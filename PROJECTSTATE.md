@@ -1,0 +1,122 @@
+# Project State
+
+**Last Updated:** 2025-12-27
+
+## Current Status: Complete ✅
+
+The manuscript for "The Invisible Users: Designing the Web for AI Agents and Everyone Else" is complete and ready for publication.
+
+## Manuscript Statistics
+
+- **Total Word Count:** ~41,700 words
+- **Chapters:** 10 of 10 complete
+- **Illustrations:** 10 of 10 complete
+- **Target Range:** 30,000-50,000 words ✅
+
+## Chapter Status
+
+All chapters are complete and fully illustrated:
+
+| Chapter | Title | Words | Status |
+| ------- | ----- | ----- | ------ |
+| 1 | What You Will Learn | ~2,750 | ✅ |
+| 2 | The Invisible Failure | ~3,900 | ✅ |
+| 3 | The Architectural Conflict | ~3,850 | ✅ |
+| 4 | The Business Reality | ~5,150 | ✅ |
+| 5 | The Content Creator's Dilemma | ~4,400 | ✅ |
+| 6 | The Security Maze | ~3,700 | ✅ |
+| 7 | The Legal Landscape | ~3,100 | ✅ |
+| 8 | The Human Cost | ~3,200 | ✅ |
+| 9 | Designing for Both | ~3,900 | ✅ |
+| 10 | Technical Advice | ~7,800 | ✅ |
+
+## Key Concepts Implemented
+
+### Identity Delegation
+
+- **Status:** Mentioned briefly as one emerging solution pattern
+- **Coverage:** Chapters 4, 6, 9, and 10
+- **Approach:** Multiple approaches acknowledged (retailer-specific tokens, centralised repositories, blockchain attestations, browser-native delegation)
+- **Treatment:** Low-level practical mention without prescribing specific implementation
+- **Note:** Detailed technical specification moved to separate identity-layer repository
+
+### Session Inheritance Problem
+
+- **Status:** Thoroughly covered in Chapter 6
+- **Description:** In-browser agents inheriting authenticated sessions
+- **Impact:** Critical security insight with no clear liability framework
+
+## Technical Infrastructure
+
+### Documentation
+
+- ✅ README.md - Project overview
+- ✅ CLAUDE.md - AI assistant guidance
+- ✅ book-plan.md - Master plan with outlines
+- ✅ book-svg-style.md - SVG illustration specifications
+- ✅ CHANGELOG.md - Version history
+- ✅ LEARNINGS.md - Actionable guidance for AI assistants (streamlined)
+- ✅ PROJECTSTATE.md - This file
+- ✅ advice.md - Standalone prescriptive guide for building AI-friendly HTML (referenced in Chapter 10)
+- ✅ for-ai.md - Concise HTML patterns reference for AI assistants (referenced in Chapter 10)
+
+### Development Tools
+
+- ✅ Markdown linting (markdownlint)
+- ✅ Link validation configuration
+- ✅ Git pre-commit hooks
+- ✅ npm scripts for validation and word counting
+- ✅ Claude Code skills (step-commit, md-fix)
+
+### Quality Standards
+
+- ✅ British English throughout
+- ✅ First-person narrative voice
+- ✅ No colons in chapter titles
+- ✅ All markdown files pass linting
+- ✅ Consistent SVG illustration style (white backgrounds)
+- ✅ Git commits without attribution
+
+## Supporting Materials
+
+All supporting materials are complete ✅:
+
+### Front Matter
+
+1. ✅ **preface.md** - Book introduction, author bio, usage guide, acknowledgements
+
+### Promotional Materials
+
+1. ✅ **blog.md** - Broad-appeal blog post (~3,000 words) targeting multiple audiences
+2. ✅ **blog.svg** - Visual illustration of human vs agent perception (900×600)
+
+### Documentation
+
+1. ✅ **Glossary.md** - Technical terms with simplified identity delegation definitions
+2. ✅ **implementation-checklist.md** - Priority-based implementation roadmap
+3. ✅ **resource-links.md** - 150+ curated resources organized by category
+4. ✅ **cover-design.svg** - Professional book cover design (600×900)
+
+### Standalone Guides
+
+✅ **advice.md** (~8,400 words) - Comprehensive prescriptive guide for building AI-friendly HTML:
+
+- 12-part structure from quick reference tables to implementation priorities
+- Complete examples (Luigi's Pizza template, e-commerce product page)
+- 14 Playwright tests for agent compatibility
+- Server-side patterns and testing strategies
+
+✅ **for-ai.md** (~1,200 words) - Concise HTML patterns quick-reference for AI assistants:
+
+- Data attribute standards and form field naming conventions
+- Ready-to-use HTML snippets for common patterns
+- Authentication state, forms, products, carts, search results, confirmations
+
+## Notes
+
+- All chapters are designed to be read sequentially
+- Cross-references between chapters have been verified
+- Technical examples use simple JavaScript with minimal dependencies
+- All illustrations use consistent visual language and styling
+- Identity delegation mentioned as one emerging solution without detailed implementation
+- Book focuses on design principles that work for both humans and AI agents

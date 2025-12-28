@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading State</title>
+</head>
+<body>
+  <h1>Loading State Patterns</h1>
+
+  <!-- Loading state -->
+  <section>
+    <h2>During Load</h2>
+    <div data-state="loading"
+         role="status"
+         aria-live="polite">
+      <p>Loading product information...</p>
+      <!-- Optional: Add a simple spinner or animation -->
+    </div>
+  </section>
+
+  <!-- Loaded state -->
+  <section>
+    <h2>After Load</h2>
+    <div data-state="loaded">
+      <article>
+        <h3>Wireless Headphones</h3>
+        <p>Premium over-ear headphones with active noise cancellation</p>
+        <p data-price="149.99" data-currency="GBP">£149.99</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Empty state -->
+  <section>
+    <h2>No Results</h2>
+    <div data-state="empty" role="status">
+      <p>No products found matching your criteria.</p>
+      <nav>
+        <a href="/products">Browse all products</a>
+        <a href="/search">Try a different search</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Error state -->
+  <section>
+    <h2>Error</h2>
+    <div data-state="error"
+         data-error-code="NETWORK_ERROR"
+         role="alert">
+      <h3>Unable to load products</h3>
+      <p>A network error occurred. Please check your connection and try again.</p>
+      <button onclick="location.reload()">Retry</button>
+    </div>
+  </section>
+
+  <!-- Progressive loading for long lists -->
+  <section>
+    <h2>Partial Load (Streaming)</h2>
+    <div data-state="loading-partial"
+         data-loaded-items="10"
+         data-total-items="47"
+         role="status"
+         aria-live="polite">
+      <p>Loaded 10 of 47 products...</p>
+      <ul>
+        <li>Product 1</li>
+        <li>Product 2</li>
+        <!-- ... -->
+      </ul>
+    </div>
+  </section>
+
+  <!--
+    Key principles:
+    - data-state always present (loading, loaded, error, empty)
+    - role="status" for loading indicators
+    - aria-live="polite" for screen readers
+    - Error state includes error code and recovery action
+    - Content shows state without requiring JavaScript
+  -->
+</body>
+</html>

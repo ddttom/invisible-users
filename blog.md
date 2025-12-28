@@ -1,0 +1,380 @@
+# Why Your Website Works Perfectly - And Fails Completely
+
+I didn't set out to write a book about AI agents. I set out to book a holiday.
+
+It was late 2024, and I was comparing tour operators for a trip through Southeast Asia. I'd delegated the research to an AI assistant, expecting it to save me hours of clicking through brochures. Instead, it gave me confident but wrong advice about which company had the better itinerary.
+
+The agent had looked at one tour operator's paginated day-by-day breakdown, seen only Day 1, and concluded that was the entire trip. The competitor's single-page itinerary was readable in full. Based on this, my assistant recommended the wrong company.
+
+I caught the error. But I wondered: how many people wouldn't?
+
+That question led me down a path I hadn't anticipated. The same design choices that confused my AI assistant also confused screen reader users, people with cognitive disabilities, and anyone who processed pages sequentially rather than spatially.
+
+We'd built a web that worked brilliantly for one specific type of user: someone with good vision, working on a desktop, with focused attention and plenty of time. Everyone else had been struggling quietly for years. Now AI agents were struggling loudly, and there was finally commercial pressure to fix the problems.
+
+---
+
+## The Invisible Visitors
+
+Right now, AI agents are visiting your site. ChatGPT is browsing your product pages. Claude is reading your documentation. Autonomous shopping assistants are attempting to complete transactions.
+
+And maybe they all fail.
+
+Not failing loudly and not throwing errors. Just... silently giving up, reporting success when they've actually failed, or completing actions incorrectly with hallucinations about success.
+
+You won't see it in your analytics. Your error logs won't catch it. Your monitoring won't alert you.
+
+But it's happening, right now.
+
+## The Pattern That Breaks Everything
+
+Let me show you a simple example. You've probably built something like this:
+
+**A form that looks perfect:**
+
+- Clean design
+- Helpful inline validation
+- Clear error messages
+- Button that lights up when complete
+
+**What the human sees:**
+
+1. Type email → green checkmark appears
+2. Type name → green checkmark appears
+3. Button changes from grey to blue
+4. Click button → success!
+
+**What the AI agent sees:**
+
+1. HTML input field (no indication it's for email)
+2. HTML input field (no indication it's for name)
+3. HTML button (disabled="false")
+4. Click button → form submits
+
+The agent doesn't see the green checkmarks. They're CSS. The button colour change? Also CSS. The inline validation? JavaScript that updates classes, not attributes.
+
+Your form works perfectly for humans. For agents, it's a mysterious box with invisible rules.
+
+## It's Not Just Forms
+
+**Your product comparison table:**
+
+- Humans see three columns, can scan and compare
+- Agents see a flat list, can't determine which features belong to which product
+
+**Your multi-step checkout:**
+
+- Humans see "Step 2 of 3" with a progress bar
+- Agents see a page that looks identical to the previous page, no idea they've progressed
+
+**Your search results:**
+
+- Humans see "Showing results 1-20 of 347"
+- Agents see 20 results, no indication there are 327 more
+
+**Your success confirmation:**
+
+- Humans see a green banner that says "Order placed!"
+- Agents see a page identical to the previous page, assume the action failed
+
+This isn't about agents being stupid. It's about the fundamental mismatch between how we design for human cognition and how agents parse the web.
+
+## Why This Matters Now
+
+You might be thinking: "AI agents are a tiny fraction of my traffic. Why should I care?"
+
+Three reasons:
+
+### 1. The Commercial Pressure Is Already Here
+
+Companies are building agent-first products right now:
+
+- Shopping assistants that compare prices across retailers
+- Booking agents that handle travel arrangements
+- Research agents that gather information from multiple sources
+- Task automation that completes repetitive web workflows
+
+If your competitors make their sites agent-compatible first, they win those transactions. All of them. Because agents don't retry on sites that fail.
+
+### 2. Your Human Users Need This Too
+
+Every pattern that breaks agents also breaks humans:
+
+- **Toast notifications** that vanish before screen readers announce them
+- **Pagination** that hides content from search engines
+- **SPAs** that break the back button
+- **Progressive disclosure** that forces many clicks to see full pricing
+- **Validation** that only works after submission
+
+The patterns that confuse agents are the same patterns accessibility advocates have been complaining about for years. You're not building for agents. You're building for everyone.
+
+### 3. The Relationship Is Breaking
+
+Here's the bit nobody's talking about: when an agent buys something on your behalf, you lose your customer relationship with the retailer.
+
+**What breaks:**
+
+- Your loyalty points disappear (the agent earned them)
+- Your warranty becomes unregistrable (who owns the product?)
+- Your purchase history vanishes (you're not in the system)
+- Your returns fail (you're not recorded as the buyer)
+
+**What this means:**
+
+- For retailers: Customer acquisition cost goes to zero value
+- For customers: You lose all the benefits you've built up
+- For agents: You become the intermediary everyone blames
+
+## The Identity Challenge
+
+One of the uncomfortable realities explored in the book: when agents make purchases on your behalf, the customer relationship between you and the retailer breaks down.
+
+**Emerging solutions:**
+
+The book mentions several approaches being explored:
+
+- Retailer-specific delegation tokens
+- Centralised identity repositories
+- Blockchain-based attestations
+- Browser-native delegation APIs
+
+Standards are still emerging. The book doesn't prescribe a specific solution, but explains why the problem needs solving and what patterns might work. This isn't the main focus - it's one practical concern among many - but it's important context for understanding why agent-compatible design matters for both businesses and customers.
+
+## About Standards and Patterns
+
+The book presents both established standards and proposed patterns. When you see:
+
+- **Schema.org, semantic HTML, ARIA** - these are established standards, use them with confidence
+- **llms.txt** - this is an emerging convention in early adoption phase
+- **ai-* meta tags, data-agent-visible** - these are proposed patterns, not yet standardised
+
+All proposed patterns are designed to be forward-compatible - they won't break anything if agents don't recognise them. Think of them as progressive enhancement for AI. The book clearly distinguishes what's deployed in production today versus logical extensions that may become standards as the ecosystem matures.
+
+## The Solutions Are Simpler Than You Think
+
+You don't need to rebuild everything. You don't need to support a separate API. You don't need to detect and route agents differently.
+
+**You need to make implicit state explicit.**
+
+Instead of this:
+
+```javascript
+// Button colour changes from grey to blue via CSS class
+<button className={isValid ? 'active' : 'inactive'}>Submit</button>
+```
+
+Do this:
+
+```javascript
+// Same visual result, but state is explicit in the DOM
+<button
+  className={isValid ? 'active' : 'inactive'}
+  disabled={!isValid}
+  data-form-state={isValid ? 'complete' : 'incomplete'}
+>
+  Submit
+</button>
+```
+
+Same design. Same user experience. But now the state is machine-readable.
+
+**Instead of toast notifications that vanish:**
+
+```javascript
+// Error appears for 3 seconds then disappears
+showToast("Email is required", 3000);
+```
+
+Do this:
+
+```javascript
+// Error persists until user fixes it
+<div className="error-summary" role="alert">
+  <h2>There are problems with this form</h2>
+  <ul>
+    <li><a href="#email">Email is required</a></li>
+  </ul>
+</div>
+```
+
+Same information. Better for everyone. Screen readers can announce it. Agents can see it. Users have time to read it.
+
+**Instead of hiding pricing behind clicks:**
+
+- Show the complete price upfront
+- Include all fees before checkout
+- Make restrictions visible, not buried
+
+This isn't about dumbing down your interface. It's about making your excellent design machine-readable.
+
+## What You'll Learn
+
+This book grew from that realisation. It's not a book about AI. It's a book about web design, and the assumptions we've embedded into it. AI agents are the lens, but the subject is broader: how do we build digital spaces that work for users we didn't anticipate?
+
+**The first three chapters** establish what's breaking and why. These are the foundations. Skip them and you'll miss the context that makes solutions make sense.
+
+**Chapters 4 through 8** address implications: business models, content economics, security concerns, legal landscape, and human costs. These might seem tangential to implementation, but they're not. The choices we make about agent compatibility are shaped by these pressures.
+
+**Chapters 9 and 10** provide solutions. Strategic frameworks in Chapter 9. Working code in Chapter 10. If you're impatient to implement, you can start there and work backwards.
+
+Throughout, I've tried to be honest about tensions that don't have clean resolutions. Some fixes for agent compatibility conflict with short-term business interests. Some accessibility improvements reduce engagement metrics. Some solutions create new problems. I've flagged these rather than pretending they don't exist.
+
+## Who This Book Is For
+
+**If you're a designer:**
+You'll learn which patterns create invisible barriers, and how to design experiences that work for everyone without compromising aesthetics.
+
+**If you're a developer:**
+You'll get implementation code, testing strategies, and practical examples of making existing patterns agent-compatible.
+
+**If you're a product manager:**
+You'll understand the business implications, competitive dynamics, and strategic decisions around agent compatibility.
+
+**If you're a content creator:**
+You'll discover why your ad-funded model is under threat, and what intermediate solutions exist whilst long-term models emerge.
+
+**If you build websites:**
+You'll learn how to future-proof your work without rebuilding everything, and why these changes benefit all your users.
+
+## The Chapters
+
+1. **What You Will Learn** - The accessibility connection and why this matters
+2. **The Invisible Failure** - Specific patterns that break, with examples
+3. **The Architectural Conflict** - Why human cognition vs AI parsing creates problems
+4. **The Business Reality** - Economics, incentives, and competitive dynamics
+5. **The Content Creator's Dilemma** - The existential threat to ad-funded content
+6. **The Security Maze** - Authentication, delegation, and session inheritance
+7. **The Legal Landscape** - Liability, copyright, and emerging regulation
+8. **The Human Cost** - Digital divide and access implications
+9. **Designing for Both** - Practical solutions that work for everyone
+10. **Technical Advice** - Implementation code and testing strategies
+
+## What You'll Find Inside
+
+**Concrete examples:**
+
+- Real websites that fail in specific ways
+- Exact patterns that break
+- Why they break
+- How to fix them
+
+**Working code:**
+
+- Practical design patterns with bad/good examples
+- Synchronous form validation
+- Explicit state management
+- Agent-compatible loading indicators
+- Structured data implementation (JSON-LD, schema.org)
+- Luigi's Pizza small business template
+- Playwright tests for agent compatibility
+- **Agent-Friendly Starter Kit**: Hands-on "Good vs. Bad" site implementation you can run yourself
+
+**Business context:**
+
+- Which industries benefit
+- Which face existential threats
+- How competitive dynamics play out
+- What the regulatory landscape looks like
+- Where the commercial opportunities are
+
+**Practical guidance:**
+
+- Implementation checklist
+- Testing strategies
+- Phased rollout plans
+- Success metrics
+- Common pitfalls
+- Standalone prescriptive guide (advice.md, ~8,400 words) with 12-part builder's reference
+- Quick-reference HTML patterns for AI assistants (for-ai.md, ~1,200 words)
+- Complete AI-native website blueprint (AI-Native.blog, ~5,000 words) covering 7-layer architecture
+- Step-by-step deployment guide (IMPLEMENTATION-GUIDE.md, ~1,500 words) with platform-specific configurations
+
+## The Promise
+
+By the end of this book, you'll be able to:
+
+- **Identify** which patterns on your site break agents (and hurt accessibility)
+- **Understand** why the simple solutions don't work at scale
+- **Implement** fixes that benefit all users without rebuilding
+- **Test** your changes with automated agent-simulation tests
+- **Navigate** the business, legal, and ethical implications
+
+You'll also understand:
+
+- How session inheritance breaks traditional security
+- What happens to customer relationships when agents transact
+- Why some businesses benefit whilst others face existential threats
+- Which emerging approaches to identity delegation show promise
+- How to build websites that work for both humans and agents
+
+## The Window Is Small
+
+Right now, agent traffic is tiny. Failures are isolated. The commercial pressure is just starting.
+
+In two years:
+
+- Agents will be mainstream user behaviour
+- Your competitors will have made their sites compatible
+- The patterns that break agents will be costing you real revenue
+- Big Tech will have built proprietary solutions
+- Standards bodies will still be debating specifications
+
+Standards are still forming. Best practices are still contested. The businesses and developers who engage now will shape what becomes normal. In five years, agent compatibility will be as routine as mobile responsiveness. The transition period - which we're in - is when advantage is gained or lost.
+
+You can wait. Or you can fix it now, whilst the changes are simple and the competitive advantage is real.
+
+## The Uncomfortable Truth
+
+Fixing your site for agents won't just help AI platforms. It won't even primarily help AI platforms.
+
+It'll help:
+
+- Blind users with screen readers
+- Users on slow connections
+- Users with cognitive disabilities
+- Search engines
+- Your own automation tools
+- Future you, debugging production issues
+
+The patterns that break agents are patterns we should have fixed years ago. We didn't, because the commercial pressure wasn't there. Now it is.
+
+---
+
+## The Book
+
+"The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+
+- **10 chapters** covering technical, business, ethical, and human implications
+- **~40,200 words** of practical, actionable guidance
+- **Working code examples** you can implement tomorrow
+- **10 practical design patterns** with bad/good examples showing correct HTML structure
+- **Concrete examples** from websites demonstrating failures and fixes
+- **Implementation checklist** for phased rollout
+- **British English** throughout, first-person narrative
+- **No exaggeration** - just technical accuracy and practical implications
+
+Available now. Please read it before your competitors do.
+
+---
+
+## About the Author
+
+Tom Cranstoun has worked on web technology since the early days of the commercial internet. Over three decades, he's seen the web evolve from hand-coded HTML pages to the sophisticated application platforms we rely on today.
+
+His career spans technical implementation, strategic consulting, and the difficult work of translating between what engineers can build and what businesses need. He's worked with organisations ranging from startups to enterprises, across sectors including finance, media, and retail.
+
+This book grew from patterns he noticed across projects: the same accessibility problems appearing in different contexts, the same design assumptions failing for unexpected user types, the same commercial pressures shaping what gets fixed and what gets ignored.
+
+Tom writes at allabout.network and can be found on LinkedIn. He's based in the UK and works with organisations internationally.
+
+He remains convinced that the web we've built is less accessible than it should be, and that AI agents - demanding clarity for their own reasons - might finally force us to fix it.
+
+---
+
+December 2025
+
+London
+
+---
+
+Copyright © Tom Cranstoun. All rights reserved.

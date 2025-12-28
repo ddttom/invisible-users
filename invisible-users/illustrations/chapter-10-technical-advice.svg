@@ -1,0 +1,107 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="600" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#1f2937">Implementation Architecture</text>
+  <text x="450" y="65" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6b7280">Building for Both Humans and Agents</text>
+
+  <!-- Architecture Layers -->
+
+  <!-- Layer 1: Discovery Layer -->
+  <g transform="translate(50, 100)">
+    <rect width="800" height="90" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <text x="20" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#166534">Discovery Layer</text>
+
+    <!-- llms.txt -->
+    <rect x="20" y="45" width="180" height="35" rx="4" fill="#ffffff" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="30" y="63" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#166534">/llms.txt</text>
+    <text x="30" y="75" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280">Site-wide policies</text>
+
+    <!-- Meta tags -->
+    <rect x="220" y="45" width="180" height="35" rx="4" fill="#ffffff" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="230" y="63" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#166534">&lt;meta&gt; tags</text>
+    <text x="230" y="75" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280">Page-level hints</text>
+
+    <!-- JSON-LD -->
+    <rect x="420" y="45" width="180" height="35" rx="4" fill="#ffffff" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="430" y="63" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#166534">JSON-LD</text>
+    <text x="430" y="75" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280">Structured data</text>
+
+    <!-- Robots.txt -->
+    <rect x="620" y="45" width="160" height="35" rx="4" fill="#ffffff" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="630" y="63" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#166534">robots.txt</text>
+    <text x="630" y="75" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280">Access control</text>
+  </g>
+
+  <!-- Arrow down -->
+  <path d="M 450 195 L 450 215" stroke="#9ca3af" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Layer 2: Detection Layer -->
+  <g transform="translate(50, 220)">
+    <rect width="800" height="80" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="20" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1e40af">Detection Layer</text>
+
+    <rect x="20" y="45" width="230" height="25" rx="4" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="30" y="63" font-family="system-ui, sans-serif" font-size="12" fill="#1e40af">Client-side detection</text>
+
+    <rect x="270" y="45" width="230" height="25" rx="4" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="280" y="63" font-family="system-ui, sans-serif" font-size="12" fill="#1e40af">Server-side analysis</text>
+
+    <rect x="520" y="45" width="260" height="25" rx="4" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="530" y="63" font-family="system-ui, sans-serif" font-size="12" fill="#1e40af">User-Agent + behaviour patterns</text>
+  </g>
+
+  <!-- Arrow down -->
+  <path d="M 450 305 L 450 325" stroke="#9ca3af" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Layer 3: Dual Interface -->
+  <g transform="translate(50, 330)">
+    <rect width="380" height="120" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="20" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#92400e">Human Interface</text>
+
+    <text x="20" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#78350f">• Visual design and animations</text>
+    <text x="20" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#78350f">• Interactive elements</text>
+    <text x="20" y="95" font-family="system-ui, sans-serif" font-size="12" fill="#78350f">• Progressive disclosure</text>
+    <text x="20" y="115" font-family="system-ui, sans-serif" font-size="12" fill="#78350f">• Rich media</text>
+  </g>
+
+  <g transform="translate(470, 330)">
+    <rect width="380" height="120" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <text x="20" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#166534">Agent Interface</text>
+
+    <text x="20" y="55" font-family="system-ui, sans-serif" font-size="12" fill="#166534">• Clear state indicators</text>
+    <text x="20" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#166534">• Persistent errors</text>
+    <text x="20" y="95" font-family="system-ui, sans-serif" font-size="12" fill="#166534">• Complete data up-front</text>
+    <text x="20" y="115" font-family="system-ui, sans-serif" font-size="12" fill="#166534">• Semantic structure</text>
+  </g>
+
+  <!-- Arrow down from both interfaces -->
+  <path d="M 240 455 L 240 475 L 450 475 L 450 490" stroke="#9ca3af" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 660 455 L 660 475 L 450 475" stroke="#9ca3af" stroke-width="2" fill="none"/>
+
+  <!-- Layer 4: Backend Services -->
+  <g transform="translate(50, 495)">
+    <rect width="800" height="80" rx="8" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+    <text x="20" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#374151">Backend Services</text>
+
+    <rect x="20" y="45" width="165" height="25" rx="4" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+    <text x="30" y="63" font-family="system-ui, sans-serif" font-size="12" fill="#374151">API endpoints</text>
+
+    <rect x="205" y="45" width="165" height="25" rx="4" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+    <text x="215" y="63" font-family="system-ui, sans-serif" font-size="12" fill="#374151">Authentication</text>
+
+    <rect x="390" y="45" width="165" height="25" rx="4" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+    <text x="400" y="63" font-family="system-ui, sans-serif" font-size="12" fill="#374151">Rate limiting</text>
+
+    <rect x="575" y="45" width="205" height="25" rx="4" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+    <text x="585" y="63" font-family="system-ui, sans-serif" font-size="12" fill="#374151">Identity delegation</text>
+  </g>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#9ca3af"/>
+    </marker>
+  </defs>
+</svg>

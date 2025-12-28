@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form with Synchronous Validation</title>
+</head>
+<body>
+  <h1>Checkout Form</h1>
+
+  <!-- Form shows all validation errors at once -->
+  <form action="/checkout" method="POST"
+        data-state="incomplete"
+        data-errors="2">
+
+    <!-- Error summary at top for accessibility -->
+    <div class="error-summary" role="alert">
+      <h2>2 errors need fixing</h2>
+      <ul>
+        <li><a href="#email">Email: Enter a valid email</a></li>
+        <li><a href="#postcode">Postcode: Required</a></li>
+      </ul>
+    </div>
+
+    <!-- Field with validation error -->
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email"
+             id="email"
+             name="email"
+             aria-invalid="true"
+             aria-describedby="email-error"
+             data-validation-state="invalid">
+      <div id="email-error" role="alert">
+        Enter a valid email (example: name@company.com)
+      </div>
+    </div>
+
+    <!-- Field with validation error -->
+    <div class="field">
+      <label for="postcode">Postcode</label>
+      <input type="text"
+             id="postcode"
+             name="postcode"
+             aria-invalid="true"
+             aria-describedby="postcode-error"
+             data-validation-state="invalid">
+      <div id="postcode-error" role="alert">
+        Postcode is required
+      </div>
+    </div>
+
+    <!-- Valid field (no error state) -->
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text"
+             id="name"
+             name="firstName"
+             value="Tom Cranstoun"
+             data-validation-state="valid">
+    </div>
+
+    <!-- Submit button disabled with clear reason -->
+    <button type="submit"
+            disabled
+            aria-disabled="true"
+            data-disabled-reason="2 fields incomplete">
+      Submit (fix 2 errors first)
+    </button>
+  </form>
+
+  <!--
+    Key principles:
+    - All errors shown at once (no "toast" notifications)
+    - Error summary links to specific fields
+    - aria-invalid and aria-describedby for accessibility
+    - data-validation-state for machine readability
+    - Submit button shows why it's disabled
+  -->
+</body>
+</html>

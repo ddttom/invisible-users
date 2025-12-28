@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication State</title>
+</head>
+<body>
+  <h1>Authentication State Patterns</h1>
+
+  <!-- Logged in state -->
+  <section>
+    <h2>Logged In</h2>
+    <div id="auth-status"
+         data-authenticated="true"
+         data-user-id="user-456">
+      <p>Signed in as tom@example.com</p>
+      <nav>
+        <a href="/account">Account</a>
+        <form action="/logout" method="POST" style="display: inline;">
+          <button type="submit">Sign out</button>
+        </form>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Logged out state -->
+  <section>
+    <h2>Logged Out</h2>
+    <div id="auth-status" data-authenticated="false">
+      <nav>
+        <a href="/login">Sign in</a>
+        <a href="/register">Create account</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Logged in with additional user info -->
+  <section>
+    <h2>Logged In with User Details</h2>
+    <div id="auth-status"
+         data-authenticated="true"
+         data-user-id="user-456"
+         data-user-role="premium"
+         data-subscription-status="active">
+      <div class="user-info">
+        <p>Welcome back, <strong>Tom Cranstoun</strong></p>
+        <p>Premium member since 2024</p>
+      </div>
+      <nav>
+        <a href="/account">My Account</a>
+        <a href="/orders">Orders</a>
+        <a href="/subscription">Subscription</a>
+        <form action="/logout" method="POST" style="display: inline;">
+          <button type="submit">Sign out</button>
+        </form>
+      </nav>
+    </div>
+  </section>
+
+  <!--
+    Key principles:
+    - data-authenticated always present (true/false)
+    - User ID in data attribute for machine readability
+    - Additional user state in data attributes
+    - Logout is POST form (not GET link)
+    - State visible without JavaScript
+  -->
+</body>
+</html>

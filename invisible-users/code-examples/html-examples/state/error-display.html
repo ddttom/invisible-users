@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Display Patterns</title>
+</head>
+<body>
+  <h1>Error Display Patterns</h1>
+
+  <!-- Payment error with recovery options -->
+  <section>
+    <h2>Payment Error</h2>
+    <div class="error"
+         role="alert"
+         data-error-code="PAYMENT_DECLINED"
+         data-severity="error">
+      <h3>Payment declined</h3>
+      <p>Your card ending 4242 was declined by your bank.</p>
+
+      <h4>What you can do:</h4>
+      <ul class="recovery-options">
+        <li><a href="/checkout/payment">Try a different card</a></li>
+        <li><a href="/checkout/payment?method=paypal">Use PayPal instead</a></li>
+        <li><a href="/cart">Return to basket</a></li>
+        <li><a href="/help/payment-issues">Payment help</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Network error -->
+  <section>
+    <h2>Network Error</h2>
+    <div class="error"
+         role="alert"
+         data-error-code="NETWORK_ERROR"
+         data-severity="error">
+      <h3>Connection problem</h3>
+      <p>We couldn't reach the server. Please check your internet connection.</p>
+
+      <div class="recovery-options">
+        <button onclick="location.reload()">Try again</button>
+        <a href="/help/connection-issues">Connection help</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Validation error (less severe) -->
+  <section>
+    <h2>Validation Warning</h2>
+    <div class="warning"
+         role="alert"
+         data-error-code="VALIDATION_WARNING"
+         data-severity="warning">
+      <h3>Please check your details</h3>
+      <p>Some information needs correction:</p>
+      <ul>
+        <li><a href="#postcode">Postcode format invalid</a></li>
+        <li><a href="#phone">Phone number required</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Stock error -->
+  <section>
+    <h2>Stock Unavailable</h2>
+    <div class="error"
+         role="alert"
+         data-error-code="OUT_OF_STOCK"
+         data-product-id="WH-1000"
+         data-severity="error">
+      <h3>Product no longer available</h3>
+      <p>Wireless Headphones (WH-1000) sold out while you were checking out.</p>
+
+      <div class="recovery-options">
+        <a href="/products/wh-1000/alternatives">View similar products</a>
+        <button type="button" onclick="/* notify me */">Notify when back in stock</button>
+        <a href="/cart">Return to basket</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Persistent error that doesn't auto-dismiss -->
+  <section>
+    <h2>Persistent Error (No Auto-Dismiss)</h2>
+    <div class="error"
+         role="alert"
+         data-error-code="ACCOUNT_LOCKED"
+         data-severity="error"
+         data-dismissible="false">
+      <h3>Account temporarily locked</h3>
+      <p>Too many failed login attempts. Your account has been locked for security.</p>
+      <p>You can unlock it by:</p>
+      <ul class="recovery-options">
+        <li><a href="/reset-password">Reset your password</a></li>
+        <li><a href="/help/contact">Contact support</a></li>
+      </ul>
+      <p>The lock will automatically expire in 30 minutes.</p>
+    </div>
+  </section>
+
+  <!--
+    Key principles:
+    - Errors persist until user takes action (no auto-dismiss)
+    - data-error-code for machine readability
+    - data-severity indicates urgency (error, warning, info)
+    - Always provide recovery options
+    - role="alert" for accessibility
+    - Include context (card number, product name)
+    - Link to specific fields when relevant
+  -->
+</body>
+</html>

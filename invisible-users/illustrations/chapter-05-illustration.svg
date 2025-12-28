@@ -1,0 +1,130 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9ca3af"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="600" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" font-family="Georgia, serif" font-size="24" fill="#1e293b" text-anchor="middle" font-weight="bold">The Value Extraction Problem</text>
+  
+  <!-- Dividing line -->
+  <line x1="450" y1="70" x2="450" y2="560" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="8,4"/>
+  
+  <!-- Left side label -->
+  <text x="225" y="85" font-family="system-ui, sans-serif" font-size="16" fill="#22c55e" text-anchor="middle" font-weight="bold">HUMAN VISIT</text>
+  <text x="225" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Sustainable Model</text>
+  
+  <!-- Right side label -->
+  <text x="675" y="85" font-family="system-ui, sans-serif" font-size="16" fill="#ef4444" text-anchor="middle" font-weight="bold">AGENT VISIT</text>
+  <text x="675" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Extraction Model</text>
+  
+  <!-- LEFT SIDE - Human Visit Flow -->
+  
+  <!-- Human user icon -->
+  <circle cx="225" cy="160" r="25" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
+  <circle cx="225" cy="150" r="8" fill="#0ea5e9"/>
+  <path d="M210,175 Q225,185 240,175" stroke="#0ea5e9" stroke-width="3" fill="none"/>
+  <text x="225" y="200" font-family="system-ui, sans-serif" font-size="11" fill="#0ea5e9" text-anchor="middle">Human User</text>
+  
+  <!-- Arrow down to content -->
+  <line x1="225" y1="210" x2="225" y2="250" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="255" y="235" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">visits site</text>
+  
+  <!-- Content/Creator box -->
+  <rect x="125" y="260" width="200" height="80" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="225" y="290" font-family="system-ui, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">Content Creator</text>
+  <text x="225" y="310" font-family="system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Recipe / Article / Tutorial</text>
+  <text x="225" y="328" font-family="system-ui, sans-serif" font-size="10" fill="#22c55e" text-anchor="middle">+ Advertisements</text>
+  
+  <!-- Engagement metrics -->
+  <rect x="340" y="270" width="90" height="60" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="385" y="290" font-family="system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">3-5 min</text>
+  <text x="385" y="305" font-family="system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">4-6 ads</text>
+  <text x="385" y="320" font-family="system-ui, sans-serif" font-size="10" fill="#22c55e" text-anchor="middle" font-weight="bold">£0.08-0.12</text>
+  
+  <line x1="325" y1="300" x2="338" y2="300" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  
+  <!-- Arrow down to advertiser -->
+  <line x1="225" y1="340" x2="225" y2="380" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="255" y="365" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">views ads</text>
+  
+  <!-- Advertiser box -->
+  <rect x="150" y="390" width="150" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="225" y="415" font-family="system-ui, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="bold">Advertisers</text>
+  <text x="225" y="432" font-family="system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Pay for impressions</text>
+  
+  <!-- Money flowing back to creator -->
+  <path d="M150,400 Q80,350 125,300" stroke="#22c55e" stroke-width="2" fill="none" marker-end="url(#arrowGreen)"/>
+  <text x="70" y="350" font-family="system-ui, sans-serif" font-size="11" fill="#22c55e" font-weight="bold">£££</text>
+  <text x="60" y="365" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Revenue</text>
+  
+  <!-- Sustainability indicator -->
+  <rect x="145" y="470" width="160" height="45" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="225" y="492" font-family="system-ui, sans-serif" font-size="12" fill="#15803d" text-anchor="middle" font-weight="bold">✓ Sustainable</text>
+  <text x="225" y="508" font-family="system-ui, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">Creator compensated</text>
+  
+  <!-- RIGHT SIDE - Agent Visit Flow -->
+  
+  <!-- Agent icon -->
+  <rect x="200" y="135" width="50" height="50" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2" transform="translate(450, 0)"/>
+  <text x="675" y="165" font-family="system-ui, sans-serif" font-size="16" fill="#ef4444" text-anchor="middle">🤖</text>
+  <text x="675" y="200" font-family="system-ui, sans-serif" font-size="11" fill="#ef4444" text-anchor="middle">AI Agent</text>
+  
+  <!-- Arrow down to content -->
+  <line x1="675" y1="210" x2="675" y2="250" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="710" y="235" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">extracts</text>
+  
+  <!-- Content/Creator box - dashed to show being bypassed -->
+  <rect x="575" y="260" width="200" height="80" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="675" y="290" font-family="system-ui, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">Content Creator</text>
+  <text x="675" y="310" font-family="system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Recipe / Article / Tutorial</text>
+  <text x="675" y="328" font-family="system-ui, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle" style="text-decoration: line-through">+ Advertisements</text>
+  
+  <!-- Extraction metrics -->
+  <rect x="790" y="270" width="90" height="60" rx="6" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+  <text x="835" y="290" font-family="system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">0.3 sec</text>
+  <text x="835" y="305" font-family="system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">0 ads</text>
+  <text x="835" y="320" font-family="system-ui, sans-serif" font-size="10" fill="#ef4444" text-anchor="middle" font-weight="bold">£0.00</text>
+  
+  <line x1="775" y1="300" x2="788" y2="300" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  
+  <!-- Value extraction arrow going up to platform -->
+  <path d="M675,260 Q675,220 720,180" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+  <text x="720" y="215" font-family="system-ui, sans-serif" font-size="10" fill="#ef4444">value</text>
+  
+  <!-- AI Platform box -->
+  <rect x="720" y="135" width="120" height="50" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <text x="780" y="160" font-family="system-ui, sans-serif" font-size="11" fill="#1e293b" text-anchor="middle" font-weight="bold">AI Platform</text>
+  <text x="780" y="175" font-family="system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Profits from content</text>
+  
+  <!-- Advertiser box - grayed out -->
+  <rect x="600" y="390" width="150" height="50" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="675" y="415" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">Advertisers</text>
+  <text x="675" y="432" font-family="system-ui, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">No impressions</text>
+  
+  <!-- No money flowing - X mark -->
+  <line x1="560" y1="370" x2="600" y2="330" stroke="#ef4444" stroke-width="2"/>
+  <circle cx="580" cy="350" r="18" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <line x1="568" y1="340" x2="592" y2="360" stroke="#ef4444" stroke-width="2"/>
+  <text x="540" y="355" font-family="system-ui, sans-serif" font-size="10" fill="#ef4444">£0</text>
+  
+  <!-- Unsustainability indicator -->
+  <rect x="595" y="470" width="160" height="45" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <text x="675" y="492" font-family="system-ui, sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">✗ Unsustainable</text>
+  <text x="675" y="508" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">Creator gets nothing</text>
+  
+  <!-- Bottom summary -->
+  <rect x="200" y="540" width="500" height="45" rx="6" fill="#fefce8" stroke="#eab308" stroke-width="1"/>
+  <text x="450" y="560" font-family="system-ui, sans-serif" font-size="12" fill="#854d0e" text-anchor="middle" font-weight="bold">If 50% of traffic becomes agents → 50%+ revenue loss</text>
+  <text x="450" y="577" font-family="system-ui, sans-serif" font-size="11" fill="#a16207" text-anchor="middle">Margins collapse. Creators stop creating. Content ecosystem degrades.</text>
+</svg>

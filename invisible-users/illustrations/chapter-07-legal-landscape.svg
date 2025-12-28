@@ -1,0 +1,137 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px Georgia, serif; fill: #1a1a1a; }
+    .subtitle { font: 15px system-ui, sans-serif; fill: #666; }
+    .section-title { font: bold 15px system-ui, sans-serif; fill: #1a1a1a; }
+    .label { font: 14px system-ui, sans-serif; fill: #333; }
+    .small-label { font: 11px system-ui, sans-serif; fill: #666; }
+    .question { font: bold 22px system-ui, sans-serif; fill: #c0392b; }
+    .scenario { font: 12px system-ui, sans-serif; fill: #2c3e50; }
+    .warning { font: bold 13px system-ui, sans-serif; fill: #e67e22; }
+    .insight { font: italic 13px system-ui, sans-serif; fill: #2c3e50; }
+    .connector-label { font: 10px system-ui, sans-serif; fill: #888; }
+  </style>
+  
+  <!-- White background -->
+  <rect width="900" height="600" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" class="title">The Legal Landscape - Who's Liable?</text>
+  <text x="450" y="55" text-anchor="middle" class="subtitle">When an agent-mediated transaction goes wrong, responsibility is unclear</text>
+  
+  <!-- Central transaction flow -->
+  <text x="450" y="85" text-anchor="middle" class="section-title">The Transaction Chain</text>
+  
+  <!-- Row of boxes - more compact, better spaced -->
+  <!-- User box -->
+  <rect x="35" y="105" width="85" height="50" rx="6" fill="#e8f4f8" stroke="#3498db" stroke-width="2"/>
+  <text x="77" y="128" text-anchor="middle" class="label">User</text>
+  <text x="77" y="145" text-anchor="middle" class="small-label">(UK)</text>
+  
+  <!-- Arrow 1 with label above -->
+  <text x="147" y="115" text-anchor="middle" class="connector-label">instructs</text>
+  <path d="M120 130 L175 130" stroke="#999" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Agent Platform box -->
+  <rect x="175" y="105" width="105" height="50" rx="6" fill="#fff5e6" stroke="#e67e22" stroke-width="2"/>
+  <text x="227" y="128" text-anchor="middle" class="label">Agent Platform</text>
+  <text x="227" y="145" text-anchor="middle" class="small-label">(US)</text>
+  
+  <!-- Arrow 2 -->
+  <text x="307" y="115" text-anchor="middle" class="connector-label">accesses</text>
+  <path d="M280 130 L335 130" stroke="#999" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Website box -->
+  <rect x="335" y="105" width="85" height="50" rx="6" fill="#f0f0f0" stroke="#666" stroke-width="2"/>
+  <text x="377" y="128" text-anchor="middle" class="label">Website</text>
+  <text x="377" y="145" text-anchor="middle" class="small-label">(Japan)</text>
+  
+  <!-- Arrow 3 -->
+  <text x="447" y="115" text-anchor="middle" class="connector-label">sells</text>
+  <path d="M420 130 L475 130" stroke="#999" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Merchant box -->
+  <rect x="475" y="105" width="90" height="50" rx="6" fill="#e8f6e8" stroke="#27ae60" stroke-width="2"/>
+  <text x="520" y="128" text-anchor="middle" class="label">Merchant</text>
+  <text x="520" y="145" text-anchor="middle" class="small-label">(Germany)</text>
+  
+  <!-- Arrow 4 -->
+  <text x="592" y="115" text-anchor="middle" class="connector-label">regulated by</text>
+  <path d="M565 130 L620 130" stroke="#999" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Regulators box -->
+  <rect x="620" y="100" width="95" height="60" rx="6" fill="#f5e6f5" stroke="#9b59b6" stroke-width="2"/>
+  <text x="667" y="123" text-anchor="middle" class="label">Regulators</text>
+  <text x="667" y="140" text-anchor="middle" class="small-label">(UK, US, EU,</text>
+  <text x="667" y="153" text-anchor="middle" class="small-label">Japan...)</text>
+  
+  <!-- Question mark - positioned below the chain, fully within viewbox -->
+  <ellipse cx="400" cy="195" rx="25" ry="20" fill="#fde8e8" stroke="#c0392b" stroke-width="2"/>
+  <text x="400" y="202" text-anchor="middle" class="question">?</text>
+  
+  <!-- Dashed lines from question mark to each party -->
+  <path d="M77 155 L380 180" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3"/>
+  <path d="M227 155 L385 180" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3"/>
+  <path d="M377 155 L398 175" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3"/>
+  <path d="M520 155 L415 180" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3"/>
+  <path d="M667 160 L420 185" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,3"/>
+  
+  <!-- Scenario boxes -->
+  <text x="450" y="245" text-anchor="middle" class="section-title">When Things Go Wrong</text>
+  
+  <!-- Scenario 1 -->
+  <rect x="50" y="260" width="250" height="90" rx="6" fill="#fff5f5" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="175" y="283" text-anchor="middle" class="warning">Wrong Booking</text>
+  <text x="175" y="302" text-anchor="middle" class="scenario">Agent misinterprets "next Friday"</text>
+  <text x="175" y="318" text-anchor="middle" class="scenario">Books wrong date, £200 lost</text>
+  <text x="175" y="340" text-anchor="middle" class="small-label">Likely liable: User (gave ambiguous instruction)</text>
+  
+  <!-- Scenario 2 -->
+  <rect x="325" y="260" width="250" height="90" rx="6" fill="#fff5f5" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="450" y="283" text-anchor="middle" class="warning">Silent Failure</text>
+  <text x="450" y="302" text-anchor="middle" class="scenario">Agent reports success incorrectly</text>
+  <text x="450" y="318" text-anchor="middle" class="scenario">Booking never completed</text>
+  <text x="450" y="340" text-anchor="middle" class="small-label">Liable: Unclear (platform? site? user?)</text>
+  
+  <!-- Scenario 3 -->
+  <rect x="600" y="260" width="250" height="90" rx="6" fill="#fff5f5" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="725" y="283" text-anchor="middle" class="warning">Terms Violation</text>
+  <text x="725" y="302" text-anchor="middle" class="scenario">Site prohibits automated access</text>
+  <text x="725" y="318" text-anchor="middle" class="scenario">Account terminated, ticket cancelled</text>
+  <text x="725" y="340" text-anchor="middle" class="small-label">Liable: User (breached terms)</text>
+  
+  <!-- Legal framework boxes -->
+  <text x="450" y="385" text-anchor="middle" class="section-title">Overlapping Legal Frameworks</text>
+  
+  <rect x="50" y="400" width="150" height="55" rx="4" fill="#e8f4f8" stroke="#3498db" stroke-width="1.5"/>
+  <text x="125" y="425" text-anchor="middle" class="label">Consumer Law</text>
+  <text x="125" y="443" text-anchor="middle" class="small-label">Where user is located</text>
+  
+  <rect x="215" y="400" width="150" height="55" rx="4" fill="#e8f6e8" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="290" y="425" text-anchor="middle" class="label">Privacy (GDPR)</text>
+  <text x="290" y="443" text-anchor="middle" class="small-label">Where data processed</text>
+  
+  <rect x="380" y="400" width="140" height="55" rx="4" fill="#fff5e6" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="450" y="425" text-anchor="middle" class="label">Copyright</text>
+  <text x="450" y="443" text-anchor="middle" class="small-label">Where content used</text>
+  
+  <rect x="535" y="400" width="150" height="55" rx="4" fill="#f5e6f5" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="610" y="425" text-anchor="middle" class="label">Contract Law</text>
+  <text x="610" y="443" text-anchor="middle" class="small-label">As specified in terms</text>
+  
+  <rect x="700" y="400" width="150" height="55" rx="4" fill="#f0f0f0" stroke="#666" stroke-width="1.5"/>
+  <text x="775" y="425" text-anchor="middle" class="label">AI Act (EU)</text>
+  <text x="775" y="443" text-anchor="middle" class="small-label">High-risk systems</text>
+  
+  <!-- Bottom insight -->
+  <rect x="100" y="480" width="700" height="55" rx="8" fill="#f8f8f8" stroke="#999" stroke-width="1.5"/>
+  <text x="450" y="505" text-anchor="middle" class="insight">Courts are deciding. Regulators are writing rules. Companies are guessing.</text>
+  <text x="450" y="525" text-anchor="middle" class="insight">In ten years, we'll have clarity. Right now, proceed carefully.</text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#999"/>
+    </marker>
+  </defs>
+</svg>

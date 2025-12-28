@@ -1,0 +1,31 @@
+{
+  "name": "the-invisible-users",
+  "version": "1.0.0",
+  "description": "Designing the Web for AI Agents and Everyone Else - A practical guide to the collision between modern web design and AI agents",
+  "private": true,
+  "scripts": {
+    "wordcount": "wc -w invisible-users/chapter-*.md | tail -1",
+    "wordcount:all": "wc -w invisible-users/*.md",
+    "lint:markdown": "markdownlint '**/*.md'",
+    "lint:markdown:fix": "markdownlint --fix '**/*.md'",
+    "validate:links": "markdown-link-check --config .markdown-link-check.json invisible-users/chapter-*.md book-plan.md",
+    "serve": "npx live-server --port=8080 --entry-file=book-plan.md",
+    "status": "node -e \"console.log('Book Status:'); require('fs').readdirSync('invisible-users').filter(f => f.startsWith('chapter-')).sort().forEach(f => console.log('  ✓', f))\"",
+    "illustrations:generate": "cd invisible-users/illustrations && for svg in chapter-*.svg; do png=\"${svg%.svg}.png\"; echo \"Converting $svg to $png...\"; magick convert -density 300 -background white \"$svg\" \"$png\" 2>/dev/null || convert -density 300 -background white \"$svg\" \"$png\"; done && echo \"✓ All PNG illustrations generated\""
+  },
+  "keywords": [
+    "AI",
+    "web-design",
+    "accessibility",
+    "agents",
+    "user-experience",
+    "book",
+    "manuscript"
+  ],
+  "author": "Tom Cranstoun",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomcranstoun/Book"
+  }
+}

@@ -1,0 +1,139 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="humanFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="agentFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="brokenFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fef2f2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fee2e2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#1f2937" font-family="system-ui, sans-serif" font-size="20" font-weight="bold">The Business Model Collision</text>
+  
+  <!-- Dividing line -->
+  <line x1="400" y1="55" x2="400" y2="490" stroke="#d1d5db" stroke-width="2" stroke-dasharray="8,4"/>
+  
+  <!-- Left side: Traditional Human Visit -->
+  <text x="200" y="70" text-anchor="middle" fill="#059669" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">TRADITIONAL HUMAN VISIT</text>
+  
+  <!-- Human icon -->
+  <circle cx="80" cy="120" r="15" fill="#10b981"/>
+  <circle cx="80" cy="105" r="8" fill="#10b981"/>
+  
+  <!-- Flow arrows and boxes - Human side -->
+  <g transform="translate(110, 95)">
+    <!-- Visit box -->
+    <rect x="0" y="0" width="170" height="35" rx="4" fill="url(#humanFlow)" opacity="0.9"/>
+    <text x="85" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">8 page views, 8 minutes</text>
+    
+    <!-- Arrow -->
+    <path d="M85 40 L85 50" stroke="#10b981" stroke-width="2" fill="none"/>
+    
+    <!-- Data collected box -->
+    <rect x="0" y="55" width="170" height="50" rx="4" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="85" y="73" text-anchor="middle" fill="#059669" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">DATA COLLECTED</text>
+    <text x="85" y="88" text-anchor="middle" fill="#047857" font-family="system-ui, sans-serif" font-size="9">Interests, behaviour, intent</text>
+    <text x="85" y="100" text-anchor="middle" fill="#047857" font-family="system-ui, sans-serif" font-size="9">Retargeting possible</text>
+    
+    <!-- Arrow -->
+    <path d="M85 110 L85 120" stroke="#10b981" stroke-width="2" fill="none"/>
+    
+    <!-- Revenue box -->
+    <rect x="0" y="125" width="170" height="35" rx="4" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="85" y="140" text-anchor="middle" fill="#059669" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">AD REVENUE</text>
+    <text x="85" y="153" text-anchor="middle" fill="#047857" font-family="system-ui, sans-serif" font-size="11">£0.50 per visit</text>
+    
+    <!-- Arrow -->
+    <path d="M85 165 L85 175" stroke="#10b981" stroke-width="2" fill="none"/>
+    
+    <!-- Customer relationship box -->
+    <rect x="0" y="180" width="170" height="70" rx="4" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="85" y="198" text-anchor="middle" fill="#059669" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">CUSTOMER RELATIONSHIP</text>
+    <text x="85" y="213" text-anchor="middle" fill="#047857" font-family="system-ui, sans-serif" font-size="9">✓ Known identity</text>
+    <text x="85" y="226" text-anchor="middle" fill="#047857" font-family="system-ui, sans-serif" font-size="9">✓ Loyalty points accrue</text>
+    <text x="85" y="239" text-anchor="middle" fill="#047857" font-family="system-ui, sans-serif" font-size="9">✓ Warranty registered</text>
+    
+    <!-- Arrow -->
+    <path d="M85 255 L85 265" stroke="#10b981" stroke-width="2" fill="none"/>
+    
+    <!-- Outcome box -->
+    <rect x="0" y="270" width="170" height="35" rx="4" fill="url(#humanFlow)"/>
+    <text x="85" y="292" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Long-term value captured</text>
+  </g>
+  
+  <!-- Right side: Agent Visit -->
+  <text x="600" y="70" text-anchor="middle" fill="#d97706" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">AI AGENT VISIT</text>
+  
+  <!-- Robot icon -->
+  <rect x="695" y="100" width="30" height="25" rx="3" fill="#f59e0b"/>
+  <rect x="700" y="95" width="20" height="8" rx="2" fill="#f59e0b"/>
+  <circle cx="703" cy="110" r="3" fill="#ffffff"/>
+  <circle cx="717" cy="110" r="3" fill="#ffffff"/>
+  <rect x="705" y="117" width="10" height="3" rx="1" fill="#ffffff"/>
+  
+  <!-- Flow arrows and boxes - Agent side -->
+  <g transform="translate(420, 95)">
+    <!-- Visit box -->
+    <rect x="0" y="0" width="170" height="35" rx="4" fill="url(#agentFlow)" opacity="0.9"/>
+    <text x="85" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">1 page view, 0.3 seconds</text>
+    
+    <!-- Arrow -->
+    <path d="M85 40 L85 50" stroke="#f59e0b" stroke-width="2" fill="none"/>
+    
+    <!-- Data collected box - broken -->
+    <rect x="0" y="55" width="170" height="50" rx="4" fill="url(#brokenFlow)" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,2"/>
+    <text x="85" y="73" text-anchor="middle" fill="#dc2626" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">NO DATA COLLECTED</text>
+    <text x="85" y="88" text-anchor="middle" fill="#b91c1c" font-family="system-ui, sans-serif" font-size="9">Data centre IP only</text>
+    <text x="85" y="100" text-anchor="middle" fill="#b91c1c" font-family="system-ui, sans-serif" font-size="9">Cannot retarget</text>
+    
+    <!-- Arrow -->
+    <path d="M85 110 L85 120" stroke="#f59e0b" stroke-width="2" fill="none"/>
+    
+    <!-- Revenue box - diminished -->
+    <rect x="0" y="125" width="170" height="35" rx="4" fill="url(#brokenFlow)" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,2"/>
+    <text x="85" y="140" text-anchor="middle" fill="#dc2626" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">MINIMAL REVENUE</text>
+    <text x="85" y="153" text-anchor="middle" fill="#b91c1c" font-family="system-ui, sans-serif" font-size="11">£0.04 per visit (-92%)</text>
+    
+    <!-- Arrow -->
+    <path d="M85 165 L85 175" stroke="#f59e0b" stroke-width="2" fill="none"/>
+    
+    <!-- Customer relationship box - broken -->
+    <rect x="0" y="180" width="170" height="70" rx="4" fill="url(#brokenFlow)" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,2"/>
+    <text x="85" y="198" text-anchor="middle" fill="#dc2626" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">RELATIONSHIP SEVERED</text>
+    <text x="85" y="213" text-anchor="middle" fill="#b91c1c" font-family="system-ui, sans-serif" font-size="9">✗ Unknown customer</text>
+    <text x="85" y="226" text-anchor="middle" fill="#b91c1c" font-family="system-ui, sans-serif" font-size="9">✗ Loyalty impossible</text>
+    <text x="85" y="239" text-anchor="middle" fill="#b91c1c" font-family="system-ui, sans-serif" font-size="9">✗ Warranty unclear</text>
+    
+    <!-- Arrow -->
+    <path d="M85 255 L85 265" stroke="#f59e0b" stroke-width="2" fill="none"/>
+    
+    <!-- Outcome box -->
+    <rect x="0" y="270" width="170" height="35" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="85" y="292" text-anchor="middle" fill="#92400e" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Transaction only - no future</text>
+  </g>
+  
+  <!-- Bottom section: The Identity Gap -->
+  <rect x="50" y="420" width="700" height="70" rx="6" fill="#eef2ff" stroke="#6366f1" stroke-width="1"/>
+  <text x="400" y="445" text-anchor="middle" fill="#4338ca" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">THE MISSING IDENTITY LAYER</text>
+  <text x="400" y="465" text-anchor="middle" fill="#4f46e5" font-family="system-ui, sans-serif" font-size="10">"This purchase is made by Agent X on behalf of Customer Y, who authorises</text>
+  <text x="400" y="480" text-anchor="middle" fill="#4f46e5" font-family="system-ui, sans-serif" font-size="10">sharing their identity for warranty registration and loyalty participation."</text>
+  
+  <!-- Comparison stats at bottom of each column -->
+  <g transform="translate(110, 400)">
+    <text x="85" y="0" text-anchor="middle" fill="#059669" font-family="system-ui, sans-serif" font-size="10">Sustainable economics</text>
+  </g>
+  <g transform="translate(420, 400)">
+    <text x="85" y="0" text-anchor="middle" fill="#d97706" font-family="system-ui, sans-serif" font-size="10">Business model under threat</text>
+  </g>
+  
+</svg>

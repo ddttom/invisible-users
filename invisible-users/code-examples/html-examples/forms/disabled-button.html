@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disabled Button with Clear Reason</title>
+</head>
+<body>
+  <h1>Complete Your Order</h1>
+
+  <form action="/checkout" method="POST">
+    <!-- Form fields here -->
+
+    <!-- Disabled button with explanation -->
+    <button type="submit"
+            disabled
+            aria-disabled="true"
+            aria-describedby="submit-status"
+            data-disabled-reason="3 fields incomplete">
+      Submit (3 errors remaining)
+    </button>
+
+    <!-- Clear explanation of what's needed -->
+    <div id="submit-status" role="status">
+      <p>Required fields remaining:</p>
+      <ul>
+        <li><a href="#email">Email address</a></li>
+        <li><a href="#postcode">Postcode</a></li>
+        <li><a href="#payment">Payment method</a></li>
+      </ul>
+    </div>
+  </form>
+
+  <!--
+    Alternative: Enabled button with inline warning
+  -->
+  <hr>
+  <h2>Alternative Pattern: Always-Enabled Button</h2>
+
+  <form action="/checkout" method="POST">
+    <!-- Form fields here -->
+
+    <!-- Button always enabled, shows clear warning -->
+    <button type="submit"
+            aria-describedby="submit-warning"
+            data-state="incomplete"
+            data-missing-fields="3">
+      Submit Order
+    </button>
+
+    <div id="submit-warning" role="status">
+      <p><strong>Warning:</strong> 3 required fields are incomplete. Submission will fail.</p>
+      <ul>
+        <li><a href="#email">Email address</a></li>
+        <li><a href="#postcode">Postcode</a></li>
+        <li><a href="#payment">Payment method</a></li>
+      </ul>
+    </div>
+  </form>
+
+  <!--
+    Key principles:
+    - Never disable buttons without explanation
+    - data-disabled-reason shows why button is disabled
+    - aria-describedby links to detailed explanation
+    - Status text includes links to incomplete fields
+    - Consider allowing submission and showing validation errors instead
+  -->
+</body>
+</html>

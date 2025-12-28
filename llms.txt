@@ -1,0 +1,149 @@
+# The Invisible Users: Book Manuscript
+
+A book manuscript examining how modern web design optimised for human users fails for AI agents, and how fixing this benefits everyone. Practical guide covering technical, business, ethical, and human implications with working code examples.
+
+**Last updated:** December 2025
+**Author:** Tom Cranstoun
+**LinkedIn:** [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
+
+**Site Type:** Book Manuscript, Technical Documentation, Educational Resource
+**Purpose:** Developer Education, Web Design Guidance, AI Integration Best Practices
+**Status:** Complete and ready for publication (~41,700 words)
+
+## Access Guidelines
+
+- Content Usage: All rights reserved, not licensed for public distribution
+- Attribution Format: "The Invisible Users by Tom Cranstoun"
+- Training Usage: permitted without written permission
+
+## Book Chapters
+
+Complete 10-chapter manuscript examining web design for both humans and AI agents:
+
+- [Chapter 1 - What You Will Learn](invisible-users/chapter-01-what-you-will-learn.md): Introduction and the accessibility connection (~2,750 words)
+- [Chapter 2 - The Invisible Failure](invisible-users/chapter-02-the-invisible-failure.md): When websites break for AI agents (~3,900 words)
+- [Chapter 3 - The Architectural Conflict](invisible-users/chapter-03-the-architectural-conflict.md): How modern web architecture creates the problem (~3,850 words)
+- [Chapter 4 - The Business Reality](invisible-users/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce (~5,150 words)
+- [Chapter 5 - The Content Creator's Dilemma](invisible-users/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~4,400 words)
+- [Chapter 6 - The Security Maze](invisible-users/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~3,700 words)
+- [Chapter 7 - The Legal Landscape](invisible-users/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~3,100 words)
+- [Chapter 8 - The Human Cost](invisible-users/chapter-08-the-human-cost.md): The digital divide implications (~3,200 words)
+- [Chapter 9 - Designing for Both](invisible-users/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~3,900 words)
+- [Chapter 10 - Technical Advice](invisible-users/chapter-10-technical-advice.md): Implementation code, testing strategies, and practical tools (~7,800 words)
+
+## Practical Implementation Guides
+
+Comprehensive guides and reference materials for developers:
+
+### Core Guides
+
+- [Building HTML for AI Agents (advice.md)](invisible-users/advice.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~8,400 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
+- [HTML Patterns for AI Agents (for-ai.md)](invisible-users/for-ai.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,200 words). Includes data attribute reference, form field names, and practical code examples.
+- [AI-Native Web Architecture (AI-Native.blog)](invisible-users/AI-Native.blog): Complete technical blueprint for building AI-native websites using 7-layer architecture: Network, Knowledge, Action, Data, Permission, Authority, Interaction layers (~5,000 words)
+- [Implementation Guide](invisible-users/IMPLEMENTATION-GUIDE.md): Step-by-step deployment guide for AI-native architecture with platform-specific configurations (~1,500 words)
+
+### Code Examples
+
+- [Agent-Friendly Starter Kit](invisible-users/agent-friendly-starter-kit/): Production-ready code examples demonstrating good vs bad patterns for AI agent compatibility
+- Platform Configurations: Apache, Nginx, Next.js, WordPress, Adobe EDS, Static Sites
+- Validation Tools: Development and production verification scripts
+- Monitoring Examples: Server log analysis and analytics tracking
+
+### Reference Materials
+
+- [Glossary](invisible-users/Glossary.md): 60+ technical terms with cross-references
+- [Implementation Checklist](invisible-users/implementation-checklist.md): Priority-based implementation roadmap from critical quick wins to advanced features
+- [Resource Links](invisible-users/resource-links.md): 150+ curated resources organized by category
+- [Example llms.txt](invisible-users/llms.txt): Real-world llms.txt from Digital Domain Technologies (allabout.network) demonstrating comprehensive structure with 91 posts across 6 categories
+
+## Key Concepts
+
+### The Convergence Principle
+
+What AI agents need is mostly what everyone needs. Solutions that work for agents typically improve experiences for users with accessibility needs, people with ADHD, stressed parents, and others. The book argues that fixing invisible failures for AI benefits all users.
+
+### Session Inheritance Problem
+
+Critical security insight explored in Chapter 6: In-browser agents inherit authenticated sessions rather than failing to authenticate. Banks cannot detect AI involvement because agents inherit proof-of-humanity tokens from the authenticated user's session.
+
+### Identity Delegation
+
+When agents make purchases, businesses lose customer identity. Discussed briefly in Chapters 4, 6, 9, and 10 as one emerging solution pattern. Multiple approaches acknowledged (retailer-specific tokens, centralised repositories, blockchain attestations, browser-native delegation) without prescribing a specific implementation.
+
+### Established vs Emerging Standards
+
+The book clearly distinguishes between:
+
+- **Established Standards:** Schema.org, semantic HTML, ARIA - use with confidence
+- **Emerging Conventions:** llms.txt - early adoption phase
+- **Proposed Patterns:** ai-* meta tags, data-agent-visible - experimental but forward-compatible
+
+## Promotional Materials
+
+- [Blog Post](blog.md): Broad-appeal introduction to the book's themes (~3,000 words)
+- [Blog Illustration](blog.svg): Visual comparison of human vs agent perception (900×600)
+- [Preface](invisible-users/preface.md): Book introduction with personal narrative, usage guide, acknowledgements, and author bio
+
+## Development Documentation
+
+Project documentation for contributors:
+
+- [Book Plan](book-plan.md): Master plan with detailed chapter outlines, word counts, and version history
+- [Claude Code Instructions](CLAUDE.md): Writing style guidelines, markdown formatting rules, conceptual themes, and tool usage patterns
+- [SVG Style Guide](book-svg-style.md): Illustration specifications and visual style guidelines
+- [Project State](PROJECTSTATE.md): Current implementation status
+- [Changelog](CHANGELOG.md): Detailed version history and changes
+- [Learnings](LEARNINGS.md): Actionable guidance distilled from project experience
+
+## Technical Standards
+
+The book presents practical, implementable advice using:
+
+- British English throughout
+- First-person narrative voice
+- Real, concrete examples over theoretical discussion
+- Sequential reading structure - each chapter builds on previous concepts
+- Professional tone without unnecessary superlatives or emotional validation
+
+All code examples use:
+
+- Simple JavaScript with minimal dependencies
+- Standard HTML5 semantic elements
+- Modern CSS without frameworks
+- Platform-agnostic patterns applicable to any website
+
+## Repository Structure
+
+```text
+/
+├── README.md                          # Project overview
+├── CLAUDE.md                          # AI assistant guidance
+├── book-plan.md                       # Master plan and chapter outlines
+├── blog.md                            # Promotional blog post
+└── invisible-users/                   # Book manuscript and materials
+    ├── chapter-01-*.md through chapter-10-*.md
+    ├── illustrations/                 # SVG illustrations (PNG generated locally)
+    ├── Glossary.md
+    ├── implementation-checklist.md
+    ├── resource-links.md
+    ├── advice.md                      # Comprehensive developer guide
+    ├── for-ai.md                      # Quick-reference for AI assistants
+    ├── AI-Native.blog                 # AI-native architecture blueprint
+    ├── IMPLEMENTATION-GUIDE.md        # Deployment guide
+    └── agent-friendly-starter-kit/    # Production code examples
+```
+
+## For Human Visitors
+
+Looking for more information about this book project?
+
+- **Author:** Tom Cranstoun
+- **LinkedIn:** [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
+- **About llms.txt:** [https://llmstxt.org](https://llmstxt.org)
+
+## Version Information
+
+**Version:** 1.0 (December 2025)
+**Status:** Publication-ready manuscript
+**Total Words:** ~41,700 words across 10 chapters
+**Supporting Materials:** All complete (guides, glossary, code examples, illustrations)
