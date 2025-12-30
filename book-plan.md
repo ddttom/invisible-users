@@ -67,6 +67,8 @@ When websites break for AI agents.
 - The feedback loop that doesn't exist
 - Measuring what you can't see
 
+**Enhanced with:** Five failure patterns summary table showing Pattern/Problem/Agent Impact/Human Impact/Example
+
 ---
 
 ### Chapter 3 — The Architectural Conflict
@@ -102,6 +104,8 @@ The commercial implications of agent-mediated commerce.
 - Who wins, who loses
 - The small business perspective
 
+**Enhanced with:** Real-world cost impact table showing business scenarios with specific lost revenue (£2,000, £150, £50k)
+
 ---
 
 ### Chapter 5 — The Content Creator's Dilemma
@@ -118,6 +122,8 @@ How AI consumption threatens existing business models.
 - What content creators can do now
 - The uncomfortable middle ground
 - Emerging licensing models
+
+**Enhanced with:** Revenue impact calculator showing how agent traffic % affects viability (30% = marginal, 50% = unsustainable)
 
 ---
 
@@ -136,6 +142,8 @@ Security implications of AI agents acting on user behalf.
 - Rate limiting and abuse
 - What security teams should consider
 
+**Enhanced with:** Indistinguishability comparison table (Legitimate User vs Authorized Agent vs Malware Attack)
+
 ---
 
 ### Chapter 7 — The Legal Landscape
@@ -152,6 +160,8 @@ Legal frameworks struggling to keep pace.
 - Cross-border enforcement
 - What might change
 - Practical legal considerations
+
+**Enhanced with:** Legal grey zone scenarios table showing five situations with current status, unclear areas, and needed clarification
 
 ---
 
@@ -171,6 +181,8 @@ The digital divide implications.
 - Geographic and language complications
 - What can be done (maintain human interfaces, support access, regulate)
 - The uncomfortable reality about technology transitions
+
+**Enhanced with:** Access barriers matrix showing five barrier types (Economic, Language, Technical Literacy, Infrastructure, Device Access) with exclusion impacts and gap-widening effects
 
 ---
 
@@ -192,6 +204,8 @@ Solutions that work for agents without degrading human experience. The convergen
 - What good looks like at different scales
 - The standards that might emerge
 - Success stories and patterns
+
+**Enhanced with:** Priority-based implementation roadmap (Priority 1: Critical Quick Wins, Priority 2: Essential Improvements, Priority 3: Core Infrastructure)
 
 ---
 
@@ -223,6 +237,8 @@ Implementation code, testing strategies, and practical tools.
 - Design Patterns Reference (10 patterns)
 - Common Mistakes to Avoid (6 mistakes)
 - Implementation by Scale
+
+**Enhanced with:** Pattern comparison table (before/after) showing six categories with problematic patterns vs better approaches, plus "Explore Further" sign-off section promoting interactive notebook
 
 ---
 
@@ -269,6 +285,12 @@ All 10 chapter illustrations complete ✅
 | implementation-checklist.md | ✅ | Priority-based implementation roadmap |
 | resource-links.md | ✅ | 150+ curated resources by category |
 | cover-design.svg | ✅ | Professional book cover (600×900) |
+
+### Interactive Materials
+
+| Material | Status | Description |
+| -------- | ------ | ----------- |
+| invisible-users.ipynb | ✅ | Interactive Jupyter notebook with visual demonstrations, data tables, and calculations (hosted at allabout.network/invisible-users.html) |
 
 ### Promotional Materials
 
@@ -384,6 +406,7 @@ Real-world llms.txt example:
 | 3.2.0 | 2025-12-25 | advice.md expanded to ~8,400 words with 12 parts, for-ai.md created |
 | 3.3.0 | 2025-12-25 | Standalone guides integrated into book chapters 9 and 10 |
 | 3.4.0 | 2025-12-25 | Dark warehouses section added to Chapter 4 (~1,900 words, total ~40,200 words) |
+| 2.6.0 | 2025-12-30 | Interactive notebook added (invisible-users.ipynb), structured tables added to all chapters, priority-based roadmap conversion, Interactive Companion sections added to preface/Chapter 10/resource-links |
 
 ---
 
@@ -403,6 +426,7 @@ Real-world llms.txt example:
 ├── llms.txt                     # Repository llms.txt file
 ├── blog.md
 ├── blog.svg
+├── invisible-users.ipynb        # Interactive notebook with demonstrations
 └── invisible-users/             # Book manuscript and materials
     ├── preface.md               # Book introduction and author bio
     ├── chapter-01-*.md through chapter-10-*.md
@@ -439,4 +463,4 @@ This manuscript is not licensed for public use, reproduction, or distribution.
 
 ---
 
-**Last updated:** 2025-12-25 — Word counts synchronized with actual manuscript
+**Last updated:** 2025-12-30 — Added interactive notebook and structured data tables across all chapters
