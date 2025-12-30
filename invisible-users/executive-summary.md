@@ -39,13 +39,13 @@ AI agents - assistants like ChatGPT, Claude, and similar tools - are visiting we
 
 ## What to Do About It
 
-**Priority 1: Quick Assessment (1-2 hours)**
+### Priority 1: Quick Assessment (1-2 hours)
 
 - Audit your site for the five critical failures: disappearing notifications, paginated content, unclear pricing, visual-only state indicators, forms with transient feedback
 - Test your checkout flow with a screen reader (if it fails for screen readers, it fails for agents)
 - Check whether agents can find your pricing, understand your offering, and determine if actions succeeded
 
-**Priority 2: High-Impact Fixes (days to weeks)**
+### Priority 2: High-Impact Fixes (days to weeks)
 
 - Replace toast notifications with persistent messages
 - Add "Show All" options to paginated content
@@ -53,14 +53,14 @@ AI agents - assistants like ChatGPT, Claude, and similar tools - are visiting we
 - Ensure URLs reflect current state
 - Use semantic HTML and clear text labels
 
-**Priority 3: Strategic Decisions (ongoing)**
+### Priority 3: Strategic Decisions (ongoing)
 
 - Decide on your agent access policy: permit, restrict, or selectively allow?
 - Consider whether to offer agent-specific APIs or interfaces
 - Evaluate business model resilience to agent-mediated commerce
 - Review liability and terms of service for agent interactions
 
-**Priority 4: Advanced Implementation (months)**
+### Priority 4: Advanced Implementation (months)
 
 - Implement identity delegation patterns for agent-mediated purchases
 - Develop comprehensive agent compatibility testing
