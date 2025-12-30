@@ -21,15 +21,15 @@ A book manuscript examining how modern web design optimised for human users fail
 Complete 10-chapter manuscript examining web design for both humans and AI agents:
 
 - [Chapter 1 - What You Will Learn](invisible-users/chapter-01-what-you-will-learn.md): Introduction and the accessibility connection (~2,750 words)
-- [Chapter 2 - The Invisible Failure](invisible-users/chapter-02-the-invisible-failure.md): When websites break for AI agents (~3,900 words)
+- [Chapter 2 - The Invisible Failure](invisible-users/chapter-02-the-invisible-failure.md): When websites break for AI agents (~4,200 words)
 - [Chapter 3 - The Architectural Conflict](invisible-users/chapter-03-the-architectural-conflict.md): How modern web architecture creates the problem (~3,850 words)
-- [Chapter 4 - The Business Reality](invisible-users/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce (~5,150 words)
-- [Chapter 5 - The Content Creator's Dilemma](invisible-users/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~4,400 words)
-- [Chapter 6 - The Security Maze](invisible-users/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~3,700 words)
-- [Chapter 7 - The Legal Landscape](invisible-users/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~3,100 words)
-- [Chapter 8 - The Human Cost](invisible-users/chapter-08-the-human-cost.md): The digital divide implications (~3,200 words)
-- [Chapter 9 - Designing for Both](invisible-users/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~3,900 words)
-- [Chapter 10 - Technical Advice](invisible-users/chapter-10-technical-advice.md): Implementation code, testing strategies, and practical tools (~7,800 words)
+- [Chapter 4 - The Business Reality](invisible-users/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce (~5,350 words)
+- [Chapter 5 - The Content Creator's Dilemma](invisible-users/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~4,600 words)
+- [Chapter 6 - The Security Maze](invisible-users/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~3,900 words)
+- [Chapter 7 - The Legal Landscape](invisible-users/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~3,300 words)
+- [Chapter 8 - The Human Cost](invisible-users/chapter-08-the-human-cost.md): The digital divide implications (~3,400 words)
+- [Chapter 9 - Designing for Both](invisible-users/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,300 words)
+- [Chapter 10 - Technical Advice](invisible-users/chapter-10-technical-advice.md): Implementation code, testing strategies, and practical tools (~8,200 words)
 
 ## Practical Implementation Guides
 
@@ -37,7 +37,7 @@ Comprehensive guides and reference materials for developers:
 
 ### Core Guides
 
-- [Building HTML for AI Agents (advice.md)](invisible-users/advice.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~8,400 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
+- [Building HTML for AI Agents (advice.md)](invisible-users/advice.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~9,000 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
 - [HTML Patterns for AI Agents (for-ai.md)](invisible-users/for-ai.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,200 words). Includes data attribute reference, form field names, and practical code examples.
 - [AI-Native Web Architecture (AI-Native.blog)](invisible-users/AI-Native.blog): Complete technical blueprint for building AI-native websites using 7-layer architecture: Network, Knowledge, Action, Data, Permission, Authority, Interaction layers (~5,000 words)
 - [Implementation Guide](invisible-users/IMPLEMENTATION-GUIDE.md): Step-by-step deployment guide for AI-native architecture with platform-specific configurations (~1,500 words)
@@ -158,7 +158,7 @@ Looking for more information about this book project?
 
 **Version:** 2.6.0 (December 2025)
 **Status:** Publication-ready manuscript
-**Total Words:** ~41,700 words across 10 chapters
+**Total Words:** ~43,800 words across 10 chapters
 **Supporting Materials:** All complete (guides, glossary, code examples, illustrations, interactive notebook)
 
 **Recent Updates (v2.6.0):**

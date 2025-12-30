@@ -15,17 +15,17 @@ This book explores the technical, business, ethical, and human implications of t
 | Chapter | Title | Status | Words |
 | --------- | ------- | -------- | ------- |
 | 1 | What You Will Learn | ✅ Complete | ~2,750 |
-| 2 | The Invisible Failure | ✅ Complete | ~3,900 |
+| 2 | The Invisible Failure | ✅ Complete | ~4,200 |
 | 3 | The Architectural Conflict | ✅ Complete | ~3,850 |
-| 4 | The Business Reality | ✅ Complete | ~5,150 |
-| 5 | The Content Creator's Dilemma | ✅ Complete | ~4,400 |
-| 6 | The Security Maze | ✅ Complete | ~3,700 |
-| 7 | The Legal Landscape | ✅ Complete | ~3,100 |
-| 8 | The Human Cost | ✅ Complete | ~3,200 |
-| 9 | Designing for Both | ✅ Complete | ~3,900 |
-| 10 | Technical Advice | ✅ Complete | ~7,800 |
+| 4 | The Business Reality | ✅ Complete | ~5,350 |
+| 5 | The Content Creator's Dilemma | ✅ Complete | ~4,600 |
+| 6 | The Security Maze | ✅ Complete | ~3,900 |
+| 7 | The Legal Landscape | ✅ Complete | ~3,300 |
+| 8 | The Human Cost | ✅ Complete | ~3,400 |
+| 9 | Designing for Both | ✅ Complete | ~4,300 |
+| 10 | Technical Advice | ✅ Complete | ~8,200 |
 
-**Total:** ~41,700 words
+**Total:** ~43,800 words
 
 ## Interactive Companion
 

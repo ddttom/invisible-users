@@ -361,7 +361,7 @@ The patterns that break agents are patterns we should have fixed years ago. We d
 "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 
 - **10 chapters** covering technical, business, ethical, and human implications
-- **~41,700 words** of practical, actionable guidance
+- **~43,800 words** of practical, actionable guidance
 - **Working code examples** you can implement tomorrow
 - **10 practical design patterns** with bad/good examples showing correct HTML structure
 - **Concrete examples** from websites demonstrating failures and fixes
