@@ -12,7 +12,8 @@
       "Bash(git push:*)",
       "Bash(node e2e-test.js:*)",
       "Bash(npx markdownlint:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(wc:*)"
     ]
   }
 }
