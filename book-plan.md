@@ -311,9 +311,8 @@ All 10 chapter illustrations complete ✅
 | Material | Status | Words | Description |
 | -------- | ------ | ----- | ----------- |
 | AI-Native.blog | ✅ | ~5,000 | Complete technical blueprint for building AI-native websites using 7-layer architecture (Network, Knowledge, Action, Data, Permission, Authority, Interaction layers) |
-| IMPLEMENTATION-GUIDE.md | ✅ | ~1,500 | Step-by-step guide for deploying AI-native architecture with platform-specific configurations |
 
-**Purpose:** These files demonstrate a complete production implementation based on Digital Domain Technologies (allabout.network). Whilst advice.md focuses on HTML patterns, these guides cover the full AI-native stack including llms.txt, OASF manifests, query indexes, HTTP headers, and JavaScript handshakes. Universal patterns applicable to any website platform.
+**Purpose:** This file demonstrates a complete production implementation based on Digital Domain Technologies (allabout.network). Whilst advice.md focuses on HTML patterns, this guide covers the full AI-native stack including llms.txt, OASF manifests, query indexes, HTTP headers, and JavaScript handshakes. Universal patterns applicable to any website platform.
 
 ---
 
@@ -439,7 +438,6 @@ Real-world llms.txt example:
     ├── for-ai.md                # AI assistant HTML reference (~1,200 words)
     ├── llms.txt                 # Example llms.txt file from book content
     ├── AI-Native.blog           # AI-native website implementation blueprint (~5,000 words)
-    ├── IMPLEMENTATION-GUIDE.md  # Deployment guide for AI-native architecture (~1,500 words)
     ├── agent-friendly-starter-kit/
     └── code-examples/           # Production-ready code implementations
         ├── html-examples/

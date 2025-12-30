@@ -38,7 +38,6 @@ This repository contains a book manuscript titled **"The Invisible Users: Design
     ├── for-ai.md             # AI patterns quick-reference
     ├── llms.txt              # Example llms.txt file from book content
     ├── AI-Native.blog
-    ├── IMPLEMENTATION-GUIDE.md
     ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
     └── code-examples/        # Production-ready code implementations
         ├── html-examples/

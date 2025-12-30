@@ -64,7 +64,6 @@ The notebook presents key concepts through visual demonstrations, interactive da
     ├── for-ai.md                      # HTML patterns quick-reference for AI assistants
     ├── llms.txt                       # Example llms.txt file from book content
     ├── AI-Native.blog                 # AI-native website implementation blueprint
-    ├── IMPLEMENTATION-GUIDE.md        # Deployment guide for AI-native architecture
     ├── agent-friendly-starter-kit/    # Hands-on "Good vs Bad" code examples
     └── code-examples/                 # Production-ready code implementations
         ├── html-examples/             # Complete HTML pattern examples

@@ -294,7 +294,6 @@ You'll understand your responsibility when instructing agents to interact with b
 - Standalone prescriptive guide (advice.md, ~8,400 words) with 12-part builder's reference
 - Quick-reference HTML patterns for AI assistants (for-ai.md, ~1,200 words)
 - Complete AI-native website blueprint (AI-Native.blog, ~5,000 words) covering 7-layer architecture
-- Step-by-step deployment guide (IMPLEMENTATION-GUIDE.md, ~1,500 words) with platform-specific configurations
 
 ## The Promise
 
