@@ -116,14 +116,14 @@ From the bank's perspective, three actors look nearly identical:
 
 | Characteristic | Legitimate User | Authorized AI Agent | Malware Attack |
 | -------------- | --------------- | ------------------- | -------------- |
-| **Session cookies** | ✓ Valid | ✓ Inherited | ✓ Stolen |
-| **Device fingerprint** | ✓ Matches | ✓ Same device | ✓ Same device |
-| **IP address** | ✓ Expected location | ✓ Same location | ✓ Same location |
-| **Authentication** | ✓ Passed 2FA | ✓ Session inherited | ✓ Session inherited |
-| **Behavioural pattern** | ✓ Normal activity | ⚠️ Slightly unusual | ⚠️ Suspicious activity |
-| **Session validity** | ✓ Active | ✓ Active | ✓ Active |
-| **CAPTCHA status** | ✓ Solved | ✓ User solved it | ✓ User solved it |
-| **User consent** | ✓ Explicit | ✓ Granted | ✗ None |
+| **Session cookies** | Valid | Inherited | Stolen |
+| **Device fingerprint** | Matches | Same device | Same device |
+| **IP address** | Expected location | Same location | Same location |
+| **Authentication** | Passed 2FA | Session inherited | Session inherited |
+| **Behavioural pattern** | Normal activity | Slightly unusual | Suspicious activity |
+| **Session validity** | Active | Active | Active |
+| **CAPTCHA status** | Solved | User solved it | User solved it |
+| **User consent** | Explicit | Granted | None |
 
 **The paradox:** Traditional security measures cannot distinguish authorized agent access from malware because both inherit the same authenticated session tokens. The only difference - user consent - exists outside the technical security layer.
 
@@ -307,12 +307,12 @@ Delegation should be granular:
 
 ```text
 Authorise AI agent to:
-[✓] View account balance
-[✓] View transaction history (last 3 months)
-[✓] Make payments up to £100
-[✗] Change account settings
-[✗] Add payees
-[✗] Transfer between accounts
+[x] View account balance
+[x] View transaction history (last 3 months)
+[x] Make payments up to £100
+[ ] Change account settings
+[ ] Add payees
+[ ] Transfer between accounts
 ```
 
 The agent can only perform explicitly authorised actions. Everything else is denied.

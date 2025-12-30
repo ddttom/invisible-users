@@ -2557,13 +2557,13 @@ In codebases spanning multiple services, AI needs explicit guidance about what i
 
 ```text
 project/
-├── core/                     # 🚫 AI: Never modify
+├── core/                     # AI: Never modify
 │   ├── framework/           # Protected framework files
 │   └── vendor/              # Third-party dependencies
-├── config/                   # ⚠️  AI: Modify with caution
+├── config/                   # AI: Modify with caution
 │   ├── environment.yml      # Review required
 │   └── deployment.yml       # Staging only
-└── application/             # ✅ AI: Safe to modify
+└── application/             # AI: Safe to modify
     ├── business-logic/      # Primary development area
     ├── integrations/        # Service connectors
     └── custom-components/   # User-defined functionality

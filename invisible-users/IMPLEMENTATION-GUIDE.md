@@ -469,9 +469,9 @@ curl https://yoursite.com/llms.txt | grep "^#"
 node verify-ai.js --domain=yoursite.com
 
 # Expected output:
-# ✓ llms.txt - PASS
-# ✓ ai-agents.md - PASS
-# ✓ query-index.json - PASS
+# llms.txt - PASS
+# ai-agents.md - PASS
+# query-index.json - PASS
 ```
 
 ### AI Assistant Testing
