@@ -48,6 +48,20 @@ Standards are still forming. Best practices are still contested. The businesses 
 
 ---
 
+## A Critical Responsibility
+
+This book addresses two audiences: developers who build websites, and people who use AI agents to interact with them. Both have responsibilities.
+
+**For developers:** The technical patterns in this book - clear state, persistent errors, semantic structure - improve experiences for everyone. Fix what you can control.
+
+**For users:** Not everything can be fixed with better design. When you instruct AI agents to interact with banking, legal services, or commercial transactions, you bear responsibility for the prompts you provide and the actions you authorise.
+
+I discuss banking security (Chapter 6), legal liability (Chapter 7), and speculative commerce patterns like dark warehouses (Chapter 4) not because developers can fix these with HTML, but because we need to pay attention. The instructions you give to agents matter enormously when dealing with services where mistakes have serious consequences.
+
+Agent-friendly design helps. But careful, considered use of agents is equally important. This book addresses both.
+
+---
+
 ## Acknowledgements
 
 This book exists because problems became visible when I looked closely at failures I'd typically have ignored. I'm grateful to everyone who has written about web accessibility over the past two decades; their work laid the foundations on which this analysis builds.
