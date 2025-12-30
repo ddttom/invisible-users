@@ -264,12 +264,12 @@ Before deciding on legal strategy, assess your exposure across four risk categor
 
 Evaluate each risk type by likelihood and potential impact for your specific business:
 
-| Risk Category                    | Likelihood Assessment                                            | Impact Assessment                                               | Priority                   |
-|----------------------------------|------------------------------------------------------------------|----------------------------------------------------------------|----------------------------|
-| **Liability for Agent Errors**   | How often could agents make costly mistakes using your service?  | What's the potential financial/reputational damage?            | High if transaction-based  |
-| **Copyright/Content Extraction** | Do you publish copyrightable content agents might extract?       | Could extraction materially harm your revenue?                 | High if ad-funded content  |
-| **Terms of Service Violations**  | Do your current ToS prohibit automation ambiguously?             | Could this create liability or enforcement issues?             | Medium for most sites      |
-| **Privacy/Data Protection**      | Do agents access personal data on users' behalf?                 | What's your GDPR/CCPA exposure if agents mishandle data?       | High if regulated industry |
+| Risk Category                    | Likelihood Assessment                                            | Impact Assessment                                            | Priority                   |
+|----------------------------------|------------------------------------------------------------------|--------------------------------------------------------------|----------------------------|
+| **Liability for Agent Errors**   | How often could agents make costly mistakes using your service?  | What's the potential financial/reputational damage?          | High if transaction-based  |
+| **Copyright/Content Extraction** | Do you publish copyrightable content agents might extract?       | Could extraction materially harm your revenue?               | High if ad-funded content  |
+| **Terms of Service Violations**  | Do your current ToS prohibit automation ambiguously?             | Could this create liability or enforcement issues?           | Medium for most sites      |
+| **Privacy/Data Protection**      | Do agents access personal data on users' behalf?                 | What's your GDPR/CCPA exposure if agents mishandle data?     | High if regulated industry |
 
 ### Risk Category Deep Dive
 
