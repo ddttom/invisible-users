@@ -46,6 +46,10 @@ I'm writing this as the problem emerges, not so early that it seems speculative.
 
 Standards are still forming. Best practices are still contested. The businesses and developers who engage now will shape what becomes normal. In five years, agent compatibility will be as routine as mobile responsiveness. The transition period - which we're in - is when advantage is gained or lost.
 
+You can learn these lessons through months of failed conversions and support tickets. Or you can learn them from someone who's already documented the patterns.
+
+**The market timing matters:** This knowledge is valuable now because it's scarce. You're reading this during the transition period - after the problem has emerged, before solutions have standardised. In two years, competitors will exist. In five years, agent compatibility will be as routine as mobile responsiveness, and this becomes commoditized knowledge. The window for gaining competitive advantage is limited.
+
 ---
 
 ## A Critical Responsibility
