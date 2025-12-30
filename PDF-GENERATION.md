@@ -21,12 +21,14 @@ This generates `the-invisible-users.html` (706KB). Then:
 5. Save as `the-invisible-users.pdf`
 
 **Advantages:**
+
 - No additional software installation required
 - Works immediately
 - Good control over page breaks via browser print dialog
 - Can preview before saving
 
 **Disadvantages:**
+
 - Manual step required (print dialog)
 - Less control over typography
 
@@ -39,6 +41,7 @@ npm run pdf:generate
 ```
 
 This generates `the-invisible-users.pdf` with:
+
 - Professional book layout
 - Automatic table of contents
 - Proper page numbering
@@ -275,6 +278,6 @@ The `--resource-path` flag tells pandoc to also search in the `invisible-users/`
 
 For issues with:
 
-- **Pandoc:** https://pandoc.org/
-- **BasicTeX:** https://www.tug.org/mactex/morepackages.html
+- **Pandoc:** <https://pandoc.org/>
+- **BasicTeX:** <https://www.tug.org/mactex/morepackages.html>
 - **Book manuscript:** See README.md or CLAUDE.md for project documentation
