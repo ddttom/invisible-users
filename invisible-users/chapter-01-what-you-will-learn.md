@@ -1,19 +1,10 @@
-CHAPTER 1
+\newpage
+
+# Chapter 1 - What You Will Learn
 
 Introduction and the accessibility connection.
 
-**Sections:**
-
-- The agent that couldn't find the checkout button
-- What this book covers (and doesn't)
-- The accessibility parallel
-- Who should read this
-- How the book is structured
-- The urgency of now
-
----
-
-# Chapter 1 - What You Will Learn
+## Introduction
 
 The patterns that break AI agents also break humans. We didn't notice.
 

@@ -1,22 +1,10 @@
-CHAPTER 4
+\newpage
+
+# Chapter 4 - The Business Reality
 
 The commercial implications of agent-mediated commerce.
 
-**Sections:**
-
-- When agents make purchases
-- The brand visibility problem
-- The price comparison acceleration
-- Dark warehouses (speculative bulk purchasing model)
-- The recommendation influence
-- The customer relationship question
-- Identity delegation patterns (brief)
-- Who wins, who loses
-- The small business perspective
-
----
-
-# Chapter 4 - The Business Reality
+## Introduction
 
 The previous chapters explained what breaks and why. This chapter asks a more complex question: who benefits from fixing it?
 

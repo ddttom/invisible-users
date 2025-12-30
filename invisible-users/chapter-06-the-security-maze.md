@@ -1,21 +1,10 @@
-CHAPTER 6
+\newpage
+
+# Chapter 6 - The Security Maze
 
 Security implications of AI agents acting on user behalf.
 
-**Sections:**
-
-- The session inheritance problem (key insight)
-- When agents inherit authentication
-- The bank that couldn't tell
-- Liability questions without answers
-- Agent identification challenges
-- The verification paradox
-- Rate limiting and abuse
-- What security teams should consider
-
----
-
-# Chapter 6 - The Security Maze
+## Introduction
 
 I asked an AI agent to check my bank balance. The agent that runs in my browser - a legitimate extension I installed myself.
 

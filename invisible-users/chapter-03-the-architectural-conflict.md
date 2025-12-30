@@ -1,21 +1,10 @@
-CHAPTER 3
+\newpage
+
+# Chapter 3 - The Architectural Conflict
 
 How modern web architecture creates the problem.
 
-**Sections:**
-
-- The JavaScript execution problem
-- Single-page applications and state management
-- The hydration gap
-- API-first versus page-first
-- The mobile app parallel
-- Progressive enhancement revisited
-- Headless CMS and the missing context
-- Server-side rendering for agents
-
----
-
-# Chapter 3 - The Architectural Conflict
+## Introduction
 
 Every design decision that breaks for AI agents was made for good reason. Toast notifications, progressive disclosure, smooth animations, single-page applications - these aren't mistakes. They're thoughtful responses to how human minds process information.
 

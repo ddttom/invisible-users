@@ -1,23 +1,10 @@
-CHAPTER 8
+\newpage
+
+# Chapter 8 - The Human Cost
 
 The digital divide implications.
 
-**Sections:**
-
-- The access problem (who has agents, who doesn't)
-- The capability gap
-- The language exclusion (English dominance)
-- The age divide
-- The disability question (benefits and harms)
-- The education gap
-- The economic divide
-- Geographic and language complications
-- What can be done (maintain human interfaces, support access, regulate)
-- The uncomfortable reality about technology transitions
-
----
-
-# Chapter 8 - The Human Cost
+## Introduction
 
 Everything discussed so far assumes resources. Developer time, technical expertise, modern devices, reliable internet, and money for subscriptions. The ability to read English fluently.
 

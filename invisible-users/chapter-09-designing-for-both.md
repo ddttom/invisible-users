@@ -1,25 +1,10 @@
-CHAPTER 9
-
-Solutions that work for agents without degrading human experience. The convergence argument.
-
-**Sections:**
-
-- Clear state instead of implied state
-- Persistent errors instead of ephemeral ones
-- Explicit feedback instead of subtle cues
-- Complete information instead of forced pagination
-- Semantic structure and JSON-LD
-- Advertising your API with meta tags
-- Identity delegation patterns (brief)
-- Real examples of good design (Stripe, GitHub, Amazon, Calendly, Wikipedia)
-- The small business version
-- What good looks like at different scales
-- The standards that might emerge
-- Success stories and patterns
-
----
+\newpage
 
 # Chapter 9 - Designing for Both
+
+Solutions that work for agents without degrading human experience.
+
+## Introduction
 
 The patterns that break AI agents are the same patterns that have frustrated humans for years. This isn't a coincidence. It's the key to solving both problems at once.
 

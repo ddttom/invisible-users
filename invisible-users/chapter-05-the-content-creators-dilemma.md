@@ -1,21 +1,10 @@
-CHAPTER 5
+\newpage
+
+# Chapter 5 - The Content Creator's Dilemma
 
 How AI consumption threatens existing business models.
 
-**Sections:**
-
-- The attention economy under pressure
-- When summarisation replaces visiting
-- The advertising model collision
-- The subscription alternative
-- The micropayment dream
-- What content creators can do now
-- The uncomfortable middle ground
-- Emerging licensing models
-
----
-
-# Chapter 5 - The Content Creator's Dilemma
+## Introduction
 
 The previous chapter examined business models in aggregate. This chapter focuses on a specific group facing existential threat: content creators whose livelihoods depend on advertising revenue.
 

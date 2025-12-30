@@ -1,21 +1,10 @@
-CHAPTER 7
+\newpage
+
+# Chapter 7 - The Legal Landscape
 
 Legal frameworks struggling to keep pace.
 
-**Sections:**
-
-- Agency law meets AI agents
-- Terms of service and automated access
-- Copyright in the age of extraction
-- Data protection complications
-- The consent problem
-- Cross-border enforcement
-- What might change
-- Practical legal considerations
-
----
-
-# Chapter 7 - The Legal Landscape
+## Introduction
 
 When an AI agent books the wrong hotel room on your behalf, who pays? When it scrapes copyrighted content to answer your question, who gets sued? When it accesses your bank account, and something goes wrong, who's liable?
 

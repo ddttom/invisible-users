@@ -1,35 +1,10 @@
-CHAPTER 10
+\newpage
+
+# Chapter 10 - Technical Advice
 
 Implementation code, testing strategies, and practical tools.
 
-**Note:** Contains simplified, readable code examples optimised for learning.
-
-**Sections:**
-
-- Detection layer (client-side and server-side)
-- Dual-interface architecture
-- Agent-friendly form patterns
-- Synchronous validation
-- Agent-readable metadata layer
-- Loading state clarity
-- Traditional multi-page alternatives to SPAs
-- Persistent error display
-- CSS for disabling animations
-- Analytics segmentation
-- Honeypot fields
-- Rate limiting by type
-- API alternatives
-- Identity delegation (basic pattern)
-- Testing for agent compatibility
-- Debugging agent failures
-- Version management and breaking changes
-- Design Patterns Reference (10 patterns)
-- Common Mistakes to Avoid (6 mistakes)
-- Implementation by Scale
-
----
-
-# Chapter 10 - Technical Advice
+## Introduction
 
 I've spent nine chapters explaining what's broken and why it matters. Now let me show you how to fix it.
 

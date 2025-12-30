@@ -1,19 +1,10 @@
-CHAPTER 2
+\newpage
+
+# Chapter 2 - The Invisible Failure
 
 When websites break for AI agents.
 
-**Sections:**
-
-- The booking that never happened
-- What agents actually see
-- The five types of invisible failure
-- Why developers don't notice
-- The feedback loop that doesn't exist
-- Measuring what you can't see
-
----
-
-# Chapter 2 - The Invisible Failure
+## Introduction
 
 The form looked simple enough. Name, email, message, submit. I asked an AI agent to fill it out and send a query to a business I was researching.
 
