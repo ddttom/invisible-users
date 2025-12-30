@@ -32,9 +32,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Chapter 10: Added "Explore Further" sign-off section
   - resource-links.md: Added as primary companion resource
 - Documentation updates:
-  - README.md: Added Interactive Companion section with hosted link
-  - PROJECTSTATE.md: Listed notebook under "Interactive Materials"
+  - README.md: Added Interactive Companion section with hosted link, PDF-GENERATION.md reference
+  - PROJECTSTATE.md: Listed notebook under "Interactive Materials", PDF generation status
   - LEARNINGS.md: Comprehensive session learnings documentation
+- PDF generation capabilities:
+  - PDF-GENERATION.md: Comprehensive guide for generating book PDFs
+  - Three npm scripts in package.json:
+    - `pdf:html` - Generate standalone HTML (print to PDF manually)
+    - `pdf:generate` - Direct PDF generation with professional book layout (requires LaTeX)
+    - `pdf:simple` - Simple article-format PDF (requires LaTeX)
+  - Pandoc 3.8.3 installed and configured
+  - Resource path configuration (--resource-path=invisible-users) for illustration embedding
+  - Troubleshooting guide with common issues and solutions
+  - Technical notes explaining pandoc configuration choices
+- Market timing urgency messaging:
+  - Preface: "A Note on Timing" section with scarcity value emphasis
+  - Blog: Market timing paragraph highlighting 2-5 year commoditization window
+  - Interactive notebook: "The Market Timing Matters" section before closing
+- User responsibility framework:
+  - Preface: "A Critical Responsibility" section addressing dual audience
+  - Developers: Fix technical patterns (clear state, persistent errors, semantic structure)
+  - Users: Exercise care with prompts for banking, legal, commercial transactions
+  - Emphasis that not everything can be fixed with HTML design
+  - Coverage of banking security, legal liability, dark warehouses as attention areas
 
 ### Changed
 
@@ -52,3 +72,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Maintained British English and professional tone throughout
 - No attribution added to any commits
 - Cross-document consistency maintained across 5 files for interactive companion references
+- Fixed pandoc illustration path resolution:
+  - Added --resource-path=invisible-users to all PDF generation scripts
+  - Resolves "Could not fetch resource" warnings for chapter illustrations
+  - Allows pandoc to find invisible-users/illustrations/*.png files correctly
+- Updated .gitignore to exclude generated book files:
+  - the-invisible-users.html
+  - the-invisible-users.pdf
+  - the-invisible-users-simple.pdf
+- Fixed markdown linting errors in PDF-GENERATION.md:
+  - MD032: Added blank lines around all lists
+  - MD034: Wrapped bare URLs in angle brackets
