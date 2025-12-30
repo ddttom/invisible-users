@@ -138,6 +138,13 @@ All supporting materials are complete ✅:
   - Preface: "A Critical Responsibility" section
   - Dual responsibility for developers and users
   - Emphasis on careful AI agent use with banking, legal, commercial services
+- Restructured all chapter openings with new format
+  - Added page breaks (\newpage) for PDF generation
+  - Moved chapter heading to top
+  - Added brief chapter summary after heading
+  - Removed CHAPTER X line and sections list
+  - Added ## Introduction subheading before body text
+  - Consistent structure across all 10 chapters
 - All changes maintain British English and professional tone
 
 ## Notes

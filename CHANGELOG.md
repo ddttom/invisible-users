@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Restructured all chapter openings (chapters 1-10) with new format:
+  - Added `\newpage` command for PDF page breaks
+  - Moved chapter heading to top position
+  - Added brief chapter summary directly after heading
+  - Removed "CHAPTER X" line and sections bullet list
+  - Added "## Introduction" subheading before body text
+  - Consistent structure across all 10 chapters
+  - Improves PDF generation and reading flow
+
 ## [2.6.0] - 2025-12-30
 
 ### Added
