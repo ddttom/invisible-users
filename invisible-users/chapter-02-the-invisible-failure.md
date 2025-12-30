@@ -317,7 +317,7 @@ I've seen agents:
 
 ```html
 <div data-loading="true" 
-     data-loading-started="2024-01-15T10:30:00Z"
+     data-loading-started="2025-01-15T10:30:00Z"
      data-expected-duration="3000"
      data-timeout="10000">
   <p>Loading search results...</p>

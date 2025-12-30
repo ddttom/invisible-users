@@ -1707,7 +1707,7 @@ app.post('/submit', (req, res) => {
 - Added structured data for product availability
 - New delegation endpoint at /api/auth/delegate
 
-## Version 2.4 (2024-12-01)
+## Version 2.4 (2025-12-01)
 - Updated checkout flow (now 3 steps instead of 5)
 - Removed deprecated /api/v1 endpoints (use /api/v2)
 ```
@@ -1768,7 +1768,7 @@ Never rely on visual cues alone. Make state explicit in attributes.
 ```html
 <div class="loading-indicator"
      data-state="loading"
-     data-started="2024-12-21T10:30:00Z"
+     data-started="2025-12-21T10:30:00Z"
      data-expected-duration="2000"
      role="status"
      aria-live="polite">
@@ -1781,7 +1781,7 @@ When complete:
 ```html
 <div class="product-data"
      data-state="loaded"
-     data-loaded-at="2024-12-21T10:30:02Z">
+     data-loaded-at="2025-12-21T10:30:02Z">
   <!-- Content here -->
 </div>
 ```

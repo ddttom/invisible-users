@@ -95,14 +95,14 @@ These changes provide immediate benefit with minimal effort:
 
 - [ ] **Add explicit state attributes** - `data-load-state="loading|complete|error"`
 - [ ] **Provide expected duration** - "Loading (expected: ~3 seconds)" helps agents wait appropriately
-- [ ] **Include timestamps** - `data-started="2024-01-15T10:30:00Z"` helps agents decide when to timeout
+- [ ] **Include timestamps** - `data-started="2025-01-15T10:30:00Z"` helps agents decide when to timeout
 - [ ] **Show what's loading** - "Loading product information..." not just a spinner
 
 **Example:**
 
 ```html
 <div data-load-state="loading"
-     data-started="2024-01-15T10:30:00Z"
+     data-started="2025-01-15T10:30:00Z"
      data-expected-duration="3000"
      role="status"
      aria-live="polite">

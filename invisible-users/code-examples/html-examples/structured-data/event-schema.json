@@ -30,7 +30,7 @@
       "priceCurrency": "GBP",
       "availability": "https://schema.org/InStock",
       "url": "https://example.com/events/audio-summit-2025/tickets",
-      "validFrom": "2024-12-01T00:00:00+00:00"
+      "validFrom": "2025-12-01T00:00:00+00:00"
     },
     {
       "@type": "Offer",
@@ -39,7 +39,7 @@
       "priceCurrency": "GBP",
       "availability": "https://schema.org/InStock",
       "url": "https://example.com/events/audio-summit-2025/tickets/vip",
-      "validFrom": "2024-12-01T00:00:00+00:00"
+      "validFrom": "2025-12-01T00:00:00+00:00"
     }
   ],
   "performer": [

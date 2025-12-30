@@ -83,7 +83,7 @@ The spinner appears. Then it disappears. Was that success or failure? How long s
 ```html
 <div class="loading-indicator" 
      data-state="loading"
-     data-started="2024-12-21T10:30:00Z"
+     data-started="2025-12-21T10:30:00Z"
      data-expected-duration="2000"
      role="status"
      aria-live="polite">
@@ -96,7 +96,7 @@ When loading completes:
 ```html
 <div class="product-data"
      data-state="loaded"
-     data-loaded-at="2024-12-21T10:30:02Z">
+     data-loaded-at="2025-12-21T10:30:02Z">
   <!-- Product information -->
 </div>
 ```
