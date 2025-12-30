@@ -54,6 +54,8 @@ AI agents operate under entirely different constraints.
 
 The constraints that shape human cognition don't apply. But that doesn't mean agents are unconstrained - they have different constraints that current interfaces ignore entirely.
 
+**Important caveat:** These constraints vary by agent architecture. Browser agents with full JavaScript execution can track state changes and timing better than server-based agents parsing static HTML. Browser extension assistants inherit authenticated sessions and can observe page changes in real-time. CLI agents and local agents typically fetch HTML remotely and parse sequentially. But regardless of architecture, no agent has peripheral vision in the human sense, and all agents require explicit state information that humans infer visually. The architectural conflict described here affects the entire ecosystem, though specific failure modes vary by implementation.
+
 ---
 
 ## The Optimisation Mismatch

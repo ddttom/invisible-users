@@ -97,6 +97,33 @@ See `/create-md` skill for complete formatting guide and examples.
 
 ## Key Conceptual Themes
 
+### Agent Diversity and Universal Patterns
+
+The book addresses a diverse ecosystem of AI agents with varying capabilities and operational contexts:
+
+- **CLI agents:** Command-line tools running locally (e.g., Claude Code, Cline)
+- **Local (SMOL) agents:** Lightweight agents running on user devices
+- **Server-based agents:** Cloud-hosted agents accessing websites remotely (e.g., ChatGPT, Claude via API)
+- **Browser agents:** Full browser automation (e.g., Playwright, Selenium-based)
+- **Browser extension assistants:** In-browser AI tools (e.g., ChatGPT sidebar, Claude browser extension)
+- **IDE-integrated browser controls:** Development environments with browser integration (e.g., Google Antigravity)
+
+Each type has different capabilities:
+
+- **Session access:** Browser extensions inherit authenticated sessions; external agents cannot
+- **JavaScript execution:** Some agents run full browsers; others parse static HTML only
+- **State detection:** Varying abilities to track page state changes and async operations
+- **Authentication:** Different approaches to passing security challenges
+
+**Design implication:** The patterns in this book aim for universal compatibility. We cannot design for one agent type without excluding others. Therefore, the guidance focuses on:
+
+- **Semantic HTML:** Works for all agents, regardless of JavaScript execution
+- **Explicit state attributes:** Visible in DOM for any parser
+- **Structured data:** Machine-readable regardless of agent architecture
+- **Clear feedback:** Persistent and unambiguous for all interaction models
+
+When chapters reference "agents" generally, they refer to this entire spectrum. When specific agent types matter (e.g., session inheritance for browser extensions in Chapter 6), the text specifies which type.
+
 ### Identity Delegation (Mentioned)
 
 A practical concern discussed briefly in Chapters 4, 6, 9, and 10: When agents make purchases, businesses lose customer identity. The book mentions identity delegation patterns as one emerging solution, without prescribing a specific implementation.

@@ -18,6 +18,8 @@ This is the invisible failure. Not a crash. Not an error screen. A quiet misunde
 
 This chapter catalogues the specific patterns that cause these failures. Each one makes sense for human users. Each one breaks for agents. In most cases, site owners are unaware that it's happening.
 
+**A note on agent types:** The failures described here affect agents differently depending on their architecture. Server-based agents parsing static HTML miss toast notifications entirely because the DOM element is removed before they scan that area. Browser agents with JavaScript execution might catch some toasts if their timing aligns perfectly, but still fail on rapid animations. Browser extension assistants inherit your authenticated session and proof-of-humanity tokens, so they bypass some challenges - but they still struggle with visual-only state indicators. CLI and local agents fetch content remotely and parse HTML sequentially, making them vulnerable to all timing-based patterns. Throughout this chapter, when I describe how "agents" experience a pattern, I'm describing behaviour common across this ecosystem. Where agent type matters to understanding a specific failure mode, I'll note it explicitly.
+
 ![The Anatomy of Invisible Failure - six patterns that silently break AI agents](illustrations/chapter-02-illustration.png)
 
 ## The Five Types of Invisible Failure: Summary

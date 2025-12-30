@@ -15,18 +15,18 @@ This book explores the technical, business, ethical, and human implications of t
 | Chapter | Title | Status | Words |
 | --------- | ------- | -------- | ------- |
 | Preface | Author's Journey | ✅ Complete | ~1,700 |
-| 1 | What You Will Learn | ✅ Complete | ~2,700 |
-| 2 | The Invisible Failure | ✅ Complete | ~4,400 |
-| 3 | The Architectural Conflict | ✅ Complete | ~4,050 |
+| 1 | What You Will Learn | ✅ Complete | ~3,200 |
+| 2 | The Invisible Failure | ✅ Complete | ~4,500 |
+| 3 | The Architectural Conflict | ✅ Complete | ~4,150 |
 | 4 | The Business Reality | ✅ Complete | ~6,200 |
 | 5 | The Content Creator's Dilemma | ✅ Complete | ~5,600 |
-| 6 | The Security Maze | ✅ Complete | ~3,850 |
+| 6 | The Security Maze | ✅ Complete | ~4,000 |
 | 7 | The Legal Landscape | ✅ Complete | ~4,400 |
 | 8 | The Human Cost | ✅ Complete | ~3,650 |
-| 9 | Designing for Both | ✅ Complete | ~4,350 |
-| 10 | Technical Advice | ✅ Complete | ~8,250 |
+| 9 | Designing for Both | ✅ Complete | ~4,400 |
+| 10 | Technical Advice | ✅ Complete | ~8,350 |
 
-**Core manuscript:** ~47,450 words
+**Core manuscript:** ~50,000 words
 
 **Supporting materials:**
 

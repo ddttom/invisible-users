@@ -8,8 +8,7 @@ The manuscript for "The Invisible Users: Designing the Web for AI Agents and Eve
 
 ## Manuscript Statistics
 
-- **Core Manuscript:** ~47,450 words (10 chapters)
-- **Total Content:** ~68,800 words (including supporting materials)
+- **Core Manuscript:** ~50,000 words (preface + 10 chapters)
 - **Chapters:** 10 of 10 complete
 - **Illustrations:** 10 of 10 complete
 - **Target Range:** 30,000-50,000 words ✅
@@ -21,16 +20,16 @@ All chapters complete with business-focused updates:
 | Chapter | Title | Words | Status | Updates |
 | ------- | ----- | ----- | ------ | ------- |
 | Preface | Author's Journey | ~1,700 | ✅ | Honest framing, reading paths |
-| 1 | What You Will Learn | ~2,700 | ✅ | Complete |
-| 2 | The Invisible Failure | ~4,400 | ✅ | Key Points box added |
-| 3 | The Architectural Conflict | ~4,050 | ✅ | Key Points box added |
+| 1 | What You Will Learn | ~3,200 | ✅ | Agent diversity section added |
+| 2 | The Invisible Failure | ~4,500 | ✅ | Key Points box, agent types note |
+| 3 | The Architectural Conflict | ~4,150 | ✅ | Key Points box, architecture caveat |
 | 4 | The Business Reality | ~6,200 | ✅ | Agent Exposure Assessment, Key Points |
 | 5 | The Content Creator's Dilemma | ~5,600 | ✅ | Vulnerability Assessment, honest framing |
-| 6 | The Security Maze | ~3,850 | ✅ | Complete |
+| 6 | The Security Maze | ~4,000 | ✅ | Agent types mapped to security problems |
 | 7 | The Legal Landscape | ~4,400 | ✅ | Risk Categorization Framework |
 | 8 | The Human Cost | ~3,650 | ✅ | Key Points box added |
-| 9 | Designing for Both | ~4,350 | ✅ | Effort estimates added |
-| 10 | Technical Advice | ~8,250 | ✅ | Effort estimates added |
+| 9 | Designing for Both | ~4,400 | ✅ | Effort estimates, universal patterns note |
+| 10 | Technical Advice | ~8,350 | ✅ | Effort estimates, architecture diversity note |
 
 ## Supporting Materials (December 2025 Updates)
 

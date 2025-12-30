@@ -10,6 +10,8 @@ The patterns that break AI agents are the same patterns that have frustrated hum
 
 In Chapter 1, I mentioned that what agents need is mostly what everyone needs. Now let me show you precisely what that means - and why it creates a single design target rather than competing requirements.
 
+**A note on universal patterns:** The solutions in this chapter work across the entire agent ecosystem - server-based agents, CLI agents, browser agents, browser extensions, IDE-integrated tools, and local agents. This is deliberate. We're not designing for a specific agent architecture; we're designing for a principle: explicit state, semantic structure, and persistent feedback. A pattern that requires JavaScript execution to work excludes half the ecosystem. A pattern that relies on session inheritance only helps browser extensions. Universal patterns benefit everyone - agents and humans alike - regardless of their technical constraints.
+
 ![Designing for Both - the convergence principle of accessibility and agent-friendly design](illustrations/chapter-09-convergence-principle.png)
 
 ## The Convergence Principle

@@ -82,6 +82,50 @@ These invisible users represent real humans trying to accomplish tasks. When an 
 
 ---
 
+## A Diverse Ecosystem
+
+When I refer to "AI agents" throughout this book, I'm describing a diverse ecosystem with varying capabilities and operational contexts:
+
+**CLI agents** like Claude Code or Cline run as command-line tools on your local machine. They can access your files and execute commands but must fetch web content remotely.
+
+**Local (SMOL) agents** are lightweight tools running entirely on your device, often with privacy-focused approaches that keep all data local.
+
+**Server-based agents** like ChatGPT or Claude via API operate from cloud infrastructure. They access websites as external visitors, without any inherited browser state or authentication.
+
+**Browser agents** use full browser automation through tools like Playwright or Selenium. They can execute JavaScript, handle dynamic content, and interact with complex web applications - but they're also more resource-intensive and slower.
+
+**Browser extension assistants** like the ChatGPT sidebar or Claude browser extension run inside your browser. They inherit your authenticated sessions, cookies, and proof-of-humanity tokens. When you're logged into your bank, they're logged into your bank.
+
+**IDE-integrated browser controls** like Google Antigravity combine development environment features with browser capabilities, offering unique workflows for developers.
+
+Each type has different capabilities:
+
+Session access varies - browser extensions inherit your authenticated sessions whilst external agents must authenticate independently (if they can at all).
+
+JavaScript execution differs - some agents run full browsers and can track dynamic state changes, whilst others parse only the static HTML and miss asynchronous updates entirely.
+
+State detection capabilities range from sophisticated tracking of page changes to simple "the URL didn't change, nothing happened" assumptions.
+
+Authentication approaches differ fundamentally - some inherit your proof-of-humanity tokens, others must solve CAPTCHAs independently (often unsuccessfully).
+
+**The critical insight:** We cannot design for just one agent type. A pattern that works brilliantly for browser extensions might fail completely for server-based agents. An approach that requires JavaScript execution excludes half the agent ecosystem.
+
+This book focuses on universal patterns that work across this entire spectrum:
+
+Semantic HTML that any agent can parse, regardless of its architecture.
+
+Explicit state attributes visible in the DOM, not just visual cues or animations.
+
+Structured data that remains machine-readable whether the agent executes JavaScript or not.
+
+Clear feedback that persists and doesn't rely on timing or visual-only indicators.
+
+When I write "agents struggle with toast notifications", I mean server-based agents miss them because they've moved on to other elements, CLI agents miss them because they parse static HTML, and even browser agents sometimes miss them due to timing. When I write "session inheritance creates security challenges", I'm specifically discussing browser extensions that inherit your authenticated state.
+
+Throughout this book, when agent type matters to understanding a problem or solution, I'll specify which type. When I refer to "agents" generally, I mean patterns that affect the entire ecosystem - because those are the patterns we need to fix.
+
+---
+
 ## The Accessibility Connection
 
 The web accessibility movement taught us something important: designing for edge cases improves experience for everyone.

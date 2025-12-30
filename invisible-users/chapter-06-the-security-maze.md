@@ -32,13 +32,28 @@ The security mechanisms we've built don't fail because agents can't pass them. T
 
 ## Two Different Problems
 
-There are two distinct security challenges with AI agents, each requiring a different solution.
+There are two distinct security challenges with AI agents, each requiring a different solution - and they map directly to different agent architectures.
 
 **Problem one: Agents that can't authenticate at all.** When you send an external agent - one running on someone else's servers - to complete a task, it faces the same security challenges any visitor would. CAPTCHA, two-factor authentication, and device fingerprinting. These mechanisms prove you're human and present. The agent is neither.
 
+This affects:
+
+- **Server-based agents** (ChatGPT, Claude via API) that access websites remotely
+- **CLI agents** (Claude Code, Cline) that fetch web content from your machine but don't inherit browser sessions
+- **Local agents** running on your device but outside your browser context
+- **Browser agents** (Playwright, Selenium) automating browsers without existing authenticated sessions
+
 **Problem two: Agents that inherit your authentication invisibly.** When you use a browser extension with AI capabilities, it can read any page you visit after you've logged in. Including your banking pages. Including your health records. Including your work email. The AI doesn't need to hack anything. It reads what's already on your screen.
 
+This affects:
+
+- **Browser extension assistants** (ChatGPT sidebar, Claude browser extension) running inside your authenticated browser
+- **IDE-integrated browser controls** (Google Antigravity) that attach to existing browser sessions
+- Custom automation tools designed to operate within authenticated sessions
+
 The first problem is frustrating. The second is dangerous.
+
+Most of this chapter focuses on Problem Two - session inheritance - because it's less obvious and potentially more harmful. When security professionals worry about "agents accessing authenticated sites", they often think of Problem One (bypassing CAPTCHA). The real concern is Problem Two (inheriting your already-passed security checks).
 
 ---
 

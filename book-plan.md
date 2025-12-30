@@ -6,7 +6,7 @@
 
 **Target Length:** 30,000-50,000 words
 
-**Current Status:** Complete ✅ (~47,450 words core manuscript, ~68,800 words total)
+**Current Status:** Complete ✅ (~50,000 words core manuscript including preface)
 
 ---
 
@@ -22,18 +22,19 @@ This book explores the technical, business, ethical, and human implications of t
 
 | Chapter | Title | Words | Status |
 | ------- | ----- | ----- | ------ |
-| 1 | What You Will Learn | ~2,700 | ✅ Complete |
-| 2 | The Invisible Failure | ~4,400 | ✅ Complete |
-| 3 | The Architectural Conflict | ~4,050 | ✅ Complete |
+| Preface | Author's Journey | ~1,700 | ✅ Complete |
+| 1 | What You Will Learn | ~3,200 | ✅ Complete |
+| 2 | The Invisible Failure | ~4,500 | ✅ Complete |
+| 3 | The Architectural Conflict | ~4,150 | ✅ Complete |
 | 4 | The Business Reality | ~6,200 | ✅ Complete |
 | 5 | The Content Creator's Dilemma | ~5,600 | ✅ Complete |
-| 6 | The Security Maze | ~3,850 | ✅ Complete |
+| 6 | The Security Maze | ~4,000 | ✅ Complete |
 | 7 | The Legal Landscape | ~4,400 | ✅ Complete |
 | 8 | The Human Cost | ~3,650 | ✅ Complete |
-| 9 | Designing for Both | ~4,350 | ✅ Complete |
-| 10 | Technical Advice | ~8,250 | ✅ Complete |
+| 9 | Designing for Both | ~4,400 | ✅ Complete |
+| 10 | Technical Advice | ~8,350 | ✅ Complete |
 
-**Total:** ~47,450 words
+**Total:** ~50,000 words (includes preface + 10 chapters)
 
 ---
 

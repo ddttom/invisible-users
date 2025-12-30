@@ -22,6 +22,8 @@ When you see:
 
 All patterns shown are designed to be forward-compatible - they won't break anything if agents don't recognise them. Think of them as progressive enhancement for AI. The speculative elements follow existing conventions (like the robots meta tag or viewport meta tag) and represent logical extensions that may standardise as the ecosystem matures.
 
+**A note on agent architecture diversity:** The implementations below work across different agent types because they follow a fundamental principle: rely on what's visible in the HTML DOM, not what requires specific execution environments. Server-based agents (ChatGPT, Claude) fetch and parse HTML remotely. CLI agents (Claude Code, Cline) access web content without browser sessions. Browser agents (Playwright, Selenium) can execute JavaScript but benefit from explicit state regardless. Browser extension assistants (ChatGPT sidebar, Claude extension) run in your authenticated browser and inherit your sessions. The patterns here serve all of them because they make state explicit, structure semantic, and feedback persistent - universally parseable properties that don't depend on JavaScript execution, session inheritance, or specific agent capabilities.
+
 ![Technical Advice - practical implementation patterns and code examples](illustrations/chapter-10-technical-advice.png)
 
 ## Starting Simple
