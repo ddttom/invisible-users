@@ -70,6 +70,15 @@ Critical security insight explored in Chapter 6: In-browser agents inherit authe
 
 When agents make purchases, businesses lose customer identity. Discussed briefly in Chapters 4, 6, 9, and 10 as one emerging solution pattern. Multiple approaches acknowledged (retailer-specific tokens, centralised repositories, blockchain attestations, browser-native delegation) without prescribing a specific implementation.
 
+### Dual Responsibility Framework
+
+The book addresses two audiences with distinct responsibilities:
+
+- **For Developers:** Fix technical patterns (clear state, persistent errors, semantic structure) that improve experiences for all users
+- **For Users:** Exercise care with prompts when dealing with banking, legal services, or commercial transactions where mistakes have serious consequences
+
+Not everything can be fixed with better HTML design. Users bear responsibility for the instructions they give to AI agents when interacting with high-stakes services. Covered in Preface and interactive notebook.
+
 ### Established vs Emerging Standards
 
 The book clearly distinguishes between:
@@ -78,11 +87,15 @@ The book clearly distinguishes between:
 - **Emerging Conventions:** llms.txt - early adoption phase
 - **Proposed Patterns:** ai-* meta tags, data-agent-visible - experimental but forward-compatible
 
+## Interactive Materials
+
+- [Interactive Notebook](invisible-users.ipynb): Interactive Jupyter notebook with visual demonstrations, data tables, and calculations. Hosted at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html). Time to complete: 60-75 minutes. Features chapter index, visual comparisons, cost impact tables, priority roadmaps, and user responsibility guidance.
+
 ## Promotional Materials
 
 - [Blog Post](blog.md): Broad-appeal introduction to the book's themes (~3,000 words)
 - [Blog Illustration](blog.svg): Visual comparison of human vs agent perception (900×600)
-- [Preface](invisible-users/preface.md): Book introduction with personal narrative, usage guide, acknowledgements, and author bio
+- [Preface](invisible-users/preface.md): Book introduction with personal narrative, usage guide, acknowledgements, author bio, and user responsibility section
 
 ## Development Documentation
 
@@ -143,7 +156,14 @@ Looking for more information about this book project?
 
 ## Version Information
 
-**Version:** 1.0 (December 2025)
+**Version:** 2.6.0 (December 2025)
 **Status:** Publication-ready manuscript
 **Total Words:** ~41,700 words across 10 chapters
-**Supporting Materials:** All complete (guides, glossary, code examples, illustrations)
+**Supporting Materials:** All complete (guides, glossary, code examples, illustrations, interactive notebook)
+
+**Recent Updates (v2.6.0):**
+- Added interactive Jupyter notebook with visual demonstrations and user responsibility guidance
+- Enhanced all chapters with structured data tables for clarity
+- Converted implementation roadmaps to priority-based system
+- Added Interactive Companion sections to preface, Chapter 10, and resource-links
+- Added Dual Responsibility Framework addressing both developers and users
