@@ -6,7 +6,47 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [2.7.0] - 2025-12-30
+
+### Added
+
+- **Business-Focused Framework Transformation** - Major manuscript revision to improve credibility and usability for business leaders:
+  - **executive-summary.md** - 2-page business briefing with "What's happening", "Why it matters", "Who's affected", and "What to do" sections. Includes one-page decision tree and role-based reading guidance (~1,100 words)
+  - **glossary-simplified.md** - 27 essential terms for business leaders in plain language without technical jargon (~900 words)
+  - **Key Points for Business Leaders** boxes added to Chapters 2, 3, 4, 5, 7, and 8 - distill essential business implications without requiring technical detail
+
+- **Decision Frameworks for Strategic Assessment:**
+  - **Agent Exposure Assessment** (Chapter 4) - 4-category framework with exposure risk matrix (Critical/High/Medium/Low), strategic response options by exposure level, and decision matrix for embrace vs resist approaches
+  - **Revenue Model Vulnerability Assessment** (Chapter 5) - 5-category vulnerability checklist, 4-level vulnerability matrix, and diversification options matrix with capital requirements, time to revenue, and success rates for 8 different options
+  - **Risk Categorization Framework** (Chapter 7) - Legal risk matrix with 4 categories (Liability, Copyright, ToS, Privacy), deep dive sections for each risk with likelihood/impact factors and mitigation options, 14 questions for legal counsel, and risk prioritization by business type
+
+- **Implementation Guidance with Qualitative Effort Estimates:**
+  - Priority 1: "A single developer can implement these changes in a focused session. No architectural changes required, minimal risk, immediate deployment."
+  - Priority 2: "Requires coordinated work across multiple developers or sustained focus from a small team. Systematic changes to existing code, testing across multiple pages."
+  - Priority 3: "Multi-person project requiring planning, architectural decisions, and cross-functional collaboration. Changes to core application structure."
+  - Priority 4: "Ongoing programme, not a one-time project. Requires dedicated resources, sustained organizational commitment, and strategic business alignment."
+  - Applied to Chapters 9, 10, and implementation-checklist.md
+
 ### Changed
+
+- **Honest Framing Throughout Manuscript:**
+  - Preface updated with explicit statement: "This is a theory book, not a research study"
+  - Acknowledged figures are illustrative, not validated: "When I write 'if agent traffic reaches 30% of visits with minimal ad revenue, a site could see revenue decline by roughly one-third,' that's a logical calculation, not a proven outcome"
+  - Replaced false precision with qualified language: "roughly", "approximately", "likely", "could", "~" (tilde) prefix
+  - Added honest framing to Chapter 5: "This chapter describes a structural problem without a clear solution... Some content types may not have viable paths forward under agent-mediated consumption"
+  - Added speculation labels to future-looking sections (e.g., "Future Models That Might Work" in Chapter 5, "Dark Warehouses" section reduced and labeled as **SPECULATIVE** in Chapter 4)
+
+- **Reading Paths and Navigation:**
+  - Added separate reading guidance for business leaders vs technical implementers in preface
+  - Business leader path: read Chapters 1, 4, 5, 7, 8, 9 (first half); skim 2, 3; skip/delegate 6, 10
+  - Updated invisible-users.ipynb to reflect all new content with "NEW" tags and updated chapter descriptions
+
+- **Word Count Updates:**
+  - Core manuscript: ~47,300 words (increased from ~43,800 due to new frameworks)
+  - Total content: ~67,200 words (including supporting materials)
+  - Updated Chapter 4: ~5,550 words (was ~5,350)
+  - Updated Chapter 5: ~5,700 words (was ~4,600)
+  - Updated Chapter 7: ~4,100 words (was ~3,300)
 
 - Restructured all chapter openings (chapters 1-10) with new format:
   - Added `\newpage` command for PDF page breaks
