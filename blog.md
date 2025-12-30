@@ -389,6 +389,10 @@ This book identifies the patterns, explains why they break, and provides working
 
 You can learn these lessons through months of failed conversions and support tickets. Or you can learn them from someone who's already documented the patterns.
 
+**The market timing matters:** This knowledge is valuable now because it's scarce. You're reading this during the transition period - after the problem has emerged, before solutions have standardised. In two years, competitors will exist. In five years, agent compatibility will be as routine as mobile responsiveness, and this becomes commoditized knowledge. The window for gaining competitive advantage is limited.
+
+The time saved researching these patterns yourself - weeks or months of experimentation and failed implementations - represents significant value. Interactive notebook included at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html).
+
 ---
 
 ## About the Author
