@@ -14,18 +14,31 @@ This book explores the technical, business, ethical, and human implications of t
 
 | Chapter | Title | Status | Words |
 | --------- | ------- | -------- | ------- |
+| Preface | Author's Journey | ✅ Complete | ~1,900 |
 | 1 | What You Will Learn | ✅ Complete | ~2,750 |
 | 2 | The Invisible Failure | ✅ Complete | ~4,200 |
 | 3 | The Architectural Conflict | ✅ Complete | ~3,850 |
-| 4 | The Business Reality | ✅ Complete | ~5,350 |
-| 5 | The Content Creator's Dilemma | ✅ Complete | ~4,600 |
+| 4 | The Business Reality | ✅ Complete | ~5,550 |
+| 5 | The Content Creator's Dilemma | ✅ Complete | ~5,700 |
 | 6 | The Security Maze | ✅ Complete | ~3,900 |
-| 7 | The Legal Landscape | ✅ Complete | ~3,300 |
-| 8 | The Human Cost | ✅ Complete | ~3,400 |
+| 7 | The Legal Landscape | ✅ Complete | ~4,100 |
+| 8 | The Human Cost | ✅ Complete | ~3,450 |
 | 9 | Designing for Both | ✅ Complete | ~4,300 |
 | 10 | Technical Advice | ✅ Complete | ~8,200 |
 
-**Total:** ~43,800 words
+**Core manuscript:** ~47,300 words
+
+**Supporting materials:**
+
+- Executive Summary: ~1,100 words
+- Glossary (comprehensive): ~3,800 words
+- Glossary (simplified): ~900 words
+- Implementation Checklist: ~2,400 words
+- Resource Links: ~2,100 words
+- Advice (standalone): ~8,400 words
+- For AI (quick reference): ~1,200 words
+
+**Total content:** ~67,200 words
 
 ## Interactive Companion
 
@@ -55,10 +68,12 @@ The notebook presents key concepts through visual demonstrations, interactive da
 ├── invisible-users.ipynb              # Interactive notebook with demonstrations
 └── invisible-users/                   # Book manuscript and materials
     ├── preface.md                     # Book introduction and author bio
+    ├── executive-summary.md           # 2-page business briefing with decision tree
     ├── chapter-01-*.md through chapter-10-*.md  # Individual chapter files
     ├── illustrations/                 # SVG illustrations for each chapter
-    ├── Glossary.md                    # Comprehensive glossary of terms
-    ├── implementation-checklist.md    # Step-by-step implementation guide
+    ├── Glossary.md                    # Comprehensive technical glossary
+    ├── glossary-simplified.md         # Essential terms for business leaders
+    ├── implementation-checklist.md    # Priority-based implementation guide
     ├── resource-links.md              # Curated resources and references
     ├── advice.md                      # Standalone prescriptive guide (~8,400 words)
     ├── for-ai.md                      # HTML patterns quick-reference for AI assistants
@@ -76,6 +91,30 @@ The notebook presents key concepts through visual demonstrations, interactive da
         ├── monitoring/                # Analytics and monitoring
         └── validation/                # Testing and validation scripts
 ```
+
+## What's New (December 2025)
+
+### Business-Focused Framework
+
+The manuscript has been transformed into a business-focused framework with honest acknowledgment of limitations:
+
+**New content:**
+
+- **Executive Summary** - 2-page briefing with decision tree for business leaders
+- **Simplified Glossary** - 27 essential terms in plain language (non-technical)
+- **Key Points for Business Leaders** boxes in Chapters 2, 3, 4, 5, 7, 8
+
+**Decision frameworks:**
+
+- **Agent Exposure Assessment** (Chapter 4) - Risk matrix and strategic response options
+- **Revenue Model Vulnerability Assessment** (Chapter 5) - Vulnerability checklist and diversification options
+- **Risk Categorization Framework** (Chapter 7) - Legal risk matrix and questions for counsel
+
+**Implementation guidance:**
+
+- Qualitative effort estimates for all four priority levels
+- Reading paths for business leaders vs technical implementers
+- Honest framing: "This is a theory book, not a research study"
 
 ## Key Themes
 

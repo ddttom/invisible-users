@@ -8,27 +8,37 @@ The manuscript for "The Invisible Users: Designing the Web for AI Agents and Eve
 
 ## Manuscript Statistics
 
-- **Total Word Count:** ~43,800 words
+- **Core Manuscript:** ~47,300 words (10 chapters + preface)
+- **Total Content:** ~67,200 words (including supporting materials)
 - **Chapters:** 10 of 10 complete
 - **Illustrations:** 10 of 10 complete
 - **Target Range:** 30,000-50,000 words ✅
 
 ## Chapter Status
 
-All chapters are complete and fully illustrated:
+All chapters complete with business-focused updates:
 
-| Chapter | Title | Words | Status |
-| ------- | ----- | ----- | ------ |
-| 1 | What You Will Learn | ~2,750 | ✅ |
-| 2 | The Invisible Failure | ~4,200 | ✅ |
-| 3 | The Architectural Conflict | ~3,850 | ✅ |
-| 4 | The Business Reality | ~5,350 | ✅ |
-| 5 | The Content Creator's Dilemma | ~4,600 | ✅ |
-| 6 | The Security Maze | ~3,900 | ✅ |
-| 7 | The Legal Landscape | ~3,300 | ✅ |
-| 8 | The Human Cost | ~3,400 | ✅ |
-| 9 | Designing for Both | ~4,300 | ✅ |
-| 10 | Technical Advice | ~8,200 | ✅ |
+| Chapter | Title | Words | Status | Updates |
+| ------- | ----- | ----- | ------ | ------- |
+| Preface | Author's Journey | ~1,900 | ✅ | Honest framing, reading paths |
+| 1 | What You Will Learn | ~2,750 | ✅ | Complete |
+| 2 | The Invisible Failure | ~4,200 | ✅ | Key Points box added |
+| 3 | The Architectural Conflict | ~3,850 | ✅ | Key Points box added |
+| 4 | The Business Reality | ~5,550 | ✅ | Agent Exposure Assessment, Key Points |
+| 5 | The Content Creator's Dilemma | ~5,700 | ✅ | Vulnerability Assessment, honest framing |
+| 6 | The Security Maze | ~3,900 | ✅ | Complete |
+| 7 | The Legal Landscape | ~4,100 | ✅ | Risk Categorization Framework |
+| 8 | The Human Cost | ~3,450 | ✅ | Key Points box added |
+| 9 | Designing for Both | ~4,300 | ✅ | Effort estimates added |
+| 10 | Technical Advice | ~8,200 | ✅ | Effort estimates added |
+
+## Supporting Materials (December 2025 Updates)
+
+- ✅ **executive-summary.md** - 2-page business briefing with decision tree (~1,100 words)
+- ✅ **glossary-simplified.md** - 27 essential terms for business leaders (~900 words)
+- ✅ **Key Points for Business Leaders** boxes in 6 chapters
+- ✅ Qualitative effort estimates for all four priority levels
+- ✅ Three major decision frameworks (Exposure, Vulnerability, Risk)
 
 ## Key Concepts Implemented
 
