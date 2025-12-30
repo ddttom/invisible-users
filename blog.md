@@ -219,6 +219,10 @@ This book grew from that realisation. It's not a book about AI. It's a book abou
 
 Throughout, I've tried to be honest about tensions that don't have clean resolutions. Some fixes for agent compatibility conflict with short-term business interests. Some accessibility improvements reduce engagement metrics. Some solutions create new problems. I've flagged these rather than pretending they don't exist.
 
+### Interactive Companion
+
+An interactive notebook version is available at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html). It presents key concepts through visual demonstrations, interactive data tables, and real-world calculations. Time to complete: 60-75 minutes. Perfect as both an introduction and a navigation tool for the full manuscript.
+
 ## Who This Book Is For
 
 **If you're a designer:**
@@ -235,6 +239,9 @@ You'll discover why your ad-funded model is under threat, and what intermediate 
 
 **If you build websites:**
 You'll learn how to future-proof your work without rebuilding everything, and why these changes benefit all your users.
+
+**If you use AI agents:**
+You'll understand your responsibility when instructing agents to interact with banking, legal services, or commercial transactions where mistakes have serious consequences.
 
 ## The Chapters
 
@@ -306,6 +313,15 @@ You'll also understand:
 - Why some businesses benefit whilst others face existential threats
 - Which emerging approaches to identity delegation show promise
 - How to build websites that work for both humans and agents
+- Your responsibilities as both a developer and an agent user
+
+### Dual Responsibility
+
+This book addresses two audiences with distinct responsibilities:
+
+**For developers:** Fix the technical patterns you can control - clear state, persistent errors, semantic structure. These improvements benefit all users, not just AI agents.
+
+**For users:** Not everything can be fixed with better HTML. When you instruct AI agents to interact with banking, legal services, or commercial transactions, you bear responsibility for the prompts you provide and the actions you authorise. The book explores why careful, considered use of agents is as important as agent-friendly design.
 
 ## The Window Is Small
 
@@ -345,11 +361,13 @@ The patterns that break agents are patterns we should have fixed years ago. We d
 "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 
 - **10 chapters** covering technical, business, ethical, and human implications
-- **~40,200 words** of practical, actionable guidance
+- **~41,700 words** of practical, actionable guidance
 - **Working code examples** you can implement tomorrow
 - **10 practical design patterns** with bad/good examples showing correct HTML structure
 - **Concrete examples** from websites demonstrating failures and fixes
 - **Implementation checklist** for phased rollout
+- **Interactive companion notebook** with visual demonstrations and calculations
+- **Dual responsibility framework** addressing both developers and users
 - **British English** throughout, first-person narrative
 - **No exaggeration** - just technical accuracy and practical implications
 
