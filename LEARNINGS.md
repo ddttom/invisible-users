@@ -232,3 +232,21 @@ The Edit tool **requires** that you read a file before editing it. This is a har
 **Rationale:** Prevents editing files blindly without understanding current state.
 
 ---
+
+## Removing Outdated Files
+
+### Systematic Documentation Cleanup
+
+When user deletes a file referenced in documentation:
+
+1. **Find all references:** `Grep(pattern="FILENAME\.md", output_mode="files_with_matches")`
+2. **Read files in parallel** for efficiency
+3. **Edit each file** to remove references
+4. **Stage deletion:** Use `git rm path/to/file.md` (not `git add`)
+5. **Commit together** - deletion + documentation updates in single commit
+
+**Common reference locations:**
+
+- Repository structure diagrams (CLAUDE.md, README.md, book-plan.md, llms.txt)
+- Supporting materials tables (book-plan.md)
+- Cross-references (blog.md, resource-links.md)
