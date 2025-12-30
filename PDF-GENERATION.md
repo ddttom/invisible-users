@@ -149,15 +149,58 @@ brew install pandoc
 
 Install BasicTeX (see Installation section above) or use Method 1 (HTML then Print to PDF).
 
-### Illustrations Missing
-
-Generate PNG illustrations from SVG sources:
-
 ```bash
-npm run illustrations:generate
+brew install --cask basictex
+eval "$(/usr/libexec/path_helper)"
 ```
 
-This converts all SVG files in `invisible-users/illustrations/` to PNG format.
+### "Could not fetch resource illustrations/chapter-XX.png"
+
+This warning appears when pandoc cannot find illustration files. The npm scripts have been updated to fix this issue using `--resource-path=invisible-users`.
+
+If you still see this warning:
+
+1. **Ensure PNG files exist:**
+
+   ```bash
+   npm run illustrations:generate
+   ```
+
+   This converts all SVG files in `invisible-users/illustrations/` to PNG format.
+
+2. **Verify the npm scripts include `--resource-path=invisible-users`:**
+
+   Check `package.json` - all three PDF scripts should include this flag to help pandoc locate images correctly.
+
+3. **Check file paths in markdown:**
+
+   Chapter files should reference illustrations as `illustrations/chapter-XX.png` (relative to the chapter file location), not with full paths.
+
+### Illustrations Missing in Generated PDF
+
+If images don't appear in the final PDF:
+
+1. Generate PNG illustrations from SVG sources:
+
+   ```bash
+   npm run illustrations:generate
+   ```
+
+2. Verify PNG files exist:
+
+   ```bash
+   ls -la invisible-users/illustrations/*.png
+   ```
+
+   You should see 10 PNG files (chapter-01 through chapter-10).
+
+3. Regenerate the PDF:
+
+   ```bash
+   npm run pdf:html
+   # or
+   npm run pdf:generate
+   ```
 
 ### File Too Large
 
@@ -201,6 +244,24 @@ Before distributing generated PDFs:
 3. **Test links** - internal cross-references should work
 4. **Review page breaks** - adjust if needed using LaTeX commands
 5. **Check metadata** - title, author, date should be correct
+
+## Technical Notes
+
+### Resource Path Configuration
+
+All npm scripts include `--resource-path=invisible-users` to help pandoc locate illustration files correctly. This is necessary because:
+
+1. Pandoc runs from the repository root directory
+2. Chapter markdown files reference images as `illustrations/chapter-XX.png` (relative to chapter location)
+3. Without `--resource-path`, pandoc looks for images in the wrong location
+
+The `--resource-path` flag tells pandoc to also search in the `invisible-users/` directory when resolving relative image paths, allowing it to find `invisible-users/illustrations/*.png` files correctly.
+
+### Image Format
+
+- **Source format:** SVG (tracked in git)
+- **Output format:** PNG at 300 DPI (generated locally, not tracked in git)
+- **Reason:** PDF generation works more reliably with PNG raster images than SVG vector graphics
 
 ## Version Information
 
