@@ -6,7 +6,7 @@
 
 **Target Length:** 30,000-50,000 words
 
-**Current Status:** Complete ✅ (~43,800 words)
+**Current Status:** Complete ✅ (~47,300 words core manuscript, ~67,200 words total)
 
 ---
 
