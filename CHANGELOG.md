@@ -83,11 +83,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Chapter 10: Added "Explore Further" sign-off section
   - resource-links.md: Added as primary companion resource
 - Documentation updates:
-  - README.md: Added Interactive Companion section with hosted link, PDF-GENERATION.md reference
+  - README.md: Added Interactive Companion section with hosted link
   - PROJECTSTATE.md: Listed notebook under "Interactive Materials", PDF generation status
   - LEARNINGS.md: Comprehensive session learnings documentation
 - PDF generation capabilities:
-  - PDF-GENERATION.md: Comprehensive guide for generating book PDFs
   - Three npm scripts in package.json:
     - `pdf:html` - Generate standalone HTML (print to PDF manually)
     - `pdf:generate` - Direct PDF generation with professional book layout (requires LaTeX)
@@ -131,6 +130,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - the-invisible-users.html
   - the-invisible-users.pdf
   - the-invisible-users-simple.pdf
-- Fixed markdown linting errors in PDF-GENERATION.md:
-  - MD032: Added blank lines around all lists
-  - MD034: Wrapped bare URLs in angle brackets
