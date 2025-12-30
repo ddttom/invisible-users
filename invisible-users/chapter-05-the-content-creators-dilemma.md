@@ -10,6 +10,8 @@ The previous chapter examined business models in aggregate. This chapter focuses
 
 For them, agent traffic isn't a strategic consideration. It's a question of survival.
 
+**Honest framing:** This chapter describes a structural problem without a clear solution. If you are a content creator funded by advertising, you face genuine difficulty. The "future models that might work" section later in this chapter explores possibilities, but none are proven at scale. Some content types may not have viable paths forward under agent-mediated consumption. Individual adaptation can help, but systemic change requires platform cooperation, legal frameworks, or user behaviour shifts that may not materialise quickly enough.
+
 ![The Value Extraction Problem - comparing sustainable human visits vs extraction-based agent visits](illustrations/chapter-05-illustration.png)
 
 ---
@@ -44,7 +46,7 @@ This covers:
 - SEO and marketing tools: £100/month
 - Time investment: 80-120 hours/month
 
-The margins are thin. Lose 30% of revenue, and the blog stops being economically viable. Lose 50% and it becomes an expensive hobby.
+The margins are thin. If agent traffic reaches 30% of visits and generates minimal ad revenue, a site could see revenue decline by roughly one-third - potentially dropping below viability. At higher agent proportions, the economics become unsustainable for most independent creators.
 
 ---
 
@@ -77,22 +79,22 @@ Total engagement: 0.3 seconds, 0-1 ad impressions (probably not rendered), no tr
 Human visit: £0.08-0.12 in ad revenue
 Agent visit: £0.00-0.02 in ad revenue
 
-If 30% of traffic becomes agents, monthly revenue declines from £3,000 to approximately £2,100-£2,400. If 50% becomes agents, revenue drops to £1,500-2,000.
+If agent traffic reaches 30% of visits, monthly revenue could decline from £3,000 to approximately £2,100-£2,400, assuming agents generate minimal ad revenue. At 50% agent traffic, revenue could drop to £1,500-2,000.
 
-The first scenario is painful. The second is unsustainable.
+The first scenario is painful. The second is likely unsustainable for most creators.
 
-### Revenue Impact Calculator
+### Revenue Impact Calculator (Illustrative Scenarios)
 
-Here's how agent traffic affects a typical recipe blog generating £3,000-4,000 monthly from 150,000 page views:
+Here's how agent traffic might affect a typical recipe blog generating £3,000-4,000 monthly from 150,000 page views. These figures are illustrative calculations, not validated research data:
 
 | Agent Traffic % | Human Page Views | Agent Page Views | Display Ad Revenue | Monthly Income | Status |
 | --------------- | ---------------- | ---------------- | ------------------ | -------------- | ------ |
 | **0% (current)** | 150,000 | 0 | £3,000 | £3,500-4,000 | Sustainable |
-| **30% agents** | 105,000 | 45,000 | £2,100-2,400 | £2,600-3,000 | Marginal |
-| **50% agents** | 75,000 | 75,000 | £1,500-2,000 | £2,000-2,500 | Unsustainable |
-| **70% agents** | 45,000 | 105,000 | £900-1,200 | £1,400-1,800 | Hobby only |
+| **30% agents** | 105,000 | 45,000 | ~£2,100-2,400 | ~£2,600-3,000 | Marginal |
+| **50% agents** | 75,000 | 75,000 | ~£1,500-2,000 | ~£2,000-2,500 | Likely unsustainable |
+| **70% agents** | 45,000 | 105,000 | ~£900-1,200 | ~£1,400-1,800 | Hobby only |
 
-**Key insight:** The shift from human to agent traffic isn't gradual degradation - it crosses viability thresholds. At 50% agent traffic, most independent content creators cannot cover costs. The economic model collapses before agents become the majority of visitors.
+**Key insight:** The shift from human to agent traffic isn't gradual degradation - it crosses viability thresholds. The exact thresholds vary by creator, but the pattern appears consistent: somewhere between 30-50% agent traffic, many independent content creators struggle to cover costs.
 
 ---
 
@@ -188,7 +190,7 @@ Put content behind registration or payment. The New York Times model: you get a 
 
 *Advantages:* Direct revenue from consumers. Not dependent on advertising. Works if your content is sufficiently unique and valuable.
 
-*Disadvantages:* Loses 90%+ of traffic. Only works for content people will pay for. Most recipe blogs, how-to sites, and local news can't compete with free alternatives. Agents can't access paywalled content, but neither can most potential readers.
+*Disadvantages:* Loses most traffic. Only works for content people will pay for. Most recipe blogs, how-to sites, and local news can't compete with free alternatives. Agents can't access paywalled content, but neither can most potential readers.
 
 ### Option 2: Aggressive bot blocking
 
@@ -409,6 +411,8 @@ Platforms operating globally face a patchwork of requirements. The strictest jur
 
 ## Future Models That Might Work
 
+**Note on speculation:** This section explores possible future models for sustainable content creation under agent-mediated consumption. None are proven at scale. None have broad platform adoption. Some may never materialise. This is forward-looking thinking, not implementation advice. Treat these as possibilities to monitor, not solutions you can implement today.
+
 The current model is breaking. What might replace it?
 
 ### Model 1: The YouTube approach
@@ -616,9 +620,78 @@ We're not there yet. Getting there requires acknowledging the problem, experimen
 
 ---
 
+## Revenue Model Vulnerability Assessment
+
+Before exploring paths forward, assess your own exposure to agent extraction. This framework helps you understand your vulnerability and prioritise responses.
+
+### Vulnerability Checklist
+
+Answer these questions about your content business:
+
+**Revenue dependence:**
+
+- What percentage of your revenue comes from display advertising? (Higher = more vulnerable)
+- What percentage comes from direct transactions, subscriptions, or services? (Higher = less vulnerable)
+- Do you have multiple revenue streams, or are you dependent on a single source?
+
+**Content extractability:**
+
+- Can your content be easily summarised by an agent? (Recipes, how-to articles = highly extractable)
+- Does your value come from unique perspective, original research, or exclusive access? (Harder to extract)
+- Have you included structured data (Schema.org markup) that makes extraction easier?
+
+**Audience relationship:**
+
+- Do readers come directly to your site, or through search/social discovery?
+- Do you have an email list, community, or direct relationship with your audience?
+- Would readers notice if your site disappeared, or would they just find another source?
+
+**Substitutability:**
+
+- Is your content unique, or could readers find similar information elsewhere?
+- Do you compete primarily on quality, perspective, or just availability?
+- How many competitors cover the same topic?
+
+**Current agent exposure:**
+
+- Can you measure what percentage of your traffic is agents vs humans?
+- Has your ad revenue declined even while page views remained stable?
+- Are you seeing sessions that access content but generate no engagement?
+
+### Vulnerability Matrix
+
+Based on your answers, categorise your exposure:
+
+**Critical vulnerability:** Ad-dependent, highly extractable content with weak audience relationships and many substitutes. Examples: Recipe blogs, general how-to sites, commodity news coverage. **Priority action:** Diversify revenue urgently. This model may not survive.
+
+**High vulnerability:** Primarily ad-funded with some direct audience relationship or moderate uniqueness. Examples: Niche how-to sites, specialised blogs, local journalism with some loyal readers. **Priority action:** Build direct relationships and alternative revenue streams now, before pressure increases.
+
+**Medium vulnerability:** Mixed revenue model with some unique value but still partially dependent on advertising. Examples: Review sites with affiliate income, blogs with products/services, publications with some subscriptions. **Priority action:** Accelerate shift away from advertising dependence.
+
+**Low vulnerability:** Strong direct relationships, unique content hard to replicate, multiple revenue streams beyond advertising. Examples: Established publications with subscriber bases, creators with strong personal brands, platforms offering tools/services alongside content. **Priority action:** Monitor the situation but focus on maintaining quality and relationships.
+
+### Diversification Options Matrix
+
+Different paths forward have different requirements and feasibility:
+
+| Option                  | Capital Required | Time to Revenue | Success Rate | Best For                                                      |
+|-------------------------|------------------|-----------------|--------------|---------------------------------------------------------------|
+| Email list + products   | Low              | 6-12 months     | Moderate     | Established creators with engaged audience                    |
+| Subscription/membership | Low-Medium       | 3-6 months      | Low-Moderate | Unique, high-value content with loyal readers                 |
+| Sponsored content       | Low              | 1-3 months      | Variable     | Creators with established traffic and niche focus             |
+| Services/consulting     | Low              | Immediate       | High         | Expertise-based content where creator has marketable skills   |
+| Courses/workshops       | Medium           | 3-6 months      | Moderate     | Educational content with clear learning outcomes              |
+| Platform partnerships   | N/A              | Variable        | Very Low     | Large creators only; requires negotiating power               |
+| Books/physical products | Medium-High      | 6-18 months     | Low          | Established creators with proven audience                     |
+| Community/events        | Medium           | 3-6 months      | Moderate     | Local or highly engaged niches                                |
+
+**Honest assessment:** Solo creators with commodity content and weak audience relationships may not have a viable path forward. Not every content type will survive the transition to agent-mediated consumption. If your assessment shows critical vulnerability with no clear diversification path, consider this as one input into larger career decisions.
+
+---
+
 ## The Path Forward
 
-For content creators reading this: the situation is difficult but not hopeless.
+For content creators reading this: the situation is difficult, and honesty about your vulnerability helps more than optimism.
 
 **The immediate actions:**
 
@@ -671,3 +744,26 @@ The content creator's dilemma is part of a larger transformation. Understanding 
 The web we know was built on advertising-funded free content. The web we're moving toward will be funded differently. How that transition unfolds depends on choices being made now - by platforms, creators, and users.
 
 Choose wisely.
+
+---
+
+## Key Points for Business Leaders
+
+**What you need to know from this chapter:**
+
+- **Ad-funded content faces structural threat:** Agents extract information in seconds without viewing ads or engaging with content. If agent traffic reaches 30-50% of visits, many independent creators cannot cover costs. This isn't gradual decline - it crosses viability thresholds rapidly.
+
+- **This affects your industry if you create content:** Recipe sites, how-to guides, reviews, local journalism, educational resources - any ad-funded content faces the same economics. Platforms profit from extraction while creators receive no compensation.
+
+- **Use the Revenue Model Vulnerability Assessment:** Five categories determine your exposure: revenue dependence, content extractability, audience relationship strength, substitutability, and current agent traffic. Critical vulnerability = ad-dependent with weak audience relationships. Low vulnerability = direct relationships with unique, hard-to-extract content.
+
+- **None of the alternative models are proven at scale:** Paywalls, bot blocking, platform partnerships, embedded sponsorship - all have significant limitations. The "future models that might work" section explores possibilities, but systemic change requires platform cooperation or regulatory intervention that may not materialise quickly.
+
+**For content creators:**
+
+- **Immediate actions:** Measure agent traffic, diversify revenue streams, build direct audience relationships (email lists, communities), document impact for advocacy
+- **Honest assessment needed:** Solo creators with commodity content may not have viable paths forward. Not every content type will survive this transition.
+
+**For businesses that employ content marketing:** Your content strategy may need to shift from traffic generation to relationship building as agent extraction reduces the value of freely available content.
+
+---

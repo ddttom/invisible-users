@@ -840,7 +840,9 @@ Getting started with agent-friendly design doesn't require a complete rebuild. F
 
 ### Priority 1: Critical Quick Wins
 
-Highest impact with minimal effort - start here:
+Highest impact with minimal effort - start here.
+
+**Effort Level:** A single developer can implement these changes in a focused session. No architectural changes required, minimal risk, immediate deployment. Most changes involve replacing existing patterns with better alternatives rather than building new systems.
 
 - **Replace toast notifications with persistent messages** - Change temporary notifications to remain visible until acknowledged or resolved
 - **Add 'Show All' option to paginated content** - Allow users and agents to view complete datasets without forced pagination
@@ -850,7 +852,9 @@ Highest impact with minimal effort - start here:
 
 ### Priority 2: Essential Improvements
 
-Important foundational work that builds on quick wins:
+Important foundational work that builds on quick wins.
+
+**Effort Level:** Requires coordinated work across multiple developers or sustained focus from a small team. Involves systematic changes to existing code, testing across multiple pages, and potentially updating design patterns. May require stakeholder buy-in for visible changes to user experience. Plan for iterative deployment with rollback capability.
 
 - **Audit all form feedback mechanisms** - Ensure errors persist, are clearly labeled, and explain how to fix issues
 - **Implement semantic HTML throughout** - Use proper heading hierarchy, landmark regions, and appropriate elements
@@ -860,7 +864,9 @@ Important foundational work that builds on quick wins:
 
 ### Priority 3: Core Infrastructure
 
-Systematic platform improvements for long-term benefits:
+Systematic platform improvements for long-term benefits.
+
+**Effort Level:** Multi-person project requiring planning, architectural decisions, and cross-functional collaboration. Involves changes to core application structure, integration with external systems, and potentially business model adjustments. Requires thorough testing, staged rollout, and ongoing monitoring. Budget for technical debt reduction and refactoring. Expect dependencies on legal, product, and business stakeholders.
 
 - **Redesign SPA architecture for URL-based state** - Ensure JavaScript state changes update URLs appropriately
 - **Implement identity delegation patterns** - Allow agents to act on behalf of users whilst preserving customer relationships

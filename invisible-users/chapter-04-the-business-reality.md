@@ -181,23 +181,13 @@ Traditional retailers have product information scattered across pages, complex c
 
 ---
 
-## Dark Warehouses - A Speculative Pattern
+## Dark Warehouses - A Speculative Scenario
 
-The price comparison discussion assumes agents operate as individual shoppers, making separate purchases for separate users. But what if successful agent platforms begin operating more like wholesalers - aggregating demand across thousands of users and bulk purchasing inventory?
+**SPECULATIVE:** This section describes a possible future pattern that does not currently exist. No major agent platform operates this model. Treat this as forward-looking thinking, not current reality.
 
-This would follow the "dark kitchen" model used in food delivery. Dark kitchens are commercial kitchens without storefronts, operating solely to fulfil delivery orders. They work because industrial rent is cheaper than retail locations, and operations can be optimised entirely for volume.
+The price comparison discussion assumes agents operate as individual shoppers, making separate purchases for separate users. But what if successful agent platforms begin operating more like wholesalers - aggregating demand across thousands of users, bulk purchasing inventory, and fulfilling orders from their own warehouses? This would follow the "dark kitchen" model in food delivery: low-cost warehouses without retail presence, optimised entirely for volume fulfillment.
 
-An agent platform serving 50,000 users might notice purchase patterns: thousands of users buying the same coffee pods, printer cartridges, or household items each month. Rather than making individual retail purchases, the platform could contact suppliers directly. "We'll purchase 24,000 units per month. What's your wholesale price?" The supplier, seeing guaranteed volume, might offer 35% below retail. The platform stocks inventory in a low-cost warehouse and fulfils orders from its own stock, offering users discounts whilst capturing margin. Users pay below retail price, the platform profits, and traditional retailers lose transactions entirely.
-
-**Why this might emerge:** Competitive pressure between platforms would push toward it. A platform offering consistently lower prices through bulk purchasing would attract users from competitors. Scale advantages would compound. Dark kitchens demonstrate the model's viability.
-
-**The problems this creates:** Transparency disappears - platforms control both supply and pricing information. Market concentration accelerates because bulk purchasing requires scale; smaller platforms cannot compete. Consumer protection questions arise: who's the actual seller? Who handles returns? Amazon already operates this model with massive advantages, making competition difficult.
-
-**Why this might not happen:** Platforms historically avoid inventory risk (Uber doesn't own cars, Airbnb doesn't own properties). The operational burden of handling returns, defective products, and warranty claims may outweigh margin benefits. Competitive pressure between platforms might prevent sustained margin capture. Regulatory scrutiny seems likely if platforms operate as retailers whilst presenting as neutral agents. Suppliers might refuse wholesale relationships with platforms, preferring traditional retail channels.
-
-**Current reality:** No major agent platform currently operates dark warehouses. The infrastructure and capital requirements create significant barriers. Most platforms facilitate purchases from existing retailers rather than holding inventory.
-
-The economic logic is clear, but whether this pattern emerges depends on scale economics, regulatory responses, competitive dynamics, and user expectations about transparency. For now, it remains speculative - but worth monitoring. If it happens, businesses face another disruption: agent-friendly design becomes irrelevant if agents source products through their own fulfilment operations rather than visiting retail sites.
+The economic logic is clear: platforms with millions of users could negotiate wholesale pricing and capture margin. But significant barriers exist: platforms historically avoid inventory risk, operational complexity (returns, defects, warranties) is substantial, and regulatory scrutiny seems likely if platforms operate as retailers whilst presenting as neutral agents. Currently, no evidence suggests this pattern is emerging. If it does happen, agent-friendly web design becomes less relevant - agents would source through platform warehouses rather than retail sites. Worth monitoring, but not a current concern for most businesses.
 
 ---
 
@@ -673,9 +663,126 @@ The strategic challenge is to identify which parts of your business benefit from
 
 ---
 
+## Agent Exposure Assessment
+
+Before deciding on a response strategy, assess your specific exposure to agent-mediated commerce. This framework helps you understand your vulnerability and prioritise actions.
+
+### Assessment Framework
+
+Answer these questions about your business:
+
+#### 1. Revenue model exposure
+
+- What percentage of revenue comes from advertising? (Higher = more vulnerable to agent extraction)
+- What percentage comes from transactions? (Higher = potential opportunity from agent efficiency)
+- What percentage comes from subscriptions or recurring revenue? (Mixed implications - assess case by case)
+- Are you dependent on time-on-site or page-per-visit metrics? (Vulnerable - agents don't browse)
+
+#### 2. Customer acquisition and discovery
+
+- Do customers find you through search and comparison? (Higher agent relevance)
+- Do they arrive with clear purchase intent or do they browse? (Intent = agent-friendly; browsing = vulnerable)
+- How much does your business depend on customer identity and loyalty data? (At risk from identity delegation)
+- Can customers substitute you easily, or do you have unique differentiation? (Substitutable = vulnerable to agent-driven comparison)
+
+#### 3. Information complexity and transparency
+
+- Is your pricing transparent and comparable? (Yes = agent-friendly; hidden = competitive disadvantage)
+- Do customers need to browse to understand your offering, or is it easily summarised? (Easily summarised = agent-compatible)
+- How much does your value proposition depend on persuasion versus objective criteria? (Objective = agent-friendly)
+- Can an agent determine if a transaction succeeded without human verification? (Clear state = agent-compatible)
+
+#### 4. Current technical patterns
+
+- Do you use the five failure patterns identified in Chapter 2? (Toast notifications, pagination, SPA without state, visual-only indicators, hidden pricing)
+- Can you currently distinguish agent traffic from human traffic in your analytics?
+- Have you seen unexplained declines in conversion rates or engagement metrics?
+- Do you have forms or checkout flows that might fail silently for agents?
+
+### Exposure Risk Matrix
+
+Based on your answers, categorise your business:
+
+**Critical exposure - Immediate action required:**
+
+- Ad-dependent revenue model with easily extractable content
+- Compete on price in transparent markets
+- Depend on page views and engagement metrics
+- Examples: Recipe blogs, general news sites, commodity content
+
+**High exposure - Action within 3-6 months:**
+
+- Transaction-based but with agent-hostile patterns (hidden pricing, complex flows)
+- Mixed revenue model with some advertising dependence
+- Compete in price-sensitive markets
+- Examples: E-commerce with complex checkout, travel booking, marketplace platforms
+
+**Medium exposure - Monitor and plan:**
+
+- Transaction-based with relatively clear processes
+- Some unique differentiation but still comparable
+- Building direct customer relationships
+- Examples: SaaS with self-service signup, specialised e-commerce, established brands
+
+**Low exposure - Watch and wait:**
+
+- Relationship-based sales (not discovery-driven)
+- Unique offerings hard for agents to evaluate
+- Strong brand loyalty and direct customer relationships
+- Examples: High-touch B2B services, luxury goods with experiential value, local businesses with established customer bases
+
+### Strategic Response Options
+
+For each exposure level, consider these approaches:
+
+**If critically exposed:**
+
+- **Resist:** Deploy aggressive bot detection (risky - harms SEO, creates maintenance burden)
+- **Pivot:** Fundamentally restructure business model away from advertising dependence
+- **Hybrid:** Offer API access for commercial use while protecting free consumer access
+- **Accept:** Reduce costs dramatically and treat as hobby or loss leader
+
+**If highly exposed:**
+
+- **Embrace:** Fix agent-hostile patterns urgently - they're costing you conversions
+- **Protect identity:** Implement identity delegation patterns to preserve customer relationships
+- **Differentiate:** Build unique value that agents can't easily replicate
+- **Monitor:** Track agent traffic separately and measure impact
+
+**If medium exposure:**
+
+- **Optimise:** Fix obvious problems (Priority 1 items from implementation checklist)
+- **Prepare:** Build agent compatibility into roadmap
+- **Test:** Include agent testing in QA processes
+- **Learn:** Understand where agents help vs. hurt your specific business
+
+**If low exposure:**
+
+- **Watch:** Monitor agent traffic percentage
+- **Fix obvious issues:** Transparent pricing, clear errors - minimal effort, avoid future problems
+- **Stay informed:** Understand emerging patterns in your industry
+- **Reassess annually:** Your exposure may change as agent adoption grows
+
+### Decision Matrix: Embrace vs. Resist
+
+Use this matrix to decide your strategic response:
+
+|                                       | Embrace Agent Compatibility                           | Resist Agent Access                                |
+|---------------------------------------|-------------------------------------------------------|----------------------------------------------------|
+| **When to choose this approach**      | Transaction-based revenue; Agents increase conversion | Ad-funded; Agent traffic destroys economics        |
+| **Your competitive position**         | You win on objective criteria (price, features)       | You depend on persuasion, engagement, time-on-site |
+| **Technical feasibility**             | You can fix patterns within reasonable budget         | Technical debt makes fixes prohibitively expensive |
+| **Industry dynamics**                 | Competitors are becoming agent-friendly               | Industry-wide resistance may work                  |
+| **Time horizon**                      | 3-5 year planning horizon                             | Buying time while pivoting business model          |
+| **Resources required**                | Developer time, testing infrastructure                | Ongoing arms race, legal costs, maintenance burden |
+| **Success criteria**                  | Increased agent-driven conversions                    | Maintained ad revenue from human traffic           |
+| **Failure risk**                      | Investment wasted if agents don't drive transactions  | Losing both humans (bad UX) and agents (blocked)   |
+
+---
+
 ## What This Means for Your Business
 
-If you've read this far, you're probably asking: what should I do?
+If you've read this far and completed the exposure assessment above, you now understand your specific situation. Here's guidance by revenue model:
 
 **If your revenue comes primarily from advertising:**
 
@@ -728,3 +835,28 @@ The following chapters examine specific challenges: content creators facing an e
 Then we'll turn to solutions - practical approaches for designing interfaces that work for both humans and machines.
 
 The business case matters because implementation requires investment. Understanding the economics helps you make that investment wisely.
+
+---
+
+## Key Points for Business Leaders
+
+**What you need to know from this chapter:**
+
+- **Agent impact varies dramatically by business model:** Ad-funded businesses face existential threat (agents don't browse, don't view ads). Transaction-based businesses often benefit (agents convert at high rates with clear intent). Subscription businesses face mixed implications depending on whether agents enhance or substitute for the service.
+
+- **Use the Agent Exposure Assessment framework:** Four categories determine your vulnerability: revenue model, customer acquisition patterns, information transparency, and current technical patterns. Assess your specific exposure before deciding on a response strategy (embrace, resist, hybrid, or wait).
+
+- **The strategic choice isn't simple:** Resisting agents (bot blocking, CAPTCHAs) preserves advertising revenue short-term but harms SEO, creates maintenance burden, and may alienate users. Embracing agents (fixing hostile patterns) increases conversion for transaction-based businesses but requires investment. Most businesses need hybrid approaches.
+
+- **Identity delegation is a strategic concern:** When agents make purchases on behalf of users, you lose direct customer relationships, transaction data, and loyalty programme opportunities. Monitor emerging delegation patterns - several approaches are being developed but no standard exists yet.
+
+**Decision framework:**
+
+- **Critical exposure (ad-dependent):** Diversify revenue urgently or prepare to pivot
+- **High exposure (transaction-based with hostile patterns):** Fix agent-breaking patterns - they're costing conversions now
+- **Medium exposure:** Optimise obvious problems, monitor impact, include in roadmap
+- **Low exposure:** Fix basic issues (transparent pricing, clear errors), reassess annually
+
+**Key question for your business:** Complete the Agent Exposure Assessment (page earlier in this chapter) to understand your specific situation before deciding strategy.
+
+---

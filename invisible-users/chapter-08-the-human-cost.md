@@ -422,3 +422,33 @@ If you have agent access and use it effectively, remember that your experience i
 The web's promise was universal access to information and services. That promise has always been imperfectly fulfilled. The transition to agent-mediated interaction can bring us closer to that promise - or further from it.
 
 The outcome isn't determined by technology. It's defined by choices.
+
+---
+
+## Key Points for Business Leaders
+
+**What you need to know from this chapter:**
+
+- **AI agents amplify existing inequalities:** Agent access requires resources (devices, connectivity, subscriptions, technical literacy, language skills). Those already advantaged gain dramatically more productivity. Those struggling fall further behind. Agents act as multipliers - they amplify existing gaps rather than leveling them.
+
+- **Five barrier categories determine access:** Economic (subscription costs, device requirements), Language (English dominance), Technical literacy (prompt crafting skills), Infrastructure (reliable internet), and Device access (modern hardware). Individuals facing multiple barriers get exponentially less value.
+
+- **Business implications are social implications:** If your business depends on agent compatibility, you're implicitly designing for affluent, educated, English-speaking customers with modern devices. This may be acceptable strategically, but understand who you're excluding.
+
+- **This creates two-tier service access:** Essential services (healthcare, government, banking) accessible through agents create advantage for those with access. If these services become agent-optimised at expense of direct human access, digital divide widens into service access divide.
+
+**Strategic considerations:**
+
+- **Compliance vs. inclusion:** Meeting accessibility standards (WCAG compliance) ensures legal defensibility but doesn't guarantee practical access for those without agent capabilities
+- **Alternative access paths:** Consider whether your agent-optimised interfaces inadvertently degrade direct human access
+- **Market segmentation risk:** Over-optimisation for agent traffic may exclude customers who would access directly
+
+**Social responsibility opportunities:**
+
+- Ensure direct human access remains functional as you optimise for agents
+- Consider offering educational resources for effective agent use
+- Support initiatives extending agent access to underserved communities
+
+**Key insight:** Agent-mediated access could reduce barriers (assistive technology benefits) or amplify them (two-tier access). Outcome depends on whether free/accessible agents remain viable and whether sites maintain direct human access alongside agent optimisation.
+
+---

@@ -254,6 +254,180 @@ For agent platforms: Same principle. Your platform is subject to the laws of eve
 
 For users: Don't assume your local laws protect you when transacting through agents on foreign platforms that access foreign sites. The enforcement mechanisms might not exist.
 
+---
+
+## Risk Categorization Framework
+
+Before deciding on legal strategy, assess your exposure across four risk categories. This framework helps you prioritize legal review and policy decisions.
+
+### Legal Risk Matrix
+
+Evaluate each risk type by likelihood and potential impact for your specific business:
+
+| Risk Category                    | Likelihood Assessment                                         | Impact Assessment                                    | Priority                   |
+|----------------------------------|---------------------------------------------------------------|------------------------------------------------------|----------------------------|
+| **Liability for Agent Errors**   | How often could agents make costly mistakes using your service? | What's the potential financial/reputational damage?  | High if transaction-based  |
+| **Copyright/Content Extraction** | Do you publish copyrightable content agents might extract?    | Could extraction materially harm your revenue?       | High if ad-funded content  |
+| **Terms of Service Violations**  | Do your current ToS prohibit automation ambiguously?          | Could this create liability or enforcement issues?   | Medium for most sites      |
+| **Privacy/Data Protection**      | Do agents access personal data on users' behalf?              | What's your GDPR/CCPA exposure if agents mishandle data? | High if regulated industry |
+
+### Risk Category Deep Dive
+
+#### 1. Liability for Agent Errors
+
+**Likelihood factors:**
+
+- Transaction complexity (simple checkout vs. complex booking)
+- Clarity of your interface (agent-friendly vs. ambiguous)
+- Frequency of edge cases (standard flows vs. many exceptions)
+
+**Impact factors:**
+
+- Average transaction value
+- Cost of reversing errors
+- Reputational risk from high-profile failures
+- Insurance coverage adequacy
+
+**Mitigation options:**
+
+- Clear confirmation pages with explicit state
+- Email/SMS confirmations independent of agent
+- Cancellation/modification policies
+- Terms stating user responsibility for agent actions
+
+#### 2. Copyright and Content Extraction
+
+**Likelihood factors:**
+
+- Content type (recipes, articles, code = high extraction value)
+- Structured data presence (Schema.org markup increases extractability)
+- Content uniqueness (commodity content vs. proprietary)
+
+**Impact factors:**
+
+- Percentage of revenue from ad-supported content
+- Dependency on traffic vs. direct relationships
+- Ability to detect and measure extraction
+
+**Mitigation options:**
+
+- Updated copyright statements addressing AI extraction
+- Robots.txt and meta tag directives
+- Content licensing frameworks
+- Platform partnership negotiations
+- Legal action (expensive, uncertain outcomes)
+
+#### 3. Terms of Service Conflicts
+
+**Likelihood factors:**
+
+- Current ToS language about automation/scraping
+- How strictly you enforce anti-bot provisions
+- Whether agents materially harm your operations
+
+**Impact factors:**
+
+- Contract enforceability against users acting in good faith
+- Reputational risk of aggressive enforcement
+- Practical ability to detect and block agents
+
+**Mitigation options:**
+
+- Clarify ToS to distinguish malicious bots from user-authorized agents
+- Create agent-specific policies (permitted uses, rate limits)
+- Implement detection without blocking (monitor first)
+- Consider explicit agent permission tier
+
+#### 4. Privacy and Data Protection
+
+**Likelihood factors:**
+
+- Volume of personal data accessible
+- Jurisdictions you operate in (GDPR, CCPA, etc.)
+- Whether agents inherit authenticated sessions
+- Data handling by third-party agents
+
+**Impact factors:**
+
+- Regulatory penalties (GDPR: up to 4% global revenue)
+- Notification requirements if breaches occur
+- Individual rights requests complexity
+- Reputational damage from privacy failures
+
+**Mitigation options:**
+
+- Privacy policy updates addressing agent access
+- Explicit consent mechanisms for agent data access
+- Audit logging of agent-mediated data access
+- Data minimization (limit what agents can access)
+- Terms prohibiting agent platforms from retaining user data
+
+### Questions for Legal Counsel
+
+When consulting lawyers about agent-related risks, prepare these questions:
+
+**General framework:**
+
+- How should we categorize agent-mediated access legally? (Authorized use? Automated access? Something new?)
+- What liability exposure do we face if agents make mistakes using our service?
+- Should we permit, prohibit, or conditionally allow agent access?
+
+**Terms of Service:**
+
+- Do our current ToS inadvertently prohibit legitimate agent use?
+- What language should we use to address agent access explicitly?
+- How do we balance anti-abuse provisions with legitimate automation?
+
+**Copyright/IP:**
+
+- Does agent extraction of our content constitute copyright infringement?
+- Should we pursue licensing agreements with agent platforms?
+- What's our position on AI training using our content?
+
+**Privacy/Data Protection:**
+
+- How do GDPR/CCPA apply when agents access data on users' behalf?
+- Who is the data controller when agents process personal information?
+- What consent mechanisms do we need for agent data access?
+
+**Cross-Border:**
+
+- Which jurisdiction's laws apply to international agent access?
+- How do we handle conflicting requirements across jurisdictions?
+- Should we geo-restrict agent access based on regulatory complexity?
+
+### Risk Prioritization by Business Type
+
+**Transaction-based businesses (e-commerce, booking, SaaS):**
+
+- **Priority 1:** Liability for agent errors - highest exposure
+- **Priority 2:** Privacy/data protection if handling personal data
+- **Priority 3:** ToS clarification
+- **Priority 4:** Copyright (lower relevance)
+
+**Content publishers (ad-funded):**
+
+- **Priority 1:** Copyright and content extraction - existential threat
+- **Priority 2:** ToS enforcement strategy
+- **Priority 3:** Privacy if user accounts exist
+- **Priority 4:** Liability (lower transaction risk)
+
+**SaaS/platforms:**
+
+- **Priority 1:** Privacy/data protection - regulatory exposure
+- **Priority 2:** Liability for agent errors in using platform
+- **Priority 3:** ToS agent provisions
+- **Priority 4:** Copyright if platform hosts user content
+
+**Small businesses (local services):**
+
+- **Priority 1:** Liability for booking/transaction errors
+- **Priority 2:** ToS clarity (low cost to fix)
+- **Priority 3:** Privacy (likely minimal data)
+- **Priority 4:** Copyright (typically low relevance)
+
+---
+
 ## What Sites Should Do
 
 Update your terms of service to explicitly address agent access. Please don't leave it ambiguous. Either permit agent access with clear conditions or prohibit it explicitly and enforce that prohibition.
@@ -305,3 +479,30 @@ Cross-border agreements. International frameworks will address jurisdictional co
 Until then, everyone's improvising. Sites, platforms, and users are all making decisions based on incomplete information and uncertain legal footing. This creates risk, but also opportunity. The companies that figure out sustainable legal frameworks first - that build trust through responsible practices - will have advantages as the landscape clarifies.
 
 The legal questions aren't going away. They're becoming more pressing as agents become more capable. Understanding the landscape helps you navigate it, even when the destination isn't yet clear.
+
+---
+
+## Key Points for Business Leaders
+
+**What you need to know from this chapter:**
+
+- **Current legal frameworks don't cover agent-mediated interactions:** When agents make mistakes (wrong booking, incorrect transaction, contract acceptance), liability is unclear. Is the user liable? The platform? The website? Courts haven't established precedents. No jurisdiction has comprehensive agent-specific legislation.
+
+- **Four major legal grey zones:** (1) Liability for agent errors and mistakes, (2) Copyright and content extraction, (3) Terms of service enforcement (many prohibit automation), (4) Privacy and data protection when agents access personal information on user's behalf.
+
+- **Your terms of service probably don't address agents:** Most ToS prohibit "automated access" written when that meant scrapers and bots, not user-authorised AI assistants. Ambiguity creates risk - users may technically violate terms while acting in good faith.
+
+- **Prepare for legal review without waiting for certainty:** While frameworks emerge, businesses should: (1) Review terms of service for agent access clarity, (2) Consider agent-specific policies (permitted uses, rate limits, identification requirements), (3) Document decision-making process for liability purposes, (4) Prepare questions for legal counsel about specific risks.
+
+**Action items for legal/compliance teams:**
+
+- Audit current ToS for ambiguous automation prohibitions
+- Assess exposure in the four risk categories (liability, copyright, ToS, privacy)
+- Determine whether to explicitly permit, prohibit, or conditionally allow agent access
+- Monitor emerging case law and regulatory guidance
+
+**Risk categorization:** Use framework on previous page to assess likelihood and impact of each legal risk type for your specific business model.
+
+**Key insight:** Legal clarity will emerge over next 3-5 years through court precedents, regulatory guidance, and industry standards. Early movers who establish responsible practices and clear policies will have competitive advantages as frameworks solidify.
+
+---

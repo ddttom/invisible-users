@@ -462,3 +462,25 @@ But the fundamental insight remains: the patterns that break for agents were des
 The web evolved to serve human attention patterns. Now it must evolve again, to serve both humans and the machines that act on their behalf. The architectural conflict isn't a problem to solve once and forget. It's a tension to navigate in every design decision.
 
 The question isn't "human-optimised or machine-optimised?" The question is "what does clarity look like for both?"
+
+---
+
+## Key Points for Business Leaders
+
+**What you need to know from this chapter:**
+
+- **The conflict is architectural, not technical:** Humans process information holistically through peripheral vision and spatial awareness. AI agents process sequentially, line by line. Design patterns optimised for human cognition often fail for machine parsing.
+
+- **This explains why good design breaks:** Visual hierarchy, progressive disclosure, and attention-optimised patterns work brilliantly for humans but create invisible barriers for agents. The failure isn't bad implementation - it's a fundamental difference in how the two user types process information.
+
+- **Agent-friendly design converges with accessibility:** The patterns that work for AI agents (semantic HTML, explicit state, visible errors, no visual-only cues) are the same patterns that work for screen readers and assistive technology. Building for agents means building for human accessibility too.
+
+- **The solution isn't choosing sides:** You don't need separate interfaces for humans and machines. The goal is clarity that serves both - explicit state changes, complete information with good organisation, semantic structure. This improves experiences for all users.
+
+**Strategic implications:**
+
+- Agent compatibility isn't a separate initiative from accessibility - they're the same work
+- Commercial pressure from agent failures may finally drive accessibility improvements that benefit everyone
+- Design decisions should consider: "Does this work if you can't see it?" If not, it probably breaks for agents too
+
+---

@@ -8,7 +8,9 @@ A practical guide to making your website work well for both AI agents and human 
 
 ## Priority 1: Critical Quick Wins
 
-These changes provide immediate benefit with minimal effort:
+These changes provide immediate benefit with minimal effort.
+
+**Effort Level:** A single developer can implement these changes in a focused session. No architectural changes required, minimal risk, immediate deployment. Most changes involve replacing existing patterns with better alternatives rather than building new systems.
 
 ### Error Messages
 
@@ -51,6 +53,8 @@ These changes provide immediate benefit with minimal effort:
 ---
 
 ## Priority 2: Essential Improvements
+
+**Effort Level:** Requires coordinated work across multiple developers or sustained focus from a small team. Involves systematic changes to existing code, testing across multiple pages, and potentially updating design patterns. May require stakeholder buy-in for visible changes to user experience. Plan for iterative deployment with rollback capability.
 
 ### Form Improvements
 
@@ -114,6 +118,8 @@ These changes provide immediate benefit with minimal effort:
 
 ## Priority 3: Core Infrastructure
 
+**Effort Level:** Multi-person project requiring planning, architectural decisions, and cross-functional collaboration. Involves changes to core application structure, integration with external systems, and potentially business model adjustments. Requires thorough testing, staged rollout, and ongoing monitoring. Budget for technical debt reduction and refactoring. Expect dependencies on legal, product, and business stakeholders.
+
 ### Agent Detection
 
 - [ ] **Implement basic detection** - Check for patterns like rapid form completion, no mouse movement
@@ -170,6 +176,8 @@ app.post('/checkout', (req, res) => {
 ---
 
 ## Priority 4: Advanced Features
+
+**Effort Level:** Ongoing programme, not a one-time project. Requires dedicated resources, sustained organizational commitment, and strategic business alignment. Involves building new systems, establishing governance frameworks, and potentially partnering with external platforms. Plan for multi-phase delivery with measurable business outcomes at each stage.
 
 ### API Development
 

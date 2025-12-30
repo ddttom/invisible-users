@@ -499,4 +499,27 @@ Meanwhile, your competitor - the one with the single-page itinerary, the persist
 
 The invisible failure is invisible to you, too. Until you look for it specifically, you won't find it.
 
+---
+
+## Key Points for Business Leaders
+
+**What you need to know from this chapter:**
+
+- **Five common patterns break for AI agents:** Toast notifications, pagination, SPAs without URL state, visual-only indicators, and hidden pricing. These aren't bugs - they're design patterns optimised for human visual browsing that fail for sequential machine reading.
+
+- **Failures are invisible in analytics:** When agents fail, you don't see error messages or abandoned cart notifications. You see slightly higher bounce rates or lower conversion. The human user goes to a competitor whose site works for agents, and you never know the sale was lost.
+
+- **This affects conversion, not just accessibility:** A tour operator with paginated itineraries loses bookings to competitors with single-page layouts. An e-commerce site with toast notifications reports "out of stock" when items are actually available. These are revenue losses, not just technical issues.
+
+- **Good human design can be bad agent design:** Every pattern discussed was designed thoughtfully for humans. This isn't about fixing broken sites - it's about expanding compatibility to a new user type with different capabilities.
+
+**Action items:**
+
+- Audit your site for these five patterns (estimate: 1-2 hours)
+- Test your checkout flow with a screen reader - if it fails there, it fails for agents
+- Review whether your pricing is transparent or requires multiple clicks to discover
+- Ask: "If an agent visited my site, could it determine if an action succeeded?"
+
+---
+
 The next chapter examines why these patterns exist - the fundamental architectural conflict between how humans and machines process information. Understanding the root cause is the first step toward solutions that serve both.

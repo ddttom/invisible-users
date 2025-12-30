@@ -18,7 +18,13 @@ This book grew from that realisation. It's not a book about AI. It's a book abou
 
 ## What This Book Is
 
-This is a practical guide. Each chapter addresses a specific aspect of the collision between agent capabilities and web design conventions, from technical failures to business model tensions to legal uncertainties.
+This is a practical guide and a thinking framework. Each chapter addresses a specific aspect of the collision between agent capabilities and web design conventions, from technical failures to business model tensions to legal uncertainties.
+
+**This is a theory book, not a research study.** The field of AI agent interaction with websites is too new for comprehensive empirical research. You won't find citations to academic papers proving the patterns I describe, because those papers don't exist yet. What you will find is a structured way to think about emerging problems and evaluate potential responses.
+
+**The figures and examples are illustrative, not validated.** When I write "if agent traffic reaches 30% of visits with minimal ad revenue, a site could see revenue decline by roughly one-third," that's a logical calculation, not a proven outcome. I've avoided false precision - you'll see ranges and qualified language rather than specific percentages presented as facts.
+
+**This book offers frameworks for decision-making, not proven solutions.** The patterns that appear to work for agent compatibility also align with accessibility best practices, which gives us confidence. But we don't yet know which approaches will become standard, which will evolve, and which will be superseded by better alternatives.
 
 The first three chapters establish what's breaking and why. These are the foundations. Skip them and you'll miss the context that makes solutions make sense.
 
@@ -79,6 +85,33 @@ I've worked on the web since its early days. Every project taught me something a
 ## How to Use This Book
 
 Read sequentially if you can. Each chapter builds on previous concepts, and forward references assume you've read the earlier material.
+
+### Reading Path for Business Leaders
+
+If you're a business leader evaluating whether this matters for your organisation, you don't need to read all the technical detail:
+
+**Read these chapters in full:**
+
+- Chapter 1: What You Will Learn (foundation and context)
+- Chapter 4: The Business Reality (economics and incentives)
+- Chapter 5: The Content Creator's Dilemma (advertising model implications)
+- Chapter 7: The Legal Landscape (liability and policy questions)
+- Chapter 8: The Human Cost (access and equity implications)
+- Chapter 9: Designing for Both (first half - strategic frameworks)
+
+**Skim these chapters for understanding:**
+
+- Chapter 2: The Invisible Failure (understand the problem without technical depth)
+- Chapter 3: The Architectural Conflict (understand why this is hard)
+
+**Skip or delegate:**
+
+- Chapter 6: The Security Maze (technical security details - delegate to your security team)
+- Chapter 10: Technical Advice (implementation code - delegate to your development team)
+
+Look for "Key Points for Business Leaders" boxes at the end of Chapters 2, 3, 4, 5, 7, and 8. These distill the essential business implications without requiring you to work through technical examples.
+
+### Reading Path for Technical Implementers
 
 If you need solutions immediately, start with Chapter 10 and work backwards when you encounter concepts that need context.
 

@@ -1718,12 +1718,16 @@ If you can only make a few changes, prioritise these:
 
 ### Priority 1: Critical Quick Wins
 
+**Effort Level:** A single developer can implement these changes in a focused session. No architectural changes required, minimal risk, immediate deployment.
+
 - [ ] Make error messages persistent (remove toast notifications)
 - [ ] Show complete pricing upfront (no hidden fees)
 - [ ] Add one piece of JSON-LD structured data
 - [ ] Check forms show validation errors immediately
 
 ### Priority 2: Essential Improvements
+
+**Effort Level:** Requires coordinated work across multiple developers or sustained focus from a small team. Systematic changes to existing code, testing across multiple pages. Plan for iterative deployment.
 
 - [ ] Add explicit state attributes to loading elements
 - [ ] Provide complete information on single pages (reduce pagination)
@@ -1733,6 +1737,8 @@ If you can only make a few changes, prioritise these:
 
 ### Priority 3: Core Infrastructure
 
+**Effort Level:** Multi-person project requiring planning, architectural decisions, and cross-functional collaboration. Changes to core application structure. Requires thorough testing, staged rollout, and ongoing monitoring.
+
 - [ ] Implement agent detection
 - [ ] Create agent-optimised view of forms
 - [ ] Add meta tags to key pages
@@ -1740,6 +1746,8 @@ If you can only make a few changes, prioritise these:
 - [ ] Implement proper HTTP status codes
 
 ### Priority 4: Advanced Features
+
+**Effort Level:** Ongoing programme, not a one-time project. Requires dedicated resources, sustained organizational commitment, and strategic business alignment. Involves building new systems, establishing governance frameworks, and potentially partnering with external platforms. Plan for multi-phase delivery with measurable business outcomes at each stage.
 
 - [ ] Build formal API alongside web interface
 - [ ] Implement comprehensive structured data
