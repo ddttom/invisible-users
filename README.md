@@ -14,31 +14,31 @@ This book explores the technical, business, ethical, and human implications of t
 
 | Chapter | Title | Status | Words |
 | --------- | ------- | -------- | ------- |
-| Preface | Author's Journey | ✅ Complete | ~1,900 |
-| 1 | What You Will Learn | ✅ Complete | ~2,750 |
-| 2 | The Invisible Failure | ✅ Complete | ~4,200 |
-| 3 | The Architectural Conflict | ✅ Complete | ~3,850 |
-| 4 | The Business Reality | ✅ Complete | ~5,550 |
-| 5 | The Content Creator's Dilemma | ✅ Complete | ~5,700 |
-| 6 | The Security Maze | ✅ Complete | ~3,900 |
-| 7 | The Legal Landscape | ✅ Complete | ~4,100 |
-| 8 | The Human Cost | ✅ Complete | ~3,450 |
-| 9 | Designing for Both | ✅ Complete | ~4,300 |
-| 10 | Technical Advice | ✅ Complete | ~8,200 |
+| Preface | Author's Journey | ✅ Complete | ~1,700 |
+| 1 | What You Will Learn | ✅ Complete | ~2,700 |
+| 2 | The Invisible Failure | ✅ Complete | ~4,400 |
+| 3 | The Architectural Conflict | ✅ Complete | ~4,050 |
+| 4 | The Business Reality | ✅ Complete | ~6,200 |
+| 5 | The Content Creator's Dilemma | ✅ Complete | ~5,600 |
+| 6 | The Security Maze | ✅ Complete | ~3,850 |
+| 7 | The Legal Landscape | ✅ Complete | ~4,400 |
+| 8 | The Human Cost | ✅ Complete | ~3,650 |
+| 9 | Designing for Both | ✅ Complete | ~4,350 |
+| 10 | Technical Advice | ✅ Complete | ~8,250 |
 
-**Core manuscript:** ~47,300 words
+**Core manuscript:** ~47,450 words
 
 **Supporting materials:**
 
 - Executive Summary: ~1,100 words
-- Glossary (comprehensive): ~3,800 words
-- Glossary (simplified): ~900 words
-- Implementation Checklist: ~2,400 words
-- Resource Links: ~2,100 words
-- Advice (standalone): ~8,400 words
-- For AI (quick reference): ~1,200 words
+- Glossary (comprehensive): ~1,850 words
+- Glossary (simplified): ~950 words
+- Implementation Checklist: ~2,750 words
+- Resource Links: ~1,950 words
+- Advice (standalone): ~9,050 words
+- For AI (quick reference): ~1,300 words
 
-**Total content:** ~67,200 words
+**Total content:** ~68,800 words
 
 ## Interactive Companion
 
@@ -75,7 +75,7 @@ The notebook presents key concepts through visual demonstrations, interactive da
     ├── glossary-simplified.md         # Essential terms for business leaders
     ├── implementation-checklist.md    # Priority-based implementation guide
     ├── resource-links.md              # Curated resources and references
-    ├── advice.md                      # Standalone prescriptive guide (~8,400 words)
+    ├── advice.md                      # Standalone prescriptive guide (~9,050 words)
     ├── for-ai.md                      # HTML patterns quick-reference for AI assistants
     ├── llms.txt                       # Example llms.txt file from book content
     ├── AI-Native.blog                 # AI-native website implementation blueprint
@@ -202,7 +202,7 @@ All 10 chapter illustrations complete ✅ ([book-svg-style.md](book-svg-style.md
 - [Glossary.md](invisible-users/Glossary.md) - 60+ technical terms with cross-references
 - [implementation-checklist.md](invisible-users/implementation-checklist.md) - Priority-based implementation roadmap
 - [resource-links.md](invisible-users/resource-links.md) - 150+ curated resources organized by category
-- [advice.md](invisible-users/advice.md) - Standalone prescriptive guide (~8,400 words)
+- [advice.md](invisible-users/advice.md) - Standalone prescriptive guide (~9,050 words)
 - [for-ai.md](invisible-users/for-ai.md) - HTML patterns quick-reference for AI assistants (~1,200 words)
 - [Agent-Friendly Starter Kit](invisible-users/agent-friendly-starter-kit/) - Production-ready "Good vs Bad" comparison site implementation
 

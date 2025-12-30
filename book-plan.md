@@ -6,7 +6,7 @@
 
 **Target Length:** 30,000-50,000 words
 
-**Current Status:** Complete ✅ (~47,300 words core manuscript, ~67,200 words total)
+**Current Status:** Complete ✅ (~47,450 words core manuscript, ~68,800 words total)
 
 ---
 
@@ -22,18 +22,18 @@ This book explores the technical, business, ethical, and human implications of t
 
 | Chapter | Title | Words | Status |
 | ------- | ----- | ----- | ------ |
-| 1 | What You Will Learn | ~2,750 | ✅ Complete |
-| 2 | The Invisible Failure | ~4,200 | ✅ Complete |
-| 3 | The Architectural Conflict | ~3,850 | ✅ Complete |
-| 4 | The Business Reality | ~5,350 | ✅ Complete |
-| 5 | The Content Creator's Dilemma | ~4,600 | ✅ Complete |
-| 6 | The Security Maze | ~3,900 | ✅ Complete |
-| 7 | The Legal Landscape | ~3,300 | ✅ Complete |
-| 8 | The Human Cost | ~3,400 | ✅ Complete |
-| 9 | Designing for Both | ~4,300 | ✅ Complete |
-| 10 | Technical Advice | ~8,200 | ✅ Complete |
+| 1 | What You Will Learn | ~2,700 | ✅ Complete |
+| 2 | The Invisible Failure | ~4,400 | ✅ Complete |
+| 3 | The Architectural Conflict | ~4,050 | ✅ Complete |
+| 4 | The Business Reality | ~6,200 | ✅ Complete |
+| 5 | The Content Creator's Dilemma | ~5,600 | ✅ Complete |
+| 6 | The Security Maze | ~3,850 | ✅ Complete |
+| 7 | The Legal Landscape | ~4,400 | ✅ Complete |
+| 8 | The Human Cost | ~3,650 | ✅ Complete |
+| 9 | Designing for Both | ~4,350 | ✅ Complete |
+| 10 | Technical Advice | ~8,250 | ✅ Complete |
 
-**Total:** ~43,800 words
+**Total:** ~47,450 words
 
 ---
 
@@ -303,8 +303,8 @@ All 10 chapter illustrations complete ✅
 
 | Material | Status | Words | Description |
 | -------- | ------ | ----- | ----------- |
-| advice.md | ✅ | ~8,400 | Comprehensive prescriptive guide for building AI-friendly HTML (referenced in Chapter 10) |
-| for-ai.md | ✅ | ~1,200 | Concise HTML patterns reference for AI assistants (referenced in Chapter 10) |
+| advice.md | ✅ | ~9,050 | Comprehensive prescriptive guide for building AI-friendly HTML (referenced in Chapter 10) |
+| for-ai.md | ✅ | ~1,300 | Concise HTML patterns reference for AI assistants (referenced in Chapter 10) |
 
 ### Implementation Case Study
 
@@ -434,8 +434,8 @@ Real-world llms.txt example:
     ├── Glossary.md
     ├── implementation-checklist.md
     ├── resource-links.md
-    ├── advice.md                # Standalone prescriptive guide (~8,400 words)
-    ├── for-ai.md                # AI assistant HTML reference (~1,200 words)
+    ├── advice.md                # Standalone prescriptive guide (~9,050 words)
+    ├── for-ai.md                # AI assistant HTML reference (~1,300 words)
     ├── llms.txt                 # Example llms.txt file from book content
     ├── AI-Native.blog           # AI-native website implementation blueprint (~5,000 words)
     ├── agent-friendly-starter-kit/
