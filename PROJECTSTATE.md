@@ -103,6 +103,7 @@ All supporting materials are complete ✅:
 2. ✅ **implementation-checklist.md** - Priority-based implementation roadmap
 3. ✅ **resource-links.md** - 150+ curated resources organized by category
 4. ✅ **cover-design.svg** - Professional book cover design (600×900)
+5. ✅ **PDF-GENERATION.md** - Comprehensive guide for generating PDF versions with pandoc
 
 ### Standalone Guides
 
@@ -125,6 +126,18 @@ All supporting materials are complete ✅:
 - Enhanced all chapters with structured data tables for clarity
 - Converted implementation roadmaps to priority-based system
 - Added Interactive Companion sections to preface, Chapter 10, and resource-links
+- Added PDF generation capabilities with pandoc
+  - Three npm scripts: pdf:html, pdf:generate, pdf:simple
+  - Comprehensive PDF-GENERATION.md guide with troubleshooting
+  - Fixed illustration paths using --resource-path flag
+- Added market timing urgency messaging
+  - Preface: "A Note on Timing" section
+  - Blog: Market timing and scarcity value
+  - Interactive notebook: "The Market Timing Matters" section
+- Added user responsibility framework
+  - Preface: "A Critical Responsibility" section
+  - Dual responsibility for developers and users
+  - Emphasis on careful AI agent use with banking, legal, commercial services
 - All changes maintain British English and professional tone
 
 ## Notes

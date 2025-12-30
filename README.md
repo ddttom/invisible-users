@@ -45,6 +45,7 @@ The notebook presents key concepts through visual demonstrations, interactive da
 ├── LEARNINGS.md                       # Session documentation and insights
 ├── PROJECTSTATE.md                    # Current implementation status
 ├── PR_TEMPLATE.md                     # Pull request template
+├── PDF-GENERATION.md                  # Guide for generating PDF versions of the book
 ├── book-plan.md                       # Master plan with detailed chapter outlines
 ├── book-svg-style.md                  # SVG illustration specifications
 ├── package.json                       # npm scripts for manuscript management
