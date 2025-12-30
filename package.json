@@ -11,7 +11,10 @@
     "validate:links": "markdown-link-check --config .markdown-link-check.json invisible-users/chapter-*.md book-plan.md",
     "serve": "npx live-server --port=8080 --entry-file=book-plan.md",
     "status": "node -e \"console.log('Book Status:'); require('fs').readdirSync('invisible-users').filter(f => f.startsWith('chapter-')).sort().forEach(f => console.log('  ✓', f))\"",
-    "illustrations:generate": "cd invisible-users/illustrations && for svg in chapter-*.svg; do png=\"${svg%.svg}.png\"; echo \"Converting $svg to $png...\"; magick convert -density 300 -background white \"$svg\" \"$png\" 2>/dev/null || convert -density 300 -background white \"$svg\" \"$png\"; done && echo \"✓ All PNG illustrations generated\""
+    "illustrations:generate": "cd invisible-users/illustrations && for svg in chapter-*.svg; do png=\"${svg%.svg}.png\"; echo \"Converting $svg to $png...\"; magick convert -density 300 -background white \"$svg\" \"$png\" 2>/dev/null || convert -density 300 -background white \"$svg\" \"$png\"; done && echo \"✓ All PNG illustrations generated\"",
+    "pdf:html": "pandoc invisible-users/preface.md invisible-users/chapter-*.md invisible-users/Glossary.md -o the-invisible-users.html --standalone --toc --toc-depth=2 --metadata title='The Invisible Users' --metadata subtitle='Designing the Web for AI Agents and Everyone Else' --metadata author='Tom Cranstoun' --metadata date='December 2025' && echo '✓ HTML generated: the-invisible-users.html (open and print to PDF using ⌘+P)'",
+    "pdf:generate": "pandoc invisible-users/preface.md invisible-users/chapter-*.md invisible-users/Glossary.md -o the-invisible-users.pdf --pdf-engine=xelatex --toc --toc-depth=2 -V geometry:margin=1in -V fontsize=11pt -V documentclass=book -V papersize=a4 -V linkcolor=blue --metadata title='The Invisible Users' --metadata subtitle='Designing the Web for AI Agents and Everyone Else' --metadata author='Tom Cranstoun' --metadata date='December 2025' && echo '✓ PDF generated: the-invisible-users.pdf'",
+    "pdf:simple": "pandoc invisible-users/preface.md invisible-users/chapter-*.md invisible-users/Glossary.md -o the-invisible-users-simple.pdf --pdf-engine=xelatex --toc --toc-depth=2 -V geometry:margin=1in -V fontsize=11pt -V linkcolor=blue && echo '✓ Simple PDF generated: the-invisible-users-simple.pdf'"
   },
   "keywords": [
     "AI",
