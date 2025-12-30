@@ -27,6 +27,14 @@ This book explores the technical, business, ethical, and human implications of t
 
 **Total:** ~41,700 words
 
+## Interactive Companion
+
+An interactive Jupyter notebook version is available at **[allabout.network/invisible-users.html](https://allabout.network/invisible-users.html)**
+
+The notebook presents key concepts through visual demonstrations, interactive data tables, and real-world calculations - perfect as both an introduction and a navigation tool for the full manuscript.
+
+**Time to complete:** 60-75 minutes
+
 ## Repository Structure
 
 ```text
@@ -43,6 +51,7 @@ This book explores the technical, business, ethical, and human implications of t
 ├── llms.txt                           # Repository llms.txt file
 ├── blog.md                            # Broad-appeal blog post for general readers
 ├── blog.svg                           # Visual illustration for blog post
+├── invisible-users.ipynb              # Interactive notebook with demonstrations
 └── invisible-users/                   # Book manuscript and materials
     ├── preface.md                     # Book introduction and author bio
     ├── chapter-01-*.md through chapter-10-*.md  # Individual chapter files

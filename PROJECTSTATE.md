@@ -1,10 +1,10 @@
 # Project State
 
-**Last Updated:** 2025-12-27
+**Last Updated:** 2025-12-30
 
 ## Current Status: Complete ✅
 
-The manuscript for "The Invisible Users: Designing the Web for AI Agents and Everyone Else" is complete and ready for publication.
+The manuscript for "The Invisible Users: Designing the Web for AI Agents and Everyone Else" is complete and ready for publication. An interactive companion notebook is also available.
 
 ## Manuscript Statistics
 
@@ -81,9 +81,16 @@ All chapters are complete and fully illustrated:
 
 All supporting materials are complete ✅:
 
+### Interactive Materials
+
+1. ✅ **invisible-users.ipynb** - Interactive Jupyter notebook with visual demonstrations, data tables, and calculations
+   - Hosted at: [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html)
+   - Time to complete: 60-75 minutes
+   - Features: Chapter index, visual comparisons, cost impact tables, priority roadmaps
+
 ### Front Matter
 
-1. ✅ **preface.md** - Book introduction, author bio, usage guide, acknowledgements
+1. ✅ **preface.md** - Book introduction, author bio, usage guide, acknowledgements, interactive companion section
 
 ### Promotional Materials
 
@@ -112,6 +119,14 @@ All supporting materials are complete ✅:
 - Ready-to-use HTML snippets for common patterns
 - Authentication state, forms, products, carts, search results, confirmations
 
+## Recent Updates (v2.6.0)
+
+- Added interactive Jupyter notebook with visual demonstrations
+- Enhanced all chapters with structured data tables for clarity
+- Converted implementation roadmaps to priority-based system
+- Added Interactive Companion sections to preface, Chapter 10, and resource-links
+- All changes maintain British English and professional tone
+
 ## Notes
 
 - All chapters are designed to be read sequentially
@@ -120,3 +135,4 @@ All supporting materials are complete ✅:
 - All illustrations use consistent visual language and styling
 - Identity delegation mentioned as one emerging solution without detailed implementation
 - Book focuses on design principles that work for both humans and AI agents
+- Interactive notebook serves as both introduction and navigation tool
