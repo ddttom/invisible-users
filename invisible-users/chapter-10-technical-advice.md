@@ -61,6 +61,21 @@ The quickest improvement costs nothing and requires no code. Review your site wi
 
 These aren't technical challenges. They're choices. Make different ones.
 
+### Pattern Comparison: Before and After
+
+Here's how common patterns compare when designed for agents versus humans-only:
+
+| Category | Problematic Pattern | Why It Fails | Better Approach | Benefits |
+| -------- | ------------------- | ------------ | --------------- | -------- |
+| **Feedback** | Toast notification (3 seconds) | Missed by agents, elderly users, distracted users | Persistent message in DOM until acknowledged | Visible to all users, remains until resolved, clear state change |
+| **Navigation** | Pagination (10 items per page) | Content hidden, requires multiple clicks, breaks screen readers | Single scrollable page or 'Show All' option | All content accessible, find-in-page works, no artificial fragmentation |
+| **State** | JavaScript updates without URL change | Can't bookmark state, browser history breaks, agents confused | URL reflects current state (`?page=checkout&step=payment`) | Bookmarkable, shareable, clear state tracking for all |
+| **Validation** | Error appears only on submit | Agent submits repeatedly, users frustrated by sequential reveals | Inline validation with clear requirements upfront | Immediate feedback, all errors visible, reduces failed submissions |
+| **Pricing** | "From £99" with hidden fees | Agent compares wrong prices, users experience price surprise | Total price displayed prominently with breakdown | Accurate comparisons, transparent costs, builds trust |
+| **Loading** | Spinner with no context | Agent doesn't know how long to wait or if stuck | `data-state="loading"` with expected duration | Clear progress indication, timeout handling, accessible status |
+
+**Key insight:** Every "agent-friendly" pattern in the right column also improves human experience. You're not optimising for machines at the expense of humans - you're fixing patterns that broke for everyone.
+
 ## Detection - Knowing Your Audience
 
 Before you can serve agents well, you need to know when you're dealing with one. Here's a simple client-side detector:
@@ -2466,3 +2481,17 @@ You also need to understand the business tensions from Chapter 4, the security c
 The web is changing. Sites that adapt now will serve agents successfully while improving the experience for everyone. Sites that ignore this will watch conversion rates drop as agent traffic increases, never understanding why.
 
 The choice is yours.
+
+---
+
+## Explore Further
+
+If you found this book valuable, explore the **interactive notebook version** at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html). It presents the book's key concepts through visual demonstrations, interactive data tables, and real-world cost calculations.
+
+The notebook serves as both an executive summary and a navigation tool - perfect for bookmarking specific topics, sharing with colleagues, or exploring concepts interactively before diving into implementation.
+
+**By building for machines, we might finally create the clearer, more honest web we should have built all along.**
+
+---
+
+December 2025

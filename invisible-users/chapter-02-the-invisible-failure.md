@@ -29,6 +29,18 @@ This chapter catalogues the specific patterns that cause these failures. Each on
 
 ![The Anatomy of Invisible Failure - six patterns that silently break AI agents](illustrations/chapter-02-illustration.png)
 
+## The Five Types of Invisible Failure: Summary
+
+| Pattern | Problem | Agent Impact | Human Impact | Example |
+| ------- | ------- | ------------ | ------------ | ------- |
+| **Toast Notifications** | Appear for 3 seconds and disappear | Agent reports success when task actually failed | Elderly users, people with processing delays miss critical feedback | Form submission confirmation that vanishes before being read |
+| **Pagination** | Content hidden behind 'Next' buttons | Agent only sees first page of results, makes recommendations on incomplete data | Users with cognitive disabilities, screen readers struggle with fragmented content | Tour itinerary split across 14 pages - agent sees only Day 1 |
+| **Single-Page Applications** | Content updates without URL changes | Agent can't tell if action succeeded, no reliable state tracking | Users who rely on browser history, bookmarking lose navigation cues | Shopping cart that updates via JavaScript with no URL change |
+| **Visual-Only Indicators** | Relies on colour, position, animation | Agent misses critical state information | Colourblind users, screen reader users can't perceive state changes | Greyed-out button without `disabled` attribute |
+| **Hidden Pricing** | Showing 'From £99' with real cost at checkout | Agent makes recommendations on wrong price data | All users experience price surprise and decision regret | Hotel showing £95 base but £140 total after fees |
+
+This table summarises patterns explored in detail throughout this chapter. Each pattern made sense when designed for human users, yet creates invisible failures for both AI agents and humans with accessibility needs.
+
 ---
 
 ## The Toast That Nobody Saw

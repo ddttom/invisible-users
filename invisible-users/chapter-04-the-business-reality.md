@@ -46,6 +46,19 @@ A user request triggers the agent. It extracts the relevant information in 0.3 s
 
 This isn't a minor optimisation problem. It's an existential threat to advertising-funded content.
 
+### Real-World Cost Impact
+
+The invisible failures discussed in Chapter 2 have tangible business consequences. Here's what these patterns cost businesses when agents fail silently:
+
+| Business Type | Failure Pattern | What Happened | Lost Revenue | Analytics Visibility |
+| ------------- | --------------- | ------------- | ------------ | -------------------- |
+| **Tour Operator** | Paginated itinerary (14 pages) | Agent saw only Day 1, recommended competitor with single-page layout | £2,000 per lost booking | No trace - appears as normal bounce |
+| **E-commerce Site** | Toast notification on add-to-cart | Agent missed confirmation, reported "out of stock" | £150 per abandoned sale | Shows as abandoned session |
+| **SaaS Platform** | Hidden pricing ("Contact sales") | Agent couldn't provide pricing, recommended competitor with transparent pricing | £50,000 annual contract | Short session, no engagement |
+| **Restaurant Booking** | SPA with no URL state changes | Agent couldn't confirm booking succeeded | Lost reservation | Incomplete form submission |
+
+**Key insight:** These failures are invisible in traditional analytics. They appear as bounces, short sessions, or abandoned forms - nothing that indicates AI agent failures. Meanwhile, competitors with agent-friendly patterns capture the business without your knowledge.
+
 ---
 
 ## Recipe Sites - A Case Study in Destruction

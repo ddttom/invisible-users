@@ -849,6 +849,42 @@ X-Agent-Authorisation: Bearer [delegation token]
 
 Not standardised yet, but the pattern is emerging across platforms.
 
+## Implementation Roadmap
+
+Getting started with agent-friendly design doesn't require a complete rebuild. Focus on priority-based improvements:
+
+### Priority 1: Critical Quick Wins
+
+Highest impact with minimal effort - start here:
+
+- **Replace toast notifications with persistent messages** - Change temporary notifications to remain visible until acknowledged or resolved
+- **Add 'Show All' option to paginated content** - Allow users and agents to view complete datasets without forced pagination
+- **Ensure URLs reflect current state** - Make page state bookmarkable and shareable through URL parameters
+- **Add clear pricing to all product pages** - Display total costs upfront, not just base prices
+- **Test with screen reader to find obvious issues** - Use NVDA (Windows) or VoiceOver (Mac) to experience your site as an assistive technology user would
+
+### Priority 2: Essential Improvements
+
+Important foundational work that builds on quick wins:
+
+- **Audit all form feedback mechanisms** - Ensure errors persist, are clearly labeled, and explain how to fix issues
+- **Implement semantic HTML throughout** - Use proper heading hierarchy, landmark regions, and appropriate elements
+- **Add agent detection and logging** - Track agent visits separately to measure impact and identify problems
+- **Review checkout flow for agent compatibility** - Test critical paths with clear state indicators at each step
+- **Create agent-friendly API documentation** - If offering API access, document it clearly in llms.txt
+
+### Priority 3: Core Infrastructure
+
+Systematic platform improvements for long-term benefits:
+
+- **Redesign SPA architecture for URL-based state** - Ensure JavaScript state changes update URLs appropriately
+- **Implement identity delegation patterns** - Allow agents to act on behalf of users whilst preserving customer relationships
+- **Develop agent-specific access policies** - Create clear terms of service that address automated access
+- **Create comprehensive agent testing suite** - Build automated tests that simulate agent interactions
+- **Review business model for agent-mediated commerce** - Assess how agent traffic affects revenue and adjust accordingly
+
+**Implementation approach:** Start with Priority 1 items - they're designed for immediate deployment with minimal risk. Move to Priority 2 once you've measured the impact of initial changes. Priority 3 items are strategic investments that require planning but deliver long-term competitive advantage.
+
 ## The Convergence Continues
 
 Every solution in this chapter helps multiple audiences:

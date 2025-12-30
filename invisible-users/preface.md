@@ -70,6 +70,20 @@ If you're a designer, Chapter 3 will change how you see your work. Chapter 9 pro
 
 There's a glossary at the end. Use it. Some terms have specific meanings in this context that differ from casual usage.
 
+### Interactive Companion
+
+An interactive notebook version of this book is available at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html). It presents key concepts through demonstrations and explorations, with:
+
+- Visual comparisons of agent failures vs reality
+- Interactive data tables showing business impact
+- Real-world cost calculations
+- Implementation priority visualizations
+- Complete chapter index with direct links
+
+The notebook serves as both an introduction to the book's themes and a navigation aid for finding specific topics. Use it to bookmark sections of interest, explore concepts interactively, or as an executive summary before diving into the full manuscript.
+
+Time to complete: 60-75 minutes.
+
 ---
 
 ## About the Author

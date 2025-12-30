@@ -110,6 +110,25 @@ None of this works for in-browser AI because:
 
 This isn't a bug in banking security. It's a fundamental architectural gap. Security systems verify who's accessing data. They have no mechanism to verify who's reading the verified user's screen.
 
+### The Indistinguishability Problem
+
+From the bank's perspective, three actors look nearly identical:
+
+| Characteristic | Legitimate User | Authorized AI Agent | Malware Attack |
+| -------------- | --------------- | ------------------- | -------------- |
+| **Session cookies** | ✓ Valid | ✓ Inherited | ✓ Stolen |
+| **Device fingerprint** | ✓ Matches | ✓ Same device | ✓ Same device |
+| **IP address** | ✓ Expected location | ✓ Same location | ✓ Same location |
+| **Authentication** | ✓ Passed 2FA | ✓ Session inherited | ✓ Session inherited |
+| **Behavioural pattern** | ✓ Normal activity | ⚠️ Slightly unusual | ⚠️ Suspicious activity |
+| **Session validity** | ✓ Active | ✓ Active | ✓ Active |
+| **CAPTCHA status** | ✓ Solved | ✓ User solved it | ✓ User solved it |
+| **User consent** | ✓ Explicit | ✓ Granted | ✗ None |
+
+**The paradox:** Traditional security measures cannot distinguish authorized agent access from malware because both inherit the same authenticated session tokens. The only difference - user consent - exists outside the technical security layer.
+
+This fundamentally breaks the assumption that "authenticated session = authorized human acting directly."
+
 ---
 
 ## The Command Channel Problem

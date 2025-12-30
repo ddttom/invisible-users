@@ -63,6 +63,20 @@ Primarily affluent, educated, English-speaking people in developed countries wit
 
 This creates an immediate division. Those with full access gain efficiency advantages. Those without full access gain nothing and may fall further behind.
 
+### Access Barriers Matrix
+
+Here's how different barriers exclude populations from agent benefits and amplify existing inequalities:
+
+| Barrier Type | Access Requirement | Who's Excluded | Direct Impact | How the Gap Widens |
+| ------------ | ------------------ | -------------- | ------------- | ------------------ |
+| **Economic** | £20-100/month for subscriptions | Low-income individuals, developing countries | Cannot afford agent access | Those with agents gain 10x productivity; those without fall behind |
+| **Language** | English fluency for optimal results | Non-English speakers (75% of world population) | Inferior agent performance or forced English use | English speakers access better information faster, reinforcing linguistic dominance |
+| **Technical Literacy** | Prompt crafting, error recognition, iteration skills | Elderly, less-educated, tech-inexperienced populations | Suboptimal results, wasted time | Skilled users get dramatically better outcomes, compounding capability gaps |
+| **Infrastructure** | Reliable high-speed internet connectivity | Rural areas, developing nations, poor urban areas | Cannot use agents reliably, frequent failures | Urban/affluent areas pull further ahead in access to services and opportunities |
+| **Device Access** | Modern smartphone or computer | Low-income individuals, elderly on old devices | Agents work poorly or not at all | Device inequality becomes productivity inequality |
+
+**Key insight:** AI agents act as productivity multipliers. Multipliers amplify existing differences. Those already advantaged gain dramatically more. Those struggling fall further behind. Each advantage builds on the last - someone with all five access points gets exponentially more value than someone with none.
+
 ## The Capability Gap
 
 Even among people who can access agents, effectiveness varies enormously.

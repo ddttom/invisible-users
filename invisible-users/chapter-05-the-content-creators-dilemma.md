@@ -88,9 +88,22 @@ Total engagement: 0.3 seconds, 0-1 ad impressions (probably not rendered), no tr
 Human visit: £0.08-0.12 in ad revenue
 Agent visit: £0.00-0.02 in ad revenue
 
-If 30% of traffic becomes agents, monthly revenue declines from £3,000 to approximately £2,100- £ 2,400. If 50% becomes agents, revenue drops to £1,500-2,000.
+If 30% of traffic becomes agents, monthly revenue declines from £3,000 to approximately £2,100-£2,400. If 50% becomes agents, revenue drops to £1,500-2,000.
 
 The first scenario is painful. The second is unsustainable.
+
+### Revenue Impact Calculator
+
+Here's how agent traffic affects a typical recipe blog generating £3,000-4,000 monthly from 150,000 page views:
+
+| Agent Traffic % | Human Page Views | Agent Page Views | Display Ad Revenue | Monthly Income | Status |
+| --------------- | ---------------- | ---------------- | ------------------ | -------------- | ------ |
+| **0% (current)** | 150,000 | 0 | £3,000 | £3,500-4,000 | Sustainable |
+| **30% agents** | 105,000 | 45,000 | £2,100-2,400 | £2,600-3,000 | Marginal |
+| **50% agents** | 75,000 | 75,000 | £1,500-2,000 | £2,000-2,500 | Unsustainable |
+| **70% agents** | 45,000 | 105,000 | £900-1,200 | £1,400-1,800 | Hobby only |
+
+**Key insight:** The shift from human to agent traffic isn't gradual degradation - it crosses viability thresholds. At 50% agent traffic, most independent content creators cannot cover costs. The economic model collapses before agents become the majority of visitors.
 
 ---
 

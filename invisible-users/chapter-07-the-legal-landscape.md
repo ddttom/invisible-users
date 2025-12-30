@@ -25,6 +25,20 @@ This chapter isn't legal advice - I'm not a lawyer. But understanding the landsc
 
 ![The Legal Landscape - mapping liability, copyright, and regulatory questions](illustrations/chapter-07-legal-landscape.png)
 
+## The Legal Grey Zone: Key Scenarios
+
+Five common scenarios demonstrate the legal uncertainty surrounding AI agents:
+
+| Situation | Question | Current Legal Status | What's Unclear | Needs Clarification |
+| --------- | -------- | -------------------- | -------------- | ------------------- |
+| **Wrong Hotel Booking** | Agent books wrong date due to ambiguous instruction | User probably liable (gave instruction) | What if agent misinterpreted clear instruction? | Standards for agent interpretation accuracy |
+| **Silent Failure** | Agent reports success but booking failed | Liability unclear | Platform fault? Site fault? User fault? | Responsibility for parsing website responses |
+| **Terms of Service Breach** | Site prohibits automation, user employs agent | Technically breach of contract | Should sites enforce? Against whom? | Clear agent access policies in TOS |
+| **Copyright Extraction** | Agent reads and summarises copyrighted content | Fair use? Derivative work? Unclear | Does summarisation equal reproduction? | Copyright law for AI extraction |
+| **Cross-Border Access** | UK user's agent accesses US site with EU data | GDPR? US law? UK law? | Which jurisdiction applies? | International agent access framework |
+
+**Key insight:** Courts haven't ruled. Legislators haven't addressed. Every agent-mediated transaction involves undefined legal risk. This uncertainty creates friction for users, platforms, and businesses.
+
 ## The Liability Question
 
 Start with a simple scenario.
