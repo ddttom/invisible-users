@@ -373,6 +373,22 @@ The patterns that break agents are patterns we should have fixed years ago. We d
 
 Available now. Please read it before your competitors do.
 
+### The Investment Case
+
+Consider what this book helps you avoid:
+
+**One lost sale from agent failure:** A tour operator loses £2,000 because an agent only saw Day 1 of their 14-day itinerary. The customer booked with a competitor whose itinerary was on a single page.
+
+**One abandoned cart from hidden pricing:** An e-commerce site shows "from £99" but the real price is £150. The agent reports the lower price. Customer arrives expecting £99, sees £150, abandons cart. Lost revenue: £150. Lost customer trust: priceless.
+
+**One failed form submission:** A SaaS platform uses toast notifications for errors. Agent misses them, reports success to the user. User assumes they're signed up. They're not. Support costs to fix: 30 minutes. Lost conversion: one annual contract.
+
+**The cost of fixing one invisible failure is typically hours of developer time. The cost of NOT fixing it compounds daily across every agent-mediated interaction.**
+
+This book identifies the patterns, explains why they break, and provides working solutions. The time saved researching, the mistakes avoided, and the competitive advantage gained make the investment trivial compared to the cost of staying in the dark whilst your competitors fix their sites first.
+
+You can learn these lessons through months of failed conversions and support tickets. Or you can learn them from someone who's already documented the patterns.
+
 ---
 
 ## About the Author
