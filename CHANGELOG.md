@@ -6,6 +6,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [2.7.1] - 2025-12-30
+
+### Added
+
+- **Agent Diversity and Universal Patterns** - Comprehensive guidance on designing for diverse AI agent architectures:
+  - **CLAUDE.md** - New "Agent Diversity and Universal Patterns" section explaining 6 agent types (CLI, local, server-based, browser, browser extensions, IDE-integrated) with varying capabilities
+  - **Chapter 1** - Added extensive "A Diverse Ecosystem" section (~500 words) describing each agent type, their capabilities, and the critical insight about universal design patterns
+  - **Chapter 2** - Added note on how different agent architectures experience failures differently
+  - **Chapter 3** - Added caveat about how architectural constraints vary by agent type
+  - **Chapter 6** - Mapped security challenges to specific agent architectures, distinguishing external agents (Problem 1) from browser extensions (Problem 2)
+  - **Chapter 9** - Added note on universal patterns working across entire agent ecosystem
+  - **Chapter 10** - Added architecture diversity note explaining how implementations work regardless of agent type
+  - **Jupyter notebook** - Added "Understanding Agent Diversity" cell introducing agent types before discussing failures
+
+### Changed
+
+- **Word Count Updates** - Verified against actual files and updated to nearest 50:
+  - Core manuscript: ~50,000 words (includes preface + 10 chapters, was ~47,450)
+  - Chapter 1: ~3,200 words (was ~2,700) - reflects agent diversity content addition
+  - Chapter 2: ~4,500 words (was ~4,400)
+  - Chapter 3: ~4,150 words (was ~4,050)
+  - Chapter 6: ~4,000 words (was ~3,850)
+  - Chapter 9: ~4,400 words (was ~4,350)
+  - Chapter 10: ~8,350 words (was ~8,250)
+  - Updated book-plan.md, README.md, and PROJECTSTATE.md with verified counts
+  - Manuscript now at upper end of 30,000-50,000 target range
+
+### Fixed
+
+- Table alignment in chapter-07-the-legal-landscape.md (Legal Risk Matrix)
+
 ## [2.7.0] - 2025-12-30
 
 ### Added
