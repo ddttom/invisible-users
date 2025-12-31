@@ -723,5 +723,5 @@ Particularly welcome:
 
 ---
 
-**Last verified:** 2025-12-25
-**Next review:** Quarterly (March 2026)
+**Last verified:** 2026-01-01
+**Next review:** Quarterly (April 2026)

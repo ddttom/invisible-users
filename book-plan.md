@@ -508,4 +508,4 @@ This manuscript is not licensed for public use, reproduction, or distribution.
 
 ---
 
-**Last updated:** 2025-12-31 — Added business planning materials (business-plan, executive-summary, pitch, plan-to-market), marketing website, and backend API
+**Last updated:** 2026-01-01 — Added business planning materials (business-plan, executive-summary, pitch, plan-to-market), marketing website, and backend API
