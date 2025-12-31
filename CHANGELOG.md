@@ -6,6 +6,48 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [2.8.0] - 2025-12-31
+
+### Added
+
+- **Complete Web Presence and Business Infrastructure**:
+  - **Marketing Website** (`/web/`) - Professional website with agent-friendly patterns:
+    - `index.html` - Landing page with Schema.org structured data (Book, WebPage types)
+    - `preview.html` - Free chapter lead generation with synchronous form validation
+    - `services.html` - Professional services offerings page
+    - `blog.html` - Blog announcement post with BlogPosting schema
+    - `blog.md` - Markdown source for blog content
+    - `styles.css` - Responsive CSS with mobile-first design
+    - `script.js` - Interactive JavaScript with explicit state management
+    - `llms.txt` - Comprehensive AI agent guidance file
+    - `FIXES.md` - Documentation of website fixes
+    - `README.md` - Website documentation and deployment guide
+
+  - **Backend API** (`/backend/`) - Node.js/Express server with agent-friendly error handling:
+    - `server.js` - Main Express application with rate limiting and Retry-After headers
+    - `routes/health.js` - Health check endpoint
+    - `routes/email.js` - Email subscription (ConvertKit/Mailchimp integration)
+    - `routes/contact.js` - Contact form processing
+    - `routes/payment.js` - Stripe payment integration
+    - `services/emailService.js` - Nodemailer email service
+    - `services/convertkitService.js` - ConvertKit integration
+    - `.env.example` - Environment configuration template
+    - `package.json` - Dependencies and scripts
+    - `README.md` - Backend documentation with deployment guide
+    - All error responses include `llms_guidance` and `retry_after` fields
+    - HTTP 422 for validation errors, 429 with Retry-After for rate limiting
+
+  - **Business Documentation**:
+    - `business-plan.md` (~18,000 words) - Complete business strategy with 7 revenue streams, financial projections (£939k-£3.3M Year 1), market analysis
+    - `executive-summary.md` (~2,900 words) - Condensed partnership pitch (8 pages) with revenue model, 4 partnership models, investment ask
+    - `pitch.md` (~19,000 words) - Comprehensive partnership deck (30+ pages) with market opportunity, what's built, partnership opportunities, financial projections, risk mitigation
+    - `plan-to-market.md` (~8,500 words) - Go-to-market plan with launch timeline, target audiences, channel strategy, 10 production-ready email templates, content calendar, partnership outreach, metrics/KPIs
+
+### Changed
+
+- Updated `README.md` - Added web/, backend/, and business documentation to repository structure
+- Updated `PROJECTSTATE.md` - Added "Business Infrastructure" section documenting web presence, backend API, and business documentation
+
 ## [2.7.1] - 2025-12-30
 
 ### Added

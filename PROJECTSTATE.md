@@ -86,6 +86,64 @@ All chapters complete with business-focused updates:
 - ✅ Consistent SVG illustration style (white backgrounds)
 - ✅ Git commits without attribution
 
+## Business Infrastructure
+
+### Web Presence
+
+✅ **Marketing Website** (`/web/`)
+
+- Landing page with Schema.org structured data
+- Free chapter lead generation page with synchronous validation
+- Professional services page
+- Blog announcement post (HTML)
+- Agent-friendly patterns throughout (llms.txt, explicit state, persistent errors)
+- Responsive design with mobile-first approach
+
+✅ **Backend API** (`/backend/`)
+
+- Node.js/Express server with agent-friendly error responses
+- Email subscription endpoint (ConvertKit/Mailchimp integration)
+- Contact form processing
+- Stripe payment integration
+- Rate limiting with Retry-After headers
+- Comprehensive llms_guidance in error responses
+
+### Business Documentation
+
+✅ **business-plan.md** (~18,000 words)
+
+- 7 revenue streams with financial projections
+- Market analysis (£6.3T opportunity)
+- Year 1 projections: £939k-£3.3M
+- Complete go-to-market strategy
+
+✅ **executive-summary.md** (~2,900 words)
+
+- Condensed partnership pitch (8 pages)
+- One-sentence opportunity statement
+- Revenue model overview
+- 4 partnership models
+- Investment ask options
+
+✅ **pitch.md** (~19,000 words)
+
+- Comprehensive partnership deck (30+ pages)
+- Market opportunity and timing analysis
+- What's been built (complete foundation)
+- Partnership opportunities (4 models)
+- Financial projections
+- Risk mitigation strategies
+
+✅ **plan-to-market.md** (~8,500 words)
+
+- Complete launch timeline (pre-launch through post-launch)
+- Target audience segmentation
+- Channel strategy (owned, earned, paid)
+- 10 production-ready email templates
+- Content calendar (Month 1-4+)
+- Partnership outreach strategy
+- Metrics and KPIs
+
 ## Supporting Materials
 
 All supporting materials are complete ✅:

@@ -65,6 +65,34 @@ The notebook presents key concepts through visual demonstrations, interactive da
 ├── blog.md                            # Broad-appeal blog post for general readers
 ├── blog.svg                           # Visual illustration for blog post
 ├── invisible-users.ipynb              # Interactive notebook with demonstrations
+├── business-plan.md                   # Complete business strategy document
+├── executive-summary.md               # Executive summary for partners
+├── pitch.md                           # Full partnership pitch deck
+├── plan-to-market.md                  # Go-to-market plan with email templates
+├── web/                               # Marketing website
+│   ├── index.html                     # Landing page with Schema.org data
+│   ├── preview.html                   # Free chapter lead generation page
+│   ├── services.html                  # Professional services page
+│   ├── blog.html                      # Blog announcement post
+│   ├── blog.md                        # Blog source (markdown)
+│   ├── styles.css                     # Responsive CSS
+│   ├── script.js                      # Interactive JavaScript
+│   ├── llms.txt                       # AI agent guidance file
+│   ├── FIXES.md                       # Website fix documentation
+│   └── README.md                      # Website documentation
+├── backend/                           # Node.js/Express API
+│   ├── server.js                      # Main Express application
+│   ├── package.json                   # Dependencies and scripts
+│   ├── .env.example                   # Environment configuration template
+│   ├── routes/                        # API route handlers
+│   │   ├── health.js                  # Health check endpoint
+│   │   ├── email.js                   # Email subscription handling
+│   │   ├── contact.js                 # Contact form processing
+│   │   └── payment.js                 # Stripe payment integration
+│   ├── services/                      # External service integrations
+│   │   ├── emailService.js            # Nodemailer email service
+│   │   └── convertkitService.js       # ConvertKit integration
+│   └── README.md                      # Backend documentation
 └── invisible-users/                   # Book manuscript and materials
     ├── preface.md                     # Book introduction and author bio
     ├── executive-summary.md           # 2-page business briefing with decision tree
