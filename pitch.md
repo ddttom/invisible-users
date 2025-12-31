@@ -1,6 +1,6 @@
 # The Invisible Users: Partnership Pitch
 
-**A market opportunity in AI agent-compatible web design**
+A market opportunity in AI agent-compatible web design
 
 **Prepared by:** Tom Cranstoun
 **Contact:** <tom@allabout.network>
@@ -160,19 +160,19 @@ These same patterns break human users:
 
 ### 2. Professional Services (High-Margin Revenue)
 
-**Site Audits: £5,000-£15,000 per engagement**
+#### Site Audits: £5,000-£15,000 per engagement
 
 - Target: 50 audits Year 1 = £500k average
 
-**Implementation Support: £25,000-£75,000 per project**
+#### Implementation Support: £25,000-£75,000 per project
 
 - Target: 20 projects Year 1 = £1M average
 
-**Retained Support: £5,000-£15,000 per month**
+#### Retained Support: £5,000-£15,000 per month
 
 - Target: 10 clients = £1.2M annually
 
-**Training Workshops: £2,500-£10,000 per workshop**
+#### Training Workshops: £2,500-£10,000 per workshop
 
 - Target: 30 workshops Year 1 = £180k average
 
@@ -271,6 +271,25 @@ Adding platform/tools revenue and agency partnerships:
 
 **Break-even:** 6-9 months with services focus
 **Profitability:** 12-18 months with multiple revenue streams
+
+### Development Cost Analysis
+
+**What it would cost to build this from scratch:**
+
+| Component | Market Rate | Details |
+| --------- | ----------- | ------- |
+| **Book Manuscript** | £25k-£75k | 50,000 words technical writing, 3-6 months, requires deep domain expertise |
+| **Business Strategy** | £15k-£30k | Business plan, pitch deck, executive summary, go-to-market plan (16,500 words) |
+| **Web Development** | £20k-£40k | Marketing site + backend API with agent-friendly patterns, Schema.org, rate limiting |
+| **Code Examples** | £10k-£20k | Production-ready examples across frameworks, Playwright test suite (14 tests) |
+| **Design & Illustrations** | £5k-£15k | 11 custom SVG illustrations, book cover, website design |
+| **Supporting Materials** | £5k-£10k | Glossary (60+ terms), checklist, resource links (150+), interactive notebook |
+| **Project Management** | £5k-£15k | Coordination, QA, standards compliance, documentation |
+| **Total Replacement Cost** | **£85k-£205k** | 930-1,370 hours professional services |
+
+**Realistic Market Value:** £100k-£150k for professional delivery at this quality level
+
+**Current State:** Complete, publication-ready, all IP owned, no debt or obligations
 
 ---
 
