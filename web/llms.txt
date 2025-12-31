@@ -1,0 +1,227 @@
+# The Invisible Users - Book and Services
+
+> AI agents and everyone else: This site sells a book about making websites work for AI agents. It also offers professional services to help organisations implement agent-friendly patterns.
+
+## Site Purpose
+
+This website promotes and sells "The Invisible Users: Designing the Web for AI Agents and Everyone Else" - a practical guide to building websites that work for both human users and AI agents. We also offer professional consulting services for implementation.
+
+## Navigation Structure
+
+### Main Pages
+
+- `/` - Home: Book overview, problem explanation, pricing
+- `/preview.html` - Free Chapter: Lead generation page offering Chapter 1
+- `/services.html` - Professional Services: Consulting, training, and implementation
+
+### Key Sections on Home Page
+
+- `#problem` - Explains why modern websites fail for AI agents
+- `#solution` - How agent-friendly design benefits everyone
+- `#contents` - Full chapter breakdown (10 chapters)
+- `#buy` - Pricing and purchase options (3 tiers)
+- `#faq` - Common questions
+
+## Products and Pricing
+
+### Digital Edition - £25.00
+Product ID: digital
+- Complete book in PDF, ePub, and Mobi formats
+- All 10 chapters (~50,000 words)
+- Production-ready code examples
+- Implementation checklist
+- 60+ term glossary
+- 150+ curated resource links
+- Lifetime updates
+
+Purchase: Click "Buy Digital Edition - £25" button in #buy section
+
+### Complete Package - £75.00
+Product ID: complete
+- Everything in Digital Edition
+- Print edition (shipping included UK)
+- Interactive companion notebook access
+- Complete code repository
+- Playwright test suite
+- Email support
+
+Purchase: Click "Buy Complete Package - £75" button in #buy section
+
+### Team License - £500.00
+Product ID: team
+- Everything in Complete Package
+- 10 digital copies for your team
+- 3 print copies
+- 2-hour team workshop (online or in-person)
+- Implementation consultation (4 hours)
+- Priority email support
+
+Purchase: Click "Buy Team License - £500" button in #buy section
+
+## Services and Pricing
+
+### Site Audit - £5,000-£15,000
+Service ID: site-audit
+Comprehensive audit of your website's agent compatibility with detailed recommendations and priority roadmap.
+
+Enquire: Use contact form on /services.html with service="site-audit"
+
+### Implementation Support - £25,000-£75,000
+Service ID: implementation
+Full implementation support to make your website agent-friendly, including code changes, testing, and validation.
+
+Enquire: Use contact form on /services.html with service="implementation"
+
+### Retained Support - £5,000-£15,000/month
+Service ID: retained
+Ongoing monthly support for agent compatibility monitoring and continuous improvement.
+
+Enquire: Use contact form on /services.html with service="retained"
+
+### Training Workshops - Custom pricing
+Service ID: training
+Half-day or full-day workshops for your team on agent-friendly design patterns.
+
+Enquire: Use contact form on /services.html with service="training"
+
+### Corporate Licenses - Custom pricing
+Service ID: corporate
+Bulk book licenses with custom training and implementation support for large organisations.
+
+Enquire: Use contact form on /services.html with service="corporate"
+
+### Speaking Engagements - Custom pricing
+Service ID: speaking
+Conference talks and keynotes on agent-friendly web design.
+
+Enquire: Use contact form on /services.html with service="speaking"
+
+## Forms and Actions
+
+### Email Subscription (Free Chapter)
+Location: `/preview.html`
+Method: POST
+Endpoint: `/api/email/subscribe`
+
+Required fields:
+- `email` (email address)
+
+Returns: Download link for Chapter 1 PDF and implementation checklist
+
+### Contact Form (Services Enquiry)
+Location: `/services.html`
+Method: POST
+Endpoint: `/api/contact/submit`
+
+Required fields:
+- `name` (full name)
+- `email` (email address)
+- `service` (one of: site-audit, implementation, retained, training, corporate, speaking)
+- `message` (enquiry details)
+
+Optional fields:
+- `company` (company name)
+- `role` (job title)
+- `timeline` (project timeline: urgent, month, quarter, exploring)
+
+Returns: Reference number and confirmation that enquiry will be responded to within 24 hours
+
+### Purchase Book
+Location: `/` (home page, #buy section)
+Method: POST
+Endpoint: `/api/payment/create-checkout-session`
+
+Required fields:
+- `productType` (one of: digital, complete, team)
+
+Optional fields:
+- `email` (pre-fill customer email)
+
+Returns: Redirect to Stripe Checkout session
+
+## Authentication and Access
+
+This site does not require authentication for browsing or making purchases.
+
+Free chapter download requires email address (no account creation).
+
+Purchased book content is delivered via email with download links. No login required.
+
+Services enquiries do not require authentication - contact form is open.
+
+## Rate Limits
+
+- Email subscriptions: 5 requests per hour per IP
+- Contact form: 5 requests per hour per IP
+- General API: 100 requests per 15 minutes per IP
+- Payment endpoints: 10 requests per hour per IP
+
+If rate limited, retry after the time specified in `Retry-After` header.
+
+## Content Highlights
+
+### Book Chapters
+
+1. What You Will Learn - Introduction and accessibility parallel
+2. The Invisible Failure - Specific failure patterns with technical detail
+3. The Architectural Conflict - Why human vs AI design conflicts
+4. The Business Reality - Economics and incentives
+5. The Content Creator's Dilemma - Ad-funded content under threat
+6. The Security Maze - Authentication and session inheritance
+7. The Legal Landscape - Liability, terms of service, copyright
+8. The Human Cost - Digital divide and access implications
+9. Designing for Both - Solution patterns (semantic HTML, explicit state, structured data)
+10. Technical Advice - Implementation code and patterns
+
+### Key Concepts Covered
+
+- Semantic HTML for machine readability
+- Explicit state attributes (data-state, aria-invalid)
+- Schema.org structured data for products and content
+- Synchronous form validation with persistent errors
+- Agent-friendly error messages with retry guidance
+- Session inheritance and delegation patterns
+- Priority-based implementation (not time-based)
+- Universal design patterns that work for all agent types
+
+### Target Audience
+
+- Web developers and engineers
+- Engineering managers and CTOs
+- UX designers and accessibility specialists
+- Product managers
+- Digital agency teams
+- E-commerce businesses
+
+## Technical Patterns
+
+This site implements the patterns described in the book:
+
+- Semantic HTML5 structure
+- ARIA labels and live regions
+- Schema.org JSON-LD for products
+- Explicit state attributes on interactive elements
+- Data attributes for machine-readable pricing
+- Synchronous form validation
+- Agent-friendly HTTP status codes
+- Rate limiting with clear retry guidance
+
+## Contact and Support
+
+- Email: tom@allabout.network
+- Website: allabout.network
+- Author: Tom Cranstoun
+
+For book-related questions, email tom@allabout.network
+
+For technical issues with the website, email tom@allabout.network
+
+For services enquiries, use the contact form at /services.html
+
+## Legal
+
+Copyright © 2025 Tom Cranstoun. All rights reserved.
+
+Purchase is for personal or team use only. Redistribution prohibited.
+
+Services subject to terms of service discussed during consultation.

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Announcing The Invisible Users: A practical guide to building websites that work for AI agents and everyone else. Learn how to fix silent conversion failures and improve accessibility.">
+    <meta name="keywords" content="AI agents, web design, accessibility, agent compatibility, book announcement, ChatGPT, Claude, semantic HTML, structured data">
+    <meta name="author" content="Tom Cranstoun">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://invisible-users.com/blog.html">
+    <meta property="og:title" content="Announcing The Invisible Users - A Guide to AI Agent-Friendly Web Design">
+    <meta property="og:description" content="AI agents are visiting your site right now and failing silently. Learn how to fix conversion drop-offs and improve accessibility.">
+    <meta property="og:image" content="https://invisible-users.com/images/og-image.jpg">
+    <meta property="article:published_time" content="2025-01-01T00:00:00Z">
+    <meta property="article:author" content="Tom Cranstoun">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Announcing The Invisible Users">
+    <meta name="twitter:description" content="A practical guide to building websites that work for AI agents and everyone else">
+
+    <!-- AI Agent Guidance -->
+    <meta name="ai:purpose" content="Blog post announcing a book about making websites work for AI agents and human users">
+    <meta name="ai:primary_action" content="Read announcement, purchase book, or contact for services">
+    <meta name="ai:content_type" content="blog-post">
+    <meta name="ai:contact" content="tom@allabout.network">
+
+    <title>Announcing The Invisible Users - Building Websites for AI Agents and Everyone Else</title>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Announcing The Invisible Users: A Guide to Building Websites That Work for AI Agents and Everyone Else",
+      "alternativeHeadline": "How to Fix Silent Conversion Failures and Improve Accessibility",
+      "image": "https://invisible-users.com/images/og-image.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Tom Cranstoun",
+        "url": "https://allabout.network",
+        "email": "tom@allabout.network"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tom Cranstoun",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://invisible-users.com/images/logo.png"
+        }
+      },
+      "datePublished": "2025-01-01",
+      "dateModified": "2025-01-01",
+      "description": "Announcing The Invisible Users, a practical guide to building websites that work for AI agents and everyone else. Learn how to fix silent conversion failures that never appear in analytics.",
+      "articleBody": "AI agents are visiting your website right now. They're researching products, comparing pricing, attempting purchases, and filling out contact forms. A significant percentage are failing silently. These failures don't appear in analytics...",
+      "wordCount": 4500,
+      "keywords": "AI agents, web design, accessibility, agent compatibility, conversion optimization, semantic HTML, structured data",
+      "articleSection": "Web Development",
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "AI Agent Compatibility",
+          "description": "Making websites work for automated agents"
+        },
+        {
+          "@type": "Thing",
+          "name": "Web Accessibility",
+          "description": "Universal design patterns for all users"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Book",
+          "name": "The Invisible Users: Designing the Web for AI Agents and Everyone Else",
+          "author": {
+            "@type": "Person",
+            "name": "Tom Cranstoun"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "25.00",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://invisible-users.com/#buy"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Announcing The Invisible Users - Blog",
+      "description": "Blog post announcing a new book about AI agent-friendly web design",
+      "url": "https://invisible-users.com/blog.html",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://invisible-users.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://invisible-users.com/blog.html"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">The Invisible Users</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#problem">The Problem</a></li>
+                <li><a href="index.html#solution">The Solution</a></li>
+                <li><a href="index.html#contents">What's Inside</a></li>
+                <li><a href="index.html#author">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#buy" class="btn btn-primary-nav">Get the Book</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="hero hero-blog">
+        <div class="container">
+            <div class="hero-content-centered">
+                <span class="hero-label">Blog Post • January 2025</span>
+                <h1 class="hero-title">Announcing "The Invisible Users"</h1>
+                <p class="hero-subtitle">A Guide to Building Websites That Work for AI Agents and Everyone Else</p>
+                <p class="hero-meta">By Tom Cranstoun • 15 minute read</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="section section-article">
+        <div class="container article-container">
+            <div class="article-content">
+                <h2 id="problem">The Problem We're Solving</h2>
+
+                <p>AI agents are visiting your website right now. They're researching products on behalf of users, comparing pricing across competitors, attempting to complete purchases, and filling out contact forms. And a significant percentage of them are failing silently.</p>
+
+                <p>These failures don't appear in your analytics. You never see the bounce. The conversion simply never happens.</p>
+
+                <p>The patterns that break AI agents also break human users. Screen reader users have been struggling with these same issues for years. People with cognitive disabilities, anyone processing pages sequentially, users on slow connections, anyone who can't perceive visual state changes - they've all encountered these barriers.</p>
+
+                <p>Now there's commercial pressure to fix them.</p>
+
+                <h2 id="what-is-invisible-users">What Is "The Invisible Users"?</h2>
+
+                <p>"The Invisible Users: Designing the Web for AI Agents and Everyone Else" is a practical guide to building websites that work for both human users and AI agents. It's not speculation about a distant future - this is happening right now, affecting real businesses and real users.</p>
+
+                <p>The book covers:</p>
+
+                <ul>
+                    <li><strong>Technical patterns that fail</strong> - Specific examples of what breaks and why</li>
+                    <li><strong>Business implications</strong> - Economics, competitive dynamics, and strategic decisions</li>
+                    <li><strong>Solution patterns</strong> - Concrete implementations that work for everyone</li>
+                    <li><strong>Production-ready code</strong> - HTML, JavaScript, React, WordPress, Next.js examples</li>
+                    <li><strong>Testing strategies</strong> - Playwright test suite for validating agent compatibility</li>
+                </ul>
+
+                <h2 id="who-should-read">Who Should Read This Book?</h2>
+
+                <div class="audience-grid">
+                    <div class="audience-card" data-audience="developers">
+                        <div class="audience-icon">👨‍💻</div>
+                        <h3>Web Developers and Engineers</h3>
+                        <p>You'll get production-ready code examples with minimal dependencies. Clear explanations of what breaks agents and how to fix it. Testing strategies you can implement immediately.</p>
+                        <p><strong>Start with:</strong> Chapter 10 (Technical Advice) for immediate implementation patterns.</p>
+                    </div>
+
+                    <div class="audience-card" data-audience="managers">
+                        <div class="audience-icon">💼</div>
+                        <h3>Engineering Managers and CTOs</h3>
+                        <p>Strategic guidance on when to prioritise agent compatibility, how to assess risk for your specific business model, and how to build the business case for investment.</p>
+                        <p><strong>Start with:</strong> Chapter 4 (The Business Reality) for decision frameworks.</p>
+                    </div>
+
+                    <div class="audience-card" data-audience="designers">
+                        <div class="audience-icon">🎨</div>
+                        <h3>UX Designers and Accessibility Specialists</h3>
+                        <p>Learn which patterns create barriers for both agents and human users. Discover how to design experiences that work without compromising aesthetics.</p>
+                        <p><strong>Start with:</strong> Chapter 9 (Designing for Both) for solution patterns.</p>
+                    </div>
+
+                    <div class="audience-card" data-audience="product">
+                        <div class="audience-icon">📊</div>
+                        <h3>Product Managers</h3>
+                        <p>Understand the business implications of agent traffic, competitive dynamics, and how to prioritise features for maximum impact.</p>
+                        <p><strong>Start with:</strong> Chapters 4-5 for business context and prioritisation frameworks.</p>
+                    </div>
+
+                    <div class="audience-card" data-audience="content">
+                        <div class="audience-icon">✍️</div>
+                        <h3>Content Creators and Publishers</h3>
+                        <p>If you run an ad-funded content business, Chapter 5 addresses the existential threat you're facing and provides intermediate solutions while long-term business models emerge.</p>
+                        <p><strong>Essential reading:</strong> Chapter 5 (The Content Creator's Dilemma).</p>
+                    </div>
+
+                    <div class="audience-card" data-audience="agencies">
+                        <div class="audience-icon">🏢</div>
+                        <h3>Digital Agency Teams</h3>
+                        <p>New service offerings, client success opportunities, team training, and white-label partnership possibilities.</p>
+                        <p><strong>See:</strong> <a href="services.html">Services page</a> for agency partnership options.</p>
+                    </div>
+                </div>
+
+                <h2 id="what-makes-different">What Makes This Book Different?</h2>
+
+                <h3>Real Examples, Not Speculation</h3>
+
+                <p>The tour operator story in Chapter 1 is real. I asked an AI assistant to compare tour operators. It recommended Company A over Company B because Company A's website used pagination - the agent saw only Day 1 of a multi-day tour and concluded that was the entire offering.</p>
+
+                <p>I caught the error. How many people wouldn't?</p>
+
+                <h3>Technical Accuracy with Practical Implications</h3>
+
+                <p>This isn't theoretical. Every code example is production-ready. Every pattern has been tested. Every recommendation considers real-world constraints.</p>
+
+                <h3>Sequential Reading with Clear Dependencies</h3>
+
+                <p>You don't need to read the entire book. Each chapter builds on previous concepts, but you can jump to the sections relevant to your role. The book acknowledges what you need to know before diving into specific topics.</p>
+
+                <h3>Focus on Universal Patterns</h3>
+
+                <p>The patterns work for the full spectrum of AI agents:</p>
+
+                <ul>
+                    <li>CLI agents running locally (Claude Code, Cline)</li>
+                    <li>Lightweight agents on user devices</li>
+                    <li>Server-based agents accessing remotely (ChatGPT, Claude API)</li>
+                    <li>Browser automation agents (Playwright, Selenium)</li>
+                    <li>Browser extension assistants with session inheritance</li>
+                </ul>
+
+                <p>You can't design for one agent type without excluding others. The guidance focuses on universal compatibility.</p>
+
+                <h2 id="what-youll-learn">What You'll Learn</h2>
+
+                <h3>Understanding the Problem (Chapters 1-3)</h3>
+
+                <ul>
+                    <li>Why modern web design optimised for human visual browsing fails for AI agents</li>
+                    <li>Five specific failure patterns with technical detail</li>
+                    <li>The architectural conflict between human cognition and AI parsing</li>
+                    <li>The accessibility parallel that's been ignored for years</li>
+                </ul>
+
+                <h3>Business Reality (Chapters 4-8)</h3>
+
+                <ul>
+                    <li>Economics and incentives driving adoption</li>
+                    <li>Competitive dynamics and first-mover advantage windows</li>
+                    <li>The existential threat to ad-funded content</li>
+                    <li>Security implications and session inheritance problems</li>
+                    <li>Legal landscape and emerging regulation</li>
+                    <li>Digital divide implications</li>
+                </ul>
+
+                <h3>Solutions (Chapters 9-10)</h3>
+
+                <ul>
+                    <li>Semantic HTML for machine readability</li>
+                    <li>Explicit state attributes (data-state, aria-invalid)</li>
+                    <li>Schema.org structured data</li>
+                    <li>Synchronous form validation with persistent errors</li>
+                    <li>Agent-friendly error messages with retry guidance</li>
+                    <li>Priority-based implementation roadmap (not time-based)</li>
+                </ul>
+
+                <h3>Bonus Materials</h3>
+
+                <ul>
+                    <li><strong>Interactive Companion Notebook</strong> - Visual demonstrations and calculations</li>
+                    <li><strong>60+ Term Glossary</strong> - Technical and business terms explained</li>
+                    <li><strong>Implementation Checklist</strong> - 4 priority levels for systematic rollout</li>
+                    <li><strong>150+ Resource Links</strong> - Curated references organised by category</li>
+                    <li><strong>Production-Ready Code</strong> - Multiple frameworks and platforms</li>
+                    <li><strong>Playwright Test Suite</strong> - 14 automated agent compatibility tests</li>
+                    <li><strong>Agent-Friendly Starter Kit</strong> - Complete "good vs bad" implementation</li>
+                </ul>
+
+                <h2 id="pricing">Pricing and Availability</h2>
+
+                <div class="pricing-cards pricing-cards-compact">
+                    <div class="pricing-card" data-product-type="digital" data-price="25.00" data-currency="GBP">
+                        <div class="pricing-header">
+                            <h3>Digital Edition</h3>
+                            <div class="pricing-price">
+                                <span class="price-amount" data-price="25.00" data-currency="GBP">£25</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>PDF, ePub, Mobi formats</li>
+                            <li>50,000 words, 10 chapters</li>
+                            <li>All code examples</li>
+                            <li>Implementation checklist</li>
+                            <li>Lifetime updates</li>
+                        </ul>
+                        <a href="index.html#buy" class="btn btn-primary btn-full" data-action="purchase" data-product="digital">Buy Digital - £25</a>
+                    </div>
+
+                    <div class="pricing-card pricing-featured" data-product-type="complete" data-price="75.00" data-currency="GBP">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Complete Package</h3>
+                            <div class="pricing-price">
+                                <span class="price-amount" data-price="75.00" data-currency="GBP">£75</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Everything in Digital</li>
+                            <li>Print edition (shipped)</li>
+                            <li>Interactive notebook access</li>
+                            <li>Code repository access</li>
+                            <li>Playwright test suite</li>
+                            <li>Email support</li>
+                        </ul>
+                        <a href="index.html#buy" class="btn btn-primary btn-full" data-action="purchase" data-product="complete">Buy Complete - £75</a>
+                    </div>
+
+                    <div class="pricing-card" data-product-type="team" data-price="500.00" data-currency="GBP">
+                        <div class="pricing-header">
+                            <h3>Team License</h3>
+                            <div class="pricing-price">
+                                <span class="price-amount" data-price="500.00" data-currency="GBP">£500</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Everything in Complete</li>
+                            <li>10 digital copies + 3 print</li>
+                            <li>2-hour team workshop</li>
+                            <li>Implementation consultation</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <a href="services.html" class="btn btn-secondary btn-full" data-action="contact" data-product="team">Contact Sales</a>
+                    </div>
+                </div>
+
+                <h2 id="services">Professional Services</h2>
+
+                <p>Beyond the book, we offer professional services for organisations that need hands-on implementation support:</p>
+
+                <div class="services-summary">
+                    <div class="service-item" data-service="audit" data-price-range="5000-15000" data-currency="GBP">
+                        <h3>Site Audit - £5,000-£15,000</h3>
+                        <p>Comprehensive audit of your website's agent compatibility with detailed recommendations and priority roadmap.</p>
+                    </div>
+
+                    <div class="service-item" data-service="implementation" data-price-range="25000-75000" data-currency="GBP">
+                        <h3>Implementation Support - £25,000-£75,000</h3>
+                        <p>Full implementation support to make your website agent-friendly. We work alongside your team to implement patterns, write tests, validate results, and document changes.</p>
+                    </div>
+
+                    <div class="service-item" data-service="retained" data-price-range="5000-15000" data-currency="GBP">
+                        <h3>Retained Support - £5,000-£15,000/month</h3>
+                        <p>Ongoing monthly support for agent compatibility monitoring and continuous improvement. As agent behaviours evolve, we ensure your site remains compatible.</p>
+                    </div>
+
+                    <div class="service-item" data-service="training" data-price-range="custom" data-currency="GBP">
+                        <h3>Training Workshops - Custom Pricing</h3>
+                        <p>Half-day or full-day workshops for your team on agent-friendly design patterns. Customised to your technology stack and business requirements.</p>
+                    </div>
+                </div>
+
+                <p><a href="services.html" class="btn btn-primary">View All Services</a></p>
+
+                <h2 id="why-now">Why This Matters Now</h2>
+
+                <h3>Projected Agent Traffic Growth</h3>
+
+                <p>Industry projections suggest 5-15% of web traffic will be AI agents by 2026. For e-commerce sites, the percentage may be higher as agents become the primary interface for product research and price comparison.</p>
+
+                <h3>First-Mover Advantage Window</h3>
+
+                <p>The competitive advantage window is estimated at 12-18 months. Early adopters capture agent traffic that competitors lose. Once best practices become standard, the advantage disappears.</p>
+
+                <h3>Global Market Impact</h3>
+
+                <p>The patterns discussed in this book affect the £6.3 trillion global e-commerce market, plus countless SaaS platforms, content publishers, and service businesses.</p>
+
+                <h3>The Accessibility Connection</h3>
+
+                <p>We've known about these problems for years. Accessibility advocates have been explaining them. But there wasn't enough commercial pressure to fix them. Now there is.</p>
+
+                <p>When agents make purchasing decisions worth millions, businesses pay attention. When conversion funnels have invisible drop-offs, there's budget to fix them. When competitors' sites work for agents and yours doesn't, the commercial incentive becomes obvious.</p>
+
+                <h2 id="principles">The Principles</h2>
+
+                <p>The book advocates for five core principles that benefit all users:</p>
+
+                <ol>
+                    <li><strong>Clear State</strong> - Use HTML attributes, not just CSS classes. State should be explicit in the DOM, readable by both agents and assistive technologies.</li>
+                    <li><strong>Persistent Errors</strong> - No toast notifications that vanish. Errors stay visible in the page content where they can be read and acted upon.</li>
+                    <li><strong>Complete Information</strong> - Show full pricing. Avoid forced pagination. Make content accessible without requiring multiple interactions.</li>
+                    <li><strong>Semantic Structure</strong> - Use proper HTML elements. Implement Schema.org structured data. Follow established standards.</li>
+                    <li><strong>Explicit Feedback</strong> - Confirm actions clearly in page content. Don't rely on visual cues alone. Make success and failure states unambiguous.</li>
+                </ol>
+
+                <h2 id="get-started">Get Started Today</h2>
+
+                <div class="cta-options">
+                    <div class="cta-option">
+                        <h3>Read the Free Chapter</h3>
+                        <p>Download Chapter 1 and the implementation checklist to see if this book is right for you. No credit card required.</p>
+                        <a href="preview.html" class="btn btn-secondary" data-action="preview">Get Free Chapter</a>
+                    </div>
+
+                    <div class="cta-option">
+                        <h3>Buy the Book</h3>
+                        <p>Early mover advantage is real. The competitive advantage window is limited. Organisations implementing agent-friendly patterns now will capture traffic that competitors lose.</p>
+                        <a href="index.html#buy" class="btn btn-primary" data-action="purchase">Get the Book - £25</a>
+                    </div>
+
+                    <div class="cta-option">
+                        <h3>Book a Consultation</h3>
+                        <p>Not sure where to start? Book a free 30-minute consultation to discuss your specific situation and whether professional services would accelerate your implementation.</p>
+                        <a href="services.html#contact" class="btn btn-secondary" data-action="contact">Contact Us</a>
+                    </div>
+                </div>
+
+                <h2 id="author">About the Author</h2>
+
+                <p>Tom Cranstoun has three decades of experience working on web technology, from hand-coded HTML to sophisticated application platforms. He's worked with organisations ranging from startups to enterprises, across finance, media, and retail.</p>
+
+                <p>This book grew from patterns he noticed across projects: the same accessibility problems appearing in different contexts, the same design assumptions failing for unexpected user types, the same commercial pressures shaping what gets fixed and what gets ignored.</p>
+
+                <p>Tom writes for <a href="https://allabout.network" target="_blank" rel="noopener">allabout.network</a> and is based in the UK. He remains convinced that the web we've built is less accessible than it should be, and that AI agents - demanding clarity for their own reasons - might finally force us to fix it.</p>
+
+                <h2 id="stay-updated">Stay Updated</h2>
+
+                <p>Subscribe to receive weekly agent compatibility tips, real-world case studies, and updates as AI agent behaviours evolve:</p>
+
+                <p><a href="preview.html" class="btn btn-primary" data-action="subscribe">Subscribe for Updates</a></p>
+
+                <hr>
+
+                <div class="article-footer">
+                    <p><strong>30-Day Money-Back Guarantee</strong> - If the book doesn't help you identify and fix agent compatibility issues, full refund, no questions asked.</p>
+
+                    <p class="article-meta">Published January 2025 • All rights reserved • © 2025 Tom Cranstoun</p>
+
+                    <p><strong>Questions?</strong> Email: <a href="mailto:tom@allabout.network">tom@allabout.network</a></p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>The Invisible Users</h3>
+                    <p>Designing the Web for AI Agents and Everyone Else</p>
+                    <p class="footer-author">By Tom Cranstoun</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Book</h4>
+                        <ul>
+                            <li><a href="index.html#contents">Contents</a></li>
+                            <li><a href="preview.html">Free Chapter</a></li>
+                            <li><a href="index.html#buy">Buy Now</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="services.html#consulting">Consulting</a></li>
+                            <li><a href="services.html#training">Training</a></li>
+                            <li><a href="services.html#speaking">Speaking</a></li>
+                            <li><a href="services.html#corporate">Corporate Licenses</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="https://allabout.network" target="_blank">Author's Blog</a></li>
+                            <li><a href="services.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="refunds.html">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tom Cranstoun. All rights reserved.</p>
+                <p>The Invisible Users is a trademark of Tom Cranstoun.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
