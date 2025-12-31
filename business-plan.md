@@ -73,7 +73,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 #### Primary Markets
 
-**1. E-commerce & Online Retail**
+##### 1. E-commerce & Online Retail
 
 - **Size:** $6.3 trillion global market
 - **Pain point:** Lost conversions from agent failures during product research/checkout
@@ -81,7 +81,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - **Decision makers:** CTO, Head of Digital, Product Managers
 - **Examples:** Fashion retailers, electronics, travel booking, marketplaces
 
-**2. SaaS & Software Companies**
+##### 2. SaaS & Software Companies
 
 - **Size:** $232 billion global market
 - **Pain point:** Sign-up forms failing for agent-assisted users
@@ -89,7 +89,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - **Decision makers:** VP Product, Growth teams, UX Directors
 - **Examples:** B2B SaaS, dev tools, collaboration platforms
 
-**3. Content Publishers & Media**
+##### 3. Content Publishers & Media
 
 - **Size:** $400+ billion digital publishing market
 - **Pain point:** Agent extraction threatens ad-funded business model
@@ -97,7 +97,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - **Decision makers:** Chief Digital Officer, Product, Editorial
 - **Examples:** News sites, blogs, recipe sites, how-to content
 
-**4. Financial Services (Online)**
+##### 4. Financial Services (Online)
 
 - **Size:** Multi-trillion dollar sector
 - **Pain point:** Security risks from session inheritance, regulatory compliance
@@ -107,7 +107,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 #### Secondary Markets
 
-**5. Web Development Agencies**
+##### 5. Web Development Agencies
 
 - **Size:** $40+ billion global market
 - **Pain point:** Client requests for "AI-friendly" sites but no clear implementation guide
@@ -115,14 +115,14 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - **Decision makers:** Technical Directors, Project Managers
 - **Examples:** Digital agencies, design studios, freelance developers
 
-**6. Enterprise IT Departments**
+##### 6. Enterprise IT Departments
 
 - **Pain point:** Internal tools failing for AI assistants
 - **Willingness to pay:** MEDIUM (efficiency gains)
 - **Decision makers:** CIO, IT Directors
 - **Examples:** Intranets, employee portals, internal applications
 
-**7. Educational Institutions**
+##### 7. Educational Institutions
 
 - **Pain point:** Course websites, learning platforms need accessibility compliance
 - **Willingness to pay:** MEDIUM (regulatory requirements)
@@ -141,12 +141,12 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Market Maturity Curve:**
 
-```
+```text
 2025 (NOW)  → Early adopters, high knowledge value, competitive advantage
 2026-2027   → Mainstream awareness, standards emerging, consulting premium
 2028-2029   → Standard practice, commoditised knowledge, tool-focused
 2030+       → Expected baseline (like mobile responsiveness)
-```
+```text
 
 **Strategic implication:** Maximum value extraction is NOW through early 2027.
 
@@ -156,7 +156,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 ### Stream 1: Book Sales (Digital + Print)
 
-**Primary Product: "The Invisible Users" Book**
+#### Primary Product: "The Invisible Users" Book
 
 **Digital formats:**
 
@@ -217,7 +217,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Workshop offerings:**
 
-**1. Half-Day Workshop (3-4 hours): "AI-Friendly Web Design Fundamentals"**
+#### 1. Half-Day Workshop (3-4 hours): "AI-Friendly Web Design Fundamentals"
 
 - Target: Developer teams, design teams
 - Content: Chapters 2, 3, 9, 10 condensed with hands-on exercises
@@ -225,7 +225,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - Pricing: £2,500-5,000 per session (up to 20 participants)
 - Delivery: 1-2 per month sustainable
 
-**2. Full-Day Workshop (6-8 hours): "Implementing Agent-Compatible Architecture"**
+#### 2. Full-Day Workshop (6-8 hours): "Implementing Agent-Compatible Architecture"
 
 - Target: Technical teams, architects
 - Content: Deep dive into Chapter 10, real implementation exercises
@@ -233,7 +233,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - Pricing: £5,000-10,000 per session (up to 20 participants)
 - Delivery: 1 per month sustainable
 
-**3. Executive Briefing (90 minutes): "Business Impact of AI Agents"**
+#### 3. Executive Briefing (90 minutes): "Business Impact of AI Agents"
 
 - Target: C-suite, business leaders
 - Content: Chapters 4, 5, 7, 8 business implications
@@ -241,7 +241,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - Pricing: £3,000-7,500 per session (up to 30 participants)
 - Delivery: 2-3 per month sustainable
 
-**4. Public Online Course (recorded, self-paced)**
+#### 4. Public Online Course (recorded, self-paced)
 
 - Platform: Teachable, Podia, or self-hosted
 - Content: Video lessons based on all chapters
@@ -269,7 +269,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Service tiers:**
 
-**1. Site Audit (£5,000-15,000)**
+#### 1. Site Audit (£5,000-15,000)
 
 - Comprehensive review of existing site
 - Identify all agent compatibility issues
@@ -278,7 +278,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - Deliverable: 50-page report with specific code examples
 - Target: 2-4 per month
 
-**2. Implementation Partnership (£25,000-75,000)**
+#### 2. Implementation Partnership (£25,000-75,000)
 
 - 3-6 month engagement
 - Hands-on implementation guidance
@@ -287,7 +287,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - Testing framework setup
 - Target: 1-2 concurrent projects
 
-**3. Retained Advisory (£5,000-15,000/month)**
+#### 3. Retained Advisory (£5,000-15,000/month)
 
 - Ongoing strategic guidance
 - Quarterly audits
@@ -296,7 +296,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - Monthly review calls
 - Target: 3-5 retained clients
 
-**4. Expert Witness / Litigation Support (£300-500/hour)**
+#### 4. Expert Witness / Litigation Support (£300-500/hour)
 
 - Legal cases involving agent access, accessibility claims
 - Expert testimony on web standards
@@ -322,7 +322,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Product concepts:**
 
-**1. Agent Compatibility Checker (Free tier + Premium)**
+#### 1. Agent Compatibility Checker (Free tier + Premium)
 
 - Automated site scanning
 - Identifies common failure patterns
@@ -330,14 +330,14 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - Premium: £49-99/month, unlimited scans, detailed reports, API access
 - Target: 100-500 paying customers by end Year 1
 
-**2. Agent Testing Framework (Open Source + Commercial)**
+#### 2. Agent Testing Framework (Open Source + Commercial)
 
 - Playwright-based test suite
 - Open source core (credibility builder)
 - Commercial: £199-499/month for extended tests, support, CI/CD integration
 - Target: 50-200 paying customers by end Year 1
 
-**3. WordPress Plugin (Freemium)**
+#### 3. WordPress Plugin (Freemium)
 
 - Automated agent-friendly HTML generation
 - Free: Basic patterns
@@ -345,7 +345,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - Huge market: 43% of websites use WordPress
 - Target: 500-2,000 paying customers by end Year 1
 
-**4. Implementation Pattern Library (Free + Corporate)**
+#### 4. Implementation Pattern Library (Free + Corporate)
 
 - Code examples and patterns
 - Free: Community edition
@@ -377,27 +377,27 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Offerings:**
 
-**1. Corporate Book Licenses**
+#### 1. Corporate Book Licenses
 
 - Internal distribution rights
 - Custom foreword/branding
 - Pricing: £5,000-15,000 for 100-500 employee companies
 - Target: 5-10 licenses Year 1
 
-**2. White-Label Training Materials**
+#### 2. White-Label Training Materials
 
 - Agencies/consultants deliver training using your content
 - Annual license: £10,000-25,000
 - Revenue share on their training delivery: 20-30%
 - Target: 3-5 partners Year 1
 
-**3. Custom Research Reports**
+#### 3. Custom Research Reports
 
 - Industry-specific agent compatibility analysis
 - Commission basis: £15,000-50,000 per report
 - Target: 2-4 reports Year 1
 
-**4. Content Syndication**
+#### 4. Content Syndication
 
 - Chapters/excerpts licensed to publications
 - £1,000-5,000 per piece
@@ -424,20 +424,20 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Opportunities:**
 
-**1. Conference Keynotes**
+#### 1. Conference Keynotes
 
 - Major tech conferences (React Summit, Web Dev Summit, UX conferences)
 - Fee: £5,000-25,000 per keynote (plus travel)
 - Target: 4-8 keynotes Year 1
 - Promotional value extremely high
 
-**2. Corporate Speaking**
+#### 2. Corporate Speaking
 
 - Private events for large companies
 - Fee: £7,500-15,000 per event
 - Target: 6-12 events Year 1
 
-**3. Webinar Partnerships**
+#### 3. Webinar Partnerships
 
 - Co-hosted with SaaS companies, agencies
 - Fee: £1,500-5,000 per webinar
@@ -462,26 +462,26 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Potential partnerships:**
 
-**1. Tool Affiliates**
+#### 1. Tool Affiliates
 
 - Playwright, testing tools, monitoring services
 - 10-30% commission on referrals
 - Passive income from book/course recommendations
 - Projected: £5,000-20,000 Year 1
 
-**2. Hosting/Infrastructure Partners**
+#### 2. Hosting/Infrastructure Partners
 
 - Vercel, Netlify, Cloudflare referrals
 - Commission or referral fees
 - Projected: £3,000-15,000 Year 1
 
-**3. Agency Partnerships**
+#### 3. Agency Partnerships
 
 - Refer implementation work to trusted agencies
 - 10-20% finder's fee
 - Projected: £10,000-40,000 Year 1
 
-**4. Course Platform Partnerships**
+#### 4. Course Platform Partnerships
 
 - Featured course on major platforms (Udemy, Pluralsight)
 - Revenue share: 25-50%
@@ -723,28 +723,28 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Options:**
 
-**1. Continue as solo/small team knowledge business**
+#### 1. Continue as solo/small team knowledge business
 
 - Sustainable £1-2M annual revenue
 - High margins (80-85%)
 - Minimal team (2-5 people)
 - Lifestyle business with strong income
 
-**2. Build SaaS company**
+#### 2. Build SaaS company
 
 - Raise funding or bootstrap
 - Hire development team
 - Focus on software tools
 - Potential exit: £5-20M (3-5x revenue for SaaS)
 
-**3. Partner with established player**
+#### 3. Partner with established player
 
 - Acquired by testing tool company (Playwright, Cypress)
 - Acquired by CMS platform (WordPress.com, Wix)
 - Acquired by agency/consultancy
 - Potential exit: £2-10M
 
-**4. Franchise/licensing model**
+#### 4. Franchise/licensing model
 
 - Train consultants worldwide
 - License methodology
@@ -995,21 +995,21 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 ### Direct Competitors
 
-**1. Accessibility Consultancies**
+#### 1. Accessibility Consultancies
 
 - **Examples:** WebAIM, Deque, Level Access
 - **Strengths:** Established, credibility, compliance expertise
 - **Weaknesses:** Don't specifically address AI agents, expensive
 - **Differentiation:** We cover AI + accessibility convergence, more technical depth
 
-**2. AI/ML Consultants**
+#### 2. AI/ML Consultants
 
 - **Examples:** Individual consultants, ML agencies
 - **Strengths:** Deep AI expertise
 - **Weaknesses:** Don't understand web design/UX, purely technical
 - **Differentiation:** We understand both web design AND AI agent needs
 
-**3. Web Development Educators**
+#### 3. Web Development Educators
 
 - **Examples:** Frontend Masters, Udemy instructors
 - **Strengths:** Large audiences, established platforms
@@ -1018,21 +1018,21 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 ### Indirect Competitors
 
-**4. Technical Publishers' Books**
+#### 4. Technical Publishers' Books
 
 - **Examples:** O'Reilly, Pragmatic Bookshelf books on web development
 - **Strengths:** Distribution, credibility
 - **Weaknesses:** Slow (18-24 month publication cycle), general topics
 - **Differentiation:** First mover on this specific topic, faster to market
 
-**5. Testing Tool Companies**
+#### 5. Testing Tool Companies
 
 - **Examples:** Playwright, Cypress, Selenium documentation
 - **Strengths:** Free, technical depth
 - **Weaknesses:** Tool-specific, no business context
 - **Differentiation:** Tool-agnostic, business implications included
 
-**6. AI Platform Documentation**
+#### 6. AI Platform Documentation
 
 - **Examples:** OpenAI, Anthropic guides
 - **Strengths:** Authoritative, free
@@ -1041,30 +1041,30 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 ### Competitive Advantages
 
-**1. Timing (First Mover)**
+#### 1. Timing (First Mover)
 
 - Topic is emerging NOW
 - No comprehensive books exist yet
 - 12-18 month window before competition catches up
 
-**2. Unique Positioning**
+#### 2. Unique Positioning
 
 - AI + Accessibility + Business + Technical = no one else covers all four
 - Real-world implementation experience
 - Practical code, not just theory
 
-**3. Complete Package**
+#### 3. Complete Package
 
 - Book + code + interactive notebook + training + consulting
 - Competitors have 1-2 of these, not all
 
-**4. Author Platform**
+#### 4. Author Platform
 
 - Established blog (allabout.network)
 - LinkedIn presence
 - Real consulting experience (credibility)
 
-**5. Supporting Materials**
+#### 5. Supporting Materials
 
 - 60+ glossary terms
 - Implementation checklist
@@ -1821,19 +1821,19 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 ### Immediate Priorities (Do First)
 
-**1. Validate pricing and positioning:**
+#### 1. Validate pricing and positioning:
 
 - Survey 20-30 potential customers
 - Ask: Would you buy at £X? What's your budget for this?
 - Test messaging variants
 
-**2. Secure first consulting clients:**
+#### 2. Secure first consulting clients:
 
 - Reach out to 10 warm contacts
 - Offer "founding client" discount
 - Goal: 3 commitments before book launch
 
-**3. Build pre-launch audience:**
+#### 3. Build pre-launch audience:
 
 - Post daily on LinkedIn (technical + business insights)
 - Share chapters/excerpts on Twitter

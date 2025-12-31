@@ -230,7 +230,7 @@
 
 **Body:**
 
-```
+```text
 Hi [First Name],
 
 After months of work, I'm excited to announce that "The Invisible Users: Designing the Web for AI Agents and Everyone Else" is now available.
@@ -289,7 +289,7 @@ Tom Cranstoun
 P.S. Launch pricing ends in 48 hours. After that, prices return to normal.
 
 [Get Your Copy - 20% Off →]
-```
+```text
 
 ---
 
@@ -301,7 +301,7 @@ P.S. Launch pricing ends in 48 hours. After that, prices return to normal.
 
 **Body:**
 
-```
+```text
 Hi [First Name],
 
 Thank you for requesting Chapter 1 of "The Invisible Users."
@@ -354,7 +354,7 @@ Tom Cranstoun
 tom@allabout.network
 
 P.S. Check your spam folder if you don't see the download link above.
-```
+```text
 
 ---
 
@@ -366,7 +366,7 @@ P.S. Check your spam folder if you don't see the download link above.
 
 **Body:**
 
-```
+```text
 Hi [Name],
 
 I'm reaching out about a partnership opportunity in AI agent-compatible web design.
@@ -432,7 +432,7 @@ tom@allabout.network
 +44 [phone]
 
 P.S. The competitive window is limited. Early partners will establish market leadership before competitors enter.
-```
+```text
 
 ---
 
@@ -444,7 +444,7 @@ P.S. The competitive window is limited. Early partners will establish market lea
 
 **Body:**
 
-```
+```text
 Hi [Name],
 
 [Mutual connection] suggested I reach out about an investment opportunity in the AI agent-compatible web design space.
@@ -517,7 +517,7 @@ tom@allabout.network
 +44 [phone]
 
 P.S. I'm speaking with several potential partners. First-mover advantage applies to investors too.
-```
+```text
 
 ---
 
@@ -529,7 +529,7 @@ P.S. I'm speaking with several potential partners. First-mover advantage applies
 
 **Body:**
 
-```
+```text
 Hi [Name],
 
 Thank you for your interest in an agent compatibility audit for [Company].
@@ -616,7 +616,7 @@ tom@allabout.network
 +44 [phone]
 
 P.S. Current availability: Projects starting [this month/next month]. I recommend booking soon to secure your slot.
-```
+```text
 
 ---
 
@@ -628,7 +628,7 @@ P.S. Current availability: Projects starting [this month/next month]. I recommen
 
 **Body:**
 
-```
+```text
 Hi [First Name],
 
 This week's agent compatibility tip: persistent error messages.
@@ -666,7 +666,7 @@ Keep errors visible in the DOM until user corrects them:
     Submit
   </button>
 </form>
-```
+```text
 
 KEY POINTS
 
@@ -717,7 +717,7 @@ P.S. Forward this to a colleague who's building forms. They'll thank you.
 
 [Get the Full Book →] [Browse Code Examples →]
 
-```
+```text
 
 ---
 
@@ -729,7 +729,7 @@ P.S. Forward this to a colleague who's building forms. They'll thank you.
 
 **Body:**
 
-```
+```text
 
 Hi [Name],
 
@@ -779,7 +779,7 @@ Tom Cranstoun
 
 P.S. Even if you haven't implemented yet, I'd love to hear what's blocking you. Your feedback helps me create better resources.
 
-```
+```text
 
 ---
 
@@ -791,7 +791,7 @@ P.S. Even if you haven't implemented yet, I'd love to hear what's blocking you. 
 
 **Body:**
 
-```
+```text
 
 Hi [Organizer Name],
 
@@ -906,7 +906,7 @@ Tom Cranstoun
 
 P.S. I'm also available for workshops, panel discussions, or fireside chats if those formats work better for your event.
 
-```
+```text
 
 ---
 
@@ -918,7 +918,7 @@ P.S. I'm also available for workshops, panel discussions, or fireside chats if t
 
 **Body:**
 
-```
+```text
 
 Hi [Name],
 
@@ -1028,7 +1028,7 @@ Tom Cranstoun
 
 P.S. I'm speaking with several agencies. If you're interested, I recommend acting quickly to secure your territory.
 
-```
+```text
 
 ---
 
@@ -1040,7 +1040,7 @@ P.S. I'm speaking with several agencies. If you're interested, I recommend actin
 
 **Body:**
 
-```
+```text
 
 Hi [First Name],
 
@@ -1090,7 +1090,7 @@ Tom Cranstoun
 
 P.S. If you're not interested, no problem - I won't email about this again. Just let me know.
 
-```
+```text
 
 ---
 

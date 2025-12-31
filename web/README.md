@@ -8,14 +8,14 @@ This is a conversion-optimised website built with semantic HTML, modern CSS, and
 
 ## Structure
 
-```
+```text
 web/
 ├── index.html              # Main landing page
 ├── services.html           # Consulting, training, speaking services
 ├── styles.css              # Complete stylesheet with responsive design
 ├── script.js               # JavaScript for interactivity and analytics
 └── README.md              # This file
-```
+```text
 
 ## Features
 
@@ -147,7 +147,7 @@ php -S localhost:8000
 
 # Node.js (if you have http-server)
 npx http-server
-```
+```text
 
 1. Visit `http://localhost:8000`
 
@@ -196,7 +196,7 @@ Replace placeholder tracking in `script.js`:
 
 // Plausible Analytics (privacy-friendly alternative)
 <script defer data-domain="invisible-users.com" src="https://plausible.io/js/script.js"></script>
-```
+```text
 
 ## Customisation
 
@@ -243,7 +243,7 @@ Create new HTML files following the template:
     <script src="script.js"></script>
 </body>
 </html>
-```
+```text
 
 ## SEO Optimisation
 
@@ -259,17 +259,17 @@ Create new HTML files following the template:
 ### To Add
 
 1. **Sitemap**: Generate `sitemap.xml`
-2. **robots.txt**: Create with:
+1. **robots.txt**: Create with:
 
-   ```
+   ```text
    User-agent: *
    Allow: /
-   Sitemap: https://invisible-users.com/sitemap.xml
+   Sitemap: <https://invisible-users.com/sitemap.xml>
    ```
 
-3. **Schema.org Markup**: Add Book schema
-4. **Blog**: Add content marketing section
-5. **Case Studies**: Add real implementation examples
+1. **Schema.org Markup**: Add Book schema
+1. **Blog**: Add content marketing section
+1. **Case Studies**: Add real implementation examples
 
 ## Performance Checklist
 

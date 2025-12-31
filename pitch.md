@@ -244,7 +244,7 @@ These same patterns break human users:
 ### Year 1 (Conservative/Optimistic)
 
 | Revenue Stream | Conservative | Optimistic |
-|----------------|--------------|------------|
+| ---------------- | -------------- | ------------ |
 | Book Sales | £375k | £750k |
 | Professional Services | £1.5M | £4M |
 | Speaking/Advisory | £100k | £300k |
@@ -255,7 +255,7 @@ These same patterns break human users:
 Adding platform/tools revenue and agency partnerships:
 
 | Year | Conservative | Optimistic |
-|------|--------------|------------|
+| ------ | -------------- | ------------ |
 | Year 2 | £3.5M | £9M |
 | Year 3 | £6M | £15M |
 

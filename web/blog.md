@@ -1,8 +1,8 @@
 # Announcing "The Invisible Users": A Guide to Building Websites That Work for AI Agents and Everyone Else
 
-**Published: January 2025**
+Published: January 2025
 
-**Author: Tom Cranstoun**
+Author: Tom Cranstoun
 
 ## The Problem We're Solving
 
@@ -143,7 +143,7 @@ The book is available in three editions:
 - 150+ curated resource links
 - Lifetime updates
 
-**[Buy Digital Edition](#buy)**
+**[Buy Digital Edition](blog.html#buy)**
 
 ### Complete Package - £75
 
@@ -154,7 +154,7 @@ The book is available in three editions:
 - Playwright test suite
 - Email support
 
-**[Buy Complete Package](#buy)**
+**[Buy Complete Package](blog.html#buy)**
 
 ### Team License - £500
 
@@ -209,7 +209,7 @@ Download Chapter 1 and the implementation checklist to see if this book is right
 
 Early mover advantage is real. The competitive advantage window is limited. Organisations implementing agent-friendly patterns now will capture traffic that competitors lose.
 
-**[Get the Book - £25](#buy)**
+**[Get the Book - £25](blog.html#buy)**
 
 ### Book a Consultation
 
@@ -287,7 +287,7 @@ Subscribe to receive weekly agent compatibility tips, real-world case studies, a
 
 **30-Day Money-Back Guarantee** - If the book doesn't help you identify and fix agent compatibility issues, full refund, no questions asked.
 
-**[Get the Book - £25](#buy)** | **[Read Free Chapter](preview.html)** | **[View Services](services.html)**
+**[Get the Book - £25](blog.html#buy)** | **[Read Free Chapter](preview.html)** | **[View Services](services.html)**
 
 ---
 

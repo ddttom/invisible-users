@@ -111,7 +111,7 @@ Added comprehensive styling for:
 
 ## File Summary
 
-```
+```text
 web/
 ├── index.html          ✅ Updated (button + footer links fixed)
 ├── services.html       ✅ Complete with contact form
@@ -120,7 +120,7 @@ web/
 ├── script.js           ✅ Complete with form handling
 ├── README.md           ✅ Complete documentation
 └── FIXES.md           ✅ This file
-```
+```text
 
 ## Testing Checklist
 

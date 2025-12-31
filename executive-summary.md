@@ -1,6 +1,6 @@
 # The Invisible Users: Executive Summary
 
-**A £6.3 trillion market opportunity in AI agent-compatible web design**
+A £6.3 trillion market opportunity in AI agent-compatible web design
 
 **Prepared by:** Tom Cranstoun | **Contact:** <tom@allabout.network> | **Date:** January 2025
 
@@ -59,7 +59,7 @@ The patterns that break agents also break screen reader users, people with cogni
 ### Year 1 Projections (Conservative / Optimistic)
 
 | Revenue Stream | Conservative | Optimistic |
-|----------------|--------------|------------|
+| -------------- | ------------ | ---------- |
 | **Book Sales** | £375k | £750k |
 | Digital (£25) | 5,000 copies | 10,000 copies |
 | Complete (£75) | 2,000 copies | 4,000 copies |
@@ -249,7 +249,7 @@ The patterns that break agents also break screen reader users, people with cogni
 **Three Options:**
 
 | Model | Investment | Use of Funds | Timeline to Profit |
-|-------|------------|--------------|-------------------|
+| ----- | ---------- | ------------ | ------------------ |
 | **Services-Focused** | £250k-£500k | Sales + delivery team | 12 months |
 | **Platform Development** | £750k-£1.5M | Dev team + GTM | 24 months |
 | **Strategic Partnership** | Non-capital | Skills, network, resources | Immediate |
