@@ -277,7 +277,7 @@ Subscribe to receive weekly agent compatibility tips, real-world case studies, a
 
 ## Questions?
 
-**Email:** tom@allabout.network
+**Email:** <tom@allabout.network>
 
 **Website:** [invisible-users.com](https://invisible-users.com)
 

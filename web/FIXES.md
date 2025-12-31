@@ -7,9 +7,11 @@ The "Read Free Chapter" button was linking to `#preview` (non-existent anchor) i
 ## Changes Made
 
 ### 1. Created Free Chapter Preview Page
+
 **File:** `preview.html`
 
 A complete lead generation page with:
+
 - Hero section introducing Chapter 1
 - Email gate form to capture leads
 - Preview of Chapter 1 opening (tour operator story)
@@ -20,14 +22,18 @@ A complete lead generation page with:
 - CTAs to buy the complete book
 
 ### 2. Updated Button Links
+
 **File:** `index.html`
+
 - Changed hero CTA: `href="#preview"` → `href="preview.html"`
 - Updated footer link: `href="#preview"` → `href="preview.html"`
 
 ### 3. Added CSS Styles
+
 **File:** `styles.css`
 
 Added comprehensive styling for:
+
 - Email gate section with split layout (form + benefits)
 - Chapter preview content with fade effect
 - Inline email forms
@@ -43,23 +49,27 @@ Added comprehensive styling for:
 ## Features of New Preview Page
 
 ### Lead Generation
+
 - Email capture form (currently logs to console, needs backend integration)
 - Clear value proposition (4 benefits listed)
 - Privacy message to reduce friction
 - Inline forms within content for engaged readers
 
 ### Preview Content
+
 - Opening section of Chapter 1 (tour operator story)
 - Teaser with fade/blur effect showing more content
 - Clear CTA to get full chapter
 
 ### Conversion Optimization
+
 - Multiple CTAs throughout page
 - Social proof (testimonial placeholder)
 - Full book contents displayed
 - Direct links to purchase
 
 ### Mobile Responsive
+
 - Stacked layout on mobile
 - Inline forms convert to vertical
 - All sections adapt properly
@@ -67,6 +77,7 @@ Added comprehensive styling for:
 ## Next Steps to Make It Functional
 
 1. **Email Marketing Integration:**
+
    ```javascript
    // Replace in preview.html (line ~160)
    // TODO: Send to email marketing service

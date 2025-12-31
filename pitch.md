@@ -3,7 +3,7 @@
 **A market opportunity in AI agent-compatible web design**
 
 **Prepared by:** Tom Cranstoun
-**Contact:** tom@allabout.network
+**Contact:** <tom@allabout.network>
 **Date:** January 2025
 
 ---
@@ -81,11 +81,13 @@ These same patterns break human users:
 ### Market Size
 
 **Primary Market:**
+
 - Global e-commerce: £6.3 trillion annually
 - Affected by agent compatibility issues
 - Growing 10-15% year-over-year
 
 **Adjacent Markets:**
+
 - SaaS platforms: £200+ billion market
 - Content publishers: £50+ billion digital advertising
 - Service businesses: Countless SMEs with web presence
@@ -101,6 +103,7 @@ These same patterns break human users:
 - **After 2027:** Competitive advantage disappears
 
 **Historical Parallel:** Mobile-responsive design (2010-2013)
+
 - Early adopters captured mobile traffic competitors lost
 - By 2015, mobile-responsive became expected
 - Advantage window: ~3 years
@@ -111,12 +114,14 @@ These same patterns break human users:
 **Current State:** No established market leaders
 
 **Competitors:**
+
 1. **Accessibility consultancies** - Have relevant expertise but not positioned for agent compatibility
 2. **SEO/performance agencies** - Adjacent skills but different focus
 3. **AI/ML consultancies** - Understand agents but not web fundamentals
 4. **Web development agencies** - Implementation capability but need methodology
 
 **Our Advantage:**
+
 - First comprehensive methodology documented
 - Production-ready code and testing framework
 - Understanding of both human and agent requirements
@@ -124,6 +129,7 @@ These same patterns break human users:
 - Clear implementation priorities
 
 **Barriers to Entry:**
+
 - Deep expertise required (web standards + AI agent behaviour + accessibility)
 - Methodology development (we've done this)
 - Trust and credibility (book establishes authority)
@@ -136,6 +142,7 @@ These same patterns break human users:
 ### 1. Book Sales (Immediate Revenue)
 
 **Three Editions:**
+
 - Digital: £25 (target: 5,000 copies Year 1 = £125k)
 - Complete: £75 (target: 2,000 copies Year 1 = £150k)
 - Team: £500 (target: 200 licenses Year 1 = £100k)
@@ -144,6 +151,7 @@ These same patterns break human users:
 **Year 1 Optimistic: £750k**
 
 **Distribution Channels:**
+
 - Direct sales via website
 - Amazon Kindle Direct Publishing
 - Corporate bulk orders
@@ -153,15 +161,19 @@ These same patterns break human users:
 ### 2. Professional Services (High-Margin Revenue)
 
 **Site Audits: £5,000-£15,000 per engagement**
+
 - Target: 50 audits Year 1 = £500k average
 
 **Implementation Support: £25,000-£75,000 per project**
+
 - Target: 20 projects Year 1 = £1M average
 
 **Retained Support: £5,000-£15,000 per month**
+
 - Target: 10 clients = £1.2M annually
 
 **Training Workshops: £2,500-£10,000 per workshop**
+
 - Target: 30 workshops Year 1 = £180k average
 
 **Year 1 Conservative: £1.5M**
@@ -170,17 +182,20 @@ These same patterns break human users:
 ### 3. Platform/Tools (Scalable Revenue)
 
 **SaaS Testing Platform:**
+
 - Automated agent compatibility testing
 - Continuous monitoring
 - Pricing: £500-£5,000/month per site
 - Target: 100 customers Year 2 = £1.2M-£6M ARR
 
 **Browser Extension/Dev Tools:**
+
 - Real-time agent compatibility hints
 - One-time purchase or subscription
 - Freemium model with premium features
 
 **WordPress/CMS Plugins:**
+
 - One-click agent-friendly patterns
 - Marketplace distribution
 - Premium support tiers
@@ -188,11 +203,13 @@ These same patterns break human users:
 ### 4. Agency Partnerships (Volume Revenue)
 
 **White-Label Program:**
+
 - Agencies deliver services under their brand
 - We provide methodology, training, support
 - Revenue share: 30-50% depending on engagement level
 
 **Referral Network:**
+
 - Agencies refer clients for complex work
 - We handle delivery, they receive commission
 - 15-20% referral fees
@@ -202,12 +219,14 @@ These same patterns break human users:
 ### 5. Enterprise Licensing (Large Deals)
 
 **Corporate Site-Wide Programs:**
+
 - Multi-site audits and implementation
 - Internal team training
 - Ongoing support and monitoring
 - Deal size: £100k-£500k annually
 
 **Platform Vendor Partnerships:**
+
 - Shopify, WordPress.com, Wix, Squarespace
 - Integration and certification programs
 - Revenue share or licensing fees
@@ -243,6 +262,7 @@ Adding platform/tools revenue and agency partnerships:
 ### Cost Structure
 
 **Immediate Needs:**
+
 - Sales/BD team (2-3 people)
 - Delivery team (3-5 consultants)
 - Platform development (if pursuing SaaS)
@@ -259,6 +279,7 @@ Adding platform/tools revenue and agency partnerships:
 ### 1. Complete Book Manuscript
 
 **10 Chapters, ~50,000 words:**
+
 1. What You Will Learn
 2. The Invisible Failure
 3. The Architectural Conflict
@@ -271,6 +292,7 @@ Adding platform/tools revenue and agency partnerships:
 10. Technical Advice (implementation code)
 
 **Plus Bonus Materials:**
+
 - 60+ term glossary
 - Implementation checklist (4 priority levels)
 - 150+ curated resource links
@@ -279,12 +301,14 @@ Adding platform/tools revenue and agency partnerships:
 ### 2. Production-Ready Code
 
 **Multiple Frameworks:**
+
 - Vanilla HTML/JavaScript
 - React/Next.js
 - WordPress
 - Static site generators
 
 **Example Implementations:**
+
 - Form validation with explicit state
 - Error handling with persistent messages
 - Structured data (Schema.org)
@@ -294,6 +318,7 @@ Adding platform/tools revenue and agency partnerships:
 ### 3. Testing Framework
 
 **Playwright Test Suite:**
+
 - 14 automated agent compatibility tests
 - Form validation testing
 - State attribute verification
@@ -301,6 +326,7 @@ Adding platform/tools revenue and agency partnerships:
 - Error message persistence checks
 
 **"Good vs Bad" Starter Kit:**
+
 - Side-by-side comparison implementations
 - Runs locally for demonstration
 - Training and workshop material
@@ -308,6 +334,7 @@ Adding platform/tools revenue and agency partnerships:
 ### 4. Marketing Materials
 
 **Website:**
+
 - Professional landing page
 - Lead generation (free chapter)
 - Payment processing (Stripe)
@@ -315,6 +342,7 @@ Adding platform/tools revenue and agency partnerships:
 - Services descriptions
 
 **Blog Content:**
+
 - Launch announcement
 - Technical deep-dives
 - Case studies (to be developed)
@@ -322,12 +350,14 @@ Adding platform/tools revenue and agency partnerships:
 ### 5. Methodology Framework
 
 **Implementation Checklist:**
+
 - Priority 1: Critical quick wins
 - Priority 2: Essential improvements
 - Priority 3: Core infrastructure
 - Priority 4: Advanced features
 
 **Assessment Framework:**
+
 - Business model evaluation
 - Risk assessment
 - ROI calculation
@@ -340,18 +370,21 @@ Adding platform/tools revenue and agency partnerships:
 ### 1. Implementation Partner
 
 **What You Bring:**
+
 - Delivery team (developers, consultants)
 - Project management capability
 - Client relationships and sales channels
 - Geographic coverage
 
 **What We Bring:**
+
 - Methodology and intellectual property
 - Training and certification
 - Marketing materials and brand
 - Technical support and updates
 
 **Structure:**
+
 - Joint venture or licensing agreement
 - Revenue share on services
 - Co-branded offerings
@@ -360,18 +393,21 @@ Adding platform/tools revenue and agency partnerships:
 ### 2. Platform/Tools Partner
 
 **What You Bring:**
+
 - Software development expertise
 - SaaS platform experience
 - DevOps and infrastructure
 - Customer success capability
 
 **What We Bring:**
+
 - Testing methodology
 - Technical specifications
 - Market positioning
 - Initial customer base
 
 **Structure:**
+
 - Co-development agreement
 - Equity or revenue share
 - Separate entity or integration
@@ -379,18 +415,21 @@ Adding platform/tools revenue and agency partnerships:
 ### 3. Agency Network Partner
 
 **What You Bring:**
+
 - Existing agency network
 - Sales and marketing infrastructure
 - Training and certification programs
 - Quality assurance processes
 
 **What We Bring:**
+
 - White-label methodology
 - Training curriculum
 - Support and updates
 - Thought leadership
 
 **Structure:**
+
 - Master franchise or network model
 - Revenue share per agency
 - Certification fees
@@ -399,18 +438,21 @@ Adding platform/tools revenue and agency partnerships:
 ### 4. Investment Partner
 
 **What You Bring:**
+
 - Capital for team growth
 - Strategic guidance
 - Network and connections
 - Operational expertise
 
 **What We Bring:**
+
 - Complete product and methodology
 - Initial revenue traction
 - Clear market opportunity
 - Founder expertise and commitment
 
 **Structure:**
+
 - Equity investment
 - Convertible note
 - Revenue-based financing
@@ -464,6 +506,7 @@ Adding platform/tools revenue and agency partnerships:
 **Risk:** Agent traffic grows slower than projected
 
 **Mitigation:**
+
 - Accessibility benefits provide immediate value
 - SEO improvements justify investment today
 - Multiple revenue streams reduce dependency
@@ -474,6 +517,7 @@ Adding platform/tools revenue and agency partnerships:
 **Risk:** Shopify/WordPress solve this at platform level
 
 **Mitigation:**
+
 - Custom implementations still need expertise
 - Enterprise needs remain complex
 - Platform limitations require workarounds
@@ -485,6 +529,7 @@ Adding platform/tools revenue and agency partnerships:
 **Risk:** Established agencies enter market
 
 **Mitigation:**
+
 - 12-18 month head start advantage
 - IP protection via book publication
 - Methodology refinement ongoing
@@ -496,6 +541,7 @@ Adding platform/tools revenue and agency partnerships:
 **Risk:** Agent capabilities improve, making patterns unnecessary
 
 **Mitigation:**
+
 - Patterns benefit human users permanently
 - Standards-based approach remains valid
 - New agent types emerge regularly
@@ -507,6 +553,7 @@ Adding platform/tools revenue and agency partnerships:
 **Risk:** Demand exceeds delivery capacity
 
 **Mitigation:**
+
 - Partner network for delivery
 - Platform/tools for scalability
 - Training and certification program
@@ -560,6 +607,7 @@ Adding platform/tools revenue and agency partnerships:
 
 **Investment:** £250k-£500k
 **Use of Funds:**
+
 - Sales team (2 people): £120k
 - Delivery team (3 people): £180k
 - Marketing and content: £50k
@@ -573,6 +621,7 @@ Adding platform/tools revenue and agency partnerships:
 
 **Investment:** £750k-£1.5M
 **Use of Funds:**
+
 - Development team (5 people): £400k
 - Sales and marketing: £300k
 - Operations and infrastructure: £150k
@@ -613,7 +662,7 @@ Adding platform/tools revenue and agency partnerships:
 ### Contact
 
 **Tom Cranstoun**
-Email: tom@allabout.network
+Email: <tom@allabout.network>
 Website: invisible-users.com
 LinkedIn: [Profile]
 
@@ -624,6 +673,7 @@ LinkedIn: [Profile]
 ### Agent Traffic Projections
 
 **Sources:**
+
 - Gartner: 15% of web traffic will be AI agents by 2026
 - Forrester: AI shopping assistants to influence 30% of e-commerce by 2027
 - McKinsey: AI agents could impact $2 trillion in e-commerce annually
@@ -631,6 +681,7 @@ LinkedIn: [Profile]
 ### Accessibility Market Precedent
 
 **Historical Data:**
+
 - WebAIM Million: 96% of home pages have WCAG failures
 - Legal pressure drove accessibility investment (2016-2023)
 - Accessibility consulting market: £500M+ annually
@@ -639,6 +690,7 @@ LinkedIn: [Profile]
 ### Digital Agency Market
 
 **Market Size:**
+
 - UK digital agencies: £8 billion annual revenue
 - US digital agencies: £30 billion annual revenue
 - Average project value: £25,000-£150,000
@@ -647,12 +699,14 @@ LinkedIn: [Profile]
 ### Technology Adoption Curves
 
 **Mobile Responsive Parallel:**
+
 - 2010: 0.7% mobile traffic
 - 2013: 13% mobile traffic (inflection point)
 - 2016: 51% mobile traffic (majority)
 - 2023: 63% mobile traffic (maturity)
 
 **Current Agent Traffic:**
+
 - 2024: 1-2% estimated agent traffic
 - 2025: 3-5% projected
 - 2026: 5-15% projected (inflection point)

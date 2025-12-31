@@ -117,6 +117,7 @@ Content-Type: application/json
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -146,6 +147,7 @@ Content-Type: application/json
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -169,6 +171,7 @@ Content-Type: application/json
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -345,6 +348,7 @@ pm2 monit
 ### Health Checks
 
 Set up uptime monitoring:
+
 - UptimeRobot: Check `/api/health` every 5 minutes
 - Pingdom
 - Better Uptime
@@ -358,6 +362,7 @@ npm install @sentry/node
 ```
 
 Add to `server.js`:
+
 ```javascript
 const Sentry = require('@sentry/node');
 Sentry.init({ dsn: process.env.SENTRY_DSN });
@@ -415,6 +420,7 @@ npm install pg
 ```
 
 Create tables:
+
 ```sql
 CREATE TABLE subscribers (
     id SERIAL PRIMARY KEY,
@@ -442,7 +448,8 @@ npm install mongodb
 ## Support
 
 For issues or questions:
-- Email: tom@allabout.network
+
+- Email: <tom@allabout.network>
 - Website: allabout.network
 
 ## License

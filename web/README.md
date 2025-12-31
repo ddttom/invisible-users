@@ -149,7 +149,7 @@ php -S localhost:8000
 npx http-server
 ```
 
-4. Visit `http://localhost:8000`
+1. Visit `http://localhost:8000`
 
 ### Production Deployment
 
@@ -203,6 +203,7 @@ Replace placeholder tracking in `script.js`:
 ### Update Pricing
 
 Edit pricing in:
+
 - `index.html` (lines 500-600)
 - `services.html` (throughout service cards)
 
@@ -259,11 +260,13 @@ Create new HTML files following the template:
 
 1. **Sitemap**: Generate `sitemap.xml`
 2. **robots.txt**: Create with:
+
    ```
    User-agent: *
    Allow: /
    Sitemap: https://invisible-users.com/sitemap.xml
    ```
+
 3. **Schema.org Markup**: Add Book schema
 4. **Blog**: Add content marketing section
 5. **Case Studies**: Add real implementation examples
@@ -341,6 +344,7 @@ Recommended platforms:
 4. **ActiveCampaign**: Advanced automation
 
 Add email signup forms to:
+
 - Footer
 - After blog posts
 - Exit intent popup
@@ -380,7 +384,7 @@ Add "Buy Now" buttons linking to checkout pages.
 
 For questions or issues:
 
-- Email: tom@allabout.network
+- Email: <tom@allabout.network>
 - Website: allabout.network
 - LinkedIn: linkedin.com/in/tomcranstoun
 

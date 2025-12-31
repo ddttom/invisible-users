@@ -23,6 +23,7 @@
 ### Pre-Launch (Weeks -4 to -1)
 
 **Week -4: Foundation**
+
 - [ ] Finalize book manuscript
 - [ ] Set up website and payment processing
 - [ ] Create lead magnet (Chapter 1 + checklist)
@@ -30,6 +31,7 @@
 - [ ] Prepare launch content
 
 **Week -3: Warm-up**
+
 - [ ] Send teaser emails to warm list
 - [ ] Post on LinkedIn/Twitter about upcoming launch
 - [ ] Reach out to beta readers for testimonials
@@ -37,6 +39,7 @@
 - [ ] Contact industry publications
 
 **Week -2: Pre-orders**
+
 - [ ] Open pre-orders with early bird discount
 - [ ] Send pre-launch emails to list
 - [ ] Post daily content building anticipation
@@ -44,6 +47,7 @@
 - [ ] Prepare press release
 
 **Week -1: Final Push**
+
 - [ ] Send final pre-launch reminder
 - [ ] Confirm all systems operational
 - [ ] Brief any launch partners
@@ -53,6 +57,7 @@
 ### Launch Week
 
 **Day 1: Public Launch**
+
 - [ ] Send launch email to full list
 - [ ] Press release distribution
 - [ ] Social media announcement
@@ -60,6 +65,7 @@
 - [ ] Reach out to press contacts
 
 **Days 2-3: Momentum**
+
 - [ ] Share early sales numbers
 - [ ] Post customer testimonials
 - [ ] Guest posts go live
@@ -67,6 +73,7 @@
 - [ ] Follow up with press
 
 **Days 4-7: Sustain**
+
 - [ ] Case study content
 - [ ] Technical deep dives
 - [ ] Partner announcements
@@ -76,6 +83,7 @@
 ### Post-Launch (Weeks 2-12)
 
 **Weeks 2-4: Consolidate**
+
 - Weekly content marketing
 - Speaking engagements
 - Partnership development
@@ -83,6 +91,7 @@
 - Service offering launches
 
 **Weeks 5-8: Scale**
+
 - Agency partnership program launch
 - First professional service deliveries
 - Platform/tools beta announcement
@@ -90,6 +99,7 @@
 - Team hiring begins
 
 **Weeks 9-12: Optimize**
+
 - Refine messaging based on data
 - Double down on winning channels
 - Launch additional products/services
@@ -131,24 +141,28 @@
 ### Owned Channels
 
 **Email List (Priority 1)**
+
 - Segment by role/interest
 - Weekly newsletter
 - Course/sequence for leads
 - Automated nurture flows
 
 **Website/Blog (Priority 1)**
+
 - SEO-optimized content
 - Lead generation (free chapter)
 - Clear service descriptions
 - Case studies and testimonials
 
 **LinkedIn (Priority 2)**
+
 - Daily posts during launch
 - Engage with comments
 - Connect with decision-makers
 - Share customer wins
 
 **Twitter/X (Priority 3)**
+
 - Technical insights
 - Real-time engagement
 - Dev community presence
@@ -157,24 +171,28 @@
 ### Earned Channels
 
 **Speaking Engagements**
+
 - Web conferences (SmashingConf, An Event Apart)
 - Tech meetups (local and virtual)
 - Corporate workshops
 - Webinar partnerships
 
 **Media Coverage**
+
 - TechCrunch, VentureBeat
 - CSS-Tricks, Smashing Magazine
 - A List Apart
 - Web Accessibility blog networks
 
 **Podcasts**
+
 - Syntax.fm
 - Shop Talk Show
 - The Changelog
 - Full Stack Radio
 
 **Guest Posts**
+
 - Dev.to
 - Medium publications
 - Industry blogs
@@ -183,16 +201,19 @@
 ### Paid Channels (If Budget Allows)
 
 **Google Ads**
+
 - Target: "AI agent compatibility", "web accessibility audit"
 - Budget: £2,000-£5,000/month
 - Focus on service keywords
 
 **LinkedIn Ads**
+
 - Target: CTOs, Engineering Managers at e-commerce/SaaS
 - Budget: £3,000-£5,000/month
 - Lead gen for services
 
 **Conference Sponsorships**
+
 - Speaking slot + booth
 - £5,000-£15,000 per event
 - 3-5 events Year 1
@@ -664,6 +685,7 @@ BENEFITS
 TRY IT
 
 Test your forms:
+
 1. Submit invalid data
 2. Wait 5 seconds
 3. Check if error still visible
@@ -694,6 +716,7 @@ Tom Cranstoun
 P.S. Forward this to a colleague who's building forms. They'll thank you.
 
 [Get the Full Book →] [Browse Code Examples →]
+
 ```
 
 ---
@@ -707,6 +730,7 @@ P.S. Forward this to a colleague who's building forms. They'll thank you.
 **Body:**
 
 ```
+
 Hi [Name],
 
 It's been [timeframe] since you [bought the book / completed the audit]. I wanted to check in and see how things are going.
@@ -754,6 +778,7 @@ Best,
 Tom Cranstoun
 
 P.S. Even if you haven't implemented yet, I'd love to hear what's blocking you. Your feedback helps me create better resources.
+
 ```
 
 ---
@@ -767,6 +792,7 @@ P.S. Even if you haven't implemented yet, I'd love to hear what's blocking you. 
 **Body:**
 
 ```
+
 Hi [Organizer Name],
 
 I'd like to propose a talk for [Conference] on AI agent-compatible web design - a critical emerging challenge that connects accessibility, business impact, and technical implementation.
@@ -790,6 +816,7 @@ This talk explores:
 AUDIENCE TAKEAWAYS
 
 Attendees will learn:
+
 1. How to test for agent compatibility (10-minute audit)
 2. Five quick wins (< 1 hour implementation each)
 3. Priority-based roadmap for systematic improvement
@@ -874,10 +901,11 @@ Let me know if you'd like to discuss further!
 
 Best,
 Tom Cranstoun
-tom@allabout.network
+<tom@allabout.network>
 +44 [phone]
 
 P.S. I'm also available for workshops, panel discussions, or fireside chats if those formats work better for your event.
+
 ```
 
 ---
@@ -891,6 +919,7 @@ P.S. I'm also available for workshops, panel discussions, or fireside chats if t
 **Body:**
 
 ```
+
 Hi [Name],
 
 I'm reaching out to digital agencies like [Agency] about a white-label partnership opportunity.
@@ -941,6 +970,7 @@ Certification fee: £2,500 (one-time, includes training)
 Ongoing revenue share: 30-40% to us, 60-70% to you
 
 Example: £50,000 implementation project
+
 - You receive: £30,000-£35,000
 - You pay us: £15,000-£20,000
 - Your team delivers under your brand
@@ -993,10 +1023,11 @@ Want to discuss?
 
 Best,
 Tom Cranstoun
-tom@allabout.network
+<tom@allabout.network>
 +44 [phone]
 
 P.S. I'm speaking with several agencies. If you're interested, I recommend acting quickly to secure your territory.
+
 ```
 
 ---
@@ -1010,6 +1041,7 @@ P.S. I'm speaking with several agencies. If you're interested, I recommend actin
 **Body:**
 
 ```
+
 Hi [First Name],
 
 I noticed you started to purchase "The Invisible Users" but didn't complete checkout. No worries - I wanted to reach out in case you had questions.
@@ -1057,6 +1089,7 @@ Best,
 Tom Cranstoun
 
 P.S. If you're not interested, no problem - I won't email about this again. Just let me know.
+
 ```
 
 ---

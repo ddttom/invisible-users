@@ -2,7 +2,7 @@
 
 **A £6.3 trillion market opportunity in AI agent-compatible web design**
 
-**Prepared by:** Tom Cranstoun | **Contact:** tom@allabout.network | **Date:** January 2025
+**Prepared by:** Tom Cranstoun | **Contact:** <tom@allabout.network> | **Date:** January 2025
 
 ---
 
@@ -187,6 +187,7 @@ The patterns that break agents also break screen reader users, people with cogni
 ## Success Metrics
 
 ### 6 Months
+
 - 1,000 book copies sold
 - 10 professional service engagements
 - 3-5 case studies documented
@@ -194,6 +195,7 @@ The patterns that break agents also break screen reader users, people with cogni
 - Revenue: £150k-£500k
 
 ### 12 Months
+
 - 5,000 book copies sold
 - 50 professional service clients
 - 10 retained support clients
@@ -201,6 +203,7 @@ The patterns that break agents also break screen reader users, people with cogni
 - Revenue: £1.5M-£4M
 
 ### 24 Months
+
 - Market leadership established
 - 100+ professional service clients
 - 20+ agency partnerships
@@ -232,6 +235,7 @@ The patterns that break agents also break screen reader users, people with cogni
 5. **Launch execution** - Begin revenue generation
 
 **Materials Available:**
+
 - Complete 50,000-word manuscript
 - Code repository and testing framework
 - Financial model spreadsheet
@@ -258,7 +262,7 @@ The patterns that break agents also break screen reader users, people with cogni
 
 **Tom Cranstoun**
 
-📧 Email: tom@allabout.network
+📧 Email: <tom@allabout.network>
 🌐 Website: invisible-users.com
 📄 LinkedIn: [Profile]
 
