@@ -300,6 +300,23 @@ All 10 chapter illustrations complete ✅
 | blog.md | ✅ | Broad-appeal blog post (~3,000 words) |
 | blog.svg | ✅ | Visual illustration (900×600) |
 
+### Business Materials
+
+| Material | Status | Words | Description |
+| -------- | ------ | ----- | ----------- |
+| business-plan.md | ✅ | ~18,000 | Complete business strategy document with 7 revenue streams, market analysis, financial projections (Year 1: £939k-£3.3M) |
+| executive-summary.md | ✅ | ~2,900 | Condensed partnership pitch (8 pages) with one-sentence opportunity, revenue model, 4 partnership models, investment ask options |
+| pitch.md | ✅ | ~19,000 | Comprehensive partnership deck (30+ pages) with market opportunity, timing analysis, what's built, partnership opportunities, financial projections, risk mitigation, development cost analysis |
+| plan-to-market.md | ✅ | ~8,500 | Go-to-market plan with launch timeline, target audience segmentation, channel strategy, 10 production-ready email templates, content calendar, partnership outreach strategy |
+
+### Web Presence
+
+| Material | Status | Description |
+| -------- | ------ | ----------- |
+| web/ | ✅ | Marketing website with landing page, free chapter lead generation, professional services, blog post (HTML) |
+| web/llms.txt | ✅ | AI agent guidance file with endpoint documentation |
+| backend/ | ✅ | Node.js/Express API with agent-friendly error responses, email subscription, contact forms, Stripe payment integration, rate limiting with Retry-After headers |
+
 ### Standalone Guides
 
 | Material | Status | Words | Description |
@@ -407,6 +424,7 @@ Real-world llms.txt example:
 | 3.3.0 | 2025-12-25 | Standalone guides integrated into book chapters 9 and 10 |
 | 3.4.0 | 2025-12-25 | Dark warehouses section added to Chapter 4 (~1,900 words, total ~40,200 words) |
 | 2.6.0 | 2025-12-30 | Interactive notebook added (invisible-users.ipynb), structured tables added to all chapters, priority-based roadmap conversion, Interactive Companion sections added to preface/Chapter 10/resource-links |
+| 2.8.0 | 2025-12-31 | Business infrastructure added: business-plan.md (~18,000 words), executive-summary.md (~2,900 words), pitch.md (~19,000 words), plan-to-market.md (~8,500 words), marketing website (web/), Node.js backend API (backend/), all following agent-friendly patterns from advice.md |
 
 ---
 
@@ -427,6 +445,34 @@ Real-world llms.txt example:
 ├── blog.md
 ├── blog.svg
 ├── invisible-users.ipynb        # Interactive notebook with demonstrations
+├── business-plan.md             # Complete business strategy document (~18,000 words)
+├── executive-summary.md         # Executive summary for partners (~2,900 words)
+├── pitch.md                     # Full partnership pitch deck (~19,000 words)
+├── plan-to-market.md            # Go-to-market plan with email templates (~8,500 words)
+├── web/                         # Marketing website
+│   ├── index.html               # Landing page with Schema.org data
+│   ├── preview.html             # Free chapter lead generation page
+│   ├── services.html            # Professional services page
+│   ├── blog.html                # Blog announcement post
+│   ├── blog.md                  # Blog source (markdown)
+│   ├── styles.css               # Responsive CSS
+│   ├── script.js                # Interactive JavaScript
+│   ├── llms.txt                 # AI agent guidance file
+│   ├── FIXES.md                 # Website fix documentation
+│   └── README.md                # Website documentation
+├── backend/                     # Node.js/Express API
+│   ├── server.js                # Main Express application
+│   ├── package.json             # Dependencies and scripts
+│   ├── .env.example             # Environment configuration template
+│   ├── routes/                  # API route handlers
+│   │   ├── health.js            # Health check endpoint
+│   │   ├── email.js             # Email subscription handling
+│   │   ├── contact.js           # Contact form processing
+│   │   └── payment.js           # Stripe payment integration
+│   ├── services/                # External service integrations
+│   │   ├── emailService.js      # Nodemailer email service
+│   │   └── convertkitService.js # ConvertKit integration
+│   └── README.md                # Backend documentation
 └── invisible-users/             # Book manuscript and materials
     ├── preface.md               # Book introduction and author bio
     ├── chapter-01-*.md through chapter-10-*.md
@@ -462,4 +508,4 @@ This manuscript is not licensed for public use, reproduction, or distribution.
 
 ---
 
-**Last updated:** 2025-12-30 — Added interactive notebook and structured data tables across all chapters
+**Last updated:** 2025-12-31 — Added business planning materials (business-plan, executive-summary, pitch, plan-to-market), marketing website, and backend API
