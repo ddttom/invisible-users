@@ -2,7 +2,7 @@
 
 **Launch strategy and email templates for book and services**
 
-**Prepared by:** Tom Cranstoun | **Date:** January 2025
+**Prepared by:** Tom Cranstoun | **Date:** January 2026
 
 ---
 
@@ -1328,6 +1328,6 @@ P.S. If you're not interested, no problem - I won't email about this again. Just
 ---
 
 **Document Version:** 1.0
-**Last Updated:** January 2025
+**Last Updated:** January 2026
 
 © 2025 Tom Cranstoun. All rights reserved.

@@ -4,7 +4,7 @@ A market opportunity in AI agent-compatible web design
 
 **Prepared by:** Tom Cranstoun
 **Contact:** <tom@allabout.network>
-**Date:** January 2025
+**Date:** January 2026
 
 ---
 
@@ -734,7 +734,7 @@ LinkedIn: [Profile]
 ---
 
 **Document Version:** 1.0
-**Date:** January 2025
+**Date:** January 2026
 **Confidential:** For discussion purposes only
 
 © 2025 Tom Cranstoun. All rights reserved.

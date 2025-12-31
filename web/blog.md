@@ -1,6 +1,6 @@
 # Announcing "The Invisible Users": A Guide to Building Websites That Work for AI Agents and Everyone Else
 
-Published: January 2025
+Published: January 2026
 
 Author: Tom Cranstoun
 
@@ -291,4 +291,4 @@ Subscribe to receive weekly agent compatibility tips, real-world case studies, a
 
 ---
 
-*Published January 2025. All rights reserved. © 2025 Tom Cranstoun.*
+*Published January 2026. All rights reserved. © 2025 Tom Cranstoun.*

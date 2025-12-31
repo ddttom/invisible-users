@@ -2,7 +2,7 @@
 
 A £6.3 trillion market opportunity in AI agent-compatible web design
 
-**Prepared by:** Tom Cranstoun | **Contact:** <tom@allabout.network> | **Date:** January 2025
+**Prepared by:** Tom Cranstoun | **Contact:** <tom@allabout.network> | **Date:** January 2026
 
 ---
 
@@ -294,6 +294,6 @@ Availability: Ready to start immediately, partnership agreements can be executed
 
 ---
 
-**Document Version:** 1.0 | **Date:** January 2025 | **Confidential:** For discussion purposes
+**Document Version:** 1.0 | **Date:** January 2026 | **Confidential:** For discussion purposes
 
 © 2025 Tom Cranstoun. All rights reserved.
