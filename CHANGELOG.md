@@ -6,6 +6,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [2.8.1] - 2026-01-01
+
+### Changed
+
+- **Publication Date Updates** - Updated all document dates to reflect January 2026 publication:
+  - `executive-summary.md` - Updated header and footer dates from January 2025 to January 2026
+  - `pitch.md` - Updated header and footer dates from January 2025 to January 2026
+  - `plan-to-market.md` - Updated header and "Last Updated" from January 2025 to January 2026
+  - `web/blog.md` - Updated published date from January 2025 to January 2026
+  - Note: Version history dates (2025-12-XX) remain unchanged as they reflect actual work completion dates
+
+- **Documentation Metadata Updates**:
+  - `PROJECTSTATE.md` - Updated "Last Updated" from 2025-12-30 to 2026-01-01
+  - `book-plan.md` - Updated "Last updated" from 2025-12-31 to 2026-01-01
+  - `invisible-users/resource-links.md` - Updated "Last verified" from 2025-12-25 to 2026-01-01, next review from March 2026 to April 2026
+
+- **Author Information**:
+  - `blog.md` - Updated author location from "London" to "York, England"
+
+- **Business Infrastructure Documentation**:
+  - `book-plan.md` - Added comprehensive "Business Materials" and "Web Presence" sections to Supporting Materials, documenting business-plan.md, executive-summary.md, pitch.md, plan-to-market.md, web/, and backend/
+  - Added v2.8.0 entry to Version History table
+
+### Fixed
+
+- **Markdown Linting** - Fixed all MD036 (emphasis used instead of heading) errors:
+  - `pitch.md` - Converted bold subtitle to plain text, converted 4 bold service pricing headers to proper heading levels
+  - All markdown files now pass linting (only MD013 line-length warnings remain, which are acceptable)
+
 ## [2.8.0] - 2025-12-31
 
 ### Added
