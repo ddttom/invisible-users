@@ -38,7 +38,7 @@
 - [ ] Schedule podcast/speaking appearances
 - [ ] Contact industry publications
 
-**Week -2: Pre-orders**
+#### Week -2: Pre-orders
 
 - [ ] Open pre-orders with early bird discount
 - [ ] Send pre-launch emails to list
@@ -46,7 +46,7 @@
 - [ ] Reach out to potential partners
 - [ ] Prepare press release
 
-**Week -1: Final Push**
+#### Week -1: Final Push
 
 - [ ] Send final pre-launch reminder
 - [ ] Confirm all systems operational
@@ -56,7 +56,7 @@
 
 ### Launch Week
 
-**Day 1: Public Launch**
+#### Day 1: Public Launch
 
 - [ ] Send launch email to full list
 - [ ] Press release distribution
@@ -64,7 +64,7 @@
 - [ ] Post on Product Hunt / Hacker News
 - [ ] Reach out to press contacts
 
-**Days 2-3: Momentum**
+#### Days 2-3: Momentum
 
 - [ ] Share early sales numbers
 - [ ] Post customer testimonials
@@ -72,7 +72,7 @@
 - [ ] Podcast episodes release
 - [ ] Follow up with press
 
-**Days 4-7: Sustain**
+#### Days 4-7: Sustain
 
 - [ ] Case study content
 - [ ] Technical deep dives
@@ -82,7 +82,7 @@
 
 ### Post-Launch (Weeks 2-12)
 
-**Weeks 2-4: Consolidate**
+#### Weeks 2-4: Consolidate
 
 - Weekly content marketing
 - Speaking engagements
@@ -90,7 +90,7 @@
 - Customer success stories
 - Service offering launches
 
-**Weeks 5-8: Scale**
+#### Weeks 5-8: Scale
 
 - Agency partnership program launch
 - First professional service deliveries
@@ -98,7 +98,7 @@
 - International expansion planning
 - Team hiring begins
 
-**Weeks 9-12: Optimize**
+#### Weeks 9-12: Optimize
 
 - Refine messaging based on data
 - Double down on winning channels
@@ -140,28 +140,28 @@
 
 ### Owned Channels
 
-**Email List (Priority 1)**
+#### Email List (Priority 1)
 
 - Segment by role/interest
 - Weekly newsletter
 - Course/sequence for leads
 - Automated nurture flows
 
-**Website/Blog (Priority 1)**
+#### Website/Blog (Priority 1)
 
 - SEO-optimized content
 - Lead generation (free chapter)
 - Clear service descriptions
 - Case studies and testimonials
 
-**LinkedIn (Priority 2)**
+#### LinkedIn (Priority 2)
 
 - Daily posts during launch
 - Engage with comments
 - Connect with decision-makers
 - Share customer wins
 
-**Twitter/X (Priority 3)**
+#### Twitter/X (Priority 3)
 
 - Technical insights
 - Real-time engagement
@@ -170,28 +170,28 @@
 
 ### Earned Channels
 
-**Speaking Engagements**
+#### Speaking Engagements
 
 - Web conferences (SmashingConf, An Event Apart)
 - Tech meetups (local and virtual)
 - Corporate workshops
 - Webinar partnerships
 
-**Media Coverage**
+#### Media Coverage
 
 - TechCrunch, VentureBeat
 - CSS-Tricks, Smashing Magazine
 - A List Apart
 - Web Accessibility blog networks
 
-**Podcasts**
+#### Podcasts
 
 - Syntax.fm
 - Shop Talk Show
 - The Changelog
 - Full Stack Radio
 
-**Guest Posts**
+#### Guest Posts
 
 - Dev.to
 - Medium publications
@@ -200,19 +200,19 @@
 
 ### Paid Channels (If Budget Allows)
 
-**Google Ads**
+#### Google Ads
 
 - Target: "AI agent compatibility", "web accessibility audit"
 - Budget: £2,000-£5,000/month
 - Focus on service keywords
 
-**LinkedIn Ads**
+#### LinkedIn Ads
 
 - Target: CTOs, Engineering Managers at e-commerce/SaaS
 - Budget: £3,000-£5,000/month
 - Lead gen for services
 
-**Conference Sponsorships**
+#### Conference Sponsorships
 
 - Speaking slot + booth
 - £5,000-£15,000 per event

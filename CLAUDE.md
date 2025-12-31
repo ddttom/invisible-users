@@ -80,18 +80,34 @@ When creating new markdown files, use the `/create-md` skill which ensures prope
 For editing existing files, follow these key rules:
 
 - **Headings:** Blank lines before/after, ATX-style only (not setext-style underlined)
+  - Use proper heading levels (###) instead of bold text for numbered items
+  - Example: Use `### 1. Title` not `**1. Title**`
 - **Lists:** Blank lines before/after
 - **Code blocks:** Always specify language (`javascript`, `html`, `css`, `json`, `bash`, `text`)
+  - Email templates and plain text should use `text` language
 - **Tables:** Proper spacing around pipes, aligned separators
+  - Separator row must have spaces: `| ----- | ----- |` not `|-----|-----|`
 - **MD036 Prevention:** Never use emphasis (bold/italic) for standalone lines
+  - Dates and metadata should be plain text, not bold
+  - Example: `Published: January 2025` not `**Published: January 2025**`
+- **URLs:** Wrap bare URLs in angle brackets: `<https://example.com>` or use markdown links
 - **Spacing:** Consistent throughout document
 
 **Common linting errors:**
 
-- **MD036:** Emphasis used instead of heading (e.g., `*December 2025*` should be `December 2025`)
+- **MD036:** Emphasis used instead of heading (e.g., `**Date**` as standalone should be `Date` or `## Date`)
 - **MD022:** Headings must be surrounded by blank lines
-- **MD040:** Code blocks must have language specified
+- **MD040:** Code blocks must have language specified (use `text` for email templates)
 - **MD047:** Files must end with single newline
+- **MD060:** Table separators need proper spacing around pipes
+- **MD031:** Code blocks must have blank lines before and after
+- **MD034:** Bare URLs should be wrapped in angle brackets or markdown links
+
+**Business documents:**
+
+- Use proper heading levels for numbered sections (e.g., `#### 1. Service Name`)
+- Convert `**Numbered Item**` patterns to headings with `sed` if needed
+- Use `text` language for email template code blocks
 
 See `/create-md` skill for complete formatting guide and examples.
 

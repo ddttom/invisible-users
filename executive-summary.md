@@ -260,15 +260,15 @@ The patterns that break agents also break screen reader users, people with cogni
 
 ## Contact
 
-**Tom Cranstoun**
+Tom Cranstoun
 
 📧 Email: <tom@allabout.network>
 🌐 Website: invisible-users.com
 📄 LinkedIn: [Profile]
 
-**Response Time:** Within 24 hours for partnership enquiries
+Response Time: Within 24 hours for partnership enquiries
 
-**Availability:** Ready to start immediately, partnership agreements can be executed within 30 days
+Availability: Ready to start immediately, partnership agreements can be executed within 30 days
 
 ---
 
