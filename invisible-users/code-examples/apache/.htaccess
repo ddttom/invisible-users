@@ -1,0 +1,23 @@
+# AI-Native Website Configuration for Apache
+# Add HTTP Link headers for AI agent discovery
+
+<IfModule mod_headers.c>
+  # Link to AI manifest files
+  # Change yoursite.com to your actual domain
+  Header set Link "<https://yoursite.com/llms.txt>; rel=\"llms-txt\", <https://yoursite.com/ai-agents.md>; rel=\"agent-manifest\""
+</IfModule>
+
+# Optional: Force HTTPS for all traffic
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+# Optional: Enable CORS for query-index.json
+<IfModule mod_headers.c>
+  <FilesMatch "\.(json)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, OPTIONS"
+  </FilesMatch>
+</IfModule>

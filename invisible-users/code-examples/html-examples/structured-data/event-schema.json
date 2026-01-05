@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Audio Technology Summit 2025",
+  "description": "Join industry leaders for a day of presentations and workshops on the latest audio technology innovations, including spatial audio, AI-powered noise cancellation, and sustainable manufacturing.",
+  "image": [
+    "https://example.com/events/audio-summit-2025.jpg"
+  ],
+  "startDate": "2025-03-15T09:00:00+00:00",
+  "endDate": "2025-03-15T18:00:00+00:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "London Convention Centre",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "456 Exhibition Road",
+      "addressLocality": "London",
+      "addressRegion": "Greater London",
+      "postalCode": "SW7 2DD",
+      "addressCountry": "GB"
+    }
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Standard Admission",
+      "price": "75.00",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock",
+      "url": "https://example.com/events/audio-summit-2025/tickets",
+      "validFrom": "2025-12-01T00:00:00+00:00"
+    },
+    {
+      "@type": "Offer",
+      "name": "VIP Pass",
+      "price": "150.00",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock",
+      "url": "https://example.com/events/audio-summit-2025/tickets/vip",
+      "validFrom": "2025-12-01T00:00:00+00:00"
+    }
+  ],
+  "performer": [
+    {
+      "@type": "Person",
+      "name": "Dr. Emma Williams",
+      "description": "Audio Engineering Expert"
+    },
+    {
+      "@type": "Person",
+      "name": "James Chen",
+      "description": "Head of Product at AudioTech"
+    }
+  ],
+  "organizer": {
+    "@type": "Organization",
+    "name": "Audio Industry Association",
+    "url": "https://example.com"
+  }
+}

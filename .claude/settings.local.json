@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(npm run:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run lint:md:*)",
+      "Bash(npm run lint:md:fix:*)",
+      "Bash(npm start:*)",
+      "Bash(npm install)",
+      "Bash(npx eslint .)",
+      "Bash(npx markdownlint:*)",
+      "Bash(node e2e-test.js:*)",
+      "Bash(ls:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(wc:*)",
+      "Bash(git remote:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

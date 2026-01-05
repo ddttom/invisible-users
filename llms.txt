@@ -1,0 +1,159 @@
+# The Invisible Users: Book Manuscript and Web Audit Suite
+
+Two integrated projects: A book manuscript examining how modern web design optimised for human users fails for AI agents, plus a production-ready implementation tool that validates websites for AI agent compatibility.
+
+**Last updated:** January 2026
+**Author:** Tom Cranstoun
+**LinkedIn:** [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
+
+**Site Type:** Book Manuscript, Technical Documentation, Educational Resource, Implementation Tool
+**Purpose:** Developer Education, Web Design Guidance, AI Integration Best Practices, Website Analysis
+**Status:** Both projects complete and production-ready
+
+## Access Guidelines
+
+- **Content Usage:** All rights reserved, not licensed for public distribution
+- **Attribution Format:** "The Invisible Users by Tom Cranstoun"
+- **Training Usage:** Not permitted
+- **Commercial Project:** Both book manuscript and Web Audit Suite are proprietary
+
+## Book Chapters
+
+Complete 10-chapter manuscript examining web design for both humans and AI agents:
+
+- [Chapter 1 - What You Will Learn](invisible-users/chapter-01-what-you-will-learn.md): Introduction and the accessibility connection (~2,750 words)
+- [Chapter 2 - The Invisible Failure](invisible-users/chapter-02-the-invisible-failure.md): When websites break for AI agents (~4,200 words)
+- [Chapter 3 - The Architectural Conflict](invisible-users/chapter-03-the-architectural-conflict.md): How modern web architecture creates the problem (~3,850 words)
+- [Chapter 4 - The Business Reality](invisible-users/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce (~5,350 words)
+- [Chapter 5 - The Content Creator's Dilemma](invisible-users/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~4,600 words)
+- [Chapter 6 - The Security Maze](invisible-users/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~3,900 words)
+- [Chapter 7 - The Legal Landscape](invisible-users/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~3,300 words)
+- [Chapter 8 - The Human Cost](invisible-users/chapter-08-the-human-cost.md): The digital divide implications (~3,400 words)
+- [Chapter 9 - Designing for Both](invisible-users/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,300 words)
+- [Chapter 10 - Technical Advice](invisible-users/chapter-10-technical-advice.md): Implementation code, testing strategies, and practical tools (~8,200 words)
+
+## Practical Implementation Guides
+
+Comprehensive guides and reference materials for developers:
+
+### Core Guides
+
+- [Building HTML for AI Agents (advice.md)](invisible-users/advice.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~9,000 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
+- [HTML Patterns for AI Agents (for-ai.md)](invisible-users/for-ai.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,200 words). Includes data attribute reference, form field names, and practical code examples.
+- [AI-Native Web Architecture (AI-Native.blog)](invisible-users/AI-Native.blog): Complete technical blueprint for building AI-native websites using 7-layer architecture: Network, Knowledge, Action, Data, Permission, Authority, Interaction layers (~5,000 words)
+
+### Code Examples
+
+- [Agent-Friendly Starter Kit](invisible-users/agent-friendly-starter-kit/): Production-ready code examples demonstrating good vs bad patterns for AI agent compatibility
+- Platform Configurations: Apache, Nginx, Next.js, WordPress, Adobe EDS, Static Sites
+- Validation Tools: Development and production verification scripts
+- Monitoring Examples: Server log analysis and analytics tracking
+
+### Reference Materials
+
+- [Glossary](invisible-users/Glossary.md): 60+ technical terms with cross-references
+- [Implementation Checklist](invisible-users/implementation-checklist.md): Priority-based implementation roadmap from critical quick wins to advanced features
+- [Resource Links](invisible-users/resource-links.md): 150+ curated resources organized by category
+- [Example llms.txt](invisible-users/llms.txt): Real-world llms.txt from Digital Domain Technologies (allabout.network) demonstrating comprehensive structure with 91 posts across 6 categories
+
+## Key Concepts
+
+### The Convergence Principle
+
+What AI agents need is mostly what everyone needs. Solutions that work for agents typically improve experiences for users with accessibility needs, people with ADHD, stressed parents, and others. The book argues that fixing invisible failures for AI benefits all users.
+
+### Session Inheritance Problem
+
+Critical security insight explored in Chapter 6: In-browser agents inherit authenticated sessions rather than failing to authenticate. Banks cannot detect AI involvement because agents inherit proof-of-humanity tokens from the authenticated user's session.
+
+### Identity Delegation
+
+When agents make purchases, businesses lose customer identity. Discussed briefly in Chapters 4, 6, 9, and 10 as one emerging solution pattern. Multiple approaches acknowledged (retailer-specific tokens, centralised repositories, blockchain attestations, browser-native delegation) without prescribing a specific implementation.
+
+### Dual Responsibility Framework
+
+The book addresses two audiences with distinct responsibilities:
+
+- **For Developers:** Fix technical patterns (clear state, persistent errors, semantic structure) that improve experiences for all users
+- **For Users:** Exercise care with prompts when dealing with banking, legal services, or commercial transactions where mistakes have serious consequences
+
+Not everything can be fixed with better HTML design. Users bear responsibility for the instructions they give to AI agents when interacting with high-stakes services. Covered in Preface and interactive notebook.
+
+### Established vs Emerging Standards
+
+The book clearly distinguishes between:
+
+- **Established Standards:** Schema.org, semantic HTML, ARIA - use with confidence
+- **Emerging Conventions:** llms.txt - early adoption phase
+- **Proposed Patterns:** ai-* meta tags, data-agent-visible - experimental but forward-compatible
+
+## Interactive Materials
+
+- [Interactive Notebook](invisible-users/invisible-users.ipynb): Interactive Jupyter notebook with visual demonstrations, data tables, and calculations. Hosted at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html). Time to complete: 60-75 minutes. Features chapter index, visual comparisons, cost impact tables, priority roadmaps, and user responsibility guidance.
+
+## Web Audit Suite
+
+Production-ready Node.js tool implementing the patterns from the book. Comprehensive website analysis for AI agent compatibility.
+
+### Overview
+
+- **Version:** 1.0.0
+- **Status:** Production-ready
+- **License:** Proprietary (all rights reserved)
+- **Node.js:** 20.0.0 or higher required
+- **Installation:** `npm install` from repository root or web-audit-suite directory
+
+### Key Features
+
+- **AI Agent Compatibility Analysis:** LLM suitability scoring based on served vs rendered HTML states
+- **SEO Performance:** Page-by-page SEO metrics and recommendations
+- **Accessibility Compliance:** WCAG 2.1 testing with Pa11y integration
+- **Performance Metrics:** Load times, resource sizes, and optimization opportunities
+- **Security Headers:** HTTP security header validation
+- **Content Quality:** Semantic HTML, structured data, and readability analysis
+- **Dashboard Generation:** Interactive HTML dashboard with charts and visualizations
+- **Historical Tracking:** Compare changes over time with trend analysis
+- **Executive Summaries:** High-level reports for stakeholders
+- **Agency White-labeling:** Custom branding with `--agency-name` and `--agency-logo` options
+- **Bulk Audits:** Analyze multiple domains from CSV files
+- **Rate Limiting:** Configurable request throttling using token bucket algorithm
+- **Flexible Configuration:** CLI flags, environment variables, and threshold files
+
+
+### Documentation
+
+- [QUICKSTART.md](web-audit-suite/QUICKSTART.md): 5-minute getting started guide
+- [README.md](web-audit-suite/README.md): Complete tool documentation
+- [User Manual](web-audit-suite/docs/usermanual.md): Comprehensive usage guide
+- [Configuration Guide](web-audit-suite/docs/CONFIGURATION.md): Environment variables and thresholds
+- [Features Overview](web-audit-suite/docs/FEATURES.md): Detailed feature descriptions
+- [CI/CD Integration](web-audit-suite/docs/CI-CD-INTEGRATION.md): Quality gates for automated pipelines
+
+ 
+## For Human Visitors
+
+Looking for more information about this book project?
+
+- **Author:** Tom Cranstoun
+- **LinkedIn:** [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
+- **About llms.txt:** [https://llmstxt.org](https://llmstxt.org)
+
+## Version Information
+
+### Book Manuscript
+
+**Version:** 2.5.1 (January 2026)
+**Status:** Publication-ready
+**Total Words:** ~50,000 words (core manuscript), ~68,800 words (including supporting materials)
+**Chapters:** 10 complete chapters
+**Illustrations:** 10 SVG illustrations
+**Supporting Materials:** All complete (guides, glossary, code examples, interactive notebook)
+
+### Web Audit Suite Version
+
+**Version:** 1.0.0 (January 2026)
+**Status:** Production-ready
+**License:** Proprietary (all rights reserved)
+**Architecture:** Three-phase pipeline with modular utilities
+**Testing:** Comprehensive unit and integration test coverage
+**Features:** Full AI agent compatibility analysis, SEO, accessibility, performance, security

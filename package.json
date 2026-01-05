@@ -1,0 +1,46 @@
+{
+  "name": "the-invisible-users",
+  "version": "1.0.0",
+  "description": "Designing the Web for AI Agents and Everyone Else - Book manuscript and Web Audit Suite implementation",
+  "private": true,
+  "scripts": {
+    "wordcount": "wc -w invisible-users/chapter-*.md | tail -1",
+    "wordcount:all": "wc -w invisible-users/*.md",
+    "lint:markdown": "markdownlint '**/*.md' --ignore node_modules --ignore web-audit-suite/node_modules",
+    "lint:markdown:fix": "markdownlint --fix '**/*.md' --ignore node_modules --ignore web-audit-suite/node_modules",
+    "validate:links": "markdown-link-check --config .markdown-link-check.json invisible-users/chapter-*.md invisible-users/book-plan.md",
+    "serve": "npx live-server --port=8080 --entry-file=invisible-users/book-plan.md",
+    "status": "node -e \"console.log('Book Status:'); require('fs').readdirSync('invisible-users').filter(f => f.startsWith('chapter-')).sort().forEach(f => console.log('  ✓', f))\"",
+    "illustrations:generate": "cd invisible-users/illustrations && for svg in chapter-*.svg; do png=\"${svg%.svg}.png\"; echo \"Converting $svg to $png...\"; magick convert -density 300 -background white \"$svg\" \"$png\" 2>/dev/null || convert -density 300 -background white \"$svg\" \"$png\"; done && echo \"✓ All PNG illustrations generated\"",
+    "pdf:html": "pandoc invisible-users/executive-summary.md invisible-users/preface.md invisible-users/chapter-*.md invisible-users/appendix-*.md invisible-users/Glossary.md invisible-users/glossary-simplified.md -o the-invisible-users.html --resource-path=invisible-users --standalone --toc --toc-depth=2 --metadata title='The Invisible Users' --metadata subtitle='Designing the Web for AI Agents and Everyone Else' --metadata author='Tom Cranstoun' --metadata date='January 2026' && echo '✓ HTML generated: the-invisible-users.html (open and print to PDF using ⌘+P)'",
+    "pdf:generate": "pandoc invisible-users/executive-summary.md invisible-users/preface.md invisible-users/chapter-*.md invisible-users/appendix-*.md invisible-users/Glossary.md invisible-users/glossary-simplified.md -o the-invisible-users.pdf --resource-path=invisible-users --pdf-engine=xelatex --toc --toc-depth=2 -V geometry:margin=1in -V fontsize=11pt -V documentclass=book -V papersize=a4 -V linkcolor=blue --metadata title='The Invisible Users' --metadata subtitle='Designing the Web for AI Agents and Everyone Else' --metadata author='Tom Cranstoun' --metadata date='January 2026' && echo '✓ PDF generated: the-invisible-users.pdf'",
+    "pdf:simple": "pandoc invisible-users/executive-summary.md invisible-users/preface.md invisible-users/chapter-*.md invisible-users/appendix-*.md invisible-users/Glossary.md invisible-users/glossary-simplified.md -o the-invisible-users-simple.pdf --resource-path=invisible-users --pdf-engine=xelatex --toc --toc-depth=2 -V geometry:margin=1in -V fontsize=11pt -V linkcolor=blue --metadata title='The Invisible Users' --metadata subtitle='Designing the Web for AI Agents and Everyone Else' --metadata author='Tom Cranstoun' --metadata date='January 2026' && echo '✓ Simple PDF generated: the-invisible-users-simple.pdf'",
+    "audit:start": "cd web-audit-suite && node index.js",
+    "audit:test": "cd web-audit-suite && npm test",
+    "audit:lint": "cd web-audit-suite && npm run lint",
+    "audit:install": "cd web-audit-suite && npm install"
+  },
+  "keywords": [
+    "AI",
+    "web-design",
+    "accessibility",
+    "agents",
+    "user-experience",
+    "book",
+    "manuscript",
+    "seo",
+    "performance",
+    "security",
+    "audit",
+    "web",
+    "pa11y",
+    "llm",
+    "ai-agents"
+  ],
+  "author": "Tom Cranstoun",
+  "license": "PROPRIETARY",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ddttom/invisible-users"
+  }
+}

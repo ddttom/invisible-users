@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results: headphones</title>
+</head>
+<body>
+  <main>
+    <h1>Search Results</h1>
+
+    <!-- Search results container -->
+    <div class="search-results"
+         data-query="headphones"
+         data-total-results="47"
+         data-page="1"
+         data-per-page="20"
+         data-total-pages="3">
+
+      <!-- Results summary -->
+      <p role="status">
+        Showing <span data-start="1">1</span>-<span data-end="20">20</span>
+        of <strong data-total="47">47</strong> results for
+        "<strong data-query="headphones">headphones</strong>"
+      </p>
+
+      <!-- Sort options -->
+      <form action="/search" method="GET">
+        <input type="hidden" name="q" value="headphones">
+        <label for="sort">Sort by:</label>
+        <select id="sort" name="sort" onchange="this.form.submit()">
+          <option value="relevance" selected>Relevance</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="date-desc">Newest First</option>
+          <option value="rating-desc">Highest Rated</option>
+        </select>
+      </form>
+
+      <!-- Results list -->
+      <ol class="results-list" data-sort="relevance">
+        <li class="result-item"
+            data-product-id="WH-1000"
+            data-price="149.99"
+            data-currency="GBP"
+            data-in-stock="true">
+          <article>
+            <h2><a href="/products/wh-1000">Wireless Headphones</a></h2>
+            <p>Premium over-ear headphones with active noise cancellation</p>
+            <p class="price">
+              <span data-price="149.99" data-currency="GBP">£149.99</span>
+            </p>
+            <p class="stock" data-in-stock="true">In stock</p>
+          </article>
+        </li>
+
+        <li class="result-item"
+            data-product-id="WH-500"
+            data-price="89.99"
+            data-currency="GBP"
+            data-in-stock="true">
+          <article>
+            <h2><a href="/products/wh-500">Budget Wireless Headphones</a></h2>
+            <p>Affordable wireless headphones with good sound quality</p>
+            <p class="price">
+              <span data-price="89.99" data-currency="GBP">£89.99</span>
+            </p>
+            <p class="stock" data-in-stock="true">In stock</p>
+          </article>
+        </li>
+
+        <li class="result-item"
+            data-product-id="WH-2000"
+            data-price="249.99"
+            data-currency="GBP"
+            data-in-stock="false">
+          <article>
+            <h2><a href="/products/wh-2000">Premium Wireless Headphones</a></h2>
+            <p>Top-of-the-line headphones with studio-quality sound</p>
+            <p class="price">
+              <span data-price="249.99" data-currency="GBP">£249.99</span>
+            </p>
+            <p class="stock" data-in-stock="false">Out of stock</p>
+          </article>
+        </li>
+
+        <!-- More results... -->
+      </ol>
+
+      <!-- Pagination -->
+      <nav aria-label="Search results pagination"
+           data-current-page="1"
+           data-total-pages="3">
+        <ul>
+          <li aria-current="page">
+            <span>1</span>
+          </li>
+          <li>
+            <a href="/search?q=headphones&page=2" rel="next">2</a>
+          </li>
+          <li>
+            <a href="/search?q=headphones&page=3">3</a>
+          </li>
+          <li>
+            <a href="/search?q=headphones&page=2" rel="next">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Alternative: No results state -->
+    <section hidden>
+      <div class="search-results"
+           data-query="zzznonexistent"
+           data-total-results="0"
+           data-state="empty">
+
+        <h2>No results found</h2>
+        <p>No products match your search for "<strong>zzznonexistent</strong>"</p>
+
+        <section class="suggestions">
+          <h3>Suggestions:</h3>
+          <ul>
+            <li>Check your spelling</li>
+            <li>Try more general keywords</li>
+            <li>Try different keywords</li>
+          </ul>
+        </section>
+
+        <nav>
+          <a href="/products">Browse all products</a>
+          <a href="/categories">Browse by category</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    Key principles:
+    - data-query stores search term
+    - data-total-results explicit count
+    - data-page, data-per-page, data-total-pages for pagination
+    - Each result has data-product-id, data-price, data-in-stock
+    - Sort order in data-sort attribute
+    - Pagination uses rel="next" for SEO
+    - Empty state has data-state="empty"
+    - Current page marked with aria-current="page"
+  -->
+</body>
+</html>

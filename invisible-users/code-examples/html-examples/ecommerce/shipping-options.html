@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Options</title>
+</head>
+<body>
+  <main>
+    <h1>Delivery Options</h1>
+
+    <form action="/checkout" method="POST">
+      <!-- Shipping options -->
+      <fieldset class="shipping-options">
+        <legend>Choose delivery method</legend>
+
+        <label>
+          <input type="radio"
+                 name="shipping"
+                 value="standard"
+                 data-price="0"
+                 data-days="3-5"
+                 checked>
+          <span><strong>Standard Delivery</strong> - Free (3-5 working days)</span>
+        </label>
+
+        <label>
+          <input type="radio"
+                 name="shipping"
+                 value="express"
+                 data-price="5.99"
+                 data-days="1-2">
+          <span><strong>Express Delivery</strong> - £5.99 (1-2 working days)</span>
+        </label>
+
+        <label>
+          <input type="radio"
+                 name="shipping"
+                 value="next-day"
+                 data-price="9.99"
+                 data-days="1">
+          <span><strong>Next Day Delivery</strong> - £9.99 (order before 6pm)</span>
+        </label>
+
+        <label>
+          <input type="radio"
+                 name="shipping"
+                 value="collection"
+                 data-price="0"
+                 data-days="2-3">
+          <span><strong>Click & Collect</strong> - Free (available in 2-3 days at selected stores)</span>
+        </label>
+      </fieldset>
+
+      <!-- Delivery address -->
+      <fieldset>
+        <legend>Delivery address</legend>
+
+        <div class="field">
+          <label for="address1">Address line 1</label>
+          <input type="text" id="address1" name="address1" required>
+        </div>
+
+        <div class="field">
+          <label for="address2">Address line 2 (optional)</label>
+          <input type="text" id="address2" name="address2">
+        </div>
+
+        <div class="field">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" required>
+        </div>
+
+        <div class="field">
+          <label for="postcode">Postcode</label>
+          <input type="text" id="postcode" name="postcode" required>
+        </div>
+
+        <div class="field">
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="GB" selected>United Kingdom</option>
+            <option value="US">United States</option>
+            <option value="FR">France</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!-- Cost summary -->
+      <div class="cost-summary">
+        <dl>
+          <dt>Subtotal</dt>
+          <dd data-subtotal="149.99" data-currency="GBP">£149.99</dd>
+
+          <dt>Delivery</dt>
+          <dd data-shipping="0" data-currency="GBP" id="shipping-cost">Free</dd>
+
+          <dt><strong>Total</strong></dt>
+          <dd data-total="149.99" data-currency="GBP" id="order-total"><strong>£149.99</strong></dd>
+        </dl>
+      </div>
+
+      <button type="submit">Continue to payment</button>
+    </form>
+
+    <!-- Alternative: Shipping with restrictions -->
+    <section hidden>
+      <h2>Shipping Options (with restrictions)</h2>
+
+      <fieldset class="shipping-options">
+        <legend>Choose delivery method</legend>
+
+        <label>
+          <input type="radio"
+                 name="shipping"
+                 value="standard"
+                 data-price="0"
+                 data-days="3-5"
+                 checked>
+          <span><strong>Standard Delivery</strong> - Free (3-5 working days)</span>
+        </label>
+
+        <label data-disabled="true">
+          <input type="radio"
+                 name="shipping"
+                 value="next-day"
+                 data-price="9.99"
+                 data-days="1"
+                 disabled
+                 aria-describedby="next-day-restriction">
+          <span><strong>Next Day Delivery</strong> - £9.99</span>
+          <span id="next-day-restriction" class="restriction">
+            Not available for your postcode
+          </span>
+        </label>
+
+        <label data-disabled="true">
+          <input type="radio"
+                 name="shipping"
+                 value="international"
+                 data-price="24.99"
+                 data-days="7-14"
+                 disabled
+                 aria-describedby="international-restriction">
+          <span><strong>International Shipping</strong> - £24.99</span>
+          <span id="international-restriction" class="restriction">
+            Not available for items containing batteries
+          </span>
+        </label>
+      </fieldset>
+    </section>
+  </main>
+
+  <!--
+    Key principles:
+    - data-price on each option (including free=0)
+    - data-days shows delivery timeframe
+    - Default option checked
+    - Disabled options show clear reason
+    - Complete cost breakdown
+    - Shipping cost updates total (can be done with JavaScript or on submit)
+  -->
+</body>
+</html>

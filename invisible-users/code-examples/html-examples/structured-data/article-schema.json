@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Choose the Right Wireless Headphones",
+  "alternativeHeadline": "A Complete Guide to Selecting Quality Wireless Headphones",
+  "description": "An in-depth guide covering everything you need to know about choosing wireless headphones, including battery life, sound quality, noise cancellation, and comfort factors.",
+  "image": "https://example.com/articles/headphone-guide-hero.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Tom Cranstoun",
+    "url": "https://example.com/authors/tom-cranstoun",
+    "jobTitle": "Audio Technology Writer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Example Electronics Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://example.com/logo.png",
+      "width": 600,
+      "height": 60
+    }
+  },
+  "datePublished": "2025-01-15T09:00:00+00:00",
+  "dateModified": "2025-01-20T14:30:00+00:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://example.com/articles/choosing-wireless-headphones"
+  },
+  "articleSection": "Audio Guides",
+  "keywords": [
+    "wireless headphones",
+    "buying guide",
+    "audio quality",
+    "noise cancellation",
+    "bluetooth headphones"
+  ],
+  "wordCount": 2500,
+  "articleBody": "When shopping for wireless headphones, battery life is one of the most important factors to consider. Modern wireless headphones typically offer between 20 and 40 hours of playback time...",
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Wireless Headphones"
+    },
+    {
+      "@type": "Thing",
+      "name": "Audio Technology"
+    }
+  ]
+}

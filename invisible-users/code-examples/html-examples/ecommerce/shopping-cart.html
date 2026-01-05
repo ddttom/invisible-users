@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+</head>
+<body>
+  <main>
+    <div id="shopping-cart"
+         data-item-count="2"
+         data-subtotal="279.98"
+         data-currency="GBP">
+
+      <h1>Your basket (2 items)</h1>
+
+      <ul class="cart-items">
+        <!-- Cart item 1 -->
+        <li class="cart-item"
+            data-product-id="WH-1000"
+            data-quantity="1"
+            data-unit-price="149.99">
+
+          <div class="item-details">
+            <h2>Wireless Headphones</h2>
+            <p>Model: WH-1000</p>
+          </div>
+
+          <div class="item-quantity">
+            <form action="/cart/update" method="POST" style="display: inline;">
+              <input type="hidden" name="product_id" value="WH-1000">
+              <label for="qty-wh1000">Qty:</label>
+              <input type="number"
+                     id="qty-wh1000"
+                     name="quantity"
+                     value="1"
+                     min="1"
+                     max="23">
+              <button type="submit">Update</button>
+            </form>
+          </div>
+
+          <div class="item-price">
+            <span data-price="149.99" data-currency="GBP">£149.99</span>
+          </div>
+
+          <div class="item-actions">
+            <form action="/cart/remove" method="POST">
+              <input type="hidden" name="product_id" value="WH-1000">
+              <button type="submit">Remove</button>
+            </form>
+          </div>
+        </li>
+
+        <!-- Cart item 2 -->
+        <li class="cart-item"
+            data-product-id="KB-500"
+            data-quantity="2"
+            data-unit-price="65.00">
+
+          <div class="item-details">
+            <h2>Mechanical Keyboard</h2>
+            <p>Model: KB-500</p>
+          </div>
+
+          <div class="item-quantity">
+            <form action="/cart/update" method="POST" style="display: inline;">
+              <input type="hidden" name="product_id" value="KB-500">
+              <label for="qty-kb500">Qty:</label>
+              <input type="number"
+                     id="qty-kb500"
+                     name="quantity"
+                     value="2"
+                     min="1"
+                     max="15">
+              <button type="submit">Update</button>
+            </form>
+          </div>
+
+          <div class="item-price">
+            <span data-price="130.00" data-currency="GBP">£130.00</span>
+            <small>(£65.00 each)</small>
+          </div>
+
+          <div class="item-actions">
+            <form action="/cart/remove" method="POST">
+              <input type="hidden" name="product_id" value="KB-500">
+              <button type="submit">Remove</button>
+            </form>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Cart totals -->
+      <div class="cart-totals">
+        <dl>
+          <dt>Subtotal</dt>
+          <dd data-subtotal="279.98" data-currency="GBP">£279.98</dd>
+
+          <dt>Shipping</dt>
+          <dd data-shipping="0" data-currency="GBP">Free</dd>
+
+          <dt>VAT (included)</dt>
+          <dd data-vat="46.66" data-currency="GBP">£46.66</dd>
+
+          <dt><strong>Total</strong></dt>
+          <dd data-total="279.98" data-currency="GBP"><strong>£279.98</strong></dd>
+        </dl>
+      </div>
+
+      <!-- Checkout action -->
+      <div class="cart-actions">
+        <a href="/checkout"
+           data-checkout-ready="true"
+           class="checkout-button">
+          Proceed to Checkout
+        </a>
+        <a href="/products">Continue shopping</a>
+      </div>
+    </div>
+
+    <!-- Empty cart state -->
+    <section class="empty-cart" hidden>
+      <div id="shopping-cart"
+           data-item-count="0"
+           data-state="empty">
+        <h1>Your basket is empty</h1>
+        <p>You haven't added any items yet.</p>
+        <a href="/products">Browse products</a>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    Key principles:
+    - data-item-count at cart level
+    - Each item has data-product-id, data-quantity, data-unit-price
+    - Totals in data attributes (subtotal, shipping, vat, total)
+    - All prices include currency
+    - Remove/update are POST forms (not GET links)
+    - Empty state has data-state="empty"
+    - Checkout ready status explicit
+  -->
+</body>
+</html>

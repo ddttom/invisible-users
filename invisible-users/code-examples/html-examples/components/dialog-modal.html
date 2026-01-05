@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialog/Modal Patterns</title>
+</head>
+<body>
+  <main>
+    <h1>Dialog and Modal Patterns</h1>
+
+    <!-- Button to open dialog -->
+    <button onclick="document.getElementById('confirm-delete').showModal()">
+      Delete Item
+    </button>
+
+    <!-- Confirmation dialog -->
+    <dialog id="confirm-delete"
+            aria-labelledby="dialog-title"
+            data-action="confirm-deletion"
+            data-target-id="item-123">
+
+      <h2 id="dialog-title">Delete this item?</h2>
+      <p>This action cannot be undone. The item will be permanently removed.</p>
+
+      <form method="dialog">
+        <button value="cancel" type="button" onclick="this.closest('dialog').close()">
+          Cancel
+        </button>
+        <button value="confirm"
+                type="submit"
+                formaction="/items/123/delete"
+                formmethod="POST">
+          Delete
+        </button>
+      </form>
+    </dialog>
+
+    <!-- Alternative: Information dialog -->
+    <h2>Information Dialog</h2>
+    <button onclick="document.getElementById('info-dialog').showModal()">
+      Show Information
+    </button>
+
+    <dialog id="info-dialog"
+            aria-labelledby="info-title"
+            data-dialog-type="information">
+
+      <header>
+        <h2 id="info-title">Product Information</h2>
+        <button type="button"
+                onclick="this.closest('dialog').close()"
+                aria-label="Close dialog">
+          ×
+        </button>
+      </header>
+
+      <div class="dialog-content">
+        <p>These headphones feature active noise cancellation and 40-hour battery life.</p>
+        <dl>
+          <dt>Weight</dt>
+          <dd>254g</dd>
+          <dt>Connectivity</dt>
+          <dd>Bluetooth 5.2</dd>
+          <dt>Warranty</dt>
+          <dd>2 years</dd>
+        </dl>
+      </div>
+
+      <footer>
+        <form method="dialog">
+          <button value="close">Close</button>
+        </form>
+      </footer>
+    </dialog>
+
+    <!-- Alternative: Form dialog -->
+    <h2>Form Dialog</h2>
+    <button onclick="document.getElementById('form-dialog').showModal()">
+      Add to Cart
+    </button>
+
+    <dialog id="form-dialog"
+            aria-labelledby="form-title"
+            data-dialog-type="form">
+
+      <h2 id="form-title">Add to Cart</h2>
+
+      <form action="/cart/add" method="POST">
+        <input type="hidden" name="product_id" value="WH-1000">
+
+        <div class="field">
+          <label for="quantity">Quantity</label>
+          <input type="number"
+                 id="quantity"
+                 name="quantity"
+                 value="1"
+                 min="1"
+                 max="23"
+                 required>
+          <small>23 available</small>
+        </div>
+
+        <div class="field">
+          <label for="color">Color</label>
+          <select id="color" name="color" required>
+            <option value="black">Black</option>
+            <option value="silver">Silver</option>
+            <option value="white">White</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" onclick="this.closest('dialog').close()">
+            Cancel
+          </button>
+          <button type="submit">
+            Add to Cart
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Alternative: Multi-action dialog -->
+    <h2>Multi-Action Dialog</h2>
+    <button onclick="document.getElementById('actions-dialog').showModal()">
+      Item Options
+    </button>
+
+    <dialog id="actions-dialog"
+            aria-labelledby="actions-title"
+            data-dialog-type="actions"
+            data-item-id="item-456">
+
+      <h2 id="actions-title">What would you like to do?</h2>
+
+      <nav class="action-list">
+        <a href="/items/456/edit">Edit item</a>
+        <a href="/items/456/duplicate">Duplicate item</a>
+        <a href="/items/456/share">Share item</a>
+        <button type="button"
+                onclick="/* show delete confirmation */">
+          Delete item
+        </button>
+      </nav>
+
+      <form method="dialog">
+        <button value="cancel">Cancel</button>
+      </form>
+    </dialog>
+  </main>
+
+  <style>
+    /* Basic dialog styling (optional) */
+    dialog {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 1rem;
+      max-width: 500px;
+    }
+
+    dialog::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .form-actions,
+    form[method="dialog"] {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+  </style>
+
+  <script>
+    // Optional: Close dialog on backdrop click
+    document.querySelectorAll('dialog').forEach(dialog => {
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) {
+          dialog.close();
+        }
+      });
+    });
+  </script>
+
+  <!--
+    Key principles:
+    - Use native <dialog> element
+    - aria-labelledby connects to title
+    - data-action or data-dialog-type for context
+    - method="dialog" allows buttons to close without JavaScript
+    - showModal() for modal behavior
+    - close() method to dismiss
+    - ::backdrop for overlay styling
+    - Escape key closes automatically
+  -->
+</body>
+</html>

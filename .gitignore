@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# symlinks for AI tools
+.agents/
+GEMINI.md
+AGENTS.md
+
+# PNG illustrations (generated from SVG)
+invisible-users/illustrations/*.png
+
+# Generated book files
+the-invisible-users.html
+the-invisible-users.pdf
+the-invisible-users-simple.pdf

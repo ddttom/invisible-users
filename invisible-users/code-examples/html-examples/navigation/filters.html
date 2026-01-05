@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Filters</title>
+</head>
+<body>
+  <main>
+    <h1>Electronics</h1>
+
+    <!-- Active filters display -->
+    <div class="active-filters" data-active-filters="2">
+      <h2>Active filters:</h2>
+      <ul>
+        <li>
+          <span data-filter="category" data-value="headphones">
+            Category: Headphones
+          </span>
+          <a href="/products?brand=sony"
+             aria-label="Remove category filter">
+            × Remove
+          </a>
+        </li>
+        <li>
+          <span data-filter="brand" data-value="sony">
+            Brand: Sony
+          </span>
+          <a href="/products?category=headphones"
+             aria-label="Remove brand filter">
+            × Remove
+          </a>
+        </li>
+      </ul>
+      <a href="/products">Clear all filters</a>
+    </div>
+
+    <!-- Product results with filter state -->
+    <div class="product-listing"
+         data-filtered="true"
+         data-active-filters="2"
+         data-total-results="12">
+      <p>Showing 12 products</p>
+      <!-- Products here -->
+    </div>
+
+    <!-- Filter sidebar -->
+    <aside class="filters" aria-label="Product filters">
+      <!-- Category filter -->
+      <section class="filter-group">
+        <h3>Category</h3>
+        <form action="/products" method="GET">
+          <input type="hidden" name="brand" value="sony">
+          <fieldset>
+            <legend class="visually-hidden">Filter by category</legend>
+            <label>
+              <input type="checkbox"
+                     name="category"
+                     value="headphones"
+                     checked
+                     onchange="this.form.submit()">
+              Headphones <span data-count="12">(12)</span>
+            </label>
+            <label>
+              <input type="checkbox"
+                     name="category"
+                     value="speakers"
+                     onchange="this.form.submit()">
+              Speakers <span data-count="8">(8)</span>
+            </label>
+            <label>
+              <input type="checkbox"
+                     name="category"
+                     value="earbuds"
+                     onchange="this.form.submit()">
+              Earbuds <span data-count="23">(23)</span>
+            </label>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- Brand filter -->
+      <section class="filter-group">
+        <h3>Brand</h3>
+        <form action="/products" method="GET">
+          <input type="hidden" name="category" value="headphones">
+          <fieldset>
+            <legend class="visually-hidden">Filter by brand</legend>
+            <label>
+              <input type="checkbox"
+                     name="brand"
+                     value="sony"
+                     checked
+                     onchange="this.form.submit()">
+              Sony <span data-count="12">(12)</span>
+            </label>
+            <label>
+              <input type="checkbox"
+                     name="brand"
+                     value="bose"
+                     onchange="this.form.submit()">
+              Bose <span data-count="7">(7)</span>
+            </label>
+            <label>
+              <input type="checkbox"
+                     name="brand"
+                     value="sennheiser"
+                     onchange="this.form.submit()">
+              Sennheiser <span data-count="5">(5)</span>
+            </label>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- Price range filter -->
+      <section class="filter-group">
+        <h3>Price</h3>
+        <form action="/products" method="GET">
+          <input type="hidden" name="category" value="headphones">
+          <input type="hidden" name="brand" value="sony">
+          <fieldset>
+            <legend class="visually-hidden">Filter by price range</legend>
+            <label>
+              <input type="checkbox"
+                     name="price_range"
+                     value="0-50"
+                     onchange="this.form.submit()">
+              Under £50 <span data-count="3">(3)</span>
+            </label>
+            <label>
+              <input type="checkbox"
+                     name="price_range"
+                     value="50-100"
+                     onchange="this.form.submit()">
+              £50-£100 <span data-count="5">(5)</span>
+            </label>
+            <label>
+              <input type="checkbox"
+                     name="price_range"
+                     value="100-200"
+                     onchange="this.form.submit()">
+              £100-£200 <span data-count="8">(8)</span>
+            </label>
+            <label>
+              <input type="checkbox"
+                     name="price_range"
+                     value="200-plus"
+                     onchange="this.form.submit()">
+              Over £200 <span data-count="4">(4)</span>
+            </label>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- Availability filter -->
+      <section class="filter-group">
+        <h3>Availability</h3>
+        <form action="/products" method="GET">
+          <input type="hidden" name="category" value="headphones">
+          <input type="hidden" name="brand" value="sony">
+          <fieldset>
+            <legend class="visually-hidden">Filter by availability</legend>
+            <label>
+              <input type="checkbox"
+                     name="in_stock"
+                     value="true"
+                     onchange="this.form.submit()">
+              In stock only <span data-count="18">(18)</span>
+            </label>
+          </fieldset>
+        </form>
+      </section>
+    </aside>
+
+    <!-- Alternative: Combined filter form -->
+    <section hidden>
+      <h2>Alternative: Single Form with All Filters</h2>
+      <form action="/products" method="GET" data-active-filters="1">
+        <fieldset>
+          <legend>Category</legend>
+          <label>
+            <input type="checkbox" name="category" value="headphones" checked>
+            Headphones (12)
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Brand</legend>
+          <label>
+            <input type="checkbox" name="brand" value="sony">
+            Sony (12)
+          </label>
+          <label>
+            <input type="checkbox" name="brand" value="bose">
+            Bose (7)
+          </label>
+        </fieldset>
+
+        <button type="submit">Apply filters</button>
+        <a href="/products">Clear all</a>
+      </form>
+    </section>
+  </main>
+
+  <!--
+    Key principles:
+    - data-active-filters count at container level
+    - Each filter has data-filter and data-value
+    - Remove links preserve other active filters
+    - Clear all link goes to unfiltered URL
+    - Result count shown for each filter option
+    - Checked state matches active filters
+    - Forms work without JavaScript (optional: submit on change)
+    - Product listing shows data-filtered="true"
+  -->
+</body>
+</html>

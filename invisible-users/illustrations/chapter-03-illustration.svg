@@ -1,0 +1,94 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" font-family="Georgia, serif" font-size="20" fill="#1a1a1a" text-anchor="middle" font-weight="bold">The Architectural Conflict</text>
+  <text x="400" y="55" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle" font-style="italic">Same interface, fundamentally different processing</text>
+  
+  <!-- Dividing line -->
+  <line x1="400" y1="70" x2="400" y2="480" stroke="#d1d5db" stroke-width="2" stroke-dasharray="8,4"/>
+  
+  <!-- Left side: Human -->
+  <text x="200" y="90" font-family="system-ui, sans-serif" font-size="16" fill="#2563eb" text-anchor="middle" font-weight="bold">Human Cognition</text>
+  
+  <!-- Human brain icon -->
+  <ellipse cx="200" cy="130" rx="30" ry="25" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <path d="M180 125 Q185 115 200 115 Q215 115 220 125" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+  <path d="M175 135 Q180 145 200 145 Q220 145 225 135" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+  
+  <!-- Human characteristics -->
+  <g transform="translate(40, 170)">
+    <!-- Working memory limited -->
+    <rect x="0" y="0" width="320" height="45" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="15" y="18" font-family="system-ui, sans-serif" font-size="11" fill="#1e40af" font-weight="bold">Limited Working Memory</text>
+    <text x="15" y="33" font-family="system-ui, sans-serif" font-size="10" fill="#444">7±2 items • Needs chunking • Progressive disclosure helps</text>
+    
+    <!-- Selective attention -->
+    <rect x="0" y="55" width="320" height="45" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="15" y="73" font-family="system-ui, sans-serif" font-size="11" fill="#1e40af" font-weight="bold">Selective Attention + Peripheral Vision</text>
+    <text x="15" y="88" font-family="system-ui, sans-serif" font-size="10" fill="#444">Notices movement in corners • Alerts to changes • Scans spatially</text>
+    
+    <!-- Inference -->
+    <rect x="0" y="110" width="320" height="45" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="15" y="128" font-family="system-ui, sans-serif" font-size="11" fill="#1e40af" font-weight="bold">Powerful Inference</text>
+    <text x="15" y="143" font-family="system-ui, sans-serif" font-size="10" fill="#444">Grey button = disabled • Red border = error • Spinner = loading</text>
+    
+    <!-- Time perception -->
+    <rect x="0" y="165" width="320" height="45" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="15" y="183" font-family="system-ui, sans-serif" font-size="11" fill="#1e40af" font-weight="bold">Time-Based Understanding</text>
+    <text x="15" y="198" font-family="system-ui, sans-serif" font-size="10" fill="#444">Animations signal transitions • "This is taking too long" intuition</text>
+  </g>
+  
+  <!-- Human optimisation strategy -->
+  <rect x="50" y="400" width="300" height="55" rx="8" fill="#2563eb" stroke="none"/>
+  <text x="200" y="422" font-family="system-ui, sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Optimises for:</text>
+  <text x="200" y="442" font-family="system-ui, sans-serif" font-size="11" fill="#bfdbfe" text-anchor="middle">Forgetting and re-finding</text>
+  
+  <!-- Right side: Machine -->
+  <text x="600" y="90" font-family="system-ui, sans-serif" font-size="16" fill="#6b7280" text-anchor="middle" font-weight="bold">Machine Parsing</text>
+  
+  <!-- Machine icon -->
+  <rect x="575" y="110" width="50" height="40" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+  <line x1="585" y1="120" x2="615" y2="120" stroke="#6b7280" stroke-width="2"/>
+  <line x1="585" y1="130" x2="605" y2="130" stroke="#6b7280" stroke-width="2"/>
+  <line x1="585" y1="140" x2="615" y2="140" stroke="#6b7280" stroke-width="2"/>
+  
+  <!-- Machine characteristics -->
+  <g transform="translate(440, 170)">
+    <!-- Unlimited memory -->
+    <rect x="0" y="0" width="320" height="45" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+    <text x="15" y="18" font-family="system-ui, sans-serif" font-size="11" fill="#374151" font-weight="bold">Unlimited Working Memory</text>
+    <text x="15" y="33" font-family="system-ui, sans-serif" font-size="10" fill="#666">Can hold entire page • Doesn't need chunking • Wants everything</text>
+    
+    <!-- Sequential parsing -->
+    <rect x="0" y="55" width="320" height="45" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+    <text x="15" y="73" font-family="system-ui, sans-serif" font-size="11" fill="#374151" font-weight="bold">Sequential Parsing, No Peripheral Vision</text>
+    <text x="15" y="88" font-family="system-ui, sans-serif" font-size="10" fill="#666">Reads DOM top-to-bottom • Misses corner events • No spatial sense</text>
+    
+    <!-- No inference -->
+    <rect x="0" y="110" width="320" height="45" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+    <text x="15" y="128" font-family="system-ui, sans-serif" font-size="11" fill="#374151" font-weight="bold">Unreliable Inference</text>
+    <text x="15" y="143" font-family="system-ui, sans-serif" font-size="10" fill="#666">Grey button = disabled? styled? processing? • Must guess or fail</text>
+    
+    <!-- No time sense -->
+    <rect x="0" y="165" width="320" height="45" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+    <text x="15" y="183" font-family="system-ui, sans-serif" font-size="11" fill="#374151" font-weight="bold">No Time Intuition</text>
+    <text x="15" y="198" font-family="system-ui, sans-serif" font-size="10" fill="#666">Animations = pure delay • 2s and 20s spinners look identical</text>
+  </g>
+  
+  <!-- Machine optimisation strategy -->
+  <rect x="450" y="400" width="300" height="55" rx="8" fill="#6b7280" stroke="none"/>
+  <text x="600" y="422" font-family="system-ui, sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Optimises for:</text>
+  <text x="600" y="442" font-family="system-ui, sans-serif" font-size="11" fill="#d1d5db" text-anchor="middle">Complete capture in single pass</text>
+  
+  <!-- Center conflict indicator -->
+  <g transform="translate(370, 280)">
+    <polygon points="30,0 60,25 30,50 0,25" fill="#dc2626" opacity="0.9"/>
+    <text x="30" y="30" font-family="system-ui, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">≠</text>
+  </g>
+  
+  <!-- Bottom insight -->
+  <rect x="200" y="465" width="400" height="28" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="1"/>
+  <text x="400" y="484" font-family="Georgia, serif" font-size="11" fill="#92400e" text-anchor="middle" font-style="italic">The same design cannot optimise for both - but clarity helps everyone</text>
+</svg>

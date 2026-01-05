@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luigi's Pizza - Manchester</title>
+    <meta name="description" content="Authentic Italian pizza in Manchester. Order online or visit us at 123 Main Street. Open 11am-10pm daily.">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured data for search engines and AI agents -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Luigi's Pizza",
+      "image": "https://luigispizza.example/logo.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Main Street",
+        "addressLocality": "Manchester",
+        "postalCode": "M1 1AA",
+        "addressCountry": "GB"
+      },
+      "telephone": "+441611234567",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "11:00",
+          "closes": "22:00"
+        }
+      ],
+      "priceRange": "££",
+      "servesCuisine": "Italian",
+      "acceptsReservations": true
+    }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div itemscope itemtype="https://schema.org/Restaurant">
+            <h1 itemprop="name">Luigi's Pizza</h1>
+
+            <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <address>
+                    <span itemprop="streetAddress">123 Main Street</span>,
+                    <span itemprop="addressLocality">Manchester</span>,
+                    <span itemprop="postalCode">M1 1AA</span>
+                </address>
+            </div>
+
+            <p>Phone: <a href="tel:+441611234567" itemprop="telephone">0161 123 4567</a></p>
+
+            <p>
+                <strong>Opening hours:</strong>
+                <time itemprop="openingHours" datetime="Mo-Su 11:00-22:00">
+                    11am - 10pm daily
+                </time>
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Order status for authenticated users -->
+        <div id="auth-status" data-authenticated="false">
+            <p><a href="/login">Sign in</a> to view your orders</p>
+        </div>
+
+        <!-- Menu section -->
+        <section itemprop="menu" itemscope itemtype="https://schema.org/Menu">
+            <h2>Menu</h2>
+
+            <div itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
+                <h3 itemprop="name">Pizzas</h3>
+
+                <!-- Menu item with complete information -->
+                <article itemprop="hasMenuItem"
+                         itemscope
+                         itemtype="https://schema.org/MenuItem"
+                         data-product-id="PIZZA-MARG"
+                         data-in-stock="true"
+                         data-price="12.99"
+                         data-currency="GBP">
+                    <h4 itemprop="name">Margherita</h4>
+                    <p itemprop="description">Tomato sauce, mozzarella, fresh basil</p>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span class="price">
+                            <meta itemprop="priceCurrency" content="GBP">
+                            <span itemprop="price" content="12.99">£12.99</span>
+                        </span>
+                        <meta itemprop="availability" content="https://schema.org/InStock">
+                        <span class="availability" data-in-stock="true">Available</span>
+                    </div>
+                    <form action="/cart/add" method="POST">
+                        <input type="hidden" name="product_id" value="PIZZA-MARG">
+                        <label for="qty-marg">Quantity:</label>
+                        <input type="number" id="qty-marg" name="quantity" value="1" min="1" max="10">
+                        <button type="submit">Add to Order</button>
+                    </form>
+                </article>
+
+                <!-- Menu item available -->
+                <article itemprop="hasMenuItem"
+                         itemscope
+                         itemtype="https://schema.org/MenuItem"
+                         data-product-id="PIZZA-PEPP"
+                         data-in-stock="true"
+                         data-price="14.99"
+                         data-currency="GBP">
+                    <h4 itemprop="name">Pepperoni</h4>
+                    <p itemprop="description">Tomato sauce, mozzarella, spicy pepperoni</p>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span class="price">
+                            <meta itemprop="priceCurrency" content="GBP">
+                            <span itemprop="price" content="14.99">£14.99</span>
+                        </span>
+                        <meta itemprop="availability" content="https://schema.org/InStock">
+                        <span class="availability" data-in-stock="true">Available</span>
+                    </div>
+                    <form action="/cart/add" method="POST">
+                        <input type="hidden" name="product_id" value="PIZZA-PEPP">
+                        <label for="qty-pepp">Quantity:</label>
+                        <input type="number" id="qty-pepp" name="quantity" value="1" min="1" max="10">
+                        <button type="submit">Add to Order</button>
+                    </form>
+                </article>
+
+                <!-- Special offer item -->
+                <article itemprop="hasMenuItem"
+                         itemscope
+                         itemtype="https://schema.org/MenuItem"
+                         data-product-id="PIZZA-FOUR"
+                         data-in-stock="true"
+                         data-price="15.99"
+                         data-original-price="18.99"
+                         data-currency="GBP">
+                    <h4 itemprop="name">Four Cheese</h4>
+                    <p itemprop="description">Mozzarella, parmesan, gorgonzola, ricotta</p>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span class="price">
+                            <meta itemprop="priceCurrency" content="GBP">
+                            <span class="original-price"><s>£18.99</s></span>
+                            <strong><span itemprop="price" content="15.99">£15.99</span></strong>
+                            <span class="discount-badge">Save £3</span>
+                        </span>
+                        <meta itemprop="availability" content="https://schema.org/InStock">
+                        <span class="availability" data-in-stock="true">Available</span>
+                    </div>
+                    <form action="/cart/add" method="POST">
+                        <input type="hidden" name="product_id" value="PIZZA-FOUR">
+                        <label for="qty-four">Quantity:</label>
+                        <input type="number" id="qty-four" name="quantity" value="1" min="1" max="10">
+                        <button type="submit">Add to Order</button>
+                    </form>
+                </article>
+            </div>
+        </section>
+
+        <!-- Delivery options section -->
+        <section>
+            <h2>Delivery Options</h2>
+            <form action="/checkout" method="POST">
+                <fieldset class="delivery-options">
+                    <legend>Choose delivery method</legend>
+
+                    <label>
+                        <input type="radio"
+                               name="delivery"
+                               value="collection"
+                               data-price="0"
+                               data-time="20"
+                               checked>
+                        <span><strong>Collection</strong> - Free (Ready in 20 minutes)</span>
+                    </label>
+
+                    <label>
+                        <input type="radio"
+                               name="delivery"
+                               value="delivery"
+                               data-price="2.99"
+                               data-time="45">
+                        <span><strong>Delivery</strong> - £2.99 (45-60 minutes)</span>
+                    </label>
+                </fieldset>
+
+                <div class="order-total">
+                    <dl>
+                        <dt>Subtotal</dt>
+                        <dd data-subtotal="0" data-currency="GBP">£0.00</dd>
+
+                        <dt>Delivery</dt>
+                        <dd data-delivery="0" data-currency="GBP">Free</dd>
+
+                        <dt><strong>Total</strong></dt>
+                        <dd data-total="0" data-currency="GBP"><strong>£0.00</strong></dd>
+                    </dl>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <nav aria-label="Footer navigation">
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/menu">Full Menu</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/terms">Terms</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2025 Luigi's Pizza. All rights reserved.</p>
+    </footer>
+
+    <!--
+    Key AI-Native Patterns Demonstrated:
+
+    1. JSON-LD structured data in <head>
+    2. Schema.org microdata throughout HTML
+    3. Explicit state in data attributes (data-in-stock, data-price, data-currency)
+    4. Complete pricing upfront (no "from £X")
+    5. Semantic HTML (header, main, section, article, nav, footer)
+    6. Progressive enhancement (forms work without JS)
+    7. Machine-readable datetime format
+    8. Clear authentication state
+    9. Delivery options with pricing
+    10. No hidden content or JavaScript requirements
+    -->
+</body>
+
+</html>

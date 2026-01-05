@@ -1,0 +1,34 @@
+# Adobe Edge Delivery Services (EDS) Query Index Configuration
+# Creates /query-index.json from your blog content
+# Place this file in your repository root
+
+indices:
+  blog-index:
+    # Source directory (adjust to your blog location)
+    source: /blogs/your-category
+
+    # Output file
+    target: /query-index.json
+
+    # Fields to extract from your content
+    fetch:
+      - title
+      - description
+      - lastModified
+      - category
+      - tags
+      - image
+      - author
+
+    # Optional: Properties for filtering
+    properties:
+      category:
+        select: head > meta[name="category"]
+        value: attribute(el, "content")
+      tags:
+        select: head > meta[name="tags"]
+        value: |
+          attribute(el, "content").split(',').map(s => s.trim())
+      author:
+        select: head > meta[name="author"]
+        value: attribute(el, "content")

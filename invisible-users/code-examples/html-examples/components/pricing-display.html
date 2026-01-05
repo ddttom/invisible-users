@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Display Patterns</title>
+</head>
+<body>
+  <main>
+    <h1>Pricing Display Patterns</h1>
+
+    <!-- Basic price with data attributes -->
+    <section>
+      <h2>Basic Price</h2>
+      <div class="price"
+           data-price="149.99"
+           data-currency="GBP">
+        <span class="currency">£</span>
+        <span class="amount">149.99</span>
+        <span class="vat-status">inc. VAT</span>
+      </div>
+    </section>
+
+    <!-- Price with breakdown -->
+    <section>
+      <h2>Price with Detailed Breakdown</h2>
+      <div class="price"
+           data-price="149.99"
+           data-currency="GBP">
+        <span class="amount-display">£149.99</span>
+        <span class="vat-status">inc. VAT</span>
+      </div>
+
+      <details class="price-breakdown">
+        <summary>Price breakdown</summary>
+        <dl>
+          <dt>Product price</dt>
+          <dd data-price="124.99" data-currency="GBP">£124.99</dd>
+
+          <dt>VAT (20%)</dt>
+          <dd data-price="25.00" data-currency="GBP">£25.00</dd>
+
+          <dt>Total</dt>
+          <dd data-price="149.99" data-currency="GBP"><strong>£149.99</strong></dd>
+        </dl>
+      </details>
+    </section>
+
+    <!-- Price with shipping -->
+    <section>
+      <h2>Price with Shipping Options</h2>
+      <div class="product-price">
+        <div class="price"
+             data-price="149.99"
+             data-currency="GBP">
+          <span>Product: £149.99</span>
+        </div>
+
+        <dl class="shipping-prices">
+          <dt>Standard delivery (3-5 days)</dt>
+          <dd data-price="0" data-currency="GBP">Free</dd>
+
+          <dt>Express delivery (1-2 days)</dt>
+          <dd data-price="5.99" data-currency="GBP">£5.99</dd>
+
+          <dt>Next day delivery</dt>
+          <dd data-price="9.99" data-currency="GBP">£9.99</dd>
+        </dl>
+
+        <div class="total-range">
+          <strong>Total:</strong>
+          <span data-price-min="149.99" data-price-max="159.98" data-currency="GBP">
+            £149.99 - £159.98
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscription pricing -->
+    <section>
+      <h2>Subscription Pricing</h2>
+      <div class="subscription-price"
+           data-price="9.99"
+           data-currency="GBP"
+           data-billing-period="month">
+        <span class="amount">£9.99</span>
+        <span class="period">per month</span>
+      </div>
+
+      <div class="pricing-tiers">
+        <article class="pricing-tier"
+                 data-tier="monthly"
+                 data-price="9.99"
+                 data-currency="GBP"
+                 data-billing-period="month">
+          <h3>Monthly Plan</h3>
+          <p class="price">£9.99/month</p>
+          <p>Billed monthly</p>
+        </article>
+
+        <article class="pricing-tier"
+                 data-tier="annual"
+                 data-price="99.99"
+                 data-currency="GBP"
+                 data-billing-period="year"
+                 data-monthly-equivalent="8.33">
+          <h3>Annual Plan</h3>
+          <p class="price">£99.99/year</p>
+          <p>£8.33 per month (save 17%)</p>
+          <span class="badge">Best value</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Volume pricing -->
+    <section>
+      <h2>Volume/Quantity Pricing</h2>
+      <table class="volume-pricing">
+        <caption>Bulk pricing discounts</caption>
+        <thead>
+          <tr>
+            <th scope="col">Quantity</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-quantity="1" data-unit-price="149.99">
+            <td>1</td>
+            <td data-price="149.99" data-currency="GBP">£149.99</td>
+            <td data-price="149.99" data-currency="GBP">£149.99</td>
+          </tr>
+          <tr data-quantity="5" data-unit-price="142.49">
+            <td>5+</td>
+            <td data-price="142.49" data-currency="GBP">£142.49 <small>(5% off)</small></td>
+            <td data-price="712.45" data-currency="GBP">£712.45</td>
+          </tr>
+          <tr data-quantity="10" data-unit-price="134.99">
+            <td>10+</td>
+            <td data-price="134.99" data-currency="GBP">£134.99 <small>(10% off)</small></td>
+            <td data-price="1349.90" data-currency="GBP">£1,349.90</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Sale/discount pricing -->
+    <section>
+      <h2>Sale Price</h2>
+      <div class="sale-price"
+           data-original-price="199.99"
+           data-sale-price="149.99"
+           data-discount-percent="25"
+           data-currency="GBP">
+        <span class="original-price" data-price="199.99">
+          <s>£199.99</s>
+        </span>
+        <span class="sale-price" data-price="149.99">
+          <strong>£149.99</strong>
+        </span>
+        <span class="discount-badge">Save 25%</span>
+      </div>
+      <p class="sale-period">
+        Sale ends: <time datetime="2025-01-31T23:59:59Z">31 January 2025</time>
+      </p>
+    </section>
+
+    <!-- International pricing -->
+    <section>
+      <h2>Multi-Currency Pricing</h2>
+      <div class="international-pricing">
+        <div class="price" data-price="149.99" data-currency="GBP">
+          UK: £149.99
+        </div>
+        <div class="price" data-price="179.99" data-currency="EUR">
+          EU: €179.99
+        </div>
+        <div class="price" data-price="199.99" data-currency="USD">
+          US: $199.99
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    Key principles:
+    - Always include data-price and data-currency
+    - VAT/tax status explicit (inc. VAT, exc. VAT, or +VAT)
+    - Complete pricing shown upfront (no "from £X")
+    - Shipping costs shown before checkout
+    - Subscription billing period clear
+    - Volume discounts in table format
+    - Sale prices show original and savings
+    - Multi-currency prices all visible
+    - No hidden costs revealed at checkout
+  -->
+</body>
+</html>
