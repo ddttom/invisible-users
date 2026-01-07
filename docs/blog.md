@@ -219,14 +219,10 @@ This book grew from that realisation. It's not a book about AI. It's a book abou
 
 Throughout, I've tried to be honest about tensions that don't have clean resolutions. Some fixes for agent compatibility conflict with short-term business interests. Some accessibility improvements reduce engagement metrics. Some solutions create new problems. I've flagged these rather than pretending they don't exist.
 
-### Interactive Companion
-
-An interactive notebook version is available at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html). It presents key concepts through visual demonstrations, interactive data tables, and real-world calculations. Time to complete: 60-75 minutes. Perfect as both an introduction and a navigation tool for the full manuscript.
-
 ## Who This Book Is For
 
 **1. Web Professionals & Engineers (The Users)**
-Developers and QA specialists who need the technical tools. You get the **Web Audit Suite**, production-ready code, and testing strategies to solve immediate pipeline challenges.
+Developers and QA specialists who need the technical tools. You get production-ready code and testing strategies to solve immediate pipeline challenges. The **Web Audit Suite** is available as a separate purchase or professional audit service.
 
 **2. Agent System Developers (The Builders)**
 Developers building AI agents, browser extensions, and agentic systems. Chapter 11 is written specifically for you. You get **validation frameworks**, **confidence scoring patterns**, and **guardrails** that prevent pipeline failures like the £203,000 cruise pricing error.
@@ -360,10 +356,10 @@ The patterns that break agents are patterns we should have fixed years ago. We d
 - **10 practical design patterns** with bad/good examples showing correct HTML structure
 - **Concrete examples** from websites demonstrating failures and fixes
 - **Implementation checklist** for phased rollout
-- **Interactive companion notebook** with visual demonstrations and calculations
 - **Dual responsibility framework** addressing both developers and users
 - **British English** throughout, first-person narrative
 - **No exaggeration** - just technical accuracy and practical implications
+- **Web Audit Suite** available as separate purchase or professional audit service
 
 Available now. Please read it before your competitors do.
 
@@ -385,7 +381,7 @@ You can learn these lessons through months of failed conversions and support tic
 
 **The market timing matters:** This knowledge is valuable now because it's scarce. You're reading this during the transition period - after the problem has emerged, before solutions have standardised. In two years, competitors will exist. In five years, agent compatibility will be as routine as mobile responsiveness, and this becomes commoditized knowledge. The window for gaining competitive advantage is limited.
 
-The time saved researching these patterns yourself - weeks or months of experimentation and failed implementations - represents significant value. Interactive notebook included at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html).
+The time saved researching these patterns yourself - weeks or months of experimentation and failed implementations - represents significant value.
 
 ---
 

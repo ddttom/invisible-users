@@ -44,9 +44,10 @@ AI agents are visiting websites right now and failing silently. These failures c
 - Battle-tested lessons from real implementations
 - Agent validation guardrails (Chapter 11)
 - 60+ term glossary, 150+ resource links
-- Interactive companion notebook
 
 **2. Production-Ready Measurement Tool (Web Audit Suite):**
+
+Available as separate purchase or professional audit service:
 
 - Comprehensive automated website analysis
 - 18 detailed reports including 3 LLM suitability reports
@@ -160,9 +161,10 @@ These same patterns break human users:
 - 60+ term glossary
 - Implementation checklist (4 priority levels)
 - 150+ curated resource links
-- Interactive companion notebook
 
 ### Part 2: The Measurement Tool (Web Audit Suite)
+
+**Availability:** Separate purchase for self-service analysis OR professional audit service
 
 **What It Analyzes:**
 
@@ -518,10 +520,11 @@ Typical Year 1 per client: £31,500
 - Agent validation guardrails (Chapter 11)
 - Battle-tested lessons from real implementations
 - Pipeline failure case study (Appendix I)
-- Interactive companion notebook
 - 60+ term glossary, 150+ resource links
 
 ✅ **Production-Ready Measurement Tool**
+
+Available as separate purchase or professional audit service:
 
 - 15,000+ lines of production JavaScript
 - 18+ comprehensive reports

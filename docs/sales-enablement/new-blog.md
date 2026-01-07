@@ -352,12 +352,13 @@ Using the prioritised implementation roadmap (Appendix F):
 
 **What You Do:**
 
-1. Purchase the book + Web Audit Suite package
-2. Run Web Audit Suite on your site
-3. Read the book (focus on Chapters 9-10 for implementation)
-4. Use the implementation cookbook for copy-paste fixes
-5. Re-run audit to verify improvements
-6. Monitor scores over time with historical tracking
+1. Purchase the book
+2. Purchase Web Audit Suite separately OR engage audit service
+3. Run Web Audit Suite on your site (or receive professional audit report)
+4. Read the book (focus on Chapters 9-10 for implementation)
+5. Use the implementation cookbook for copy-paste fixes
+6. Re-run audit to verify improvements
+7. Monitor scores over time with historical tracking
 
 **Time Investment:**
 
@@ -368,9 +369,10 @@ Using the prioritised implementation roadmap (Appendix F):
 
 **Cost:**
 
-- Book + Web Audit Suite package: Purchase price
+- Book: Purchase price
+- Web Audit Suite: Separate purchase OR audit service fee
 - Implementation: Internal developer time
-- Total: Package cost + £0 - £5,000 for implementation (depending on developer rates and site complexity)
+- Total: Book + audit costs + £0 - £5,000 for implementation (depending on developer rates and site complexity)
 
 **Potential Benefits:** Improved agent compatibility, better accessibility, clearer state management. Actual revenue impact will vary.
 
@@ -561,11 +563,12 @@ Total Year 1 Revenue per Client: £31,500
 
 ### Week 1: Assessment
 
-1. Purchase the book + Web Audit Suite package
-2. Run Web Audit Suite on your site (30 minutes)
-3. Review executive dashboard and LLM suitability scores
-4. Read Executive Summary + Chapter 1 of the book (2 hours)
-5. Present findings to stakeholders (internal business case)
+1. Purchase the book
+2. Purchase Web Audit Suite OR engage audit service
+3. Run Web Audit Suite on your site (30 minutes) or receive professional audit report
+4. Review executive dashboard and LLM suitability scores
+5. Read Executive Summary + Chapter 1 of the book (2 hours)
+6. Present findings to stakeholders (internal business case)
 
 ### Week 2-3: Planning
 
@@ -593,11 +596,12 @@ Total Year 1 Revenue per Client: £31,500
 
 ### Week 1: Setup
 
-1. Purchase the book + Web Audit Suite package
-2. Install and configure Web Audit Suite
-3. Set up white-labeling (agency branding)
-4. Read the book cover-to-cover (8-12 hours)
-5. Create service packages and pricing
+1. Purchase the book
+2. Purchase Web Audit Suite (for agencies offering self-service) OR establish referral arrangement for audit service
+3. Install and configure Web Audit Suite (if purchased)
+4. Set up white-labeling (agency branding, if applicable)
+5. Read the book cover-to-cover (8-12 hours)
+6. Create service packages and pricing
 
 ### Week 2: Testing
 
@@ -887,10 +891,13 @@ You can identify issues preventing agent-mediated transactions. You can implemen
 **Package includes:**
 
 - Complete book manuscript (11 chapters + 9 appendices)
-- Web Audit Suite with 18 detailed reports
 - Implementation cookbook with code examples
 - Priority-based roadmap templates
-- Access to interactive companion notebook
+
+**Web Audit Suite available as:**
+
+- Separate purchase for self-service analysis
+- Professional audit service (we run it for you)
 
 **But don't wait.**
 

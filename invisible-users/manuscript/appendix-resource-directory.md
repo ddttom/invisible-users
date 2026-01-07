@@ -4,18 +4,6 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 ---
 
-## Interactive Companion
-
-### The Invisible Users - Interactive Notebook
-
-- Website: <https://allabout.network/invisible-users.html>
-- Time to complete: 60-75 minutes
-- Interactive demonstrations of key concepts with visual comparisons, data tables, and real-world calculations
-- Complete chapter index with direct navigation links
-- Serves as both an executive summary and bookmarking tool for specific topics
-
----
-
 ## Standards and Specifications
 
 ### Schema.org

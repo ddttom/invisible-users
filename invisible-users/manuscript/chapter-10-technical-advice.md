@@ -2831,9 +2831,7 @@ The choice is yours.
 
 ## Explore Further
 
-If you found this book valuable, explore the **interactive notebook version** at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html). It presents the book's key concepts through visual demonstrations, interactive data tables, and real-world cost calculations.
-
-The notebook serves as both an executive summary and a navigation tool - perfect for bookmarking specific topics, sharing with colleagues, or exploring concepts interactively before diving into implementation.
+If you found this book valuable and need to assess your website's agent compatibility, the **Web Audit Suite** is available as a separate purchase or professional audit service. It provides comprehensive automated analysis with 18 detailed reports covering traditional web metrics and LLM suitability scoring.
 
 **By building for machines, we might finally create the clearer, more honest web we should have built all along.**
 

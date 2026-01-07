@@ -420,7 +420,7 @@ Read(file_path="invisible-users/book-plan.md")
 
 ```python
 Grep(pattern="FILENAME\\.md", output_mode="files_with_matches")
-Grep(pattern="interactive companion", -i=True, output_mode="files_with_matches")
+Grep(pattern="Web Audit Suite", -i=True, output_mode="files_with_matches")
 ```
 
 ## Enhanced Markdown Linting
@@ -518,22 +518,23 @@ When removing a file that's referenced in documentation:
 
 ## Cross-Document Update Patterns
 
-### Adding References to Interactive Materials
+### Web Audit Suite References
 
-When adding references to interactive companions or new resources, update these files simultaneously:
+**Important**: The Web Audit Suite is now offered as a separate purchase or professional audit service, not included with the book.
 
-1. **preface.md** - Add to "How to Use This Book" section
-2. **chapter-10-technical-advice.md** - Add "Explore Further" section at end
-3. **resource-links.md** - Add at top as primary resource
-4. **README.md** - Add prominent section after chapter status
-5. **PROJECTSTATE.md** - Add under "Supporting Materials" → "Interactive Materials"
+When referencing the Web Audit Suite in documentation:
+
+- Use: "The Web Audit Suite is available as a separate purchase or professional audit service"
+- NOT: "included with this book", "included in the package", "free", "open-source"
+- For agencies: Mention both self-service purchase option AND referral arrangement for audit service
 
 ### URL Consistency
 
-All URL references must use consistent format:
+All contact and website references must use consistent format:
 
-- Use: `https://allabout.network/invisible-users.html`
-- Not: shortened URLs, www prefix, or trailing slash variations
+- Website: `https://allabout.network`
+- Email: `tom.cranstoun@gmail.com`
+- No shortened URLs, www prefix, or trailing slash variations
 
 This ensures all cross-references work correctly and maintain professional consistency.
 
