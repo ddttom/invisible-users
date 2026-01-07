@@ -119,7 +119,7 @@ Technical review of [2-3 chapters relevant to their expertise]:
 
 **Format:** Whatever works - PDF, Markdown, GitHub access, HTML.
 
-**Time:** Most reviewers spend 2-3 hours on focused chapters rather than reading cover-to-cover.
+**Time:** Most reviewers focus on specific chapters relevant to their expertise rather than reading cover-to-cover.
 
 Interested? I can send the table of contents and relevant chapters for your area.
 
@@ -173,7 +173,7 @@ I'd suggest focusing on:
 - Chapter 9: Designing for Both (solution patterns)
 - Appendix A: Implementation Cookbook (practical recipes)
 
-Total reading time: ~2 hours. Feedback can be as detailed or high-level as you prefer.
+Focused reading approach. Feedback can be as detailed or high-level as you prefer.
 
 Would this be useful to you? Happy to share just these chapters to start.
 
@@ -239,7 +239,7 @@ Tom Cranstoun
 
 ---
 
-## Follow-up Email (if no response after 7-10 days)
+## Follow-up Email (if no response after reasonable period)
 
 Subject: Following up: Book review request
 
@@ -293,7 +293,7 @@ Thanks for agreeing to review the manuscript! I really appreciate your time and 
 
 **Timeline:**
 
-- No hard deadline, but ideally within [2-3 weeks/timeframe] if possible
+- No hard deadline, but any timeframe that works for you
 - If timing changes, just let me know
 
 **Credit:**

@@ -104,7 +104,7 @@ You need strategic understanding without technical implementation details.
 
 Look for "Key Points for Business Leaders" boxes at the end of Chapters 2, 3, 4, 5, 7, and 8.
 
-**Expected time:** 3-4 hours
+**Reading approach:** Focused reading
 
 ### Reading Path for Product Managers and Designers
 
@@ -129,7 +129,7 @@ You need to understand the problem deeply, grasp business context, and implement
 
 Focus on decision frameworks in Chapters 4, 5, and 7. Chapter 3 will change how you see design trade-offs.
 
-**Expected time:** 5-6 hours
+**Reading approach:** Comprehensive coverage
 
 ### Reading Path for Developers
 
@@ -155,7 +155,7 @@ You need implementation patterns and technical depth.
 
 Use the implementation checklist and code examples. There's a glossary at the end - some terms have specific meanings here.
 
-**Expected time:** 4-5 hours
+**Reading approach:** Technical focus
 
 ### Reading Path for Agent System Developers
 
@@ -181,7 +181,7 @@ You're building AI agents, browser extensions, or agentic systems that interact 
 
 Focus on the £203,000 cruise pricing case study (Appendix I) - it demonstrates exactly why validation layers, comparative analysis, and confidence scoring are essential. Your agents will encounter malformed data, ambiguous HTML, and incomplete information. Chapter 11 provides the frameworks to handle these gracefully.
 
-**Expected time:** 2-3 hours
+**Reading approach:** Targeted reading
 
 ### Reading Path for Small Business Owners
 
@@ -203,7 +203,7 @@ You need to determine if this matters for your business and what to do about it.
 
 Many relationship-based local businesses can safely deprioritise this. The decision tree in Chapter 4 and the Executive Summary will help you determine your priority level.
 
-**Expected time:** 1-2 hours
+**Reading approach:** Quick overview
 
 ### Other Navigation Aids
 

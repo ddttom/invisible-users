@@ -41,13 +41,13 @@ This represents a fundamental shift: agents aren't just reading static HTML anym
 
 ## What to Do About It
 
-### Priority 1: Quick Assessment (1-2 hours)
+### Priority 1: Quick Assessment
 
 - Audit your site for the six critical failures: disappearing notifications, hidden content (pagination, tabs, below-the-fold), single-page applications without URL state, delayed form validation, unclear pricing, and ambiguous loading states
 - Test your checkout flow with a screen reader (if it fails for screen readers, it fails for agents)
 - Check whether agents can find your pricing, understand your offering, and determine if actions succeeded
 
-### Priority 2: High-Impact Fixes (days to weeks)
+### Priority 2: High-Impact Fixes
 
 - Replace toast notifications with persistent messages
 - Add "Show All" options to paginated content
@@ -62,7 +62,7 @@ This represents a fundamental shift: agents aren't just reading static HTML anym
 - Evaluate business model resilience to agent-mediated commerce
 - Review liability and terms of service for agent interactions
 
-### Priority 4: Advanced Implementation (months)
+### Priority 4: Advanced Implementation
 
 - Implement identity delegation patterns for agent-mediated purchases
 - Develop comprehensive agent compatibility testing
@@ -72,19 +72,17 @@ This represents a fundamental shift: agents aren't just reading static HTML anym
 
 This book addresses different audiences with different needs:
 
-**Business Decision-Makers**: Chapters 1, 4, 5, 7, 8, and first half of Chapter 9 (3-4 hours). Delegate Chapter 11 to teams evaluating agent partnerships.
+**Business Decision-Makers**: Chapters 1, 4, 5, 7, 8, and first half of Chapter 9 (Focused reading). Delegate Chapter 11 to teams evaluating agent partnerships.
 
-**Product & Design**: Chapters 1-5, 9-11 (5-6 hours)
+**Product & Design**: Chapters 1-5, 9-11 (Comprehensive coverage)
 
-**Developers**: Start with Chapters 10-11, then work backwards through Chapters 2, 6, 9 for context (4-5 hours)
+**Developers**: Start with Chapters 10-11, then work backwards through Chapters 2, 6, 9 for context (Technical focus)
 
-**Agent System Developers**: Chapter 11 (core focus on validation layers and guardrails), Chapters 2-3 (failure modes), Chapter 10 (website patterns your agents will encounter) (2-3 hours)
+**Agent System Developers**: Chapter 11 (core focus on validation layers and guardrails), Chapters 2-3 (failure modes), Chapter 10 (website patterns your agents will encounter) (Targeted reading)
 
-**Small Business Owners**: Chapters 1, 4, small business sections in Chapter 9 (1-2 hours)
+**Small Business Owners**: Chapters 1, 4, small business sections in Chapter 9 (Quick overview)
 
 For detailed reading paths with chapter-by-chapter guidance, see the navigation guide in the Preface (page X).
-
-Total reading time: 8-12 hours for complete coverage, depending on technical depth required.
 
 ## One-Page Decision Tree: Should You Prioritise Agent Compatibility?
 

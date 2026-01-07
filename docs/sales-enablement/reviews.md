@@ -44,9 +44,9 @@ This document captures the perspective of the four primary target audiences iden
 ### Technical Review
 
 * **"Chapter 11 is exactly what we need."**
-  * *Thought:* "I've been building browser agents for 6 months and kept hitting data extraction errors. Chapter 11's validation frameworks, confidence scoring patterns, and guardrails are precisely the architecture I needed but didn't have."
+  * *Thought:* "I've been building browser agents and kept hitting data extraction errors. Chapter 11's validation frameworks, confidence scoring patterns, and guardrails are precisely the architecture I needed but didn't have."
 * **"The £203k case study is invaluable."**
-  * *Thought:* "Appendix I's £203,000 cruise pricing error demonstrates exactly why range validation, comparative analysis, and cross-referencing are essential. This real-world failure mode has saved me weeks of debugging."
+  * *Thought:* "Appendix I's £203,000 cruise pricing error demonstrates exactly why range validation, comparative analysis, and cross-referencing are essential. This real-world failure mode has saved me significant debugging effort."
 * **"Incomplete data detection pattern."**
   * *Thought:* "The code example showing how to detect incomplete comparative data (pricing for 1 of 3 operators reduces confidence by 40%) is brilliant. I'm implementing this immediately in our data collection pipeline."
 * **"Validation layers prevent production disasters."**
@@ -61,7 +61,7 @@ This document captures the perspective of the four primary target audiences iden
 
 ### Agent System Developers - Verdict
 
-**"Essential Reading."** Chapter 11 and Appendix I are required reading for anyone building production agent systems. The validation frameworks save months of trial-and-error development.
+**"Essential Reading."** Chapter 11 and Appendix I are required reading for anyone building production agent systems. The validation frameworks save extensive trial-and-error development effort.
 
 ### Agent System Developers - Suggested Improvements
 

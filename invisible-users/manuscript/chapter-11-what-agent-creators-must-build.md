@@ -899,7 +899,7 @@ Implement these immediately. They prevent catastrophic failures.
 - Display confidence to users
 - Use confidence thresholds for action gates
 
-**Example implementation time:** 2-3 days for basic version
+**Implementation scope:** Quick prototype for basic version
 
 ### Priority 2: Comparative Analysis
 
@@ -923,7 +923,7 @@ Add context-aware validation using market knowledge.
 - Enable post-mortem debugging
 - Track confidence over time
 
-**Example implementation time:** 1-2 weeks for comprehensive version
+**Implementation scope:** Core feature for comprehensive version
 
 ### Priority 3: Advanced Features
 
@@ -947,7 +947,7 @@ Build sophisticated validation as resources allow.
 - Build collective knowledge base
 - Warn others about problematic sites
 
-**Example implementation time:** 1-3 months depending on scope
+**Implementation scope:** Major infrastructure depending on scope
 
 ### Priority 4: Ecosystem Standards
 
@@ -971,7 +971,7 @@ Work towards industry-wide validation patterns.
 - Agent quality standards
 - User trust signals
 
-**Example implementation time:** Industry coordination required (6-12 months)
+**Implementation scope:** Industry coordination required (extended timeline)
 
 You don't need to implement everything at once. Priority 1 guardrails prevent the worst failures. Priority 2 improves reliability substantially. Priority 3 and 4 are aspirational - they represent where the ecosystem should move over time.
 

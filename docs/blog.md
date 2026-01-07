@@ -2,7 +2,7 @@
 
 I didn't set out to write a book about AI agents. I set out to book a holiday.
 
-It was late 2024, and I was comparing tour operators for a trip through Southeast Asia. I'd delegated the research to an AI assistant, expecting it to save me hours of clicking through brochures. Instead, it gave me confident but wrong advice about which company had the better itinerary.
+It was late 2024, and I was comparing tour operators for a trip through Southeast Asia. I'd delegated the research to an AI assistant, expecting it to save me effort clicking through brochures. Instead, it gave me confident but wrong advice about which company had the better itinerary.
 
 The agent had looked at one tour operator's paginated day-by-day breakdown, seen only Day 1, and concluded that was the entire trip. The competitor's single-page itinerary was readable in full. Based on this, my assistant recommended the wrong company.
 
@@ -373,15 +373,15 @@ Consider what this book helps you avoid:
 
 **One failed form submission:** A SaaS platform uses toast notifications for errors. Agent misses them, reports success to the user. User assumes they're signed up. They're not. Support costs to fix: 30 minutes. Lost conversion: one annual contract.
 
-**The cost of fixing one invisible failure is typically hours of developer time. The cost of NOT fixing it compounds daily across every agent-mediated interaction.**
+**The cost of fixing one invisible failure is typically minimal developer effort. The cost of NOT fixing it compounds daily across every agent-mediated interaction.**
 
 This book identifies the patterns, explains why they break, and provides working solutions. The time saved researching, the mistakes avoided, and the competitive advantage gained make the investment trivial compared to the cost of staying in the dark whilst your competitors fix their sites first.
 
-You can learn these lessons through months of failed conversions and support tickets. Or you can learn them from someone who's already documented the patterns.
+You can learn these lessons through extended trial-and-error with failed conversions and support tickets. Or you can learn them from someone who's already documented the patterns.
 
 **The market timing matters:** This knowledge is valuable now because it's scarce. You're reading this during the transition period - after the problem has emerged, before solutions have standardised. In two years, competitors will exist. In five years, agent compatibility will be as routine as mobile responsiveness, and this becomes commoditized knowledge. The window for gaining competitive advantage is limited.
 
-The time saved researching these patterns yourself - weeks or months of experimentation and failed implementations - represents significant value.
+The time saved researching these patterns yourself - through extensive experimentation and failed implementations - represents significant value.
 
 ---
 

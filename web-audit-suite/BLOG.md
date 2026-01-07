@@ -189,7 +189,7 @@ This is what your page looks like after JavaScript runs - what browser-based age
 
 **Result:** AI agents successfully complete checkout. 2.5% conversion rate = £249k annual revenue from agent traffic.
 
-**Implementation time:** 2 hours of developer time.
+**Implementation effort:** Minimal developer time required.
 
 ## The Business Impact
 
@@ -503,11 +503,11 @@ Yes. Many AI-friendly patterns are also SEO best practices:
 
 Depends on your starting point, but typically:
 
-- **Quick wins (1-2 hours):** Add Schema.org, fix form field names, add semantic elements
-- **Medium effort (1-2 days):** Restructure forms, add ARIA labels, fix error handling
-- **Larger projects (1-2 weeks):** Refactor SPA to progressive enhancement, add server-side rendering
+- **Quick wins (Minimal effort):** Add Schema.org, fix form field names, add semantic elements
+- **Medium effort (Moderate work):** Restructure forms, add ARIA labels, fix error handling
+- **Larger projects (Significant refactoring):** Refactor SPA to progressive enhancement, add server-side rendering
 
-**Most critical fixes take less than a day of developer time.**
+**Most critical fixes require minimal developer effort.**
 
 ### What's the ROI?
 
@@ -599,7 +599,6 @@ Web Audit Suite is available for businesses serious about AI agent compatibility
 - Enterprise agreements
 
 **Email:** <tom.cranstoun@gmail.com>
-**Time:** Initial consultation typically within 48 hours
 
 ### Option 2: Read the Methodology First
 

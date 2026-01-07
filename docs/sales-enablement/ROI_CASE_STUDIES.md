@@ -32,7 +32,7 @@ Implemented **Explicit State Attributes**:
 
 * **12% Increase** in successful "Add to Cart" actions from automated traffic.
 * **5% Uplift** in overall mobile conversion (demonstrating the "Curb Cut Effect" - simpler code helped mobile users too).
-* **ROI:** The fix took 2 developer days. The revenue uplift paid for the audit in week 1.
+* **ROI:** The fix required minimal development effort. The revenue uplift paid for the audit immediately.
 
 > "We didn't realize our fancy UI was locking out not just bots, but anyone on a slow connection. Fixing it for agents fixed it for everyone." — *Head of Product*
 
@@ -92,7 +92,7 @@ Implemented **"Load All" Capability**:
 
 ### Case Study 3 - The Results
 
-* **Ranked #1** in category searches on 3 major AI search platforms within 2 weeks.
+* **Ranked #1** in category searches on 3 major AI search platforms quickly after implementation.
 * **20% Increase** in organic referral traffic from AI summaries.
 * **Business Impact:** Captured a high-value niche (Luxury Tours) that was previously invisible to the algorithms.
 

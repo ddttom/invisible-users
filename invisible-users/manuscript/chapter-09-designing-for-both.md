@@ -648,7 +648,7 @@ This requires no JavaScript, no frameworks, no APIs—just semantic HTML with sc
 - Search engines display rich snippets
 - Voice assistants can answer "What's on the menu at Luigi's?"
 
-Total implementation time: maybe two hours if you're learning as you go.
+Total implementation effort: straightforward, especially if you're learning as you go.
 
 > **Hands-On: The Agent-Friendly Starter Kit**
 >
@@ -671,7 +671,7 @@ Total implementation time: maybe two hours if you're learning as you go.
 - Forms with immediate validation
 - One-page content (no forced pagination)
 
-**Effort:** A few hours
+**Effort:** Minimal
 
 **Benefit:** Visible to agents, better search results, clearer for all humans
 
@@ -685,7 +685,7 @@ Total implementation time: maybe two hours if you're learning as you go.
 - Multi-step processes with progress indicators
 - Basic agent detection and analytics
 
-**Effort:** A developer-week or two
+**Effort:** Moderate development work
 
 **Benefit:** Measurable improvement in agent conversion rates
 
