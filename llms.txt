@@ -21,26 +21,29 @@ Two integrated projects: A book manuscript examining how modern web design optim
 
 Complete 10-chapter manuscript examining web design for both humans and AI agents:
 
-- [Chapter 1 - What You Will Learn](invisible-users/chapter-01-what-you-will-learn.md): Introduction and the accessibility connection (~2,750 words)
-- [Chapter 2 - The Invisible Failure](invisible-users/chapter-02-the-invisible-failure.md): When websites break for AI agents (~4,200 words)
-- [Chapter 3 - The Architectural Conflict](invisible-users/chapter-03-the-architectural-conflict.md): How modern web architecture creates the problem (~3,850 words)
-- [Chapter 4 - The Business Reality](invisible-users/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce (~5,350 words)
-- [Chapter 5 - The Content Creator's Dilemma](invisible-users/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~4,600 words)
-- [Chapter 6 - The Security Maze](invisible-users/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~3,900 words)
-- [Chapter 7 - The Legal Landscape](invisible-users/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~3,300 words)
-- [Chapter 8 - The Human Cost](invisible-users/chapter-08-the-human-cost.md): The digital divide implications (~3,400 words)
-- [Chapter 9 - Designing for Both](invisible-users/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,300 words)
-- [Chapter 10 - Technical Advice](invisible-users/chapter-10-technical-advice.md): Implementation code, testing strategies, and practical tools (~8,200 words)
+- [Chapter 1 - What You Will Learn](invisible-users/manuscript/chapter-01-what-you-will-learn.md): Introduction and the accessibility connection (~2,750 words)
+- [Chapter 2 - The Invisible Failure](invisible-users/manuscript/chapter-02-the-invisible-failure.md): When websites break for AI agents (~4,200 words)
+- [Chapter 3 - The Architectural Conflict](invisible-users/manuscript/chapter-03-the-architectural-conflict.md): How modern web architecture creates the problem (~3,850 words)
+- [Chapter 4 - The Business Reality](invisible-users/manuscript/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce (~5,350 words)
+- [Chapter 5 - The Content Creator's Dilemma](invisible-users/manuscript/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~4,600 words)
+- [Chapter 6 - The Security Maze](invisible-users/manuscript/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~3,900 words)
+- [Chapter 7 - The Legal Landscape](invisible-users/manuscript/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~3,300 words)
+- [Chapter 8 - The Human Cost](invisible-users/manuscript/chapter-08-the-human-cost.md): The digital divide implications (~3,400 words)
+- [Chapter 9 - Designing for Both](invisible-users/manuscript/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,300 words)
+- [Chapter 10 - Technical Advice](invisible-users/manuscript/chapter-10-technical-advice.md): Implementation code, testing strategies, and practical tools (~8,200 words)
 
 ## Practical Implementation Guides
 
 Comprehensive guides and reference materials for developers:
 
-### Core Guides
+### Manuscript Appendices
 
-- [Building HTML for AI Agents (advice.md)](invisible-users/advice.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~9,000 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
-- [HTML Patterns for AI Agents (AI-design-rules.md)](invisible-users/AI-design-rules.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,200 words). Includes data attribute reference, form field names, and practical code examples.
-- [AI-Native Web Architecture (AI-Native.blog)](invisible-users/AI-Native.blog): Complete technical blueprint for building AI-native websites using 7-layer architecture: Network, Knowledge, Action, Data, Permission, Authority, Interaction layers (~5,000 words)
+Reference materials integrated into the manuscript as appendices:
+
+- [Appendix D - AI-Friendly HTML Guide](invisible-users/manuscript/appendix-ai-friendly-html-guide.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~9,050 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
+- [Appendix E - AI Patterns Quick Reference](invisible-users/manuscript/appendix-ai-patterns-quick-reference.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,300 words). Includes data attribute reference, form field names, and practical code examples.
+- [Appendix F - Implementation Roadmap](invisible-users/manuscript/appendix-implementation-roadmap.md): Priority-based implementation roadmap from critical quick wins to advanced features (~2,750 words). Organized by priority levels rather than time estimates.
+- [Appendix G - Resource Directory](invisible-users/manuscript/appendix-resource-directory.md): Curated directory of 150+ resources organized by category (~1,950 words). Includes documentation, tools, specifications, and case studies.
 
 ### Code Examples
 
@@ -51,10 +54,9 @@ Comprehensive guides and reference materials for developers:
 
 ### Reference Materials
 
-- [Glossary](invisible-users/Glossary.md): 60+ technical terms with cross-references
-- [Implementation Checklist](invisible-users/implementation-checklist.md): Priority-based implementation roadmap from critical quick wins to advanced features
-- [Resource Links](invisible-users/resource-links.md): 150+ curated resources organized by category
-- [Example llms.txt](invisible-users/llms.txt): Real-world llms.txt from Digital Domain Technologies (allabout.network) demonstrating comprehensive structure with 91 posts across 6 categories
+- [Glossary](invisible-users/manuscript/Glossary.md): 60+ technical terms with cross-references
+- [Implementation Roadmap](invisible-users/manuscript/appendix-implementation-roadmap.md): Priority-based implementation roadmap
+- [Resource Directory](invisible-users/manuscript/appendix-resource-directory.md): 150+ curated resources organized by category
 
 ## Key Concepts
 
@@ -77,7 +79,7 @@ The book addresses two audiences with distinct responsibilities:
 - **For Developers:** Fix technical patterns (clear state, persistent errors, semantic structure) that improve experiences for all users
 - **For Users:** Exercise care with prompts when dealing with banking, legal services, or commercial transactions where mistakes have serious consequences
 
-Not everything can be fixed with better HTML design. Users bear responsibility for the instructions they give to AI agents when interacting with high-stakes services. Covered in Preface and interactive notebook.
+Not everything can be fixed with better HTML design. Users bear responsibility for the instructions they give to AI agents when interacting with high-stakes services. Covered in Preface.
 
 ### Established vs Emerging Standards
 
@@ -143,7 +145,7 @@ Looking for more information about this book project?
 **Total Words:** ~50,000 words (core manuscript), ~68,800 words (including supporting materials)
 **Chapters:** 10 complete chapters
 **Illustrations:** 10 SVG illustrations
-**Supporting Materials:** All complete (guides, glossary, code examples, interactive notebook)
+**Supporting Materials:** All complete (7 appendices, glossary, code examples)
 
 ### Web Audit Suite Version
 
