@@ -275,7 +275,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - Comprehensive review of existing site
 - Identify all agent compatibility issues
 - Prioritised fix recommendations
-- 2-3 week turnaround
+- Comprehensive turnaround timeframe
 - Deliverable: 50-page report with specific code examples
 - Target: 2-4 per month
 
