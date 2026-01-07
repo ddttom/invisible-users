@@ -2530,23 +2530,23 @@ Use folder names that encode meaning. AI can't interpret conventions the way hum
 
 ```text
 project/
-├── src/
-│   ├── components/
-│   ├── utils/
-│   └── lib/
+|-- src/
+    |-- components/
+    |-- utils/
+    +-- lib/
 ```
 
 **Good — Self-documenting:**
 
 ```text
 project/
-├── user-management/
-│   ├── authentication/
-│   ├── profile-updates/
-│   └── session-handling/
-└── content-delivery/
-    ├── static-assets/
-    └── dynamic-generation/
+|-- user-management/
+|   |-- authentication/
+|   |-- profile-updates/
+|   +-- session-handling/
++-- content-delivery/
+    |-- static-assets/
+    +-- dynamic-generation/
 ```
 
 A `user-authentication` directory communicates purpose; an `auth` folder requires human interpretation.
@@ -2557,16 +2557,16 @@ In codebases spanning multiple services, AI needs explicit guidance about what i
 
 ```text
 project/
-├── core/                     # AI: Never modify
-│   ├── framework/           # Protected framework files
-│   └── vendor/              # Third-party dependencies
-├── config/                   # AI: Modify with caution
-│   ├── environment.yml      # Review required
-│   └── deployment.yml       # Staging only
-└── application/             # AI: Safe to modify
-    ├── business-logic/      # Primary development area
-    ├── integrations/        # Service connectors
-    └── custom-components/   # User-defined functionality
+|-- core/                     # AI: Never modify
+|   |-- framework/           # Protected framework files
+|   +-- vendor/              # Third-party dependencies
+|-- config/                   # AI: Modify with caution
+|   |-- environment.yml      # Review required
+|   +-- deployment.yml       # Staging only
++-- application/             # AI: Safe to modify
+    |-- business-logic/      # Primary development area
+    |-- integrations/        # Service connectors
+    +-- custom-components/   # User-defined functionality
 ```
 
 ### Documentation for AI (Skills Pattern)
@@ -2579,17 +2579,17 @@ Create a `docs/for-ai/` folder with technical system documentation optimised for
 
 ```text
 docs/
-├── for-humans/
-│   ├── getting-started.md
-│   └── user-guides/
-└── for-ai/
-    ├── README.md                     # Entry point - overview and index
-    ├── system-architecture.md        # How components connect
-    ├── data-flow-mapping.md          # How data moves through system
-    ├── component-relationships.md    # Dependencies and interactions
-    ├── build-process-guide.md        # Source to runtime transformations
-    ├── conventions.md                # Naming patterns, file organisation
-    └── troubleshooting-guides/       # Framework-specific debugging
+|-- for-humans/
+|   |-- getting-started.md
+|   +-- user-guides/
++-- for-ai/
+    |-- README.md                     # Entry point - overview and index
+    |-- system-architecture.md        # How components connect
+    |-- data-flow-mapping.md          # How data moves through system
+    |-- component-relationships.md    # Dependencies and interactions
+    |-- build-process-guide.md        # Source to runtime transformations
+    |-- conventions.md                # Naming patterns, file organisation
+    +-- troubleshooting-guides/       # Framework-specific debugging
 ```
 
 **README.md as entry point:**
@@ -2701,9 +2701,9 @@ Or use file naming conventions:
 
 ```text
 build/
-├── UserCard.generated.js
-├── routes.generated.js
-└── api-client.generated.js
+|-- UserCard.generated.js
+|-- routes.generated.js
++-- api-client.generated.js
 ```
 
 ### Priority Ranking for AI-Ready Architecture
