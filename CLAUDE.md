@@ -42,16 +42,21 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ├── invisible-users/          # Book manuscript and materials
 │   ├── book-plan.md          # Master plan with chapter outlines and status
 │   ├── book-svg-style.md     # SVG illustration style guide
-│   ├── preface.md
-│   ├── chapter-XX-*.md       # Individual chapter files (01-10)
-│   ├── illustrations/        # Illustrations for each chapter (SVG + PNG)
-│   │   ├── chapter-XX-*.svg  # Source SVG files (tracked in git)
-│   │   └── chapter-XX-*.png  # PNG exports (gitignored, generated locally)
-│   ├── Glossary.md           # Comprehensive glossary
-│   ├── implementation-checklist.md
-│   ├── resource-links.md
-│   ├── advice.md             # Standalone prescriptive guide
-│   ├── AI-design-rules.md    # AI patterns quick-reference
+│   ├── manuscript/           # Complete manuscript content
+│   │   ├── executive-summary.md
+│   │   ├── preface.md
+│   │   ├── chapter-XX-*.md   # Individual chapter files (01-10)
+│   │   ├── Glossary.md       # Comprehensive glossary
+│   │   ├── appendix-implementation-cookbook.md      # Appendix A
+│   │   ├── appendix-battle-tested-lessons.md        # Appendix B
+│   │   ├── appendix-web-audit-suite-guide.md        # Appendix C
+│   │   ├── appendix-ai-friendly-html-guide.md       # Appendix D
+│   │   ├── appendix-ai-patterns-quick-reference.md  # Appendix E
+│   │   ├── appendix-implementation-roadmap.md       # Appendix F
+│   │   ├── appendix-resource-directory.md           # Appendix G
+│   │   └── illustrations/    # Illustrations for each chapter (SVG + PNG)
+│   │       ├── chapter-XX-*.svg  # Source SVG files (tracked in git)
+│   │       └── chapter-XX-*.png  # PNG exports (gitignored, generated locally)
 │   ├── llms.txt              # Example llms.txt file from book content
 │   ├── AI-Native.blog
 │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
@@ -224,9 +229,9 @@ The Web Audit Suite implements the patterns from "The Invisible Users" book:
 
 Reference Documentation:
 
-- Book manuscript: `invisible-users/` directory
-- Implementation guidance: `invisible-users/chapter-10-technical-advice.md`
-- Quick reference: `invisible-users/AI-design-rules.md`
+- Book manuscript: `invisible-users/manuscript/` directory
+- Implementation guidance: `invisible-users/manuscript/chapter-10-technical-advice.md`
+- Quick reference: `invisible-users/manuscript/appendix-ai-patterns-quick-reference.md`
 
 ### Two HTML States (Critical Distinction)
 
@@ -589,9 +594,9 @@ When creating git commits:
 ### Book Documentation
 
 - `invisible-users/book-plan.md` - Master plan with chapter outlines and status
-- `invisible-users/Glossary.md` - Comprehensive technical glossary
-- `invisible-users/implementation-checklist.md` - Priority-based implementation guide
-- `invisible-users/resource-links.md` - Curated resources and references
+- `invisible-users/manuscript/Glossary.md` - Comprehensive technical glossary
+- `invisible-users/manuscript/appendix-implementation-roadmap.md` - Priority-based implementation guide
+- `invisible-users/manuscript/appendix-resource-directory.md` - Curated resources and references
 
 ### Web Audit Suite Documentation
 

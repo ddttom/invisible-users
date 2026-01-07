@@ -1,4 +1,4 @@
-# Agent-Friendly Website Implementation Checklist
+# Appendix F: Implementation Roadmap
 
 A practical guide to making your website work well for both AI agents and human users.
 

@@ -250,8 +250,8 @@ A critical security insight: in-browser agents inherit authenticated sessions ra
 
 - [invisible-users/book-plan.md](invisible-users/book-plan.md) - Master plan with chapter outlines
 - [invisible-users/manuscript/Glossary.md](invisible-users/manuscript/Glossary.md) - Technical glossary
-- [invisible-users/implementation-checklist.md](invisible-users/implementation-checklist.md) - Priority-based guide
-- [invisible-users/resource-links.md](invisible-users/resource-links.md) - Curated resources
+- [invisible-users/manuscript/appendix-implementation-roadmap.md](invisible-users/manuscript/appendix-implementation-roadmap.md) - Priority-based guide
+- [invisible-users/manuscript/appendix-resource-directory.md](invisible-users/manuscript/appendix-resource-directory.md) - Curated resources
 
 ### Web Audit Suite Documentation
 

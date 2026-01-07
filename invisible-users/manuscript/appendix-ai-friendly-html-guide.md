@@ -1,4 +1,4 @@
-# Building HTML for AI Agents
+# Appendix D: AI-Friendly HTML Guide
 
 A prescriptive guide for developers creating web interfaces that work for both humans and AI agents.
 

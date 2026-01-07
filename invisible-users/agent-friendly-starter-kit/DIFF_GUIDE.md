@@ -151,5 +151,5 @@ By moving from imperative code (JavaScript logic) to declarative code (HTML + Sc
 For more AI-native patterns, see:
 
 - `../../code-examples/html-examples/` - Complete HTML pattern library
-- `../../AI-design-rules.md` - Quick reference guide
-- `../../advice.md` - Comprehensive implementation guide
+- `../../appendix-ai-patterns-quick-reference.md` - Quick reference guide
+- `../../appendix-ai-friendly-html-guide.md` - Comprehensive implementation guide

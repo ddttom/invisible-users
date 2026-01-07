@@ -661,7 +661,7 @@ Web Audit Suite gives you the measurements that matter:
 
 - Book: [allabout.network/invisible-users](https://allabout.network/invisible-users)
 - Preview: [Interactive Jupyter Notebook](https://allabout.network/invisible-users.html)
-- Technical Guidance: [advice.md](https://github.com/ddttom/invisible-users/blob/main/invisible-users/advice.md)
+- Technical Guidance: [appendix-ai-friendly-html-guide.md](https://github.com/ddttom/invisible-users/blob/main/invisible-users/appendix-ai-friendly-html-guide.md)
 
 **Contact:**
 

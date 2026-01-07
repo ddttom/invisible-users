@@ -7,7 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed - 2026-01-07
+### Changed - 2026-01-07 (Phase 2)
+
+**Complete Manuscript Consolidation:**
+
+- Moved reference materials into manuscript as appendices D-G
+  - advice.md → appendix-ai-friendly-html-guide.md (Appendix D)
+  - AI-design-rules.md → appendix-ai-patterns-quick-reference.md (Appendix E)
+  - implementation-checklist.md → appendix-implementation-roadmap.md (Appendix F)
+  - resource-links.md → appendix-resource-directory.md (Appendix G)
+- Updated all documentation references (13 files):
+  - CLAUDE.md, README.md, book-plan.md
+  - Chapter 10, code examples, blog posts
+  - agent-friendly-starter-kit documentation
+- Fixed PDF build scripts:
+  - Updated `--resource-path` from `invisible-users` to `invisible-users/manuscript`
+  - Resolves illustration path errors (chapters now correctly find illustrations/ subdirectory)
+- All manuscript content now in `invisible-users/manuscript/`:
+  - Core chapters, preface, executive summary, glossary
+  - Seven appendices (A-G)
+  - Planning files (book-plan.md, book-svg-style.md) remain at root
+
+### Changed - 2026-01-07 (Phase 1)
 
 **Manuscript Reorganization:**
 
@@ -15,12 +36,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Chapters 01-10
   - preface.md, executive-summary.md
   - Glossary.md
-  - All appendix files
+  - Appendices A-C (implementation-cookbook, battle-tested-lessons, web-audit-suite-guide)
   - All illustrations (SVG files)
-- Supporting materials remain in `invisible-users/` root:
-  - book-plan.md
-  - advice.md, AI-design-rules.md
-  - implementation-checklist.md, resource-links.md
+- Planning materials remain in `invisible-users/` root:
+  - book-plan.md, book-svg-style.md
   - agent-friendly-starter-kit/, code-examples/
 
 **File Deletions:**

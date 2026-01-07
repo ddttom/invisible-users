@@ -292,9 +292,9 @@ All 10 chapter illustrations complete ✅
 
 | Material | Status | Description |
 | -------- | ------ | ----------- |
-| Glossary.md | ✅ | 60+ technical terms with cross-references |
-| implementation-checklist.md | ✅ | Priority-based implementation roadmap |
-| resource-links.md | ✅ | 150+ curated resources by category |
+| manuscript/Glossary.md | ✅ | 60+ technical terms with cross-references |
+| manuscript/appendix-implementation-roadmap.md | ✅ | Priority-based implementation roadmap (Appendix F) |
+| manuscript/appendix-resource-directory.md | ✅ | 150+ curated resources by category (Appendix G) |
 | cover-design.svg | ✅ | Professional book cover (600×900) |
 
 ### Interactive Materials
@@ -334,8 +334,8 @@ All materials located in `docs/sales-enablement/`:
 
 | Material | Status | Words | Description |
 | -------- | ------ | ----- | ----------- |
-| advice.md | ✅ | ~9,050 | Comprehensive prescriptive guide for building AI-friendly HTML (referenced in Chapter 10) |
-| AI-design-rules.md | ✅ | ~1,300 | Concise HTML patterns reference for AI assistants (referenced in Chapter 10) |
+| manuscript/appendix-ai-friendly-html-guide.md | ✅ | ~9,050 | Comprehensive prescriptive guide for building AI-friendly HTML (Appendix D, referenced in Chapter 10) |
+| manuscript/appendix-ai-patterns-quick-reference.md | ✅ | ~1,300 | Concise HTML patterns reference for AI assistants (Appendix E, referenced in Chapter 10) |
 
 ### Implementation Case Study
 
@@ -343,11 +343,11 @@ All materials located in `docs/sales-enablement/`:
 | -------- | ------ | ----- | ----------- |
 | AI-Native.blog | ✅ | ~5,000 | Complete technical blueprint for building AI-native websites using 7-layer architecture (Network, Knowledge, Action, Data, Permission, Authority, Interaction layers) |
 
-**Purpose:** This file demonstrates a complete production implementation based on Digital Domain Technologies (allabout.network). Whilst advice.md focuses on HTML patterns, this guide covers the full AI-native stack including llms.txt, OASF manifests, query indexes, HTTP headers, and JavaScript handshakes. Universal patterns applicable to any website platform.
+**Purpose:** This file demonstrates a complete production implementation based on Digital Domain Technologies (allabout.network). Whilst manuscript/appendix-ai-friendly-html-guide.md focuses on HTML patterns, this guide covers the full AI-native stack including llms.txt, OASF manifests, query indexes, HTTP headers, and JavaScript handshakes. Universal patterns applicable to any website platform.
 
 ---
 
-## advice.md Structure
+## manuscript/appendix-ai-friendly-html-guide.md Structure
 
 The standalone prescriptive guide has 12 parts:
 
@@ -397,7 +397,7 @@ When agents make purchases, businesses lose customer identity. Mentioned briefly
 
 ## Source Materials
 
-Content for advice.md drawn from:
+Content for manuscript/appendix-ai-friendly-html-guide.md drawn from:
 
 1. llmstxt.org specification
 2. "Creating an llms.txt File" — allabout.network
@@ -409,7 +409,7 @@ Real-world llms.txt example:
 
 - Digital Domain Technologies llms.txt — <https://allabout.network/llms.txt>
 - Demonstrates comprehensive structure with 91 posts across 6 categories
-- Used as production reference in Chapters 9, 10, and advice.md
+- Used as production reference in Chapters 9, 10, and manuscript/appendix-ai-friendly-html-guide.md
 
 ---
 
@@ -432,11 +432,11 @@ Real-world llms.txt example:
 | 1.0.0 | 2025-12-22 | Complete manuscript (10 chapters, ~40,200 words) |
 | 2.0.0 | 2025-12-23 | Identity layer expansion (centralised repository concept) |
 | 3.0.0 | 2025-12-24 | Identity layer reduction (moved to separate repository) |
-| 3.1.0 | 2025-12-24 | Design Patterns Reference added to Chapter 10, advice.md created |
-| 3.2.0 | 2025-12-25 | advice.md expanded to ~8,400 words with 12 parts, AI-design-rules.md created |
+| 3.1.0 | 2025-12-24 | Design Patterns Reference added to Chapter 10, manuscript/appendix-ai-friendly-html-guide.md created |
+| 3.2.0 | 2025-12-25 | manuscript/appendix-ai-friendly-html-guide.md expanded to ~8,400 words with 12 parts, manuscript/appendix-ai-patterns-quick-reference.md created |
 | 3.3.0 | 2025-12-25 | Standalone guides integrated into book chapters 9 and 10 |
 | 3.4.0 | 2025-12-25 | Dark warehouses section added to Chapter 4 (~1,900 words, total ~40,200 words) |
-| 2.8.0 | 2025-12-31 | Sales infrastructure added: docs/sales-enablement/ folder with business-plan.md (~18,000 words), PITCH.md (~27,500 words), executive-summary.md (~2,900 words), plan-to-market.md (~8,500 words), reviews.md (~2,500 words), plus EXECUTIVE_PITCH_DECK.md, PARTNER_KIT.md, ROI_CASE_STUDIES.md, all following agent-friendly patterns from advice.md |
+| 2.8.0 | 2025-12-31 | Sales infrastructure added: docs/sales-enablement/ folder with business-plan.md (~18,000 words), PITCH.md (~27,500 words), executive-summary.md (~2,900 words), plan-to-market.md (~8,500 words), reviews.md (~2,500 words), plus EXECUTIVE_PITCH_DECK.md, PARTNER_KIT.md, ROI_CASE_STUDIES.md, all following agent-friendly patterns from manuscript/appendix-ai-friendly-html-guide.md |
 
 ---
 
@@ -468,15 +468,20 @@ Real-world llms.txt example:
 └── invisible-users/             # Book manuscript and materials
     ├── book-plan.md             # Master plan with chapter outlines and status
     ├── book-svg-style.md        # SVG illustration style guide
-    ├── preface.md               # Book introduction and author bio
-    ├── chapter-01-*.md through chapter-10-*.md
-    ├── illustrations/
-    │   └── chapter-01-*.svg through chapter-10-*.svg
-    ├── Glossary.md
-    ├── implementation-checklist.md
-    ├── resource-links.md
-    ├── advice.md                # Standalone prescriptive guide (~9,050 words)
-    ├── AI-design-rules.md       # AI assistant HTML reference (~1,300 words)
+    ├── manuscript/              # Complete manuscript content
+    │   ├── executive-summary.md
+    │   ├── preface.md
+    │   ├── chapter-01-*.md through chapter-10-*.md
+    │   ├── Glossary.md
+    │   ├── appendix-implementation-cookbook.md      # Appendix A
+    │   ├── appendix-battle-tested-lessons.md        # Appendix B
+    │   ├── appendix-web-audit-suite-guide.md        # Appendix C
+    │   ├── appendix-ai-friendly-html-guide.md       # Appendix D (~9,050 words)
+    │   ├── appendix-ai-patterns-quick-reference.md  # Appendix E (~1,300 words)
+    │   ├── appendix-implementation-roadmap.md       # Appendix F (~2,750 words)
+    │   ├── appendix-resource-directory.md           # Appendix G (~1,950 words)
+    │   └── illustrations/
+    │       └── chapter-01-*.svg through chapter-10-*.svg
     ├── llms.txt                 # Example llms.txt file from book content
     ├── AI-Native.blog           # AI-native website implementation blueprint (~5,000 words)
     ├── agent-friendly-starter-kit/

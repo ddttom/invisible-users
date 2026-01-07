@@ -1,4 +1,4 @@
-# Resource Links
+# Appendix G: Resource Directory
 
 Curated resources referenced in *The Invisible Users: Designing the Web for AI Agents and Everyone Else*
 

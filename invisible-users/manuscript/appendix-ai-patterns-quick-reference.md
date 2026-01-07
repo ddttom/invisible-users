@@ -1,4 +1,4 @@
-# HTML Patterns for AI Agents
+# Appendix E: AI Patterns Quick Reference
 
 > Quick reference for AI assistants generating HTML that works for both humans and AI agents.
 > Use explicit state, semantic markup, and machine-readable data attributes.

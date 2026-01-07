@@ -47,8 +47,8 @@ The `good/` example demonstrates 10 key AI-native patterns:
 For comprehensive AI-native patterns:
 
 - **HTML Examples**: `../code-examples/html-examples/` - 21 production-ready patterns
-- **Quick Reference**: `../AI-design-rules.md` - Pattern reference for AI assistants
-- **Complete Guide**: `../advice.md` - Comprehensive implementation guidance
+- **Quick Reference**: `../appendix-ai-patterns-quick-reference.md` - Pattern reference for AI assistants
+- **Complete Guide**: `../appendix-ai-friendly-html-guide.md` - Comprehensive implementation guidance
 - **Detailed Analysis**: `DIFF_GUIDE.md` - Line-by-line explanation of changes
 
 ## Key Takeaway
