@@ -489,7 +489,7 @@ Scalable business model with strong growth potential across all revenue streams.
 | **Business Strategy** | Business plan, pitch deck, executive summary, go-to-market materials |
 | **Web Audit Suite** | 15,000+ lines production JavaScript, 18+ reports, 3-phase pipeline |
 | **Code Examples** | Production-ready examples, Playwright test suite (14 tests) |
-| **Design & Illustrations** | 11 custom SVG illustrations, book cover, website design |
+| **Design & Illustrations** | 13 custom SVG illustrations (11 chapters + cover + decision tree), website design |
 | **Supporting Materials** | Glossary (60+ terms), checklist, resource links (150+) |
 | **Project Management** | Coordination, QA, standards compliance, documentation |
 
