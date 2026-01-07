@@ -162,7 +162,7 @@ The agent should have flagged this as anomalous because:
 - Mixed with legitimate high-end pricing from other operators
 - No caveats or verification notes added
 
-**Format creates false confidence**: Professional formatting and detailed presentation mask underlying data quality issues. Structure ≠ accuracy.
+**Format creates false confidence**: Professional formatting and detailed presentation mask underlying data quality issues. Structure != accuracy.
 
 ### Stage 6: Human Detection
 
@@ -482,7 +482,7 @@ Critical data needs multiple checkpoints:
 
 ### 5. Format Creates False Confidence
 
-Professional formatting and detailed presentation mask underlying data quality issues. Structure ≠ accuracy.
+Professional formatting and detailed presentation mask underlying data quality issues. Structure != accuracy.
 
 **The danger**: Users trust well-formatted output more than plain text, even when data quality is identical.
 
@@ -545,7 +545,7 @@ This case study informed the validation framework presented in Chapter 11:
 
 - **Range validation**: £203,000 > £15,000 maximum → flag
 - **Comparative analysis**: 58x higher than peers → flag
-- **Structured data cross-reference**: HTML ≠ JSON-LD → flag
+- **Structured data cross-reference**: HTML != JSON-LD → flag
 - **Confidence scoring**: Multiple failures → very low confidence
 - **Graceful degradation**: Low confidence → require verification
 
