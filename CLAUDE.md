@@ -314,12 +314,14 @@ Key security insight (Chapter 6): In-browser agents inherit authenticated sessio
 **CRITICAL:** Marketing materials (docs/sales-enablement/) must avoid specific claims that cannot be validated:
 
 **Do NOT use:**
+
 - Fixed monetary amounts (£500, £5,000, £50,000, etc.)
 - Concrete percentages (67%, 984% ROI, 70-80% margins, etc.)
 - Specific time commitments (2-3 weeks, 6 months, etc.)
 - Precise numeric scores (42/100, 78/100, etc.)
 
 **Instead use:**
+
 - General pricing language ("Contact for pricing", "varies by site")
 - Qualitative descriptions ("significant improvement", "strong margins", "healthy margins")
 - Phase-based progression ("Early Phase", "Growth Phase" not "6 months", "12 months")
