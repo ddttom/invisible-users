@@ -72,13 +72,13 @@ specific traffic patterns, conversion rates, and agent compatibility issues.
 
 Following the implementation cookbook from "The Invisible Users":
 
-1. **Priority 1 fixes** (completed in 2 days):
+1. **Priority 1 fixes**:
    - Displayed full pricing upfront (not "from £X")
    - Added "Show All" option to product specs
    - Replaced toast notifications with persistent alerts
    - Added explicit state attributes to forms
 
-2. **Estimated implementation cost**: £3,200 (16 developer hours)
+2. **Estimated implementation cost**: £3,200
 3. **Example post-fix LLM Suitability Score**: 78/100 (good threshold)
 4. **Potential agent conversion success rate**: 67% (from 0%)
 5. **Estimated annual recovery**: £31,500
@@ -127,14 +127,14 @@ Conservative estimate: £19,200/year
 
 Following Chapter 10's technical implementation guide:
 
-1. **Priority 1-2 fixes** (completed in 5 days):
+1. **Priority 1-2 fixes**:
    - Created transparent pricing page (no forms required)
    - Restructured comparison table with semantic HTML + Schema.org Product markup
    - Converted div-buttons to actual `<button>` elements with ARIA attributes
    - Added explicit state attributes: `data-validation-state`, `aria-invalid`
    - Replaced JavaScript success messages with DOM-persistent alerts
 
-2. **Implementation cost**: £6,800 (34 developer hours)
+2. **Implementation cost**: £6,800
 3. **Post-fix LLM Suitability Score**: 82/100 (excellent threshold)
 4. **Agent signup success rate**: 73%
 5. **Projected annual recovery**: £14,000
@@ -181,14 +181,14 @@ Conservative estimate: £52,000/year
 
 Using the prioritised implementation roadmap (Appendix F):
 
-1. **Priority 1-3 fixes** (completed in 12 days):
+1. **Priority 1-3 fixes**:
    - Added "Show All Results" option (with performance optimization)
    - Expanded itinerary details by default (progressive disclosure optional)
    - Added URL state: search filters, pagination, selected options
    - Replaced JavaScript date picker with `<input type="date">` + enhancement
    - Added explicit progress attributes: `data-step="2" data-total-steps="4"`
 
-2. **Implementation cost**: £14,400 (72 developer hours)
+2. **Implementation cost**: £14,400
 3. **Post-fix LLM Suitability Score**: 74/100 (good threshold)
 4. **Agent booking success rate**: 58%
 5. **Projected annual recovery**: £30,000
@@ -276,7 +276,7 @@ Using the prioritised implementation roadmap (Appendix F):
 **What Each Score Range Means:**
 
 - **Critical (0-39):** Immediate action required. You're losing agent-mediated sales.
-- **Poor (40-59):** Priority fixes needed within 30 days. Significant revenue at risk.
+- **Poor (40-59):** Priority fixes needed. Significant revenue at risk.
 - **Fair (60-74):** Implement Priority 1-2 fixes. Competitive disadvantage likely.
 - **Good (75-84):** Minor improvements. Better than most competitors.
 - **Excellent (85-100):** Best-in-class. Competitive advantage secured.
@@ -304,8 +304,6 @@ Using the prioritised implementation roadmap (Appendix F):
 - **Business Leaders:** Chapters 1, 4, 5, 7, 8, 9 (strategy and business case)
 - **Agent System Developers:** Chapter 11 + Appendix I (validation frameworks)
 
-**Reading Time:** 2-12 hours depending on role and depth required
-
 ### 2. The Web Audit Suite: Production-Ready Analysis Tool
 
 **What You Get:**
@@ -325,10 +323,6 @@ Using the prioritised implementation roadmap (Appendix F):
 - 512MB RAM minimum
 - Works on macOS, Linux, Windows
 - No external dependencies for basic operation
-
-**Setup Time:** 5 minutes
-
-**First Audit:** 10-30 minutes depending on site size
 
 ### 3. Implementation Framework
 
@@ -360,13 +354,6 @@ Using the prioritised implementation roadmap (Appendix F):
 6. Re-run audit to verify improvements
 7. Monitor scores over time with historical tracking
 
-**Time Investment:**
-
-- Initial audit: 30 minutes
-- Reading: 4-6 hours (implementation chapters)
-- Implementation: 2-10 days depending on site complexity
-- Verification: 30 minutes
-
 **Cost:**
 
 - Book: Purchase price
@@ -396,7 +383,7 @@ Using the prioritised implementation roadmap (Appendix F):
 - Priority-based action plan (Priority 1-4)
 - Cost-benefit analysis (estimated revenue at risk)
 - Code examples for your specific technology stack
-- Follow-up audit 30-60 days post-implementation
+- Follow-up audit post-implementation
 
 **Pricing Tiers:**
 
@@ -404,13 +391,6 @@ Using the prioritised implementation roadmap (Appendix F):
 - **Medium sites** (50-500 pages): £1,500
 - **Large sites** (500-5000 pages): £3,500
 - **Enterprise sites** (5000+ pages): £5,000+
-
-**Timeline:**
-
-- Initial audit: 1-3 days
-- Report delivery: 2-4 days
-- Consultation: 60 minutes (scheduled)
-- Follow-up audit: 1 day
 
 **Potential Benefits:** Professional assessment of agent compatibility issues with prioritised remediation plan. Actual outcomes depend on implementation and site-specific factors.
 
@@ -445,21 +425,13 @@ Using the prioritised implementation roadmap (Appendix F):
 - **Priority 1-2 fixes** (essential improvements): £20,000 - £30,000
 - **Priority 1-3 fixes** (comprehensive): £35,000 - £50,000
 
-**Timeline:**
-
-- Initial audit: 1 week
-- Implementation: 4-8 weeks depending on scope
-- Testing: 1-2 weeks
-- Launch: 1 week
-- Total: 8-12 weeks from kickoff to launch
-
 **Potential Benefits:** Complete implementation with testing and validation. Addresses known agent compatibility issues systematically.
 
 ---
 
 ## The Business Opportunity: Why This Matters Now
 
-### Market Timing: 12-18 Month Window
+### Market Timing: Early Mover Advantage
 
 **Why Now:**
 
@@ -486,11 +458,11 @@ Using the prioritised implementation roadmap (Appendix F):
 
 **What Happens Next:**
 
-- **Months 0-6:** Early adopters fix their sites, gain measurable advantage
-- **Months 6-12:** Competitors notice conversion rate differences, scramble to catch up
-- **Months 12-18:** Standards bodies begin formal specifications
-- **Months 18-24:** Agent compatibility becomes "table stakes" like mobile responsiveness
-- **Months 24+:** Methodology becomes commoditised, advantage disappears
+- **Phase 1:** Early adopters fix their sites, gain measurable advantage
+- **Phase 2:** Competitors notice conversion rate differences, scramble to catch up
+- **Phase 3:** Standards bodies begin formal specifications
+- **Phase 4:** Agent compatibility becomes "table stakes" like mobile responsiveness
+- **Phase 5:** Methodology becomes commoditised, advantage disappears
 
 **The window for competitive advantage is now.**
 
@@ -561,23 +533,23 @@ Total Year 1 Revenue per Client: £31,500
 
 ### For Businesses (Internal Use)
 
-### Week 1: Assessment
+### Phase 1: Assessment
 
 1. Purchase the book
 2. Purchase Web Audit Suite OR engage audit service
-3. Run Web Audit Suite on your site (30 minutes) or receive professional audit report
+3. Run Web Audit Suite on your site or receive professional audit report
 4. Review executive dashboard and LLM suitability scores
-5. Read Executive Summary + Chapter 1 of the book (2 hours)
+5. Read Executive Summary + Chapter 1 of the book
 6. Present findings to stakeholders (internal business case)
 
-### Week 2-3: Planning
+### Phase 2: Planning
 
-1. Read implementation chapters (Chapters 9-10) (4-6 hours)
+1. Read implementation chapters (Chapters 9-10)
 2. Prioritise fixes using the cookbook (Priority 1-2 first)
 3. Estimate internal implementation cost
 4. Secure budget and resources
 
-### Week 4-8: Implementation
+### Phase 3: Implementation
 
 1. Implement Priority 1 fixes (quick wins)
 2. Test with automated suite
@@ -585,7 +557,7 @@ Total Year 1 Revenue per Client: £31,500
 4. Implement Priority 2 fixes
 5. Final verification audit
 
-### Week 9+: Monitoring
+### Phase 4: Monitoring
 
 1. Set up quarterly re-audits
 2. Monitor agent conversion rates
@@ -594,30 +566,30 @@ Total Year 1 Revenue per Client: £31,500
 
 ### For Agencies (Service Offering)
 
-### Week 1: Setup
+### Phase 1: Setup
 
 1. Purchase the book
 2. Purchase Web Audit Suite (for agencies offering self-service) OR establish referral arrangement for audit service
 3. Install and configure Web Audit Suite (if purchased)
 4. Set up white-labeling (agency branding, if applicable)
-5. Read the book cover-to-cover (8-12 hours)
+5. Read the book cover-to-cover
 6. Create service packages and pricing
 
-### Week 2: Testing
+### Phase 2: Testing
 
 1. Run audits on 3-5 demo sites (your own + volunteers)
 2. Generate sample reports
 3. Create sales materials (case studies, presentations)
 4. Build ROI calculator for prospects
 
-### Week 3: Launch
+### Phase 3: Launch
 
 1. Identify target market (e-commerce, SaaS, travel, etc.)
 2. Develop outreach campaigns
 3. Conduct initial client audits (offer free analysis as lead generation)
 4. Build case studies from early wins
 
-### Month 2+: Scale
+### Phase 4: Scale
 
 1. Hire/train delivery team
 2. Systematise audit process
@@ -626,14 +598,14 @@ Total Year 1 Revenue per Client: £31,500
 
 ### For Agent System Developers
 
-### Week 1: Learn
+### Phase 1: Learn
 
 1. Read Chapter 11: What Agent Creators Must Build
 2. Study Appendix I: £203k cruise pricing case study
 3. Review validation framework code examples
 4. Understand confidence scoring patterns
 
-### Week 2: Implement
+### Phase 2: Implement
 
 1. Build range validation (price boundaries)
 2. Implement comparative analysis (outlier detection)
@@ -641,14 +613,14 @@ Total Year 1 Revenue per Client: £31,500
 4. Set up structured data cross-reference
 5. Integrate confidence scoring
 
-### Week 3: Test
+### Phase 3: Test
 
 1. Unit test validation layers
 2. Integration test comparative validators
 3. Load test with production data
 4. Measure false positive/negative rates
 
-### Week 4+: Deploy
+### Phase 4: Deploy
 
 1. Deploy to production with monitoring
 2. Collect telemetry on validation effectiveness
@@ -690,17 +662,17 @@ Total Year 1 Revenue per Client: £31,500
    - Blocking agents is blocking future customers
    - Commercial pressure favours access, not restrictions
 
-### "What's the ROI timeline?"
+### "What's the ROI progression?"
 
 **Typical pattern:**
 
-- **Month 1:** Audit identifies issues (cost: £0 - £5,000)
-- **Month 2-3:** Priority 1-2 implementation (cost: £3,000 - £30,000)
-- **Month 4:** Agent conversion rates measurable
-- **Month 6:** Revenue recovery becomes significant
-- **Month 12:** Full ROI achieved (200-1000% returns common)
+- **Phase 1:** Audit identifies issues (cost: £0 - £5,000)
+- **Phase 2:** Priority 1-2 implementation (cost: £3,000 - £30,000)
+- **Phase 3:** Agent conversion rates measurable
+- **Phase 4:** Revenue recovery becomes significant
+- **Phase 5:** Full ROI achieved (200-1000% returns common)
 
-**Fast wins:** Priority 1 fixes often show results within 30-60 days
+**Fast wins:** Priority 1 fixes often show results quickly
 
 **Long-term value:** Competitive advantage compounds as agent traffic grows
 
@@ -728,7 +700,7 @@ Total Year 1 Revenue per Client: £31,500
 - Replace toast notifications
 - Add explicit state attributes
 
-**These can be implemented in days, not months.**
+**These can be implemented quickly.**
 
 Priority 2-4 fixes are deeper but still don't require rebuilds. You're enhancing existing HTML, not replacing your technology stack.
 
@@ -810,9 +782,7 @@ Used Luigi's Pizza example from the book (Appendix A):
 3. Replaced CSS validation with aria-invalid attributes
 4. Added persistent success message (role="alert" + DOM element)
 
-**Developer time:** 8 hours
-
-**Cost:** £640 (freelance developer, £80/hour)
+**Cost:** £640
 
 **Post-Fix Results:**
 
@@ -834,7 +804,6 @@ Plus: Customer satisfaction (word-of-mouth)
 
 Total measurable impact: £1,800/year
 ROI: 281% (£1,800 gain / £640 cost)
-Payback period: 4.3 months
 ```
 
 **Note on This Example:**

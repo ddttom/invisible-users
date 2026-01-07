@@ -346,12 +346,12 @@ Typical Year 1 per client: £31,500
 
 ### Market Timing
 
-**Critical Window:** 12-18 months first-mover advantage
+**Critical Window:** Early mover advantage available
 
 - **Now:** Early adopters gaining competitive edge
-- **2025-2026:** Agent traffic grows to 5-15% of total
-- **2026-2027:** Best practices become table stakes
-- **After 2027:** Competitive advantage disappears
+- **Early Phase:** Agent traffic grows to 5-15% of total
+- **Mainstream Phase:** Best practices become table stakes
+- **Mature Phase:** Competitive advantage disappears
 
 **Historical Parallel:** Mobile-responsive design (2010-2013)
 
@@ -493,15 +493,15 @@ Typical Year 1 per client: £31,500
 
 | Component | Market Rate | Details |
 | --------- | ----------- | ------- |
-| **Book Manuscript** | £35k-£95k | 65,500 words technical writing (11 chapters), 4-7 months, deep domain expertise |
+| **Book Manuscript** | £35k-£95k | 65,500 words technical writing (11 chapters), deep domain expertise |
 | **Nine Appendices** | £12k-£22k | Implementation guides, case studies, resources, pipeline failure analysis |
 | **Business Strategy** | £15k-£30k | Business plan, pitch deck, executive summary, go-to-market (16,500 words) |
 | **Web Audit Suite** | £50k-£100k | 15,000+ lines production JavaScript, 18+ reports, 3-phase pipeline |
 | **Code Examples** | £10k-£20k | Production-ready examples, Playwright test suite (14 tests) |
 | **Design & Illustrations** | £5k-£15k | 11 custom SVG illustrations, book cover, website design |
-| **Supporting Materials** | £5k-£10k | Glossary (60+ terms), checklist, resource links (150+), interactive notebook |
+| **Supporting Materials** | £5k-£10k | Glossary (60+ terms), checklist, resource links (150+) |
 | **Project Management** | £5k-£15k | Coordination, QA, standards compliance, documentation |
-| **Total Replacement Cost** | **£142k-£317k** | 1,500-1,900 hours professional services |
+| **Total Replacement Cost** | **£142k-£317k** | Professional services equivalent |
 
 **Realistic Market Value:** £175k-£250k for professional delivery at this quality level
 
@@ -753,7 +753,7 @@ Available as separate purchase or professional audit service:
 
 ## Success Criteria
 
-### 6 Months
+### Early Phase
 
 - [ ] Book published and selling (target: 1,000 copies)
 - [ ] SaaS platform beta launched (target: 50 customers)
@@ -763,7 +763,7 @@ Available as separate purchase or professional audit service:
 - [ ] Partnership discussions underway
 - [ ] Revenue: £250k-£750k
 
-### 12 Months
+### Growth Phase
 
 - [ ] Book sales: 5,000+ copies
 - [ ] SaaS customers: 200+ (target ARR: £600k-£1.2M)
@@ -772,7 +772,7 @@ Available as separate purchase or professional audit service:
 - [ ] 5-10 agency partnerships established
 - [ ] Revenue: £2.5M-£6M
 
-### 24 Months
+### Expansion Phase
 
 - [ ] Market leadership position established
 - [ ] SaaS customers: 500+ (target ARR: £1.5M-£3M)
@@ -781,7 +781,7 @@ Available as separate purchase or professional audit service:
 - [ ] 20+ agency partnerships
 - [ ] Revenue: £4.5M-£11M
 
-### 36 Months
+### Maturity Phase
 
 - [ ] Recognised authority in field
 - [ ] SaaS customers: 1,000+ (target ARR: £3M-£6M)
@@ -807,7 +807,7 @@ Available as separate purchase or professional audit service:
 - Working capital: £50k-£550k
 
 **Returns:** Revenue share or equity stake
-**Timeline:** Profitable within 12-18 months
+**Path to Profitability:** Early phase target
 
 ### Option B: Platform-Focused Partnership
 
@@ -821,7 +821,7 @@ Available as separate purchase or professional audit service:
 - Working capital: £500k-£1.5M
 
 **Returns:** Equity stake with board seat
-**Timeline:** Revenue by Month 6, profitable by Month 18
+**Path to Profitability:** Revenue in early phase, profitability in growth phase
 
 ### Option C: Strategic Partnership (Non-Capital)
 
@@ -893,12 +893,12 @@ LinkedIn: [Profile]
 
 ### Limited Opportunity Window
 
-**12-18 Month First-Mover Advantage:**
+**First-Mover Advantage Window:**
 
 - **Now:** We're first to market with complete solution (methodology + tool)
-- **6 months:** Competitors see opportunity, start development
-- **12 months:** First competitors launch basic tools
-- **18 months:** Market becomes crowded, advantage diminishes
+- **Early Phase:** Competitors see opportunity, start development
+- **Growth Phase:** First competitors launch basic tools
+- **Mature Phase:** Market becomes crowded, advantage diminishes
 
 **First Mover Advantages:**
 
