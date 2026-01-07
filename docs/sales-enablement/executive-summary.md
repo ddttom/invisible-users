@@ -108,7 +108,7 @@ The patterns that break agents also break screen reader users, people with cogni
 **We bring:** Methodology, IP, training, brand, technical support
 **Investment:** £250k-£500k for sales and delivery team
 **Returns:** Revenue share or equity stake
-**Timeline:** Profitable within 12 months
+**Timeline:** Early profitability target
 
 ### 2. Platform Development Partner (SaaS Scaling)
 
@@ -116,7 +116,7 @@ The patterns that break agents also break screen reader users, people with cogni
 **We bring:** Testing methodology, specifications, market positioning
 **Investment:** £750k-£1.5M for development and go-to-market
 **Returns:** Equity stake with board seat
-**Timeline:** Revenue by month 12, profitable by month 24
+**Timeline:** Revenue in early phase, profitability in growth phase
 
 ### 3. Agency Network Partner (Franchise/White-Label)
 
@@ -132,7 +132,7 @@ The patterns that break agents also break screen reader users, people with cogni
 **We bring:** Complete product, methodology, initial revenue traction
 **Investment:** £250k-£1.5M depending on model
 **Returns:** Equity or revenue-based financing
-**Timeline:** 6-9 months to break-even
+**Timeline:** Early break-even target
 
 ---
 
@@ -186,7 +186,7 @@ The patterns that break agents also break screen reader users, people with cogni
 
 ## Success Metrics
 
-### 6 Months
+### Early Phase
 
 - 1,000 book copies sold
 - 10 professional service engagements
@@ -194,7 +194,7 @@ The patterns that break agents also break screen reader users, people with cogni
 - 2-3 conference speaking slots
 - Revenue: £150k-£500k
 
-### 12 Months
+### Growth Phase
 
 - 5,000 book copies sold
 - 50 professional service clients
@@ -202,7 +202,7 @@ The patterns that break agents also break screen reader users, people with cogni
 - 5-10 agency partnerships
 - Revenue: £1.5M-£4M
 
-### 24 Months
+### Maturity Phase
 
 - Market leadership established
 - 100+ professional service clients
@@ -249,10 +249,10 @@ The patterns that break agents also break screen reader users, people with cogni
 
 **Three Options:**
 
-| Model | Investment | Use of Funds | Timeline to Profit |
-| ----- | ---------- | ------------ | ------------------ |
-| **Services-Focused** | £250k-£500k | Sales + delivery team | 12 months |
-| **Platform Development** | £750k-£1.5M | Dev team + GTM | 24 months |
+| Model | Investment | Use of Funds | Profitability Target |
+| ----- | ---------- | ------------ | -------------------- |
+| **Services-Focused** | £250k-£500k | Sales + delivery team | Early phase |
+| **Platform Development** | £750k-£1.5M | Dev team + GTM | Growth phase |
 | **Strategic Partnership** | Non-capital | Skills, network, resources | Immediate |
 
 **All options include:** Equity or revenue share, founder commitment, complete foundation
@@ -267,9 +267,7 @@ Tom Cranstoun
 🌐 Website: invisible-users.com
 📄 LinkedIn: [Profile]
 
-Response Time: Within 24 hours for partnership enquiries
-
-Availability: Ready to start immediately, partnership agreements can be executed within 30 days
+Availability: Ready to start immediately, flexible partnership agreement timeline
 
 ---
 

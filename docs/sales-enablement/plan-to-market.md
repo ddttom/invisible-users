@@ -595,7 +595,7 @@ If you'd like to proceed:
 1. I'll send a formal proposal and SOW
 2. We schedule kick-off call
 3. You provide site access and analytics
-4. We deliver audit within 3 weeks
+4. We deliver comprehensive audit report
 
 OPTIONAL: IMPLEMENTATION SUPPORT
 
@@ -819,7 +819,7 @@ AUDIENCE TAKEAWAYS
 Attendees will learn:
 
 1. How to test for agent compatibility (10-minute audit)
-2. Five quick wins (< 1 hour implementation each)
+2. Five quick wins (minimal implementation effort each)
 3. Priority-based roadmap for systematic improvement
 4. Business case for justifying investment
 5. Code examples they can use immediately
