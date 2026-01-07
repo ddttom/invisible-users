@@ -310,7 +310,7 @@ Using the prioritised implementation roadmap (Appendix F):
 
 **What You Get:**
 
-- **Open-source Node.js tool** (MIT license)
+- **Professional Node.js analysis tool**
 - **Complete source code** with comprehensive documentation
 - **CLI interface** with flexible configuration
 - **18 report types** (CSV + Markdown)
@@ -352,11 +352,12 @@ Using the prioritised implementation roadmap (Appendix F):
 
 **What You Do:**
 
-1. Run Web Audit Suite on your site (free, open-source)
-2. Read the book (focus on Chapters 9-10 for implementation)
-3. Use the implementation cookbook for copy-paste fixes
-4. Re-run audit to verify improvements
-5. Monitor scores over time with historical tracking
+1. Purchase the book + Web Audit Suite package
+2. Run Web Audit Suite on your site
+3. Read the book (focus on Chapters 9-10 for implementation)
+4. Use the implementation cookbook for copy-paste fixes
+5. Re-run audit to verify improvements
+6. Monitor scores over time with historical tracking
 
 **Time Investment:**
 
@@ -367,10 +368,9 @@ Using the prioritised implementation roadmap (Appendix F):
 
 **Cost:**
 
-- Book: Purchase price only
-- Tool: Free (open-source)
+- Book + Web Audit Suite package: Purchase price
 - Implementation: Internal developer time
-- Total: £0 - £5,000 depending on developer rates and site complexity
+- Total: Package cost + £0 - £5,000 for implementation (depending on developer rates and site complexity)
 
 **Potential Benefits:** Improved agent compatibility, better accessibility, clearer state management. Actual revenue impact will vary.
 
@@ -561,10 +561,11 @@ Total Year 1 Revenue per Client: £31,500
 
 ### Week 1: Assessment
 
-1. Download and run Web Audit Suite on your site (30 minutes)
-2. Review executive dashboard and LLM suitability scores
-3. Read Executive Summary + Chapter 1 of the book (2 hours)
-4. Present findings to stakeholders (internal business case)
+1. Purchase the book + Web Audit Suite package
+2. Run Web Audit Suite on your site (30 minutes)
+3. Review executive dashboard and LLM suitability scores
+4. Read Executive Summary + Chapter 1 of the book (2 hours)
+5. Present findings to stakeholders (internal business case)
 
 ### Week 2-3: Planning
 
@@ -592,10 +593,11 @@ Total Year 1 Revenue per Client: £31,500
 
 ### Week 1: Setup
 
-1. Install and configure Web Audit Suite
-2. Set up white-labeling (agency branding)
-3. Read the book cover-to-cover (8-12 hours)
-4. Create service packages and pricing
+1. Purchase the book + Web Audit Suite package
+2. Install and configure Web Audit Suite
+3. Set up white-labeling (agency branding)
+4. Read the book cover-to-cover (8-12 hours)
+5. Create service packages and pricing
 
 ### Week 2: Testing
 
@@ -608,7 +610,7 @@ Total Year 1 Revenue per Client: £31,500
 
 1. Identify target market (e-commerce, SaaS, travel, etc.)
 2. Develop outreach campaigns
-3. Conduct initial client audits (free or discounted)
+3. Conduct initial client audits (offer free analysis as lead generation)
 4. Build case studies from early wins
 
 ### Month 2+: Scale
@@ -874,7 +876,7 @@ You can identify issues preventing agent-mediated transactions. You can implemen
 ### Book + Web Audit Suite + Implementation Framework
 
 - Comprehensive methodology (65,500 words)
-- Production-ready analysis tool (open-source)
+- Production-ready analysis tool
 - Copy-paste implementation recipes
 - Agent validation frameworks
 - Priority-based roadmap templates
@@ -882,15 +884,13 @@ You can identify issues preventing agent-mediated transactions. You can implemen
 
 **Contact:** <tom.cranstoun@gmail.com>
 
-**Or start with the free audit:**
+**Package includes:**
 
-Download the Web Audit Suite (open-source, MIT license):
-
-<https://github.com/ddttom/invisible-users>
-
-Run it on your site. See your score. Understand what's broken.
-
-Then decide whether to fix it yourself or hire help.
+- Complete book manuscript (11 chapters + 9 appendices)
+- Web Audit Suite with 18 detailed reports
+- Implementation cookbook with code examples
+- Priority-based roadmap templates
+- Access to interactive companion notebook
 
 **But don't wait.**
 
@@ -918,4 +918,4 @@ He's based in the UK and works with organisations internationally.
 
 **Copyright:** © Tom Cranstoun. All rights reserved.
 
-**License:** The methodology (book) is proprietary. The Web Audit Suite (tool) is open-source MIT licensed.
+**License:** The methodology (book) and Web Audit Suite (tool) are included in the purchased package. All rights reserved.
