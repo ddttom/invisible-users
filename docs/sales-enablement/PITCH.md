@@ -1,6 +1,8 @@
 # The Invisible Users: Complete Partnership Pitch
 
-A market opportunity in AI agent-compatible web design - Methodology + Measurement Tool
+## A New Business Opportunity in AI Agent-Compatible Web Design
+
+Methodology + Measurement Tool + Proven Service Framework
 
 **Prepared by:** Tom Cranstoun
 **Contact:** <tom.cranstoun@gmail.com>
@@ -10,16 +12,28 @@ A market opportunity in AI agent-compatible web design - Methodology + Measureme
 
 ## Executive Summary
 
-AI agents are visiting websites right now and failing silently. These failures cost businesses millions in lost conversions that never appear in analytics. We've built the complete solution: a comprehensive book documenting the methodology AND a production-ready measurement tool.
+**This is a new business opportunity - not an established market.**
 
-**The Opportunity:**
+AI agents are visiting websites right now and failing silently. These failures cost businesses millions in lost conversions that never appear in analytics. We've built the complete solution: a comprehensive book documenting the methodology AND a production-ready measurement tool AND a proven service framework.
+
+**Why This Is a Business Opportunity:**
+
+- **New category creation** - Agent-compatible web design is not yet an established service line
+- **No dominant players** - Market leaders have not yet emerged (12-18 month window)
+- **Clear commercial demand** - Businesses are losing revenue to invisible failures right now
+- **Multiple revenue streams** - Audit services, implementation, training, subscriptions
+- **High margins** - 70-90% on audit services, 40-60% on implementation
+- **Scalable delivery** - Automated tooling + proven implementation patterns
+- **Low barriers to entry** - Book + tool provide complete methodology and measurement
+
+**The Market Opportunity:**
 
 - £6.3 trillion global e-commerce market affected
-- 5-15% projected agent traffic by 2026
-- 12-18 month first-mover advantage window
-- No established market leaders yet
-- Clear technical solution exists
-- Multiple revenue streams available
+- 5-15% projected agent traffic by 2026 (growing to 30-40% by 2028)
+- £50,000+ average annual loss per site from silent conversion failures
+- 12-18 month first-mover advantage window before commoditisation
+- Clear technical solutions exist (not speculative)
+- Multiple revenue streams with high margins
 
 **What We've Built:**
 
@@ -282,6 +296,38 @@ Executives who need to understand strategic risk. We provide the **Book** and **
 ### 4. Partners & Investors (The Scalers)
 
 Agencies and investors looking for the next growth category. We provide the **Methodology** and **Business Model** to enable new professional service lines.
+
+**THIS IS THE PRIMARY BUSINESS OPPORTUNITY:**
+
+Agent-compatible web design is a new, unestablished service category. Early movers can:
+
+- **Define the category** as authority figures
+- **Capture market share** before commoditisation
+- **Command premium rates** (£500-£50,000 per client engagement)
+- **Build recurring revenue** (quarterly audits, monitoring subscriptions)
+- **Scale efficiently** (automated tooling + proven patterns)
+
+**Agency Revenue Model:**
+
+```text
+Audit services: £500-£5,000 per client (70-80% margin)
+Implementation: £10,000-£50,000 per client (40-60% margin)
+Training: £1,500-£5,000 per session (80-90% margin)
+Subscriptions: £500-£2,000/month per client (85-95% margin)
+
+Typical Year 1 per client: £31,500
+10 clients = £315,000 annual revenue
+25 clients = £787,500 annual revenue
+50 clients = £1,575,000 annual revenue
+```
+
+**What Makes This Unique:**
+
+1. **Complete methodology included** - Book provides proven implementation patterns
+2. **Measurement tool provided** - Web Audit Suite (white-labelable, open-source)
+3. **No platform lock-in** - Works with any technology stack
+4. **Proven case studies** - Real ROI data from implementations
+5. **12-18 month window** - Market leaders haven't emerged yet
 
 ---
 
