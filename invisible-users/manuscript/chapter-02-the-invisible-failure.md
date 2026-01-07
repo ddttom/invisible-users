@@ -20,19 +20,22 @@ This chapter catalogues the specific patterns that cause these failures. Each on
 
 **A note on agent types:** The failures described here affect agents differently depending on their architecture. Server-based agents parsing static HTML miss toast notifications entirely because the DOM element is removed before they scan that area. Browser agents with JavaScript execution might catch some toasts if their timing aligns perfectly, but still fail on rapid animations. Browser extension assistants inherit your authenticated session and proof-of-humanity tokens, so they bypass some challenges - but they still struggle with visual-only state indicators. CLI and local agents fetch content remotely and parse HTML sequentially, making them vulnerable to all timing-based patterns. Throughout this chapter, when I describe how "agents" experience a pattern, I'm describing behaviour common across this ecosystem. Where agent type matters to understanding a specific failure mode, I'll note it explicitly.
 
-![The Anatomy of Invisible Failure - six patterns that silently break AI agents](illustrations/chapter-02-illustration.png)
+![The Anatomy of Invisible Failure - common patterns that silently break AI agents](illustrations/chapter-02-illustration.png)
 
-## The Five Types of Invisible Failure: Summary
+## The Six Types of Invisible Failure: Summary
 
 | Pattern | Problem | Agent Impact | Human Impact | Example |
 | ------- | ------- | ------------ | ------------ | ------- |
 | **Toast Notifications** | Appear for 3 seconds and disappear | Agent reports success when task actually failed | Elderly users, people with processing delays miss critical feedback | Form submission confirmation that vanishes before being read |
-| **Pagination** | Content hidden behind 'Next' buttons | Agent only sees first page of results, makes recommendations on incomplete data | Users with cognitive disabilities, screen readers struggle with fragmented content | Tour itinerary split across 14 pages - agent sees only Day 1 |
+| **Hidden Content** | Information behind pagination, tabs, accordions, or below the fold | Agent only sees visible content, makes decisions on incomplete data | Users with cognitive disabilities, screen readers struggle with fragmented content | Tour itinerary split across 14 pages; specifications hidden in collapsed tabs |
 | **Single-Page Applications** | Content updates without URL changes | Agent can't tell if action succeeded, no reliable state tracking | Users who rely on browser history, bookmarking lose navigation cues | Shopping cart that updates via JavaScript with no URL change |
-| **Visual-Only Indicators** | Relies on colour, position, animation | Agent misses critical state information | Colourblind users, screen reader users can't perceive state changes | Greyed-out button without `disabled` attribute |
+| **Delayed Validation** | Form errors shown only after submission | Agent doesn't know requirements upfront, multiple failed submission attempts | All users face trial-and-error form completion | Password requirements not shown until invalid submission |
 | **Hidden Pricing** | Showing 'From £99' with real cost at checkout | Agent makes recommendations on wrong price data | All users experience price surprise and decision regret | Hotel showing £95 base but £140 total after fees |
+| **Loading States** | Spinning indicators without semantic information about duration or success | Agent doesn't know how long to wait or if request failed | Users with anxiety, attention difficulties struggle with ambiguous wait times | Spinner that continues indefinitely on silent server error |
 
 This table summarises patterns explored in detail throughout this chapter. Each pattern made sense when designed for human users, yet creates invisible failures for both AI agents and humans with accessibility needs.
+
+**Note:** 'Hidden Content' encompasses multiple related patterns - pagination, tabs and accordions, and below-the-fold content - that share a root cause: information that exists but isn't immediately visible.
 
 ---
 
@@ -507,7 +510,7 @@ The invisible failure is invisible to you, too. Until you look for it specifical
 
 **What you need to know from this chapter:**
 
-- **Five common patterns break for AI agents:** Toast notifications, pagination, SPAs without URL state, visual-only indicators, and hidden pricing. These aren't bugs - they're design patterns optimised for human visual browsing that fail for sequential machine reading.
+- **Six common patterns break for AI agents:** Toast notifications, hidden content (pagination, tabs, below-the-fold), SPAs without URL state, delayed validation, hidden pricing, and ambiguous loading states. These aren't bugs - they're design patterns optimised for human visual browsing that fail for sequential machine reading.
 
 - **Failures are invisible in analytics:** When agents fail, you don't see error messages or abandoned cart notifications. You see slightly higher bounce rates or lower conversion. The human user goes to a competitor whose site works for agents, and you never know the sale was lost.
 
@@ -517,7 +520,7 @@ The invisible failure is invisible to you, too. Until you look for it specifical
 
 **Action items:**
 
-- Audit your site for these five patterns (estimate: 1-2 hours)
+- Audit your site for these six patterns (estimate: 1-2 hours)
 - Test your checkout flow with a screen reader - if it fails there, it fails for agents
 - Review whether your pricing is transparent or requires multiple clicks to discover
 - Ask: "If an agent visited my site, could it determine if an action succeeded?"

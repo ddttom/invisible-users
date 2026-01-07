@@ -41,7 +41,7 @@ AI agents - assistants like ChatGPT, Claude, and similar tools - are visiting we
 
 ### Priority 1: Quick Assessment (1-2 hours)
 
-- Audit your site for the five critical failures: disappearing notifications, paginated content, unclear pricing, visual-only state indicators, forms with transient feedback
+- Audit your site for the six critical failures: disappearing notifications, hidden content (pagination, tabs, below-the-fold), single-page applications without URL state, delayed form validation, unclear pricing, and ambiguous loading states
 - Test your checkout flow with a screen reader (if it fails for screen readers, it fails for agents)
 - Check whether agents can find your pricing, understand your offering, and determine if actions succeeded
 

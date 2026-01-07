@@ -52,7 +52,7 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 - Specification: <https://oauth.net/2/>
 - RFC 6749: <https://tools.ietf.org/html/rfc6749>
 - PKCE (RFC 7636): <https://tools.ietf.org/html/rfc7636>
-- Authorization framework used for agent delegation in Identity Layer v2.0
+- Authorisation framework being explored for agent delegation scenarios
 
 ### JWT (JSON Web Tokens)
 
@@ -60,13 +60,13 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 - RFC 7519: <https://tools.ietf.org/html/rfc7519>
 - JWS (RFC 7515): <https://tools.ietf.org/html/rfc7515>
 - JWKS (RFC 7517): <https://tools.ietf.org/html/rfc7517>
-- Token format for Identity Layer identity tokens
+- Token format widely used in authentication and authorisation systems
 
 ### DPoP (Demonstration of Proof-of-Possession)
 
 - RFC 9449: <https://datatracker.ietf.org/doc/html/rfc9449>
 - Specification for binding tokens to specific clients
-- Used in Identity Layer v2.5.1 for token security
+- Emerging approach for token security in agent authentication contexts
 
 ### WebAuthn / FIDO2
 

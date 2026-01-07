@@ -379,6 +379,24 @@ Schema.org provides vocabularies for most things you'd want to describe:
 
 Use the vocabulary that matches your content. Start with one type and expand.
 
+### The Structured Data Dilemma
+
+Here's the irony that Chapter 5 documented: the same Schema.org markup that improves search rankings makes content trivially extractable by agents. Recipe sites added structured data to rank higher on Google. News sites marked up articles to earn rich snippets. Tutorial creators added how-to schemas to increase visibility. They optimised for search engines. Now they're facing agent extraction without ad revenue.
+
+An agent doesn't need to render your page, scroll through your "life story before the recipe", or view your advertisements. It reads the Recipe schema, extracts the ingredients and instructions, and moves on. The entire economic structure that made ad-funded content viable - scroll depth, time on page, multiple ad impressions - becomes irrelevant when agents bypass the page entirely and consume only the structured data.
+
+**Content type determines risk.** For transactional sites - e-commerce, booking platforms, service providers - Schema.org is beneficial. Agents need structured product data, pricing information, and availability to complete purchases. Your revenue comes from transactions, not pageviews. An agent that correctly understands your product and completes a purchase is the desired outcome. The structured data serves your business model.
+
+For creative and informational content - recipes, news articles, tutorials, product reviews - the risk is higher. Revenue depends on pageviews and ad impressions. Agent extraction bypasses your monetisation model entirely. The content creator invested time and resources producing something valuable. The agent platform extracts that value, serves it to users, and the creator receives nothing. No traffic. No ad revenue. No attribution in many cases.
+
+**Strategic decision framework.** Use Schema.org when your business model depends on transactions rather than pageviews, when you want agents to recommend and complete purchases on your site, and when you have alternative revenue streams beyond advertising. Consider the trade-offs more carefully when revenue depends entirely on ad impressions, when content is easily extractable and summarisable, and when there's no clear path to alternative monetisation.
+
+**Mitigation strategies exist, though none is perfect.** Mark up products and services but not full content text. Paywall critical information whilst leaving summaries accessible for discovery. Provide API access with licensing terms for high-volume agent platforms. Explore agent-friendly monetisation models: per-extraction fees, partnership arrangements with agent platforms, or subscription models that charge users directly rather than advertisers.
+
+This tension will drive the evolution of web monetisation. Schema.org enables the agent ecosystem but requires new business models to sustain content creation. Early adopters who solve this - who find ways to serve both human browsers and AI agents whilst maintaining viable revenue - will have a competitive advantage. It's not a binary choice between "optimise for agents" or "protect content". It's a strategic decision based on your business model, content type, and willingness to experiment with new approaches.
+
+The web has survived similar transitions before. When Google began showing answers directly in search results, content creators adapted. Some put more content behind paywalls. Others focused on building direct relationships with readers. Still others found value in the visibility even without the click. Agent extraction is a more fundamental shift, but the principle remains: understand your business model, recognise how agents interact with your content, and make informed decisions about what to expose and what to protect.
+
 ## Advertising Your API
 
 If you have an API that's better for agents than scraping your HTML, tell them about it.
