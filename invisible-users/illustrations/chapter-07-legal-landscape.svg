@@ -1,15 +1,15 @@
 <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .title { font: bold 24px Georgia, serif; fill: #1a1a1a; }
-    .subtitle { font: 15px system-ui, sans-serif; fill: #666; }
-    .section-title { font: bold 15px system-ui, sans-serif; fill: #1a1a1a; }
-    .label { font: 14px system-ui, sans-serif; fill: #333; }
-    .small-label { font: 11px system-ui, sans-serif; fill: #666; }
-    .question { font: bold 22px system-ui, sans-serif; fill: #c0392b; }
-    .scenario { font: 12px system-ui, sans-serif; fill: #2c3e50; }
-    .warning { font: bold 13px system-ui, sans-serif; fill: #e67e22; }
-    .insight { font: italic 13px system-ui, sans-serif; fill: #2c3e50; }
-    .connector-label { font: 10px system-ui, sans-serif; fill: #888; }
+    .title { font-family: Georgia, serif; font-size: 24px; font-weight: bold; fill: #1a1a1a; }
+    .subtitle { font-family: system-ui, sans-serif; font-size: 15px; fill: #666; }
+    .section-title { font-family: system-ui, sans-serif; font-size: 15px; font-weight: bold; fill: #1a1a1a; }
+    .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #333; }
+    .small-label { font-family: system-ui, sans-serif; font-size: 11px; fill: #666; }
+    .question { font-family: system-ui, sans-serif; font-size: 22px; font-weight: bold; fill: #c0392b; }
+    .scenario { font-family: system-ui, sans-serif; font-size: 12px; fill: #2c3e50; }
+    .warning { font-family: system-ui, sans-serif; font-size: 13px; font-weight: bold; fill: #e67e22; }
+    .insight { font-family: system-ui, sans-serif; font-size: 13px; font-style: italic; fill: #2c3e50; }
+    .connector-label { font-family: system-ui, sans-serif; font-size: 10px; fill: #888; }
   </style>
   
   <!-- White background -->
