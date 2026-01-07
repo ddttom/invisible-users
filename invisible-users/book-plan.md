@@ -336,7 +336,7 @@ All materials located in `docs/sales-enablement/`:
 | Material | Status | Words | Description |
 | -------- | ------ | ----- | ----------- |
 | advice.md | ✅ | ~9,050 | Comprehensive prescriptive guide for building AI-friendly HTML (referenced in Chapter 10) |
-| for-ai.md | ✅ | ~1,300 | Concise HTML patterns reference for AI assistants (referenced in Chapter 10) |
+| AI-design-rules.md | ✅ | ~1,300 | Concise HTML patterns reference for AI assistants (referenced in Chapter 10) |
 
 ### Implementation Case Study
 
@@ -434,7 +434,7 @@ Real-world llms.txt example:
 | 2.0.0 | 2025-12-23 | Identity layer expansion (centralised repository concept) |
 | 3.0.0 | 2025-12-24 | Identity layer reduction (moved to separate repository) |
 | 3.1.0 | 2025-12-24 | Design Patterns Reference added to Chapter 10, advice.md created |
-| 3.2.0 | 2025-12-25 | advice.md expanded to ~8,400 words with 12 parts, for-ai.md created |
+| 3.2.0 | 2025-12-25 | advice.md expanded to ~8,400 words with 12 parts, AI-design-rules.md created |
 | 3.3.0 | 2025-12-25 | Standalone guides integrated into book chapters 9 and 10 |
 | 3.4.0 | 2025-12-25 | Dark warehouses section added to Chapter 4 (~1,900 words, total ~40,200 words) |
 | 2.6.0 | 2025-12-30 | Interactive notebook added (invisible-users.ipynb), structured tables added to all chapters, priority-based roadmap conversion, Interactive Companion sections added to preface/Chapter 10/resource-links |
@@ -479,7 +479,7 @@ Real-world llms.txt example:
     ├── implementation-checklist.md
     ├── resource-links.md
     ├── advice.md                # Standalone prescriptive guide (~9,050 words)
-    ├── for-ai.md                # AI assistant HTML reference (~1,300 words)
+    ├── AI-design-rules.md       # AI assistant HTML reference (~1,300 words)
     ├── llms.txt                 # Example llms.txt file from book content
     ├── AI-Native.blog           # AI-native website implementation blueprint (~5,000 words)
     ├── agent-friendly-starter-kit/

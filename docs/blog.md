@@ -283,7 +283,7 @@ Agencies and investors looking for the next growth category. You get the **Metho
 - Success metrics
 - Common pitfalls
 - Standalone prescriptive guide (advice.md, ~8,400 words) with 12-part builder's reference
-- Quick-reference HTML patterns for AI assistants (for-ai.md, ~1,200 words)
+- Quick-reference HTML patterns for AI assistants (AI-design-rules.md, ~1,200 words)
 - Complete AI-native website blueprint (AI-Native.blog, ~5,000 words) covering 7-layer architecture
 
 ## The Promise

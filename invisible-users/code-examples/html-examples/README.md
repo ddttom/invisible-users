@@ -101,7 +101,7 @@ All examples work without JavaScript but can be progressively enhanced.
 ## Related Documentation
 
 - **Prescriptive Guide**: `../advice.md` - Comprehensive implementation guidance
-- **Quick Reference**: `../for-ai.md` - Condensed patterns for AI assistants
+- **Quick Reference**: `../AI-design-rules.md` - Condensed patterns for AI assistants
 - **Platform Configs**: `../apache/`, `../nginx/`, `../nextjs/`, `../wordpress/` - Server configuration
 - **Validation**: `../validation/` - Scripts to verify AI-native implementation
 - **Monitoring**: `../monitoring/` - Track AI agent traffic

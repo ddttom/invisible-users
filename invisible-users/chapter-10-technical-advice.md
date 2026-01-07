@@ -2811,9 +2811,9 @@ This chapter provided implementation guidance integrated with the book's narrati
 
 **Building HTML for AI Agents (advice.md)** - A comprehensive 12-part builder's guide (~8,400 words) with quick reference tables, HTML patterns, server-side implementations, complete examples, and testing strategies. Organised by implementation complexity from immediate fixes to quarterly projects. Includes Luigi's Pizza template for small businesses and complete e-commerce product page patterns.
 
-**HTML Patterns for AI Agents (for-ai.md)** - A concise, quick-reference guide (~1,200 words) for AI coding assistants. Contains data attribute standards, form field naming conventions, and ready-to-use HTML snippets for common patterns like authentication state, shopping carts, search results, and order confirmations.
+**HTML Patterns for AI Agents (AI-design-rules.md)** - A concise, quick-reference guide (~1,200 words) for AI coding assistants. Contains data attribute standards, form field naming conventions, and ready-to-use HTML snippets for common patterns like authentication state, shopping carts, search results, and order confirmations.
 
-Both guides complement this chapter with additional patterns and examples not covered in the main narrative. The advice.md file provides the "how to build" prescriptive guidance, whilst for-ai.md serves as a rapid reference for code generation.
+Both guides complement this chapter with additional patterns and examples not covered in the main narrative. The advice.md file provides the "how to build" prescriptive guidance, whilst AI-design-rules.md serves as a rapid reference for code generation.
 
 ## The Path Forward
 

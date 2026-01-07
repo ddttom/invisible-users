@@ -48,7 +48,7 @@ Complete 13-part series covering Edge Delivery Services development from fundame
 
 ### AI & Development Workflows
 
-- [The Convergence - Completing Adobe's Claude Skills](https://allabout.network/blogs/ddt/integrations/the-convergence-completing-adobe-s-claude-skills-for-perfect-eds-ai-development): How comprehensive docs/for-ai provides the missing 90% that makes Adobe's EDS Skills actually work
+- [The Convergence - Completing Adobe's Claude Skills](https://allabout.network/blogs/ddt/integrations/the-convergence-completing-adobe-s-claude-skills-for-perfect-eds-ai-development): How comprehensive docs/AI-design-rules provides the missing 90% that makes Adobe's EDS Skills actually work
 - [Fast EDS Development with AI](https://allabout.network/blogs/ddt/integrations/fast-eds-development-integration-for-ai): Transform your Adobe Edge Delivery Services workflow with a simple development server that brings AI assistance to EDS development
 
 ### Framework Integrations

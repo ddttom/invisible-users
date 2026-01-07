@@ -39,7 +39,7 @@ Comprehensive guides and reference materials for developers:
 ### Core Guides
 
 - [Building HTML for AI Agents (advice.md)](invisible-users/advice.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~9,000 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
-- [HTML Patterns for AI Agents (for-ai.md)](invisible-users/for-ai.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,200 words). Includes data attribute reference, form field names, and practical code examples.
+- [HTML Patterns for AI Agents (AI-design-rules.md)](invisible-users/AI-design-rules.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,200 words). Includes data attribute reference, form field names, and practical code examples.
 - [AI-Native Web Architecture (AI-Native.blog)](invisible-users/AI-Native.blog): Complete technical blueprint for building AI-native websites using 7-layer architecture: Network, Knowledge, Action, Data, Permission, Authority, Interaction layers (~5,000 words)
 
 ### Code Examples

@@ -52,7 +52,7 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   ├── implementation-checklist.md
 │   ├── resource-links.md
 │   ├── advice.md             # Standalone prescriptive guide
-│   ├── for-ai.md             # AI patterns quick-reference
+│   ├── AI-design-rules.md    # AI patterns quick-reference
 │   ├── llms.txt              # Example llms.txt file from book content
 │   ├── AI-Native.blog
 │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
@@ -81,7 +81,7 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   │   ├── usermanual.md
 │   │   ├── CONFIGURATION.md
 │   │   ├── FEATURES.md
-│   │   └── for-ai/           # AI assistant extension prompts
+│   │   └── AI-design-rules/  # AI assistant extension prompts
 │   └── examples/             # Configuration examples
 ```
 
@@ -227,7 +227,7 @@ Reference Documentation:
 
 - Book manuscript: `invisible-users/` directory
 - Implementation guidance: `invisible-users/chapter-10-technical-advice.md`
-- Quick reference: `invisible-users/for-ai.md`
+- Quick reference: `invisible-users/AI-design-rules.md`
 
 ### Two HTML States (Critical Distinction)
 

@@ -81,7 +81,7 @@ This ensures the book remains the single source of truth.
 │   ├── implementation-checklist.md
 │   ├── resource-links.md
 │   ├── advice.md             # Standalone prescriptive guide
-│   └── for-ai.md             # AI patterns quick-reference
+│   └── AI-design-rules.md    # AI patterns quick-reference
 │
 └── web-audit-suite/          # Production-ready analysis tool
     ├── src/                  # Source code

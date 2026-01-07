@@ -329,7 +329,7 @@ web-audit-suite/
 │   ├── FEATURES.md         # Feature overview
 │   ├── report-layout.md    # Report structure documentation
 │   ├── usermanual.md       # User guide
-│   └── for-ai/             # AI assistant extension prompts
+│   └── AI-design-rules/    # AI assistant extension prompts
 │       ├── comment.md          # Commenting guidelines
 │       ├── modification.md     # Code modification templates
 │       └── system.md           # Development standards
