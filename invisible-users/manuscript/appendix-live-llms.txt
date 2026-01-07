@@ -17,9 +17,9 @@
 
 **Contact & Services:**
 
-- **Email**: info@digitaldomaintechnologies.com
-- **LinkedIn**: https://www.linkedin.com/in/tom-cranstoun/
-- **GitHub**: https://github.com/digitaldomaintech
+- **Email**: <info@digitaldomaintechnologies.com>
+- **LinkedIn**: <https://www.linkedin.com/in/tom-cranstoun/>
+- **GitHub**: <https://github.com/digitaldomaintech>
 - **Services**: Strategic Architecture, AI Integration Workshops, Team Mentoring, EDS Block Development
 
 ## Core AI & LLM Topics
@@ -136,30 +136,30 @@
 
 ### Official Adobe Documentation
 
-- Adobe Edge Delivery Services: https://www.aem.live/
-- AEM Cloud Service: https://experienceleague.adobe.com/docs/experience-manager-cloud-service.html
-- Adobe Experience League: https://experienceleague.adobe.com/
+- Adobe Edge Delivery Services: <https://www.aem.live/>
+- AEM Cloud Service: <https://experienceleague.adobe.com/docs/experience-manager-cloud-service.html>
+- Adobe Experience League: <https://experienceleague.adobe.com/>
 
 ### Community & Open Source
 
-- EDS Community Discord: https://discord.gg/adobe-eds
-- GitHub Discussions: https://github.com/adobe/helix-project-boilerplate/discussions
+- EDS Community Discord: <https://discord.gg/adobe-eds>
+- GitHub Discussions: <https://github.com/adobe/helix-project-boilerplate/discussions>
 - Stack Overflow: Tagged `adobe-edge-delivery`
 
 ### DDT Resources
 
-- Blog: https://allabout.network/blogs/ddt/
-- Code Examples: https://github.com/digitaldomaintech/eds-examples
-- Newsletter: Subscribe at info@digitaldomaintechnologies.com
+- Blog: <https://allabout.network/blogs/ddt/>
+- Code Examples: <https://github.com/digitaldomaintech/eds-examples>
+- Newsletter: Subscribe at <info@digitaldomaintechnologies.com>
 
 ## Get in Touch
 
 For strategic consulting, team training, or custom development:
 
-**Digital Domain Technologies**
+### Digital Domain Technologies
 
-- Email: info@digitaldomaintechnologies.com
-- LinkedIn: https://www.linkedin.com/in/tom-cranstoun/
+- Email: <info@digitaldomaintechnologies.com>
+- LinkedIn: <https://www.linkedin.com/in/tom-cranstoun/>
 - Location: Available for remote and on-site engagements globally
 
 **Typical Response Time**: Within 48 hours for new inquiries
@@ -170,6 +170,6 @@ For strategic consulting, team training, or custom development:
 
 *This knowledge base represents 15+ years of enterprise CMS expertise and real-world implementations across Fortune 500 companies. All technical guidance is current as of December 2025.*
 
-*Last Updated: December 27, 2025*
+Last Updated: December 27, 2025
 
-*Version: 1.0*
+Version: 1.0
