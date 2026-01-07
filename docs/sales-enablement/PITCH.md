@@ -22,18 +22,18 @@ AI agents are visiting websites right now and failing silently. These failures c
 - **No dominant players** - Market leaders have not yet emerged (12-18 month window)
 - **Clear commercial demand** - Businesses are losing revenue to invisible failures right now
 - **Multiple revenue streams** - Audit services, implementation, training, subscriptions
-- **High margins** - 70-90% on audit services, 40-60% on implementation
+- **High margins** - Strong margins on audit services and training, healthy margins on implementation
 - **Scalable delivery** - Automated tooling + proven implementation patterns
 - **Low barriers to entry** - Book + tool provide complete methodology and measurement
 
 **The Market Opportunity:**
 
-- £6.3 trillion global e-commerce market affected
-- 5-15% projected agent traffic by 2026 (growing to 30-40% by 2028)
-- £50,000+ average annual loss per site from silent conversion failures
-- 12-18 month first-mover advantage window before commoditisation
+- Global e-commerce market affected
+- Growing projected agent traffic
+- Significant potential loss per site from silent conversion failures
+- Early mover advantage window before commoditisation
 - Clear technical solutions exist (not speculative)
-- Multiple revenue streams with high margins
+- Multiple revenue streams with strong margins
 
 **What We've Built:**
 
@@ -86,7 +86,7 @@ Modern websites work beautifully for human visual browsing but fail completely f
 - **No user complaints** - Users assume it's a service limitation
 - **No competitive intelligence** - You don't know competitors are succeeding
 
-**Real Example:** An AI assistant compared two tour operators. Company A's website used pagination - the agent saw only Day 1 of a 14-day tour and recommended based on incomplete information. Company B showed their full itinerary on one page and won the business.
+**Real Example:** An AI assistant compared two tour operators. Company A's website used pagination - the agent saw only the first day of a multi-day tour and recommended based on incomplete information. Company B showed their full itinerary on one page and won the business.
 
 ### The Patterns That Break
 
@@ -95,7 +95,7 @@ Five specific failure modes:
 1. **Visual state only** - Disabled buttons that look disabled but have no `disabled` attribute
 2. **Toast notifications** - Error messages that vanish before agents can read them
 3. **Paginated content** - Information split across multiple pages that agents don't follow
-4. **Hidden pricing** - "From £99" display pricing that hides the real £150 price
+4. **Hidden pricing** - "From" display pricing that hides the real price
 5. **Client-side rendering** - State changes invisible to HTML parsers
 
 ### The Measurement Gap
@@ -154,7 +154,7 @@ These same patterns break human users:
 - **Appendix B:** Battle-Tested Lessons (15 real-world implementation mistakes)
 - **Appendix C:** Web Audit Suite User Guide (complete measurement framework)
 - **Appendix D-H:** AI-Friendly HTML Guide, Quick Reference, Roadmap, Resources, Live llms.txt
-- **Appendix I:** Pipeline Failure Case Study (£203k cruise pricing error analysis)
+- **Appendix I:** Pipeline Failure Case Study (cruise pricing error analysis)
 
 **Plus Supporting Materials:**
 
@@ -217,7 +217,7 @@ These same patterns break human users:
 - What browser extensions parse
 - **Essential only for browser agents**
 
-**Why This Matters:** Most tools only check rendered HTML. They miss that 70% of AI agents never execute JavaScript. Web Audit Suite measures both states and weights them correctly.
+**Why This Matters:** Most tools only check rendered HTML. They miss that majority of AI agents never execute JavaScript. Web Audit Suite measures both states and weights them correctly.
 
 ### Scoring Methodology
 
@@ -305,22 +305,19 @@ Agent-compatible web design is a new, unestablished service category. Early move
 
 - **Define the category** as authority figures
 - **Capture market share** before commoditisation
-- **Command premium rates** (£500-£50,000 per client engagement)
+- **Command premium rates** for specialized services
 - **Build recurring revenue** (quarterly audits, monitoring subscriptions)
 - **Scale efficiently** (automated tooling + proven patterns)
 
 **Agency Revenue Model:**
 
 ```text
-Audit services: £500-£5,000 per client (70-80% margin)
-Implementation: £10,000-£50,000 per client (40-60% margin)
-Training: £1,500-£5,000 per session (80-90% margin)
-Subscriptions: £500-£2,000/month per client (85-95% margin)
+Audit services: Scalable pricing (strong margins)
+Implementation: Project-based pricing (healthy margins)
+Training: Session-based pricing (strong margins)
+Subscriptions: Monthly recurring revenue (excellent margins)
 
-Typical Year 1 per client: £31,500
-10 clients = £315,000 annual revenue
-25 clients = £787,500 annual revenue
-50 clients = £1,575,000 annual revenue
+Scalable business model with multiple revenue streams
 ```
 
 **What Makes This Unique:**
@@ -339,26 +336,26 @@ Typical Year 1 per client: £31,500
 
 **Primary Market:**
 
-- Global e-commerce: £6.3 trillion annually
-- SaaS platforms: £200+ billion market
-- Content publishers: £50+ billion digital advertising
-- Digital agencies: £30+ billion professional services
+- Global e-commerce: Substantial market
+- SaaS platforms: Large market
+- Content publishers: Significant digital advertising market
+- Digital agencies: Professional services market
 
 ### Market Timing
 
 **Critical Window:** Early mover advantage available
 
 - **Now:** Early adopters gaining competitive edge
-- **Early Phase:** Agent traffic grows to 5-15% of total
+- **Early Phase:** Agent traffic growing
 - **Mainstream Phase:** Best practices become table stakes
 - **Mature Phase:** Competitive advantage disappears
 
-**Historical Parallel:** Mobile-responsive design (2010-2013)
+**Historical Parallel:** Mobile-responsive design
 
 - Early adopters captured mobile traffic competitors lost
-- By 2015, mobile-responsive became expected
-- Advantage window: ~3 years
-- We're at the 2010 equivalent now
+- Mobile-responsive became expected standard
+- Limited advantage window
+- Similar opportunity exists now
 
 ### Competition Analysis
 
@@ -388,38 +385,34 @@ Typical Year 1 per client: £31,500
 
 ### 1. Book Sales (Immediate Revenue)
 
-**Three Editions:**
+**Multiple Editions:**
 
-- Digital: £25 (target: 5,000 copies Year 1 = £125k)
-- Complete: £75 (target: 2,000 copies Year 1 = £150k)
-- Team: £500 (target: 200 licenses Year 1 = £100k)
+- Digital edition
+- Complete edition
+- Team licenses
 
-**Year 1 Conservative: £375k**
-**Year 1 Optimistic: £750k**
+Scalable revenue stream with multiple pricing tiers
 
 ### 2. Web Audit Suite SaaS (Scalable Revenue)
 
 **Subscription Tiers:**
 
-- Starter: £99/month (10 audits, 100 pages/audit)
-- Professional: £299/month (50 audits, 500 pages/audit, API access)
-- Enterprise: £999/month (unlimited audits, unlimited pages, white-label, priority support)
+- Starter: Entry-level features
+- Professional: Advanced features and API access
+- Enterprise: Unlimited audits, white-label, priority support
 
 **Target:**
 
-- Year 1: 200 customers = £600k-£1.2M ARR
-- Year 2: 500 customers = £1.5M-£3M ARR
-- Year 3: 1,000 customers = £3M-£6M ARR
+Scalable SaaS model with tiered pricing
 
 ### 3. Professional Services (High-Margin Revenue)
 
-- **Site Audits:** £5,000-£15,000 per engagement (target: 50 Year 1 = £500k)
-- **Implementation Support:** £25,000-£75,000 per project (target: 20 Year 1 = £1M)
-- **Retained Support:** £5,000-£15,000/month (target: 10 clients = £1.2M annually)
-- **Training Workshops:** £2,500-£10,000 per workshop (target: 30 Year 1 = £180k)
+- **Site Audits:** Engagement-based pricing
+- **Implementation Support:** Project-based pricing
+- **Retained Support:** Monthly retainers
+- **Training Workshops:** Session-based pricing
 
-**Year 1 Conservative: £1.5M**
-**Year 1 Optimistic: £4M**
+Strong margins with scalable delivery model
 
 ### 4. Agency Partnerships (Volume Revenue)
 
@@ -427,13 +420,13 @@ Typical Year 1 per client: £31,500
 
 - Agencies deliver services under their brand
 - We provide methodology, training, Web Audit Suite access
-- Revenue share: 30-50% depending on engagement level
+- Revenue share model
 
-**Target:** 20 agency partners Year 1, 100 by Year 3
+**Target:** Growing agency partner network
 
 ### 5. Enterprise Licensing
 
-- Corporate site-wide programs: £100k-£500k annually
+- Corporate site-wide programs
 - Platform vendor partnerships (Shopify, WordPress.com, Wix)
 - Integration and certification programs
 
@@ -468,42 +461,39 @@ Typical Year 1 per client: £31,500
 
 ## Financial Projections
 
-### Year 1 (Conservative/Optimistic)
+### Revenue Streams
 
-| Revenue Stream | Conservative | Optimistic |
-| ---------------- | -------------- | ------------ |
-| Book Sales | £375k | £750k |
-| SaaS Subscriptions | £600k | £1.2M |
-| Professional Services | £1.5M | £4M |
-| Speaking/Advisory | £100k | £300k |
-| **Total Year 1** | **£2.575M** | **£6.25M** |
+Multiple revenue streams provide strong growth potential:
 
-### Year 2-3 Projection
+| Revenue Stream | Model |
+| ---------------- | -------------- |
+| Book Sales | Multiple editions with tiered pricing |
+| SaaS Subscriptions | Recurring revenue with tiered plans |
+| Professional Services | Project and engagement-based |
+| Speaking/Advisory | Session-based |
 
-| Year | Conservative | Optimistic |
-| ------ | -------------- | ------------ |
-| Year 2 | £4.5M | £11M |
-| Year 3 | £7.5M | £18M |
+### Growth Trajectory
+
+Scalable business model with strong growth potential across all revenue streams.
 
 ---
 
 ## Development Investment Already Completed
 
-### What It Would Cost to Build From Scratch
+### What Has Been Built
 
-| Component | Market Rate | Details |
-| --------- | ----------- | ------- |
-| **Book Manuscript** | £35k-£95k | 65,500 words technical writing (11 chapters), deep domain expertise |
-| **Nine Appendices** | £12k-£22k | Implementation guides, case studies, resources, pipeline failure analysis |
-| **Business Strategy** | £15k-£30k | Business plan, pitch deck, executive summary, go-to-market (16,500 words) |
-| **Web Audit Suite** | £50k-£100k | 15,000+ lines production JavaScript, 18+ reports, 3-phase pipeline |
-| **Code Examples** | £10k-£20k | Production-ready examples, Playwright test suite (14 tests) |
-| **Design & Illustrations** | £5k-£15k | 11 custom SVG illustrations, book cover, website design |
-| **Supporting Materials** | £5k-£10k | Glossary (60+ terms), checklist, resource links (150+) |
-| **Project Management** | £5k-£15k | Coordination, QA, standards compliance, documentation |
-| **Total Replacement Cost** | **£142k-£317k** | Professional services equivalent |
+| Component | Details |
+| --------- | ------- |
+| **Book Manuscript** | 65,500 words technical writing (11 chapters), deep domain expertise |
+| **Nine Appendices** | Implementation guides, case studies, resources, pipeline failure analysis |
+| **Business Strategy** | Business plan, pitch deck, executive summary, go-to-market materials |
+| **Web Audit Suite** | 15,000+ lines production JavaScript, 18+ reports, 3-phase pipeline |
+| **Code Examples** | Production-ready examples, Playwright test suite (14 tests) |
+| **Design & Illustrations** | 11 custom SVG illustrations, book cover, website design |
+| **Supporting Materials** | Glossary (60+ terms), checklist, resource links (150+) |
+| **Project Management** | Coordination, QA, standards compliance, documentation |
 
-**Realistic Market Value:** £175k-£250k for professional delivery at this quality level
+Substantial professional development investment completed.
 
 **Current State:** Complete, publication-ready, all IP owned, no debt or obligations
 
@@ -605,7 +595,7 @@ Available as separate purchase or professional audit service:
 
 **Technology Assets:**
 
-- Production-ready tool with £50k-£100k development investment
+- Production-ready tool with substantial development investment
 - Complete source code and methodology
 - Comprehensive documentation
 - Published book establishing authority
@@ -622,9 +612,8 @@ Available as separate purchase or professional audit service:
 **Revenue Potential:**
 
 - Multiple revenue streams (book, SaaS, services, partnerships)
-- Conservative Year 1: £2.575M
-- Optimistic Year 1: £6.25M
-- Strong growth trajectory (Year 3: £7.5M-£18M)
+- Strong growth trajectory across all streams
+- Scalable business model with healthy margins
 
 ### What We Need
 
@@ -755,40 +744,40 @@ Available as separate purchase or professional audit service:
 
 ### Early Phase
 
-- [ ] Book published and selling (target: 1,000 copies)
-- [ ] SaaS platform beta launched (target: 50 customers)
-- [ ] 10 professional service engagements completed
-- [ ] 3-5 case studies documented
-- [ ] 2-3 conference speaking engagements
+- [ ] Book published and selling
+- [ ] SaaS platform beta launched
+- [ ] Professional service engagements completed
+- [ ] Case studies documented
+- [ ] Conference speaking engagements
 - [ ] Partnership discussions underway
-- [ ] Revenue: £250k-£750k
+- [ ] Revenue generation established
 
 ### Growth Phase
 
-- [ ] Book sales: 5,000+ copies
-- [ ] SaaS customers: 200+ (target ARR: £600k-£1.2M)
-- [ ] 50 professional service clients
-- [ ] 10 retained support clients
-- [ ] 5-10 agency partnerships established
-- [ ] Revenue: £2.5M-£6M
+- [ ] Book sales scaling
+- [ ] SaaS customer base growing
+- [ ] Professional service clients established
+- [ ] Retained support clients
+- [ ] Agency partnerships established
+- [ ] Revenue growth trajectory strong
 
 ### Expansion Phase
 
 - [ ] Market leadership position established
-- [ ] SaaS customers: 500+ (target ARR: £1.5M-£3M)
-- [ ] 100+ professional service clients
-- [ ] 25 retained support clients
-- [ ] 20+ agency partnerships
-- [ ] Revenue: £4.5M-£11M
+- [ ] SaaS customer base substantial
+- [ ] Professional service clients scaling
+- [ ] Retained support clients growing
+- [ ] Agency partnerships expanding
+- [ ] Revenue scaling significantly
 
 ### Maturity Phase
 
 - [ ] Recognised authority in field
-- [ ] SaaS customers: 1,000+ (target ARR: £3M-£6M)
+- [ ] SaaS customer base mature
 - [ ] Multiple revenue streams mature
 - [ ] International expansion complete
 - [ ] Exit opportunity or growth capital raised
-- [ ] Revenue: £7.5M-£18M
+- [ ] Revenue substantial and sustainable
 
 ---
 
@@ -796,29 +785,29 @@ Available as separate purchase or professional audit service:
 
 ### Option A: Services + SaaS Partnership
 
-**Investment:** £500k-£1M
+**Investment:** Growth capital for scaling
 **Use of Funds:**
 
-- SaaS development team (5 people): £400k
-- Sales team (2 people): £120k
-- Delivery team (3 people): £180k
-- Marketing and content: £100k
-- Operations and infrastructure: £150k
-- Working capital: £50k-£550k
+- SaaS development team
+- Sales team
+- Delivery team
+- Marketing and content
+- Operations and infrastructure
+- Working capital
 
 **Returns:** Revenue share or equity stake
 **Path to Profitability:** Early phase target
 
 ### Option B: Platform-Focused Partnership
 
-**Investment:** £1M-£2M
+**Investment:** Substantial growth capital
 **Use of Funds:**
 
-- Development team (8 people): £600k
-- Sales and marketing: £400k
-- Professional services team: £300k
-- Operations and infrastructure: £200k
-- Working capital: £500k-£1.5M
+- Development team
+- Sales and marketing
+- Professional services team
+- Operations and infrastructure
+- Working capital
 
 **Returns:** Equity stake with board seat
 **Path to Profitability:** Revenue in early phase, profitability in growth phase

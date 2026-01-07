@@ -27,7 +27,7 @@ But here's what you don't see:
 
 **Hypothetical Problem:**
 
-- Product pricing shown as "from £99" with final price revealed at checkout
+- Product pricing shown as "from" price with final price revealed at checkout
 - Multi-page product specifications with "Load more" pagination
 - Toast notifications for cart updates (disappeared after 3 seconds)
 - Success confirmation relied entirely on CSS colour changes
@@ -36,33 +36,31 @@ But here's what you don't see:
 
 A Web Audit Suite analysis could reveal:
 
-- **LLM Suitability Score: 42/100** (failing threshold)
-- **Agent Accessibility: Critical failures** in 8 of 12 key patterns
-- **Data Extraction Issues:** 67% of product information invisible to served HTML
-- **State Visibility: Zero** explicit state attributes for form validation
+- **LLM Suitability Score: Low** (failing threshold)
+- **Agent Accessibility: Critical failures** in majority of key patterns
+- **Data Extraction Issues:** Significant portion of product information invisible to served HTML
+- **State Visibility: Minimal** explicit state attributes for form validation
 
 **Potential Agent Behaviour:**
 
 Testing with AI agents might show:
 
-- Both agents reported the "from £99" price as the actual price (real price: £149)
-- Product specifications: Only first 3 of 12 features were visible
+- Both agents reported the "from" display price as the actual price (real price was higher)
+- Product specifications: Only first few features were visible
 - Add-to-cart actions: Agents couldn't confirm success (no persistent feedback)
-- Checkout completion: 0% success rate (success state not machine-readable)
+- Checkout completion: Complete failure (success state not machine-readable)
 
 **Example Impact Calculation:**
 
 ```text
 Hypothetical site metrics:
-Current traffic: 50,000 monthly visits
-Estimated agent traffic: 5% = 2,500 agent visits/month
-Conversion rate (human): 3% = expected 75 agent conversions
-If actual agent conversions: 0 (100% failure rate)
-Average order value: £150
+Current traffic: Substantial monthly visits
+Estimated agent traffic: Small but growing percentage
+Conversion rate (human): Standard e-commerce rate
+If actual agent conversions: Complete failure
+Average order value: Typical for category
 
-Potential lost revenue = 75 conversions × £150 × 12 months = £135,000/year
-
-Conservative estimate (accounting for lower agent conversion): £47,000/year
+Potential lost revenue = Could be significant over time
 
 Note: These are illustrative calculations. Your actual exposure depends on your
 specific traffic patterns, conversion rates, and agent compatibility issues.
@@ -78,11 +76,9 @@ Following the implementation cookbook from "The Invisible Users":
    - Replaced toast notifications with persistent alerts
    - Added explicit state attributes to forms
 
-2. **Estimated implementation cost**: £3,200
-3. **Example post-fix LLM Suitability Score**: 78/100 (good threshold)
-4. **Potential agent conversion success rate**: 67% (from 0%)
-5. **Estimated annual recovery**: £31,500
-6. **Estimated ROI**: 984% in first year
+2. **Example post-fix LLM Suitability Score**: Good threshold
+3. **Potential agent conversion success rate**: Significant improvement
+4. **These changes can be implemented quickly with standard web development practices**
 
 **Important:** These figures are illustrative examples, not proven results. Your actual costs and outcomes will vary based on your specific situation.
 
@@ -97,30 +93,29 @@ Following the implementation cookbook from "The Invisible Users":
 
 **What the Audit Found:**
 
-- **LLM Suitability Score: 38/100** (critical threshold)
-- **Semantic HTML Score: 31/100** (forms used `<div>` buttons)
+- **LLM Suitability Score: Critical** (failing threshold)
+- **Semantic HTML Score: Poor** (forms used `<div>` buttons)
 - **Structured Data: None** (no Schema.org markup)
-- **State Attributes: 0%** (all state conveyed through CSS classes)
+- **State Attributes: Minimal** (all state conveyed through CSS classes)
 
 **Agent Behaviour Testing:**
 
 - Pricing research: Agents reported "pricing not available" (it was, behind a form)
 - Feature comparison: Agents couldn't determine which features belonged to which tier
-- Trial signup: 0% completion rate (validation errors invisible)
+- Trial signup: Complete failure (validation errors invisible)
 
 **Business Impact:**
 
 ```text
-Monthly site visits: 20,000
-Agent traffic estimate: 8% = 1,600 agent visits
-Free trial signup rate (human): 5% = expected 80 agent signups
-Actual agent signups: 0
+Monthly site visits: Typical for SaaS platform
+Agent traffic estimate: Small but growing percentage
+Free trial signup rate (human): Standard for category
+Actual agent signups: Complete failure
 
-Free-to-paid conversion: 15%
-Average annual contract value: £2,400
+Free-to-paid conversion: Industry standard
+Average annual contract value: Typical for category
 
-Lost revenue = 80 signups × 15% × £2,400 = £28,800/year
-Conservative estimate: £19,200/year
+Potential lost revenue: Could be substantial
 ```
 
 **The Fix:**
@@ -134,11 +129,9 @@ Following Chapter 10's technical implementation guide:
    - Added explicit state attributes: `data-validation-state`, `aria-invalid`
    - Replaced JavaScript success messages with DOM-persistent alerts
 
-2. **Implementation cost**: £6,800
-3. **Post-fix LLM Suitability Score**: 82/100 (excellent threshold)
-4. **Agent signup success rate**: 73%
-5. **Projected annual recovery**: £14,000
-6. **ROI**: 206% in first year
+2. **Post-fix LLM Suitability Score**: Excellent threshold
+3. **Agent signup success rate**: Significant improvement
+4. **These improvements can be implemented following standard web development practices**
 
 ### Scenario 3: Travel Booking Site - Abandoned Itinerary Searches
 
@@ -151,30 +144,29 @@ Following Chapter 10's technical implementation guide:
 
 **What the Audit Found:**
 
-- **LLM Suitability Score: 29/100** (failing badly)
-- **Content Accessibility: 83%** of itinerary details hidden behind interaction
+- **LLM Suitability Score: Critical** (failing badly)
+- **Content Accessibility: Majority** of itinerary details hidden behind interaction
 - **URL State: None** (all filter/search state in JavaScript, not URL)
 - **Pagination: Agent-hostile** (no "Show All" option, no clear indication of total results)
 
 **Agent Behaviour:**
 
-- Search results: Agents saw only first 20 of 300 options
-- Itinerary comparison: 0% success (details in collapsed elements)
-- Booking completion: Failed at step 2 (couldn't determine progress)
+- Search results: Agents saw only first page of many options
+- Itinerary comparison: Complete failure (details in collapsed elements)
+- Booking completion: Failed partway through (couldn't determine progress)
 - Date selection: Complete failure (no `<input type="date">` fallback)
 
 **Business Impact:**
 
 ```text
-Monthly searches: 15,000
-Agent traffic estimate: 6% = 900 agent searches
-Booking conversion (human): 12% = expected 108 agent bookings
-Actual agent bookings: 0
+Monthly searches: Substantial for travel booking site
+Agent traffic estimate: Small but growing percentage
+Booking conversion (human): Industry standard
+Actual agent bookings: Complete failure
 
-Average booking value: £850
+Average booking value: Typical for category
 
-Lost revenue = 108 bookings × £850 × 12 months = £1,101,600/year
-Conservative estimate: £52,000/year
+Potential lost revenue: Could be substantial
 ```
 
 **The Fix:**
@@ -186,13 +178,11 @@ Using the prioritised implementation roadmap (Appendix F):
    - Expanded itinerary details by default (progressive disclosure optional)
    - Added URL state: search filters, pagination, selected options
    - Replaced JavaScript date picker with `<input type="date">` + enhancement
-   - Added explicit progress attributes: `data-step="2" data-total-steps="4"`
+   - Added explicit progress attributes for multi-step processes
 
-2. **Implementation cost**: £14,400
-3. **Post-fix LLM Suitability Score**: 74/100 (good threshold)
-4. **Agent booking success rate**: 58%
-5. **Projected annual recovery**: £30,000
-6. **ROI**: 208% in first year
+2. **Post-fix LLM Suitability Score**: Good threshold
+3. **Agent booking success rate**: Significant improvement
+4. **These improvements can be implemented following standard web development practices**
 
 ---
 
@@ -265,21 +255,21 @@ Using the prioritised implementation roadmap (Appendix F):
 
 ### Scoring System
 
-**LLM Suitability Scores (0-100):**
+**LLM Suitability Scores:**
 
-- **0-39: Critical** - Agents likely to fail completely
-- **40-59: Poor** - Agents will struggle, success rate <30%
-- **60-74: Fair** - Agents can function but with difficulty
-- **75-84: Good** - Agents work reliably for most tasks
-- **85-100: Excellent** - Optimal agent compatibility
+- **Critical** - Agents likely to fail completely
+- **Poor** - Agents will struggle, low success rate
+- **Fair** - Agents can function but with difficulty
+- **Good** - Agents work reliably for most tasks
+- **Excellent** - Optimal agent compatibility
 
 **What Each Score Range Means:**
 
-- **Critical (0-39):** Immediate action required. You're losing agent-mediated sales.
-- **Poor (40-59):** Priority fixes needed. Significant revenue at risk.
-- **Fair (60-74):** Implement Priority 1-2 fixes. Competitive disadvantage likely.
-- **Good (75-84):** Minor improvements. Better than most competitors.
-- **Excellent (85-100):** Best-in-class. Competitive advantage secured.
+- **Critical:** Immediate action required. You're losing agent-mediated transactions.
+- **Poor:** Priority fixes needed. Significant transactions at risk.
+- **Fair:** Implement Priority 1-2 fixes. Competitive disadvantage likely.
+- **Good:** Minor improvements. Better than most competitors.
+- **Excellent:** Best-in-class. Competitive advantage secured.
 
 ---
 
@@ -295,7 +285,7 @@ Using the prioritised implementation roadmap (Appendix F):
 - **Real-world examples** with before/after code
 - **Priority-based roadmap** (not time-based - Priority 1-4)
 - **Agent validation frameworks** (Chapter 11: for developers building agents)
-- **£203k case study** (pipeline failure analysis with prevention strategies)
+- **Pipeline failure case study** (analysis with prevention strategies)
 
 **Key Chapters for Different Roles:**
 
@@ -340,7 +330,7 @@ Using the prioritised implementation roadmap (Appendix F):
 
 ## Three Ways to Use This
 
-### Option 1: DIY Implementation (£0 - £5,000)
+### Option 1: DIY Implementation
 
 **Best for:** In-house development teams, agencies with technical capacity
 
@@ -359,11 +349,11 @@ Using the prioritised implementation roadmap (Appendix F):
 - Book: Purchase price
 - Web Audit Suite: Separate purchase OR audit service fee
 - Implementation: Internal developer time
-- Total: Book + audit costs + £0 - £5,000 for implementation (depending on developer rates and site complexity)
+- Total: Book + audit costs + implementation (varies by site complexity)
 
 **Potential Benefits:** Improved agent compatibility, better accessibility, clearer state management. Actual revenue impact will vary.
 
-### Option 2: Audit Service (£500 - £5,000)
+### Option 2: Audit Service
 
 **Best for:** Businesses without in-house technical expertise, agencies needing independent validation
 
@@ -373,7 +363,7 @@ Using the prioritised implementation roadmap (Appendix F):
 - Executive dashboard with visual scoring
 - Prioritised remediation roadmap
 - Technical implementation guide customised to your stack
-- 60-minute consultation to review findings
+- Consultation to review findings
 - Re-audit after implementation (verify improvements)
 
 **Deliverables:**
@@ -385,16 +375,13 @@ Using the prioritised implementation roadmap (Appendix F):
 - Code examples for your specific technology stack
 - Follow-up audit post-implementation
 
-**Pricing Tiers:**
+**Pricing:**
 
-- **Small sites** (< 50 pages): £500
-- **Medium sites** (50-500 pages): £1,500
-- **Large sites** (500-5000 pages): £3,500
-- **Enterprise sites** (5000+ pages): £5,000+
+Contact for pricing based on site size and complexity.
 
 **Potential Benefits:** Professional assessment of agent compatibility issues with prioritised remediation plan. Actual outcomes depend on implementation and site-specific factors.
 
-### Option 3: Full Implementation Service (£10,000 - £50,000)
+### Option 3: Full Implementation Service
 
 **Best for:** Businesses requiring complete solution including implementation
 
@@ -405,7 +392,7 @@ Using the prioritised implementation roadmap (Appendix F):
 - Prioritised remediation (Priority 1-2 fixes guaranteed)
 - Testing and validation (automated test suite)
 - Documentation for ongoing maintenance
-- 90-day post-launch support
+- Post-launch support
 - Training for internal teams
 - Quarterly re-audits (first year)
 
@@ -414,16 +401,14 @@ Using the prioritised implementation roadmap (Appendix F):
 - Complete Priority 1-2 implementation
 - Automated test suite (Playwright + agent simulation)
 - Technical documentation
-- Team training (half-day workshop)
-- 90-day support period
-- Quarterly audits (4 re-audits in year 1)
+- Team training workshop
+- Extended support period
+- Quarterly audits (re-audits in year 1)
 - ROI measurement framework
 
-**Pricing Based on Complexity:**
+**Pricing:**
 
-- **Priority 1 fixes only** (quick wins): £10,000 - £15,000
-- **Priority 1-2 fixes** (essential improvements): £20,000 - £30,000
-- **Priority 1-3 fixes** (comprehensive): £35,000 - £50,000
+Contact for pricing based on priority level and site complexity.
 
 **Potential Benefits:** Complete implementation with testing and validation. Addresses known agent compatibility issues systematically.
 
@@ -435,9 +420,9 @@ Using the prioritised implementation roadmap (Appendix F):
 
 **Why Now:**
 
-1. **Agent traffic is real but still small** (5-15% of visits)
+1. **Agent traffic is real but still small**
    - Early movers gain competitive advantage
-   - Fixes are cheaper now than later
+   - Fixes are more straightforward now than later
    - Standards haven't ossified yet
 
 2. **No established market leaders** (yet)
@@ -468,64 +453,55 @@ Using the prioritised implementation roadmap (Appendix F):
 
 ### Revenue Streams for Agencies
 
-**1. Audit Services (£500 - £5,000 per client):**
+**1. Audit Services:**
 
 - Run Web Audit Suite (white-labeled)
 - Generate prioritised roadmap
 - Deliver executive presentation
 - Recurring revenue: Quarterly re-audits
 
-**2. Implementation Services (£10,000 - £50,000 per client):**
+**2. Implementation Services:**
 
 - Priority 1-2 fixes as minimum package
 - Priority 3-4 as upsell
 - Ongoing maintenance contracts
 - Training and documentation
 
-**3. Consulting & Strategy (£2,000 - £10,000 per engagement):**
+**3. Consulting & Strategy:**
 
 - Business case development
 - ROI calculation and forecasting
 - Competitive benchmarking
 - Board-level presentations
 
-**4. Training & Workshops (£1,500 - £5,000 per session):**
+**4. Training & Workshops:**
 
-- Half-day workshops for development teams
+- Workshops for development teams
 - Executive briefings for C-suite
 - Webinars and online courses
 - Certification programs
 
-**5. Subscription Services (£500 - £2,000/month):**
+**5. Subscription Services:**
 
 - Monthly audits with trend reporting
 - Continuous monitoring
 - Alert notifications (score drops)
 - Benchmarking against competitors
 
-**Typical Agency Package:**
+**Typical Agency Package Structure:**
 
 ```text
-Initial Audit: £1,500
-Implementation (Priority 1-2): £25,000
-Quarterly Re-audits: £500 × 4 = £2,000
-First-year training: £3,000
+Initial Audit
+Implementation (Priority-based)
+Quarterly Re-audits
+Training and support
 
-Total Year 1 Revenue per Client: £31,500
+Contact for pricing based on scope
 ```
 
 **Scale Potential:**
 
-- **10 clients:** £315,000 annual revenue
-- **25 clients:** £787,500 annual revenue
-- **50 clients:** £1,575,000 annual revenue
-
-**Profit Margins:**
-
-- Audit services: 70-80% (mostly automated)
-- Implementation: 40-60% (standard patterns + customisation)
-- Training: 80-90% (knowledge transfer)
-- Subscriptions: 85-95% (automated monitoring)
+Scalable business model with multiple revenue streams and high margins on audit and training services.
 
 ---
 
@@ -662,15 +638,15 @@ Total Year 1 Revenue per Client: £31,500
    - Blocking agents is blocking future customers
    - Commercial pressure favours access, not restrictions
 
-### "What's the ROI progression?"
+### "What's the improvement pattern?"
 
 **Typical pattern:**
 
-- **Phase 1:** Audit identifies issues (cost: £0 - £5,000)
-- **Phase 2:** Priority 1-2 implementation (cost: £3,000 - £30,000)
+- **Phase 1:** Audit identifies issues
+- **Phase 2:** Priority 1-2 implementation
 - **Phase 3:** Agent conversion rates measurable
 - **Phase 4:** Revenue recovery becomes significant
-- **Phase 5:** Full ROI achieved (200-1000% returns common)
+- **Phase 5:** Full ROI achieved
 
 **Fast wins:** Priority 1 fixes often show results quickly
 
@@ -693,7 +669,7 @@ Total Year 1 Revenue per Client: £31,500
 
 **No.** The methodology is specifically designed for incremental improvement:
 
-**Priority 1 fixes** (quick wins, 80% of impact):
+**Priority 1 fixes** (quick wins, high impact):
 
 - Display pricing upfront
 - Add "Show All" to paginated content
@@ -745,11 +721,11 @@ Priority 2-4 fixes are deeper but still don't require rebuilds. You're enhancing
 
 **Hypothetical Background:**
 
-Small local restaurant with online ordering. Monthly revenue: £12,000. Website built with WordPress + WooCommerce.
+Small local restaurant with online ordering. Monthly revenue: Typical for category. Website built with WordPress + WooCommerce.
 
 **Initial Audit Results:**
 
-- LLM Suitability Score: 34/100 (critical)
+- LLM Suitability Score: Critical
 - No structured data (Schema.org)
 - Menu items in JavaScript-rendered tabs
 - Checkout used complex CSS for validation feedback
@@ -759,16 +735,16 @@ Small local restaurant with online ordering. Monthly revenue: £12,000. Website 
 
 - Claude browsing: Could not read full menu (tabs collapsed)
 - ChatGPT shopping: Reported "checkout failed" (success toast disappeared)
-- Ordering success rate: 0%
+- Ordering success rate: Complete failure
 
 **Business Impact:**
 
 ```text
-Monthly orders: 400 (all via phone or walk-in web orders)
-Web orders: 20% = 80 monthly
-Agent-mediated attempts: 5% = 4 per month
-Successful agent orders: 0
-Lost revenue: 4 orders × £30 average × 12 months = £1,440/year
+Monthly orders: Typical for category (phone, walk-in, web)
+Web orders: Standard percentage
+Agent-mediated attempts: Small but growing percentage
+Successful agent orders: Complete failure
+Potential lost revenue: Could be significant as agent traffic grows
 ```
 
 **Implementation:**
@@ -782,33 +758,29 @@ Used Luigi's Pizza example from the book (Appendix A):
 3. Replaced CSS validation with aria-invalid attributes
 4. Added persistent success message (role="alert" + DOM element)
 
-**Cost:** £640
-
 **Post-Fix Results:**
 
-- LLM Suitability Score: 79/100 (good)
-- Agent ordering success rate: 71%
+- LLM Suitability Score: Good threshold
+- Agent ordering success rate: Significant improvement
 - Bonus: Google began showing rich snippets with menu items
 - Bonus: Screen reader users reported improved experience
 
-**Revenue Impact (12 months):**
+**Impact:**
 
 ```text
-Agent-mediated orders (before): 0
-Agent-mediated orders (after): 4 × 71% = ~3 per month
-Additional revenue: 3 orders × £30 × 12 months = £1,080/year
+Agent-mediated orders: Improved from complete failure to significant success
+Additional revenue: Measurable improvement
 
 Plus: SEO improvement from rich snippets
 Plus: Human accessibility improvements
 Plus: Customer satisfaction (word-of-mouth)
 
-Total measurable impact: £1,800/year
-ROI: 281% (£1,800 gain / £640 cost)
+Total impact: Substantial improvement across multiple metrics
 ```
 
 **Note on This Example:**
 
-This illustrative scenario demonstrates how the methodology applies to small businesses. The figures are examples used to teach calculation methods, not verified outcomes. The patterns (Schema.org markup, expanded menus, persistent feedback) are real techniques from the book, but the specific ROI figures are for demonstration purposes.
+This illustrative scenario demonstrates how the methodology applies to small businesses. The patterns (Schema.org markup, expanded menus, persistent feedback) are real techniques from the book demonstrating systematic improvement approaches.
 
 **Key Teaching Point:**
 
@@ -827,8 +799,8 @@ You can't see it in your analytics because agent failures look like bounces. You
 **You have three choices:**
 
 1. **Wait and see** - Risk losing agent-mediated transactions to competitors who move first
-2. **DIY implementation** - Use the book + tool to assess and address issues yourself (£0 - £5,000)
-3. **Professional service** - Have it assessed and implemented for you (£500 - £50,000 depending on scope)
+2. **DIY implementation** - Use the book + tool to assess and address issues yourself
+3. **Professional service** - Have it assessed and implemented for you (contact for pricing)
 
 **The window for first-mover advantage is limited.**
 
