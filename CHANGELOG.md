@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - 2026-01-07 (Manuscript Consistency)
+
+**Resolved Internal Inconsistencies:**
+
+- **Chapter 2:** Updated pattern count from five to six consolidated patterns
+  - Changed heading to "The Six Types of Invisible Failure"
+  - Updated figure caption to generic wording (no number until illustration regenerated)
+  - Expanded summary table to include all 6 patterns:
+    - Toast Notifications
+    - Hidden Content (consolidated: pagination, tabs, below-the-fold)
+    - Single-Page Applications
+    - Delayed Validation (newly added to table)
+    - Hidden Pricing
+    - Loading States (newly added to table)
+  - Updated Key Points section to reference six patterns
+  - Added explanatory note about Hidden Content consolidation
+- **Chapter 9:** Added comprehensive "The Structured Data Dilemma" section
+  - Addresses contradiction between Schema.org benefits (Chapter 9) and extraction risks (Chapter 5)
+  - Distinguishes transactional sites (beneficial) vs. content sites (risky)
+  - Provides strategic decision framework for when to use Schema.org
+  - Suggests mitigation strategies for content creators
+  - 8 paragraphs, ~550 words
+- **Appendix G:** Removed fictional Identity Layer version references
+  - Removed "Identity Layer v2.0" from OAuth 2.0 entry
+  - Removed "Identity Layer v2.5.1" from DPoP entry
+  - Rewrote descriptions to reflect emerging/exploratory status
+  - Now consistent with Chapter 4's "no standard exists yet" statement
+- **Executive Summary:** Updated priority assessment to reference six patterns
+- **amend.md:** Fixed markdown linting errors (duplicate headings, spacing)
+
 ### Changed - 2026-01-07 (Phase 2)
 
 **Complete Manuscript Consolidation:**
