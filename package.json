@@ -42,5 +42,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ddttom/invisible-users"
+  },
+  "devDependencies": {
+    "markdownlint-cli": "^0.47.0"
   }
 }
