@@ -75,9 +75,14 @@ This ensures the book remains the single source of truth.
 ```text
 /
 ├── invisible-users/          # Book manuscript (~50,000 words)
-│   ├── chapter-01-*.md through chapter-10-*.md
-│   ├── preface.md
-│   ├── Glossary.md
+│   ├── manuscript/           # Core manuscript files
+│   │   ├── chapter-01-*.md through chapter-10-*.md
+│   │   ├── preface.md
+│   │   ├── executive-summary.md
+│   │   ├── Glossary.md
+│   │   ├── appendix-*.md
+│   │   └── illustrations/    # SVG illustrations (PNG gitignored)
+│   ├── book-plan.md
 │   ├── implementation-checklist.md
 │   ├── resource-links.md
 │   ├── advice.md             # Standalone prescriptive guide
@@ -112,13 +117,12 @@ This ensures the book remains the single source of truth.
 
 - Executive Summary: ~1,100 words
 - Glossary (comprehensive): ~1,850 words
-- Glossary (simplified): ~950 words
 - Implementation Checklist: ~2,750 words
 - Resource Links: ~1,950 words
 - Advice (standalone): ~9,050 words
-- For AI (quick reference): ~1,300 words
+- AI Design Rules (quick reference): ~1,300 words
 
-**Total content:** ~68,800 words
+**Total content:** ~68,000 words
 
 ## Quick Start
 
@@ -245,7 +249,7 @@ A critical security insight: in-browser agents inherit authenticated sessions ra
 ### Book Documentation
 
 - [invisible-users/book-plan.md](invisible-users/book-plan.md) - Master plan with chapter outlines
-- [invisible-users/Glossary.md](invisible-users/Glossary.md) - Technical glossary
+- [invisible-users/manuscript/Glossary.md](invisible-users/manuscript/Glossary.md) - Technical glossary
 - [invisible-users/implementation-checklist.md](invisible-users/implementation-checklist.md) - Priority-based guide
 - [invisible-users/resource-links.md](invisible-users/resource-links.md) - Curated resources
 
@@ -256,14 +260,6 @@ A critical security insight: in-browser agents inherit authenticated sessions ra
 - [web-audit-suite/docs/usermanual.md](web-audit-suite/docs/usermanual.md) - User guide
 - [web-audit-suite/docs/CONFIGURATION.md](web-audit-suite/docs/CONFIGURATION.md) - Configuration reference
 - [web-audit-suite/docs/FEATURES.md](web-audit-suite/docs/FEATURES.md) - Feature overview
-
-## Interactive Companion
-
-An interactive Jupyter notebook version is available at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html)
-
-The notebook presents key concepts through visual demonstrations, interactive data tables, and real-world calculations - perfect as both an introduction and a navigation tool for the full manuscript.
-
-**Time to complete:** 60-75 minutes
 
 ## Writing Style
 
