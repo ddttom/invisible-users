@@ -13,16 +13,17 @@ This repository contains two integrated projects:
 
 ### Book Manuscript Status
 
-- **Version:** 2.5.1
+- **Version:** 2.6.0
 - **Status:** Publication-ready
-- **Word Count:** ~50,272 words (core chapters)
-- **Total Content:** ~70,962 words (including appendices)
-- **Chapters:** 10 chapters complete
-- **Appendices:** 8 appendices (A-H) covering implementation guides, patterns, resources, and LLM context
-- **Illustrations:** 10 SVG illustrations complete
+- **Word Count:** ~55,000 words (core chapters)
+- **Total Content:** ~65,500 words (including appendices)
+- **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
+- **Appendices:** 9 appendices (A-I) covering implementation guides, patterns, resources, LLM context, and pipeline failure case study
+- **Illustrations:** 11 SVG illustrations complete
+- **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Complete manuscript consolidated in `invisible-users/manuscript/` subdirectory
-  - Core chapters, preface, executive summary
-  - All eight appendices (implementation guides, pattern references, resource directory, DDT reference)
+  - Core chapters (1-11), preface, executive summary
+  - All nine appendices (implementation guides, pattern references, resource directory, DDT reference, pipeline failure case study)
   - Planning files (book-plan.md, book-svg-style.md) remain at root level
 
 ### Web Audit Suite Status
