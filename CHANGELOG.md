@@ -9,6 +9,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added - 2026-01-07
 
+**Chapter 11: What Agent Creators Must Build (~5,000 words):**
+
+- New chapter completing the solutions arc by addressing agent creator responsibilities
+- Establishes "Pipeline Failures" as seventh failure category (distinct from website design failures and reasoning failures)
+- Detailed case study: £203,000 cruise pricing error showing data extraction/parsing failure
+- Five specific guardrails with JavaScript code examples:
+  - Multi-source verification
+  - Audit trails for debugging
+  - Comparative context and outlier detection
+  - Graceful degradation patterns
+  - Human-in-the-loop options
+- Confidence scoring framework (0-100%) with action-dependent thresholds
+- Validation layers: range validation, comparative analysis, incomplete data detection, structured data cross-reference
+- Incomplete data detection pattern: validates data completeness when gathering comparative information (e.g., pricing for only 1 of 3 operators should reduce confidence)
+- Agent architecture considerations: browser extensions, CLI agents, server-based agents
+- Priority-based validation roadmap (4 priority levels)
+- Chapter 11 SVG illustration: "The Validation Pipeline" showing multi-gate validation checkpoint
+- Cross-references added in Chapters 1, 2, 9, 10
+- Updated preface navigation paths for all reader types
+- Updated book-plan.md with Chapter 11 outline and word counts
+- Core manuscript now ~57,000 words (was ~52,000)
+- With appendices: ~65,500 words total (was ~58,000)
+
+**Appendix I: Pipeline Failure Case Study (~2,500 words):**
+
+- Moved ai-error-analysis.md into manuscript as formal appendix
+- Complete analysis of £203,000 cruise pricing error (six-stage error chain)
+- Source attribution: Claude for Chrome (early beta version) error from December 2024
+- Anonymized operator names (Saga Cruises, Uniworld River Cruises, Viking River Cruises)
+- Actual agent output showing incomplete data pattern (pricing for 1 of 3 operators)
+- Four failure scenarios: decimal separator confusion, number concatenation, wrong field extraction, HTML/CSS parsing error
+- Prevention strategies with JavaScript code examples for AI systems
+- Technical root cause analysis of number parsing in LLMs
+- Seven lessons learned about data pipeline failures vs reasoning failures
+- Critical teaching point: Incomplete data itself is a warning sign (integrated into Chapter 11)
+- Cross-referenced with Chapter 11 validation framework
+- Original file preserved as ai-error-analysis.md.original
+
 **Web Audit Suite Improvements:**
 
 - **Golden Master Test:** Added `test/goldenMaster.test.js` to ensure regression protection across the full audit pipeline.

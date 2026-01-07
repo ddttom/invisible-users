@@ -43,9 +43,9 @@ The patterns that break agents also break screen reader users, people with cogni
 
 **Complete foundation for immediate market entry:**
 
-1. **50,000-word book manuscript** (10 chapters) - Establishes thought leadership
+1. **65,500-word book manuscript** (11 chapters + 9 appendices) - Establishes thought leadership
 2. **Production-ready code examples** - HTML, React, WordPress, Next.js implementations
-3. **Playwright testing framework** - 14 automated agent compatibility tests
+3. **Web Audit Suite** - Comprehensive Node.js analysis tool implementing all patterns
 4. **Implementation methodology** - 4-priority-level systematic rollout
 5. **Professional services framework** - Audit, implementation, retained support models
 6. **Marketing website** - Lead generation, payment processing, content ready
@@ -236,8 +236,9 @@ The patterns that break agents also break screen reader users, people with cogni
 
 **Materials Available:**
 
-- Complete 50,000-word manuscript
-- Code repository and testing framework
+- Complete 65,500-word manuscript (11 chapters + 9 appendices)
+- Web Audit Suite (production-ready analysis tool)
+- Code repository and implementation examples
 - Financial model spreadsheet
 - Partnership agreement templates
 - Full pitch deck (20+ pages)
@@ -280,7 +281,7 @@ Availability: Ready to start immediately, partnership agreements can be executed
 
 **Market:** £6.3 trillion e-commerce + adjacent markets, 12-18 month first-mover window
 
-**What's Built:** Complete book, code examples, testing framework, methodology, website
+**What's Built:** 65,500-word manuscript (11 chapters + 9 appendices), Web Audit Suite, code examples, methodology, website
 
 **Revenue:** £2M-£5M Year 1 potential across multiple streams
 

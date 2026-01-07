@@ -72,11 +72,11 @@ This represents a fundamental shift: agents aren't just reading static HTML anym
 
 This book addresses different audiences with different needs:
 
-**Business Decision-Makers**: Chapters 1, 4, 5, 7, 8, and first half of Chapter 9 (3-4 hours)
+**Business Decision-Makers**: Chapters 1, 4, 5, 7, 8, and first half of Chapter 9 (3-4 hours). Delegate Chapter 11 to teams evaluating agent partnerships.
 
-**Product & Design**: Chapters 1-5, 9-10 (5-6 hours)
+**Product & Design**: Chapters 1-5, 9-11 (5-6 hours)
 
-**Developers**: Chapters 2, 6, 9-10, working backwards for context (4-5 hours)
+**Developers**: Start with Chapters 10-11, then work backwards through Chapters 2, 6, 9 for context (4-5 hours)
 
 **Small Business Owners**: Chapters 1, 4, small business sections in Chapter 9 (1-2 hours)
 

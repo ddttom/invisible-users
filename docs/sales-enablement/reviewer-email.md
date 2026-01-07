@@ -20,11 +20,12 @@ I'm reaching out because of your expertise in [web development/accessibility/AI 
 
 **The problem:** AI agents are visiting websites and failing silently. The same design patterns that work beautifully for human users - toast notifications, visual state changes, paginated content - break completely for AI agents. And critically, these are the exact patterns that have been creating accessibility barriers for years.
 
-I've documented this in a 58,000-word manuscript called "The Invisible Users: Designing the Web for AI Agents and Everyone Else." It covers:
+I've documented this in a 65,500-word manuscript called "The Invisible Users: Designing the Web for AI Agents and Everyone Else." It covers:
 
 - **Technical failures** - What breaks and why (with code examples)
 - **Business implications** - ROI frameworks and strategic considerations
-- **Practical solutions** - 10 chapters plus 3 appendices with copy-paste implementations
+- **Practical solutions** - 11 chapters plus 9 appendices with copy-paste implementations
+- **Agent validation** - Guardrails agent creators must build (Chapter 11)
 
 The book includes:
 
@@ -63,7 +64,7 @@ Tom Cranstoun
 
 **About the book:**
 "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
-~58,000 words | 10 chapters + 3 appendices
+~65,500 words | 11 chapters + 9 appendices
 Publication: Early 2026
 
 **Contact:**
@@ -79,7 +80,7 @@ Hi [Name],
 
 Quick question: Have you noticed AI agents struggling with websites that work perfectly for humans?
 
-I've spent the past [timeframe] documenting this problem and building solutions. The result is a 58,000-word technical book called "The Invisible Users" - and I'd value your feedback before publishing.
+I've spent the past [timeframe] documenting this problem and building solutions. The result is a 65,500-word technical book called "The Invisible Users" - and I'd value your feedback before publishing.
 
 **The core issue:**
 
@@ -94,10 +95,10 @@ These same patterns have been accessibility barriers for years. Now there's comm
 
 **What I've built:**
 
-- **10 chapters** covering failures, business impact, and technical solutions
-- **3 appendices** with copy-paste recipes and real-world lessons
+- **11 chapters** covering failures, business impact, technical solutions, and agent validation
+- **9 appendices** with copy-paste recipes, real-world lessons, and pipeline failure analysis
 - **Production code** across vanilla JS, React, Next.js, WordPress
-- **Web Audit Suite integration** for measurement and validation
+- **Web Audit Suite** for comprehensive measurement and validation
 - **Test framework** (Playwright) for verification
 
 **Why you specifically:**
@@ -146,12 +147,13 @@ I've documented this in a book manuscript that bridges technical implementation 
 
 **What I've written:**
 
-58,000 words covering:
+65,500 words covering:
 
 - **Technical patterns** that break (with evidence)
 - **Business implications** including ROI frameworks
 - **Strategic considerations** for different industries
 - **Implementation guidance** with priority levels
+- **Agent validation** guardrails (Chapter 11)
 - **Measurement frameworks** for tracking progress
 
 **Why I'm asking you:**
@@ -191,7 +193,7 @@ I'm reaching out because you'll recognize the patterns I'm writing about - they'
 
 The difference now: AI agents are failing on these patterns too, and suddenly there's commercial pressure to fix them.
 
-I've written a 58,000-word book called "The Invisible Users" that documents this connection and provides technical solutions. I'd value your perspective before publication.
+I've written a 65,500-word book called "The Invisible Users" that documents this connection and provides technical solutions. I'd value your perspective before publication.
 
 **The uncomfortable parallel:**
 

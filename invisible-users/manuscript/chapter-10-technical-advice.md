@@ -2825,6 +2825,8 @@ The web is changing. Sites that adapt now will serve agents successfully while i
 
 The choice is yours.
 
+**What about agent creators?** This chapter addressed what website builders should implement. **Chapter 11: What Agent Creators Must Build** completes the picture by showing what validation layers, confidence scoring, and guardrails agent creators should implement to prevent pipeline failures like the £203,000 pricing error. Both sides - website builders and agent creators - must improve to create a reliable agent-mediated web.
+
 ---
 
 ## Explore Further

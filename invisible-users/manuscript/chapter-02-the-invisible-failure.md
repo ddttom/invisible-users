@@ -37,6 +37,8 @@ This table summarises patterns explored in detail throughout this chapter. Each 
 
 **Note:** 'Hidden Content' encompasses multiple related patterns - pagination, tabs and accordions, and below-the-fold content - that share a root cause: information that exists but isn't immediately visible.
 
+**Additional failure type:** Chapter 11 introduces a seventh failure category - **pipeline failures** - where agents fail to validate data during extraction, leading to errors like the £203,000 cruise pricing mistake. Pipeline failures occur within the agent's systems and require validation layers that agent creators must build, distinct from the website design failures discussed in this chapter.
+
 ---
 
 ## The Toast That Nobody Saw

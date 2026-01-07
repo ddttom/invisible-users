@@ -245,9 +245,10 @@ The patterns that break agents also break screen reader users, people with cogni
 
 WHAT'S IN THE BOOK
 
-• 50,000 words across 10 chapters
+• 65,500 words across 11 chapters + 9 appendices
+• Agent validation guardrails (Chapter 11)
 • Production-ready code examples (HTML, React, WordPress, Next.js)
-• Playwright testing framework (14 tests)
+• Web Audit Suite (comprehensive analysis tool)
 • Implementation checklist (4 priority levels)
 • 60+ term glossary
 • 150+ curated resources
@@ -840,9 +841,9 @@ Half-day masterclass (deep implementation)
 WHY ME
 
 • 30 years web development experience
-• Author of "The Invisible Users" (50,000 words, 10 chapters)
+• Author of "The Invisible Users" (65,500 words, 11 chapters + 9 appendices)
 • Created production-ready implementation framework
-• Built testing suite (Playwright, 14 tests)
+• Built Web Audit Suite (comprehensive analysis tool)
 • Delivered agent compatibility audits for [X] companies
 
 PREVIOUS SPEAKING

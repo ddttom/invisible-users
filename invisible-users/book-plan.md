@@ -6,10 +6,11 @@
 
 **Target Length:** 30,000-50,000 words
 
-**Current Status:** Complete with Phase 1-2 Enhancements ✅ (~58,000 words including appendices)
+**Current Status:** Complete with Phase 1-2 Enhancements + Chapter 11 ✅ (~65,500 words including appendices)
 
-**Latest Update (January 2026):** Added Phase 1-2 improvements from Web Audit Suite learnings:
+**Latest Update (January 2026):** Added Chapter 11 and Phase 1-2 improvements:
 
+- Added Chapter 11: What Agent Creators Must Build (~5,000 words) - validation layers, confidence scoring, guardrails for agent systems including incomplete data detection
 - Enhanced Chapter 10 with served vs rendered HTML distinction, robots.txt deep dive, Web Audit Suite integration
 - Enhanced Chapter 4 with comprehensive ROI assessment framework
 - Added three practical appendices: Implementation Cookbook, Battle-Tested Lessons, Web Audit Suite User Guide
@@ -39,12 +40,14 @@ This book explores the technical, business, ethical, and human implications of t
 | 8 | The Human Cost | ~3,650 | ✅ Complete |
 | 9 | Designing for Both | ~4,400 | ✅ Complete |
 | 10 | Technical Advice | ~9,650 | ✅ Complete + Enhanced |
+| 11 | What Agent Creators Must Build | ~5,000 | ✅ Complete |
 | Appendix A | Implementation Cookbook | ~1,900 | ✅ Complete |
 | Appendix B | Battle-Tested Lessons | ~1,850 | ✅ Complete |
 | Appendix C | Web Audit Suite Guide | ~2,000 | ✅ Complete |
+| Appendix I | Pipeline Failure Case Study | ~2,500 | ✅ Complete |
 
-**Core Manuscript:** ~52,000 words (preface + 10 chapters)
-**With Appendices:** ~58,000 words total
+**Core Manuscript:** ~57,000 words (preface + 11 chapters)
+**With Appendices:** ~65,500 words total
 
 ---
 
@@ -253,6 +256,28 @@ Implementation code, testing strategies, and practical tools.
 
 ---
 
+### Chapter 11 — What Agent Creators Must Build
+
+Implementation patterns, validation layers, and guardrails for reliable agent systems.
+
+**Sections:**
+
+- The three failure types (website design, reasoning, pipeline failures)
+- Anatomy of the £203k error (detailed case study)
+- The validation gap (range validation, comparative analysis, incomplete data detection, structured data cross-reference)
+- Confidence thresholds and decision points
+- Guardrails agent creators should build (five specific guardrails with code examples)
+- Agent architecture considerations (browser extensions, CLI agents, server-based agents)
+- Learning from production failures
+- The validation roadmap (priority-based implementation)
+- Conclusion (completing the ecosystem view)
+
+**Key insight:** Pipeline failures occur when agents fail to validate data during extraction. The £203,000 cruise pricing error wouldn't have occurred if either the website provided clear structured data (Chapter 10) or the agent had validation layers (Chapter 11). Both sides must improve.
+
+**Enhanced with:** Complete validation pipeline code examples showing range checking, comparative analysis, incomplete data detection, confidence scoring, and graceful degradation patterns
+
+---
+
 ## Supporting Materials
 
 ### Front Matter
@@ -275,7 +300,7 @@ Implementation code, testing strategies, and practical tools.
 
 ### Illustrations
 
-All 10 chapter illustrations complete ✅
+All 11 chapter illustrations complete ✅
 
 1. Chapter 1 — "Same Website, Different Reality"
 2. Chapter 2 — "The Anatomy of Invisible Failure"
@@ -287,6 +312,7 @@ All 10 chapter illustrations complete ✅
 8. Chapter 8 — "The Human Cost"
 9. Chapter 9 — "Designing for Both"
 10. Chapter 10 — "Technical Advice"
+11. Chapter 11 — "The Validation Pipeline"
 
 ### Reference Materials
 
@@ -296,6 +322,7 @@ All 10 chapter illustrations complete ✅
 | manuscript/appendix-implementation-roadmap.md | ✅ | Priority-based implementation roadmap (Appendix F) |
 | manuscript/appendix-resource-directory.md | ✅ | 150+ curated resources by category (Appendix G) |
 | manuscript/appendix-live-llms.txt | ✅ | Digital Domain Technologies reference for LLM context (Appendix H) |
+| manuscript/appendix-pipeline-failure-case-study.md | ✅ | Complete £203k pricing error analysis (Appendix I, referenced in Chapter 11) |
 | cover-design.svg | ✅ | Professional book cover (600×900) |
 
 ### Interactive Materials

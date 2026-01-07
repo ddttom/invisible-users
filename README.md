@@ -74,9 +74,9 @@ This ensures the book remains the single source of truth.
 
 ```text
 /
-├── invisible-users/          # Book manuscript (~50,000 words)
+├── invisible-users/          # Book manuscript (~57,000 words)
 │   ├── manuscript/           # Core manuscript files
-│   │   ├── chapter-01-*.md through chapter-10-*.md
+│   │   ├── chapter-01-*.md through chapter-11-*.md
 │   │   ├── preface.md
 │   │   ├── executive-summary.md
 │   │   ├── Glossary.md
@@ -110,8 +110,9 @@ This ensures the book remains the single source of truth.
 | 8 | The Human Cost | ✅ Complete | ~3,650 |
 | 9 | Designing for Both | ✅ Complete | ~4,400 |
 | 10 | Technical Advice | ✅ Complete | ~8,350 |
+| 11 | What Agent Creators Must Build | ✅ Complete | ~4,700 |
 
-**Core manuscript:** ~50,000 words
+**Core manuscript:** ~57,000 words
 
 **Supporting materials:**
 

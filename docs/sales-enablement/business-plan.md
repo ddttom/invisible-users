@@ -25,7 +25,8 @@
 
 **Competitive advantage:**
 
-- Complete, publication-ready manuscript (~50,000 words)
+- Complete, publication-ready manuscript (~65,500 words: 11 chapters + 9 appendices)
+- Web Audit Suite (production-ready analysis tool)
 - Practical, working code examples
 - Interactive notebook companion
 - Established author platform (allabout.network)
@@ -591,7 +592,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Deliverables:**
 
-1. ✅ **Manuscript complete** (DONE - 50,000 words)
+1. ✅ **Manuscript complete** (DONE - 65,500 words: 11 chapters + 9 appendices)
 2. ✅ **Supporting materials complete** (DONE)
 3. **Publication preparation:**
    - Professional editing (copy edit + technical review): 4-6 weeks

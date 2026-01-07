@@ -25,9 +25,10 @@ AI agents are visiting websites right now and failing silently. These failures c
 
 **1. Complete Methodology (Book):**
 
-- 58,000-word manuscript (10 chapters + 3 practical appendices)
+- 65,500-word manuscript (11 chapters + 9 appendices)
 - Implementation cookbook with 10 copy-paste recipes
 - Battle-tested lessons from real implementations
+- Agent validation guardrails (Chapter 11)
 - 60+ term glossary, 150+ resource links
 - Interactive companion notebook
 
@@ -118,7 +119,7 @@ These same patterns break human users:
 
 "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 
-10 Chapters, ~58,000 words:
+11 Chapters, ~65,500 words total:
 
 1. What You Will Learn
 2. The Invisible Failure
@@ -130,12 +131,15 @@ These same patterns break human users:
 8. The Human Cost
 9. Designing for Both (solution patterns)
 10. Technical Advice (implementation code)
+11. What Agent Creators Must Build (validation layers, confidence scoring, guardrails)
 
-**Three Practical Appendices:**
+**Nine Comprehensive Appendices:**
 
 - **Appendix A:** Implementation Cookbook (10 copy-paste recipes with score impact)
 - **Appendix B:** Battle-Tested Lessons (15 real-world implementation mistakes)
 - **Appendix C:** Web Audit Suite User Guide (complete measurement framework)
+- **Appendix D-H:** AI-Friendly HTML Guide, Quick Reference, Roadmap, Resources, Live llms.txt
+- **Appendix I:** Pipeline Failure Case Study (£203k cruise pricing error analysis)
 
 **Plus Supporting Materials:**
 
@@ -437,17 +441,17 @@ Agencies and investors looking for the next growth category. We provide the **Me
 
 | Component | Market Rate | Details |
 | --------- | ----------- | ------- |
-| **Book Manuscript** | £30k-£85k | 58,000 words technical writing, 3-6 months, deep domain expertise |
-| **Three Appendices** | £8k-£15k | Implementation Cookbook, Battle-Tested Lessons, Web Audit Suite Guide |
+| **Book Manuscript** | £35k-£95k | 65,500 words technical writing (11 chapters), 4-7 months, deep domain expertise |
+| **Nine Appendices** | £12k-£22k | Implementation guides, case studies, resources, pipeline failure analysis |
 | **Business Strategy** | £15k-£30k | Business plan, pitch deck, executive summary, go-to-market (16,500 words) |
 | **Web Audit Suite** | £50k-£100k | 15,000+ lines production JavaScript, 18+ reports, 3-phase pipeline |
 | **Code Examples** | £10k-£20k | Production-ready examples, Playwright test suite (14 tests) |
 | **Design & Illustrations** | £5k-£15k | 11 custom SVG illustrations, book cover, website design |
 | **Supporting Materials** | £5k-£10k | Glossary (60+ terms), checklist, resource links (150+), interactive notebook |
 | **Project Management** | £5k-£15k | Coordination, QA, standards compliance, documentation |
-| **Total Replacement Cost** | **£133k-£295k** | 1,400-1,800 hours professional services |
+| **Total Replacement Cost** | **£142k-£317k** | 1,500-1,900 hours professional services |
 
-**Realistic Market Value:** £165k-£235k for professional delivery at this quality level
+**Realistic Market Value:** £175k-£250k for professional delivery at this quality level
 
 **Current State:** Complete, publication-ready, all IP owned, no debt or obligations
 
@@ -459,9 +463,11 @@ Agencies and investors looking for the next growth category. We provide the **Me
 
 ✅ **Complete Methodology**
 
-- 58,000-word book manuscript (10 chapters + 3 appendices)
+- 65,500-word book manuscript (11 chapters + 9 appendices)
 - Implementation cookbook with recipes
+- Agent validation guardrails (Chapter 11)
 - Battle-tested lessons from real implementations
+- Pipeline failure case study (Appendix I)
 - Interactive companion notebook
 - 60+ term glossary, 150+ resource links
 

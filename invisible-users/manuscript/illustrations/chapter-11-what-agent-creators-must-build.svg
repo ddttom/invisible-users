@@ -1,0 +1,173 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Georgia, serif; font-size: 24px; font-weight: bold; fill: #1a1a1a; }
+      .subtitle { font-family: system-ui, sans-serif; font-size: 14px; fill: #4a4a4a; }
+      .label { font-family: system-ui, sans-serif; font-size: 13px; fill: #2a2a2a; }
+      .label-small { font-family: system-ui, sans-serif; font-size: 11px; fill: #4a4a4a; }
+      .code { font-family: 'Courier New', monospace; font-size: 11px; fill: #2a2a2a; }
+      .warning { fill: #d32f2f; font-weight: bold; }
+      .success { fill: #2e7d32; font-weight: bold; }
+      .process-box { fill: #f5f5f5; stroke: #333; stroke-width: 2; }
+      .validation-gate { fill: #fff; stroke: #1976d2; stroke-width: 2; }
+      .data-flow { fill: none; stroke: #666; stroke-width: 2; marker-end: url(#arrowhead); }
+      .error-flow { fill: none; stroke: #d32f2f; stroke-width: 2; stroke-dasharray: 5,5; marker-end: url(#arrowhead-red); }
+      .success-flow { fill: none; stroke: #2e7d32; stroke-width: 2; marker-end: url(#arrowhead-green); }
+      .confidence-badge { fill: #fff; stroke: #2e7d32; stroke-width: 2; }
+      .alert-box { fill: #fff3cd; stroke: #856404; stroke-width: 2; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#d32f2f" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2e7d32" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" class="title">The Validation Pipeline</text>
+  <text x="450" y="55" text-anchor="middle" class="subtitle">Multi-layer validation prevents pipeline failures</text>
+
+  <!-- Left: Raw Data Input -->
+  <g id="raw-data">
+    <text x="80" y="95" class="label" font-weight="bold">Raw Data Sources</text>
+
+    <!-- HTML Data -->
+    <rect x="20" y="110" width="140" height="60" class="process-box"/>
+    <text x="90" y="130" text-anchor="middle" class="label-small">HTML Content</text>
+    <text x="90" y="148" text-anchor="middle" class="code">&lt;td&gt;£203,000&lt;/td&gt;</text>
+    <text x="90" y="163" text-anchor="middle" class="label-small" fill="#d32f2f">Ambiguous</text>
+
+    <!-- JSON-LD Data -->
+    <rect x="20" y="180" width="140" height="60" class="process-box"/>
+    <text x="90" y="200" text-anchor="middle" class="label-small">JSON-LD Structured Data</text>
+    <text x="90" y="218" text-anchor="middle" class="code">"price": "2030"</text>
+    <text x="90" y="233" text-anchor="middle" class="label-small" fill="#2e7d32">Explicit</text>
+
+    <!-- Competitor Data -->
+    <rect x="20" y="250" width="140" height="55" class="process-box"/>
+    <text x="90" y="270" text-anchor="middle" class="label-small">Market Context</text>
+    <text x="90" y="288" text-anchor="middle" class="code">£2k-£6k typical</text>
+  </g>
+
+  <!-- Center: Validation Gates -->
+  <g id="validation-gates">
+    <text x="450" y="95" text-anchor="middle" class="label" font-weight="bold">Validation Checkpoints</text>
+
+    <!-- Gate 1: Range Validation -->
+    <rect x="340" y="110" width="220" height="70" class="validation-gate"/>
+    <text x="450" y="130" text-anchor="middle" class="label" font-weight="bold">Gate 1: Range Validation</text>
+    <circle cx="360" cy="155" r="12" fill="#d32f2f"/>
+    <text x="380" y="160" class="label-small">£203k &gt; £15k max</text>
+    <text x="380" y="173" class="label-small warning">❌ FAIL: Outlier detected</text>
+
+    <!-- Gate 2: Comparative Analysis -->
+    <rect x="340" y="190" width="220" height="70" class="validation-gate"/>
+    <text x="450" y="210" text-anchor="middle" class="label" font-weight="bold">Gate 2: Comparative Analysis</text>
+    <circle cx="360" cy="235" r="12" fill="#d32f2f"/>
+    <text x="380" y="240" class="label-small">£203k vs £2-6k peers</text>
+    <text x="380" y="253" class="label-small warning">❌ FAIL: 100x outlier</text>
+
+    <!-- Gate 3: Source Cross-Check -->
+    <rect x="340" y="270" width="220" height="70" class="validation-gate"/>
+    <text x="450" y="290" text-anchor="middle" class="label" font-weight="bold">Gate 3: Source Cross-Check</text>
+    <circle cx="360" cy="315" r="12" fill="#d32f2f"/>
+    <text x="380" y="320" class="label-small">HTML ≠ JSON-LD</text>
+    <text x="380" y="333" class="label-small warning">❌ FAIL: Conflict</text>
+  </g>
+
+  <!-- Right: Output Paths -->
+  <g id="output-paths">
+    <text x="750" y="95" text-anchor="middle" class="label" font-weight="bold">Output Decision</text>
+
+    <!-- High Confidence Path (Hypothetical) -->
+    <rect x="640" y="110" width="220" height="90" class="confidence-badge" stroke="#2e7d32"/>
+    <text x="750" y="135" text-anchor="middle" class="label" font-weight="bold">High Confidence Path</text>
+    <text x="750" y="155" text-anchor="middle" class="label-small">(All gates passed)</text>
+    <circle cx="720" cy="175" r="20" fill="#2e7d32"/>
+    <text x="720" y="182" text-anchor="middle" class="label" fill="#fff" font-weight="bold">95%</text>
+    <text x="750" y="193" text-anchor="middle" class="label-small success">✓ Report with confidence</text>
+
+    <!-- Low Confidence Path (Actual) -->
+    <rect x="640" y="220" width="220" height="120" class="alert-box"/>
+    <text x="750" y="245" text-anchor="middle" class="label" font-weight="bold">Low Confidence Path</text>
+    <text x="750" y="265" text-anchor="middle" class="label-small">(Multiple gates failed)</text>
+    <circle cx="720" cy="288" r="20" fill="#d32f2f"/>
+    <text x="720" y="295" text-anchor="middle" class="label" fill="#fff" font-weight="bold">0%</text>
+    <text x="750" y="313" text-anchor="middle" class="label-small warning">⚠ Require verification</text>
+    <text x="750" y="328" text-anchor="middle" class="label-small">"Data may be incorrect"</text>
+  </g>
+
+  <!-- Data Flow Arrows -->
+  <!-- HTML to Gate 1 -->
+  <path d="M 160 140 L 340 140" class="data-flow"/>
+
+  <!-- JSON-LD to Gate 3 -->
+  <path d="M 160 210 L 250 210 L 250 305 L 340 305" class="data-flow"/>
+
+  <!-- Market Context to Gate 2 -->
+  <path d="M 160 277 L 250 277 L 250 225 L 340 225" class="data-flow"/>
+
+  <!-- Gate 1 to High Confidence (dashed - not taken) -->
+  <path d="M 560 145 L 600 145 L 600 155 L 640 155" class="data-flow" stroke-dasharray="3,3" opacity="0.3"/>
+
+  <!-- Gates to Low Confidence (taken) -->
+  <path d="M 560 155 L 600 155 L 600 280 L 640 280" class="error-flow"/>
+  <path d="M 560 225 L 600 225 L 600 280 L 640 280" class="error-flow"/>
+  <path d="M 560 305 L 600 305 L 600 280 L 640 280" class="error-flow"/>
+
+  <!-- Bottom: Case Study Example -->
+  <g id="case-study">
+    <rect x="20" y="360" width="860" height="220" fill="#f9f9f9" stroke="#ccc" stroke-width="2" rx="8"/>
+    <text x="450" y="385" text-anchor="middle" class="label" font-weight="bold" font-size="15">Case Study: £203k Cruise Pricing Error</text>
+
+    <!-- What Happened -->
+    <g id="what-happened">
+      <text x="40" y="410" class="label" font-weight="bold">What Happened (No Validation):</text>
+      <rect x="40" y="418" width="250" height="145" fill="#fff" stroke="#d32f2f" stroke-width="2" rx="4"/>
+
+      <text x="50" y="438" class="label-small">1. Agent scraped HTML table</text>
+      <text x="65" y="454" class="code">Extracted: "£203,000"</text>
+
+      <text x="50" y="474" class="label-small">2. No validation performed</text>
+      <text x="65" y="490" class="code">❌ No range check</text>
+      <text x="65" y="504" class="code">❌ No comparison</text>
+      <text x="65" y="518" class="code">❌ No source verification</text>
+
+      <text x="50" y="538" class="label-small">3. Reported to user</text>
+      <text x="65" y="554" class="code">"£203,000-£402,000"</text>
+    </g>
+
+    <!-- What Should Happen -->
+    <g id="what-should-happen">
+      <text x="330" y="410" class="label" font-weight="bold">What Should Happen (With Validation):</text>
+      <rect x="330" y="418" width="530" height="145" fill="#fff" stroke="#2e7d32" stroke-width="2" rx="4"/>
+
+      <text x="340" y="438" class="label-small">1. Agent extracts from multiple sources</text>
+      <text x="355" y="454" class="code">HTML: "£203,000" | JSON-LD: "£2,030" | Market: £2k-£6k</text>
+
+      <text x="340" y="474" class="label-small">2. Validation pipeline flags errors</text>
+      <text x="355" y="490" class="code">✓ Range: £203k &gt; £15k max → Confidence -40%</text>
+      <text x="355" y="504" class="code">✓ Comparative: 100x above peers → Confidence -25%</text>
+      <text x="355" y="518" class="code">✓ Cross-check: HTML ≠ JSON-LD → Confidence -30%</text>
+
+      <text x="340" y="538" class="label-small">3. Reports with warning (Confidence: 5%)</text>
+      <text x="355" y="554" class="code">"Price data unreliable. HTML shows £203k, structured data shows £2,030.</text>
+      <text x="355" y="568" class="code">Verify at operator website before booking."</text>
+    </g>
+  </g>
+
+  <!-- Key Insight -->
+  <g id="key-insight">
+    <rect x="320" y="595" width="260" height="0" fill="none"/>
+    <text x="450" y="595" text-anchor="middle" class="label-small" font-style="italic">
+      Each validation gate prevents a category of pipeline failures
+    </text>
+  </g>
+</svg>

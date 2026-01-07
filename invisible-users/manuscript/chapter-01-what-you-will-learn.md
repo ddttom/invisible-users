@@ -148,6 +148,8 @@ This isn't a theoretical discussion. It's a practical guide to a problem that's 
 
 **Chapter 10 - Technical Advice** provides implementation details. Code examples for agent detection, dual-interface architecture, synchronous form validation, and structured metadata. We also provide a complete **Agent-Friendly Starter Kit** with this book—showing "Good" vs. "Bad" implementations side by side so you can test these concepts yourself. Testing strategies for agent compatibility. Debugging approaches when agents fail. Practical tools you can use immediately.
 
+**Chapter 11 - What Agent Creators Must Build** completes the solutions picture by addressing the other side: what agent creators should implement. Validation layers, confidence scoring, guardrails for data extraction, and graceful failure modes. The £203,000 cruise pricing error case study shows why pipeline validation matters. This chapter provides implementation patterns for browser extensions, CLI agents, and server-based agents to build reliable systems that serve users well.
+
 ---
 
 ## What You'll Be Able to Do

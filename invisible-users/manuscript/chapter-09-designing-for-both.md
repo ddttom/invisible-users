@@ -916,4 +916,6 @@ The web works best when information is transparent, honest, complete, and access
 
 Building for agents means building better. Not because agents matter more than humans, but because the problems agents expose were always there. We're finally fixing them.
 
+**The complete solutions picture:** This chapter and Chapter 10 address what website builders should implement. **Chapter 11: What Agent Creators Must Build** addresses the other side - what validation layers and guardrails agent creators should implement. Neither side can fix the ecosystem alone. Perfect websites still fail if agents lack validation. Sophisticated agents still fail if websites hide information. Both sides must improve.
+
 The next chapter provides the implementation code. But the philosophy matters more than the technology: design for clarity, and you design for everyone.

@@ -97,6 +97,7 @@ You need strategic understanding without technical implementation details.
 
 - Chapter 6: The Security Maze (your security team)
 - Chapter 10: Technical Advice (your development team)
+- Chapter 11: What Agent Creators Must Build (if evaluating agent partnerships)
 
 Look for "Key Points for Business Leaders" boxes at the end of Chapters 2, 3, 4, 5, 7, and 8.
 
@@ -115,6 +116,7 @@ You need to understand the problem deeply, grasp business context, and implement
 - Chapter 5: The Content Creator's Dilemma (content strategy)
 - Chapter 9: Designing for Both (solution patterns)
 - Chapter 10: Technical Advice (implementation approaches)
+- Chapter 11: What Agent Creators Must Build (if designing agent features)
 
 **Skim for context:**
 
@@ -132,7 +134,8 @@ You need implementation patterns and technical depth.
 
 **Start with:**
 
-- Chapter 10: Technical Advice (immediate patterns and code examples)
+- Chapter 10: Technical Advice (immediate patterns and code examples for websites)
+- Chapter 11: What Agent Creators Must Build (validation layers and guardrails for agents)
 
 **Then work backwards:**
 

@@ -10,8 +10,8 @@ This repository contains two integrated projects:
 
 **"The Invisible Users: Designing the Web for AI Agents and Everyone Else"** - a practical guide examining how modern web design optimized for human users fails for AI agents, and how fixing this benefits everyone.
 
-**Target length:** 30,000-50,000 words (10 chapters, 3,000-5,000 words each)
-**Current status:** Chapters 1-10 complete, all illustrations complete
+**Target length:** 30,000-50,000 words (11 chapters, 3,000-5,000 words each)
+**Current status:** Chapters 1-11 complete, all illustrations complete
 
 ### 2. Web Audit Suite (Analysis Tool)
 
@@ -45,7 +45,7 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   ├── manuscript/           # Complete manuscript content
 │   │   ├── executive-summary.md
 │   │   ├── preface.md
-│   │   ├── chapter-XX-*.md   # Individual chapter files (01-10)
+│   │   ├── chapter-XX-*.md   # Individual chapter files (01-11)
 │   │   ├── Glossary.md       # Comprehensive glossary
 │   │   ├── appendix-implementation-cookbook.md      # Appendix A
 │   │   ├── appendix-battle-tested-lessons.md        # Appendix B
@@ -55,9 +55,10 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   │   ├── appendix-implementation-roadmap.md       # Appendix F
 │   │   ├── appendix-resource-directory.md           # Appendix G
 │   │   ├── appendix-live-llms.txt                   # Appendix H
+│   │   ├── appendix-pipeline-failure-case-study.md  # Appendix I
 │   │   └── illustrations/    # Illustrations for each chapter (SVG + PNG)
-│   │       ├── chapter-XX-*.svg  # Source SVG files (tracked in git)
-│   │       └── chapter-XX-*.png  # PNG exports (gitignored, generated locally)
+│   │       ├── chapter-XX-*.svg  # Source SVG files (tracked in git) (01-11)
+│   │       └── chapter-XX-*.png  # PNG exports (gitignored, generated locally) (01-11)
 │   ├── llms.txt              # Example llms.txt file from book content
 │   ├── AI-Native.blog
 │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
