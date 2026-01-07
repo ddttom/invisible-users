@@ -27,11 +27,12 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 
 ## Who This Is For
 
-This repository serves three distinct audiences:
+This repository serves four distinct audiences:
 
 1. **Web Professionals & Engineers**: Developers and QA specialists using the [Web Audit Suite](web-audit-suite/) to test and optimize sites for AI agent compatibility.
-2. **Business Leaders**: Executives and managers using the [Book](invisible-users/) to understand the strategic impact of AI agents on their digital business.
-3. **Partners & Investors**: Agencies and investors using the [Business Model](docs/sales-enablement/business-plan.md) to evaluate the commercial potential of this new market category.
+2. **Agent System Developers**: Developers building AI agents, browser extensions, and agentic systems. Chapter 11 provides validation frameworks, confidence scoring patterns, and guardrails for robust data quality.
+3. **Business Leaders**: Executives and managers using the [Book](invisible-users/) to understand the strategic impact of AI agents on their digital business.
+4. **Partners & Investors**: Agencies and investors using the [Business Model](docs/sales-enablement/business-plan.md) to evaluate the commercial potential of this new market category.
 
 ## Key Organizational Principles
 
