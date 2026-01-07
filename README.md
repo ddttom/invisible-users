@@ -134,7 +134,29 @@ npm run illustrations:generate
 # Lint all markdown files
 npm run lint:markdown
 npm run lint:markdown:fix
+
+# Generate PDF (requires LaTeX - see below)
+npm run pdf:generate       # Full PDF with professional book formatting
+npm run pdf:simple         # Simplified PDF formatting
+npm run pdf:html           # Generate HTML (print to PDF via browser ⌘+P)
 ```
+
+**PDF Generation Requirements:**
+
+To use `npm run pdf:generate` or `npm run pdf:simple`, you need a LaTeX distribution installed:
+
+```bash
+# Install BasicTeX (lightweight, ~100MB) via Homebrew
+brew install --cask basictex
+
+# After installation, reload your shell
+source ~/.zshrc
+
+# Verify installation
+which xelatex
+```
+
+If you don't want to install LaTeX, use `npm run pdf:html` to generate an HTML file that you can print to PDF using your browser's print function (⌘+P).
 
 ### Web Audit Suite
 
