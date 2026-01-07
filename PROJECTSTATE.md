@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-05
+**Last Updated:** 2026-01-07
 
 ### Combined Repository
 
@@ -16,9 +16,10 @@ This repository contains two integrated projects:
 - **Version:** 2.5.1
 - **Status:** Publication-ready
 - **Word Count:** ~50,000 words (core manuscript)
-- **Total Content:** ~68,800 words (including supporting materials)
+- **Total Content:** ~68,000 words (including supporting materials)
 - **Chapters:** 10 chapters complete
 - **Illustrations:** 10 SVG illustrations complete
+- **Structure:** Core manuscript organized in `invisible-users/manuscript/` subdirectory
 
 ### Web Audit Suite Status
 
