@@ -7,9 +7,9 @@ import path from 'path';
  * @param {string} outputDir - Output directory
  * @param {Object} comparison - Optional comparison with previous run
  */
-export async function generateExecutiveSummary(results, outputDir, comparison = null) {
+export async function generateExecutiveSummary(results, outputDir, comparison = null, context) {
   try {
-    global.auditcore.logger.info('Generating executive summary report...');
+    context.logger.info('Generating executive summary report...');
 
     const summary = buildExecutiveSummary(results, comparison);
 
@@ -20,9 +20,9 @@ export async function generateExecutiveSummary(results, outputDir, comparison = 
     await fs.writeFile(mdPath, generateMarkdownSummary(summary));
     await fs.writeFile(jsonPath, JSON.stringify(summary, null, 2));
 
-    global.auditcore.logger.info('Executive summary report generated successfully');
+    context.logger.info('Executive summary report generated successfully');
   } catch (error) {
-    global.auditcore.logger.error('Error generating executive summary:', error);
+    context.logger.error('Error generating executive summary:', error);
     throw error;
   }
 }

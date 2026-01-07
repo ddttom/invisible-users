@@ -7,7 +7,7 @@ import path from 'path';
  * @param {string} outputDir - Output directory
  * @returns {Promise<string>} Path to stored historical result
  */
-export async function storeHistoricalResult(results, outputDir) {
+export async function storeHistoricalResult(results, outputDir, context) {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
   const historyDir = path.join(outputDir, 'history');
 
@@ -24,7 +24,7 @@ export async function storeHistoricalResult(results, outputDir) {
   };
 
   await fs.writeFile(historyFile, JSON.stringify(historicalEntry, null, 2));
-  global.auditcore.logger.info(`Stored historical result: ${historyFile}`);
+  context.logger.info(`Stored historical result: ${historyFile}`);
 
   return historyFile;
 }
@@ -34,7 +34,7 @@ export async function storeHistoricalResult(results, outputDir) {
  * @param {string} outputDir - Output directory
  * @returns {Promise<Array>} Array of historical results with timestamps
  */
-export async function loadHistoricalResults(outputDir) {
+export async function loadHistoricalResults(outputDir, context) {
   const historyDir = path.join(outputDir, 'history');
 
   try {
@@ -51,13 +51,13 @@ export async function loadHistoricalResults(outputDir) {
         const entry = JSON.parse(content);
         historicalResults.push(entry);
       } catch (error) {
-        global.auditcore.logger.warn(`Failed to load historical result ${file}:`, error.message);
+        context.logger.warn(`Failed to load historical result ${file}:`, error.message);
       }
     }
 
     return historicalResults;
   } catch (error) {
-    global.auditcore.logger.debug('No historical results found');
+    context.logger.debug('No historical results found');
     return [];
   }
 }
@@ -68,8 +68,8 @@ export async function loadHistoricalResults(outputDir) {
  * @param {string} outputDir - Output directory
  * @returns {Promise<Object|null>} Comparison object or null if no history
  */
-export async function compareWithPrevious(currentResults, outputDir) {
-  const historicalResults = await loadHistoricalResults(outputDir);
+export async function compareWithPrevious(currentResults, outputDir, context) {
+  const historicalResults = await loadHistoricalResults(outputDir, context);
 
   if (historicalResults.length === 0) {
     return null;
@@ -357,8 +357,8 @@ function calculatePercentChange(oldValue, newValue) {
  * @param {string} outputDir - Output directory
  * @returns {Promise<Object>} Trend data
  */
-export async function generateTrendData(outputDir) {
-  const historicalResults = await loadHistoricalResults(outputDir);
+export async function generateTrendData(outputDir, context) {
+  const historicalResults = await loadHistoricalResults(outputDir, context);
 
   if (historicalResults.length < 2) {
     return null;

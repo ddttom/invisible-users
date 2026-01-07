@@ -85,7 +85,7 @@ function isNetworkError(error) {
  * @returns {Promise<any>} Operation result
  * @throws {Error} If operation fails
  */
-async function executePuppeteerOperation(operation, operationName, options = {}) {
+async function executePuppeteerOperation(operation, operationName, options = {}, context) {
   let browser;
   try {
     browser = await puppeteer.launch({
@@ -146,7 +146,7 @@ async function executePuppeteerOperation(operation, operationName, options = {})
 
     return result;
   } catch (error) {
-    global.auditcore.logger.error(`Puppeteer operation failed during ${operationName}:`, error);
+    context.logger.error(`Puppeteer operation failed during ${operationName}:`, error);
     throw error;
   } finally {
     if (browser) {
@@ -160,12 +160,13 @@ async function executePuppeteerOperation(operation, operationName, options = {})
  *
  * @param {Function} operation - Operation to execute
  * @param {string} operationName - Name of operation for logging
+ * @param {Object} context - Audit context
  * @returns {Promise<any>} Operation result
  * @throws {Error} If challenge cannot be bypassed
  */
-async function handleCloudflareChallenge(operation, operationName) {
+async function handleCloudflareChallenge(operation, operationName, context) {
   try {
-    global.auditcore.logger.info('Attempting to bypass Cloudflare challenge...');
+    context.logger.info('Attempting to bypass Cloudflare challenge...');
     return await executePuppeteerOperation(operation, operationName, {
       headless: false, // Need visible browser for challenges
       args: [
@@ -177,9 +178,9 @@ async function handleCloudflareChallenge(operation, operationName) {
         '--window-size=1920,1080',
         '--disable-blink-features=AutomationControlled',
       ],
-    });
+    }, context);
   } catch (error) {
-    global.auditcore.logger.error('Failed to bypass Cloudflare challenge:', error);
+    context.logger.error('Failed to bypass Cloudflare challenge:', error);
     throw new Error('Unable to bypass Cloudflare protection. Please try again later or skip this site.');
   }
 }
@@ -195,11 +196,11 @@ async function handleCloudflareChallenge(operation, operationName) {
  *
  * @param {Function} operation - Network operation to execute
  * @param {string} operationName - Name of operation for logging
-
+ * @param {Object} context - Audit context
  * @returns {Promise<any>} Operation result
  * @throws {Error} If operation fails after retries
  */
-async function executeNetworkOperation(operation, operationName) {
+async function executeNetworkOperation(operation, operationName, context) {
   let retryCount = 0;
   const maxRetries = 3;
   const baseDelay = 1000;
@@ -207,23 +208,23 @@ async function executeNetworkOperation(operation, operationName) {
   while (retryCount < maxRetries) {
     try {
       // Throttle request before execution
-      await throttle();
+      await throttle(); // TODO: Update throttle to accept context if needed
 
       return await operation();
     } catch (error) {
       if (isCloudflareChallenge(error)) {
-        return handleCloudflareChallenge(operation, operationName);
+        return handleCloudflareChallenge(operation, operationName, context);
       }
 
       if (isBlockedError(error)) {
         retryCount++;
         if (retryCount >= maxRetries) {
-          global.auditcore.logger.warn('Falling back to Puppeteer for blocked request');
-          return executePuppeteerOperation(operation, operationName);
+          context.logger.warn('Falling back to Puppeteer for blocked request');
+          return executePuppeteerOperation(operation, operationName, {}, context);
         }
 
         const delay = baseDelay * 2 ** retryCount;
-        global.auditcore.logger.warn(`Blocked during ${operationName}, retrying in ${delay}ms...`);
+        context.logger.warn(`Blocked during ${operationName}, retrying in ${delay}ms...`);
         await new Promise((resolve) => { setTimeout(resolve, delay); });
         continue;
       }
@@ -235,7 +236,7 @@ async function executeNetworkOperation(operation, operationName) {
         }
 
         const delay = baseDelay * 2 ** retryCount;
-        global.auditcore.logger.warn(`Network error during ${operationName}, retrying in ${delay}ms...`);
+        context.logger.warn(`Network error during ${operationName}, retrying in ${delay}ms...`);
         await new Promise((resolve) => { setTimeout(resolve, delay); });
         continue;
       }

@@ -129,12 +129,6 @@ async function initializeConfig() {
 // Initialize configuration
 const options = await initializeConfig();
 
-// Global configuration object for shared state
-global.auditcore = {
-  logger: null,
-  options,
-};
-
 // Destructure output directory from options
 const { output: outputDir } = options;
 
@@ -176,8 +170,8 @@ try {
   console.error('Failed to clear log files:', err);
 }
 
-global.auditcore.logger = winston.createLogger({
-  level: global.auditcore.options.logLevel,
+const logger = winston.createLogger({
+  level: options.logLevel,
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.printf(
@@ -191,6 +185,9 @@ global.auditcore.logger = winston.createLogger({
   ],
 });
 
+import { AuditContext } from './src/core/AuditContext.js';
+const context = new AuditContext(options, logger);
+
 /**
  * Log startup parameters
  * Using console.log to ensure visibility regardless of configured log level
@@ -200,7 +197,7 @@ console.log('=== Application Started ===');
 console.log(`Command: ${process.argv.join(' ')}`);
 console.log('Input Parameters:');
 const excludedKeys = ['pa11y', 'sitemapProcessing', 'performance', 'thresholds'];
-Object.entries(global.auditcore.options).forEach(([key, value]) => {
+Object.entries(options).forEach(([key, value]) => {
   if (!excludedKeys.includes(key)) {
     console.log(`  ${key}: ${JSON.stringify(value)}`);
   }
@@ -218,19 +215,19 @@ function ensureCacheDirectory() {
   try {
     if (!fs.existsSync(cacheDir)) {
       fs.mkdirSync(cacheDir, { recursive: true });
-      global.auditcore.logger.info(`Created cache directory at ${cacheDir}`);
+      logger.info(`Created cache directory at ${cacheDir}`);
     }
     if (!fs.existsSync(renderedDir)) {
       fs.mkdirSync(renderedDir, { recursive: true });
-      global.auditcore.logger.info(`Created rendered cache directory at ${renderedDir}`);
+      logger.info(`Created rendered cache directory at ${renderedDir}`);
     }
     const servedDir = path.join(cacheDir, 'served');
     if (!fs.existsSync(servedDir)) {
       fs.mkdirSync(servedDir, { recursive: true });
-      global.auditcore.logger.info(`Created served cache directory at ${servedDir}`);
+      logger.info(`Created served cache directory at ${servedDir}`);
     }
   } catch (error) {
-    global.auditcore.logger.error(`Failed to create cache directory: ${error.message}`);
+    logger.error(`Failed to create cache directory: ${error.message}`);
     process.exit(1);
   }
 }
@@ -254,30 +251,30 @@ async function main() {
 
     // Execute main analysis process
     let results;
-    if (global.auditcore.options.bulk) {
-      await runBulkAudit(global.auditcore.options.bulk);
+    if (options.bulk) {
+      await runBulkAudit(options.bulk); // TODO: Refactor bulk audit to accept context
     } else {
-      results = await runTestsOnSitemap();
+      results = await runTestsOnSitemap(context); // PASS CONTEXT
 
       // Handle specific analysis errors
       if (results && results.errors) {
         results.errors.forEach((error) => {
           if (error.includes('openGraphTags must be an object')) {
-            global.auditcore.logger.warn('Warning: Issue with openGraphTags in scoreSocialMediaTags. This may affect SEO scores.');
+             logger.warn('Warning: Issue with openGraphTags in scoreSocialMediaTags. This may affect SEO scores.');
           }
         });
       }
     }
 
-    global.auditcore.logger.info('Script completed successfully');
+    logger.info('Script completed successfully');
   } catch (error) {
-    global.auditcore.logger.error('Script failed with error:', error);
+    logger.error('Script failed with error:', error);
     process.exit(1);
   }
 }
 
 // Execute main function with error handling
 main().catch((error) => {
-  global.auditcore.logger.error('Uncaught exception:', error);
+  logger.error('Uncaught exception:', error);
   process.exit(1);
 });

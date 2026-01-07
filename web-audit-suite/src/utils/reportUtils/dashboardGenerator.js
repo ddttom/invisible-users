@@ -9,23 +9,23 @@ import { ChartJSNodeCanvas } from 'chartjs-node-canvas';
  * @param {Object} comparison - Optional comparison data
  * @param {Object} trendData - Optional trend data from historical runs
  */
-export async function generateDashboard(results, outputDir, comparison = null, trendData = null) {
+export async function generateDashboard(results, outputDir, comparison = null, trendData = null, context) {
   try {
-    global.auditcore.logger.info('Generating HTML dashboard...');
+    context.logger.info('Generating HTML dashboard...');
 
     // Generate chart images
-    const charts = await generateCharts(results, trendData);
+    const charts = await generateCharts(results, trendData, context);
 
     // Build HTML dashboard
-    const html = buildDashboardHTML(results, comparison, charts, trendData);
+    const html = buildDashboardHTML(results, comparison, charts, trendData, context);
 
     // Write dashboard to file
     const dashboardPath = path.join(outputDir, 'dashboard.html');
     await fs.writeFile(dashboardPath, html);
 
-    global.auditcore.logger.info(`Dashboard generated: ${dashboardPath}`);
+    context.logger.info(`Dashboard generated: ${dashboardPath}`);
   } catch (error) {
-    global.auditcore.logger.error('Error generating dashboard:', error);
+    context.logger.error('Error generating dashboard:', error);
     throw error;
   }
 }
@@ -33,7 +33,7 @@ export async function generateDashboard(results, outputDir, comparison = null, t
 /**
  * Generates chart images using Chart.js
  */
-async function generateCharts(results, trendData) {
+async function generateCharts(results, trendData, context) {
   const width = 800;
   const height = 400;
   const chartJSNodeCanvas = new ChartJSNodeCanvas({ width, height, backgroundColour: 'white' });
@@ -42,7 +42,7 @@ async function generateCharts(results, trendData) {
 
   try {
     // Performance overview chart
-    charts.performance = await generatePerformanceChart(chartJSNodeCanvas, results);
+    charts.performance = await generatePerformanceChart(chartJSNodeCanvas, results, context);
 
     // Accessibility issues chart
     charts.accessibility = await generateAccessibilityChart(chartJSNodeCanvas, results);
@@ -54,7 +54,7 @@ async function generateCharts(results, trendData) {
     charts.content = await generateContentChart(chartJSNodeCanvas, results);
 
     // LLM suitability chart
-    charts.llm = await generateLLMChart(chartJSNodeCanvas, results);
+    charts.llm = await generateLLMChart(chartJSNodeCanvas, results, context);
 
     // Trend charts if historical data available
     if (trendData && trendData.timestamps.length >= 2) {
@@ -62,7 +62,7 @@ async function generateCharts(results, trendData) {
       charts.accessibilityTrend = await generateAccessibilityTrendChart(chartJSNodeCanvas, trendData);
     }
   } catch (error) {
-    global.auditcore.logger.warn('Error generating some charts:', error.message);
+    context.logger.warn('Error generating some charts:', error.message);
   }
 
   return charts;
@@ -71,7 +71,7 @@ async function generateCharts(results, trendData) {
 /**
  * Generate performance metrics chart
  */
-async function generatePerformanceChart(canvas, results) {
+async function generatePerformanceChart(canvas, results, context) {
   const metrics = results.performanceAnalysis || [];
 
   if (metrics.length === 0) return null;
@@ -89,10 +89,10 @@ async function generatePerformanceChart(canvas, results) {
         label: 'Performance Metrics (ms)',
         data: [avgLoadTime, avgLCP, avgFCP, avgTTI],
         backgroundColor: [
-          getStatusColor(avgLoadTime, global.auditcore.options.thresholds.performance.loadTime),
-          getStatusColor(avgLCP, global.auditcore.options.thresholds.performance.lcp),
-          getStatusColor(avgFCP, global.auditcore.options.thresholds.performance.fcp),
-          getStatusColor(avgTTI, global.auditcore.options.thresholds.performance.tti),
+          getStatusColor(avgLoadTime, context.options.thresholds.performance.loadTime),
+          getStatusColor(avgLCP, context.options.thresholds.performance.lcp),
+          getStatusColor(avgFCP, context.options.thresholds.performance.fcp),
+          getStatusColor(avgTTI, context.options.thresholds.performance.tti),
         ],
       }],
     },
@@ -278,7 +278,7 @@ async function generateContentChart(canvas, results) {
 /**
  * Generate LLM suitability chart
  */
-async function generateLLMChart(canvas, results) {
+async function generateLLMChart(canvas, results, context) {
   const metrics = results.llmMetrics || [];
 
   if (metrics.length === 0) return null;
@@ -294,8 +294,9 @@ async function generateLLMChart(canvas, results) {
         label: 'LLM Suitability Score',
         data: [avgServedScore, avgRenderedScore],
         backgroundColor: [
-          getStatusColor(avgServedScore, global.auditcore.options.thresholds.llm.minServedScore, true),
-          getStatusColor(avgRenderedScore, global.auditcore.options.thresholds.llm.minRenderedScore, true),
+        backgroundColor: [
+          getStatusColor(avgServedScore, context.options.thresholds.llm.minServedScore, true),
+          getStatusColor(avgRenderedScore, context.options.thresholds.llm.minRenderedScore, true),
         ],
       }],
     },
@@ -431,11 +432,11 @@ async function generateAccessibilityTrendChart(canvas, trendData) {
 /**
  * Build the complete HTML dashboard
  */
-function buildDashboardHTML(results, comparison, charts, trendData) {
+function buildDashboardHTML(results, comparison, charts, trendData, context) {
   const siteName = extractSiteName(results);
   const timestamp = new Date().toISOString();
 
-  const { agencyLogo, agencyName } = global.auditcore.options;
+  const { agencyLogo, agencyName } = context.options;
 
   const headerLogoHtml = agencyLogo
     ? `<img src="${agencyLogo}" alt="${agencyName || 'Agency'} Logo" style="max-height: 50px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;">`

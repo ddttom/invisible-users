@@ -23,12 +23,12 @@ import {
  * Generate General LLM Suitability Report
  * Shows both served and rendered scores with essential vs nice-to-have issues
  */
-export async function generateGeneralLLMReport(results, outputDir) {
+export async function generateGeneralLLMReport(results, outputDir, context) {
   try {
-    global.auditcore.logger.info('Generating general LLM suitability report');
+    context.logger.info('Generating general LLM suitability report');
 
     if (!results.llmMetrics || results.llmMetrics.length === 0) {
-      global.auditcore.logger.warn('No LLM metrics found, skipping general LLM report');
+      context.logger.warn('No LLM metrics found, skipping general LLM report');
       return;
     }
 
@@ -98,20 +98,20 @@ export async function generateGeneralLLMReport(results, outputDir) {
     });
 
     await csvWriter.writeRecords(records);
-    global.auditcore.logger.info(`General LLM suitability report generated: ${records.length} pages analyzed`);
+    context.logger.info(`General LLM suitability report generated: ${records.length} pages analyzed`);
 
     // Generate summary statistics
     const avgServedScore = records.reduce((sum, r) => sum + r.servedScore, 0) / records.length;
     const avgRenderedScore = records.reduce((sum, r) => sum + r.renderedScore, 0) / records.length;
     const totalEssentialIssues = records.reduce((sum, r) => sum + r.essentialIssuesCount, 0);
 
-    global.auditcore.logger.info(
+    context.logger.info(
       `LLM Summary: Avg served: ${Math.round(avgServedScore)}, `
       + `Avg rendered: ${Math.round(avgRenderedScore)}, `
       + `Total essential issues: ${totalEssentialIssues}`,
     );
   } catch (error) {
-    global.auditcore.logger.error('Error generating general LLM report:', error);
+    context.logger.error('Error generating general LLM report:', error);
     throw error;
   }
 }
@@ -120,12 +120,12 @@ export async function generateGeneralLLMReport(results, outputDir) {
  * Generate Frontend LLM Suitability Report
  * Separates served (form patterns) from rendered (dynamic features)
  */
-export async function generateFrontendLLMReport(results, outputDir) {
+export async function generateFrontendLLMReport(results, outputDir, context) {
   try {
-    global.auditcore.logger.info('Generating frontend LLM suitability report');
+    context.logger.info('Generating frontend LLM suitability report');
 
     if (!results.llmMetrics || results.llmMetrics.length === 0) {
-      global.auditcore.logger.warn('No LLM metrics found, skipping frontend LLM report');
+      context.logger.warn('No LLM metrics found, skipping frontend LLM report');
       return;
     }
 
@@ -214,9 +214,9 @@ export async function generateFrontendLLMReport(results, outputDir) {
     });
 
     await csvWriter.writeRecords(records);
-    global.auditcore.logger.info(`Frontend LLM suitability report generated: ${records.length} pages analyzed`);
+    context.logger.info(`Frontend LLM suitability report generated: ${records.length} pages analyzed`);
   } catch (error) {
-    global.auditcore.logger.error('Error generating frontend LLM report:', error);
+    context.logger.error('Error generating frontend LLM report:', error);
     throw error;
   }
 }
@@ -225,12 +225,12 @@ export async function generateFrontendLLMReport(results, outputDir) {
  * Generate Backend LLM Suitability Report
  * Focuses on served HTML only (HTTP codes, headers, structured data)
  */
-export async function generateBackendLLMReport(results, outputDir) {
+export async function generateBackendLLMReport(results, outputDir, context) {
   try {
-    global.auditcore.logger.info('Generating backend LLM suitability report');
+    context.logger.info('Generating backend LLM suitability report');
 
     if (!results.llmMetrics || results.llmMetrics.length === 0) {
-      global.auditcore.logger.warn('No LLM metrics found, skipping backend LLM report');
+      context.logger.warn('No LLM metrics found, skipping backend LLM report');
       return;
     }
 
@@ -356,20 +356,20 @@ export async function generateBackendLLMReport(results, outputDir) {
     });
 
     await csvWriter.writeRecords(records);
-    global.auditcore.logger.info(`Backend LLM suitability report generated: ${records.length} pages analyzed`);
+    context.logger.info(`Backend LLM suitability report generated: ${records.length} pages analyzed`);
 
     // Log summary
     const avgScore = records.reduce((sum, r) => sum + r.backendScore, 0) / records.length;
     const pagesWithSchemaOrg = records.filter((r) => r.hasSchemaOrg === 'Yes').length;
     const pagesWithHTTPS = records.filter((r) => r.hasHTTPS === 'Yes').length;
 
-    global.auditcore.logger.info(
+    context.logger.info(
       `Backend Summary: Avg score: ${Math.round(avgScore)}, `
       + `Schema.org: ${pagesWithSchemaOrg}/${records.length}, `
       + `HTTPS: ${pagesWithHTTPS}/${records.length}`,
     );
   } catch (error) {
-    global.auditcore.logger.error('Error generating backend LLM report:', error);
+    context.logger.error('Error generating backend LLM report:', error);
     throw error;
   }
 }

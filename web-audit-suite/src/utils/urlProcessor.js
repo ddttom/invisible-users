@@ -28,9 +28,11 @@ export class UrlProcessor {
   /**
    * Creates a new UrlProcessor instance.
    * @param {Object} options - Configuration options.
+   * @param {Object} context - Audit context.
    */
-  constructor(options) {
+  constructor(options, context) {
     this.options = { ...DEFAULT_CONFIG, ...options };
+    this.context = context;
     this.results = {
       performanceAnalysis: [],
       seoScores: [],
@@ -52,20 +54,20 @@ export class UrlProcessor {
     await throttle();
 
     // Log the initial state and input parameters
-    global.auditcore.logger.info(`Initiating processing for URL at index ${index + 1} of ${totalTests}: ${testUrl}`);
-    global.auditcore.logger.debug(`Last modified date: ${lastmod}, Configuration: ${JSON.stringify(this.options)}`);
+    this.context.logger.info(`Initiating processing for URL at index ${index + 1} of ${totalTests}: ${testUrl}`);
+    this.context.logger.debug(`Last modified date: ${lastmod}, Configuration: ${JSON.stringify(this.options)}`);
 
     // Early validation check
     if (!testUrl) {
-      global.auditcore.logger.error(`Undefined or invalid URL provided at index ${index + 1}`);
+      this.context.logger.error(`Undefined or invalid URL provided at index ${index + 1}`);
       this.results.failedUrls.push({ url: 'undefined', error: 'Invalid or undefined URL' });
       return;
     }
 
     for (let attempt = 1; attempt <= this.options.maxRetries; attempt++) {
       try {
-        global.auditcore.logger.debug(`Attempt ${attempt} to process ${testUrl}`);
-        const data = await getOrRenderData(testUrl, this.options, global.auditcore.logger);
+        this.context.logger.debug(`Attempt ${attempt} to process ${testUrl}`);
+        const data = await getOrRenderData(testUrl, this.options, this.context.logger);
 
         if (data.error) {
           throw new Error(data.error);
@@ -75,12 +77,12 @@ export class UrlProcessor {
           html, jsErrors, statusCode, headers, pageData,
         } = data;
 
-        global.auditcore.logger.debug(`Data retrieved for ${testUrl}. Status code: ${statusCode}`);
-        updateUrlMetrics(testUrl, this.options.baseUrl, html, statusCode, this.results, global.auditcore.logger);
-        updateResponseCodeMetrics(statusCode, this.results, global.auditcore.logger);
+        this.context.logger.debug(`Data retrieved for ${testUrl}. Status code: ${statusCode}`);
+        updateUrlMetrics(testUrl, this.options.baseUrl, html, statusCode, this.results, this.context.logger);
+        updateResponseCodeMetrics(statusCode, this.results, this.context.logger);
 
         if (statusCode === 200) {
-          global.auditcore.logger.info(`Successfully received 200 status for ${testUrl}`);
+          this.context.logger.info(`Successfully received 200 status for ${testUrl}`);
           await this.processSuccessfulResponse(testUrl, html, jsErrors, headers, pageData, lastmod, data);
         } else {
           const invalidUrl = {
@@ -88,17 +90,17 @@ export class UrlProcessor {
             reason: `Non-200 status code (${statusCode})`,
           };
           writeToInvalidUrlFile(invalidUrl);
-          global.auditcore.logger.warn(`Non-200 status code (${statusCode}) for ${testUrl}, skipping content analysis`);
+          this.context.logger.warn(`Non-200 status code (${statusCode}) for ${testUrl}, skipping content analysis`);
         }
 
         return; // Successfully processed, exit the retry loop
       } catch (error) {
-        global.auditcore.logger.error(`Error processing ${testUrl} (Attempt ${attempt}/${this.options.maxRetries}): ${error.message}`);
+        this.context.logger.error(`Error processing ${testUrl} (Attempt ${attempt}/${this.options.maxRetries}): ${error.message}`);
 
         if (attempt === this.options.maxRetries) {
           this.handleProcessingFailure(testUrl, error);
         } else {
-          global.auditcore.logger.info(`Retrying ${testUrl} in ${this.options.retryDelay / 1000} seconds...`);
+          this.context.logger.info(`Retrying ${testUrl} in ${this.options.retryDelay / 1000} seconds...`);
           await new Promise((resolve) => { setTimeout(resolve, this.options.retryDelay); });
         }
       }
@@ -116,7 +118,7 @@ export class UrlProcessor {
    * @returns {Promise<void>}
    */
   async processSuccessfulResponse(testUrl, html, jsErrors, headers, pageData, lastmod, cachedData = null) {
-    global.auditcore.logger.info(`Processing successful response for ${testUrl}`);
+    this.context.logger.info(`Processing successful response for ${testUrl}`);
     try {
       const cachedPa11y = cachedData ? cachedData.pa11y : null;
       const result = await processUrl(
@@ -139,20 +141,20 @@ export class UrlProcessor {
       );
 
       if (result.pa11ySuccess) {
-        global.auditcore.logger.info(`Pa11y analysis successful for ${result.url}`);
+        this.context.logger.info(`Pa11y analysis successful for ${result.url}`);
       }
 
       let performanceMetrics;
       if (cachedData && cachedData.performanceMetrics && Object.keys(cachedData.performanceMetrics).length > 0) {
-        global.auditcore.logger.info(`Using cached performance metrics for ${testUrl}`);
+        this.context.logger.info(`Using cached performance metrics for ${testUrl}`);
         performanceMetrics = cachedData.performanceMetrics;
       } else {
-        global.auditcore.logger.debug(`Analyzing performance for ${testUrl}`);
-        performanceMetrics = await analyzePerformance(testUrl, global.auditcore.logger);
+        this.context.logger.debug(`Analyzing performance for ${testUrl}`);
+        performanceMetrics = await analyzePerformance(testUrl, this.context.logger);
       }
       this.results.performanceAnalysis.push({ url: testUrl, lastmod, ...performanceMetrics });
 
-      global.auditcore.logger.debug(`Calculating SEO score for ${testUrl}`);
+      this.context.logger.debug(`Calculating SEO score for ${testUrl}`);
       const seoScore = calculateSeoScore({
         ...pageData, testUrl, jsErrors, performanceMetrics,
       });
@@ -167,12 +169,12 @@ export class UrlProcessor {
           seoScore,
         };
         await setCachedData(testUrl, newCacheData);
-        global.auditcore.logger.debug(`Updated cache with full analysis results for ${testUrl}`);
+        this.context.logger.debug(`Updated cache with full analysis results for ${testUrl}`);
       }
 
-      global.auditcore.logger.info(`Successfully processed ${testUrl}`);
+      this.context.logger.info(`Successfully processed ${testUrl}`);
     } catch (error) {
-      global.auditcore.logger.error(`Error in processSuccessfulResponse for ${testUrl}: ${error.message}`);
+      this.context.logger.error(`Error in processSuccessfulResponse for ${testUrl}: ${error.message}`);
       this.handleProcessingFailure(testUrl, error);
     }
   }
@@ -188,7 +190,7 @@ export class UrlProcessor {
       reason: error.message,
     };
     writeToInvalidUrlFile(invalidUrl);
-    global.auditcore.logger.error(`Failed to process ${testUrl} after ${this.options.maxRetries} attempts. Last error: ${error.message}`);
+    this.context.logger.error(`Failed to process ${testUrl} after ${this.options.maxRetries} attempts. Last error: ${error.message}`);
     this.results.failedUrls.push({ url: testUrl || 'undefined', error: error.message });
   }
 
@@ -245,7 +247,7 @@ export class UrlProcessor {
           priority: 0.5,
         });
       } catch (error) {
-        global.auditcore.logger.debug(`Invalid URL found: ${linkUrl}`);
+        this.context.logger.debug(`Invalid URL found: ${linkUrl}`);
       }
     }
 
@@ -259,11 +261,11 @@ export class UrlProcessor {
    */
   async processUrlsSequentially(urls) {
     if (!Array.isArray(urls) || urls.length === 0) {
-      global.auditcore.logger.warn('No URLs to process');
+      this.context.logger.warn('No URLs to process');
       return [];
     }
 
-    global.auditcore.logger.info(`Processing ${urls.length} URLs`);
+    this.context.logger.info(`Processing ${urls.length} URLs`);
     const totalTests = urls.length;
 
     for (let i = 0; i < totalTests; i++) {
@@ -289,11 +291,11 @@ export class UrlProcessor {
 
     // Recursive mode: queue-based processing
     if (!Array.isArray(urls) || urls.length === 0) {
-      global.auditcore.logger.warn('No URLs to process');
+      this.context.logger.warn('No URLs to process');
       return [];
     }
 
-    global.auditcore.logger.info(`Starting recursive crawling with ${urls.length} initial URLs`);
+    this.context.logger.info(`Starting recursive crawling with ${urls.length} initial URLs`);
 
     const urlQueue = [...urls]; // Copy initial URLs
     const processedUrls = new Set(); // Track processed URLs
@@ -301,7 +303,7 @@ export class UrlProcessor {
     const baseUrl = urls[0]?.url ? new URL(urls[0].url).origin : null;
 
     if (!baseUrl) {
-      global.auditcore.logger.error('Could not determine base URL for recursive crawling');
+      this.context.logger.error('Could not determine base URL for recursive crawling');
       return this.processUrlsSequentially(urls);
     }
 
@@ -310,7 +312,7 @@ export class UrlProcessor {
     while (urlQueue.length > 0) {
       // Check if we've reached the absolute limit (if set)
       if (this.options.limit > 0 && processedUrls.size >= this.options.limit) {
-        global.auditcore.logger.info(`Reached configured limit of ${this.options.limit} URLs. Stopping recursive crawl.`);
+        this.context.logger.info(`Reached configured limit of ${this.options.limit} URLs. Stopping recursive crawl.`);
         break;
       }
 
@@ -339,14 +341,14 @@ export class UrlProcessor {
       if (discoveredUrls.length > 0) {
         const newUrls = discoveredUrls.filter((u) => !queuedUrls.has(u.url));
         if (newUrls.length > 0) {
-          global.auditcore.logger.info(`Found ${newUrls.length} new URLs to process from ${url} (${discoveredUrls.length - newUrls.length} already queued)`);
+          this.context.logger.info(`Found ${newUrls.length} new URLs to process from ${url} (${discoveredUrls.length - newUrls.length} already queued)`);
           newUrls.forEach((u) => queuedUrls.add(u.url));
           urlQueue.push(...newUrls);
         }
       }
     }
 
-    global.auditcore.logger.info(`Recursive crawling complete. Processed ${processedUrls.size} total URLs`);
+    this.context.logger.info(`Recursive crawling complete. Processed ${processedUrls.size} total URLs`);
     return this.results;
   }
 }

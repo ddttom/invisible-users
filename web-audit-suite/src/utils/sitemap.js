@@ -49,9 +49,9 @@ const gunzipAsync = promisify(gunzip);
  * // Returns array of processed URLs
  * const urls = await getUrlsFromSitemap('https://example.com/sitemap.xml');
  */
-export async function getUrlsFromSitemap(url, limit = -1) {
+export async function getUrlsFromSitemap(url, limit = -1, context) {
   try {
-    global.auditcore.logger.info(`Fetching URL: ${url}`);
+    context.logger.info(`Fetching URL: ${url}`);
 
     // First check if URL is a sitemap
     const isSitemap = url.toLowerCase().endsWith('sitemap.xml');
@@ -80,39 +80,40 @@ export async function getUrlsFromSitemap(url, limit = -1) {
           };
         },
         'URL fetch',
+        context // Pass context
       );
 
       const contentType = response.headers['content-type'];
       content = response.data;
 
       if (contentType?.includes('gzip')) {
-        global.auditcore.logger.debug('Processing gzipped content');
+        context.logger.debug('Processing gzipped content');
         content = await gunzipAsync(content);
       }
 
       content = content.toString('utf-8');
     } catch (error) {
       if (error.message.includes('403') && !isSitemap) {
-        global.auditcore.logger.info('403 Forbidden - Falling back to Puppeteer');
-        return await processWithPuppeteer(url, limit);
+        context.logger.info('403 Forbidden - Falling back to Puppeteer');
+        return await processWithPuppeteer(url, limit, context);
       }
       throw error;
     }
 
-    global.auditcore.logger.debug(`Content length: ${content.length}`);
+    context.logger.debug(`Content length: ${content.length}`);
 
     let urls = [];
     if (isSitemap && isValidXML(content)) {
-      global.auditcore.logger.info('Processing as XML sitemap');
+      context.logger.info('Processing as XML sitemap');
       const parsed = await parseStringPromise(content);
-      urls = await processSitemapContent(parsed, limit);
+      urls = await processSitemapContent(parsed, limit, context);
     } else {
-      global.auditcore.logger.info('Processing as HTML page');
-      urls = await processHtmlContent(content, url, limit);
+      context.logger.info('Processing as HTML page');
+      urls = await processHtmlContent(content, url, limit, context);
 
       if (urls.length === 0) {
-        global.auditcore.logger.info('No URLs found with JSDOM, falling back to Puppeteer');
-        urls = await processWithPuppeteer(url, limit);
+        context.logger.info('No URLs found with JSDOM, falling back to Puppeteer');
+        urls = await processWithPuppeteer(url, limit, context);
       }
     }
 
@@ -122,7 +123,7 @@ export async function getUrlsFromSitemap(url, limit = -1) {
       const llmsTxtUrl = `${inputUrlObj.origin}/llms.txt`;
       const exists = urls.some((u) => u.url === llmsTxtUrl);
       if (!exists) {
-        global.auditcore.logger.info(`Automatically adding ${llmsTxtUrl} to processing list`);
+        context.logger.info(`Automatically adding ${llmsTxtUrl} to processing list`);
         urls.push({
           url: llmsTxtUrl,
           lastmod: new Date().toISOString(),
@@ -131,16 +132,16 @@ export async function getUrlsFromSitemap(url, limit = -1) {
         });
       }
     } catch (error) {
-      global.auditcore.logger.debug(`Could not add llms.txt: ${error.message}`);
+      context.logger.debug(`Could not add llms.txt: ${error.message}`);
     }
 
     // Filter and validate URLs
-    const validUrls = urls.filter((urlObj) => isValidUrl(urlObj.url, url));
-    global.auditcore.logger.info(`Found ${validUrls.length} valid URLs out of ${urls.length} total URLs`);
+    const validUrls = (urls || []).filter((urlObj) => isValidUrl(urlObj.url, url));
+    context.logger.info(`Found ${validUrls.length} valid URLs out of ${urls.length} total URLs`);
 
     return validUrls;
   } catch (error) {
-    global.auditcore.logger.error(`Error fetching ${url}:`, error);
+    context.logger.error(`Error fetching ${url}:`, error);
     throw error;
   }
 }
@@ -159,13 +160,13 @@ export async function getUrlsFromSitemap(url, limit = -1) {
  * @returns {Promise<Array>} Array of processed URLs
  * @throws {Error} If Puppeteer processing fails
  */
-async function processWithPuppeteer(baseUrl, limit) {
+async function processWithPuppeteer(baseUrl, limit, context) {
   return executePuppeteerOperation(async (page) => {
-    global.auditcore.logger.info(`Processing ${baseUrl} with Puppeteer`);
+    context.logger.info(`Processing ${baseUrl} with Puppeteer`);
 
     try {
       // Create results directory if it doesn't exist
-      await fs.mkdir(global.auditcore.options.output, { recursive: true });
+      await fs.mkdir(context.options.output, { recursive: true });
 
       // Set up request interception to wait for all resources
       await page.setRequestInterception(true);
@@ -175,7 +176,7 @@ async function processWithPuppeteer(baseUrl, limit) {
       const requestHandler = (request) => {
         // Skip font requests to prevent hanging
         if (request.resourceType() === 'font') {
-          global.auditcore.logger.debug(`Skipping font request: ${request.url()}`);
+          context.logger.debug(`Skipping font request: ${request.url()}`);
           request.abort();
           return;
         }
@@ -201,36 +202,36 @@ async function processWithPuppeteer(baseUrl, limit) {
       // Navigate to the page and wait for network activity
       await page.goto(baseUrl, {
         waitUntil: 'networkidle2',
-        timeout: 60000,
+        timeout: 20000, // Give it some time
       });
 
       // Take a screenshot for debugging
-      const screenshotPath = path.join(global.auditcore.options.output, 'screenshot.png');
+      const screenshotPath = path.join(context.options.output, 'screenshot.png');
       await page.screenshot({ path: screenshotPath, fullPage: true });
-      global.auditcore.logger.info(`Saved screenshot to: ${screenshotPath}`);
+      context.logger.info(`Saved screenshot to: ${screenshotPath}`);
 
       // Wait for additional network activity with timeout
       const maxWaitTime = 10000; // 10 seconds
       const startTime = Date.now();
       while (pendingRequests.size > 0 && Date.now() - startTime < maxWaitTime) {
         await new Promise((resolve) => { setTimeout(resolve, 1000); });
-        global.auditcore.logger.debug(`Waiting for ${pendingRequests.size} pending requests...`);
+        context.logger.debug(`Waiting for ${pendingRequests.size} pending requests...`);
 
         // Log details of pending requests
         if (pendingRequests.size > 0) {
           const pendingUrls = Array.from(pendingRequests).map((req) => req.url());
-          global.auditcore.logger.debug(`Pending requests: ${pendingUrls.join(', ')}`);
+          context.logger.debug(`Pending requests: ${pendingUrls.join(', ')}`);
         }
       }
 
       // If there are still pending requests, abort them
       if (pendingRequests.size > 0) {
-        global.auditcore.logger.warn(`Aborting ${pendingRequests.size} pending requests after timeout`);
+        context.logger.warn(`Aborting ${pendingRequests.size} pending requests after timeout`);
         for (const request of pendingRequests) {
           try {
             request.abort('timedout');
           } catch (error) {
-            global.auditcore.logger.debug(`Error aborting request: ${error.message}`);
+            context.logger.debug(`Error aborting request: ${error.message}`);
           }
         }
       }
@@ -253,7 +254,7 @@ async function processWithPuppeteer(baseUrl, limit) {
         stylesheetsCount: document.styleSheets.length,
         iframesCount: document.querySelectorAll('iframe').length,
       }));
-      global.auditcore.logger.debug('Page state:', pageState);
+      context.logger.debug('Page state:', pageState);
 
       // Get the rendered HTML content using multiple methods
       let content = '';
@@ -269,10 +270,10 @@ async function processWithPuppeteer(baseUrl, limit) {
           content = await page.evaluate(() => document.body.innerHTML);
         }
       } catch (error) {
-        global.auditcore.logger.error('Error extracting HTML content:', error);
+        context.logger.error('Error extracting HTML content:', error);
       }
 
-      global.auditcore.logger.debug('Rendered HTML content:', `${content.substring(0, 1000)}...`);
+      context.logger.debug('Rendered HTML content:', `${content.substring(0, 1000)}...`);
 
       // Extract links using Puppeteer's DOM access - only <a> tags with href
       const links = await page.evaluate((bUrl, lim) => {
@@ -321,7 +322,7 @@ async function processWithPuppeteer(baseUrl, limit) {
         return results;
       }, baseUrl, limit);
 
-      global.auditcore.logger.debug(`Found ${links.length} links using Puppeteer`);
+      context.logger.debug(`Found ${links.length} links using Puppeteer`);
 
       // Process the extracted links
       const urls = links.map((link) => ({
@@ -332,13 +333,13 @@ async function processWithPuppeteer(baseUrl, limit) {
         text: link.text,
       }));
 
-      global.auditcore.logger.info(`Found ${urls.length} internal URLs using Puppeteer`);
+      context.logger.info(`Found ${urls.length} internal URLs using Puppeteer`);
       return urls;
     } catch (error) {
-      global.auditcore.logger.error('Error in Puppeteer processing:', error);
+      context.logger.error('Error in Puppeteer processing:', error);
       throw error;
     }
-  }, 'Puppeteer URL processing');
+  }, 'Puppeteer URL processing', {}, context);
 }
 
 /**
@@ -350,35 +351,35 @@ async function processWithPuppeteer(baseUrl, limit) {
  * @param {number} limit - Maximum number of URLs to return
  * @returns {Promise<Array>} Array of processed URLs
  */
-async function processSitemapContent(parsed, limit) {
+async function processSitemapContent(parsed, limit, context) {
   const urls = [];
 
-  global.auditcore.logger.info('Processing sitemap content');
+  context.logger.info('Processing sitemap content');
 
   if (parsed.sitemapindex) {
-    global.auditcore.logger.info('Found sitemap index');
+    context.logger.info('Found sitemap index');
     const sitemapUrls = parsed.sitemapindex.sitemap.map((sitemap) => sitemap.loc[0]);
-    global.auditcore.logger.debug(`Found ${sitemapUrls.length} sitemaps in index`);
+    context.logger.debug(`Found ${sitemapUrls.length} sitemaps in index`);
 
     for (const sitemapUrl of sitemapUrls) {
-      global.auditcore.logger.info(`Processing sub-sitemap: ${sitemapUrl}`);
-      const subUrls = await getUrlsFromSitemap(sitemapUrl);
+      context.logger.info(`Processing sub-sitemap: ${sitemapUrl}`);
+      const subUrls = await getUrlsFromSitemap(sitemapUrl, -1, context); // Verify recursion params
       urls.push(...subUrls);
       if (limit > 0 && urls.length >= limit) {
-        global.auditcore.logger.info(`Reached URL limit of ${limit}`);
+        context.logger.info(`Reached URL limit of ${limit}`);
         break;
       }
     }
   } else if (parsed.urlset) {
-    global.auditcore.logger.info('Processing single sitemap');
-    const extractedUrls = extractUrlsFromUrlset(parsed.urlset);
-    global.auditcore.logger.debug(`Extracted ${extractedUrls.length} URLs from sitemap`);
+    context.logger.info('Processing single sitemap');
+    const extractedUrls = extractUrlsFromUrlset(parsed.urlset, context);
+    context.logger.debug(`Extracted ${extractedUrls.length} URLs from sitemap`);
     urls.push(...extractedUrls);
   } else {
-    global.auditcore.logger.warn('Invalid sitemap format - no urlset or sitemapindex found');
+    context.logger.warn('Invalid sitemap format - no urlset or sitemapindex found');
   }
 
-  global.auditcore.logger.info(`Total URLs found: ${urls.length}`);
+  context.logger.info(`Total URLs found: ${urls.length}`);
   return limit > 0 ? urls.slice(0, limit) : urls;
 }
 
@@ -392,13 +393,13 @@ async function processSitemapContent(parsed, limit) {
  * @param {number} limit - Maximum number of URLs to return
  * @returns {Promise<Array>} Array of processed URLs
  */
-async function processHtmlContent(content, baseUrl, limit) {
+async function processHtmlContent(content, baseUrl, limit, context) {
   if (!content || !baseUrl) {
-    global.auditcore.logger.error('Missing content or baseUrl for HTML processing');
+    context.logger.error('Missing content or baseUrl for HTML processing');
     return [];
   }
 
-  global.auditcore.logger.info(`Processing HTML content from: ${baseUrl}`);
+  context.logger.info(`Processing HTML content from: ${baseUrl}`);
 
   const dom = new JSDOM(content);
   const { document } = dom.window;
@@ -406,7 +407,7 @@ async function processHtmlContent(content, baseUrl, limit) {
   const baseUrlObj = new URL(baseUrl);
 
   const links = document.querySelectorAll('a[href]');
-  global.auditcore.logger.debug(`Found ${links.length} total links`);
+  context.logger.debug(`Found ${links.length} total links`);
 
   for (const link of links) {
     try {
@@ -416,20 +417,20 @@ async function processHtmlContent(content, baseUrl, limit) {
       }
 
       const href = link.getAttribute('href');
-      global.auditcore.logger.debug(`Checking link href: ${href}`);
+      context.logger.debug(`Checking link href: ${href}`);
 
       // eslint-disable-next-line no-script-url
       if (!href || href.startsWith('#') || href.startsWith('javascript:')) {
-        global.auditcore.logger.debug(`Skipping invalid href: ${href}`);
+        context.logger.debug(`Skipping invalid href: ${href}`);
         continue;
       }
 
       const url = new URL(href, baseUrl);
-      global.auditcore.logger.debug(`Resolved URL: ${url.href}`);
-      global.auditcore.logger.debug(`Comparing hostname: ${url.hostname} vs ${baseUrlObj.hostname}`);
+      context.logger.debug(`Resolved URL: ${url.href}`);
+      context.logger.debug(`Comparing hostname: ${url.hostname} vs ${baseUrlObj.hostname}`);
 
       if (url.hostname === baseUrlObj.hostname) {
-        global.auditcore.logger.debug(`Found internal URL: ${url.href}`);
+        context.logger.debug(`Found internal URL: ${url.href}`);
         urls.push({
           url: url.href,
           lastmod: new Date().toISOString(),
@@ -437,36 +438,29 @@ async function processHtmlContent(content, baseUrl, limit) {
           priority: 0.7,
         });
       } else {
-        global.auditcore.logger.debug(`Skipping external URL: ${url.href}`);
+        context.logger.debug(`Skipping external URL: ${url.href}`);
       }
     } catch (error) {
-      global.auditcore.logger.debug(`Error processing link: ${error.message}`);
+      context.logger.debug(`Error processing link: ${error.message}`);
     }
   }
 
-  global.auditcore.logger.info(`Found ${urls.length} internal URLs`);
-  global.auditcore.logger.debug('Internal URLs:', urls.map((u) => u.url).join('\n'));
+  context.logger.info(`Found ${urls.length} internal URLs`);
+  context.logger.debug('Internal URLs:', urls.map((u) => u.url).join('\n'));
 
   return urls;
 }
 
 /**
  * Extract URLs from sitemap urlset
- *
- * @param {Object} urlset - Parsed urlset object
- * @returns {Array} Array of extracted URLs containing:
- *   - url: Full URL
- *   - lastmod: Last modified date
- *   - changefreq: Change frequency
- *   - priority: URL priority
  */
-function extractUrlsFromUrlset(urlset) {
+function extractUrlsFromUrlset(urlset, context) {
   if (!urlset?.url) {
-    global.auditcore.logger.warn('No URLs found in urlset');
+    context.logger.warn('No URLs found in urlset');
     return [];
   }
 
-  global.auditcore.logger.debug(`Processing ${urlset.url.length} URLs from urlset`);
+  context.logger.debug(`Processing ${urlset.url.length} URLs from urlset`);
 
   const extractedUrls = urlset.url
     .filter((url) => {
@@ -479,8 +473,8 @@ function extractUrlsFromUrlset(urlset) {
       const isAllowedVariant = ['en', 'us'].includes(pathParts[0]);
 
       // Skip if URL has a language variant and --include-all-languages is not set
-      if (hasLanguageVariant && !isAllowedVariant && !global.auditcore.options.includeAllLanguages) {
-        global.auditcore.logger.debug(`Skipping URL with language variant: ${url.loc[0]}`);
+      if (hasLanguageVariant && !isAllowedVariant && !context.options.includeAllLanguages) {
+        context.logger.debug(`Skipping URL with language variant: ${url.loc[0]}`);
         return false;
       }
 
@@ -493,18 +487,14 @@ function extractUrlsFromUrlset(urlset) {
       priority: url.priority ? parseFloat(url.priority[0]) : null,
     }));
 
-  global.auditcore.logger.debug(`Successfully extracted ${extractedUrls.length} valid URLs`);
+  context.logger.debug(`Successfully extracted ${extractedUrls.length} valid URLs`);
   return extractedUrls;
 }
 
 /**
  * Process sitemap URLs with the URL processor
- *
- * @param {Array} urls - URLs to process
- * @param {boolean} recursive - Whether to recursively process discovered URLs
- * @returns {Promise<Array>} Processed URLs
  */
-export async function processSitemapUrls(urls, recursive = false) {
-  const processor = new UrlProcessor(global.auditcore.options);
+export async function processSitemapUrls(urls, recursive = false, context) {
+  const processor = new UrlProcessor(context.options, context); // Pass context
   return processor.processUrls(urls, recursive);
 }

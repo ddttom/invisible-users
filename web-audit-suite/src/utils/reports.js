@@ -22,71 +22,74 @@ import { compareWithPrevious, generateTrendData } from './historicalComparison.j
 /**
  * Main function to generate all reports
  */
-export async function generateReports(results, urls, outputDir) {
+/**
+ * Main function to generate all reports
+ */
+export async function generateReports(results, urls, outputDir, context) {
   try {
     if (!results) {
       throw new Error('Invalid results structure');
     }
 
-    global.auditcore.logger.info('Starting report generation');
+    context.logger.info('Starting report generation');
 
     // Generate standard reports
-    await generateSeoReport(results, outputDir);
-    await generatePerformanceReport(results, outputDir);
-    await generateSeoScores(results, outputDir);
-    await generateAccessibilityReport(results, outputDir);
-    await generateImageOptimizationReport(results, outputDir);
-    await generateLinkAnalysisReport(results, outputDir);
-    await generateContentQualityReport(results, outputDir);
-    await generateSecurityReport(results, outputDir);
-    await generateGeneralLLMReport(results, outputDir);
-    await generateFrontendLLMReport(results, outputDir);
-    await generateBackendLLMReport(results, outputDir);
+    await generateSeoReport(results, outputDir, context);
+    await generatePerformanceReport(results, outputDir, context);
+    await generateSeoScores(results, outputDir, context);
+    await generateAccessibilityReport(results, outputDir, context);
+    await generateImageOptimizationReport(results, outputDir, context);
+    await generateLinkAnalysisReport(results, outputDir, context);
+    await generateContentQualityReport(results, outputDir, context);
+    await generateSecurityReport(results, outputDir, context);
+    await generateGeneralLLMReport(results, outputDir, context);
+    await generateFrontendLLMReport(results, outputDir, context);
+    await generateBackendLLMReport(results, outputDir, context);
 
     // Check if enhanced features are enabled
-    const { options } = global.auditcore;
+    const { options } = context;
     let comparison = null;
     let trendData = null;
 
     // Generate comparison with previous run if historical tracking is enabled
     if (options.enableHistory) {
       try {
-        comparison = await compareWithPrevious(results, outputDir);
+        comparison = await compareWithPrevious(results, outputDir, context);
         if (comparison) {
-          global.auditcore.logger.info('Generated comparison with previous run');
+          context.logger.info('Generated comparison with previous run');
         }
       } catch (error) {
-        global.auditcore.logger.warn('Could not generate comparison:', error.message);
+        context.logger.warn('Could not generate comparison:', error.message);
       }
 
       // Generate trend data from historical runs
       try {
-        trendData = await generateTrendData(outputDir);
+        trendData = await generateTrendData(outputDir, context);
         if (trendData) {
-          global.auditcore.logger.info(`Generated trend data from ${trendData.timestamps.length} historical runs`);
+          context.logger.info(`Generated trend data from ${trendData.timestamps.length} historical runs`);
         }
       } catch (error) {
-        global.auditcore.logger.warn('Could not generate trend data:', error.message);
+        context.logger.warn('Could not generate trend data:', error.message);
       }
     }
 
     // Generate executive summary if enabled
     if (options.generateExecutiveSummary) {
       try {
-        await generateExecutiveSummary(results, outputDir, comparison);
-        global.auditcore.logger.info('Executive summary generated');
+        await generateExecutiveSummary(results, outputDir, comparison, context);
+        context.logger.info('Executive summary generated');
       } catch (error) {
-        global.auditcore.logger.error('Error generating executive summary:', error);
+        context.logger.error('Error generating executive summary:', error);
       }
     }
 
     // Generate HTML dashboard if enabled
     if (options.generateDashboard) {
       try {
-        await generateDashboard(results, outputDir, comparison, trendData);
-        global.auditcore.logger.info('HTML dashboard generated');
+        await generateDashboard(results, outputDir, comparison, trendData, context);
+        context.logger.info('HTML dashboard generated');
       } catch (error) {
-        global.auditcore.logger.error('Error generating dashboard:', error);
+        context.logger.error('Error generating dashboard:', error);
       }
     }
 
@@ -96,9 +99,9 @@ export async function generateReports(results, urls, outputDir) {
       JSON.stringify(results, null, 2),
     );
 
-    global.auditcore.logger.info('All reports generated successfully');
+    context.logger.info('All reports generated successfully');
   } catch (error) {
-    global.auditcore.logger.error('Error generating reports:', error);
+    context.logger.error('Error generating reports:', error);
     throw error;
   }
 }

@@ -12,9 +12,10 @@ import { analyzeContentQuality } from './contentAnalysis.js';
 /**
  * Helper function to check if URL should be included based on language variants
  * @param {string} url - URL to check
+ * @param {Object} context - Audit context
  * @returns {boolean} True if URL should be included
  */
-function shouldIncludeUrl(url) {
+function shouldIncludeUrl(url, context) {
   try {
     const urlObj = new URL(url);
     const pathParts = urlObj.pathname.split('/').filter(Boolean);
@@ -22,7 +23,7 @@ function shouldIncludeUrl(url) {
     const isAllowedVariant = ['en', 'us'].includes(pathParts[0]);
 
     // Include all URLs if --include-all-languages is set
-    if (global.auditcore.options.includeAllLanguages) {
+    if (context.options.includeAllLanguages) {
       return true;
     }
 
@@ -33,7 +34,7 @@ function shouldIncludeUrl(url) {
 
     return true;
   } catch (error) {
-    global.auditcore.logger.debug(`Error checking URL ${url}:`, error);
+    context.logger.debug(`Error checking URL ${url}:`, error);
     return true;
   }
 }
@@ -47,7 +48,7 @@ function shouldIncludeUrl(url) {
  * await generateSeoReport(results, './reports');
  * // Creates seo_report.csv with URL, title, description, and SEO metrics
  */
-export async function generateSeoReport(results, outputDir) {
+export async function generateSeoReport(results, outputDir, context) {
   const csvWriter = createObjectCsvWriter({
     path: path.join(outputDir, 'seo_report.csv'),
     header: [
@@ -70,7 +71,7 @@ export async function generateSeoReport(results, outputDir) {
   });
 
   const reportData = results.contentAnalysis
-    ?.filter((page) => shouldIncludeUrl(page.url))
+    ?.filter((page) => shouldIncludeUrl(page.url, context))
     ?.map((page) => ({
       url: page.url || '',
       title: page.title || '',
@@ -90,7 +91,7 @@ export async function generateSeoReport(results, outputDir) {
     })) || [];
 
   await csvWriter.writeRecords(reportData);
-  global.auditcore.logger.info(`SEO report generated with ${reportData.length} records`);
+  context.logger.info(`SEO report generated with ${reportData.length} records`);
 }
 
 /**
@@ -102,7 +103,7 @@ export async function generateSeoReport(results, outputDir) {
  * await generatePerformanceReport(results, './reports');
  * // Creates performance_analysis.csv with Core Web Vitals metrics
  */
-export async function generatePerformanceReport(results, outputDir) {
+export async function generatePerformanceReport(results, outputDir, context) {
   const csvWriter = createObjectCsvWriter({
     path: path.join(outputDir, 'performance_analysis.csv'),
     header: [
@@ -118,7 +119,7 @@ export async function generatePerformanceReport(results, outputDir) {
   });
 
   const reportData = results.performanceAnalysis
-    ?.filter((page) => shouldIncludeUrl(page.url))
+    ?.filter((page) => shouldIncludeUrl(page.url, context))
     ?.map((page) => ({
       url: page.url || '',
       loadTime: Math.round(page.loadTime || 0),
@@ -131,7 +132,7 @@ export async function generatePerformanceReport(results, outputDir) {
     })) || [];
 
   await csvWriter.writeRecords(reportData);
-  global.auditcore.logger.info(`Performance report generated with ${reportData.length} records`);
+  context.logger.info(`Performance report generated with ${reportData.length} records`);
 }
 
 /**
@@ -143,7 +144,7 @@ export async function generatePerformanceReport(results, outputDir) {
  * await generateSeoScores(results, './reports');
  * // Creates seo_scores.csv with detailed SEO scoring breakdown
  */
-export async function generateSeoScores(results, outputDir) {
+export async function generateSeoScores(results, outputDir, context) {
   const csvWriter = createObjectCsvWriter({
     path: path.join(outputDir, 'seo_scores.csv'),
     header: [
@@ -161,7 +162,7 @@ export async function generateSeoScores(results, outputDir) {
   });
 
   const reportData = results.seoScores
-    ?.filter((page) => shouldIncludeUrl(page.url))
+    ?.filter((page) => shouldIncludeUrl(page.url, context))
     ?.map((page) => ({
       url: page.url || '',
       overallScore: formatScore(page.score),
@@ -176,7 +177,7 @@ export async function generateSeoScores(results, outputDir) {
     })) || [];
 
   await csvWriter.writeRecords(reportData);
-  global.auditcore.logger.info(`SEO scores report generated with ${reportData.length} records`);
+  context.logger.info(`SEO scores report generated with ${reportData.length} records`);
 }
 
 /**
@@ -188,14 +189,14 @@ export async function generateSeoScores(results, outputDir) {
  * await generateAccessibilityReport(results, './reports');
  * // Creates accessibility_report.csv with WCAG compliance metrics
  */
-export async function generateAccessibilityReport(results, outputDir) {
-  global.auditcore.logger.debug('Starting accessibility report generation');
+export async function generateAccessibilityReport(results, outputDir, context) {
+  context.logger.debug('Starting accessibility report generation');
 
   const csvWriter = createObjectCsvWriter({
     path: path.join(outputDir, 'accessibility_report.csv'),
     header: [
       { id: 'url', title: 'URL' },
-      { id: 'totalIssues', title: 'Total Issues' },
+      { id: 'totalIssues', title: 'TotalIssues' },
       { id: 'criticalIssues', title: 'Critical Issues' },
       { id: 'seriousIssues', title: 'Serious Issues' },
       { id: 'moderateIssues', title: 'Moderate Issues' },
@@ -212,7 +213,7 @@ export async function generateAccessibilityReport(results, outputDir) {
 
   // Get all URLs from content analysis to ensure we have a complete list
   const allUrls = new Set(results.contentAnalysis
-    ?.filter((page) => shouldIncludeUrl(page.url))
+    ?.filter((page) => shouldIncludeUrl(page.url, context))
     ?.map((page) => page.url) || []);
 
   const reportData = Array.from(allUrls).map((url) => {
@@ -237,7 +238,7 @@ export async function generateAccessibilityReport(results, outputDir) {
   });
 
   await csvWriter.writeRecords(reportData);
-  global.auditcore.logger.info(`Accessibility report generated with ${reportData.length} records`);
+  context.logger.info(`Accessibility report generated with ${reportData.length} records`);
 }
 
 /**
@@ -249,7 +250,7 @@ export async function generateAccessibilityReport(results, outputDir) {
  * await generateImageOptimizationReport(results, './reports');
  * // Creates image_optimization.csv with image analysis metrics
  */
-export async function generateImageOptimizationReport(results, outputDir) {
+export async function generateImageOptimizationReport(results, outputDir, context) {
   const csvWriter = createObjectCsvWriter({
     path: path.join(outputDir, 'image_optimization.csv'),
     header: [
@@ -270,7 +271,7 @@ export async function generateImageOptimizationReport(results, outputDir) {
 
   const reportData = [];
   results.contentAnalysis
-    ?.filter((page) => shouldIncludeUrl(page.url))
+    ?.filter((page) => shouldIncludeUrl(page.url, context))
     ?.forEach((page) => {
       page.images?.forEach((image) => {
         const analysis = analyzeImage(image);
@@ -292,7 +293,7 @@ export async function generateImageOptimizationReport(results, outputDir) {
     });
 
   await csvWriter.writeRecords(reportData);
-  global.auditcore.logger.info(`Image optimization report generated with ${reportData.length} records`);
+  context.logger.info(`Image optimization report generated with ${reportData.length} records`);
 }
 
 /**
@@ -304,7 +305,7 @@ export async function generateImageOptimizationReport(results, outputDir) {
  * await generateLinkAnalysisReport(results, './reports');
  * // Creates link_analysis.csv with internal/external link metrics
  */
-export async function generateLinkAnalysisReport(results, outputDir) {
+export async function generateLinkAnalysisReport(results, outputDir, context) {
   const csvWriter = createObjectCsvWriter({
     path: path.join(outputDir, 'link_analysis.csv'),
     header: [
@@ -324,7 +325,7 @@ export async function generateLinkAnalysisReport(results, outputDir) {
 
   const reportData = [];
   results.internalLinks
-    ?.filter((page) => shouldIncludeUrl(page.url))
+    ?.filter((page) => shouldIncludeUrl(page.url, context))
     ?.forEach((page) => {
       page.links?.forEach((link) => {
         const analysis = analyzeLinkQuality(link);
@@ -345,7 +346,7 @@ export async function generateLinkAnalysisReport(results, outputDir) {
     });
 
   await csvWriter.writeRecords(reportData);
-  global.auditcore.logger.info(`Link analysis report generated with ${reportData.length} records`);
+  context.logger.info(`Link analysis report generated with ${reportData.length} records`);
 }
 
 /**
@@ -357,7 +358,7 @@ export async function generateLinkAnalysisReport(results, outputDir) {
  * await generateContentQualityReport(results, './reports');
  * // Creates content_quality.csv with readability and content metrics
  */
-export async function generateContentQualityReport(results, outputDir) {
+export async function generateContentQualityReport(results, outputDir, context) {
   const csvWriter = createObjectCsvWriter({
     path: path.join(outputDir, 'content_quality.csv'),
     header: [
@@ -373,7 +374,7 @@ export async function generateContentQualityReport(results, outputDir) {
   });
 
   const reportData = results.contentAnalysis
-    ?.filter((page) => shouldIncludeUrl(page.url))
+    ?.filter((page) => shouldIncludeUrl(page.url, context))
     ?.map((page) => {
       const analysis = analyzeContentQuality(page);
       return {
@@ -389,7 +390,7 @@ export async function generateContentQualityReport(results, outputDir) {
     }) || [];
 
   await csvWriter.writeRecords(reportData);
-  global.auditcore.logger.info(`Content quality report generated with ${reportData.length} records`);
+  context.logger.info(`Content quality report generated with ${reportData.length} records`);
 }
 
 /**
@@ -398,7 +399,7 @@ export async function generateContentQualityReport(results, outputDir) {
  * @param {string} outputDir - Directory path to save the report
  * @returns {Promise<void>}
  */
-export async function generateSecurityReport(results, outputDir) {
+export async function generateSecurityReport(results, outputDir, context) {
   const csvWriter = createObjectCsvWriter({
     path: path.join(outputDir, 'security_report.csv'),
     header: [
@@ -413,7 +414,7 @@ export async function generateSecurityReport(results, outputDir) {
 
   const reportData = results.securityMetrics
     ? Object.entries(results.securityMetrics)
-      .filter(([url]) => shouldIncludeUrl(url))
+      .filter(([url]) => shouldIncludeUrl(url, context))
       .map(([url, metrics]) => ({
         url,
         https: metrics.https ? 'Yes' : 'No',
@@ -425,7 +426,7 @@ export async function generateSecurityReport(results, outputDir) {
     : [];
 
   await csvWriter.writeRecords(reportData);
-  global.auditcore.logger.info(`Security report generated with ${reportData.length} records`);
+  context.logger.info(`Security report generated with ${reportData.length} records`);
 }
 
 /**
@@ -444,9 +445,9 @@ function formatScore(score) {
  * @param {string} outputDir - Directory path to save the report
  * @returns {Promise<void>}
  */
-export async function generateSpecificUrlReport(results, outputDir) {
+export async function generateSpecificUrlReport(results, outputDir, context) {
   if (!results.specificUrlMetrics || results.specificUrlMetrics.length === 0) {
-    global.auditcore.logger.info('No specific URL matches found, skipping report generation');
+    context.logger.info('No specific URL matches found, skipping report generation');
     return;
   }
 
@@ -461,7 +462,7 @@ export async function generateSpecificUrlReport(results, outputDir) {
   });
 
   await csvWriter.writeRecords(results.specificUrlMetrics);
-  global.auditcore.logger.info(`Specific URL report generated with ${results.specificUrlMetrics.length} records`);
+  context.logger.info(`Specific URL report generated with ${results.specificUrlMetrics.length} records`);
 }
 
 /**
@@ -473,9 +474,9 @@ export async function generateSpecificUrlReport(results, outputDir) {
  * await generateExternalResourcesReport(results, './reports');
  * // Creates external_resources_report.csv with site-wide resource counts
  */
-export async function generateExternalResourcesReport(results, outputDir) {
+export async function generateExternalResourcesReport(results, outputDir, context) {
   if (!results.externalResourcesAggregation || Object.keys(results.externalResourcesAggregation).length === 0) {
-    global.auditcore.logger.info('No resources found, skipping resources report generation');
+    context.logger.info('No resources found, skipping resources report generation');
     return;
   }
 
@@ -498,7 +499,7 @@ export async function generateExternalResourcesReport(results, outputDir) {
     .sort((a, b) => b.count - a.count); // Sort by count, highest first
 
   await csvWriter.writeRecords(reportData);
-  global.auditcore.logger.info(`All resources report generated with ${reportData.length} unique resources (JS, CSS, images, fonts, etc.)`);
+  context.logger.info(`All resources report generated with ${reportData.length} unique resources (JS, CSS, images, fonts, etc.)`);
 }
 
 /**
@@ -510,13 +511,13 @@ export async function generateExternalResourcesReport(results, outputDir) {
  * await generateMissingSitemapUrlsReport(results, './reports');
  * // Creates missing_sitemap_urls.csv with discovered URLs
  */
-export async function generateMissingSitemapUrlsReport(results, outputDir) {
+export async function generateMissingSitemapUrlsReport(results, outputDir, context) {
   // Dynamically import to avoid circular dependencies
   const { getDiscoveredUrls } = await import('../sitemapUtils.js');
   const discoveredUrls = getDiscoveredUrls(results);
 
   if (discoveredUrls.length === 0) {
-    global.auditcore.logger.info('No URLs discovered outside original sitemap, skipping missing sitemap URLs report');
+    context.logger.info('No URLs discovered outside original sitemap, skipping missing sitemap URLs report');
     return;
   }
 
@@ -544,7 +545,7 @@ export async function generateMissingSitemapUrlsReport(results, outputDir) {
   }));
 
   await csvWriter.writeRecords(reportData);
-  global.auditcore.logger.info(`Missing sitemap URLs report generated with ${discoveredUrls.length} discovered URLs`);
+  context.logger.info(`Missing sitemap URLs report generated with ${discoveredUrls.length} discovered URLs`);
 }
 
 /**
@@ -557,10 +558,10 @@ export async function generateMissingSitemapUrlsReport(results, outputDir) {
  * await generateLlmReadabilityReport(results, './reports');
  * // Creates llm_readability_report.csv with LLM processing metrics
  */
-export async function generateLlmReadabilityReport(results, outputDir) {
+export async function generateLlmReadabilityReport(results, outputDir, context) {
   if (!results.llmReadabilityAggregation
       || Object.keys(results.llmReadabilityAggregation).length === 0) {
-    global.auditcore.logger.warn('No LLM readability data available for report generation');
+    context.logger.warn('No LLM readability data available for report generation');
     return;
   }
 
@@ -611,7 +612,7 @@ export async function generateLlmReadabilityReport(results, outputDir) {
 
   await csvWriter.writeRecords(reportData);
 
-  global.auditcore.logger.info(`LLM Readability report generated: ${reportData.length} pages analyzed`);
+  context.logger.info(`LLM Readability report generated: ${reportData.length} pages analyzed`);
 
   // Console summary
   const avgScore = reportData.reduce((sum, item) => sum + item.overallScore, 0) / reportData.length;
@@ -628,10 +629,10 @@ export async function generateLlmReadabilityReport(results, outputDir) {
  * @param {Object} results - Results object containing httpStatusAggregation
  * @param {string} outputDir - Output directory path
  */
-export async function generateHttpStatusReport(results, outputDir) {
+export async function generateHttpStatusReport(results, outputDir, context) {
   if (!results.httpStatusAggregation
       || Object.keys(results.httpStatusAggregation).length === 0) {
-    global.auditcore.logger.info('All pages returned 200 OK status. No non-200 status report needed.');
+    context.logger.info('All pages returned 200 OK status. No non-200 status report needed.');
     return;
   }
 

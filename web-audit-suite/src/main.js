@@ -42,50 +42,57 @@ import {
  *   internalLinks: [...]
  * }
  */
-export async function runTestsOnSitemap() {
-  const { sitemap: sitemapUrl, output: outputDir, count } = global.auditcore.options;
+/**
+ * Main function to run accessibility and SEO tests on a sitemap or webpage
+ */
+export async function runTestsOnSitemap(context) {
+  const { sitemap: sitemapUrl, output: outputDir, count } = context.options;
+  const { loggerOptions } = context; // Or however logger is accessed
 
   // Setup shutdown handler at the start to ensure graceful termination
   setupShutdownHandler();
 
-  global.auditcore.logger.info(`Starting process for sitemap or page: ${sitemapUrl}`);
-  global.auditcore.logger.info(`Results will be saved to: ${outputDir}`);
+  context.logger.info(`Starting process for sitemap or page: ${sitemapUrl}`);
+  context.logger.info(`Results will be saved to: ${outputDir}`);
 
   // Handle cleanups
-  await cleanupDirectories(global.auditcore.options);
+  await cleanupDirectories(context.options);
 
   const resultsPath = path.join(outputDir, 'results.json');
 
   // Try to resume
-  let results = await loadExistingResults(resultsPath, global.auditcore.options);
+  let results = await loadExistingResults(resultsPath, context.options);
 
   try {
     if (!results) {
       // Phase 1: Get URLs from sitemap or process single page
-      global.auditcore.logger.info('Phase 1: Getting sitemap URLs...');
+      context.logger.info('Phase 1: Getting sitemap URLs...');
       const urls = await executeNetworkOperation(
-        () => getUrlsFromSitemap(sitemapUrl, count),
+        () => getUrlsFromSitemap(sitemapUrl, count, context), // PASS CONTEXT
         'sitemap URL retrieval',
+        context // Optional if executeNetworkOperation needs it
       );
 
       if (!urls || urls.length === 0) {
-        global.auditcore.logger.warn('No valid URLs found to process');
+        context.logger.warn('No valid URLs found to process');
         return null;
       }
 
-      global.auditcore.logger.info(`Found ${urls.length} URLs to process`);
+      context.logger.info(`Found ${urls.length} URLs to process`);
 
       // Phase 2: Process URLs through analysis pipeline
-      global.auditcore.logger.info('Phase 2: Processing URLs...');
+      context.logger.info('Phase 2: Processing URLs...');
       // Commander.js converts --no-recursive to recursive: false, defaults to true
-      const { recursive = true } = global.auditcore.options;
+      const { recursive = true } = context.options;
 
       results = await executeNetworkOperation(
         () => processSitemapUrls(
           urls.slice(0, count === -1 ? urls.length : count),
           recursive, // Pass recursive flag (default: true)
+          context // PASS CONTEXT
         ),
         'URL processing',
+        context
       );
 
       // Store original sitemap URLs for comparison with discovered URLs
@@ -102,27 +109,28 @@ export async function runTestsOnSitemap() {
     updateCurrentResults(results);
 
     // Store historical result if enabled
-    if (global.auditcore.options.enableHistory) {
+    if (context.options.enableHistory) {
       try {
         await storeHistoricalResult(results, outputDir);
-        global.auditcore.logger.info('Historical result stored for future comparison');
+        context.logger.info('Historical result stored for future comparison');
       } catch (error) {
-        global.auditcore.logger.warn('Could not store historical result:', error.message);
+        context.logger.warn('Could not store historical result:', error.message);
       }
     }
 
     // Phase 3: Generate comprehensive reports from collected data
-    global.auditcore.logger.info('Phase 3: Generating reports...');
+    context.logger.info('Phase 3: Generating reports...');
     await executeNetworkOperation(
-      () => generateReports(results, results.urls || [], outputDir),
+      () => generateReports(results, results.urls || [], outputDir, context), // PASS CONTEXT
       'report generation',
+      context
     );
 
     logExecutionSummary(results);
 
     return results;
   } catch (error) {
-    global.auditcore.logger.error('Error in runTestsOnSitemap:', error);
+    context.logger.error('Error in runTestsOnSitemap:', error);
     throw error;
   }
 }
