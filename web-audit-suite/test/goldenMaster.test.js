@@ -1,45 +1,46 @@
-
 import { expect } from 'chai';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import nock from 'nock';
-import { runTestsOnSitemap } from '../src/main.js';
 import winston from 'winston';
+import { runTestsOnSitemap } from '../src/main.js';
+import { AuditContext } from '../src/core/AuditContext.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Mock global.auditcore as it exists in the legacy code
-function setupGlobalMock(options = {}) {
+function setupContext(options = {}) {
   const defaultOptions = {
     sitemap: 'https://example.com/sitemap.xml',
     output: path.join(__dirname, 'temp_output'),
     limit: 1,
     count: 1,
-    'cache-only': false,
-    'no-cache': false,
-    'no-puppeteer': true, // Important for CI/fast testing
-    'force-delete-cache': true,
-    'log-level': 'error',
+    cacheOnly: false,
+    noCache: false,
+    noPuppeteer: true, // Important for CI/fast testing
+    forceDeleteCache: true,
+    logLevel: 'error',
     recursive: false,
-    ...options
+    pa11y: {
+      retryDelay: 1000,
+      maxRetries: 3,
+    },
+    ...options,
   };
 
-  global.auditcore = {
-    options: defaultOptions,
-    logger: winston.createLogger({
-       transports: [new winston.transports.Console({ silent: true })]
-    })
-  };
+  const logger = winston.createLogger({
+    transports: [new winston.transports.Console({ silent: false })],
+  });
 
-  return defaultOptions.output;
+  return new AuditContext(defaultOptions, logger);
 }
 
-describe('Golden Master Regression Test', function() {
+describe('Golden Master Regression Test', function () {
   this.timeout(10000); // Give it some time
   const outputDir = path.join(__dirname, 'golden_output');
 
-  before(function() {
+  before(() => {
     // Setup Nock to intercept requests
     nock('https://example.com')
       .persist()
@@ -72,39 +73,40 @@ describe('Golden Master Regression Test', function() {
         </body>
         </html>
       `);
-      
-     // Ensure creating output
-     if (!fs.existsSync(outputDir)) {
-       fs.mkdirSync(outputDir, { recursive: true });
-     }
+
+    // Ensure creating output
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
   });
 
-  after(function() {
+  after(() => {
     nock.cleanAll();
     // Cleanup global state
     delete global.auditcore;
     // Cleanup output dir? Maybe keep for inspection
   });
 
-  it('should produce identical results to the golden snapshot', async function() {
-    setupGlobalMock({ output: outputDir });
-    
-    const results = await runTestsOnSitemap();
-    
+  it('should produce identical results to the golden snapshot', async () => {
+    const context = setupContext({ output: outputDir });
+
+    const results = await runTestsOnSitemap(context);
+
     expect(results).to.not.be.null;
+    expect(results.failedUrls).to.be.an('array').that.is.empty;
     expect(results.urls).to.have.lengthOf(1);
-    
+
     // Snapshot verification
     // In a real Golden Master, we would load a previous JSON and compare deep equals
     // For now, we verify key structural properties that must not change
-    
+
     // LLM Metrics Check
     const llmMetric = results.llmMetrics[0];
-    expect(llmMetric.semanticHTML.metrics.hasMain).to.be.true; 
+    expect(llmMetric.semanticHTML.metrics.hasMain).to.be.true;
     expect(llmMetric.formFields.metrics.standardNameRatio).to.be.equal(1);
-    
+
     // SEO Check
     const seoScore = results.seoScores[0];
-    expect(seoScore.score).to. be.a('number');
+    expect(seoScore.score).to.be.a('number');
   });
 });

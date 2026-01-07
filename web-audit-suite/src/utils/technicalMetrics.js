@@ -10,8 +10,8 @@ import { isValidUrl } from './urlUtils.js';
  * @param {Object} results - The results object to update.
 
  */
-export function updateSecurityMetrics(testUrl, headers, results) {
-  if (!isValidUrl(testUrl) || !headers || !results) {
+export function updateSecurityMetrics(testUrl, headers, results, context) {
+  if (!isValidUrl(testUrl, null, context) || !headers || !results) {
     throw new Error('Invalid parameters for updateSecurityMetrics');
   }
 
@@ -21,9 +21,9 @@ export function updateSecurityMetrics(testUrl, headers, results) {
     if (!headers['content-security-policy']) safeIncrement(results.securityMetrics, 'missingContentSecurityPolicy');
     if (!headers['x-frame-options']) safeIncrement(results.securityMetrics, 'missingXFrameOptions');
     if (!headers['x-content-type-options']) safeIncrement(results.securityMetrics, 'missingXContentTypeOptions');
-    global.auditcore.logger.debug('Updated security metrics');
+    context.logger.debug('Updated security metrics');
   } catch (error) {
-    global.auditcore.logger.error('Error updating security metrics:', error);
+    context.logger.error('Error updating security metrics:', error);
   }
 }
 
@@ -32,15 +32,15 @@ export function updateSecurityMetrics(testUrl, headers, results) {
  * @param {Object} $ - The Cheerio instance.
  * @param {Object} results - The results object to update.
  */
-export function updateHreflangMetrics($, results) {
+export function updateHreflangMetrics($, results, context) {
   try {
     const hreflangTags = $('link[rel="alternate"][hreflang]');
     if (hreflangTags.length > 0) {
       safeIncrement(results.hreflangMetrics, 'pagesWithHreflang');
     }
-    global.auditcore.logger.debug('Updated hreflang metrics');
+    context.logger.debug('Updated hreflang metrics');
   } catch (error) {
-    global.auditcore.logger.error('Error updating hreflang metrics:', error);
+    context.logger.error('Error updating hreflang metrics:', error);
   }
 }
 
@@ -50,8 +50,8 @@ export function updateHreflangMetrics($, results) {
  * @param {string} testUrl - The URL being tested.
  * @param {Object} results - The results object to update.
  */
-export function updateCanonicalMetrics($, testUrl, results) {
-  if (!$ || !isValidUrl(testUrl) || !results) {
+export function updateCanonicalMetrics($, testUrl, results, context) {
+  if (!$ || !isValidUrl(testUrl, null, context) || !results) {
     throw new Error('Invalid parameters for updateCanonicalMetrics');
   }
 
@@ -67,9 +67,9 @@ export function updateCanonicalMetrics($, testUrl, results) {
         safeIncrement(results.canonicalMetrics, 'nonSelf');
       }
     }
-    global.auditcore.logger.debug('Updated canonical metrics');
+    context.logger.debug('Updated canonical metrics');
   } catch (error) {
-    global.auditcore.logger.error('Error updating canonical metrics:', error);
+    context.logger.error('Error updating canonical metrics:', error);
   }
 }
 
@@ -78,7 +78,7 @@ export function updateCanonicalMetrics($, testUrl, results) {
  * @param {Object} contentAnalysis - The content analysis object.
  * @param {Object} results - The results object to update.
  */
-export function updateContentAnalysis(contentAnalysis, results) {
+export function updateContentAnalysis(contentAnalysis, results, context) {
   if (!results.contentAnalysis) {
     results.contentAnalysis = [];
   }
@@ -89,9 +89,9 @@ export function updateContentAnalysis(contentAnalysis, results) {
     if (wordCount < 300) {
       safeIncrement(results.contentMetrics, 'lowContent');
     }
-    global.auditcore.logger.debug('Updated content analysis');
+    context.logger.debug('Updated content analysis');
   } catch (error) {
-    global.auditcore.logger.error('Error updating content analysis:', error);
+    context.logger.error('Error updating content analysis:', error);
   }
 }
 
@@ -101,15 +101,15 @@ export function updateContentAnalysis(contentAnalysis, results) {
  * @param {Array} internalLinks - The array of internal links.
  * @param {Object} results - The results object to update.
  */
-export function updateInternalLinks(testUrl, internalLinks, results) {
-  if (!isValidUrl(testUrl) || !Array.isArray(internalLinks) || !results) {
+export function updateInternalLinks(testUrl, internalLinks, results, context) {
+  if (!isValidUrl(testUrl, null, context) || !Array.isArray(internalLinks) || !results) {
     throw new Error('Invalid parameters for updateInternalLinks');
   }
 
   try {
     results.internalLinks.push({ url: testUrl, links: internalLinks });
-    global.auditcore.logger.debug(`Updated internal links for ${testUrl}`);
+    context.logger.debug(`Updated internal links for ${testUrl}`);
   } catch (error) {
-    global.auditcore.logger.error(`Error updating internal links for ${testUrl}:`, error);
+    context.logger.error(`Error updating internal links for ${testUrl}:`, error);
   }
 }

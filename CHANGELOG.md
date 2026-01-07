@@ -9,12 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added - 2026-01-07
 
+**Web Audit Suite Improvements:**
+
+- **Golden Master Test:** Added `test/goldenMaster.test.js` to ensure regression protection across the full audit pipeline.
+- **Dependency Injection:** Implemented `AuditContext` pattern to replace global state.
+
 **New Appendix H:**
 
 - **appendix-live-llms.txt:** Added comprehensive Digital Domain Technologies (DDT) reference document for LLM context delivery. Contains author bio, Adobe EDS consulting resources, AI integration topics, and contact information. Formatted with proper markdown spacing for optimal LLM parsing.
 - Integrated as Appendix H in manuscript structure
 - Updated documentation: book-plan.md, CLAUDE.md, PROJECTSTATE.md
 - Total appendices now: 8 (A-H)
+
+### Changed - 2026-01-07
+
+**Web Audit Suite Refactoring:**
+
+- **Removed Global State:** Eliminated `global.auditcore` in favor of passing explicit `context` objects.
+- **Updated Core Utilities:** Refactored `caching.js`, `networkUtils.js`, `seoScoring.js`, `sitemapUtils.js`, and `results.js` to accept `context`.
+- **Main Entry Point:** Updated `index.js`, `main.js`, and `bulk-audit.js` to initialize and propagate `AuditContext`.
 
 ### Changed - 2026-01-22 (January 2026 AI Landscape Updates)
 

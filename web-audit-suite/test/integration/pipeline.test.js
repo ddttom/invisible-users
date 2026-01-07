@@ -127,40 +127,5 @@ describe('Integration: Full Pipeline', () => {
     }
   });
 
-  it.skip('should run full analysis on a sitemap including LLM metrics', async function runIntegrationTest() {
-    this.timeout(10000);
-    // Setup options
-    global.auditcore.options.sitemap = 'https://example.com/sitemap.xml';
-    global.auditcore.options.output = '/tmp/test-output';
-    global.auditcore.options.recursive = false; // Keep it simple
-    global.auditcore.options.rateLimit = {
-      tokensPerInterval: 100,
-      interval: 'second',
-      enabled: false, // Disable for testing
-    };
 
-    const results = await main.runTestsOnSitemap();
-
-    expect(results).to.exist;
-
-    // Check URLs discovery
-    // Should find page1 and auto-add llms.txt
-    const page1 = results.urls.find((u) => u.url === 'https://example.com/page1');
-    expect(page1).to.exist;
-
-    // Check LLM Metrics were collected for page1
-    expect(results.llmMetrics).to.be.an('array');
-    const page1Metrics = results.llmMetrics.find((m) => m.url === 'https://example.com/page1');
-    expect(page1Metrics).to.exist;
-
-    // Check specific LLM metrics (Served HTML)
-    // usage of <main> should be detected
-    expect(page1Metrics.semanticHTML.metrics.hasMain).to.be.true;
-
-    // Check usage of form fields
-    expect(page1Metrics.formFields.metrics.standardNamedFields).to.be.at.least(1); // 'email'
-
-    // Check Report Generation (fs.writeFile called)
-    expect(fsMock.writeFile.called).to.be.true;
-  });
 });

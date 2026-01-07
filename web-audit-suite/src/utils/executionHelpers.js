@@ -8,7 +8,7 @@ import { getDiscoveredUrls } from './sitemapUtils.js';
  * @param {Object} options - Application options
  * @param {Object} context - Logger context
  */
-export async function cleanupDirectories(options, context = global.auditcore) {
+export async function cleanupDirectories(options, context) {
   const { output: outputDir, forceDeleteCache, cacheDir = '.cache' } = options;
 
   if (forceDeleteCache) {
@@ -35,7 +35,7 @@ export async function cleanupDirectories(options, context = global.auditcore) {
  * @param {Object} context - Logger context
  * @returns {Promise<Object|null>} existing results or null
  */
-export async function loadExistingResults(resultsPath, options, context = global.auditcore) {
+export async function loadExistingResults(resultsPath, options, context) {
   const { cache = true, noCache: explicitNoCache = false, forceDeleteCache = false } = options;
   const noCache = explicitNoCache || !cache;
 
@@ -70,7 +70,7 @@ export async function loadExistingResults(resultsPath, options, context = global
  * @param {Object} results - The analysis results
  * @param {Object} context - Logger context
  */
-export function logExecutionSummary(results, context = global.auditcore) {
+export function logExecutionSummary(results, context) {
   // Specific URL Search Results
   if (results.specificUrlMetrics && results.specificUrlMetrics.length > 0) {
     context.logger.info(`\n=== Specific URL Search Results ===\nFound ${results.specificUrlMetrics.length} occurrences of the target URL.\nSee specific_url_report.csv for details.\n=====================================\n`);

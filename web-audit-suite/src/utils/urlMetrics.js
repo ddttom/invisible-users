@@ -16,7 +16,7 @@
  * @param {number} statusCode - The HTTP status code of the response.
  * @param {Object} results - The results object to update.
  */
-export function updateUrlMetrics(url, baseUrl, html, statusCode, results) {
+export function updateUrlMetrics(url, baseUrl, html, statusCode, results, context) {
   // Initialize urlMetrics if it doesn't exist
   results.urlMetrics = results.urlMetrics || {
     total: 0,
@@ -75,8 +75,10 @@ export function updateUrlMetrics(url, baseUrl, html, statusCode, results) {
   results.urlMetrics[url].internalLinks = (results.urlMetrics[url].internalLinks || 0) + 1;
 
   // Log the update
-  global.auditcore.logger.debug(`Updated URL metrics for ${url}`);
-  global.auditcore.logger.debug(`Current URL metrics: ${JSON.stringify(results.urlMetrics, null, 2)}`);
+  if (context && context.logger) {
+    context.logger.debug(`Updated URL metrics for ${url}`);
+    context.logger.debug(`Current URL metrics: ${JSON.stringify(results.urlMetrics, null, 2)}`);
+  }
 }
 export function updateResponseCodeMetrics(statusCode, results) {
   results.responseCodeMetrics = results.responseCodeMetrics || {};

@@ -30,7 +30,7 @@ This repository contains two integrated projects:
 - **Version:** 1.0.0
 - **Status:** Production-ready
 - **Features:** Full AI agent compatibility analysis, detailed SEO/Performance/Accessibility reports, Dashboard generation, Historical tracking, Rate Limiting, Flexible Configuration (CLI/Env), **Agency White-labeling**, **Bulk Audit**
-- **Architecture:** Three-phase pipeline (URL collection, data collection, report generation), centralized configuration, modular utilities
+- **Architecture:** Three-phase pipeline (URL collection, data collection, report generation), centralized configuration, modular utilities, **Dependency Injection (AuditContext)** for state management
 - **Testing:** Comprehensive test coverage (unit and integration)
 
 ### Code Quality

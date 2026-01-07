@@ -6,7 +6,7 @@ import path from 'path';
 /**
  * Check if a URL is valid for processing
  */
-export function isValidUrl(url, baseUrl = null) {
+export function isValidUrl(url, baseUrl = null, context = null) {
   try {
     const urlObj = new URL(url);
 
@@ -30,7 +30,7 @@ export function isValidUrl(url, baseUrl = null) {
     }
 
     // Language variant filtering (unless --include-all-languages is set)
-    if (!global.auditcore?.options?.includeAllLanguages) {
+    if (context && !context.options?.includeAllLanguages) {
       const pathParts = urlObj.pathname.split('/').filter(Boolean);
       if (pathParts.length > 0) {
         const firstPath = pathParts[0];
@@ -106,8 +106,8 @@ export function extractDomain(url) {
   return hostname;
 }
 
-export async function writeToInvalidUrlFile(invalidUrl) {
-  const invalidUrlsPath = path.join(global.auditcore.options.output, 'invalid_urls.json');
+export async function writeToInvalidUrlFile(invalidUrl, context) {
+  const invalidUrlsPath = path.join(context.options.output, 'invalid_urls.json');
   // Check if the file exists, if not, create it with an empty array
   try {
     await fs.access(invalidUrlsPath);

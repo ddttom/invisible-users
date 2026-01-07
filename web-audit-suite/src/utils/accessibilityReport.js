@@ -168,7 +168,7 @@ function generateAccessibilityReportContent(results) {
  * @param {String} outputDir - Directory to save report
  * @returns {Promise<String>} - Path to generated report
  */
-export async function generateAccessibilityReport(results, outputDir) {
+export async function generateAccessibilityReport(results, outputDir, context) {
   try {
     const timestamp = formatTimestamp(new Date());
     const reportPath = path.join(outputDir, `accessibility_report_${timestamp}.csv`);
@@ -176,10 +176,10 @@ export async function generateAccessibilityReport(results, outputDir) {
     const content = generateAccessibilityReportContent(results);
     await writeFile(reportPath, content);
 
-    global.auditcore.logger.info(`Accessibility report generated at: ${reportPath}`);
+    context.logger.info(`Accessibility report generated at: ${reportPath}`);
     return reportPath;
   } catch (error) {
-    global.auditcore.logger.error('Error generating accessibility report:', error);
+    context.logger.error('Error generating accessibility report:', error);
     throw error;
   }
 }
@@ -191,17 +191,17 @@ export async function generateAccessibilityReport(results, outputDir) {
  * @param {String} sectionName - Name of the section being analyzed
  * @returns {Promise<String>} - Path to generated report
  */
-export async function generateWCAGMarkdownReport(results, outputDir, sectionName = 'Initial Accessibility Analysis') {
+export async function generateWCAGMarkdownReport(results, outputDir, context, sectionName = 'Initial Accessibility Analysis') {
   try {
     const timestamp = formatTimestamp(new Date());
     const reportPath = path.join(outputDir, `wcag_report_${timestamp}.md`);
     const content = generateWCAGMarkdownContent(results, sectionName);
     await writeFile(reportPath, content);
 
-    global.auditcore.logger.info(`WCAG markdown report generated at: ${reportPath}`);
+    context.logger.info(`WCAG markdown report generated at: ${reportPath}`);
     return reportPath;
   } catch (error) {
-    global.auditcore.logger.error('Error generating WCAG markdown report:', error);
+    context.logger.error('Error generating WCAG markdown report:', error);
     throw error;
   }
 }
@@ -218,7 +218,7 @@ export async function generateWCAGMarkdownReport(results, outputDir, sectionName
  * - Remediation suggestions
  * - Manual check requirements
  */
-export async function generateDetailedAccessibilityReport(results, outputDir) {
+export async function generateDetailedAccessibilityReport(results, outputDir, context) {
   try {
     const timestamp = formatTimestamp(new Date());
     const reportPath = path.join(outputDir, `detailed_accessibility_report_${timestamp}.csv`);
@@ -252,10 +252,10 @@ export async function generateDetailedAccessibilityReport(results, outputDir) {
     const content = [headers, ...rows].join('\n');
     await writeFile(reportPath, content);
 
-    global.auditcore.logger.info(`Detailed accessibility report generated at: ${reportPath}`);
+    context.logger.info(`Detailed accessibility report generated at: ${reportPath}`);
     return reportPath;
   } catch (error) {
-    global.auditcore.logger.error('Error generating detailed accessibility report:', error);
+    context.logger.error('Error generating detailed accessibility report:', error);
     throw error;
   }
 }
@@ -272,7 +272,7 @@ export async function generateDetailedAccessibilityReport(results, outputDir) {
  * - Required manual checks
  * - Compliance statistics
  */
-export async function generateWCAGComplianceReport(results, outputDir) {
+export async function generateWCAGComplianceReport(results, outputDir, context) {
   try {
     const timestamp = formatTimestamp(new Date());
     const reportPath = path.join(outputDir, `wcag_compliance_report_${timestamp}.csv`);
@@ -298,10 +298,10 @@ export async function generateWCAGComplianceReport(results, outputDir) {
     const content = [headers, ...rows].join('\n');
     await writeFile(reportPath, content);
 
-    global.auditcore.logger.info(`WCAG compliance report generated at: ${reportPath}`);
+    context.logger.info(`WCAG compliance report generated at: ${reportPath}`);
     return reportPath;
   } catch (error) {
-    global.auditcore.logger.error('Error generating WCAG compliance report:', error);
+    context.logger.error('Error generating WCAG compliance report:', error);
     throw error;
   }
 }

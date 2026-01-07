@@ -50,18 +50,18 @@ export async function runTestsOnSitemap(context) {
   const { loggerOptions } = context; // Or however logger is accessed
 
   // Setup shutdown handler at the start to ensure graceful termination
-  setupShutdownHandler();
+  setupShutdownHandler(context);
 
   context.logger.info(`Starting process for sitemap or page: ${sitemapUrl}`);
   context.logger.info(`Results will be saved to: ${outputDir}`);
 
   // Handle cleanups
-  await cleanupDirectories(context.options);
+  await cleanupDirectories(context.options, context);
 
   const resultsPath = path.join(outputDir, 'results.json');
 
   // Try to resume
-  let results = await loadExistingResults(resultsPath, context.options);
+  let results = await loadExistingResults(resultsPath, context.options, context);
 
   try {
     if (!results) {
@@ -70,7 +70,7 @@ export async function runTestsOnSitemap(context) {
       const urls = await executeNetworkOperation(
         () => getUrlsFromSitemap(sitemapUrl, count, context), // PASS CONTEXT
         'sitemap URL retrieval',
-        context // Optional if executeNetworkOperation needs it
+        context, // Optional if executeNetworkOperation needs it
       );
 
       if (!urls || urls.length === 0) {
@@ -89,10 +89,10 @@ export async function runTestsOnSitemap(context) {
         () => processSitemapUrls(
           urls.slice(0, count === -1 ? urls.length : count),
           recursive, // Pass recursive flag (default: true)
-          context // PASS CONTEXT
+          context, // PASS CONTEXT
         ),
         'URL processing',
-        context
+        context,
       );
 
       // Store original sitemap URLs for comparison with discovered URLs
@@ -111,7 +111,7 @@ export async function runTestsOnSitemap(context) {
     // Store historical result if enabled
     if (context.options.enableHistory) {
       try {
-        await storeHistoricalResult(results, outputDir);
+        await storeHistoricalResult(results, outputDir, context);
         context.logger.info('Historical result stored for future comparison');
       } catch (error) {
         context.logger.warn('Could not store historical result:', error.message);
@@ -123,10 +123,10 @@ export async function runTestsOnSitemap(context) {
     await executeNetworkOperation(
       () => generateReports(results, results.urls || [], outputDir, context), // PASS CONTEXT
       'report generation',
-      context
+      context,
     );
 
-    logExecutionSummary(results);
+    logExecutionSummary(results, context);
 
     return results;
   } catch (error) {

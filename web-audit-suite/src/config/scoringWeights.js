@@ -1,4 +1,3 @@
-
 export const SCORING_WEIGHTS = {
   SERVED: {
     SEMANTIC_HTML: {
@@ -28,7 +27,7 @@ export const SCORING_WEIGHTS = {
     TABLES: {
       properMarkup: 10,
       emptyBonus: 10,
-    }
+    },
   },
   RENDERED: {
     MAX_BONUS: 30,
@@ -40,6 +39,6 @@ export const SCORING_WEIGHTS = {
     ERROR_HANDLING: {
       hasPersistentErrors: 10,
       hasAriaInvalid: 5,
-    }
-  }
+    },
+  },
 };

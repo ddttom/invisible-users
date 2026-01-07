@@ -354,16 +354,20 @@ When modifying the Web Audit Suite:
 - Uses ES Modules (`"type": "module"` in package.json)
 - All imports must include `.js` extension: `import { foo } from './utils/bar.js'`
 
-**Global State:**
+**Dependency Injection:**
 
-The application uses a global `auditcore` object:
+The application avoids global state by using Dependency Injection. An `AuditContext` object is initialized in `index.js` and passed through the call stack:
 
 ```javascript
-global.auditcore = {
-  logger: winston.Logger,  // Winston logger instance
-  options: Object          // Parsed CLI options
+// Context passed to all functions
+const context = {
+  logger: winston.Logger,
+  options: Object,
+  // ... other shared state
 }
 ```
+
+Legacy `global.auditcore` usage has been removed. All utilities (`caching.js`, `networkUtils.js`, etc.) now accept `context` as an argument.
 
 ## Tool Usage Best Practices
 

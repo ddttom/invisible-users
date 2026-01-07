@@ -1,4 +1,3 @@
-
 import { SCORING_WEIGHTS } from '../config/scoringWeights.js';
 
 export class LLMScorer {
@@ -76,7 +75,7 @@ export class LLMScorer {
     if (!metrics || metrics.error) return 0;
 
     // Start with served score
-    let score = this.calculateServedScore(metrics);
+    const score = this.calculateServedScore(metrics);
     const weights = SCORING_WEIGHTS.RENDERED;
 
     let renderedBonus = 0;

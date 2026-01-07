@@ -4,25 +4,25 @@
 import * as cheerio from 'cheerio';
 import { updateInternalLinks } from './technicalMetrics.js';
 
-async function retryOperation(operation, retryAttempts, retryDelay) {
+async function retryOperation(operation, retryAttempts, retryDelay, context) {
   for (let attempt = 1; attempt <= retryAttempts; attempt += 1) {
     try {
       const result = await operation();
-      global.auditcore.logger.debug(`Operation succeeded on attempt ${attempt}`);
+      context?.logger.debug(`Operation succeeded on attempt ${attempt}`);
       return result;
     } catch (error) {
       if (attempt === retryAttempts) {
-        global.auditcore.logger.warn(`Operation failed after ${retryAttempts} attempts: ${error.message}`);
+        context?.logger.warn(`Operation failed after ${retryAttempts} attempts: ${error.message}`);
         return Promise.reject(error);
       }
-      global.auditcore.logger.warn(`Operation failed, retrying (${attempt}/${retryAttempts}): ${error.message}`);
+      context?.logger.warn(`Operation failed, retrying (${attempt}/${retryAttempts}): ${error.message}`);
       await new Promise((resolve) => { setTimeout(resolve, retryDelay); });
     }
   }
   return null;
 }
 
-async function getInternalLinksWithRetry(html, testUrl, baseUrl) {
+async function getInternalLinksWithRetry(html, testUrl, baseUrl, config, context) {
   try {
     const $ = cheerio.load(html);
     const links = [];
@@ -62,38 +62,38 @@ async function getInternalLinksWithRetry(html, testUrl, baseUrl) {
           });
         }
       } catch (error) {
-        global.auditcore.logger.warn(`Error processing link in ${testUrl}: ${error.message}`);
+        context?.logger.warn(`Error processing link in ${testUrl}: ${error.message}`);
       }
     });
 
     return links;
   } catch (error) {
-    global.auditcore.logger.error(`Error getting internal links for ${testUrl}: ${error.message}`);
+    context?.logger.error(`Error getting internal links for ${testUrl}: ${error.message}`);
     return [];
   }
 }
 
-function updateResults(results, testUrl, pa11yResult, internalLinks) {
+function updateResults(results, testUrl, pa11yResult, internalLinks, context) {
   if (!results) {
-    global.auditcore.logger.error('Results object is undefined in updateResults');
+    context?.logger.error('Results object is undefined in updateResults');
     return;
   }
 
   if (pa11yResult) {
     if (!results.pa11y) results.pa11y = [];
     results.pa11y.push({ url: testUrl, issues: pa11yResult.issues || [] });
-    global.auditcore.logger.debug(`Updated Pa11y results for ${testUrl}`);
+    context?.logger.debug(`Updated Pa11y results for ${testUrl}`);
   }
 
   if (internalLinks) {
-    updateInternalLinks(testUrl, internalLinks, results);
-    global.auditcore.logger.debug(`Updated internal links for ${testUrl}`);
+    updateInternalLinks(testUrl, internalLinks, results, context);
+    context?.logger.debug(`Updated internal links for ${testUrl}`);
   }
 }
 
-function createContentAnalysis(testUrl, pageData, jsErrors, internalLinks, pa11yResult) {
+function createContentAnalysis(testUrl, pageData, jsErrors, internalLinks, pa11yResult, context) {
   if (!testUrl) {
-    global.auditcore.logger.error('TestUrl is undefined in createContentAnalysis');
+    context?.logger.error('TestUrl is undefined in createContentAnalysis');
     return null;
   }
   const analysis = {
@@ -121,8 +121,8 @@ function createContentAnalysis(testUrl, pageData, jsErrors, internalLinks, pa11y
     jsErrors: Array.isArray(jsErrors) ? jsErrors.length : 0,
     pa11yIssuesCount: pa11yResult && Array.isArray(pa11yResult.issues) ? pa11yResult.issues.length : 0,
   };
-  global.auditcore.logger.debug(`Created content analysis for ${testUrl}`);
-  global.auditcore.logger.debug(`Images found: ${analysis.imagesCount}, Images without alt: ${analysis.imagesWithoutAlt}`);
+  context?.logger.debug(`Created content analysis for ${testUrl}`);
+  context?.logger.debug(`Images found: ${analysis.imagesCount}, Images without alt: ${analysis.imagesWithoutAlt}`);
   return analysis;
 }
 function calculateDuration(startTime) {
@@ -130,9 +130,9 @@ function calculateDuration(startTime) {
   return seconds + nanoseconds / 1e9;
 }
 
-function createAnalysisResult(testUrl, duration, contentAnalysis, pa11yResult, internalLinks) {
+function createAnalysisResult(testUrl, duration, contentAnalysis, pa11yResult, internalLinks, context) {
   if (!testUrl) {
-    global.auditcore.logger.error('TestUrl is undefined in createAnalysisResult');
+    context?.logger.error('TestUrl is undefined in createAnalysisResult');
     return null;
   }
 
@@ -146,7 +146,7 @@ function createAnalysisResult(testUrl, duration, contentAnalysis, pa11yResult, i
     pa11y: pa11yResult,
   };
 
-  global.auditcore.logger.debug(`Created analysis result for ${testUrl}`);
+  context?.logger.debug(`Created analysis result for ${testUrl}`);
   return result;
 }
 

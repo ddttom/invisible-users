@@ -9,41 +9,42 @@ import puppeteer from 'puppeteer';
 import { calculateSeoScore } from './seoScoring.js';
 import { isValidUrl } from './urlUtils.js';
 
-const CACHE_DIR = path.join(process.cwd(), '.cache');
-
+// CACHE_DIR removed in favor of context.options.cacheDir
 function generateCacheKey(url) {
   return crypto.createHash('md5').update(url).digest('hex');
 }
 
-async function ensureCacheDir(options = {}) {
+async function ensureCacheDir(options, context) {
+  const cacheDir = options.cacheDir || path.join(process.cwd(), '.cache');
   try {
     if (options.forceDeleteCache) {
-      global.auditcore.logger.debug(`Force delete cache option detected. Attempting to delete cache directory: ${CACHE_DIR}`);
+      context.logger.debug(`Force delete cache option detected. Attempting to delete cache directory: ${cacheDir}`);
       try {
-        await fs.rm(CACHE_DIR, { recursive: true, force: true });
-        global.auditcore.logger.debug('Cache directory deleted successfully');
+        await fs.rm(cacheDir, { recursive: true, force: true });
+        context.logger.debug('Cache directory deleted successfully');
       } catch (deleteError) {
-        global.auditcore.logger.error(`Error deleting cache directory: ${deleteError.message}`);
-        global.auditcore.logger.debug('Delete error stack:', deleteError.stack);
+        context.logger.error(`Error deleting cache directory: ${deleteError.message}`);
+        context.logger.debug('Delete error stack:', deleteError.stack);
       }
     }
 
-    await fs.mkdir(CACHE_DIR, { recursive: true });
-    global.auditcore.logger.debug(`Cache directory ensured: ${CACHE_DIR}`);
+    await fs.mkdir(cacheDir, { recursive: true });
+    context.logger.debug(`Cache directory ensured: ${cacheDir}`);
   } catch (error) {
-    global.auditcore.logger.error('Error managing cache directory:', error.message);
-    global.auditcore.logger.debug('Error stack:', error.stack);
+    context.logger.error('Error managing cache directory:', error.message);
+    context.logger.debug('Error stack:', error.stack);
     throw error;
   }
 }
 
-async function getCachedData(url) {
+async function getCachedData(url, context) {
+  const cacheDir = context.options.cacheDir || path.join(process.cwd(), '.cache');
   const cacheKey = generateCacheKey(url);
-  const cachePath = path.join(CACHE_DIR, `${cacheKey}.json`);
-  global.auditcore.logger.debug(`Attempting to read cache from: ${cachePath}`);
+  const cachePath = path.join(cacheDir, `${cacheKey}.json`);
+  context.logger.debug(`Attempting to read cache from: ${cachePath}`);
   try {
     const cachedData = await fs.readFile(cachePath, 'utf8');
-    global.auditcore.logger.debug(`Cache hit for ${url}`);
+    context.logger.debug(`Cache hit for ${url}`);
     const parsedData = JSON.parse(cachedData);
 
     // Ensure cached data has a status code
@@ -53,8 +54,8 @@ async function getCachedData(url) {
 
     // Validate URLs in cached data
     if (parsedData.pageData && parsedData.pageData.testUrl) {
-      if (!isValidUrl(parsedData.pageData.testUrl)) {
-        global.auditcore.logger.warn(`Invalid URL in cached data: ${parsedData.pageData.testUrl}`);
+      if (!isValidUrl(parsedData.pageData.testUrl, null, context)) {
+        context.logger.warn(`Invalid URL in cached data: ${parsedData.pageData.testUrl}`);
         return null;
       }
     }
@@ -62,32 +63,34 @@ async function getCachedData(url) {
     return parsedData;
   } catch (error) {
     if (error.code !== 'ENOENT') {
-      global.auditcore.logger.error(`Error reading cache for ${url}:`, error);
+      context.logger.error(`Error reading cache for ${url}:`, error);
     } else {
-      global.auditcore.logger.info(`Cache miss for ${url}`);
+      context.logger.info(`Cache miss for ${url}`);
     }
     return null;
   }
 }
 
-async function setCachedData(url, data) {
+async function setCachedData(url, data, context) {
+  const cacheDir = context.options.cacheDir || path.join(process.cwd(), '.cache');
   const cacheKey = generateCacheKey(url);
-  const cachePath = path.join(CACHE_DIR, `${cacheKey}.json`);
-  global.auditcore.logger.debug(`Attempting to write cache to: ${cachePath}`);
+  const cachePath = path.join(cacheDir, `${cacheKey}.json`);
+  context.logger.debug(`Attempting to write cache to: ${cachePath}`);
 
   try {
     const jsonString = JSON.stringify(data, (key, value) => (typeof value === 'string' ? value.normalize('NFC') : value), 2);
     await fs.writeFile(cachePath, jsonString, 'utf8');
-    global.auditcore.logger.debug(`Cache written for ${url}`);
+    context.logger.debug(`Cache written for ${url}`);
   } catch (error) {
-    global.auditcore.logger.error(`Error writing cache for ${url}:`, error);
+    context.logger.error(`Error writing cache for ${url}:`, error);
     throw error;
   }
 }
 
-async function fetchDataWithoutPuppeteer(url) {
+async function fetchDataWithoutPuppeteer(url, context) {
+  const cacheDir = context.options.cacheDir || path.join(process.cwd(), '.cache');
   try {
-    global.auditcore.logger.debug(`Fetching data without Puppeteer for ${url}`);
+    context.logger.debug(`Fetching data without Puppeteer for ${url}`);
     const response = await axios.get(url);
     const html = response.data;
     const $ = cheerio.load(html);
@@ -175,70 +178,73 @@ async function fetchDataWithoutPuppeteer(url) {
         ...pageData,
         testUrl: url,
         jsErrors: [],
-      }),
+      }, context), // Pass context to calculateSeoScore if needed, or if it doesn't need it yet, we might need to update seoScoring.js next.
       lastCrawled: new Date().toISOString(),
     };
 
     // Save served HTML to .cache/served
     try {
       const cacheKey = generateCacheKey(url);
-      const servedPath = path.join(CACHE_DIR, 'served', `${cacheKey}.html`);
+      const servedPath = path.join(cacheDir, 'served', `${cacheKey}.html`);
+      // Ensure served directory exists
+      await fs.mkdir(path.dirname(servedPath), { recursive: true });
       await fs.writeFile(servedPath, html, 'utf8');
-      global.auditcore.logger.debug(`Served HTML saved to: ${servedPath}`);
+      context.logger.debug(`Served HTML saved to: ${servedPath}`);
     } catch (error) {
-      global.auditcore.logger.error(`Error saving served HTML for ${url}:`, error);
+      context.logger.error(`Error saving served HTML for ${url}:`, error);
     }
 
-    global.auditcore.logger.debug(`Successfully fetched, scored, and analyzed ${url} without Puppeteer`);
+    context.logger.debug(`Successfully fetched, scored, and analyzed ${url} without Puppeteer`);
     return data;
   } catch (error) {
-    global.auditcore.logger.error(`Error fetching data without Puppeteer for ${url}:`, error);
+    context.logger.error(`Error fetching data without Puppeteer for ${url}:`, error);
     throw error;
   }
 }
 
-async function getOrRenderData(url, options = {}) {
+async function getOrRenderData(url, options = {}, context) {
   const { noPuppeteer = false, cacheOnly = false, cache = true } = options;
   // If cache is false (from --no-cache), then noCache should be true
   const noCache = options.noCache || !cache;
 
-  global.auditcore.logger.debug(`getOrRenderData called for ${url} with options: ${JSON.stringify(options)}`);
+  context.logger.debug(`getOrRenderData called for ${url} with options: ${JSON.stringify(options)}`);
 
   if (!noCache) {
-    const cachedData = await getCachedData(url);
+    const cachedData = await getCachedData(url, context);
     if (cachedData) {
       cachedData.contentFreshness = analyzeContentFreshness(cachedData);
-      global.auditcore.logger.debug(`Returning cached data for ${url}`);
+      context.logger.debug(`Returning cached data for ${url}`);
       return cachedData;
     }
   }
 
   if (cacheOnly) {
-    global.auditcore.logger.warn(`No cached data available for ${url} and cache-only mode is enabled. Skipping this URL.`);
+    context.logger.warn(`No cached data available for ${url} and cache-only mode is enabled. Skipping this URL.`);
     return { html: null, statusCode: null };
   }
 
-  global.auditcore.logger.debug(`No cache found or cache disabled, ${noPuppeteer ? 'fetching' : 'rendering'} data for ${url}`);
+  context.logger.debug(`No cache found or cache disabled, ${noPuppeteer ? 'fetching' : 'rendering'} data for ${url}`);
   try {
     const newData = noPuppeteer
-      ? await fetchDataWithoutPuppeteer(url)
-      : await renderAndCacheData(url);
+      ? await fetchDataWithoutPuppeteer(url, context)
+      : await renderAndCacheData(url, context);
 
     newData.contentFreshness = analyzeContentFreshness(newData);
 
     if (!noCache) {
-      await setCachedData(url, newData);
+      await setCachedData(url, newData, context);
     }
 
     return newData;
   } catch (error) {
-    global.auditcore.logger.error(`Error ${noPuppeteer ? 'fetching' : 'rendering'} data for ${url}:`, error);
+    context.logger.error(`Error ${noPuppeteer ? 'fetching' : 'rendering'} data for ${url}:`, error);
     return { html: null, statusCode: null, error: error.message };
   }
 }
 
-async function renderAndCacheData(url) {
-  global.auditcore.logger.debug(`Rendering and caching data for ${url}`);
+async function renderAndCacheData(url, context) {
+  const cacheDir = context.options.cacheDir || path.join(process.cwd(), '.cache');
+  context.logger.debug(`Rendering and caching data for ${url}`);
   let browser;
   try {
     browser = await puppeteer.launch({
@@ -615,13 +621,14 @@ async function renderAndCacheData(url) {
     const screenshotDir = path.join(process.cwd(), 'ss');
     try {
       await fs.access(screenshotDir);
-      global.auditcore.logger.debug(`Screenshot directory already exists: ${screenshotDir}`);
+      await fs.access(screenshotDir);
+      context.logger.debug(`Screenshot directory already exists: ${screenshotDir}`);
     } catch (error) {
       if (error.code === 'ENOENT') {
         await fs.mkdir(screenshotDir, { recursive: true });
-        global.auditcore.logger.debug(`Created screenshot directory: ${screenshotDir}`);
+        context.logger.debug(`Created screenshot directory: ${screenshotDir}`);
       } else {
-        global.auditcore.logger.error(`Error checking/creating screenshot directory: ${error.message}`);
+        context.logger.error(`Error checking/creating screenshot directory: ${error.message}`);
         throw error;
       }
     }
@@ -646,7 +653,8 @@ async function renderAndCacheData(url) {
         testUrl: url,
         jsErrors,
         performanceMetrics,
-      }),
+        performanceMetrics,
+      }, context), // Pass context
       lastCrawled: new Date().toISOString(),
       screenshot: screenshotFilename,
     };
@@ -654,40 +662,46 @@ async function renderAndCacheData(url) {
     // Save rendered HTML to .cache/rendered
     try {
       const cacheKey = generateCacheKey(url);
-      const renderedPath = path.join(CACHE_DIR, 'rendered', `${cacheKey}.html`);
+      const renderedPath = path.join(cacheDir, 'rendered', `${cacheKey}.html`);
+      // Ensure directory
+      await fs.mkdir(path.dirname(renderedPath), { recursive: true });
       await fs.writeFile(renderedPath, html, 'utf8');
-      global.auditcore.logger.debug(`Rendered HTML saved to: ${renderedPath}`);
+      context.logger.debug(`Rendered HTML saved to: ${renderedPath}`);
     } catch (error) {
-      global.auditcore.logger.error(`Error saving rendered HTML for ${url}:`, error);
+      context.logger.error(`Error saving rendered HTML for ${url}:`, error);
     }
 
     // Save served HTML to .cache/served
     try {
       const cacheKey = generateCacheKey(url);
-      const servedPath = path.join(CACHE_DIR, 'served', `${cacheKey}.html`);
+      const servedPath = path.join(cacheDir, 'served', `${cacheKey}.html`);
+      // Ensure directory
+      await fs.mkdir(path.dirname(servedPath), { recursive: true });
       await fs.writeFile(servedPath, servedHtml, 'utf8');
-      global.auditcore.logger.debug(`Served HTML saved to: ${servedPath}`);
+      context.logger.debug(`Served HTML saved to: ${servedPath}`);
     } catch (error) {
-      global.auditcore.logger.error(`Error saving served HTML for ${url}:`, error);
+      context.logger.error(`Error saving served HTML for ${url}:`, error);
     }
 
     // Save console log output to .cache/rendered (same name as HTML with .log suffix)
     try {
       const cacheKey = generateCacheKey(url);
-      const consoleLogPath = path.join(CACHE_DIR, 'rendered', `${cacheKey}.log`);
+      const consoleLogPath = path.join(cacheDir, 'rendered', `${cacheKey}.log`);
+      // Ensure directory
+      await fs.mkdir(path.dirname(consoleLogPath), { recursive: true });
       const logContent = consoleMessages.length > 0
         ? consoleMessages.join('\n')
         : '// No console output captured';
       await fs.writeFile(consoleLogPath, logContent, 'utf8');
-      global.auditcore.logger.debug(`Console log saved to: ${consoleLogPath} (${consoleMessages.length} messages)`);
+      context.logger.debug(`Console log saved to: ${consoleLogPath} (${consoleMessages.length} messages)`);
     } catch (error) {
-      global.auditcore.logger.error(`Error saving console log for ${url}:`, error);
+      context.logger.error(`Error saving console log for ${url}:`, error);
     }
 
-    global.auditcore.logger.debug(`Successfully rendered, scored, and analyzed ${url}`);
+    context.logger.debug(`Successfully rendered, scored, and analyzed ${url}`);
     return data;
   } catch (error) {
-    global.auditcore.logger.error(`Error rendering data for ${url}:`, error);
+    context.logger.error(`Error rendering data for ${url}:`, error);
     if (browser) {
       await browser.close();
     }

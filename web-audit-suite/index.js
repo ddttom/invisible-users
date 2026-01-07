@@ -20,6 +20,8 @@ import { runBulkAudit } from './src/bulk-audit.js';
 import { loadDotEnv, mergeConfig, validateEnvConfig } from './src/config/env.js';
 import { prepareConfig } from './src/config/validation.js';
 
+import { AuditContext } from './src/core/AuditContext.js';
+
 /**
  * Configure command line options using Commander
  *
@@ -184,8 +186,6 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: combinedLogPath }),
   ],
 });
-
-import { AuditContext } from './src/core/AuditContext.js';
 const context = new AuditContext(options, logger);
 
 /**
@@ -252,7 +252,7 @@ async function main() {
     // Execute main analysis process
     let results;
     if (options.bulk) {
-      await runBulkAudit(options.bulk); // TODO: Refactor bulk audit to accept context
+      await runBulkAudit(options.bulk, context); // Pass context
     } else {
       results = await runTestsOnSitemap(context); // PASS CONTEXT
 
@@ -260,7 +260,7 @@ async function main() {
       if (results && results.errors) {
         results.errors.forEach((error) => {
           if (error.includes('openGraphTags must be an object')) {
-             logger.warn('Warning: Issue with openGraphTags in scoreSocialMediaTags. This may affect SEO scores.');
+            logger.warn('Warning: Issue with openGraphTags in scoreSocialMediaTags. This may affect SEO scores.');
           }
         });
       }

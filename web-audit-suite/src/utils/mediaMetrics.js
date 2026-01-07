@@ -9,9 +9,11 @@ const MAX_EXTERNAL_LINKS = 100;
  * @param {Object} $ - The Cheerio instance.
  * @param {Object} results - The results object to update.
  */
-export function updateImageMetrics($, results) {
+export function updateImageMetrics($, results, context) {
   try {
-    global.auditcore.logger.debug('Starting updateImageMetrics');
+    if (context && context.logger) {
+        context.logger.debug('Starting updateImageMetrics');
+    }
 
     if (!$ || typeof $ !== 'function') {
       throw new Error('Invalid Cheerio instance');
@@ -24,7 +26,9 @@ export function updateImageMetrics($, results) {
     results.imageMetrics = results.imageMetrics || {};
 
     const images = $('img');
-    global.auditcore.logger.debug(`Found ${images.length} images`);
+    if (context && context.logger) {
+        context.logger.debug(`Found ${images.length} images`);
+    }
 
     images.each((i, el) => {
       safeIncrement(results.imageMetrics, 'total');
@@ -40,10 +44,14 @@ export function updateImageMetrics($, results) {
       }
     });
 
-    global.auditcore.logger.debug('Image metrics after update:', JSON.stringify(results.imageMetrics));
-    global.auditcore.logger.info('Updated image metrics successfully');
+    if (context && context.logger) {
+        context.logger.debug('Image metrics after update:', JSON.stringify(results.imageMetrics));
+        context.logger.info('Updated image metrics successfully');
+    }
   } catch (error) {
-    global.auditcore.logger.error('Error updating image metrics:', error);
+    if (context && context.logger) {
+        context.logger.error('Error updating image metrics:', error);
+    }
     results.imageMetrics = results.imageMetrics || {};
     results.imageMetrics.error = error.message;
   }
@@ -55,9 +63,11 @@ export function updateImageMetrics($, results) {
  * @param {string} baseUrl - The base URL of the website.
  * @param {Object} results - The results object to update.
  */
-export function updateLinkMetrics($, baseUrl, results) {
+export function updateLinkMetrics($, baseUrl, results, context) {
   try {
-    global.auditcore.logger.debug('Starting updateLinkMetrics');
+    if (context && context.logger) {
+        context.logger.debug('Starting updateLinkMetrics');
+    }
 
     if (!$ || typeof $ !== 'function') {
       throw new Error('Invalid Cheerio instance');
@@ -76,7 +86,9 @@ export function updateLinkMetrics($, baseUrl, results) {
     const internalLinkElements = $(`a[href^="/"], a[href^="${baseUrl}"]`);
     const externalLinks = $('a').not(internalLinkElements);
 
-    global.auditcore.logger.debug(`Found ${internalLinkElements.length} internal links and ${externalLinks.length} external links`);
+    if (context && context.logger) {
+        context.logger.debug(`Found ${internalLinkElements.length} internal links and ${externalLinks.length} external links`);
+    }
 
     if (internalLinkElements.length === 0) {
       safeIncrement(results.linkMetrics, 'pagesWithoutInternalOutlinks');
@@ -95,10 +107,14 @@ export function updateLinkMetrics($, baseUrl, results) {
       }
     });
 
-    global.auditcore.logger.debug('Link metrics after update:', JSON.stringify(results.linkMetrics));
-    global.auditcore.logger.info('Updated link metrics successfully');
+    if (context && context.logger) {
+        context.logger.debug('Link metrics after update:', JSON.stringify(results.linkMetrics));
+        context.logger.info('Updated link metrics successfully');
+    }
   } catch (error) {
-    global.auditcore.logger.error('Error updating link metrics:', error);
+    if (context && context.logger) {
+        context.logger.error('Error updating link metrics:', error);
+    }
     results.linkMetrics = results.linkMetrics || {};
     results.linkMetrics.error = error.message;
   }

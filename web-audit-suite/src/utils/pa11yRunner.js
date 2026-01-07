@@ -107,15 +107,15 @@ function getRemediationSuggestion(issue) {
  *   - error: Error details if test failed
  * @throws {Error} If all retry attempts fail
  */
-export async function runPa11yWithRetry(testUrl, options) {
-  const { maxRetries } = global.auditcore.options;
-  const { retryDelay } = global.auditcore.options.pa11y;
+export async function runPa11yWithRetry(testUrl, options, context) {
+  const { maxRetries } = context.options;
+  const { retryDelay } = context.options.pa11y;
 
-  global.auditcore.logger.debug(`[START] runPa11yWithRetry for ${testUrl}`);
+  context.logger.debug(`[START] runPa11yWithRetry for ${testUrl}`);
 
   for (let attempt = 1; attempt <= maxRetries; attempt += 1) {
     try {
-      global.auditcore.logger.debug(`Pa11y test attempt ${attempt} for ${testUrl}`);
+      context.logger.debug(`Pa11y test attempt ${attempt} for ${testUrl}`);
       const result = await pa11y(testUrl, options);
 
       // Enhance results with additional metrics
@@ -133,12 +133,12 @@ export async function runPa11yWithRetry(testUrl, options) {
         };
       });
 
-      global.auditcore.logger.debug(`Pa11y test successful for ${testUrl} on attempt ${attempt}`);
+      context.logger.debug(`Pa11y test successful for ${testUrl} on attempt ${attempt}`);
       return result;
     } catch (error) {
-      global.auditcore.logger.warn(`Pa11y test failed for ${testUrl} on attempt ${attempt}:`, error);
+      context.logger.warn(`Pa11y test failed for ${testUrl} on attempt ${attempt}:`, error);
       if (attempt === maxRetries) {
-        global.auditcore.logger.error(`Pa11y test failed for ${testUrl} after ${maxRetries} attempts.`);
+        context.logger.error(`Pa11y test failed for ${testUrl} after ${maxRetries} attempts.`);
         return {
           error: error.message,
           stack: error.stack,
@@ -162,16 +162,16 @@ export async function runPa11yWithRetry(testUrl, options) {
  *   - analysis: Aggregated metrics
  * @throws {Error} If test fails after all retries
  */
-export async function runPa11yTest(testUrl, html, results) {
-  global.auditcore.logger.info(`[START] Running enhanced Pa11y accessibility test for ${testUrl}`);
+export async function runPa11yTest(testUrl, html, results, context) {
+  context.logger.info(`[START] Running enhanced Pa11y accessibility test for ${testUrl}`);
 
   try {
     const options = {
-      ...global.auditcore.options.pa11y,
+      ...context.options.pa11y,
       html,
     };
 
-    const pa11yResult = await runPa11yWithRetry(testUrl, options);
+    const pa11yResult = await runPa11yWithRetry(testUrl, options, context);
 
     if (!pa11yResult) {
       throw new Error('Pa11y result is null or undefined');
@@ -201,19 +201,19 @@ export async function runPa11yTest(testUrl, html, results) {
       analysis: issueAnalysis,
     });
 
-    global.auditcore.logger.info('Enhanced Pa11y test summary:');
-    global.auditcore.logger.info(`  Total issues: ${issueAnalysis.totalIssues}`);
+    context.logger.info('Enhanced Pa11y test summary:');
+    context.logger.info(`  Total issues: ${issueAnalysis.totalIssues}`);
     Object.entries(issueAnalysis.bySeverity).forEach(([severity, count]) => {
-      global.auditcore.logger.info(`  ${severity}: ${count}`);
+      context.logger.info(`  ${severity}: ${count}`);
     });
     Object.entries(issueAnalysis.byWCAGLevel).forEach(([level, count]) => {
-      global.auditcore.logger.info(`  WCAG ${level}: ${count}`);
+      context.logger.info(`  WCAG ${level}: ${count}`);
     });
 
-    global.auditcore.logger.info(`[END] Enhanced Pa11y accessibility test completed for ${testUrl}`);
+    context.logger.info(`[END] Enhanced Pa11y accessibility test completed for ${testUrl}`);
     return pa11yResult;
   } catch (error) {
-    global.auditcore.logger.error(`Error running enhanced Pa11y test for ${testUrl}:`, error);
+    context.logger.error(`Error running enhanced Pa11y test for ${testUrl}:`, error);
     results.pa11y = results.pa11y || [];
     results.pa11y.push({ url: testUrl, error: error.message });
     throw error;
@@ -237,11 +237,11 @@ export async function runPa11yTest(testUrl, html, results) {
  *   - byWCAGLevel: Issue counts by WCAG level
  *   - byGuideline: Issue counts by WCAG guideline
  */
-export function analyzeAccessibilityResults(results) {
-  global.auditcore.logger.info('[START] Analyzing enhanced accessibility results');
+export function analyzeAccessibilityResults(results, context) {
+  context.logger.info('[START] Analyzing enhanced accessibility results');
 
   if (!results.pa11y || !Array.isArray(results.pa11y)) {
-    global.auditcore.logger.error('Invalid pa11y results structure');
+    context.logger.error('Invalid pa11y results structure');
     return null;
   }
 
@@ -274,26 +274,26 @@ export function analyzeAccessibilityResults(results) {
     byGuideline: {},
   });
 
-  global.auditcore.logger.info('Enhanced accessibility analysis:');
-  global.auditcore.logger.info(`  Total issues: ${analysis.totalIssues}`);
-  global.auditcore.logger.info(`  URLs with issues: ${analysis.urlsWithIssues}`);
+  context.logger.info('Enhanced accessibility analysis:');
+  context.logger.info(`  Total issues: ${analysis.totalIssues}`);
+  context.logger.info(`  URLs with issues: ${analysis.urlsWithIssues}`);
 
-  global.auditcore.logger.info('  By severity:');
+  context.logger.info('  By severity:');
   Object.entries(analysis.bySeverity).forEach(([severity, count]) => {
-    global.auditcore.logger.info(`    ${severity}: ${count}`);
+    context.logger.info(`    ${severity}: ${count}`);
   });
 
-  global.auditcore.logger.info('  By WCAG level:');
+  context.logger.info('  By WCAG level:');
   Object.entries(analysis.byWCAGLevel).forEach(([level, count]) => {
-    global.auditcore.logger.info(`    WCAG ${level}: ${count}`);
+    context.logger.info(`    WCAG ${level}: ${count}`);
   });
 
-  global.auditcore.logger.info('  By guideline:');
+  context.logger.info('  By guideline:');
   Object.entries(analysis.byGuideline).forEach(([guideline, count]) => {
-    global.auditcore.logger.info(`    ${guideline}: ${count}`);
+    context.logger.info(`    ${guideline}: ${count}`);
   });
 
-  global.auditcore.logger.info('[END] Enhanced accessibility results analysis completed');
+  context.logger.info('[END] Enhanced accessibility results analysis completed');
   return analysis;
 }
 
@@ -312,9 +312,9 @@ export function analyzeAccessibilityResults(results) {
  *   - batchResults: Array of individual test results
  *   - overallAnalysis: Aggregated metrics across all tests
  */
-export async function runPa11yTestBatch(urls, results, concurrency = 5) {
-  global.auditcore.logger.info(`[START] Running enhanced Pa11y tests for ${urls.length} URLs with concurrency ${concurrency}`);
-  const pa11yOptions = global.auditcore.options.pa11y;
+export async function runPa11yTestBatch(urls, results, context, concurrency = 5) {
+  context.logger.info(`[START] Running enhanced Pa11y tests for ${urls.length} URLs with concurrency ${concurrency}`);
+  const pa11yOptions = context.options.pa11y;
 
   // Process URLs in batches based on concurrency
   const batchPromises = [];
@@ -324,7 +324,7 @@ export async function runPa11yTestBatch(urls, results, concurrency = 5) {
       Promise.all(
         batch.map(async (url) => {
           try {
-            const pa11yResult = await runPa11yWithRetry(url, pa11yOptions);
+            const pa11yResult = await runPa11yWithRetry(url, pa11yOptions, context);
             return {
               url,
               issues: pa11yResult.issues,
@@ -343,11 +343,11 @@ export async function runPa11yTestBatch(urls, results, concurrency = 5) {
   results.pa11y.push(...batchResults);
 
   // Perform overall analysis
-  const overallAnalysis = analyzeAccessibilityResults(results);
+  const overallAnalysis = analyzeAccessibilityResults(results, context);
 
-  global.auditcore.logger.info('Enhanced Pa11y batch tests completed');
-  global.auditcore.logger.info(`Total issues found: ${overallAnalysis.totalIssues}`);
-  global.auditcore.logger.info(`URLs with issues: ${overallAnalysis.urlsWithIssues}`);
+  context.logger.info('Enhanced Pa11y batch tests completed');
+  context.logger.info(`Total issues found: ${overallAnalysis.totalIssues}`);
+  context.logger.info(`URLs with issues: ${overallAnalysis.urlsWithIssues}`);
 
   return {
     batchResults,

@@ -6,14 +6,14 @@ import { runTestsOnSitemap } from './main.js';
  * Runs a bulk audit for a list of domains from a CSV file
  * @param {string} csvPath - Path to the CSV file
  */
-export async function runBulkAudit(csvPath) {
-  global.auditcore.logger.info(`Starting Bulk Audit from: ${csvPath}`);
+export async function runBulkAudit(csvPath, context) {
+  context.logger.info(`Starting Bulk Audit from: ${csvPath}`);
 
   let content;
   try {
     content = await fs.readFile(csvPath, 'utf8');
   } catch (err) {
-    global.auditcore.logger.error(`Could not read CSV file: ${err.message}`);
+    context.logger.error(`Could not read CSV file: ${err.message}`);
     process.exit(1);
   }
 
@@ -35,9 +35,9 @@ export async function runBulkAudit(csvPath) {
     }
   }
 
-  global.auditcore.logger.info(`Found ${domains.length} domains to audit.`);
+  context.logger.info(`Found ${domains.length} domains to audit.`);
 
-  const originalOutputDir = global.auditcore.options.output;
+  const originalOutputDir = context.options.output;
   const summary = [];
 
   for (const url of domains) {
@@ -51,17 +51,17 @@ export async function runBulkAudit(csvPath) {
     try {
       const domainOutputDir = path.join(originalOutputDir, hostname);
 
-      global.auditcore.logger.info(`\n--- Auditing ${hostname} ---`);
+      context.logger.info(`\n--- Auditing ${hostname} ---`);
 
-      // Update global config for this run
-      global.auditcore.options.sitemap = url;
-      global.auditcore.options.output = domainOutputDir;
+      // Update global config for this run - NOTE: Mutating context options
+      context.options.sitemap = url;
+      context.options.output = domainOutputDir;
 
       // Ensure the recursive flag is respected or defaulted appropriately for bulk
       // We assume user wants to crawl what is found.
 
       // Run the audit
-      const results = await runTestsOnSitemap();
+      const results = await runTestsOnSitemap(context.options, context);
 
       // Calculate a simple score from results for the summary CSV
       // Using a weighted average similar to the Executive Dashboard
@@ -85,7 +85,7 @@ export async function runBulkAudit(csvPath) {
         report: path.join(hostname, 'dashboard.html'),
       });
     } catch (err) {
-      global.auditcore.logger.error(`Failed to audit ${url}: ${err.message}`);
+      context.logger.error(`Failed to audit ${url}: ${err.message}`);
       summary.push({
         domain: hostname,
         status: 'Failed',
@@ -95,12 +95,12 @@ export async function runBulkAudit(csvPath) {
   }
 
   // Restore output dir just in case
-  global.auditcore.options.output = originalOutputDir;
+  context.options.output = originalOutputDir;
 
   // Generate Master CSV
   const csvHeader = 'Domain,Status,Score,Pages,Report Path,Error\n';
   const csvRows = summary.map((r) => `${r.domain},${r.status},${r.score || ''},${r.pages || ''},${r.report || ''},"${r.error || ''}"`).join('\n');
 
   await fs.writeFile(path.join(originalOutputDir, 'bulk_audit_summary.csv'), csvHeader + csvRows);
-  global.auditcore.logger.info(`\nBulk Audit Complete. Summary saved to ${path.join(originalOutputDir, 'bulk_audit_summary.csv')}`);
+  context.logger.info(`\nBulk Audit Complete. Summary saved to ${path.join(originalOutputDir, 'bulk_audit_summary.csv')}`);
 }

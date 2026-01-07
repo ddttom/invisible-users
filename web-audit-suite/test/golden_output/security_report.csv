@@ -1,0 +1,2 @@
+URL,HTTPS,HSTS,CSP,X-Frame-Options,X-Content-Type-Options
+https://example.com/,Yes,No,No,No,No

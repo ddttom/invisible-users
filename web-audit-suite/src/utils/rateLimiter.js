@@ -16,14 +16,16 @@ let instance = null;
  * @param {string} options.interval Interval for token addition ('second', 'minute', 'hour', 'day')
  * @returns {Object} Rate limiter instance
  */
-export function getRateLimiter(options = {}) {
+export function getRateLimiter(options = {}, context) {
   if (!instance) {
     const {
       tokensPerInterval = 5,
       interval = 'second',
     } = options;
 
-    global.auditcore.logger.info(`Initializing rate limiter: ${tokensPerInterval} requests per ${interval}`);
+    if (context && context.logger) {
+        context.logger.info(`Initializing rate limiter: ${tokensPerInterval} requests per ${interval}`);
+    }
     instance = new Limiter({ tokensPerInterval, interval });
   }
   return instance;
@@ -40,11 +42,11 @@ export function resetRateLimiter() {
  * Throttle execution based on rate limits
  * @returns {Promise<void>} Resolves when a token is removed
  */
-export async function throttle() {
-  const options = global.auditcore?.options?.rateLimit || {};
+export async function throttle(context) {
+  const options = context?.options?.rateLimit || {};
   if (options.enabled === false) {
     return;
   }
-  const limiter = getRateLimiter(options);
+  const limiter = getRateLimiter(options, context);
   await limiter.removeTokens(1);
 }

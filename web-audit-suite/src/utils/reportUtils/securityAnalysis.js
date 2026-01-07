@@ -166,9 +166,9 @@ export function detectVulnerabilities(html) {
 /**
  * Analyze security features
  */
-export function analyzeSecurityFeatures(page) {
+export function analyzeSecurityFeatures(page, context) {
   if (!page) {
-    global.auditcore.logger.warn('No page data provided for security analysis');
+    context?.logger.warn('No page data provided for security analysis');
     return {
       httpsScore: 0,
       headerScore: 0,

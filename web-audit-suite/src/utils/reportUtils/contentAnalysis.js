@@ -1,9 +1,9 @@
 /**
  * Analyze heading structure
  */
-export function analyzeHeadingStructure(headings) {
+export function analyzeHeadingStructure(headings, context) {
   if (!headings || typeof headings !== 'object') {
-    global.auditcore.logger.debug('Invalid headings data for analysis');
+    context?.logger.debug('Invalid headings data for analysis');
     return 0;
   }
 
@@ -101,9 +101,9 @@ export function extractTopKeywords(content) {
 /**
  * Analyze content quality
  */
-export function analyzeContentQuality(page) {
+export function analyzeContentQuality(page, context) {
   if (!page) {
-    global.auditcore.logger.warn('No page data provided for content analysis');
+    context?.logger.warn('No page data provided for content analysis');
     return {
       headingStructureScore: 0,
       freshnessScore: 0,
@@ -115,7 +115,7 @@ export function analyzeContentQuality(page) {
     };
   }
 
-  global.auditcore.logger.debug(`Analyzing content quality for page: ${page.url}`);
+  context?.logger.debug(`Analyzing content quality for page: ${page.url}`);
 
   const headingStructureScore = analyzeHeadingStructure({
     h1Count: page.h1Count,
@@ -124,7 +124,7 @@ export function analyzeContentQuality(page) {
     h4Count: page.h4Count,
     h5Count: page.h5Count,
     h6Count: page.h6Count,
-  });
+  }, context);
   const freshnessScore = calculateFreshnessScore(page.lastmod);
   const uniquenessScore = 100; // Would require content comparison
   const grammarScore = 100; // Would require NLP analysis

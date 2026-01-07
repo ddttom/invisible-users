@@ -38,6 +38,7 @@ export class UrlProcessor {
       seoScores: [],
       pa11y: [],
       failedUrls: [],
+      urls: [],
     };
   }
 
@@ -51,7 +52,7 @@ export class UrlProcessor {
    */
   async processUrl(testUrl, lastmod, index, totalTests) {
     // Throttle requests
-    await throttle();
+    await throttle(this.context);
 
     // Log the initial state and input parameters
     this.context.logger.info(`Initiating processing for URL at index ${index + 1} of ${totalTests}: ${testUrl}`);
@@ -67,7 +68,7 @@ export class UrlProcessor {
     for (let attempt = 1; attempt <= this.options.maxRetries; attempt++) {
       try {
         this.context.logger.debug(`Attempt ${attempt} to process ${testUrl}`);
-        const data = await getOrRenderData(testUrl, this.options, this.context.logger);
+        const data = await getOrRenderData(testUrl, this.options, this.context);
 
         if (data.error) {
           throw new Error(data.error);
@@ -78,8 +79,8 @@ export class UrlProcessor {
         } = data;
 
         this.context.logger.debug(`Data retrieved for ${testUrl}. Status code: ${statusCode}`);
-        updateUrlMetrics(testUrl, this.options.baseUrl, html, statusCode, this.results, this.context.logger);
-        updateResponseCodeMetrics(statusCode, this.results, this.context.logger);
+        updateUrlMetrics(testUrl, this.options.baseUrl, html, statusCode, this.results, this.context);
+        updateResponseCodeMetrics(statusCode, this.results, this.context);
 
         if (statusCode === 200) {
           this.context.logger.info(`Successfully received 200 status for ${testUrl}`);
@@ -89,7 +90,7 @@ export class UrlProcessor {
             url: testUrl,
             reason: `Non-200 status code (${statusCode})`,
           };
-          writeToInvalidUrlFile(invalidUrl);
+          writeToInvalidUrlFile(invalidUrl, this.context);
           this.context.logger.warn(`Non-200 status code (${statusCode}) for ${testUrl}, skipping content analysis`);
         }
 
@@ -138,6 +139,7 @@ export class UrlProcessor {
           retryDelay: this.options.retryDelay,
         },
         cachedPa11y,
+        this.context,
       );
 
       if (result.pa11ySuccess) {
@@ -150,14 +152,14 @@ export class UrlProcessor {
         performanceMetrics = cachedData.performanceMetrics;
       } else {
         this.context.logger.debug(`Analyzing performance for ${testUrl}`);
-        performanceMetrics = await analyzePerformance(testUrl, this.context.logger);
+        performanceMetrics = await analyzePerformance(testUrl, this.context);
       }
       this.results.performanceAnalysis.push({ url: testUrl, lastmod, ...performanceMetrics });
 
       this.context.logger.debug(`Calculating SEO score for ${testUrl}`);
       const seoScore = calculateSeoScore({
         ...pageData, testUrl, jsErrors, performanceMetrics,
-      });
+      }, this.context);
       this.results.seoScores.push({ url: testUrl, lastmod, ...seoScore });
 
       // Update cache with all results
@@ -168,10 +170,11 @@ export class UrlProcessor {
           performanceMetrics,
           seoScore,
         };
-        await setCachedData(testUrl, newCacheData);
+        await setCachedData(testUrl, newCacheData, this.context);
         this.context.logger.debug(`Updated cache with full analysis results for ${testUrl}`);
       }
 
+      this.results.urls.push(testUrl);
       this.context.logger.info(`Successfully processed ${testUrl}`);
     } catch (error) {
       this.context.logger.error(`Error in processSuccessfulResponse for ${testUrl}: ${error.message}`);
@@ -189,9 +192,12 @@ export class UrlProcessor {
       url: testUrl,
       reason: error.message,
     };
-    writeToInvalidUrlFile(invalidUrl);
+    writeToInvalidUrlFile(invalidUrl, this.context);
     this.context.logger.error(`Failed to process ${testUrl} after ${this.options.maxRetries} attempts. Last error: ${error.message}`);
     this.results.failedUrls.push({ url: testUrl || 'undefined', error: error.message });
+    if (testUrl && !this.results.urls.includes(testUrl)) {
+      this.results.urls.push(testUrl);
+    }
   }
 
   /**

@@ -1,4 +1,3 @@
-
 /**
  * LLM Suitability Metrics Collection
  *
@@ -43,7 +42,7 @@ export function generateFeedback(metrics) {
 /**
  * Updates the results object with LLM metrics
  */
-export function updateLLMMetrics($, results, url, htmlSource = 'rendered') {
+export function updateLLMMetrics($, results, url, context, htmlSource = 'rendered') {
   if (!results.llmMetrics) {
     results.llmMetrics = [];
   }
@@ -51,7 +50,5 @@ export function updateLLMMetrics($, results, url, htmlSource = 'rendered') {
   const metrics = collectLLMMetrics($, url, htmlSource);
   results.llmMetrics.push(metrics);
 
-  if (global.auditcore && global.auditcore.logger) {
-    global.auditcore.logger.debug(`Updated LLM metrics for ${url} (${htmlSource} HTML)`);
-  }
+  context.logger.debug(`Updated LLM metrics for ${url} (${htmlSource} HTML)`);
 }

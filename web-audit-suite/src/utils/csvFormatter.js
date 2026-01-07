@@ -8,13 +8,17 @@
  * @returns {string} The formatted CSV string.
  * @throws {Error} If input is invalid.
  */
-export function formatCsv(data, headers) {
-  global.auditcore.logger.debug('Formatting CSV data...');
-  global.auditcore.logger.debug(`Data type: ${typeof data}`);
-  global.auditcore.logger.debug(`Data length: ${Array.isArray(data) ? data.length : 'N/A'}`);
+export function formatCsv(data, headers, context) {
+  if (context && context.logger) {
+    context.logger.debug('Formatting CSV data...');
+    context.logger.debug(`Data type: ${typeof data}`);
+    context.logger.debug(`Data length: ${Array.isArray(data) ? data.length : 'N/A'}`);
+  }
 
   if (!Array.isArray(data)) {
-    global.auditcore.logger.error('formatCsv received non-array data:', data);
+    if (context && context.logger) {
+      context.logger.error('formatCsv received non-array data:', data);
+    }
     throw new Error('Invalid input: data must be an array');
   }
 
@@ -27,6 +31,8 @@ export function formatCsv(data, headers) {
     return `"${cell.toString().replace(/"/g, '""')}"`;
   }).join(',')).join('\n');
 
-  global.auditcore.logger.debug('CSV formatting completed.');
+  if (context && context.logger) {
+    context.logger.debug('CSV formatting completed.');
+  }
   return csvContent;
 }

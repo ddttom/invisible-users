@@ -208,7 +208,7 @@ async function executeNetworkOperation(operation, operationName, context) {
   while (retryCount < maxRetries) {
     try {
       // Throttle request before execution
-      await throttle(); // TODO: Update throttle to accept context if needed
+      await throttle(context);
 
       return await operation();
     } catch (error) {

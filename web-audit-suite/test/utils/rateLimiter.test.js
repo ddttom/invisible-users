@@ -1,14 +1,13 @@
-
 import { expect } from 'chai';
-import { getRateLimiter, resetRateLimiter } from '../../src/utils/rateLimiter.js';
 import sinon from 'sinon';
+import { getRateLimiter, resetRateLimiter } from '../../src/utils/rateLimiter.js';
 
 describe('Rate Limiter Utils', () => {
   beforeEach(() => {
     resetRateLimiter();
     // Ensure global exists
     if (!global.auditcore) {
-        global.auditcore = { options: {}, logger: { info: sinon.stub(), warn: sinon.stub(), error: sinon.stub() } };
+      global.auditcore = { options: {}, logger: { info: sinon.stub(), warn: sinon.stub(), error: sinon.stub() } };
     }
   });
 

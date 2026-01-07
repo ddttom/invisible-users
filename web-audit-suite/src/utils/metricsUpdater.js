@@ -2,7 +2,7 @@
 
 import { estimatePixelWidth } from './metricsCommon.js';
 
-export function updateContentAnalysis(contentAnalysis, results) {
+export function updateContentAnalysis(contentAnalysis, results, context) {
   if (!results.contentAnalysis) {
     results.contentAnalysis = [];
   }
@@ -14,12 +14,12 @@ export function updateContentAnalysis(contentAnalysis, results) {
       results.contentMetrics = results.contentMetrics || {};
       results.contentMetrics.lowContent = (results.contentMetrics.lowContent || 0) + 1;
     }
-    global.auditcore.logger.debug(`Updated content analysis for ${contentAnalysis.url}`);
+    context.logger.debug(`Updated content analysis for ${contentAnalysis.url}`);
   } catch (error) {
-    global.auditcore.logger.error(`Error updating content analysis for ${contentAnalysis.url}:`, error);
+    context.logger.error(`Error updating content analysis for ${contentAnalysis.url}:`, error);
   }
 }
-export function updateTitleMetrics($, results, url) {
+export function updateTitleMetrics($, results, url, context) {
   const title = $('title').text().trim();
   results.titleMetrics = results.titleMetrics || {};
   results.titleMetrics[url] = {
@@ -30,7 +30,7 @@ export function updateTitleMetrics($, results, url) {
   };
 }
 
-export function updateMetaDescriptionMetrics($, results, url) {
+export function updateMetaDescriptionMetrics($, results, url, context) {
   const metaDescription = $('meta[name="description"]').attr('content') || '';
   results.metaDescriptionMetrics = results.metaDescriptionMetrics || {};
   results.metaDescriptionMetrics[url] = {
@@ -41,7 +41,7 @@ export function updateMetaDescriptionMetrics($, results, url) {
   };
 }
 
-export function updateHeadingMetrics($, results, url) {
+export function updateHeadingMetrics($, results, url, context) {
   const h1 = $('h1').first().text().trim();
   const h2Count = $('h2').length;
 
@@ -61,7 +61,7 @@ export function updateHeadingMetrics($, results, url) {
   };
 }
 
-export function updateImageMetrics($, results, url) {
+export function updateImageMetrics($, results, url, context) {
   const images = $('img');
   const imagesWithAlt = images.filter((i, el) => $(el).attr('alt')?.trim().length > 0);
 
@@ -72,10 +72,10 @@ export function updateImageMetrics($, results, url) {
     altTooLong: imagesWithAlt.filter((i, el) => $(el).attr('alt').length > 100).length,
   };
 
-  global.auditcore.logger.debug(`Image metrics for ${url}: ${JSON.stringify(results.imageMetrics[url])}`);
+  context.logger.debug(`Image metrics for ${url}: ${JSON.stringify(results.imageMetrics[url])}`);
 }
 
-export function updateLinkMetrics($, baseUrl, results, url) {
+export function updateLinkMetrics($, baseUrl, results, url, context) {
   const internalLinks = $(`a[href^="/"], a[href^="${baseUrl}"]`);
   const externalLinks = $('a').not(internalLinks);
 
@@ -88,7 +88,7 @@ export function updateLinkMetrics($, baseUrl, results, url) {
   };
 }
 
-export function updateSecurityMetrics(url, headers, results) {
+export function updateSecurityMetrics(url, headers, results, context) {
   results.securityMetrics = results.securityMetrics || {};
   results.securityMetrics[url] = {
     https: url.startsWith('https') ? 1 : 0,
@@ -99,7 +99,7 @@ export function updateSecurityMetrics(url, headers, results) {
   };
 }
 
-export function updateHreflangMetrics($, results, url) {
+export function updateHreflangMetrics($, results, url, context) {
   const hreflangTags = $('link[rel="alternate"][hreflang]');
 
   results.hreflangMetrics = results.hreflangMetrics || {};
@@ -109,14 +109,14 @@ export function updateHreflangMetrics($, results, url) {
   };
 }
 
-export async function updateCanonicalMetrics($, testUrl, results) {
+export async function updateCanonicalMetrics($, testUrl, results, context) {
   const canonicalUrl = $('link[rel="canonical"]').attr('href');
   results.canonicalMetrics[testUrl] = results.canonicalMetrics[testUrl] || {};
   results.canonicalMetrics[testUrl].hasCanonical = !!canonicalUrl;
   results.canonicalMetrics[testUrl].isSelfReferential = canonicalUrl === testUrl;
 }
-export async function updateContentMetrics($, results, testUrl) {
-  global.auditcore.logger.debug(`[START] Updating content metrics for ${testUrl}`);
+export async function updateContentMetrics($, results, testUrl, context) {
+  context.logger.debug(`[START] Updating content metrics for ${testUrl}`);
 
   try {
     const content = $('body').text();
@@ -130,16 +130,16 @@ export async function updateContentMetrics($, results, testUrl) {
       hasLongParagraphs: $('p').toArray().some((p) => $(p).text().split(/\s+/).length > 300),
     };
 
-    global.auditcore.logger.debug(`Content metrics updated for ${testUrl}: ${JSON.stringify(results.contentMetrics[testUrl])}`);
+    context.logger.debug(`Content metrics updated for ${testUrl}: ${JSON.stringify(results.contentMetrics[testUrl])}`);
   } catch (error) {
-    global.auditcore.logger.error(`[ERROR] Error updating content metrics for ${testUrl}:`, error);
-    global.auditcore.logger.debug(`Error stack: ${error.stack}`);
+    context.logger.error(`[ERROR] Error updating content metrics for ${testUrl}:`, error);
+    context.logger.debug(`Error stack: ${error.stack}`);
   }
 
-  global.auditcore.logger.debug(`[END] Updating content metrics for ${testUrl}`);
+  context.logger.debug(`[END] Updating content metrics for ${testUrl}`);
 }
 
-export function updateSpecificUrlMetrics($, results, testUrl) {
+export function updateSpecificUrlMetrics($, results, testUrl, context) {
   const targetSubstring = 'main--allaboutv2--ddttom.hlx.live';
   const matches = [];
 
@@ -171,9 +171,10 @@ export function updateSpecificUrlMetrics($, results, testUrl) {
   if (matches.length > 0) {
     results.specificUrlMetrics = results.specificUrlMetrics || [];
     results.specificUrlMetrics.push(...matches);
-    global.auditcore.logger.info(`Found ${matches.length} occurrences of ${targetSubstring} on ${testUrl}`);
+    context.logger.info(`Found ${matches.length} occurrences of ${targetSubstring} on ${testUrl}`);
   }
 }
+
 
 /**
  * Aggregates external resources across all pages
@@ -181,8 +182,8 @@ export function updateSpecificUrlMetrics($, results, testUrl) {
  * @param {Object} results - Results object to store aggregated metrics
  * @param {string} testUrl - Current page URL being processed
  */
-export function updateExternalResourcesMetrics(pageData, results, testUrl) {
-  global.auditcore.logger.debug(`[START] Updating external resources metrics for ${testUrl}`);
+export function updateExternalResourcesMetrics(pageData, results, testUrl, context) {
+  context.logger.debug(`[START] Updating external resources metrics for ${testUrl}`);
 
   try {
     // Initialize the aggregation object if it doesn't exist
@@ -194,7 +195,7 @@ export function updateExternalResourcesMetrics(pageData, results, testUrl) {
     const externalResources = pageData.allResources || pageData.externalResources || [];
 
     if (externalResources.length === 0) {
-      global.auditcore.logger.debug(`No external resources found on ${testUrl}`);
+      context.logger.debug(`No external resources found on ${testUrl}`);
       return;
     }
 
@@ -223,15 +224,15 @@ export function updateExternalResourcesMetrics(pageData, results, testUrl) {
       }
     });
 
-    global.auditcore.logger.info(`Aggregated ${externalResources.length} external resources from ${testUrl}`);
+    context.logger.info(`Aggregated ${externalResources.length} external resources from ${testUrl}`);
   } catch (error) {
-    global.auditcore.logger.error(`[ERROR] Error updating external resources metrics for ${testUrl}:`, error);
+    context.logger.error(`[ERROR] Error updating external resources metrics for ${testUrl}:`, error);
   }
 
-  global.auditcore.logger.debug(`[END] Updating external resources metrics for ${testUrl}`);
+  context.logger.debug(`[END] Updating external resources metrics for ${testUrl}`);
 }
 
-export function updateUrlMetrics(url, baseUrl, html, statusCode, results) {
+export function updateUrlMetrics(url, baseUrl, html, statusCode, results, context) {
   results.urlMetrics = results.urlMetrics || {
     total: 0,
     internal: 0,
@@ -282,7 +283,7 @@ export function updateUrlMetrics(url, baseUrl, html, statusCode, results) {
   results.urlMetrics[url].internalLinks = (results.urlMetrics[url].internalLinks || 0) + 1;
 }
 
-export function updateResponseCodeMetrics(statusCode, results) {
+export function updateResponseCodeMetrics(statusCode, results, context) {
   results.responseCodeMetrics = results.responseCodeMetrics || {};
   results.responseCodeMetrics[statusCode] = (results.responseCodeMetrics[statusCode] || 0) + 1;
 }
@@ -471,7 +472,7 @@ function calculateHiddenContentRatio(llm) {
  * @param {Object} results - Results object to update
  * @param {string} testUrl - URL being tested
  */
-export function updateHttpStatusMetrics(pageData, results, testUrl) {
+export function updateHttpStatusMetrics(pageData, results, testUrl, context) {
   if (!results.httpStatusAggregation) {
     results.httpStatusAggregation = {};
   }
@@ -487,7 +488,7 @@ export function updateHttpStatusMetrics(pageData, results, testUrl) {
       timestamp: new Date().toISOString(),
     };
 
-    global.auditcore.logger.debug(`Non-200 status code detected: ${testUrl} returned ${statusCode}`);
+    context.logger.debug(`Non-200 status code detected: ${testUrl} returned ${statusCode}`);
   }
 }
 

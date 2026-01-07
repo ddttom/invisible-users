@@ -1,0 +1,343 @@
+{
+  "performanceAnalysis": [
+    {
+      "url": "https://example.com/",
+      "lastmod": "2024-01-01",
+      "loadTime": 0,
+      "firstPaint": 0,
+      "firstContentfulPaint": 0,
+      "largestContentfulPaint": 0,
+      "timeToInteractive": 0,
+      "totalBlockingTime": 0,
+      "cumulativeLayoutShift": 0
+    }
+  ],
+  "seoScores": [
+    {
+      "url": "https://example.com/",
+      "lastmod": "2024-01-01",
+      "score": 31,
+      "details": {
+        "titleOptimization": 0,
+        "metaDescriptionOptimization": 0,
+        "urlStructure": 0.8,
+        "h1Optimization": 1,
+        "contentLength": 0,
+        "contentQuality": 0.2,
+        "internalLinking": 0,
+        "imageOptimization": 0,
+        "pageSpeed": 1,
+        "mobileOptimization": 0,
+        "securityFactors": 1,
+        "structuredData": 0,
+        "socialMediaTags": 0
+      }
+    }
+  ],
+  "pa11y": [
+    {
+      "url": "https://example.com/",
+      "error": "Pa11y result is null or undefined",
+      "stack": "Error: Pa11y result is null or undefined\n    at runPa11yAnalysis (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/web-audit-suite/src/utils/pageAnalyzer.js:198:13)\n    at async analyzePageContent (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/web-audit-suite/src/utils/pageAnalyzer.js:145:21)\n    at async processUrl (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/web-audit-suite/src/utils/pageAnalyzer.js:39:28)\n    at async UrlProcessor.processSuccessfulResponse (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/web-audit-suite/src/utils/urlProcessor.js:125:22)\n    at async UrlProcessor.processUrl (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/web-audit-suite/src/utils/urlProcessor.js:87:11)\n    at async UrlProcessor.processUrlsSequentially (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/web-audit-suite/src/utils/urlProcessor.js:280:7)\n    at async executeNetworkOperation (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/web-audit-suite/src/utils/networkUtils.js:213:14)\n    at async runTestsOnSitemap (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/web-audit-suite/src/main.js:88:17)\n    at async Context.<anonymous> (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/web-audit-suite/test/goldenMaster.test.js:93:21)"
+    }
+  ],
+  "failedUrls": [],
+  "urls": [
+    "https://example.com/"
+  ],
+  "urlMetrics": {
+    "total": 1,
+    "internal": 0,
+    "external": 1,
+    "internalIndexable": 0,
+    "internalNonIndexable": 0,
+    "nonAscii": 0,
+    "uppercase": 0,
+    "underscores": 0,
+    "containsSpace": 0,
+    "overLength": 0,
+    "https://example.com/": {
+      "internalLinks": 0
+    }
+  },
+  "responseCodeMetrics": {
+    "200": 1,
+    "https://example.com/": {
+      "statusCode": 200
+    }
+  },
+  "internalLinks": [
+    {
+      "url": "https://example.com/",
+      "links": []
+    }
+  ],
+  "titleMetrics": {
+    "https://example.com/": {
+      "length": 9,
+      "tooLong": 0,
+      "tooShort": 1,
+      "pixelWidth": 54
+    }
+  },
+  "metaDescriptionMetrics": {
+    "https://example.com/": {
+      "length": 16,
+      "tooLong": 0,
+      "tooShort": 1,
+      "pixelWidth": 96
+    }
+  },
+  "h1Metrics": {
+    "https://example.com/": {
+      "length": 11,
+      "missing": 0,
+      "tooLong": 0,
+      "multiple": 0
+    }
+  },
+  "h2Metrics": {
+    "https://example.com/": {
+      "count": 0,
+      "missing": 1,
+      "tooMany": 0
+    }
+  },
+  "imageMetrics": {
+    "https://example.com/": {
+      "total": 0,
+      "missingAlt": 0,
+      "altTooLong": 0
+    }
+  },
+  "linkMetrics": {
+    "https://example.com/": {
+      "internalCount": 0,
+      "externalCount": 0,
+      "noFollowCount": 0,
+      "emptyLinkText": 0
+    }
+  },
+  "securityMetrics": {
+    "https://example.com/": {
+      "https": 1,
+      "hasHsts": 0,
+      "hasCsp": 0,
+      "hasXFrameOptions": 0,
+      "hasXContentTypeOptions": 0
+    }
+  },
+  "hreflangMetrics": {
+    "https://example.com/": {
+      "count": 0,
+      "hasXDefault": 0
+    }
+  },
+  "canonicalMetrics": {
+    "https://example.com/": {
+      "hasCanonical": false,
+      "isSelfReferential": false
+    }
+  },
+  "contentMetrics": {
+    "https://example.com/": {
+      "wordCount": 3,
+      "hasLongParagraphs": false
+    },
+    "lowContent": 1
+  },
+  "llmMetrics": [
+    {
+      "url": "https://example.com/",
+      "htmlSource": "rendered",
+      "semanticHTML": {
+        "importance": "essential_served",
+        "metrics": {
+          "hasMain": true,
+          "hasNav": false,
+          "hasHeader": false,
+          "hasFooter": false,
+          "hasArticle": false,
+          "hasSection": false,
+          "navCount": 0,
+          "articleCount": 0,
+          "sectionCount": 0,
+          "divCount": 0
+        }
+      },
+      "formFields": {
+        "importance": "essential_served",
+        "metrics": {
+          "formCount": 1,
+          "totalInputs": 1,
+          "standardNamedFields": 1,
+          "nonStandardNamedFields": 0,
+          "fieldsWithLabels": 1,
+          "fieldsWithType": 1,
+          "fieldsWithRequired": 1,
+          "standardNameRatio": 1,
+          "labelRatio": 1
+        }
+      },
+      "structuredData": {
+        "importance": "essential_served",
+        "metrics": {
+          "hasJsonLd": false,
+          "jsonLdCount": 0,
+          "schemaTypes": [],
+          "hasSchemaOrg": false,
+          "hasMicrodata": false,
+          "microdataCount": 0
+        }
+      },
+      "llmsTxt": {
+        "importance": "essential_served",
+        "metrics": {
+          "hasLLMsTxtReference": false,
+          "hasLLMsTxtMeta": false,
+          "llmsTxtUrl": null
+        }
+      },
+      "robotsTxt": {
+        "importance": "essential_served",
+        "metrics": {
+          "hasRobotsTxtReference": false,
+          "hasAiTxtReference": false,
+          "hasRobotsMeta": false,
+          "robotsMetaContent": "",
+          "isNoIndex": false,
+          "isNoFollow": false,
+          "isNoArchive": false,
+          "hasAgentRestrictions": false
+        }
+      },
+      "formAutocomplete": {
+        "importance": "essential_served",
+        "metrics": {
+          "totalFormFields": 1,
+          "fieldsWithAutocomplete": 0,
+          "fieldsWithoutAutocomplete": 1,
+          "autocompleteRatio": 0,
+          "autocompleteValues": [],
+          "hasGoodAutocompleteCoverage": false
+        }
+      },
+      "dataAttributes": {
+        "importance": "essential_rendered",
+        "metrics": {
+          "hasDataState": false,
+          "dataStateCount": 0,
+          "hasAuthState": false,
+          "hasValidationState": false,
+          "hasErrorCodes": false,
+          "hasLoadingIndicators": false,
+          "totalDataAttributes": 0,
+          "hasAgentVisibilityControl": false,
+          "agentVisibleCount": 0,
+          "visibleToAgents": 0,
+          "hiddenFromAgents": 0
+        }
+      },
+      "errorHandling": {
+        "importance": "essential_rendered",
+        "metrics": {
+          "hasErrorSummary": false,
+          "errorAlertCount": 0,
+          "hasAriaLive": false,
+          "ariaLiveCount": 0,
+          "hasFieldErrors": false,
+          "errorElementCount": 0,
+          "hasAriaInvalid": false,
+          "invalidFieldCount": 0,
+          "hasPersistentErrors": false
+        }
+      },
+      "tableData": {
+        "importance": "nice_to_have",
+        "metrics": {
+          "tableCount": 0,
+          "tablesWithCaption": 0,
+          "tablesWithScope": 0,
+          "cellsWithDataAttributes": 0,
+          "totalCells": 0,
+          "machineReadableRatio": 0
+        }
+      },
+      "buttonStates": {
+        "importance": "nice_to_have",
+        "metrics": {
+          "disabledButtonCount": 0,
+          "disabledWithExplanation": 0,
+          "disabledWithoutExplanation": 0,
+          "explanationRatio": 1
+        }
+      },
+      "authenticationState": {
+        "importance": "nice_to_have",
+        "metrics": {
+          "hasAuthStateAttribute": false,
+          "hasLoginLink": false,
+          "hasLogoutLink": false,
+          "hasAccountLink": false,
+          "hasUserIdentifier": false
+        }
+      },
+      "captchaProtection": {
+        "importance": "nice_to_have",
+        "metrics": {
+          "hasCaptcha": false,
+          "hasRecaptcha": false,
+          "hasHCaptcha": false,
+          "hasTurnstile": false,
+          "hasCloudflareChallenge": false,
+          "hasBotProtection": false,
+          "captchaType": "None"
+        }
+      },
+      "apiEndpoints": {
+        "importance": "nice_to_have",
+        "metrics": {
+          "hasApiDocs": false,
+          "hasApiMeta": false,
+          "hasRestIndicators": false,
+          "hasGraphQLIndicators": false,
+          "hasOpenApiSpec": false,
+          "apiDiscoverabilityScore": 0,
+          "apiLinksCount": 0
+        }
+      }
+    }
+  ],
+  "contentAnalysis": [
+    {
+      "url": "https://example.com/",
+      "wordCount": 3,
+      "h1Count": 1,
+      "h2Count": 0,
+      "h3Count": 0,
+      "imagesCount": 0,
+      "images": [],
+      "imagesWithoutAlt": 0,
+      "internalLinksCount": 0,
+      "externalLinksCount": 0,
+      "title": "Test Page",
+      "metaDescription": "Test description",
+      "h1": "Hello World",
+      "hasResponsiveMetaTag": false,
+      "scriptsCount": 0,
+      "stylesheetsCount": 0,
+      "htmlLang": "en",
+      "canonicalUrl": "",
+      "formsCount": 1,
+      "tablesCount": 0,
+      "pageSize": 454,
+      "jsErrors": 0,
+      "pa11yIssuesCount": 0
+    }
+  ],
+  "originalSitemapUrls": [
+    "https://example.com/",
+    "https://example.com/llms.txt"
+  ],
+  "schemaVersion": "1.2.0"
+}

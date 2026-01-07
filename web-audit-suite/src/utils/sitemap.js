@@ -80,7 +80,7 @@ export async function getUrlsFromSitemap(url, limit = -1, context) {
           };
         },
         'URL fetch',
-        context // Pass context
+        context, // Pass context
       );
 
       const contentType = response.headers['content-type'];
@@ -94,6 +94,10 @@ export async function getUrlsFromSitemap(url, limit = -1, context) {
       content = content.toString('utf-8');
     } catch (error) {
       if (error.message.includes('403') && !isSitemap) {
+        if (context.options.noPuppeteer) {
+          context.logger.warn('403 Forbidden and Puppeteer disabled - skipping URL');
+          throw error;
+        }
         context.logger.info('403 Forbidden - Falling back to Puppeteer');
         return await processWithPuppeteer(url, limit, context);
       }
@@ -111,9 +115,11 @@ export async function getUrlsFromSitemap(url, limit = -1, context) {
       context.logger.info('Processing as HTML page');
       urls = await processHtmlContent(content, url, limit, context);
 
-      if (urls.length === 0) {
+      if (urls.length === 0 && !context.options.noPuppeteer) {
         context.logger.info('No URLs found with JSDOM, falling back to Puppeteer');
         urls = await processWithPuppeteer(url, limit, context);
+      } else if (urls.length === 0) {
+        context.logger.info('No URLs found with JSDOM and Puppeteer disabled');
       }
     }
 
@@ -136,7 +142,7 @@ export async function getUrlsFromSitemap(url, limit = -1, context) {
     }
 
     // Filter and validate URLs
-    const validUrls = (urls || []).filter((urlObj) => isValidUrl(urlObj.url, url));
+    const validUrls = (urls || []).filter((urlObj) => isValidUrl(urlObj.url, url, context));
     context.logger.info(`Found ${validUrls.length} valid URLs out of ${urls.length} total URLs`);
 
     return validUrls;

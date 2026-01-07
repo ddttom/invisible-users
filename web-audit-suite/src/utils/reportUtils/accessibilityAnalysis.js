@@ -22,16 +22,16 @@ import {
  * - Remediation suggestions
  * - Accessibility scoring
  */
-export function analyzePa11yResults(page) {
+export function analyzePa11yResults(page, context) {
   const analysis = createEmptyAnalysis();
 
   // Exit early if page or issues are missing
   if (!page || !page.issues) {
-    global.auditcore.logger.debug('No Pa11y issues found for page');
+    context?.logger.debug('No Pa11y issues found for page');
     return analysis;
   }
 
-  global.auditcore.logger.debug(`Analyzing ${page.issues.length} Pa11y issues`);
+  context?.logger.debug(`Analyzing ${page.issues.length} Pa11y issues`);
 
   // Ensure issues is an array
   const issues = Array.isArray(page.issues) ? page.issues : [];

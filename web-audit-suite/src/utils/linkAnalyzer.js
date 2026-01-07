@@ -11,7 +11,7 @@ import { writeToInvalidUrlFile, fixUrl } from './urlUtils.js';
  * @returns {Array<Object>} An array of internal link objects.
  * @throws {Error} If the HTML content is invalid.
  */
-export function getInternalLinks(html, pageUrl, baseUrl) {
+export function getInternalLinks(html, pageUrl, baseUrl, context) {
   if (typeof html !== 'string' || html.trim().length === 0) {
     throw new Error('Invalid HTML content');
   }
@@ -36,13 +36,13 @@ export function getInternalLinks(html, pageUrl, baseUrl) {
             });
           }
         } catch (urlError) {
-          global.auditcore.logger.warn(`Invalid URL found: ${href}`);
+          context.logger.warn(`Invalid URL found: ${href}`);
           const invalidUrl = {
             url: href,
             reason: 'Bad internal link',
             sourceUrl: pageUrl,
           };
-          writeToInvalidUrlFile(invalidUrl);
+          writeToInvalidUrlFile(invalidUrl, context);
         }
       }
     });
@@ -61,7 +61,7 @@ export function getInternalLinks(html, pageUrl, baseUrl) {
  * @returns {Array<Object>} An array of external link objects.
  * @throws {Error} If the HTML content is invalid.
  */
-export function getExternalLinks(html, pageUrl, baseUrl) {
+export function getExternalLinks(html, pageUrl, baseUrl, context) {
   if (typeof html !== 'string' || html.trim().length === 0) {
     throw new Error('Invalid HTML content');
   }
@@ -84,7 +84,7 @@ export function getExternalLinks(html, pageUrl, baseUrl) {
             });
           }
         } catch (urlError) {
-          global.auditcore.logger.warn(`Invalid URL found: ${href}`);
+          context.logger.warn(`Invalid URL found: ${href}`);
         }
       }
     });

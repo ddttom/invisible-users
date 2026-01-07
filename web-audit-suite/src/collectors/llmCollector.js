@@ -1,13 +1,12 @@
-
 /**
  * LLM Collector
- * 
+ *
  * Responsible for extracting raw LLM compatibility metrics from a Cheerio instance.
  * Pure data extraction only - no scoring or feedback logic.
  */
 
 // Constants for importance levels used in data structure
-// These are kept attached to data to indicate *intent* of the data point, 
+// These are kept attached to data to indicate *intent* of the data point,
 // even if scoring happens elsewhere.
 const IMPORTANCE = {
   ESSENTIAL_SERVED: 'essential_served',
@@ -173,7 +172,7 @@ export class LLMCollector {
   static analyzeRobotsTxt($) {
     const robotsTxtLink = $('link[href*="robots.txt"], a[href*="robots.txt"]').first();
     const aiTxtLink = $('link[href*="ai.txt"], a[href*="ai.txt"]').first();
-    
+
     const robotsMeta = $('meta[name="robots"]').attr('content');
     const hasRobotsMeta = !!robotsMeta;
     const robotsMetaContent = robotsMeta || '';
@@ -242,12 +241,12 @@ export class LLMCollector {
   static analyzeDataAttributes($) {
     const elements = $('[data-state], [data-authenticated], [data-validation-state], [data-error-code], [data-loading]');
     const agentVisibleElements = $('[data-agent-visible]');
-    
+
     const visibleToAgents = agentVisibleElements.filter((_, el) => {
       const value = $(el).attr('data-agent-visible');
       return value === 'true' || value === '';
     }).length;
-    
+
     const hiddenFromAgents = agentVisibleElements.filter((_, el) => {
       const value = $(el).attr('data-agent-visible');
       return value === 'false';

@@ -294,7 +294,6 @@ async function generateLLMChart(canvas, results, context) {
         label: 'LLM Suitability Score',
         data: [avgServedScore, avgRenderedScore],
         backgroundColor: [
-        backgroundColor: [
           getStatusColor(avgServedScore, context.options.thresholds.llm.minServedScore, true),
           getStatusColor(avgRenderedScore, context.options.thresholds.llm.minRenderedScore, true),
         ],
@@ -863,7 +862,7 @@ function buildDetailedMetricsSection(results) {
     <h2 class="section-title">Detailed Metrics</h2>
     <div class="card">
       <div class="card-header">Pass/Fail Summary</div>
-      ${buildPassFailTable(results)}
+      ${buildPassFailTable(results, context)}
     </div>
   `;
 }
@@ -871,8 +870,8 @@ function buildDetailedMetricsSection(results) {
 /**
  * Build pass/fail table
  */
-function buildPassFailTable(results) {
-  const metrics = calculatePassFailMetrics(results);
+function buildPassFailTable(results, context) {
+  const metrics = calculatePassFailMetrics(results, context);
 
   let html = '<table><thead><tr><th>Category</th><th>Metric</th><th>Value</th><th>Status</th></tr></thead><tbody>';
 
@@ -997,7 +996,7 @@ function calculateLLMOverview(results) {
   return { status, servedScore, renderedScore };
 }
 
-function calculatePassFailMetrics(results) {
+function calculatePassFailMetrics(results, context) {
   const metrics = [];
   const perf = results.performanceAnalysis || [];
   const a11y = results.pa11y || [];
@@ -1011,8 +1010,8 @@ function calculatePassFailMetrics(results) {
       category: 'Performance',
       metric: 'Avg Load Time',
       value: `${Math.round(avgLoadTime)}ms`,
-      status: avgLoadTime <= global.auditcore.options.thresholds.performance.loadTime.pass ? 'Pass'
-        : avgLoadTime <= global.auditcore.options.thresholds.performance.loadTime.warn ? 'Warn' : 'Fail',
+      status: avgLoadTime <= context.options.thresholds.performance.loadTime.pass ? 'Pass'
+        : avgLoadTime <= context.options.thresholds.performance.loadTime.warn ? 'Warn' : 'Fail',
     });
 
     const avgLCP = average(perf.map((m) => m.largestContentfulPaint || 0));
@@ -1020,8 +1019,8 @@ function calculatePassFailMetrics(results) {
       category: 'Performance',
       metric: 'Avg LCP',
       value: `${Math.round(avgLCP)}ms`,
-      status: avgLCP <= global.auditcore.options.thresholds.performance.lcp.pass ? 'Pass'
-        : avgLCP <= global.auditcore.options.thresholds.performance.lcp.warn ? 'Warn' : 'Fail',
+      status: avgLCP <= context.options.thresholds.performance.lcp.pass ? 'Pass'
+        : avgLCP <= context.options.thresholds.performance.lcp.warn ? 'Warn' : 'Fail',
     });
   }
 
@@ -1036,8 +1035,8 @@ function calculatePassFailMetrics(results) {
       category: 'Accessibility',
       metric: 'Total Errors',
       value: errors,
-      status: errors <= global.auditcore.options.thresholds.accessibility.maxErrors.pass ? 'Pass'
-        : errors <= global.auditcore.options.thresholds.accessibility.maxErrors.warn ? 'Warn' : 'Fail',
+      status: errors <= context.options.thresholds.accessibility.maxErrors.pass ? 'Pass'
+        : errors <= context.options.thresholds.accessibility.maxErrors.warn ? 'Warn' : 'Fail',
     });
   }
 
@@ -1048,8 +1047,8 @@ function calculatePassFailMetrics(results) {
       category: 'SEO',
       metric: 'Avg Score',
       value: `${Math.round(avgScore)}/100`,
-      status: avgScore >= global.auditcore.options.thresholds.seo.minScore.pass ? 'Pass'
-        : avgScore >= global.auditcore.options.thresholds.seo.minScore.warn ? 'Warn' : 'Fail',
+      status: avgScore >= context.options.thresholds.seo.minScore.pass ? 'Pass'
+        : avgScore >= context.options.thresholds.seo.minScore.warn ? 'Warn' : 'Fail',
     });
   }
 
@@ -1060,8 +1059,8 @@ function calculatePassFailMetrics(results) {
       category: 'LLM',
       metric: 'Served Score',
       value: `${Math.round(avgServed)}/100`,
-      status: avgServed >= global.auditcore.options.thresholds.llm.minServedScore.pass ? 'Pass'
-        : avgServed >= global.auditcore.options.thresholds.llm.minServedScore.warn ? 'Warn' : 'Fail',
+      status: avgServed >= context.options.thresholds.llm.minServedScore.pass ? 'Pass'
+        : avgServed >= context.options.thresholds.llm.minServedScore.warn ? 'Warn' : 'Fail',
     });
   }
 

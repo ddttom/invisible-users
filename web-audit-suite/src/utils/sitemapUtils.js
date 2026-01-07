@@ -32,7 +32,7 @@ export function getDiscoveredUrls(results) {
  * @param {string} outputDir - Output directory
  * @returns {Promise<string>} Path to perfected sitemap
  */
-export async function savePerfectedSitemap(results, outputDir) {
+export async function savePerfectedSitemap(results, outputDir, context) {
   try {
     await fs.mkdir(outputDir, { recursive: true });
 
@@ -58,7 +58,7 @@ export async function savePerfectedSitemap(results, outputDir) {
     const sortedUrls = [...allUrls].sort();
     const discoveredCount = sortedUrls.filter((url) => !originalUrls.has(url)).length;
 
-    global.auditcore.logger.info(`Saving perfected sitemap: ${sortedUrls.length} total URLs (${originalUrls.size} original + ${discoveredCount} discovered)`);
+    context.logger.info(`Saving perfected sitemap: ${sortedUrls.length} total URLs (${originalUrls.size} original + ${discoveredCount} discovered)`);
 
     sortedUrls.forEach((url) => {
       xml.push('  <url>');
@@ -74,12 +74,12 @@ export async function savePerfectedSitemap(results, outputDir) {
 
     const perfectedSitemapPath = path.join(outputDir, 'v-sitemap.xml');
     await fs.writeFile(perfectedSitemapPath, xml.join('\n'));
-    global.auditcore.logger.info(`Perfected sitemap saved to: ${perfectedSitemapPath}`);
-    global.auditcore.logger.info(`Original: ${originalUrls.size}, Discovered: ${discoveredCount}, Total: ${sortedUrls.length}`);
+    context.logger.info(`Perfected sitemap saved to: ${perfectedSitemapPath}`);
+    context.logger.info(`Original: ${originalUrls.size}, Discovered: ${discoveredCount}, Total: ${sortedUrls.length}`);
 
     return perfectedSitemapPath;
   } catch (error) {
-    global.auditcore.logger.error('Error saving perfected sitemap:', error);
+    context.logger.error('Error saving perfected sitemap:', error);
     throw error;
   }
 }

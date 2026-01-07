@@ -27,13 +27,13 @@ import {
   updateLLMMetrics,
 } from './llmMetrics.js';
 
-async function processUrl(url, html, jsErrors, baseUrl, results, headers, pageData, config, cachedPa11yResult = null) {
+async function processUrl(url, html, jsErrors, baseUrl, results, headers, pageData, config, cachedPa11yResult = null, context) {
   if (!url) {
-    global.auditcore.logger.error('Attempting to process undefined URL');
+    context.logger.error('Attempting to process undefined URL');
     return { error: 'Undefined URL' };
   }
 
-  global.auditcore.logger.info(`Processing URL: ${url}`);
+  context.logger.info(`Processing URL: ${url}`);
 
   try {
     const analysisResult = await analyzePageContent({
@@ -46,12 +46,13 @@ async function processUrl(url, html, jsErrors, baseUrl, results, headers, pageDa
       pageData,
       config,
       cachedPa11yResult,
+      context,
     });
 
-    global.auditcore.logger.info(`Analysis completed for ${url}`);
+    context.logger.info(`Analysis completed for ${url}`);
     return analysisResult;
   } catch (error) {
-    global.auditcore.logger.error(`Error processing ${url}:`, error);
+    context.logger.error(`Error processing ${url}:`, error);
     return { url, error: error.message };
   }
 }
@@ -106,9 +107,10 @@ async function analyzePageContent({
   pageData,
   config = {},
   cachedPa11yResult = null,
+  context,
 }) {
   const startTime = process.hrtime();
-  global.auditcore.logger.info(`[START] Analyzing content for ${testUrl}`);
+  context.logger.info(`[START] Analyzing content for ${testUrl}`);
 
   try {
     if (!testUrl) {
@@ -119,7 +121,7 @@ async function analyzePageContent({
     const { testUrl: validTestUrl, baseUrl: validBaseUrl } = validateInput(testUrl, html, baseUrl);
 
     const $ = cheerio.load(html);
-    global.auditcore.logger.debug(`Cheerio loaded for ${validTestUrl}`);
+    context.logger.debug(`Cheerio loaded for ${validTestUrl}`);
 
     // Extract header information
     for (let i = 1; i <= 6; i++) {
@@ -132,52 +134,52 @@ async function analyzePageContent({
     pageData.imagesCount = images.length;
     pageData.imagesWithoutAlt = images.filter((img) => !img.alt).length;
 
-    global.auditcore.logger.debug(`Found ${images.length} images for ${validTestUrl}`);
-    global.auditcore.logger.debug(`Images without alt text: ${pageData.imagesWithoutAlt}`);
+    context.logger.debug(`Found ${images.length} images for ${validTestUrl}`);
+    context.logger.debug(`Images without alt text: ${pageData.imagesWithoutAlt}`);
 
     let pa11yResult;
     if (cachedPa11yResult) {
-      global.auditcore.logger.info(`Using cached Pa11y results for ${validTestUrl}`);
+      context.logger.info(`Using cached Pa11y results for ${validTestUrl}`);
       pa11yResult = cachedPa11yResult;
     } else {
-      pa11yResult = await runPa11yAnalysis(validTestUrl, html, config);
+      pa11yResult = await runPa11yAnalysis(validTestUrl, html, config, context);
     }
     if (!results.pa11y) results.pa11y = [];
     results.pa11y.push(pa11yResult);
 
     if (pa11yResult.issues && pa11yResult.issues.length > 0) {
-      global.auditcore.logger.info(`Found ${pa11yResult.issues.length} Pa11y issues for ${validTestUrl}`);
+      context.logger.info(`Found ${pa11yResult.issues.length} Pa11y issues for ${validTestUrl}`);
     } else {
-      global.auditcore.logger.info(`No Pa11y issues found for ${validTestUrl}`);
+      context.logger.info(`No Pa11y issues found for ${validTestUrl}`);
     }
 
-    const internalLinks = await getInternalLinksWithRetry(html, validTestUrl, validBaseUrl, config);
+    const internalLinks = await getInternalLinksWithRetry(html, validTestUrl, validBaseUrl, config, context);
     if (!results.internalLinks) results.internalLinks = [];
     results.internalLinks.push({
       url: validTestUrl,
       links: internalLinks,
     });
 
-    await runMetricsAnalysis($, validTestUrl, validBaseUrl, headers, results);
+    await runMetricsAnalysis($, validTestUrl, validBaseUrl, headers, results, context);
 
-    updateResults(results, validTestUrl, pa11yResult, internalLinks);
+    updateResults(results, validTestUrl, pa11yResult, internalLinks, context);
 
-    const contentAnalysis = createContentAnalysis(validTestUrl, pageData, jsErrors, internalLinks, pa11yResult);
-    updateContentAnalysis(contentAnalysis, results);
+    const contentAnalysis = createContentAnalysis(validTestUrl, pageData, jsErrors, internalLinks, pa11yResult, context);
+    updateContentAnalysis(contentAnalysis, results, context);
 
     const duration = calculateDuration(startTime);
-    global.auditcore.logger.info(`[END] Content analysis completed for ${validTestUrl} in ${duration.toFixed(3)} seconds`);
+    context.logger.info(`[END] Content analysis completed for ${validTestUrl} in ${duration.toFixed(3)} seconds`);
 
-    return createAnalysisResult(validTestUrl, duration, contentAnalysis, pa11yResult, internalLinks);
+    return createAnalysisResult(validTestUrl, duration, contentAnalysis, pa11yResult, internalLinks, context);
   } catch (error) {
-    global.auditcore.logger.error(`[ERROR] Error in analyzePageContent for ${testUrl}:`, error);
+    context.logger.error(`[ERROR] Error in analyzePageContent for ${testUrl}:`, error);
     return { url: testUrl, error: error.message };
   }
 }
 
-async function runPa11yAnalysis(testUrl, html, config) {
-  global.auditcore.logger.info(`[START] runPa11yAnalysis for ${testUrl}`);
-  global.auditcore.logger.debug(`Pa11y options: ${JSON.stringify(config)}`);
+async function runPa11yAnalysis(testUrl, html, config, context) {
+  context.logger.info(`[START] runPa11yAnalysis for ${testUrl}`);
+  context.logger.debug(`Pa11y options: ${JSON.stringify(config)}`);
 
   try {
     if (!config || typeof config !== 'object') {
@@ -191,19 +193,19 @@ async function runPa11yAnalysis(testUrl, html, config) {
       threshold: config.pa11yThreshold,
     };
 
-    const result = await runPa11yWithRetry(testUrl, pa11yOptions);
+    const result = await runPa11yWithRetry(testUrl, pa11yOptions, context);
     if (!result) {
       throw new Error('Pa11y result is null or undefined');
     }
-    global.auditcore.logger.debug(`Pa11y result: ${JSON.stringify(result)}`);
-    global.auditcore.logger.info(`[END] runPa11yAnalysis completed successfully for ${testUrl}`);
+    context.logger.debug(`Pa11y result: ${JSON.stringify(result)}`);
+    context.logger.info(`[END] runPa11yAnalysis completed successfully for ${testUrl}`);
 
-    global.auditcore.logger.info(`Pa11y found ${result.issues ? result.issues.length : 0} issues for ${testUrl}`);
+    context.logger.info(`Pa11y found ${result.issues ? result.issues.length : 0} issues for ${testUrl}`);
 
     return result;
   } catch (error) {
-    global.auditcore.logger.error(`[ERROR] Error in runPa11yAnalysis for ${testUrl}:`, error);
-    global.auditcore.logger.error(`Error stack: ${error.stack}`);
+    context.logger.error(`[ERROR] Error in runPa11yAnalysis for ${testUrl}:`, error);
+    context.logger.error(`Error stack: ${error.stack}`);
     return {
       url: testUrl,
       error: error.message,
@@ -212,8 +214,8 @@ async function runPa11yAnalysis(testUrl, html, config) {
   }
 }
 
-async function runMetricsAnalysis($, testUrl, baseUrl, headers, results) {
-  global.auditcore.logger.info(`[START] Running metrics analysis for ${testUrl}`);
+async function runMetricsAnalysis($, testUrl, baseUrl, headers, results, context) {
+  context.logger.info(`[START] Running metrics analysis for ${testUrl}`);
   try {
     // Initialize all metric objects
     results.urlMetrics = results.urlMetrics || {};
@@ -243,35 +245,35 @@ async function runMetricsAnalysis($, testUrl, baseUrl, headers, results) {
     results.canonicalMetrics[testUrl] = results.canonicalMetrics[testUrl] || {};
     results.contentMetrics[testUrl] = results.contentMetrics[testUrl] || {};
 
-    await updateTitleMetrics($, results, testUrl);
-    await updateMetaDescriptionMetrics($, results, testUrl);
-    await updateHeadingMetrics($, results, testUrl);
-    await updateImageMetrics($, results, testUrl);
-    await updateLinkMetrics($, baseUrl, results, testUrl);
-    await updateSecurityMetrics(testUrl, headers, results);
-    await updateHreflangMetrics($, results, testUrl);
-    await updateCanonicalMetrics($, testUrl, results);
-    await updateContentMetrics($, results, testUrl);
-    await updateLLMMetrics($, results, testUrl);
+    updateTitleMetrics($, results, testUrl, context);
+    updateMetaDescriptionMetrics($, results, testUrl, context);
+    updateHeadingMetrics($, results, testUrl, context);
+    updateImageMetrics($, results, testUrl, context);
+    updateLinkMetrics($, baseUrl, results, testUrl, context);
+    updateSecurityMetrics(testUrl, headers, results, context);
+    updateHreflangMetrics($, results, testUrl, context);
+    await updateCanonicalMetrics($, testUrl, results, context);
+    await updateContentMetrics($, results, testUrl, context);
+    await updateLLMMetrics($, results, testUrl, context);
 
     const metricsToCheck = ['titleMetrics', 'metaDescriptionMetrics', 'h1Metrics', 'h2Metrics', 'imageMetrics', 'linkMetrics', 'securityMetrics', 'hreflangMetrics', 'canonicalMetrics', 'contentMetrics'];
     metricsToCheck.forEach((metric) => {
       if (!results[metric][testUrl] || Object.keys(results[metric][testUrl]).length === 0) {
-        global.auditcore.logger.warn(`${metric} not populated for ${testUrl}`);
+        context.logger.warn(`${metric} not populated for ${testUrl}`);
       } else {
-        global.auditcore.logger.debug(`${metric} updated: ${JSON.stringify(results[metric][testUrl])}`);
+        context.logger.debug(`${metric} updated: ${JSON.stringify(results[metric][testUrl])}`);
       }
     });
 
-    global.auditcore.logger.info(`[END] Metrics analysis completed successfully for ${testUrl}`);
+    context.logger.info(`[END] Metrics analysis completed successfully for ${testUrl}`);
   } catch (error) {
-    global.auditcore.logger.error(`[ERROR] Error in runMetricsAnalysis for ${testUrl}:`, error);
-    global.auditcore.logger.debug(`Error stack: ${error.stack}`);
+    context.logger.error(`[ERROR] Error in runMetricsAnalysis for ${testUrl}:`, error);
+    context.logger.debug(`Error stack: ${error.stack}`);
   }
 }
 
-function updateResults(results, testUrl, pa11yResult, internalLinks) {
-  global.auditcore.logger.info(`[START] Updating results for ${testUrl}`);
+function updateResults(results, testUrl, pa11yResult, internalLinks, context) {
+  context.logger.info(`[START] Updating results for ${testUrl}`);
 
   results.urlMetrics = results.urlMetrics || {};
   results.urlMetrics[testUrl] = results.urlMetrics[testUrl] || {};
@@ -284,7 +286,7 @@ function updateResults(results, testUrl, pa11yResult, internalLinks) {
   results.contentMetrics = results.contentMetrics || {};
   results.contentMetrics[testUrl] = results.contentMetrics[testUrl] || {};
 
-  global.auditcore.logger.info(`[END] Results updated for ${testUrl}`);
+  context.logger.info(`[END] Results updated for ${testUrl}`);
 }
 
 export {
