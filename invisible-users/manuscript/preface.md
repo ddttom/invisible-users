@@ -10,6 +10,8 @@ I caught the error, and that led me down a path I hadn't anticipated. I started 
 
 We'd built a web that worked brilliantly for one specific type of user: someone with good vision, working on a desktop, with focused attention and plenty of time. Everyone else had been struggling quietly for years. Now AI agents were struggling loudly, and there was finally commercial pressure to fix the problems.
 
+Since I began this research, the landscape has shifted dramatically. Browser extensions like Claude for Chrome and Microsoft Copilot now bring agents directly into your workflow. They operate within your browser, logged in with your credentials, seeing your screen, clicking buttons, filling forms, and working across multiple tabs whilst you handle other tasks. They schedule recurring workflows, remember shortcuts you create, and maintain context across your web sessions. This isn't agents fetching pages remotely anymore. This is agents working alongside you, in your context, on your actual work.
+
 This book grew from that realisation. It's not a book about AI. It's a book about web design, and the assumptions we've embedded into it. AI agents are the lens, but the subject is broader: how do we build digital spaces that work for users we didn't anticipate?
 
 ---

@@ -18,8 +18,6 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 ## Standards and Specifications
 
-### Standards - Web Standards
-
 ### Schema.org
 
 - Website: <https://schema.org>
@@ -30,8 +28,8 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 ### JSON-LD
 
 - Specification: <https://json-ld.org>
-- W3C Standard: <https://www.w3.org/TR/json-ld/>
-- Playground: <https://json-ld.org/playground/>
+- W3C Standard: <https://www.w3.org/TR/json-ld/> (JSON-LD 1.1 current standard)
+- Playground: <https://json-ld.org/playground/> (supports JSON-LD 1.1)
 - Format for linking data on the web in a machine-readable format
 
 ### Microdata
@@ -43,9 +41,10 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 ### Web Content Accessibility Guidelines (WCAG)
 
 - WCAG 2.1: <https://www.w3.org/WAI/WCAG21/quickref/>
-- WCAG 3.0 Draft: <https://www.w3.org/TR/wcag-3.0/>
+- WCAG 3.0 (W3C Accessibility Guidelines): <https://www.w3.org/TR/wcag-3.0/> (Provisional status as of 2026, formerly "Project Silver")
 - Understanding WCAG: <https://www.w3.org/WAI/WCAG21/Understanding/>
 - Essential for accessible and agent-friendly design
+- Note: WCAG 3.0 introduces a score-based conformance model, moving away from the A/AA/AAA levels used in WCAG 2.x
 
 ### OAuth 2.0
 
@@ -66,7 +65,9 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 - RFC 9449: <https://datatracker.ietf.org/doc/html/rfc9449>
 - Specification for binding tokens to specific clients
-- Emerging approach for token security in agent authentication contexts
+- **Status:** Recommended practice for high-security agent delegations (as of 2026)
+- Prevents token replay attacks in agent authentication scenarios
+- Critical for secure agent-to-service authentication
 
 ### WebAuthn / FIDO2
 
@@ -145,6 +146,29 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 - Documentation: <https://pptr.dev>
 - Node.js library for Chrome/Chromium automation
 
+### Agent-Specific Testing
+
+### Agent Protocol
+
+- Website: <https://agentprotocol.ai>
+- Standard communication protocol for AI agents
+- Defines how agents interact with systems and services
+- Essential for testing agent compatibility
+
+### LangSmith
+
+- Website: <https://www.langchain.com/langsmith>
+- Tracing and observability for AI agent interactions
+- Tracks how agents parse and interact with DOM elements
+- Debug agent behaviour and interaction patterns
+
+### LangFuse
+
+- Website: <https://langfuse.com>
+- Open-source observability platform for LLM applications
+- Agent interaction analysis and debugging
+- Track agent decision-making and DOM navigation
+
 ---
 
 ## AI Agent Platforms
@@ -154,19 +178,22 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 ### ChatGPT (OpenAI)
 
 - Website: <https://chat.openai.com>
-- Browsing: <https://help.openai.com/en/articles/8077698-how-do-i-use-chatgpt-browse-with-bing-to-search-the-web>
+- Models: GPT-5 and o-series reasoning models with native SearchGPT integration
+- Browsing: Natively integrated web search and browsing capabilities (legacy Bing integration documentation: <https://help.openai.com/en/articles/8077698-how-do-i-use-chatgpt-browse-with-bing-to-search-the-web>)
 - API: <https://platform.openai.com/docs/api-reference>
 
 ### Claude (Anthropic)
 
 - Website: <https://claude.ai>
-- Computer Use: <https://docs.anthropic.com/claude/docs/computer-use>
+- Computer Use: <https://docs.anthropic.com/claude/docs/computer-use> (enables direct UI interaction, making inclusive design principles critical)
+- Chrome Extension: <https://support.claude.com/en/articles/12431227-simplify-your-browsing-experience-with-claude-in-chrome> (in-browser assistant for web interaction)
 - API: <https://docs.anthropic.com/claude/reference/getting-started-with-the-api>
+- Claude's Computer Use capability allows agents to interact directly with user interfaces, making the accessibility and semantic patterns discussed in this book essential for reliable agent operation
 
 ### Gemini (Google)
 
 - Website: <https://gemini.google.com>
-- API: <https://ai.google.dev/docs>
+- API: <https://ai.google.dev/docs> (Gemini 2.0/Ultra documentation)
 
 ### Microsoft Copilot
 
@@ -210,6 +237,7 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 - Website: <https://caniuse.com>
 - Browser compatibility tables for web technologies
+- Baseline: <https://web.dev/baseline> (Web Platform Tests initiative for tracking cross-browser support, modern standard for feature adoption tracking)
 
 ### APIs and Standards
 
@@ -250,9 +278,10 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 ### EU AI Act
 
-- Official Proposal: <https://artificialintelligenceact.eu>
+- Final Act Text: <https://artificialintelligenceact.eu>
 - European Commission: <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai>
-- Emerging AI regulation framework
+- AI regulation framework (law as of 2024, implementation phase in 2026)
+- Establishes risk-based approach to AI system regulation
 
 ### Security Standards
 
@@ -371,7 +400,7 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 - API Docs: <https://stripe.com/docs/api>
 - Excellent API-first design
 
-### Example Sites - GitHub
+### GitHub (Example Site)
 
 - Website: <https://github.com>
 - API: <https://docs.github.com/en/rest>
@@ -382,6 +411,7 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 - Website: <https://amazon.com>
 - Comprehensive structured data implementation
+- Note: While Amazon implements rich structured data, they employ strict rate-limiting and web application firewalls (WAF) that may block automated agent access. For a more collaborative approach to agent access, see the llms.txt emerging standard in the Emerging Standards section
 
 ### Calendly
 
@@ -458,9 +488,10 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 - Official Specification: <https://llmstxt.org>
 - Example implementation in code-examples repository
-- **Status:** Emerging convention (early adoption phase)
+- **Status:** De facto standard (widely adopted as of 2026)
 - Similar to robots.txt but for language models
-- Not yet a formal standard, but gaining community adoption
+- Adopted by major platforms including Stack Overflow, documentation sites, and enterprise applications
+- Optimises content for RAG (Retrieval-Augmented Generation) systems
 
 ### Real-World Example
 
@@ -507,7 +538,7 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 - Website: <https://git-scm.com>
 - Documentation: <https://git-scm.com/doc>
 
-### Version Control - GitHub
+### GitHub (Version Control)
 
 - Website: <https://github.com>
 - Repository hosting and collaboration
@@ -723,5 +754,5 @@ Particularly welcome:
 
 ---
 
-**Last verified:** 2026-01-01
+**Last verified:** 2026-01-22
 **Next review:** Quarterly (April 2026)

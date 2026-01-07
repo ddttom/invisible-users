@@ -2,7 +2,9 @@
 
 ## What Is Happening
 
-AI agents - assistants like ChatGPT, Claude, and similar tools - are visiting websites on behalf of human users to research products, compare options, check availability, and increasingly to complete transactions. These agents struggle with common web design patterns that work well for human visual browsing but fail for sequential, programmatic reading. The same patterns that break for agents also create accessibility problems for disabled users, but until now there's been insufficient commercial pressure to fix them.
+AI agents are no longer just chat interfaces that fetch web pages. Browser extensions like Claude for Chrome and Microsoft Copilot now work directly alongside users within their actual browsers, seeing what you see, clicking what needs clicking, logged in with your credentials, and acting on your behalf across multiple tabs. These agents operate in your context, with your permissions, on websites you use every day.
+
+This represents a fundamental shift: agents aren't just reading static HTML anymore. They navigate interfaces visually, maintain context across sessions, fill forms, click buttons, and execute multi-step workflows whilst you work on something else. They struggle with common web design patterns that work well for human visual browsing but fail for sequential, programmatic interaction. The same patterns that break for agents also create accessibility problems for disabled users, but until now there's been insufficient commercial pressure to fix them.
 
 ## Why It Matters to Business
 
