@@ -88,30 +88,16 @@ Total reading time: 8-12 hours for complete coverage, depending on technical dep
 
 ## One-Page Decision Tree: Should You Prioritise Agent Compatibility?
 
-**Start here: Is your business primarily local and relationship-based?**
+![Decision tree flowchart showing five questions to assess agent compatibility priority level](illustrations/executive-summary-decision-tree.png)
 
-- Yes → **Low priority.** Monitor the situation but don't invest heavily unless your competitive landscape changes.
-- No → Continue.
+**How to use this decision tree:**
 
-**Do customers find you through search and compare multiple options?**
+Start at Q1 and follow the YES/NO arrows through five key questions. Each path leads to one of four priority levels:
 
-- No → **Low priority.** Established customer relationships reduce agent impact.
-- Yes → Continue.
-
-**Is your revenue model dependent on advertising?**
-
-- Yes → **Critical priority.** Chapter 5 describes the structural threat. Consider revenue diversification urgently.
-- No → Continue.
-
-**Do you compete primarily on price or easily comparable features?**
-
-- Yes → **High priority.** Agents excel at comparison shopping. Agent-friendly sites capture sales from competitors.
-- No → Continue.
-
-**Do you have complex product information, multi-step forms, or checkout flows?**
-
-- Yes → **High priority.** These are where agents commonly fail. Fixing them improves conversions.
-- No → **Medium priority.** Start with Priority 1 assessment and monitor agent traffic.
+- **LOW PRIORITY:** Monitor the situation but don't invest heavily
+- **MEDIUM PRIORITY:** Start with Priority 1 assessment and monitor agent traffic
+- **HIGH PRIORITY:** Agents excel at comparison shopping - fix agent-hostile patterns urgently
+- **CRITICAL PRIORITY:** Structural threat to ad-dependent revenue - diversify urgently
 
 ## Key Limitation: What This Book Is Not
 
