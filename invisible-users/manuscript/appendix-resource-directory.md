@@ -185,7 +185,7 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 ### Claude (Anthropic)
 
 - Website: <https://claude.ai>
-- Computer Use: <https://docs.anthropic.com/claude/docs/computer-use> (enables direct UI interaction, making inclusive design principles critical)
+- Computer Use: <https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool> (enables direct UI interaction, making inclusive design principles critical)
 - Chrome Extension: <https://support.claude.com/en/articles/12431227-simplify-your-browsing-experience-with-claude-in-chrome> (in-browser assistant for web interaction)
 - API: <https://docs.anthropic.com/claude/reference/getting-started-with-the-api>
 - Claude's Computer Use capability allows agents to interact directly with user interfaces, making the accessibility and semantic patterns discussed in this book essential for reliable agent operation
@@ -495,11 +495,12 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 ### Real-World Example
 
-- Digital Domain Technologies llms.txt: <https://allabout.network/llms.txt>
-- Comprehensive documentation structure for Adobe Edge Delivery Services and AI development
-- Demonstrates practical implementation with many posts across six major categories
-- Shows how to organise technical documentation, developer guides, and AI integration resources
+- Digital Domain Technologies: <https://allabout.network/llms.txt>
+- Comprehensive documentation portal structured around llms.txt principles
+- HTML-based implementation for Adobe Edge Delivery Services and AI development
+- Demonstrates how to organise technical documentation, developer guides, and AI integration resources across six major categories
 - Includes structured access guidelines, rate limits, and attribution requirements
+- Note: This is an HTML documentation portal following llms.txt principles, not a raw markdown llms.txt file
 
 ### Discussion
 
