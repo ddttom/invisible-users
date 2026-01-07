@@ -19,7 +19,8 @@
       "Bash(tree:*)",
       "Bash(find:*)",
       "Bash(wc:*)",
-      "Bash(git remote:*)"
+      "Bash(git remote:*)",
+      "Bash(test:*)"
     ],
     "deny": [],
     "ask": []
