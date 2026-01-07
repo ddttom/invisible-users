@@ -265,17 +265,21 @@ Plus: `results.json` (single source of truth), sitemaps, comprehensive logs
 
 ## Target Audience
 
-We address three distinct segments with tailored value propositions:
+We address four distinct segments with tailored value propositions:
 
 ### 1. Web Professionals & Engineers (The Users)
 
 Developers and QA specialists who need technical tools. We provide the **Web Audit Suite** and production-ready code to solve immediate implementation challenges.
 
-### 2. Business Leaders (The Buyers)
+### 2. Agent System Developers (The Builders)
+
+Developers building AI agents, browser extensions, and agentic systems that interact with websites. Chapter 11 provides **validation frameworks**, **confidence scoring patterns**, and **guardrails** that prevent pipeline failures.
+
+### 3. Business Leaders (The Buyers)
 
 Executives who need to understand strategic risk. We provide the **Book** and **Business Case** to explain "silent conversion failures" and justify investment.
 
-### 3. Partners & Investors (The Scalers)
+### 4. Partners & Investors (The Scalers)
 
 Agencies and investors looking for the next growth category. We provide the **Methodology** and **Business Model** to enable new professional service lines.
 

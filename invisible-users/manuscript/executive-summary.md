@@ -78,6 +78,8 @@ This book addresses different audiences with different needs:
 
 **Developers**: Start with Chapters 10-11, then work backwards through Chapters 2, 6, 9 for context (4-5 hours)
 
+**Agent System Developers**: Chapter 11 (core focus on validation layers and guardrails), Chapters 2-3 (failure modes), Chapter 10 (website patterns your agents will encounter) (2-3 hours)
+
 **Small Business Owners**: Chapters 1, 4, small business sections in Chapter 9 (1-2 hours)
 
 For detailed reading paths with chapter-by-chapter guidance, see the navigation guide in the Preface (page X).

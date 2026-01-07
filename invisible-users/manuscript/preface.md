@@ -48,15 +48,18 @@ This isn't a manifesto. There are genuine disagreements about how to handle agen
 
 ## Who This Book Is For
 
-This book is written for three distinct audiences, each of whom holds a piece of the solution:
+This book is written for four distinct audiences, each of whom holds a piece of the solution:
 
 **1. Web Professionals & Engineers**
 Developers, architects, and product owners who build the web. You are the text's primary audience. You'll find technical patterns, code examples, and architectural discussions that explain exactly how to build agent-compatible interfaces. The [Web Audit Suite](../web-audit-suite/) included with this book is your toolset.
 
-**2. Business Leaders & Decision Makers**
+**2. Agent System Developers**
+Developers building AI agents, browser extensions, and agentic systems that interact with websites. Chapter 11 is written specifically for you. You'll find validation frameworks, confidence scoring patterns, and guardrails that prevent pipeline failures like the £203,000 cruise pricing error. Your agents need robust data quality controls.
+
+**3. Business Leaders & Decision Makers**
 CTOs, CMOs, and executives who need to understand the strategic shift. You don't need to write the code, but you do need to understand why "silent conversion failures" are happening and how to resource the fix. Chapters 4, 5, and 9 are written specifically for you.
 
-**3. Partners & Investors**
+**4. Partners & Investors**
 Agencies looking to offer new services and investors evaluating the next phase of web evolution. The methodology described here creates a new category of professional services—audit, remediation, and certification—that will likely dominate web development discussions for the next decade.
 
 ---
@@ -153,6 +156,32 @@ You need implementation patterns and technical depth.
 Use the implementation checklist and code examples. There's a glossary at the end - some terms have specific meanings here.
 
 **Expected time:** 4-5 hours
+
+### Reading Path for Agent System Developers
+
+You're building AI agents, browser extensions, or agentic systems that interact with websites. You need validation frameworks and guardrails.
+
+**Start with:**
+
+- Chapter 11: What Agent Creators Must Build (validation layers, confidence scoring, pipeline failure prevention)
+
+**Essential context:**
+
+- Chapter 2: The Invisible Failure (what breaks for agents and why)
+- Chapter 3: The Architectural Conflict (website design patterns your agents will encounter)
+
+**Implementation patterns:**
+
+- Chapter 10: Technical Advice (website-side patterns your agents should expect)
+
+**Business context:**
+
+- Chapter 4: The Business Reality (commercial pressures affecting website design)
+- Chapter 6: The Security Maze (authentication challenges for agents)
+
+Focus on the £203,000 cruise pricing case study (Appendix I) - it demonstrates exactly why validation layers, comparative analysis, and confidence scoring are essential. Your agents will encounter malformed data, ambiguous HTML, and incomplete information. Chapter 11 provides the frameworks to handle these gracefully.
+
+**Expected time:** 2-3 hours
 
 ### Reading Path for Small Business Owners
 

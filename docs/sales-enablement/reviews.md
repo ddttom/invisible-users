@@ -1,6 +1,6 @@
 # Repository Review by Target Audience
 
-This document captures the perspective of the three primary target audiences identified in the repository's strategy. It serves to validate that the current content meets the distinct needs of each group.
+This document captures the perspective of the four primary target audiences identified in the repository's strategy. It serves to validate that the current content meets the distinct needs of each group.
 
 ## 1. Web Professionals & Engineers (The Users)
 
@@ -36,7 +36,43 @@ This document captures the perspective of the three primary target audiences ide
 
 ---
 
-## 2. Business Leaders (The Buyers)
+## 2. Agent System Developers (The Builders)
+
+**Persona:** Senior Developer building AI agents, browser extensions, or agentic systems that interact with websites.
+**Mindset:** Focused on data quality, pipeline robustness, validation frameworks, and preventing agent failures.
+
+### Technical Review
+
+* **"Chapter 11 is exactly what we need."**
+  * *Thought:* "I've been building browser agents for 6 months and kept hitting data extraction errors. Chapter 11's validation frameworks, confidence scoring patterns, and guardrails are precisely the architecture I needed but didn't have."
+* **"The £203k case study is invaluable."**
+  * *Thought:* "Appendix I's £203,000 cruise pricing error demonstrates exactly why range validation, comparative analysis, and cross-referencing are essential. This real-world failure mode has saved me weeks of debugging."
+* **"Incomplete data detection pattern."**
+  * *Thought:* "The code example showing how to detect incomplete comparative data (pricing for 1 of 3 operators reduces confidence by 40%) is brilliant. I'm implementing this immediately in our data collection pipeline."
+* **"Validation layers prevent production disasters."**
+  * *Thought:* "The five-layer validation framework (range → comparative → structured data → confidence scoring → graceful degradation) is production-grade architecture. This isn't academic theory; it's what we should have built from day one."
+
+### Implementation Reaction
+
+* **"Website patterns inform agent design."**
+  * *Thought:* "Chapter 10's website patterns help me understand what my agents will encounter in the wild. Knowing that most sites lack explicit state attributes means I need robust fallback detection."
+* **"Business context matters."**
+  * *Thought:* "Chapters 4 and 6 explain commercial pressures affecting website design. Understanding why sites have anti-agent patterns helps me build better detection and handling strategies."
+
+### Agent System Developers - Verdict
+
+**"Essential Reading."** Chapter 11 and Appendix I are required reading for anyone building production agent systems. The validation frameworks save months of trial-and-error development.
+
+### Agent System Developers - Suggested Improvements
+
+* **Reference Implementation:** "Provide a complete TypeScript reference implementation of the validation framework. I want to fork it as a starting point for our agent pipeline."
+* **Testing Strategies:** "Add guidance on testing validation layers. How do I unit test confidence scoring? How do I integration test comparative validators?"
+* **Performance Considerations:** "Multi-source verification is great for accuracy but adds latency. Include guidance on when to prioritize speed vs. confidence."
+* **Error Recovery Patterns:** "Chapter 11 covers prevention well. I'd like more on recovery: when validation fails, what are the agent's options besides 'flag for manual review'?"
+
+---
+
+## 3. Business Leaders (The Buyers)
 
 **Persona:** CTO, CMO, or VP of Digital Product at a mid-to-large e-commerce or SaaS company.
 **Mindset:** Risk-averse but FOMO-driven regarding AI, focused on ROI, conversion rates, and competitive advantage.
@@ -68,7 +104,7 @@ This document captures the perspective of the three primary target audiences ide
 
 ---
 
-## 3. Partners & Investors (The Scalers)
+## 4. Partners & Investors (The Scalers)
 
 **Persona:** Agency Founder, Venture Capitalist, or Strategic Consultant.
 **Mindset:** Looking for leverage, scalability, market timing, and "why now?".

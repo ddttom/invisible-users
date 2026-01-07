@@ -228,10 +228,13 @@ An interactive notebook version is available at [allabout.network/invisible-user
 **1. Web Professionals & Engineers (The Users)**
 Developers and QA specialists who need the technical tools. You get the **Web Audit Suite**, production-ready code, and testing strategies to solve immediate pipeline challenges.
 
-**2. Business Leaders (The Buyers)**
+**2. Agent System Developers (The Builders)**
+Developers building AI agents, browser extensions, and agentic systems. Chapter 11 is written specifically for you. You get **validation frameworks**, **confidence scoring patterns**, and **guardrails** that prevent pipeline failures like the £203,000 cruise pricing error.
+
+**3. Business Leaders (The Buyers)**
 Executives who need to understand the strategic risk. You get the **Business Case** to explain "silent conversion failures" and justify the investment in agent compatibility.
 
-**3. Partners & Investors (The Scalers)**
+**4. Partners & Investors (The Scalers)**
 Agencies and investors looking for the next growth category. You get the **Methodology** and **Business Model** to enable new professional service lines.
 
 ## The Chapters
@@ -246,6 +249,7 @@ Agencies and investors looking for the next growth category. You get the **Metho
 8. **The Human Cost** - Digital divide and access implications
 9. **Designing for Both** - Practical solutions that work for everyone
 10. **Technical Advice** - Implementation code and testing strategies
+11. **What Agent Creators Must Build** - Validation layers, confidence scoring, and pipeline failure prevention
 
 ## What You'll Find Inside
 
@@ -350,8 +354,8 @@ The patterns that break agents are patterns we should have fixed years ago. We d
 
 "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 
-- **10 chapters** covering technical, business, ethical, and human implications
-- **~43,800 words** of practical, actionable guidance
+- **11 chapters** covering technical, business, ethical, and human implications
+- **~65,500 words** of practical, actionable guidance
 - **Working code examples** you can implement tomorrow
 - **10 practical design patterns** with bad/good examples showing correct HTML structure
 - **Concrete examples** from websites demonstrating failures and fixes
