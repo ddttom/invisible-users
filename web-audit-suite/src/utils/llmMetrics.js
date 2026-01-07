@@ -54,7 +54,7 @@ function analyzeFormFields($) {
   const forms = $('form');
   const inputs = $('input, select, textarea');
 
-  // Standard field names from advice.md - ESSENTIAL
+  // Standard field names from appendix-ai-friendly-html-guide.md - ESSENTIAL
   const standardNames = [
     'email', 'firstName', 'first_name', 'lastName', 'last_name',
     'fullName', 'full_name', 'phone', 'telephone',
