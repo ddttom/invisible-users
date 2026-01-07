@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2026-01-07 (Late PM)
+
+**Marketing Materials Policy Documentation:**
+
+- CLAUDE.md: Added "Marketing Materials Guidelines" section documenting policy against fixed costs, concrete percentages, and time commitments in marketing materials
+- Rationale: Field too new for validated ROI data; every site is different
+- Guidelines include what to avoid (£500, 67%, "2-3 weeks") and what to use instead (qualitative language, phase-based progression)
+- All marketing materials previously updated to comply with this policy
+- appendix-live-llms.txt: Enhanced with access guidelines, rate limits, attribution requirements, and author metadata
+
 ### Added - 2026-01-07 (PM)
 
 **Agent System Developers as Fourth Primary Audience:**
