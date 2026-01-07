@@ -19,7 +19,7 @@ This repository contains two integrated projects:
 - **Total Content:** ~65,500 words (including appendices)
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
 - **Appendices:** 9 appendices (A-I) covering implementation guides, patterns, resources, LLM context, and pipeline failure case study
-- **Illustrations:** 11 SVG illustrations complete
+- **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Complete manuscript consolidated in `invisible-users/manuscript/` subdirectory
   - Core chapters (1-11), preface, executive summary
