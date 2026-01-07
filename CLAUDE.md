@@ -54,6 +54,7 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   │   ├── appendix-ai-patterns-quick-reference.md  # Appendix E
 │   │   ├── appendix-implementation-roadmap.md       # Appendix F
 │   │   ├── appendix-resource-directory.md           # Appendix G
+│   │   ├── appendix-live-llms.txt                   # Appendix H
 │   │   └── illustrations/    # Illustrations for each chapter (SVG + PNG)
 │   │       ├── chapter-XX-*.svg  # Source SVG files (tracked in git)
 │   │       └── chapter-XX-*.png  # PNG exports (gitignored, generated locally)

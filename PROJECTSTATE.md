@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-22
+**Last Updated:** 2026-01-07
 
 ### Combined Repository
 
@@ -18,11 +18,11 @@ This repository contains two integrated projects:
 - **Word Count:** ~50,272 words (core chapters)
 - **Total Content:** ~70,962 words (including appendices)
 - **Chapters:** 10 chapters complete
-- **Appendices:** 7 appendices (A-G) covering implementation guides, patterns, and resources
+- **Appendices:** 8 appendices (A-H) covering implementation guides, patterns, resources, and LLM context
 - **Illustrations:** 10 SVG illustrations complete
 - **Structure:** Complete manuscript consolidated in `invisible-users/manuscript/` subdirectory
   - Core chapters, preface, executive summary
-  - All seven appendices (implementation guides, pattern references, resource directory)
+  - All eight appendices (implementation guides, pattern references, resource directory, DDT reference)
   - Planning files (book-plan.md, book-svg-style.md) remain at root level
 
 ### Web Audit Suite Status

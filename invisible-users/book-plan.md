@@ -295,6 +295,7 @@ All 10 chapter illustrations complete ✅
 | manuscript/Glossary.md | ✅ | 60+ technical terms with cross-references |
 | manuscript/appendix-implementation-roadmap.md | ✅ | Priority-based implementation roadmap (Appendix F) |
 | manuscript/appendix-resource-directory.md | ✅ | 150+ curated resources by category (Appendix G) |
+| manuscript/appendix-live-llms.txt | ✅ | Digital Domain Technologies reference for LLM context (Appendix H) |
 | cover-design.svg | ✅ | Professional book cover (600×900) |
 
 ### Interactive Materials
@@ -480,6 +481,7 @@ Real-world llms.txt example:
     │   ├── appendix-ai-patterns-quick-reference.md  # Appendix E (~1,300 words)
     │   ├── appendix-implementation-roadmap.md       # Appendix F (~2,750 words)
     │   ├── appendix-resource-directory.md           # Appendix G (~1,950 words)
+    │   ├── appendix-live-llms.txt                   # Appendix H (DDT/LLM reference)
     │   └── illustrations/
     │       └── chapter-01-*.svg through chapter-10-*.svg
     ├── llms.txt                 # Example llms.txt file from book content
