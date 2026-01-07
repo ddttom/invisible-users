@@ -7,7 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added - 2026-01-07
+### Added - 2026-01-07 (PM)
+
+**Agent System Developers as Fourth Primary Audience:**
+
+- Updated manuscript to explicitly include Agent System Developers as distinct fourth audience alongside Web Professionals, Business Leaders, and Partners/Investors
+- Executive Summary: Added Agent System Developers to "Navigate This Book" section with recommended reading path (Chapter 11 core focus, Chapters 2-3 for failure modes, Chapter 10 for website patterns, 2-3 hours)
+- Preface: Updated "Who This Book Is For" from three to four audiences
+- Preface: Created comprehensive "Reading Path for Agent System Developers" section highlighting Chapter 11 and Appendix I (£203k case study) as essential resources
+- Blog: Updated audience section and chapter list to reflect 11 chapters and four audiences
+- PITCH.md: Updated target audience from three to four segments
+- reviews.md: Added comprehensive Agent System Developers persona review with technical reactions and suggested improvements
+- README.md: Updated repository audience description to include Agent System Developers
+- PROJECTSTATE.md: Updated to reflect v2.6.0, 11 chapters, 9 appendices, and four target audiences
+- Focus: Chapter 11's validation frameworks, confidence scoring patterns, and guardrails are specifically designed for developers building AI agents and browser extensions
+
+### Added - 2026-01-07 (AM)
 
 **Chapter 11: What Agent Creators Must Build (~5,000 words):**
 
