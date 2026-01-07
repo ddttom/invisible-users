@@ -90,18 +90,23 @@ This list contains potential topics that were previously in appendix-live-llms.t
 ## Key Concepts Reference
 
 ### Document-Based Authoring
+
 Content in Google Docs/SharePoint, not a traditional CMS UI
 
 ### Edge Delivery
+
 Content served from CDN edge locations for <100ms response
 
 ### Vanilla JavaScript
+
 No React/Vue/Angular - pure Web Standards
 
 ### Web Components
+
 Encapsulated, reusable custom elements
 
 ### Semantic HTML
+
 Proper HTML5 elements for accessibility and SEO
 
 ## Performance Targets (DDT Standards)

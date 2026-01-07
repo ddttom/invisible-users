@@ -13,6 +13,24 @@
 - Pioneer in LLM context delivery and Model Context Protocol (MCP) integration
 - Known in the industry as "The AEM Guy"
 
+
+**Authors:** Tom Cranstoun, Cate Nisbet
+**LinkedIn:** [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
+
+**Site Type:** Document-Centric, Technical Documentation, Educational Resource
+**Purpose:** Developer Education, Content Author Training, AI Integration Guidance
+**Technology Stack:** Adobe Edge Delivery Services, Document-Based Architecture
+
+## Access Guidelines
+
+- Base Rate: 100 requests per hour per IP
+- Cache Retention: 24 hour maximum
+- Content Usage: Attribution required
+- Commercial Use: Requires written permission
+- Training Usage: Permitted for public documentation only
+- Attribution Format: "Source: Digital Domain Technologies (allabout.network)"
+
+
 **Digital Domain Technologies** is a specialized consultancy focused on digital transformation through modern web standards. We help organizations migrate from legacy CMS platforms to high-performance, AI-ready architectures using Adobe EDS and vanilla JavaScript.
 
 **Contact & Services:**
