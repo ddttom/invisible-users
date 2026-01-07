@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2026-01-07 (Late Evening)
+
+**Time-Based Estimates Removed Across Documentation:**
+
+- Systematically removed all time-based implementation estimates (hours, days, weeks, months) from documentation across 9 files
+- Replaced specific time estimates with qualitative descriptions to avoid misleading claims (implementation time varies by site size and complexity)
+- Book manuscript updates:
+  - executive-summary.md: Removed time estimates from Priority headers (1-2 hours, days to weeks, months) and reading path guidance (3-4 hours → "Focused reading", etc.)
+  - preface.md: Updated all reading path time estimates to qualitative descriptions (Expected time: 3-4 hours → Reading approach: Focused reading)
+  - chapter-09-designing-for-both.md: Changed narrative time references (A few hours → Minimal, A developer-week or two → Moderate development work)
+  - chapter-11-what-agent-creators-must-build.md: Replaced implementation time examples with scope descriptions (2-3 days → Quick prototype, 1-2 weeks → Core feature)
+- Marketing materials updates:
+  - docs/blog.md: Removed time claims about research savings and implementation effort
+  - docs/sales-enablement/ROI_CASE_STUDIES.md: Changed "2 developer days" to "minimal development effort", "within 2 weeks" to "quickly after implementation"
+  - docs/sales-enablement/reviews.md: Removed time duration claims (6 months, weeks, months)
+  - docs/sales-enablement/reviewer-email.md: Replaced specific review time estimates with flexible language (2-3 hours → focused reading, 7-10 days → reasonable period)
+- Tool documentation updates:
+  - web-audit-suite/BLOG.md: Changed implementation time estimates to effort levels (1-2 hours → Minimal effort, 1-2 days → Moderate work, 1-2 weeks → Significant refactoring)
+  - Removed "48 hours" delivery promise from contact section
+- Rationale: Per CLAUDE.md guidelines, time estimates are misleading because implementation varies by site size, organizational context, and complexity
+- Total: 36 time-based references removed/replaced across core documentation, marketing, and tool docs
+
 ### Added - 2026-01-07 (Evening)
 
 **Executive Summary Decision Tree Illustration:**
