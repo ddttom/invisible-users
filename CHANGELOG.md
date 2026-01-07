@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2026-01-07
+
+**New Reference Material:**
+
+- **appendix-live-llms.txt:** Added comprehensive Digital Domain Technologies (DDT) reference document for LLM context delivery. Contains author bio, Adobe EDS consulting resources, AI integration topics, and contact information. Formatted with proper markdown spacing for optimal LLM parsing.
+
 ### Changed - 2026-01-22 (January 2026 AI Landscape Updates)
 
 **Updated manuscript for current AI agent landscape:**
