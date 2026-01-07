@@ -22,5 +22,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - invisible-users/agent-friendly-starter-kit/README.md (1 reference)
   - invisible-users/agent-friendly-starter-kit/DIFF_GUIDE.md (1 reference)
   - invisible-users/code-examples/html-examples/README.md (1 reference)
-  - invisible-users/invisible-users.ipynb (2 cell references in interactive notebook)
 - Preserved generic folder pattern examples (`docs/for-ai/`) in advice.md as conceptual examples

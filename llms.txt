@@ -87,10 +87,6 @@ The book clearly distinguishes between:
 - **Emerging Conventions:** llms.txt - early adoption phase
 - **Proposed Patterns:** ai-* meta tags, data-agent-visible - experimental but forward-compatible
 
-## Interactive Materials
-
-- [Interactive Notebook](invisible-users/invisible-users.ipynb): Interactive Jupyter notebook with visual demonstrations, data tables, and calculations. Hosted at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html). Time to complete: 60-75 minutes. Features chapter index, visual comparisons, cost impact tables, priority roadmaps, and user responsibility guidance.
-
 ## Web Audit Suite
 
 Production-ready Node.js tool implementing the patterns from the book. Comprehensive website analysis for AI agent compatibility.

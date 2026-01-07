@@ -301,7 +301,6 @@ All 10 chapter illustrations complete ✅
 
 | Material | Status | Description |
 | -------- | ------ | ----------- |
-| invisible-users.ipynb | ✅ | Interactive Jupyter notebook with visual demonstrations, data tables, and calculations (hosted at allabout.network/invisible-users.html) |
 
 ### Promotional Materials
 
@@ -437,7 +436,6 @@ Real-world llms.txt example:
 | 3.2.0 | 2025-12-25 | advice.md expanded to ~8,400 words with 12 parts, AI-design-rules.md created |
 | 3.3.0 | 2025-12-25 | Standalone guides integrated into book chapters 9 and 10 |
 | 3.4.0 | 2025-12-25 | Dark warehouses section added to Chapter 4 (~1,900 words, total ~40,200 words) |
-| 2.6.0 | 2025-12-30 | Interactive notebook added (invisible-users.ipynb), structured tables added to all chapters, priority-based roadmap conversion, Interactive Companion sections added to preface/Chapter 10/resource-links |
 | 2.8.0 | 2025-12-31 | Sales infrastructure added: docs/sales-enablement/ folder with business-plan.md (~18,000 words), PITCH.md (~27,500 words), executive-summary.md (~2,900 words), plan-to-market.md (~8,500 words), reviews.md (~2,500 words), plus EXECUTIVE_PITCH_DECK.md, PARTNER_KIT.md, ROI_CASE_STUDIES.md, all following agent-friendly patterns from advice.md |
 
 ---
@@ -470,7 +468,6 @@ Real-world llms.txt example:
 └── invisible-users/             # Book manuscript and materials
     ├── book-plan.md             # Master plan with chapter outlines and status
     ├── book-svg-style.md        # SVG illustration style guide
-    ├── invisible-users.ipynb    # Interactive Jupyter notebook
     ├── preface.md               # Book introduction and author bio
     ├── chapter-01-*.md through chapter-10-*.md
     ├── illustrations/

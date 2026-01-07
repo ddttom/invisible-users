@@ -66,23 +66,21 @@ AI agents - assistants like ChatGPT, Claude, and similar tools - are visiting we
 - Develop comprehensive agent compatibility testing
 - Create governance frameworks for agent access policies
 
-## How to Use This Book
+## Navigate This Book
 
-**For executives and business leaders:**
+This book addresses different audiences with different needs:
 
-Read Chapters 1, 4, 5, 7, 8, and the first half of Chapter 9. Skim Chapters 2 and 3 for problem understanding. Delegate Chapters 6 and 10 to technical teams. Expected reading time: 3-4 hours.
+**Business Decision-Makers**: Chapters 1, 4, 5, 7, 8, and first half of Chapter 9 (3-4 hours)
 
-**For product managers and designers:**
+**Product & Design**: Chapters 1-5, 9-10 (5-6 hours)
 
-Read Chapters 1-3 to understand the problem, Chapters 4-5 for business context, and Chapters 9-10 for solution patterns. Focus on decision frameworks in Chapters 4, 5, and 7. Expected reading time: 5-6 hours.
+**Developers**: Chapters 2, 6, 9-10, working backwards for context (4-5 hours)
 
-**For developers and technical implementers:**
+**Small Business Owners**: Chapters 1, 4, small business sections in Chapter 9 (1-2 hours)
 
-Start with Chapter 10 for immediate implementation patterns, then work backwards through Chapters 9, 6, and 2-3 for context. Use the code examples and implementation checklist. Expected reading time: 4-5 hours.
+For detailed reading paths with chapter-by-chapter guidance, see the navigation guide in the Preface (page X).
 
-**For small business owners without technical resources:**
-
-Read Chapters 1, 4, and the small business sections in Chapter 9. Use the decision tree to determine if you need to act. Many small, relationship-based businesses can safely deprioritise this. Expected reading time: 1-2 hours.
+Total reading time: 8-12 hours for complete coverage, depending on technical depth required.
 
 ## One-Page Decision Tree: Should You Prioritise Agent Compatibility?
 
@@ -119,17 +117,6 @@ Use this book to structure your thinking, evaluate your exposure, and make infor
 
 ---
 
-**Total reading time for full manuscript:** 8-12 hours depending on technical depth required.
-
-**Most valuable chapters by role:**
-
-- **Business leaders:** Chapters 4, 5, 7, 8
-- **Product managers:** Chapters 2, 3, 4, 9
-- **Developers:** Chapters 2, 6, 9, 10
-- **Designers:** Chapters 3, 9
-- **Legal/compliance:** Chapter 7
-- **Content creators:** Chapters 5, 8
-
 **The core insight:** The patterns that break AI agents also break human users. We've tolerated accessibility problems for years because they affected minorities without commercial power. Agents represent potential customers with spending power. Commercial pressure might finally drive the improvements that benefit everyone.
 
-The opportunity is temporary. Early movers gain advantage. In five years, agent compatibility will be as routine as mobile responsiveness. The transition period - which we're in now - is when competitive advantage is gained or lost.
+For detailed chapter summaries and content overview, see Chapter 1.

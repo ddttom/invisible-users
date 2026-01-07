@@ -6,9 +6,7 @@ It was late 2024, and I was comparing tour operators for a trip through Southeas
 
 The agent had looked at one tour operator's paginated day-by-day breakdown, seen only Day 1, and concluded that was the entire trip. The competitor's single-page itinerary was readable in full. Based on this, my assistant recommended the wrong company.
 
-I caught the error. But I wondered: how many people wouldn't?
-
-That question led me down a path I hadn't anticipated. I started examining why the agent had failed, and found a pattern. The same design choices that confused my AI assistant also confused screen reader users, people with cognitive disabilities, and anyone who processed pages sequentially rather than spatially.
+I caught the error, and that led me down a path I hadn't anticipated. I started examining why the agent had failed, and found a pattern. The same design choices that confused my AI assistant also confused screen reader users, people with cognitive disabilities, and anyone who processed pages sequentially rather than spatially.
 
 We'd built a web that worked brilliantly for one specific type of user: someone with good vision, working on a desktop, with focused attention and plenty of time. Everyone else had been struggling quietly for years. Now AI agents were struggling loudly, and there was finally commercial pressure to fix the problems.
 
@@ -46,18 +44,6 @@ This isn't a manifesto. There are genuine disagreements about how to handle agen
 
 ---
 
-## A Note on Timing
-
-I'm writing this as the problem emerges, not so early that it seems speculative. Not so late that solutions are already standardised.
-
-Standards are still forming. Best practices are still contested. The businesses and developers who engage now will shape what becomes normal. In five years, agent compatibility will be as routine as mobile responsiveness. The transition period - which we're in - is when advantage is gained or lost.
-
-You can learn these lessons through months of failed conversions and support tickets. Or you can learn them from someone who's already documented the patterns.
-
-**The market timing matters:** This knowledge is valuable now because it's scarce. You're reading this during the transition period - after the problem has emerged, before solutions have standardised. In two years, competitors will exist. In five years, agent compatibility will be as routine as mobile responsiveness, and this becomes commoditized knowledge. The window for gaining competitive advantage is limited.
-
----
-
 ## Who This Book Is For
 
 This book is written for three distinct audiences, each of whom holds a piece of the solution:
@@ -73,20 +59,6 @@ Agencies looking to offer new services and investors evaluating the next phase o
 
 ---
 
-## A Critical Responsibility
-
-This book addresses two audiences: developers who build websites, and people who use AI agents to interact with them. Both have responsibilities.
-
-**For developers:** The technical patterns in this book - clear state, persistent errors, semantic structure - improve experiences for everyone. Fix what you can control.
-
-**For users:** Not everything can be fixed with better design. When you instruct AI agents to interact with banking, legal services, or commercial transactions, you bear responsibility for the prompts you provide and the actions you authorise.
-
-I discuss banking security (Chapter 6), legal liability (Chapter 7), and speculative commerce patterns like dark warehouses (Chapter 4) not because developers can fix these with HTML, but because we need to pay attention. The instructions you give to agents matter enormously when dealing with services where mistakes have serious consequences.
-
-Agent-friendly design helps. But careful, considered use of agents is equally important. This book addresses both.
-
----
-
 ## Acknowledgements
 
 This book exists because problems became visible when I looked closely at failures I'd typically have ignored. I'm grateful to everyone who has written about web accessibility over the past two decades; their work laid the foundations on which this analysis builds.
@@ -97,15 +69,15 @@ I've worked on the web since its early days. Every project taught me something a
 
 ---
 
-## How to Use This Book
+## How to Navigate This Book
 
-Read sequentially if you can. Each chapter builds on previous concepts, and forward references assume you've read the earlier material.
+The chapters build sequentially, but you don't need to read everything with equal depth.
 
 ### Reading Path for Business Leaders
 
-If you're a business leader evaluating whether this matters for your organisation, you don't need to read all the technical detail:
+You need strategic understanding without technical implementation details.
 
-**Read these chapters in full:**
+**Read in full:**
 
 - Chapter 1: What You Will Learn (foundation and context)
 - Chapter 4: The Business Reality (economics and incentives)
@@ -114,41 +86,98 @@ If you're a business leader evaluating whether this matters for your organisatio
 - Chapter 8: The Human Cost (access and equity implications)
 - Chapter 9: Designing for Both (first half - strategic frameworks)
 
-**Skim these chapters for understanding:**
+**Skim for understanding:**
 
 - Chapter 2: The Invisible Failure (understand the problem without technical depth)
 - Chapter 3: The Architectural Conflict (understand why this is hard)
 
-**Skip or delegate:**
+**Delegate to teams:**
 
-- Chapter 6: The Security Maze (technical security details - delegate to your security team)
-- Chapter 10: Technical Advice (implementation code - delegate to your development team)
+- Chapter 6: The Security Maze (your security team)
+- Chapter 10: Technical Advice (your development team)
 
-Look for "Key Points for Business Leaders" boxes at the end of Chapters 2, 3, 4, 5, 7, and 8. These distill the essential business implications without requiring you to work through technical examples.
+Look for "Key Points for Business Leaders" boxes at the end of Chapters 2, 3, 4, 5, 7, and 8.
 
-### Reading Path for Technical Implementers
+**Expected time:** 3-4 hours
 
-If you need solutions immediately, start with Chapter 10 and work backwards when you encounter concepts that need context.
+### Reading Path for Product Managers and Designers
 
-If you're making a business case for agent compatibility work, Chapters 4, 5, and 8 provide the commercial and human arguments. Chapter 2 identifies the technical failures.
+You need to understand the problem deeply, grasp business context, and implement solutions.
 
-If you're a designer, Chapter 3 will change how you see your work. Chapter 9 provides the patterns that serve both audiences.
+**Read in full:**
 
-There's a glossary at the end. Use it. Some terms have specific meanings in this context that differ from casual usage.
+- Chapter 1: What You Will Learn (foundation)
+- Chapter 2: The Invisible Failure (specific patterns that break)
+- Chapter 3: The Architectural Conflict (why design decisions matter)
+- Chapter 4: The Business Reality (commercial implications)
+- Chapter 5: The Content Creator's Dilemma (content strategy)
+- Chapter 9: Designing for Both (solution patterns)
+- Chapter 10: Technical Advice (implementation approaches)
 
-### Interactive Companion
+**Skim for context:**
 
-An interactive notebook version of this book is available at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html). It presents key concepts through demonstrations and explorations, with:
+- Chapter 6: The Security Maze (understand constraints)
+- Chapter 7: The Legal Landscape (understand boundaries)
+- Chapter 8: The Human Cost (broader impact)
 
-- Visual comparisons of agent failures vs reality
-- Interactive data tables showing business impact
-- Real-world cost calculations
-- Implementation priority visualizations
-- Complete chapter index with direct links
+Focus on decision frameworks in Chapters 4, 5, and 7. Chapter 3 will change how you see design trade-offs.
 
-The notebook serves as both an introduction to the book's themes and a navigation aid for finding specific topics. Use it to bookmark sections of interest, explore concepts interactively, or as an executive summary before diving into the full manuscript.
+**Expected time:** 5-6 hours
 
-Time to complete: 60-75 minutes.
+### Reading Path for Developers
+
+You need implementation patterns and technical depth.
+
+**Start with:**
+
+- Chapter 10: Technical Advice (immediate patterns and code examples)
+
+**Then work backwards:**
+
+- Chapter 9: Designing for Both (strategic patterns)
+- Chapter 6: The Security Maze (authentication and access control)
+- Chapter 2: The Invisible Failure (what's breaking and why)
+- Chapter 3: The Architectural Conflict (design perspective)
+
+**For business case:**
+
+- Chapter 4: The Business Reality (commercial arguments)
+- Chapter 5: The Content Creator's Dilemma (revenue model challenges)
+- Chapter 8: The Human Cost (human impact)
+
+Use the implementation checklist and code examples. There's a glossary at the end - some terms have specific meanings here.
+
+**Expected time:** 4-5 hours
+
+### Reading Path for Small Business Owners
+
+You need to determine if this matters for your business and what to do about it.
+
+**Read in full:**
+
+- Chapter 1: What You Will Learn (understand the problem)
+- Chapter 4: The Business Reality (use the decision tree)
+
+**Focus on:**
+
+- Small business sections in Chapter 9 (practical actions)
+
+**Optional:**
+
+- Chapter 2 (if you want technical understanding)
+- Chapter 8 (if you care about broader access implications)
+
+Many relationship-based local businesses can safely deprioritise this. The decision tree in Chapter 4 and the Executive Summary will help you determine your priority level.
+
+**Expected time:** 1-2 hours
+
+### Other Navigation Aids
+
+**Interactive Companion**: An interactive notebook version is available at [allabout.network/invisible-users.html](https://allabout.network/invisible-users.html) with visual comparisons, interactive data tables, and direct chapter links. Time to complete: 60-75 minutes.
+
+**Glossary**: Technical terms are defined at the end of the book. Some terms have specific meanings in this context that differ from casual usage.
+
+**Sequential Reading**: If you have time, read the chapters in order. Each builds on concepts introduced earlier.
 
 ---
 

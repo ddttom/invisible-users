@@ -8,31 +8,15 @@ Introduction and the accessibility connection.
 
 The patterns that break AI agents also break humans. We didn't notice.
 
-The elderly user who misses a three-second toast notification. The person with ADHD who can't track state changes across 14 paginated screens. The screen reader user who can't navigate the visual hierarchy. The stressed parent is trying to complete a form while distracted.
+The elderly user who misses a three-second toast notification. The person with ADHD who can't track state changes across 14 paginated screens. The screen reader user who can't navigate the visual hierarchy. The stressed parent trying to complete a form whilst distracted.
 
-They've all been struggling with modern web design for years. We knew this, as you know, about problems that don't affect you personally. We filed it under "accessibility" and moved on to more pressing concerns.
+They've all been struggling with modern web design for years. We filed it under "accessibility" and moved on.
 
-Now, AI agents are struggling with the same patterns. And suddenly there's commercial pressure to fix them - because agents represent customers who will shop elsewhere if your site doesn't work.
+Now AI agents are struggling with the same patterns. And suddenly there's commercial pressure to fix them - because agents represent customers who will shop elsewhere if your site doesn't work.
 
-This book is about that collision. It's about how we built a web optimised for a narrow definition of "user" and what happens now that a new kind of user has arrived. It concerns the business implications, the technical solutions, and the unexpected benefit. By building for machines, we might finally create the clearer, more honest web we should have built all along.
+This book is about that collision. It's about how we built a web optimised for a narrow definition of "user" and what happens now that a new kind of user has arrived. It's about the business implications, the technical solutions, and the unexpected benefit: by building for machines, we might finally create the clearer, more honest web we should have built all along.
 
----
-
-## The Invisible Failure
-
-I discovered this problem while planning a holiday. I asked an AI agent to compare tour operators offering trips through Southeast Asia and tell me which had the better itinerary.
-
-The agent reported back confidently: "Tour Company A offers a 14-day experience covering Vietnam, Cambodia, and Thailand. Tour Company B only covers one day in Bangkok. Company A is clearly superior."
-
-This was completely wrong.
-
-Company B also had a 14-day itinerary. They would split it across 14 pages, each requiring a click on "Next" to view the following day. My agent saw Day 1, assumed that was everything, and gave me useless advice.
-
-I ended up booking with a different company - one that showed their entire itinerary on a single scrollable page. The agent could read it. I could compare it. That company got my money. The paginated site lost a customer and will never know why.
-
-This isn't an edge case. This is how most of the web works now.
-
-![Same Website, Different Reality - comparing how humans and AI agents experience the same tour website](illustrations/chapter-01-illustration.png)
+For the story of how this problem was discovered and why this book exists, see the Preface.
 
 ---
 
@@ -166,24 +150,6 @@ This isn't a theoretical discussion. It's a practical guide to a problem that's 
 
 ---
 
-## Who This Book Is For
-
-**Web developers** will find technical guidance on making sites agent-compatible without sacrificing human experience: specific patterns, code examples, and testing approaches.
-
-**UX designers** will understand how design decisions that seem purely aesthetic have functional consequences for automated users. The chapter on architectural conflict is particularly relevant.
-
-**Product managers** will learn to think strategically about agent traffic. When to embrace it, when to resist it, how to measure it, what it means for your metrics.
-
-**Business owners** will understand the commercial implications of why conversion rates might mysteriously change, why engagement metrics might not tell the whole story, and how to position for a web where agents mediate transactions.
-
-**Content creators** will face difficult questions about the future of ad-funded content: no easy answers, but clarity on the challenge and some paths forward.
-
-**Technical leaders** will find material for strategic planning. How to prioritise agent compatibility work. How to think about APIs versus web interfaces. How to position your organisation for changes that are already happening.
-
-If you build for the web, publish on the web, or run a business on the web, this affects you.
-
----
-
 ## What You'll Be Able to Do
 
 By the end of this book, you'll be able to:
@@ -202,7 +168,7 @@ By the end of this book, you'll be able to:
 
 ---
 
-## The Uncomfortable Truth
+## The Tension and the Opportunity
 
 Here's something this book will make clear: fixing agent compatibility isn't just about adding some structured data and calling it done.
 
@@ -210,21 +176,11 @@ The patterns that break for agents often exist because they serve business inter
 
 Making sites work better for agents sometimes means making less money in the short term. Or fundamentally rethinking business models. Or accepting that engagement metrics will drop even as conversion improves.
 
-This book won't pretend these tensions don't exist. It will help you navigate them honestly.
-
----
-
-## The Opportunity
-
-But there's good news too.
-
-Right now, most sites are agent-hostile by accident. They weren't designed to block agents; they weren't designed with agents in mind. This means competitors aren't optimised either.
+But there's good news too. Right now, most sites are agent-hostile by accident. They weren't designed to block agents; they weren't designed with agents in mind. This means competitors aren't optimised either.
 
 The first businesses in each sector to become genuinely agent-friendly will gain an advantage. When someone asks their AI assistant to find a hotel, compare insurance quotes, or book a restaurant, the sites that work reliably will get the business. The sites that confuse or frustrate agents will be filtered out before a human ever sees them.
 
-We're at an inflection point. Early movers will benefit. Standards are still forming. Best practices are still emerging. The decisions made now will shape how this plays out.
-
-This book is your guide to being early rather than late.
+This book won't pretend these tensions don't exist. It will help you navigate them honestly.
 
 ---
 
@@ -242,21 +198,11 @@ This book is your guide to that transition.
 
 ---
 
-## How to Read This Book
+## Your Starting Point
 
-The chapters are designed to be read in sequence. Each builds on concepts introduced earlier.
+These chapters are designed to be read in sequence. Each builds on concepts introduced earlier. Chapters 2 and 3 establish what's breaking and why. Chapters 4 through 8 examine the implications. Chapters 9 and 10 provide solutions.
 
-Chapters 2 and 3 establish the problem - what's breaking and why. Read these even if you think you understand the issue. The architectural analysis in Chapter 3 will change how you see web design.
-
-Chapters 4 and 5 address business implications. These matter for technical readers. Understanding the economics shapes how you prioritise solutions.
-
-Chapters 6 and 7 cover security and legal concerns. These are complex problems with no clean solutions. Read them to understand the constraints you're working within.
-
-Chapter 8 addresses social implications. This may seem tangential to practical implementation, but it is crucial. The choices we make about agent optimisation affect who can access the web effectively.
-
-Chapters 9 and 10 provide solutions: the strategic framework in Chapter 9 and the technical implementation in Chapter 10. If you're impatient, you might want to skip ahead, but you'll miss context that clarifies the solutions.
-
-Ultimately, you'll have a complete picture: what's happening, why it matters, who's affected, and what to do about it.
+For reading paths tailored to your role and time constraints, see the navigation guide in the Preface (page X).
 
 ---
 

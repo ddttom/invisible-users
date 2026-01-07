@@ -42,7 +42,6 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ├── invisible-users/          # Book manuscript and materials
 │   ├── book-plan.md          # Master plan with chapter outlines and status
 │   ├── book-svg-style.md     # SVG illustration style guide
-│   ├── invisible-users.ipynb # Interactive Jupyter notebook
 │   ├── preface.md
 │   ├── chapter-XX-*.md       # Individual chapter files (01-10)
 │   ├── illustrations/        # Illustrations for each chapter (SVG + PNG)
