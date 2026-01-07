@@ -1,6 +1,8 @@
-# How a £15 Audit Revealed £50,000 in Silent Conversion Failures
+# How to Identify Silent Conversion Failures on Your Website
 
-## Why your perfectly designed website is losing sales you'll never see in analytics
+## Using the Web Audit Suite and Implementation Framework to Find Agent Compatibility Issues
+
+**Important:** The scenarios in this document are illustrative examples to demonstrate the methodology, not validated case studies. The field is too new for proven ROI data. Treat these as frameworks for calculating your potential exposure, not as guaranteed outcomes.
 
 ---
 
@@ -17,52 +19,58 @@ But here's what you don't see:
 
 **These failures don't show up in your analytics.** They look like short sessions or bounces. You never see the lost sale.
 
-## The Real-World Impact: Three Case Studies
+## Illustrative Scenarios: Calculating Your Exposure
 
-### Case Study 1: E-commerce Site - £47,000 Annual Loss
+**Disclaimer:** These scenarios are illustrative examples demonstrating how to use the methodology and tools. They are not validated case studies or proven ROI figures. Use them as frameworks to calculate your own site's potential exposure.
 
-**The Problem:**
+### Scenario 1: E-commerce Site - Calculating Potential Loss
+
+**Hypothetical Problem:**
 
 - Product pricing shown as "from £99" with final price revealed at checkout
 - Multi-page product specifications with "Load more" pagination
 - Toast notifications for cart updates (disappeared after 3 seconds)
 - Success confirmation relied entirely on CSS colour changes
 
-**What the Audit Found:**
+**What an Audit Might Find:**
 
-Our Web Audit Suite analysis revealed:
+A Web Audit Suite analysis could reveal:
 
 - **LLM Suitability Score: 42/100** (failing threshold)
 - **Agent Accessibility: Critical failures** in 8 of 12 key patterns
 - **Data Extraction Issues:** 67% of product information invisible to served HTML
 - **State Visibility: Zero** explicit state attributes for form validation
 
-**Agent Behaviour:**
+**Potential Agent Behaviour:**
 
-When we tested with Claude and ChatGPT browsing agents:
+Testing with AI agents might show:
 
 - Both agents reported the "from £99" price as the actual price (real price: £149)
 - Product specifications: Only first 3 of 12 features were visible
 - Add-to-cart actions: Agents couldn't confirm success (no persistent feedback)
 - Checkout completion: 0% success rate (success state not machine-readable)
 
-**Business Impact Calculation:**
+**Example Impact Calculation:**
 
 ```text
+Hypothetical site metrics:
 Current traffic: 50,000 monthly visits
 Estimated agent traffic: 5% = 2,500 agent visits/month
 Conversion rate (human): 3% = expected 75 agent conversions
-Actual agent conversions: 0 (100% failure rate)
+If actual agent conversions: 0 (100% failure rate)
 Average order value: £150
 
-Lost revenue = 75 conversions × £150 × 12 months = £135,000/year
+Potential lost revenue = 75 conversions × £150 × 12 months = £135,000/year
 
 Conservative estimate (accounting for lower agent conversion): £47,000/year
+
+Note: These are illustrative calculations. Your actual exposure depends on your
+specific traffic patterns, conversion rates, and agent compatibility issues.
 ```
 
-**The Fix:**
+**Example Fix Approach:**
 
-Using the implementation cookbook from "The Invisible Users":
+Following the implementation cookbook from "The Invisible Users":
 
 1. **Priority 1 fixes** (completed in 2 days):
    - Displayed full pricing upfront (not "from £X")
@@ -70,15 +78,17 @@ Using the implementation cookbook from "The Invisible Users":
    - Replaced toast notifications with persistent alerts
    - Added explicit state attributes to forms
 
-2. **Implementation cost**: £3,200 (16 developer hours)
-3. **Post-fix LLM Suitability Score**: 78/100 (good threshold)
-4. **Agent conversion success rate**: 67% (from 0%)
-5. **Projected annual recovery**: £31,500
-6. **ROI**: 984% in first year
+2. **Estimated implementation cost**: £3,200 (16 developer hours)
+3. **Example post-fix LLM Suitability Score**: 78/100 (good threshold)
+4. **Potential agent conversion success rate**: 67% (from 0%)
+5. **Estimated annual recovery**: £31,500
+6. **Estimated ROI**: 984% in first year
 
-### Case Study 2: SaaS Platform - Free-to-Paid Conversion Gap
+**Important:** These figures are illustrative examples, not proven results. Your actual costs and outcomes will vary based on your specific situation.
 
-**The Problem:**
+### Scenario 2: SaaS Platform - Free-to-Paid Conversion Gap
+
+**Hypothetical Problem:**
 
 - Pricing hidden behind "Request Demo" forms
 - Feature comparison table using complex CSS Grid (unreadable to agents)
@@ -130,9 +140,9 @@ Following Chapter 10's technical implementation guide:
 5. **Projected annual recovery**: £14,000
 6. **ROI**: 206% in first year
 
-### Case Study 3: Travel Booking Site - Abandoned Itinerary Searches
+### Scenario 3: Travel Booking Site - Abandoned Itinerary Searches
 
-**The Problem:**
+**Hypothetical Problem:**
 
 - Search results paginated (20 per page, 300 total)
 - Itinerary details in collapsed accordions
@@ -362,7 +372,7 @@ Using the prioritised implementation roadmap (Appendix F):
 - Implementation: Internal developer time
 - Total: £0 - £5,000 depending on developer rates and site complexity
 
-**Expected ROI:** 200-1000% in first year based on case studies
+**Potential Benefits:** Improved agent compatibility, better accessibility, clearer state management. Actual revenue impact will vary.
 
 ### Option 2: Audit Service (£500 - £5,000)
 
@@ -400,7 +410,7 @@ Using the prioritised implementation roadmap (Appendix F):
 - Consultation: 60 minutes (scheduled)
 - Follow-up audit: 1 day
 
-**Expected ROI:** 400-2000% in first year based on identified issues
+**Potential Benefits:** Professional assessment of agent compatibility issues with prioritised remediation plan. Actual outcomes depend on implementation and site-specific factors.
 
 ### Option 3: Full Implementation Service (£10,000 - £50,000)
 
@@ -441,7 +451,7 @@ Using the prioritised implementation roadmap (Appendix F):
 - Launch: 1 week
 - Total: 8-12 weeks from kickoff to launch
 
-**Expected ROI:** 300-1500% in first year based on revenue recovery
+**Potential Benefits:** Complete implementation with testing and validation. Addresses known agent compatibility issues systematically.
 
 ---
 
@@ -751,9 +761,11 @@ Priority 2-4 fixes are deeper but still don't require rebuilds. You're enhancing
 
 ---
 
-## Case Study Deep Dive: Luigi's Pizza
+## Illustrative Example: Luigi's Pizza
 
-**Background:**
+**Important:** This is an illustrative example from the book's appendix, not a verified case study. Use it to understand the methodology, not as proof of guaranteed results.
+
+**Hypothetical Background:**
 
 Small local restaurant with online ordering. Monthly revenue: £12,000. Website built with WordPress + WooCommerce.
 
@@ -819,37 +831,39 @@ ROI: 281% (£1,800 gain / £640 cost)
 Payback period: 4.3 months
 ```
 
-**Owner Quote:**
+**Note on This Example:**
 
-> "I didn't believe AI agents would order pizza. I was wrong. After we fixed the site, we started getting orders from users saying 'Claude ordered this for me' or 'my assistant placed this.' The developer cost paid for itself in 4 months, and now it's pure profit. Plus, Google is showing our menu directly in search results, which is driving more traffic overall."
+This illustrative scenario demonstrates how the methodology applies to small businesses. The figures are examples used to teach calculation methods, not verified outcomes. The patterns (Schema.org markup, expanded menus, persistent feedback) are real techniques from the book, but the specific ROI figures are for demonstration purposes.
 
-**Key Lesson:**
+**Key Teaching Point:**
 
-Even small businesses with modest traffic see measurable returns. Luigi's Pizza isn't a tech company - it's a local restaurant with a basic website. If they can achieve 281% ROI, larger businesses with more traffic and higher transaction values can expect significantly greater returns.
+This example shows how to calculate potential exposure even for small businesses with modest traffic. The methodology works at any scale - from local restaurants to enterprise e-commerce - but actual results will vary based on your specific implementation, traffic patterns, and agent compatibility issues.
 
 ---
 
 ## The Bottom Line
 
-**Your website is losing money right now.**
+**Your website may be losing potential revenue right now.**
 
 You can't see it in your analytics because agent failures look like bounces. You don't get error reports because agents fail silently. You don't know it's happening until a competitor's site becomes agent-compatible and you wonder why their conversion rates improved.
 
-**This is solvable.** The patterns are known. The tools exist. The methodology is proven.
+**This is addressable.** The patterns are documented. The tools exist. The methodology provides a framework for identifying and fixing issues.
 
 **You have three choices:**
 
-1. **Wait and see** - Lose agent-mediated revenue to competitors who move first
-2. **DIY implementation** - Use the book + tool to fix it yourself (£0 - £5,000)
-3. **Professional service** - Have it done for you (£500 - £50,000 depending on scope)
+1. **Wait and see** - Risk losing agent-mediated transactions to competitors who move first
+2. **DIY implementation** - Use the book + tool to assess and address issues yourself (£0 - £5,000)
+3. **Professional service** - Have it assessed and implemented for you (£500 - £50,000 depending on scope)
 
-**The window for competitive advantage is 12-18 months.**
+**The window for first-mover advantage is limited.**
 
-After that, agent compatibility becomes table stakes - like mobile responsiveness today. Everyone will have it. The advantage disappears.
+Agent compatibility is likely to become table stakes - like mobile responsiveness today. Early movers can establish authority and capture market share before the category commoditises.
 
-**But right now, today, you can be ahead of your competitors.**
+**Right now, you can assess your exposure and decide whether to act.**
 
-You can capture agent-mediated transactions they're losing. You can see revenue recovery in 30-60 days. You can achieve 200-1000% ROI in the first year.
+You can identify issues preventing agent-mediated transactions. You can implement patterns that benefit both agents and human users. You can calculate your potential exposure and prioritise fixes accordingly.
+
+**Important:** The field is too new for proven ROI data. Use the methodology and tools to assess your specific situation, but don't expect guaranteed outcomes. Treat this as risk management and accessibility improvement, not as a proven revenue generator.
 
 ---
 
