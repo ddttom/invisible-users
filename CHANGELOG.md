@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2026-01-22 (January 2026 AI Landscape Updates)
+
+**Updated manuscript for current AI agent landscape:**
+
+- **Appendix G (Resource Directory):**
+  - Updated AI platforms: ChatGPT (GPT-5/o-series, native SearchGPT), Claude (Computer Use emphasis, Chrome extension), Gemini (2.0/Ultra)
+  - Updated emerging standards: llms.txt (de facto standard), DPoP (recommended practice for high-security delegations)
+  - Updated WCAG 3.0 to Provisional status with score-based conformance model
+  - Added Agent-Specific Testing section: Agent Protocol, LangSmith, LangFuse
+  - Updated EU AI Act to final legislation status (implementation phase 2026)
+  - Added JSON-LD 1.1 specification notes
+  - Added Baseline to Can I Use section for cross-browser support tracking
+  - Added caveat to Amazon example about bot-blocking and WAF protection
+  - Removed redundant headings, fixed duplicate GitHub headings with contextual prefixes
+  - Updated verification date to 2026-01-22
+- **Executive Summary:**
+  - Added browser extension context (Claude for Chrome, Microsoft Copilot)
+  - Emphasized shift from fetching pages to working within user's browser with credentials and permissions
+  - Described visual interface navigation across multiple tabs in user's context
+- **Preface:**
+  - Added paragraph describing browser extensions bringing agents into workflows
+  - Explained scheduling, shortcuts, and context maintenance capabilities
+  - Distinguished between remote page fetching and working alongside users
+- **Removed amend.md** (no longer needed after consistency fixes)
+
 ### Fixed - 2026-01-07 (Manuscript Consistency)
 
 **Resolved Internal Inconsistencies:**
