@@ -624,9 +624,9 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 See also:
 
-- [Implementation Checklist](implementation-checklist.md) - Step-by-step guide
-- [Glossary](Glossary.md) - Terms and definitions (includes OAuth2, JWT, DPoP, PKCE)
-- [Agent-Friendly Starter Kit](agent-friendly-starter-kit/) - Good vs Bad implementation examples
+- [Implementation Checklist](implementation-checklist.md) - Step-by-step guide (**Repository file**)
+- [Glossary](Glossary.md) - Terms and definitions (includes OAuth2, JWT, DPoP, PKCE) (**Repository file**)
+- [Agent-Friendly Starter Kit](agent-friendly-starter-kit/) - Good vs Bad implementation examples (**Repository directory**)
 
 ---
 
@@ -739,7 +739,7 @@ Particularly welcome:
 - Schema.org documentation
 - JSON-LD tools
 - Playwright testing
-- [Agent-Friendly Starter Kit](agent-friendly-starter-kit/) - Good vs Bad implementation examples
+- [Agent-Friendly Starter Kit](agent-friendly-starter-kit/) - Good vs Bad implementation examples (**Repository directory**)
 
 ---
 
