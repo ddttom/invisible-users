@@ -289,7 +289,7 @@ Sites that adapt early gain advantage. Sites that don't get quietly bypassed.
 
 Due Q1 2026
 
-**Tom Cranstoun**
+Tom Cranstoun
 
 <tom.cranstoun@gmail.com>
 

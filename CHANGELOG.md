@@ -42,9 +42,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Opening hook: £203,000 cruise pricing error case study (from Appendix I)
   - Real production mistakes: toast notifications, hidden checkout state (from Appendix B)
   - Three implementation patterns with code samples (from Appendix A):
-    * Pattern #1: Persistent error messages
-    * Pattern #2: Complete pricing display
-    * Pattern #3: Explicit state attributes
+    - Pattern #1: Persistent error messages
+    - Pattern #2: Complete pricing display
+    - Pattern #3: Explicit state attributes
   - Priority-based action roadmap (Priority 1-3)
   - Discussion prompts for audience engagement
   - Speaker notes for timing and adaptation
