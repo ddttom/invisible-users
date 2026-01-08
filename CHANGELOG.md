@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2026-01-08 (Evening)
+
+**Sales Enablement: 20-Minute Talk Materials:**
+
+- Created comprehensive talk.md (11k) - Complete 20-minute presentation script
+  - Opening hook: £203,000 cruise pricing error case study (from Appendix I)
+  - Real production mistakes: toast notifications, hidden checkout state (from Appendix B)
+  - Three implementation patterns with code samples (from Appendix A):
+    * Pattern #1: Persistent error messages
+    * Pattern #2: Complete pricing display
+    * Pattern #3: Explicit state attributes
+  - Priority-based action roadmap (Priority 1-3)
+  - Discussion prompts for audience engagement
+  - Speaker notes for timing and adaptation
+  - Tailored for business leaders (CTOs, product owners)
+  - Follows marketing guidelines (no specific monetary/time claims)
+  - British English throughout
+- Created talk-slides.js - Google Apps Script to generate presentation
+  - 19 slides optimized for 20-minute delivery (~63 seconds per slide)
+  - Removed "Breaking the Baseline", discussion interstitials, and priority framework slides per user feedback
+  - Integrated business value directly into pattern slides (no separate slides)
+  - Code examples with clear ROI implications
+  - Sections: Opening Hook (2 slides), Problem (3 slides), Why (2 slides), Solution (6 slides), Action (3 slides), Closing (2 slides)
+  - Run createInvisibleUsersDeck() in Google Apps Script to generate full deck
+- Added talk1.md - Original outline for reference (1.9k)
+- Updated PROJECTSTATE.md to document new sales enablement materials
+
 ### Changed - 2026-01-08 (Morning)
 
 **PDF Generation Improvements and Appendix H Refinement:**
