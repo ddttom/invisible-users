@@ -7,6 +7,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2026-01-08 (Morning)
+
+**PDF Generation Improvements and Appendix H Refinement:**
+
+- Refined appendix-h-live-llms.txt from 91 links to 20 curated links (78% reduction)
+  - Kept only the most representative resources from each category
+  - Reduced Developer Documentation from 13 to 4 key links
+  - Consolidated EDS & Integrations from 20 to 4 links
+  - Reduced Core AI/LLM Topics from 18 to 5 key articles
+  - Reduced AI Development Tools & Practices from 20 to 3 links
+  - Reduced AEM/CMS Resources from 6 to 2 links
+  - Reduced Content Author Resources from 3 to 2 links
+  - Updated version to 2.0 (January 2026)
+  - Restored full "For Human Visitors" section with all 5 contact links
+  - Retained essential metadata (Site Type, Purpose, Technology Stack)
+- Created appendix-h-live-llms.md wrapper file to display llms.txt as code example in PDF
+  - Provides introduction text explaining the example
+  - Wraps .txt content in markdown code block for proper formatting
+  - Allows PDF to show "here's what an llms.txt file looks like" as formatted example
+- Created metadata.yaml for PDF generation configuration
+  - Added cover image (cover-design.png) as first page using eso-pic package
+  - Configured title page with title, subtitle, author, date
+  - Added listings package for code block line wrapping
+  - Configured line breaking with red arrow indicators for long lines
+- Fixed PNG illustration format for XeLaTeX compatibility
+  - Updated illustrations:generate script in package.json
+  - Added ImageMagick parameters: -alpha remove -alpha off -depth 8
+  - Converts PNG from 16-bit RGBA to 8-bit RGB format
+  - Resolves XeLaTeX rendering issues with 16-bit PNG files
+- Suppressed Glossary from table of contents
+  - Added {.unnumbered .unlisted} pandoc attributes to Glossary heading
+  - Added \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} to suppress subsections
+  - Keeps Glossary in PDF but excludes from TOC completely
+- Updated package.json PDF generation commands
+  - pdf:generate now uses metadata.yaml for title page and cover configuration
+  - Excludes appendix-*.txt files (uses appendix-*.md instead)
+  - Added --listings flag for enhanced code formatting
+- Documented Appendix H dual-file structure
+  - Updated README.md with explanation of .txt (source) and .md (wrapper) files
+  - Updated CLAUDE.md with detailed explanation of why both files are needed
+  - Clarified that .txt is source of truth, .md is PDF presentation wrapper
+
 ### Changed - 2026-01-07 (Late Evening)
 
 **Time-Based Estimates Removed Across Documentation:**
