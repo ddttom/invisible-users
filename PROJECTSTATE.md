@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-08
+**Last Updated:** 2026-01-09
 
 ### Combined Repository
 
@@ -25,6 +25,11 @@ This repository contains two integrated projects:
   - Core chapters (1-11), preface, executive summary
   - All nine appendices (implementation guides, pattern references, resource directory, DDT reference, pipeline failure case study)
   - Planning files (book-plan.md, book-svg-style.md) remain at root level
+- **PDF Generation:**
+  - **A4 Format** (`pdf:generate`) - Professional review copy with footer "Review Copy not for publication/distribution"
+  - **Kindle Format** (`pdf:kindle`) - 6"×9" KDP-ready paperback format, production-ready (no review footer)
+  - **Simple Format** (`pdf:simple`) - Basic PDF without cover or footer
+  - **HTML Format** (`pdf:html`) - Browser-printable HTML version
 
 ### Web Audit Suite Status
 
