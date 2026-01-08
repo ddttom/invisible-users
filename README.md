@@ -81,7 +81,8 @@ This ensures the book remains the single source of truth.
 │   │   ├── preface.md
 │   │   ├── executive-summary.md
 │   │   ├── Glossary.md
-│   │   ├── appendix-*.md
+│   │   ├── appendix-*.md     # Appendices A-I (includes appendix-h-live-llms.md)
+│   │   ├── appendix-live-llms.txt  # Appendix H source (llms.txt example, 20 curated links)
 │   │   └── illustrations/    # SVG illustrations (PNG gitignored)
 │   ├── book-plan.md
 │   ├── implementation-checklist.md
@@ -95,6 +96,8 @@ This ensures the book remains the single source of truth.
     ├── examples/             # Configuration examples
     └── README.md             # Tool documentation
 ```
+
+**Note on Appendix H:** This appendix uses two files - `appendix-live-llms.txt` (the actual llms.txt content) and `appendix-live-llms.md` (markdown wrapper that displays it in a code block). The PDF includes the .md wrapper to show "here's what an llms.txt file looks like" as a formatted example, while the .txt file remains the editable source of truth.
 
 ## Book Status
 

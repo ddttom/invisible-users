@@ -1,3 +1,10 @@
+# Appendix H: Example llms.txt File {.unnumbered}
+
+\markboth{Appendix H: Example llms.txt File}{Appendix H: Example llms.txt File}
+
+This is an example of an `llms.txt` file. It demonstrates the patterns and structure discussed in Chapter 4.
+
+```markdown
 # Digital Domain Technologies (DDT)
 
 > Expert Adobe Edge Delivery Services consulting and AI integration resources by Tom Cranstoun ("The AEM Guy")
@@ -93,3 +100,4 @@ Looking for the full interactive experience?
 **Version:** 2.0 (Updated: January 2026)
 **Curated highlights:** 20 key resources across 6 major categories
 **Categories:** Developer Documentation (4), EDS Integration & Development (4), Core AI/LLM Topics (5), AI Development Tools & Practices (3), AEM/CMS Resources (2), Content Author Resources (2)
+```

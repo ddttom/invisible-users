@@ -1,4 +1,6 @@
-# Glossary of Terms
+# Glossary of Terms {.unnumbered .unlisted}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 
 ## A
 

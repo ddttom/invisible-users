@@ -54,12 +54,13 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   │   ├── appendix-ai-patterns-quick-reference.md  # Appendix E
 │   │   ├── appendix-implementation-roadmap.md       # Appendix F
 │   │   ├── appendix-resource-directory.md           # Appendix G
-│   │   ├── appendix-live-llms.txt                   # Appendix H
+│   │   ├── appendix-live-llms.md                    # Appendix H (wrapper for PDF)
+│   │   ├── appendix-live-llms.txt                   # Appendix H (source - actual llms.txt)
 │   │   ├── appendix-pipeline-failure-case-study.md  # Appendix I
 │   │   └── illustrations/    # Illustrations for each chapter (SVG + PNG)
 │   │       ├── chapter-XX-*.svg  # Source SVG files (tracked in git) (01-11)
 │   │       └── chapter-XX-*.png  # PNG exports (gitignored, generated locally) (01-11)
-│   ├── llms.txt              # Example llms.txt file from book content
+│   ├── llms.txt              # Repository llms.txt file
 │   ├── AI-Native.blog
 │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
 │   └── code-examples/        # Production-ready code implementations
@@ -92,6 +93,17 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ```
 
 **Note:** PNG illustrations are generated from SVG sources using `npm run illustrations:generate` and are not tracked in version control.
+
+**Appendix H Dual-File Structure:**
+
+Appendix H uses two files to demonstrate an llms.txt example:
+
+- **`appendix-live-llms.txt`** - The actual llms.txt content (source of truth, 20 curated links)
+- **`appendix-live-llms.md`** - Markdown wrapper that displays the .txt content in a code block
+
+**Why both files?**
+
+The PDF generation command (`pdf:generate` in package.json) uses `appendix-*.md` pattern but excludes `.txt` files. The .md wrapper includes introduction text plus the .txt content in a markdown code block, allowing the PDF to show "here's what an llms.txt file looks like" as a formatted example. The .txt file remains the source of truth that can be edited independently.
 
 ## Essential Commands
 
