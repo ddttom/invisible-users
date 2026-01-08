@@ -227,6 +227,6 @@ He remains convinced that the web we've built is less accessible than it should 
 
 ---
 
-December 2025
+January 2026
 
-London
+York, England
