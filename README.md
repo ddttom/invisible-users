@@ -145,14 +145,15 @@ npm run lint:markdown
 npm run lint:markdown:fix
 
 # Generate PDF (requires LaTeX - see below)
-npm run pdf:generate       # Full PDF with professional book formatting
+npm run pdf:generate       # Full PDF with professional book formatting (A4)
+npm run pdf:kindle         # Kindle Direct Publishing format (6"×9" paperback)
 npm run pdf:simple         # Simplified PDF formatting
 npm run pdf:html           # Generate HTML (print to PDF via browser ⌘+P)
 ```
 
 **PDF Generation Requirements:**
 
-To use `npm run pdf:generate` or `npm run pdf:simple`, you need a LaTeX distribution installed:
+To use `npm run pdf:generate`, `npm run pdf:kindle`, or `npm run pdf:simple`, you need a LaTeX distribution installed:
 
 ```bash
 # Install BasicTeX (lightweight, ~100MB) via Homebrew
@@ -166,6 +167,24 @@ which xelatex
 ```
 
 If you don't want to install LaTeX, use `npm run pdf:html` to generate an HTML file that you can print to PDF using your browser's print function (⌘+P).
+
+**Creating a KDP Cover for `pdf:kindle`:**
+
+The Kindle PDF (`pdf:kindle`) generates a print-ready interior file only. KDP requires a separate cover file. To create your cover:
+
+1. Generate the Kindle PDF first: `npm run pdf:kindle`
+2. Check the page count in the generated PDF
+3. Visit the [KDP Cover Calculator](https://kdp.amazon.com/cover-calculator)
+4. Input your specifications:
+   - Trim size: **6" × 9"**
+   - Page count: (from your generated PDF)
+   - Paper type: White or Cream
+   - Binding: Paperback
+5. Download the template with correct spine width
+6. Create your cover design using the template dimensions
+7. Export at **300 DPI** matching the exact template dimensions
+
+The current cover design at `invisible-users/manuscript/illustrations/cover-design.png` can be adapted, but you'll need to add the spine and back cover, sized according to the KDP template for your specific page count.
 
 ### Web Audit Suite
 

@@ -121,6 +121,11 @@ npm run illustrations:generate
 npm run lint:markdown       # Check all markdown files
 npm run lint:markdown:fix   # Fix all markdown files
 
+# PDF generation
+npm run pdf:generate        # Generate A4 PDF with cover (for review/distribution)
+npm run pdf:kindle          # Generate 6"×9" PDF for Kindle Direct Publishing
+npm run pdf:simple          # Generate simple PDF without cover
+
 # Chapter status
 npm run status              # Show all chapter files
 ```

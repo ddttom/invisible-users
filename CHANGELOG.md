@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2026-01-09
+
+**A4 PDF Review Footer:**
+
+- Added review copy footer to A4 PDF format (`pdf:generate`)
+  - Footer text: "Review Copy not for publication/distribution" on every page
+  - Centered footer in italic, small font
+  - Page numbers on outer margins (left on even pages, right on odd pages)
+  - Uses fancyhdr LaTeX package for custom page styling
+  - Kindle PDF (`pdf:kindle`) remains without footer for production use
+
+**Kindle PDF Generation:**
+
+- Added `npm run pdf:kindle` command for Kindle Direct Publishing (KDP) paperback format
+  - 6" × 9" (152.4 × 228.6 mm) trade paperback trim size
+  - KDP-compliant margins: inner 0.625", outer 0.5", top/bottom 0.625"
+  - Print-friendly styling: black links (not blue), chapters start on right pages
+  - Simplified title page (no embedded cover - KDP requires separate cover file)
+- Created `metadata-kindle.yaml` with KDP-specific LaTeX configuration
+  - Removed eso-pic package (no full-page background image)
+  - Updated code block arrow color to black for print compatibility
+  - Uses openright class option for proper chapter pagination
+- Updated documentation:
+  - CLAUDE.md: Added pdf:kindle to Book Manuscript Commands section
+  - README.md: Added pdf:kindle to PDF generation options with KDP cover creation instructions
+  - .gitignore: Excluded the-invisible-users-kindle.pdf from version control
+
 ### Added - 2026-01-08 (Evening)
 
 **Sales Enablement: 20-Minute Talk Materials:**
