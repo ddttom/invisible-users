@@ -2,8 +2,7 @@
 
 Websites can look polished, intuitive, and conversion-friendly, yet still fail quietly for a growing group of users. Not just people using assistive technologies, but also AI agents that are already browsing, comparing, and transacting on users’ behalf.
 
-In this member call, Tom Cranstoun shares insights from his forthcoming book, The Invisible Users: Designing the Web for AI Agents and Everyone Else (due Q1 2026). 
-
+In this member call, Tom Cranstoun shares insights from his forthcoming book, The Invisible Users: Designing the Web for AI Agents and Everyone Else (due Q1 2026).
 
 Tom Cranstoun as seen on stage at CMS Summit 25
 

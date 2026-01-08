@@ -25,6 +25,7 @@ This wasn't a reasoning failure. The AI didn't think £203,000 was reasonable. T
 The actual price was probably **£2,030-£4,020**.
 
 **What's instructive here:** No validation layers caught this. The agent had:
+
 - No range validation (£203k > £15k maximum for river cruises)
 - No comparative checks (58x higher than peer average)
 - No cross-referencing against structured data
@@ -124,6 +125,7 @@ There are two fundamentally different HTML states:
 To most agents, your product catalogue is invisible.
 
 **The architectural conflict:** We've spent years optimising for:
+
 - Single-page applications with client-side state
 - Toast notifications and modal dialogs
 - Loading spinners without context
@@ -166,6 +168,7 @@ Instead of toast notifications:
 ```
 
 **Business value:**
+
 - Errors persist until fixed (no more vanishing feedback)
 - Screen readers can announce them
 - Agents can read and act on them
@@ -199,6 +202,7 @@ Instead of "From £99":
 ```
 
 **Business value:**
+
 - No hidden fees that break trust
 - Agents can extract accurate pricing
 - Price comparison sites get correct data
@@ -224,6 +228,7 @@ Make checkout state visible:
 ```
 
 **Business value:**
+
 - Cart state visible in DOM, not just JavaScript
 - Agents can verify cart contents before checkout
 - State persists through page refreshes
@@ -240,21 +245,24 @@ You don't need complex infrastructure. A simple restaurant site with semantic HT
 
 ## Taking Action [TIME: 2 minutes]
 
-**Priority-based approach** (not time-based):
+Priority-based approach (not time-based):
 
-**Priority 1: Critical Quick Wins**
+### Priority 1: Critical Quick Wins
+
 - Add persistent error messages
 - Display complete pricing (no hidden fees)
 - Ensure served HTML contains core content
 - Add basic Schema.org structured data
 
-**Priority 2: Essential Improvements**
+### Priority 2: Essential Improvements
+
 - Explicit state attributes (data-state, data-validation-state)
 - Create or improve robots.txt
 - Add llms.txt file (structured guidance for agents)
 - Fix progressive enhancement gaps
 
-**Priority 3: Core Infrastructure**
+### Priority 3: Core Infrastructure
+
 - Review and fix all forms systematically
 - Implement comprehensive structured data
 - Add agent-specific communication patterns
@@ -276,6 +284,7 @@ The sites that adapt early gain advantage. The sites that don't get quietly bypa
 ## Q&A and Discussion [TIME: Remaining time]
 
 Key themes to explore:
+
 - What patterns have you already encountered?
 - Where do you see the biggest risk in your business?
 - What's stopping you from making these changes?
@@ -298,12 +307,14 @@ Key themes to explore:
 5. **Priority-based action** - start with quick wins
 
 **Adjust timing based on:**
+
 - Group engagement level
 - Questions during presentation
 - Technical depth desired
 - Specific industry concerns
 
 **Be prepared to discuss:**
+
 - Security implications (session inheritance problem)
 - Legal landscape (web scraping, copyright)
 - Content creator concerns (advertising model impact)
