@@ -16,15 +16,11 @@ Let me start with a real example from December 2024. I was using an AI assistant
 
 But one price caught my eye: **£203,000-£402,000** per person for a week-long river cruise.
 
-> **Discussion prompt:** Has anyone here seen AI agents make obvious errors like this? What was your reaction?
-
-**[EXAMPLE: The Error Chain]**
-
-This wasn't a reasoning failure. The AI didn't think £203,000 was reasonable. The error occurred during data extraction - likely a decimal separator confusion where €2.030,00 (European format) became 2030, then got multiplied by 100 during currency conversion.
-
 The actual price was probably **£2,030-£4,020**.
 
-**What's instructive here:** No validation layers caught this. The agent had:
+This was a **100x multiplication error** - likely a decimal separator confusion where €2.030,00 (European format) became 2030, then got multiplied by 100 during currency conversion.
+
+**What's instructive here:** This wasn't a reasoning failure. The AI didn't think £203,000 was reasonable. The error occurred during data extraction, and no validation layers caught it:
 
 - No range validation (£203k > £15k maximum for river cruises)
 - No comparative checks (58x higher than peer average)
@@ -35,43 +31,40 @@ The error was presented with the same confidence as verified data. Professional 
 
 **The business impact:** If this agent was making a booking rather than researching, this could have been a £201,000 mistake. More concerning - if the error had been plausible (20% too high instead of 100x), would anyone have caught it?
 
+**Validation layers are essential, not optional.**
+
 ---
 
 ## The Problem: Invisible Failures [TIME: 5 minutes]
 
-Websites can look polished and conversion-friendly, yet fail quietly for AI agents. Not just theoretical future agents - agents that are browsing, comparing, and transacting today.
+Websites fail quietly for AI agents. Not theoretical futures - this is happening today. Agents are browsing, comparing, and transacting now.
 
-**[EXAMPLE: Three Real Production Mistakes]**
+Sites that work get preferred. Sites that don't get quietly avoided.
 
-### 1. Progressive Enhancement That Broke the Baseline
+This creates a first-mover advantage that's hard to claw back.
 
-```javascript
-// Server renders initial price
-<div id="price">£149.99</div>
+**Two real production mistakes...**
 
-// JavaScript "enhancement" breaks it
-<script>
-  document.getElementById('price').innerHTML = 'Loading...';
-  fetch('/api/price').then(r => r.json()).then(data => {
-    document.getElementById('price').innerHTML = `£${data.price}`;
-  });
-</script>
-```
+### Mistake #1: Toast Notifications
 
-**What happened:** Agents saw "Loading..." because JavaScript replaced server-rendered content before fetching completed. The enhancement destroyed the baseline.
-
-**Business impact:** Product appeared unpurchasable. Agents moved to competitors.
-
-### 2. Toast Notifications That Kept Returning
+**The Pattern That Keeps Returning:**
 
 Team removed toast notifications from forms (good!) but they kept getting reintroduced in new features. Shopping cart still used `showToast('Item added!')`.
 
-**Why this matters:** Toast notifications vanish before agents can read them. Form submission appears to fail silently. Agents abandon the flow.
+**Why this matters:**
 
-### 3. Hidden Checkout State
+- Toast notifications vanish before agents can read them
+- Form submission appears to fail silently
+- Agents abandon the flow
+
+**Solution:** Persistent alerts that stay visible.
+
+### Mistake #2: Hidden Checkout State
+
+**State Invisible to Agents:**
 
 ```javascript
-// Step tracked only in JavaScript
+// JavaScript-only state
 let currentStep = 1;
 
 function nextStep() {
@@ -80,61 +73,60 @@ function nextStep() {
 }
 ```
 
-**What happened:** Checkout progress invisible in URL and DOM. Agents couldn't tell which step they were on. Refreshing the page lost all progress.
+**What happened:**
 
-**Business impact:** Checkout completion rates dropped for agent-assisted purchases. Sites with explicit state attributes in the DOM got the bookings instead.
+- No URL reflection
+- No DOM attributes
+- Agents can't track progress
+- Refreshing loses state
 
-> **Discussion prompt:** Have you noticed patterns in your analytics that might indicate agent failures? Unusually high abandonment rates at specific steps?
+**Solution:** data-state attributes in DOM.
 
-**The commercial reality:** Sites that work well for agents are remembered and preferred. Sites that don't are quietly avoided. This creates a first-mover advantage that's difficult to claw back later.
+**The commercial reality:** Sites that work well for agents are remembered and preferred. Sites that don't are quietly avoided. Checkout completion rates dropped for agent-assisted purchases. Sites with explicit state attributes in the DOM got the bookings instead.
 
 ---
 
-## Why This Happens [TIME: 4 minutes]
+## Why This Happens [TIME: 3 minutes]
 
 Modern web design is optimised for visual feedback that humans interpret through a browser. AI agents operate differently.
 
-**[KEY CONCEPT: Served vs Rendered HTML]**
+**The architectural conflict:** We've spent years optimising for:
 
-There are two fundamentally different HTML states:
+- Single-page applications
+- Client-side state management
+- Toast notifications and modals
+- Loading spinners without context
+- JavaScript-dependent navigation
 
-1. **Served HTML** (static) - What server sends before JavaScript executes
-   - CLI agents see only this
-   - Server-based agents see only this
-   - Most agents operate in this mode
+These patterns break agents and screen readers. AI agents face the same barriers humans with disabilities have encountered for years.
 
-2. **Rendered HTML** (dynamic) - After JavaScript execution
-   - Browser-based agents can see this
-   - Requires full browser automation
-   - More resource-intensive for agents
+### Two HTML States: The Gap
 
-**Example of the gap:**
+**Critical Distinction:**
+
+1. **Served HTML** (static)
+   - What server sends before JavaScript
+   - Most agents see only this
+
+2. **Rendered HTML** (dynamic)
+   - After JavaScript execution
+   - Only browser-based agents see this
+
+**Example:**
 
 ```html
-<!-- Served HTML: Empty container -->
-<div id="products"></div>
+<!-- Served HTML: Empty -->
+<div id='products'></div>
 
-<!-- Rendered HTML: Content appears after JavaScript -->
+<!-- Rendered HTML: Populated after JavaScript -->
 <script>
-  fetch('/api/products').then(r => r.json()).then(data => {
-    document.getElementById('products').innerHTML = renderProducts(data);
+  fetch('/api/products').then(data => {
+    renderProducts(data);
   });
 </script>
 ```
 
 To most agents, your product catalogue is invisible.
-
-**The architectural conflict:** We've spent years optimising for:
-
-- Single-page applications with client-side state
-- Toast notifications and modal dialogs
-- Loading spinners without context
-- Visual-only feedback (colour changes, animations)
-- JavaScript-dependent navigation
-
-These patterns break agents - and they've been breaking screen readers and accessibility tools for years. **This isn't new.** AI agents are encountering the same barriers that humans with disabilities have faced.
-
-The difference? There's now commercial pressure to fix it.
 
 ---
 
@@ -142,157 +134,168 @@ The difference? There's now commercial pressure to fix it.
 
 The good news: fixing this doesn't require rebuilding your interfaces or creating special agent-only experiences. It requires making implicit state explicit.
 
-**[CODE SAMPLE: Persistent Error Messages]**
+Small, well-understood changes that improve accessibility for everyone.
 
-Instead of toast notifications:
+**Three concrete patterns with code and business value.**
+
+### Pattern #1: Persistent Errors
+
+Instead of vanishing toast notifications:
 
 ```html
-<form id="signup-form" data-state="incomplete">
-  <!-- Error summary that persists -->
-  <div id="error-summary" role="alert" class="errors" style="display: none;">
-    <h3>Please fix the following errors:</h3>
-    <ul id="error-list"></ul>
+<form data-state='incomplete'>
+  <div id='error-summary' role='alert'>
+    <h3>Please fix the following:</h3>
+    <ul id='error-list'></ul>
   </div>
 
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      aria-describedby="email-error"
-      aria-invalid="false">
-    <div id="email-error" class="field-error" style="display: none;"></div>
-  </div>
+  <input aria-invalid='false'
+         aria-describedby='email-error'>
+  <div id='email-error'></div>
 </form>
 ```
 
-**Business value:**
+**Business value:** Conversion rates improve for everyone.
 
-- Errors persist until fixed (no more vanishing feedback)
+- Errors persist until fixed (no vanishing)
 - Screen readers can announce them
 - Agents can read and act on them
 - Users with cognitive disabilities have time to process
-- Conversion rates improve for everyone
 
-**[CODE SAMPLE: Complete Pricing Display]**
+### Pattern #2: Complete Pricing
 
-Instead of "From £99":
+Instead of 'From £99':
 
 ```html
-<div class="product-price" itemscope itemtype="https://schema.org/Offer">
-  <meta itemprop="priceCurrency" content="GBP">
-  <meta itemprop="price" content="119.00">
+<div itemscope itemtype='schema.org/Offer'>
+  <meta itemprop='price' content='119.00'>
+  <meta itemprop='priceCurrency' content='GBP'>
 
-  <div class="price-total">
-    Total: <span class="amount">£119.00</span>
-    <span class="tax-status">(inc. VAT)</span>
-  </div>
+  Total: £119.00 (inc. VAT)
 
-  <details class="price-breakdown">
+  <details>
     <summary>See breakdown</summary>
-    <table>
-      <tr><td>Product price:</td><td>£99.00</td></tr>
-      <tr><td>Delivery:</td><td>£15.00</td></tr>
-      <tr><td>Service fee:</td><td>£5.00</td></tr>
-      <tr class="total"><td>Total (inc. VAT):</td><td>£119.00</td></tr>
-    </table>
+    Product: £99 | Delivery: £15 | Fee: £5
   </details>
 </div>
 ```
 
-**Business value:**
+**Business value:** No hidden fees. Agent-readable. Builds trust.
 
 - No hidden fees that break trust
-- Agents can extract accurate pricing
+- Agents extract accurate pricing
 - Price comparison sites get correct data
-- Reduces support queries about unexpected charges
-- Improves conversion by being transparent
+- Reduces support queries about charges
+- Improves conversion through transparency
 
-**[CODE SAMPLE: Explicit State Attributes]**
+### Pattern #3: Explicit State
 
-Make checkout state visible:
+Make cart state visible:
 
 ```html
-<div id="shopping-cart"
-     data-state="active"
-     data-item-count="3"
-     data-subtotal="247.97"
-     data-currency="GBP">
+<div id='shopping-cart'
+     data-state='active'
+     data-item-count='3'
+     data-subtotal='247.97'
+     data-currency='GBP'>
 
-  <div class="cart-summary" role="status">
-    <p>Items: <span id="item-count">3</span></p>
-    <p>Subtotal: £<span id="subtotal">247.97</span></p>
+  <div role='status'>
+    Items: <span>3</span>
+    Subtotal: £<span>247.97</span>
   </div>
 </div>
 ```
 
-**Business value:**
+**Business value:** State persists. Debugging easier. Integration testing more reliable.
 
 - Cart state visible in DOM, not just JavaScript
-- Agents can verify cart contents before checkout
+- Agents verify cart contents before checkout
 - State persists through page refreshes
-- Debugging becomes easier for your own developers
-- Integration testing more reliable
+- Debugging easier for your own developers
 
-> **Discussion prompt:** Which of these patterns would have the biggest immediate impact on your site?
+### The Small Business Case
 
-**The small business case:**
+You don't need complex infrastructure.
 
-You don't need complex infrastructure. A simple restaurant site with semantic HTML and Schema.org markup can be completely agent-friendly with minimal effort. We're talking about Priority 1 quick wins, not expensive rebuilds.
+Simple restaurant site:
+
+- Semantic HTML (`<nav>`, `<main>`, `<article>`)
+- Schema.org markup (Restaurant, Menu, MenuItem)
+- Minimal effort
+- Completely agent-friendly
+
+Quick wins, not expensive rebuilds.
 
 ---
 
-## Taking Action [TIME: 2 minutes]
+## Taking Action [TIME: 3 minutes]
 
-Priority-based approach (not time-based):
+### Quick Wins: Start Here
 
-### Priority 1: Critical Quick Wins
+**Critical Priority 1 Changes:**
 
 - Add persistent error messages
 - Display complete pricing (no hidden fees)
 - Ensure served HTML contains core content
 - Add basic Schema.org structured data
 
-### Priority 2: Essential Improvements
+These changes benefit everyone immediately.
 
-- Explicit state attributes (data-state, data-validation-state)
-- Create or improve robots.txt
-- Add llms.txt file (structured guidance for agents)
-- Fix progressive enhancement gaps
+Start with highest impact, lowest effort.
 
-### Priority 3: Core Infrastructure
+### Web Audit Suite
 
-- Review and fix all forms systematically
-- Implement comprehensive structured data
-- Add agent-specific communication patterns
+Available as separate purchase or professional audit service.
 
-**Web Audit Suite:**
+- Implements patterns from the book
+- Generates detailed reports
+- Shows exactly where sites break for agents
+- Provides specific fix recommendations
 
-Available as a separate purchase or professional audit service (not included with the book). It implements these patterns and generates detailed reports showing exactly where your site breaks for agents and how to fix it.
+Not included with book - separate offering.
 
-> **Discussion prompt:** What would you want to measure first on your own site?
+**Measure what you can't see.**
 
-**Call to action:**
+### Call to Action
 
-Start with one pattern. Pick the highest-impact, lowest-effort change for your business. Implement it. Measure the improvement. Then tackle the next one.
+Start with one pattern:
 
-The sites that adapt early gain advantage. The sites that don't get quietly bypassed.
+1. Pick highest-impact, lowest-effort change
+2. Implement it
+3. Measure the improvement
+4. Tackle the next one
+
+Sites that adapt early gain advantage. Sites that don't get quietly bypassed.
+
+**Questions? Let's discuss your specific challenges.**
 
 ---
 
-## Q&A and Discussion [TIME: Remaining time]
+## Key Takeaways [TIME: Closing]
 
-Key themes to explore:
+**Five Essential Messages:**
 
-- What patterns have you already encountered?
-- Where do you see the biggest risk in your business?
-- What's stopping you from making these changes?
-- How do you measure agent-friendliness today?
+1. This is happening now (not speculative)
+2. Commercial pressure exists (preference = advantage)
+3. Solutions are accessible (small changes, big impact)
+4. Universal benefit (humans and machines)
+5. Start with quick wins (measure and iterate)
 
-**Book availability:** "The Invisible Users: Designing the Web for AI Agents and Everyone Else" - Due Q1 2026
+---
 
-**Contact:** <tom.cranstoun@gmail.com> | <https://allabout.network>
+## Book & Contact
+
+**The Invisible Users:** Designing the Web for AI Agents and Everyone Else
+
+Due Q1 2026
+
+**Tom Cranstoun**
+
+<tom.cranstoun@gmail.com>
+
+<https://allabout.network>
+
+**Questions? Discussion? Your challenges?**
 
 ---
 
