@@ -368,7 +368,7 @@ Accordions create the same problem:
 </details>
 ```
 
-The `<details>` element is collapsed by default. The content is in the DOM but not visible. Agents might not expand it. The answers to frequently asked questions - the information most likely to be useful - remain invisible.
+The `<details>` element is collapsed by default. The content is in the DOM but not visible on the screen. Agents might not expand it. The answers to frequently asked questions - the information most likely to be useful - remain invisible.
 
 **The irony:** These patterns exist to reduce cognitive load for humans. Too much information at once is overwhelming. Progressive disclosure helps people focus. But agents don't get overwhelmed. They can process unlimited details instantly. The kindness we show human attention spans becomes an obstacle for machine parsing.
 
