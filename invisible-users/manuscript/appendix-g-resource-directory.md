@@ -293,41 +293,6 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 - OWASP JWT Guide: <https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html>
 - Critical for Identity Layer implementations
 
----
-
-## AI and Ethics
-
-### Research Organisations
-
-### Partnership on AI
-
-- Website: <https://partnershiponai.org>
-- Research on responsible AI development
-
-### AI Now Institute
-
-- Website: <https://ainowinstitute.org>
-- Research on social implications of AI
-
-### Future of Humanity Institute
-
-- Website: <https://www.fhi.ox.ac.uk>
-- AI safety and ethics research
-
-### Guidelines
-
-### IEEE Ethically Aligned Design
-
-- Website: <https://ethicsinaction.ieee.org>
-- Ethics guidelines for autonomous systems
-
-### Montreal Declaration for Responsible AI
-
-- Website: <https://www.montrealdeclaration-responsibleai.com>
-- Ethical principles for AI development
-
----
-
 ## Books and Further Reading
 
 ### Web Development and Design
@@ -346,25 +311,6 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 - Interface design patterns
 - Many concepts relevant to agent interaction
-
-### AI and Machine Learning
-
-**Life 3.0** by Max Tegmark
-
-- Future of AI and humanity
-- Context for AI agent development
-
-**The Alignment Problem** by Brian Christian
-
-- AI safety and ethics
-- Relevant to agent behaviour and trust
-
-**Human Compatible** by Stuart Russell
-
-- AI alignment and safety
-- Framework for beneficial AI systems
-
-### Books - Web Standards
 
 **HTML and CSS: Design and Build Websites** by Jon Duckett
 
@@ -411,39 +357,6 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 - Website: <https://wikipedia.org>
 - Wikidata: <https://www.wikidata.org>
 - Structured knowledge with machine-readable data
-
----
-
-## Community and Discussion
-
-### Forums and Communities
-
-### WebAIM Mailing List
-
-- Website: <https://webaim.org/discussion/>
-- Accessibility discussion
-
-### A11y Slack
-
-- Signup: <https://web-a11y.slack.com>
-- Accessibility community
-
-### dev.to
-
-- Website: <https://dev.to>
-- Web development community
-- Tag: <https://dev.to/t/accessibility>
-
-### Stack Overflow
-
-- Website: <https://stackoverflow.com>
-- Technical Q&A
-- Tags: [accessibility], [schema.org], [json-ld]
-
-### Web Directions
-
-- Website: <https://webdirections.org>
-- Web standards and best practices
 
 ---
 
@@ -508,18 +421,6 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 ## Tools for Implementation
 
-### Code Editors
-
-### Visual Studio Code
-
-- Download: <https://code.visualstudio.com>
-- Extensions for accessibility, HTML validation, etc.
-
-### Sublime Text
-
-- Download: <https://www.sublimetext.com>
-- Fast, lightweight code editor
-
 ### Version Control
 
 ### Git
@@ -539,43 +440,14 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 - Website: <https://www.npmjs.com>
 - JavaScript package manager
 
-### yarn
-
-- Website: <https://yarnpkg.com>
-- Alternative JavaScript package manager
-
 ---
 
 ## Analytics and Monitoring
-
-### Web Analytics
 
 ### Google Analytics
 
 - Website: <https://analytics.google.com>
 - User behaviour tracking (segment agent vs human traffic)
-
-### Plausible Analytics
-
-- Website: <https://plausible.io>
-- Privacy-friendly analytics alternative
-
-### Matomo
-
-- Website: <https://matomo.org>
-- Open source analytics platform
-
-### Error Monitoring
-
-### Sentry
-
-- Website: <https://sentry.io>
-- Error tracking and monitoring
-
-### LogRocket
-
-- Website: <https://logrocket.com>
-- Session replay and monitoring
 
 ---
 
@@ -603,20 +475,10 @@ Curated resources referenced in *The Invisible Users: Designing the Web for AI A
 
 ## Legal Resources
 
-### Electronic Frontier Foundation (EFF)
-
-- Website: <https://www.eff.org>
-- Digital rights and internet law
-
 ### Creative Commons
 
 - Website: <https://creativecommons.org>
 - Open content licensing
-
-### Copyright Alliance
-
-- Website: <https://copyrightalliance.org>
-- Copyright information and advocacy
 
 ---
 
@@ -627,46 +489,6 @@ See also:
 - [Implementation Checklist](implementation-checklist.md) - Step-by-step guide (**Repository file**)
 - [Glossary](Glossary.md) - Terms and definitions (includes OAuth2, JWT, DPoP, PKCE) (**Repository file**)
 - [Agent-Friendly Starter Kit](agent-friendly-starter-kit/) - Good vs Bad implementation examples (**Repository directory**)
-
----
-
-## Staying Current
-
-### Blogs and News
-
-### A List Apart
-
-- Website: <https://alistapart.com>
-- Web design and development articles
-
-### CSS-Tricks
-
-- Website: <https://css-tricks.com>
-- Frontend development guides
-
-### Smashing Magazine
-
-- Website: <https://www.smashingmagazine.com>
-- Web design and development
-
-### Web.dev
-
-- Website: <https://web.dev>
-- Google's web development best practices
-
-### Newsletters
-
-### JavaScript Weekly
-
-- Website: <https://javascriptweekly.com>
-
-### Frontend Focus
-
-- Website: <https://frontendfoc.us>
-
-### Accessibility Weekly
-
-- Website: <https://a11yweekly.com>
 
 ---
 
