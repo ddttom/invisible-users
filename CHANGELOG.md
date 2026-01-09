@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2026-01-09 (Afternoon)
+
+**Manuscript Content Improvements:**
+
+- Reduced content duplication across Preface, Chapter 1, and Executive Summary
+  - Streamlined chapter descriptions in Preface to avoid repeating Chapter 1 content
+  - Added cross-references directing readers to detailed content locations
+  - Added "14-day tour" detail to tour operator story for consistency with Executive Summary
+  - Added reference from Preface to Chapter 1's accessibility connection section
+  - Added reference from Chapter 1 to Chapter 4 for business timing implications
+- Improved document navigation with explicit pointers between related sections
+
+**Web Audit Suite Code Quality:**
+
+- Fixed ESLint errors across codebase (24 errors resolved, 0 remaining)
+  - Fixed default-param-last errors by moving context parameter before optional parameters
+  - Updated function signatures in 11 files: caching.js, networkUtils.js, pageAnalyzer.js, rateLimiter.js, sitemap.js, dashboardGenerator.js, executiveSummary.js
+  - Updated all function call sites to match new parameter order
+  - Removed unused variables: loggerOptions in main.js, duplicate performanceMetrics key in caching.js
+  - Prefixed unused context parameters with underscore in metricsUpdater.js (9 functions)
+  - Fixed undefined context reference in dashboardGenerator.js
+- Updated test files to match refactored function signatures
+  - Fixed parameter order in sitemap.test.js (3 test cases)
+  - Added eslint-disable comments for Mocha test patterns (beforeEach, describe)
+  - Marked intentionally unused test variables in pipeline.test.js
+- All linting now passes: ESLint 0 errors, markdownlint 0 errors
+- All tests passing: 22/22 tests
+
 ### Added - 2026-01-09
 
 **A4 PDF Review Footer:**
