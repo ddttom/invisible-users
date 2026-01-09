@@ -20,10 +20,13 @@ Modern websites work beautifully for humans but fail completely for AI agents. T
 - **Silent failures** - Agents move on without error messages
 - **£6.3 trillion market** - Global e-commerce affected
 - **5-15% projected traffic** - AI agents by 2026
+- **Multiple proprietary platforms** - Amazon Alexa+, Microsoft Copilot (verified); Google/Apple expected to follow
 
 **Real Example:** An AI assistant compared tour operators. Company A's pagination made the agent think a 14-day tour was only 1 day. Company B showed full content on one page and won the business.
 
 The patterns that break agents also break screen reader users, people with cognitive disabilities, and anyone processing pages sequentially. We've known about these problems for years - now there's commercial pressure to fix them. (For detailed analysis of the accessibility-agent connection, see Chapter 1 of the manuscript.)
+
+**The proprietary lock-in reality:** Major platforms (Microsoft, Amazon verified; Google, Apple expected) are building closed identity systems to establish first-mover advantages before open standards emerge. Businesses must now test against multiple proprietary agent platforms, knowing each integration creates lock-in for customers and dependency for themselves. The industry must work to build open standards for identity delegation and agent interoperability.
 
 ---
 

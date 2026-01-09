@@ -93,9 +93,12 @@ We don't need a redesign. We need **Code Remediation**.
 
 1. **Week 1:** Run the **Web Audit Suite** to benchmark our current score.
 2. **Week 2:** Present the "Technical Debt" report with priority fixes.
-3. **Month 1:** Fix the "Critical" blockers (Checkout, Pricing, Sign-up).
+3. **Week 2-3:** Test checkout flow with Claude for Chrome, Microsoft Copilot, Amazon Alexa+
+4. **Month 1:** Fix the "Critical" blockers (Checkout, Pricing, Sign-up).
 
 **Recommendation:** Approve the Phase 1 Audit budget of £[Amount] to quantify our risk.
+
+**Critical testing requirement:** You must test against multiple agent platforms. Amazon Alexa+ (5 Jan 2026) and Microsoft Copilot Checkout (8 Jan 2026) are processing real transactions NOW. Sites that don't work for these platforms are excluded from high-conversion agent traffic whilst competitors capture it.
 
 ---
 
@@ -103,12 +106,17 @@ We don't need a redesign. We need **Code Remediation**.
 
 ### Beyond This Project: Universal Identity Delegation
 
-**The Infrastructure Gap:**
+**The Proprietary Lock-in Problem (Happening NOW):**
 
-* Microsoft building proprietary identity for Copilot Checkout
-* Claude for Chrome inheriting browser sessions through Anthropic
-* Google and Apple building their own walled gardens
+* **Microsoft** building proprietary identity for Copilot Checkout (January 2026)
+* **Amazon** controlling shopping through Alexa+ platform (3x purchase increase)
+* **Claude for Chrome** inheriting browser sessions through Anthropic (August-December 2025)
+* **Google and Apple** expected to build their own walled gardens
 * **Result:** User lock-in, agent fragmentation, business complexity
+
+**Critical implication for businesses:**
+
+Every integration with a proprietary platform creates lock-in for your customers and dependency for your business. You cannot assume your site works for "AI agents" in general - you must test against specific platforms (Microsoft, Amazon verified; Google, Apple expected) knowing each has different identity systems, different capabilities, and different failure modes.
 
 **The Next Project:**
 
@@ -117,13 +125,13 @@ Open-source universal identity delegation framework:
 * Portable authorisation tokens across platforms
 * User-controlled permissions and audit trails
 * OAuth 2.0 delegation extension support
-* Community infrastructure before proprietary lock-in
+* Community infrastructure before proprietary lock-in becomes permanent
 
 **Why This Matters:**
 
-Regulatory pressure will eventually force interoperability (like mobile number portability). Early involvement positions organisations as authority figures when standards emerge.
+The industry predicted platforms would race to establish first-mover advantages before standards emerge - and that's exactly what happened (Amazon 5 Jan, Microsoft 8 Jan, within 72 hours). Regulatory pressure will eventually force interoperability (like mobile number portability). Early involvement positions organisations as authority figures when standards emerge.
 
-**Looking for collaborators** with identity systems, OAuth, and agent architecture expertise.
+**Looking for collaborators** with identity systems, OAuth, and agent architecture expertise to build open standards whilst platforms pursue closed systems.
 
 ---
 

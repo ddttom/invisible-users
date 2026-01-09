@@ -563,7 +563,7 @@ This project includes custom Claude Code configuration in the `.claude/` directo
 
 ### Custom Skills
 
-Two custom skills are available via the `/` command syntax:
+Three custom skills are available via the `/` command syntax:
 
 1. **`/step-commit`** - Systematic commit workflow
    - Reviews all changes with git status and diff
@@ -577,6 +577,17 @@ Two custom skills are available via the `/` command syntax:
    - Verifies all issues are resolved
    - Reports remaining issues requiring manual fixes
    - Shows modified files
+
+3. **`/news`** - Add verified industry news to book documentation
+   - Verifies all claims against official sources using WebSearch
+   - Validates relevance using five strict criteria (all must pass)
+   - Sequences entries chronologically
+   - Creates properly formatted blog entries (narrative style)
+   - Creates structured appendix entries (12-section technical format)
+   - Updates both `invisible-users/manuscript/blog/book-updates.md` and `appendix-j-industry-developments.md`
+   - Includes qualifiers for unverified company-reported metrics
+   - Only adds news that validates or challenges specific book chapters
+   - **Usage:** `/news [paste news content or URL]`
 
 ### Git Hooks
 
@@ -604,6 +615,56 @@ The `.claude/settings.local.json` file pre-approves common operations:
 - Linting commands
 - Project commands (npm start, npm run)
 - Directory inspection (ls, tree, find)
+
+### Using the `/news` Skill
+
+The `/news` skill automates adding industry developments to the book's blog and appendix with strict verification.
+
+**When to use:**
+
+When you have industry news about:
+
+- AI agent launches (browser automation, commerce agents)
+- Agent-mediated commerce platforms
+- Standards or protocols for agents
+- Business model innovations in agent space
+- Security or identity solutions for agents
+
+**How it works:**
+
+1. **Verification Phase** - Fact-checks all claims via WebSearch against official sources
+2. **Relevance Check** - Must meet ALL five criteria:
+   - Validates/challenges specific book chapters
+   - Production reality (available NOW, not beta/research/future)
+   - Commercial pressure (affects website owner decisions)
+   - Timeline impact (accelerates adoption or validates projections)
+   - Ecosystem shift (platform power dynamics or standards)
+3. **User Approval** - Presents verification summary with ✓/⚠/✗ indicators
+4. **Entry Creation** - Writes blog and appendix entries if approved
+5. **Quality Check** - Validates markdown formatting and cross-references
+
+**Examples:**
+
+```bash
+# Good candidates (likely to qualify)
+/news Microsoft Copilot Checkout processes real transactions with retailers
+/news Claude for Chrome browser automation launches to paid subscribers
+/news Google Shopping Agent enables checkout within search interface
+
+# Will be rejected (don't meet criteria)
+/news Claude Desktop adds new keyboard shortcut
+/news Research paper shows agents can navigate websites
+/news ChatGPT announces features "coming soon in Q3"
+```
+
+**Skill files location:**
+
+- Main workflow: `.claude/skills/news/skill.md`
+- Verification rules: `.claude/skills/news/verification-guidelines.md`
+- Relevance criteria: `.claude/skills/news/relevance-checklist.md`
+- Templates: `.claude/skills/news/templates/`
+
+**Note:** The skill is conservative by design - better to reject potentially relevant news than to add irrelevant content to the book documentation.
 
 ## Git Commit Guidelines
 
