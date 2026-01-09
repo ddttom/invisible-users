@@ -101,7 +101,7 @@ This ensures the book remains the single source of truth.
 
 ## Working with the Manuscript Submodule
 
-The book manuscript is maintained in a separate repository and integrated as a git submodule. When you first clone this repository, you need to initialize the submodule:
+The book manuscript is maintained in a separate public repository and integrated as a git submodule. When you first clone this repository, you need to initialize the submodule:
 
 ```bash
 # Clone the main repository
