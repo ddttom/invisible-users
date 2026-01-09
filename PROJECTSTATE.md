@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-09 (Appendix J: Industry Developments + metrics removal)
+**Last Updated:** 2026-01-09 (Identity Layer + Agent Limitations)
 
 ### Combined Repository
 
@@ -19,7 +19,7 @@ This repository contains two integrated projects:
 - **Total Content:** ~69,300 words (including appendices)
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
 - **Appendices:** 10 appendices (A-J) covering implementation guides, patterns, resources, LLM context, pipeline failure case study, and industry developments
-- **Latest Addition:** Appendix J: Industry Developments tracking Claude for Chrome (20 Dec 2024) and Microsoft Copilot Checkout (Jan 2025). All unvalidated metrics removed per CLAUDE.md guidelines.
+- **Latest Addition:** Identity layer section in Chapter 11 addressing proprietary platform lock-in strategies. Additional content on VPN challenges (Chapter 4), system prompt limitations (Chapter 6), hallucinations (Chapter 11), and professional responsibility (Chapter 9).
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule

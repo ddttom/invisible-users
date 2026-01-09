@@ -7,6 +7,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2026-01-09 (Late Night)
+
+**Identity Layer and Agent Limitations Content:**
+
+- Added "The Missing Identity Layer" section to Chapter 11 (~1,200 words, lines 693-794)
+  - Explains why universal identity delegation layer is missing from AI agent ecosystem
+  - Documents platform strategy: first-mover advantage through proprietary identity systems
+  - Practical architecture guidance: support proprietary systems today whilst preparing for eventual standards
+  - Code examples: Universal identity layer interface and abstraction pattern for agent creators
+  - OAuth 2.0 delegation extension as standard specification reference
+- Added agent limitation content distributed across four chapters (~800 words total):
+  - **Chapter 4:** "The Location Detection Challenge" section - VPN/proxy implications for geolocation, fraud detection, pricing strategies
+  - **Chapter 6:** "The System Prompt Illusion" section - Why hidden guardrails are necessary but insufficient, validation layers needed
+  - **Chapter 9:** Professional responsibility paragraph - Clear obligation for designers/developers/product owners/executives
+  - **Chapter 11:** Hallucinations paragraph in conclusion - Inherent characteristic of probabilistic systems, validation layers catch errors
+- Updated blog post (agent-ecosystem-acceleration.md):
+  - Added "VPNs and Hidden Guardrails" section
+  - Added system prompts paragraph explaining limitations
+- Updated presentation slides (talks/members-call/talk-slides.js):
+  - Added "VPNs and Hidden Guardrails" slide
+  - Added "Our Responsibility" slide
+
+**Context:**
+
+Platforms are racing to establish proprietary identity delegation systems before standards emerge, creating first-mover advantages through platform lock-in. When Microsoft establishes Copilot as the identity layer for e-commerce, or Apple builds agent authorization into their ecosystem, users face switching costs to move between competing agents. Agent creators need abstraction layers that support proprietary systems today whilst preparing for eventual open standards.
+
+System prompts and guardrails exist in all agents but work at reasoning level, not data extraction. The £203,000 cruise pricing error occurred despite whatever guardrails the agent operated under. Validation layers (range checking, comparative analysis, cross-referencing) must be implemented as code, not just natural language instructions.
+
+Browser extensions and smart AI browsers inherit user network configuration (VPNs, corporate proxies), making IP-based location detection unreliable. This affects fraud detection, pricing strategies, content delivery, and compliance requirements.
+
+**Commits:**
+- Manuscript submodule: 1320186 "Add identity layer section to Chapter 11"
+- Manuscript submodule: 5e660a6 "Add VPN, system prompts, hallucinations, and responsibility content"
+- Parent repository: Updated submodule pointers (319a697, 1136fd5)
+
 ### Added - 2026-01-09 (Night)
 
 **Appendix J: Industry Developments - Major AI Agent Launches:**
