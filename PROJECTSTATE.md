@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-09 (manuscript submodule integration)
+**Last Updated:** 2026-01-09 (Appendix J: Industry Developments + metrics removal)
 
 ### Combined Repository
 
@@ -13,19 +13,20 @@ This repository contains two integrated projects:
 
 ### Book Manuscript Status
 
-- **Version:** 2.6.0
+- **Version:** 2.7.0
 - **Status:** Publication-ready
-- **Word Count:** ~55,000 words (core chapters)
-- **Total Content:** ~65,500 words (including appendices)
+- **Word Count:** ~57,000 words (core chapters)
+- **Total Content:** ~69,300 words (including appendices)
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
-- **Appendices:** 9 appendices (A-I) covering implementation guides, patterns, resources, LLM context, and pipeline failure case study
+- **Appendices:** 10 appendices (A-J) covering implementation guides, patterns, resources, LLM context, pipeline failure case study, and industry developments
+- **Latest Addition:** Appendix J: Industry Developments tracking Claude for Chrome (20 Dec 2024) and Microsoft Copilot Checkout (Jan 2025). All unvalidated metrics removed per CLAUDE.md guidelines.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
   - **Submodule:** `invisible-users/manuscript/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
   - Tracks main branch for easy updates
   - Core chapters (1-11), preface, executive summary in submodule
-  - All nine appendices (implementation guides, pattern references, resource directory, DDT reference, pipeline failure case study) in submodule
+  - All ten appendices (implementation guides, pattern references, resource directory, DDT reference, pipeline failure case study, industry developments) in submodule
   - Code examples (agent-friendly-starter-kit/, code-examples/) in submodule
   - Blog materials (blog/blog.md, blog/blog.svg, blog/AI-Native.blog) in submodule
   - Presentation materials (talks/members-call/) in submodule
