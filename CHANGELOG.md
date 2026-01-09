@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2026-01-09 (Very Late Night)
+
+**Platform Claims Qualified + /news Skill Documentation:**
+
+- **Qualified Google/Apple platform claims as expectations:** Changed all references from stating as verified fact ("Google and Apple building their own walled gardens") to qualifying as expected ("Google and Apple expected to build their own walled gardens"). Distinguishes between:
+  - **Verified platforms:** Microsoft Copilot Checkout, Amazon Alexa+ (documented launches with dates and features)
+  - **Expected platforms:** Google, Apple (logical inference but not yet verified)
+- **Console capability corrections:** Updated from definitive "agents don't read console" to accurate "you cannot assume agents can read console" whilst noting Claude for Chrome CAN read console output but many agents cannot
+- **Sales materials updated:**
+  - EXECUTIVE_PITCH_DECK.md: Qualified platform claims, added multi-platform testing requirement
+  - executive-summary.md: Added proprietary lock-in context with verified/expected distinction
+  - PITCH.md: Fixed bare URL markdown linting issue
+- **Manuscript submodule updated** (bed5610): Applied same platform claim qualifications and console capability corrections across 9 files (appendix-j, blog files, chapters 2-4, 9-10, preface)
+- **CLAUDE.md documentation:** Added comprehensive /news skill documentation with usage guide, examples, verification workflow, and relevance criteria
+- **/.claude/skills/news/ added:** Complete skill implementation files (skill.md, verification-guidelines.md, relevance-checklist.md, templates/)
+- **PROJECTSTATE.md updated:** Corrected Claude Code configuration location, documented three custom skills, updated latest additions
+
+**Rationale:**
+
+User correctly identified that stating "Google and Apple building their own walled gardens" was unverified speculation. Platforms verified as building proprietary systems: Microsoft (Copilot Checkout, January 2026), Amazon (Alexa+, January 2026), Anthropic (Claude for Chrome session inheritance, August-December 2025). Google and Apple have logical incentive to follow but no verified launches yet.
+
+Console capability correction addresses that some agents (Claude for Chrome) CAN read browser console whilst many cannot, requiring conditional language rather than definitive statements.
+
+**Commits:**
+
+- Manuscript submodule: bed5610 "Qualify Google/Apple walled garden claims as expectations"
+- Parent repository: 96e9de9 "Qualify Google/Apple claims and document /news skill"
+- Parent repository: ab6e697 "Fix markdown linting issues"
+- Parent repository: cafb74d "Update PROJECTSTATE.md with latest changes"
+
 ### Added - 2026-01-09 (Late Night)
 
 **Identity Layer and Agent Limitations Content:**
