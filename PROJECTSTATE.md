@@ -26,6 +26,11 @@ This repository contains two integrated projects:
   - Tracks main branch for easy updates
   - Core chapters (1-11), preface, executive summary in submodule
   - All nine appendices (implementation guides, pattern references, resource directory, DDT reference, pipeline failure case study) in submodule
+  - Code examples (agent-friendly-starter-kit/, code-examples/) in submodule
+  - Blog materials (blog/blog.md, blog/blog.svg, blog/AI-Native.blog) in submodule
+  - Presentation materials (talks/members-call/) in submodule
+  - Claude Code configuration (.claude/ with hooks, commands, skills) in submodule
+  - Documentation (README.md, CLAUDE.md) in submodule with comprehensive guidance
   - Planning files (book-plan.md, book-svg-style.md) remain at main repository root level
 - **PDF Generation:**
   - **A4 Format** (`pdf:generate`) - Professional review copy with footer "Review Copy not for publication/distribution"
@@ -46,10 +51,8 @@ This repository contains two integrated projects:
 - **Location:** `docs/sales-enablement/`
 - **Status:** Complete
 - **Materials:**
-  - **talk.md** - Complete 20-minute talk script with concrete examples from book appendices
-  - **talk-slides.js** - Google Apps Script to generate 19-slide presentation
-  - **talk1.md** - Original outline reference
-  - Additional materials: PITCH.md, business-plan.md, executive-summary.md, PARTNER_KIT.md, ROI_CASE_STUDIES.md
+  - Business and sales materials: PITCH.md, business-plan.md, executive-summary.md, PARTNER_KIT.md, ROI_CASE_STUDIES.md
+  - Presentation materials (talk.md, talk-slides.js, talk1.md) moved to manuscript repository at `invisible-users/manuscript/talks/members-call/`
 - **Target Audience:** Business leaders (CTOs, product owners)
 - **Key Features:** Priority-based roadmap, real production examples, code samples with ROI implications
 
