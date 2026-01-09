@@ -4,18 +4,10 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 
 ---
 
-## Suppressing Sections from Pandoc TOC
+## File Location: Always Check Root Directory First
 
-**Rule** (2026-01-08): To completely remove a section and its subsections from the pandoc table of contents requires BOTH pandoc attributes AND LaTeX commands. Tried using only `{.unnumbered .unlisted}` which removed the main heading but left subsections (A, B, C, etc.) visible in TOC. The complete solution for Glossary suppression is:
+**Rule** (2026-01-09): Tried to find LEARNINGS.md by searching subdirectories and checking if it existed in various locations, but the user pointed out "learnings.md is here @LEARNINGS.md this is one more eror to add, you did not look in the root." When looking for project-level files like LEARNINGS.md, README.md, CLAUDE.md, always check the root directory first before searching subdirectories. The root directory is where project-level documentation lives.
 
-```markdown
-# Glossary of Terms {.unnumbered .unlisted}
+## Marketing Metrics from Company Announcements
 
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-```
-
-The pandoc attributes remove the main heading from TOC, but the `\addtocontents` command is required to suppress subsections. This took multiple attempts to discover the correct combination.
-
-## Pandoc Resource Paths
-
-**Rule** (2026-01-07): When moving manuscript files to subdirectories, pandoc's `--resource-path` must be updated to match the new location. After moving chapters from `invisible-users/` to `invisible-users/manuscript/`, the PDF build failed to find illustrations because `--resource-path=invisible-users` was looking at the wrong level. Always update `--resource-path` to point to the directory containing the manuscript files when restructuring directories.
+**Rule** (2026-01-09): Tried using real Microsoft metrics (2x, 53%, 7x) from official announcements to demonstrate "measurable business impact," but CLAUDE.md explicitly forbids concrete percentages in marketing materials and the user correctly noted these "feel false to readers." Even when metrics come from real company announcements, they are unverifiable marketing claims, not independent research. Always replace specific percentages with qualitative statements like "Microsoft reports improved conversion rates (though unvalidated)" plus verifiable facts (dates, company names, partner retailers). Marketing percentages feel like hype regardless of source.
