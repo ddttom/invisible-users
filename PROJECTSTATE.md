@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-09 (Identity Layer + Agent Limitations)
+**Last Updated:** 2026-01-09 (Google/Apple Claims Qualified + /news Skill)
 
 ### Combined Repository
 
@@ -19,7 +19,7 @@ This repository contains two integrated projects:
 - **Total Content:** ~69,300 words (including appendices)
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
 - **Appendices:** 10 appendices (A-J) covering implementation guides, patterns, resources, LLM context, pipeline failure case study, and industry developments
-- **Latest Addition:** Identity layer section in Chapter 11 addressing proprietary platform lock-in strategies. Additional content on VPN challenges (Chapter 4), system prompt limitations (Chapter 6), hallucinations (Chapter 11), and professional responsibility (Chapter 9).
+- **Latest Addition:** Qualified Google/Apple platform claims as "expected to follow" rather than verified facts. Distinguished between verified platforms (Microsoft Copilot, Amazon Alexa+) and expected platforms (Google, Apple). Updated console capability statements from "agents don't read console" to "you cannot assume agents can read console" whilst noting Claude for Chrome CAN read console.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
@@ -30,7 +30,7 @@ This repository contains two integrated projects:
   - Code examples (agent-friendly-starter-kit/, code-examples/) in submodule
   - Blog materials (blog/blog.md, blog/blog.svg, blog/AI-Native.blog) in submodule
   - Presentation materials (talks/members-call/) in submodule
-  - Claude Code configuration (.claude/ with hooks, commands, skills) in submodule
+  - Claude Code configuration in main repository (.claude/ with hooks, commands, three skills: /step-commit, /md-fix, /news)
   - Documentation (README.md, CLAUDE.md) in submodule with comprehensive guidance
   - Planning files (book-plan.md, book-svg-style.md) remain at main repository root level
 - **PDF Generation:**
