@@ -36,8 +36,6 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ├── package.json              # Combined npm scripts for all projects
 ├── llms.txt                  # Repository llms.txt file
 ├── docs/                     # Business and sales materials
-│   ├── blog.md               # Promotional blog post
-│   ├── blog.svg              # Blog post illustration
 │   └── sales-enablement/     # Sales materials, pitch decks, business plan
 ├── invisible-users/          # Book manuscript and materials
 │   ├── book-plan.md          # Master plan with chapter outlines and status
@@ -45,9 +43,9 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   ├── manuscript/           # Complete manuscript content (git submodule)
 │   │   ├── [chapters, appendices, illustrations in separate repository]
 │   │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
-│   │   └── code-examples/    # Production-ready code implementations
-│   ├── llms.txt              # Repository llms.txt file
-│   └── AI-Native.blog
+│   │   ├── code-examples/    # Production-ready code implementations
+│   │   └── blog/             # Blog and promotional materials (blog.md, blog.svg, AI-Native.blog)
+│   └── llms.txt              # Repository llms.txt file
 ├── web-audit-suite/          # Web analysis tool (implements book's patterns)
 │   ├── index.js              # Entry point, CLI parsing, logger setup
 │   ├── package.json          # Tool-specific dependencies
@@ -535,7 +533,7 @@ When removing a file that's referenced in documentation:
 
 - Repository structure diagrams: `CLAUDE.md`, `README.md`, `invisible-users/book-plan.md`, `llms.txt`
 - Supporting materials tables: `invisible-users/book-plan.md`
-- Cross-references: `blog.md`, `resource-links.md`, `PROJECTSTATE.md`
+- Cross-references: `invisible-users/manuscript/blog/blog.md`, `resource-links.md`, `PROJECTSTATE.md`
 
 ## Cross-Document Update Patterns
 

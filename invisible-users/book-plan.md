@@ -481,8 +481,6 @@ Real-world llms.txt example:
 ├── package.json
 ├── llms.txt                     # Repository llms.txt file
 ├── docs/
-│   ├── blog.md                  # Promotional blog post
-│   ├── blog.svg                 # Blog post illustration
 │   └── sales-enablement/        # Sales and partnership materials
 │       ├── business-plan.md     # Complete business strategy (~18,000 words)
 │       ├── PITCH.md             # Combined partnership pitch (~27,500 words)
@@ -520,10 +518,13 @@ Real-world llms.txt example:
     │   │   ├── static-site/
     │   │   ├── monitoring/
     │   │   └── validation/
+    │   ├── blog/                                    # Blog and promotional materials
+    │   │   ├── blog.md                              # Promotional blog post
+    │   │   ├── blog.svg                             # Blog post illustration
+    │   │   └── AI-Native.blog                       # AI-native website guide (~38,000 words)
     │   └── illustrations/
     │       └── chapter-01-*.svg through chapter-10-*.svg
-    ├── llms.txt                 # Example llms.txt file from book content
-    └── AI-Native.blog           # AI-native website implementation blueprint (~5,000 words)
+    └── llms.txt                 # Example llms.txt file from book content
 ```
 
 ---
