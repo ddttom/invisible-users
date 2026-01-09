@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2026-01-09 (Night)
+
+**Appendix J: Industry Developments - Major AI Agent Launches:**
+
+- Added Appendix J: Industry Developments (~3,800 words) tracking major AI agent developments
+  - **Claude for Chrome (20 December 2024):** Browser extension for complete web automation, available to all paid Claude subscribers. Particularly significant because it was used in the book's case studies whilst being written. Demonstrates session inheritance problem, prompt injection risks, makes agent detection nearly impossible.
+  - **Microsoft Copilot Checkout (January 2025):** Complete purchase transactions within AI assistant. Partner retailers: Urban Outfitters, Anthropologie, Etsy, Shopify. Microsoft reports improved conversion rates (unvalidated by independent research).
+- Created blog post: "Two Weeks That Changed Everything" (~2,700 words)
+  - Covers both launches as ecosystem tipping point
+  - Browser automation + commerce integration = mainstream adoption
+  - Practical action steps, security reality, timeline acceleration
+- Updated manuscript chapters with real-world validation:
+  - **Chapter 4:** Added "Real-World Validation: Microsoft Copilot Checkout" subsection (~300 words) after e-commerce section
+  - **Chapter 9:** Added production validation paragraph referencing both launches (~150 words)
+  - **Chapter 10:** Added real-world context introduction about both implementations (~100 words)
+- Updated documentation:
+  - Updated book-plan.md: Added Appendix J entry, updated word counts (~69,300 total)
+  - Updated status: "Complete with Phase 1-2 Enhancements + Chapter 11 + Industry Developments"
+
+**Context:**
+
+These two launches within weeks validate the book's core thesis with production implementations. Claude for Chrome validates security concerns (session inheritance, prompt injection, agent detection challenges). Microsoft Copilot Checkout validates business model predictions (platform power shift, identity preservation). Together they demonstrate agent-mediated commerce and browser automation are happening now, not in the future.
+
+**Metrics Removal (same day):** Removed all unvalidated Microsoft metrics (2x, 53%, 7x) from manuscript per CLAUDE.md guidelines. Replaced with "Microsoft reports improved conversion rates (though unvalidated)" and verifiable facts only. Even real company announcements feel like marketing hype without independent validation.
+
+**Significance:** Claude for Chrome was used in the manuscript's case studies whilst the book was being written, making it especially relevant to the narrative. The tool demonstrates the exact patterns and challenges discussed throughout the manuscript because it encounters them in production, right now.
+
 ### Changed - 2026-01-09 (Late Evening)
 
 **Manuscript Repository Organization:**
