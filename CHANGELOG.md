@@ -38,6 +38,7 @@ System prompts and guardrails exist in all agents but work at reasoning level, n
 Browser extensions and smart AI browsers inherit user network configuration (VPNs, corporate proxies), making IP-based location detection unreliable. This affects fraud detection, pricing strategies, content delivery, and compliance requirements.
 
 **Commits:**
+
 - Manuscript submodule: 1320186 "Add identity layer section to Chapter 11"
 - Manuscript submodule: 5e660a6 "Add VPN, system prompts, hallucinations, and responsibility content"
 - Parent repository: Updated submodule pointers (319a697, 1136fd5)

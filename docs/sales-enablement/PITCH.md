@@ -889,7 +889,7 @@ This requires collaboration across competing interests. Building a coalition of 
 
 **Looking for:** Collaborators with expertise in identity systems, OAuth implementations, agent architectures, and open standards development.
 
-**Contact for involvement:** tom.cranstoun@gmail.com
+**Contact for involvement:** <tom.cranstoun@gmail.com>
 
 ---
 
@@ -901,6 +901,7 @@ Website: <https://allabout.network>
 LinkedIn: [Profile]
 
 **Current Projects:**
+
 - **Book:** "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 - **Tool:** Web Audit Suite (available as separate purchase or professional audit service)
 - **Next Project:** Universal Identity Layer (open-source infrastructure - seeking collaborators)
