@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added `submodules: recursive` to checkout actions in ci.yml and quality-gate.yml
   - Excluded manuscript submodule from markdown linting (handled in manuscript repo)
   - Updated package.json lint scripts: `--ignore invisible-users/manuscript`
+  - Made manuscript repository public for GitHub Actions access
+  - Disabled quality-gate workflow on push events (now only runs on PRs and manual dispatch)
 - Updated PROJECTSTATE.md with repository structure details
 - All npm scripts continue to work unchanged (wordcount, pdf generation, status, illustrations)
 - Benefits: Independent manuscript versioning, cleaner separation of concerns, standard git workflow

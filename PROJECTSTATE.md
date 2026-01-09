@@ -59,6 +59,7 @@ This repository contains two integrated projects:
   - Contains Web Audit Suite, documentation, sales materials
   - Manuscript integrated as git submodule
 - **Manuscript Repository:** <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
+  - Public repository for GitHub Actions access
   - Independent manuscript versioning and CI
   - Tracked as submodule at `invisible-users/manuscript/`
 - **Submodule Initialization:** `git submodule update --init --recursive`
@@ -70,9 +71,9 @@ This repository contains two integrated projects:
 - **ESLint:** Web Audit Suite configured with ESLint 8.57.0
 - **Linting Commands:** `npm run lint:markdown`, `npm run lint:markdown:fix`, `npm run audit:lint`
 - **CI/CD:** GitHub Actions workflows configured with submodule initialization
-  - `ci.yml` - Main CI pipeline with markdown linting and audit tests
-  - `quality-gate.yml` - Web Audit quality gates
-  - `web-audit-suite-ci.yml` - Dedicated Web Audit Suite testing
+  - `ci.yml` - Main CI pipeline with markdown linting and audit tests (runs on all pushes)
+  - `quality-gate.yml` - Web Audit quality gates (runs on PRs and manual dispatch only)
+  - `web-audit-suite-ci.yml` - Dedicated Web Audit Suite testing (runs when web-audit-suite/ changes)
 
 ## Next Steps
 
