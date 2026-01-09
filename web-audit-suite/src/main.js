@@ -47,7 +47,6 @@ import {
  */
 export async function runTestsOnSitemap(context) {
   const { sitemap: sitemapUrl, output: outputDir, count } = context.options;
-  const { loggerOptions } = context; // Or however logger is accessed
 
   // Setup shutdown handler at the start to ensure graceful termination
   setupShutdownHandler(context);
@@ -68,7 +67,7 @@ export async function runTestsOnSitemap(context) {
       // Phase 1: Get URLs from sitemap or process single page
       context.logger.info('Phase 1: Getting sitemap URLs...');
       const urls = await executeNetworkOperation(
-        () => getUrlsFromSitemap(sitemapUrl, count, context), // PASS CONTEXT
+        () => getUrlsFromSitemap(sitemapUrl, context, count), // PASS CONTEXT
         'sitemap URL retrieval',
         context, // Optional if executeNetworkOperation needs it
       );
@@ -88,8 +87,8 @@ export async function runTestsOnSitemap(context) {
       results = await executeNetworkOperation(
         () => processSitemapUrls(
           urls.slice(0, count === -1 ? urls.length : count),
-          recursive, // Pass recursive flag (default: true)
           context, // PASS CONTEXT
+          recursive, // Pass recursive flag (default: true)
         ),
         'URL processing',
         context,

@@ -76,7 +76,7 @@ export async function generateReports(results, urls, outputDir, context) {
     // Generate executive summary if enabled
     if (options.generateExecutiveSummary) {
       try {
-        await generateExecutiveSummary(results, outputDir, comparison, context);
+        await generateExecutiveSummary(results, outputDir, context, comparison);
         context.logger.info('Executive summary generated');
       } catch (error) {
         context.logger.error('Error generating executive summary:', error);
@@ -86,7 +86,7 @@ export async function generateReports(results, urls, outputDir, context) {
     // Generate HTML dashboard if enabled
     if (options.generateDashboard) {
       try {
-        await generateDashboard(results, outputDir, comparison, trendData, context);
+        await generateDashboard(results, outputDir, context, comparison, trendData);
         context.logger.info('HTML dashboard generated');
       } catch (error) {
         context.logger.error('Error generating dashboard:', error);

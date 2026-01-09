@@ -24,7 +24,7 @@ const axiosInstance = axios.create({
 export async function fetchAndParseSitemap(sitemapPath, context) {
   context.logger.info(`Fetching content from: ${sitemapPath}`);
   try {
-    const limiter = getRateLimiter(context.options?.rateLimit, context);
+    const limiter = getRateLimiter(context, context.options?.rateLimit);
     await limiter.removeTokens(1);
     let content;
     let isCompressed = false;
@@ -106,7 +106,7 @@ async function processSitemapIndex(sitemapindex, context) {
     }
     context.logger.debug(`Processing nested sitemap: ${sitemapUrl.url}`);
     try {
-      const limiter = getRateLimiter(context.options?.rateLimit, context);
+      const limiter = getRateLimiter(context, context.options?.rateLimit);
       await limiter.removeTokens(1);
       const nestedParsedContent = await fetchAndParseSitemap(sitemapUrl.url, context);
       const nestedUrls = await extractUrls(nestedParsedContent, context);

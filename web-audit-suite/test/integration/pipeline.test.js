@@ -1,11 +1,11 @@
-import { expect } from 'chai';
 import esmock from 'esmock';
 import sinon from 'sinon';
 import '../setup.js'; // Global mocks
 import { resetRateLimiter } from '../../src/utils/rateLimiter.js';
 
 describe('Integration: Full Pipeline', () => {
-  let main;
+  // eslint-disable-next-line no-unused-vars
+  let _main; // Loaded but not used yet
   let fsMock;
   let networkUtilsMock;
   let pa11yRunnerMock;
@@ -109,7 +109,7 @@ describe('Integration: Full Pipeline', () => {
     // Import main with mocks
     // Note: we need to mock modules that are imported by the internal dependency chain
     // We mock rateLimiter to avoid actual delays
-    main = await esmock('../../src/main.js', {
+    _main = await esmock('../../src/main.js', {
       'fs/promises': fsMock,
       '../../src/utils/networkUtils.js': networkUtilsMock,
       '../../src/utils/pa11yRunner.js': pa11yRunnerMock,
@@ -126,6 +126,4 @@ describe('Integration: Full Pipeline', () => {
       delete global.fetch;
     }
   });
-
-
 });

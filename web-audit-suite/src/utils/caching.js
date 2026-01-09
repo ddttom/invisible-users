@@ -202,7 +202,7 @@ async function fetchDataWithoutPuppeteer(url, context) {
   }
 }
 
-async function getOrRenderData(url, options = {}, context) {
+async function getOrRenderData(url, context, options = {}) {
   const { noPuppeteer = false, cacheOnly = false, cache = true } = options;
   // If cache is false (from --no-cache), then noCache should be true
   const noCache = options.noCache || !cache;
@@ -652,7 +652,6 @@ async function renderAndCacheData(url, context) {
         ...pageData,
         testUrl: url,
         jsErrors,
-        performanceMetrics,
         performanceMetrics,
       }, context), // Pass context
       lastCrawled: new Date().toISOString(),

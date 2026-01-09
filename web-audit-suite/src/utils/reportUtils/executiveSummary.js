@@ -7,7 +7,7 @@ import path from 'path';
  * @param {string} outputDir - Output directory
  * @param {Object} comparison - Optional comparison with previous run
  */
-export async function generateExecutiveSummary(results, outputDir, comparison = null, context) {
+export async function generateExecutiveSummary(results, outputDir, context, comparison = null) {
   try {
     context.logger.info('Generating executive summary report...');
 

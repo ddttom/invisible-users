@@ -23,7 +23,7 @@ Modern websites work beautifully for humans but fail completely for AI agents. T
 
 **Real Example:** An AI assistant compared tour operators. Company A's pagination made the agent think a 14-day tour was only 1 day. Company B showed full content on one page and won the business.
 
-The patterns that break agents also break screen reader users, people with cognitive disabilities, and anyone processing pages sequentially. We've known about these problems for years - now there's commercial pressure to fix them.
+The patterns that break agents also break screen reader users, people with cognitive disabilities, and anyone processing pages sequentially. We've known about these problems for years - now there's commercial pressure to fix them. (For detailed analysis of the accessibility-agent connection, see Chapter 1 of the manuscript.)
 
 ---
 

@@ -16,7 +16,7 @@ let instance = null;
  * @param {string} options.interval Interval for token addition ('second', 'minute', 'hour', 'day')
  * @returns {Object} Rate limiter instance
  */
-export function getRateLimiter(options = {}, context) {
+export function getRateLimiter(context, options = {}) {
   if (!instance) {
     const {
       tokensPerInterval = 5,
@@ -24,7 +24,7 @@ export function getRateLimiter(options = {}, context) {
     } = options;
 
     if (context && context.logger) {
-        context.logger.info(`Initializing rate limiter: ${tokensPerInterval} requests per ${interval}`);
+      context.logger.info(`Initializing rate limiter: ${tokensPerInterval} requests per ${interval}`);
     }
     instance = new Limiter({ tokensPerInterval, interval });
   }
@@ -47,6 +47,6 @@ export async function throttle(context) {
   if (options.enabled === false) {
     return;
   }
-  const limiter = getRateLimiter(options, context);
+  const limiter = getRateLimiter(context, options);
   await limiter.removeTokens(1);
 }

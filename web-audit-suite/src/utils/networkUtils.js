@@ -85,7 +85,7 @@ function isNetworkError(error) {
  * @returns {Promise<any>} Operation result
  * @throws {Error} If operation fails
  */
-async function executePuppeteerOperation(operation, operationName, options = {}, context) {
+async function executePuppeteerOperation(operation, operationName, context, options = {}) {
   let browser;
   try {
     browser = await puppeteer.launch({
@@ -167,7 +167,7 @@ async function executePuppeteerOperation(operation, operationName, options = {},
 async function handleCloudflareChallenge(operation, operationName, context) {
   try {
     context.logger.info('Attempting to bypass Cloudflare challenge...');
-    return await executePuppeteerOperation(operation, operationName, {
+    return await executePuppeteerOperation(operation, operationName, context, {
       headless: false, // Need visible browser for challenges
       args: [
         '--no-sandbox',
@@ -178,7 +178,7 @@ async function handleCloudflareChallenge(operation, operationName, context) {
         '--window-size=1920,1080',
         '--disable-blink-features=AutomationControlled',
       ],
-    }, context);
+    });
   } catch (error) {
     context.logger.error('Failed to bypass Cloudflare challenge:', error);
     throw new Error('Unable to bypass Cloudflare protection. Please try again later or skip this site.');
@@ -220,7 +220,7 @@ async function executeNetworkOperation(operation, operationName, context) {
         retryCount++;
         if (retryCount >= maxRetries) {
           context.logger.warn('Falling back to Puppeteer for blocked request');
-          return executePuppeteerOperation(operation, operationName, {}, context);
+          return executePuppeteerOperation(operation, operationName, context, {});
         }
 
         const delay = baseDelay * 2 ** retryCount;

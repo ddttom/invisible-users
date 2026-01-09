@@ -36,6 +36,7 @@ function setupContext(options = {}) {
   return new AuditContext(defaultOptions, logger);
 }
 
+// eslint-disable-next-line func-names
 describe('Golden Master Regression Test', function () {
   this.timeout(10000); // Give it some time
   const outputDir = path.join(__dirname, 'golden_output');

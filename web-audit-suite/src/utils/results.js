@@ -43,11 +43,11 @@ async function saveFile(filePath, content, context) {
   try {
     await fs.writeFile(filePath, content, 'utf8');
     if (context && context.logger) {
-       context.logger.info(`File saved successfully: ${filePath}`);
+      context.logger.info(`File saved successfully: ${filePath}`);
     }
   } catch (error) {
     if (context && context.logger) {
-       context.logger.error(`Error saving file ${filePath}:`, error);
+      context.logger.error(`Error saving file ${filePath}:`, error);
     }
     throw error;
   }
@@ -133,7 +133,7 @@ async function savePa11yResults(results, outputDir, context) {
   const pa11yCsv = formatCsv(
     flattenedResults,
     ['pageUrl', 'type', 'code', 'message', 'context', 'selector', 'error'],
-    context
+    context,
   );
 
   await saveFile(path.join(outputDir, 'pa11y_results.csv'), pa11yCsv, context);
@@ -143,7 +143,7 @@ async function savePa11yResults(results, outputDir, context) {
 function flattenPa11yResults(pa11yResults, context) {
   if (!pa11yResults || !Array.isArray(pa11yResults)) {
     if (context && context.logger) {
-       context.logger.warn('Pa11y results are missing or not in the expected format');
+      context.logger.warn('Pa11y results are missing or not in the expected format');
     }
     return [];
   }
@@ -153,9 +153,9 @@ function flattenPa11yResults(pa11yResults, context) {
       return [{ pageUrl: result.url, error: result.error }];
     }
     if (!result.issues || !Array.isArray(result.issues)) {
-    if (context && context.logger) {
-      context.logger.warn(`No issues found for ${result.url}`);
-    }
+      if (context && context.logger) {
+        context.logger.warn(`No issues found for ${result.url}`);
+      }
       return [];
     }
     return result.issues.map((issue) => ({
@@ -178,13 +178,13 @@ async function saveInternalLinks(results, outputDir, context) {
   const internalLinksCsv = formatCsv(
     flattenedLinks,
     ['source', 'target', 'anchorText'],
-    context
+    context,
   );
 
   await saveFile(
     path.join(outputDir, 'internal_links.csv'),
     internalLinksCsv,
-    context
+    context,
   );
   context.logger.info(`Saved ${flattenedLinks.length} internal links to CSV`);
 }
@@ -216,13 +216,13 @@ async function saveImagesWithoutAlt(contentAnalysis, outputDir, context) {
     const imagesWithoutAltCsv = formatCsv(
       formattedImagesWithoutAlt,
       headers,
-      context
+      context,
     );
 
     await saveFile(
       path.join(outputDir, 'images_without_alt.csv'),
       imagesWithoutAltCsv,
-      context
+      context,
     );
     context.logger.info(`${imagesWithoutAlt.length} out of ${totalImages} images are without alt text (${calculatePercentage(imagesWithoutAlt.length, totalImages)})`);
   } else {
@@ -275,7 +275,7 @@ async function saveContentAnalysis(results, outputDir, context) {
     await saveFile(
       path.join(outputDir, 'content_analysis.csv'),
       contentAnalysisCsv,
-      context
+      context,
     );
     context.logger.info('Content analysis saved to content_analysis.csv');
   } catch (error) {
@@ -292,7 +292,7 @@ async function saveOrphanedUrls(results, outputDir, context) {
     await saveFile(
       path.join(outputDir, 'orphaned_urls.csv'),
       orphanedUrlsCsv,
-      context
+      context,
     );
     context.logger.info(`${results.orphanedUrls.size} orphaned URLs saved`);
     return results.orphanedUrls.size;
@@ -730,7 +730,7 @@ async function savePerformanceAnalysis(results, outputDir, context) {
   await saveFile(
     path.join(outputDir, 'performance_analysis.csv'),
     performanceAnalysisCsv,
-    context
+    context,
   );
   context.logger.debug('Performance analysis saved');
   return roundedPerformanceAnalysis.length;
@@ -816,7 +816,7 @@ async function saveSeoScoresSummary(results, outputDir, context) {
   await saveFile(
     path.join(outputDir, 'seo_scores_summary.csv'),
     seoScoresSummaryCsv,
-    context
+    context,
   );
   context.logger.debug('SEO scores summary saved');
 }
@@ -925,12 +925,12 @@ async function saveCommonPa11yIssues(commonIssues, outputDir, context) {
     const csvData = formatCsv(
       commonIssues,
       ['code', 'message', 'count'],
-      context
+      context,
     );
     await saveFile(
       path.join(outputDir, 'common_pa11y_issues.csv'),
       csvData,
-      context
+      context,
     );
     context.logger.debug('Common Pa11y issues saved');
   } else {

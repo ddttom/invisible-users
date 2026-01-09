@@ -19,7 +19,7 @@ export function updateContentAnalysis(contentAnalysis, results, context) {
     context.logger.error(`Error updating content analysis for ${contentAnalysis.url}:`, error);
   }
 }
-export function updateTitleMetrics($, results, url, context) {
+export function updateTitleMetrics($, results, url, _context) {
   const title = $('title').text().trim();
   results.titleMetrics = results.titleMetrics || {};
   results.titleMetrics[url] = {
@@ -30,7 +30,7 @@ export function updateTitleMetrics($, results, url, context) {
   };
 }
 
-export function updateMetaDescriptionMetrics($, results, url, context) {
+export function updateMetaDescriptionMetrics($, results, url, _context) {
   const metaDescription = $('meta[name="description"]').attr('content') || '';
   results.metaDescriptionMetrics = results.metaDescriptionMetrics || {};
   results.metaDescriptionMetrics[url] = {
@@ -41,7 +41,7 @@ export function updateMetaDescriptionMetrics($, results, url, context) {
   };
 }
 
-export function updateHeadingMetrics($, results, url, context) {
+export function updateHeadingMetrics($, results, url, _context) {
   const h1 = $('h1').first().text().trim();
   const h2Count = $('h2').length;
 
@@ -75,7 +75,7 @@ export function updateImageMetrics($, results, url, context) {
   context.logger.debug(`Image metrics for ${url}: ${JSON.stringify(results.imageMetrics[url])}`);
 }
 
-export function updateLinkMetrics($, baseUrl, results, url, context) {
+export function updateLinkMetrics($, baseUrl, results, url, _context) {
   const internalLinks = $(`a[href^="/"], a[href^="${baseUrl}"]`);
   const externalLinks = $('a').not(internalLinks);
 
@@ -88,7 +88,7 @@ export function updateLinkMetrics($, baseUrl, results, url, context) {
   };
 }
 
-export function updateSecurityMetrics(url, headers, results, context) {
+export function updateSecurityMetrics(url, headers, results, _context) {
   results.securityMetrics = results.securityMetrics || {};
   results.securityMetrics[url] = {
     https: url.startsWith('https') ? 1 : 0,
@@ -99,7 +99,7 @@ export function updateSecurityMetrics(url, headers, results, context) {
   };
 }
 
-export function updateHreflangMetrics($, results, url, context) {
+export function updateHreflangMetrics($, results, url, _context) {
   const hreflangTags = $('link[rel="alternate"][hreflang]');
 
   results.hreflangMetrics = results.hreflangMetrics || {};
@@ -109,7 +109,7 @@ export function updateHreflangMetrics($, results, url, context) {
   };
 }
 
-export async function updateCanonicalMetrics($, testUrl, results, context) {
+export async function updateCanonicalMetrics($, testUrl, results, _context) {
   const canonicalUrl = $('link[rel="canonical"]').attr('href');
   results.canonicalMetrics[testUrl] = results.canonicalMetrics[testUrl] || {};
   results.canonicalMetrics[testUrl].hasCanonical = !!canonicalUrl;
@@ -175,7 +175,6 @@ export function updateSpecificUrlMetrics($, results, testUrl, context) {
   }
 }
 
-
 /**
  * Aggregates external resources across all pages
  * @param {Object} pageData - Page data containing externalResources array
@@ -232,7 +231,7 @@ export function updateExternalResourcesMetrics(pageData, results, testUrl, conte
   context.logger.debug(`[END] Updating external resources metrics for ${testUrl}`);
 }
 
-export function updateUrlMetrics(url, baseUrl, html, statusCode, results, context) {
+export function updateUrlMetrics(url, baseUrl, html, statusCode, results, _context) {
   results.urlMetrics = results.urlMetrics || {
     total: 0,
     internal: 0,
@@ -283,7 +282,7 @@ export function updateUrlMetrics(url, baseUrl, html, statusCode, results, contex
   results.urlMetrics[url].internalLinks = (results.urlMetrics[url].internalLinks || 0) + 1;
 }
 
-export function updateResponseCodeMetrics(statusCode, results, context) {
+export function updateResponseCodeMetrics(statusCode, results, _context) {
   results.responseCodeMetrics = results.responseCodeMetrics || {};
   results.responseCodeMetrics[statusCode] = (results.responseCodeMetrics[statusCode] || 0) + 1;
 }

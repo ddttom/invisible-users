@@ -8,7 +8,8 @@ describe('Sitemap Utils', () => {
   let networkUtilsMock; // Mock the ENTIRE networkUtils module
   let testContext;
 
-  beforeEach(async function() {
+  // eslint-disable-next-line prefer-arrow-callback, func-names
+  beforeEach(async function () {
     // Setup global mock properly
     const auditContext = {
       options: {
@@ -37,7 +38,6 @@ describe('Sitemap Utils', () => {
   afterEach(() => {
     sinon.restore();
     delete global.auditcore; // Just in case
-
   });
 
   it('should parse an XML sitemap correctly', async () => {
@@ -56,7 +56,7 @@ describe('Sitemap Utils', () => {
       headers: new Headers({ 'content-type': 'application/xml' }),
     });
 
-    const urls = await getUrlsFromSitemap('https://example.com/sitemap.xml', -1, testContext);
+    const urls = await getUrlsFromSitemap('https://example.com/sitemap.xml', testContext, -1);
 
     // Check that we found at least the one page + llms.txt auto-added
     expect(urls).to.be.an('array');
@@ -77,7 +77,7 @@ describe('Sitemap Utils', () => {
       headers: new Headers({ 'content-type': 'text/html' }),
     });
 
-    const urls = await getUrlsFromSitemap('https://example.com/page', -1, testContext);
+    const urls = await getUrlsFromSitemap('https://example.com/page', testContext, -1);
     const internal = urls.find((u) => u.url === 'https://example.com/internal-link');
     expect(internal).to.exist;
   });
@@ -89,7 +89,7 @@ describe('Sitemap Utils', () => {
       headers: new Headers({ 'content-type': 'text/html' }),
     });
 
-    const urls = await getUrlsFromSitemap('https://example.com', -1, testContext);
+    const urls = await getUrlsFromSitemap('https://example.com', testContext, -1);
     const llms = urls.find((u) => u.url === 'https://example.com/llms.txt');
     expect(llms).to.exist;
   });

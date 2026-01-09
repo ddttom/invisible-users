@@ -49,7 +49,7 @@ const gunzipAsync = promisify(gunzip);
  * // Returns array of processed URLs
  * const urls = await getUrlsFromSitemap('https://example.com/sitemap.xml');
  */
-export async function getUrlsFromSitemap(url, limit = -1, context) {
+export async function getUrlsFromSitemap(url, context, limit = -1) {
   try {
     context.logger.info(`Fetching URL: ${url}`);
 
@@ -369,7 +369,7 @@ async function processSitemapContent(parsed, limit, context) {
 
     for (const sitemapUrl of sitemapUrls) {
       context.logger.info(`Processing sub-sitemap: ${sitemapUrl}`);
-      const subUrls = await getUrlsFromSitemap(sitemapUrl, -1, context); // Verify recursion params
+      const subUrls = await getUrlsFromSitemap(sitemapUrl, context, -1); // Verify recursion params
       urls.push(...subUrls);
       if (limit > 0 && urls.length >= limit) {
         context.logger.info(`Reached URL limit of ${limit}`);
@@ -500,7 +500,7 @@ function extractUrlsFromUrlset(urlset, context) {
 /**
  * Process sitemap URLs with the URL processor
  */
-export async function processSitemapUrls(urls, recursive = false, context) {
+export async function processSitemapUrls(urls, context, recursive = false) {
   const processor = new UrlProcessor(context.options, context); // Pass context
   return processor.processUrls(urls, recursive);
 }

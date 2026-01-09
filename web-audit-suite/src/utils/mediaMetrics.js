@@ -12,7 +12,7 @@ const MAX_EXTERNAL_LINKS = 100;
 export function updateImageMetrics($, results, context) {
   try {
     if (context && context.logger) {
-        context.logger.debug('Starting updateImageMetrics');
+      context.logger.debug('Starting updateImageMetrics');
     }
 
     if (!$ || typeof $ !== 'function') {
@@ -27,7 +27,7 @@ export function updateImageMetrics($, results, context) {
 
     const images = $('img');
     if (context && context.logger) {
-        context.logger.debug(`Found ${images.length} images`);
+      context.logger.debug(`Found ${images.length} images`);
     }
 
     images.each((i, el) => {
@@ -45,12 +45,12 @@ export function updateImageMetrics($, results, context) {
     });
 
     if (context && context.logger) {
-        context.logger.debug('Image metrics after update:', JSON.stringify(results.imageMetrics));
-        context.logger.info('Updated image metrics successfully');
+      context.logger.debug('Image metrics after update:', JSON.stringify(results.imageMetrics));
+      context.logger.info('Updated image metrics successfully');
     }
   } catch (error) {
     if (context && context.logger) {
-        context.logger.error('Error updating image metrics:', error);
+      context.logger.error('Error updating image metrics:', error);
     }
     results.imageMetrics = results.imageMetrics || {};
     results.imageMetrics.error = error.message;
@@ -66,7 +66,7 @@ export function updateImageMetrics($, results, context) {
 export function updateLinkMetrics($, baseUrl, results, context) {
   try {
     if (context && context.logger) {
-        context.logger.debug('Starting updateLinkMetrics');
+      context.logger.debug('Starting updateLinkMetrics');
     }
 
     if (!$ || typeof $ !== 'function') {
@@ -87,7 +87,7 @@ export function updateLinkMetrics($, baseUrl, results, context) {
     const externalLinks = $('a').not(internalLinkElements);
 
     if (context && context.logger) {
-        context.logger.debug(`Found ${internalLinkElements.length} internal links and ${externalLinks.length} external links`);
+      context.logger.debug(`Found ${internalLinkElements.length} internal links and ${externalLinks.length} external links`);
     }
 
     if (internalLinkElements.length === 0) {
@@ -108,12 +108,12 @@ export function updateLinkMetrics($, baseUrl, results, context) {
     });
 
     if (context && context.logger) {
-        context.logger.debug('Link metrics after update:', JSON.stringify(results.linkMetrics));
-        context.logger.info('Updated link metrics successfully');
+      context.logger.debug('Link metrics after update:', JSON.stringify(results.linkMetrics));
+      context.logger.info('Updated link metrics successfully');
     }
   } catch (error) {
     if (context && context.logger) {
-        context.logger.error('Error updating link metrics:', error);
+      context.logger.error('Error updating link metrics:', error);
     }
     results.linkMetrics = results.linkMetrics || {};
     results.linkMetrics.error = error.message;

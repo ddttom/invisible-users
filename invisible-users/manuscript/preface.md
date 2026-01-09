@@ -4,9 +4,9 @@ I didn't set out to write a book about AI agents. I set out to book a holiday.
 
 It was late 2024, and I was comparing tour operators for a trip through Southeast Asia. I'd delegated the research to an AI assistant, expecting it to save me hours of clicking through brochures. Instead, it gave me confident but wrong advice about which company had the better itinerary.
 
-The agent had looked at one tour operator's paginated day-by-day breakdown, seen only Day 1, and concluded that was the entire trip. The competitor's single-page itinerary was readable in full. Based on this, my assistant recommended the wrong company.
+The agent had looked at one tour operator's paginated day-by-day breakdown for a 14-day tour, seen only Day 1, and concluded that was the entire trip. The competitor's single-page itinerary was readable in full. Based on this, my assistant recommended the wrong company.
 
-I caught the error, and that led me down a path I hadn't anticipated. I started examining why the agent had failed, and found a pattern. The same design choices that confused my AI assistant also confused screen reader users, people with cognitive disabilities, and anyone who processed pages sequentially rather than spatially.
+I caught the error, and that led me down a path I hadn't anticipated. I started examining why the agent had failed, and found a pattern. The same design choices that confused my AI assistant also confused screen reader users, people with cognitive disabilities, and anyone who processed pages sequentially rather than spatially. (Chapter 1 explores this accessibility connection in depth, with examples that made the pattern clear to me.)
 
 We'd built a web that worked brilliantly for one specific type of user: someone with good vision, working on a desktop, with focused attention and plenty of time. Everyone else had been struggling quietly for years. Now AI agents were struggling loudly, and there was finally commercial pressure to fix the problems.
 
@@ -26,11 +26,15 @@ This is a practical guide and a thinking framework. Each chapter addresses a spe
 
 **This book offers frameworks for decision-making, not proven solutions.** The patterns that appear to work for agent compatibility also align with accessibility best practices, which gives us confidence. But we don't yet know which approaches will become standard, which will evolve, and which will be superseded by better alternatives.
 
-The first three chapters establish what's breaking and why. These are the foundations. Skip them and you'll miss the context that makes solutions make sense.
+The book follows a structured progression from problem to solution:
 
-Chapters 4 through 8 address implications: business models, content economics, security concerns, legal landscape, and human costs. These might seem tangential to implementation, but they're not. The choices we make about agent compatibility are shaped by these pressures, and understanding them helps you prioritise.
+**Foundations (Chapters 1-3)**: What's breaking and why - the essential context for understanding solutions
 
-Chapters 9 and 10 provide solutions. Strategic frameworks in Chapter 9. Working code in Chapter 10. If you're impatient to implement, you can start there and work backwards.
+**Implications (Chapters 4-8)**: Business models, content economics, security, legal landscape, and human costs - the pressures that shape our choices
+
+**Solutions (Chapters 9-11)**: Strategic frameworks, working code, and agent creator guidance
+
+For detailed chapter-by-chapter descriptions, see Chapter 1. For reading paths tailored to your role, see the navigation guide below.
 
 Throughout, I've tried to be honest about tensions that don't have clean resolutions. Some fixes for agent compatibility conflict with short-term business interests. Some accessibility improvements reduce engagement metrics. Some solutions create new problems. I've flagged these rather than pretending they don't exist.
 

@@ -27,7 +27,7 @@ import {
   updateLLMMetrics,
 } from './llmMetrics.js';
 
-async function processUrl(url, html, jsErrors, baseUrl, results, headers, pageData, config, cachedPa11yResult = null, context) {
+async function processUrl(url, html, jsErrors, baseUrl, results, headers, pageData, config, context, cachedPa11yResult = null) {
   if (!url) {
     context.logger.error('Attempting to process undefined URL');
     return { error: 'Undefined URL' };

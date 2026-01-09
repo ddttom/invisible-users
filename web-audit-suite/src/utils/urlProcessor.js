@@ -68,7 +68,7 @@ export class UrlProcessor {
     for (let attempt = 1; attempt <= this.options.maxRetries; attempt++) {
       try {
         this.context.logger.debug(`Attempt ${attempt} to process ${testUrl}`);
-        const data = await getOrRenderData(testUrl, this.options, this.context);
+        const data = await getOrRenderData(testUrl, this.context, this.options);
 
         if (data.error) {
           throw new Error(data.error);
@@ -138,8 +138,8 @@ export class UrlProcessor {
           retryAttempts: this.options.maxRetries,
           retryDelay: this.options.retryDelay,
         },
-        cachedPa11y,
         this.context,
+        cachedPa11y,
       );
 
       if (result.pa11ySuccess) {

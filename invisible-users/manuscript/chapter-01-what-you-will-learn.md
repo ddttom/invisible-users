@@ -196,6 +196,8 @@ In five years, much of this will be obvious. Agent compatibility will be a stand
 
 But we're not there yet. And the transition period - which we're in right now - is when advantage is gained or lost.
 
+The business implications of this timing - including first-mover advantages and competitive positioning - are explored in detail in Chapter 4.
+
 This book is your guide to that transition.
 
 ---
