@@ -43,11 +43,11 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   ├── book-plan.md          # Master plan with chapter outlines and status
 │   ├── book-svg-style.md     # SVG illustration style guide
 │   ├── manuscript/           # Complete manuscript content (git submodule)
-│   │   └── [managed in separate repository: invisible-users-manuscript]
+│   │   ├── [chapters, appendices, illustrations in separate repository]
+│   │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
+│   │   └── code-examples/    # Production-ready code implementations
 │   ├── llms.txt              # Repository llms.txt file
-│   ├── AI-Native.blog
-│   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
-│   └── code-examples/        # Production-ready code implementations
+│   └── AI-Native.blog
 ├── web-audit-suite/          # Web analysis tool (implements book's patterns)
 │   ├── index.js              # Entry point, CLI parsing, logger setup
 │   ├── package.json          # Tool-specific dependencies
