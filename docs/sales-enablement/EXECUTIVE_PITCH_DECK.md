@@ -99,7 +99,35 @@ We don't need a redesign. We need **Code Remediation**.
 
 ---
 
-## Slide 8: Appendix - Case Study
+## Slide 8: What Comes Next - The Identity Layer
+
+### Beyond This Project: Universal Identity Delegation
+
+**The Infrastructure Gap:**
+
+* Microsoft building proprietary identity for Copilot Checkout
+* Claude for Chrome inheriting browser sessions through Anthropic
+* Google and Apple building their own walled gardens
+* **Result:** User lock-in, agent fragmentation, business complexity
+
+**The Next Project:**
+
+Open-source universal identity delegation framework:
+
+* Portable authorisation tokens across platforms
+* User-controlled permissions and audit trails
+* OAuth 2.0 delegation extension support
+* Community infrastructure before proprietary lock-in
+
+**Why This Matters:**
+
+Regulatory pressure will eventually force interoperability (like mobile number portability). Early involvement positions organisations as authority figures when standards emerge.
+
+**Looking for collaborators** with identity systems, OAuth, and agent architecture expertise.
+
+---
+
+## Slide 9: Appendix - Case Study
 
 ### Industry Example
 

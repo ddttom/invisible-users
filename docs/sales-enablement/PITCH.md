@@ -844,15 +844,66 @@ Available as separate purchase or professional audit service:
 
 ---
 
+## What Comes Next: The Universal Identity Layer
+
+Beyond the current book and tool offering, there's a critical infrastructure gap in the AI agent ecosystem that represents both a challenge and an opportunity.
+
+### The Missing Piece
+
+Every major platform is building proprietary identity delegation systems:
+
+- Microsoft's Copilot Checkout uses Microsoft's own identity layer
+- Claude for Chrome inherits browser sessions through Anthropic's extension
+- Google and Apple are building their own walled gardens
+
+**The problem:** Users face lock-in. Agent creators face fragmentation. Businesses face complexity.
+
+**The opportunity:** Build the open alternative before proprietary systems become entrenched.
+
+### The Next Project: Open-Source Identity Delegation Framework
+
+An open-source universal identity delegation framework that provides:
+
+- Reference implementation of portable identity delegation
+- OAuth 2.0 delegation extension support
+- User-controlled permissions and auditable delegation trails
+- Abstraction layers for agent creators
+- Tools for businesses implementing identity delegation
+- Open specifications that work across platforms
+
+**This isn't a commercial product** - it's infrastructure the ecosystem needs. If platforms won't build interoperability, the community can.
+
+### Why This Matters for Partners
+
+**For agencies:** Early involvement in open standards development positions you as authority figures when the market shifts toward interoperability (regulatory pressure will eventually force it, similar to mobile number portability).
+
+**For investors:** Infrastructure plays are strategic bets. Whoever provides the open alternative to proprietary identity systems gains influence as regulators force standardisation.
+
+**For agent creators:** You need identity abstraction to support multiple platforms without fragmentation. Open standards benefit everyone except the platforms racing to lock in users.
+
+### The Challenge
+
+This requires collaboration across competing interests. Building a coalition of agent creators, businesses, and users who recognise that interoperability serves everyone better than fragmentation.
+
+**Timeline:** Narrow window (12-18 months) before proprietary systems become entrenched.
+
+**Looking for:** Collaborators with expertise in identity systems, OAuth implementations, agent architectures, and open standards development.
+
+**Contact for involvement:** tom.cranstoun@gmail.com
+
+---
+
 ## Contact
 
 **Tom Cranstoun**
 Email: <tom.cranstoun@gmail.com>
-Website: invisible-users.com
+Website: <https://allabout.network>
 LinkedIn: [Profile]
 
-**Book:** "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
-**Tool:** Web Audit Suite (Private repository - access upon partnership)
+**Current Projects:**
+- **Book:** "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+- **Tool:** Web Audit Suite (available as separate purchase or professional audit service)
+- **Next Project:** Universal Identity Layer (open-source infrastructure - seeking collaborators)
 
 ---
 
