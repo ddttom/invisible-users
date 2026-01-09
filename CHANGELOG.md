@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2026-01-09 (Late Evening)
+
+**Manuscript Repository Organization:**
+
+- Consolidated all manuscript-related content in manuscript submodule
+  - Moved blog materials (blog.md, blog.svg, AI-Native.blog) from docs/ to manuscript/blog/
+  - Moved presentation materials (talk.md, talk1.md, talk-slides.js) from docs/sales-enablement/ to manuscript/talks/members-call/
+  - Code examples (agent-friendly-starter-kit/, code-examples/) already in manuscript from earlier consolidation
+- Added Claude Code configuration to manuscript repository
+  - Created .claude/ directory with hooks, commands, skills, and settings
+  - Adapted hooks for submodule context (no package.json in manuscript)
+  - pre-commit.sh lists staged markdown files
+  - pre-push.sh warns about uncommitted changes and reminds to update parent submodule pointer
+  - post-tool-use.sh reminds to update parent after git push
+  - settings.local.json pre-approves git operations and file inspection commands
+- Created comprehensive documentation in manuscript repository
+  - README.md: Complete repository overview, structure, content summary, submodule workflow, key themes
+  - CLAUDE.md: AI assistant guidance with file listings (word counts), writing style guidelines, terminology standards, .claude documentation
+- Updated main repository documentation for manuscript organization
+  - Updated llms.txt with explicit code-examples link
+  - Updated CLAUDE.md repository structure to show blog/ and talks/ in submodule
+  - Updated book-plan.md structure diagrams
+  - Updated AI-Native.blog with 15 path references to manuscript/code-examples/
+  - Updated PROJECTSTATE.md to reflect manuscript organization and moved files
+- Benefits: All manuscript-related content now in single repository, clearer separation of manuscript vs. business materials
+
 ### Changed - 2026-01-09 (Evening)
 
 **Repository Structure - Manuscript Submodule Integration:**
