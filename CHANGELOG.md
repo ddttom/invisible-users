@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2026-01-09 (Evening)
+
+**Repository Structure - Manuscript Submodule Integration:**
+
+- Moved manuscript to separate repository and integrated as git submodule
+  - Created new repository: <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
+  - Added as submodule at `invisible-users/manuscript/` path
+  - Configured to track main branch for easy updates
+  - All 50 manuscript files (chapters, appendices, illustrations, metadata) now managed independently
+- Updated documentation for submodule workflow
+  - Added "Working with the Manuscript Submodule" section to README.md
+  - Added "Working with Submodules" section to CLAUDE.md
+  - Updated repository structure diagrams to show submodule
+  - Documented initialization: `git submodule update --init --recursive`
+  - Documented updates: `git submodule update --remote invisible-users/manuscript`
+- Updated CI/CD workflows to support submodules
+  - Added `submodules: recursive` to checkout actions in ci.yml and quality-gate.yml
+  - Excluded manuscript submodule from markdown linting (handled in manuscript repo)
+  - Updated package.json lint scripts: `--ignore invisible-users/manuscript`
+- Updated PROJECTSTATE.md with repository structure details
+- All npm scripts continue to work unchanged (wordcount, pdf generation, status, illustrations)
+- Benefits: Independent manuscript versioning, cleaner separation of concerns, standard git workflow
+
 ### Changed - 2026-01-09 (Afternoon)
 
 **Manuscript Content Improvements:**
