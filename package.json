@@ -6,8 +6,8 @@
   "scripts": {
     "wordcount": "wc -w invisible-users/manuscript/chapter-*.md | tail -1",
     "wordcount:all": "wc -w invisible-users/manuscript/*.md",
-    "lint:markdown": "markdownlint '**/*.md' --ignore node_modules --ignore web-audit-suite/node_modules",
-    "lint:markdown:fix": "markdownlint --fix '**/*.md' --ignore node_modules --ignore web-audit-suite/node_modules",
+    "lint:markdown": "markdownlint '**/*.md' --ignore node_modules --ignore web-audit-suite/node_modules --ignore invisible-users/manuscript",
+    "lint:markdown:fix": "markdownlint --fix '**/*.md' --ignore node_modules --ignore web-audit-suite/node_modules --ignore invisible-users/manuscript",
     "validate:links": "markdown-link-check --config .markdown-link-check.json invisible-users/manuscript/chapter-*.md invisible-users/book-plan.md",
     "serve": "npx live-server --port=8080 --entry-file=invisible-users/book-plan.md",
     "status": "node -e \"console.log('Book Status:'); require('fs').readdirSync('invisible-users/manuscript').filter(f => f.startsWith('chapter-')).sort().forEach(f => console.log('  ✓', f))\"",
