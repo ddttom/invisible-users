@@ -56,7 +56,8 @@ Reference materials integrated into the manuscript as appendices:
 
 ### Code Examples
 
-- [Agent-Friendly Starter Kit](invisible-users/agent-friendly-starter-kit/): Production-ready code examples demonstrating good vs bad patterns for AI agent compatibility
+- [Agent-Friendly Starter Kit](invisible-users/manuscript/agent-friendly-starter-kit/): Production-ready code examples demonstrating good vs bad patterns for AI agent compatibility
+- [Code Examples](invisible-users/manuscript/code-examples/): Platform configurations, validation tools, and monitoring examples
 - Platform Configurations: Apache, Nginx, Next.js, WordPress, Adobe EDS, Static Sites
 - Validation Tools: Development and production verification scripts
 - Monitoring Examples: Server log analysis and analytics tracking

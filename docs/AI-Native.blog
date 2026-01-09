@@ -91,15 +91,15 @@ Link: <https://yoursite.com/llms.txt>; rel="llms-txt", <https://yoursite.com/ai-
 
 ### How to Configure Headers
 
-Platform-specific configuration files are available in [code-examples/](code-examples/):
+Platform-specific configuration files are available in [invisible-users/manuscript/code-examples/](invisible-users/manuscript/code-examples/):
 
-**Apache:** See [code-examples/apache/.htaccess](code-examples/apache/.htaccess)
+**Apache:** See [invisible-users/manuscript/code-examples/apache/.htaccess](invisible-users/manuscript/code-examples/apache/.htaccess)
 
-**Nginx:** See [code-examples/nginx/ai-headers.conf](code-examples/nginx/ai-headers.conf)
+**Nginx:** See [invisible-users/manuscript/code-examples/nginx/ai-headers.conf](invisible-users/manuscript/code-examples/nginx/ai-headers.conf)
 
-**Next.js:** See [code-examples/nextjs/next.config.js](code-examples/nextjs/next.config.js)
+**Next.js:** See [invisible-users/manuscript/code-examples/nextjs/next.config.js](invisible-users/manuscript/code-examples/nextjs/next.config.js)
 
-**WordPress:** See [code-examples/wordpress/functions-headers.php](code-examples/wordpress/functions-headers.php)
+**WordPress:** See [invisible-users/manuscript/code-examples/wordpress/functions-headers.php](invisible-users/manuscript/code-examples/wordpress/functions-headers.php)
 
 ---
 
@@ -385,17 +385,17 @@ This file allows agents to perform Retrieval-Augmented Generation (RAG) without 
 
 **For Adobe EDS** (DDT's Platform):
 
-See [code-examples/eds/helix-query.yaml](code-examples/eds/helix-query.yaml)
+See [invisible-users/manuscript/code-examples/eds/helix-query.yaml](invisible-users/manuscript/code-examples/eds/helix-query.yaml)
 
 **For WordPress**:
 
 **FIXED:** Uses `posts_per_page` instead of deprecated `numberposts`.
 
-See [code-examples/wordpress/generate-query-index.php](code-examples/wordpress/generate-query-index.php)
+See [invisible-users/manuscript/code-examples/wordpress/generate-query-index.php](invisible-users/manuscript/code-examples/wordpress/generate-query-index.php)
 
 **For Static Site Generators** (Hugo, Jekyll, Next.js):
 
-See [code-examples/static-site/generate-index.js](code-examples/static-site/generate-index.js)
+See [invisible-users/manuscript/code-examples/static-site/generate-index.js](invisible-users/manuscript/code-examples/static-site/generate-index.js)
 
 ### 4.4 Enabling Filtered Queries
 
@@ -629,9 +629,11 @@ Include a condensed bio in your `llms.txt`:
 - Rate limit by user-agent if serving sensitive data (see [code-examples/nginx/rate-limiting.conf](code-examples/nginx/rate-limiting.conf))
 - Consider delegation tokens for high-value operations
 - Log agent activity separately for audit trails
-- Review access logs regularly (see [code-examples/monitoring/server-log-analysis.sh](code-examples/monitoring/server-log-analysis.sh))
+- Review access logs regularly (see [invisible-users/manuscript/code-examples/monitoring/server-log-analysis.sh](invisible-users/manuscript/code-examples/monitoring/server-log-analysis.sh))
 
 **Key insight from "The Invisible Users" book:** In-browser agents inherit proof-of-humanity tokens from the authenticated user's session. This is why banks cannot detect AI involvement—the agent inherits the user's authenticated session rather than failing to authenticate.
+
+**Rate Limiting Configuration:** See [invisible-users/manuscript/code-examples/nginx/rate-limiting.conf](invisible-users/manuscript/code-examples/nginx/rate-limiting.conf) for implementation details.
 
 ---
 
@@ -651,11 +653,11 @@ Add the vanilla JavaScript version before closing `</body>` tag (see WordPress i
 
 **For WordPress:**
 
-See [code-examples/wordpress/functions-headers.php](code-examples/wordpress/functions-headers.php) (includes both HTTP headers and AI handshake in `wp_footer`)
+See [invisible-users/manuscript/code-examples/wordpress/functions-headers.php](invisible-users/manuscript/code-examples/wordpress/functions-headers.php) (includes both HTTP headers and AI handshake in `wp_footer`)
 
 **For React/Next.js:**
 
-See [code-examples/nextjs/AIHandshake.jsx](code-examples/nextjs/AIHandshake.jsx)
+See [invisible-users/manuscript/code-examples/nextjs/AIHandshake.jsx](invisible-users/manuscript/code-examples/nextjs/AIHandshake.jsx)
 
 ---
 
@@ -671,7 +673,7 @@ Two validation scripts are provided for different use cases:
 
 **Simple Version** (Quick Health Check):
 
-See [code-examples/validation/verify-ai-simple.js](code-examples/validation/verify-ai-simple.js)
+See [invisible-users/manuscript/code-examples/validation/verify-ai-simple.js](invisible-users/manuscript/code-examples/validation/verify-ai-simple.js)
 
 - 30 lines of code
 - Checks file accessibility only
@@ -680,7 +682,7 @@ See [code-examples/validation/verify-ai-simple.js](code-examples/validation/veri
 
 **Production Version** (Comprehensive Validation):
 
-See [code-examples/validation/verify-ai-production.js](code-examples/validation/verify-ai-production.js)
+See [invisible-users/manuscript/code-examples/validation/verify-ai-production.js](invisible-users/manuscript/code-examples/validation/verify-ai-production.js)
 
 - 115 lines of code
 - Content validation (checks for required headers and fields)
@@ -691,17 +693,17 @@ See [code-examples/validation/verify-ai-production.js](code-examples/validation/
 
 ```bash
 # Simple check
-node code-examples/validation/verify-ai-simple.js
+node invisible-users/manuscript/code-examples/validation/verify-ai-simple.js
 
 # Production check
-node code-examples/validation/verify-ai-production.js
+node invisible-users/manuscript/code-examples/validation/verify-ai-production.js
 ```
 
 **Configuration:** Change the `DOMAIN` constant in either script to your domain before running.
 
 ### 8.2 CI/CD Integration
 
-See [code-examples/validation/github-actions.yml](code-examples/validation/github-actions.yml)
+See [invisible-users/manuscript/code-examples/validation/github-actions.yml](invisible-users/manuscript/code-examples/validation/github-actions.yml)
 
 Copy this file to `.github/workflows/ai-health-check.yml` in your repository to enable automated validation on every push, pull request, and daily at 2am UTC.
 
@@ -735,16 +737,16 @@ Copy this file to `.github/workflows/ai-health-check.yml` in your repository to 
 
 **Google Analytics 4:**
 
-See [code-examples/monitoring/analytics-tracking.js](code-examples/monitoring/analytics-tracking.js) for complete AI agent detection and tracking code.
+See [invisible-users/manuscript/code-examples/monitoring/analytics-tracking.js](invisible-users/manuscript/code-examples/monitoring/analytics-tracking.js) for complete AI agent detection and tracking code.
 
 **Server-Side Log Analysis** (Apache/Nginx):
 
-See [code-examples/monitoring/server-log-analysis.sh](code-examples/monitoring/server-log-analysis.sh) for a comprehensive bash script that analyzes access logs for AI bot traffic patterns.
+See [invisible-users/manuscript/code-examples/monitoring/server-log-analysis.sh](invisible-users/manuscript/code-examples/monitoring/server-log-analysis.sh) for a comprehensive bash script that analyzes access logs for AI bot traffic patterns.
 
 **Usage:**
 
 ```bash
-./code-examples/monitoring/server-log-analysis.sh /var/log/nginx/access.log
+./invisible-users/manuscript/code-examples/monitoring/server-log-analysis.sh /var/log/nginx/access.log
 ```
 
 ---

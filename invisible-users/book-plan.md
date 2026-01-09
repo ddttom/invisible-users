@@ -509,21 +509,21 @@ Real-world llms.txt example:
     │   ├── appendix-implementation-roadmap.md       # Appendix F (~2,750 words)
     │   ├── appendix-resource-directory.md           # Appendix G (~1,950 words)
     │   ├── appendix-live-llms.txt                   # Appendix H (DDT/LLM reference)
+    │   ├── agent-friendly-starter-kit/              # Code examples (good/ vs bad/)
+    │   ├── code-examples/                           # Production-ready code implementations
+    │   │   ├── html-examples/
+    │   │   ├── apache/
+    │   │   ├── nginx/
+    │   │   ├── nextjs/
+    │   │   ├── wordpress/
+    │   │   ├── eds/
+    │   │   ├── static-site/
+    │   │   ├── monitoring/
+    │   │   └── validation/
     │   └── illustrations/
     │       └── chapter-01-*.svg through chapter-10-*.svg
     ├── llms.txt                 # Example llms.txt file from book content
-    ├── AI-Native.blog           # AI-native website implementation blueprint (~5,000 words)
-    ├── agent-friendly-starter-kit/
-    └── code-examples/           # Production-ready code implementations
-        ├── html-examples/
-        ├── apache/
-        ├── nginx/
-        ├── nextjs/
-        ├── wordpress/
-        ├── eds/
-        ├── static-site/
-        ├── monitoring/
-        └── validation/
+    └── AI-Native.blog           # AI-native website implementation blueprint (~5,000 words)
 ```
 
 ---
