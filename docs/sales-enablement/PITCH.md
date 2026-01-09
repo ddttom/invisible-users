@@ -871,7 +871,7 @@ An open-source universal identity delegation framework that provides:
 - Tools for businesses implementing identity delegation
 - Open specifications that work across platforms
 
-**This isn't a commercial product** - it's infrastructure the ecosystem needs. If platforms won't build interoperability, the community can.
+**Unlike the book and Web Audit Suite** (which are professional offerings), **this would be open-source community infrastructure** - not a commercial product. It's infrastructure the ecosystem needs. If platforms won't build interoperability, an open community effort can.
 
 ### Why This Matters for Partners
 
