@@ -42,24 +42,8 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ├── invisible-users/          # Book manuscript and materials
 │   ├── book-plan.md          # Master plan with chapter outlines and status
 │   ├── book-svg-style.md     # SVG illustration style guide
-│   ├── manuscript/           # Complete manuscript content
-│   │   ├── executive-summary.md
-│   │   ├── preface.md
-│   │   ├── chapter-XX-*.md   # Individual chapter files (01-11)
-│   │   ├── Glossary.md       # Comprehensive glossary
-│   │   ├── appendix-implementation-cookbook.md      # Appendix A
-│   │   ├── appendix-battle-tested-lessons.md        # Appendix B
-│   │   ├── appendix-web-audit-suite-guide.md        # Appendix C
-│   │   ├── appendix-ai-friendly-html-guide.md       # Appendix D
-│   │   ├── appendix-ai-patterns-quick-reference.md  # Appendix E
-│   │   ├── appendix-implementation-roadmap.md       # Appendix F
-│   │   ├── appendix-resource-directory.md           # Appendix G
-│   │   ├── appendix-live-llms.md                    # Appendix H (wrapper for PDF)
-│   │   ├── appendix-live-llms.txt                   # Appendix H (source - actual llms.txt)
-│   │   ├── appendix-pipeline-failure-case-study.md  # Appendix I
-│   │   └── illustrations/    # Illustrations for each chapter (SVG + PNG)
-│   │       ├── chapter-XX-*.svg  # Source SVG files (tracked in git) (01-11)
-│   │       └── chapter-XX-*.png  # PNG exports (gitignored, generated locally) (01-11)
+│   ├── manuscript/           # Complete manuscript content (git submodule)
+│   │   └── [managed in separate repository: invisible-users-manuscript]
 │   ├── llms.txt              # Repository llms.txt file
 │   ├── AI-Native.blog
 │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
@@ -632,6 +616,43 @@ When creating git commits:
 - Focus on describing the changes, not the tools used
 - Standard commit message format: clear subject line, optional detailed body
 - Example: "Fix markdown linting issues in all chapters" not "Generated with Claude Code"
+
+## Working with Submodules
+
+The manuscript directory is a git submodule pointing to:
+<https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
+
+**For Claude Code:**
+
+- The submodule appears as a normal directory once initialized
+- All npm scripts work normally with the submodule content
+- Read operations work as expected
+- Write operations to manuscript files should be done through the manuscript repository
+- When reading manuscript content, be aware it's maintained separately
+
+**Initialization:**
+
+When working with a fresh clone, initialize submodules:
+
+```bash
+git submodule update --init --recursive
+```
+
+**Submodule updates are two-step:**
+
+1. Changes are made in the manuscript repository
+2. This repository's submodule pointer is updated to reference the new commit
+
+**Updating to latest manuscript version:**
+
+```bash
+# Update submodule to latest from tracked branch (main)
+git submodule update --remote invisible-users/manuscript
+
+# Commit the submodule pointer update
+git add invisible-users/manuscript
+git commit -m "Update manuscript submodule to latest version"
+```
 
 ## Documentation Structure
 

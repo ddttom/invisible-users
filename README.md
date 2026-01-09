@@ -99,6 +99,46 @@ This ensures the book remains the single source of truth.
 
 **Note on Appendix H:** This appendix uses two files - `appendix-live-llms.txt` (the actual llms.txt content) and `appendix-live-llms.md` (markdown wrapper that displays it in a code block). The PDF includes the .md wrapper to show "here's what an llms.txt file looks like" as a formatted example, while the .txt file remains the editable source of truth.
 
+## Working with the Manuscript Submodule
+
+The book manuscript is maintained in a separate repository and integrated as a git submodule. When you first clone this repository, you need to initialize the submodule:
+
+```bash
+# Clone the main repository
+git clone https://github.com/ddttom/invisible-users.git
+cd invisible-users
+
+# Initialize and fetch the manuscript submodule
+git submodule update --init --recursive
+```
+
+**Updating the manuscript to the latest version:**
+
+Since the submodule is configured to track the main branch, updating is easy:
+
+```bash
+# Update submodule to latest commit on main branch
+git submodule update --remote invisible-users/manuscript
+
+# Commit the submodule pointer update
+git add invisible-users/manuscript
+git commit -m "Update manuscript submodule to latest version"
+```
+
+The `--remote` flag pulls the latest changes from the tracked branch (main).
+
+**Making changes to the manuscript:**
+
+The manuscript is maintained in its own repository at <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>. To contribute changes:
+
+1. Navigate to the submodule: `cd invisible-users/manuscript`
+2. Create a branch: `git checkout -b your-feature-branch`
+3. Make your changes and commit them
+4. Push to the manuscript repository: `git push origin your-feature-branch`
+5. Create a pull request in the manuscript repository
+
+After the manuscript changes are merged, update this repository's submodule reference to point to the latest commit.
+
 ## Book Status
 
 | Chapter | Title | Status | Words |
