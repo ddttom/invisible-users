@@ -281,10 +281,9 @@ function buildFAQSummary(results) {
   const withFAQ = metrics.filter((m) => m.faqSchema?.metrics?.hasFAQPage).length;
   const withDuplication = metrics.filter((m) => m.faqSchema?.metrics?.hasDuplicateMarkup).length;
 
-  const avgCompleteness =
-    withFAQ > 0
-      ? average(metrics.filter((m) => m.faqSchema?.metrics?.hasFAQPage).map((m) => m.faqSchema.metrics.completenessRatio))
-      : 0;
+  const avgCompleteness = withFAQ > 0
+    ? average(metrics.filter((m) => m.faqSchema?.metrics?.hasFAQPage).map((m) => m.faqSchema.metrics.completenessRatio))
+    : 0;
 
   const coverage = (withFAQ / metrics.length) * 100;
   const score = coverage * 0.4 + avgCompleteness * 60;
