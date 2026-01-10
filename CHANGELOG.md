@@ -7,6 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - News Skill Ecosystem Signals and Documentation (2026-01-10)
+
+**News Skill Enhancement and Documentation Quality:**
+
+- **News skill scope expansion:**
+  - Updated `/news` skill to understand book's broader scope includes ecosystem maturity signals
+  - Enhanced `.claude/skills/news/relevance-checklist.md` with ecosystem signal examples throughout all 5 criteria
+  - Added "Understanding the Book's Scope" section to `.claude/skills/news/skill.md`
+  - Added Scenario 6 example: Stack Overflow decline as qualifying ecosystem maturity signal
+  - Clarified two types of qualifying news: (1) Direct agent-website patterns, (2) Ecosystem maturity signals
+  - Key insight: Developers experiencing AI-mediated workflows creates urgency for website owners
+- **Manuscript updates:**
+  - Added Stack Overflow 76% decline entry to blog and Appendix J (developers shifting to AI tools)
+  - Blog entry: Narrative style focused on developers experiencing the shift they're designing for
+  - Appendix J entry: Technical 12-section analysis validating Chapter 1 urgency, Chapter 8 capability gaps, 2-year timeline
+  - Demonstrates adoption velocity creating indirect commercial pressure
+- **Documentation quality improvements:**
+  - Fixed CHANGELOG.md duplicate heading errors (MD024: "Added - 2026-01-10" appeared twice)
+  - Changed to unique headings with context: "Publication Status and Documentation" and "Web Pages and HTML Enhancement Pipeline"
+  - Added duplicate heading guidance to LEARNINGS.md (MD024 cannot be disabled, must fix by adding context)
+  - Enhanced CLAUDE.md markdown linting section with MD024 guidance and concrete examples
+  - Created `.claude/pwd-reminder.md` for working directory reference
+  - Added `.claude/hooks/pre-tool-use.sh` for pwd checking reminders
+  - Enhanced CLAUDE.md with prominent pwd checking warning box at top
+  - Enhanced LEARNINGS.md with "CRITICAL AVOIDANCE TACTIC" section for pwd checking
+
+**Commits:**
+
+- 96691da "Update /news skill to include ecosystem maturity signals and fix duplicate headings"
+- c7dab97 "Add Stack Overflow usage decline as ecosystem maturity signal" (submodule)
+- 49c1801 "Update manuscript submodule (Stack Overflow ecosystem signal entry)"
+- 2024192 "Fix markdown linting error in LEARNINGS.md (MD032)"
+
 ### Added - Publication Status and Documentation (2026-01-10)
 
 **Publication Status and Documentation Improvements:**
