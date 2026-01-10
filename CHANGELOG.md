@@ -7,6 +7,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2026-01-10
+
+**Book Restructured: Appendices Published Separately Online:**
+
+- **Book structure change:** Book now ends with The-End.md directing readers to online appendices at <https://about.network/invisible-users/web/>
+  - Core manuscript: ~57,000 words (preface + 11 chapters + The End + Glossary)
+  - Web appendices: ~27,400 words (10 appendices: A-J) published separately online
+  - Rationale: Fast-moving field requires appendices remain current; online publication allows updates without republishing book
+- **HTML generation infrastructure added:**
+  - Created `npm run pdf:appendix` command for generating HTML appendices
+  - Added `scripts/generate-appendix-html.sh` bash script using Pandoc
+  - Generates 12 files: index.html, llms.txt, and appendix-{a-j}.html
+  - Each appendix page includes: navigation footer, TOC (2 levels), responsive design, semantic HTML
+  - Added .gitignore entries for temporary template files (appendix-nav-footer.html, appendix-index-template.md)
+- **PDF generation commands updated:**
+  - All PDF commands (pdf:html, pdf:generate, pdf:kindle, pdf:simple) now exclude appendices
+  - All commands now include The-End.md as final chapter
+- **Manuscript updates (submodule commit 40a3c95):**
+  - Added The-End.md: Final page with appendix descriptions, online URL, contact info, copyright
+  - Added web/ directory with 12 generated HTML files
+  - Updated chapter references: Chapters 4, 9, 10 now link to online Appendix J URLs
+  - Updated blog files: blog.md, book-updates.md, agent-ecosystem-acceleration.md with online appendix references
+- **Documentation updates:**
+  - book-plan.md: Complete restructure showing web appendices section, updated word counts
+  - CLAUDE.md: Added pdf:appendix command documentation
+  - README.md: Added web appendices section with generation instructions
+  - llms.txt: Added web appendices section with links to all 10 online pages
+  - PROJECTSTATE.md: Updated to version 2.8.0 with new structure
+- **Sales enablement updates:**
+  - Updated word counts from "65,500-69,300" to "~57,000 core + 10 appendices online" across:
+    - business-plan.md, PITCH.md (expanded to show all 10 appendices), executive-summary.md
+    - plan-to-market.md, reviewer-email.md (all 4 email versions), new-blog.md
+- **Consistency verification:** Ensured all references updated across book, tools, and documentation
+
+**Commits:**
+
+- Main repository: 659e1df "Restructure book to publish appendices separately online"
+- Manuscript submodule: 40a3c95 "Add The-End.md and web appendices; update chapter references"
+- Main repository: 4b2d154 "Update manuscript submodule to latest version with The-End.md and web appendices"
+- Main repository: 24e499b "Fix markdown linting: wrap bare URLs in angle brackets"
+- Main repository: 174b54d "Update PROJECTSTATE.md and remaining word count references"
+
 ### Changed - 2026-01-09 (Very Late Night)
 
 **Platform Claims Qualified + /news Skill Documentation:**
