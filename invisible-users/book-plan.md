@@ -301,6 +301,7 @@ Implementation patterns, validation layers, and guardrails for reliable agent sy
 | Material | Status | Description |
 | -------- | ------ | ----------- |
 | preface.md | ✅ | Book introduction with personal narrative, usage guide, acknowledgements, and author bio |
+| reading-guide.md | ✅ | Comprehensive navigation guidance with tailored reading paths for five audience types |
 
 ### Core Documentation
 
@@ -555,6 +556,7 @@ Real-world llms.txt example:
     ├── manuscript/              # Complete manuscript content
     │   ├── executive-summary.md
     │   ├── preface.md
+    │   ├── reading-guide.md     # Navigation guidance with tailored reading paths
     │   ├── chapter-01-*.md through chapter-11-*.md
     │   ├── The-End.md           # Final page directing to online appendices
     │   ├── Glossary.md
