@@ -79,13 +79,36 @@ function enhanceHTML(filePath) {
     '<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">'
   );
 
-  // 2. Add meta tags before </head>
+  // 2. Add CSS for proper margins (override Pandoc defaults)
+  const customCSS = `
+  <style>
+    body {
+      max-width: 900px !important;
+      margin: 2rem auto !important;
+      padding: 0 2rem !important;
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      body {
+        padding: 0 1rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin: 1rem auto !important;
+      }
+    }
+  </style>`;
+
+  // 3. Add meta tags and CSS before </head>
   enhanced = enhanced.replace(
     '</head>',
-    `${aiMetaTags}${jsonLD}\n</head>`
+    `${aiMetaTags}${jsonLD}${customCSS}\n</head>`
   );
 
-  // 3. Add semantic roles and data attributes
+  // 4. Add semantic roles and data attributes
   // Add role="main" to main content div
   enhanced = enhanced.replace(
     /<div id="(TOC|main-content|content)"[^>]*>/,
@@ -104,13 +127,13 @@ function enhanceHTML(filePath) {
     '<footer role="contentinfo">'
   );
 
-  // 4. Enhance appendix navigation with roles
+  // 5. Enhance appendix navigation with roles
   enhanced = enhanced.replace(
     /<nav class="appendix-navigation"[^>]*>/,
     '<nav class="appendix-navigation" role="navigation" aria-label="Appendix Navigation">'
   );
 
-  // 5. Add data attributes to code blocks (if they have language classes)
+  // 6. Add data attributes to code blocks (if they have language classes)
   enhanced = enhanced.replace(
     /<pre class="([^"]+)"><code/g,
     (match, className) => {
