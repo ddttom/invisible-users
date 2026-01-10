@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-10 (Sitemap Generation, Margin Styling, and Pricing JSON-LD Example Added)
+**Last Updated:** 2026-01-10 (Code Block Copy Buttons and Semantic Data Attributes Added)
 
 ### Combined Repository
 
@@ -18,7 +18,7 @@ This repository contains two integrated projects:
 - **Word Count:** ~57,000 words (core manuscript: preface + 11 chapters + The End + Glossary)
 - **Appendices:** 10 appendices (~27,400 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
-- **Latest Change:** Enhanced appendix HTML generation with sitemap.xml for SEO, responsive margin styling (900px max-width) matching web pages, and comprehensive pricing JSON-LD example in Appendix F showing Schema.org priceSpecification breakdown (product + delivery + service charges).
+- **Latest Change:** Enhanced appendix HTML with code block copy-to-clipboard buttons and semantic data-role attributes. All code blocks (both syntax-highlighted and plain text) now have black borders, light grey backgrounds, and copy buttons in top-right corner. Added data-role attributes (code-container, code-block, code-content) to clarify HTML structure for AI agent parsing. New example in Appendix D demonstrates using data attributes to resolve duplicate class name ambiguity.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
@@ -37,15 +37,16 @@ This repository contains two integrated projects:
   - **Kindle Format** (`pdf:kindle`) - 6"×9" KDP-ready paperback format, production-ready (no review footer)
   - **Simple Format** (`pdf:simple`) - Basic PDF without cover or footer
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
-  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 13 files (index.html, llms.txt, sitemap.xml, 10 appendix pages)
+  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 16 files (index.html, appendix-index.html, news.html, identity-layer.html, llms.txt, sitemap.xml, 10 appendix pages)
 - **Web Pages:**
   - **Identity Layer** (`web/identity-layer.html`) - Universal Identity Delegation Infrastructure project landing page
   - **News** (`web/news.html`) - Project news and updates
   - All pages follow Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML)
   - Book website URL: <https://allabout.network/invisible-users>
 - **HTML Enhancement Pipeline:**
-  - **Post-processor** (`scripts/enhance-appendix-html.js`) - Adds AI meta tags, Schema.org JSON-LD, semantic roles, and responsive margin CSS (900px max-width, 2rem padding) to Pandoc HTML
-  - **Sitemap generator** (`scripts/generate-sitemap.js`) - Creates sitemap.xml with 12 URLs, appropriate priorities and change frequencies
+  - **Post-processor** (`scripts/enhance-appendix-html.js`) - Adds AI meta tags, Schema.org JSON-LD, semantic roles, responsive margin CSS, code block styling, and copy-to-clipboard functionality to Pandoc HTML
+  - **Code Block Features** - Black 2px borders, light grey backgrounds, copy buttons with visual feedback, data-role attributes for semantic clarity
+  - **Sitemap generator** (`scripts/generate-sitemap.js`) - Creates sitemap.xml with appropriate priorities and change frequencies
   - **Generation script** (`scripts/generate-appendix-html.sh`) - Orchestrates Pandoc conversion + enhancement + sitemap generation
   - **Documentation** (`scripts/README-appendix-enhancements.md`) - Complete pipeline documentation
   - Automatically applies British English, AI-specific meta tags, accessibility enhancements, and consistent styling matching web pages

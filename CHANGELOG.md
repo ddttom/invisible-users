@@ -7,6 +7,49 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Code Block Copy Buttons and Semantic Attributes (2026-01-10)
+
+**Code Block Enhancements:**
+
+- **Copy-to-clipboard functionality:**
+  - Added copy button to top-right corner of all code blocks
+  - Handles both syntax-highlighted (HTML, JavaScript) and plain text (robots.txt, llms.txt) blocks
+  - Visual feedback: button turns green with checkmark for 2 seconds on successful copy
+  - Extracts raw text content, removing syntax highlighting markup and line numbers
+  - Fully accessible with aria-label and keyboard navigation
+  - Uses modern `navigator.clipboard` API with graceful error handling
+- **Visual styling:**
+  - Black 2px border around all code blocks
+  - Light grey (#f5f5f5) background for better readability
+  - Rounded corners (4px border-radius) and proper padding (1rem)
+  - Targets both `div.sourceCode` (wrapped blocks) and `pre.text` (standalone blocks)
+  - High-specificity CSS selectors with !important to override Pandoc defaults
+- **Semantic data attributes:**
+  - Added `data-role="code-container"` to div.sourceCode wrappers
+  - Added `data-role="code-block"` to pre elements
+  - Added `data-role="code-content"` to code elements
+  - Added `data-language` attribute with programming language
+  - Clarifies ambiguous HTML structure where same class appears on multiple levels
+  - Helps AI agents distinguish container from content
+- **New documentation example:**
+  - Added "Clarify Ambiguous Structure with Data Attributes" section to Appendix D
+  - Demonstrates using data-role attributes to resolve duplicate class name ambiguity
+  - Book's own appendices serve as working reference implementation
+  - Shows pattern for making implicit structure explicit for AI agents
+
+**Results:**
+
+- All code blocks have consistent visual appearance with copy functionality
+- Resolves duplicate `.sourceCode` class name ambiguity for AI agent parsing
+- Self-referential documentation - appendices demonstrate the pattern they describe
+- Enhanced user experience with one-click code copying
+
+**Commits:**
+
+- 2dcf56d "Add code block styling and copy-to-clipboard functionality to appendix HTML" (submodule)
+- 632e360 "Add code block styling and copy-to-clipboard functionality to appendix HTML"
+- fd610ff "Update documentation for code block copy button feature"
+
 ### Added - Appendix HTML Enhancements (2026-01-10)
 
 **Sitemap Generation and Styling Improvements:**
