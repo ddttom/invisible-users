@@ -41,6 +41,7 @@ This repository contains two integrated projects:
 - **Web Pages:**
   - **Identity Layer** (`web/identity-layer.html`) - Universal Identity Delegation Infrastructure project landing page
   - **News** (`web/news.html`) - Project news and updates
+  - **FAQ** (`web/faq.html`) - Frequently asked questions about the book and project
   - All pages follow Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML)
   - Book website URL: <https://allabout.network/invisible-users>
 - **HTML Enhancement Pipeline:**
