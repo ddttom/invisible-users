@@ -221,6 +221,7 @@ The book examines how modern web design optimised for human users fails for AI a
 - Book Main Page: https://allabout.network/invisible-users/web/index.html - Complete book overview, chapter summaries, and resources
 - Appendix Index: https://allabout.network/invisible-users/web/appendix-index.html - Landing page with all appendices
 - Project News: https://allabout.network/invisible-users/web/news.html - Latest updates and announcements
+- FAQ: https://allabout.network/invisible-users/web/faq.html - Frequently asked questions about the book and project
 - Identity Delegation Project: https://allabout.network/invisible-users/web/identity-layer.html - Universal Identity Delegation Infrastructure
 
 ## Access Guidelines

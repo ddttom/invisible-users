@@ -44,6 +44,12 @@ const urls = [
     description: 'Project News and Updates'
   },
   {
+    loc: `${BASE_URL}/faq.html`,
+    priority: '0.9',
+    changefreq: 'monthly',
+    description: 'Frequently Asked Questions'
+  },
+  {
     loc: `${BASE_URL}/identity-layer.html`,
     priority: '0.9',
     changefreq: 'monthly',
