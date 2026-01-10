@@ -37,6 +37,9 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ├── llms.txt                  # Repository llms.txt file
 ├── docs/                     # Business and sales materials
 │   └── sales-enablement/     # Sales materials, pitch decks, business plan
+├── web/                      # Public web pages
+│   ├── identity-layer.html   # Identity delegation infrastructure project page
+│   └── news.html             # Project news and updates
 ├── invisible-users/          # Book manuscript and materials
 │   ├── book-plan.md          # Master plan with chapter outlines and status
 │   ├── book-svg-style.md     # SVG illustration style guide
@@ -111,10 +114,13 @@ npm run pdf:simple          # Generate simple PDF without cover
 
 # HTML appendix generation
 npm run pdf:appendix        # Generate individual HTML pages for each appendix
+                            # Includes automatic Chapter 10 pattern enhancement
 
 # Chapter status
 npm run status              # Show all chapter files
 ```
+
+**HTML Appendix Enhancement:** The `pdf:appendix` command automatically enhances Pandoc-generated HTML with Chapter 10 technical patterns via [scripts/enhance-appendix-html.js](scripts/enhance-appendix-html.js). See [scripts/README-appendix-enhancements.md](scripts/README-appendix-enhancements.md) for details.
 
 ### Web Audit Suite Commands
 

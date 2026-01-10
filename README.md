@@ -277,6 +277,19 @@ Each appendix page includes:
 - Full content with syntax highlighting
 - Navigation footer linking to other appendices
 - Responsive design (mobile-friendly)
+- Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML)
+
+## Project Web Pages
+
+The repository includes public web pages for the book project:
+
+- [web/identity-layer.html](web/identity-layer.html) - Universal Identity Delegation Infrastructure project landing page
+- [web/news.html](web/news.html) - Project news and updates
+
+These pages follow Chapter 10 technical patterns and will be published at:
+
+- <https://allabout.network/invisible-users/identity-layer.html>
+- <https://allabout.network/invisible-users/news.html>
 
 ## Key Themes
 
