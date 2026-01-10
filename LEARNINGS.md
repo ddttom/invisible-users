@@ -40,3 +40,20 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 ## Duplicate Headings Cannot Be Ignored
 
 **Rule** (2026-01-10): GitHub Actions failed with MD024 error: "Multiple headings with the same content" in CHANGELOG.md where two entries both used `### Added - 2026-01-10`. MD024 (no-duplicate-heading) is a critical linting rule that cannot be disabled or ignored - duplicate headings break CI/CD and must be fixed by making headings unique with contextual information. **Fix duplicate headings by adding descriptive context**, not by disabling linting rules. Example: Change both `### Added - 2026-01-10` to `### Added - Publication Status and Documentation (2026-01-10)` and `### Added - Web Pages and HTML Enhancement Pipeline (2026-01-10)`. This pattern applies to all documentation files: CHANGELOG.md, README.md, chapter files. Always make headings unique by adding what distinguishes them.
+
+## Pre-Tool-Use Hook for Wrong Repository Detection
+
+**Rule** (2026-01-10): Despite documentation in CLAUDE.md and LEARNINGS.md about checking `pwd` before file operations, the `.claude/` path error was repeated multiple times during the FAQ schema implementation session. The pattern: attempting to access `.claude/skills/news/` or other `.claude/` files without verifying current directory, resulting in "No such file or directory" errors when in the submodule.
+
+**Solution Implemented**: Enhanced `.claude/hooks/pre-tool-use.sh` to:
+
+1. **Detect .claude/ path mistakes** - If attempting to access `.claude/*` from submodule directory, the hook now BLOCKS the operation (exit 1) with clear error message showing:
+   - Current directory
+   - Attempted path
+   - Fix options (absolute path, navigate to main repo, or relative path)
+
+2. **Reduced reminder threshold** - Changed from 5 tool uses to 3 before showing pwd reminder, making location checks more frequent
+
+3. **Absolute state file path** - Changed from relative `.claude/.pwd-check-state` to absolute `/Users/tomcranstoun/Documents/GitHub/invisible-users/.claude/.pwd-check-state` to work from any directory
+
+**Key insight**: Documentation alone is insufficient for preventing repeated mistakes. Automated enforcement through hooks is necessary for complex repository structures with submodules. The hook now catches the mistake BEFORE it happens rather than relying on post-error documentation.
