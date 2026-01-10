@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-10 (Appendices Published Online)
+**Last Updated:** 2026-01-10 (Web Pages and Appendix Enhancement Pipeline Added)
 
 ### Combined Repository
 
@@ -37,6 +37,17 @@ This repository contains two integrated projects:
   - **Kindle Format** (`pdf:kindle`) - 6"×9" KDP-ready paperback format, production-ready (no review footer)
   - **Simple Format** (`pdf:simple`) - Basic PDF without cover or footer
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
+  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement
+- **Web Pages:**
+  - **Identity Layer** (`web/identity-layer.html`) - Universal Identity Delegation Infrastructure project landing page
+  - **News** (`web/news.html`) - Project news and updates
+  - All pages follow Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML)
+  - Book website URL: <https://allabout.network/invisible-users>
+- **HTML Enhancement Pipeline:**
+  - **Post-processor** (`scripts/enhance-appendix-html.js`) - Adds AI meta tags, Schema.org JSON-LD, semantic roles to Pandoc HTML
+  - **Generation script** (`scripts/generate-appendix-html.sh`) - Orchestrates Pandoc conversion + enhancement
+  - **Documentation** (`scripts/README-appendix-enhancements.md`) - Complete pipeline documentation
+  - Automatically applies British English, AI-specific meta tags, and accessibility enhancements
 
 ### Web Audit Suite Status
 
