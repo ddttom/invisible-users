@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2026-01-10
+
+**Web Pages and Appendix HTML Enhancement Pipeline:**
+
+- **Project web pages created:**
+  - `web/identity-layer.html` - Universal Identity Delegation Infrastructure project landing page with roadmap, technical details, collaboration opportunities
+  - `web/news.html` - Project news and updates page with book announcement and identity delegation project roadmap
+  - Both pages follow Chapter 10 technical patterns (British English, AI-specific meta tags, Schema.org JSON-LD, semantic HTML with ARIA roles)
+  - Book website URL established: <https://allabout.network/invisible-users>
+- **Appendix HTML enhancement pipeline:**
+  - Created `scripts/enhance-appendix-html.js` (Node.js post-processor, ~140 lines) to add Chapter 10 patterns to Pandoc HTML
+  - Updated `scripts/generate-appendix-html.sh` to call enhancement script after Pandoc conversion
+  - Created `scripts/README-appendix-enhancements.md` documenting pipeline flow, usage, testing
+  - Enhancement adds: AI-specific meta tags (ai-preferred-access, ai-content-policy, ai-freshness, ai-structured-data, ai-attribution), Schema.org JSON-LD (TechArticle, CollectionPage types), semantic HTML roles (role="main", role="navigation", role="contentinfo"), British English lang attributes (en-GB)
+  - Pipeline is idempotent - can be run multiple times safely
+  - Aligns with Chapter 10 technical patterns (lines 1186-1214 for AI meta tags, lines 541-564 for Schema.org)
+- **Documentation updates:**
+  - CLAUDE.md: Added web/ directory to repository structure, documented HTML appendix enhancement
+  - README.md: Added "Project Web Pages" section with links and descriptions
+  - PROJECTSTATE.md: Added web pages and HTML enhancement pipeline sections
+- **Code examples updated:**
+  - identity-delegation-worker.js and identity-delegation-README.md updated with correct book website URLs
+
+**Commits:**
+
+- 264af97 "Add Chapter 10 patterns to appendix HTML generation pipeline"
+- b17c8c2 "Fix markdown linting issues in appendix enhancements README"
+- d37ddb7 "Update documentation for web pages and appendix HTML enhancements"
+- fff32bc "Update project state with web pages and appendix enhancement pipeline"
+
 ### Changed - 2026-01-10
 
 **Book Restructured: Appendices Published Separately Online:**
