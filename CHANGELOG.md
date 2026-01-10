@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - FAQ Page (2026-01-10)
+
+**New FAQ page:**
+
+- **Created faq.html** in `invisible-users/manuscript/web/`:
+  - Schema.org FAQPage structured data with 10 common questions
+  - Three sections: About the Book, Technical Concepts, Implementation and Resources
+  - Questions cover book purpose, target audiences, AI agents, accessibility differences, implementation guidance, Web Audit Suite, identity delegation, code examples, and contact information
+  - Follows all AI-friendly patterns from Appendix D (meta tags, semantic HTML, data attributes)
+  - Floating navigation buttons (Home and Back to Top)
+  - WCAG AA contrast compliance with dark grey text on light blue backgrounds
+  - Explicit `!important` flags on button styles to ensure proper display
+- **Integration:**
+  - Added FAQ resource card to index.html main page
+  - Added FAQ link to footer navigation on index.html
+  - Updated sitemap.xml with FAQ entry (priority 0.9, monthly change frequency)
+  - Updated llms.txt to include FAQ in main pages section
+  - Updated PROJECTSTATE.md web pages list
+
+**Purpose:** Provides comprehensive answers to common questions about the book, improving discoverability for both humans and AI agents.
+
 ### Added - Code Block Copy Buttons and Semantic Attributes (2026-01-10)
 
 **Code Block Enhancements:**
