@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - FAQ Page Integration into Generation Scripts (2026-01-10)
+
+**FAQ Page Generation Integration:**
+
+- **Updated `scripts/generate-sitemap.js`:**
+  - Added FAQ page entry to sitemap generation
+  - Priority: 0.9 (high priority, same as news and identity layer pages)
+  - Change frequency: monthly
+  - Description: "Frequently Asked Questions"
+- **Updated `scripts/generate-appendix-html.sh`:**
+  - Added FAQ entry to llms.txt template generation
+  - Placed in Main Pages section between Project News and Identity Delegation Project
+  - Ensures FAQ appears in generated llms.txt when running `npm run pdf:appendix`
+- **Restored FAQ references:**
+  - Re-added FAQ to `web/llms.txt` main pages section (was incorrectly removed)
+  - Re-added FAQ to `web/sitemap.xml` with priority 0.9 (was incorrectly removed)
+
+**Result:** The FAQ page is now properly integrated into both manual (web/ directory) and automated (generation scripts) workflows, ensuring consistent discovery by AI agents and search engines.
+
+**Commits:**
+
+- e1c2e19 "Restore FAQ page references to llms.txt and sitemap.xml" (submodule)
+- 3eb2d5a "Update manuscript submodule (restore FAQ references)"
+- 08c9130 "Add FAQ page to appendix generation scripts"
+
 ### Added - Pre-Tool-Use Hook for Repository Navigation (2026-01-10)
 
 **Hook Enhancement for Wrong Repository Detection:**
