@@ -36,12 +36,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - All cross-references functional and tested
 
 **Results:**
+
 - All content preserved and relocated appropriately
 - Clear purpose boundaries established between files
 - Markdown linting passes for all modified files
 - Total reduction: 135 lines removed through consolidation
 
 **Commits:**
+
 - 88197ad "Resolve content duplication across Preface, Executive Summary, and Chapter 1" (submodule)
 - fa4809a "Update book-plan.md to include reading-guide.md"
 - 4f12883 "Update manuscript submodule to latest version"
