@@ -14,6 +14,23 @@ When you provide industry news about AI agents, web automation, or agent-mediate
 4. **Creates entries** - Writes properly formatted blog and appendix entries
 5. **Validates quality** - Checks markdown formatting and cross-references
 
+## Publication Status and Propagation Strategy
+
+**CURRENT STATUS: BOOK IN REVIEW (Pre-Publication)**
+
+**Before publication (now):**
+- Updates propagate to manuscript files (`blog/book-updates.md` and `appendix-j-industry-developments.md`)
+- Changes tracked in version control
+- Book can be republished with latest news
+
+**After publication:**
+- Book manuscript frozen (no more updates to core content)
+- Online appendices continue to receive updates at `https://allabout.network/invisible-users/web/appendix-j.html`
+- HTML generation via `npm run pdf:appendix` keeps web version current
+- Verified news ensures online appendices remain authoritative even after book publication
+
+The `/news` skill ensures appendices stay current in this fast-moving field without requiring book republication.
+
 ## How to Use
 
 ```bash

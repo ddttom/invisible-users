@@ -15,3 +15,7 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 ## Book Publication Status
 
 **Rule** (2026-01-10): Updated publication date from "Due Q1 2026" to "Published January 2026" across materials, but the book is actually still in review, not yet published. Q1 2026 (Due Q1 2026) is correct. Never assume publication status - the book remains "Due Q1 2026" until the user explicitly confirms publication. Publication timing is the user's decision, not something to infer from current date.
+
+## Git Directory Navigation: Always Check pwd First
+
+**Rule** (2026-01-10): Made multiple errors trying to navigate to submodule directory with `cd invisible-users/manuscript` resulting in "No such file or directory" errors. The fix is simple: **always run `pwd` first** to check current working directory before attempting navigation. This repository has a git submodule at `invisible-users/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail. **Check `pwd`, then use correct relative or absolute paths.** When working with submodules, verify current location before every directory change.

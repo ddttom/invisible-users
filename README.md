@@ -369,6 +369,14 @@ A critical security insight: in-browser agents inherit authenticated sessions ra
 - [web-audit-suite/docs/CONFIGURATION.md](web-audit-suite/docs/CONFIGURATION.md) - Configuration reference
 - [web-audit-suite/docs/FEATURES.md](web-audit-suite/docs/FEATURES.md) - Feature overview
 
+## Common Mistakes to Avoid
+
+### Git Directory Navigation with Submodules
+
+**Always check `pwd` before attempting directory navigation.** This repository has a git submodule at `invisible-users/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
+
+**Best practice:** Run `pwd` first, then use correct relative or absolute paths. When working with submodules, verify current location before every directory change.
+
 ## Writing Style
 
 - British English throughout (organise, colour, whilst)

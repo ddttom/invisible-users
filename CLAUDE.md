@@ -13,6 +13,13 @@ This repository contains two integrated projects:
 **Target length:** 30,000-50,000 words (11 chapters, 3,000-5,000 words each)
 **Current status:** Chapters 1-11 complete, all illustrations complete
 
+**PUBLICATION STATUS: IN REVIEW (Pre-Publication)**
+- Book manuscript is complete and in review
+- Publication date: Due Q1 2026
+- Do NOT assume published status based on current date
+- User will explicitly confirm when published
+- Until then, manuscript remains "Due Q1 2026"
+
 ### 2. Web Audit Suite (Analysis Tool)
 
 A comprehensive Node.js website analysis tool that implements the AI agent compatibility patterns described in the book. It crawls websites and generates detailed reports on:
@@ -698,6 +705,22 @@ The manuscript directory is a git submodule pointing to:
 - Read operations work as expected
 - Write operations to manuscript files should be done through the manuscript repository
 - When reading manuscript content, be aware it's maintained separately
+
+**CRITICAL: Git Directory Navigation**
+
+**Always run `pwd` first** before attempting directory navigation. This repository has a git submodule at `invisible-users/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
+
+Common mistake pattern:
+```bash
+# ❌ Wrong: Attempting cd without checking location
+cd invisible-users/manuscript  # Fails if already inside submodule
+
+# ✅ Correct: Check location first
+pwd  # Verify current directory
+# Then use appropriate path based on actual location
+```
+
+**Best practice:** Check `pwd`, then use correct relative or absolute paths. When working with submodules, verify current location before every directory change.
 
 **Initialization:**
 
