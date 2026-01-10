@@ -26,6 +26,7 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/` (does NOT contain `.claude/skills/`)
 
 **Before accessing ANY `.claude/` files:**
+
 1. Run `pwd` FIRST
 2. If in submodule (`/invisible-users/manuscript/`), use `../../.claude/skills/news/`
 3. If in root (`/invisible-users/`), use `.claude/skills/news/`
