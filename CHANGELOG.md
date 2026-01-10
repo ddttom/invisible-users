@@ -7,6 +7,63 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - FAQ Schema Detection and Appendix D Section (2026-01-10)
+
+**Manuscript Updates:**
+
+- **Appendix D additions:**
+  - Added comprehensive FAQPage (Schema.org) section with JSON-LD examples
+  - Explained why dual-format (JSON-LD + microdata) should be avoided
+  - Documented required properties and implementation approach
+  - Referenced book's FAQ page as real-world example
+  - Cited 41% LLM citation rate improvement research (FAQPage vs no structured data)
+- **FAQ page cleanup:**
+  - Removed all microdata markup (itemscope, itemprop, itemtype attributes) from faq.html
+  - Maintained JSON-LD FAQPage schema in head (single source of truth)
+  - Preserved semantic HTML structure and styling
+  - Demonstrates JSON-LD only best practice (2024-2025 guidance)
+
+**Web Audit Suite Enhancements:**
+
+- **FAQ Schema Detection (llmCollector.js):**
+  - Detects FAQPage schema in JSON-LD structured data
+  - Counts FAQ items and calculates completeness ratio (items with answers / total items)
+  - Identifies dual-format duplication (JSON-LD + microdata)
+  - Returns metrics: hasFAQPage, faqCount, completenessRatio, hasDuplicateMarkup
+- **Scoring System (scoringWeights.js, llmScorer.js):**
+  - Awards 8 points for FAQPage presence
+  - Awards 0-5 points based on completeness ratio
+  - Deducts 3 points for dual-format duplication (encourages best practices)
+  - Net scoring range: -3 to +13 points
+- **Feedback Generation (llmFeedback.js):**
+  - Validates FAQ quality when FAQPage markup is present
+  - Flags missing answers and empty FAQ structures
+  - Warns about dual-format redundancy
+  - References Appendix D for implementation guidance
+- **Reporting (llmReports.js, executiveSummary.js):**
+  - Added FAQ columns to all three CSV reports (general, frontend, backend)
+  - Added FAQ section to executive summary with status, coverage, completeness metrics
+  - Shows duplication warnings when dual-format markup detected
+
+**Configuration:**
+
+- Updated .gitignore to exclude external FAQ wrapper files (allabout-faq.html, allabout-faq-wrapped.html)
+
+**Cross-Project Consistency:**
+
+- Book (Appendix D) is authoritative source for FAQ schema best practices
+- Web Audit Suite implements and enforces patterns described in book
+- Tool penalizes dual-format approach that book recommends avoiding
+- Feedback references Appendix D for implementation guidance
+
+**Purpose:** Establishes comprehensive FAQ schema guidance in book and tooling to detect, score, and provide actionable feedback on FAQ implementation quality.
+
+**Commits:**
+
+- 7cd76de "Add FAQ Schema.org guidance and clean up faq.html" (submodule)
+- 28e4c59 "Add FAQ schema detection and scoring to Web Audit Suite"
+- 9b8c2fa "Fix ESLint operator-linebreak error in executiveSummary"
+
 ### Added - FAQ Page (2026-01-10)
 
 **New FAQ page:**

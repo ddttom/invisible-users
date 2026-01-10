@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-10 (Code Block Copy Buttons and Semantic Data Attributes Added)
+**Last Updated:** 2026-01-10 (FAQ Schema Detection and Appendix D FAQ Section Added)
 
 ### Combined Repository
 
@@ -13,12 +13,12 @@ This repository contains two integrated projects:
 
 ### Book Manuscript Status
 
-- **Version:** 2.8.0
+- **Version:** 2.8.1
 - **Status:** Publication-ready
 - **Word Count:** ~57,000 words (core manuscript: preface + 11 chapters + The End + Glossary)
 - **Appendices:** 10 appendices (~27,400 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
-- **Latest Change:** Enhanced appendix HTML with code block copy-to-clipboard buttons and semantic data-role attributes. All code blocks (both syntax-highlighted and plain text) now have black borders, light grey backgrounds, and copy buttons in top-right corner. Added data-role attributes (code-container, code-block, code-content) to clarify HTML structure for AI agent parsing. New example in Appendix D demonstrates using data attributes to resolve duplicate class name ambiguity.
+- **Latest Change:** Added comprehensive FAQ Schema.org guidance to Appendix D and cleaned up faq.html to demonstrate JSON-LD only approach (removed all microdata markup). Web Audit Suite now detects FAQPage schema, scores implementation quality (awards points for presence and completeness, penalizes dual-format duplication), and provides actionable feedback referencing Appendix D guidance. FAQ metrics appear in all three CSV reports and executive summary.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
