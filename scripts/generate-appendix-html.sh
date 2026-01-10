@@ -59,7 +59,7 @@ for appendix_file in "$MANUSCRIPT_DIR"/appendix-*.md; do
 
     echo -e "Processing Appendix ${letter_upper}: $title"
 
-    # Run Pandoc conversion
+    # Run Pandoc conversion with additional metadata
     pandoc "$appendix_file" \
         -o "$output_file" \
         --resource-path="$MANUSCRIPT_DIR" \
@@ -70,7 +70,13 @@ for appendix_file in "$MANUSCRIPT_DIR"/appendix-*.md; do
         --metadata subtitle="The Invisible Users" \
         --metadata author="Tom Cranstoun" \
         --metadata date="January 2026" \
+        --metadata description="Practical guidance from The Invisible Users book on designing AI agent-friendly websites" \
+        --metadata lang="en-GB" \
         --include-after-body="$SCRIPTS_DIR/appendix-nav-footer.html"
+
+    # Enhance with Chapter 10 patterns
+    echo -e "  Enhancing with Chapter 10 technical patterns..."
+    node "$SCRIPTS_DIR/enhance-appendix-html.js" "$output_file" > /dev/null
 
     # Store info for index generation
     APPENDIX_INFO+=("$letter|$title")
@@ -154,7 +160,13 @@ pandoc "$SCRIPTS_DIR/appendix-index-template.md" \
     --standalone \
     --metadata title="The Invisible Users - Appendices" \
     --metadata author="Tom Cranstoun" \
-    --metadata date="January 2026"
+    --metadata date="January 2026" \
+    --metadata description="Practical guides for designing AI agent-friendly websites" \
+    --metadata lang="en-GB"
+
+# Enhance index with Chapter 10 patterns
+echo -e "  Enhancing index with Chapter 10 technical patterns..."
+node "$SCRIPTS_DIR/enhance-appendix-html.js" "$OUTPUT_DIR/index.html" > /dev/null
 
 echo -e "${GREEN}✓ Generated index.html${NC}"
 
