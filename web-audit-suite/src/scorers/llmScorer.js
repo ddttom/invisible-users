@@ -39,6 +39,18 @@ export class LLMScorer {
       if (metrics.structuredData.metrics.hasSchemaOrg) score += weights.STRUCTURED_DATA.hasSchemaOrg;
     }
 
+    // FAQ Schema
+    if (metrics.faqSchema?.metrics) {
+      const faq = metrics.faqSchema.metrics;
+      if (faq.hasFAQPage) {
+        score += weights.FAQ_SCHEMA.hasFAQPage;
+        score += faq.completenessRatio * weights.FAQ_SCHEMA.completenessRatio;
+      }
+      if (faq.hasDuplicateMarkup) {
+        score += weights.FAQ_SCHEMA.duplicatePenalty; // Note: penalty is negative number in config
+      }
+    }
+
     // LLMs.txt
     if (metrics.llmsTxt?.metrics) {
       if (metrics.llmsTxt.metrics.hasLLMsTxtReference || metrics.llmsTxt.metrics.hasLLMsTxtMeta) {

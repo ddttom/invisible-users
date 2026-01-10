@@ -17,6 +17,11 @@ export const SCORING_WEIGHTS = {
     STRUCTURED_DATA: {
       hasSchemaOrg: 15,
     },
+    FAQ_SCHEMA: {
+      hasFAQPage: 8,
+      completenessRatio: 5,
+      duplicatePenalty: -3,
+    },
     LLMS_TXT: {
       presence: 10,
     },

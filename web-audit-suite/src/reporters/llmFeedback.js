@@ -26,6 +26,7 @@ export class LLMFeedback {
     this.getSemanticHtmlFeedback(metrics, essentialIssues, recommendations);
     this.getFormFeedback(metrics, essentialIssues, recommendations);
     this.getMetadataFeedback(metrics, essentialIssues, niceToHaveIssues, recommendations);
+    this.getFAQFeedback(metrics, essentialIssues, niceToHaveIssues, recommendations);
     this.getRenderedFeedback(metrics, niceToHaveIssues, recommendations);
     this.getNiceToHaveFeedback(metrics, niceToHaveIssues, recommendations);
 
@@ -88,6 +89,32 @@ export class LLMFeedback {
         niceToHaveIssues.push('No ai.txt file detected for AI-specific instructions');
         recommendations.push('Consider adding ai.txt file for AI agent-specific guidance');
       }
+    }
+  }
+
+  static getFAQFeedback(metrics, essentialIssues, niceToHaveIssues, recommendations) {
+    const faq = metrics.faqSchema?.metrics;
+
+    if (!faq || !faq.hasFAQPage) {
+      // FAQ is optional, so skip if not present
+      return;
+    }
+
+    // FAQ present - validate quality
+    if (faq.faqCount === 0) {
+      essentialIssues.push('FAQPage markup present but contains no questions');
+      recommendations.push('Add Question items to FAQPage mainEntity array');
+    }
+
+    if (faq.completenessRatio < 1.0 && faq.faqCount > 0) {
+      const missingPercent = Math.round((1 - faq.completenessRatio) * 100);
+      essentialIssues.push(`${missingPercent}% of FAQ items missing answers`);
+      recommendations.push('Ensure all Question items have acceptedAnswer.text properties');
+    }
+
+    if (faq.hasDuplicateMarkup) {
+      essentialIssues.push('FAQ uses dual-format markup (JSON-LD + microdata) creating redundancy');
+      recommendations.push('Remove microdata markup, keep JSON-LD only (see Appendix D for guidance)');
     }
   }
 

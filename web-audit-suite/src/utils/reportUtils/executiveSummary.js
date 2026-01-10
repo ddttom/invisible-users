@@ -40,6 +40,7 @@ function buildExecutiveSummary(results, comparison) {
     seo: buildSeoSummary(results, comparison?.seo),
     content: buildContentSummary(results, comparison?.content),
     llmSuitability: buildLLMSummary(results, comparison?.llm),
+    faq: buildFAQSummary(results),
     keyFindings: buildKeyFindings(results),
     recommendations: buildRecommendations(results),
     comparison: comparison ? buildComparisonSummary(comparison) : null,
@@ -265,6 +266,39 @@ function buildLLMSummary(results, comparisonData) {
   }
 
   return summary;
+}
+
+/**
+ * Build FAQ summary
+ */
+function buildFAQSummary(results) {
+  const metrics = results.llmMetrics || [];
+
+  if (metrics.length === 0) {
+    return { status: 'No data', score: 0 };
+  }
+
+  const withFAQ = metrics.filter((m) => m.faqSchema?.metrics?.hasFAQPage).length;
+  const withDuplication = metrics.filter((m) => m.faqSchema?.metrics?.hasDuplicateMarkup).length;
+
+  const avgCompleteness =
+    withFAQ > 0
+      ? average(metrics.filter((m) => m.faqSchema?.metrics?.hasFAQPage).map((m) => m.faqSchema.metrics.completenessRatio))
+      : 0;
+
+  const coverage = (withFAQ / metrics.length) * 100;
+  const score = coverage * 0.4 + avgCompleteness * 60;
+
+  return {
+    status:
+      score > 70 ? 'Good' : score > 40 ? 'Partial' : withFAQ > 0 ? 'Needs Improvement' : 'Not Applicable',
+    pagesWithFAQ: withFAQ,
+    coverage: Math.round(coverage),
+    avgCompleteness: Math.round(avgCompleteness * 100),
+    hasDuplication: withDuplication > 0,
+    duplicationCount: withDuplication,
+    score: Math.round(score),
+  };
 }
 
 /**
@@ -526,6 +560,17 @@ function generateMarkdownSummary(summary) {
   if (summary.llmSuitability.trend) {
     md += `- **Trend (Served):** ${summary.llmSuitability.trend.servedScore > 0 ? '📈' : '📉'} ${summary.llmSuitability.trend.servedScore.toFixed(1)}%\n`;
   }
+  md += '\n';
+
+  // FAQ Schema Implementation
+  md += '## FAQ Schema Implementation\n\n';
+  md += `- **Status:** ${summary.faq.status}\n`;
+  md += `- **Coverage:** ${summary.faq.pagesWithFAQ} of ${summary.overview.totalPages} pages (${summary.faq.coverage}%)\n`;
+  md += `- **Average Completeness:** ${summary.faq.avgCompleteness}%\n`;
+  if (summary.faq.hasDuplication) {
+    md += `- **⚠️ Duplication Detected:** ${summary.faq.duplicationCount} pages use dual-format markup (JSON-LD + microdata)\n`;
+  }
+  md += `- **Score:** ${summary.faq.score}/100\n`;
   md += '\n';
 
   // Key findings

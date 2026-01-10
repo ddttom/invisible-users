@@ -29,6 +29,7 @@ export class LLMCollector {
       semanticHTML: this.analyzeSemanticHTML($),
       formFields: this.analyzeFormFields($),
       structuredData: this.analyzeStructuredData($),
+      faqSchema: this.analyzeFAQSchema($),
       llmsTxt: this.analyzeLLMsTxt($),
       robotsTxt: this.analyzeRobotsTxt($),
       formAutocomplete: this.analyzeFormAutocomplete($),
@@ -149,6 +150,64 @@ export class LLMCollector {
         hasSchemaOrg,
         hasMicrodata: $('[itemscope]').length > 0,
         microdataCount: $('[itemscope]').length,
+      },
+    };
+  }
+
+  static analyzeFAQSchema($) {
+    const jsonLdScripts = $('script[type="application/ld+json"]');
+    let hasFAQPage = false;
+    let faqCount = 0;
+    let hasMainEntity = false;
+    let itemsWithAnswers = 0;
+    let itemsWithoutAnswers = 0;
+    let hasDuplicateMarkup = false;
+
+    // Check for microdata duplication (itemtype containing "Question")
+    const microdataItems = $('[itemtype*="Question"]').length;
+
+    jsonLdScripts.each((_, script) => {
+      try {
+        const data = JSON.parse($(script).html());
+
+        if (data['@type'] === 'FAQPage') {
+          hasFAQPage = true;
+          if (data.mainEntity) hasMainEntity = true;
+
+          const items = Array.isArray(data.mainEntity) ? data.mainEntity : [data.mainEntity];
+
+          items.forEach((item) => {
+            if (item['@type'] === 'Question') {
+              faqCount++;
+              if (item.acceptedAnswer?.text) {
+                itemsWithAnswers++;
+              } else {
+                itemsWithoutAnswers++;
+              }
+            }
+          });
+        }
+      } catch (e) {
+        // Invalid JSON-LD, skip
+      }
+    });
+
+    // Detect duplication (JSON-LD + microdata)
+    if (hasFAQPage && microdataItems > 0) {
+      hasDuplicateMarkup = true;
+    }
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        hasFAQPage,
+        faqCount,
+        hasMainEntity,
+        itemsWithAnswers,
+        itemsWithoutAnswers,
+        completenessRatio: faqCount > 0 ? itemsWithAnswers / faqCount : 1,
+        hasDuplicateMarkup,
+        microdataCount: microdataItems,
       },
     };
   }
