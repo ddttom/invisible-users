@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-09 (Google/Apple Claims Qualified + /news Skill)
+**Last Updated:** 2026-01-10 (Appendices Published Online)
 
 ### Combined Repository
 
@@ -13,13 +13,12 @@ This repository contains two integrated projects:
 
 ### Book Manuscript Status
 
-- **Version:** 2.7.0
+- **Version:** 2.8.0
 - **Status:** Publication-ready
-- **Word Count:** ~57,000 words (core chapters)
-- **Total Content:** ~69,300 words (including appendices)
+- **Word Count:** ~57,000 words (core manuscript: preface + 11 chapters + The End + Glossary)
+- **Appendices:** 10 appendices (~27,400 words) published separately online at <https://about.network/invisible-users/web/>
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
-- **Appendices:** 10 appendices (A-J) covering implementation guides, patterns, resources, LLM context, pipeline failure case study, and industry developments
-- **Latest Addition:** Qualified Google/Apple platform claims as "expected to follow" rather than verified facts. Distinguished between verified platforms (Microsoft Copilot, Amazon Alexa+) and expected platforms (Google, Apple). Updated console capability statements from "agents don't read console" to "you cannot assume agents can read console" whilst noting Claude for Chrome CAN read console.
+- **Latest Change:** Book restructured to end with The-End.md directing readers to online appendices. All appendices published as individual HTML pages with navigation, TOC, and llms.txt discovery. This allows appendices to remain current in fast-moving field without republishing core book.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule

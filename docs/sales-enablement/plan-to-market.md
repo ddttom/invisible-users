@@ -841,7 +841,7 @@ Half-day masterclass (deep implementation)
 WHY ME
 
 • 30 years web development experience
-• Author of "The Invisible Users" (65,500 words, 11 chapters + 9 appendices)
+• Author of "The Invisible Users" (~57,000 words core manuscript, 11 chapters + 10 appendices online)
 • Created production-ready implementation framework
 • Built Web Audit Suite (comprehensive analysis tool)
 • Delivered agent compatibility audits for [X] companies
