@@ -64,7 +64,7 @@ Tom Cranstoun
 
 **About the book:**
 "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
-~57,000 words | 11 chapters + 10 appendices online at https://about.network/invisible-users/web/
+~57,000 words | 11 chapters + 10 appendices online at <https://about.network/invisible-users/web/>
 Publication: Early 2026
 
 **Contact:**

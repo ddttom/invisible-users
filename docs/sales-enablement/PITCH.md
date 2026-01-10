@@ -490,7 +490,7 @@ Scalable business model with strong growth potential across all revenue streams.
 | Component | Details |
 | --------- | ------- |
 | **Book Manuscript** | ~57,000 words core manuscript (11 chapters), deep domain expertise |
-| **Ten Appendices** | Implementation guides, case studies, resources, published separately online at https://about.network/invisible-users/web/ |
+| **Ten Appendices** | Implementation guides, case studies, resources, published separately online at <https://about.network/invisible-users/web/> |
 | **Business Strategy** | Business plan, pitch deck, executive summary, go-to-market materials |
 | **Web Audit Suite** | 15,000+ lines production JavaScript, 18+ reports, 3-phase pipeline |
 | **Code Examples** | Production-ready examples, Playwright test suite (14 tests) |
