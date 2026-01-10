@@ -281,7 +281,7 @@ Using the prioritised implementation roadmap (Appendix F):
 
 - **~57,000 words** of practical, actionable guidance
 - **11 chapters** covering technical, business, ethical implications
-- **10 appendices** (published online at <https://about.network/invisible-users/web/>) including implementation cookbook and validation patterns
+- **10 appendices** (published online at <https://allabout.network/invisible-users/web/>) including implementation cookbook and validation patterns
 - **Real-world examples** with before/after code
 - **Priority-based roadmap** (not time-based - Priority 1-4)
 - **Agent validation frameworks** (Chapter 11: for developers building agents)

@@ -592,7 +592,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Deliverables:**
 
-1. ✅ **Manuscript complete** (DONE - ~57,000 words: 11 chapters + 10 appendices published separately at https://about.network/invisible-users/web/)
+1. ✅ **Manuscript complete** (DONE - ~57,000 words: 11 chapters + 10 appendices published separately at <https://allabout.network/invisible-users/web/>)
 2. ✅ **Supporting materials complete** (DONE)
 3. **Publication preparation:**
    - Professional editing (copy edit + technical review): 4-6 weeks

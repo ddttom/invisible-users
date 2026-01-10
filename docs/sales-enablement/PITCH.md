@@ -148,7 +148,7 @@ These same patterns break human users:
 10. Technical Advice (implementation code)
 11. What Agent Creators Must Build (validation layers, confidence scoring, guardrails)
 
-**Ten Comprehensive Appendices** (published separately at <https://about.network/invisible-users/web/>):
+**Ten Comprehensive Appendices** (published separately at <https://allabout.network/invisible-users/web/>):
 
 - **Appendix A:** Implementation Cookbook (10 copy-paste recipes with score impact)
 - **Appendix B:** Battle-Tested Lessons (15 real-world implementation mistakes)
@@ -490,7 +490,7 @@ Scalable business model with strong growth potential across all revenue streams.
 | Component | Details |
 | --------- | ------- |
 | **Book Manuscript** | ~57,000 words core manuscript (11 chapters), deep domain expertise |
-| **Ten Appendices** | Implementation guides, case studies, resources, published separately online at <https://about.network/invisible-users/web/> |
+| **Ten Appendices** | Implementation guides, case studies, resources, published separately online at <https://allabout.network/invisible-users/web/> |
 | **Business Strategy** | Business plan, pitch deck, executive summary, go-to-market materials |
 | **Web Audit Suite** | 15,000+ lines production JavaScript, 18+ reports, 3-phase pipeline |
 | **Code Examples** | Production-ready examples, Playwright test suite (14 tests) |
@@ -909,7 +909,8 @@ LinkedIn: [Profile]
 
 - **Book:** "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 - **Tool:** Web Audit Suite (available as separate purchase or professional audit service)
-- **Next Project:** Universal Identity Layer (open-source infrastructure - seeking collaborators)
+- **Next Project:** Universal Identity Delegation Infrastructure (open-source - <https://allabout.network/invisible-users/identity-layer.html>)
+- **Project News:** <https://allabout.network/invisible-users/news.html>
 
 ---
 
