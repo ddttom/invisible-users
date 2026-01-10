@@ -7,11 +7,13 @@ The `pdf:appendix` npm script now generates Pandoc-based HTML pages enhanced wit
 ## What Gets Enhanced
 
 ### 1. British English Language Attribute
+
 ```html
 <html lang="en-GB" xml:lang="en-GB">
 ```
 
 ### 2. AI-Specific Meta Tags (Chapter 10 Proposed Pattern)
+
 ```html
 <meta name="ai-preferred-access" content="html">
 <meta name="ai-content-policy" content="summaries-allowed, full-extraction-allowed">
@@ -21,6 +23,7 @@ The `pdf:appendix` npm script now generates Pandoc-based HTML pages enhanced wit
 ```
 
 ### 3. Schema.org JSON-LD Structured Data
+
 ```javascript
 {
   "@context": "https://schema.org",
@@ -45,6 +48,7 @@ The `pdf:appendix` npm script now generates Pandoc-based HTML pages enhanced wit
 ```
 
 ### 4. Semantic HTML Enhancements
+
 - `role="main"` and `data-load-state="complete"` on main content
 - `role="navigation"` with `aria-label` on navigation elements
 - `role="contentinfo"` on footer elements
@@ -52,7 +56,7 @@ The `pdf:appendix` npm script now generates Pandoc-based HTML pages enhanced wit
 
 ## Pipeline Flow
 
-```
+```text
 Markdown → Pandoc HTML → Enhancement Script → Final HTML
 ```
 
@@ -70,22 +74,26 @@ Markdown → Pandoc HTML → Enhancement Script → Final HTML
 ## Usage
 
 ### Generate All Appendices
+
 ```bash
 npm run pdf:appendix
 ```
 
 This will:
+
 1. Process all `appendix-*.md` files
 2. Generate HTML with Pandoc
 3. Enhance each file with Chapter 10 patterns
 4. Generate index.html and llms.txt
 
 ### Enhance Individual File
+
 ```bash
 node scripts/enhance-appendix-html.js path/to/file.html
 ```
 
 ### Enhance Multiple Files
+
 ```bash
 node scripts/enhance-appendix-html.js appendix-a.html appendix-b.html index.html
 ```
@@ -93,11 +101,13 @@ node scripts/enhance-appendix-html.js appendix-a.html appendix-b.html index.html
 ## Files Modified
 
 ### Scripts
+
 - `scripts/generate-appendix-html.sh` - Bash script orchestrating generation
 - `scripts/enhance-appendix-html.js` - Node.js post-processor (NEW)
 - `scripts/README-appendix-enhancements.md` - This file (NEW)
 
 ### Generated Files (in `invisible-users/manuscript/web/`)
+
 - `index.html` - Landing page with TOC
 - `appendix-a.html` through `appendix-j.html` - Individual appendices
 - `llms.txt` - AI agent discovery file
@@ -107,6 +117,7 @@ node scripts/enhance-appendix-html.js appendix-a.html appendix-b.html index.html
 ### Why Post-Processing?
 
 Pandoc's metadata system doesn't support:
+
 - Custom meta tags (ai-* namespace)
 - JSON-LD injection
 - Conditional attribute injection (role, data-*)
@@ -117,6 +128,7 @@ Post-processing with Node.js allows surgical DOM manipulation while preserving P
 ### Idempotency
 
 The enhancement script is idempotent - running it multiple times on the same file won't create duplicates. It:
+
 - Replaces existing lang attributes
 - Inserts meta tags before `</head>` (only if not present)
 - Adds roles and data attributes to specific elements
@@ -135,6 +147,7 @@ All enhancements follow Chapter 10's technical advice:
 ## Testing
 
 Test on a single file:
+
 ```bash
 # Create test copy
 cp invisible-users/manuscript/web/appendix-a.html /tmp/test.html
@@ -155,6 +168,7 @@ grep '@context' /tmp/test.html
 ## Future Enhancements
 
 Potential additions:
+
 - Breadcrumb navigation markup
 - WebPage/Article markup for better SEO
 - OpenGraph tags for social sharing
@@ -164,6 +178,7 @@ Potential additions:
 ## Maintenance
 
 When updating:
+
 1. Modify `enhance-appendix-html.js` for new patterns
 2. Run `npm run pdf:appendix` to regenerate all files
 3. Test with sample files to verify enhancements
@@ -172,5 +187,6 @@ When updating:
 ## Contact
 
 Questions about the enhancement pipeline:
-- Email: tom.cranstoun@gmail.com
+
+- Email: <tom.cranstoun@gmail.com>
 - Context: Chapter 10 of "The Invisible Users"
