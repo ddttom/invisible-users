@@ -7,6 +7,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Appendix HTML Enhancements (2026-01-10)
+
+**Sitemap Generation and Styling Improvements:**
+
+- **Sitemap.xml generation:**
+  - Created `scripts/generate-sitemap.js` to generate SEO-friendly sitemap
+  - Integrated into `npm run pdf:appendix` command
+  - Includes 12 URLs (index, llms.txt URL, 10 appendix pages)
+  - Configured priorities (1.0 for index, 0.9-0.7 for appendices)
+  - Set appropriate change frequencies (weekly for Appendices G and J, monthly/yearly for others)
+  - Documentation updated in CLAUDE.md and README.md
+- **Responsive margin styling:**
+  - Enhanced `scripts/enhance-appendix-html.js` to inject custom CSS
+  - Overrides Pandoc's default wide margins (36em, 50px padding)
+  - Desktop: 900px max-width with 2rem padding
+  - Mobile: 1rem padding for better mobile experience
+  - Uses !important flags to ensure styles override Pandoc defaults
+  - Matches styling in `web/news.html` and `web/identity-layer.html`
+- **Comprehensive pricing JSON-LD example:**
+  - Added to Appendix F (Implementation Roadmap)
+  - Shows complete pricing breakdown: Product £99 + Delivery £15 + Service £5 = Total £119
+  - Demonstrates Schema.org `priceSpecification` array
+  - Includes `UnitPriceSpecification`, `DeliveryChargeSpecification`, `PaymentChargeSpecification`
+  - Added `shippingDetails` with explicit rate and destination
+  - Four key implementation points for AI agent transparency
+
+**Results:**
+
+- Appendix HTML generation now produces 13 files (was 12)
+- All appendix pages have consistent, readable margins
+- Complete pricing example demonstrates transparency patterns from Priority 1 guidance
+- SEO-friendly sitemap for search engine discovery
+
+**Commits:**
+
+- c404ae3 "Fix markdown linting errors in CHANGELOG.md"
+- cfed630 "Add sitemap.xml generation to appendix HTML pipeline"
+- fd56abf "Update manuscript submodule to latest version"
+- 6597238 "Fix appendix HTML margins to match web pages" (submodule)
+- 969b2d2 "Add responsive margin CSS to appendix HTML enhancement"
+- 6506cf2 "Add comprehensive pricing JSON-LD example to Appendix F" (submodule)
+- 0f74a65 "Update manuscript submodule with pricing JSON-LD example"
+- b936859 "Update project state with latest enhancements"
+
 ### Changed - Content Duplication Resolution (2026-01-10)
 
 **Manuscript Structure Reorganization:**
