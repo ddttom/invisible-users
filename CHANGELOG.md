@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added - 2026-01-10
+### Added - Publication Status and Documentation (2026-01-10)
 
 **Publication Status and Documentation Improvements:**
 
@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fa9d5fb "Add publication status, propagation strategy, and git navigation guidance"
 - ae3a4b8 "Fix markdown linting errors in CLAUDE.md"
 
-### Added - 2026-01-10
+### Added - Web Pages and HTML Enhancement Pipeline (2026-01-10)
 
 **Web Pages and Appendix HTML Enhancement Pipeline:**
 

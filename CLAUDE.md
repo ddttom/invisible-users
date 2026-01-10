@@ -2,6 +2,21 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+---
+
+## ⚠️ CRITICAL: Check Working Directory Before File Operations
+
+**This workspace has TWO git repositories (main + submodule). File paths depend on your location.**
+
+**MANDATORY: Run `pwd` before accessing `.claude/` files**
+
+- Main repo: `/Users/tomcranstoun/Documents/GitHub/invisible-users/` (has `.claude/`)
+- Submodule: `/Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/` (NO `.claude/`)
+
+See `.claude/pwd-reminder.md` and "Git Directory Navigation" section below for details.
+
+---
+
 ## Project Overview
 
 This repository contains two integrated projects:
@@ -204,6 +219,9 @@ For editing existing files, follow these key rules:
 
 - **MD024:** Duplicate headings must be made unique by adding context prefixes
   - Example: Change duplicate "Example Row" to "1. SEO Report - Example Row", "2. Performance Analysis - Example Row"
+  - **CRITICAL:** MD024 cannot be disabled or suppressed - duplicate headings break CI/CD
+  - Fix by making headings unique with descriptive context, not by adjusting lint configuration
+  - Example: `### Added - 2026-01-10` appears twice → Add context: `### Added - Publication Status (2026-01-10)` and `### Added - Web Pages (2026-01-10)`
 - **MD036:** Emphasis used instead of heading (e.g., `**Date**` as standalone should be `Date` or `## Date`)
 - **MD022:** Headings must be surrounded by blank lines
 - **MD040:** Code blocks must have language specified (use `text` for email templates)
@@ -713,18 +731,45 @@ The manuscript directory is a git submodule pointing to:
 
 **CRITICAL:** Always run `pwd` first before attempting directory navigation. This repository has a git submodule at `invisible-users/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
 
-Common mistake pattern:
+**TWO REPOSITORIES IN THIS WORKSPACE:**
+
+1. **Main repo:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/`
+   - Contains: `.claude/`, `web-audit-suite/`, `docs/`, `CLAUDE.md`, `LEARNINGS.md`
+   - Project-level configuration and skills
+
+2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/`
+   - Contains: chapters, appendices, blog files
+   - Does NOT contain `.claude/` directory
+
+**MANDATORY WORKFLOW FOR ALL FILE OPERATIONS:**
 
 ```bash
-# ❌ Wrong: Attempting cd without checking location
-cd invisible-users/manuscript  # Fails if already inside submodule
+# STEP 1: ALWAYS check location first
+pwd
 
-# ✅ Correct: Check location first
-pwd  # Verify current directory
-# Then use appropriate path based on actual location
+# STEP 2: Use correct path based on output
+# If in main repo (/invisible-users/):
+Read(file_path=".claude/skills/news/skill.md")
+
+# If in submodule (/invisible-users/manuscript/):
+Read(file_path="../../.claude/skills/news/skill.md")
 ```
 
-**Best practice:** Check `pwd`, then use correct relative or absolute paths. When working with submodules, verify current location before every directory change.
+**Common mistake pattern (AVOID THIS):**
+
+```bash
+# ❌ Wrong: Attempting to access .claude/ without checking pwd
+Read(file_path=".claude/skills/news/skill.md")  # Fails if in submodule
+
+# ❌ Wrong: Assuming you're in root when you're not
+ls .claude/skills/news/  # "No such file or directory"
+
+# ✅ Correct: Always start with pwd
+pwd  # Check location FIRST
+# Then construct correct path
+```
+
+**Best practice:** Check `pwd` before EVERY file operation in this repository. Never assume your current location. The submodule structure makes path assumptions unreliable.
 
 **Initialization:**
 

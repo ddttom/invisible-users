@@ -20,6 +20,22 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 
 **Rule** (2026-01-10): Made multiple errors trying to navigate to submodule directory with `cd invisible-users/manuscript` resulting in "No such file or directory" errors. The fix is simple: **always run `pwd` first** to check current working directory before attempting navigation. This repository has a git submodule at `invisible-users/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail. **Check `pwd`, then use correct relative or absolute paths.** When working with submodules, verify current location before every directory change.
 
+**CRITICAL AVOIDANCE TACTIC** (2026-01-10): This error was repeated despite being documented in both LEARNINGS.md and CLAUDE.md. The mistake is attempting to access `.claude/skills/news/` files without first checking working directory. Two repositories exist in this workspace:
+
+1. **Main repo:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/` (contains `.claude/skills/news/`)
+2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/` (does NOT contain `.claude/skills/`)
+
+**Before accessing ANY `.claude/` files:**
+1. Run `pwd` FIRST
+2. If in submodule (`/invisible-users/manuscript/`), use `../../.claude/skills/news/`
+3. If in root (`/invisible-users/`), use `.claude/skills/news/`
+
+**Pattern to avoid:** Assuming file paths without checking location. Always verify with `pwd` before file operations in repos with submodules.
+
 ## Cross-Manuscript News Integration: Search All Relevant Chapters
 
 **Rule** (2026-01-10): Added ACP (Agentic Commerce Protocol) news to blog and Appendix J through `/news` skill, but user asked "can acp fit anywhere else in the manuscript" - revealing that major developments should be cross-referenced throughout relevant chapters, not just added to news appendices. When adding verified industry news, search for all chapters that discuss related concepts (e.g., "identity delegation", "open standard", "proprietary platform") and update each location to acknowledge the development. Chapter 4 (business implications) and Chapter 11 (identity layer) both had "doesn't exist yet" statements that needed updating to "now exists as ACP". Major developments validate or challenge multiple chapters - cross-reference comprehensively.
+
+## Duplicate Headings Cannot Be Ignored
+
+**Rule** (2026-01-10): GitHub Actions failed with MD024 error: "Multiple headings with the same content" in CHANGELOG.md where two entries both used `### Added - 2026-01-10`. MD024 (no-duplicate-heading) is a critical linting rule that cannot be disabled or ignored - duplicate headings break CI/CD and must be fixed by making headings unique with contextual information. **Fix duplicate headings by adding descriptive context**, not by disabling linting rules. Example: Change both `### Added - 2026-01-10` to `### Added - Publication Status and Documentation (2026-01-10)` and `### Added - Web Pages and HTML Enhancement Pipeline (2026-01-10)`. This pattern applies to all documentation files: CHANGELOG.md, README.md, chapter files. Always make headings unique by adding what distinguishes them.

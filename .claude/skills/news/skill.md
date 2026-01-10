@@ -14,6 +14,26 @@ When you provide industry news about AI agents, web automation, or agent-mediate
 4. **Creates entries** - Writes properly formatted blog and appendix entries
 5. **Validates quality** - Checks markdown formatting and cross-references
 
+## Understanding the Book's Scope
+
+**IMPORTANT:** The book covers two types of developments:
+
+### 1. Direct Agent-Website Patterns
+Technical patterns where AI agents interact with websites:
+- Browser automation tools (Claude for Chrome, ChatGPT browser features)
+- Agent-mediated commerce (Copilot Checkout, Agentic Commerce Protocol)
+- Session inheritance, identity delegation, structured data
+- Patterns from Chapters 2, 3, 6, 9, 10, 11
+
+### 2. Ecosystem Maturity Signals
+Broader shifts demonstrating AI adoption velocity and commercial pressure:
+- **Behavioral shifts:** How humans delegate tasks to AI (developers using ChatGPT instead of Stack Overflow)
+- **Adoption velocity:** How quickly AI displaces traditional platforms (76% decline in 2 years)
+- **Platform dynamics:** How established platforms respond to AI disruption
+- Validates urgency from Preface, Chapter 1, Chapter 8
+
+**Key insight:** When developers (who build websites) experience AI-mediated workflows firsthand, this creates urgency and empathy. News about **developers experiencing the shift they're designing for** validates the book's core thesis even if it doesn't directly relate to agent-website compatibility.
+
 ## Publication Status and Propagation Strategy
 
 **CURRENT STATUS: BOOK IN REVIEW (Pre-Publication)**
@@ -225,6 +245,7 @@ The `/news` skill ensures appendices stay current in this fast-moving field with
 - Standards and Protocol Announcements
 - Business Model Innovations
 - Security and Identity Solutions
+- Ecosystem Maturity Signals (NEW: behavioral shifts, adoption velocity, platform displacement)
 
 **What I'll do:** Read appendix, determine category, create structured entry, insert chronologically, update timestamp
 

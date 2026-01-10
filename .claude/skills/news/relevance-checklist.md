@@ -12,19 +12,32 @@ News must meet **all five** of these criteria to qualify:
 
 **Requirement:** Must demonstrate patterns from specific chapters OR challenge assumptions made in the book.
 
+**IMPORTANT:** The book's scope includes:
+1. **Agent-website compatibility** - Technical patterns that help agents succeed
+2. **Broader ecosystem shifts** - AI adoption velocity, behavioral changes, commercial pressure signals
+
 **How to verify:**
 - Read the relevant chapter files
 - Find specific patterns, predictions, or assumptions
 - Match news to chapter content using book's terminology
+- Consider both direct validation (agent tools) AND indirect validation (ecosystem signals)
 
-**Qualifies:**
+**Qualifies - Direct agent-website patterns:**
 - ✓ "Claude for Chrome inherits authenticated sessions" → Validates Chapter 6 "Session Inheritance Problem"
 - ✓ "Microsoft Copilot processes real transactions" → Validates Chapter 4 "E-Commerce - Where Incentives Align"
 - ✓ "Proprietary identity solution launched" → Challenges Chapter 4 assumption about standards negotiation
 
+**Qualifies - Ecosystem maturity signals:**
+- ✓ "Stack Overflow usage declines 76% as developers shift to AI tools" → Validates Chapter 1 urgency, Chapter 8 capability gaps, 2-year adoption timeline
+- ✓ "Platform blocks AI agents whilst building proprietary alternative" → Validates Chapter 4 platform power dynamics
+- ✓ "Developers adopt AI tools for routine work" → Demonstrates behavioral shift underlying book's thesis
+
+**Key insight for ecosystem signals:**
+When developers (who build websites) experience AI-mediated workflows firsthand, this creates urgency and empathy. News about **developers experiencing the shift they're designing for** validates the book's core urgency argument even if it doesn't directly relate to agent-website compatibility.
+
 **Does not qualify:**
 - ✗ "ChatGPT adds voice mode" → No chapter validation (unless it relates to agent-mediated commerce)
-- ✗ "New AI model improves reasoning" → General AI advancement, not related to web design for agents
+- ✗ "New AI model improves reasoning" → General AI advancement, not related to web design OR ecosystem adoption patterns
 - ✗ "Claude Desktop bug fixes" → Product update, no chapter connection
 
 ### 2. Production Reality (Not Research or Beta)
@@ -59,17 +72,27 @@ News must meet **all five** of these criteria to qualify:
 - Does this change competitive dynamics?
 - Does this create urgency for action?
 - Are businesses excluded if they don't adapt?
+- Does this demonstrate adoption velocity that creates pressure?
 
-**Qualifies:**
+**Qualifies - Direct pressure:**
 - ✓ Creates first-mover advantage (Microsoft Copilot Checkout)
 - ✓ Excludes non-compatible sites from transactions
 - ✓ Changes conversion rates measurably
 - ✓ Shifts platform power (AI companies mediating access)
 
+**Qualifies - Indirect pressure via adoption velocity:**
+- ✓ "Stack Overflow declined 76% in 2 years" → Demonstrates how quickly behavioral shifts happen, creating urgency for website owners
+- ✓ "Developers abandon 15-year-old platform in 2 years" → Shows velocity of displacement when AI offers better experience
+- ✓ "84% developer adoption of AI tools" → Proves mainstream adoption is happening faster than expected
+
+**Key insight:**
+Ecosystem signals create **indirect commercial pressure** by demonstrating adoption velocity. If developers abandoned Stack Overflow in 2 years, how quickly will customers abandon sites that don't work with agents? This urgency argument is commercial pressure.
+
 **Does not qualify:**
 - ✗ Feature update with no business impact
 - ✗ Improvement that doesn't affect competitive positioning
 - ✗ Internal tool not affecting external websites
+- ✗ News that doesn't demonstrate urgency or velocity
 
 ### 4. Timeline Significance
 
@@ -92,23 +115,33 @@ News must meet **all five** of these criteria to qualify:
 
 ### 5. Ecosystem Shift
 
-**Requirement:** Must represent platform power dynamics, standards emergence, or business model innovation.
+**Requirement:** Must represent platform power dynamics, standards emergence, business model innovation, OR fundamental behavioral shifts.
 
 **How to verify:**
 - Does this change who controls distribution?
 - Does this represent new standards or protocols?
 - Does this demonstrate new business models?
+- Does this show fundamental change in how humans seek information or complete tasks?
 
-**Qualifies:**
+**Qualifies - Platform/standards shifts:**
 - ✓ Platform power shift (AI companies mediating commerce)
-- ✓ Standards emergence (llms.txt adoption)
+- ✓ Standards emergence (llms.txt adoption, Agentic Commerce Protocol)
 - ✓ Business model innovation (identity delegation patterns)
 - ✓ New agent capabilities (browser automation, session inheritance)
+
+**Qualifies - Behavioral/adoption shifts:**
+- ✓ "Stack Overflow usage declines as developers prefer conversational AI" → Fundamental shift in information-seeking behavior
+- ✓ "Developers delegate routine work to AI tools" → Behavioral shift that website builders experience firsthand
+- ✓ "Platform displacement velocity" → Shows how quickly AI can disrupt established platforms
+
+**Key insight:**
+Ecosystem shifts include **behavioral changes** that demonstrate the underlying shift to AI-mediated access. When developers (early adopters) show 2-year displacement of a 15-year-old platform, this signals ecosystem maturity and validates the book's urgency argument.
 
 **Does not qualify:**
 - ✗ Product updates within existing paradigm
 - ✗ Feature parity (matching competitor features)
 - ✗ Incremental improvements
+- ✗ Changes that don't signal fundamental shifts
 
 ## Evaluation Process
 
@@ -206,7 +239,7 @@ News must score YES on all five criteria:
 **Verdict:** Reject for now - Re-evaluate when actually launched
 **Alternative:** Note in PROJECTSTATE.md as "watching"
 
-### Scenario 5: Qualifies - Good Example
+### Scenario 5: Qualifies - Direct Agent Tool
 
 **Example:** "Microsoft Copilot Checkout processes real transactions with partner retailers"
 
@@ -217,7 +250,22 @@ News must score YES on all five criteria:
 - ✓ Timeline impact: Validates "two years" timeline, possibly accelerates
 - ✓ Ecosystem shift: Platform power shift to AI companies mediating commerce
 
-**Verdict:** Accept - Meets all five criteria
+**Verdict:** Accept - Meets all five criteria (direct agent-website pattern)
+
+### Scenario 6: Qualifies - Ecosystem Maturity Signal
+
+**Example:** "Stack Overflow question volume declines 76% as developers shift to AI tools (Nov 2022 → Dec 2024)"
+
+**Analysis:**
+- ✓ Chapter validation: Validates Chapter 1 urgency ("AI agents are here"), Chapter 8 capability gaps (productivity multiplier effect), 2-year adoption timeline, Preface delegation narrative
+- ✓ Production reality: Observable, measurable decline with verified statistics
+- ✓ Commercial pressure: Demonstrates adoption velocity that creates urgency - if developers abandoned 15-year platform in 2 years, customers will abandon non-compatible sites at similar velocity
+- ✓ Timeline impact: Validates "two years" timeline with concrete evidence
+- ✓ Ecosystem shift: Fundamental behavioral shift in how developers seek information; demonstrates platform displacement velocity
+
+**Verdict:** Accept - Meets all five criteria (ecosystem maturity signal)
+
+**Key distinction:** This isn't about agent-website compatibility problems (Stack Overflow works fine for agents). It's about **developers experiencing the behavioral shift they're designing for**, which validates the book's urgency argument and demonstrates adoption velocity.
 
 ## Edge Cases
 
