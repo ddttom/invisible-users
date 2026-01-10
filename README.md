@@ -251,7 +251,7 @@ See [web-audit-suite/README.md](web-audit-suite/README.md) for complete document
 
 Individual appendix pages are available online for easy reference and sharing:
 
-**Online access:** <https://about.network/invisible-users/web/>
+**Online access:** <https://allabout.network/invisible-users/web/>
 
 The appendices are published as separate HTML pages with full navigation:
 

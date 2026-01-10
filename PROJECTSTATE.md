@@ -16,7 +16,7 @@ This repository contains two integrated projects:
 - **Version:** 2.8.0
 - **Status:** Publication-ready
 - **Word Count:** ~57,000 words (core manuscript: preface + 11 chapters + The End + Glossary)
-- **Appendices:** 10 appendices (~27,400 words) published separately online at <https://about.network/invisible-users/web/>
+- **Appendices:** 10 appendices (~27,400 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
 - **Latest Change:** Book restructured to end with The-End.md directing readers to online appendices. All appendices published as individual HTML pages with navigation, TOC, and llms.txt discovery. This allows appendices to remain current in fast-moving field without republishing core book.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)

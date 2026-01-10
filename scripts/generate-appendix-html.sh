@@ -9,7 +9,7 @@ set -e  # Exit on error
 MANUSCRIPT_DIR="invisible-users/manuscript"
 OUTPUT_DIR="invisible-users/manuscript/web"
 SCRIPTS_DIR="scripts"
-BASE_URL="https://about.network/invisible-users/web"
+BASE_URL="https://allabout.network/invisible-users/web"
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -206,22 +206,22 @@ The book examines how modern web design optimised for human users fails for AI a
 
 ## Implementation Guides
 
-- Appendix A: https://about.network/invisible-users/web/appendix-a.html - Implementation Cookbook (quick-reference recipes for common patterns)
-- Appendix B: https://about.network/invisible-users/web/appendix-b.html - Battle-Tested Lessons (production learnings and pitfalls to avoid)
-- Appendix C: https://about.network/invisible-users/web/appendix-c.html - Web Audit Suite User Guide (complete tool documentation)
-- Appendix D: https://about.network/invisible-users/web/appendix-d.html - AI-Friendly HTML Guide (comprehensive semantic HTML patterns)
+- Appendix A: https://allabout.network/invisible-users/web/appendix-a.html - Implementation Cookbook (quick-reference recipes for common patterns)
+- Appendix B: https://allabout.network/invisible-users/web/appendix-b.html - Battle-Tested Lessons (production learnings and pitfalls to avoid)
+- Appendix C: https://allabout.network/invisible-users/web/appendix-c.html - Web Audit Suite User Guide (complete tool documentation)
+- Appendix D: https://allabout.network/invisible-users/web/appendix-d.html - AI-Friendly HTML Guide (comprehensive semantic HTML patterns)
 
 ## Quick References
 
-- Appendix E: https://about.network/invisible-users/web/appendix-e.html - AI Patterns Quick Reference (one-page data attribute reference)
-- Appendix F: https://about.network/invisible-users/web/appendix-f.html - Implementation Roadmap (priority-based adoption guide)
-- Appendix G: https://about.network/invisible-users/web/appendix-g.html - Resource Directory (150+ curated resources and tools)
+- Appendix E: https://allabout.network/invisible-users/web/appendix-e.html - AI Patterns Quick Reference (one-page data attribute reference)
+- Appendix F: https://allabout.network/invisible-users/web/appendix-f.html - Implementation Roadmap (priority-based adoption guide)
+- Appendix G: https://allabout.network/invisible-users/web/appendix-g.html - Resource Directory (150+ curated resources and tools)
 
 ## Case Studies and Examples
 
-- Appendix H: https://about.network/invisible-users/web/appendix-h.html - Example llms.txt File (working llmstxt.org template)
-- Appendix I: https://about.network/invisible-users/web/appendix-i.html - Pipeline Failure Case Study (£203k error analysis)
-- Appendix J: https://about.network/invisible-users/web/appendix-j.html - Industry Developments (latest verified news and updates)
+- Appendix H: https://allabout.network/invisible-users/web/appendix-h.html - Example llms.txt File (working llmstxt.org template)
+- Appendix I: https://allabout.network/invisible-users/web/appendix-i.html - Pipeline Failure Case Study (£203k error analysis)
+- Appendix J: https://allabout.network/invisible-users/web/appendix-j.html - Industry Developments (latest verified news and updates)
 
 ## Topics
 
@@ -240,7 +240,7 @@ Looking for more information about this book and its appendices?
 - **Author:** Tom Cranstoun
 - **LinkedIn:** https://www.linkedin.com/in/tom-cranstoun/
 - **About llms.txt:** https://llmstxt.org
-- **Full Book:** Available at https://about.network/invisible-users/
+- **Full Book:** Available at https://allabout.network/invisible-users/
 - **Web Audit Suite:** Implementation tool at https://github.com/ddttom/invisible-users
 
 This llms.txt file follows the specification at llmstxt.org to help AI agents discover and understand our content.

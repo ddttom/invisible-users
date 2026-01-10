@@ -508,7 +508,7 @@ Score = (Has Link Text × 20) +
 
 ```csv
 Source URL,Target URL,Link Text,Link Type,Follow Type,HTTP Status,Redirect Chain,Content Type,In Navigation,Link Depth,Link Quality Score
-https://example.com/page,https://example.com/about,About Us,internal,follow,200,,text/html,true,1,95.0
+https://example.com/page,https://example.com/allabout,About Us,internal,follow,200,,text/html,true,1,95.0
 ```
 
 ---
@@ -606,7 +606,7 @@ https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900
 Discovered URL,Reference Count,First Discovered On
 https://example.com/blog/hidden-post,15,https://example.com/blog/archive
 https://example.com/products/unlisted-item,8,https://example.com/search?q=item
-https://example.com/about/team/member-5,5,https://example.com/about/team
+https://example.com/allabout/team/member-5,5,https://example.com/allabout/team
 ```
 
 ---

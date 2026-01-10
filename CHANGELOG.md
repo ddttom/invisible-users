@@ -41,7 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Book Restructured: Appendices Published Separately Online:**
 
-- **Book structure change:** Book now ends with The-End.md directing readers to online appendices at <https://about.network/invisible-users/web/>
+- **Book structure change:** Book now ends with The-End.md directing readers to online appendices at <https://allabout.network/invisible-users/web/>
   - Core manuscript: ~57,000 words (preface + 11 chapters + The End + Glossary)
   - Web appendices: ~27,400 words (10 appendices: A-J) published separately online
   - Rationale: Fast-moving field requires appendices remain current; online publication allows updates without republishing book

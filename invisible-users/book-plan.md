@@ -10,7 +10,7 @@
 
 **Latest Update (January 2026):** Restructured book to publish appendices separately online:
 
-- Book now ends with "The End" chapter directing readers to online appendices at <https://about.network/invisible-users/web/>
+- Book now ends with "The End" chapter directing readers to online appendices at <https://allabout.network/invisible-users/web/>
 - All 10 appendices (A-J) published as individual HTML pages with navigation and llms.txt discovery
 - Updated all manuscript references to appendices to point to online URLs
 - Core manuscript: ~57,000 words (preface + 11 chapters + The End)
@@ -48,7 +48,7 @@ This book explores the technical, business, ethical, and human implications of t
 
 **Core Manuscript:** ~57,000 words (preface + 11 chapters + The End + Glossary)
 
-**Web Appendices** (published separately at <https://about.network/invisible-users/web/>):
+**Web Appendices** (published separately at <https://allabout.network/invisible-users/web/>):
 
 | Appendix | Title | Words | Status |
 | -------- | ----- | ----- | ------ |
@@ -340,7 +340,7 @@ All 11 chapter illustrations complete ✅
 
 ### Web Appendices
 
-Published separately at <https://about.network/invisible-users/web/> as this is a fast-moving field. Appendices are maintained online to ensure they remain current and relevant.
+Published separately at <https://allabout.network/invisible-users/web/> as this is a fast-moving field. Appendices are maintained online to ensure they remain current and relevant.
 
 **Generated files** (via `npm run pdf:appendix`):
 
@@ -603,4 +603,4 @@ This manuscript is not licensed for public use, reproduction, or distribution.
 
 ---
 
-**Last updated:** 2026-01-10 — Restructured book to publish appendices separately online at <https://about.network/invisible-users/web/>; book now ends with The-End.md chapter; added npm run pdf:appendix command to generate HTML appendices with navigation and llms.txt discovery
+**Last updated:** 2026-01-10 — Restructured book to publish appendices separately online at <https://allabout.network/invisible-users/web/>; book now ends with The-End.md chapter; added npm run pdf:appendix command to generate HTML appendices with navigation and llms.txt discovery
