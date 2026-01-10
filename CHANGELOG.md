@@ -7,6 +7,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - Content Duplication Resolution (2026-01-10)
+
+**Manuscript Structure Reorganization:**
+
+- **New reading-guide.md file created:**
+  - Extracted all navigation guidance from Preface into dedicated file
+  - 148 lines of comprehensive reading paths for 5 audience types
+  - Business Leaders, Product Managers/Designers, Developers, Agent System Developers, Small Business Owners
+  - Includes "Other Navigation Aids" section with glossary and sequential reading guidance
+- **Preface.md condensed:**
+  - Reduced from 238 to 103 lines (135 lines removed)
+  - Removed entire "How to Navigate This Book" section → moved to reading-guide.md
+  - Condensed platform launch details (Claude for Chrome, Copilot Checkout) to single sentence
+  - Replaced with brief reference: "For reading paths tailored to your role and time constraints, see the Reading Guide"
+  - Kept: personal discovery story, "What This Book Is/Isn't", audience description, author bio, acknowledgements
+- **Chapter 1 cross-references updated:**
+  - Changed reference from "navigation guide in the Preface (page X)" to "see the Reading Guide"
+  - Removed "14 paginated screens" specific detail from accessibility example
+  - Added forward reference to Preface for discovery story
+  - 221 lines (minimal change from 222)
+- **Executive Summary verified clean:**
+  - No duplication found (already clean from previous work)
+  - No changes needed
+- **Documentation updates:**
+  - Added reading-guide.md to book-plan.md Front Matter table
+  - Added reading-guide.md to repository structure diagram
+  - All cross-references functional and tested
+
+**Results:**
+- All content preserved and relocated appropriately
+- Clear purpose boundaries established between files
+- Markdown linting passes for all modified files
+- Total reduction: 135 lines removed through consolidation
+
+**Commits:**
+- 88197ad "Resolve content duplication across Preface, Executive Summary, and Chapter 1" (submodule)
+- fa4809a "Update book-plan.md to include reading-guide.md"
+- 4f12883 "Update manuscript submodule to latest version"
+
 ### Added - News Skill Ecosystem Signals and Documentation (2026-01-10)
 
 **News Skill Enhancement and Documentation Quality:**
