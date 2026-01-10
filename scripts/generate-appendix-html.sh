@@ -248,6 +248,11 @@ LLMSEOF
 
 echo -e "${GREEN}✓ Generated llms.txt${NC}"
 
+# Generate sitemap.xml
+echo -e "${BLUE}Generating sitemap.xml...${NC}"
+node "$SCRIPTS_DIR/generate-sitemap.js"
+echo -e "${GREEN}✓ Generated sitemap.xml${NC}"
+
 # Summary
 echo ""
 echo -e "${GREEN}════════════════════════════════════════${NC}"
@@ -257,9 +262,10 @@ echo ""
 echo "Generated files in $OUTPUT_DIR:"
 echo "  - index.html (landing page)"
 echo "  - llms.txt (AI agent discovery)"
+echo "  - sitemap.xml (search engine discovery)"
 echo "  - appendix-a.html through appendix-j.html (10 files)"
 echo ""
-echo "Total: 12 files"
+echo "Total: 13 files"
 echo ""
 echo "View locally: open $OUTPUT_DIR/index.html"
 echo "Target URL: $BASE_URL/"

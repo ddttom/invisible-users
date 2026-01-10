@@ -140,12 +140,13 @@ npm run pdf:simple          # Generate simple PDF without cover
 # HTML appendix generation
 npm run pdf:appendix        # Generate individual HTML pages for each appendix
                             # Includes automatic Chapter 10 pattern enhancement
+                            # Also generates sitemap.xml for search engine discovery
 
 # Chapter status
 npm run status              # Show all chapter files
 ```
 
-**HTML Appendix Enhancement:** The `pdf:appendix` command automatically enhances Pandoc-generated HTML with Chapter 10 technical patterns via [scripts/enhance-appendix-html.js](scripts/enhance-appendix-html.js). See [scripts/README-appendix-enhancements.md](scripts/README-appendix-enhancements.md) for details.
+**HTML Appendix Enhancement:** The `pdf:appendix` command automatically enhances Pandoc-generated HTML with Chapter 10 technical patterns via [scripts/enhance-appendix-html.js](scripts/enhance-appendix-html.js). It also generates a sitemap.xml file for search engine discovery via [scripts/generate-sitemap.js](scripts/generate-sitemap.js). See [scripts/README-appendix-enhancements.md](scripts/README-appendix-enhancements.md) for details.
 
 ### Web Audit Suite Commands
 

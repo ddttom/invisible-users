@@ -265,10 +265,11 @@ The appendices are published as separate HTML pages with full navigation:
 npm run pdf:appendix        # Generate HTML pages in invisible-users/manuscript/web/
 ```
 
-This creates 12 files in the manuscript submodule:
+This creates 13 files in the manuscript submodule:
 
 - `index.html` - Landing page with all appendices
 - `llms.txt` - AI agent discovery file
+- `sitemap.xml` - Search engine discovery file
 - `appendix-a.html` through `appendix-j.html` - Individual appendix pages
 
 Each appendix page includes:
