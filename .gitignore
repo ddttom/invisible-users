@@ -35,7 +35,3 @@ the-invisible-users-simple.pdf
 # Generated appendix HTML build templates (temporary)
 scripts/appendix-nav-footer.html
 scripts/appendix-index-template.md
-
-# External FAQ wrappers (not part of this project)
-invisible-users/manuscript/web/allabout-faq.html
-invisible-users/manuscript/web/allabout-faq-wrapped.html

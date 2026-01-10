@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Pre-Tool-Use Hook for Repository Navigation (2026-01-10)
+
+**Hook Enhancement for Wrong Repository Detection:**
+
+- **Enhanced `.claude/hooks/pre-tool-use.sh`** to prevent recurring file path errors in submodule structure:
+  - **Critical error detection:** BLOCKS operations attempting to access `.claude/*` paths from submodule directory (exit 1)
+  - Shows clear error message with current directory, attempted path, and three fix options
+  - **Reduced reminder threshold:** Changed from 5 to 3 tool uses before pwd reminder (more frequent location checks)
+  - **Absolute state file path:** Uses `/Users/tomcranstoun/Documents/GitHub/invisible-users/.claude/.pwd-check-state` to work from any directory
+- **Documentation updates:**
+  - Added comprehensive entry to LEARNINGS.md documenting the recurring error pattern and solution
+  - Key insight: Documentation alone is insufficient for preventing repeated mistakes in complex repository structures
+  - Automated enforcement through hooks catches errors BEFORE they happen
+
+**Problem Solved:** Despite clear documentation in CLAUDE.md and LEARNINGS.md, the `.claude/` path error was repeated multiple times during FAQ schema implementation. The hook now provides proactive enforcement rather than reactive documentation.
+
+**Commits:**
+
+- 63ff775 "Add pre-tool-use hook to detect wrong-repository file path mistakes"
+
 ### Added - FAQ Schema Detection and Appendix D Section (2026-01-10)
 
 **Manuscript Updates:**
