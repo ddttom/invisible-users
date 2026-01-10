@@ -245,7 +245,7 @@ The patterns that break agents also break screen reader users, people with cogni
 
 WHAT'S IN THE BOOK
 
-• 65,500 words across 11 chapters + 9 appendices
+• ~57,000 words across 11 chapters + 10 appendices published separately online
 • Agent validation guardrails (Chapter 11)
 • Production-ready code examples (HTML, React, WordPress, Next.js)
 • Web Audit Suite (comprehensive analysis tool)

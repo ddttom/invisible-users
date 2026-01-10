@@ -247,6 +247,37 @@ npm run audit:start -- -s https://example.com/sitemap.xml \
 
 See [web-audit-suite/README.md](web-audit-suite/README.md) for complete documentation.
 
+## Web Appendices
+
+Individual appendix pages are available online for easy reference and sharing:
+
+**Online access:** <https://about.network/invisible-users/web/>
+
+The appendices are published as separate HTML pages with full navigation:
+
+- **Implementation Guides:** Appendices A-D (cookbooks, patterns, tools)
+- **Quick References:** Appendices E-G (one-page guides, roadmaps, resources)
+- **Case Studies:** Appendices H-J (examples, analysis, industry updates)
+
+**Generate locally:**
+
+```bash
+npm run pdf:appendix        # Generate HTML pages in invisible-users/manuscript/web/
+```
+
+This creates 12 files in the manuscript submodule:
+
+- `index.html` - Landing page with all appendices
+- `llms.txt` - AI agent discovery file
+- `appendix-a.html` through `appendix-j.html` - Individual appendix pages
+
+Each appendix page includes:
+
+- Table of contents
+- Full content with syntax highlighting
+- Navigation footer linking to other appendices
+- Responsive design (mobile-friendly)
+
 ## Key Themes
 
 ### Agent Diversity

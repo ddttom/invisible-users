@@ -39,7 +39,7 @@ AI agents are visiting websites right now and failing silently. These failures c
 
 **1. Complete Methodology (Book):**
 
-- 65,500-word manuscript (11 chapters + 9 appendices)
+- ~57,000-word manuscript (11 chapters) + 10 appendices published separately online
 - Implementation cookbook with 10 copy-paste recipes
 - Battle-tested lessons from real implementations
 - Agent validation guardrails (Chapter 11)
@@ -134,7 +134,7 @@ These same patterns break human users:
 
 "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 
-11 Chapters, ~65,500 words total:
+11 Chapters, ~57,000 words core manuscript:
 
 1. What You Will Learn
 2. The Invisible Failure
@@ -148,13 +148,18 @@ These same patterns break human users:
 10. Technical Advice (implementation code)
 11. What Agent Creators Must Build (validation layers, confidence scoring, guardrails)
 
-**Nine Comprehensive Appendices:**
+**Ten Comprehensive Appendices** (published separately at <https://about.network/invisible-users/web/>):
 
 - **Appendix A:** Implementation Cookbook (10 copy-paste recipes with score impact)
 - **Appendix B:** Battle-Tested Lessons (15 real-world implementation mistakes)
 - **Appendix C:** Web Audit Suite User Guide (complete measurement framework)
-- **Appendix D-H:** AI-Friendly HTML Guide, Quick Reference, Roadmap, Resources, Live llms.txt
-- **Appendix I:** Pipeline Failure Case Study (cruise pricing error analysis)
+- **Appendix D:** AI-Friendly HTML Guide (comprehensive semantic HTML patterns)
+- **Appendix E:** AI Patterns Quick Reference (one-page data attribute reference)
+- **Appendix F:** Implementation Roadmap (priority-based adoption guide)
+- **Appendix G:** Resource Directory (150+ curated resources)
+- **Appendix H:** Example llms.txt File (working template)
+- **Appendix I:** Pipeline Failure Case Study (£203k cruise pricing error analysis)
+- **Appendix J:** Industry Developments (latest verified news and updates)
 
 **Plus Supporting Materials:**
 
@@ -484,8 +489,8 @@ Scalable business model with strong growth potential across all revenue streams.
 
 | Component | Details |
 | --------- | ------- |
-| **Book Manuscript** | 65,500 words technical writing (11 chapters), deep domain expertise |
-| **Nine Appendices** | Implementation guides, case studies, resources, pipeline failure analysis |
+| **Book Manuscript** | ~57,000 words core manuscript (11 chapters), deep domain expertise |
+| **Ten Appendices** | Implementation guides, case studies, resources, published separately online at https://about.network/invisible-users/web/ |
 | **Business Strategy** | Business plan, pitch deck, executive summary, go-to-market materials |
 | **Web Audit Suite** | 15,000+ lines production JavaScript, 18+ reports, 3-phase pipeline |
 | **Code Examples** | Production-ready examples, Playwright test suite (14 tests) |

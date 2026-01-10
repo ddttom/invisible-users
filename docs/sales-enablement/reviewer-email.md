@@ -20,11 +20,11 @@ I'm reaching out because of your expertise in [web development/accessibility/AI 
 
 **The problem:** AI agents are visiting websites and failing silently. The same design patterns that work beautifully for human users - toast notifications, visual state changes, paginated content - break completely for AI agents. And critically, these are the exact patterns that have been creating accessibility barriers for years.
 
-I've documented this in a 65,500-word manuscript called "The Invisible Users: Designing the Web for AI Agents and Everyone Else." It covers:
+I've documented this in a ~57,000-word manuscript called "The Invisible Users: Designing the Web for AI Agents and Everyone Else" with 10 comprehensive appendices published separately online. It covers:
 
 - **Technical failures** - What breaks and why (with code examples)
 - **Business implications** - ROI frameworks and strategic considerations
-- **Practical solutions** - 11 chapters plus 9 appendices with copy-paste implementations
+- **Practical solutions** - 11 chapters plus 10 appendices (published online) with copy-paste implementations
 - **Agent validation** - Guardrails agent creators must build (Chapter 11)
 
 The book includes:
@@ -64,7 +64,7 @@ Tom Cranstoun
 
 **About the book:**
 "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
-~65,500 words | 11 chapters + 9 appendices
+~57,000 words | 11 chapters + 10 appendices online at https://about.network/invisible-users/web/
 Publication: Early 2026
 
 **Contact:**
@@ -80,7 +80,7 @@ Hi [Name],
 
 Quick question: Have you noticed AI agents struggling with websites that work perfectly for humans?
 
-I've spent the past [timeframe] documenting this problem and building solutions. The result is a 65,500-word technical book called "The Invisible Users" - and I'd value your feedback before publishing.
+I've spent the past [timeframe] documenting this problem and building solutions. The result is a ~57,000-word technical book called "The Invisible Users" with 10 comprehensive appendices published online - and I'd value your feedback before publishing.
 
 **The core issue:**
 
@@ -96,7 +96,7 @@ These same patterns have been accessibility barriers for years. Now there's comm
 **What I've built:**
 
 - **11 chapters** covering failures, business impact, technical solutions, and agent validation
-- **9 appendices** with copy-paste recipes, real-world lessons, and pipeline failure analysis
+- **10 appendices** (published online) with copy-paste recipes, real-world lessons, and pipeline failure analysis
 - **Production code** across vanilla JS, React, Next.js, WordPress
 - **Web Audit Suite** for comprehensive measurement and validation
 - **Test framework** (Playwright) for verification
@@ -147,7 +147,7 @@ I've documented this in a book manuscript that bridges technical implementation 
 
 **What I've written:**
 
-65,500 words covering:
+~57,000 words covering:
 
 - **Technical patterns** that break (with evidence)
 - **Business implications** including ROI frameworks
@@ -193,7 +193,7 @@ I'm reaching out because you'll recognize the patterns I'm writing about - they'
 
 The difference now: AI agents are failing on these patterns too, and suddenly there's commercial pressure to fix them.
 
-I've written a 65,500-word book called "The Invisible Users" that documents this connection and provides technical solutions. I'd value your perspective before publication.
+I've written a ~57,000-word book called "The Invisible Users" with 10 comprehensive appendices (published online) that documents this connection and provides technical solutions. I'd value your perspective before publication.
 
 **The uncomfortable parallel:**
 

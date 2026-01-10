@@ -6,15 +6,17 @@
 
 **Target Length:** 30,000-50,000 words
 
-**Current Status:** Complete with Phase 1-2 Enhancements + Chapter 11 + Industry Developments ✅ (~69,300 words including appendices)
+**Current Status:** Complete with Phase 1-2 Enhancements + Chapter 11 + Web Appendices ✅ (~57,000 words core manuscript)
 
-**Latest Update (January 2026):** Added Appendix J tracking major industry developments:
+**Latest Update (January 2026):** Restructured book to publish appendices separately online:
 
-- Added Appendix J: Industry Developments (~3,800 words) - tracking Claude for Chrome (20 Dec 2024) and Microsoft Copilot Checkout (Jan 2025)
-- Updated Chapters 4, 9, 10 with real-world validation from both launches
-- Created blog post: "Two Weeks That Changed Everything" covering both developments
+- Book now ends with "The End" chapter directing readers to online appendices at <https://about.network/invisible-users/web/>
+- All 10 appendices (A-J) published as individual HTML pages with navigation and llms.txt discovery
+- Updated all manuscript references to appendices to point to online URLs
+- Core manuscript: ~57,000 words (preface + 11 chapters + The End)
+- Web appendices: ~20,000 words published separately
+- Previous: Added Appendix J tracking Claude for Chrome (20 Dec 2024) and Microsoft Copilot Checkout (Jan 2025)
 - Previous: Added Chapter 11 (~5,000 words), enhanced Chapter 10, enhanced Chapter 4 with ROI framework
-- Previous: Added three practical appendices: Implementation Cookbook, Battle-Tested Lessons, Web Audit Suite User Guide
 
 ---
 
@@ -42,14 +44,26 @@ This book explores the technical, business, ethical, and human implications of t
 | 9 | Designing for Both | ~4,400 | ✅ Complete |
 | 10 | Technical Advice | ~9,650 | ✅ Complete + Enhanced |
 | 11 | What Agent Creators Must Build | ~5,000 | ✅ Complete |
-| Appendix A | Implementation Cookbook | ~1,900 | ✅ Complete |
-| Appendix B | Battle-Tested Lessons | ~1,850 | ✅ Complete |
-| Appendix C | Web Audit Suite Guide | ~2,000 | ✅ Complete |
-| Appendix I | Pipeline Failure Case Study | ~2,500 | ✅ Complete |
-| Appendix J | Industry Developments | ~3,800 | ✅ Complete |
+| The End | Additional Resources Available Online | ~400 | ✅ Complete |
 
-**Core Manuscript:** ~57,000 words (preface + 11 chapters)
-**With Appendices:** ~69,300 words total
+**Core Manuscript:** ~57,000 words (preface + 11 chapters + The End + Glossary)
+
+**Web Appendices** (published separately at <https://about.network/invisible-users/web/>):
+
+| Appendix | Title | Words | Status |
+| -------- | ----- | ----- | ------ |
+| A | Implementation Cookbook | ~1,900 | ✅ Published |
+| B | Battle-Tested Lessons | ~1,850 | ✅ Published |
+| C | Web Audit Suite Guide | ~2,000 | ✅ Published |
+| D | AI-Friendly HTML Guide | ~9,050 | ✅ Published |
+| E | AI Patterns Quick Reference | ~1,300 | ✅ Published |
+| F | Implementation Roadmap | ~2,750 | ✅ Published |
+| G | Resource Directory | ~1,950 | ✅ Published |
+| H | Example llms.txt File | ~300 | ✅ Published |
+| I | Pipeline Failure Case Study | ~2,500 | ✅ Published |
+| J | Industry Developments | ~3,800 | ✅ Published |
+
+**Total Web Appendices:** ~27,400 words
 
 ---
 
@@ -320,12 +334,54 @@ All 11 chapter illustrations complete ✅
 
 | Material | Status | Description |
 | -------- | ------ | ----------- |
-| manuscript/Glossary.md | ✅ | 60+ technical terms with cross-references |
-| manuscript/appendix-implementation-roadmap.md | ✅ | Priority-based implementation roadmap (Appendix F) |
-| manuscript/appendix-resource-directory.md | ✅ | 150+ curated resources by category (Appendix G) |
-| manuscript/appendix-live-llms.txt | ✅ | Digital Domain Technologies reference for LLM context (Appendix H) |
-| manuscript/appendix-pipeline-failure-case-study.md | ✅ | Complete £203k pricing error analysis (Appendix I, referenced in Chapter 11) |
+| manuscript/Glossary.md | ✅ | 60+ technical terms with cross-references (included in book) |
+| manuscript/The-End.md | ✅ | Final page directing readers to online appendices with full descriptions |
 | cover-design.svg | ✅ | Professional book cover (600×900) |
+
+### Web Appendices
+
+Published separately at <https://about.network/invisible-users/web/> as this is a fast-moving field. Appendices are maintained online to ensure they remain current and relevant.
+
+**Generated files** (via `npm run pdf:appendix`):
+
+| File | Status | Description |
+| ---- | ------ | ----------- |
+| manuscript/web/index.html | ✅ | Landing page listing all appendices |
+| manuscript/web/llms.txt | ✅ | AI agent discovery file (llmstxt.org format) with metadata, copyright, access guidelines |
+| manuscript/web/appendix-a.html | ✅ | Implementation Cookbook (quick-reference recipes) |
+| manuscript/web/appendix-b.html | ✅ | Battle-Tested Lessons (production learnings) |
+| manuscript/web/appendix-c.html | ✅ | Web Audit Suite Guide (tool documentation) |
+| manuscript/web/appendix-d.html | ✅ | AI-Friendly HTML Guide (comprehensive semantic HTML patterns) |
+| manuscript/web/appendix-e.html | ✅ | AI Patterns Quick Reference (one-page data attribute reference) |
+| manuscript/web/appendix-f.html | ✅ | Implementation Roadmap (priority-based adoption guide) |
+| manuscript/web/appendix-g.html | ✅ | Resource Directory (150+ curated resources) |
+| manuscript/web/appendix-h.html | ✅ | Example llms.txt File (working template) |
+| manuscript/web/appendix-i.html | ✅ | Pipeline Failure Case Study (£203k error analysis) |
+| manuscript/web/appendix-j.html | ✅ | Industry Developments (latest verified news) |
+
+**Source files** (markdown):
+
+| File | Status | Description |
+| ---- | ------ | ----------- |
+| manuscript/appendix-a-implementation-cookbook.md | ✅ | Implementation patterns source |
+| manuscript/appendix-b-battle-tested-lessons.md | ✅ | Production learnings source |
+| manuscript/appendix-c-web-audit-suite-guide.md | ✅ | Tool documentation source |
+| manuscript/appendix-d-ai-friendly-html-guide.md | ✅ | HTML patterns guide source (~9,050 words) |
+| manuscript/appendix-e-ai-patterns-quick-reference.md | ✅ | Quick reference source (~1,300 words) |
+| manuscript/appendix-f-implementation-roadmap.md | ✅ | Priority roadmap source (~2,750 words) |
+| manuscript/appendix-g-resource-directory.md | ✅ | Resources directory source (~1,950 words) |
+| manuscript/appendix-h-live-llms.md | ✅ | llms.txt example wrapper |
+| manuscript/appendix-h-live-llms.txt | ✅ | Digital Domain Technologies llms.txt reference (20 links) |
+| manuscript/appendix-i-pipeline-failure-case-study.md | ✅ | £203k error analysis source (~2,500 words) |
+| manuscript/appendix-j-industry-developments.md | ✅ | Industry news source (~3,800 words) |
+
+Each HTML page includes:
+
+- Standalone HTML with embedded CSS (Pandoc-generated)
+- Table of contents (2 levels deep)
+- Navigation footer with links to all appendices
+- Responsive design (mobile-friendly)
+- Proper semantic HTML for AI agent compatibility
 
 ### Interactive Materials
 
@@ -499,16 +555,24 @@ Real-world llms.txt example:
     ├── manuscript/              # Complete manuscript content
     │   ├── executive-summary.md
     │   ├── preface.md
-    │   ├── chapter-01-*.md through chapter-10-*.md
+    │   ├── chapter-01-*.md through chapter-11-*.md
+    │   ├── The-End.md           # Final page directing to online appendices
     │   ├── Glossary.md
-    │   ├── appendix-implementation-cookbook.md      # Appendix A
-    │   ├── appendix-battle-tested-lessons.md        # Appendix B
-    │   ├── appendix-web-audit-suite-guide.md        # Appendix C
-    │   ├── appendix-ai-friendly-html-guide.md       # Appendix D (~9,050 words)
-    │   ├── appendix-ai-patterns-quick-reference.md  # Appendix E (~1,300 words)
-    │   ├── appendix-implementation-roadmap.md       # Appendix F (~2,750 words)
-    │   ├── appendix-resource-directory.md           # Appendix G (~1,950 words)
-    │   ├── appendix-live-llms.txt                   # Appendix H (DDT/LLM reference)
+    │   ├── appendix-a-implementation-cookbook.md      # Appendix A source
+    │   ├── appendix-b-battle-tested-lessons.md        # Appendix B source
+    │   ├── appendix-c-web-audit-suite-guide.md        # Appendix C source
+    │   ├── appendix-d-ai-friendly-html-guide.md       # Appendix D source (~9,050 words)
+    │   ├── appendix-e-ai-patterns-quick-reference.md  # Appendix E source (~1,300 words)
+    │   ├── appendix-f-implementation-roadmap.md       # Appendix F source (~2,750 words)
+    │   ├── appendix-g-resource-directory.md           # Appendix G source (~1,950 words)
+    │   ├── appendix-h-live-llms.md                    # Appendix H wrapper
+    │   ├── appendix-h-live-llms.txt                   # Appendix H content (DDT llms.txt reference)
+    │   ├── appendix-i-pipeline-failure-case-study.md  # Appendix I source (~2,500 words)
+    │   ├── appendix-j-industry-developments.md        # Appendix J source (~3,800 words)
+    │   ├── web/                                       # Generated HTML appendices (published online)
+    │   │   ├── index.html       # Appendices landing page
+    │   │   ├── llms.txt         # AI agent discovery file
+    │   │   └── appendix-{a-j}.html  # 10 individual appendix pages
     │   ├── agent-friendly-starter-kit/              # Code examples (good/ vs bad/)
     │   ├── code-examples/                           # Production-ready code implementations
     │   │   ├── html-examples/
@@ -525,7 +589,7 @@ Real-world llms.txt example:
     │   │   ├── blog.svg                             # Blog post illustration
     │   │   └── AI-Native.blog                       # AI-native website guide (~38,000 words)
     │   └── illustrations/
-    │       └── chapter-01-*.svg through chapter-10-*.svg
+    │       └── chapter-01-*.svg through chapter-11-*.svg
     └── llms.txt                 # Example llms.txt file from book content
 ```
 
@@ -539,4 +603,4 @@ This manuscript is not licensed for public use, reproduction, or distribution.
 
 ---
 
-**Last updated:** 2026-01-01 — Added business planning materials (business-plan, executive-summary, pitch, plan-to-market), marketing website, and backend API
+**Last updated:** 2026-01-10 — Restructured book to publish appendices separately online at <https://about.network/invisible-users/web/>; book now ends with The-End.md chapter; added npm run pdf:appendix command to generate HTML appendices with navigation and llms.txt discovery

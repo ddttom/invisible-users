@@ -46,7 +46,7 @@ The patterns that break agents also break screen reader users, people with cogni
 
 **Complete foundation for immediate market entry:**
 
-1. **65,500-word book manuscript** (11 chapters + 9 appendices) - Establishes thought leadership
+1. **~57,000-word book manuscript** (11 chapters) + 10 appendices published separately online - Establishes thought leadership
 2. **Production-ready code examples** - HTML, React, WordPress, Next.js implementations
 3. **Web Audit Suite** - Comprehensive Node.js analysis tool implementing all patterns
 4. **Implementation methodology** - 4-priority-level systematic rollout
@@ -239,7 +239,7 @@ The patterns that break agents also break screen reader users, people with cogni
 
 **Materials Available:**
 
-- Complete 65,500-word manuscript (11 chapters + 9 appendices)
+- Complete ~57,000-word manuscript (11 chapters) + 10 appendices published online
 - Web Audit Suite (production-ready analysis tool)
 - Code repository and implementation examples
 - Financial model spreadsheet
@@ -282,7 +282,7 @@ Availability: Ready to start immediately, flexible partnership agreement timelin
 
 **Market:** £6.3 trillion e-commerce + adjacent markets, 12-18 month first-mover window
 
-**What's Built:** 65,500-word manuscript (11 chapters + 9 appendices), Web Audit Suite, code examples, methodology, website
+**What's Built:** ~57,000-word manuscript (11 chapters) + 10 appendices online, Web Audit Suite, code examples, methodology, website
 
 **Revenue:** £2M-£5M Year 1 potential across multiple streams
 

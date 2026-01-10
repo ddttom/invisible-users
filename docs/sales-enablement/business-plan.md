@@ -25,7 +25,7 @@
 
 **Competitive advantage:**
 
-- Complete, publication-ready manuscript (~65,500 words: 11 chapters + 9 appendices)
+- Complete, publication-ready manuscript (~57,000 words: 11 chapters + 10 appendices published separately online)
 - Web Audit Suite (production-ready analysis tool)
 - Practical, working code examples
 - Interactive notebook companion
@@ -592,7 +592,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Deliverables:**
 
-1. ✅ **Manuscript complete** (DONE - 65,500 words: 11 chapters + 9 appendices)
+1. ✅ **Manuscript complete** (DONE - ~57,000 words: 11 chapters + 10 appendices published separately at https://about.network/invisible-users/web/)
 2. ✅ **Supporting materials complete** (DONE)
 3. **Publication preparation:**
    - Professional editing (copy edit + technical review): 4-6 weeks

@@ -44,6 +44,7 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   │   ├── [chapters, appendices, illustrations in separate repository]
 │   │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
 │   │   ├── code-examples/    # Production-ready code implementations
+│   │   ├── web/              # Generated HTML appendices for web publishing
 │   │   └── blog/             # Blog and promotional materials (blog.md, blog.svg, AI-Native.blog)
 │   └── llms.txt              # Repository llms.txt file
 ├── web-audit-suite/          # Web analysis tool (implements book's patterns)
@@ -107,6 +108,9 @@ npm run lint:markdown:fix   # Fix all markdown files
 npm run pdf:generate        # Generate A4 PDF with cover (for review/distribution)
 npm run pdf:kindle          # Generate 6"×9" PDF for Kindle Direct Publishing
 npm run pdf:simple          # Generate simple PDF without cover
+
+# HTML appendix generation
+npm run pdf:appendix        # Generate individual HTML pages for each appendix
 
 # Chapter status
 npm run status              # Show all chapter files
