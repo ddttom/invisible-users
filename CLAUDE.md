@@ -148,6 +148,23 @@ npm run status              # Show all chapter files
 
 **HTML Appendix Enhancement:** The `pdf:appendix` command automatically enhances Pandoc-generated HTML with Chapter 10 technical patterns via [scripts/enhance-appendix-html.js](scripts/enhance-appendix-html.js). It also generates a sitemap.xml file for search engine discovery via [scripts/generate-sitemap.js](scripts/generate-sitemap.js). See [scripts/README-appendix-enhancements.md](scripts/README-appendix-enhancements.md) for details.
 
+### Accessibility Contrast Requirements
+
+**CRITICAL:** All UI elements must meet WCAG 2.1 AA contrast requirements:
+
+- **Normal text:** Minimum 4.5:1 contrast ratio
+- **Large text (18pt+ or 14pt+ bold):** Minimum 3:1 contrast ratio
+- **UI components and graphical objects:** Minimum 3:1 contrast ratio
+
+**Common violations to avoid:**
+
+- Black text on blue backgrounds (insufficient contrast)
+- Light grey text on white backgrounds
+- Blue links on blue backgrounds
+- Disabled state with insufficient contrast
+
+**Testing:** Use browser DevTools or online contrast checkers to verify all color combinations meet WCAG AA standards before deployment.
+
 ### Web Audit Suite Commands
 
 ```bash

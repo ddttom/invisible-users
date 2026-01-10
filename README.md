@@ -265,20 +265,24 @@ The appendices are published as separate HTML pages with full navigation:
 npm run pdf:appendix        # Generate HTML pages in invisible-users/manuscript/web/
 ```
 
-This creates 13 files in the manuscript submodule:
+This creates 16 files in the manuscript submodule:
 
-- `index.html` - Landing page with all appendices
+- `index.html` - Book main page with complete overview
+- `appendix-index.html` - Appendix landing page
+- `news.html` - Project news and updates
+- `identity-layer.html` - Identity delegation project page
 - `llms.txt` - AI agent discovery file
 - `sitemap.xml` - Search engine discovery file
-- `appendix-a.html` through `appendix-j.html` - Individual appendix pages
+- `appendix-a.html` through `appendix-j.html` - Individual appendix pages (10 files)
 
 Each appendix page includes:
 
 - Table of contents
 - Full content with syntax highlighting
+- Code blocks with copy-to-clipboard buttons
 - Navigation footer linking to other appendices
 - Responsive design (mobile-friendly)
-- Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML)
+- Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML, data-role attributes)
 
 ## Project Web Pages
 
