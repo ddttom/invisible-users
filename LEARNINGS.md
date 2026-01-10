@@ -11,3 +11,7 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 ## Marketing Metrics from Company Announcements
 
 **Rule** (2026-01-09): Tried using real Microsoft metrics (2x, 53%, 7x) from official announcements to demonstrate "measurable business impact," but CLAUDE.md explicitly forbids concrete percentages in marketing materials and the user correctly noted these "feel false to readers." Even when metrics come from real company announcements, they are unverifiable marketing claims, not independent research. Always replace specific percentages with qualitative statements like "Microsoft reports improved conversion rates (though unvalidated)" plus verifiable facts (dates, company names, partner retailers). Marketing percentages feel like hype regardless of source.
+
+## Book Publication Status
+
+**Rule** (2026-01-10): Updated publication date from "Due Q1 2026" to "Published January 2026" across materials, but the book is actually still in review, not yet published. Q1 2026 (Due Q1 2026) is correct. Never assume publication status - the book remains "Due Q1 2026" until the user explicitly confirms publication. Publication timing is the user's decision, not something to infer from current date.
