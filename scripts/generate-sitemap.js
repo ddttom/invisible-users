@@ -29,7 +29,25 @@ const urls = [
     loc: `${BASE_URL}/index.html`,
     priority: '1.0',
     changefreq: 'monthly',
-    description: 'Index HTML'
+    description: 'Book Main Page'
+  },
+  {
+    loc: `${BASE_URL}/appendix-index.html`,
+    priority: '1.0',
+    changefreq: 'monthly',
+    description: 'Appendix Index HTML'
+  },
+  {
+    loc: `${BASE_URL}/news.html`,
+    priority: '0.9',
+    changefreq: 'weekly',
+    description: 'Project News and Updates'
+  },
+  {
+    loc: `${BASE_URL}/identity-layer.html`,
+    priority: '0.9',
+    changefreq: 'monthly',
+    description: 'Identity Delegation Infrastructure Project'
   },
   {
     loc: `${BASE_URL}/appendix-a.html`,

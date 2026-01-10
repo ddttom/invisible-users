@@ -84,7 +84,7 @@ This will:
 1. Process all `appendix-*.md` files
 2. Generate HTML with Pandoc
 3. Enhance each file with Chapter 10 patterns
-4. Generate index.html and llms.txt
+4. Generate appendix-index.html and llms.txt
 
 ### Enhance Individual File
 
@@ -95,7 +95,7 @@ node scripts/enhance-appendix-html.js path/to/file.html
 ### Enhance Multiple Files
 
 ```bash
-node scripts/enhance-appendix-html.js appendix-a.html appendix-b.html index.html
+node scripts/enhance-appendix-html.js appendix-a.html appendix-b.html appendix-index.html
 ```
 
 ## Files Modified
@@ -108,7 +108,7 @@ node scripts/enhance-appendix-html.js appendix-a.html appendix-b.html index.html
 
 ### Generated Files (in `invisible-users/manuscript/web/`)
 
-- `index.html` - Landing page with TOC
+- `appendix-index.html` - Landing page with TOC
 - `appendix-a.html` through `appendix-j.html` - Individual appendices
 - `llms.txt` - AI agent discovery file
 

@@ -21,11 +21,31 @@ echo -e "${BLUE}Generating HTML appendix pages...${NC}"
 # Create output directory
 mkdir -p "$OUTPUT_DIR"
 
-# Create navigation footer template
+# Create navigation header template (appears after title, before TOC)
+cat > "$SCRIPTS_DIR/appendix-nav-header.html" << 'EOF'
+<nav class="appendix-navigation" role="navigation" aria-label="Appendix Navigation">
+    <p><a href="appendix-index.html">← Back to Appendices Index</a></p>
+    <p>Quick navigation:
+        <a href="appendix-a.html">A</a> |
+        <a href="appendix-b.html">B</a> |
+        <a href="appendix-c.html">C</a> |
+        <a href="appendix-d.html">D</a> |
+        <a href="appendix-e.html">E</a> |
+        <a href="appendix-f.html">F</a> |
+        <a href="appendix-g.html">G</a> |
+        <a href="appendix-h.html">H</a> |
+        <a href="appendix-i.html">I</a> |
+        <a href="appendix-j.html">J</a>
+    </p>
+</nav>
+<hr>
+EOF
+
+# Create navigation footer template (appears at bottom)
 cat > "$SCRIPTS_DIR/appendix-nav-footer.html" << 'EOF'
 <hr>
 <nav class="appendix-navigation" role="navigation" aria-label="Appendix Navigation">
-    <p><a href="index.html">← Back to Appendices Index</a></p>
+    <p><a href="appendix-index.html">← Back to Appendices Index</a></p>
     <p>Quick navigation:
         <a href="appendix-a.html">A</a> |
         <a href="appendix-b.html">B</a> |
@@ -51,8 +71,8 @@ for appendix_file in "$MANUSCRIPT_DIR"/appendix-*.md; do
     letter=$(echo "$filename" | sed -E 's/appendix-([a-z])-.*/\1/')
     letter_upper=$(echo "$letter" | tr '[:lower:]' '[:upper:]')
 
-    # Extract title from first heading in the file
-    title=$(grep -m 1 "^# " "$appendix_file" | sed 's/^# //' || echo "Appendix ${letter_upper}")
+    # Extract title from first heading in the file (strip "Appendix X:" or "Appendix X -" prefix to avoid duplication)
+    title=$(grep -m 1 "^# " "$appendix_file" | sed -E 's/^# Appendix [A-Z]( - | - |: |:)//' || echo "Implementation Guide")
 
     # Generate output filename
     output_file="$OUTPUT_DIR/appendix-${letter}.html"
@@ -72,6 +92,7 @@ for appendix_file in "$MANUSCRIPT_DIR"/appendix-*.md; do
         --metadata date="January 2026" \
         --metadata description="Practical guidance from The Invisible Users book on designing AI agent-friendly websites" \
         --metadata lang="en-GB" \
+        --include-before-body="$SCRIPTS_DIR/appendix-nav-header.html" \
         --include-after-body="$SCRIPTS_DIR/appendix-nav-footer.html"
 
     # Enhance with Chapter 10 patterns
@@ -84,8 +105,8 @@ done
 
 echo -e "${GREEN}✓ Generated individual appendix HTML files${NC}"
 
-# Generate index.html from markdown template
-echo -e "${BLUE}Generating index page...${NC}"
+# Generate appendix-index.html from markdown template
+echo -e "${BLUE}Generating appendix index page...${NC}"
 
 cat > "$SCRIPTS_DIR/appendix-index-template.md" << 'INDEXEOF'
 # The Invisible Users - Appendices
@@ -156,7 +177,7 @@ These pages use semantic HTML, proper heading structure, and explicit data attri
 INDEXEOF
 
 pandoc "$SCRIPTS_DIR/appendix-index-template.md" \
-    -o "$OUTPUT_DIR/index.html" \
+    -o "$OUTPUT_DIR/appendix-index.html" \
     --standalone \
     --metadata title="The Invisible Users - Appendices" \
     --metadata author="Tom Cranstoun" \
@@ -165,10 +186,10 @@ pandoc "$SCRIPTS_DIR/appendix-index-template.md" \
     --metadata lang="en-GB"
 
 # Enhance index with Chapter 10 patterns
-echo -e "  Enhancing index with Chapter 10 technical patterns..."
-node "$SCRIPTS_DIR/enhance-appendix-html.js" "$OUTPUT_DIR/index.html" > /dev/null
+echo -e "  Enhancing appendix index with Chapter 10 technical patterns..."
+node "$SCRIPTS_DIR/enhance-appendix-html.js" "$OUTPUT_DIR/appendix-index.html" > /dev/null
 
-echo -e "${GREEN}✓ Generated index.html${NC}"
+echo -e "${GREEN}✓ Generated appendix-index.html${NC}"
 
 # Generate llms.txt
 echo -e "${BLUE}Generating llms.txt...${NC}"
@@ -194,6 +215,13 @@ The book examines how modern web design optimised for human users fails for AI a
 
 **Contact:** tom.cranstoun@gmail.com
 **Website:** https://allabout.network
+
+## Main Pages
+
+- Book Main Page: https://allabout.network/invisible-users/web/index.html - Complete book overview, chapter summaries, and resources
+- Appendix Index: https://allabout.network/invisible-users/web/appendix-index.html - Landing page with all appendices
+- Project News: https://allabout.network/invisible-users/web/news.html - Latest updates and announcements
+- Identity Delegation Project: https://allabout.network/invisible-users/web/identity-layer.html - Universal Identity Delegation Infrastructure
 
 ## Access Guidelines
 
@@ -248,6 +276,23 @@ LLMSEOF
 
 echo -e "${GREEN}✓ Generated llms.txt${NC}"
 
+# Copy web pages (news.html and identity-layer.html) from web/ directory
+echo -e "${BLUE}Copying project web pages...${NC}"
+if [ -f "web/news.html" ]; then
+  cp "web/news.html" "$OUTPUT_DIR/news.html"
+  echo -e "  Copied news.html"
+else
+  echo -e "  Warning: web/news.html not found"
+fi
+
+if [ -f "web/identity-layer.html" ]; then
+  cp "web/identity-layer.html" "$OUTPUT_DIR/identity-layer.html"
+  echo -e "  Copied identity-layer.html"
+else
+  echo -e "  Warning: web/identity-layer.html not found"
+fi
+echo -e "${GREEN}✓ Copied web pages${NC}"
+
 # Generate sitemap.xml
 echo -e "${BLUE}Generating sitemap.xml...${NC}"
 node "$SCRIPTS_DIR/generate-sitemap.js"
@@ -260,12 +305,17 @@ echo -e "${GREEN}✓ Appendix HTML generation complete${NC}"
 echo -e "${GREEN}════════════════════════════════════════${NC}"
 echo ""
 echo "Generated files in $OUTPUT_DIR:"
-echo "  - index.html (landing page)"
+echo "  - index.html (book main page)"
+echo "  - appendix-index.html (appendix landing page)"
+echo "  - news.html (project news)"
+echo "  - identity-layer.html (identity delegation project)"
 echo "  - llms.txt (AI agent discovery)"
 echo "  - sitemap.xml (search engine discovery)"
 echo "  - appendix-a.html through appendix-j.html (10 files)"
 echo ""
-echo "Total: 13 files"
+echo "Total: 16 files"
 echo ""
-echo "View locally: open $OUTPUT_DIR/index.html"
+echo "View locally:"
+echo "  open $OUTPUT_DIR/index.html (book main page)"
+echo "  open $OUTPUT_DIR/appendix-index.html (appendices)"
 echo "Target URL: $BASE_URL/"
