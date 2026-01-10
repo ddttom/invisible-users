@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-10 (Web Pages and Appendix Enhancement Pipeline Added)
+**Last Updated:** 2026-01-10 (Publication Status, Git Navigation Guidance, and News Propagation Strategy Added)
 
 ### Combined Repository
 

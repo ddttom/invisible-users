@@ -9,6 +9,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added - 2026-01-10
 
+**Publication Status and Documentation Improvements:**
+
+- **Publication status clarification:**
+  - Added explicit "Publication Status" sections to CLAUDE.md (main and manuscript)
+  - Status: "IN REVIEW (Pre-Publication)"
+  - Clearly states publication date as "Due Q1 2026"
+  - Prevents AI assistants from assuming published status based on current date
+  - User will explicitly confirm when published
+- **Git directory navigation guidance:**
+  - Added "Git Directory Navigation: Always Check pwd First" rule to LEARNINGS.md
+  - Added "Common Mistakes to Avoid" section to README.md with git navigation guidance
+  - Added "Git Directory Navigation" sections to CLAUDE.md (main and manuscript)
+  - Documents the submodule navigation issue: always check `pwd` before attempting directory changes
+  - Prevents "No such file or directory" errors when already inside submodule
+- **News propagation strategy:**
+  - Updated `/news` skill documentation with "Publication Status and Propagation Strategy"
+  - Pre-publication: News updates propagate to manuscript files (blog/book-updates.md, appendix-j-industry-developments.md)
+  - Post-publication: News updates propagate to online appendices only (via `npm run pdf:appendix`)
+  - Ensures online appendices remain current without requiring book republication
+
+**Commits:**
+
+- fa9d5fb "Add publication status, propagation strategy, and git navigation guidance"
+- ae3a4b8 "Fix markdown linting errors in CLAUDE.md"
+
+### Added - 2026-01-10
+
 **Web Pages and Appendix HTML Enhancement Pipeline:**
 
 - **Project web pages created:**
