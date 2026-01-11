@@ -18,7 +18,7 @@ This repository contains two integrated projects:
 - **Word Count:** ~57,000 words (core manuscript: preface + 11 chapters + The End + Glossary)
 - **Appendices:** 11 appendices (~41,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
-- **Latest Change:** Added comprehensive FAQ Schema.org guidance to Appendix D and cleaned up faq.html to demonstrate JSON-LD only approach (removed all microdata markup). Web Audit Suite now detects FAQPage schema, scores implementation quality (awards points for presence and completeness, penalizes dual-format duplication), and provides actionable feedback referencing Appendix D guidance. FAQ metrics appear in all three CSV reports and executive summary.
+- **Latest Change:** Added Appendix K: Common Page Patterns (~14,200 words) with production-ready HTML templates for 8 common page types. Updated all documentation and generation scripts to support 11 appendices. Total appendices word count increased from ~27,400 to ~41,600 words. Navigation updated to A-K across all appendix pages.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
