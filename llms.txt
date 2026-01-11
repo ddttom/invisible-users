@@ -54,15 +54,16 @@ Reference materials integrated into the manuscript as appendices:
 - [Appendix H - Live llms.txt](invisible-users/manuscript/appendix-h-live-llms.md): Markdown wrapper demonstrating llms.txt example with Digital Domain Technologies reference (20 curated links). Shows what a complete llms.txt file looks like in practice.
 - [Appendix I - Pipeline Failure Case Study](invisible-users/manuscript/appendix-i-pipeline-failure-case-study.md): Complete £203k cruise pricing error analysis referenced in Chapter 11 (~2,500 words). Demonstrates how agents fail when websites lack clear structured data and agents lack validation layers.
 - [Appendix J - Industry Developments](invisible-users/manuscript/appendix-j-industry-developments.md): Latest verified news and updates about AI agents, commerce platforms, and industry developments. Regularly updated with sources.
+- [Appendix K - Common Page Patterns](invisible-users/manuscript/appendix-k-common-page-patterns.md): Production-ready HTML templates demonstrating AI-friendly patterns for common page types (~14,200 words). Complete examples for home, about, contact, sales, collection, article, FAQ, and form pages.
 
 ### Web Appendices
 
 Individual appendix pages published as standalone HTML for easy reference and sharing:
 
-- [Appendices Index](https://allabout.network/invisible-users/web/): Landing page with all 10 appendices available as separate HTML pages
+- [Appendices Index](https://allabout.network/invisible-users/web/): Landing page with all 11 appendices available as separate HTML pages
 - Implementation Guides: Appendices A-D (cookbook recipes, battle-tested lessons, audit tool guide, comprehensive HTML guide)
 - Quick References: Appendices E-G (patterns reference, implementation roadmap, resource directory)
-- Case Studies: Appendices H-J (llms.txt example, pipeline failure analysis, industry developments)
+- Case Studies & Templates: Appendices H-K (llms.txt example, pipeline failure analysis, industry developments, page patterns)
 
 Each appendix page includes table of contents, syntax highlighting, and navigation between appendices. Designed for AI agent compatibility with semantic HTML, proper heading structure, and responsive layout.
 

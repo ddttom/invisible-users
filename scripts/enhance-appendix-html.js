@@ -23,7 +23,7 @@ function enhanceHTML(filePath) {
   const pageTitle = titleMatch ? titleMatch[1] : 'The Invisible Users';
 
   // Extract appendix letter if present
-  const appendixMatch = pageTitle.match(/Appendix ([A-J]):/i);
+  const appendixMatch = pageTitle.match(/Appendix ([A-K]):/i);
   const appendixLetter = appendixMatch ? appendixMatch[1] : null;
 
   // Determine content type for Schema.org

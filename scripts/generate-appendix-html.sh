@@ -35,7 +35,8 @@ cat > "$SCRIPTS_DIR/appendix-nav-header.html" << 'EOF'
         <a href="appendix-g.html">G</a> |
         <a href="appendix-h.html">H</a> |
         <a href="appendix-i.html">I</a> |
-        <a href="appendix-j.html">J</a>
+        <a href="appendix-j.html">J</a> |
+        <a href="appendix-k.html">K</a>
     </p>
 </nav>
 <hr>
@@ -56,7 +57,8 @@ cat > "$SCRIPTS_DIR/appendix-nav-footer.html" << 'EOF'
         <a href="appendix-g.html">G</a> |
         <a href="appendix-h.html">H</a> |
         <a href="appendix-i.html">I</a> |
-        <a href="appendix-j.html">J</a>
+        <a href="appendix-j.html">J</a> |
+        <a href="appendix-k.html">K</a>
     </p>
 </nav>
 EOF
@@ -152,6 +154,9 @@ Detailed analysis of a £203,000 AI agent error. How poor form design caused pip
 
 **[Appendix J: Industry Developments](appendix-j.html)**
 Latest news and updates about AI agents, commerce platforms, and industry shifts. Regularly updated with verified sources.
+
+**[Appendix K: Common Page Patterns](appendix-k.html)**
+Production-ready HTML templates demonstrating AI-friendly patterns for common page types. Complete examples for home, about, contact, sales, collection, article, FAQ, and form pages.
 
 ## For AI Agents
 
@@ -251,6 +256,7 @@ The book examines how modern web design optimised for human users fails for AI a
 - Appendix H: https://allabout.network/invisible-users/web/appendix-h.html - Example llms.txt File (working llmstxt.org template)
 - Appendix I: https://allabout.network/invisible-users/web/appendix-i.html - Pipeline Failure Case Study (£203k error analysis)
 - Appendix J: https://allabout.network/invisible-users/web/appendix-j.html - Industry Developments (latest verified news and updates)
+- Appendix K: https://allabout.network/invisible-users/web/appendix-k.html - Common Page Patterns (production-ready HTML templates for 8 page types)
 
 ## Topics
 

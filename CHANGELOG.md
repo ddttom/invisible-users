@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Appendix K (2026-01-11)
+
+- Added Appendix K: Common Page Patterns (~14,200 words)
+- Production-ready HTML templates for 8 common page types
+- Updated all documentation to reference 11 appendices
+- Updated npm scripts and generation templates
+- Updated word counts and file counts throughout repository
+- Updated navigation links in HTML generation script (A-K)
+- Updated regex pattern in enhance-appendix-html.js to support Appendix K
+- Total appendices word count increased from ~27,400 to ~41,600 words
+
 ### Changed - FAQ Page Integration into Generation Scripts (2026-01-10)
 
 **FAQ Page Generation Integration:**

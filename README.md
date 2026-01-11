@@ -257,7 +257,7 @@ The appendices are published as separate HTML pages with full navigation:
 
 - **Implementation Guides:** Appendices A-D (cookbooks, patterns, tools)
 - **Quick References:** Appendices E-G (one-page guides, roadmaps, resources)
-- **Case Studies:** Appendices H-J (examples, analysis, industry updates)
+- **Case Studies & Templates:** Appendices H-K (examples, analysis, industry updates, page patterns)
 
 **Generate locally:**
 
@@ -265,7 +265,7 @@ The appendices are published as separate HTML pages with full navigation:
 npm run pdf:appendix        # Generate HTML pages in invisible-users/manuscript/web/
 ```
 
-This creates 16 files in the manuscript submodule:
+This creates 17 files in the manuscript submodule:
 
 - `index.html` - Book main page with complete overview
 - `appendix-index.html` - Appendix landing page
@@ -273,7 +273,7 @@ This creates 16 files in the manuscript submodule:
 - `identity-layer.html` - Identity delegation project page
 - `llms.txt` - AI agent discovery file
 - `sitemap.xml` - Search engine discovery file
-- `appendix-a.html` through `appendix-j.html` - Individual appendix pages (10 files)
+- `appendix-a.html` through `appendix-k.html` - Individual appendix pages (11 files)
 
 Each appendix page includes:
 
