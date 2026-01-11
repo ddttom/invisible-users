@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | The Invisible Users</title>
+  <meta name="ai-preferred-access" content="html">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; }
+    .login-container { max-width: 400px; margin: 6rem auto; background: white; padding: 3rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    h1 { color: #1e40af; margin-bottom: 2rem; text-align: center; }
+    .form-field { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600; }
+    input { width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 6px; font-size: 1rem; }
+    input:focus { outline: none; border-color: #3b82f6; }
+    .btn { width: 100%; background: #2563eb; color: white; padding: 1rem; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 1rem; }
+    .btn:hover { background: #1d4ed8; }
+    .floating-home-button { position: fixed; top: 20px; left: 20px; background: #0066cc; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; z-index: 1000; }
+  </style>
+</head>
+<body>
+  <main class="login-container" role="main" data-form-type="login">
+    <h1>Sign In</h1>
+    <form action="/login" method="POST" data-state="ready">
+      <div class="form-field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+      </div>
+      <div class="form-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required aria-required="true" autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn">Sign In</button>
+    </form>
+    <p style="text-align: center; margin-top: 1.5rem; color: #6b7280;">
+      Don't have an account? <a href="contact.html" style="color: #2563eb;">Contact us</a>
+    </p>
+  </main>
+  <a href="index.html" class="floating-home-button">Home</a>
+</body>
+</html>
