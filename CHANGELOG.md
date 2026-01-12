@@ -12,8 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **CSS Linting Improvements:**
 
 - Removed empty CSS rulesets from `web/appendix.css` (`div.sourceCode`, `code span.ex`)
+- Added vendor prefixes for broader browser compatibility:
+  - `-webkit-hyphens` for Safari iOS < 17 support (body and code rules)
+  - `-moz-text-size-adjust` for Firefox compatibility
+  - Follows progressive enhancement with standard properties
 - Resolved Microsoft Edge Tools CSS validation warnings
-- No functional changes, purely cleanup
+- No functional changes, purely cleanup and compatibility
 
 **Meta Tag Naming Standardization:**
 
