@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - For Reviewers Page (2026-01-12)
+
+**Created professional reviewer acknowledgment page following AI-friendly HTML patterns:**
+
+- **web/for-reviewers.html** (Submodule):
+  - Professional reviewer acknowledgment page with Schema.org Article JSON-LD
+  - AI-specific meta tags (ai-preferred-access, ai-content-policy, ai-freshness, ai-structured-data, ai-attribution)
+  - Semantic HTML structure with proper data-* attributes and ARIA roles
+  - Reviewer acknowledgment policy (all reviewers mentioned in final book)
+  - Feedback instructions (email tom.cranstoun@gmail.com, Q1 2026 timeline)
+  - NDA agreement section with download button placeholder
+  - External CSS (css/styles.css) and JS (js/common.js) references for consistency
+  - Floating navigation buttons (Home, Back to Top)
+  - British English throughout with professional but warm tone
+  - Follows patterns from Appendices D and K
+
+**Documentation Updates (Main Repository):**
+
+- **PROJECTSTATE.md:**
+  - Added for-reviewers.html to Web Pages section
+  - Updated "Last Updated" date
+
 ### Removed - Identity Delegation Framework and GitHub Links (2026-01-12)
 
 **Removed Identity Delegation framework concept and all GitHub repository links from web materials:**
