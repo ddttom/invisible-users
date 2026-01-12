@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - AI-Friendly Meta Tags and External CSS (2026-01-12)
+
+**Meta Tag Enhancement:**
+
+- Added `llms-txt` meta tag to all appendix HTML files to indicate llms.txt file availability
+- Added `llms-txt` meta tag to manuscript/web/index.html (book main page)
+- Added `llms-txt` meta tag to web/news.html
+- Added complete AI-specific meta tags to agent-friendly-starter-kit/good/index.html example
+- Meta tag follows proposed pattern from Chapter 10: `<meta name="llms-txt" content="/llms.txt">`
+
+**CSS Externalization:**
+
+- Created appendix.css (12KB, 553 lines) containing all Pandoc and enhancement styles
+- Updated enhance-appendix-html.js to replace embedded styles with external CSS link
+- Removed ~220 lines of embedded CSS from each appendix HTML file
+- Maintained WCAG 2.1 AA contrast compliance throughout
+- Preserved inline JavaScript for copy-to-clipboard functionality
+- Improved page load performance through CSS caching across 12 appendix pages
+
+**Web Directory Files:**
+
+- Created web/llms.txt for root web directory discovery
+- Created web/sitemap.xml for search engine discovery (4 URLs)
+- Removed identity-layer.html references from all scripts (file deleted intentionally)
+
+**Script Updates:**
+
+- scripts/enhance-appendix-html.js: Added llms-txt meta tag, externalized CSS
+- scripts/generate-appendix-html.sh: Removed identity-layer.html copying logic
+- scripts/generate-sitemap.js: Removed identity-layer.html from sitemap
+
 ### Added - Platform Blog Integration and Business Decision Frameworks (2026-01-12)
 
 **Manuscript Enhancement:**

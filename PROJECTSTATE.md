@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Platform Blog Integration + Business Decision Frameworks)
+**Last Updated:** 2026-01-12 (AI Meta Tags + External CSS)
 
 ### Combined Repository
 
@@ -50,12 +50,14 @@ This repository contains two integrated projects:
   - All pages follow Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML)
   - Book website URL: <https://allabout.network/invisible-users>
 - **HTML Enhancement Pipeline:**
-  - **Post-processor** (`scripts/enhance-appendix-html.js`) - Adds AI meta tags, Schema.org JSON-LD, semantic roles, responsive margin CSS, code block styling, and copy-to-clipboard functionality to Pandoc HTML
+  - **Post-processor** (`scripts/enhance-appendix-html.js`) - Adds AI meta tags (including llms-txt), Schema.org JSON-LD, semantic roles, and replaces embedded CSS with external stylesheet link
+  - **External Stylesheet** (`appendix.css`) - 12KB shared CSS file containing all Pandoc base styles and custom enhancements (navigation buttons, code blocks, responsive design)
   - **Code Block Features** - Black 2px borders, light grey backgrounds, copy buttons with visual feedback, data-role attributes for semantic clarity
-  - **Sitemap generator** (`scripts/generate-sitemap.js`) - Creates sitemap.xml with appropriate priorities and change frequencies
+  - **Sitemap generator** (`scripts/generate-sitemap.js`) - Creates sitemap.xml with appropriate priorities and change frequencies (15 URLs including appendices)
   - **Generation script** (`scripts/generate-appendix-html.sh`) - Orchestrates Pandoc conversion + enhancement + sitemap generation
   - **Documentation** (`scripts/README-appendix-enhancements.md`) - Complete pipeline documentation
-  - Automatically applies British English, AI-specific meta tags, accessibility enhancements, and consistent styling matching web pages
+  - Automatically applies British English, AI-specific meta tags (including llms-txt), accessibility enhancements, and external CSS for performance
+  - Removes ~220 lines of embedded CSS per page, improving caching and maintainability
 
 ### Web Audit Suite Status
 
