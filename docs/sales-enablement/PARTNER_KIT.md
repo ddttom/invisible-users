@@ -44,6 +44,32 @@ Best,
 
 ---
 
+### Template C: The "Platform Retention Risk" (For CMS/platform vendors)
+
+**Subject:** Customer churn vector affecting [Platform Name] clients
+
+Hi [Name],
+
+I'm reaching out because I've identified a customer retention risk that affects CMS and e-commerce platforms like [Platform Name].
+
+Your clients' websites are currently being accessed by AI agents (ChatGPT, Claude, shopping assistants) on behalf of users. When these agents can't extract structured data—because the platform doesn't make it trivial to output semantic HTML, Schema.org JSON-LD, or llms.txt files—those clients get filtered out of agent recommendations.
+
+They lose business silently. No analytics spike. No error logs. Just invisible exclusion.
+
+Eventually, your client wonders why traffic is down. They don't blame the agents. They blame their website. And they blame their platform.
+
+**The opportunity:** Platforms that make agent compatibility automatic—with Schema.org templates built into content models, automatic llms.txt generation, protocol abstraction layers—become indispensable. Those that don't create migration triggers.
+
+Your clients already output Schema.org data for SEO. The same patterns help with AI agents. Making this trivial becomes a competitive moat.
+
+I'd love to share our framework for how platforms can position "agent-ready" as a core differentiator. Are you available for a 20-minute call next week?
+
+Best,
+
+[Your Name]
+
+---
+
 ## 2. Objection Handling Script
 
 **Objection:** "AI is free/cheap, why should I pay for this?"
@@ -57,6 +83,9 @@ Best,
 
 **Objection:** "Can't we just wait until this becomes standard?"
 **Response:** "You can, but there is a 'First Mover Advantage.' Agents are learning right now which sites are reliable. If an agent learns that [Competitor] is easy to buy from and [Company] is hard, it will default to [Competitor] for future queries. You want to train the agents to prefer you *now*."
+
+**Objection (Platform Vendors):** "We're a CMS/platform provider, not an end user. This doesn't affect us."
+**Response:** "That's the most dangerous misunderstanding. Your clients are losing business to AI agents silently, and they'll eventually blame your platform. When agents can't extract structured data because your CMS doesn't make it trivial to output semantic HTML or Schema.org JSON-LD, those clients get filtered out of agent recommendations. They lose revenue, don't know why, and switch to competitors whose platforms make agent compatibility automatic. This is a customer retention risk you're not seeing. The platforms that abstract this complexity—with automatic llms.txt generation, Schema.org templates, protocol support—become indispensable. Those that don't become migration triggers."
 
 ---
 

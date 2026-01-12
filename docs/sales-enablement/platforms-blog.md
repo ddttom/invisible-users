@@ -157,6 +157,20 @@ Focus first on universal patterns \- the designs that work for all agents regard
 
 When you're ready for transaction integration, evaluate which protocol has the broadest agent support in your market. But build the foundation first.
 
+**If you're a platform vendor (CMS, e-commerce platform, framework provider):**
+
+You might think: "Our clients face this problem, but we don't. We're infrastructure, not end users."
+
+This is the most dangerous misunderstanding. Your clients' websites are already being accessed by AI agents. When agents can't extract structured data (because your platform doesn't make it trivial to output semantic HTML, Schema.org JSON-LD, or llms.txt files), those clients get filtered out of agent recommendations. They lose business silently.
+
+Your client eventually wonders why traffic is down and revenue is stagnant. They don't blame the agents. They blame their website. And they blame their platform.
+
+CMSs and platforms that make agent compatibility automatic—with Schema.org templates built into content models, automatic llms.txt generation from content taxonomies, and protocol abstraction layers (ACP, UCP, future standards)—become indispensable. Platforms that don't create a customer retention risk.
+
+Your clients already output Schema.org structured data for SEO. The same patterns that help with Google Search rankings are exactly what AI agents need. A platform that makes this trivial becomes a competitive advantage. A platform that makes it difficult becomes a migration trigger.
+
+The sales narrative writes itself: "Your customers' customers use AI agents. Our platform makes agent compatibility automatic. Competitors don't. Choose us."
+
 ## The Bigger Picture
 
 Platform competition corroborates what I've been researching for two years: AI agents are changing web design requirements.
