@@ -32,7 +32,9 @@
       "Bash(do)",
       "Bash(python3:*)",
       "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/web/site/**)",
-      "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/**)"
+      "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/**)",
+      "Bash(git checkout:*)",
+      "Bash(git mv:*)"
     ],
     "deny": [],
     "ask": []
