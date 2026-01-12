@@ -282,7 +282,7 @@ function generateReport(scanResults) {
   const aiMetaFiles = scanResults.filter(r => r.patterns.aiMeta.present);
   if (aiMetaFiles.length > 0) {
     aiMetaFiles.forEach(r => {
-      const relPath = r.file.replace(/^.*invisible-users\//, '');
+      const relPath = r.file.replace(/^.*packages\/manuscript\/manuscript\//, '');
       report += `- ${relPath} (${r.patterns.aiMeta.tags.length} tags)\n`;
     });
   } else {
@@ -298,7 +298,7 @@ function generateReport(scanResults) {
   const agentVisibleFiles = scanResults.filter(r => r.patterns.dataAgentVisible.present);
   if (agentVisibleFiles.length > 0) {
     agentVisibleFiles.forEach(r => {
-      const relPath = r.file.replace(/^.*invisible-users\//, '');
+      const relPath = r.file.replace(/^.*packages\/manuscript\/manuscript\//, '');
       report += `- ${relPath} (${r.patterns.dataAgentVisible.count} occurrences)\n`;
     });
   } else {
@@ -403,7 +403,7 @@ function main() {
   const report = generateReport(scanResults);
 
   // Write report
-  const reportPath = path.join(repoRoot, 'invisible-users/manuscript/PATTERN-AUDIT-REPORT.md');
+  const reportPath = path.join(repoRoot, 'packages/manuscript/manuscript/PATTERN-AUDIT-REPORT.md');
   fs.writeFileSync(reportPath, report, 'utf8');
 
   console.log(`✓ Audit complete`);

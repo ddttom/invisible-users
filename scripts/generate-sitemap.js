@@ -10,7 +10,7 @@ const path = require('path');
 
 // Configuration
 const BASE_URL = 'https://allabout.network/invisible-users/web';
-const OUTPUT_DIR = path.join(__dirname, '..', 'invisible-users', 'manuscript', 'web');
+const OUTPUT_DIR = path.join(__dirname, '..', 'packages', 'manuscript', 'manuscript', 'web');
 const SITEMAP_FILE = path.join(OUTPUT_DIR, 'sitemap.xml');
 
 // Current date in ISO format (YYYY-MM-DD)

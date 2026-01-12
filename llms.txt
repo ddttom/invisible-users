@@ -21,40 +21,40 @@ Two integrated projects: A book manuscript examining how modern web design optim
 
 Complete 11-chapter manuscript examining web design for both humans and AI agents:
 
-- [Preface - Author's Journey](invisible-users/manuscript/preface.md): Book introduction with personal narrative, usage guide, acknowledgements, and author bio (~1,700 words)
-- [Chapter 1 - What You Will Learn](invisible-users/manuscript/chapter-01-what-you-will-learn.md): Introduction and the accessibility connection (~3,200 words)
-- [Chapter 2 - The Invisible Failure](invisible-users/manuscript/chapter-02-the-invisible-failure.md): When websites break for AI agents (~4,500 words)
-- [Chapter 3 - The Architectural Conflict](invisible-users/manuscript/chapter-03-the-architectural-conflict.md): How modern web architecture creates the problem (~4,150 words)
-- [Chapter 4 - The Business Reality](invisible-users/manuscript/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce with ROI assessment framework (~7,350 words)
-- [Chapter 5 - The Content Creator's Dilemma](invisible-users/manuscript/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~5,600 words)
-- [Chapter 6 - The Security Maze](invisible-users/manuscript/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~4,000 words)
-- [Chapter 7 - The Legal Landscape](invisible-users/manuscript/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~4,400 words)
-- [Chapter 8 - The Human Cost](invisible-users/manuscript/chapter-08-the-human-cost.md): The digital divide implications (~3,650 words)
-- [Chapter 9 - Designing for Both](invisible-users/manuscript/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,400 words)
-- [Chapter 10 - Technical Advice](invisible-users/manuscript/chapter-10-technical-advice.md): Implementation code, testing strategies, and practical tools (~9,650 words)
-- [Chapter 11 - What Agent Creators Must Build](invisible-users/manuscript/chapter-11-what-agent-creators-must-build.md): Implementation patterns, validation layers, confidence scoring, and guardrails for reliable agent systems including incomplete data detection (~5,000 words)
+- [Preface - Author's Journey](packages/manuscript/manuscript/preface.md): Book introduction with personal narrative, usage guide, acknowledgements, and author bio (~1,700 words)
+- [Chapter 1 - What You Will Learn](packages/manuscript/manuscript/chapter-01-what-you-will-learn.md): Introduction and the accessibility connection (~3,200 words)
+- [Chapter 2 - The Invisible Failure](packages/manuscript/manuscript/chapter-02-the-invisible-failure.md): When websites break for AI agents (~4,500 words)
+- [Chapter 3 - The Architectural Conflict](packages/manuscript/manuscript/chapter-03-the-architectural-conflict.md): How modern web architecture creates the problem (~4,150 words)
+- [Chapter 4 - The Business Reality](packages/manuscript/manuscript/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce with ROI assessment framework (~7,350 words)
+- [Chapter 5 - The Content Creator's Dilemma](packages/manuscript/manuscript/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~5,600 words)
+- [Chapter 6 - The Security Maze](packages/manuscript/manuscript/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~4,000 words)
+- [Chapter 7 - The Legal Landscape](packages/manuscript/manuscript/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~4,400 words)
+- [Chapter 8 - The Human Cost](packages/manuscript/manuscript/chapter-08-the-human-cost.md): The digital divide implications (~3,650 words)
+- [Chapter 9 - Designing for Both](packages/manuscript/manuscript/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,400 words)
+- [Chapter 10 - Technical Advice](packages/manuscript/manuscript/chapter-10-technical-advice.md): Implementation code, testing strategies, and practical tools (~9,650 words)
+- [Chapter 11 - What Agent Creators Must Build](packages/manuscript/manuscript/chapter-11-what-agent-creators-must-build.md): Implementation patterns, validation layers, confidence scoring, and guardrails for reliable agent systems including incomplete data detection (~5,000 words)
 
 ## Practical Implementation Guides
 
 Comprehensive guides and reference materials for developers:
 
-- [Executive Summary](invisible-users/manuscript/executive-summary.md): Condensed overview of the book's key insights and arguments (~1,100 words)
+- [Executive Summary](packages/manuscript/manuscript/executive-summary.md): Condensed overview of the book's key insights and arguments (~1,100 words)
 
 ### Manuscript Appendices
 
 Reference materials integrated into the manuscript as appendices:
 
-- [Appendix A - Implementation Cookbook](invisible-users/manuscript/appendix-implementation-cookbook.md): Quick-reference recipes for common AI agent compatibility patterns with copy-paste implementations (~1,873 words). Includes persistent error messages, explicit state attributes, semantic form fields, and progressive enhancement patterns.
-- [Appendix B - Battle-Tested Lessons](invisible-users/manuscript/appendix-battle-tested-lessons.md): Real-world learnings from implementing AI agent compatibility patterns in production (~1,796 words). Covers mistakes to avoid, solutions that work, and practical insights from production deployments.
-- [Appendix C - Web Audit Suite User Guide](invisible-users/manuscript/appendix-web-audit-suite-guide.md): Complete guide to auditing websites for AI agent compatibility using Web Audit Suite (~2,010 words). Includes installation, usage examples, report interpretation, and CI/CD integration.
-- [Appendix D - AI-Friendly HTML Guide](invisible-users/manuscript/appendix-ai-friendly-html-guide.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~9,050 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
-- [Appendix E - AI Patterns Quick Reference](invisible-users/manuscript/appendix-ai-patterns-quick-reference.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,300 words). Includes data attribute reference, form field names, and practical code examples.
-- [Appendix F - Implementation Roadmap](invisible-users/manuscript/appendix-implementation-roadmap.md): Priority-based implementation roadmap from critical quick wins to advanced features (~2,750 words). Organized by priority levels rather than time estimates.
-- [Appendix G - Resource Directory](invisible-users/manuscript/appendix-resource-directory.md): Curated directory of 150+ resources organized by category (~1,950 words). Includes documentation, tools, specifications, and case studies.
-- [Appendix H - Live llms.txt](invisible-users/manuscript/appendix-h-live-llms.md): Markdown wrapper demonstrating llms.txt example with Digital Domain Technologies reference (20 curated links). Shows what a complete llms.txt file looks like in practice.
-- [Appendix I - Pipeline Failure Case Study](invisible-users/manuscript/appendix-i-pipeline-failure-case-study.md): Complete £203k cruise pricing error analysis referenced in Chapter 11 (~2,500 words). Demonstrates how agents fail when websites lack clear structured data and agents lack validation layers.
-- [Appendix J - Industry Developments](invisible-users/manuscript/appendix-j-industry-developments.md): Latest verified news and updates about AI agents, commerce platforms, and industry developments. Regularly updated with sources.
-- [Appendix K - Common Page Patterns](invisible-users/manuscript/appendix-k-common-page-patterns.md): Production-ready HTML templates demonstrating AI-friendly patterns for common page types (~14,200 words). Complete examples for home, about, contact, sales, collection, article, FAQ, and form pages.
+- [Appendix A - Implementation Cookbook](packages/manuscript/manuscript/appendix-implementation-cookbook.md): Quick-reference recipes for common AI agent compatibility patterns with copy-paste implementations (~1,873 words). Includes persistent error messages, explicit state attributes, semantic form fields, and progressive enhancement patterns.
+- [Appendix B - Battle-Tested Lessons](packages/manuscript/manuscript/appendix-battle-tested-lessons.md): Real-world learnings from implementing AI agent compatibility patterns in production (~1,796 words). Covers mistakes to avoid, solutions that work, and practical insights from production deployments.
+- [Appendix C - Web Audit Suite User Guide](packages/manuscript/manuscript/appendix-web-audit-suite-guide.md): Complete guide to auditing websites for AI agent compatibility using Web Audit Suite (~2,010 words). Includes installation, usage examples, report interpretation, and CI/CD integration.
+- [Appendix D - AI-Friendly HTML Guide](packages/manuscript/manuscript/appendix-ai-friendly-html-guide.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~9,050 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
+- [Appendix E - AI Patterns Quick Reference](packages/manuscript/manuscript/appendix-ai-patterns-quick-reference.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,300 words). Includes data attribute reference, form field names, and practical code examples.
+- [Appendix F - Implementation Roadmap](packages/manuscript/manuscript/appendix-implementation-roadmap.md): Priority-based implementation roadmap from critical quick wins to advanced features (~2,750 words). Organized by priority levels rather than time estimates.
+- [Appendix G - Resource Directory](packages/manuscript/manuscript/appendix-resource-directory.md): Curated directory of 150+ resources organized by category (~1,950 words). Includes documentation, tools, specifications, and case studies.
+- [Appendix H - Live llms.txt](packages/manuscript/manuscript/appendix-h-live-llms.md): Markdown wrapper demonstrating llms.txt example with Digital Domain Technologies reference (20 curated links). Shows what a complete llms.txt file looks like in practice.
+- [Appendix I - Pipeline Failure Case Study](packages/manuscript/manuscript/appendix-i-pipeline-failure-case-study.md): Complete £203k cruise pricing error analysis referenced in Chapter 11 (~2,500 words). Demonstrates how agents fail when websites lack clear structured data and agents lack validation layers.
+- [Appendix J - Industry Developments](packages/manuscript/manuscript/appendix-j-industry-developments.md): Latest verified news and updates about AI agents, commerce platforms, and industry developments. Regularly updated with sources.
+- [Appendix K - Common Page Patterns](packages/manuscript/manuscript/appendix-k-common-page-patterns.md): Production-ready HTML templates demonstrating AI-friendly patterns for common page types (~14,200 words). Complete examples for home, about, contact, sales, collection, article, FAQ, and form pages.
 
 ### Web Appendices
 
@@ -69,17 +69,17 @@ Each appendix page includes table of contents, syntax highlighting, and navigati
 
 ### Code Examples
 
-- [Agent-Friendly Starter Kit](invisible-users/manuscript/agent-friendly-starter-kit/): Production-ready code examples demonstrating good vs bad patterns for AI agent compatibility
-- [Code Examples](invisible-users/manuscript/code-examples/): Platform configurations, validation tools, and monitoring examples
+- [Agent-Friendly Starter Kit](packages/manuscript/manuscript/agent-friendly-starter-kit/): Production-ready code examples demonstrating good vs bad patterns for AI agent compatibility
+- [Code Examples](packages/manuscript/manuscript/code-examples/): Platform configurations, validation tools, and monitoring examples
 - Platform Configurations: Apache, Nginx, Next.js, WordPress, Adobe EDS, Static Sites
 - Validation Tools: Development and production verification scripts
 - Monitoring Examples: Server log analysis and analytics tracking
 
 ### Reference Materials
 
-- [Glossary](invisible-users/manuscript/Glossary.md): 60+ technical terms with cross-references
-- [Implementation Roadmap](invisible-users/manuscript/appendix-implementation-roadmap.md): Priority-based implementation roadmap
-- [Resource Directory](invisible-users/manuscript/appendix-resource-directory.md): 150+ curated resources organized by category
+- [Glossary](packages/manuscript/manuscript/Glossary.md): 60+ technical terms with cross-references
+- [Implementation Roadmap](packages/manuscript/manuscript/appendix-implementation-roadmap.md): Priority-based implementation roadmap
+- [Resource Directory](packages/manuscript/manuscript/appendix-resource-directory.md): 150+ curated resources organized by category
 
 ## Key Concepts
 

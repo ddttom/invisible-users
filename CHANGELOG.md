@@ -420,7 +420,7 @@ Appendix J: Industry Developments
 
 **Event Page Update:**
 
-- Updated [web/site/event.html](invisible-users/manuscript/web/site/event.html) with real Boye & Company webinar details
+- Updated [web/site/event.html](packages/manuscript/manuscript/web/site/event.html) with real Boye & Company webinar details
   - Event: "The Platform Race: How Three Tech Giants Launched Agent Commerce in Seven Days"
   - Date: Wednesday, 21 January 2026
   - Times: 14:00 GMT (15:00 CET, 09:00 EST)
