@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Broadened Audience Descriptions (2026-01-12)
+
+**Expanded manuscript audience descriptions to reflect wider stakeholder ecosystem:**
+
+Updated audience descriptions throughout the manuscript to acknowledge the full range of stakeholders involved in web development and digital experience decisions.
+
+**Manuscript Changes (Submodule):**
+
+- **Preface (line 140):** Replaced narrow "Frontend Engineers and System Architects" recommendation with inclusive language: "Web professionals (developers, designers, product owners), business leaders, content strategists, and anyone responsible for digital experience decisions"
+- **Preface "Web Professionals & Engineers" (lines 65-66):** Expanded description to explicitly mention and provide guidance for:
+  - Product Owners and Project Managers (prioritisation frameworks)
+  - UX Designers (interface patterns serving both humans and agents)
+  - Content Strategists (agent-friendly content structure)
+  - QA Engineers (testing approaches for agent compatibility)
+- **Reading Guide:** Added 2 new dedicated reading paths:
+  - **Product Owners:** Strategic implementation focus balancing business objectives with technical realities (Chapters 1-5, 9, 10 with delegation guidance)
+  - **Content Managers and Strategists:** Content-first perspective on agent-friendly structure (Chapters 1, 2, 3, 5, 10, 11 with focus on Schema.org, semantic HTML, llms.txt)
+- **Reading Guide:** Renamed "Product Managers and Designers" to "UX Designers and Information Architects" for clarity and better role differentiation
+- **Executive Summary "Navigate This Book":** Updated audience navigation with dedicated entries for Product Owners, Content Managers/Strategists, and UX Designers/Information Architects
+
+**Documentation:**
+
+- **PROJECTSTATE.md:** Updated "Target Audiences" section to reflect 7 distinct reading paths (was 5) and expanded stakeholder descriptions
+
+**Impact:**
+
+- Result: 7 distinct reading paths instead of 5, covering wider stakeholder ecosystem
+- Each role (Product Owners, Project Managers, Content Managers, Strategists, Designers, Developers, Testers) can now immediately identify their relevant reading path
+- Maintains consistency across Preface, Reading Guide, and Executive Summary
+- All changes preserve British English, professional tone, and existing markdown structure
+
 ### Fixed - Path References Post-Restructure (2026-01-12)
 
 **Complete path cleanup after monorepo restructure:**
