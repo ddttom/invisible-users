@@ -7,6 +7,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Platform Vendor Messaging (2026-01-12)
+
+**Extended sales messaging to counter "this isn't for us" objection from platform vendors:**
+
+Added comprehensive messaging addressing CMS providers, e-commerce platforms, and infrastructure vendors who might dismiss AI agent compatibility as irrelevant to their business.
+
+**Submodule Changes (packages/manuscript/manuscript/):**
+
+- **executive-summary.md:**
+  - Added new section "But We're Not End Users—Why Does This Matter to Us?"
+  - Addresses customer churn vector (clients lose business silently, blame platform, switch competitors)
+  - Highlights competitive moat opportunity (automatic agent compatibility = indispensable)
+  - Provides concrete examples for 5 platform types: CMS, e-commerce, payment gateways, frameworks, hosting
+  - References Chapter 9 urgency (Amazon/Microsoft/Google simultaneous Jan 2026 launches)
+
+**Main Repository Changes:**
+
+- **docs/sales-enablement/platforms-blog.md:**
+  - Added platform vendor section to "What This Means for Different Audiences"
+  - Explains silent business loss and platform blame cycle
+  - Positions as competitive advantage vs migration trigger
+  - Emphasizes they're already in structured data business (SEO → agents)
+
+- **docs/sales-enablement/PARTNER_KIT.md:**
+  - Added Template C: "Platform Retention Risk" email for CMS/platform vendor outreach
+  - Added objection handler for "We're a platform provider, not an end user"
+  - Reframes as customer retention risk and competitive positioning
+
+**Key Arguments:**
+
+- Customer churn vector: Invisible failures lead to platform blame
+- Competitive moat: Abstracting complexity makes platforms indispensable
+- Already their business: Schema.org for SEO = agent compatibility
+- Urgency: Amazon/Microsoft/Google Jan 2026 launches signal infrastructure shift
+
+**Use Case:** Responding to platform vendors (like Kontent.ai) who initially dismiss book relevance because they're infrastructure, not end users.
+
 ### Fixed - Directory Naming (2026-01-12)
 
 **Renamed packages/web to packages/project-web to avoid confusion:**
