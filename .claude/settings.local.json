@@ -24,7 +24,15 @@
       "Bash(grep:*)",
       "Bash(git submodule add:*)",
       "Bash(git rm:*)",
-      "Bash(git submodule:*)"
+      "Bash(git submodule:*)",
+      "Bash(for file in about.html contact.html product.html event.html article.html)",
+      "Bash(do echo \"=== $file ===\" grep -A 8 '\"\"breadcrumb\"\"' \"/Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/web/site/$file\")",
+      "Bash(done)",
+      "Bash(for file in pricing.html consulting.html index.html about.html contact.html collection.html blog-post.html article.html faq.html product.html checkout.html search.html login.html 404.html team.html portfolio.html event.html testimonials.html privacy.html)",
+      "Bash(do)",
+      "Bash(python3:*)",
+      "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/web/site/**)",
+      "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/**)"
     ],
     "deny": [],
     "ask": []

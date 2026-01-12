@@ -69,41 +69,49 @@ The Schema.org validation integrates with the existing pipeline:
 ### Required Properties by Type
 
 **Product:**
+
 - name
 - offers (with price, priceCurrency)
 
 **Book:**
+
 - name
 - author
 - bookFormat
 
 **Article:**
+
 - headline
 - author
 - datePublished
 
 **BreadcrumbList:**
+
 - itemListElement (array of ListItem with position, name, item)
 
 **Offer:**
+
 - price
 - priceCurrency
 
 ### Recommended Properties
 
 **All Types:**
+
 - image
 - datePublished
 - dateModified
 - inLanguage
 
 **Product:**
+
 - description
 - sku
 - brand
 - aggregateRating
 
 **Offer:**
+
 - availability
 - seller
 - itemCondition
@@ -152,6 +160,7 @@ Page Type,Count,Total Schemas,Total Issues,Total Warnings,Schema Types Used,Exam
 ### schema-summary.md
 
 Human-readable summary with:
+
 - Overall statistics
 - Page type distribution
 - Most common issues
@@ -345,6 +354,7 @@ Don't just provide price - add all recommended properties:
 ## Support
 
 For issues or questions about Schema.org validation:
+
 - Check the [Web Audit Suite documentation](./usermanual.md)
 - Review [example implementations](../examples/)
 - See [The Invisible Users book](https://allabout.network/invisible-users/) for comprehensive patterns
