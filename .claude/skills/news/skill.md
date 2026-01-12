@@ -36,20 +36,51 @@ Broader shifts demonstrating AI adoption velocity and commercial pressure:
 
 ## Publication Status and Propagation Strategy
 
-**CURRENT STATUS: BOOK IN REVIEW (Pre-Publication)**
+**BOOK PUBLISHED: 12 January 2026**
 
-**Before publication (now):**
-- Updates propagate to manuscript files (`blog/book-updates.md` and `appendix-j-industry-developments.md`)
+**Before publication (historical):**
+- Updates propagated to manuscript files (`blog/book-updates.md` and `appendix-j-industry-developments.md`)
 - Changes tracked in version control
-- Book can be republished with latest news
+- Book republished with latest news
 
-**After publication:**
-- Book manuscript frozen (no more updates to core content)
-- Online appendices continue to receive updates at `https://allabout.network/invisible-users/web/appendix-j.html`
-- HTML generation via `npm run pdf:appendix` keeps web version current
-- Verified news ensures online appendices remain authoritative even after book publication
+**After publication (NOW):**
+- Book manuscript frozen, but appendices are LIVE online documents kept up to date
+- Post-publication news propagates to THREE locations:
+  1. `web/news.html` at `https://allabout.network/invisible-users/news.html` (public-facing HTML)
+  2. `blog/book-updates.md` (changelog tracking additions to Appendix J)
+  3. `appendix-j-industry-developments.md` (LIVE comprehensive record, new entries added to existing content)
+- All three files track developments that would have been in the book had they happened before publication
+- The six categories define what qualifies as significant post-publication news
 
-The `/news` skill ensures appendices stay current in this fast-moving field without requiring book republication.
+**Key categories for news.html (all must relate to book chapters):**
+
+1. **AI agent platform launches and capabilities**
+   - Examples: Browser automation tools, shopping agents, new agent platforms
+   - Validates: Chapters 2, 6, 9 (platform race, session inheritance, capabilities)
+
+2. **Commerce protocol developments (ACP, UCP, proprietary systems)**
+   - Examples: New protocols, protocol updates, merchant integrations, proprietary launches
+   - Validates: Chapters 4, 9, 12 (commerce incentives, platform race, identity layer)
+
+3. **Identity delegation and authentication standards**
+   - Examples: OAuth developments, delegation protocols, authentication standards
+   - Validates: Chapters 4, 6, 12 (identity delegation, security, missing identity layer)
+
+4. **Legal and regulatory changes affecting agent access**
+   - Examples: Bot detection laws, agent access regulations, liability frameworks
+   - Validates: Chapter 7 (legal landscape, liability, copyright)
+
+5. **Major website implementations of agent-friendly patterns**
+   - Examples: Sites adopting llms.txt, semantic HTML improvements, explicit state patterns
+   - Validates: Chapters 10, 11 (designing for both, technical advice)
+
+6. **Standards evolution (llms.txt adoption, proposed patterns becoming standards)**
+   - Examples: llms.txt adoption announcements, W3C standardization, ai-* meta tags becoming standards
+   - Validates: Chapters 10, 11, Appendix L (proposed patterns, standards evolution)
+
+**All news MUST still meet the five relevance criteria** (production reality, commercial pressure, timeline impact, ecosystem shift) - the categories are thematic groupings, not exceptions to the criteria.
+
+The `/news` skill ensures the news page stays current in this fast-moving "rocket-fuel mode" market without requiring book republication.
 
 ## How to Use
 
@@ -71,7 +102,7 @@ The `/news` skill ensures appendices stay current in this fast-moving field with
 /news OpenAI announced browser automation features for ChatGPT, available to Plus subscribers
 ```
 
-## 7-Phase Workflow
+## 8-Phase Workflow (Post-Publication - Updates All Three Files)
 
 ### Phase 1: Content Verification
 
@@ -177,42 +208,32 @@ The `/news` skill ensures appendices stay current in this fast-moving field with
 
 **What you'll do:** Approve to proceed, or request corrections
 
-### Phase 5: Blog Entry Creation
+### Phase 5: Blog Changelog Entry Creation
 
 **Automatic actions:**
-- Use narrative template from `templates/blog-entry.md`
-- Write conversational introduction with urgency
-- Create "What This Validates" and "What This Challenges" sections
-- Add audience-specific action items
-- Include qualifiers for unverified claims
+- Create changelog entry noting addition to Appendix J
+- Include date, headline, chapter validation
+- Link to full entry in Appendix J
 - Update footer timestamp
 
 **Entry structure:**
 ```markdown
-### [Product Name] ([Date])
+### [Date Added] - [Product/Development Name]
 
-[Narrative paragraph with context and urgency]
+**Added to Appendix J:** [Full entry headline]
 
-**Key capabilities:**
-- [Bullet points]
+**Validates chapters:** X, Y, Z ([brief explanation])
 
-**What this validates:**
-- **Chapter X ([Name]):** [Explanation]
-
-**What this challenges:**
-[Or note if fully aligns]
-
-### What This Means for [Audience]
-[Action items]
+**See:** Full 12-section entry in Appendix J: "[Entry title]"
 ```
 
 **Insertion strategy:**
-- Read current blog file
-- Determine insertion point (chronological narrative)
-- May restructure section headings if needed
+- Read current changelog file
+- Add entry chronologically (most recent first)
+- Keep it brief - full details are in Appendix J
 - Update footer with today's date
 
-**What I'll do:** Read blog file, create entry, insert properly, update timestamp
+**What I'll do:** Read blog file, create changelog entry, insert at top, update timestamp
 
 ### Phase 6: Appendix Entry Creation
 
@@ -247,29 +268,69 @@ The `/news` skill ensures appendices stay current in this fast-moving field with
 - Security and Identity Solutions
 - Ecosystem Maturity Signals (NEW: behavioral shifts, adoption velocity, platform displacement)
 
-**What I'll do:** Read appendix, determine category, create structured entry, insert chronologically, update timestamp
+**What I'll do:** Read appendix, determine category, create structured entry, ADD to existing content (appendix is live document), insert chronologically within category, update timestamp
 
-### Phase 7: Final Verification
+### Phase 7: News.html Entry Creation (POST-PUBLICATION ONLY)
 
 **Automatic actions:**
-- Read both updated files
-- Verify markdown formatting:
+- Read current news.html file
+- Determine which of the six categories this news belongs to
+- Create formatted HTML news entry
+- Insert chronologically (most recent first)
+- Update "Last updated" date in footer
+- Preserve all HTML structure and styling
+
+**Entry structure (HTML):**
+```html
+<article class="news-item" data-article-type="industry-update">
+  <time class="news-date" datetime="YYYY-MM-DD">Month Year</time>
+  <h2>[Headline]</h2>
+  <p>[Introduction paragraph]</p>
+  <p><strong>Key details:</strong></p>
+  <ul>
+    <li>[Bullet point]</li>
+  </ul>
+  <p><strong>Book validation:</strong> [Which chapters this validates/challenges]</p>
+  <span class="tag">Category Tag</span>
+</article>
+```
+
+**Category tags:**
+- "Platform Launch" - AI agent platform launches and capabilities
+- "Commerce Protocol" - ACP, UCP, proprietary systems
+- "Identity Standards" - Identity delegation and authentication
+- "Legal/Regulatory" - Legal and regulatory changes
+- "Implementation" - Major website implementations
+- "Standards Evolution" - llms.txt, proposed patterns
+
+**What I'll do:** Read news.html, create entry, insert at top, update footer timestamp
+
+### Phase 8: Final Verification
+
+**Automatic actions:**
+- Read all three updated files (news.html, blog, appendix)
+- Verify HTML formatting in news.html:
+  - Proper article structure
+  - Valid datetime attributes
+  - No unclosed tags
+  - Consistent styling classes
+- Verify markdown formatting in blog and appendix:
   - No MD024 (duplicate headings)
   - No MD040 (code blocks have language)
   - No MD034 (bare URLs)
-  - Tables properly formatted
-- Check cross-references are accurate
+- Check cross-references are accurate across all files
 - Confirm date sequencing is correct
 
-**What I'll do:** Run markdown linting checks, report any issues
+**What I'll do:** Validate all three files, report any issues
 
 **What you'll do:** Review final entries
 
 ## File Locations
 
-**Primary targets:**
-- Blog: `packages/manuscript/manuscript/blog/book-updates.md`
-- Appendix: `packages/manuscript/manuscript/appendix-j-industry-developments.md`
+**POST-PUBLICATION targets (ALL THREE updated with each news item):**
+- News page: `packages/manuscript/manuscript/web/news.html` (public-facing HTML at https://allabout.network/invisible-users/news.html)
+- Blog: `packages/manuscript/manuscript/blog/book-updates.md` (changelog tracking additions to Appendix J)
+- Appendix: `packages/manuscript/manuscript/appendix-j-industry-developments.md` (LIVE comprehensive record, new entries ADDED to existing content)
 
 **Reference files (read-only):**
 - Chapters: `packages/manuscript/manuscript/chapter-*.md`
@@ -278,25 +339,28 @@ The `/news` skill ensures appendices stay current in this fast-moving field with
 **Supporting documentation:**
 - `verification-guidelines.md` - Fact-checking process
 - `relevance-checklist.md` - The five criteria
-- `templates/blog-entry.md` - Blog format and style
-- `templates/appendix-entry.md` - Appendix structure
+- `templates/appendix-entry.md` - Appendix 12-section structure
 
 ## Common Scenarios
 
-### Scenario 1: News Qualifies
+### Scenario 1: Post-Publication News Qualifies
 
 ```
-User: /news Microsoft Copilot Checkout launches with partner retailers
+User: /news Anthropic announces new agent protocol with major retailers
 
-Phase 1: ✓ Verified all claims
+Phase 1: ✓ Verified all claims via WebSearch
 Phase 2: ✓ Meets all five criteria
-Phase 3: ✓ Date sequenced
+Phase 3: ✓ Date after 12 Jan 2026 (post-publication)
 Phase 4: User approves
-Phase 5: Blog entry created
-Phase 6: Appendix entry created
-Phase 7: ✓ Markdown valid
+Phase 5: Blog changelog entry created (notes addition to Appendix J)
+Phase 6: Appendix entry created and ADDED to existing content (12-section format)
+Phase 7: news.html entry created (HTML, public-facing)
+  - Category: "Commerce Protocol"
+  - Inserted at top (most recent)
+  - Footer updated with today's date
+Phase 8: ✓ All three files validated (HTML + markdown)
 
-Result: Entries added to both files successfully
+Result: New entry added to appendix-j.md, changelog entry added to blog, HTML entry added to news.html
 ```
 
 ### Scenario 2: News Doesn't Qualify

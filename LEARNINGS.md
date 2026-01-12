@@ -84,3 +84,41 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 4. Push main repository: `git push origin <branch>`
 
 **Pattern**: After ANY submodule push, the parent repository needs a commit to update the pointer. Git shows this as `modified: packages/manuscript/manuscript (new commits)` in git status. The hooks remind about this, but you still need to execute the steps. This is a two-step process that cannot be skipped.
+
+## Accessibility: WCAG Contrast Requirements Keep Being Violated
+
+**Rule** (2026-01-12): Created news.html page with a "Subscribe to Updates" button that had poor contrast - blue text (`#2563eb`) on blue background (`#eff6ff` box), making it nearly invisible to users. User provided screenshot showing the button was unreadable and noted "You are not following the guidance about readability or contrast." This violates WCAG AA requirements that the book itself emphasizes throughout (especially in preface and Chapter 8).
+
+**The pattern of repeated violations**:
+
+1. **Preface example** (lines 19-21): Book explicitly warns about using `opacity: 0.9` on header text - it failed WCAG contrast for sighted humans while working fine for agents
+2. **News.html button**: Used `#2563eb` blue text on light blue background - insufficient contrast, nearly invisible
+3. **This keeps happening**: Despite the book being about accessibility and agent compatibility, I repeatedly create interfaces that fail basic WCAG contrast requirements
+
+**WCAG AA contrast minimums**:
+- Normal text: 4.5:1 contrast ratio
+- Large text (18pt+ or 14pt+ bold): 3:1 contrast ratio
+- UI components: 3:1 contrast ratio
+
+**Common violations to avoid**:
+- Blue text on blue backgrounds (any shade variation)
+- Light grey text on white backgrounds
+- Colored text on colored backgrounds without checking contrast
+- Using opacity for visual effects without verifying final contrast
+
+**Fix pattern**: Always use explicit colors meeting contrast ratios:
+- Button: Dark background (`#1e40af`) + white text (`#ffffff`) = good contrast
+- Links: Use darker blue (`#2563eb`) on white background = good contrast
+- Never assume color combinations are accessible - verify with contrast checker
+
+**Why this matters for THIS book**: The entire preface uses the `opacity: 0.9` mistake as a teaching example - "I'd built an AI-friendly interface that excluded people with low vision, exactly the pattern the book warns against." The book explicitly states "Both matter. Neither is optional. We can't optimise for one group whilst neglecting another." Yet I keep violating this principle when creating web pages for the book project itself.
+
+**Enforcement needed**: Before creating any HTML/CSS, verify all text/background color combinations meet WCAG AA contrast requirements. Use browser DevTools or online contrast checkers. This applies to buttons, links, headers, body text, and all UI components.
+
+**Hook implemented** (2026-01-12): Created `.claude/hooks/check-html-contrast.sh` that runs during pre-commit to detect common contrast violations:
+- Blue text on blue backgrounds
+- Light grey text (may fail 4.5:1 ratio)
+- Opacity usage (known to reduce contrast)
+- Buttons without explicit background/color
+
+The hook blocks commits with violations and provides guidance on fixing them, including links to contrast checkers and references to the book's own examples. Integrated into `.claude/hooks/pre-commit.sh` to run automatically.

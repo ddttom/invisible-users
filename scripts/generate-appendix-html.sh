@@ -288,23 +288,23 @@ LLMSEOF
 
 echo -e "${GREEN}✓ Generated llms.txt${NC}"
 
-# Copy web pages from packages/project-web/ directory
-echo -e "${BLUE}Copying project web pages...${NC}"
-if [ -f "packages/project-web/news.html" ]; then
-  cp "packages/project-web/news.html" "$OUTPUT_DIR/news.html"
-  echo -e "  Copied news.html"
+# Check manually maintained web pages exist
+echo -e "${BLUE}Checking manually maintained web pages...${NC}"
+if [ -f "$OUTPUT_DIR/news.html" ]; then
+  echo -e "  ✓ news.html exists (manually maintained)"
 else
-  echo -e "  Warning: packages/project-web/news.html not found"
+  echo -e "  ${RED}ERROR: news.html not found at $OUTPUT_DIR/news.html${NC}"
+  echo -e "  ${RED}This file must be manually maintained in the web directory${NC}"
+  exit 1
 fi
 if [ -f "$OUTPUT_DIR/faq.html" ]; then
-  echo -e "  FAQ already exists at $OUTPUT_DIR/faq.html"
-elif [ -f "$MANUSCRIPT_DIR/web/faq.html" ]; then
-  cp "$MANUSCRIPT_DIR/web/faq.html" "$OUTPUT_DIR/faq.html"
-  echo -e "  Copied faq.html"
+  echo -e "  ✓ faq.html exists (manually maintained)"
 else
-  echo -e "  Warning: faq.html not found"
+  echo -e "  ${RED}ERROR: faq.html not found at $OUTPUT_DIR/faq.html${NC}"
+  echo -e "  ${RED}This file must be manually maintained in the web directory${NC}"
+  exit 1
 fi
-echo -e "${GREEN}✓ Copied web pages${NC}"
+echo -e "${GREEN}✓ Manually maintained web pages verified${NC}"
 
 # Generate sitemap.xml
 echo -e "${BLUE}Generating sitemap.xml...${NC}"

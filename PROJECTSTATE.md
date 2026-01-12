@@ -10,7 +10,6 @@ This repository is now structured as a monorepo with npm workspaces:
 
 - **`packages/manuscript/`** - Book manuscript and materials (contains git submodule at `packages/manuscript/manuscript/`)
 - **`packages/web-audit-suite/`** - Web analysis tool
-- **`packages/project-web/`** - Public web pages (source files copied during appendix generation)
 - **Root level** - Shared tooling, scripts, and documentation
 
 All projects share dependency management and build scripts via npm workspaces.
@@ -52,11 +51,11 @@ All projects share dependency management and build scripts via npm workspaces.
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
   - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 17 files (index.html, appendix-index.html, news.html, faq.html, llms.txt, sitemap.xml, 11 appendix pages including new Appendix L)
 - **Web Pages:**
-  - **Source files** (`packages/project-web/`) - Contains news.html and other project pages
-  - **Published location** (`packages/manuscript/manuscript/web/`) - Generated during appendix HTML generation
-  - **News** (`web/news.html`) - Project news and updates
-  - **FAQ** (`web/faq.html`) - Frequently asked questions about the book and project
+  - **Location** (`packages/manuscript/manuscript/web/`) - Contains both manually maintained files and generated appendices
+  - **News** (`web/news.html`) - Project news and updates (manually maintained)
+  - **FAQ** (`web/faq.html`) - Frequently asked questions about the book and project (manually maintained)
   - **For Reviewers** (`web/for-reviewers.html`) - Reviewer acknowledgment page with NDA agreement and download access
+  - **Generated files** - HTML appendices, llms.txt, sitemap.xml (created during build process)
   - All pages follow Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML)
   - Book website URL: <https://allabout.network/invisible-users>
 - **HTML Enhancement Pipeline:**

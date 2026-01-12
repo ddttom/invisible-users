@@ -87,14 +87,11 @@ This ensures the book remains the single source of truth.
 │   │       ├── appendix-live-llms.txt  # Appendix H source (llms.txt example)
 │   │       └── illustrations/    # SVG illustrations (PNG gitignored)
 │   │
-│   ├── web-audit-suite/      # Production-ready analysis tool
-│   │   ├── src/              # Source code
-│   │   ├── docs/             # Documentation
-│   │   ├── examples/         # Configuration examples
-│   │   └── README.md         # Tool documentation
-│   │
-│   └── project-web/          # Public web pages (source files)
-│       └── news.html         # Project news and updates
+│   └── web-audit-suite/      # Production-ready analysis tool
+│       ├── src/              # Source code
+│       ├── docs/             # Documentation
+│       ├── examples/         # Configuration examples
+│       └── README.md         # Tool documentation
 │
 ├── docs/                     # Business and sales materials
 │   └── sales-enablement/
@@ -288,18 +285,6 @@ Each appendix page includes:
 - Navigation footer linking to other appendices
 - Responsive design (mobile-friendly)
 - Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML, data-role attributes)
-
-## Project Web Pages
-
-The repository includes public web pages for the book project in [packages/project-web/](packages/project-web/):
-
-- [packages/project-web/news.html](packages/project-web/news.html) - Project news and updates
-
-These source files are copied during the appendix generation process (`npm run pdf:appendix`) to the published location at [packages/manuscript/manuscript/web/](packages/manuscript/manuscript/web/).
-
-The published pages follow Chapter 10 technical patterns and are accessible at:
-
-- <https://allabout.network/invisible-users/web/news.html>
 
 ## Key Themes
 

@@ -8,15 +8,17 @@
 
 **Current Status:** Complete with Phase 1-2 Enhancements + Chapter 12 + Web Appendices ✅ (~57,000 words core manuscript)
 
-**Latest Update (January 2026):** Restructured book to publish appendices separately online:
+**Latest Update (12 January 2026):** Book published with live online appendices:
 
-- Book now ends with "The End" chapter directing readers to online appendices at <https://allabout.network/invisible-users/web/>
-- All 10 appendices (A-J) published as individual HTML pages with navigation and llms.txt discovery
-- Updated all manuscript references to appendices to point to online URLs
-- Core manuscript: ~57,000 words (preface + 11 chapters + The End)
-- Web appendices: ~20,000 words published separately
-- Previous: Added Appendix J tracking Claude for Chrome (20 Dec 2024) and Microsoft Copilot Checkout (Jan 2025)
-- Previous: Added Chapter 12 (~5,000 words), enhanced Chapter 11, enhanced Chapter 4 with ROI framework
+- Book published 12 January 2026
+- Book ends with "The End" chapter directing readers to online appendices at <https://allabout.network/invisible-users/web/>
+- All 12 appendices (A-L) published as individual HTML pages with navigation and llms.txt discovery
+- Appendices are LIVE documents kept up to date as the field evolves
+- Appendix J receives new entries as significant industry developments occur
+- Created `blog/book-updates.md` as changelog tracking additions to Appendix J
+- Created `web/news.html` as public-facing page for industry developments
+- Core manuscript: ~57,000 words (preface + 11 chapters + The End + Glossary)
+- Web appendices: ~44,600 words base content (grows as Appendix J is updated)
 
 ---
 
@@ -51,6 +53,8 @@ This book explores the technical, business, ethical, and human implications of t
 
 **Web Appendices** (published separately at <https://allabout.network/invisible-users/web/>):
 
+These are LIVE online documents kept up to date as the field evolves. Appendix J receives new entries as significant industry developments occur.
+
 | Appendix | Title | Words | Status |
 | -------- | ----- | ----- | ------ |
 | A | Implementation Cookbook | ~1,900 | ✅ Published |
@@ -62,11 +66,11 @@ This book explores the technical, business, ethical, and human implications of t
 | G | Resource Directory | ~1,950 | ✅ Published |
 | H | Example llms.txt File | ~300 | ✅ Published |
 | I | Pipeline Failure Case Study | ~2,500 | ✅ Published |
-| J | Industry Developments | ~3,800 | ✅ Published |
+| J | Industry Developments | ~3,800 | ✅ Published (LIVE - updated as developments occur) |
 | K | Common Page Patterns | ~14,200 | ✅ Published |
 | L | Proposed AI Metadata Patterns | ~3,000 | ✅ Published |
 
-**Total Web Appendices:** ~44,600 words
+**Total Web Appendices:** ~44,600 words (base content as of 12 January 2026)
 
 ---
 
@@ -422,8 +426,10 @@ Each HTML page includes:
 
 | Material | Status | Description |
 | -------- | ------ | ----------- |
-| blog.md | ✅ | Broad-appeal blog post (~3,000 words) |
-| blog.svg | ✅ | Visual illustration (900×600) |
+| blog/blog.md | ✅ | Broad-appeal blog post (~3,000 words) |
+| blog/blog.svg | ✅ | Visual illustration (900×600) |
+| blog/book-updates.md | ✅ | Changelog tracking additions to Appendix J (post-publication) |
+| web/news.html | ✅ | Public-facing page for industry developments (post-publication) |
 
 ### Sales & Partnership Materials
 
@@ -599,11 +605,14 @@ Real-world llms.txt example:
     │   ├── appendix-h-live-llms.md                    # Appendix H wrapper
     │   ├── appendix-h-live-llms.txt                   # Appendix H content (DDT llms.txt reference)
     │   ├── appendix-i-pipeline-failure-case-study.md  # Appendix I source (~2,500 words)
-    │   ├── appendix-j-industry-developments.md        # Appendix J source (~3,800 words)
+    │   ├── appendix-j-industry-developments.md        # Appendix J source (LIVE - ~3,800 words base, grows with new entries)
+    │   ├── appendix-k-common-page-patterns.md         # Appendix K source (~14,200 words)
+    │   ├── appendix-l-proposed-ai-metadata-patterns.md # Appendix L source (~3,000 words)
     │   ├── web/                                       # Generated HTML appendices (published online)
     │   │   ├── index.html       # Appendices landing page
     │   │   ├── llms.txt         # AI agent discovery file
-    │   │   └── appendix-{a-j}.html  # 10 individual appendix pages
+    │   │   ├── news.html        # Public-facing industry developments page (post-publication)
+    │   │   └── appendix-{a-l}.html  # 12 individual appendix pages
     │   ├── agent-friendly-starter-kit/              # Code examples (good/ vs bad/)
     │   ├── code-examples/                           # Production-ready code implementations
     │   │   ├── html-examples/
@@ -618,6 +627,7 @@ Real-world llms.txt example:
     │   ├── blog/                                    # Blog and promotional materials
     │   │   ├── blog.md                              # Promotional blog post
     │   │   ├── blog.svg                             # Blog post illustration
+    │   │   ├── book-updates.md                      # Changelog for Appendix J additions (post-publication)
     │   │   └── AI-Native.blog                       # AI-native website guide (~38,000 words)
     │   └── illustrations/
     │       └── chapter-01-*.svg through chapter-11-*.svg
@@ -634,4 +644,4 @@ This manuscript is not licensed for public use, reproduction, or distribution.
 
 ---
 
-**Last updated:** 2026-01-10 — Restructured book to publish appendices separately online at <https://allabout.network/invisible-users/web/>; book now ends with The-End.md chapter; added npm run pdf:appendix command to generate HTML appendices with navigation and llms.txt discovery
+**Last updated:** 2026-01-12 — Book published with live online appendices; Appendix J maintained as LIVE document updated as industry developments occur; created blog/book-updates.md changelog and web/news.html public page for post-publication developments
