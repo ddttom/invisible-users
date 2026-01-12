@@ -64,8 +64,9 @@ This book explores the technical, business, ethical, and human implications of t
 | I | Pipeline Failure Case Study | ~2,500 | ✅ Published |
 | J | Industry Developments | ~3,800 | ✅ Published |
 | K | Common Page Patterns | ~14,200 | ✅ Published |
+| L | Proposed AI Metadata Patterns | ~3,000 | ✅ Published |
 
-**Total Web Appendices:** ~41,600 words
+**Total Web Appendices:** ~44,600 words
 
 ---
 
@@ -384,6 +385,7 @@ Published separately at <https://allabout.network/invisible-users/web/> as this 
 | manuscript/web/appendix-i.html | ✅ | Pipeline Failure Case Study (£203k error analysis) |
 | manuscript/web/appendix-j.html | ✅ | Industry Developments (latest verified news) |
 | manuscript/web/appendix-k.html | ✅ | Common Page Patterns (production-ready HTML templates) |
+| manuscript/web/appendix-l.html | ✅ | Proposed AI Metadata Patterns (formal W3C-style proposals for experimental patterns) |
 
 **Source files** (markdown):
 
@@ -401,6 +403,7 @@ Published separately at <https://allabout.network/invisible-users/web/> as this 
 | manuscript/appendix-i-pipeline-failure-case-study.md | ✅ | £203k error analysis source (~2,500 words) |
 | manuscript/appendix-j-industry-developments.md | ✅ | Industry news source (~3,800 words) |
 | manuscript/appendix-k-common-page-patterns.md | ✅ | Page templates source (~14,200 words) |
+| manuscript/appendix-l-proposed-ai-metadata-patterns.md | ✅ | Formal proposals source (~3,000 words) |
 
 Each HTML page includes:
 

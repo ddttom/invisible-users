@@ -108,6 +108,18 @@ const urls = [
     priority: '0.9',
     changefreq: 'weekly',
     description: 'Industry Developments (updated frequently)'
+  },
+  {
+    loc: `${BASE_URL}/appendix-k.html`,
+    priority: '0.8',
+    changefreq: 'monthly',
+    description: 'Common Page Patterns'
+  },
+  {
+    loc: `${BASE_URL}/appendix-l.html`,
+    priority: '0.9',
+    changefreq: 'monthly',
+    description: 'Proposed AI Metadata Patterns'
   }
 ];
 

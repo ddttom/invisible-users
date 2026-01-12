@@ -35,7 +35,9 @@
       "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/**)",
       "Bash(git checkout:*)",
       "Bash(git mv:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(node scripts/audit-html-patterns.js:*)",
+      "Bash(node scripts/generate-sitemap.js:*)"
     ],
     "deny": [],
     "ask": []

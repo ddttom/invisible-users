@@ -7,6 +7,122 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - HTML Pattern Implementation (2026-01-12)
+
+Implemented Priority 1 audit recommendations to ensure educational examples demonstrate best practices:
+
+**E-commerce examples enhanced with data-agent-visible pattern:**
+
+- `product-page.html`: Added agent metadata section with purchase instructions, prerequisites, expected responses
+- `shopping-cart.html`: Added agent metadata section with checkout instructions, cart operations, prerequisites
+- Updated comments in both files to document the pattern implementation
+
+**Schema.org JSON-LD added to product pages:**
+
+- `product-page.html`: Added complete Product schema with brand, pricing, availability, aggregate ratings
+- Provides machine-readable structured data (established standard) for AI agents and search engines
+
+**Pattern audit updated:**
+
+- Re-ran `scripts/audit-html-patterns.js` to capture improvements
+- data-agent-visible: 0% → 5.0% (3 files now implement the pattern)
+- Schema.org JSON-LD: maintained at 66.7% coverage (40/60 files)
+- Updated `PATTERN-AUDIT-REPORT.md` with current implementation status
+
+**Priority 2 improvements (Semantic HTML):**
+
+- `disabled-button.html`: Added `<main>` semantic element wrapping form content
+- `validation-form.html`: Added `<main>` semantic element wrapping form content
+- Semantic HTML5: 95.0% → 98.3% (57→59 files now use semantic elements)
+
+**Priority 3 improvements (AI Meta Tag Standardization):**
+
+- Standardized AI meta tags across all demo site pages (7 files updated: checkout, event, login, portfolio, search, team, testimonials)
+- Each file now has complete 5-tag set: ai-preferred-access, ai-content-policy, ai-freshness, ai-structured-data, ai-attribution
+- Enhanced ai-attribution specification in Appendix L with `text` attribute requirement
+- Updated all 39 HTML files with ai-attribution to include proper attribution text: "Source: The Invisible Users by Tom Cranstoun, <https://allabout.network/invisible-users/>"
+- Updated `scripts/enhance-appendix-html.js` to include attribution text in generated appendices
+- Regenerated all appendix HTML files with updated attribution format
+- Updated Appendix K: Fixed all 11 ai-attribution tags to include text attribute in inline HTML examples
+
+**Pattern audit final results:**
+
+- AI Meta Tags: 65.0% implementation (39/60 files) - all now standardized with complete 5-6 tag sets and proper attribution text
+- data-agent-visible: 5.0% implementation (3 files: product-page, shopping-cart, appendix-l)
+- Schema.org JSON-LD: 66.7% coverage (40/60 files)
+- Semantic HTML5: 98.3% coverage (59/60 files)
+
+**Educational Impact:** Code examples now properly demonstrate both established standards (Schema.org, semantic HTML5) and proposed patterns (data-agent-visible, standardized AI meta tags with attribution), ensuring readers see correct implementation in context. All AI meta tags now include proper attribution text for consistent citation across AI-generated content.
+
+### Added - Appendix L Expansion (2026-01-12)
+
+**Pattern 3: Common Data Attributes:**
+
+- Expanded Appendix L with comprehensive Pattern 3 section (~300 lines, 25+ data attributes documented)
+- Five attribute categories: State Management, E-commerce, Pagination/Sorting, Multi-step Workflows, Button States
+- Complete tables with attribute names, purposes, and example values
+- Implementation guidelines (consistency rules, good vs bad patterns)
+- Forward compatibility analysis and adoption considerations
+- Cross-references to all HTML implementations
+
+**Updated documentation:**
+
+- Summary section: Added Pattern 3 to consolidated patterns list
+- Relationship to Established Standards: Added common data attributes entry
+- Implementation Strategy: Moved common data attributes to Priority 1
+- Risk Assessment: Added common data attributes to low-risk category
+- Fixed all markdown linting errors (12 duplicate heading errors resolved with context additions)
+
+**Word count:** Appendix L now ~2,933 words (maintains comprehensive educational scope)
+
+### Added - Appendix L and HTML Pattern Audit (2026-01-12)
+
+**New Appendix:**
+
+- Created Appendix L: Proposed AI Metadata Patterns (~3,000 words)
+  - Formal W3C-style proposal document for experimental AI patterns
+  - Consolidates all proposed patterns from book (ai-* meta tags, data-agent-visible)
+  - Includes rationale, use cases, implementation examples for each pattern
+  - Provides forward-compatibility guarantees
+  - Includes adoption decision framework (when to adopt vs wait)
+  - Documents relationship to web standards process
+  - Cross-references all mentions in book chapters
+
+**Pattern Audit:**
+
+- Generated comprehensive HTML pattern audit report (PATTERN-AUDIT-REPORT.md)
+  - Scanned all 59 HTML files across repository
+  - Documented implementation of 8 pattern categories
+  - Created location-based analysis (appendices, starter kit, code examples, demo site)
+  - Mapped patterns to documentation cross-references
+  - Identified implementation gaps and recommendations
+  - Created audit script (scripts/audit-html-patterns.js) for ongoing monitoring
+
+**Documentation Updates:**
+
+- Updated Appendix D with bidirectional cross-references to Appendix L
+  - Added reference in "Standards vs Proposed Patterns" section (line 32)
+  - Added reference in data-agent-visible section (line 1330)
+  - Added reference in ai-* meta tags section (line 1574)
+- Updated book-plan.md to include Appendix L in appendices table
+- Updated appendix navigation in all generated HTML files (A-L)
+- Updated appendix index page with Appendix L description
+- Updated llms.txt with Appendix L entry
+
+**Build System:**
+
+- Updated scripts/generate-appendix-html.sh to include Appendix L in navigation
+- Verified scripts/generate-sitemap.js includes appendix-l.html
+- Updated file counts and summaries in build scripts
+
+**Total Impact:**
+
+- New appendix: 1 file (~3,000 words)
+- Pattern audit: 2 files (script + report, ~2,000 words report)
+- Documentation updates: 7 files modified
+- Build system: 2 scripts updated
+- Web appendices total: ~44,600 words (was ~41,600)
+
 ### Fixed - CSS and Meta Tag Standardization (2026-01-12)
 
 **CSS Linting Improvements:**

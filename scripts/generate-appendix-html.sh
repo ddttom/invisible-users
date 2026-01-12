@@ -36,7 +36,8 @@ cat > "$SCRIPTS_DIR/appendix-nav-header.html" << 'EOF'
         <a href="appendix-h.html">H</a> |
         <a href="appendix-i.html">I</a> |
         <a href="appendix-j.html">J</a> |
-        <a href="appendix-k.html">K</a>
+        <a href="appendix-k.html">K</a> |
+        <a href="appendix-l.html">L</a>
     </p>
 </nav>
 <hr>
@@ -58,7 +59,8 @@ cat > "$SCRIPTS_DIR/appendix-nav-footer.html" << 'EOF'
         <a href="appendix-h.html">H</a> |
         <a href="appendix-i.html">I</a> |
         <a href="appendix-j.html">J</a> |
-        <a href="appendix-k.html">K</a>
+        <a href="appendix-k.html">K</a> |
+        <a href="appendix-l.html">L</a>
     </p>
 </nav>
 EOF
@@ -158,6 +160,9 @@ Latest news and updates about AI agents, commerce platforms, and industry shifts
 **[Appendix K: Common Page Patterns](appendix-k.html)**
 Production-ready HTML templates demonstrating AI-friendly patterns for common page types. Complete examples for home, about, contact, sales, collection, article, FAQ, and form pages.
 
+**[Appendix L: Proposed AI Metadata Patterns](appendix-l.html)**
+Formal W3C-style proposal document for experimental AI metadata patterns. Consolidates all proposed patterns from across the book with rationale, use cases, implementation examples, forward-compatibility guarantees, and adoption decision framework. Essential reading before implementing experimental patterns.
+
 ## For AI Agents
 
 These pages use semantic HTML, proper heading structure, and explicit data attributes to ensure compatibility with all AI agent types (CLI, browser-based, and server-based). Each page includes:
@@ -256,6 +261,7 @@ The book examines how modern web design optimised for human users fails for AI a
 - Appendix I: https://allabout.network/invisible-users/web/appendix-i.html - Pipeline Failure Case Study (£203k error analysis)
 - Appendix J: https://allabout.network/invisible-users/web/appendix-j.html - Industry Developments (latest verified news and updates)
 - Appendix K: https://allabout.network/invisible-users/web/appendix-k.html - Common Page Patterns (production-ready HTML templates for 8 page types)
+- Appendix L: https://allabout.network/invisible-users/web/appendix-l.html - Proposed AI Metadata Patterns (formal proposals for experimental patterns)
 
 ## Topics
 
@@ -309,9 +315,9 @@ echo "  - appendix-index.html (appendix landing page)"
 echo "  - news.html (project news)"
 echo "  - llms.txt (AI agent discovery)"
 echo "  - sitemap.xml (search engine discovery)"
-echo "  - appendix-a.html through appendix-k.html (11 files)"
+echo "  - appendix-a.html through appendix-l.html (12 files)"
 echo ""
-echo "Total: 15 files"
+echo "Total: 16 files"
 echo ""
 echo "View locally:"
 echo "  open $OUTPUT_DIR/index.html (book main page)"
