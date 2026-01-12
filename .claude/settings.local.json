@@ -41,7 +41,12 @@
       "Bash(npm test:*)",
       "Bash(bash:*)",
       "Bash(git restore:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(while read file)",
+      "Bash(if ! grep -q 'ai-attribution.*text=' \"$file\")",
+      "Bash(then)",
+      "Bash(echo:*)",
+      "Bash(fi)"
     ],
     "deny": [],
     "ask": []
