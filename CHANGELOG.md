@@ -7,6 +7,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - Schema.org Person Entity Updates (2026-01-12)
+
+**Person Schema Standardization:**
+
+- **Added canonical author URL** to all Tom Cranstoun Person schemas:
+  - Updated 14 HTML tutorial files with `"url": "https://allabout.network/tom-cranstoun.html"`
+  - Establishes proper entity linking for AI agents and search engines
+  - Files: author.html, about.html, index.html, consulting.html, pricing.html, sales.html, article.html, blog-post.html, collection.html, contact.html, event.html, privacy.html, product.html, team.html
+- **Removed incorrect alumniOf property:**
+  - Deleted `alumniOf` educational institution references from author.html and about.html
+  - Updated about.html.md and team.html.md to remove university-specific examples
+  - Maintains generic biographical information without specific institutional claims
+
+**Appendix K Enhancement:**
+
+- **Added example #12: Author/Profile Page**
+  - 255 lines of production-ready HTML demonstrating ProfilePage schema
+  - Complete Person entity with givenName, familyName, jobTitle, email, url
+  - Educational credentials (hasCredential with EducationalOccupationalCredential)
+  - Professional expertise (knowsAbout array with 7 areas)
+  - Organization affiliation (worksFor with Digital Domain Technologies)
+  - Social profiles (sameAs array with LinkedIn and GitHub)
+  - Breadcrumb navigation for site structure
+  - Data attributes for machine-readable expertise areas (data-expertise)
+  - Follows external CSS/JS architecture pattern established in v2.8.1
+
+**Result:** All Person schemas now consistently reference the author profile page, providing a single canonical URL for author identity across all pages. Appendix K now includes 12 complete page pattern examples (up from 11).
+
+**Commits:**
+
+- 66f95e7 "Update Person schemas and add author page to Appendix K" (manuscript submodule)
+- da15188 "Update manuscript submodule pointer (Person schema updates)"
+- db8bc98 "Fix markdown linting errors in SCHEMA-VALIDATION.md"
+
 ### Added - Appendix K (2026-01-11)
 
 - Added Appendix K: Common Page Patterns (~14,200 words)

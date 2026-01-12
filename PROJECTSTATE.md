@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Schema.org Enhancements: HTML Tutorial Refactoring + Web Audit Suite Validation Features)
+**Last Updated:** 2026-01-12 (Schema.org Person Entity Updates + ProfilePage Documentation)
 
 ### Combined Repository
 
@@ -13,15 +13,16 @@ This repository contains two integrated projects:
 
 ### Book Manuscript Status
 
-- **Version:** 2.8.1
+- **Version:** 2.8.2
 - **Status:** Publication-ready
 - **Word Count:** ~57,000 words (core manuscript: preface + 11 chapters + The End + Glossary)
 - **Appendices:** 11 appendices (~41,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
-- **Latest Change:** Comprehensive Schema.org enhancement project completed:
-  - **HTML Tutorial Pages:** Refactored all 20 pages to use external CSS (`css/styles.css`) and JavaScript (`js/common.js`), removing 4,000+ lines of inline code. Enhanced Schema.org JSON-LD with 150+ improvements (datePublished, dateModified, breadcrumbs, images, enhanced Offer objects).
-  - **Manuscript Updates:** Updated Appendix K (all 12 HTML examples refactored), Chapter 10 (added BreadcrumbList, Book schema, enhanced Product patterns), and Appendix D (added BreadcrumbList and Book schemas with implementation guidance).
-  - **Web Audit Suite:** Added comprehensive Schema.org validation with 5 new modules (schemaValidator.js, pageTypeDetector.js, schemaAnalysis.js, schemaReports.js integration) generating 5 report types (validation CSV, issues CSV, page-types CSV, page-type-stats CSV, summary markdown).
+- **Latest Change:** Schema.org Person entity updates and ProfilePage documentation:
+  - **Person Schema Updates:** Added canonical author URL (`https://allabout.network/tom-cranstoun.html`) to all Tom Cranstoun Person schemas across 14 HTML files, establishing proper entity linking for AI agents and search engines.
+  - **Data Corrections:** Removed incorrect alumniOf property from author.html and about.html, updated documentation files (about.html.md, team.html.md) to remove educational institution references.
+  - **Appendix K Enhancement:** Added example #12 (Author/Profile Page) demonstrating ProfilePage schema with comprehensive Person entity including givenName/familyName, jobTitle, credentials (hasCredential), expertise (knowsAbout), organization (worksFor), social profiles (sameAs), and data attributes for machine-readable content. 255 lines of production-ready HTML with Schema.org markup.
+  - **Previous:** Comprehensive Schema.org enhancement (external CSS/JS refactoring, BreadcrumbList patterns, Web Audit Suite validation features with 5 new modules generating 5 report types).
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
