@@ -2,14 +2,18 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Protocol Landscape Updates)
+**Last Updated:** 2026-01-12 (Monorepo Structure Complete)
 
-### Combined Repository
+### Monorepo Structure
 
-This repository contains two integrated projects:
+This repository is now structured as a monorepo with npm workspaces:
 
-1. **Book Manuscript** - Complete and publication-ready
-2. **Web Audit Suite** - Production-ready implementation tool
+- **`packages/manuscript/`** - Book manuscript and materials (contains git submodule at `packages/manuscript/manuscript/`)
+- **`packages/web-audit-suite/`** - Web analysis tool
+- **`packages/web/`** - Public web pages (planned)
+- **Root level** - Shared tooling, scripts, and documentation
+
+All projects share dependency management and build scripts via npm workspaces.
 
 ### Book Manuscript Status
 
