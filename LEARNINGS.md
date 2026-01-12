@@ -73,3 +73,14 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 **Pattern**: This error occurs specifically during git workflows (commits, staging) when trying to "navigate to" the submodule instead of treating it as part of the current repository tree. The fix is always: check `pwd` first, then use git commands from current location.
 
 **Enforcement needed**: The hooks catch `.claude/` file access mistakes but do NOT catch incorrect navigation attempts during git operations. Consider adding detection for `cd packages/manuscript/manuscript` patterns during git workflows.
+
+## Submodule Pointer Update After Push
+
+**Rule** (2026-01-12): After successfully pushing submodule commits to the manuscript repository, attempted to push main repository changes, but forgot the critical step of committing the updated submodule pointer in the main repository. User correctly identified: "i think the submodule pointer needs commit and push". When you push commits to a submodule, the parent repository still points to the old submodule commit hash. You MUST:
+
+1. Push submodule commits first: `cd packages/manuscript/manuscript && git push origin main`
+2. Return to main repository: `cd /path/to/main/repo`
+3. Commit submodule pointer update: `git add packages/manuscript/manuscript && git commit -m "Update manuscript submodule pointer"`
+4. Push main repository: `git push origin <branch>`
+
+**Pattern**: After ANY submodule push, the parent repository needs a commit to update the pointer. Git shows this as `modified: packages/manuscript/manuscript (new commits)` in git status. The hooks remind about this, but you still need to execute the steps. This is a two-step process that cannot be skipped.
