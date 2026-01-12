@@ -7,6 +7,55 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed - Identity Delegation Framework and GitHub Links (2026-01-12)
+
+**Removed Identity Delegation framework concept and all GitHub repository links from web materials:**
+
+The Identity Delegation framework has been removed from the project. All references have been removed from web pages, documentation examples, and navigation.
+
+**Web Page Changes (Submodule):**
+
+- **web/index.html:**
+  - Removed "identity delegation" from Schema.org keywords metadata
+  - Removed entire "Identity Delegation" section and explanation paragraph
+- **web/faq.html:**
+  - Removed entire "What is identity delegation?" FAQ entry (both visible content and Schema.org structured data)
+  - Removed "Identity Delegation Project" link from Related Pages section
+  - Removed GitHub Repository link from code examples list
+  - Removed GitHub link from footer contact links
+- **web/news.html:**
+  - Removed "Book Publication and Identity Delegation Project Announcement" article
+  - Removed "Identity Delegation Project Roadmap Published" article
+  - Removed Identity Delegation references from "Future News" section
+  - Removed Identity Delegation Infrastructure Project link from Related Resources
+  - Removed GitHub Repository links from Related Resources and footer
+  - Replaced with simplified "Book Publication Announcement" article
+  - Updated Related Resources with appendices and FAQ links
+
+**Documentation Examples (Submodule):**
+
+- **appendix-k-common-page-patterns.md:**
+  - Updated FAQ Schema.org examples with enhanced metadata (author, dateCreated, upvoteCount)
+  - Examples now reflect current web page structure without identity delegation references
+- **web/site/faq.html:**
+  - Updated template with enhanced Schema.org metadata
+  - Removed obsolete web/site/faq.html.md source file
+
+**Build Script Updates (Main Repository):**
+
+- **scripts/generate-appendix-html.sh:**
+  - Added FAQ page copying from manuscript/web/ directory
+  - Updated file count from 16 to 17 files (added faq.html)
+  - Updated generation summary and documentation
+
+**Impact:**
+
+- All Identity Delegation framework references removed from book and web materials
+- All GitHub repository links removed (repository is private, not publicly accessible)
+- Web pages now focus on book content without external project announcements
+- FAQ and news pages simplified and focused on core book materials
+- Build process now includes FAQ page in generated output
+
 ### Added - Broadened Audience Descriptions (2026-01-12)
 
 **Expanded manuscript audience descriptions to reflect wider stakeholder ecosystem:**

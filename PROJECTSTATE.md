@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Audience Descriptions Broadened)
+**Last Updated:** 2026-01-12 (Identity Delegation Framework Removed)
 
 ### Monorepo Structure
 
@@ -22,11 +22,11 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~60,666 words (core manuscript: preface + 12 chapters + The End + Glossary) - increased by 166 words
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Broadened audience descriptions to reflect wider stakeholder ecosystem (2026-01-12):
-  - **Preface Update:** Replaced narrow "Frontend Engineers and System Architects" with inclusive language acknowledging developers, designers, product owners, business leaders, and content strategists. Expanded "Web Professionals & Engineers" description to explicitly mention product owners, project managers, UX designers, content strategists, and QA engineers with role-specific guidance.
-  - **Reading Guide Enhancement:** Added 2 new dedicated reading paths (Product Owners with strategic+implementation focus, Content Managers/Strategists with content-first perspective). Renamed "Product Managers and Designers" to "UX Designers and Information Architects" for clarity. Result: 7 distinct reading paths (was 5).
-  - **Executive Summary Update:** Updated "Navigate This Book" section to reflect new audience segments with dedicated entries for Product Owners, Content Managers/Strategists, and UX Designers/Information Architects.
-  - **Consistency:** All changes maintain British English, professional tone, and existing markdown structure.
+- **Latest Change:** Removed Identity Delegation framework and GitHub repository links (2026-01-12):
+  - **Identity Delegation Removal:** The Identity Delegation framework concept has been removed from the book and all web materials. Removed all references from web/index.html, web/faq.html, and web/news.html including navigation links, FAQ entries, and project announcements.
+  - **GitHub Links Removal:** Repository is private and not publicly accessible. Removed all GitHub repository links from FAQ page (Related Pages section, code examples list, footer), news page (Related Resources section, footer), and web index page.
+  - **Content Updates:** News page simplified to single "Book Publication Announcement" article. FAQ page updated with appendices and FAQ links in Related Resources. All Schema.org structured data updated to reflect removals.
+  - **Previous Change:** Broadened audience descriptions (preface, reading guide, executive summary, web index) to reflect wider stakeholder ecosystem with 7 distinct reading paths.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences with 7 distinct reading paths
   - **Web Professionals & Engineers:** Expanded to include product owners, project managers, UX designers, content strategists, and QA engineers
@@ -50,7 +50,7 @@ All projects share dependency management and build scripts via npm workspaces.
   - **Kindle Format** (`pdf:kindle`) - 6"×9" KDP-ready paperback format, production-ready (no review footer)
   - **Simple Format** (`pdf:simple`) - Basic PDF without cover or footer
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
-  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 16 files (index.html, appendix-index.html, news.html, llms.txt, sitemap.xml, 11 appendix pages including new Appendix L)
+  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 17 files (index.html, appendix-index.html, news.html, faq.html, llms.txt, sitemap.xml, 11 appendix pages including new Appendix L)
 - **Web Pages:**
   - **News** (`web/news.html`) - Project news and updates
   - **FAQ** (`web/faq.html`) - Frequently asked questions about the book and project
