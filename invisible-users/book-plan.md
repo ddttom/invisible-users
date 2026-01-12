@@ -6,7 +6,7 @@
 
 **Target Length:** 30,000-50,000 words
 
-**Current Status:** Complete with Phase 1-2 Enhancements + Chapter 11 + Web Appendices ✅ (~57,000 words core manuscript)
+**Current Status:** Complete with Phase 1-2 Enhancements + Chapter 12 + Web Appendices ✅ (~57,000 words core manuscript)
 
 **Latest Update (January 2026):** Restructured book to publish appendices separately online:
 
@@ -16,7 +16,7 @@
 - Core manuscript: ~57,000 words (preface + 11 chapters + The End)
 - Web appendices: ~20,000 words published separately
 - Previous: Added Appendix J tracking Claude for Chrome (20 Dec 2024) and Microsoft Copilot Checkout (Jan 2025)
-- Previous: Added Chapter 11 (~5,000 words), enhanced Chapter 10, enhanced Chapter 4 with ROI framework
+- Previous: Added Chapter 12 (~5,000 words), enhanced Chapter 11, enhanced Chapter 4 with ROI framework
 
 ---
 
@@ -41,9 +41,10 @@ This book explores the technical, business, ethical, and human implications of t
 | 6 | The Security Maze | ~4,000 | ✅ Complete |
 | 7 | The Legal Landscape | ~4,400 | ✅ Complete |
 | 8 | The Human Cost | ~3,650 | ✅ Complete |
-| 9 | Designing for Both | ~4,400 | ✅ Complete |
-| 10 | Technical Advice | ~9,650 | ✅ Complete + Enhanced |
-| 11 | What Agent Creators Must Build | ~5,000 | ✅ Complete |
+| 9 | The Platform Race | ~4,000 | 🚧 In Progress |
+| 10 | Designing for Both | ~4,400 | ✅ Complete |
+| 11 | Technical Advice | ~9,650 | ✅ Complete + Enhanced |
+| 12 | What Agent Creators Must Build | ~5,000 | ✅ Complete |
 | The End | Additional Resources Available Online | ~400 | ✅ Complete |
 
 **Core Manuscript:** ~57,000 words (preface + 11 chapters + The End + Glossary)
@@ -217,7 +218,28 @@ The digital divide implications.
 
 ---
 
-### Chapter 9 — Designing for Both
+### Chapter 9 — The Platform Race
+
+Platform competition, urgency, and the open vs closed dynamic. This chapter bridges problems → solutions.
+
+**Sections:**
+
+- The Seven-Day Acceleration (January 2026: Amazon, Microsoft, Google)
+- Open vs Closed Competition (ACP, UCP vs Copilot Checkout)
+- The Players and Their Strategies
+- Microsoft's Isolation
+- The Fragmentation Danger (ACP vs UCP compatibility)
+- Ecosystem Maturity Signal (20+ retailers endorsing common protocol)
+- What This Means for Different Audiences (businesses, agent creators, investors, users)
+- Timeline Urgency - Read This Book NOW
+
+**Tone:** Urgent, immediate - "THIS IS HAPPENING NOW, not future speculation"
+
+**Purpose:** Establishes commercial urgency that motivates why readers need the solutions in Chapters 10-12 immediately
+
+---
+
+### Chapter 10 — Designing for Both
 
 Solutions that work for agents without degrading human experience. The convergence argument.
 
@@ -240,7 +262,7 @@ Solutions that work for agents without degrading human experience. The convergen
 
 ---
 
-### Chapter 10 — Technical Advice
+### Chapter 11 — Technical Advice
 
 Implementation code, testing strategies, and practical tools.
 
@@ -273,7 +295,7 @@ Implementation code, testing strategies, and practical tools.
 
 ---
 
-### Chapter 11 — What Agent Creators Must Build
+### Chapter 12 — What Agent Creators Must Build
 
 Implementation patterns, validation layers, and guardrails for reliable agent systems.
 
@@ -289,7 +311,7 @@ Implementation patterns, validation layers, and guardrails for reliable agent sy
 - The validation roadmap (priority-based implementation)
 - Conclusion (completing the ecosystem view)
 
-**Key insight:** Pipeline failures occur when agents fail to validate data during extraction. The £203,000 cruise pricing error wouldn't have occurred if either the website provided clear structured data (Chapter 10) or the agent had validation layers (Chapter 11). Both sides must improve.
+**Key insight:** Pipeline failures occur when agents fail to validate data during extraction. The £203,000 cruise pricing error wouldn't have occurred if either the website provided clear structured data (Chapter 11) or the agent had validation layers (Chapter 12). Both sides must improve.
 
 **Enhanced with:** Complete validation pipeline code examples showing range checking, comparative analysis, incomplete data detection, confidence scoring, and graceful degradation patterns
 
@@ -328,9 +350,10 @@ All 11 chapter illustrations complete ✅
 6. Chapter 6 — "The Security Maze"
 7. Chapter 7 — "The Legal Landscape"
 8. Chapter 8 — "The Human Cost"
-9. Chapter 9 — "Designing for Both"
-10. Chapter 10 — "Technical Advice"
-11. Chapter 11 — "The Validation Pipeline"
+9. Chapter 9 — "The Platform Race"
+10. Chapter 10 — "Designing for Both"
+11. Chapter 11 — "Technical Advice"
+12. Chapter 12 — "The Validation Pipeline"
 
 ### Reference Materials
 
@@ -424,8 +447,8 @@ All materials located in `docs/sales-enablement/`:
 
 | Material | Status | Words | Description |
 | -------- | ------ | ----- | ----------- |
-| manuscript/appendix-ai-friendly-html-guide.md | ✅ | ~9,050 | Comprehensive prescriptive guide for building AI-friendly HTML (Appendix D, referenced in Chapter 10) |
-| manuscript/appendix-ai-patterns-quick-reference.md | ✅ | ~1,300 | Concise HTML patterns reference for AI assistants (Appendix E, referenced in Chapter 10) |
+| manuscript/appendix-ai-friendly-html-guide.md | ✅ | ~9,050 | Comprehensive prescriptive guide for building AI-friendly HTML (Appendix D, referenced in Chapter 11) |
+| manuscript/appendix-ai-patterns-quick-reference.md | ✅ | ~1,300 | Concise HTML patterns reference for AI assistants (Appendix E, referenced in Chapter 11) |
 
 ### Implementation Case Study
 
@@ -522,7 +545,7 @@ Real-world llms.txt example:
 | 1.0.0 | 2025-12-22 | Complete manuscript (10 chapters, ~40,200 words) |
 | 2.0.0 | 2025-12-23 | Identity layer expansion (centralised repository concept) |
 | 3.0.0 | 2025-12-24 | Identity layer reduction (moved to separate repository) |
-| 3.1.0 | 2025-12-24 | Design Patterns Reference added to Chapter 10, manuscript/appendix-ai-friendly-html-guide.md created |
+| 3.1.0 | 2025-12-24 | Design Patterns Reference added to Chapter 11, manuscript/appendix-ai-friendly-html-guide.md created |
 | 3.2.0 | 2025-12-25 | manuscript/appendix-ai-friendly-html-guide.md expanded to ~8,400 words with 12 parts, manuscript/appendix-ai-patterns-quick-reference.md created |
 | 3.3.0 | 2025-12-25 | Standalone guides integrated into book chapters 9 and 10 |
 | 3.4.0 | 2025-12-25 | Dark warehouses section added to Chapter 4 (~1,900 words, total ~40,200 words) |
