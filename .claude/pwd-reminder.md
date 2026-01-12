@@ -9,13 +9,13 @@ This workspace contains TWO separate git repositories:
 
 **Contains:**
 - `.claude/` directory (skills, hooks, settings)
-- `web-audit-suite/` directory
+- `packages/` directory with all workspace packages
 - `docs/` directory
 - `CLAUDE.md`, `LEARNINGS.md`, `README.md`
 - All project-level configuration
 
 ### 2. Submodule Repository
-**Location:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/`
+**Location:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/`
 
 **Contains:**
 - All book chapters (`chapter-*.md`)

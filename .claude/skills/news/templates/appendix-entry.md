@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Template for adding structured technical entries to `invisible-users/manuscript/appendix-j-industry-developments.md`.
+Template for adding structured technical entries to `packages/manuscript/manuscript/appendix-j-industry-developments.md`.
 
 ## Tone and Style
 

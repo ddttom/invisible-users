@@ -36,8 +36,8 @@ fi
 if [[ "$FILE_PATH" == .claude/* ]] || [[ "$FILE_PATH" == */.claude/* ]]; then
     CURRENT_DIR=$(pwd)
 
-    # Check if we're in the submodule (path contains /manuscript/ after /invisible-users/)
-    if [[ "$CURRENT_DIR" == */invisible-users/invisible-users/manuscript* ]]; then
+    # Check if we're in the submodule (path contains packages/manuscript/manuscript/)
+    if [[ "$CURRENT_DIR" == */packages/manuscript/manuscript* ]]; then
         echo "❌ CRITICAL ERROR: Attempting to access .claude/ from submodule directory!"
         echo ""
         echo "Current directory: $CURRENT_DIR"
@@ -47,12 +47,12 @@ if [[ "$FILE_PATH" == .claude/* ]] || [[ "$FILE_PATH" == */.claude/* ]]; then
         echo "  /Users/tomcranstoun/Documents/GitHub/invisible-users/"
         echo ""
         echo "You are currently in the submodule at:"
-        echo "  /Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/"
+        echo "  /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/"
         echo ""
         echo "Fix options:"
         echo "  1. Use absolute path: /Users/tomcranstoun/Documents/GitHub/invisible-users/.claude/..."
         echo "  2. Navigate to main repo: cd /Users/tomcranstoun/Documents/GitHub/invisible-users"
-        echo "  3. Use relative path from submodule: ../../.claude/..."
+        echo "  3. Use relative path from submodule: ../../../.claude/..."
         echo ""
 
         # BLOCK this operation - it will definitely fail
@@ -79,7 +79,7 @@ if [[ "$COUNTER" -ge "$PWD_CHECK_THRESHOLD" ]]; then
     echo ""
     echo "This workspace has TWO repositories:"
     echo "  Main:      /Users/tomcranstoun/Documents/GitHub/invisible-users/ (has .claude/)"
-    echo "  Submodule: /Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/ (NO .claude/)"
+    echo "  Submodule: /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/ (NO .claude/)"
     echo ""
     echo "Current directory: $(pwd)"
     echo ""

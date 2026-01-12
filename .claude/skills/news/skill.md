@@ -268,12 +268,12 @@ The `/news` skill ensures appendices stay current in this fast-moving field with
 ## File Locations
 
 **Primary targets:**
-- Blog: `invisible-users/manuscript/blog/book-updates.md`
-- Appendix: `invisible-users/manuscript/appendix-j-industry-developments.md`
+- Blog: `packages/manuscript/manuscript/blog/book-updates.md`
+- Appendix: `packages/manuscript/manuscript/appendix-j-industry-developments.md`
 
 **Reference files (read-only):**
-- Chapters: `invisible-users/manuscript/chapter-*.md`
-- Book plan: `invisible-users/book-plan.md`
+- Chapters: `packages/manuscript/manuscript/chapter-*.md`
+- Book plan: `packages/book-plan.md`
 
 **Supporting documentation:**
 - `verification-guidelines.md` - Fact-checking process
