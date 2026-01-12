@@ -3,12 +3,12 @@ name: Web Audit Suite CI
 on:
   push:
     paths:
-      - 'web-audit-suite/**'
-      - '.github/workflows/web-audit-suite-ci.yml'
+      - 'packages/web-audit-suite/**'
+      - '.github/workflows/packages/web-audit-suite-ci.yml'
   pull_request:
     paths:
-      - 'web-audit-suite/**'
-      - '.github/workflows/web-audit-suite-ci.yml'
+      - 'packages/web-audit-suite/**'
+      - '.github/workflows/packages/web-audit-suite-ci.yml'
 
 jobs:
   test:
@@ -16,7 +16,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: web-audit-suite
+        working-directory: packages/web-audit-suite
 
     steps:
       - uses: actions/checkout@v3
@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: web-audit-suite/package-lock.json
+          cache-dependency-path: packages/web-audit-suite/package-lock.json
 
       - name: Install dependencies
         run: npm ci

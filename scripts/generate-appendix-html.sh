@@ -6,8 +6,8 @@
 set -e  # Exit on error
 
 # Configuration
-MANUSCRIPT_DIR="invisible-users/manuscript"
-OUTPUT_DIR="invisible-users/manuscript/web"
+MANUSCRIPT_DIR="packages/manuscript/manuscript"
+OUTPUT_DIR="packages/manuscript/manuscript/web"
 SCRIPTS_DIR="scripts"
 BASE_URL="https://allabout.network/invisible-users/web"
 

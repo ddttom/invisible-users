@@ -72,7 +72,7 @@ jobs:
         npm run audit:start -- \
           -s "${{ steps.config.outputs.sitemap_url }}" \
           -c "${{ steps.config.outputs.url_limit }}" \
-          --thresholds "./web-audit-suite/examples/${{ steps.config.outputs.threshold_profile }}-thresholds.json" \
+          --thresholds "./packages/web-audit-suite/examples/${{ steps.config.outputs.threshold_profile }}-thresholds.json" \
           --enable-history \
           --generate-dashboard \
           --generate-executive-summary \
@@ -88,8 +88,8 @@ jobs:
       with:
         name: audit-results-${{ github.run_number }}
         path: |
-          web-audit-suite/results/
-          !web-audit-suite/results/.cache
+          packages/web-audit-suite/results/
+          !packages/web-audit-suite/results/.cache
         retention-days: 30
 
     - name: Generate audit summary
@@ -98,8 +98,8 @@ jobs:
         echo "## Web Audit Results" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
 
-        if [ -f "web-audit-suite/results/executive_summary.md" ]; then
-          cat web-audit-suite/results/executive_summary.md >> $GITHUB_STEP_SUMMARY
+        if [ -f "packages/web-audit-suite/results/executive_summary.md" ]; then
+          cat packages/web-audit-suite/results/executive_summary.md >> $GITHUB_STEP_SUMMARY
         else
           echo "❌ Executive summary not generated" >> $GITHUB_STEP_SUMMARY
         fi
@@ -122,8 +122,8 @@ jobs:
 
           let comment = '## 🔍 Web Audit Quality Gate Results\n\n';
 
-          if (fs.existsSync('web-audit-suite/results/executive_summary.md')) {
-            const summary = fs.readFileSync('web-audit-suite/results/executive_summary.md', 'utf8');
+          if (fs.existsSync('packages/web-audit-suite/results/executive_summary.md')) {
+            const summary = fs.readFileSync('packages/web-audit-suite/results/executive_summary.md', 'utf8');
             comment += summary + '\n\n';
           } else {
             comment += '❌ Executive summary not available\n\n';

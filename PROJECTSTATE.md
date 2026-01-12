@@ -26,7 +26,7 @@ This repository contains two integrated projects:
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
-  - **Submodule:** `invisible-users/manuscript/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
+  - **Submodule:** `packages/manuscript/manuscript/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
   - Tracks main branch for easy updates
   - Core chapters (1-11), preface, executive summary in submodule
   - All twelve appendices (implementation guides, pattern references, resource directory, DDT reference, pipeline failure case study, industry developments, common page patterns, proposed AI metadata patterns) in submodule
@@ -71,7 +71,7 @@ This repository contains two integrated projects:
 - **Status:** Complete
 - **Materials:**
   - Business and sales materials: PITCH.md, business-plan.md, executive-summary.md, PARTNER_KIT.md, ROI_CASE_STUDIES.md
-  - Presentation materials (talk.md, talk-slides.js, talk1.md) moved to manuscript repository at `invisible-users/manuscript/talks/members-call/`
+  - Presentation materials (talk.md, talk-slides.js, talk1.md) moved to manuscript repository at `packages/manuscript/manuscript/talks/members-call/`
 - **Target Audience:** Business leaders (CTOs, product owners)
 - **Key Features:** Priority-based roadmap, real production examples, code samples with ROI implications
 
@@ -83,9 +83,9 @@ This repository contains two integrated projects:
 - **Manuscript Repository:** <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
   - Public repository for GitHub Actions access
   - Independent manuscript versioning and CI
-  - Tracked as submodule at `invisible-users/manuscript/`
+  - Tracked as submodule at `packages/manuscript/manuscript/`
 - **Submodule Initialization:** `git submodule update --init --recursive`
-- **Submodule Updates:** `git submodule update --remote invisible-users/manuscript`
+- **Submodule Updates:** `git submodule update --remote packages/manuscript/manuscript`
 
 ### Code Quality
 
@@ -95,7 +95,7 @@ This repository contains two integrated projects:
 - **CI/CD:** GitHub Actions workflows configured with submodule initialization
   - `ci.yml` - Main CI pipeline with markdown linting and audit tests (runs on all pushes)
   - `quality-gate.yml` - Web Audit quality gates (runs on PRs and manual dispatch only)
-  - `web-audit-suite-ci.yml` - Dedicated Web Audit Suite testing (runs when web-audit-suite/ changes)
+  - `web-audit-suite-ci.yml` - Dedicated Web Audit Suite testing (runs when packages/web-audit-suite/ changes)
 
 ## Next Steps
 

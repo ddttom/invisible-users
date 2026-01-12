@@ -1,4 +1,4 @@
-[submodule "invisible-users/manuscript"]
+[submodule "packages/manuscript/manuscript"]
 	path = packages/manuscript/manuscript
 	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript.git
 	branch = main

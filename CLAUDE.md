@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **MANDATORY: Run `pwd` before accessing `.claude/` files**
 
 - Main repo: `/Users/tomcranstoun/Documents/GitHub/invisible-users/` (has `.claude/`)
-- Submodule: `/Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/` (NO `.claude/`)
+- Submodule: `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/` (NO `.claude/`)
 
 See `.claude/pwd-reminder.md` and "Git Directory Navigation" section below for details.
 
@@ -58,24 +58,23 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ├── CHANGELOG.md
 ├── PROJECTSTATE.md
 ├── PR_TEMPLATE.md
-├── package.json              # Combined npm scripts for all projects
+├── package.json              # Monorepo workspace configuration
 ├── llms.txt                  # Repository llms.txt file
 ├── docs/                     # Business and sales materials
 │   └── sales-enablement/     # Sales materials, pitch decks, business plan
-├── web/                      # Public web pages
-│   ├── identity-layer.html   # Identity delegation infrastructure project page
-│   └── news.html             # Project news and updates
-├── invisible-users/          # Book manuscript and materials
-│   ├── book-plan.md          # Master plan with chapter outlines and status
-│   ├── book-svg-style.md     # SVG illustration style guide
-│   ├── manuscript/           # Complete manuscript content (git submodule)
-│   │   ├── [chapters, appendices, illustrations in separate repository]
-│   │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
-│   │   ├── code-examples/    # Production-ready code implementations
-│   │   ├── web/              # Generated HTML appendices for web publishing
-│   │   └── blog/             # Blog and promotional materials (blog.md, blog.svg, AI-Native.blog)
-│   └── llms.txt              # Repository llms.txt file
-├── web-audit-suite/          # Web analysis tool (implements book's patterns)
+├── scripts/                  # Build scripts
+├── packages/                 # Monorepo packages
+│   ├── manuscript/           # Book manuscript and materials
+│   │   ├── book-plan.md      # Master plan with chapter outlines and status
+│   │   ├── book-svg-style.md # SVG illustration style guide
+│   │   ├── manuscript/       # Complete manuscript content (git submodule)
+│   │   │   ├── [chapters, appendices, illustrations in separate repository]
+│   │   │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
+│   │   │   ├── code-examples/    # Production-ready code implementations
+│   │   │   ├── web/              # Generated HTML appendices for web publishing
+│   │   │   └── blog/             # Blog and promotional materials (blog.md, blog.svg, AI-Native.blog)
+│   │   └── llms.txt          # Repository llms.txt file
+│   ├── web-audit-suite/      # Web analysis tool (implements book's patterns)
 │   ├── index.js              # Entry point, CLI parsing, logger setup
 │   ├── package.json          # Tool-specific dependencies
 │   ├── README.md             # Tool documentation
@@ -187,7 +186,7 @@ npm run audit:lint
 npm run audit:test
 ```
 
-**Note on ESLint**: The Web Audit Suite uses ESLint 8.57.0 with `.eslintrc.cjs` configuration. Always use `npm run audit:lint` from the root, or `npm run lint` from within the `web-audit-suite/` directory.
+**Note on ESLint**: The Web Audit Suite uses ESLint 8.57.0 with `.eslintrc.cjs` configuration. Always use `npm run audit:lint` from the root, or `npm run lint` from within the `packages/web-audit-suite/` directory.
 
 ## Writing Style Guidelines (Book Manuscript)
 
@@ -271,7 +270,7 @@ For editing existing files, follow these key rules:
 
 ### Key Design Principle: Single Source of Truth
 
-**CRITICAL**: `web-audit-suite/results/results.json` is the single source of truth. All reports MUST be generated from this file. Report generation functions should NEVER:
+**CRITICAL**: `packages/web-audit-suite/results/results.json` is the single source of truth. All reports MUST be generated from this file. Report generation functions should NEVER:
 
 - Fetch URLs directly
 - Make network requests
@@ -286,9 +285,9 @@ The Web Audit Suite implements the patterns from "The Invisible Users" book:
 
 Reference Documentation:
 
-- Book manuscript: `invisible-users/manuscript/` directory
-- Implementation guidance: `invisible-users/manuscript/chapter-10-technical-advice.md`
-- Quick reference: `invisible-users/manuscript/appendix-ai-patterns-quick-reference.md`
+- Book manuscript: `packages/manuscript/manuscript/` directory
+- Implementation guidance: `packages/manuscript/manuscript/chapter-10-technical-advice.md`
+- Quick reference: `packages/manuscript/manuscript/appendix-ai-patterns-quick-reference.md`
 
 ### Two HTML States (Critical Distinction)
 
@@ -410,7 +409,7 @@ Use globally applicable terms, not region-specific:
 When asked to review or edit a chapter:
 
 1. Read the chapter file completely
-2. Check `invisible-users/book-plan.md` for chapter requirements and status
+2. Check `packages/manuscript/book-plan.md` for chapter requirements and status
 3. Verify consistency with established themes
 4. Ensure British English and style guidelines
 5. Confirm sequential flow - don't reference future chapters
@@ -420,7 +419,7 @@ When asked to review or edit a chapter:
 
 When modifying the Web Audit Suite:
 
-1. Check what data exists in `web-audit-suite/results/results.json` structure
+1. Check what data exists in `packages/web-audit-suite/results/results.json` structure
 2. Add data collection in Phase 2 (pageAnalyzer, metricsUpdater)
 3. Update report generation in Phase 3 to read from `results.json`
 4. Never fetch data during report generation
@@ -488,7 +487,7 @@ When multiple operations are independent, make parallel tool calls in a single m
 ```python
 Read(file_path="README.md")
 Read(file_path="CLAUDE.md")
-Read(file_path="invisible-users/book-plan.md")
+Read(file_path="packages/manuscript/book-plan.md")
 ```
 
 **Example - Searching multiple patterns:**
@@ -587,9 +586,9 @@ When removing a file that's referenced in documentation:
 
 **Common reference locations to check:**
 
-- Repository structure diagrams: `CLAUDE.md`, `README.md`, `invisible-users/book-plan.md`, `llms.txt`
-- Supporting materials tables: `invisible-users/book-plan.md`
-- Cross-references: `invisible-users/manuscript/blog/blog.md`, `resource-links.md`, `PROJECTSTATE.md`
+- Repository structure diagrams: `CLAUDE.md`, `README.md`, `packages/manuscript/book-plan.md`, `llms.txt`
+- Supporting materials tables: `packages/manuscript/book-plan.md`
+- Cross-references: `packages/manuscript/manuscript/blog/blog.md`, `resource-links.md`, `PROJECTSTATE.md`
 
 ## Cross-Document Update Patterns
 
@@ -640,7 +639,7 @@ Three custom skills are available via the `/` command syntax:
    - Sequences entries chronologically
    - Creates properly formatted blog entries (narrative style)
    - Creates structured appendix entries (12-section technical format)
-   - Updates both `invisible-users/manuscript/blog/book-updates.md` and `appendix-j-industry-developments.md`
+   - Updates both `packages/manuscript/manuscript/blog/book-updates.md` and `appendix-j-industry-developments.md`
    - Includes qualifiers for unverified company-reported metrics
    - Only adds news that validates or challenges specific book chapters
    - **Usage:** `/news [paste news content or URL]`
@@ -749,15 +748,15 @@ The manuscript directory is a git submodule pointing to:
 
 **⚠️ ABSOLUTE REQUIREMENT: Run `pwd` BEFORE EVERY file operation, directory navigation, or git command in this repository. NO EXCEPTIONS.**
 
-This repository has a git submodule at `invisible-users/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
+This repository has a git submodule at `packages/manuscript/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
 
 **TWO REPOSITORIES IN THIS WORKSPACE:**
 
 1. **Main repo:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/`
-   - Contains: `.claude/`, `web-audit-suite/`, `docs/`, `CLAUDE.md`, `LEARNINGS.md`
+   - Contains: `.claude/`, `packages/web-audit-suite/`, `docs/`, `CLAUDE.md`, `LEARNINGS.md`
    - Project-level configuration and skills
 
-2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/`
+2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/`
    - Contains: chapters, appendices, blog files
    - Does NOT contain `.claude/` directory
 
@@ -771,7 +770,7 @@ pwd
 # If in main repo (/invisible-users/):
 Read(file_path=".claude/skills/news/skill.md")
 
-# If in submodule (/invisible-users/manuscript/):
+# If in submodule (/packages/manuscript/manuscript/):
 Read(file_path="../../.claude/skills/news/skill.md")
 ```
 
@@ -782,7 +781,7 @@ Read(file_path="../../.claude/skills/news/skill.md")
 pwd
 
 # STEP 2: Use git commands from current location
-# ❌ NEVER do: cd invisible-users/manuscript && git add -A
+# ❌ NEVER do: cd packages/manuscript/manuscript && git add -A
 # ✅ ALWAYS do: git add -A (from current location)
 
 # Git knows about the submodule and will handle it correctly
@@ -799,7 +798,7 @@ Read(file_path=".claude/skills/news/skill.md")  # Fails if in submodule
 ls .claude/skills/news/  # "No such file or directory"
 
 # ❌ WRONG: Attempting to navigate to submodule during git operations
-cd invisible-users/manuscript && git add -A  # "No such file or directory"
+cd packages/manuscript/manuscript && git add -A  # "No such file or directory"
 
 # ✅ CORRECT: Always start with pwd
 pwd  # Check location FIRST - NOT OPTIONAL
@@ -825,10 +824,10 @@ git submodule update --init --recursive
 
 ```bash
 # Update submodule to latest from tracked branch (main)
-git submodule update --remote invisible-users/manuscript
+git submodule update --remote packages/manuscript/manuscript
 
 # Commit the submodule pointer update
-git add invisible-users/manuscript
+git add packages/manuscript/manuscript
 git commit -m "Update manuscript submodule to latest version"
 ```
 
@@ -836,19 +835,19 @@ git commit -m "Update manuscript submodule to latest version"
 
 ### Book Documentation
 
-- `invisible-users/book-plan.md` - Master plan with chapter outlines and status
-- `invisible-users/manuscript/Glossary.md` - Comprehensive technical glossary
-- `invisible-users/manuscript/appendix-implementation-roadmap.md` - Priority-based implementation guide
-- `invisible-users/manuscript/appendix-resource-directory.md` - Curated resources and references
+- `packages/manuscript/book-plan.md` - Master plan with chapter outlines and status
+- `packages/manuscript/manuscript/Glossary.md` - Comprehensive technical glossary
+- `packages/manuscript/manuscript/appendix-implementation-roadmap.md` - Priority-based implementation guide
+- `packages/manuscript/manuscript/appendix-resource-directory.md` - Curated resources and references
 
 ### Web Audit Suite Documentation
 
-- `web-audit-suite/README.md` - Complete tool documentation
-- `web-audit-suite/QUICKSTART.md` - 5-minute getting started guide
-- `web-audit-suite/docs/usermanual.md` - Complete user guide
-- `web-audit-suite/docs/CONFIGURATION.md` - Configuration reference
-- `web-audit-suite/docs/FEATURES.md` - Feature overview
-- `web-audit-suite/docs/report-layout.md` - Report structure and data schema
+- `packages/web-audit-suite/README.md` - Complete tool documentation
+- `packages/web-audit-suite/QUICKSTART.md` - 5-minute getting started guide
+- `packages/web-audit-suite/docs/usermanual.md` - Complete user guide
+- `packages/web-audit-suite/docs/CONFIGURATION.md` - Configuration reference
+- `packages/web-audit-suite/docs/FEATURES.md` - Feature overview
+- `packages/web-audit-suite/docs/report-layout.md` - Report structure and data schema
 
 ## Cross-Project Consistency and Terminology
 
@@ -886,7 +885,7 @@ Ensure consistency across all projects (book, tools, documentation) for these ke
 
 #### 1. The Book is Authoritative
 
-The Invisible Users book (`invisible-users/` directory) is the authoritative source for:
+The Invisible Users book (`packages/manuscript/` directory) is the authoritative source for:
 
 - Terminology and definitions
 - Pattern descriptions
@@ -897,7 +896,7 @@ If there's a conflict between the book and the tool, update the tool to match th
 
 #### 2. The Tool Implements the Book
 
-Web Audit Suite (`web-audit-suite/` directory) implements the concepts from the book:
+Web Audit Suite (`packages/web-audit-suite/` directory) implements the concepts from the book:
 
 - Detects patterns described in the book
 - Uses terminology from the book
