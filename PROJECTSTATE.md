@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Schema.org Person Entity Updates + ProfilePage Documentation)
+**Last Updated:** 2026-01-12 (Google UCP Platform Race + Chapter 9 + Sales Blog)
 
 ### Combined Repository
 
@@ -13,16 +13,20 @@ This repository contains two integrated projects:
 
 ### Book Manuscript Status
 
-- **Version:** 2.8.2
-- **Status:** Publication-ready
-- **Word Count:** ~57,000 words (core manuscript: preface + 11 chapters + The End + Glossary)
-- **Appendices:** 11 appendices (~41,600 words) published separately online at <https://allabout.network/invisible-users/web/>
-- **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
-- **Latest Change:** Schema.org Person entity updates and ProfilePage documentation:
-  - **Person Schema Updates:** Added canonical author URL (`https://allabout.network/tom-cranstoun.html`) to all Tom Cranstoun Person schemas across 14 HTML files, establishing proper entity linking for AI agents and search engines.
-  - **Data Corrections:** Removed incorrect alumniOf property from author.html and about.html, updated documentation files (about.html.md, team.html.md) to remove educational institution references.
-  - **Appendix K Enhancement:** Added example #12 (Author/Profile Page) demonstrating ProfilePage schema with comprehensive Person entity including givenName/familyName, jobTitle, credentials (hasCredential), expertise (knowsAbout), organization (worksFor), social profiles (sameAs), and data attributes for machine-readable content. 255 lines of production-ready HTML with Schema.org markup.
-  - **Previous:** Comprehensive Schema.org enhancement (external CSS/JS refactoring, BreadcrumbList patterns, Web Audit Suite validation features with 5 new modules generating 5 report types).
+- **Version:** 2.9.0
+- **Status:** Publication-ready (in review, due Q1 2026)
+- **Word Count:** ~60,500 words (core manuscript: preface + 12 chapters + The End + Glossary)
+- **Appendices:** 11 appendices (~42,000 words) published separately online at <https://allabout.network/invisible-users/web/>
+- **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
+- **Latest Change:** Platform race chapter and comprehensive Google UCP integration:
+  - **NEW Chapter 9: The Platform Race** (~5,200 words) documents January 2026 seven-day acceleration (Amazon Jan 5, Microsoft Jan 8, Google Jan 11) when three major platforms launched agent commerce systems. Analyzes competitive landscape: two open protocols (ACP, UCP) vs Microsoft proprietary, fragmentation risk, Microsoft's isolation problem, timeline compression from 12 months to 6-9 months for meaningful adoption.
+  - **Chapter Renumbering:** Previous Ch 9→10, Ch 10→11, Ch 11→12. Updated ALL cross-references across 60+ files (chapters, appendices, front matter, blog, sales materials).
+  - **Google UCP Integration:** Added comprehensive entries to Appendix J (~280 lines, 12-section format) and blog/book-updates.md documenting Universal Commerce Protocol announcement, competitive positioning, and implications.
+  - **Chapter Content Updates:** Added platform competition and protocol fragmentation sections to Chapters 10, 11, 12 with urgency messaging and Chapter 9 backward references.
+  - **Glossary Expansion:** Added Agentic Commerce Protocol (ACP) and Universal Commerce Protocol (UCP) entries with Chapter 9 cross-references.
+  - **Web Cleanup:** Deleted obsolete web/identity-layer.html (identity delegation project proposal page - superseded by real platform launches).
+  - **Tone Corrections:** Fixed "Timeline update: This chapter was written before..." messaging to "As of January 2026:" (appropriate for pre-publication manuscript).
+  - **Sales Materials:** Updated 6 sales enablement files with chapter renumbering, added platforms-blog.md for LinkedIn promotion and Boye & Company members call (January 21st, 2026).
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
@@ -41,9 +45,8 @@ This repository contains two integrated projects:
   - **Kindle Format** (`pdf:kindle`) - 6"×9" KDP-ready paperback format, production-ready (no review footer)
   - **Simple Format** (`pdf:simple`) - Basic PDF without cover or footer
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
-  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 16 files (index.html, appendix-index.html, news.html, identity-layer.html, llms.txt, sitemap.xml, 10 appendix pages)
+  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 15 files (index.html, appendix-index.html, news.html, llms.txt, sitemap.xml, 10 appendix pages)
 - **Web Pages:**
-  - **Identity Layer** (`web/identity-layer.html`) - Universal Identity Delegation Infrastructure project landing page
   - **News** (`web/news.html`) - Project news and updates
   - **FAQ** (`web/faq.html`) - Frequently asked questions about the book and project
   - All pages follow Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML)
