@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-10 (FAQ Schema Detection and Appendix D FAQ Section Added)
+**Last Updated:** 2026-01-12 (Schema.org Enhancements: HTML Tutorial Refactoring + Web Audit Suite Validation Features)
 
 ### Combined Repository
 
@@ -18,7 +18,10 @@ This repository contains two integrated projects:
 - **Word Count:** ~57,000 words (core manuscript: preface + 11 chapters + The End + Glossary)
 - **Appendices:** 11 appendices (~41,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 11 chapters complete (added Chapter 11: What Agent Creators Must Build)
-- **Latest Change:** Added Appendix K: Common Page Patterns (~14,200 words) with production-ready HTML templates for 8 common page types. Updated all documentation and generation scripts to support 11 appendices. Total appendices word count increased from ~27,400 to ~41,600 words. Navigation updated to A-K across all appendix pages.
+- **Latest Change:** Comprehensive Schema.org enhancement project completed:
+  - **HTML Tutorial Pages:** Refactored all 20 pages to use external CSS (`css/styles.css`) and JavaScript (`js/common.js`), removing 4,000+ lines of inline code. Enhanced Schema.org JSON-LD with 150+ improvements (datePublished, dateModified, breadcrumbs, images, enhanced Offer objects).
+  - **Manuscript Updates:** Updated Appendix K (all 12 HTML examples refactored), Chapter 10 (added BreadcrumbList, Book schema, enhanced Product patterns), and Appendix D (added BreadcrumbList and Book schemas with implementation guidance).
+  - **Web Audit Suite:** Added comprehensive Schema.org validation with 5 new modules (schemaValidator.js, pageTypeDetector.js, schemaAnalysis.js, schemaReports.js integration) generating 5 report types (validation CSV, issues CSV, page-types CSV, page-type-stats CSV, summary markdown).
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
