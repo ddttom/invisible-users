@@ -7,6 +7,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Platform Race Chapter and Google UCP Integration (2026-01-12)
+
+**Version:** 2.9.0 (up from 2.8.2)
+**Word Count:** ~60,500 words (up from ~57,000)
+**Chapter Count:** 12 chapters (up from 11)
+
+**NEW Chapter 9: The Platform Race:**
+
+- Created comprehensive new chapter (~5,200 words) documenting the January 2026 seven-day acceleration:
+  - Amazon Alexa+ (January 5, 2026)
+  - Microsoft Copilot Checkout expansion (January 8, 2026)
+  - Google UCP + Business Agent (January 11, 2026)
+- Eight sections covering competitive landscape, Microsoft isolation, fragmentation risk, ecosystem maturity
+- Timeline compression analysis: 12 months → 6-9 months for meaningful adoption
+- Two open protocols (ACP, UCP) vs one closed system (Microsoft Copilot Checkout)
+
+**Chapter Renumbering (ALL files updated):**
+
+- Previous Chapter 9 (Designing for Both) → Chapter 10
+- Previous Chapter 10 (Technical Advice) → Chapter 11
+- Previous Chapter 11 (What Agent Creators Must Build) → Chapter 12
+- Updated 60+ files with cross-references across manuscript, appendices, blog, sales materials
+
+**Google UCP Documentation:**
+
+- **Appendix J:** Added comprehensive 12-section technical entry (~280 lines)
+  - Complete announcement details (January 11, 2026)
+  - 20+ retail partners (Target, Walmart, Macy's, Best Buy, The Home Depot)
+  - Technical capabilities, business implications, architectural insights
+  - Competitive analysis vs ACP and Microsoft
+- **Blog:** Added narrative entry to book-updates.md emphasizing platform competition urgency
+- **Glossary:** Added Agentic Commerce Protocol (ACP) and Universal Commerce Protocol (UCP) entries with Chapter 9 cross-references
+
+**Chapter Content Updates:**
+
+- **Chapter 10 (Designing for Both):** Added Commerce Protocol Fragmentation subsection
+- **Chapter 11 (Technical Advice):** Added Platform Competition and Protocol Fragmentation with 4-step integration framework
+- **Chapter 12 (What Agent Creators Must Build):** Replaced obsolete "What Comes Next" identity layer proposal with "Open Protocol Reality" documenting actual platform launches
+
+**Sales Enablement Materials:**
+
+- Created [platforms-blog.md](docs/sales-enablement/platforms-blog.md) - comprehensive LinkedIn blog post (268 lines)
+  - Balanced analysis of all three platforms (including Microsoft's strategic rationale)
+  - Technical deep-dive on Google UCP capabilities
+  - "The Invisible Failure Problem" concept (silent agent failures)
+  - Prominent Boye & Company members call promotion (January 21st, 2026)
+  - Author positioning and book promotion with LinkedIn follow CTAs
+  - Urgency messaging throughout (6-9 month timeline)
+
+**Web Page Cleanup:**
+
+- Deleted obsolete `web/identity-layer.html` (Universal Identity Delegation Infrastructure project page)
+  - Superseded by real platform launches (ACP, UCP, Copilot Checkout)
+  - Project proposal no longer relevant with production commerce protocols live
+
+**Tone Corrections:**
+
+- Fixed inappropriate "Timeline update: This chapter was written before..." messaging in Chapters 10, 11, 12
+- Changed to "As of January 2026:" throughout (appropriate for pre-publication manuscript)
+- Book remains in review status (due Q1 2026), not yet published
+
+**Result:** The book now documents the dramatic January 2026 platform race as it happened, with comprehensive analysis of competitive dynamics, protocol fragmentation risks, and timeline compression. The new Chapter 9 bridges the problem chapters (1-8) with the solution chapters (10-12) by establishing urgency. All materials updated with consistent messaging emphasizing immediate need for agent-friendly patterns.
+
+**Commits:**
+
+- 3 commits in main repository (sales materials, PROJECTSTATE.md)
+- 17 commits in manuscript submodule (NEW chapter, renumbering, content updates, tone corrections)
+
 ### Changed - Schema.org Person Entity Updates (2026-01-12)
 
 **Person Schema Standardization:**
