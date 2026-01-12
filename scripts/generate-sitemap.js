@@ -50,12 +50,6 @@ const urls = [
     description: 'Frequently Asked Questions'
   },
   {
-    loc: `${BASE_URL}/identity-layer.html`,
-    priority: '0.9',
-    changefreq: 'monthly',
-    description: 'Identity Delegation Infrastructure Project'
-  },
-  {
     loc: `${BASE_URL}/appendix-a.html`,
     priority: '0.9',
     changefreq: 'monthly',

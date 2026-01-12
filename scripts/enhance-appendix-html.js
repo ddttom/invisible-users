@@ -37,7 +37,8 @@ function enhanceHTML(filePath) {
   <meta name="ai-content-policy" content="summaries-allowed, full-extraction-allowed">
   <meta name="ai-freshness" content="monthly">
   <meta name="ai-structured-data" content="json-ld">
-  <meta name="ai-attribution" content="required">`;
+  <meta name="ai-attribution" content="required">
+  <meta name="llms-txt" content="/llms.txt">`;
 
   // Build Schema.org JSON-LD
   const jsonLD = `
@@ -79,221 +80,21 @@ function enhanceHTML(filePath) {
     '<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">'
   );
 
-  // 2. Add CSS for proper margins (override Pandoc defaults)
-  const customCSS = `
-  <style>
-    body {
-      max-width: 900px !important;
-      margin: 2rem auto !important;
-      padding: 0 2rem !important;
-      padding-left: 2rem !important;
-      padding-right: 2rem !important;
-      padding-top: 2rem !important;
-      padding-bottom: 2rem !important;
-      line-height: 1.6;
-    }
-    @media (max-width: 768px) {
-      body {
-        padding: 0 1rem !important;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        margin: 1rem auto !important;
-      }
-    }
-    /* Pre-publication header banner */
-    body::before {
-      content: "PRE-PUBLICATION SAMPLE - FOR REVIEWERS";
-      display: block;
-      position: sticky;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: #fff3cd;
-      border-bottom: 2px solid #ff9800;
-      color: #856404;
-      text-align: center;
-      font-weight: bold;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 0.75rem 1rem;
-      margin: -2rem -2rem 2rem -2rem;
-      z-index: 1000;
-    }
-    @media (max-width: 768px) {
-      body::before {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.75rem;
-        margin: -1rem -1rem 1rem -1rem;
-      }
-    }
-    /* Link styling - override Pandoc's default black links */
-    a:not(.floating-home-button):not(.floating-top-button):not(.copy-button) {
-      color: #0066cc !important;
-      text-decoration: underline !important;
-    }
-    a:not(.floating-home-button):not(.floating-top-button):not(.copy-button):visited {
-      color: #551a8b !important;
-      text-decoration: underline !important;
-    }
-    a:not(.floating-home-button):not(.floating-top-button):not(.copy-button):hover {
-      color: #003d7a !important;
-      text-decoration: underline !important;
-    }
-    a:not(.floating-home-button):not(.floating-top-button):not(.copy-button):active {
-      color: #ff4500 !important;
-      text-decoration: underline !important;
-    }
-    /* Floating navigation buttons */
-    .floating-home-button {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      background-color: #0066cc;
-      color: white !important;
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none !important;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
-      transition: all 0.3s ease;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .floating-home-button:hover {
-      background-color: #003d7a !important;
-      color: white !important;
-      box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
-      transform: translateY(-2px);
-    }
-    .floating-home-button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
-    }
-    .floating-home-button svg {
-      fill: white;
-    }
-    .floating-top-button {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #0066cc;
-      color: white !important;
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none !important;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
-      transition: all 0.3s ease;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-    }
-    .floating-top-button:hover {
-      background-color: #003d7a !important;
-      color: white !important;
-      box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
-      transform: translateY(-2px);
-    }
-    .floating-top-button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
-    }
-    .floating-top-button svg {
-      fill: white;
-    }
-    @media (max-width: 768px) {
-      .floating-home-button {
-        top: 15px;
-        left: 15px;
-        padding: 10px 16px;
-        font-size: 0.85rem;
-      }
-      .floating-top-button {
-        bottom: 15px;
-        left: 15px;
-        padding: 10px 16px;
-        font-size: 0.85rem;
-      }
-    }
-    /* Code block styling */
-    div.sourceCode {
-      position: relative !important;
-      border: 2px solid #000000 !important;
-      background-color: #f5f5f5 !important;
-      border-radius: 4px !important;
-      padding: 1rem !important;
-      margin: 1.5rem 0 !important;
-      overflow: visible !important;
-    }
-    pre.sourceCode {
-      background-color: transparent !important;
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-    code.sourceCode {
-      white-space: pre-wrap !important;
-    }
-    pre > code.sourceCode > span {
-      display: inline-block !important;
-      line-height: 1.25 !important;
-    }
-    /* Standalone code blocks (text, plain code without wrapper) */
-    pre.text,
-    pre[data-role="code-block"]:not(.sourceCode) {
-      position: relative !important;
-      border: 2px solid #000000 !important;
-      background-color: #f5f5f5 !important;
-      border-radius: 4px !important;
-      padding: 1rem !important;
-      margin: 1.5rem 0 !important;
-      overflow: auto !important;
-      white-space: pre-wrap !important;
-    }
-    /* Copy to clipboard button */
-    .copy-button {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background-color: #0066cc;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 12px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      z-index: 10;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .copy-button:hover {
-      background-color: #003d7a;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    }
-    .copy-button:active {
-      transform: translateY(0);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    }
-    .copy-button.copied {
-      background-color: #28a745;
-    }
-    .copy-button.copied::after {
-      content: " ✓";
-    }
-  </style>`;
+  // 2. Remove Pandoc's embedded styles and replace with external CSS link
+  // First, remove the entire Pandoc <style> block
+  enhanced = enhanced.replace(
+    /<style>[\s\S]*?<\/style>/,
+    ''
+  );
 
-  // 3. Add meta tags and CSS before </head>
+  // Add external CSS link
+  const externalCSS = `
+  <link rel="stylesheet" href="appendix.css">`;
+
+  // 3. Add meta tags and external CSS link before </head>
   enhanced = enhanced.replace(
     '</head>',
-    `${aiMetaTags}${jsonLD}${customCSS}\n</head>`
+    `${aiMetaTags}${jsonLD}${externalCSS}\n</head>`
   );
 
   // 4. Add semantic roles and data attributes

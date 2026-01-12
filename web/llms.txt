@@ -1,0 +1,57 @@
+# The Invisible Users - Web Resources
+
+> Project news and updates
+
+**Last updated:** January 2026
+**Author:** Tom Cranstoun
+**LinkedIn:** https://www.linkedin.com/in/tom-cranstoun/
+
+**Site Type:** Project Updates, News, Technical Documentation
+**Purpose:** Developer Education, AI Agent Compatibility, Web Design Best Practices
+**Status:** Active project website
+
+## About
+
+This directory contains public web pages for "The Invisible Users: Designing the Web for AI Agents and Everyone Else" by Tom Cranstoun.
+
+The book examines how modern web design optimized for human users fails for AI agents, and how fixing this benefits everyone.
+
+**Contact:** tom.cranstoun@gmail.com
+**Website:** https://allabout.network
+
+## Main Pages
+
+- Project News: https://allabout.network/invisible-users/web/news.html - Latest updates and announcements
+
+## Complete Book Resources
+
+For the complete book content, appendices, implementation guides, and technical documentation, see:
+
+- Book Main Page: https://allabout.network/invisible-users/web/index.html
+- Complete llms.txt: https://allabout.network/invisible-users/web/llms.txt
+- Appendices Index: https://allabout.network/invisible-users/web/appendix-index.html
+
+## Access Guidelines
+
+- **Copyright:** © 2026 Tom Cranstoun. All rights reserved.
+- **Content Usage:** All rights reserved, not licensed for public distribution
+- **Attribution Format:** "The Invisible Users by Tom Cranstoun"
+- **Training Usage:** Not permitted
+- **Rate Limits:** Please respect reasonable crawling rates (max 1 request per second)
+- **Commercial Use:** Content is proprietary; contact for licensing inquiries
+
+## Topics
+
+AI agents, web design, web accessibility, agent-mediated commerce, semantic HTML, structured data, identity delegation, browser automation, llms.txt, implementation patterns
+
+## For Human Visitors
+
+Looking for more information about this book and its resources?
+
+- **Author:** Tom Cranstoun
+- **LinkedIn:** https://www.linkedin.com/in/tom-cranstoun/
+- **About llms.txt:** https://llmstxt.org
+- **Full Book:** Available at https://allabout.network/invisible-users/
+- **Web Audit Suite:** Implementation tool at https://github.com/Digital-Domain-Technologies-Ltd/invisible-users
+
+This llms.txt file follows the specification at llmstxt.org to help AI agents discover and understand our content.
