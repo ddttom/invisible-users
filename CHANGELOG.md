@@ -7,6 +7,64 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - Protocol Landscape Updates (2026-01-12)
+
+Updated manuscript to reflect January 2026 protocol landscape and accelerated timeline:
+
+**Preface updates:**
+
+- Added new paragraph acknowledging ACP (September 2024) and UCP (January 2026) launches
+- Describes seven-day platform acceleration (Amazon Jan 5, Microsoft Jan 8, Google Jan 11)
+- Explains timeline compression from 12 months to 6-9 months
+- Notes fragmentation creating commercial urgency (businesses must support multiple protocols)
+- Maintains personal narrative voice: "That pressure intensified dramatically whilst writing this book"
+- Reinforces universal patterns work regardless of which protocol wins
+- Added 115 words, maintains accessibility-focused narrative
+
+**Chapter 12 ("The Missing Identity Layer" section) updates:**
+
+- Rewrote opening to acknowledge current state: two open protocols vs one proprietary system
+- Updated current state description: ACP (1M+ merchants), UCP (20+ retailers), Microsoft (isolated)
+- Added competitive landscape analysis: Microsoft's proprietary lock-in now competitively isolated
+- Reframed agent creator implications: from "waiting for standards" to "navigating dual standards"
+- Updated practical guidance: build for open protocols (ACP/UCP) with abstraction layers
+- Revised code examples: show ACP/UCP provider support instead of generic "open standards"
+- Added cross-reference to Chapter 9 for platform race analysis
+- Reframed closing from "winner-take-all competition" to "convergence preparation"
+- Changed 62 lines, maintains technical accuracy
+
+**Executive Summary updates:**
+
+- Updated "What Is Happening": Three platforms launched within seven days (consensus signal)
+- Added protocol infrastructure details: 1M+ merchants (ACP), 20+ retailers (UCP)
+- Added timeline acceleration paragraph: 6-9 months adoption timeline
+- Updated business impact: payment protocols provide standardised infrastructure
+- Enhanced Priority 3 action items: protocol evaluation decisions (ACP vs UCP vs both)
+- Enhanced Priority 4 action items: specific protocol integration guidance with merchant numbers
+- Changed 19 lines across three sections
+
+**Consistency achieved:**
+
+- All three documents align on facts: ACP (Sept 2024, 1M+ merchants), UCP (Jan 2026, 20+ retailers)
+- Seven-day acceleration verified (Jan 5-11, 2026)
+- Timeline compression consistent (12→6-9 months)
+- Microsoft's competitive isolation acknowledged
+- Universal patterns emphasis maintained throughout
+
+**Cross-references verified:**
+
+- Preface → Chapter 9 (platform race details)
+- Chapter 12 → Chapter 9 (competitive analysis)
+- Executive Summary → Chapters 4, 9, 12 (frameworks and guidance)
+- All facts verified against Chapter 9 and Appendix J
+
+**Word count impact:**
+
+- Core manuscript: 60,500 → 60,666 words (+166 words)
+- Maintains target range for publication
+
+**Version:** 2.9.0 → 2.9.1
+
 ### Added - HTML Pattern Implementation (2026-01-12)
 
 Implemented Priority 1 audit recommendations to ensure educational examples demonstrate best practices:
