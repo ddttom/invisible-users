@@ -34,7 +34,8 @@
       "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/web/site/**)",
       "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/**)",
       "Bash(git checkout:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
