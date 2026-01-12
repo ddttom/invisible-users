@@ -7,6 +7,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Canonical Href Tags (2026-01-12)
+
+**Canonical URL Implementation:**
+
+- Enhanced `scripts/enhance-appendix-html.js` to automatically generate canonical tags
+- Canonical tags now added to all generated appendix HTML files (appendix-a through appendix-k, appendix-index)
+- Format: `https://allabout.network/invisible-users/[filename].html`
+
+**Manuscript Web Pages (4 files):**
+
+- Added canonical tags to web/index.html, web/appendix-index.html, web/faq.html, web/news.html
+- Follows established SEO and AI agent compatibility patterns
+
+**HTML Code Examples (16 files):**
+
+- Added contextual canonical URLs to all examples in code-examples/html-examples/
+- E-commerce examples: product-page.html, shopping-cart.html, order-confirmation.html, shipping-options.html
+- Form examples: validation-form.html, multi-step-wizard.html, disabled-button.html
+- Navigation examples: breadcrumbs.html, filters.html, search-results.html
+- Component examples: data-tables.html, dialog-modal.html, pricing-display.html
+- State examples: authentication.html, error-display.html, loading-state.html
+- Uses `https://example.com/` with realistic contextual paths for teaching examples
+
+**Agent-Friendly Starter Kit:**
+
+- Added canonical tag to agent-friendly-starter-kit/good/index.html
+- Demonstrates established pattern alongside AI-specific meta tags
+- Bad example intentionally NOT updated (demonstrates anti-patterns)
+
+**Standards Classification:**
+
+- Canonical href tags are an **established standard** (not proposed pattern)
+- Already detected and scored by Web Audit Suite
+- Documented in AI-Native.blog as part of SEO/AI agent compatibility patterns
+
 ### Added - AI-Friendly Meta Tags and External CSS (2026-01-12)
 
 **Meta Tag Enhancement:**
