@@ -7,6 +7,54 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Boye Webinar Event Page and Appendix K Expansion (2026-01-12)
+
+**Event Page Update:**
+
+- Updated [web/site/event.html](invisible-users/manuscript/web/site/event.html) with real Boye & Company webinar details
+  - Event: "The Platform Race: How Three Tech Giants Launched Agent Commerce in Seven Days"
+  - Date: Wednesday, 21 January 2026
+  - Times: 14:00 GMT (15:00 CET, 09:00 EST)
+  - Format: 20-minute presentation + Q&A
+  - Registration: <https://www.boye-co.com/blog/2026/1/websites-work-until-dont>
+  - Free registration with recording provided to attendees
+- Complete content replacement from placeholder to production event
+- Schema.org Event structured data with proper timezone handling
+- Added platform race context section explaining Amazon/Google/Microsoft competition
+- Professional tone without urgency messaging
+
+**Appendix K Major Expansion:**
+
+- Grew from 8 to 20 documented page patterns (+615 lines, +77% content increase)
+- Added 7 new complete pattern sections with full HTML examples:
+  - **Pattern #14: Event/Webinar Page** - Using real Boye webinar with Schema.org Event, VirtualLocation, timezone information
+  - **Pattern #15: Login Page** - Authentication with autocomplete attributes, proper field naming (email, password)
+  - **Pattern #16: Checkout Page** - E-commerce with explicit state management (data-state, data-cart-items)
+  - **Pattern #17: Search Results Page** - Search functionality with result positioning (data-result-position)
+  - **Pattern #18: Portfolio/Case Studies Page** - Professional work showcase with CollectionPage schema
+  - **Pattern #19: Team Page** - Person profiles with ProfilePage schema and structured metadata
+  - **Pattern #20: Testimonials Page** - Social proof with Review schema and rating attributes
+- Each pattern includes:
+  - Complete production-ready HTML code example
+  - "AI-friendly patterns demonstrated" section
+  - Schema.org structured data explanation
+  - Data attribute usage guidance
+- Updated introduction and conclusion from "eight common page types" to "twenty common page types"
+- All patterns follow Chapter 10 technical guidance (semantic HTML, explicit state, structured data)
+
+**Documentation Updates:**
+
+- Updated PROJECTSTATE.md with comprehensive change documentation
+- Updated CHANGELOG.md with this entry
+- All markdown linting passes (0 errors)
+
+**Result:** Appendix K now provides comprehensive coverage of all 21 HTML files in the web/site/ directory, serving as complete reference documentation for AI-friendly page patterns. Event page ready for production use with real webinar details.
+
+**Commits:**
+
+- Manuscript submodule: 3 commits (event.html update, Appendix K expansion, markdown cleanup)
+- Main repository: 2 commits (submodule pointer updates, documentation)
+
 ### Added - Platform Race Chapter and Google UCP Integration (2026-01-12)
 
 **Version:** 2.9.0 (up from 2.8.2)

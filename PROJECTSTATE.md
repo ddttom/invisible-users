@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Google UCP Platform Race + Chapter 9 + Sales Blog)
+**Last Updated:** 2026-01-12 (Boye Webinar Event Page + Appendix K Expansion)
 
 ### Combined Repository
 
@@ -18,15 +18,17 @@ This repository contains two integrated projects:
 - **Word Count:** ~60,500 words (core manuscript: preface + 12 chapters + The End + Glossary)
 - **Appendices:** 11 appendices (~42,000 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Platform race chapter and comprehensive Google UCP integration:
-  - **NEW Chapter 9: The Platform Race** (~5,200 words) documents January 2026 seven-day acceleration (Amazon Jan 5, Microsoft Jan 8, Google Jan 11) when three major platforms launched agent commerce systems. Analyzes competitive landscape: two open protocols (ACP, UCP) vs Microsoft proprietary, fragmentation risk, Microsoft's isolation problem, timeline compression from 12 months to 6-9 months for meaningful adoption.
-  - **Chapter Renumbering:** Previous Ch 9→10, Ch 10→11, Ch 11→12. Updated ALL cross-references across 60+ files (chapters, appendices, front matter, blog, sales materials).
-  - **Google UCP Integration:** Added comprehensive entries to Appendix J (~280 lines, 12-section format) and blog/book-updates.md documenting Universal Commerce Protocol announcement, competitive positioning, and implications.
-  - **Chapter Content Updates:** Added platform competition and protocol fragmentation sections to Chapters 10, 11, 12 with urgency messaging and Chapter 9 backward references.
-  - **Glossary Expansion:** Added Agentic Commerce Protocol (ACP) and Universal Commerce Protocol (UCP) entries with Chapter 9 cross-references.
-  - **Web Cleanup:** Deleted obsolete web/identity-layer.html (identity delegation project proposal page - superseded by real platform launches).
-  - **Tone Corrections:** Fixed "Timeline update: This chapter was written before..." messaging to "As of January 2026:" (appropriate for pre-publication manuscript).
-  - **Sales Materials:** Updated 6 sales enablement files with chapter renumbering, added platforms-blog.md for LinkedIn promotion and Boye & Company members call (January 21st, 2026).
+- **Latest Change:** Boye & Company webinar event page and Appendix K expansion:
+  - **Event Page Update:** Updated `web/site/event.html` with real Boye & Company webinar details (January 21st, 2026: "The Platform Race: How Three Tech Giants Launched Agent Commerce in Seven Days"). Complete content replacement from placeholder to production event with Schema.org Event structured data, timezone information, platform race context section, and registration URL.
+  - **Appendix K Major Expansion:** Grew from 8 to 20 documented page patterns (+615 lines). Added 7 new complete pattern sections (#14-20) with full HTML examples and AI-friendly pattern descriptions:
+    - Pattern #14: Event/Webinar Page (using real Boye webinar)
+    - Pattern #15: Login Page (authentication with autocomplete)
+    - Pattern #16: Checkout Page (e-commerce with explicit state)
+    - Pattern #17: Search Results Page (with result positioning)
+    - Pattern #18: Portfolio/Case Studies Page (professional work)
+    - Pattern #19: Team Page (person profiles)
+    - Pattern #20: Testimonials Page (social proof with ratings)
+  - **Documentation Consistency:** Updated Appendix K introduction and conclusion from "eight common page types" to "twenty common page types" to reflect comprehensive coverage of all web/site/ HTML files.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
