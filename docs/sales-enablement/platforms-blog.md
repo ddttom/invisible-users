@@ -1,6 +1,6 @@
 # The Platform Race: How Three Tech Giants Launched Agent Commerce in Seven Days
 
-**By Tom Cranstoun**
+By Tom Cranstoun
 
 Something extraordinary happened in January 2026. In the span of just seven days, three of the world's largest technology companies launched AI agent commerce systems - and they made fundamentally different strategic choices that will shape the future of online shopping.
 
@@ -37,12 +37,14 @@ Two open protocols competing against one closed system.
 In my book, I explore the technical patterns that make websites work for AI agents. But this platform race isn't just about technology - it's about power, control, and who owns the future of commerce.
 
 **The open approach (ACP and UCP) offers:**
+
 - Integrate once, support all agents
 - No platform lock-in
 - Portability across ecosystems
 - Innovation without permission
 
 **The closed approach (Microsoft) offers:**
+
 - Deep enterprise integration
 - Controlled user experience
 - Platform-specific optimization
@@ -57,6 +59,7 @@ Only one of these bets can be right.
 Here's the strategic challenge Microsoft faces: they're competing against **two** open protocols simultaneously.
 
 When merchants evaluate where to invest integration effort, they must weigh:
+
 - **Support ACP or UCP:** Potentially reach agents across multiple platforms
 - **Support Microsoft:** Reach only Copilot users, locked to Microsoft's ecosystem
 - **Support both:** Double or triple the work
@@ -70,6 +73,7 @@ Unless Microsoft's agent traffic dramatically exceeds combined ACP/UCP traffic, 
 But open isn't perfect either. Two open protocols is better than five proprietary systems - but it's worse than one universal standard.
 
 Merchants now face tough decisions:
+
 - Integrate ACP only? (Proven, 1M+ merchants, mature tooling)
 - Integrate UCP only? (Google distribution, major retail partnerships)
 - Integrate both? (Double the security surface, double the maintenance)
@@ -86,18 +90,21 @@ Google's Universal Commerce Protocol addresses a real problem: today's commerce 
 UCP provides standardized primitives:
 
 **Core Capabilities:**
+
 - **Checkout:** Cart management, tax calculation, session handling
 - **Order:** Lifecycle events (shipped, delivered, returned)
 - **Identity Linking:** OAuth 2.0 authorization
 - **Payment Token Exchange:** Secure credential protocols
 
 **Extensions:**
+
 - Discounts and promotions
 - Fulfillment tracking
 - Advanced security patterns
 - Explicit user consent
 
 **Transport Flexibility:**
+
 - REST APIs (traditional HTTP)
 - MCP (Model Context Protocol) for native AI integration
 - A2A (Agent-to-Agent) for direct communication
@@ -154,6 +161,7 @@ When you're ready for transaction integration, evaluate which protocol has the b
 Platform competition validates what I've been researching for two years: AI agents are fundamentally changing web design requirements.
 
 The patterns that work for humans often break for agents:
+
 - Toast notifications (appear and disappear before agents see them)
 - Forced pagination (agents can't understand "more" means additional content)
 - Client-side validation only (agents submit forms without JavaScript checks)
@@ -182,6 +190,7 @@ Only Microsoft chose lock-in.
 This shift from "websites work until they don't" changes the mechanics of discovery and purchasing fundamentally. If an agent can't read your site's state, it won't recommend your product. Making the implicit explicit isn't about building a separate site for bots or chasing speculative tech - it's about making your existing interface more resilient.
 
 **What we'll cover:**
+
 - How design decisions based solely on visual intuition create barriers for browser assistants
 - Why machine-driven failures often mirror accessibility gaps we've known about for decades
 - Practical, technical changes that ensure your site remains legible to both humans and machines
@@ -190,6 +199,7 @@ This shift from "websites work until they don't" changes the mechanics of discov
 **Format:** 20-minute presentation followed by Q&A
 
 **When:** Wednesday, January 21st
+
 - 14:00 London
 - 15:00 Aarhus
 - 09:00 Toronto
@@ -205,6 +215,7 @@ This shift from "websites work until they don't" changes the mechanics of discov
 "The Invisible Users" isn't just about commerce protocols. It's about the fundamental shift happening as machines become our primary interface to the web.
 
 The book covers:
+
 - **Technical patterns** that work for both humans and agents (Chapters 10-11)
 - **Business implications** of agent-mediated commerce (Chapter 4)
 - **Security challenges** when agents inherit authenticated sessions (Chapter 6)
@@ -221,6 +232,7 @@ It's practical, technical, and honest about tensions between business interests 
 This space is evolving rapidly. Three platforms launched in seven days. More developments will follow.
 
 **Follow me on LinkedIn** for ongoing analysis of:
+
 - Platform strategy and competitive dynamics
 - Protocol convergence prospects (or failure to converge)
 - Real-world implementation patterns
@@ -246,23 +258,27 @@ The only question is whether you're ready.
 ## Resources
 
 **Join the live session:**
+
 - **Boye & Company Members Call:** [Register for January 21st](https://www.boye-co.com/blog/2026/1/websites-work-until-dont)
 
 **Learn more about the platforms:**
+
 - **ACP Specification:** [agenticcommerce.dev](https://agenticcommerce.dev)
 - **UCP Documentation:** [ucp.dev](https://ucp.dev)
 - **Microsoft Copilot:** [microsoft.com/copilot](https://microsoft.com/copilot)
 
 **About the book:**
+
 - **Website:** [allabout.network/invisible-users](https://allabout.network/invisible-users)
 - **Web Audit Suite:** Assess your site's agent compatibility (available as separate purchase/service)
 
 **Connect:**
+
 - **LinkedIn:** [linkedin.com/in/tomcranstoun](https://www.linkedin.com/in/tomcranstoun/)
-- **Email:** tom.cranstoun@gmail.com
+- **Email:** <tom.cranstoun@gmail.com>
 
 ---
 
-**The platform race has begun. Join me on January 21st to learn how to compete.**
+The platform race has begun. Join me on January 21st to learn how to compete.
 
-**Book publication: Q1 2026 | Live session: January 21st, 2026**
+Book publication: Q1 2026 | Live session: January 21st, 2026
