@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (AI Meta Tags + External CSS)
+**Last Updated:** 2026-01-12 (Appendix L Expansion + HTML Pattern Audit)
 
 ### Combined Repository
 
@@ -16,22 +16,21 @@ This repository contains two integrated projects:
 - **Version:** 2.9.0
 - **Status:** Publication-ready (in review, due Q1 2026)
 - **Word Count:** ~60,500 words (core manuscript: preface + 12 chapters + The End + Glossary)
-- **Appendices:** 11 appendices (~42,000 words) published separately online at <https://allabout.network/invisible-users/web/>
+- **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Platform blog integration and business decision frameworks:
-  - **Manuscript Enhancement:** Integrated business decision-making guidance from `docs/sales-enablement/platforms-blog.md` into manuscript chapters and appendices. Added approximately 2,800 words of practical merchant guidance addressing critical gaps in protocol integration decision-making.
-  - **Chapter 4 Enhancements:** Added "Making Protocol Integration Decisions" section with decision framework for choosing ACP, UCP, both, or wait. Added "Invisible Failure Problem Drives Platform Urgency" connecting Chapter 2 invisible failures to January 2026 platform race.
-  - **Chapter 9 Enhancements:** Expanded "Microsoft's Isolation Problem" with force analysis explaining what compels Microsoft to abandon proprietary approach. Added "Integration Reality for Merchants" section covering technical implementation burden, testing complexity, and migration strategies.
-  - **Appendix F Enhancements:** Added "Priority 1.5: Protocol Integration Strategy" with timeline guidance by exposure level and single vs. dual protocol decision framework.
-  - **Appendix J Enhancements:** Added "ACP/UCP Convergence Prospects" analyzing convergence timeline and triggers. Added "Why Competitors Are Cooperating" examining Target/Walmart cooperation significance.
-  - **Content Focus:** Actionable business decision frameworks, risk analysis, and competitive dynamics. Maintains British English, professional tone, and sequential reading structure.
+- **Latest Change:** Appendix L expansion and comprehensive HTML pattern audit:
+  - **Appendix L Expansion:** Added Pattern 3: Common Data Attributes (~300 lines documenting 25+ data attributes across 5 categories: State Management, E-commerce, Pagination/Sorting, Multi-step Workflows, Button States). Updated Summary, Implementation Strategy (moved data attributes to Priority 1), and Risk Assessment sections. Fixed all markdown linting errors (12 duplicate headings resolved with context additions).
+  - **HTML Pattern Implementations:** Priority 1: Added data-agent-visible pattern to e-commerce examples (product-page.html, shopping-cart.html), added Schema.org JSON-LD to product-page.html. Priority 2: Added semantic HTML5 `<main>` elements to form examples. Priority 3: Standardised AI meta tags across 7 demo site pages, enhanced ai-attribution specification with text attribute requirement, updated all 39 HTML files with ai-attribution to include proper attribution text.
+  - **Pattern Audit System:** Created scripts/audit-html-patterns.js for automated HTML pattern detection. Scans 60 HTML files for 8 pattern categories. Generates comprehensive markdown report (PATTERN-AUDIT-REPORT.md) with location-based analysis.
+  - **Final Pattern Audit Results:** AI Meta Tags: 65.0% (39/60 files) - all standardised with complete sets and attribution text. data-agent-visible: 5.0% (3 files). Schema.org JSON-LD: 66.7% (40/60 files). Semantic HTML5: 98.3% (59/60 files).
+  - **Educational Impact:** Code examples now properly demonstrate both established standards (Schema.org, semantic HTML5) and proposed patterns (data-agent-visible, standardised AI meta tags with attribution, common data attributes), ensuring readers see correct implementation in context.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
   - **Submodule:** `invisible-users/manuscript/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
   - Tracks main branch for easy updates
   - Core chapters (1-11), preface, executive summary in submodule
-  - All ten appendices (implementation guides, pattern references, resource directory, DDT reference, pipeline failure case study, industry developments) in submodule
+  - All twelve appendices (implementation guides, pattern references, resource directory, DDT reference, pipeline failure case study, industry developments, common page patterns, proposed AI metadata patterns) in submodule
   - Code examples (agent-friendly-starter-kit/, code-examples/) in submodule
   - Blog materials (blog/blog.md, blog/blog.svg, blog/AI-Native.blog) in submodule
   - Presentation materials (talks/members-call/) in submodule
@@ -43,7 +42,7 @@ This repository contains two integrated projects:
   - **Kindle Format** (`pdf:kindle`) - 6"×9" KDP-ready paperback format, production-ready (no review footer)
   - **Simple Format** (`pdf:simple`) - Basic PDF without cover or footer
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
-  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 15 files (index.html, appendix-index.html, news.html, llms.txt, sitemap.xml, 10 appendix pages)
+  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 16 files (index.html, appendix-index.html, news.html, llms.txt, sitemap.xml, 11 appendix pages including new Appendix L)
 - **Web Pages:**
   - **News** (`web/news.html`) - Project news and updates
   - **FAQ** (`web/faq.html`) - Frequently asked questions about the book and project
