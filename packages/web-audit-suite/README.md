@@ -439,6 +439,7 @@ docker run --rm -v $(pwd)/results:/app/results \
 ```
 
 See [DOCKER.md](DOCKER.md) for comprehensive Docker usage guide including:
+
 - Quick start examples
 - CI/CD integration
 - Advanced configuration

@@ -88,6 +88,7 @@ docker run --rm \
 ```
 
 Example `.env` file:
+
 ```env
 SITEMAP_URL=https://example.com/sitemap.xml
 OUTPUT_DIR=/app/results
@@ -126,7 +127,7 @@ docker run --rm \
 All standard CLI options work in Docker:
 
 | Option | Description |
-|--------|-------------|
+| ------ | ----------- |
 | `-s, --sitemap <url>` | URL of sitemap to process |
 | `-o, --output <dir>` | Output directory (default: /app/results) |
 | `-c, --count <number>` | Number of URLs to audit |
@@ -162,6 +163,7 @@ services:
 ```
 
 Run with:
+
 ```bash
 docker-compose up
 ```
@@ -301,6 +303,7 @@ docker run --rm \
 ## Image Size
 
 The Docker image is approximately 450MB due to:
+
 - Node.js runtime (~200MB)
 - Chromium browser (~200MB)
 - System dependencies (~50MB)

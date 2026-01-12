@@ -128,15 +128,18 @@ Create a `Dockerfile` in `packages/manuscript` (or root).
 **Goal**: Address narrative risks and improve timelessness of the book content.
 
 #### [MODIFY] Chapter 6: The Security Maze
--   **Generalize Examples**: Replace specific references to "a recent Medium article" with broader phrasing ("Common productivity setups involve...").
--   **Benefit**: Prevents the content from feeling anecdotal or dated.
+
+- **Generalize Examples**: Replace specific references to "a recent Medium article" with broader phrasing ("Common productivity setups involve...").
+- **Benefit**: Prevents the content from feeling anecdotal or dated.
 
 #### [MODIFY] Chapter 1 & 9: Future Narrative
--   **Soften Dates**: Change specific "January 2026" references to "Early 2026" or "The mid-2020s" where specific accuracy isn't guaranteed.
--   **Benefit**: mitigates the risk of the book feeling "wrong" if real-world events shift slightly.
+
+- **Soften Dates**: Change specific "January 2026" references to "Early 2026" or "The mid-2020s" where specific accuracy isn't guaranteed.
+- **Benefit**: mitigates the risk of the book feeling "wrong" if real-world events shift slightly.
 
 #### [MODIFY] Global: Example Diversity
--   **Rotate Examples**: Reduce reliance on the "toast notification" example in later chapters. Introduce "infinite scroll" and "dynamic pricing" as primary examples in Chapter 2 and Glossary.
+
+- **Rotate Examples**: Reduce reliance on the "toast notification" example in later chapters. Introduce "infinite scroll" and "dynamic pricing" as primary examples in Chapter 2 and Glossary.
 
 ## Verification Plan
 

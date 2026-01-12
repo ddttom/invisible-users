@@ -83,6 +83,7 @@ sudo chown -R $(whoami) *.pdf *.html
 ### Build fails
 
 Check that Docker has enough memory allocated:
+
 - Open Docker Desktop settings
 - Increase memory limit to at least 4GB
 - Restart Docker
