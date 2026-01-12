@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - Path References Post-Restructure (2026-01-12)
+
+**Complete path cleanup after monorepo restructure:**
+
+Fixed all remaining `invisible-users/manuscript` path references to use new `packages/manuscript/manuscript` structure:
+
+**Main Repository:**
+
+- Fixed PDF generation error by updating cover image path in metadata.yaml
+- Updated llms.txt with correct manuscript file references (58 path updates)
+- Fixed scripts/generate-sitemap.js output directory path
+- Fixed scripts/audit-html-patterns.js report paths and relative path replacements
+- Updated CHANGELOG.md markdown link to event page
+- Removed obsolete docs/imp-plan.md and docs/manuscript-critique.md files
+
+**Manuscript Submodule:**
+
+- Fixed metadata.yaml cover image path (resolves "Unable to load picture" PDF error)
+- Updated blog/AI-Native.blog code example references (19 path updates)
+- Fixed .claude/hooks git workflow reminders for submodule operations
+
+**Impact:**
+
+- All PDF generation commands now work: `npm run pdf:generate`, `pdf:kindle`, `pdf:simple`, `pdf:html`, `pdf:appendix`, `pdf:all`
+- AI agent file discovery via llms.txt now references correct paths
+- Build scripts and documentation have consistent path references
+- Git hooks provide correct submodule update instructions
+
 ### Added - Monorepo Structure (2026-01-12)
 
 **Complete repository restructure into monorepo with npm workspaces:**
