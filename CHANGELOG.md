@@ -7,6 +7,56 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Monorepo Structure (2026-01-12)
+
+**Complete repository restructure into monorepo with npm workspaces:**
+
+- Reorganized repository into `packages/` directory structure
+- Added npm workspaces configuration for unified dependency management
+- Created `packages/manuscript/` directory with book planning files
+- Moved Web Audit Suite to `packages/web-audit-suite/`
+- Manuscript submodule now at `packages/manuscript/manuscript/`
+- Created root-level Dockerfile for book PDF generation (Pandoc + XeLaTeX)
+- Created `packages/web-audit-suite/Dockerfile` for containerized audits
+
+**Phase 1: Repository Structure**
+- Moved all files to new `packages/` structure
+- Updated 40+ path references across all files
+- Updated all npm scripts to work with new structure
+- Configured npm workspaces for shared dependencies
+
+**Phase 2: Code Quality**
+- Removed `global.auditcore` from Web Audit Suite codebase
+- Updated test files to use explicit AuditContext
+- All 22 tests passing with dependency injection pattern
+
+**Phase 3: Docker Support**
+- Book building: Pandoc, XeLaTeX, ImageMagick (~800MB image)
+- Web auditing: Node.js, Chromium, Pa11y (~450MB image)
+- Non-root user security (UID 1000)
+- Volume mounts for results and output
+- CI/CD ready for GitHub Actions and GitLab CI
+
+**Documentation Updates**
+- Updated all CLAUDE.md files with new paths
+- Updated all README.md files with new paths
+- Updated .claude/ configuration (hooks, skills, commands)
+- Updated LEARNINGS.md with new submodule paths
+- Updated scripts and build documentation
+- Fixed 30+ markdown linting issues
+
+**Git Submodule**
+- Manuscript submodule path: `invisible-users/manuscript/` → `packages/manuscript/manuscript/`
+- Updated manuscript CLAUDE.md with parent navigation instructions
+- Committed submodule changes and updated parent pointers
+
+**Verification**
+- All npm scripts functional
+- All tests passing (22/22)
+- Markdown linting clean
+- Docker builds successful
+- Submodule integrity maintained
+
 ### Changed - Protocol Landscape Updates (2026-01-12)
 
 Updated manuscript to reflect January 2026 protocol landscape and accelerated timeline:
