@@ -1,14 +1,9 @@
 import { expect } from 'chai';
-import sinon from 'sinon';
 import { getRateLimiter, resetRateLimiter } from '../../src/utils/rateLimiter.js';
 
 describe('Rate Limiter Utils', () => {
   beforeEach(() => {
     resetRateLimiter();
-    // Ensure global exists
-    if (!global.auditcore) {
-      global.auditcore = { options: {}, logger: { info: sinon.stub(), warn: sinon.stub(), error: sinon.stub() } };
-    }
   });
 
   describe('getRateLimiter', () => {
@@ -30,22 +25,15 @@ describe('Rate Limiter Utils', () => {
     });
   });
 
-  describe('Integration with Global Options', () => {
-    it('should use global options if provided', () => {
-      // Mock global options safely
-      const originalOptions = global.auditcore.options;
-      global.auditcore.options = {
-        rateLimit: {
-          tokensPerInterval: 123,
-          interval: 'hour',
-        },
+  describe('Integration with Options', () => {
+    it('should use provided options', () => {
+      const options = {
+        tokensPerInterval: 123,
+        interval: 'hour',
       };
 
-      const limiter = getRateLimiter(global.auditcore.options.rateLimit);
+      const limiter = getRateLimiter(options);
       expect(limiter).to.exist;
-
-      // Restore
-      global.auditcore.options = originalOptions || {};
     });
   });
 });

@@ -37,7 +37,6 @@ describe('Sitemap Utils', () => {
 
   afterEach(() => {
     sinon.restore();
-    delete global.auditcore; // Just in case
   });
 
   it('should parse an XML sitemap correctly', async () => {

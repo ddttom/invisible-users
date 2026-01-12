@@ -83,8 +83,6 @@ describe('Golden Master Regression Test', function () {
 
   after(() => {
     nock.cleanAll();
-    // Cleanup global state
-    delete global.auditcore;
     // Cleanup output dir? Maybe keep for inspection
   });
 
