@@ -42,7 +42,7 @@ AI agents are visiting websites right now and failing silently. These failures c
 - ~57,000-word manuscript (11 chapters) + 10 appendices published separately online
 - Implementation cookbook with 10 copy-paste recipes
 - Battle-tested lessons from real implementations
-- Agent validation guardrails (Chapter 11)
+- Agent validation guardrails (Chapter 12)
 - 60+ term glossary, 150+ resource links
 
 **2. Production-Ready Measurement Tool (Web Audit Suite):**
@@ -294,7 +294,7 @@ Developers and QA specialists who need technical tools. We provide the **Web Aud
 
 ### 2. Agent System Developers (The Builders)
 
-Developers building AI agents, browser extensions, and agentic systems that interact with websites. Chapter 11 provides **validation frameworks**, **confidence scoring patterns**, and **guardrails** that prevent pipeline failures.
+Developers building AI agents, browser extensions, and agentic systems that interact with websites. Chapter 12 provides **validation frameworks**, **confidence scoring patterns**, and **guardrails** that prevent pipeline failures.
 
 ### 3. Business Leaders (The Buyers)
 
@@ -512,7 +512,7 @@ Substantial professional development investment completed.
 
 - ~57,000-word book manuscript (11 chapters) + 10 appendices published online
 - Implementation cookbook with recipes
-- Agent validation guardrails (Chapter 11)
+- Agent validation guardrails (Chapter 12)
 - Battle-tested lessons from real implementations
 - Pipeline failure case study (Appendix I)
 - 60+ term glossary, 150+ resource links

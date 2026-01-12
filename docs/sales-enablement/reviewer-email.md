@@ -25,7 +25,7 @@ I've documented this in a ~57,000-word manuscript called "The Invisible Users: D
 - **Technical failures** - What breaks and why (with code examples)
 - **Business implications** - ROI frameworks and strategic considerations
 - **Practical solutions** - 11 chapters plus 10 appendices (published online) with copy-paste implementations
-- **Agent validation** - Guardrails agent creators must build (Chapter 11)
+- **Agent validation** - Guardrails agent creators must build (Chapter 12)
 
 The book includes:
 
@@ -153,7 +153,7 @@ I've documented this in a book manuscript that bridges technical implementation 
 - **Business implications** including ROI frameworks
 - **Strategic considerations** for different industries
 - **Implementation guidance** with priority levels
-- **Agent validation** guardrails (Chapter 11)
+- **Agent validation** guardrails (Chapter 12)
 - **Measurement frameworks** for tracking progress
 
 **Why I'm asking you:**
@@ -170,7 +170,7 @@ Your experience with [specific context - e.g., "scaling e-commerce platforms" or
 I'd suggest focusing on:
 
 - Chapter 4: The Business Reality (ROI frameworks)
-- Chapter 9: Designing for Both (solution patterns)
+- Chapter 10: Designing for Both (solution patterns)
 - Appendix A: Implementation Cookbook (practical recipes)
 
 Focused reading approach. Feedback can be as detailed or high-level as you prefer.
@@ -222,8 +222,8 @@ Validation that:
 **Relevant chapters for your expertise:**
 
 - Chapter 8: The Human Cost (accessibility implications)
-- Chapter 9: Designing for Both (universal solutions)
-- Chapter 10: Technical Advice (implementation patterns)
+- Chapter 10: Designing for Both (universal solutions)
+- Chapter 11: Technical Advice (implementation patterns)
 - Appendix B: Battle-Tested Lessons (real-world implementations)
 
 **Format:** Whatever works best for you - PDF, accessible HTML, Markdown.

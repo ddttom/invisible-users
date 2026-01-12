@@ -120,7 +120,7 @@ Potential lost revenue: Could be substantial
 
 **The Fix:**
 
-Following Chapter 10's technical implementation guide:
+Following Chapter 11's technical implementation guide:
 
 1. **Priority 1-2 fixes**:
    - Created transparent pricing page (no forms required)
@@ -284,15 +284,15 @@ Using the prioritised implementation roadmap (Appendix F):
 - **10 appendices** (published online at <https://allabout.network/invisible-users/web/>) including implementation cookbook and validation patterns
 - **Real-world examples** with before/after code
 - **Priority-based roadmap** (not time-based - Priority 1-4)
-- **Agent validation frameworks** (Chapter 11: for developers building agents)
+- **Agent validation frameworks** (Chapter 12: for developers building agents)
 - **Pipeline failure case study** (analysis with prevention strategies)
 
 **Key Chapters for Different Roles:**
 
 - **Developers:** Start with Chapters 10-11 (implementation code + agent validation)
-- **Product Managers:** Chapters 1-5, 9-11 (problems, solutions, validation)
-- **Business Leaders:** Chapters 1, 4, 5, 7, 8, 9 (strategy and business case)
-- **Agent System Developers:** Chapter 11 + Appendix I (validation frameworks)
+- **Product Managers:** Chapters 1-5, 10-12 (problems, solutions, validation)
+- **Business Leaders:** Chapters 1, 4, 5, 7, 8, 9, 10 (strategy and business case)
+- **Agent System Developers:** Chapter 12 + Appendix I (validation frameworks)
 
 ### 2. The Web Audit Suite: Production-Ready Analysis Tool
 
@@ -576,7 +576,7 @@ Scalable business model with multiple revenue streams and high margins on audit 
 
 ### Phase 1: Learn
 
-1. Read Chapter 11: What Agent Creators Must Build
+1. Read Chapter 12: What Agent Creators Must Build
 2. Study Appendix I: £203k cruise pricing case study
 3. Review validation framework code examples
 4. Understand confidence scoring patterns
