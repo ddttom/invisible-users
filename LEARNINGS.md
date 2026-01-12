@@ -18,17 +18,17 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 
 ## Git Directory Navigation: Always Check pwd First
 
-**Rule** (2026-01-10): Made multiple errors trying to navigate to submodule directory with `cd invisible-users/manuscript` resulting in "No such file or directory" errors. The fix is simple: **always run `pwd` first** to check current working directory before attempting navigation. This repository has a git submodule at `invisible-users/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail. **Check `pwd`, then use correct relative or absolute paths.** When working with submodules, verify current location before every directory change.
+**Rule** (2026-01-10): Made multiple errors trying to navigate to submodule directory with `cd packages/manuscript/manuscript` resulting in "No such file or directory" errors. The fix is simple: **always run `pwd` first** to check current working directory before attempting navigation. This repository has a git submodule at `packages/manuscript/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail. **Check `pwd`, then use correct relative or absolute paths.** When working with submodules, verify current location before every directory change.
 
 **CRITICAL AVOIDANCE TACTIC** (2026-01-10): This error was repeated despite being documented in both LEARNINGS.md and CLAUDE.md. The mistake is attempting to access `.claude/skills/news/` files without first checking working directory. Two repositories exist in this workspace:
 
 1. **Main repo:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/` (contains `.claude/skills/news/`)
-2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/invisible-users/manuscript/` (does NOT contain `.claude/skills/`)
+2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/` (does NOT contain `.claude/skills/`)
 
 **Before accessing ANY `.claude/` files:**
 
 1. Run `pwd` FIRST
-2. If in submodule (`/invisible-users/manuscript/`), use `../../.claude/skills/news/`
+2. If in submodule (`/packages/manuscript/manuscript/`), use `../../../.claude/skills/news/`
 3. If in root (`/invisible-users/`), use `.claude/skills/news/`
 
 **Pattern to avoid:** Assuming file paths without checking location. Always verify with `pwd` before file operations in repos with submodules.
@@ -60,16 +60,16 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 
 ## Step-Commit Submodule Path Error
 
-**Rule** (2026-01-12): During the `/step-commit` workflow, attempted to navigate to submodule with `cd invisible-users/manuscript && pwd && git add -A`, which failed with "No such file or directory" error. This repeated the submodule path mistake AGAIN despite:
+**Rule** (2026-01-12): During the `/step-commit` workflow, attempted to navigate to submodule with `cd packages/manuscript/manuscript && pwd && git add -A`, which failed with "No such file or directory" error. This repeated the submodule path mistake AGAIN despite:
 
 1. Existing documentation in LEARNINGS.md (entries above)
 2. Existing documentation in CLAUDE.md ("Git Directory Navigation" section)
 3. Automated enforcement in `.claude/hooks/pre-tool-use.sh`
 
-**What happened**: During the commit phase of `/step-commit`, I tried to stage manuscript changes by changing directory to the submodule. The working directory was already at `/Users/tomcranstoun/Documents/GitHub/invisible-users` and the path `invisible-users/manuscript` doesn't exist from that location because the submodule is already initialized and appears as a normal directory.
+**What happened**: During the commit phase of `/step-commit`, I tried to stage manuscript changes by changing directory to the submodule. The working directory was already at `/Users/tomcranstoun/Documents/GitHub/invisible-users` and the path `packages/manuscript/manuscript` doesn't exist as a relative path when already inside the submodule because the submodule is already initialized and appears as a normal directory.
 
 **Correct approach**: Simply use `git add -A` from the current directory without attempting to navigate. Git is already aware of the submodule and will stage changes correctly from the root.
 
 **Pattern**: This error occurs specifically during git workflows (commits, staging) when trying to "navigate to" the submodule instead of treating it as part of the current repository tree. The fix is always: check `pwd` first, then use git commands from current location.
 
-**Enforcement needed**: The hooks catch `.claude/` file access mistakes but do NOT catch incorrect navigation attempts during git operations. Consider adding detection for `cd invisible-users/manuscript` patterns during git workflows.
+**Enforcement needed**: The hooks catch `.claude/` file access mistakes but do NOT catch incorrect navigation attempts during git operations. Consider adding detection for `cd packages/manuscript/manuscript` patterns during git workflows.
