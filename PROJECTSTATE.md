@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Boye Webinar Event Page + Appendix K Expansion)
+**Last Updated:** 2026-01-12 (Platform Blog Integration + Business Decision Frameworks)
 
 ### Combined Repository
 
@@ -18,17 +18,13 @@ This repository contains two integrated projects:
 - **Word Count:** ~60,500 words (core manuscript: preface + 12 chapters + The End + Glossary)
 - **Appendices:** 11 appendices (~42,000 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Boye & Company webinar event page and Appendix K expansion:
-  - **Event Page Update:** Updated `web/site/event.html` with real Boye & Company webinar details (January 21st, 2026: "The Platform Race: How Three Tech Giants Launched Agent Commerce in Seven Days"). Complete content replacement from placeholder to production event with Schema.org Event structured data, timezone information, platform race context section, and registration URL.
-  - **Appendix K Major Expansion:** Grew from 8 to 20 documented page patterns (+615 lines). Added 7 new complete pattern sections (#14-20) with full HTML examples and AI-friendly pattern descriptions:
-    - Pattern #14: Event/Webinar Page (using real Boye webinar)
-    - Pattern #15: Login Page (authentication with autocomplete)
-    - Pattern #16: Checkout Page (e-commerce with explicit state)
-    - Pattern #17: Search Results Page (with result positioning)
-    - Pattern #18: Portfolio/Case Studies Page (professional work)
-    - Pattern #19: Team Page (person profiles)
-    - Pattern #20: Testimonials Page (social proof with ratings)
-  - **Documentation Consistency:** Updated Appendix K introduction and conclusion from "eight common page types" to "twenty common page types" to reflect comprehensive coverage of all web/site/ HTML files.
+- **Latest Change:** Platform blog integration and business decision frameworks:
+  - **Manuscript Enhancement:** Integrated business decision-making guidance from `docs/sales-enablement/platforms-blog.md` into manuscript chapters and appendices. Added approximately 2,800 words of practical merchant guidance addressing critical gaps in protocol integration decision-making.
+  - **Chapter 4 Enhancements:** Added "Making Protocol Integration Decisions" section with decision framework for choosing ACP, UCP, both, or wait. Added "Invisible Failure Problem Drives Platform Urgency" connecting Chapter 2 invisible failures to January 2026 platform race.
+  - **Chapter 9 Enhancements:** Expanded "Microsoft's Isolation Problem" with force analysis explaining what compels Microsoft to abandon proprietary approach. Added "Integration Reality for Merchants" section covering technical implementation burden, testing complexity, and migration strategies.
+  - **Appendix F Enhancements:** Added "Priority 1.5: Protocol Integration Strategy" with timeline guidance by exposure level and single vs. dual protocol decision framework.
+  - **Appendix J Enhancements:** Added "ACP/UCP Convergence Prospects" analyzing convergence timeline and triggers. Added "Why Competitors Are Cooperating" examining Target/Walmart cooperation significance.
+  - **Content Focus:** Actionable business decision frameworks, risk analysis, and competitive dynamics. Maintains British English, professional tone, and sequential reading structure.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
