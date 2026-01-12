@@ -7,6 +7,98 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Platform Blog Integration and Business Decision Frameworks (2026-01-12)
+
+**Manuscript Enhancement:**
+
+Integrated business decision-making guidance from `docs/sales-enablement/platforms-blog.md` into manuscript chapters and appendices. Added approximately 2,800 words of practical merchant guidance addressing critical gaps in protocol integration decision-making.
+
+Chapter 4: The Business Reality
+
+- **New Section: "Making Protocol Integration Decisions"** (~1,100 words)
+  - Decision framework for choosing ACP, UCP, both, or wait
+  - Risk analysis: early adoption vs. wait-and-see
+  - Protocol choice guidance by exposure level (critical/high/medium/low)
+  - Small business simplified path (Shopify/Etsy automatic integration)
+  - Enterprise integration considerations (protocol abstraction layers, dual-protocol support)
+- **New Section: "The Invisible Failure Problem Drives Platform Urgency"** (~400 words)
+  - Connection between invisible failures (Chapter 2) and January 2026 platform race
+  - Explains why Amazon/Microsoft/Google launched simultaneously (merchant failures created platform opportunity)
+  - Target/Walmart cooperation as signal of industry consensus
+  - Links protocol integration necessity to underlying pattern fixes
+
+Chapter 9: The Platform Race
+
+- **Enhanced: "Microsoft's Isolation Problem" section** (~700 words added)
+  - New subsection: "What Forces Microsoft's Hand?"
+  - Four forces compelling Microsoft to abandon proprietary approach:
+    1. Merchant adoption thresholds (trigger: <15% adoption by Q3 2026)
+    2. Agent creator defection (trigger: no third-party adoption by Q2 2026)
+    3. Enterprise vs. consumer dynamics (split market scenario)
+    4. Internal cost of maintaining isolation
+  - Timeline estimate with quarterly milestones (Q1-Q4 2026)
+  - Face-saving "interoperability" framing prediction
+- **New Section: "Integration Reality for Merchants"** (~800 words)
+  - Technical implementation burden (single vs. dual protocol effort estimates)
+  - Testing and QA multiplication factor (2.5x for dual protocols, not 2x)
+  - Security surface expansion analysis
+  - Migration strategies and protocol abstraction patterns
+  - Developer experience and learning curves
+  - Cost-benefit analysis by business size (enterprise/mid-size/small)
+
+Appendix F: Implementation Roadmap
+
+- **New Section: "Priority 1.5: Protocol Integration Strategy"** (~600 words)
+  - Integration timeline by exposure level (Critical/High/Medium/Low)
+  - Single vs. dual protocol decision framework
+  - Small business simplified path (platform provider guidance)
+  - Enterprise considerations (abstraction layers, agent testing, identity delegation)
+  - Testing and validation requirements checklist
+  - Platform-agnostic patterns before protocol-specific integration
+  - When to evaluate professional audit services
+
+Appendix J: Industry Developments
+
+- **Enhanced ACP Section: "ACP/UCP Convergence Prospects"** (~500 words)
+  - Current state analysis (ACP first mover vs. UCP Google-backed)
+  - Best outcome: unified standard within 6 months
+  - Convergence triggers (merchant pressure, regulatory intervention, market consolidation)
+  - Convergence barriers (competitive positioning, revenue implications, governance control)
+  - Timeline assessment (Q1-Q4 2026 milestones)
+  - What happens if convergence fails (permanent fragmentation costs)
+- **Enhanced Google UCP Section: "Why Competitors Are Cooperating"** (~700 words)
+  - Analysis of Target/Walmart cooperation significance
+  - Signal interpretation: "inevitable not possible" shift
+  - Strategic calculation (compete independently vs. cooperate on standards)
+  - Historical technology transitions comparison (credit cards, Internet protocols, mobile payments)
+  - Implications for smaller merchants
+  - Why retailers chose UCP over ACP (search leverage, governance, payment neutrality)
+  - Timeline for convergence pressure
+
+**Content Approach:**
+
+- Maintained British English and professional tone throughout
+- Removed promotional language (webinar references, LinkedIn follow requests)
+- Added cross-references between related sections
+- Preserved sequential reading structure (each addition builds on prior chapters)
+- Excluded Amazon position speculation (maintaining "position unclear" approach)
+- Focused on actionable business decision frameworks, not just platform announcements
+
+**Word Count Impact:**
+
+- Chapter 4: +1,500 words (Protocol Decision Framework + Invisible Failures connection)
+- Chapter 9: +1,500 words (Microsoft Force Analysis + Integration Reality)
+- Appendix F: +600 words (Protocol Integration Strategy)
+- Appendix J: +1,200 words (Convergence prospects + Competitor cooperation analysis)
+- Total addition: ~2,800 words
+
+**Verification:**
+
+- Cross-references validated (Chapter 4 → Chapter 9, Appendix F → both chapters)
+- No duplication of existing seven-day launch narrative
+- Business decision focus maintained throughout
+- Markdown formatting follows project guidelines
+
 ### Added - Boye Webinar Event Page and Appendix K Expansion (2026-01-12)
 
 **Event Page Update:**
