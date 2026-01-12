@@ -357,16 +357,19 @@ Priority: CLI flags > config file > environment > defaults
 **Process:**
 
 1. **Phase 1:** URL Collection
+
    ```javascript
    const urls = await getUrlsFromSitemap(context, sitemapUrl)
    ```
 
 2. **Phase 2:** Data Collection
+
    ```javascript
    await processSitemapUrls(context, urls)
    ```
 
 3. **Phase 3:** Report Generation
+
    ```javascript
    await generateReports(context)
    ```

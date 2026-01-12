@@ -96,17 +96,20 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 3. **This keeps happening**: Despite the book being about accessibility and agent compatibility, I repeatedly create interfaces that fail basic WCAG contrast requirements
 
 **WCAG AA contrast minimums**:
+
 - Normal text: 4.5:1 contrast ratio
 - Large text (18pt+ or 14pt+ bold): 3:1 contrast ratio
 - UI components: 3:1 contrast ratio
 
 **Common violations to avoid**:
+
 - Blue text on blue backgrounds (any shade variation)
 - Light grey text on white backgrounds
 - Colored text on colored backgrounds without checking contrast
 - Using opacity for visual effects without verifying final contrast
 
 **Fix pattern**: Always use explicit colors meeting contrast ratios:
+
 - Button: Dark background (`#1e40af`) + white text (`#ffffff`) = good contrast
 - Links: Use darker blue (`#2563eb`) on white background = good contrast
 - Never assume color combinations are accessible - verify with contrast checker
@@ -116,6 +119,7 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 **Enforcement needed**: Before creating any HTML/CSS, verify all text/background color combinations meet WCAG AA contrast requirements. Use browser DevTools or online contrast checkers. This applies to buttons, links, headers, body text, and all UI components.
 
 **Hook implemented** (2026-01-12): Created `.claude/hooks/check-html-contrast.sh` that runs during pre-commit to detect common contrast violations:
+
 - Blue text on blue backgrounds
 - Light grey text (may fail 4.5:1 ratio)
 - Opacity usage (known to reduce contrast)
