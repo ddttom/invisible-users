@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Appendix L Expansion + HTML Pattern Audit)
+**Last Updated:** 2026-01-12 (Protocol Landscape Updates)
 
 ### Combined Repository
 
@@ -13,17 +13,16 @@ This repository contains two integrated projects:
 
 ### Book Manuscript Status
 
-- **Version:** 2.9.0
+- **Version:** 2.9.1
 - **Status:** Publication-ready (in review, due Q1 2026)
-- **Word Count:** ~60,500 words (core manuscript: preface + 12 chapters + The End + Glossary)
+- **Word Count:** ~60,666 words (core manuscript: preface + 12 chapters + The End + Glossary) - increased by 166 words
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Appendix L expansion and comprehensive HTML pattern audit:
-  - **Appendix L Expansion:** Added Pattern 3: Common Data Attributes (~300 lines documenting 25+ data attributes across 5 categories: State Management, E-commerce, Pagination/Sorting, Multi-step Workflows, Button States). Updated Summary, Implementation Strategy (moved data attributes to Priority 1), and Risk Assessment sections. Fixed all markdown linting errors (12 duplicate headings resolved with context additions).
-  - **HTML Pattern Implementations:** Priority 1: Added data-agent-visible pattern to e-commerce examples (product-page.html, shopping-cart.html), added Schema.org JSON-LD to product-page.html. Priority 2: Added semantic HTML5 `<main>` elements to form examples. Priority 3: Standardised AI meta tags across 7 demo site pages, enhanced ai-attribution specification with text attribute requirement, updated all 39 HTML files with ai-attribution to include proper attribution text.
-  - **Pattern Audit System:** Created scripts/audit-html-patterns.js for automated HTML pattern detection. Scans 60 HTML files for 8 pattern categories. Generates comprehensive markdown report (PATTERN-AUDIT-REPORT.md) with location-based analysis.
-  - **Final Pattern Audit Results:** AI Meta Tags: 65.0% (39/60 files) - all standardised with complete sets and attribution text. data-agent-visible: 5.0% (3 files). Schema.org JSON-LD: 66.7% (40/60 files). Semantic HTML5: 98.3% (59/60 files).
-  - **Educational Impact:** Code examples now properly demonstrate both established standards (Schema.org, semantic HTML5) and proposed patterns (data-agent-visible, standardised AI meta tags with attribution, common data attributes), ensuring readers see correct implementation in context.
+- **Latest Change:** Protocol landscape updates reflecting January 2026 developments:
+  - **Preface Update:** Added new paragraph acknowledging Agentic Commerce Protocol (ACP, September 2024) and Universal Commerce Protocol (UCP, January 2026) launches, seven-day platform acceleration, timeline compression (12→6-9 months), and fragmentation creating commercial urgency. Maintains personal narrative voice whilst validating book's thesis.
+  - **Chapter 12 Update:** Rewrote "The Missing Identity Layer" section to reflect current state - two open protocols (ACP with 1M+ merchants, UCP with 20+ retailers) versus one proprietary system (Microsoft Copilot Checkout). Updated competitive landscape analysis, added cross-reference to Chapter 9, revised code examples to show ACP/UCP support, reframed from "winner-take-all" to "convergence preparation."
+  - **Executive Summary Update:** Updated "What Is Happening" with January 2026 seven-day acceleration (Amazon, Microsoft, Google), added protocol infrastructure details, mentioned timeline compression. Updated "Why It Matters to Business" with urgency paragraph and protocol integration guidance. Enhanced Priority 3 & 4 action items with protocol evaluation and integration specifics.
+  - **Consistency Achieved:** All three documents now align on ACP launch (Sept 2024, 1M+ merchants), UCP launch (Jan 2026, 20+ retailers), seven-day acceleration (Jan 5-11), timeline compression (12→6-9 months), Microsoft's competitive isolation, and universal pattern emphasis.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
 - **Structure:** Manuscript maintained in separate repository as git submodule
