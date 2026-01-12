@@ -57,3 +57,19 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 3. **Absolute state file path** - Changed from relative `.claude/.pwd-check-state` to absolute `/Users/tomcranstoun/Documents/GitHub/invisible-users/.claude/.pwd-check-state` to work from any directory
 
 **Key insight**: Documentation alone is insufficient for preventing repeated mistakes. Automated enforcement through hooks is necessary for complex repository structures with submodules. The hook now catches the mistake BEFORE it happens rather than relying on post-error documentation.
+
+## Step-Commit Submodule Path Error
+
+**Rule** (2026-01-12): During the `/step-commit` workflow, attempted to navigate to submodule with `cd invisible-users/manuscript && pwd && git add -A`, which failed with "No such file or directory" error. This repeated the submodule path mistake AGAIN despite:
+
+1. Existing documentation in LEARNINGS.md (entries above)
+2. Existing documentation in CLAUDE.md ("Git Directory Navigation" section)
+3. Automated enforcement in `.claude/hooks/pre-tool-use.sh`
+
+**What happened**: During the commit phase of `/step-commit`, I tried to stage manuscript changes by changing directory to the submodule. The working directory was already at `/Users/tomcranstoun/Documents/GitHub/invisible-users` and the path `invisible-users/manuscript` doesn't exist from that location because the submodule is already initialized and appears as a normal directory.
+
+**Correct approach**: Simply use `git add -A` from the current directory without attempting to navigate. Git is already aware of the submodule and will stage changes correctly from the root.
+
+**Pattern**: This error occurs specifically during git workflows (commits, staging) when trying to "navigate to" the submodule instead of treating it as part of the current repository tree. The fix is always: check `pwd` first, then use git commands from current location.
+
+**Enforcement needed**: The hooks catch `.claude/` file access mistakes but do NOT catch incorrect navigation attempts during git operations. Consider adding detection for `cd invisible-users/manuscript` patterns during git workflows.

@@ -747,7 +747,9 @@ The manuscript directory is a git submodule pointing to:
 
 ### Git Directory Navigation
 
-**CRITICAL:** Always run `pwd` first before attempting directory navigation. This repository has a git submodule at `invisible-users/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
+**⚠️ ABSOLUTE REQUIREMENT: Run `pwd` BEFORE EVERY file operation, directory navigation, or git command in this repository. NO EXCEPTIONS.**
+
+This repository has a git submodule at `invisible-users/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
 
 **TWO REPOSITORIES IN THIS WORKSPACE:**
 
@@ -762,7 +764,7 @@ The manuscript directory is a git submodule pointing to:
 **MANDATORY WORKFLOW FOR ALL FILE OPERATIONS:**
 
 ```bash
-# STEP 1: ALWAYS check location first
+# STEP 1: ALWAYS check location first - THIS IS NOT OPTIONAL
 pwd
 
 # STEP 2: Use correct path based on output
@@ -773,21 +775,38 @@ Read(file_path=".claude/skills/news/skill.md")
 Read(file_path="../../.claude/skills/news/skill.md")
 ```
 
-**Common mistake pattern (AVOID THIS):**
+**MANDATORY WORKFLOW FOR GIT OPERATIONS:**
 
 ```bash
-# ❌ Wrong: Attempting to access .claude/ without checking pwd
-Read(file_path=".claude/skills/news/skill.md")  # Fails if in submodule
+# STEP 1: ALWAYS check location first - THIS IS NOT OPTIONAL
+pwd
 
-# ❌ Wrong: Assuming you're in root when you're not
-ls .claude/skills/news/  # "No such file or directory"
+# STEP 2: Use git commands from current location
+# ❌ NEVER do: cd invisible-users/manuscript && git add -A
+# ✅ ALWAYS do: git add -A (from current location)
 
-# ✅ Correct: Always start with pwd
-pwd  # Check location FIRST
-# Then construct correct path
+# Git knows about the submodule and will handle it correctly
+# DO NOT attempt to navigate to the submodule directory
 ```
 
-**Best practice:** Check `pwd` before EVERY file operation in this repository. Never assume your current location. The submodule structure makes path assumptions unreliable.
+**Common mistake patterns (THESE ARE ERRORS - DO NOT DO THIS):**
+
+```bash
+# ❌ WRONG: Attempting to access .claude/ without checking pwd
+Read(file_path=".claude/skills/news/skill.md")  # Fails if in submodule
+
+# ❌ WRONG: Assuming you're in root when you're not
+ls .claude/skills/news/  # "No such file or directory"
+
+# ❌ WRONG: Attempting to navigate to submodule during git operations
+cd invisible-users/manuscript && git add -A  # "No such file or directory"
+
+# ✅ CORRECT: Always start with pwd
+pwd  # Check location FIRST - NOT OPTIONAL
+# Then construct correct path or use git from current location
+```
+
+**CRITICAL REQUIREMENT:** Check `pwd` before EVERY file operation, EVERY directory navigation attempt, and EVERY git command in this repository. Never assume your current location. The submodule structure makes ALL path assumptions unreliable. This has been repeated multiple times and is documented in LEARNINGS.md as a recurring error. The `.claude/hooks/pre-tool-use.sh` hook provides automated enforcement for `.claude/` file access, but you must still check `pwd` manually before git operations.
 
 **Initialization:**
 
