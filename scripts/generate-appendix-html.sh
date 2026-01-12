@@ -288,13 +288,13 @@ LLMSEOF
 
 echo -e "${GREEN}✓ Generated llms.txt${NC}"
 
-# Copy web pages from both web/ and manuscript/web/ directories
+# Copy web pages from packages/project-web/ directory
 echo -e "${BLUE}Copying project web pages...${NC}"
-if [ -f "web/news.html" ]; then
-  cp "web/news.html" "$OUTPUT_DIR/news.html"
+if [ -f "packages/project-web/news.html" ]; then
+  cp "packages/project-web/news.html" "$OUTPUT_DIR/news.html"
   echo -e "  Copied news.html"
 else
-  echo -e "  Warning: web/news.html not found"
+  echo -e "  Warning: packages/project-web/news.html not found"
 fi
 if [ -f "$OUTPUT_DIR/faq.html" ]; then
   echo -e "  FAQ already exists at $OUTPUT_DIR/faq.html"

@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - Directory Naming (2026-01-12)
+
+**Renamed packages/web to packages/project-web to avoid confusion:**
+
+- **packages/web → packages/project-web**: Renamed directory to clarify it contains source files, not generated output
+- **scripts/generate-appendix-html.sh**: Updated to look for source files in packages/project-web/ instead of web/
+- **README.md**: Updated repository structure diagram and Project Web Pages section to reflect new naming
+- **PROJECTSTATE.md**: Updated Monorepo Structure and Web Pages sections with correct paths
+- **Rationale**: The script looks for generated files at manuscript/web/ but was checking for source files at web/. Having both "web" and "packages/web" was confusing. Renaming to "project-web" makes it clear these are source files for project pages.
+- **Generated files**: appendix generation now correctly finds and copies news.html from packages/project-web/ to packages/manuscript/manuscript/web/
+
+### Fixed - PDF Generation (2026-01-12)
+
+**Resolved XeLaTeX warnings for emoji characters:**
+
+- **packages/manuscript/manuscript/preface.md**: Replaced star emoji (⭐⭐⭐⭐) with text-based rating (4/5 Stars)
+- **Rationale**: XeLaTeX's Latin Modern font doesn't support emoji characters (U+2B50), causing warnings during PDF generation
+- **Result**: PDF generation now completes cleanly with no font warnings
+
 ### Added - For Reviewers Page (2026-01-12)
 
 **Created professional reviewer acknowledgment page following AI-friendly HTML patterns:**

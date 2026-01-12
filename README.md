@@ -93,9 +93,8 @@ This ensures the book remains the single source of truth.
 │   │   ├── examples/         # Configuration examples
 │   │   └── README.md         # Tool documentation
 │   │
-│   └── web/                  # Public web pages
-│       ├── identity-layer.html
-│       └── news.html
+│   └── project-web/          # Public web pages (source files)
+│       └── news.html         # Project news and updates
 │
 ├── docs/                     # Business and sales materials
 │   └── sales-enablement/
@@ -292,15 +291,15 @@ Each appendix page includes:
 
 ## Project Web Pages
 
-The repository includes public web pages for the book project:
+The repository includes public web pages for the book project in [packages/project-web/](packages/project-web/):
 
-- [web/identity-layer.html](web/identity-layer.html) - Universal Identity Delegation Infrastructure project landing page
-- [web/news.html](web/news.html) - Project news and updates
+- [packages/project-web/news.html](packages/project-web/news.html) - Project news and updates
 
-These pages follow Chapter 10 technical patterns and will be published at:
+These source files are copied during the appendix generation process (`npm run pdf:appendix`) to the published location at [packages/manuscript/manuscript/web/](packages/manuscript/manuscript/web/).
 
-- <https://allabout.network/packages/manuscript/identity-layer.html>
-- <https://allabout.network/packages/manuscript/news.html>
+The published pages follow Chapter 10 technical patterns and are accessible at:
+
+- <https://allabout.network/invisible-users/web/news.html>
 
 ## Key Themes
 
