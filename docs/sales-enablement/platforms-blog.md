@@ -1,6 +1,6 @@
 # The Platform Race \- How Three Tech Giants Launched Agent Commerce in Seven Days
 
-| bio |  |
+| bio | |
 | :---- | :---- |
 | Picture Here | In January 2026, three of the world's largest technology companies launched AI agent commerce systems within seven days \- and they made different strategic choices that will shape the future of online shopping. |
 
@@ -282,7 +282,7 @@ The only question is whether you're ready.
 
 **The platform race has begun. Join me on January 21st to learn how to compete.**
 
-**Book publication: Q1 2026 | Live session: January 21st, 2026**
+Book publication: Q1 2026 | Live session: January 21st, 2026
 
 ---
 
@@ -290,7 +290,7 @@ The only question is whether you're ready.
 | :---- |
 | /fragments/ddt/proposition |
 
-| Section metadata |  |
+| Section metadata | |
 | :---- | :---- |
 | style | bg-dark |
 
@@ -301,7 +301,7 @@ Related Articles
 | Blogroll |
 | :---- |
 
-## 
+##
 
 | Blogroll (compact) |
 | :---- |
@@ -316,12 +316,12 @@ Related Articles
 | :---- |
 | Back to Top |
 
-| metadata |  |
+| metadata | |
 | :---- | :---- |
 | title | The Platform Race \- How Three Tech Giants Launched Agent Commerce in Seven Days |
 | description | Three major platforms launched AI agent commerce systems in seven days. Google and OpenAI chose open protocols, Microsoft went proprietary. What this means for businesses, developers, and the future of online shopping. |
 | jsonld | article |
-| image |  |
+| image | |
 | author | Tom Cranstoun |
 | longdescription | In January 2026, Amazon, Microsoft, and Google launched AI agent commerce systems within a single week. Google and OpenAI/Stripe chose open protocols that any merchant can implement. Microsoft built a closed, proprietary system. This analysis examines the strategic choices each platform made, why Target and Walmart are cooperating on standards despite fierce competition, and what the 6-9 month timeline means for businesses that aren't yet prepared for agent-mediated commerce. Includes technical details on how Universal Commerce Protocol works, predictions about Microsoft's isolation problem, and practical guidance for businesses, developers, and agent creators navigating this shift. |
 | LinkedIn | [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/) |
