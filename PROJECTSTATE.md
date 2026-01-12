@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Identity Delegation Framework Removed)
+**Last Updated:** 2026-01-12 (Added For Reviewers Page)
 
 ### Monorepo Structure
 
@@ -54,6 +54,7 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Web Pages:**
   - **News** (`web/news.html`) - Project news and updates
   - **FAQ** (`web/faq.html`) - Frequently asked questions about the book and project
+  - **For Reviewers** (`web/for-reviewers.html`) - Reviewer acknowledgment page with NDA agreement and download access
   - All pages follow Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML)
   - Book website URL: <https://allabout.network/invisible-users>
 - **HTML Enhancement Pipeline:**
