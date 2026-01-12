@@ -288,13 +288,21 @@ LLMSEOF
 
 echo -e "${GREEN}✓ Generated llms.txt${NC}"
 
-# Copy web pages (news.html) from web/ directory
+# Copy web pages from both web/ and manuscript/web/ directories
 echo -e "${BLUE}Copying project web pages...${NC}"
 if [ -f "web/news.html" ]; then
   cp "web/news.html" "$OUTPUT_DIR/news.html"
   echo -e "  Copied news.html"
 else
   echo -e "  Warning: web/news.html not found"
+fi
+if [ -f "$OUTPUT_DIR/faq.html" ]; then
+  echo -e "  FAQ already exists at $OUTPUT_DIR/faq.html"
+elif [ -f "$MANUSCRIPT_DIR/web/faq.html" ]; then
+  cp "$MANUSCRIPT_DIR/web/faq.html" "$OUTPUT_DIR/faq.html"
+  echo -e "  Copied faq.html"
+else
+  echo -e "  Warning: faq.html not found"
 fi
 echo -e "${GREEN}✓ Copied web pages${NC}"
 
@@ -313,11 +321,12 @@ echo "Generated files in $OUTPUT_DIR:"
 echo "  - index.html (book main page)"
 echo "  - appendix-index.html (appendix landing page)"
 echo "  - news.html (project news)"
+echo "  - faq.html (frequently asked questions)"
 echo "  - llms.txt (AI agent discovery)"
 echo "  - sitemap.xml (search engine discovery)"
 echo "  - appendix-a.html through appendix-l.html (12 files)"
 echo ""
-echo "Total: 16 files"
+echo "Total: 17 files"
 echo ""
 echo "View locally:"
 echo "  open $OUTPUT_DIR/index.html (book main page)"
