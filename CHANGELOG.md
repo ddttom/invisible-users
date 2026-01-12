@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - CSS and Meta Tag Standardization (2026-01-12)
+
+**CSS Linting Improvements:**
+
+- Removed empty CSS rulesets from `web/appendix.css` (`div.sourceCode`, `code span.ex`)
+- Resolved Microsoft Edge Tools CSS validation warnings
+- No functional changes, purely cleanup
+
+**Meta Tag Naming Standardization:**
+
+- Standardized meta tag name from `llms-section` to `llms-txt` throughout documentation
+- Updated Appendix D (AI-Friendly HTML Guide) - all 404 page examples now use `llms-txt`
+- Updated Appendix K (Common Page Patterns) - 404 page pattern with comprehensive server-side examples
+- Added Express.js and Nginx configuration examples showing `X-llms-txt` header usage
+- Consistent with Web Audit Suite implementation (`meta[name="llms-txt"]`)
+- No breaking changes - purely documentation consistency
+
+**Chapter Structure Updates:**
+
+- Updated `web/index.html` to reflect current 12-chapter book structure (was showing 11)
+- Updated appendix count from 10 to 11 appendices
+- Added reference to new Chapter 9 (The Platform Race) in table of contents
+
 ### Added - Canonical Href Tags (2026-01-12)
 
 **Canonical URL Implementation:**
