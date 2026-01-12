@@ -30,6 +30,12 @@ function enhanceHTML(filePath) {
   const isIndex = filePath.includes('appendix-index.html');
   const schemaType = isIndex ? 'CollectionPage' : 'TechArticle';
 
+  // Build canonical URL from filename
+  const filename = path.basename(filePath);
+  const baseUrl = 'https://allabout.network/invisible-users';
+  const canonicalUrl = `${baseUrl}/${filename}`;
+  const canonicalTag = `\n  <link rel="canonical" href="${canonicalUrl}">`;
+
   // Build AI meta tags
   const aiMetaTags = `
   <!-- AI-specific meta tags (proposed pattern from Chapter 10) -->
@@ -91,10 +97,10 @@ function enhanceHTML(filePath) {
   const externalCSS = `
   <link rel="stylesheet" href="appendix.css">`;
 
-  // 3. Add meta tags and external CSS link before </head>
+  // 3. Add canonical tag, meta tags and external CSS link before </head>
   enhanced = enhanced.replace(
     '</head>',
-    `${aiMetaTags}${jsonLD}${externalCSS}\n</head>`
+    `${canonicalTag}${aiMetaTags}${jsonLD}${externalCSS}\n</head>`
   );
 
   // 4. Add semantic roles and data attributes
