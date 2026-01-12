@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Monorepo Structure Complete)
+**Last Updated:** 2026-01-12 (Audience Descriptions Broadened)
 
 ### Monorepo Structure
 
@@ -22,13 +22,18 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~60,666 words (core manuscript: preface + 12 chapters + The End + Glossary) - increased by 166 words
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Protocol landscape updates reflecting January 2026 developments:
-  - **Preface Update:** Added new paragraph acknowledging Agentic Commerce Protocol (ACP, September 2024) and Universal Commerce Protocol (UCP, January 2026) launches, seven-day platform acceleration, timeline compression (12→6-9 months), and fragmentation creating commercial urgency. Maintains personal narrative voice whilst validating book's thesis.
-  - **Chapter 12 Update:** Rewrote "The Missing Identity Layer" section to reflect current state - two open protocols (ACP with 1M+ merchants, UCP with 20+ retailers) versus one proprietary system (Microsoft Copilot Checkout). Updated competitive landscape analysis, added cross-reference to Chapter 9, revised code examples to show ACP/UCP support, reframed from "winner-take-all" to "convergence preparation."
-  - **Executive Summary Update:** Updated "What Is Happening" with January 2026 seven-day acceleration (Amazon, Microsoft, Google), added protocol infrastructure details, mentioned timeline compression. Updated "Why It Matters to Business" with urgency paragraph and protocol integration guidance. Enhanced Priority 3 & 4 action items with protocol evaluation and integration specifics.
-  - **Consistency Achieved:** All three documents now align on ACP launch (Sept 2024, 1M+ merchants), UCP launch (Jan 2026, 20+ retailers), seven-day acceleration (Jan 5-11), timeline compression (12→6-9 months), Microsoft's competitive isolation, and universal pattern emphasis.
+- **Latest Change:** Broadened audience descriptions to reflect wider stakeholder ecosystem (2026-01-12):
+  - **Preface Update:** Replaced narrow "Frontend Engineers and System Architects" with inclusive language acknowledging developers, designers, product owners, business leaders, and content strategists. Expanded "Web Professionals & Engineers" description to explicitly mention product owners, project managers, UX designers, content strategists, and QA engineers with role-specific guidance.
+  - **Reading Guide Enhancement:** Added 2 new dedicated reading paths (Product Owners with strategic+implementation focus, Content Managers/Strategists with content-first perspective). Renamed "Product Managers and Designers" to "UX Designers and Information Architects" for clarity. Result: 7 distinct reading paths (was 5).
+  - **Executive Summary Update:** Updated "Navigate This Book" section to reflect new audience segments with dedicated entries for Product Owners, Content Managers/Strategists, and UX Designers/Information Architects.
+  - **Consistency:** All changes maintain British English, professional tone, and existing markdown structure.
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
-- **Target Audiences:** Four primary audiences - Web Professionals, Agent System Developers, Business Leaders, Partners & Investors
+- **Target Audiences:** Four primary audiences with 7 distinct reading paths
+  - **Web Professionals & Engineers:** Expanded to include product owners, project managers, UX designers, content strategists, and QA engineers
+  - **Agent System Developers:** Browser extensions, CLI agents, agentic systems
+  - **Business Leaders & Decision Makers:** CTOs, CMOs, executives
+  - **Partners & Investors:** Agencies and investors
+  - **Reading Paths:** Business Leaders, Product Owners, Content Managers/Strategists, UX Designers/Information Architects, Developers, Agent System Developers, Small Business Owners
 - **Structure:** Manuscript maintained in separate repository as git submodule
   - **Submodule:** `packages/manuscript/manuscript/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
   - Tracks main branch for easy updates
