@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-13 (Removed Identity Delegation Project references + news.html accessibility improvements)
+**Last Updated:** 2026-01-13 (Added automatic file copying to allaboutV2 output directory)
 
 ### Monorepo Structure
 
@@ -21,7 +21,13 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~60,666 words (core manuscript: preface + 12 chapters + The End + Glossary) - increased by 166 words
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Removed Identity Delegation Infrastructure Project references and improved news.html accessibility (2026-01-13):
+- **Latest Change:** Added automatic file copying to allaboutV2 output directory (2026-01-13):
+  - **Build Scripts Enhancement:** Modified pdf:generate and pdf:appendix commands to automatically copy output files to `/Users/tomcranstoun/Documents/GitHub/allaboutV2/invisible-users` when directory exists
+  - **PDF Generation:** pdf:generate now copies the-invisible-users.pdf to output directory after successful generation
+  - **Web Files:** pdf:appendix copies all 18 generated web files (HTML appendices, index, news, FAQ, llms.txt, sitemap.xml) to output directory
+  - **Graceful Fallback:** Both scripts check if output directory exists and provide informative messages without failing if directory is missing
+  - **Documentation:** Updated README.md and CLAUDE.md to document the automatic copying behavior
+- **Previous Change:** Removed Identity Delegation Infrastructure Project references and improved news.html accessibility (2026-01-13):
   - **Project References Removal:** Removed all references to the discontinued Identity Delegation Infrastructure Project and identity-layer.html page from:
     - Repository documentation (README.md, docs/sales-enablement/PITCH.md)
     - Web materials (web/news.html Related Resources)
@@ -52,11 +58,11 @@ All projects share dependency management and build scripts via npm workspaces.
   - Documentation (README.md, CLAUDE.md) in submodule with comprehensive guidance
   - Planning files (book-plan.md, book-svg-style.md) remain at main repository root level
 - **PDF Generation:**
-  - **A4 Format** (`pdf:generate`) - Professional review copy with footer "Review Copy not for publication/distribution"
+  - **A4 Format** (`pdf:generate`) - Professional review copy with footer "Review Copy not for publication/distribution". Auto-copies to allaboutV2/invisible-users if directory exists.
   - **Kindle Format** (`pdf:kindle`) - 6"×9" KDP-ready paperback format, production-ready (no review footer)
   - **Simple Format** (`pdf:simple`) - Basic PDF without cover or footer
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
-  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 18 files (index.html, appendix-index.html, news.html, faq.html, llms.txt, sitemap.xml, 12 appendix pages A-L)
+  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 18 files (index.html, appendix-index.html, news.html, faq.html, llms.txt, sitemap.xml, 12 appendix pages A-L). Auto-copies all files to allaboutV2/invisible-users if directory exists.
 - **Web Pages:**
   - **Location** (`packages/manuscript/manuscript/web/`) - Contains both manually maintained files and generated appendices
   - **News** (`web/news.html`) - Project news and updates (manually maintained)
