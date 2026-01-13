@@ -7,6 +7,57 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - Code Review Issues and Backwards Compatibility (2026-01-13)
+
+**Code Review Fixes:**
+
+Addressed code review feedback with the following fixes:
+
+- **Workflow Path Filter:** Fixed `.github/workflows/web-audit-suite-ci.yml` to reference correct workflow file path (`.github/workflows/web-audit-suite-ci.yml` instead of incorrect `packages/` prefix), ensuring CI triggers on workflow file changes
+- **File Count Documentation:** Updated file count from 16/17 to correct count of 18 files across README.md, PROJECTSTATE.md, scripts/generate-appendix-html.sh, and docs/doc-architecture.md (6 special files + 12 appendices A-L)
+- **ES Module to CommonJS:** Converted `scripts/audit-html-patterns.js` from ESM to CommonJS to match project conventions (other scripts use `require()`, root package.json has no `"type": "module"`)
+- **Regex Pattern Bug:** Removed global `g` flag from regex patterns used with `.test()` to prevent flaky results from `lastIndex` mutation (affected canonical, ariaRoles, dataAgentVisible, schemaOrg patterns)
+
+**Backwards Compatibility Removal:**
+
+Per user request, removed all backwards compatibility code:
+
+- **Removed `global.auditcore`:** Deleted backwards compatibility layer from `packages/web-audit-suite/test/setup.js` that provided `global.auditcore` for legacy tests
+- **Updated Test Comments:** Changed outdated comments in `packages/web-audit-suite/test/goldenMaster.test.js` to reflect current `AuditContext` dependency injection pattern
+- **Clean Test Suite:** All 22 tests pass using proper `AuditContext` pattern with no global state
+
+**Architecture Documentation:**
+
+Added comprehensive architecture documentation to `docs/` folder:
+
+- **`docs/doc-architecture.md`:** Repository restructure documentation with Mermaid diagrams showing `/news` skill workflow and appendix HTML generation pipeline
+- **`docs/web-audit-architecture.md`:** Renamed from `docs/architecture.md` for clarity, contains Web Audit Suite architecture documentation
+- **Updated Folder Structure:** Updated README.md and CLAUDE.md to reflect new docs/ folder structure with architecture files
+
+**Files Modified:**
+
+- `.github/workflows/web-audit-suite-ci.yml` - Workflow path filter fix
+- `README.md` - File count and folder structure updates
+- `CLAUDE.md` - Folder structure updates
+- `PROJECTSTATE.md` - File count update
+- `scripts/generate-appendix-html.sh` - File count update
+- `scripts/audit-html-patterns.js` - ESM to CommonJS conversion and regex bug fixes
+- `packages/web-audit-suite/test/setup.js` - Remove backwards compatibility layer
+- `packages/web-audit-suite/test/goldenMaster.test.js` - Update comments
+- `docs/doc-architecture.md` - New file with Mermaid diagrams
+- `docs/web-audit-architecture.md` - Renamed from architecture.md
+
+**Verification:**
+
+- ✅ All 22 Web Audit Suite tests pass
+- ✅ `audit-html-patterns.js` runs successfully (found 60 HTML files, generated report)
+- ✅ Markdown linting passes
+- ✅ File count verified: 18 files = 6 special (index, appendix-index, news, faq, llms.txt, sitemap.xml) + 12 appendices (A-L)
+
+**Skipped (Intentional):**
+
+- Canonical URL base path and public appendices URL intentionally NOT fixed - these reference the future published site and will be correct when the site goes live
+
 ### Removed - Identity Delegation Infrastructure Project References (2026-01-13)
 
 **Removed all references to discontinued Identity Delegation Infrastructure Project:**
