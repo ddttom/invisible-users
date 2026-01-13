@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - Escaped HTML Tags in Code Examples (2026-01-13)
+
+Fixed markdown code examples to prevent HTML rendering issues.
+
+**Changes:**
+
+- **HTML Tag Escaping:** Replaced literal `<details>` and `<summary>` tags with HTML entities (`&lt;` and `&gt;`) in markdown code blocks
+- **Purpose:** Prevents tags from being rendered as actual HTML elements when documentation is viewed
+- **Files Updated:** 6 files across appendices, chapters, and presentation materials:
+  - `appendix-a-implementation-cookbook.md`
+  - `appendix-d-ai-friendly-html-guide.md`
+  - `appendix-e-ai-patterns-quick-reference.md`
+  - `chapter-02-the-invisible-failure.md`
+  - `chapter-11-technical-advice.md`
+  - `talks/members-call/talk.md`
+- **Submodule Commit:** df8213e in manuscript repository
+- **Main Repository Commit:** 7d4f9a8 (submodule pointer update)
+
 ### Added - Automatic File Copying to Output Directory (2026-01-13)
 
 Enhanced build scripts to automatically copy generated files to external output directory when it exists.
