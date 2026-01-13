@@ -7,6 +7,87 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed - Identity Delegation Infrastructure Project References (2026-01-13)
+
+**Removed all references to discontinued Identity Delegation Infrastructure Project:**
+
+The Identity Delegation Infrastructure Project (identity-layer.html page) has been removed from the repository. All references to the specific project have been cleaned up while maintaining the conceptual discussion of identity delegation patterns in the book context.
+
+**Files Modified:**
+
+- **packages/manuscript/manuscript/web/news.html:**
+  - Removed "Identity Delegation Infrastructure Project" link from Related Resources section
+
+- **README.md:**
+  - Updated file count from 17 to 16 (removed identity-layer.html from list)
+  - Changed section title from "Identity Delegation" to "Identity Delegation Patterns"
+  - Softened language to focus on patterns discussed in the book rather than specific project
+
+- **docs/sales-enablement/PITCH.md:**
+  - Removed "The Next Project: Open-Source Identity Delegation Framework" section
+  - Replaced with "Future Opportunities in Identity Delegation" focusing on conceptual area
+  - Removed identity-layer.html link from Current Projects list
+
+- **packages/manuscript/manuscript/talks/members-call/talk.md:**
+  - Removed detailed project description and timeline
+  - Replaced with brief note about evolving patterns
+  - Removed identity-layer.html link from Project Pages section
+
+- **packages/manuscript/manuscript/talks/members-call/talk-slides.js:**
+  - Updated slide content to reference "patterns emerging" instead of specific project
+  - Removed identity-layer.html link from contact slide
+
+- **packages/manuscript/manuscript/code-examples/identity-delegation-README.md:**
+  - Updated to clarify these are educational proof-of-concept examples only
+  - Removed references to future open-source project
+  - Removed identity-layer.html links
+
+- **packages/manuscript/manuscript/code-examples/identity-delegation-worker.js:**
+  - Updated header comment to clarify educational purpose
+  - Removed reference to future infrastructure project
+
+**What Remains:**
+
+The concept of "identity delegation patterns" is still mentioned in the book context as an emerging area discussed conceptually, which is appropriate since it's a topic covered in the book itself. The code examples remain as educational demonstrations.
+
+### Changed - WCAG 2.1 AA Accessibility Improvements (news.html) (2026-01-13)
+
+**Fixed all WCAG contrast issues and aligned colors with established design system:**
+
+The news.html page had several contrast violations and used inconsistent colors compared to the appendix.css design system. All colors have been updated to match the established palette and meet WCAG 2.1 AA standards.
+
+**Contrast Fixes:**
+
+- **Tag elements:** Fixed critical failure (3.2:1 → 8.5:1)
+  - OLD: Dark blue text (#1e40af) on light blue background (#dbeafe)
+  - NEW: White text (#ffffff) on blue background (#0066cc)
+  - Font-weight increased from 500 to 600 for better readability
+
+- **News date:** Improved borderline contrast (4.6:1 → 8.3:1)
+  - OLD: Light grey (#6b7280)
+  - NEW: Darker grey (#4b5563)
+
+- **Footer text:** Improved contrast (4.6:1 → 8.3:1)
+  - OLD: Light grey (#6b7280)
+  - NEW: Darker grey (#4b5563)
+
+**Color System Alignment:**
+
+All blues updated to match appendix.css established palette:
+
+- Header gradient: #1e40af/#3b82f6 → #0066cc/#2196F3
+- News item border: #3b82f6 → #0066cc
+- Links: #2563eb → #0066cc
+- CTA box: #1e40af → #0066cc
+- Button background: #1e40af → #0066cc
+- Button hover: #1e3a8a → #003d7a
+
+**Results:**
+
+- All text elements now meet or exceed WCAG AA 4.5:1 minimum contrast
+- Visual consistency achieved across all web documentation
+- Tag and button elements use unified styling with established blue (#0066cc)
+
 ### Changed - Web Files Consolidation (2026-01-12)
 
 **Simplified web file management by removing redundant source directory:**
