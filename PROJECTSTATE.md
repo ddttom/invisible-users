@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-13 (Added automatic file copying to allaboutV2 output directory)
+**Last Updated:** 2026-01-13 (Escaped HTML tags in code examples)
 
 ### Monorepo Structure
 
@@ -21,7 +21,12 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~60,666 words (core manuscript: preface + 12 chapters + The End + Glossary) - increased by 166 words
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Added automatic file copying to allaboutV2 output directory (2026-01-13):
+- **Latest Change:** Escaped HTML tags in markdown code examples (2026-01-13):
+  - **HTML Tag Escaping:** Replaced literal `<details>` and `<summary>` tags with HTML entities (`&lt;` and `&gt;`) in markdown code blocks
+  - **Files Updated:** 6 files across appendices, chapters, and presentation materials
+  - **Purpose:** Prevents HTML tags from being rendered as actual HTML elements in documentation
+  - **Submodule commit:** df8213e in manuscript repository
+- **Previous Change:** Added automatic file copying to allaboutV2 output directory (2026-01-13):
   - **Build Scripts Enhancement:** Modified pdf:generate and pdf:appendix commands to automatically copy output files to `/Users/tomcranstoun/Documents/GitHub/allaboutV2/invisible-users` when directory exists
   - **PDF Generation:** pdf:generate now copies the-invisible-users.pdf to output directory after successful generation
   - **Web Files:** pdf:appendix copies all 18 generated web files (HTML appendices, index, news, FAQ, llms.txt, sitemap.xml) to output directory
