@@ -9,8 +9,8 @@
   "scripts": {
     "wordcount": "wc -w packages/manuscript/manuscript/chapter-*.md | tail -1",
     "wordcount:all": "wc -w packages/manuscript/manuscript/*.md",
-    "lint:markdown": "markdownlint '**/*.md' --ignore node_modules --ignore packages/web-audit-suite/node_modules --ignore packages/manuscript/manuscript",
-    "lint:markdown:fix": "markdownlint --fix '**/*.md' --ignore node_modules --ignore packages/web-audit-suite/node_modules --ignore packages/manuscript/manuscript",
+    "lint:markdown": "markdownlint '**/*.md' --ignore node_modules --ignore packages/web-audit-suite/node_modules --ignore packages/manuscript/manuscript --ignore CHANGELOG.md --ignore CHANGELOG-FULL.md",
+    "lint:markdown:fix": "markdownlint --fix '**/*.md' --ignore node_modules --ignore packages/web-audit-suite/node_modules --ignore packages/manuscript/manuscript --ignore CHANGELOG.md --ignore CHANGELOG-FULL.md",
     "validate:links": "markdown-link-check --config .markdown-link-check.json packages/manuscript/manuscript/chapter-*.md packages/manuscript/book-plan.md",
     "serve": "npx live-server --port=8080 --entry-file=packages/manuscript/book-plan.md",
     "status": "node -e \"console.log('Book Status:'); require('fs').readdirSync('packages/manuscript/manuscript').filter(f => f.startsWith('chapter-')).sort().forEach(f => console.log('  ✓', f))\"",

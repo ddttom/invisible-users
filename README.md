@@ -375,6 +375,7 @@ A critical security insight: in-browser agents inherit authenticated sessions ra
 **📖 See [GIT-README.md](GIT-README.md) for comprehensive git workflow guidance.**
 
 This repository has TWO separate git repositories:
+
 1. **Main repo:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/`
 2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/`
 
