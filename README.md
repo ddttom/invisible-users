@@ -368,13 +368,17 @@ A critical security insight: in-browser agents inherit authenticated sessions ra
 - [packages/web-audit-suite/docs/CONFIGURATION.md](packages/web-audit-suite/docs/CONFIGURATION.md) - Configuration reference
 - [packages/web-audit-suite/docs/FEATURES.md](packages/web-audit-suite/docs/FEATURES.md) - Feature overview
 
-## Common Mistakes to Avoid
+## Working with Git and Submodules
 
-### Git Directory Navigation with Submodules
+**⚠️ CRITICAL: This repository uses a git submodule structure that requires careful handling.**
 
-**Always check `pwd` before attempting directory navigation.** This repository has a git submodule at `packages/manuscript/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
+**📖 See [GIT-README.md](GIT-README.md) for comprehensive git workflow guidance.**
 
-**Best practice:** Run `pwd` first, then use correct relative or absolute paths. When working with submodules, verify current location before every directory change.
+This repository has TWO separate git repositories:
+1. **Main repo:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/`
+2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/`
+
+**Always check `pwd` before git operations.** If you're working with an AI agent that handles git commands, ensure it follows the workflows in [GIT-README.md](GIT-README.md) to avoid corrupting the submodule pointers.
 
 ## Writing Style
 

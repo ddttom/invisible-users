@@ -13,7 +13,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Main repo: `/Users/tomcranstoun/Documents/GitHub/invisible-users/` (has `.claude/`)
 - Submodule: `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/` (NO `.claude/`)
 
-See `.claude/pwd-reminder.md` and "Git Directory Navigation" section below for details.
+**📖 See [GIT-README.md](GIT-README.md) for comprehensive git workflow guidance for AI agents.**
+
+Also see `.claude/pwd-reminder.md` and "Git Directory Navigation" section below for details.
 
 ---
 
@@ -55,6 +57,7 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 /
 ├── README.md
 ├── CLAUDE.md                 # This file
+├── GIT-README.md             # Git workflow guide for AI agents
 ├── CHANGELOG.md
 ├── PROJECTSTATE.md
 ├── PR_TEMPLATE.md
