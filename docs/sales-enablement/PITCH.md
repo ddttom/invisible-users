@@ -865,36 +865,17 @@ Every major platform is building proprietary identity delegation systems:
 
 **The opportunity:** Build the open alternative before proprietary systems become entrenched.
 
-### The Next Project: Open-Source Identity Delegation Framework
+### Future Opportunities in Identity Delegation
 
-An open-source universal identity delegation framework that provides:
+The book discusses identity delegation patterns as an emerging area where AI agents need to establish trust and maintain customer relationships. This represents a significant opportunity for:
 
-- Reference implementation of portable identity delegation
-- OAuth 2.0 delegation extension support
-- User-controlled permissions and auditable delegation trails
-- Abstraction layers for agent creators
-- Tools for businesses implementing identity delegation
-- Open specifications that work across platforms
+**For agencies:** Understanding identity delegation patterns positions you to advise clients on emerging standards and implementations as they mature.
 
-**Unlike the book and Web Audit Suite** (which are professional offerings), **this would be open-source community infrastructure** - not a commercial product. It's infrastructure the ecosystem needs. If platforms won't build interoperability, an open community effort can.
+**For investors:** Identity delegation infrastructure represents a strategic area to watch as the ecosystem develops solutions for agent-mediated commerce.
 
-### Why This Matters for Partners
+**For agent creators:** Identity delegation solutions will be critical for maintaining customer relationships as agents become more autonomous in transactions.
 
-**For agencies:** Early involvement in open standards development positions you as authority figures when the market shifts toward interoperability (regulatory pressure will eventually force it, similar to mobile number portability).
-
-**For investors:** Infrastructure plays are strategic bets. Whoever provides the open alternative to proprietary identity systems gains influence as regulators force standardisation.
-
-**For agent creators:** You need identity abstraction to support multiple platforms without fragmentation. Open standards benefit everyone except the platforms racing to lock in users.
-
-### The Challenge
-
-This requires collaboration across competing interests. Building a coalition of agent creators, businesses, and users who recognise that interoperability serves everyone better than fragmentation.
-
-**Timeline:** Narrow window (12-18 months) before proprietary systems become entrenched.
-
-**Looking for:** Collaborators with expertise in identity systems, OAuth implementations, agent architectures, and open standards development.
-
-**Contact for involvement:** <tom.cranstoun@gmail.com>
+This is an evolving space with multiple approaches emerging. The book provides conceptual guidance without prescribing specific implementations, acknowledging that the market is still finding optimal solutions.
 
 ---
 
@@ -909,7 +890,6 @@ LinkedIn: [Profile]
 
 - **Book:** "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 - **Tool:** Web Audit Suite (available as separate purchase or professional audit service)
-- **Next Project:** Universal Identity Delegation Infrastructure (open-source - <https://allabout.network/invisible-users/identity-layer.html>)
 - **Project News:** <https://allabout.network/invisible-users/news.html>
 
 ---
