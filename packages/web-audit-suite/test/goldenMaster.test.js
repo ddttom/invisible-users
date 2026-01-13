@@ -9,7 +9,7 @@ import { AuditContext } from '../src/core/AuditContext.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Mock global.auditcore as it exists in the legacy code
+// Setup test context with appropriate options for golden master testing
 function setupContext(options = {}) {
   const defaultOptions = {
     sitemap: 'https://example.com/sitemap.xml',

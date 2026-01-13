@@ -60,8 +60,10 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ├── PR_TEMPLATE.md
 ├── package.json              # Monorepo workspace configuration
 ├── llms.txt                  # Repository llms.txt file
-├── docs/                     # Business and sales materials
-│   └── sales-enablement/     # Sales materials, pitch decks, business plan
+├── docs/                     # Documentation and architecture
+│   ├── doc-architecture.md         # Repository restructure documentation with Mermaid diagrams
+│   ├── web-audit-architecture.md   # Web Audit Suite architecture documentation
+│   └── sales-enablement/           # Sales materials, pitch decks, business plan
 ├── scripts/                  # Build scripts
 ├── packages/                 # Monorepo packages
 │   ├── manuscript/           # Book manuscript and materials
@@ -133,6 +135,7 @@ npm run lint:markdown:fix   # Fix all markdown files
 
 # PDF generation
 npm run pdf:generate        # Generate A4 PDF with cover (for review/distribution)
+                            # Automatically copies to allaboutV2/invisible-users if directory exists
 npm run pdf:kindle          # Generate 6"×9" PDF for Kindle Direct Publishing
 npm run pdf:simple          # Generate simple PDF without cover
 
@@ -140,6 +143,7 @@ npm run pdf:simple          # Generate simple PDF without cover
 npm run pdf:appendix        # Generate individual HTML pages for each appendix
                             # Includes automatic Chapter 10 pattern enhancement
                             # Also generates sitemap.xml for search engine discovery
+                            # Automatically copies all web files to allaboutV2/invisible-users if directory exists
 
 # Chapter status
 npm run status              # Show all chapter files

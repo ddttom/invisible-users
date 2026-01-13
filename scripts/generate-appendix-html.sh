@@ -9,7 +9,7 @@ set -e  # Exit on error
 MANUSCRIPT_DIR="packages/manuscript/manuscript"
 OUTPUT_DIR="packages/manuscript/manuscript/web"
 SCRIPTS_DIR="scripts"
-BASE_URL="https://allabout.network/invisible-users/web"
+BASE_URL="https://allabout.network/invisible-users"
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -228,10 +228,10 @@ The book examines how modern web design optimised for human users fails for AI a
 
 ## Main Pages
 
-- Book Main Page: https://allabout.network/invisible-users/web/index.html - Complete book overview, chapter summaries, and resources
-- Appendix Index: https://allabout.network/invisible-users/web/appendix-index.html - Landing page with all appendices
-- Project News: https://allabout.network/invisible-users/web/news.html - Latest updates and announcements
-- FAQ: https://allabout.network/invisible-users/web/faq.html - Frequently asked questions about the book and project
+- Book Main Page: https://allabout.network/invisible-users/index.html - Complete book overview, chapter summaries, and resources
+- Appendix Index: https://allabout.network/invisible-users/appendix-index.html - Landing page with all appendices
+- Project News: https://allabout.network/invisible-users/news.html - Latest updates and announcements
+- FAQ: https://allabout.network/invisible-users/faq.html - Frequently asked questions about the book and project
 
 ## Access Guidelines
 
@@ -244,24 +244,24 @@ The book examines how modern web design optimised for human users fails for AI a
 
 ## Implementation Guides
 
-- Appendix A: https://allabout.network/invisible-users/web/appendix-a.html - Implementation Cookbook (quick-reference recipes for common patterns)
-- Appendix B: https://allabout.network/invisible-users/web/appendix-b.html - Battle-Tested Lessons (production learnings and pitfalls to avoid)
-- Appendix C: https://allabout.network/invisible-users/web/appendix-c.html - Web Audit Suite User Guide (complete tool documentation)
-- Appendix D: https://allabout.network/invisible-users/web/appendix-d.html - AI-Friendly HTML Guide (comprehensive semantic HTML patterns)
+- Appendix A: https://allabout.network/invisible-users/appendix-a.html - Implementation Cookbook (quick-reference recipes for common patterns)
+- Appendix B: https://allabout.network/invisible-users/appendix-b.html - Battle-Tested Lessons (production learnings and pitfalls to avoid)
+- Appendix C: https://allabout.network/invisible-users/appendix-c.html - Web Audit Suite User Guide (complete tool documentation)
+- Appendix D: https://allabout.network/invisible-users/appendix-d.html - AI-Friendly HTML Guide (comprehensive semantic HTML patterns)
 
 ## Quick References
 
-- Appendix E: https://allabout.network/invisible-users/web/appendix-e.html - AI Patterns Quick Reference (one-page data attribute reference)
-- Appendix F: https://allabout.network/invisible-users/web/appendix-f.html - Implementation Roadmap (priority-based adoption guide)
-- Appendix G: https://allabout.network/invisible-users/web/appendix-g.html - Resource Directory (150+ curated resources and tools)
+- Appendix E: https://allabout.network/invisible-users/appendix-e.html - AI Patterns Quick Reference (one-page data attribute reference)
+- Appendix F: https://allabout.network/invisible-users/appendix-f.html - Implementation Roadmap (priority-based adoption guide)
+- Appendix G: https://allabout.network/invisible-users/appendix-g.html - Resource Directory (150+ curated resources and tools)
 
 ## Case Studies and Examples
 
-- Appendix H: https://allabout.network/invisible-users/web/appendix-h.html - Example llms.txt File (working llmstxt.org template)
-- Appendix I: https://allabout.network/invisible-users/web/appendix-i.html - Pipeline Failure Case Study (£203k error analysis)
-- Appendix J: https://allabout.network/invisible-users/web/appendix-j.html - Industry Developments (latest verified news and updates)
-- Appendix K: https://allabout.network/invisible-users/web/appendix-k.html - Common Page Patterns (production-ready HTML templates for 8 page types)
-- Appendix L: https://allabout.network/invisible-users/web/appendix-l.html - Proposed AI Metadata Patterns (formal proposals for experimental patterns)
+- Appendix H: https://allabout.network/invisible-users/appendix-h.html - Example llms.txt File (working llmstxt.org template)
+- Appendix I: https://allabout.network/invisible-users/appendix-i.html - Pipeline Failure Case Study (£203k error analysis)
+- Appendix J: https://allabout.network/invisible-users/appendix-j.html - Industry Developments (latest verified news and updates)
+- Appendix K: https://allabout.network/invisible-users/appendix-k.html - Common Page Patterns (production-ready HTML templates for 8 page types)
+- Appendix L: https://allabout.network/invisible-users/appendix-l.html - Proposed AI Metadata Patterns (formal proposals for experimental patterns)
 
 ## Topics
 
@@ -311,6 +311,16 @@ echo -e "${BLUE}Generating sitemap.xml...${NC}"
 node "$SCRIPTS_DIR/generate-sitemap.js"
 echo -e "${GREEN}✓ Generated sitemap.xml${NC}"
 
+# Copy all files to output folder if it exists
+COPY_TARGET="/Users/tomcranstoun/Documents/GitHub/allaboutV2/invisible-users"
+if [ -d "$COPY_TARGET" ]; then
+    echo -e "${BLUE}Copying all web files to allaboutV2...${NC}"
+    cp -r "$OUTPUT_DIR"/* "$COPY_TARGET/"
+    echo -e "${GREEN}✓ All files copied to allaboutV2/invisible-users/${NC}"
+else
+    echo -e "${BLUE}Note: Output folder does not exist, files remain in $OUTPUT_DIR${NC}"
+fi
+
 # Summary
 echo ""
 echo -e "${GREEN}════════════════════════════════════════${NC}"
@@ -326,9 +336,9 @@ echo "  - llms.txt (AI agent discovery)"
 echo "  - sitemap.xml (search engine discovery)"
 echo "  - appendix-a.html through appendix-l.html (12 files)"
 echo ""
-echo "Total: 17 files"
+echo "Total: 18 files"
 echo ""
 echo "View locally:"
-echo "  open $OUTPUT_DIR/index.html (book main page)"
-echo "  open $OUTPUT_DIR/appendix-index.html (appendices)"
+echo "  open packages/manuscript/manuscript/web/index.html (book main page)"
+echo "  open packages/manuscript/manuscript/web/appendix-index.html (appendices)"
 echo "Target URL: $BASE_URL/"

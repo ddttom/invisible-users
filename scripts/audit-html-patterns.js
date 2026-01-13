@@ -14,12 +14,10 @@
  * Generates comprehensive markdown report.
  */
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const fs = require('fs');
+const path = require('path');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// __dirname is automatically available in CommonJS, no need to define it
 
 // Recursively find all HTML files
 function findHTMLFiles(dir, fileList = []) {
@@ -59,12 +57,12 @@ const PATTERNS = {
   dataAgentVisible: {
     name: 'data-agent-visible',
     status: 'proposed',
-    pattern: /data-agent-visible\s*=/g
+    pattern: /data-agent-visible\s*=/
   },
   schemaOrg: {
     name: 'Schema.org JSON-LD',
     status: 'established',
-    pattern: /"@context"\s*:\s*"https:\/\/schema\.org"/g
+    pattern: /"@context"\s*:\s*"https:\/\/schema\.org"/
   },
   semanticHTML: {
     name: 'Semantic HTML5',
@@ -95,12 +93,12 @@ const PATTERNS = {
   ariaRoles: {
     name: 'ARIA Roles',
     status: 'established',
-    pattern: /role="(main|navigation|contentinfo|complementary|banner|alert|status)"/g
+    pattern: /role="(main|navigation|contentinfo|complementary|banner|alert|status)"/
   },
   canonical: {
     name: 'Canonical URL',
     status: 'established',
-    pattern: /<link\s+rel="canonical"/g
+    pattern: /<link\s+rel="canonical"/
   }
 };
 
@@ -125,14 +123,14 @@ function scanHTMLFile(filePath) {
   });
 
   // Check data-agent-visible
-  const agentVisibleMatches = content.match(PATTERNS.dataAgentVisible.pattern) || [];
+  const agentVisibleMatches = content.match(new RegExp(PATTERNS.dataAgentVisible.pattern, 'g')) || [];
   results.patterns.dataAgentVisible = {
     present: agentVisibleMatches.length > 0,
     count: agentVisibleMatches.length
   };
 
   // Check Schema.org
-  const schemaMatches = content.match(PATTERNS.schemaOrg.pattern) || [];
+  const schemaMatches = content.match(new RegExp(PATTERNS.schemaOrg.pattern, 'g')) || [];
   results.patterns.schemaOrg = {
     present: schemaMatches.length > 0,
     count: schemaMatches.length
@@ -175,13 +173,13 @@ function scanHTMLFile(filePath) {
   });
 
   // Check ARIA roles
-  const ariaMatches = content.match(PATTERNS.ariaRoles.pattern) || [];
+  const ariaMatches = content.match(new RegExp(PATTERNS.ariaRoles.pattern, 'g')) || [];
   results.patterns.ariaRoles = {
     present: ariaMatches.length > 0,
     count: ariaMatches.length
   };
 
-  // Check canonical
+  // Check canonical - use fresh regex to avoid lastIndex issues
   results.patterns.canonical = {
     present: PATTERNS.canonical.pattern.test(content)
   };

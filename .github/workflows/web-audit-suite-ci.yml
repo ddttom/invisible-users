@@ -4,11 +4,11 @@ on:
   push:
     paths:
       - 'packages/web-audit-suite/**'
-      - '.github/workflows/packages/web-audit-suite-ci.yml'
+      - '.github/workflows/web-audit-suite-ci.yml'
   pull_request:
     paths:
       - 'packages/web-audit-suite/**'
-      - '.github/workflows/packages/web-audit-suite-ci.yml'
+      - '.github/workflows/web-audit-suite-ci.yml'
 
 jobs:
   test:

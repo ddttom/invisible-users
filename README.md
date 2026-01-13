@@ -93,8 +93,10 @@ This ensures the book remains the single source of truth.
 │       ├── examples/         # Configuration examples
 │       └── README.md         # Tool documentation
 │
-├── docs/                     # Business and sales materials
-│   └── sales-enablement/
+├── docs/                     # Documentation and architecture
+│   ├── doc-architecture.md         # Repository restructure documentation
+│   ├── web-audit-architecture.md   # Web Audit Suite architecture
+│   └── sales-enablement/           # Business and sales materials
 ├── scripts/                  # Build scripts
 └── package.json              # Monorepo workspace configuration
 ```
@@ -188,6 +190,7 @@ npm run lint:markdown:fix
 
 # Generate PDF (requires LaTeX - see below)
 npm run pdf:generate       # Full PDF with professional book formatting (A4)
+                           # Auto-copies to allaboutV2/invisible-users if directory exists
 npm run pdf:kindle         # Kindle Direct Publishing format (6"×9" paperback)
 npm run pdf:simple         # Simplified PDF formatting
 npm run pdf:html           # Generate HTML (print to PDF via browser ⌘+P)
@@ -265,16 +268,18 @@ The appendices are published as separate HTML pages with full navigation:
 
 ```bash
 npm run pdf:appendix        # Generate HTML pages in packages/manuscript/manuscript/web/
+                            # Auto-copies all files to allaboutV2/invisible-users if directory exists
 ```
 
-This creates 16 files in the manuscript submodule:
+This creates 18 files in the manuscript submodule:
 
 - `index.html` - Book main page with complete overview
 - `appendix-index.html` - Appendix landing page
 - `news.html` - Project news and updates
+- `faq.html` - Frequently asked questions
 - `llms.txt` - AI agent discovery file
 - `sitemap.xml` - Search engine discovery file
-- `appendix-a.html` through `appendix-k.html` - Individual appendix pages (11 files)
+- `appendix-a.html` through `appendix-l.html` - Individual appendix pages (12 files)
 
 Each appendix page includes:
 
