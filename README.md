@@ -190,6 +190,7 @@ npm run lint:markdown:fix
 
 # Generate PDF (requires LaTeX - see below)
 npm run pdf:generate       # Full PDF with professional book formatting (A4)
+                           # Auto-copies to allaboutV2/invisible-users if directory exists
 npm run pdf:kindle         # Kindle Direct Publishing format (6"×9" paperback)
 npm run pdf:simple         # Simplified PDF formatting
 npm run pdf:html           # Generate HTML (print to PDF via browser ⌘+P)
@@ -267,6 +268,7 @@ The appendices are published as separate HTML pages with full navigation:
 
 ```bash
 npm run pdf:appendix        # Generate HTML pages in packages/manuscript/manuscript/web/
+                            # Auto-copies all files to allaboutV2/invisible-users if directory exists
 ```
 
 This creates 18 files in the manuscript submodule:
