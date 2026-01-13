@@ -10,7 +10,7 @@ const path = require('path');
 
 // Configuration
 const BASE_URL = 'https://allabout.network/invisible-users/web';
-const OUTPUT_DIR = path.join(__dirname, '..', 'invisible-users', 'manuscript', 'web');
+const OUTPUT_DIR = path.join(__dirname, '..', 'packages', 'manuscript', 'manuscript', 'web');
 const SITEMAP_FILE = path.join(OUTPUT_DIR, 'sitemap.xml');
 
 // Current date in ISO format (YYYY-MM-DD)
@@ -48,12 +48,6 @@ const urls = [
     priority: '0.9',
     changefreq: 'monthly',
     description: 'Frequently Asked Questions'
-  },
-  {
-    loc: `${BASE_URL}/identity-layer.html`,
-    priority: '0.9',
-    changefreq: 'monthly',
-    description: 'Identity Delegation Infrastructure Project'
   },
   {
     loc: `${BASE_URL}/appendix-a.html`,
@@ -114,6 +108,18 @@ const urls = [
     priority: '0.9',
     changefreq: 'weekly',
     description: 'Industry Developments (updated frequently)'
+  },
+  {
+    loc: `${BASE_URL}/appendix-k.html`,
+    priority: '0.8',
+    changefreq: 'monthly',
+    description: 'Common Page Patterns'
+  },
+  {
+    loc: `${BASE_URL}/appendix-l.html`,
+    priority: '0.9',
+    changefreq: 'monthly',
+    description: 'Proposed AI Metadata Patterns'
   }
 ];
 

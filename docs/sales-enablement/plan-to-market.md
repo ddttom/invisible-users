@@ -246,7 +246,7 @@ The patterns that break agents also break screen reader users, people with cogni
 WHAT'S IN THE BOOK
 
 • ~57,000 words across 11 chapters + 10 appendices published separately online
-• Agent validation guardrails (Chapter 11)
+• Agent validation guardrails (Chapter 12)
 • Production-ready code examples (HTML, React, WordPress, Next.js)
 • Web Audit Suite (comprehensive analysis tool)
 • Implementation checklist (4 priority levels)
@@ -1050,7 +1050,7 @@ I noticed you started to purchase "The Invisible Users" but didn't complete chec
 COMMON QUESTIONS
 
 **"Is this too technical for non-developers?"**
-Chapters 1-9 are accessible to anyone working with websites. Chapter 10 has code, but it's clearly marked and optional. Many product managers and designers find it valuable.
+Chapters 1-10 are accessible to anyone working with websites. Chapter 11 has code, but it's clearly marked and optional. Many product managers and designers find it valuable.
 
 **"Will this become outdated quickly?"**
 The core principles (semantic HTML, clear state, persistent feedback) are timeless. You'll receive lifetime updates as agent behaviors evolve.

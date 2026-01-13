@@ -56,4 +56,15 @@ else
 fi
 
 echo ""
+
+# Run HTML contrast check
+HOOK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -f "$HOOK_DIR/check-html-contrast.sh" ]; then
+    bash "$HOOK_DIR/check-html-contrast.sh"
+    contrast_check_result=$?
+    if [ $contrast_check_result -ne 0 ]; then
+        exit $contrast_check_result
+    fi
+fi
+
 exit 0

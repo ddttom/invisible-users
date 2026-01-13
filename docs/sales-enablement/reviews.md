@@ -43,8 +43,8 @@ This document captures the perspective of the four primary target audiences iden
 
 ### Technical Review
 
-* **"Chapter 11 is exactly what we need."**
-  * *Thought:* "I've been building browser agents and kept hitting data extraction errors. Chapter 11's validation frameworks, confidence scoring patterns, and guardrails are precisely the architecture I needed but didn't have."
+* **"Chapter 12 is exactly what we need."**
+  * *Thought:* "I've been building browser agents and kept hitting data extraction errors. Chapter 12's validation frameworks, confidence scoring patterns, and guardrails are precisely the architecture I needed but didn't have."
 * **"The £203k case study is invaluable."**
   * *Thought:* "Appendix I's £203,000 cruise pricing error demonstrates exactly why range validation, comparative analysis, and cross-referencing are essential. This real-world failure mode has saved me significant debugging effort."
 * **"Incomplete data detection pattern."**
@@ -55,20 +55,20 @@ This document captures the perspective of the four primary target audiences iden
 ### Implementation Reaction
 
 * **"Website patterns inform agent design."**
-  * *Thought:* "Chapter 10's website patterns help me understand what my agents will encounter in the wild. Knowing that most sites lack explicit state attributes means I need robust fallback detection."
+  * *Thought:* "Chapter 11's website patterns help me understand what my agents will encounter in the wild. Knowing that most sites lack explicit state attributes means I need robust fallback detection."
 * **"Business context matters."**
   * *Thought:* "Chapters 4 and 6 explain commercial pressures affecting website design. Understanding why sites have anti-agent patterns helps me build better detection and handling strategies."
 
 ### Agent System Developers - Verdict
 
-**"Essential Reading."** Chapter 11 and Appendix I are required reading for anyone building production agent systems. The validation frameworks save extensive trial-and-error development effort.
+**"Essential Reading."** Chapter 12 and Appendix I are required reading for anyone building production agent systems. The validation frameworks save extensive trial-and-error development effort.
 
 ### Agent System Developers - Suggested Improvements
 
 * **Reference Implementation:** "Provide a complete TypeScript reference implementation of the validation framework. I want to fork it as a starting point for our agent pipeline."
 * **Testing Strategies:** "Add guidance on testing validation layers. How do I unit test confidence scoring? How do I integration test comparative validators?"
 * **Performance Considerations:** "Multi-source verification is great for accuracy but adds latency. Include guidance on when to prioritize speed vs. confidence."
-* **Error Recovery Patterns:** "Chapter 11 covers prevention well. I'd like more on recovery: when validation fails, what are the agent's options besides 'flag for manual review'?"
+* **Error Recovery Patterns:** "Chapter 12 covers prevention well. I'd like more on recovery: when validation fails, what are the agent's options besides 'flag for manual review'?"
 
 ---
 

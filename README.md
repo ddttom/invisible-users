@@ -29,9 +29,9 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 
 This repository serves four distinct audiences:
 
-1. **Web Professionals & Engineers**: Developers and QA specialists using the [Web Audit Suite](web-audit-suite/) to test and optimize sites for AI agent compatibility.
+1. **Web Professionals & Engineers**: Developers and QA specialists using the [Web Audit Suite](packages/web-audit-suite/) to test and optimize sites for AI agent compatibility.
 2. **Agent System Developers**: Developers building AI agents, browser extensions, and agentic systems. Chapter 11 provides validation frameworks, confidence scoring patterns, and guardrails for robust data quality.
-3. **Business Leaders**: Executives and managers using the [Book](invisible-users/) to understand the strategic impact of AI agents on their digital business.
+3. **Business Leaders**: Executives and managers using the [Book](packages/manuscript/) to understand the strategic impact of AI agents on their digital business.
 4. **Partners & Investors**: Agencies and investors using the [Business Model](docs/sales-enablement/business-plan.md) to evaluate the commercial potential of this new market category.
 
 ## Key Organizational Principles
@@ -40,11 +40,11 @@ This repository maintains strict cross-project consistency:
 
 ### The Book is Authoritative
 
-The book manuscript (`invisible-users/`) is the authoritative source for all terminology, patterns, and concepts. If there's a conflict between the book and implementation, the implementation must be updated to match the book.
+The book manuscript (`packages/manuscript/`) is the authoritative source for all terminology, patterns, and concepts. If there's a conflict between the book and implementation, the implementation must be updated to match the book.
 
 ### The Tool Implements the Book
 
-Web Audit Suite (`web-audit-suite/`) implements patterns from the book:
+Web Audit Suite (`packages/web-audit-suite/`) implements patterns from the book:
 
 - Detects patterns described in the book
 - Uses terminology from the book
@@ -75,26 +75,28 @@ This ensures the book remains the single source of truth.
 
 ```text
 /
-├── invisible-users/          # Book manuscript (~57,000 words)
-│   ├── manuscript/           # Core manuscript files
-│   │   ├── chapter-01-*.md through chapter-11-*.md
-│   │   ├── preface.md
-│   │   ├── executive-summary.md
-│   │   ├── Glossary.md
-│   │   ├── appendix-*.md     # Appendices A-I (includes appendix-h-live-llms.md)
-│   │   ├── appendix-live-llms.txt  # Appendix H source (llms.txt example, 20 curated links)
-│   │   └── illustrations/    # SVG illustrations (PNG gitignored)
-│   ├── book-plan.md
-│   ├── implementation-checklist.md
-│   ├── resource-links.md
-│   ├── advice.md             # Standalone prescriptive guide
-│   └── AI-design-rules.md    # AI patterns quick-reference
+├── packages/
+│   ├── manuscript/           # Book manuscript (~57,000 words)
+│   │   ├── book-plan.md
+│   │   └── manuscript/       # Core manuscript files (git submodule)
+│   │       ├── chapter-01-*.md through chapter-11-*.md
+│   │       ├── preface.md
+│   │       ├── executive-summary.md
+│   │       ├── Glossary.md
+│   │       ├── appendix-*.md     # Appendices A-K
+│   │       ├── appendix-live-llms.txt  # Appendix H source (llms.txt example)
+│   │       └── illustrations/    # SVG illustrations (PNG gitignored)
+│   │
+│   └── web-audit-suite/      # Production-ready analysis tool
+│       ├── src/              # Source code
+│       ├── docs/             # Documentation
+│       ├── examples/         # Configuration examples
+│       └── README.md         # Tool documentation
 │
-└── web-audit-suite/          # Production-ready analysis tool
-    ├── src/                  # Source code
-    ├── docs/                 # Documentation
-    ├── examples/             # Configuration examples
-    └── README.md             # Tool documentation
+├── docs/                     # Business and sales materials
+│   └── sales-enablement/
+├── scripts/                  # Build scripts
+└── package.json              # Monorepo workspace configuration
 ```
 
 **Note on Appendix H:** This appendix uses two files - `appendix-live-llms.txt` (the actual llms.txt content) and `appendix-live-llms.md` (markdown wrapper that displays it in a code block). The PDF includes the .md wrapper to show "here's what an llms.txt file looks like" as a formatted example, while the .txt file remains the editable source of truth.
@@ -118,10 +120,10 @@ Since the submodule is configured to track the main branch, updating is easy:
 
 ```bash
 # Update submodule to latest commit on main branch
-git submodule update --remote invisible-users/manuscript
+git submodule update --remote packages/manuscript/manuscript
 
 # Commit the submodule pointer update
-git add invisible-users/manuscript
+git add packages/manuscript/manuscript
 git commit -m "Update manuscript submodule to latest version"
 ```
 
@@ -131,7 +133,7 @@ The `--remote` flag pulls the latest changes from the tracked branch (main).
 
 The manuscript is maintained in its own repository at <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>. To contribute changes:
 
-1. Navigate to the submodule: `cd invisible-users/manuscript`
+1. Navigate to the submodule: `cd packages/manuscript/manuscript`
 2. Create a branch: `git checkout -b your-feature-branch`
 3. Make your changes and commit them
 4. Push to the manuscript repository: `git push origin your-feature-branch`
@@ -224,7 +226,7 @@ The Kindle PDF (`pdf:kindle`) generates a print-ready interior file only. KDP re
 6. Create your cover design using the template dimensions
 7. Export at **300 DPI** matching the exact template dimensions
 
-The current cover design at `invisible-users/manuscript/illustrations/cover-design.png` can be adapted, but you'll need to add the spine and back cover, sized according to the KDP template for your specific page count.
+The current cover design at `packages/manuscript/manuscript/illustrations/cover-design.png` can be adapted, but you'll need to add the spine and back cover, sized according to the KDP template for your specific page count.
 
 ### Web Audit Suite
 
@@ -245,13 +247,13 @@ npm run audit:start -- -s https://example.com/sitemap.xml \
   --generate-executive-summary
 ```
 
-See [web-audit-suite/README.md](web-audit-suite/README.md) for complete documentation.
+See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) for complete documentation.
 
 ## Web Appendices
 
 Individual appendix pages are available online for easy reference and sharing:
 
-**Online access:** <https://allabout.network/invisible-users/web/>
+**Online access:** <https://allabout.network/packages/manuscript/web/>
 
 The appendices are published as separate HTML pages with full navigation:
 
@@ -262,15 +264,14 @@ The appendices are published as separate HTML pages with full navigation:
 **Generate locally:**
 
 ```bash
-npm run pdf:appendix        # Generate HTML pages in invisible-users/manuscript/web/
+npm run pdf:appendix        # Generate HTML pages in packages/manuscript/manuscript/web/
 ```
 
-This creates 17 files in the manuscript submodule:
+This creates 16 files in the manuscript submodule:
 
 - `index.html` - Book main page with complete overview
 - `appendix-index.html` - Appendix landing page
 - `news.html` - Project news and updates
-- `identity-layer.html` - Identity delegation project page
 - `llms.txt` - AI agent discovery file
 - `sitemap.xml` - Search engine discovery file
 - `appendix-a.html` through `appendix-k.html` - Individual appendix pages (11 files)
@@ -283,18 +284,6 @@ Each appendix page includes:
 - Navigation footer linking to other appendices
 - Responsive design (mobile-friendly)
 - Chapter 10 technical patterns (AI meta tags, Schema.org JSON-LD, semantic HTML, data-role attributes)
-
-## Project Web Pages
-
-The repository includes public web pages for the book project:
-
-- [web/identity-layer.html](web/identity-layer.html) - Universal Identity Delegation Infrastructure project landing page
-- [web/news.html](web/news.html) - Project news and updates
-
-These pages follow Chapter 10 technical patterns and will be published at:
-
-- <https://allabout.network/invisible-users/identity-layer.html>
-- <https://allabout.network/invisible-users/news.html>
 
 ## Key Themes
 
@@ -318,9 +307,9 @@ The guidance focuses on patterns that work for all agent types:
 - **Structured data:** Machine-readable for all architectures
 - **Clear feedback:** Persistent and unambiguous
 
-### Identity Delegation
+### Identity Delegation Patterns
 
-When AI agents transact on behalf of customers, the business-customer relationship breaks down. The book discusses identity delegation patterns as one emerging solution, acknowledging multiple approaches without prescribing a specific implementation.
+When AI agents transact on behalf of customers, the business-customer relationship can be affected. The book discusses identity delegation patterns as one emerging solution, acknowledging multiple approaches without prescribing a specific implementation.
 
 **Mentioned in:** Chapters 4, 6, 9, and 10
 
@@ -361,24 +350,24 @@ A critical security insight: in-browser agents inherit authenticated sessions ra
 
 ### Book Documentation
 
-- [invisible-users/book-plan.md](invisible-users/book-plan.md) - Master plan with chapter outlines
-- [invisible-users/manuscript/Glossary.md](invisible-users/manuscript/Glossary.md) - Technical glossary
-- [invisible-users/manuscript/appendix-implementation-roadmap.md](invisible-users/manuscript/appendix-implementation-roadmap.md) - Priority-based guide
-- [invisible-users/manuscript/appendix-resource-directory.md](invisible-users/manuscript/appendix-resource-directory.md) - Curated resources
+- [packages/manuscript/book-plan.md](packages/manuscript/book-plan.md) - Master plan with chapter outlines
+- [packages/manuscript/manuscript/Glossary.md](packages/manuscript/manuscript/Glossary.md) - Technical glossary
+- [packages/manuscript/manuscript/appendix-implementation-roadmap.md](packages/manuscript/manuscript/appendix-implementation-roadmap.md) - Priority-based guide
+- [packages/manuscript/manuscript/appendix-resource-directory.md](packages/manuscript/manuscript/appendix-resource-directory.md) - Curated resources
 
 ### Web Audit Suite Documentation
 
-- [web-audit-suite/README.md](web-audit-suite/README.md) - Complete tool documentation
-- [web-audit-suite/QUICKSTART.md](web-audit-suite/QUICKSTART.md) - 5-minute guide
-- [web-audit-suite/docs/usermanual.md](web-audit-suite/docs/usermanual.md) - User guide
-- [web-audit-suite/docs/CONFIGURATION.md](web-audit-suite/docs/CONFIGURATION.md) - Configuration reference
-- [web-audit-suite/docs/FEATURES.md](web-audit-suite/docs/FEATURES.md) - Feature overview
+- [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) - Complete tool documentation
+- [packages/web-audit-suite/QUICKSTART.md](packages/web-audit-suite/QUICKSTART.md) - 5-minute guide
+- [packages/web-audit-suite/docs/usermanual.md](packages/web-audit-suite/docs/usermanual.md) - User guide
+- [packages/web-audit-suite/docs/CONFIGURATION.md](packages/web-audit-suite/docs/CONFIGURATION.md) - Configuration reference
+- [packages/web-audit-suite/docs/FEATURES.md](packages/web-audit-suite/docs/FEATURES.md) - Feature overview
 
 ## Common Mistakes to Avoid
 
 ### Git Directory Navigation with Submodules
 
-**Always check `pwd` before attempting directory navigation.** This repository has a git submodule at `invisible-users/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
+**Always check `pwd` before attempting directory navigation.** This repository has a git submodule at `packages/manuscript/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
 
 **Best practice:** Run `pwd` first, then use correct relative or absolute paths. When working with submodules, verify current location before every directory change.
 

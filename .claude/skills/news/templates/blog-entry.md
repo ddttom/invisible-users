@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Template for adding narrative-style news entries to `invisible-users/manuscript/blog/book-updates.md`.
+Template for adding narrative-style news entries to `packages/manuscript/manuscript/blog/book-updates.md`.
 
 ## Tone and Style
 

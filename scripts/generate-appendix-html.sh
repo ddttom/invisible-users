@@ -6,8 +6,8 @@
 set -e  # Exit on error
 
 # Configuration
-MANUSCRIPT_DIR="invisible-users/manuscript"
-OUTPUT_DIR="invisible-users/manuscript/web"
+MANUSCRIPT_DIR="packages/manuscript/manuscript"
+OUTPUT_DIR="packages/manuscript/manuscript/web"
 SCRIPTS_DIR="scripts"
 BASE_URL="https://allabout.network/invisible-users/web"
 
@@ -36,7 +36,8 @@ cat > "$SCRIPTS_DIR/appendix-nav-header.html" << 'EOF'
         <a href="appendix-h.html">H</a> |
         <a href="appendix-i.html">I</a> |
         <a href="appendix-j.html">J</a> |
-        <a href="appendix-k.html">K</a>
+        <a href="appendix-k.html">K</a> |
+        <a href="appendix-l.html">L</a>
     </p>
 </nav>
 <hr>
@@ -58,7 +59,8 @@ cat > "$SCRIPTS_DIR/appendix-nav-footer.html" << 'EOF'
         <a href="appendix-h.html">H</a> |
         <a href="appendix-i.html">I</a> |
         <a href="appendix-j.html">J</a> |
-        <a href="appendix-k.html">K</a>
+        <a href="appendix-k.html">K</a> |
+        <a href="appendix-l.html">L</a>
     </p>
 </nav>
 EOF
@@ -158,6 +160,9 @@ Latest news and updates about AI agents, commerce platforms, and industry shifts
 **[Appendix K: Common Page Patterns](appendix-k.html)**
 Production-ready HTML templates demonstrating AI-friendly patterns for common page types. Complete examples for home, about, contact, sales, collection, article, FAQ, and form pages.
 
+**[Appendix L: Proposed AI Metadata Patterns](appendix-l.html)**
+Formal W3C-style proposal document for experimental AI metadata patterns. Consolidates all proposed patterns from across the book with rationale, use cases, implementation examples, forward-compatibility guarantees, and adoption decision framework. Essential reading before implementing experimental patterns.
+
 ## For AI Agents
 
 These pages use semantic HTML, proper heading structure, and explicit data attributes to ensure compatibility with all AI agent types (CLI, browser-based, and server-based). Each page includes:
@@ -227,7 +232,6 @@ The book examines how modern web design optimised for human users fails for AI a
 - Appendix Index: https://allabout.network/invisible-users/web/appendix-index.html - Landing page with all appendices
 - Project News: https://allabout.network/invisible-users/web/news.html - Latest updates and announcements
 - FAQ: https://allabout.network/invisible-users/web/faq.html - Frequently asked questions about the book and project
-- Identity Delegation Project: https://allabout.network/invisible-users/web/identity-layer.html - Universal Identity Delegation Infrastructure
 
 ## Access Guidelines
 
@@ -257,6 +261,7 @@ The book examines how modern web design optimised for human users fails for AI a
 - Appendix I: https://allabout.network/invisible-users/web/appendix-i.html - Pipeline Failure Case Study (£203k error analysis)
 - Appendix J: https://allabout.network/invisible-users/web/appendix-j.html - Industry Developments (latest verified news and updates)
 - Appendix K: https://allabout.network/invisible-users/web/appendix-k.html - Common Page Patterns (production-ready HTML templates for 8 page types)
+- Appendix L: https://allabout.network/invisible-users/web/appendix-l.html - Proposed AI Metadata Patterns (formal proposals for experimental patterns)
 
 ## Topics
 
@@ -283,22 +288,23 @@ LLMSEOF
 
 echo -e "${GREEN}✓ Generated llms.txt${NC}"
 
-# Copy web pages (news.html and identity-layer.html) from web/ directory
-echo -e "${BLUE}Copying project web pages...${NC}"
-if [ -f "web/news.html" ]; then
-  cp "web/news.html" "$OUTPUT_DIR/news.html"
-  echo -e "  Copied news.html"
+# Check manually maintained web pages exist
+echo -e "${BLUE}Checking manually maintained web pages...${NC}"
+if [ -f "$OUTPUT_DIR/news.html" ]; then
+  echo -e "  ✓ news.html exists (manually maintained)"
 else
-  echo -e "  Warning: web/news.html not found"
+  echo -e "  ${RED}ERROR: news.html not found at $OUTPUT_DIR/news.html${NC}"
+  echo -e "  ${RED}This file must be manually maintained in the web directory${NC}"
+  exit 1
 fi
-
-if [ -f "web/identity-layer.html" ]; then
-  cp "web/identity-layer.html" "$OUTPUT_DIR/identity-layer.html"
-  echo -e "  Copied identity-layer.html"
+if [ -f "$OUTPUT_DIR/faq.html" ]; then
+  echo -e "  ✓ faq.html exists (manually maintained)"
 else
-  echo -e "  Warning: web/identity-layer.html not found"
+  echo -e "  ${RED}ERROR: faq.html not found at $OUTPUT_DIR/faq.html${NC}"
+  echo -e "  ${RED}This file must be manually maintained in the web directory${NC}"
+  exit 1
 fi
-echo -e "${GREEN}✓ Copied web pages${NC}"
+echo -e "${GREEN}✓ Manually maintained web pages verified${NC}"
 
 # Generate sitemap.xml
 echo -e "${BLUE}Generating sitemap.xml...${NC}"
@@ -315,12 +321,12 @@ echo "Generated files in $OUTPUT_DIR:"
 echo "  - index.html (book main page)"
 echo "  - appendix-index.html (appendix landing page)"
 echo "  - news.html (project news)"
-echo "  - identity-layer.html (identity delegation project)"
+echo "  - faq.html (frequently asked questions)"
 echo "  - llms.txt (AI agent discovery)"
 echo "  - sitemap.xml (search engine discovery)"
-echo "  - appendix-a.html through appendix-j.html (10 files)"
+echo "  - appendix-a.html through appendix-l.html (12 files)"
 echo ""
-echo "Total: 16 files"
+echo "Total: 17 files"
 echo ""
 echo "View locally:"
 echo "  open $OUTPUT_DIR/index.html (book main page)"

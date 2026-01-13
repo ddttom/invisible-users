@@ -1,2 +1,4 @@
-node_modules/
-.git/
+# Exclude appendix-j from markdown linting
+# This file uses a consistent 12-section template for all entries,
+# which creates MD024 duplicate heading violations by design
+packages/manuscript/manuscript/appendix-j-industry-developments.md

@@ -24,7 +24,7 @@ GEMINI.md
 AGENTS.md
 
 # PNG illustrations (generated from SVG)
-invisible-users/manuscript/illustrations/*.png
+packages/manuscript/manuscript/illustrations/*.png
 
 # Generated book files
 the-invisible-users.html

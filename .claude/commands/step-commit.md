@@ -19,13 +19,13 @@ Execute the systematic "step commit" workflow:
 
 4. Cross-Project Consistency Check (CRITICAL)
    - If changes affect terminology, patterns, or concepts:
-     - Verify book manuscript (invisible-users/) is the authoritative source
-     - Check if tool (web-audit-suite/) needs updates to match book
+     - Verify book manuscript (packages/manuscript/manuscript/) is the authoritative source
+     - Check if tool (packages/web-audit-suite/) needs updates to match book
      - Ensure all documentation uses consistent terminology
    - Terminology changes MUST flow: book → tool → documentation
    - Verify alignment across both projects:
-     - Book manuscript (invisible-users/)
-     - Web Audit Suite (web-audit-suite/)
+     - Book manuscript (packages/manuscript/manuscript/)
+     - Web Audit Suite (packages/web-audit-suite/)
    - Check shared terminology standards (see CLAUDE.md "Cross-Project Consistency")
 
 5. Documentation Updates

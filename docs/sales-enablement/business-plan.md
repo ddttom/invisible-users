@@ -229,7 +229,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 #### 2. Full-Day Workshop (6-8 hours): "Implementing Agent-Compatible Architecture"
 
 - Target: Technical teams, architects
-- Content: Deep dive into Chapter 10, real implementation exercises
+- Content: Deep dive into Chapter 11, real implementation exercises
 - Format: Virtual or in-person
 - Pricing: £5,000-10,000 per session (up to 20 participants)
 - Delivery: 1 per month sustainable

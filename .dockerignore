@@ -1,0 +1,59 @@
+# Docker ignore file for The Invisible Users repository
+# Excludes unnecessary files from Docker build context
+
+# Node modules (will be installed in container)
+node_modules/
+packages/*/node_modules/
+
+# Build artifacts
+*.pdf
+*.html
+the-invisible-users*
+
+# Cache directories
+.cache/
+packages/web-audit-suite/.cache/
+packages/web-audit-suite/results/
+
+# Git files
+.git/
+.gitignore
+.gitmodules
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+
+# Logs
+*.log
+packages/web-audit-suite/error.log
+packages/web-audit-suite/combined.log
+
+# Documentation that's not needed for build
+docs/sales-enablement/
+docs/imp-plan.md
+docs/manuscript-critique.md
+
+# Test files
+test/
+packages/web-audit-suite/test/
+
+# Claude Code configuration (not needed in container)
+.claude/
+
+# Generated PNG illustrations (will be generated in container)
+packages/manuscript/manuscript/illustrations/*.png
+
+# Temporary files
+scripts/appendix-nav-footer.html
+scripts/appendix-index-template.md

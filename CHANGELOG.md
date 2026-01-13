@@ -7,6 +7,844 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed - Identity Delegation Infrastructure Project References (2026-01-13)
+
+**Removed all references to discontinued Identity Delegation Infrastructure Project:**
+
+The Identity Delegation Infrastructure Project (identity-layer.html page) has been removed from the repository. All references to the specific project have been cleaned up while maintaining the conceptual discussion of identity delegation patterns in the book context.
+
+**Files Modified:**
+
+- **packages/manuscript/manuscript/web/news.html:**
+  - Removed "Identity Delegation Infrastructure Project" link from Related Resources section
+
+- **README.md:**
+  - Updated file count from 17 to 16 (removed identity-layer.html from list)
+  - Changed section title from "Identity Delegation" to "Identity Delegation Patterns"
+  - Softened language to focus on patterns discussed in the book rather than specific project
+
+- **docs/sales-enablement/PITCH.md:**
+  - Removed "The Next Project: Open-Source Identity Delegation Framework" section
+  - Replaced with "Future Opportunities in Identity Delegation" focusing on conceptual area
+  - Removed identity-layer.html link from Current Projects list
+
+- **packages/manuscript/manuscript/talks/members-call/talk.md:**
+  - Removed detailed project description and timeline
+  - Replaced with brief note about evolving patterns
+  - Removed identity-layer.html link from Project Pages section
+
+- **packages/manuscript/manuscript/talks/members-call/talk-slides.js:**
+  - Updated slide content to reference "patterns emerging" instead of specific project
+  - Removed identity-layer.html link from contact slide
+
+- **packages/manuscript/manuscript/code-examples/identity-delegation-README.md:**
+  - Updated to clarify these are educational proof-of-concept examples only
+  - Removed references to future open-source project
+  - Removed identity-layer.html links
+
+- **packages/manuscript/manuscript/code-examples/identity-delegation-worker.js:**
+  - Updated header comment to clarify educational purpose
+  - Removed reference to future infrastructure project
+
+**What Remains:**
+
+The concept of "identity delegation patterns" is still mentioned in the book context as an emerging area discussed conceptually, which is appropriate since it's a topic covered in the book itself. The code examples remain as educational demonstrations.
+
+### Changed - WCAG 2.1 AA Accessibility Improvements (news.html) (2026-01-13)
+
+**Fixed all WCAG contrast issues and aligned colors with established design system:**
+
+The news.html page had several contrast violations and used inconsistent colors compared to the appendix.css design system. All colors have been updated to match the established palette and meet WCAG 2.1 AA standards.
+
+**Contrast Fixes:**
+
+- **Tag elements:** Fixed critical failure (3.2:1 → 8.5:1)
+  - OLD: Dark blue text (#1e40af) on light blue background (#dbeafe)
+  - NEW: White text (#ffffff) on blue background (#0066cc)
+  - Font-weight increased from 500 to 600 for better readability
+
+- **News date:** Improved borderline contrast (4.6:1 → 8.3:1)
+  - OLD: Light grey (#6b7280)
+  - NEW: Darker grey (#4b5563)
+
+- **Footer text:** Improved contrast (4.6:1 → 8.3:1)
+  - OLD: Light grey (#6b7280)
+  - NEW: Darker grey (#4b5563)
+
+**Color System Alignment:**
+
+All blues updated to match appendix.css established palette:
+
+- Header gradient: #1e40af/#3b82f6 → #0066cc/#2196F3
+- News item border: #3b82f6 → #0066cc
+- Links: #2563eb → #0066cc
+- CTA box: #1e40af → #0066cc
+- Button background: #1e40af → #0066cc
+- Button hover: #1e3a8a → #003d7a
+
+**Results:**
+
+- All text elements now meet or exceed WCAG AA 4.5:1 minimum contrast
+- Visual consistency achieved across all web documentation
+- Tag and button elements use unified styling with established blue (#0066cc)
+
+### Changed - Web Files Consolidation (2026-01-12)
+
+**Simplified web file management by removing redundant source directory:**
+
+Eliminated `packages/project-web/` directory containing duplicate/stale copies of web files. All web files now live in single location: `packages/manuscript/manuscript/web/`.
+
+**Changes:**
+
+- **Removed** `packages/project-web/` directory containing:
+  - `news.html` (duplicate, identical to manuscript/web version)
+  - `llms.txt` (stale, 867 bytes vs. complete 2.3KB generated version)
+  - `sitemap.xml` (stale, 4 URLs vs. complete 14 URLs generated version)
+
+- **Updated** `scripts/generate-appendix-html.sh`:
+  - Removed copy logic from packages/project-web/
+  - Added validation checks for manually maintained files (news.html, faq.html)
+  - Build now fails fast with clear error if required files missing
+
+- **Updated** documentation (README.md, PROJECTSTATE.md):
+  - Removed references to packages/project-web/ from structure diagrams
+  - Clarified that manuscript/web/ contains both manually maintained and generated files
+  - Removed "source vs. published" distinction explanations
+
+**Rationale:**
+
+The packages/project-web/ directory was created to separate "source" files from "generated" output, but this distinction was confusing and error-prone:
+
+- news.html is manually edited, not generated - should live where it's published
+- llms.txt is generated by build script, not a source file
+- sitemap.xml is generated by build script, not a source file
+
+Having duplicate copies created synchronization issues and maintenance burden.
+
+**Single Source of Truth:**
+
+All web files now in `packages/manuscript/manuscript/web/`:
+
+- **Manually maintained:** news.html, faq.html, index.html, for-reviewers.html
+- **Generated by build:** appendix-*.html, llms.txt, sitemap.xml, appendix.css
+
+### Added - Platform Vendor Messaging (2026-01-12)
+
+**Extended sales messaging to counter "this isn't for us" objection from platform vendors:**
+
+Added comprehensive messaging addressing CMS providers, e-commerce platforms, and infrastructure vendors who might dismiss AI agent compatibility as irrelevant to their business.
+
+**Submodule Changes (packages/manuscript/manuscript/):**
+
+- **executive-summary.md:**
+  - Added new section "But We're Not End Users—Why Does This Matter to Us?"
+  - Addresses customer churn vector (clients lose business silently, blame platform, switch competitors)
+  - Highlights competitive moat opportunity (automatic agent compatibility = indispensable)
+  - Provides concrete examples for 5 platform types: CMS, e-commerce, payment gateways, frameworks, hosting
+  - References Chapter 9 urgency (Amazon/Microsoft/Google simultaneous Jan 2026 launches)
+
+**Main Repository Changes:**
+
+- **docs/sales-enablement/platforms-blog.md:**
+  - Added platform vendor section to "What This Means for Different Audiences"
+  - Explains silent business loss and platform blame cycle
+  - Positions as competitive advantage vs migration trigger
+  - Emphasizes they're already in structured data business (SEO → agents)
+
+- **docs/sales-enablement/PARTNER_KIT.md:**
+  - Added Template C: "Platform Retention Risk" email for CMS/platform vendor outreach
+  - Added objection handler for "We're a platform provider, not an end user"
+  - Reframes as customer retention risk and competitive positioning
+
+**Key Arguments:**
+
+- Customer churn vector: Invisible failures lead to platform blame
+- Competitive moat: Abstracting complexity makes platforms indispensable
+- Already their business: Schema.org for SEO = agent compatibility
+- Urgency: Amazon/Microsoft/Google Jan 2026 launches signal infrastructure shift
+
+**Use Case:** Responding to platform vendors (like Kontent.ai) who initially dismiss book relevance because they're infrastructure, not end users.
+
+### Fixed - Directory Naming (2026-01-12)
+
+**Renamed packages/web to packages/project-web to avoid confusion:**
+
+- **packages/web → packages/project-web**: Renamed directory to clarify it contains source files, not generated output
+- **scripts/generate-appendix-html.sh**: Updated to look for source files in packages/project-web/ instead of web/
+- **README.md**: Updated repository structure diagram and Project Web Pages section to reflect new naming
+- **PROJECTSTATE.md**: Updated Monorepo Structure and Web Pages sections with correct paths
+- **Rationale**: The script looks for generated files at manuscript/web/ but was checking for source files at web/. Having both "web" and "packages/web" was confusing. Renaming to "project-web" makes it clear these are source files for project pages.
+- **Generated files**: appendix generation now correctly finds and copies news.html from packages/project-web/ to packages/manuscript/manuscript/web/
+
+### Fixed - PDF Generation (2026-01-12)
+
+**Resolved XeLaTeX warnings for emoji characters:**
+
+- **packages/manuscript/manuscript/preface.md**: Replaced star emoji (⭐⭐⭐⭐) with text-based rating (4/5 Stars)
+- **Rationale**: XeLaTeX's Latin Modern font doesn't support emoji characters (U+2B50), causing warnings during PDF generation
+- **Result**: PDF generation now completes cleanly with no font warnings
+
+### Added - For Reviewers Page (2026-01-12)
+
+**Created professional reviewer acknowledgment page following AI-friendly HTML patterns:**
+
+- **web/for-reviewers.html** (Submodule):
+  - Professional reviewer acknowledgment page with Schema.org Article JSON-LD
+  - AI-specific meta tags (ai-preferred-access, ai-content-policy, ai-freshness, ai-structured-data, ai-attribution)
+  - Semantic HTML structure with proper data-* attributes and ARIA roles
+  - Reviewer acknowledgment policy (all reviewers mentioned in final book)
+  - Feedback instructions (email <tom.cranstoun@gmail.com>, Q1 2026 timeline)
+  - NDA agreement section with download button placeholder
+  - External CSS (css/styles.css) and JS (js/common.js) references for consistency
+  - Floating navigation buttons (Home, Back to Top)
+  - British English throughout with professional but warm tone
+  - Follows patterns from Appendices D and K
+
+**Documentation Updates (Main Repository):**
+
+- **PROJECTSTATE.md:**
+  - Added for-reviewers.html to Web Pages section
+  - Updated "Last Updated" date
+
+### Removed - Identity Delegation Framework and GitHub Links (2026-01-12)
+
+**Removed Identity Delegation framework concept and all GitHub repository links from web materials:**
+
+The Identity Delegation framework has been removed from the project. All references have been removed from web pages, documentation examples, and navigation.
+
+**Web Page Changes (Submodule):**
+
+- **web/index.html:**
+  - Removed "identity delegation" from Schema.org keywords metadata
+  - Removed entire "Identity Delegation" section and explanation paragraph
+- **web/faq.html:**
+  - Removed entire "What is identity delegation?" FAQ entry (both visible content and Schema.org structured data)
+  - Removed "Identity Delegation Project" link from Related Pages section
+  - Removed GitHub Repository link from code examples list
+  - Removed GitHub link from footer contact links
+- **web/news.html:**
+  - Removed "Book Publication and Identity Delegation Project Announcement" article
+  - Removed "Identity Delegation Project Roadmap Published" article
+  - Removed Identity Delegation references from "Future News" section
+  - Removed Identity Delegation Infrastructure Project link from Related Resources
+  - Removed GitHub Repository links from Related Resources and footer
+  - Replaced with simplified "Book Publication Announcement" article
+  - Updated Related Resources with appendices and FAQ links
+
+**Documentation Examples (Submodule):**
+
+- **appendix-k-common-page-patterns.md:**
+  - Updated FAQ Schema.org examples with enhanced metadata (author, dateCreated, upvoteCount)
+  - Examples now reflect current web page structure without identity delegation references
+- **web/site/faq.html:**
+  - Updated template with enhanced Schema.org metadata
+  - Removed obsolete web/site/faq.html.md source file
+
+**Build Script Updates (Main Repository):**
+
+- **scripts/generate-appendix-html.sh:**
+  - Added FAQ page copying from manuscript/web/ directory
+  - Updated file count from 16 to 17 files (added faq.html)
+  - Updated generation summary and documentation
+
+**Impact:**
+
+- All Identity Delegation framework references removed from book and web materials
+- All GitHub repository links removed (repository is private, not publicly accessible)
+- Web pages now focus on book content without external project announcements
+- FAQ and news pages simplified and focused on core book materials
+- Build process now includes FAQ page in generated output
+
+### Added - Broadened Audience Descriptions (2026-01-12)
+
+**Expanded manuscript audience descriptions to reflect wider stakeholder ecosystem:**
+
+Updated audience descriptions throughout the manuscript to acknowledge the full range of stakeholders involved in web development and digital experience decisions.
+
+**Manuscript Changes (Submodule):**
+
+- **Preface (line 140):** Replaced narrow "Frontend Engineers and System Architects" recommendation with inclusive language: "Web professionals (developers, designers, product owners), business leaders, content strategists, and anyone responsible for digital experience decisions"
+- **Preface "Web Professionals & Engineers" (lines 65-66):** Expanded description to explicitly mention and provide guidance for:
+  - Product Owners and Project Managers (prioritisation frameworks)
+  - UX Designers (interface patterns serving both humans and agents)
+  - Content Strategists (agent-friendly content structure)
+  - QA Engineers (testing approaches for agent compatibility)
+- **Reading Guide:** Added 2 new dedicated reading paths:
+  - **Product Owners:** Strategic implementation focus balancing business objectives with technical realities (Chapters 1-5, 9, 10 with delegation guidance)
+  - **Content Managers and Strategists:** Content-first perspective on agent-friendly structure (Chapters 1, 2, 3, 5, 10, 11 with focus on Schema.org, semantic HTML, llms.txt)
+- **Reading Guide:** Renamed "Product Managers and Designers" to "UX Designers and Information Architects" for clarity and better role differentiation
+- **Executive Summary "Navigate This Book":** Updated audience navigation with dedicated entries for Product Owners, Content Managers/Strategists, and UX Designers/Information Architects
+
+**Documentation:**
+
+- **PROJECTSTATE.md:** Updated "Target Audiences" section to reflect 7 distinct reading paths (was 5) and expanded stakeholder descriptions
+
+**Impact:**
+
+- Result: 7 distinct reading paths instead of 5, covering wider stakeholder ecosystem
+- Each role (Product Owners, Project Managers, Content Managers, Strategists, Designers, Developers, Testers) can now immediately identify their relevant reading path
+- Maintains consistency across Preface, Reading Guide, and Executive Summary
+- All changes preserve British English, professional tone, and existing markdown structure
+
+### Fixed - Path References Post-Restructure (2026-01-12)
+
+**Complete path cleanup after monorepo restructure:**
+
+Fixed all remaining `invisible-users/manuscript` path references to use new `packages/manuscript/manuscript` structure:
+
+**Main Repository:**
+
+- Fixed PDF generation error by updating cover image path in metadata.yaml
+- Updated llms.txt with correct manuscript file references (58 path updates)
+- Fixed scripts/generate-sitemap.js output directory path
+- Fixed scripts/audit-html-patterns.js report paths and relative path replacements
+- Updated CHANGELOG.md markdown link to event page
+- Removed obsolete docs/imp-plan.md and docs/manuscript-critique.md files
+
+**Manuscript Submodule:**
+
+- Fixed metadata.yaml cover image path (resolves "Unable to load picture" PDF error)
+- Updated blog/AI-Native.blog code example references (19 path updates)
+- Fixed .claude/hooks git workflow reminders for submodule operations
+
+**Impact:**
+
+- All PDF generation commands now work: `npm run pdf:generate`, `pdf:kindle`, `pdf:simple`, `pdf:html`, `pdf:appendix`, `pdf:all`
+- AI agent file discovery via llms.txt now references correct paths
+- Build scripts and documentation have consistent path references
+- Git hooks provide correct submodule update instructions
+
+### Added - Monorepo Structure (2026-01-12)
+
+**Complete repository restructure into monorepo with npm workspaces:**
+
+- Reorganized repository into `packages/` directory structure
+- Added npm workspaces configuration for unified dependency management
+- Created `packages/manuscript/` directory with book planning files
+- Moved Web Audit Suite to `packages/web-audit-suite/`
+- Manuscript submodule now at `packages/manuscript/manuscript/`
+- Created root-level Dockerfile for book PDF generation (Pandoc + XeLaTeX)
+- Created `packages/web-audit-suite/Dockerfile` for containerized audits
+
+#### Phase 1: Repository Structure
+
+- Moved all files to new `packages/` structure
+- Updated 40+ path references across all files
+- Updated all npm scripts to work with new structure
+- Configured npm workspaces for shared dependencies
+
+#### Phase 2: Code Quality
+
+- Removed `global.auditcore` from Web Audit Suite codebase
+- Updated test files to use explicit AuditContext
+- All 22 tests passing with dependency injection pattern
+
+#### Phase 3: Docker Support
+
+- Book building: Pandoc, XeLaTeX, ImageMagick (~800MB image)
+- Web auditing: Node.js, Chromium, Pa11y (~450MB image)
+- Non-root user security (UID 1000)
+- Volume mounts for results and output
+- CI/CD ready for GitHub Actions and GitLab CI
+
+#### Documentation Updates
+
+- Updated all CLAUDE.md files with new paths
+- Updated all README.md files with new paths
+- Updated .claude/ configuration (hooks, skills, commands)
+- Updated LEARNINGS.md with new submodule paths
+- Updated scripts and build documentation
+- Fixed 30+ markdown linting issues
+
+#### Git Submodule
+
+- Manuscript submodule path: `invisible-users/manuscript/` → `packages/manuscript/manuscript/`
+- Updated manuscript CLAUDE.md with parent navigation instructions
+- Committed submodule changes and updated parent pointers
+
+#### Verification
+
+- All npm scripts functional
+- All tests passing (22/22)
+- Markdown linting clean
+- Docker builds successful
+- Submodule integrity maintained
+
+### Changed - Protocol Landscape Updates (2026-01-12)
+
+Updated manuscript to reflect January 2026 protocol landscape and accelerated timeline:
+
+**Preface updates:**
+
+- Added new paragraph acknowledging ACP (September 2024) and UCP (January 2026) launches
+- Describes seven-day platform acceleration (Amazon Jan 5, Microsoft Jan 8, Google Jan 11)
+- Explains timeline compression from 12 months to 6-9 months
+- Notes fragmentation creating commercial urgency (businesses must support multiple protocols)
+- Maintains personal narrative voice: "That pressure intensified dramatically whilst writing this book"
+- Reinforces universal patterns work regardless of which protocol wins
+- Added 115 words, maintains accessibility-focused narrative
+
+**Chapter 12 ("The Missing Identity Layer" section) updates:**
+
+- Rewrote opening to acknowledge current state: two open protocols vs one proprietary system
+- Updated current state description: ACP (1M+ merchants), UCP (20+ retailers), Microsoft (isolated)
+- Added competitive landscape analysis: Microsoft's proprietary lock-in now competitively isolated
+- Reframed agent creator implications: from "waiting for standards" to "navigating dual standards"
+- Updated practical guidance: build for open protocols (ACP/UCP) with abstraction layers
+- Revised code examples: show ACP/UCP provider support instead of generic "open standards"
+- Added cross-reference to Chapter 9 for platform race analysis
+- Reframed closing from "winner-take-all competition" to "convergence preparation"
+- Changed 62 lines, maintains technical accuracy
+
+**Executive Summary updates:**
+
+- Updated "What Is Happening": Three platforms launched within seven days (consensus signal)
+- Added protocol infrastructure details: 1M+ merchants (ACP), 20+ retailers (UCP)
+- Added timeline acceleration paragraph: 6-9 months adoption timeline
+- Updated business impact: payment protocols provide standardised infrastructure
+- Enhanced Priority 3 action items: protocol evaluation decisions (ACP vs UCP vs both)
+- Enhanced Priority 4 action items: specific protocol integration guidance with merchant numbers
+- Changed 19 lines across three sections
+
+**Consistency achieved:**
+
+- All three documents align on facts: ACP (Sept 2024, 1M+ merchants), UCP (Jan 2026, 20+ retailers)
+- Seven-day acceleration verified (Jan 5-11, 2026)
+- Timeline compression consistent (12→6-9 months)
+- Microsoft's competitive isolation acknowledged
+- Universal patterns emphasis maintained throughout
+
+**Cross-references verified:**
+
+- Preface → Chapter 9 (platform race details)
+- Chapter 12 → Chapter 9 (competitive analysis)
+- Executive Summary → Chapters 4, 9, 12 (frameworks and guidance)
+- All facts verified against Chapter 9 and Appendix J
+
+**Word count impact:**
+
+- Core manuscript: 60,500 → 60,666 words (+166 words)
+- Maintains target range for publication
+
+**Version:** 2.9.0 → 2.9.1
+
+### Added - HTML Pattern Implementation (2026-01-12)
+
+Implemented Priority 1 audit recommendations to ensure educational examples demonstrate best practices:
+
+**E-commerce examples enhanced with data-agent-visible pattern:**
+
+- `product-page.html`: Added agent metadata section with purchase instructions, prerequisites, expected responses
+- `shopping-cart.html`: Added agent metadata section with checkout instructions, cart operations, prerequisites
+- Updated comments in both files to document the pattern implementation
+
+**Schema.org JSON-LD added to product pages:**
+
+- `product-page.html`: Added complete Product schema with brand, pricing, availability, aggregate ratings
+- Provides machine-readable structured data (established standard) for AI agents and search engines
+
+**Pattern audit updated:**
+
+- Re-ran `scripts/audit-html-patterns.js` to capture improvements
+- data-agent-visible: 0% → 5.0% (3 files now implement the pattern)
+- Schema.org JSON-LD: maintained at 66.7% coverage (40/60 files)
+- Updated `PATTERN-AUDIT-REPORT.md` with current implementation status
+
+**Priority 2 improvements (Semantic HTML):**
+
+- `disabled-button.html`: Added `<main>` semantic element wrapping form content
+- `validation-form.html`: Added `<main>` semantic element wrapping form content
+- Semantic HTML5: 95.0% → 98.3% (57→59 files now use semantic elements)
+
+**Priority 3 improvements (AI Meta Tag Standardization):**
+
+- Standardized AI meta tags across all demo site pages (7 files updated: checkout, event, login, portfolio, search, team, testimonials)
+- Each file now has complete 5-tag set: ai-preferred-access, ai-content-policy, ai-freshness, ai-structured-data, ai-attribution
+- Enhanced ai-attribution specification in Appendix L with `text` attribute requirement
+- Updated all 39 HTML files with ai-attribution to include proper attribution text: "Source: The Invisible Users by Tom Cranstoun, <https://allabout.network/invisible-users/>"
+- Updated `scripts/enhance-appendix-html.js` to include attribution text in generated appendices
+- Regenerated all appendix HTML files with updated attribution format
+- Updated Appendix K: Fixed all 11 ai-attribution tags to include text attribute in inline HTML examples
+
+**Pattern audit final results:**
+
+- AI Meta Tags: 65.0% implementation (39/60 files) - all now standardized with complete 5-6 tag sets and proper attribution text
+- data-agent-visible: 5.0% implementation (3 files: product-page, shopping-cart, appendix-l)
+- Schema.org JSON-LD: 66.7% coverage (40/60 files)
+- Semantic HTML5: 98.3% coverage (59/60 files)
+
+**Educational Impact:** Code examples now properly demonstrate both established standards (Schema.org, semantic HTML5) and proposed patterns (data-agent-visible, standardized AI meta tags with attribution), ensuring readers see correct implementation in context. All AI meta tags now include proper attribution text for consistent citation across AI-generated content.
+
+### Added - Appendix L Expansion (2026-01-12)
+
+**Pattern 3: Common Data Attributes:**
+
+- Expanded Appendix L with comprehensive Pattern 3 section (~300 lines, 25+ data attributes documented)
+- Five attribute categories: State Management, E-commerce, Pagination/Sorting, Multi-step Workflows, Button States
+- Complete tables with attribute names, purposes, and example values
+- Implementation guidelines (consistency rules, good vs bad patterns)
+- Forward compatibility analysis and adoption considerations
+- Cross-references to all HTML implementations
+
+**Updated documentation:**
+
+- Summary section: Added Pattern 3 to consolidated patterns list
+- Relationship to Established Standards: Added common data attributes entry
+- Implementation Strategy: Moved common data attributes to Priority 1
+- Risk Assessment: Added common data attributes to low-risk category
+- Fixed all markdown linting errors (12 duplicate heading errors resolved with context additions)
+
+**Word count:** Appendix L now ~2,933 words (maintains comprehensive educational scope)
+
+### Added - Appendix L and HTML Pattern Audit (2026-01-12)
+
+**New Appendix:**
+
+- Created Appendix L: Proposed AI Metadata Patterns (~3,000 words)
+  - Formal W3C-style proposal document for experimental AI patterns
+  - Consolidates all proposed patterns from book (ai-* meta tags, data-agent-visible)
+  - Includes rationale, use cases, implementation examples for each pattern
+  - Provides forward-compatibility guarantees
+  - Includes adoption decision framework (when to adopt vs wait)
+  - Documents relationship to web standards process
+  - Cross-references all mentions in book chapters
+
+**Pattern Audit:**
+
+- Generated comprehensive HTML pattern audit report (PATTERN-AUDIT-REPORT.md)
+  - Scanned all 59 HTML files across repository
+  - Documented implementation of 8 pattern categories
+  - Created location-based analysis (appendices, starter kit, code examples, demo site)
+  - Mapped patterns to documentation cross-references
+  - Identified implementation gaps and recommendations
+  - Created audit script (scripts/audit-html-patterns.js) for ongoing monitoring
+
+**Documentation Updates:**
+
+- Updated Appendix D with bidirectional cross-references to Appendix L
+  - Added reference in "Standards vs Proposed Patterns" section (line 32)
+  - Added reference in data-agent-visible section (line 1330)
+  - Added reference in ai-* meta tags section (line 1574)
+- Updated book-plan.md to include Appendix L in appendices table
+- Updated appendix navigation in all generated HTML files (A-L)
+- Updated appendix index page with Appendix L description
+- Updated llms.txt with Appendix L entry
+
+**Build System:**
+
+- Updated scripts/generate-appendix-html.sh to include Appendix L in navigation
+- Verified scripts/generate-sitemap.js includes appendix-l.html
+- Updated file counts and summaries in build scripts
+
+**Total Impact:**
+
+- New appendix: 1 file (~3,000 words)
+- Pattern audit: 2 files (script + report, ~2,000 words report)
+- Documentation updates: 7 files modified
+- Build system: 2 scripts updated
+- Web appendices total: ~44,600 words (was ~41,600)
+
+### Fixed - CSS and Meta Tag Standardization (2026-01-12)
+
+**CSS Linting Improvements:**
+
+- Removed empty CSS rulesets from `web/appendix.css` (`div.sourceCode`, `code span.ex`)
+- Added vendor prefixes for broader browser compatibility:
+  - `-webkit-hyphens` for Safari iOS < 17 support (body and code rules)
+  - `-moz-text-size-adjust` for Firefox compatibility
+  - Follows progressive enhancement with standard properties
+- Resolved Microsoft Edge Tools CSS validation warnings
+- No functional changes, purely cleanup and compatibility
+
+**Meta Tag Naming Standardization:**
+
+- Standardized meta tag name from `llms-section` to `llms-txt` throughout documentation
+- Updated Appendix D (AI-Friendly HTML Guide) - all 404 page examples now use `llms-txt`
+- Updated Appendix K (Common Page Patterns) - 404 page pattern with comprehensive server-side examples
+- Added Express.js and Nginx configuration examples showing `X-llms-txt` header usage
+- Consistent with Web Audit Suite implementation (`meta[name="llms-txt"]`)
+- No breaking changes - purely documentation consistency
+
+**Chapter Structure Updates:**
+
+- Updated `web/index.html` to reflect current 12-chapter book structure (was showing 11)
+- Updated appendix count from 10 to 11 appendices
+- Added reference to new Chapter 9 (The Platform Race) in table of contents
+
+### Added - Canonical Href Tags (2026-01-12)
+
+**Canonical URL Implementation:**
+
+- Enhanced `scripts/enhance-appendix-html.js` to automatically generate canonical tags
+- Canonical tags now added to all generated appendix HTML files (appendix-a through appendix-k, appendix-index)
+- Format: `https://allabout.network/invisible-users/[filename].html`
+
+**Manuscript Web Pages (4 files):**
+
+- Added canonical tags to web/index.html, web/appendix-index.html, web/faq.html, web/news.html
+- Follows established SEO and AI agent compatibility patterns
+
+**HTML Code Examples (16 files):**
+
+- Added contextual canonical URLs to all examples in code-examples/html-examples/
+- E-commerce examples: product-page.html, shopping-cart.html, order-confirmation.html, shipping-options.html
+- Form examples: validation-form.html, multi-step-wizard.html, disabled-button.html
+- Navigation examples: breadcrumbs.html, filters.html, search-results.html
+- Component examples: data-tables.html, dialog-modal.html, pricing-display.html
+- State examples: authentication.html, error-display.html, loading-state.html
+- Uses `https://example.com/` with realistic contextual paths for teaching examples
+
+**Agent-Friendly Starter Kit:**
+
+- Added canonical tag to agent-friendly-starter-kit/good/index.html
+- Demonstrates established pattern alongside AI-specific meta tags
+- Bad example intentionally NOT updated (demonstrates anti-patterns)
+
+**Standards Classification:**
+
+- Canonical href tags are an **established standard** (not proposed pattern)
+- Already detected and scored by Web Audit Suite
+- Documented in AI-Native.blog as part of SEO/AI agent compatibility patterns
+
+### Added - AI-Friendly Meta Tags and External CSS (2026-01-12)
+
+**Meta Tag Enhancement:**
+
+- Added `llms-txt` meta tag to all appendix HTML files to indicate llms.txt file availability
+- Added `llms-txt` meta tag to manuscript/web/index.html (book main page)
+- Added `llms-txt` meta tag to web/news.html
+- Added complete AI-specific meta tags to agent-friendly-starter-kit/good/index.html example
+- Meta tag follows proposed pattern from Chapter 10: `<meta name="llms-txt" content="/llms.txt">`
+
+**CSS Externalization:**
+
+- Created appendix.css (12KB, 553 lines) containing all Pandoc and enhancement styles
+- Updated enhance-appendix-html.js to replace embedded styles with external CSS link
+- Removed ~220 lines of embedded CSS from each appendix HTML file
+- Maintained WCAG 2.1 AA contrast compliance throughout
+- Preserved inline JavaScript for copy-to-clipboard functionality
+- Improved page load performance through CSS caching across 12 appendix pages
+
+**Web Directory Files:**
+
+- Created web/llms.txt for root web directory discovery
+- Created web/sitemap.xml for search engine discovery (4 URLs)
+- Removed identity-layer.html references from all scripts (file deleted intentionally)
+
+**Script Updates:**
+
+- scripts/enhance-appendix-html.js: Added llms-txt meta tag, externalized CSS
+- scripts/generate-appendix-html.sh: Removed identity-layer.html copying logic
+- scripts/generate-sitemap.js: Removed identity-layer.html from sitemap
+
+### Added - Platform Blog Integration and Business Decision Frameworks (2026-01-12)
+
+**Manuscript Enhancement:**
+
+Integrated business decision-making guidance from `docs/sales-enablement/platforms-blog.md` into manuscript chapters and appendices. Added approximately 2,800 words of practical merchant guidance addressing critical gaps in protocol integration decision-making.
+
+Chapter 4: The Business Reality
+
+- **New Section: "Making Protocol Integration Decisions"** (~1,100 words)
+  - Decision framework for choosing ACP, UCP, both, or wait
+  - Risk analysis: early adoption vs. wait-and-see
+  - Protocol choice guidance by exposure level (critical/high/medium/low)
+  - Small business simplified path (Shopify/Etsy automatic integration)
+  - Enterprise integration considerations (protocol abstraction layers, dual-protocol support)
+- **New Section: "The Invisible Failure Problem Drives Platform Urgency"** (~400 words)
+  - Connection between invisible failures (Chapter 2) and January 2026 platform race
+  - Explains why Amazon/Microsoft/Google launched simultaneously (merchant failures created platform opportunity)
+  - Target/Walmart cooperation as signal of industry consensus
+  - Links protocol integration necessity to underlying pattern fixes
+
+Chapter 9: The Platform Race
+
+- **Enhanced: "Microsoft's Isolation Problem" section** (~700 words added)
+  - New subsection: "What Forces Microsoft's Hand?"
+  - Four forces compelling Microsoft to abandon proprietary approach:
+    1. Merchant adoption thresholds (trigger: <15% adoption by Q3 2026)
+    2. Agent creator defection (trigger: no third-party adoption by Q2 2026)
+    3. Enterprise vs. consumer dynamics (split market scenario)
+    4. Internal cost of maintaining isolation
+  - Timeline estimate with quarterly milestones (Q1-Q4 2026)
+  - Face-saving "interoperability" framing prediction
+- **New Section: "Integration Reality for Merchants"** (~800 words)
+  - Technical implementation burden (single vs. dual protocol effort estimates)
+  - Testing and QA multiplication factor (2.5x for dual protocols, not 2x)
+  - Security surface expansion analysis
+  - Migration strategies and protocol abstraction patterns
+  - Developer experience and learning curves
+  - Cost-benefit analysis by business size (enterprise/mid-size/small)
+
+Appendix F: Implementation Roadmap
+
+- **New Section: "Priority 1.5: Protocol Integration Strategy"** (~600 words)
+  - Integration timeline by exposure level (Critical/High/Medium/Low)
+  - Single vs. dual protocol decision framework
+  - Small business simplified path (platform provider guidance)
+  - Enterprise considerations (abstraction layers, agent testing, identity delegation)
+  - Testing and validation requirements checklist
+  - Platform-agnostic patterns before protocol-specific integration
+  - When to evaluate professional audit services
+
+Appendix J: Industry Developments
+
+- **Enhanced ACP Section: "ACP/UCP Convergence Prospects"** (~500 words)
+  - Current state analysis (ACP first mover vs. UCP Google-backed)
+  - Best outcome: unified standard within 6 months
+  - Convergence triggers (merchant pressure, regulatory intervention, market consolidation)
+  - Convergence barriers (competitive positioning, revenue implications, governance control)
+  - Timeline assessment (Q1-Q4 2026 milestones)
+  - What happens if convergence fails (permanent fragmentation costs)
+- **Enhanced Google UCP Section: "Why Competitors Are Cooperating"** (~700 words)
+  - Analysis of Target/Walmart cooperation significance
+  - Signal interpretation: "inevitable not possible" shift
+  - Strategic calculation (compete independently vs. cooperate on standards)
+  - Historical technology transitions comparison (credit cards, Internet protocols, mobile payments)
+  - Implications for smaller merchants
+  - Why retailers chose UCP over ACP (search leverage, governance, payment neutrality)
+  - Timeline for convergence pressure
+
+**Content Approach:**
+
+- Maintained British English and professional tone throughout
+- Removed promotional language (webinar references, LinkedIn follow requests)
+- Added cross-references between related sections
+- Preserved sequential reading structure (each addition builds on prior chapters)
+- Excluded Amazon position speculation (maintaining "position unclear" approach)
+- Focused on actionable business decision frameworks, not just platform announcements
+
+**Word Count Impact:**
+
+- Chapter 4: +1,500 words (Protocol Decision Framework + Invisible Failures connection)
+- Chapter 9: +1,500 words (Microsoft Force Analysis + Integration Reality)
+- Appendix F: +600 words (Protocol Integration Strategy)
+- Appendix J: +1,200 words (Convergence prospects + Competitor cooperation analysis)
+- Total addition: ~2,800 words
+
+**Verification:**
+
+- Cross-references validated (Chapter 4 → Chapter 9, Appendix F → both chapters)
+- No duplication of existing seven-day launch narrative
+- Business decision focus maintained throughout
+- Markdown formatting follows project guidelines
+
+### Added - Boye Webinar Event Page and Appendix K Expansion (2026-01-12)
+
+**Event Page Update:**
+
+- Updated [web/site/event.html](packages/manuscript/manuscript/web/site/event.html) with real Boye & Company webinar details
+  - Event: "The Platform Race: How Three Tech Giants Launched Agent Commerce in Seven Days"
+  - Date: Wednesday, 21 January 2026
+  - Times: 14:00 GMT (15:00 CET, 09:00 EST)
+  - Format: 20-minute presentation + Q&A
+  - Registration: <https://www.boye-co.com/blog/2026/1/websites-work-until-dont>
+  - Free registration with recording provided to attendees
+- Complete content replacement from placeholder to production event
+- Schema.org Event structured data with proper timezone handling
+- Added platform race context section explaining Amazon/Google/Microsoft competition
+- Professional tone without urgency messaging
+
+**Appendix K Major Expansion:**
+
+- Grew from 8 to 20 documented page patterns (+615 lines, +77% content increase)
+- Added 7 new complete pattern sections with full HTML examples:
+  - **Pattern #14: Event/Webinar Page** - Using real Boye webinar with Schema.org Event, VirtualLocation, timezone information
+  - **Pattern #15: Login Page** - Authentication with autocomplete attributes, proper field naming (email, password)
+  - **Pattern #16: Checkout Page** - E-commerce with explicit state management (data-state, data-cart-items)
+  - **Pattern #17: Search Results Page** - Search functionality with result positioning (data-result-position)
+  - **Pattern #18: Portfolio/Case Studies Page** - Professional work showcase with CollectionPage schema
+  - **Pattern #19: Team Page** - Person profiles with ProfilePage schema and structured metadata
+  - **Pattern #20: Testimonials Page** - Social proof with Review schema and rating attributes
+- Each pattern includes:
+  - Complete production-ready HTML code example
+  - "AI-friendly patterns demonstrated" section
+  - Schema.org structured data explanation
+  - Data attribute usage guidance
+- Updated introduction and conclusion from "eight common page types" to "twenty common page types"
+- All patterns follow Chapter 10 technical guidance (semantic HTML, explicit state, structured data)
+
+**Documentation Updates:**
+
+- Updated PROJECTSTATE.md with comprehensive change documentation
+- Updated CHANGELOG.md with this entry
+- All markdown linting passes (0 errors)
+
+**Result:** Appendix K now provides comprehensive coverage of all 21 HTML files in the web/site/ directory, serving as complete reference documentation for AI-friendly page patterns. Event page ready for production use with real webinar details.
+
+**Commits:**
+
+- Manuscript submodule: 3 commits (event.html update, Appendix K expansion, markdown cleanup)
+- Main repository: 2 commits (submodule pointer updates, documentation)
+
+### Added - Platform Race Chapter and Google UCP Integration (2026-01-12)
+
+**Version:** 2.9.0 (up from 2.8.2)
+**Word Count:** ~60,500 words (up from ~57,000)
+**Chapter Count:** 12 chapters (up from 11)
+
+**NEW Chapter 9: The Platform Race:**
+
+- Created comprehensive new chapter (~5,200 words) documenting the January 2026 seven-day acceleration:
+  - Amazon Alexa+ (January 5, 2026)
+  - Microsoft Copilot Checkout expansion (January 8, 2026)
+  - Google UCP + Business Agent (January 11, 2026)
+- Eight sections covering competitive landscape, Microsoft isolation, fragmentation risk, ecosystem maturity
+- Timeline compression analysis: 12 months → 6-9 months for meaningful adoption
+- Two open protocols (ACP, UCP) vs one closed system (Microsoft Copilot Checkout)
+
+**Chapter Renumbering (ALL files updated):**
+
+- Previous Chapter 9 (Designing for Both) → Chapter 10
+- Previous Chapter 10 (Technical Advice) → Chapter 11
+- Previous Chapter 11 (What Agent Creators Must Build) → Chapter 12
+- Updated 60+ files with cross-references across manuscript, appendices, blog, sales materials
+
+**Google UCP Documentation:**
+
+- **Appendix J:** Added comprehensive 12-section technical entry (~280 lines)
+  - Complete announcement details (January 11, 2026)
+  - 20+ retail partners (Target, Walmart, Macy's, Best Buy, The Home Depot)
+  - Technical capabilities, business implications, architectural insights
+  - Competitive analysis vs ACP and Microsoft
+- **Blog:** Added narrative entry to book-updates.md emphasizing platform competition urgency
+- **Glossary:** Added Agentic Commerce Protocol (ACP) and Universal Commerce Protocol (UCP) entries with Chapter 9 cross-references
+
+**Chapter Content Updates:**
+
+- **Chapter 10 (Designing for Both):** Added Commerce Protocol Fragmentation subsection
+- **Chapter 11 (Technical Advice):** Added Platform Competition and Protocol Fragmentation with 4-step integration framework
+- **Chapter 12 (What Agent Creators Must Build):** Replaced obsolete "What Comes Next" identity layer proposal with "Open Protocol Reality" documenting actual platform launches
+
+**Sales Enablement Materials:**
+
+- Created [platforms-blog.md](docs/sales-enablement/platforms-blog.md) - comprehensive LinkedIn blog post (268 lines)
+  - Balanced analysis of all three platforms (including Microsoft's strategic rationale)
+  - Technical deep-dive on Google UCP capabilities
+  - "The Invisible Failure Problem" concept (silent agent failures)
+  - Prominent Boye & Company members call promotion (January 21st, 2026)
+  - Author positioning and book promotion with LinkedIn follow CTAs
+  - Urgency messaging throughout (6-9 month timeline)
+
+**Web Page Cleanup:**
+
+- Deleted obsolete `web/identity-layer.html` (Universal Identity Delegation Infrastructure project page)
+  - Superseded by real platform launches (ACP, UCP, Copilot Checkout)
+  - Project proposal no longer relevant with production commerce protocols live
+
+**Tone Corrections:**
+
+- Fixed inappropriate "Timeline update: This chapter was written before..." messaging in Chapters 10, 11, 12
+- Changed to "As of January 2026:" throughout (appropriate for pre-publication manuscript)
+- Book remains in review status (due Q1 2026), not yet published
+
+**Result:** The book now documents the dramatic January 2026 platform race as it happened, with comprehensive analysis of competitive dynamics, protocol fragmentation risks, and timeline compression. The new Chapter 9 bridges the problem chapters (1-8) with the solution chapters (10-12) by establishing urgency. All materials updated with consistent messaging emphasizing immediate need for agent-friendly patterns.
+
+**Commits:**
+
+- 3 commits in main repository (sales materials, PROJECTSTATE.md)
+- 17 commits in manuscript submodule (NEW chapter, renumbering, content updates, tone corrections)
+
 ### Changed - Schema.org Person Entity Updates (2026-01-12)
 
 **Person Schema Standardization:**

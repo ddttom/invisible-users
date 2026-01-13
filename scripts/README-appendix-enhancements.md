@@ -106,7 +106,7 @@ node scripts/enhance-appendix-html.js appendix-a.html appendix-b.html appendix-i
 - `scripts/enhance-appendix-html.js` - Node.js post-processor (NEW)
 - `scripts/README-appendix-enhancements.md` - This file (NEW)
 
-### Generated Files (in `invisible-users/manuscript/web/`)
+### Generated Files (in `packages/manuscript/manuscript/web/`)
 
 - `appendix-index.html` - Landing page with TOC
 - `appendix-a.html` through `appendix-j.html` - Individual appendices
@@ -150,7 +150,7 @@ Test on a single file:
 
 ```bash
 # Create test copy
-cp invisible-users/manuscript/web/appendix-a.html /tmp/test.html
+cp packages/manuscript/manuscript/web/appendix-a.html /tmp/test.html
 
 # Enhance
 node scripts/enhance-appendix-html.js /tmp/test.html
