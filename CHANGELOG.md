@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - Reviewer Notice on For Reviewers Page (2026-01-13)
+
+Added "Review Copy Status" notice to for-reviewers.html informing reviewers that the PDF is frozen for review (except critical bugs). Directs them to news.html for industry updates and clarifies manuscript will be revised before publication.
+
 ### Changed - Git Workflow Guide for AI Agents (2026-01-13)
 
 Created comprehensive GIT-README.md to help AI agents safely work with dual-repository structure (main repo + submodule). Addresses issues with agents corrupting git submodule pointers.
@@ -35,7 +39,8 @@ Fixed critical contrast violations in news.html - all UI elements now meet WCAG 
 
 ## Summary by Date
 
-### January 13, 2026 (6 changes)
+### January 13, 2026 (7 changes)
+- Reviewer notice on for-reviewers page
 - Git workflow guide for AI agents
 - HTML tag escaping
 - Automatic file copying
