@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Automatic File Copying to Output Directory (2026-01-13)
+
+Enhanced build scripts to automatically copy generated files to external output directory when it exists.
+
+**Build Script Enhancements:**
+
+- **PDF Generation (`pdf:generate`):** Modified to automatically copy `the-invisible-users.pdf` to `/Users/tomcranstoun/Documents/GitHub/allaboutV2/invisible-users` after successful generation
+- **Web Files (`pdf:appendix`):** Modified `scripts/generate-appendix-html.sh` to copy all 18 generated web files to the same output directory
+- **Graceful Fallback:** Both scripts check if output directory exists using `[ -d ... ]` conditional
+- **User Feedback:** Provides informative messages indicating whether files were copied or directory was missing
+- **No Breaking Changes:** Scripts never fail due to missing output directory - always succeed in generating files
+
+**Files Modified:**
+
+- `package.json` - Updated `pdf:generate` script with conditional copy logic
+- `scripts/generate-appendix-html.sh` - Added copy section after sitemap generation
+- `CLAUDE.md` - Documented automatic copying behavior for both commands
+- `README.md` - Updated command descriptions with auto-copy notes
+- `PROJECTSTATE.md` - Added current status and PDF Generation section updates
+
+**Benefits:**
+
+- Eliminates manual file copying step after generation
+- Maintains backward compatibility (works whether output directory exists or not)
+- Clear user feedback about copy operation status
+- Consistent workflow for both PDF and web file generation
+
 ### Fixed - Code Review Issues and Backwards Compatibility (2026-01-13)
 
 **Code Review Fixes:**
