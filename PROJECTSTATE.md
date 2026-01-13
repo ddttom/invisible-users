@@ -56,7 +56,7 @@ All projects share dependency management and build scripts via npm workspaces.
   - **Kindle Format** (`pdf:kindle`) - 6"×9" KDP-ready paperback format, production-ready (no review footer)
   - **Simple Format** (`pdf:simple`) - Basic PDF without cover or footer
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
-  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 16 files (index.html, appendix-index.html, news.html, faq.html, llms.txt, sitemap.xml, 11 appendix pages)
+  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 18 files (index.html, appendix-index.html, news.html, faq.html, llms.txt, sitemap.xml, 12 appendix pages A-L)
 - **Web Pages:**
   - **Location** (`packages/manuscript/manuscript/web/`) - Contains both manually maintained files and generated appendices
   - **News** (`web/news.html`) - Project news and updates (manually maintained)

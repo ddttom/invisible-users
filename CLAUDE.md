@@ -60,8 +60,10 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ├── PR_TEMPLATE.md
 ├── package.json              # Monorepo workspace configuration
 ├── llms.txt                  # Repository llms.txt file
-├── docs/                     # Business and sales materials
-│   └── sales-enablement/     # Sales materials, pitch decks, business plan
+├── docs/                     # Documentation and architecture
+│   ├── doc-architecture.md         # Repository restructure documentation with Mermaid diagrams
+│   ├── web-audit-architecture.md   # Web Audit Suite architecture documentation
+│   └── sales-enablement/           # Sales materials, pitch decks, business plan
 ├── scripts/                  # Build scripts
 ├── packages/                 # Monorepo packages
 │   ├── manuscript/           # Book manuscript and materials
