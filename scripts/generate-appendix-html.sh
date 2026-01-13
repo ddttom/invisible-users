@@ -311,6 +311,16 @@ echo -e "${BLUE}Generating sitemap.xml...${NC}"
 node "$SCRIPTS_DIR/generate-sitemap.js"
 echo -e "${GREEN}✓ Generated sitemap.xml${NC}"
 
+# Copy all files to output folder if it exists
+COPY_TARGET="/Users/tomcranstoun/Documents/GitHub/allaboutV2/invisible-users"
+if [ -d "$COPY_TARGET" ]; then
+    echo -e "${BLUE}Copying all web files to allaboutV2...${NC}"
+    cp -r "$OUTPUT_DIR"/* "$COPY_TARGET/"
+    echo -e "${GREEN}✓ All files copied to allaboutV2/invisible-users/${NC}"
+else
+    echo -e "${BLUE}Note: Output folder does not exist, files remain in $OUTPUT_DIR${NC}"
+fi
+
 # Summary
 echo ""
 echo -e "${GREEN}════════════════════════════════════════${NC}"
