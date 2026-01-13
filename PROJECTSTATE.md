@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-12 (Added For Reviewers Page)
+**Last Updated:** 2026-01-13 (Removed Identity Delegation Project references + news.html accessibility improvements)
 
 ### Monorepo Structure
 
@@ -21,11 +21,18 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~60,666 words (core manuscript: preface + 12 chapters + The End + Glossary) - increased by 166 words
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Removed Identity Delegation framework and GitHub repository links (2026-01-12):
-  - **Identity Delegation Removal:** The Identity Delegation framework concept has been removed from the book and all web materials. Removed all references from web/index.html, web/faq.html, and web/news.html including navigation links, FAQ entries, and project announcements.
-  - **GitHub Links Removal:** Repository is private and not publicly accessible. Removed all GitHub repository links from FAQ page (Related Pages section, code examples list, footer), news page (Related Resources section, footer), and web index page.
-  - **Content Updates:** News page simplified to single "Book Publication Announcement" article. FAQ page updated with appendices and FAQ links in Related Resources. All Schema.org structured data updated to reflect removals.
-  - **Previous Change:** Broadened audience descriptions (preface, reading guide, executive summary, web index) to reflect wider stakeholder ecosystem with 7 distinct reading paths.
+- **Latest Change:** Removed Identity Delegation Infrastructure Project references and improved news.html accessibility (2026-01-13):
+  - **Project References Removal:** Removed all references to the discontinued Identity Delegation Infrastructure Project and identity-layer.html page from:
+    - Repository documentation (README.md, docs/sales-enablement/PITCH.md)
+    - Web materials (web/news.html Related Resources)
+    - Talk materials (talks/members-call/talk.md, talk-slides.js)
+    - Code examples (code-examples/identity-delegation-README.md, identity-delegation-worker.js)
+  - **Accessibility Improvements (web/news.html):** Fixed WCAG 2.1 AA contrast issues and aligned all colors with appendix.css design system:
+    - Fixed critical tag contrast failure: 3.2:1 → 8.5:1 (light blue on dark blue → white on blue)
+    - Improved news date contrast: 4.6:1 → 8.3:1 (lighter grey → darker grey)
+    - Updated all blues to match appendix.css standard (#0066cc)
+    - All UI elements now meet or exceed WCAG AA 4.5:1 minimum contrast
+  - **Previous Change:** Removed Identity Delegation framework and GitHub repository links from web/index.html, web/faq.html, web/news.html (2026-01-12)
 - **Illustrations:** 13 SVG illustrations complete (11 chapters + cover design + executive summary decision tree)
 - **Target Audiences:** Four primary audiences with 7 distinct reading paths
   - **Web Professionals & Engineers:** Expanded to include product owners, project managers, UX designers, content strategists, and QA engineers
@@ -49,7 +56,7 @@ All projects share dependency management and build scripts via npm workspaces.
   - **Kindle Format** (`pdf:kindle`) - 6"×9" KDP-ready paperback format, production-ready (no review footer)
   - **Simple Format** (`pdf:simple`) - Basic PDF without cover or footer
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
-  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 17 files (index.html, appendix-index.html, news.html, faq.html, llms.txt, sitemap.xml, 11 appendix pages including new Appendix L)
+  - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 10 pattern enhancement, generates 16 files (index.html, appendix-index.html, news.html, faq.html, llms.txt, sitemap.xml, 11 appendix pages)
 - **Web Pages:**
   - **Location** (`packages/manuscript/manuscript/web/`) - Contains both manually maintained files and generated appendices
   - **News** (`web/news.html`) - Project news and updates (manually maintained)
