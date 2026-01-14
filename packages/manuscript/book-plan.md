@@ -450,6 +450,9 @@ All materials located in `docs/sales-enablement/`:
 
 | Material | Status | Description |
 | -------- | ------ | ----------- |
+| web/book.html | ✅ | Book preview page with chapter highlights, sample content, and webinar notice |
+| web/faq.html | ✅ | Frequently asked questions about the book |
+| web/appendix-index.html | ✅ | Comprehensive appendix navigation page |
 | llms.txt | ✅ | AI agent guidance file with repository documentation |
 
 ### Standalone Guides
@@ -609,9 +612,12 @@ Real-world llms.txt example:
     │   ├── appendix-k-common-page-patterns.md         # Appendix K source (~14,200 words)
     │   ├── appendix-l-proposed-ai-metadata-patterns.md # Appendix L source (~3,000 words)
     │   ├── web/                                       # Generated HTML appendices (published online)
-    │   │   ├── index.html       # Appendices landing page
-    │   │   ├── llms.txt         # AI agent discovery file
-    │   │   ├── news.html        # Public-facing industry developments page (post-publication)
+    │   │   ├── index.html           # Appendices landing page
+    │   │   ├── book.html            # Book preview with chapter highlights and webinar notice
+    │   │   ├── faq.html             # Frequently asked questions
+    │   │   ├── appendix-index.html  # Comprehensive appendix navigation
+    │   │   ├── news.html            # Public-facing industry developments page (post-publication)
+    │   │   ├── llms.txt             # AI agent discovery file
     │   │   └── appendix-{a-l}.html  # 12 individual appendix pages
     │   ├── agent-friendly-starter-kit/              # Code examples (good/ vs bad/)
     │   ├── code-examples/                           # Production-ready code implementations
