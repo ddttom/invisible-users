@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-13 (Escaped HTML tags in code examples)
+**Last Updated:** 2026-01-14 (Added book preview page with webinar notice)
 
 ### Monorepo Structure
 
@@ -21,7 +21,16 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~60,666 words (core manuscript: preface + 12 chapters + The End + Glossary) - increased by 166 words
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Escaped HTML tags in markdown code examples (2026-01-13):
+- **Latest Change:** Added book preview page with webinar notice (2026-01-14):
+  - **New Book Preview Page:** Created web/book.html featuring six chapter highlights with compelling excerpts from chapters 1, 2, 6, 9, 10, and 12
+  - **Webinar Integration:** Added time-aware webinar notice for Boye & Co webinar "Websites That Work Perfectly - Until They Don't" (Jan 21, 2026, 14:00-14:30 London) that automatically hides after event date
+  - **Visual Design:** Blue gradient header and design system matching index.html with full mobile responsiveness
+  - **Schema.org Data:** Complete Book structured data with author, publisher, genre information
+  - **AI-Friendly Patterns:** Implemented all Chapter 10 technical patterns (AI meta tags, semantic HTML, explicit state attributes)
+  - **Navigation Updates:** Added links to book.html from index.html, faq.html, and sitemap.xml (priority 0.95)
+  - **Contact Options:** Both mailto link with pre-filled message and visible email address for early access requests
+  - **Submodule commit:** 687aa36 in manuscript repository
+- **Previous Change:** Escaped HTML tags in markdown code examples (2026-01-13):
   - **HTML Tag Escaping:** Replaced literal `<details>` and `<summary>` tags with HTML entities (`&lt;` and `&gt;`) in markdown code blocks
   - **Files Updated:** 6 files across appendices, chapters, and presentation materials
   - **Purpose:** Prevents HTML tags from being rendered as actual HTML elements in documentation
