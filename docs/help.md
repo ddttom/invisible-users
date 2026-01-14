@@ -63,7 +63,7 @@ A powerful new navigation panel appears on the left side of the overlay:
 The top bar contains all your navigation and utility controls:
 
 | Button | Icon | Position | Function |
-|--------|------|----------|----------|
+| ------ | ---- | -------- | -------- |
 | **Home** | 🏠 | Left | Jump to the first page/cell or markdown file |
 | **Tree Toggle** | ◄/► | Left | Hide/show the navigation tree panel |
 | **History** | 🕘 | Right | View your navigation history (last 25 items) |
@@ -253,7 +253,7 @@ Shows all markdown files linked in the notebook:
 
 Bookmarks are stored in your browser's localStorage using the pattern:
 
-```
+```text
 ipynb-bookmarks-{notebook-path}
 ```
 
@@ -295,7 +295,7 @@ The Viewer automatically tracks your navigation history for each notebook sessio
 ### History vs Bookmarks
 
 | Feature | History | Bookmarks |
-|---------|---------|-----------|
+| ------- | ------- | --------- |
 | **Automatic** | ✅ Yes | ❌ No (manual) |
 | **Limit** | 25 items per notebook | Unlimited |
 | **Persistence** | Session only (per notebook) | Permanent (localStorage) |
@@ -312,16 +312,16 @@ Make navigation faster with keyboard shortcuts:
 ### Paged Overlay
 
 | Key | Action |
-|-----|--------|
+| --- | ------ |
 | **Arrow Left** (←) | Previous page |
 | **Arrow Right** (→) | Next page |
 | **Escape** | Close overlay |
 
 ### All Overlays
 
-| Key | Action |
-|-----|--------|
-| **Escape** | Close the topmost overlay |
+| Key        | Action                       |
+| ---------- | ---------------------------- |
+| **Escape** | Close the topmost overlay    |
 
 ### Tips
 

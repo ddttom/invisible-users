@@ -36,6 +36,7 @@ Fixed critical contrast violations in news.html - all UI elements now meet WCAG 
 ## Summary by Date
 
 ### January 13, 2026 (6 changes)
+
 - Git workflow guide for AI agents
 - HTML tag escaping
 - Automatic file copying
@@ -44,7 +45,9 @@ Fixed critical contrast violations in news.html - all UI elements now meet WCAG 
 - WCAG accessibility improvements
 
 ### January 12, 2026 (19 changes)
+
 Major repository restructure:
+
 - Web files consolidation (for-reviewers, news, FAQ pages)
 - Monorepo structure implementation
 - Protocol landscape updates (ACP)
@@ -54,6 +57,7 @@ Major repository restructure:
 - Platform vendor messaging
 
 ### January 11, 2026 (7 changes)
+
 - `/news` skill with verification
 - Perplexity Comet entry
 - ACP additions
@@ -61,6 +65,7 @@ Major repository restructure:
 - Documentation updates
 
 ### January 10, 2026 (11 changes)
+
 - Publication status corrections
 - Git hooks enhancements
 - New appendices (H: llms.txt, I: Darwin case study)
@@ -68,18 +73,21 @@ Major repository restructure:
 - FAQ improvements
 
 ### January 9, 2026 (8 changes)
+
 - Chapter 9 "The Platform Race" (~5,700 words)
 - Reading paths expansion
 - Sitemap generation
 - llms.txt additions
 
 ### January 8, 2026 (4 changes)
+
 - Appendix automation
 - HTML enhancement pipeline
 - PDF improvements
 - Chapter 11 refinements
 
 ### January 7, 2026 and earlier (2 changes)
+
 - Chapter 10 restructure (~8,350 words)
 - Initial repository setup
 
