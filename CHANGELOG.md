@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Book Preview Page with Webinar Notice (2026-01-14)
+
+Created new web/book.html as book teaser page featuring six chapter highlights with compelling excerpts, time-aware webinar announcement, Schema.org Book structured data, and AI-friendly meta tags. Updated navigation links in index.html, faq.html, and sitemap.xml. Page implements all Chapter 10 technical patterns with blue gradient design matching index.html and mobile responsiveness.
+
 ### Changed - Reviewer Notice on For Reviewers Page (2026-01-13)
 
 Added "Review Copy Status" notice to for-reviewers.html informing reviewers that the PDF is frozen for review (except critical bugs). Directs them to news.html for industry updates and clarifies manuscript will be revised before publication.
@@ -38,6 +42,10 @@ Removed all references to discontinued Identity Delegation Infrastructure Projec
 Fixed critical contrast violations in news.html - all UI elements now meet WCAG AA standards.
 
 ## Summary by Date
+
+### January 14, 2026 (1 change)
+
+- Book preview page with webinar notice
 
 ### January 13, 2026 (7 changes)
 - Reviewer notice on for-reviewers page
