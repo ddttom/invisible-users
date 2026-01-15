@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Commit and Push Command for All Repositories (2026-01-15)
+
+Added `npm run commit-push` command with interactive script ([scripts/commit-and-push-all.sh](scripts/commit-and-push-all.sh)) to handle commits and pushes across both main repository and manuscript submodule. Script ensures proper workflow: commits and pushes submodule first, then updates submodule pointer in main repo. Interactive prompts for commit messages with option to skip. Includes comprehensive documentation in CLAUDE.md with example usage.
+
 ### Added - Meta Tag Validation Scoring in Web Audit Suite (2026-01-15)
 
 Web Audit Suite includes comprehensive meta tag validation and scoring in LLM suitability analysis. Social media meta tags (Open Graph, Twitter Card) contribute +20 points, SEO meta tags (robots, keywords, theme-color) contribute +5 points, and reading time metadata (timeRequired, educationalLevel, inLanguage) contributes +10 points to the ESSENTIAL_SERVED score. LLMCollector analyzes all meta tag types, scoring weights configure point allocation, LLMScorer calculates scores, and all three LLM reports (general, frontend, backend) include validation columns. Documentation covers Appendix A (Recipe 12 scoring breakdown), META-TAG-ENHANCEMENTS.md (section 11 with Web Audit Suite scoring details), IMPLEMENTATION-SUMMARY.md (scoring contribution summary), FEATURES.md (scoring categories), and README.md (feature list). ESSENTIAL_SERVED category: 105 points maximum.
@@ -47,8 +51,9 @@ Fixed critical contrast violations in news.html - all UI elements now meet WCAG 
 
 ## Summary by Date
 
-### January 15, 2026 (1 change)
+### January 15, 2026 (2 changes)
 
+- Commit and push command for all repositories
 - Meta tag validation scoring in Web Audit Suite
 
 ### January 14, 2026 (1 change)

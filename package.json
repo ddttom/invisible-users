@@ -24,7 +24,8 @@
     "audit:start": "npm run start -w packages/web-audit-suite --",
     "audit:test": "npm test -w packages/web-audit-suite",
     "audit:lint": "npm run lint -w packages/web-audit-suite",
-    "audit:install": "npm install -w packages/web-audit-suite"
+    "audit:install": "npm install -w packages/web-audit-suite",
+    "commit-push": "bash scripts/commit-and-push-all.sh"
   },
   "keywords": [
     "AI",

@@ -181,6 +181,9 @@ npm run pdf:appendix        # Generate individual HTML pages for each appendix
 
 # Chapter status
 npm run status              # Show all chapter files
+
+# Commit and push all repositories
+npm run commit-push         # Interactive commit and push for both main repo and submodule
 ```
 
 **HTML Appendix Enhancement:** The `pdf:appendix` command automatically enhances Pandoc-generated HTML with Chapter 10 technical patterns via [scripts/enhance-appendix-html.js](scripts/enhance-appendix-html.js). It also generates a sitemap.xml file for search engine discovery via [scripts/generate-sitemap.js](scripts/generate-sitemap.js). See [scripts/README-appendix-enhancements.md](scripts/README-appendix-enhancements.md) for details.
@@ -784,6 +787,46 @@ The manuscript directory is a git submodule pointing to:
 - Read operations work as expected
 - Write operations to manuscript files should be done through the manuscript repository
 - When reading manuscript content, be aware it's maintained separately
+
+### Commit and Push All Repositories
+
+**Use `npm run commit-push` for easy commits across both repositories.**
+
+This interactive command ([scripts/commit-and-push-all.sh](scripts/commit-and-push-all.sh)) handles the proper workflow:
+
+1. **Checks manuscript submodule** for changes first
+   - Shows status of any modified/untracked files
+   - Prompts for commit message (or press Enter to skip)
+   - Commits and pushes to submodule remote if message provided
+
+2. **Checks main repository** for changes
+   - Shows status including submodule pointer changes
+   - Prompts for commit message (or press Enter to skip)
+   - Commits and pushes to main remote if message provided
+
+**Why this order matters:** The submodule must be committed and pushed FIRST. Then the main repository commits the updated submodule pointer. This ensures the main repo always points to commits that exist on the remote.
+
+**Example usage:**
+
+```bash
+npm run commit-push
+
+# Output:
+# 🔍 Checking for changes...
+# 📝 Submodule has changes:
+#  M chapter-01-the-invisible-failure.md
+# Enter commit message for manuscript submodule: Fix typo in chapter 1
+# 📦 Committing submodule changes...
+# ⬆️  Pushing submodule to remote...
+# ✅ Submodule committed and pushed
+#
+# 📝 Main repository has changes:
+#  M packages/manuscript/manuscript
+# Enter commit message for main repository: Update manuscript submodule pointer
+# 📦 Committing main repository changes...
+# ⬆️  Pushing main repository to remote...
+# ✅ Main repository committed and pushed
+```
 
 ### Git Directory Navigation
 
