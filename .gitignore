@@ -6,7 +6,12 @@ node_modules/
 Thumbs.db
 
 # Editor files
-.vscode/
+# VS Code workspace settings - commit recommended config, ignore personal settings
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
 .idea/
 *.swp
 *~

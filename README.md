@@ -4,6 +4,8 @@
 
 A practical guide to the collision between modern web design and AI agents, with a production-ready implementation tool.
 
+**New to this project?** Start with [ONBOARDING.md](ONBOARDING.md) for a complete setup guide.
+
 ## About This Repository
 
 This repository contains two integrated projects working together to address AI agent compatibility:
@@ -351,7 +353,81 @@ A critical security insight: in-browser agents inherit authenticated sessions ra
 - **Configurable Thresholds:** Customize pass/fail criteria
 - **Resume Capability:** Continue from existing results
 
+## Development Environment
+
+This repository includes comprehensive VS Code workspace configuration for an optimized development experience:
+
+### VS Code Setup
+
+The [.vscode/](.vscode/) directory contains:
+
+- **[settings.json](.vscode/settings.json)** - Workspace settings with ESLint, Markdownlint, Prettier integration
+- **[extensions.json](.vscode/extensions.json)** - Recommended extensions for this project
+- **[tasks.json](.vscode/tasks.json)** - Quick-access tasks for common operations
+- **[launch.json](.vscode/launch.json)** - Debug configurations for Web Audit Suite
+
+### Quick Access Tasks
+
+Press **Cmd+Shift+P** → "Tasks: Run Task" to access:
+
+**Book/Manuscript:**
+
+- Book: Word Count
+- Book: Generate PDF
+- Book: Generate Kindle PDF
+- Book: Generate HTML Appendices
+- Book: Generate Illustrations
+
+**Code Quality:**
+
+- Markdown: Lint and Fix (Cmd+Shift+B default)
+- Web Audit Suite: Lint
+
+**Development:**
+
+- Web Audit Suite: Start
+- Web Audit Suite: Start with URL (prompts for custom URL)
+- Web Audit Suite: Test
+
+**Git Workflow:**
+
+- Git: Commit and Push All
+
+### Debugging
+
+Press **F5** to start debugging with these configurations:
+
+- Web Audit Suite: Debug (with example URL)
+- Web Audit Suite: Debug with Custom URL (prompts for input)
+- Web Audit Suite: Debug Tests
+- Web Audit Suite: Debug Current Test File
+- Node: Launch Current File
+
+Set breakpoints with **F9**, step over with **F10**, step into with **F11**.
+
+### Formatting and Linting
+
+- **Auto-formatting on save**: Prettier for JavaScript/JSON, Markdownlint for Markdown
+- **ESLint**: Automatic linting for Web Audit Suite code
+- **EditorConfig**: Cross-editor consistency ([.editorconfig](.editorconfig))
+
+### Extension Management
+
+See [docs/vscode-extension-cleanup.md](docs/vscode-extension-cleanup.md) for:
+
+- List of 24 recommended extensions
+- 100+ extensions to disable for better performance
+- Performance optimization guide
+
+First-time setup: VS Code will prompt to install recommended extensions automatically.
+
 ## Documentation
+
+### Getting Started
+
+- [ONBOARDING.md](ONBOARDING.md) - Complete developer onboarding guide (start here!)
+- [CLAUDE.md](CLAUDE.md) - AI agent instructions and comprehensive project guide
+- [GIT-README.md](GIT-README.md) - Git workflow guide for submodule management
 
 ### Book Documentation
 
@@ -367,6 +443,13 @@ A critical security insight: in-browser agents inherit authenticated sessions ra
 - [packages/web-audit-suite/docs/usermanual.md](packages/web-audit-suite/docs/usermanual.md) - User guide
 - [packages/web-audit-suite/docs/CONFIGURATION.md](packages/web-audit-suite/docs/CONFIGURATION.md) - Configuration reference
 - [packages/web-audit-suite/docs/FEATURES.md](packages/web-audit-suite/docs/FEATURES.md) - Feature overview
+
+### Development Environment Documentation
+
+- [docs/vscode-extension-cleanup.md](docs/vscode-extension-cleanup.md) - Extension management guide
+- [.vscode/settings.json](.vscode/settings.json) - Workspace configuration
+- [.prettierrc](.prettierrc) - Code formatting rules
+- [.editorconfig](.editorconfig) - Cross-editor settings
 
 ## Working with Git and Submodules
 

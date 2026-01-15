@@ -1,0 +1,52 @@
+{
+  "recommendations": [
+    // Essential for this project
+    "anthropic.claude-code",
+
+    // Linting and formatting
+    "dbaeumer.vscode-eslint",
+    "davidanson.vscode-markdownlint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+
+    // Markdown editing
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-emoji",
+    "bierner.markdown-mermaid",
+    "shd101wyy.markdown-preview-enhanced",
+
+    // Git integration
+    "eamodio.gitlens",
+    "donjayamanne.githistory",
+    "mhutchie.git-graph",
+
+    // Live preview
+    "ms-vscode.live-server",
+
+    // Path and import assistance
+    "christian-kohler.path-intellisense",
+    "christian-kohler.npm-intellisense",
+
+    // Error visualization
+    "usernamehw.errorlens",
+
+    // Todo tracking
+    "gruntfuggly.todo-tree",
+
+    // JSON and CSV viewing
+    "grapecity.gc-excelviewer",
+    "meezilla.json",
+
+    // Better code visualization
+    "oderwat.indent-rainbow",
+    "vscode-icons-team.vscode-icons"
+  ],
+  "unwantedRecommendations": [
+    // These are useful for other projects but not this one
+    "vscjava.vscode-java-pack",
+    "ms-dotnettools.csharp",
+    "ms-python.python",
+    "devsense.phptools-vscode",
+    "swiftlang.swift-vscode"
+  ]
+}
