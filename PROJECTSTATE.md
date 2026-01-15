@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-15 (Added meta tag validation scoring to Web Audit Suite)
+**Last Updated:** 2026-01-15 (Added VS Code workspace configuration and developer onboarding)
 
 ### Monorepo Structure
 
@@ -131,6 +131,30 @@ All projects share dependency management and build scripts via npm workspaces.
   - Tracked as submodule at `packages/manuscript/manuscript/`
 - **Submodule Initialization:** `git submodule update --init --recursive`
 - **Submodule Updates:** `git submodule update --remote packages/manuscript/manuscript`
+
+### Development Environment
+
+- **VS Code Workspace Configuration:** Complete professional setup in `.vscode/` directory
+  - **Settings** (`.vscode/settings.json`) - ESLint, Markdownlint, Prettier integration with auto-format on save
+  - **Extensions** (`.vscode/extensions.json`) - 24 recommended extensions (ESLint, Markdownlint, Prettier, Claude Code, GitLens, etc.)
+  - **Tasks** (`.vscode/tasks.json`) - 15 quick-access tasks for book generation, linting, Web Audit Suite operations, git workflow
+  - **Debug Configurations** (`.vscode/launch.json`) - 6 debug configurations for Web Audit Suite and Node.js debugging
+- **Code Formatting:**
+  - **Prettier** (`.prettierrc`) - Single quotes, 2-space tabs, 100-char line width
+  - **EditorConfig** (`.editorconfig`) - Cross-editor consistency settings
+  - **Prettier Ignore** (`.prettierignore`) - Excludes generated files and markdown
+- **Developer Onboarding:**
+  - **Onboarding Guide** (`ONBOARDING.md`) - 580-line comprehensive guide for new developers
+    - 5-minute quickstart with verification checklist
+    - Repository structure and submodule explanation
+    - Common development tasks and VS Code integration
+    - Troubleshooting common issues
+    - Project principles and next steps
+  - **Extension Management Guide** (`docs/vscode-extension-cleanup.md`) - Performance optimization guide identifying 100+ unnecessary extensions
+- **Documentation Updates:**
+  - README.md enhanced with Development Environment section
+  - Quick reference for tasks and debugging shortcuts
+  - Links to all configuration files and guides
 
 ### Code Quality
 
