@@ -63,7 +63,9 @@
       "Bash(git -C packages/manuscript/manuscript commit -m \"Remove cover PNG files from git tracking and revert .gitignore\")",
       "Bash(git -C packages/manuscript/manuscript status --short)",
       "Bash(git -C packages/manuscript/manuscript log --oneline -5)",
-      "Bash(git -C packages/manuscript/manuscript status -sb)"
+      "Bash(git -C packages/manuscript/manuscript status -sb)",
+      "Bash(git -C packages/manuscript/manuscript diff metadata.yaml metadata-kindle.yaml)",
+      "Bash(git -C packages/manuscript/manuscript commit -m \"Update PDF generation to use format-specific cover images\n\n- A4 PDF: Use A4-Cover.png \\(7.6MB\\) for review/distribution format\n- Kindle PDF: Use Kindle-Cover.png \\(231KB\\) for 6x9 KDP format\n- Added eso-pic package and titlepage to Kindle metadata\")"
     ],
     "deny": [],
     "ask": []
