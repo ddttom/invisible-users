@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-15 (Added VS Code workspace configuration and developer onboarding)
+**Last Updated:** 2026-01-15 (Added cover image download automation and todo.md documentation)
 
 ### Monorepo Structure
 
@@ -21,7 +21,16 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~60,666 words (core manuscript: preface + 12 chapters + The End + Glossary) - increased by 166 words
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 12 chapters complete (added NEW Chapter 9: The Platform Race)
-- **Latest Change:** Added book preview page with webinar notice (2026-01-14):
+- **Latest Change:** Added cover image download automation and todo.md documentation (2026-01-15):
+  - **Cover Image Automation:** Created scripts/download-cover-images.js to automatically download missing cover images (Profile.png, A4-Cover.png, Kindle-Cover.png)
+  - **Build Enhancement:** Updated illustrations:generate npm script to run download script before SVG conversion
+  - **No Dependencies:** Script uses only Node.js built-in modules (fs, https, path)
+  - **Idempotent Operation:** Safely skips existing files, handles redirects and errors gracefully
+  - **todo.md Documentation:** Added comprehensive usage guidelines to both CLAUDE.md files (main repo and manuscript submodule)
+  - **Usage Rules:** Documented that todo.md is user's personal task list, Claude must never execute tasks autonomously
+  - **Markdown Linting:** Fixed all pre-existing markdown linting issues in manuscript CLAUDE.md
+  - **Submodule commit:** 3dc05ff in manuscript repository
+- **Previous Change:** Added book preview page with webinar notice (2026-01-14):
   - **New Book Preview Page:** Created web/book.html featuring six chapter highlights with compelling excerpts from chapters 1, 2, 6, 9, 10, and 12
   - **Webinar Integration:** Added time-aware webinar notice for Boye & Co webinar "Websites That Work Perfectly - Until They Don't" (Jan 21, 2026, 14:00-14:30 London) that automatically hides after event date
   - **Visual Design:** Blue gradient header and design system matching index.html with full mobile responsiveness
