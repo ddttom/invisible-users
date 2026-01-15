@@ -50,7 +50,20 @@
       "Bash(pandoc:*)",
       "Bash(npx eslint:*)",
       "Bash(./node_modules/.bin/eslint:*)",
-      "Bash(./packages/web-audit-suite/node_modules/.bin/eslint:*)"
+      "Bash(./packages/web-audit-suite/node_modules/.bin/eslint:*)",
+      "Bash(git status:*)",
+      "Bash(git -C packages/manuscript/manuscript diff HEAD)",
+      "Bash(git -C packages/manuscript/manuscript add:*)",
+      "Bash(git -C packages/manuscript/manuscript commit -m \"Add SVG cover illustration for invisible users\")",
+      "Bash(git -C packages/manuscript/manuscript log --oneline -3)",
+      "Bash(git -C packages/manuscript/manuscript push -v origin main)",
+      "Bash(git -C packages/manuscript/manuscript ls-files illustrations/*Cover.png)",
+      "Bash(git -C packages/manuscript/manuscript ls-files:*)",
+      "Bash(git -C packages/manuscript/manuscript rm:*)",
+      "Bash(git -C packages/manuscript/manuscript commit -m \"Remove cover PNG files from git tracking and revert .gitignore\")",
+      "Bash(git -C packages/manuscript/manuscript status --short)",
+      "Bash(git -C packages/manuscript/manuscript log --oneline -5)",
+      "Bash(git -C packages/manuscript/manuscript status -sb)"
     ],
     "deny": [],
     "ask": []
