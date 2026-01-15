@@ -659,11 +659,14 @@ This project includes custom Claude Code configuration in the `.claude/` directo
 Three custom skills are available via the `/` command syntax:
 
 1. **`/step-commit`** - Systematic commit workflow
-   - Reviews all changes with git status and diff
+   - **CRITICAL**: Checks BOTH main repository AND manuscript submodule for changes
+   - If submodule has uncommitted changes, commits submodule FIRST, then updates pointer in main repo
+   - Reviews all changes with git status and git diff
    - Commits code changes
    - Runs linting and fixes errors
    - Reviews and updates documentation (README, CLAUDE.md, CHANGELOG.md)
    - Does NOT add attribution or "Generated with" messages
+   - **Dual-repository workflow**: Automatically handles submodule commits and pointer updates
 
 2. **`/md-fix`** - Markdown linting and auto-fix
    - Runs `npm run lint:markdown:fix` to auto-fix issues

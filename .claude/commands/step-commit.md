@@ -1,5 +1,7 @@
 Execute the systematic "step commit" workflow:
 
+**IMPORTANT**: This repository has dual git repositories (main + submodule). For comprehensive git workflow guidance, see GIT-README.md which explains safe patterns using `git -C` to avoid navigation errors.
+
 1. Initial Commit
    - Review all current changes with git status and git diff
    - **CRITICAL**: Check if git status shows `modified: packages/manuscript/manuscript (modified content, untracked content)` - this indicates submodule has uncommitted changes
@@ -8,11 +10,11 @@ Execute the systematic "step commit" workflow:
    - Do NOT add attribution or "Generated with" messages
 
 1a. Submodule Handling (if submodule shows modified content)
-   - Navigate to submodule: `cd packages/manuscript/manuscript`
-   - Run git status and git diff in submodule
-   - Stage and commit submodule changes
-   - Push submodule commits to remote
-   - Return to main repository: `cd /Users/tomcranstoun/Documents/GitHub/invisible-users`
+   - **See GIT-README.md "Workflow 3: Commit Changes in Both Repositories" for detailed guidance**
+   - Use `git -C packages/manuscript/manuscript` commands to avoid navigation issues
+   - Run git status and git diff in submodule: `git -C packages/manuscript/manuscript status`
+   - Stage and commit submodule changes: `git -C packages/manuscript/manuscript add -A && git -C packages/manuscript/manuscript commit -m "Message"`
+   - Push submodule commits to remote: `git -C packages/manuscript/manuscript push origin main`
    - Stage submodule pointer update: `git add packages/manuscript/manuscript`
    - Commit pointer update: `git commit -m "Update manuscript submodule with [description]"`
    - Continue with main repository workflow
