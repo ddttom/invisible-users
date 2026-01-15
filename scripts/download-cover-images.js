@@ -114,6 +114,21 @@ async function downloadCoverImages() {
     }
   }
 
+  // Check for back-cover.png (generated manually, not downloaded)
+  const backCoverPath = path.join(OUTPUT_DIR, 'back-cover.png');
+  if (!fs.existsSync(backCoverPath)) {
+    console.log('');
+    console.log('⚠️  back-cover.png is missing');
+    console.log('');
+    console.log('To generate back-cover.png:');
+    console.log('  1. Open packages/manuscript/manuscript/web/back-cover.html in a browser');
+    console.log('  2. Take a screenshot (full page screenshot recommended)');
+    console.log('  3. Save as back-cover.png in packages/manuscript/manuscript/illustrations/');
+    console.log('');
+  } else {
+    console.log(`✓ back-cover.png exists`);
+  }
+
   // Summary
   console.log('');
   console.log(`Summary: ${existingCount} existing, ${downloadedCount} downloaded, ${errorCount} failed`);

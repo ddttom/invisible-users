@@ -132,6 +132,17 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 
 **Note:** PNG illustrations are generated from SVG sources using `npm run illustrations:generate` and are not tracked in version control.
 
+**Illustration Generation Process:**
+
+The `npm run illustrations:generate` command performs these steps:
+
+1. **Downloads cover images** (if missing): Profile.png, A4-Cover.png, Kindle-Cover.png
+2. **Checks for back-cover.png**: This file must be generated manually by:
+   - Opening [packages/manuscript/manuscript/web/back-cover.html](packages/manuscript/manuscript/web/back-cover.html) in a browser
+   - Taking a full-page screenshot
+   - Saving as `back-cover.png` in `packages/manuscript/manuscript/illustrations/`
+3. **Converts SVG to PNG**: All .svg files in illustrations/ are converted to .png using ImageMagick
+
 ## Project Task List (todo.md)
 
 **Location:** `packages/manuscript/manuscript/todo.md`
@@ -1100,7 +1111,7 @@ Maintain consistent contact information across all projects:
 
 When creating web pages, marketing materials, or book covers that feature the author:
 
-- **Profile picture URL:** `https://allabout.network/media_126e99d56f06caf788bee715aff92281d2e31a206`
+- **Profile picture URL:** `https://allabout.network/media_126e99d56f06caf788bee715aff92281d2e31a206.png`
 - Used in: [back-cover.html](packages/manuscript/manuscript/web/back-cover.html), marketing materials
 - Format: Square profile image suitable for circular cropping
 - Usage: Reference this URL directly in HTML `<img>` tags or download for local use

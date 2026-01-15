@@ -171,7 +171,22 @@ npm run lint:markdown:fix
 
 # Generate PNG illustrations from SVG sources
 npm run illustrations:generate
+# Note: This downloads missing cover images, checks for back-cover.png,
+# and converts all SVG files to PNG. See details below.
 ```
+
+**About Illustration Generation:**
+
+The `npm run illustrations:generate` command:
+
+1. **Downloads cover images** if missing (Profile.png, A4-Cover.png, Kindle-Cover.png)
+2. **Checks for back-cover.png** - if missing, displays instructions to:
+   - Open `packages/manuscript/manuscript/web/back-cover.html` in a browser
+   - Take a full-page screenshot
+   - Save as `back-cover.png` in `packages/manuscript/manuscript/illustrations/`
+3. **Converts all SVG files** in illustrations/ to PNG using ImageMagick
+
+**Note:** ImageMagick is required for SVG conversion. Install with `brew install imagemagick` if needed.
 
 ### Generating PDFs
 
