@@ -792,6 +792,8 @@ The manuscript directory is a git submodule pointing to:
 
 **Use `npm run commit-push` for easy commits across both repositories.**
 
+**Note:** This command is for human users of the repository. Claude Code should NOT use this command - Claude should use the `/step-commit` skill instead, which provides proper review and validation workflows.
+
 This interactive command ([scripts/commit-and-push-all.sh](scripts/commit-and-push-all.sh)) handles the proper workflow:
 
 1. **Checks manuscript submodule** for changes first
