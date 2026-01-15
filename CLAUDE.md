@@ -89,11 +89,13 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   ├── web-audit-architecture.md   # Web Audit Suite architecture documentation
 │   └── sales-enablement/           # Sales materials, pitch decks, business plan
 ├── scripts/                  # Build scripts
+│   └── download-cover-images.js    # Downloads cover images for illustrations
 ├── packages/                 # Monorepo packages
 │   ├── manuscript/           # Book manuscript and materials
 │   │   ├── book-plan.md      # Master plan with chapter outlines and status
 │   │   ├── book-svg-style.md # SVG illustration style guide
 │   │   ├── manuscript/       # Complete manuscript content (git submodule)
+│   │   │   ├── todo.md       # Project task list (USER REFERENCE ONLY - see below)
 │   │   │   ├── [chapters, appendices, illustrations in separate repository]
 │   │   │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
 │   │   │   ├── code-examples/    # Production-ready code implementations
@@ -129,6 +131,54 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ```
 
 **Note:** PNG illustrations are generated from SVG sources using `npm run illustrations:generate` and are not tracked in version control.
+
+## Project Task List (todo.md)
+
+**Location:** `packages/manuscript/manuscript/todo.md`
+
+**CRITICAL: This file is the USER'S personal project task list and reference.**
+
+**Purpose:**
+
+- Contains URLs, notes, and reminders for various project tasks
+- Used by the user for planning and tracking different aspects of the solution
+- Content is ephemeral and changes frequently as the user works through different tasks
+- May contain URLs for images, assets, documentation links, or other resources
+
+**How Claude Code should interact with todo.md:**
+
+1. **NEVER execute tasks from todo.md autonomously**
+   - Claude must NOT treat items in todo.md as automatic instructions
+   - Claude must NOT implement tasks found in todo.md without explicit user direction
+
+2. **User must explicitly request action**
+   - The user will provide clear, direct instructions for any task they want Claude to perform
+   - If a task happens to be related to something in todo.md, the user will specify it explicitly
+   - Example: "Download the images referenced in todo.md and add them to illustrations/"
+
+3. **Reading todo.md is informational only**
+   - Claude may read todo.md to understand context if explicitly asked
+   - Claude should not proactively offer to complete tasks listed in todo.md
+   - Claude should not suggest implementing items from todo.md unless directly asked
+
+4. **todo.md is user-owned**
+   - This file belongs to the user's workflow
+   - Claude should not modify todo.md unless explicitly asked
+   - Claude should not assume the file structure or content format is stable
+
+**Example - Correct interaction:**
+
+```text
+User: "Download the cover images from the URLs in todo.md"
+Claude: [Reads todo.md, extracts URLs, downloads images as instructed]
+```
+
+**Example - Incorrect interaction:**
+
+```text
+Claude: [Reads todo.md] "I see you have some tasks listed. Would you like me to implement them?"
+→ This is WRONG - Claude should not proactively suggest implementing todo.md items
+```
 
 **Dual-File Appendix Structure:**
 
