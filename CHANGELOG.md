@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - PDF Generation Uses Format-Specific Covers (2026-01-15)
+
+Updated PDF generation metadata files to use appropriate cover images: A4 PDF (`npm run pdf:generate`) now uses A4-Cover.png (7.6MB), Kindle PDF (`npm run pdf:kindle`) now uses Kindle-Cover.png (231KB). Added eso-pic package and titlepage configuration to Kindle metadata for proper cover rendering. Submodule commit: 82195fd.
+
 ### Added - Commit and Push Command for All Repositories (2026-01-15)
 
 Added `npm run commit-push` command with interactive script ([scripts/commit-and-push-all.sh](scripts/commit-and-push-all.sh)) to handle commits and pushes across both main repository and manuscript submodule. Script ensures proper workflow: commits and pushes submodule first, then updates submodule pointer in main repo. Interactive prompts for commit messages with "tidy" as default when Enter is pressed. Includes comprehensive documentation in CLAUDE.md with example usage.
@@ -51,8 +55,9 @@ Fixed critical contrast violations in news.html - all UI elements now meet WCAG 
 
 ## Summary by Date
 
-### January 15, 2026 (2 changes)
+### January 15, 2026 (3 changes)
 
+- PDF generation uses format-specific covers
 - Commit and push command for all repositories
 - Meta tag validation scoring in Web Audit Suite
 
