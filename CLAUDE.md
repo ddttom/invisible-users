@@ -1096,6 +1096,15 @@ Maintain consistent contact information across all projects:
 - Email: <tom.cranstoun@gmail.com>
 - Website: <https://allabout.network>
 
+## Author Profile Resources
+
+When creating web pages, marketing materials, or book covers that feature the author:
+
+- **Profile picture URL:** `https://allabout.network/media_126e99d56f06caf788bee715aff92281d2e31a206`
+- Used in: [back-cover.html](packages/manuscript/manuscript/web/back-cover.html), marketing materials
+- Format: Square profile image suitable for circular cropping
+- Usage: Reference this URL directly in HTML `<img>` tags or download for local use
+
 ## Notes for Future Development
 
 - Book manuscript: Publication-ready (v2.5.1)
