@@ -126,3 +126,22 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 - Buttons without explicit background/color
 
 The hook blocks commits with violations and provides guidance on fixing them, including links to contrast checkers and references to the book's own examples. Integrated into `.claude/hooks/pre-commit.sh` to run automatically.
+
+## Step-Commit Must Check Submodule Changes
+
+**Rule** (2026-01-15): During `/step-commit` execution, I completed the entire workflow for the main repository but forgot to check if the manuscript submodule had uncommitted changes. User had to point out "hmm, the manuscript has not been step-commit" after I reported the workflow complete. Git status showed `modified: packages/manuscript/manuscript (modified content, untracked content)` in the main repo, which indicates the submodule has uncommitted changes, but I didn't process this information during the workflow.
+
+**What broke**: The `/step-commit` skill completed successfully for the main repository but left the submodule in an uncommitted state. This violates the purpose of the systematic commit workflow, which should ensure ALL changes across both repositories are committed.
+
+**Correct workflow for dual-repository setup**:
+
+1. Check `git status` in main repository - look for `modified: packages/manuscript/manuscript` indicator
+2. If submodule shows modified content, navigate to submodule: `cd packages/manuscript/manuscript`
+3. Run complete step-commit workflow IN the submodule (git status, diff, stage, commit, lint, push)
+4. Return to main repository: `cd /path/to/main/repo`
+5. Update submodule pointer: `git add packages/manuscript/manuscript && git commit -m "Update manuscript submodule pointer"`
+6. Push main repository
+
+**Pattern recognition**: When `git status` shows `modified: packages/manuscript/manuscript (modified content, untracked content)`, this means the submodule has uncommitted changes that need their own commit workflow BEFORE updating the submodule pointer.
+
+**Skill update needed**: The `/step-commit` skill should detect submodule changes and either handle them automatically or explicitly warn the user that submodule commits are required.

@@ -2,8 +2,20 @@ Execute the systematic "step commit" workflow:
 
 1. Initial Commit
    - Review all current changes with git status and git diff
+   - **CRITICAL**: Check if git status shows `modified: packages/manuscript/manuscript (modified content, untracked content)` - this indicates submodule has uncommitted changes
+   - If submodule has changes, handle it FIRST (see step 1a below)
    - Commit all current code changes with a clear, descriptive commit message
    - Do NOT add attribution or "Generated with" messages
+
+1a. Submodule Handling (if submodule shows modified content)
+   - Navigate to submodule: `cd packages/manuscript/manuscript`
+   - Run git status and git diff in submodule
+   - Stage and commit submodule changes
+   - Push submodule commits to remote
+   - Return to main repository: `cd /Users/tomcranstoun/Documents/GitHub/invisible-users`
+   - Stage submodule pointer update: `git add packages/manuscript/manuscript`
+   - Commit pointer update: `git commit -m "Update manuscript submodule with [description]"`
+   - Continue with main repository workflow
 
 2. Linting
    - Run lint on all changed files
