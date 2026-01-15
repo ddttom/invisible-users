@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-14 (Added book preview page with webinar notice)
+**Last Updated:** 2026-01-15 (Added meta tag validation scoring to Web Audit Suite)
 
 ### Monorepo Structure
 
@@ -99,7 +99,14 @@ All projects share dependency management and build scripts via npm workspaces.
 
 - **Version:** 1.0.0
 - **Status:** Production-ready
-- **Features:** Full AI agent compatibility analysis, detailed SEO/Performance/Accessibility reports, Dashboard generation, Historical tracking, Rate Limiting, Flexible Configuration (CLI/Env), **Agency White-labeling**, **Bulk Audit**
+- **Features:** Full AI agent compatibility analysis (including meta tag validation), detailed SEO/Performance/Accessibility reports, Dashboard generation, Historical tracking, Rate Limiting, Flexible Configuration (CLI/Env), **Agency White-labeling**, **Bulk Audit**
+- **Latest Change:** Meta tag validation scoring (2026-01-15):
+  - **Social Media Meta Tags:** +20 points to ESSENTIAL_SERVED score (Open Graph +8, Twitter Card +5, completeness +7)
+  - **SEO Meta Tags:** +5 points (robots, keywords, theme-color)
+  - **Reading Time Metadata:** +10 points (timeRequired +5, completeness +5 for timeRequired/educationalLevel/inLanguage)
+  - **LLM Reports:** 7 new CSV columns for meta tag validation metrics
+  - **ESSENTIAL_SERVED Category:** 105 points maximum (increased from 70)
+  - **Documentation:** Recipe 12 (Appendix A), FEATURES.md, README.md updated with scoring details
 - **Architecture:** Three-phase pipeline (URL collection, data collection, report generation), centralized configuration, modular utilities, **Dependency Injection (AuditContext)** for state management
 - **Testing:** Comprehensive test coverage (unit and integration)
 
