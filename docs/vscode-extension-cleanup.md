@@ -11,6 +11,7 @@ Your installed extensions were analyzed for relevance to this Node.js/Markdown p
 These extensions are essential for this project and are listed in [.vscode/extensions.json](../.vscode/extensions.json):
 
 ### Core Development
+
 - `anthropic.claude-code` - Claude Code integration
 - `dbaeumer.vscode-eslint` - ESLint for Web Audit Suite
 - `davidanson.vscode-markdownlint` - Markdown linting
@@ -18,17 +19,20 @@ These extensions are essential for this project and are listed in [.vscode/exten
 - `editorconfig.editorconfig` - EditorConfig support
 
 ### Markdown Editing
+
 - `yzhang.markdown-all-in-one` - Markdown shortcuts and tools
 - `bierner.markdown-emoji` - Emoji support in Markdown
 - `bierner.markdown-mermaid` - Mermaid diagram support
 - `shd101wyy.markdown-preview-enhanced` - Enhanced markdown preview
 
 ### Git Integration
+
 - `eamodio.gitlens` - Advanced Git integration
 - `donjayamanne.githistory` - Git history visualization
 - `mhutchie.git-graph` - Git graph visualization
 
 ### Development Tools
+
 - `ms-vscode.live-server` - Live preview for HTML appendices
 - `christian-kohler.path-intellisense` - Path autocomplete
 - `christian-kohler.npm-intellisense` - npm package autocomplete
@@ -36,6 +40,7 @@ These extensions are essential for this project and are listed in [.vscode/exten
 - `gruntfuggly.todo-tree` - TODO tracking
 
 ### Visualization
+
 - `grapecity.gc-excelviewer` - CSV/Excel viewing (for Web Audit Suite reports)
 - `meezilla.json` - JSON visualization
 - `oderwat.indent-rainbow` - Better indentation visibility
@@ -46,6 +51,7 @@ These extensions are essential for this project and are listed in [.vscode/exten
 These extensions are not relevant to this Node.js/Markdown project and should be disabled workspace-wide:
 
 ### Java Development (Not Used)
+
 - `vscjava.vscode-java-pack`
 - `vscjava.vscode-java-debug`
 - `vscjava.vscode-java-dependency`
@@ -57,12 +63,14 @@ These extensions are not relevant to this Node.js/Markdown project and should be
 - `dhruv.maven-dependency-explorer`
 
 ### .NET/C# Development (Not Used)
+
 - `ms-dotnettools.csdevkit`
 - `ms-dotnettools.csharp`
 - `ms-dotnettools.vscode-dotnet-runtime`
 - `wivuu.dotnetscriptr`
 
 ### PHP Development (Not Used)
+
 - `devsense.phptools-vscode`
 - `devsense.intelli-php-vscode`
 - `devsense.composer-php-vscode`
@@ -85,6 +93,7 @@ These extensions are not relevant to this Node.js/Markdown project and should be
 - `rifi2k.format-html-in-php`
 
 ### Swift/Xcode Development (Not Used)
+
 - `swiftlang.swift-vscode`
 - `alishobeiri.swift-development`
 - `dunstontc.vscode-swift-syntax`
@@ -96,12 +105,14 @@ These extensions are not relevant to this Node.js/Markdown project and should be
 - `mariomatheu.syntax-project-pbxproj`
 
 ### Python Development (Minimal Use)
+
 - `ms-python.python`
 - `ms-python.vscode-pylance`
 - `ms-python.debugpy`
 - `ms-python.vscode-python-envs`
 
 ### Adobe Experience Manager (Not Used)
+
 - `mansquatch.aem-component-builder`
 - `mansquatch.create-aem-clientlib`
 - `misonou.aemexplorer`
@@ -110,6 +121,7 @@ These extensions are not relevant to this Node.js/Markdown project and should be
 - `yinkai15.aemsync`
 
 ### Other Specialized Tools (Not Needed)
+
 - `dsanders11.vscode-electron-build-tools` - Electron development
 - `firefox-devtools.vscode-firefox-debug` - Firefox debugging
 - `google.vscode-mojom` - Chrome/Mojo development
@@ -119,6 +131,7 @@ These extensions are not relevant to this Node.js/Markdown project and should be
 - `ziglang.vscode-zig` - Zig language
 
 ### Duplicate AI Assistants (Already Have Claude Code)
+
 - `github.copilot` - GitHub Copilot
 - `github.copilot-chat` - GitHub Copilot Chat
 - `google.geminicodeassist` - Gemini Code Assist
@@ -146,6 +159,7 @@ This keeps the extension installed globally but disables it for this specific pr
 ## Performance Impact
 
 Disabling unnecessary extensions can significantly improve:
+
 - **Startup time**: Fewer extensions to load on launch
 - **Memory usage**: Less RAM consumed by inactive language servers
 - **Responsiveness**: Fewer background processes competing for resources
@@ -164,6 +178,7 @@ This approach maintains separate extension configurations without manually enabl
 ## Regular Maintenance
 
 Periodically review installed extensions:
+
 - Uninstall extensions you never use
 - Check for updated versions of active extensions
 - Remove duplicate functionality extensions
@@ -172,6 +187,7 @@ Periodically review installed extensions:
 ## Questions?
 
 If you're unsure about disabling a specific extension:
+
 - Check the extension's marketplace page for use cases
 - Verify it's not used by any npm scripts in package.json
 - Test disabling it and see if your workflow is affected
