@@ -5,6 +5,7 @@
 
 const fs = require('fs').promises;
 const path = require('path');
+const pageTypeDetector = require('../pageTypeDetector.js');
 
 /**
  * Generate Schema.org validation CSV report
@@ -24,12 +25,12 @@ async function generateSchemaValidationCSV(schemaValidation, outputDir, context)
       'Total Issues',
       'Total Warnings',
       'Schema Types',
-      'Summary'
+      'Summary',
     ].join(','));
 
-    schemaValidation.forEach(result => {
+    schemaValidation.forEach((result) => {
       const schemaTypes = result.schemas
-        ? result.schemas.map(s => s.type).join('; ')
+        ? result.schemas.map((s) => s.type).join('; ')
         : '';
 
       csvRows.push([
@@ -41,7 +42,7 @@ async function generateSchemaValidationCSV(schemaValidation, outputDir, context)
         result.totalIssues || 0,
         result.totalWarnings || 0,
         `"${schemaTypes}"`,
-        `"${result.summary || ''}"`
+        `"${result.summary || ''}"`,
       ].join(','));
     });
 
@@ -72,16 +73,16 @@ async function generateSchemaIssuesCSV(schemaValidation, outputDir, context) {
       'Severity',
       'Issue Type',
       'Property',
-      'Message'
+      'Message',
     ].join(','));
 
-    schemaValidation.forEach(result => {
+    schemaValidation.forEach((result) => {
       if (!result.schemas) return;
 
       result.schemas.forEach((schema, index) => {
         // Add errors
         if (schema.issues) {
-          schema.issues.forEach(issue => {
+          schema.issues.forEach((issue) => {
             csvRows.push([
               `"${result.url}"`,
               `"${schema.type || 'Unknown'}"`,
@@ -89,14 +90,14 @@ async function generateSchemaIssuesCSV(schemaValidation, outputDir, context) {
               'Error',
               'Validation',
               `"${issue.property || ''}"`,
-              `"${issue.message || ''}"`
+              `"${issue.message || ''}"`,
             ].join(','));
           });
         }
 
         // Add warnings
         if (schema.warnings) {
-          schema.warnings.forEach(warning => {
+          schema.warnings.forEach((warning) => {
             csvRows.push([
               `"${result.url}"`,
               `"${schema.type || 'Unknown'}"`,
@@ -104,7 +105,7 @@ async function generateSchemaIssuesCSV(schemaValidation, outputDir, context) {
               'Warning',
               'Recommendation',
               `"${warning.property || ''}"`,
-              `"${warning.message || ''}"`
+              `"${warning.message || ''}"`,
             ].join(','));
           });
         }
@@ -138,10 +139,10 @@ async function generatePageTypeCSV(pageTypes, outputDir, context) {
       'Schema Types',
       'Confidence',
       'Source',
-      'Has Multiple Types'
+      'Has Multiple Types',
     ].join(','));
 
-    pageTypes.forEach(result => {
+    pageTypes.forEach((result) => {
       csvRows.push([
         `"${result.url}"`,
         `"${result.primaryType || 'Unknown'}"`,
@@ -149,7 +150,7 @@ async function generatePageTypeCSV(pageTypes, outputDir, context) {
         `"${(result.schemaTypes || []).join('; ')}"`,
         result.confidence || 'none',
         result.source || 'unknown',
-        result.hasMultipleTypes ? 'Yes' : 'No'
+        result.hasMultipleTypes ? 'Yes' : 'No',
       ].join(','));
     });
 
@@ -180,7 +181,7 @@ async function generatePageTypeStatsCSV(stats, outputDir, context) {
       'Total Issues',
       'Total Warnings',
       'Schema Types Used',
-      'Example URLs'
+      'Example URLs',
     ].join(','));
 
     Object.entries(stats).forEach(([pageType, data]) => {
@@ -192,7 +193,7 @@ async function generatePageTypeStatsCSV(stats, outputDir, context) {
         data.totalIssues,
         data.totalWarnings,
         `"${data.schemaTypes.join('; ')}"`,
-        `"${exampleUrls}"`
+        `"${exampleUrls}"`,
       ].join(','));
     });
 
@@ -225,13 +226,13 @@ async function generateSchemaSummaryMarkdown(schemaValidation, pageTypes, stats,
     // Overall statistics
     lines.push('## Overall Statistics\n');
     const totalPages = schemaValidation.length;
-    const pagesWithSchemas = schemaValidation.filter(r => r.hasSchemas).length;
+    const pagesWithSchemas = schemaValidation.filter((r) => r.hasSchemas).length;
     const totalSchemas = schemaValidation.reduce((sum, r) => sum + (r.schemaCount || 0), 0);
     const totalIssues = schemaValidation.reduce((sum, r) => sum + (r.totalIssues || 0), 0);
     const totalWarnings = schemaValidation.reduce((sum, r) => sum + (r.totalWarnings || 0), 0);
 
     lines.push(`- **Total Pages Analyzed:** ${totalPages}`);
-    lines.push(`- **Pages with Schema.org:** ${pagesWithSchemas} (${((pagesWithSchemas/totalPages) * 100).toFixed(1)}%)`);
+    lines.push(`- **Pages with Schema.org:** ${pagesWithSchemas} (${((pagesWithSchemas / totalPages) * 100).toFixed(1)}%)`);
     lines.push(`- **Total Schemas Found:** ${totalSchemas}`);
     lines.push(`- **Total Validation Issues:** ${totalIssues}`);
     lines.push(`- **Total Warnings:** ${totalWarnings}\n`);
@@ -249,11 +250,11 @@ async function generateSchemaSummaryMarkdown(schemaValidation, pageTypes, stats,
     // Top issues
     lines.push('## Most Common Issues\n');
     const issueCount = {};
-    schemaValidation.forEach(result => {
+    schemaValidation.forEach((result) => {
       if (!result.schemas) return;
-      result.schemas.forEach(schema => {
+      result.schemas.forEach((schema) => {
         if (schema.issues) {
-          schema.issues.forEach(issue => {
+          schema.issues.forEach((issue) => {
             const key = `${issue.message} (${issue.property || 'N/A'})`;
             issueCount[key] = (issueCount[key] || 0) + 1;
           });
@@ -293,10 +294,10 @@ async function generateSchemaSummaryMarkdown(schemaValidation, pageTypes, stats,
     }
 
     // Pages without schemas
-    const pagesWithoutSchemas = schemaValidation.filter(r => !r.hasSchemas);
+    const pagesWithoutSchemas = schemaValidation.filter((r) => !r.hasSchemas);
     if (pagesWithoutSchemas.length > 0) {
       lines.push('## Pages Without Schema.org\n');
-      pagesWithoutSchemas.slice(0, 10).forEach(result => {
+      pagesWithoutSchemas.slice(0, 10).forEach((result) => {
         lines.push(`- ${result.url}`);
       });
       if (pagesWithoutSchemas.length > 10) {
@@ -335,13 +336,12 @@ async function generateAllSchemaReports(results, outputDir, context) {
     }
 
     // Calculate page type statistics
-    const pageTypeDetector = require('../pageTypeDetector.js');
     const stats = pageTypeDetector.getPageTypeStatistics(
       pageTypes.map((pt, index) => ({
         url: pt.url,
         pageType: pt,
-        schemaValidation: schemaValidation[index]
-      }))
+        schemaValidation: schemaValidation[index],
+      })),
     );
 
     const reportPaths = [];
@@ -367,5 +367,5 @@ module.exports = {
   generatePageTypeCSV,
   generatePageTypeStatsCSV,
   generateSchemaSummaryMarkdown,
-  generateAllSchemaReports
+  generateAllSchemaReports,
 };

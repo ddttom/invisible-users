@@ -21,7 +21,7 @@ const PAGE_TYPE_PATTERNS = {
   'Profile Page': ['ProfilePage'],
   'Service Page': ['Service'],
   'Home Page': ['WebSite'],
-  'General Page': ['WebPage']
+  'General Page': ['WebPage'],
 };
 
 /**
@@ -43,7 +43,7 @@ const TYPE_PRIORITY = [
   'Search Results',
   'Profile Page',
   'Home Page',
-  'General Page'
+  'General Page',
 ];
 
 /**
@@ -90,7 +90,7 @@ function detectPageType(schemas) {
       allTypes: [],
       schemaTypes: [],
       confidence: 'none',
-      hasMultipleTypes: false
+      hasMultipleTypes: false,
     };
   }
 
@@ -98,7 +98,7 @@ function detectPageType(schemas) {
   const schemaTypes = [];
 
   // Collect all detected types
-  schemas.forEach(schema => {
+  schemas.forEach((schema) => {
     if (schema.error) return;
 
     const pageType = detectTypeFromSchema(schema);
@@ -121,7 +121,7 @@ function detectPageType(schemas) {
       allTypes: ['General Page'],
       schemaTypes,
       confidence: 'low',
-      hasMultipleTypes: false
+      hasMultipleTypes: false,
     };
   }
 
@@ -147,7 +147,7 @@ function detectPageType(schemas) {
     allTypes: typesArray,
     schemaTypes: [...new Set(schemaTypes)],
     confidence,
-    hasMultipleTypes: typesArray.length > 1
+    hasMultipleTypes: typesArray.length > 1,
   };
 }
 
@@ -170,13 +170,13 @@ function analyzePageType(schemas, url) {
       primaryType: urlHints,
       allTypes: [urlHints, ...detection.allTypes],
       confidence: 'medium',
-      source: 'url-hint'
+      source: 'url-hint',
     };
   }
 
   return {
     ...detection,
-    source: 'schema'
+    source: 'schema',
   };
 }
 
@@ -216,7 +216,7 @@ function detectTypeFromUrl(url) {
 function getPageTypeStatistics(pageResults) {
   const stats = {};
 
-  pageResults.forEach(result => {
+  pageResults.forEach((result) => {
     const pageType = result.pageType?.primaryType || 'Unknown';
 
     if (!stats[pageType]) {
@@ -226,7 +226,7 @@ function getPageTypeStatistics(pageResults) {
         schemaTypes: new Set(),
         totalSchemas: 0,
         totalIssues: 0,
-        totalWarnings: 0
+        totalWarnings: 0,
       };
     }
 
@@ -240,7 +240,7 @@ function getPageTypeStatistics(pageResults) {
 
       // Collect schema types
       if (result.pageType?.schemaTypes) {
-        result.pageType.schemaTypes.forEach(type => {
+        result.pageType.schemaTypes.forEach((type) => {
           stats[pageType].schemaTypes.add(type);
         });
       }
@@ -248,7 +248,7 @@ function getPageTypeStatistics(pageResults) {
   });
 
   // Convert Sets to Arrays
-  Object.keys(stats).forEach(pageType => {
+  Object.keys(stats).forEach((pageType) => {
     stats[pageType].schemaTypes = Array.from(stats[pageType].schemaTypes);
   });
 
@@ -261,5 +261,5 @@ module.exports = {
   detectTypeFromUrl,
   getPageTypeStatistics,
   PAGE_TYPE_PATTERNS,
-  TYPE_PRIORITY
+  TYPE_PRIORITY,
 };

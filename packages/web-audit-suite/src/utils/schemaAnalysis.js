@@ -24,7 +24,7 @@ async function analyzePageSchemas(page, url, results, context) {
     // Detect page type from schemas
     const pageType = pageTypeDetector.analyzePageType(
       schemaValidation.schemas || [],
-      url
+      url,
     );
 
     // Store results
@@ -38,17 +38,17 @@ async function analyzePageSchemas(page, url, results, context) {
     }
     results.pageTypes.push({
       url,
-      ...pageType
+      ...pageType,
     });
 
     context.logger.info(
-      `Schema analysis for ${url}: ${schemaValidation.schemaCount} schemas, ` +
-      `type: ${pageType.primaryType}, ${schemaValidation.totalIssues} issues`
+      `Schema analysis for ${url}: ${schemaValidation.schemaCount} schemas, `
+      + `type: ${pageType.primaryType}, ${schemaValidation.totalIssues} issues`,
     );
 
     return {
       schemaValidation,
-      pageType
+      pageType,
     };
   } catch (error) {
     context.logger.error(`Schema analysis failed for ${url}: ${error.message}`);
@@ -57,13 +57,13 @@ async function analyzePageSchemas(page, url, results, context) {
         url,
         hasSchemas: false,
         schemaCount: 0,
-        error: error.message
+        error: error.message,
       },
       pageType: {
         primaryType: 'Unknown',
         allTypes: [],
-        confidence: 'none'
-      }
+        confidence: 'none',
+      },
     };
   }
 }
@@ -83,5 +83,5 @@ async function updateSchemaResults(page, url, results, context) {
 
 module.exports = {
   analyzePageSchemas,
-  updateSchemaResults
+  updateSchemaResults,
 };

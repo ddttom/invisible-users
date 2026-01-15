@@ -5,13 +5,14 @@
 
 /**
  * Critical properties that should be present on most schema types
+ * @deprecated Currently unused but kept for future validation enhancements
  */
-const CRITICAL_PROPERTIES = {
-  common: ['@context', '@type'],
-  temporal: ['datePublished', 'dateModified'],
-  visual: ['image'],
-  localization: ['inLanguage']
-};
+// const CRITICAL_PROPERTIES = {
+//   common: ['@context', '@type'],
+//   temporal: ['datePublished', 'dateModified'],
+//   visual: ['image'],
+//   localization: ['inLanguage'],
+// };
 
 /**
  * Required properties by schema type
@@ -32,7 +33,7 @@ const REQUIRED_PROPERTIES = {
   BreadcrumbList: ['itemListElement'],
   Offer: ['price', 'priceCurrency'],
   Question: ['name', 'acceptedAnswer'],
-  Answer: ['text']
+  Answer: ['text'],
 };
 
 /**
@@ -47,7 +48,7 @@ const RECOMMENDED_PROPERTIES = {
   Event: ['image', 'offers', 'endDate'],
   LocalBusiness: ['telephone', 'openingHours', 'priceRange'],
   Offer: ['availability', 'seller', 'itemCondition', 'url'],
-  BreadcrumbList: [] // Position, name, item are already required in itemListElement
+  BreadcrumbList: [], // Position, name, item are already required in itemListElement
 };
 
 /**
@@ -57,15 +58,13 @@ const RECOMMENDED_PROPERTIES = {
  */
 async function extractJsonLd(page) {
   try {
-    const scripts = await page.$$eval('script[type="application/ld+json"]', elements => {
-      return elements.map(el => {
-        try {
-          return JSON.parse(el.textContent);
-        } catch (e) {
-          return { error: 'Parse error', content: el.textContent };
-        }
-      });
-    });
+    const scripts = await page.$$eval('script[type="application/ld+json"]', (elements) => elements.map((el) => {
+      try {
+        return JSON.parse(el.textContent);
+      } catch (e) {
+        return { error: 'Parse error', content: el.textContent };
+      }
+    }));
     return scripts;
   } catch (error) {
     return [];
@@ -97,7 +96,7 @@ function validateSchema(schema) {
       valid: false,
       type: 'Unknown',
       issues: [{ severity: 'error', message: 'JSON-LD parse error', property: '@context' }],
-      warnings: []
+      warnings: [],
     };
   }
 
@@ -109,7 +108,9 @@ function validateSchema(schema) {
   // Check for @type
   if (!schema['@type']) {
     issues.push({ severity: 'error', message: 'Missing @type', property: '@type' });
-    return { valid: false, type: 'Unknown', issues, warnings };
+    return {
+      valid: false, type: 'Unknown', issues, warnings,
+    };
   }
 
   const types = normalizeType(schema['@type']);
@@ -117,26 +118,26 @@ function validateSchema(schema) {
 
   // Validate required properties
   const requiredProps = REQUIRED_PROPERTIES[primaryType] || [];
-  requiredProps.forEach(prop => {
+  requiredProps.forEach((prop) => {
     if (!schema[prop]) {
       issues.push({
         severity: 'error',
         message: `Missing required property: ${prop}`,
         property: prop,
-        type: primaryType
+        type: primaryType,
       });
     }
   });
 
   // Check recommended properties
   const recommendedProps = RECOMMENDED_PROPERTIES[primaryType] || [];
-  recommendedProps.forEach(prop => {
+  recommendedProps.forEach((prop) => {
     if (!schema[prop]) {
       warnings.push({
         severity: 'warning',
         message: `Missing recommended property: ${prop}`,
         property: prop,
-        type: primaryType
+        type: primaryType,
       });
     }
   });
@@ -147,7 +148,7 @@ function validateSchema(schema) {
       severity: 'warning',
       message: 'Missing image property',
       property: 'image',
-      type: primaryType
+      type: primaryType,
     });
   }
 
@@ -170,7 +171,7 @@ function validateSchema(schema) {
     type: types.join(', '),
     issues,
     warnings,
-    schema
+    schema,
   };
 }
 
@@ -192,7 +193,7 @@ function validateOffer(offers, parentType) {
         severity: 'error',
         message: `Offer ${index + 1}: Missing or incorrect @type`,
         property: 'offers',
-        type: parentType
+        type: parentType,
       });
     }
 
@@ -202,7 +203,7 @@ function validateOffer(offers, parentType) {
         severity: 'error',
         message: `Offer ${index + 1}: Missing price`,
         property: 'offers.price',
-        type: parentType
+        type: parentType,
       });
     }
 
@@ -211,7 +212,7 @@ function validateOffer(offers, parentType) {
         severity: 'error',
         message: `Offer ${index + 1}: Missing priceCurrency`,
         property: 'offers.priceCurrency',
-        type: parentType
+        type: parentType,
       });
     }
 
@@ -221,7 +222,7 @@ function validateOffer(offers, parentType) {
         severity: 'warning',
         message: `Offer ${index + 1}: Missing availability`,
         property: 'offers.availability',
-        type: parentType
+        type: parentType,
       });
     }
 
@@ -230,7 +231,7 @@ function validateOffer(offers, parentType) {
         severity: 'warning',
         message: `Offer ${index + 1}: Missing seller`,
         property: 'offers.seller',
-        type: parentType
+        type: parentType,
       });
     }
 
@@ -239,7 +240,7 @@ function validateOffer(offers, parentType) {
         severity: 'warning',
         message: `Offer ${index + 1}: Missing itemCondition`,
         property: 'offers.itemCondition',
-        type: parentType
+        type: parentType,
       });
     }
   });
@@ -261,7 +262,7 @@ function validateBreadcrumbList(schema) {
       severity: 'error',
       message: 'itemListElement must be an array',
       property: 'itemListElement',
-      type: 'BreadcrumbList'
+      type: 'BreadcrumbList',
     });
     return { issues, warnings };
   }
@@ -272,7 +273,7 @@ function validateBreadcrumbList(schema) {
         severity: 'error',
         message: `Item ${index + 1}: @type must be "ListItem"`,
         property: `itemListElement[${index}]`,
-        type: 'BreadcrumbList'
+        type: 'BreadcrumbList',
       });
     }
 
@@ -281,7 +282,7 @@ function validateBreadcrumbList(schema) {
         severity: 'error',
         message: `Item ${index + 1}: position must be ${index + 1}`,
         property: `itemListElement[${index}].position`,
-        type: 'BreadcrumbList'
+        type: 'BreadcrumbList',
       });
     }
 
@@ -290,7 +291,7 @@ function validateBreadcrumbList(schema) {
         severity: 'error',
         message: `Item ${index + 1}: Missing name`,
         property: `itemListElement[${index}].name`,
-        type: 'BreadcrumbList'
+        type: 'BreadcrumbList',
       });
     }
 
@@ -299,7 +300,7 @@ function validateBreadcrumbList(schema) {
         severity: 'error',
         message: `Item ${index + 1}: Missing item URL`,
         property: `itemListElement[${index}].item`,
-        type: 'BreadcrumbList'
+        type: 'BreadcrumbList',
       });
     }
   });
@@ -326,13 +327,13 @@ async function analyzeSchemas(page, url) {
       totalIssues: 0,
       totalWarnings: 0,
       schemas: [],
-      summary: 'No Schema.org JSON-LD found on page'
+      summary: 'No Schema.org JSON-LD found on page',
     };
   }
 
-  const validationResults = schemas.map(schema => validateSchema(schema));
+  const validationResults = schemas.map((schema) => validateSchema(schema));
 
-  const validCount = validationResults.filter(r => r.valid).length;
+  const validCount = validationResults.filter((r) => r.valid).length;
   const totalIssues = validationResults.reduce((sum, r) => sum + r.issues.length, 0);
   const totalWarnings = validationResults.reduce((sum, r) => sum + r.warnings.length, 0);
 
@@ -345,7 +346,7 @@ async function analyzeSchemas(page, url) {
     totalIssues,
     totalWarnings,
     schemas: validationResults,
-    summary: `Found ${schemas.length} schema(s): ${validCount} valid, ${schemas.length - validCount} invalid, ${totalIssues} issues, ${totalWarnings} warnings`
+    summary: `Found ${schemas.length} schema(s): ${validCount} valid, ${schemas.length - validCount} invalid, ${totalIssues} issues, ${totalWarnings} warnings`,
   };
 }
 
@@ -354,5 +355,5 @@ module.exports = {
   validateSchema,
   analyzeSchemas,
   REQUIRED_PROPERTIES,
-  RECOMMENDED_PROPERTIES
+  RECOMMENDED_PROPERTIES,
 };
