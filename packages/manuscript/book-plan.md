@@ -330,6 +330,7 @@ Implementation patterns, validation layers, and guardrails for reliable agent sy
 | -------- | ------ | ----------- |
 | preface.md | ✅ | Book introduction with personal narrative, usage guide, acknowledgements, and author bio |
 | reading-guide.md | ✅ | Comprehensive navigation guidance with tailored reading paths for five audience types |
+| rear-cover.md | ✅ | Back cover copy with main text, About the Author, and review (4/5 stars) |
 
 ### Core Documentation
 
@@ -366,6 +367,7 @@ All 11 chapter illustrations complete ✅
 | -------- | ------ | ----------- |
 | manuscript/Glossary.md | ✅ | 60+ technical terms with cross-references (included in book) |
 | manuscript/The-End.md | ✅ | Final page directing readers to online appendices with full descriptions |
+| manuscript/rear-cover.md | ✅ | Back cover copy with problem/opportunity framing, four audience segments, About the Author section, and 4/5 star review |
 | cover-design.svg | ✅ | Professional book cover (600×900) |
 
 ### Web Appendices
