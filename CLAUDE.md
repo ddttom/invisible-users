@@ -798,13 +798,13 @@ This interactive command ([scripts/commit-and-push-all.sh](scripts/commit-and-pu
 
 1. **Checks manuscript submodule** for changes first
    - Shows status of any modified/untracked files
-   - Prompts for commit message (or press Enter to skip)
-   - Commits and pushes to submodule remote if message provided
+   - Prompts for commit message (press Enter to use "tidy")
+   - Commits and pushes to submodule remote
 
 2. **Checks main repository** for changes
    - Shows status including submodule pointer changes
-   - Prompts for commit message (or press Enter to skip)
-   - Commits and pushes to main remote if message provided
+   - Prompts for commit message (press Enter to use "tidy")
+   - Commits and pushes to main remote
 
 **Why this order matters:** The submodule must be committed and pushed FIRST. Then the main repository commits the updated submodule pointer. This ensures the main repo always points to commits that exist on the remote.
 
@@ -817,14 +817,14 @@ npm run commit-push
 # 🔍 Checking for changes...
 # 📝 Submodule has changes:
 #  M chapter-01-the-invisible-failure.md
-# Enter commit message for manuscript submodule: Fix typo in chapter 1
+# Enter commit message for manuscript submodule (or press Enter for 'tidy'): Fix typo in chapter 1
 # 📦 Committing submodule changes...
 # ⬆️  Pushing submodule to remote...
 # ✅ Submodule committed and pushed
 #
 # 📝 Main repository has changes:
 #  M packages/manuscript/manuscript
-# Enter commit message for main repository: Update manuscript submodule pointer
+# Enter commit message for main repository (or press Enter for 'tidy'): [Enter pressed]
 # 📦 Committing main repository changes...
 # ⬆️  Pushing main repository to remote...
 # ✅ Main repository committed and pushed

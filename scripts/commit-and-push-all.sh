@@ -21,19 +21,20 @@ if [ -n "$SUBMODULE_CHANGES" ]; then
     echo ""
 
     # Prompt for submodule commit message
-    read -p "Enter commit message for manuscript submodule (or press Enter to skip): " SUBMODULE_MSG
+    read -p "Enter commit message for manuscript submodule (or press Enter for 'tidy'): " SUBMODULE_MSG
 
-    if [ -n "$SUBMODULE_MSG" ]; then
-        echo "📦 Committing submodule changes..."
-        git add -A
-        git commit -m "$SUBMODULE_MSG"
-
-        echo "⬆️  Pushing submodule to remote..."
-        git push origin main
-        echo "✅ Submodule committed and pushed"
-    else
-        echo "⏭️  Skipping submodule commit"
+    # Default to "tidy" if no message provided
+    if [ -z "$SUBMODULE_MSG" ]; then
+        SUBMODULE_MSG="tidy"
     fi
+
+    echo "📦 Committing submodule changes..."
+    git add -A
+    git commit -m "$SUBMODULE_MSG"
+
+    echo "⬆️  Pushing submodule to remote..."
+    git push origin main
+    echo "✅ Submodule committed and pushed"
 else
     echo "✅ No changes in manuscript submodule"
 fi
@@ -49,19 +50,20 @@ if [ -n "$MAIN_CHANGES" ]; then
     echo ""
 
     # Prompt for main repo commit message
-    read -p "Enter commit message for main repository (or press Enter to skip): " MAIN_MSG
+    read -p "Enter commit message for main repository (or press Enter for 'tidy'): " MAIN_MSG
 
-    if [ -n "$MAIN_MSG" ]; then
-        echo "📦 Committing main repository changes..."
-        git add -A
-        git commit -m "$MAIN_MSG"
-
-        echo "⬆️  Pushing main repository to remote..."
-        git push origin main
-        echo "✅ Main repository committed and pushed"
-    else
-        echo "⏭️  Skipping main repository commit"
+    # Default to "tidy" if no message provided
+    if [ -z "$MAIN_MSG" ]; then
+        MAIN_MSG="tidy"
     fi
+
+    echo "📦 Committing main repository changes..."
+    git add -A
+    git commit -m "$MAIN_MSG"
+
+    echo "⬆️  Pushing main repository to remote..."
+    git push origin main
+    echo "✅ Main repository committed and pushed"
 else
     echo "✅ No changes in main repository"
 fi

@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added - Commit and Push Command for All Repositories (2026-01-15)
 
-Added `npm run commit-push` command with interactive script ([scripts/commit-and-push-all.sh](scripts/commit-and-push-all.sh)) to handle commits and pushes across both main repository and manuscript submodule. Script ensures proper workflow: commits and pushes submodule first, then updates submodule pointer in main repo. Interactive prompts for commit messages with option to skip. Includes comprehensive documentation in CLAUDE.md with example usage.
+Added `npm run commit-push` command with interactive script ([scripts/commit-and-push-all.sh](scripts/commit-and-push-all.sh)) to handle commits and pushes across both main repository and manuscript submodule. Script ensures proper workflow: commits and pushes submodule first, then updates submodule pointer in main repo. Interactive prompts for commit messages with "tidy" as default when Enter is pressed. Includes comprehensive documentation in CLAUDE.md with example usage.
 
 ### Added - Meta Tag Validation Scoring in Web Audit Suite (2026-01-15)
 
