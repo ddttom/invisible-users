@@ -46,7 +46,10 @@
       "Bash(if ! grep -q 'ai-attribution.*text=' \"$file\")",
       "Bash(then)",
       "Bash(echo:*)",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(pandoc:*)",
+      "Bash(npx eslint:*)",
+      "Bash(./node_modules/.bin/eslint:*)"
     ],
     "deny": [],
     "ask": []

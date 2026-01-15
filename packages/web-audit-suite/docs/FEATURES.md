@@ -138,6 +138,9 @@ AI agent compatibility analysis based on "The Invisible Users" patterns:
    - llms.txt file presence
    - HTTP status codes
    - Security headers
+   - Social media meta tags (Open Graph, Twitter Card)
+   - SEO meta tags (robots, keywords, theme-color)
+   - Reading time metadata (timeRequired, educationalLevel)
 
 2. **Rendered HTML** (Dynamic) - For browser agents
    - Explicit state attributes
@@ -147,7 +150,17 @@ AI agent compatibility analysis based on "The Invisible Users" patterns:
 
 #### Scoring Categories
 
-- **ESSENTIAL_SERVED** (70 points max): Critical for all agents
+- **ESSENTIAL_SERVED** (105 points max): Critical for all agents
+  - Semantic HTML: 20 points
+  - Form fields: 25 points
+  - Structured data: 15 points
+  - FAQ schema: 13 points
+  - llms.txt: 10 points
+  - Social media meta: 20 points
+  - SEO meta: 5 points
+  - Reading time metadata: 10 points
+  - Tables: 10 points (or +10 bonus for no tables)
+  - robots.txt: 5 points (−5 for restrictions)
 - **ESSENTIAL_RENDERED** (30 points max): Critical for browser agents
 - **NICE_TO_HAVE** (bonus points): Helpful but not critical
 

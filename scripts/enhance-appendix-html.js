@@ -46,6 +46,30 @@ function enhanceHTML(filePath) {
   <meta name="ai-attribution" content="required" text="Source: The Invisible Users by Tom Cranstoun, https://allabout.network/invisible-users/">
   <meta name="llms-txt" content="/llms.txt">`;
 
+  // Build social media and SEO meta tags
+  const socialMetaTags = `
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:title" content="${pageTitle.replace(/"/g, '\\"')}">
+  <meta property="og:description" content="Practical guidance from The Invisible Users book on designing AI agent-friendly websites">
+  <meta property="og:image" content="https://allabout.network/images/invisible-users-appendix-og.jpg">
+  <meta property="og:site_name" content="The Invisible Users">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="${canonicalUrl}">
+  <meta name="twitter:title" content="${pageTitle.replace(/"/g, '\\"')}">
+  <meta name="twitter:description" content="Implementation guide from The Invisible Users book">
+  <meta name="twitter:image" content="https://allabout.network/images/invisible-users-appendix-og.jpg">
+  <meta name="twitter:creator" content="@tomcranstoun">
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="AI agents, web design, implementation guide, ${appendixLetter ? `Appendix ${appendixLetter}, ` : ''}technical patterns, code examples">
+  <meta name="theme-color" content="#1e40af">`;
+
   // Build Schema.org JSON-LD
   const jsonLD = `
   <!-- Schema.org structured data -->
@@ -62,6 +86,8 @@ function enhanceHTML(filePath) {
       "url": "https://allabout.network"
     },
     "inLanguage": "en-GB",
+    "timeRequired": "PT60M",
+    "educationalLevel": "Intermediate",
     "datePublished": "2026-01-10",
     "dateModified": "2026-01-10",
     "isPartOf": {
@@ -97,16 +123,30 @@ function enhanceHTML(filePath) {
   const externalCSS = `
   <link rel="stylesheet" href="appendix.css">`;
 
-  // 3. Add canonical tag, meta tags and external CSS link before </head>
+  // 3. Add canonical tag, meta tags, social tags, Schema.org and external CSS link before </head>
   enhanced = enhanced.replace(
     '</head>',
-    `${canonicalTag}${aiMetaTags}${jsonLD}${externalCSS}\n</head>`
+    `${canonicalTag}${aiMetaTags}${socialMetaTags}${jsonLD}${externalCSS}\n</head>`
   );
 
-  // 4. Add semantic roles and data attributes
-  // Add role="main" to main content div
+  // 4. Add semantic <main> element wrapping the main content
+  // Wrap content between end of TOC and footer navigation with <main>
+  // Pattern: </nav> (TOC end) ... content ... <hr>\n<nav class="appendix-navigation" (footer start)
   enhanced = enhanced.replace(
-    /<div id="(TOC|main-content|content)"[^>]*>/,
+    /(id="TOC"[^>]*>[\s\S]*?<\/nav>)\s*(<h1)/,
+    '$1\n<main role="main" data-content-type="appendix">\n$2'
+  );
+
+  // Close </main> before the footer navigation (second appendix-navigation)
+  enhanced = enhanced.replace(
+    /(<hr>\s*<nav class="appendix-navigation")/,
+    '</main>\n$1'
+  );
+
+  // 5. Add semantic roles and data attributes to any remaining divs
+  // Add role="main" to main content div if <main> wrapper didn't work
+  enhanced = enhanced.replace(
+    /<div id="(main-content|content)"[^>]*>/,
     (match) => match.replace('>', ' role="main" data-load-state="complete">')
   );
 
@@ -122,13 +162,13 @@ function enhanceHTML(filePath) {
     '<footer role="contentinfo">'
   );
 
-  // 5. Enhance appendix navigation with roles
+  // 6. Enhance appendix navigation with roles
   enhanced = enhanced.replace(
-    /<nav class="appendix-navigation"[^>]*>/,
+    /<nav class="appendix-navigation"[^>]*>/g,
     '<nav class="appendix-navigation" role="navigation" aria-label="Appendix Navigation">'
   );
 
-  // 6. Add data attributes to code blocks for AI agent clarity
+  // 7. Add data attributes to code blocks for AI agent clarity
   // Add data-role to div.sourceCode containers
   enhanced = enhanced.replace(
     /<div class="sourceCode" id="([^"]+)">/g,
@@ -151,7 +191,7 @@ function enhanceHTML(filePath) {
     '<code class="sourceCode $1" data-role="code-content">'
   );
 
-  // 7. Add floating navigation buttons and copy-to-clipboard script before </body>
+  // 8. Add floating navigation buttons and copy-to-clipboard script before </body>
   const copyScript = `
   <script>
     // Add copy buttons to all code blocks

@@ -28,6 +28,9 @@ This tool is designed for:
   - llms.txt detection for AI agent guidance
   - Automatic `llms.txt` discovery at domain root
   - data-agent-visible attribute tracking
+  - Social media meta tag validation (Open Graph, Twitter Card)
+  - SEO meta tag analysis (robots, keywords, theme-color)
+  - Reading time metadata validation (timeRequired, educationalLevel)
   - Three specialized reports (general, frontend, backend)
 - **Automatic Cache Management**: .cache directory creation and management
 - **Robust Error Handling**: Network error recovery and retry mechanism

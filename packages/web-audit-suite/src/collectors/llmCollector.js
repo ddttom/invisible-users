@@ -40,6 +40,9 @@ export class LLMCollector {
       authenticationState: this.analyzeAuthenticationState($),
       captchaProtection: this.analyzeCaptchaAndBotProtection($),
       apiEndpoints: this.analyzeApiEndpoints($),
+      socialMediaMeta: this.analyzeSocialMediaMeta($),
+      seoMeta: this.analyzeSEOMeta($),
+      readingTimeMeta: this.analyzeReadingTimeMeta($),
     };
   }
 
@@ -476,6 +479,126 @@ export class LLMCollector {
         hasOpenApiSpec,
         apiDiscoverabilityScore: apiEndpointScore,
         apiLinksCount: apiLinks.length,
+      },
+    };
+  }
+
+  static analyzeSocialMediaMeta($) {
+    // Open Graph tags
+    const ogType = $('meta[property="og:type"]').attr('content');
+    const ogUrl = $('meta[property="og:url"]').attr('content');
+    const ogTitle = $('meta[property="og:title"]').attr('content');
+    const ogDescription = $('meta[property="og:description"]').attr('content');
+    const ogImage = $('meta[property="og:image"]').attr('content');
+    const ogSiteName = $('meta[property="og:site_name"]').attr('content');
+    const ogLocale = $('meta[property="og:locale"]').attr('content');
+
+    const ogTagCount = [ogType, ogUrl, ogTitle, ogDescription, ogImage, ogSiteName, ogLocale]
+      .filter((val) => val && val.trim().length > 0).length;
+    const hasOpenGraph = ogTagCount >= 5; // Minimum 5 of 7 tags
+
+    // Twitter Card tags
+    const twitterCard = $('meta[name="twitter:card"]').attr('content');
+    const twitterTitle = $('meta[name="twitter:title"]').attr('content');
+    const twitterDescription = $('meta[name="twitter:description"]').attr('content');
+    const twitterImage = $('meta[name="twitter:image"]').attr('content');
+
+    const twitterTagCount = [twitterCard, twitterTitle, twitterDescription, twitterImage]
+      .filter((val) => val && val.trim().length > 0).length;
+    const hasTwitterCard = twitterTagCount >= 3; // Minimum 3 of 4 tags
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        hasOpenGraph,
+        ogTagCount,
+        hasOgType: !!ogType,
+        hasOgUrl: !!ogUrl,
+        hasOgTitle: !!ogTitle,
+        hasOgDescription: !!ogDescription,
+        hasOgImage: !!ogImage,
+        hasOgLocale: !!ogLocale,
+        hasTwitterCard,
+        twitterTagCount,
+        hasTwitterCardType: !!twitterCard,
+        hasTwitterTitle: !!twitterTitle,
+        hasTwitterDescription: !!twitterDescription,
+        hasTwitterImage: !!twitterImage,
+        completenessRatio: (ogTagCount + twitterTagCount) / 11, // 7 OG + 4 Twitter = 11 total
+      },
+    };
+  }
+
+  static analyzeSEOMeta($) {
+    const robotsMeta = $('meta[name="robots"]').attr('content');
+    const hasRobotsMeta = !!robotsMeta;
+
+    const keywordsMeta = $('meta[name="keywords"]').attr('content');
+    const hasKeywords = !!keywordsMeta && keywordsMeta.trim().length > 0;
+
+    const themeColor = $('meta[name="theme-color"]').attr('content');
+    const hasThemeColor = !!themeColor && themeColor.trim().length > 0;
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        hasRobotsMeta,
+        robotsMetaContent: robotsMeta || '',
+        hasKeywords,
+        keywordsCount: hasKeywords ? keywordsMeta.split(',').length : 0,
+        hasThemeColor,
+        themeColorValue: themeColor || '',
+        completenessRatio: [hasRobotsMeta, hasKeywords, hasThemeColor].filter(Boolean).length / 3,
+      },
+    };
+  }
+
+  static analyzeReadingTimeMeta($) {
+    const jsonLdScripts = $('script[type="application/ld+json"]');
+    let hasTimeRequired = false;
+    let hasEducationalLevel = false;
+    let hasInLanguage = false;
+    let timeRequiredValue = null;
+    let educationalLevelValue = null;
+    let inLanguageValue = null;
+
+    jsonLdScripts.each((_, script) => {
+      try {
+        const data = JSON.parse($(script).html());
+
+        if (data.timeRequired) {
+          hasTimeRequired = true;
+          timeRequiredValue = data.timeRequired;
+        }
+
+        if (data.educationalLevel) {
+          hasEducationalLevel = true;
+          educationalLevelValue = data.educationalLevel;
+        }
+
+        if (data.inLanguage) {
+          hasInLanguage = true;
+          inLanguageValue = data.inLanguage;
+        }
+      } catch (e) {
+        // Invalid JSON-LD, skip
+      }
+    });
+
+    // Check for ISO 8601 format validation (PT\d+M pattern)
+    const isValidISO8601 = timeRequiredValue ? /^PT\d+(M|H)$/.test(timeRequiredValue) : false;
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        hasTimeRequired,
+        hasEducationalLevel,
+        hasInLanguage,
+        timeRequiredValue,
+        educationalLevelValue,
+        inLanguageValue,
+        isValidISO8601,
+        completenessRatio: [hasTimeRequired, hasEducationalLevel, hasInLanguage].filter(Boolean).length / 3,
       },
     };
   }

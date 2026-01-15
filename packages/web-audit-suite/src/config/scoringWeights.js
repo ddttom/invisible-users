@@ -33,6 +33,18 @@ export const SCORING_WEIGHTS = {
       properMarkup: 10,
       emptyBonus: 10,
     },
+    SOCIAL_MEDIA_META: {
+      hasOpenGraph: 8,
+      hasTwitterCard: 5,
+      completenessRatio: 7,
+    },
+    SEO_META: {
+      completenessRatio: 5,
+    },
+    READING_TIME_META: {
+      hasTimeRequired: 5,
+      completenessRatio: 5,
+    },
   },
   RENDERED: {
     MAX_BONUS: 30,

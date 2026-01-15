@@ -32,13 +32,34 @@ This repository contains two integrated projects:
 
 ### Publication Status
 
-Current Status: IN REVIEW (Pre-Publication)
+Current Status: EDIT FOR PUBLICATION (Post-Review)
 
-- Book manuscript is complete and in review
+- Book manuscript has completed review phase
 - Publication date: Due Q1 2026
 - Do NOT assume published status based on current date
 - User will explicitly confirm when published
 - Until then, manuscript remains "Due Q1 2026"
+
+**CRITICAL WRITING REQUIREMENT:**
+
+When adding or modifying content in this repository, NEVER write narrative text that describes changes being made or features being added. Always write as if the feature or content has always existed in its current form.
+
+**Examples of FORBIDDEN narrative writing:**
+
+- ❌ "We have added meta tag validation"
+- ❌ "This update includes new scoring"
+- ❌ "Recently implemented social media tags"
+- ❌ "Now includes support for..."
+- ❌ "Has been enhanced to..."
+
+**Examples of CORRECT writing:**
+
+- ✅ "Meta tag validation provides scoring"
+- ✅ "Social media tags contribute +20 points"
+- ✅ "The Web Audit Suite validates meta tags"
+- ✅ "Recipe 12 demonstrates social media integration"
+
+**Rationale:** The book is in final editing before publication. All documentation must read as authoritative reference material, not as a development log. Write in present tense as definitive statements of how things work, not how they were changed.
 
 ### 2. Web Audit Suite (Analysis Tool)
 
@@ -109,16 +130,27 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 
 **Note:** PNG illustrations are generated from SVG sources using `npm run illustrations:generate` and are not tracked in version control.
 
-**Appendix H Dual-File Structure:**
+**Dual-File Appendix Structure:**
 
-Appendix H uses two files to demonstrate an llms.txt example:
+Some appendices use a dual-file structure where content is maintained separately from presentation:
 
-- **`appendix-live-llms.txt`** - The actual llms.txt content (source of truth, 20 curated links)
-- **`appendix-live-llms.md`** - Markdown wrapper that displays the .txt content in a code block
+**Appendix H (Example llms.txt):**
+
+- **`appendix-h-live-llms.txt`** - The actual llms.txt content (source of truth, 20 curated links)
+- **`appendix-h-live-llms.md`** - Markdown wrapper that displays the .txt content in a code block
+
+**Appendix D (AI-Friendly HTML Guide):**
+
+- **`appendix-d-ai-friendly-html-guide.txt`** - The actual guide content (source of truth, ~3,000 lines)
+- **`appendix-d-ai-friendly-html-guide.md`** - Markdown wrapper that displays the .txt content in a code block
 
 **Why both files?**
 
-The PDF generation command (`pdf:generate` in package.json) uses `appendix-*.md` pattern but excludes `.txt` files. The .md wrapper includes introduction text plus the .txt content in a markdown code block, allowing the PDF to show "here's what an llms.txt file looks like" as a formatted example. The .txt file remains the source of truth that can be edited independently.
+The PDF generation command (`pdf:generate` in package.json) uses `appendix-*.md` pattern but excludes `.txt` files. The .md wrapper includes introduction text plus the .txt content in a markdown code block, allowing the PDF to show "here's a complete guide you can copy-paste" as a formatted example. The .txt file remains the source of truth that can be:
+
+- Edited independently without Pandoc formatting concerns
+- Copied directly into AI assistants (Claude Code, Cursor, GitHub Copilot) for implementation guidance
+- Used as a reference without needing to parse code blocks
 
 ## Essential Commands
 
@@ -138,7 +170,6 @@ npm run lint:markdown:fix   # Fix all markdown files
 
 # PDF generation
 npm run pdf:generate        # Generate A4 PDF with cover (for review/distribution)
-                            # Automatically copies to allaboutV2/invisible-users if directory exists
 npm run pdf:kindle          # Generate 6"×9" PDF for Kindle Direct Publishing
 npm run pdf:simple          # Generate simple PDF without cover
 

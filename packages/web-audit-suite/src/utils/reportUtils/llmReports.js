@@ -54,6 +54,13 @@ export async function generateGeneralLLMReport(results, outputDir, context) {
         { id: 'hasBotProtection', title: 'Bot Protection' },
         { id: 'apiDiscoverable', title: 'API Discoverable' },
         { id: 'hasAgentVisibility', title: 'Has data-agent-visible' },
+        { id: 'hasOpenGraph', title: 'Has Open Graph' },
+        { id: 'hasTwitterCard', title: 'Has Twitter Card' },
+        { id: 'socialMediaCompleteness', title: 'Social Media Completeness %' },
+        { id: 'seoCompleteness', title: 'SEO Meta Completeness %' },
+        { id: 'hasTimeRequired', title: 'Has timeRequired' },
+        { id: 'hasEducationalLevel', title: 'Has educationalLevel' },
+        { id: 'readingTimeCompleteness', title: 'Reading Time Completeness %' },
         { id: 'essentialIssuesCount', title: 'Essential Issues' },
         { id: 'niceToHaveIssuesCount', title: 'Nice-to-Have Issues' },
         { id: 'topEssentialIssue', title: 'Top Essential Issue' },
@@ -78,6 +85,15 @@ export async function generateGeneralLLMReport(results, outputDir, context) {
       const hasBotProtection = metrics.captchaProtection?.metrics?.hasBotProtection || false;
       const hasApiDocs = metrics.apiEndpoints?.metrics?.hasApiDocs || false;
 
+      // Meta tag metrics
+      const hasOpenGraph = metrics.socialMediaMeta?.metrics?.hasOpenGraph || false;
+      const hasTwitterCard = metrics.socialMediaMeta?.metrics?.hasTwitterCard || false;
+      const socialMediaCompleteness = metrics.socialMediaMeta?.metrics?.completenessRatio || 0;
+      const seoCompleteness = metrics.seoMeta?.metrics?.completenessRatio || 0;
+      const hasTimeRequired = metrics.readingTimeMeta?.metrics?.hasTimeRequired || false;
+      const hasEducationalLevel = metrics.readingTimeMeta?.metrics?.hasEducationalLevel || false;
+      const readingTimeCompleteness = metrics.readingTimeMeta?.metrics?.completenessRatio || 0;
+
       return {
         url: metrics.url,
         htmlSource: metrics.htmlSource || 'rendered',
@@ -98,6 +114,13 @@ export async function generateGeneralLLMReport(results, outputDir, context) {
         hasBotProtection: hasBotProtection ? 'Yes' : 'No',
         apiDiscoverable: hasApiDocs ? 'Yes' : 'No',
         hasAgentVisibility: hasAgentVisibility ? 'Yes' : 'No',
+        hasOpenGraph: hasOpenGraph ? 'Yes' : 'No',
+        hasTwitterCard: hasTwitterCard ? 'Yes' : 'No',
+        socialMediaCompleteness: Math.round(socialMediaCompleteness * 100),
+        seoCompleteness: Math.round(seoCompleteness * 100),
+        hasTimeRequired: hasTimeRequired ? 'Yes' : 'No',
+        hasEducationalLevel: hasEducationalLevel ? 'Yes' : 'No',
+        readingTimeCompleteness: Math.round(readingTimeCompleteness * 100),
         essentialIssuesCount: feedback.essentialIssues.length,
         niceToHaveIssuesCount: feedback.niceToHaveIssues.length,
         topEssentialIssue: feedback.essentialIssues[0] || 'None',

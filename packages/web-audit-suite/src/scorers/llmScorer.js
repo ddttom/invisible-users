@@ -75,6 +75,28 @@ export class LLMScorer {
       }
     }
 
+    // Social Media Meta Tags
+    if (metrics.socialMediaMeta?.metrics) {
+      const social = metrics.socialMediaMeta.metrics;
+      if (social.hasOpenGraph) score += weights.SOCIAL_MEDIA_META.hasOpenGraph;
+      if (social.hasTwitterCard) score += weights.SOCIAL_MEDIA_META.hasTwitterCard;
+      score += social.completenessRatio * weights.SOCIAL_MEDIA_META.completenessRatio;
+    }
+
+    // SEO Meta Tags
+    if (metrics.seoMeta?.metrics) {
+      score += metrics.seoMeta.metrics.completenessRatio * weights.SEO_META.completenessRatio;
+    }
+
+    // Reading Time Metadata
+    if (metrics.readingTimeMeta?.metrics) {
+      const reading = metrics.readingTimeMeta.metrics;
+      if (reading.hasTimeRequired && reading.isValidISO8601) {
+        score += weights.READING_TIME_META.hasTimeRequired;
+      }
+      score += reading.completenessRatio * weights.READING_TIME_META.completenessRatio;
+    }
+
     return Math.max(0, Math.min(100, Math.round(score)));
   }
 
