@@ -31,7 +31,10 @@
       "Bash(test:*)",
       "Bash(python3:*)",
       "Bash(pandoc:*)",
-      "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/**)"
+      "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/**)",
+      "Bash(node test-html-validation.js:*)",
+      "Bash(node debug-cheerio.js:*)",
+      "Bash(node test-complex-case.js:*)"
     ],
     "deny": [],
     "ask": [
