@@ -774,8 +774,7 @@ For issues and questions:
 1. Check error logs first (`error.log`)
 2. Verify input parameters
 3. Review this documentation
-4. Check TODO.md for known issues
-5. Submit issue with:
+4. Submit issue with:
    - Full error message
    - Command used
    - URL being analyzed

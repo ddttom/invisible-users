@@ -95,7 +95,7 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   │   ├── book-plan.md      # Master plan with chapter outlines and status
 │   │   ├── book-svg-style.md # SVG illustration style guide
 │   │   ├── manuscript/       # Complete manuscript content (git submodule)
-│   │   │   ├── todo.md       # Project task list (USER REFERENCE ONLY - see below)
+│   │   │   ├── todo.txt       # Project task list (USER REFERENCE ONLY - see below)
 │   │   │   ├── [chapters, appendices, illustrations in separate repository]
 │   │   │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
 │   │   │   ├── code-examples/    # Production-ready code implementations
@@ -143,9 +143,9 @@ The `npm run illustrations:generate` command performs these steps:
    - Saving as `back-cover.png` in `packages/manuscript/manuscript/illustrations/`
 3. **Converts SVG to PNG**: All .svg files in illustrations/ are converted to .png using ImageMagick
 
-## Project Task List (todo.md)
+## Project Task List (todo.txt)
 
-**Location:** `packages/manuscript/manuscript/todo.md`
+**Location:** `packages/manuscript/manuscript/todo.txt`
 
 **CRITICAL: This file is the USER'S personal project task list and reference.**
 
@@ -156,39 +156,39 @@ The `npm run illustrations:generate` command performs these steps:
 - Content is ephemeral and changes frequently as the user works through different tasks
 - May contain URLs for images, assets, documentation links, or other resources
 
-**How Claude Code should interact with todo.md:**
+**How Claude Code should interact with todo.txt:**
 
-1. **NEVER execute tasks from todo.md autonomously**
-   - Claude must NOT treat items in todo.md as automatic instructions
-   - Claude must NOT implement tasks found in todo.md without explicit user direction
+1. **NEVER execute tasks from todo.txt autonomously**
+   - Claude must NOT treat items in todo.txt as automatic instructions
+   - Claude must NOT implement tasks found in todo.txt without explicit user direction
 
 2. **User must explicitly request action**
    - The user will provide clear, direct instructions for any task they want Claude to perform
-   - If a task happens to be related to something in todo.md, the user will specify it explicitly
-   - Example: "Download the images referenced in todo.md and add them to illustrations/"
+   - If a task happens to be related to something in todo.txt, the user will specify it explicitly
+   - Example: "Download the images referenced in todo.txt and add them to illustrations/"
 
-3. **Reading todo.md is informational only**
-   - Claude may read todo.md to understand context if explicitly asked
-   - Claude should not proactively offer to complete tasks listed in todo.md
-   - Claude should not suggest implementing items from todo.md unless directly asked
+3. **Reading todo.txt is informational only**
+   - Claude may read todo.txt to understand context if explicitly asked
+   - Claude should not proactively offer to complete tasks listed in todo.txt
+   - Claude should not suggest implementing items from todo.txt unless directly asked
 
-4. **todo.md is user-owned**
+4. **todo.txt is user-owned**
    - This file belongs to the user's workflow
-   - Claude should not modify todo.md unless explicitly asked
+   - Claude should not modify todo.txt unless explicitly asked
    - Claude should not assume the file structure or content format is stable
 
 **Example - Correct interaction:**
 
 ```text
-User: "Download the cover images from the URLs in todo.md"
-Claude: [Reads todo.md, extracts URLs, downloads images as instructed]
+User: "Download the cover images from the URLs in todo.txt"
+Claude: [Reads todo.txt, extracts URLs, downloads images as instructed]
 ```
 
 **Example - Incorrect interaction:**
 
 ```text
-Claude: [Reads todo.md] "I see you have some tasks listed. Would you like me to implement them?"
-→ This is WRONG - Claude should not proactively suggest implementing todo.md items
+Claude: [Reads todo.txt] "I see you have some tasks listed. Would you like me to implement them?"
+→ This is WRONG - Claude should not proactively suggest implementing todo.txt items
 ```
 
 **Dual-File Appendix Structure:**
