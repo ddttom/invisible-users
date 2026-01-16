@@ -4,11 +4,19 @@
 
 **Author:** Tom Cranstoun
 
-**Target Length:** 30,000-50,000 words
+**Target Length:** 30,000-50,000 words (expanded to 60,000-65,000 with Chapter 10 addition)
 
-**Current Status:** Complete with Phase 1-2 Enhancements + Chapter 12 + Web Appendices ✅ (~57,000 words core manuscript)
+**Current Status:** Complete with Chapter 10 (GEO) + Phase 1-2 Enhancements + Web Appendices ✅ (~62,000 words core manuscript)
 
-**Latest Update (12 January 2026):** Book published with live online appendices:
+**Latest Update (15 January 2026):** Added Chapter 10 on Generative Engine Optimization:
+
+- **New Chapter 10** - Generative Engine Optimization (~3,100 words)
+- Bridges gap between commercial urgency (Chapter 9) and technical implementation (Chapters 11-13)
+- Establishes discovery as unified strategy for both search engines and AI agents
+- Business decision framework for when to emphasize discoverability vs protect content
+- Core manuscript: ~62,000 words (preface + 12 chapters + The End + Glossary)
+
+**Previous Update (12 January 2026):** Book published with live online appendices:
 
 - Book published 12 January 2026
 - Book ends with "The End" chapter directing readers to online appendices at <https://allabout.network/invisible-users/web/>
@@ -17,7 +25,6 @@
 - Appendix J receives new entries as significant industry developments occur
 - Created `blog/book-updates.md` as changelog tracking additions to Appendix J
 - Created `web/news.html` as public-facing page for industry developments
-- Core manuscript: ~57,000 words (preface + 11 chapters + The End + Glossary)
 - Web appendices: ~44,600 words base content (grows as Appendix J is updated)
 
 ---
@@ -43,13 +50,14 @@ This book explores the technical, business, ethical, and human implications of t
 | 6 | The Security Maze | ~4,000 | ✅ Complete |
 | 7 | The Legal Landscape | ~4,400 | ✅ Complete |
 | 8 | The Human Cost | ~3,650 | ✅ Complete |
-| 9 | The Platform Race | ~4,000 | 🚧 In Progress |
-| 10 | Designing for Both | ~4,400 | ✅ Complete |
-| 11 | Technical Advice | ~9,650 | ✅ Complete + Enhanced |
-| 12 | What Agent Creators Must Build | ~5,000 | ✅ Complete |
+| 9 | The Platform Race | ~5,200 | ✅ Complete |
+| 10 | Generative Engine Optimization | ~3,100 | ✅ Complete |
+| 11 | Designing for Both | ~5,600 | ✅ Complete |
+| 12 | Technical Advice | ~11,000 | ✅ Complete + Enhanced |
+| 13 | What Agent Creators Must Build | ~9,000 | ✅ Complete |
 | The End | Additional Resources Available Online | ~400 | ✅ Complete |
 
-**Core Manuscript:** ~57,000 words (preface + 11 chapters + The End + Glossary)
+**Core Manuscript:** ~62,000 words (preface + 13 chapters + The End + Glossary)
 
 **Web Appendices** (published separately at <https://allabout.network/invisible-users/web/>):
 
@@ -240,11 +248,36 @@ Platform competition, urgency, and the open vs closed dynamic. This chapter brid
 
 **Tone:** Urgent, immediate - "THIS IS HAPPENING NOW, not future speculation"
 
-**Purpose:** Establishes commercial urgency that motivates why readers need the solutions in Chapters 10-12 immediately
+**Purpose:** Establishes commercial urgency that motivates why readers need the solutions in Chapters 10-13 immediately
 
 ---
 
-### Chapter 10 — Designing for Both
+### Chapter 10 — Generative Engine Optimization
+
+Discovery patterns that work for search engines and AI agents.
+
+**Sections:**
+
+- The death of the click (how AI answer engines change discovery)
+- GEO vs SEO (citation vs ranking, the convergence principle)
+- The three layers of discovery (site-wide guidance, page-level metadata, content structure)
+- robots.txt + llms.txt (parallel guidance systems)
+- JSON-LD structured data (serves both SEO and GEO)
+- Business decision framework (when to emphasize discoverability vs protect content)
+- Transaction-focused businesses vs ad-funded content
+- Measuring GEO success (beyond clicks - citation frequency, traffic attribution, structured data validation)
+- Implementation priorities (robots.txt/llms.txt → audit Schema.org → expand metadata → improve content structure)
+- The trust dividend (platform citations compound over time)
+- Real-world validation (Tailwind Labs case study from Appendix J)
+- Connecting to Chapter 11 (discovery leads to usability)
+
+**Key insight:** The patterns that help AI agents cite you correctly are the same patterns that improve traditional search ranking. Structured data, semantic HTML, and clear information architecture work across the entire discovery ecosystem - Google Search, ChatGPT, Claude, Perplexity. GEO and SEO converge.
+
+**Target length:** ~3,100 words (actual)
+
+---
+
+### Chapter 11 — Designing for Both
 
 Solutions that work for agents without degrading human experience. The convergence argument.
 
@@ -267,7 +300,7 @@ Solutions that work for agents without degrading human experience. The convergen
 
 ---
 
-### Chapter 11 — Technical Advice
+### Chapter 12 — Technical Advice
 
 Implementation code, testing strategies, and practical tools.
 
@@ -300,7 +333,7 @@ Implementation code, testing strategies, and practical tools.
 
 ---
 
-### Chapter 12 — What Agent Creators Must Build
+### Chapter 13 — What Agent Creators Must Build
 
 Implementation patterns, validation layers, and guardrails for reliable agent systems.
 
@@ -316,7 +349,7 @@ Implementation patterns, validation layers, and guardrails for reliable agent sy
 - The validation roadmap (priority-based implementation)
 - Conclusion (completing the ecosystem view)
 
-**Key insight:** Pipeline failures occur when agents fail to validate data during extraction. The £203,000 cruise pricing error wouldn't have occurred if either the website provided clear structured data (Chapter 11) or the agent had validation layers (Chapter 12). Both sides must improve.
+**Key insight:** Pipeline failures occur when agents fail to validate data during extraction. The £203,000 cruise pricing error wouldn't have occurred if either the website provided clear structured data (Chapter 12) or the agent had validation layers (Chapter 13). Both sides must improve.
 
 **Enhanced with:** Complete validation pipeline code examples showing range checking, comparative analysis, incomplete data detection, confidence scoring, and graceful degradation patterns
 
@@ -346,7 +379,7 @@ Implementation patterns, validation layers, and guardrails for reliable agent sy
 
 ### Illustrations
 
-All 11 chapter illustrations complete ✅
+12 of 13 chapter illustrations complete ✅ (Chapter 10 pending)
 
 1. Chapter 1 — "Same Website, Different Reality"
 2. Chapter 2 — "The Anatomy of Invisible Failure"
@@ -357,9 +390,10 @@ All 11 chapter illustrations complete ✅
 7. Chapter 7 — "The Legal Landscape"
 8. Chapter 8 — "The Human Cost"
 9. Chapter 9 — "The Platform Race"
-10. Chapter 10 — "Designing for Both"
-11. Chapter 11 — "Technical Advice"
-12. Chapter 12 — "The Validation Pipeline"
+10. Chapter 10 — "Generative Engine Optimization" (illustration pending)
+11. Chapter 11 — "Designing for Both"
+12. Chapter 12 — "Technical Advice"
+13. Chapter 13 — "The Validation Pipeline"
 
 ### Reference Materials
 
@@ -536,7 +570,7 @@ Real-world llms.txt example:
 
 - Digital Domain Technologies llms.txt — <https://allabout.network/llms.txt>
 - Demonstrates comprehensive structure with 91 posts across 6 categories
-- Used as production reference in Chapters 9, 10, and manuscript/appendix-ai-friendly-html-guide.md
+- Used as production reference in Chapters 10, 11, and manuscript/appendix-ai-friendly-html-guide.md
 
 ---
 
@@ -597,7 +631,7 @@ Real-world llms.txt example:
     │   ├── executive-summary.md
     │   ├── preface.md
     │   ├── reading-guide.md     # Navigation guidance with tailored reading paths
-    │   ├── chapter-01-*.md through chapter-11-*.md
+    │   ├── chapter-01-*.md through chapter-13-*.md
     │   ├── The-End.md           # Final page directing to online appendices
     │   ├── Glossary.md
     │   ├── appendix-a-implementation-cookbook.md      # Appendix A source
@@ -638,7 +672,7 @@ Real-world llms.txt example:
     │   │   ├── book-updates.md                      # Changelog for Appendix J additions (post-publication)
     │   │   └── AI-Native.blog                       # AI-native website guide (~38,000 words)
     │   └── illustrations/
-    │       └── chapter-01-*.svg through chapter-11-*.svg
+    │       └── chapter-01-*.svg through chapter-13-*.svg
     └── llms.txt                 # Example llms.txt file from book content
 ```
 

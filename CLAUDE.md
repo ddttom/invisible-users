@@ -27,8 +27,8 @@ This repository contains two integrated projects:
 
 **"The Invisible Users: Designing the Web for AI Agents and Everyone Else"** - a practical guide examining how modern web design optimized for human users fails for AI agents, and how fixing this benefits everyone.
 
-**Target length:** 30,000-50,000 words (11 chapters, 3,000-5,000 words each)
-**Current status:** Chapters 1-11 complete, all illustrations complete
+**Target length:** 30,000-50,000 words (13 chapters, 3,000-5,000 words each)
+**Current status:** Chapters 1-13 complete, all illustrations complete
 
 ### Publication Status
 
@@ -203,7 +203,7 @@ Some appendices use a dual-file structure where content is maintained separately
 **Appendix D (AI-Friendly HTML Guide):**
 
 - **`appendix-d-ai-friendly-html-guide.txt`** - The actual guide content (source of truth, ~3,000 lines)
-- **`appendix-d-ai-friendly-html-guide.md`** - Markdown wrapper that displays the .txt content in a code block
+- **`appendix-d-ai-friendly-html-guide.md`** - Markdown wrapper with introduction and table of contents
 
 **Why both files?**
 
@@ -212,6 +212,69 @@ The PDF generation command (`pdf:generate` in package.json) uses `appendix-*.md`
 - Edited independently without Pandoc formatting concerns
 - Copied directly into AI assistants (Claude Code, Cursor, GitHub Copilot) for implementation guidance
 - Used as a reference without needing to parse code blocks
+
+### CRITICAL: When Editing Dual-File Appendices
+
+⚠️ **You MUST update BOTH the .txt and .md files when making content changes to Appendix D or Appendix H:**
+
+**Workflow for ANY dual-file appendix:**
+
+1. **Primary edit:** Make content changes to the `.txt` file (source of truth)
+2. **Secondary update:** Update the `.md` file to reflect changes
+
+**Which dual-file appendices exist:**
+
+- **Appendix D** (AI-Friendly HTML Guide) - Has table of contents in .md file
+- **Appendix H** (Example llms.txt) - Has introduction text in .md file
+
+**Example - Adding a section to Appendix D:**
+
+```bash
+# Step 1: Edit the .txt file (add content)
+Edit packages/manuscript/manuscript/appendix-d-ai-friendly-html-guide.txt
+# Add new "Common Validation Pitfalls" section at line 2674
+
+# Step 2: Update the .md file (update TOC)
+Edit packages/manuscript/manuscript/appendix-d-ai-friendly-html-guide.md
+# Update Part 9 description from:
+#   "Testing and Validation - Automated Playwright tests, manual validation"
+# To:
+#   "Testing and Validation - Automated Playwright tests, common validation pitfalls, manual validation tools"
+```
+
+**Example - Adding links to Appendix H:**
+
+```bash
+# Step 1: Edit the .txt file (add links)
+Edit packages/manuscript/manuscript/appendix-h-live-llms.txt
+# Add new curated links to the 20-link collection
+
+# Step 2: Update the .md file (update count if changed)
+Edit packages/manuscript/manuscript/appendix-h-live-llms.md
+# Update link count in introduction if changed from 20 to a different number
+```
+
+**What needs updating in the .md file:**
+
+- **Table of contents** - If you added/removed/renamed sections
+- **Part descriptions** - Brief summary of what each part covers
+- **Introduction text** - If the guide's purpose or scope changed
+
+**What does NOT need updating in the .md file:**
+
+- Detailed content (lives in .txt file only)
+- Code examples (lives in .txt file only)
+- Technical patterns (lives in .txt file only)
+
+**Verification:**
+
+After updating both files, verify consistency:
+
+```bash
+# Check that .md table of contents matches .txt structure
+grep "^## Part" packages/manuscript/manuscript/appendix-d-ai-friendly-html-guide.txt
+# Compare against .md table of contents (lines 14-24)
+```
 
 ## Essential Commands
 
@@ -236,9 +299,8 @@ npm run pdf:simple          # Generate simple PDF without cover
 
 # HTML appendix generation
 npm run pdf:appendix        # Generate individual HTML pages for each appendix
-                            # Includes automatic Chapter 10 pattern enhancement
+                            # Includes automatic Chapter 11 pattern enhancement
                             # Also generates sitemap.xml for search engine discovery
-                            # Automatically copies all web files to allaboutV2/invisible-users if directory exists
 
 # Chapter status
 npm run status              # Show all chapter files
@@ -388,7 +450,7 @@ The Web Audit Suite implements the patterns from "The Invisible Users" book:
 Reference Documentation:
 
 - Book manuscript: `packages/manuscript/manuscript/` directory
-- Implementation guidance: `packages/manuscript/manuscript/chapter-10-technical-advice.md`
+- Implementation guidance: `packages/manuscript/manuscript/chapter-12-technical-advice.md`
 - Quick reference: `packages/manuscript/manuscript/appendix-ai-patterns-quick-reference.md`
 
 ### Two HTML States (Critical Distinction)
@@ -446,7 +508,7 @@ The book addresses a diverse ecosystem of AI agents with varying capabilities:
 
 ### Identity Delegation (Mentioned)
 
-A practical concern discussed briefly in Chapters 4, 6, 9, and 10: When agents make purchases, businesses lose customer identity. The book mentions identity delegation patterns as one emerging solution, without prescribing a specific implementation.
+A practical concern discussed briefly in Chapters 4, 6, 10, and 11: When agents make purchases, businesses lose customer identity. The book mentions identity delegation patterns as one emerging solution, without prescribing a specific implementation.
 
 ### Session Inheritance Problem
 
@@ -651,6 +713,166 @@ Explanatory paragraph introducing the table.
 
 **Key insight:** Summary paragraph explaining what the table demonstrates and why it matters.
 ```
+
+## HTML Validation and AI-Friendly Patterns
+
+### HTML Validation Tools
+
+When working with HTML files (especially web appendices and marketing pages), use validation tools to catch common errors:
+
+**html-validate (local CLI):**
+
+```bash
+npx html-validate path/to/file.html
+```
+
+Catches:
+
+- Unencoded special characters (`&` must be `&amp;`)
+- Redundant ARIA roles
+- ARIA attribute misuse
+- Non-semantic HTML structure
+- Accessibility violations
+
+**W3C Validator (online):**
+
+Visit: <https://validator.w3.org/>
+
+Checks:
+
+- HTML5 spec compliance
+- Well-formed markup
+- Valid attributes
+- Proper nesting
+
+### Common HTML Validation Pitfalls
+
+These issues often slip through but break both AI agent parsing and accessibility:
+
+#### 1. Unencoded Special Characters
+
+**Bad:**
+
+```html
+<div>Technical patterns & implementation</div>
+```
+
+**Good:**
+
+```html
+<div>Technical patterns &amp; implementation</div>
+```
+
+Always encode: `&` as `&amp;`, `<` as `&lt;`, `>` as `&gt;`, `"` as `&quot;` (in attributes)
+
+#### 2. Redundant ARIA Roles
+
+**Bad:**
+
+```html
+<section role="region" aria-label="Book review">
+```
+
+**Good:**
+
+```html
+<section aria-label="Book review">
+```
+
+Semantic elements have implicit roles:
+
+- `<section>` = region (when it has an accessible name)
+- `<nav>` = navigation
+- `<main>` = main
+- `<article>` = article
+- `<footer>` = contentinfo (when top-level)
+
+#### 3. ARIA Attributes on Non-Interactive Elements
+
+**Bad:**
+
+```html
+<div class="stars" aria-label="Rating: 4 out of 5 stars">★★★★☆</div>
+```
+
+**Good:**
+
+```html
+<div class="stars" role="img" aria-label="Rating: 4 out of 5 stars">★★★★☆</div>
+```
+
+`aria-label` only works on:
+
+- Interactive elements (buttons, links, inputs)
+- Landmark roles (navigation, main, etc.)
+- Elements with explicit `role="img"` or similar
+
+#### 4. Missing Semantic Structure
+
+**Bad:**
+
+```html
+<div class="content">
+    <section>...</section>
+</div>
+```
+
+**Good:**
+
+```html
+<div class="content">
+    <main>
+        <article>
+            <section>...</section>
+        </article>
+    </main>
+</div>
+```
+
+Every page should have:
+
+- One `<main>` element containing primary content
+- `<article>` for self-contained content
+- `<section>` for thematic groupings within articles
+
+#### 5. Inline Styles Warning
+
+html-validate will warn about inline styles. This is acceptable for:
+
+- Single-file HTML pages (email templates, design comps)
+- Pages meant for screenshot generation (like back-cover.html)
+- Marketing landing pages with unique designs
+
+For production sites with separate CSS files, avoid inline styles.
+
+### AI-Friendly HTML Patterns Reference
+
+When creating web pages (appendices, marketing materials, documentation):
+
+**Essential patterns:**
+
+1. **Semantic HTML** - Use `<main>`, `<article>`, `<section>`, `<nav>`, `<header>`, `<footer>`
+2. **Schema.org JSON-LD** - Add structured data for book, person, organization
+3. **Machine-readable dates** - Use `<time datetime="2026-03-31">` with ISO 8601 format
+4. **Explicit locale** - Use `<html lang="en-GB" data-locale="en-GB">`
+5. **Contact information** - Wrap URLs in `<address>` element
+
+**Complete reference:** See [appendix-d-ai-friendly-html-guide.txt](packages/manuscript/manuscript/appendix-d-ai-friendly-html-guide.txt) for comprehensive patterns.
+
+**Real-world example:** The [back-cover.html](packages/manuscript/manuscript/web/back-cover.html) demonstrates all patterns in production use.
+
+### Pre-Deploy HTML Checklist
+
+Before deploying HTML changes:
+
+- [ ] All `&` characters encoded as `&amp;`
+- [ ] No redundant `role` attributes on semantic elements
+- [ ] `aria-label` only used on elements that support it
+- [ ] Semantic elements used instead of divs where appropriate
+- [ ] Document has `<main>` landmark
+- [ ] Self-contained content wrapped in `<article>`
+- [ ] Schema.org JSON-LD validates without errors (use <https://validator.schema.org>)
+- [ ] Passes W3C HTML validator
 
 ## Enhanced Git Workflows
 

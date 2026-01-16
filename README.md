@@ -32,7 +32,7 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 This repository serves four distinct audiences:
 
 1. **Web Professionals & Engineers**: Developers and QA specialists using the [Web Audit Suite](packages/web-audit-suite/) to test and optimize sites for AI agent compatibility.
-2. **Agent System Developers**: Developers building AI agents, browser extensions, and agentic systems. Chapter 11 provides validation frameworks, confidence scoring patterns, and guardrails for robust data quality.
+2. **Agent System Developers**: Developers building AI agents, browser extensions, and agentic systems. Chapter 13 provides validation frameworks, confidence scoring patterns, and guardrails for robust data quality.
 3. **Business Leaders**: Executives and managers using the [Book](packages/manuscript/) to understand the strategic impact of AI agents on their digital business.
 4. **Partners & Investors**: Agencies and investors using the [Business Model](docs/sales-enablement/business-plan.md) to evaluate the commercial potential of this new market category.
 
@@ -192,7 +192,6 @@ npm run lint:markdown:fix
 
 # Generate PDF (requires LaTeX - see below)
 npm run pdf:generate       # Full PDF with professional book formatting (A4)
-                           # Auto-copies to allaboutV2/invisible-users if directory exists
 npm run pdf:kindle         # Kindle Direct Publishing format (6"×9" paperback)
 npm run pdf:simple         # Simplified PDF formatting
 npm run pdf:html           # Generate HTML (print to PDF via browser ⌘+P)
@@ -270,7 +269,6 @@ The appendices are published as separate HTML pages with full navigation:
 
 ```bash
 npm run pdf:appendix        # Generate HTML pages in packages/manuscript/manuscript/web/
-                            # Auto-copies all files to allaboutV2/invisible-users if directory exists
 ```
 
 This creates 18 files in the manuscript submodule:
