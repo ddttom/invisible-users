@@ -97,6 +97,20 @@ export class LLMScorer {
       score += reading.completenessRatio * weights.READING_TIME_META.completenessRatio;
     }
 
+    // HTML Validation
+    if (metrics.htmlValidation?.metrics) {
+      const validation = metrics.htmlValidation.metrics;
+      if (!validation.hasIssues) {
+        score += weights.HTML_VALIDATION.noIssuesBonus;
+      } else {
+        // Apply penalties for each type of issue
+        score += validation.unencodedAmpersands * weights.HTML_VALIDATION.unencodedAmpersandPenalty;
+        score += validation.redundantRoles * weights.HTML_VALIDATION.redundantRolePenalty;
+        score += validation.ariaMisuse * weights.HTML_VALIDATION.ariaMisusePenalty;
+        score += validation.nonSemanticContainers * weights.HTML_VALIDATION.nonSemanticContainerPenalty;
+      }
+    }
+
     return Math.max(0, Math.min(100, Math.round(score)));
   }
 

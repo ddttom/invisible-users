@@ -45,6 +45,13 @@ export const SCORING_WEIGHTS = {
       hasTimeRequired: 5,
       completenessRatio: 5,
     },
+    HTML_VALIDATION: {
+      noIssuesBonus: 10,
+      unencodedAmpersandPenalty: -1,
+      redundantRolePenalty: -1,
+      ariaMisusePenalty: -2,
+      nonSemanticContainerPenalty: -1,
+    },
   },
   RENDERED: {
     MAX_BONUS: 30,

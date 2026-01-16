@@ -43,6 +43,7 @@ export class LLMCollector {
       socialMediaMeta: this.analyzeSocialMediaMeta($),
       seoMeta: this.analyzeSEOMeta($),
       readingTimeMeta: this.analyzeReadingTimeMeta($),
+      htmlValidation: this.analyzeHTMLValidation($),
     };
   }
 
@@ -599,6 +600,143 @@ export class LLMCollector {
         inLanguageValue,
         isValidISO8601,
         completenessRatio: [hasTimeRequired, hasEducationalLevel, hasInLanguage].filter(Boolean).length / 3,
+      },
+    };
+  }
+
+  /**
+   * Analyze HTML validation issues that break AI agent parsing and accessibility
+   * Based on patterns from Appendix D (AI-Friendly HTML Guide)
+   *
+   * IMPORTANT: Cheerio (like browser engines) automatically corrects some invalid HTML
+   * during parsing. Unencoded ampersands (&) are automatically fixed to &amp; by both
+   * Cheerio and browser parsers, so they won't be detected here. This matches real-world
+   * behavior: browser-based AI agents see the corrected HTML, while CLI agents working
+   * with raw HTML see the original errors. For comprehensive validation, use html-validate
+   * or W3C Validator on the raw HTML source before browser processing.
+   *
+   * @param {CheerioAPI} $ - Cheerio instance
+   * @returns {Object} HTML validation metrics
+   */
+  static analyzeHTMLValidation($) {
+    const issues = {
+      unencodedAmpersands: 0,
+      redundantRoles: 0,
+      ariaMisuse: 0,
+      nonSemanticContainers: 0,
+    };
+
+    // Check for unencoded ampersands in HTML source
+    // NOTE: Cheerio auto-corrects these during parsing, so this check may not detect
+    // ampersands in the original source. It will catch any that remain after parsing.
+    // Use .html() to get raw HTML with entities, not .text() which decodes them
+    $('body *').each((_, el) => {
+      const $el = $(el);
+      // Only check content elements, skip script/style/svg
+      if ($el.is('script, style, svg')) return;
+
+      // Get the inner HTML (preserves entities)
+      const html = $el.html();
+      if (!html) return;
+
+      // Match & not followed by valid entity pattern (amp;, lt;, gt;, quot;, apos;, #\d+;, or named entities)
+      const unencodedMatches = html.match(/&(?!amp;|lt;|gt;|quot;|apos;|#\d+;|[a-z]+;)/gi);
+      if (unencodedMatches) {
+        issues.unencodedAmpersands += unencodedMatches.length;
+      }
+    });
+
+    // Check for redundant ARIA roles on semantic elements
+    // Note: Some elements like <header> and <footer> only have implicit roles
+    // when they are NOT nested in sectioning content (article, aside, main, nav, section)
+    const semanticElementsWithImplicitRoles = {
+      section: 'region', // when it has an accessible name
+      nav: 'navigation',
+      main: 'main',
+      article: 'article',
+      aside: 'complementary',
+      header: 'banner', // only when NOT nested in sectioning content
+      footer: 'contentinfo', // only when NOT nested in sectioning content
+    };
+
+    // Elements that scope <header>/<footer> roles
+    const sectioningContent = ['article', 'aside', 'main', 'nav', 'section'];
+
+    Object.keys(semanticElementsWithImplicitRoles).forEach((tag) => {
+      const implicitRole = semanticElementsWithImplicitRoles[tag];
+
+      $(`${tag}[role="${implicitRole}"]`).each((_, el) => {
+        const $el = $(el);
+
+        // For header/footer elements, check if they're nested in sectioning content
+        if (tag === 'header' || tag === 'footer') {
+          // Check if any ancestor is sectioning content
+          const isNested = $el.parents(sectioningContent.join(',')).length > 0;
+
+          if (!isNested) {
+            // Not nested - implicit role applies, so explicit role is redundant
+            issues.redundantRoles++;
+          }
+          // If nested, the explicit role IS needed (not redundant)
+        } else {
+          // For other elements (nav, main, article, aside, section), the role is always redundant
+          issues.redundantRoles++;
+        }
+      });
+    });
+
+    // Check for ARIA misuse: aria-label on non-interactive elements without role
+    // aria-label only works on:
+    // - Interactive elements (button, a, input, select, textarea)
+    // - Elements with explicit roles (role="img", role="region", etc.)
+    $('[aria-label]').each((_, el) => {
+      const $el = $(el);
+      const tagName = el.name;
+      const hasRole = $el.attr('role');
+
+      // Interactive elements that support aria-label
+      const interactiveElements = ['button', 'a', 'input', 'select', 'textarea', 'summary'];
+
+      // Elements that have implicit roles
+      const elementsWithImplicitRoles = ['nav', 'main', 'article', 'aside', 'header', 'footer', 'section', 'form'];
+
+      // If element is not interactive, has no explicit role, and has no implicit role
+      if (!interactiveElements.includes(tagName)
+          && !hasRole
+          && !elementsWithImplicitRoles.includes(tagName)) {
+        issues.ariaMisuse++;
+      }
+    });
+
+    // Check for non-semantic containers: divs with ARIA labels but no explicit role
+    // These should probably be <section> elements instead
+    $('div[aria-label]').each((_, el) => {
+      const $el = $(el);
+      // Only flag if div has NO role attribute (div with role="img" etc is fine)
+      if (!$el.attr('role')) {
+        issues.nonSemanticContainers++;
+      }
+    });
+
+    // Calculate total issues and quality score
+    const totalIssues = issues.unencodedAmpersands
+                      + issues.redundantRoles
+                      + issues.ariaMisuse
+                      + issues.nonSemanticContainers;
+
+    // Score inversely proportional to issues (0 issues = 100, 10+ issues = 0)
+    const qualityScore = Math.max(0, Math.min(100, Math.round(100 - (totalIssues * 10))));
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        unencodedAmpersands: issues.unencodedAmpersands,
+        redundantRoles: issues.redundantRoles,
+        ariaMisuse: issues.ariaMisuse,
+        nonSemanticContainers: issues.nonSemanticContainers,
+        totalIssues,
+        qualityScore,
+        hasIssues: totalIssues > 0,
       },
     };
   }
