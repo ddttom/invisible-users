@@ -9,6 +9,71 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Visual Dynamism Detection to Web Audit Suite (2026-01-17)
+
+Added screenshot-based visual dynamism detection to complement library-based dynamic content detection, catching typewriter animations, rotating text, tickers, and other timing-dependent visual changes.
+
+**Detection Implementation (caching.js):**
+
+- Screenshot comparison logic added to capturePageData function (lines 755-772)
+- Takes 3 screenshots at random 2-5 second intervals using Puppeteer page.screenshot
+- Calculates MD5 hash of each screenshot buffer
+- Compares hashes to detect unique visual states (Set size > 1 indicates dynamism)
+- Returns visualDynamism object with detected boolean and uniqueStates count
+- Works on homepage only (when url === baseUrl) to avoid false positives from lazy loading on deep pages
+
+**Data Collection (llmCollector.js):**
+
+- Added visualDynamism extraction in analyzeDynamicContent method (line 864)
+- Metrics: visualDynamism.detected (boolean), visualDynamism.uniqueStates (count)
+- Marked ESSENTIAL_RENDERED importance (browser-based agents only)
+
+**Scoring and Feedback:**
+
+- Added -5 point penalty for detected visual dynamism (scoringWeights.js line 81, llmScorer.js lines 214-217)
+- Essential issue warning generated when detected (llmFeedback.js lines 310-321)
+- Recommendations include exposing all text variations in served HTML, adding data-content-complete attribute, considering static alternatives
+
+**Testing (dynamicContent.test.js):**
+
+- Added 2 new tests for visual dynamism detection (lines 135-154, 446-474)
+- Tests verify metrics collection, scoring penalties, and feedback generation
+- Total 16 tests covering all dynamic content patterns
+
+**Documentation Updates:**
+
+- **Appendix C (appendix-c-web-audit-suite-guide.md)**: Added Visual Dynamism Detection section (lines 750-835) with:
+  - New metrics: visualDynamismDetected, visualDynamismUniqueStates
+  - Real-world example: Arbory Digital homepage with typewriter animation cycling through "AEM UPGRADE SPECIALISTS" → "AEM EXPERTS" → "SECURITY"
+  - Troubleshooting guidance for typewriter animations, ticker-tape text, rotating hero content
+  - Complete fix recommendations with static alternatives and data attributes
+- **Sales Materials**: Updated business-opportunities.md, EXECUTIVE_PITCH_DECK.md with visual dynamism detection feature
+- **ROI Case Studies (ROI_CASE_STUDIES.md)**: Added Case Study 4: Professional Services Firm demonstrating visual dynamism detection on Arbory Digital site
+
+**Technical Implementation:**
+
+Visual dynamism detection runs independently from library detection, merging results into single dynamicContent object. Random wait intervals (2-5 seconds) ensure typewriter animations complete between screenshots. MD5 hash comparison provides fast, reliable change detection without image analysis. Homepage-only restriction prevents false positives from progressive image loading on deep pages.
+
+**Files Modified:**
+
+Web Audit Suite (5 files):
+
+- src/utils/caching.js (added screenshot comparison)
+- src/collectors/llmCollector.js (added visualDynamism metrics)
+- src/config/scoringWeights.js (added visualDynamismPenalty: -5)
+- src/scorers/llmScorer.js (applied penalty logic)
+- src/reporters/llmFeedback.js (added warnings and recommendations)
+
+Testing and Documentation (5 files):
+
+- test/utils/dynamicContent.test.js (added 2 visual dynamism tests)
+- packages/manuscript/manuscript/appendix-c-web-audit-suite-guide.md (added Visual Dynamism Detection section)
+- docs/sales-enablement/business-opportunities.md (updated Agent Readiness Score section)
+- docs/sales-enablement/EXECUTIVE_PITCH_DECK.md (updated Week 1 audit and Month 1 fixes)
+- docs/sales-enablement/ROI_CASE_STUDIES.md (added Case Study 4)
+
+**Commits:** Manuscript submodule: 958d99a. Main repository: e3a5a23 (test golden output), 2ff64fc (implementation), b79d3b6 (sales materials), dfedf21 (lint fixes), 289e328 (README), 7c44094 (PROJECTSTATE).
+
 ### Added - Dynamic Content Patterns to Book and Web Audit Suite (2026-01-17)
 
 Added comprehensive coverage of dynamic content patterns that confuse AI agents across both book manuscript and Web Audit Suite implementation.
