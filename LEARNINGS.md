@@ -4,6 +4,12 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 
 ---
 
+## Site-Level Resource Detection: Fetch from Origin, Not Page HTML
+
+**Rule** (2026-01-17): Tried to detect llms.txt presence by looking for HTML references (`<link rel="alternate">` or `<a href="/llms.txt">`) in page markup, but this failed to detect the file at <https://allabout.network/llms.txt> even though it existed. Site-level resources like llms.txt, robots.txt, and ai.txt are **site-wide files at the origin**, not page-specific content. Always fetch them directly from `{origin}/llms.txt` once per audit and apply the result site-wide. Don't rely on pages linking to them in HTML - the files might exist without any HTML references. This is analogous to robots.txt detection: you fetch it from the root, not by searching for mentions of it in page content.
+
+---
+
 ## Array Type Validation: Always Use Array.isArray()
 
 **Rule** (2026-01-17): Encountered `TypeError: carousels.filter is not a function` during Web Audit Suite execution. Code assumed `dynamicData.carousels || []` would ensure an array, but in some cases the property existed but wasn't an array. JavaScript's `||` operator doesn't validate types, it just checks truthiness. Always use explicit type checking: `Array.isArray(data.property) ? data.property : []` when you need to guarantee array operations like `.filter()`, `.map()`, or `.reduce()` will work correctly.
