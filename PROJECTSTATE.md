@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-17 (Fixed carousel array bug in Web Audit Suite)
+**Last Updated:** 2026-01-17 (Organized sales-enablement directory structure)
 
 ### Monorepo Structure
 
@@ -21,7 +21,13 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~140,000 words total (core manuscript ~78,000 words + appendices ~58,600 words + supporting materials ~3,550 words)
 - **Appendices:** 12 appendices (~58,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 13 chapters complete (added NEW Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Fixed carousel array TypeError bug in Web Audit Suite (2026-01-17):
+- **Latest Change:** Organized sales-enablement directory into logical subfolders (2026-01-17):
+  - **Reorganization:** Moved 25 files from flat structure into 8 organized categories (business, pitches, publishers, partners, outreach, content, profiles, pricing)
+  - **Documentation Updates:** Updated README.md and CLAUDE.md with new folder structure showing complete file organization
+  - **Skill Updates:** Updated /opportunity skill documentation (README.md and skill.md) with new file paths for generated materials
+  - **Git Tracking:** All moves tracked as renames with 100% similarity preserved
+  - **Improved Navigation:** Sales enablement materials now organized by purpose for easier discovery and management
+- **Previous Change:** Fixed carousel array TypeError bug in Web Audit Suite (2026-01-17):
   - **Bug:** `TypeError: carousels.filter is not a function` during LLM metrics collection
   - **Root Cause:** Code assumed `dynamicData.carousels || []` would ensure array type, but property could exist with non-array value
   - **Fix:** Added explicit type check using `Array.isArray(dynamicData.carousels) ? dynamicData.carousels : []` in llmCollector.js:865
