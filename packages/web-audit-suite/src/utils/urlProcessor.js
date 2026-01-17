@@ -261,7 +261,58 @@ export class UrlProcessor {
   }
 
   /**
-   * Processes an array of URLs sequentially (original behavior).
+   * Processes an array of URLs concurrently with configurable concurrency.
+   * @param {Array} urls - The URLs to process.
+   * @param {number} concurrency - Maximum number of concurrent operations (default: 3).
+   * @returns {Promise<Object>} The results of processing all URLs.
+   */
+  async processUrlsConcurrently(urls, concurrency = 3) {
+    if (!Array.isArray(urls) || urls.length === 0) {
+      this.context.logger.warn('No URLs to process');
+      return [];
+    }
+
+    this.context.logger.info(`Processing ${urls.length} URLs with concurrency ${concurrency}`);
+    const totalTests = urls.length;
+    const progressTracker = { completed: 0 };
+
+    // Process URLs in batches based on concurrency
+    for (let i = 0; i < urls.length; i += concurrency) {
+      // Use dynamic concurrency from adaptive rate limiter if enabled
+      const currentConcurrency = this.context.rateLimiter
+        ? this.context.rateLimiter.getConcurrency()
+        : concurrency;
+
+      const batch = urls.slice(i, i + currentConcurrency);
+      const startIndex = i;
+
+      const batchPromises = batch.map(async ({ url, lastmod }, batchIndex) => {
+        const globalIndex = startIndex + batchIndex;
+        try {
+          console.info(`Starting processing of URL ${globalIndex + 1} of ${totalTests}: ${url}`);
+          await this.processUrl(url, lastmod, globalIndex, totalTests);
+          progressTracker.completed++;
+          this.context.logger.info(`Progress: ${progressTracker.completed}/${totalTests} URLs completed`);
+        } catch (error) {
+          this.context.logger.error(`Error processing URL ${url}:`, error);
+          progressTracker.completed++;
+        }
+      });
+
+      // Wait for current batch to complete before starting next batch
+      await Promise.allSettled(batchPromises);
+    }
+
+    // Log rate limiter statistics if enabled
+    if (this.context.rateLimiter) {
+      this.context.rateLimiter.logStats();
+    }
+
+    return this.results;
+  }
+
+  /**
+   * Processes an array of URLs sequentially (legacy/fallback behavior).
    * @param {Array} urls - The URLs to process.
    * @returns {Promise<Object>} The results of processing all URLs.
    */
@@ -271,7 +322,7 @@ export class UrlProcessor {
       return [];
     }
 
-    this.context.logger.info(`Processing ${urls.length} URLs`);
+    this.context.logger.info(`Processing ${urls.length} URLs sequentially`);
     const totalTests = urls.length;
 
     for (let i = 0; i < totalTests; i++) {
@@ -291,8 +342,9 @@ export class UrlProcessor {
    */
   async processUrls(urls, recursive = false) {
     if (!recursive) {
-      // Original behavior: process only initial URLs
-      return this.processUrlsSequentially(urls);
+      // Use concurrent processing for better performance
+      const concurrency = this.options.urlConcurrency || 3;
+      return this.processUrlsConcurrently(urls, concurrency);
     }
 
     // Recursive mode: queue-based processing
