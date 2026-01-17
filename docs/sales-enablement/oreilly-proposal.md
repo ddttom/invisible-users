@@ -1,6 +1,6 @@
 # O'Reilly Media Book Proposal
 
-**To:** authorreln@oreilly.com
+**To:** <authorreln@oreilly.com>
 **From:** Tom Cranstoun
 **Date:** January 2026
 **Subject:** Book Proposal - "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
@@ -26,6 +26,7 @@ By Q3 2026, agent compatibility will be established practice. The book needs to 
 ### Option 1: Immediate Early Release (Recommended)
 
 **Timeline:**
+
 - **Week 1-2:** Contract finalization
 - **Week 3:** First 3 chapters live on O'Reilly Learning Platform
 - **Weeks 4-8:** Rolling chapter releases (2-3 chapters per week)
@@ -33,12 +34,14 @@ By Q3 2026, agent compatibility will be established practice. The book needs to 
 - **Week 12:** Print edition available (if desired)
 
 **Benefits:**
+
 - O'Reilly Learning subscribers get immediate access
 - Platform analytics show real-time engagement
 - Corporate adoption visible within weeks
 - Print edition follows proven demand
 
 **Author concession:**
+
 - Accept lower advance in exchange for speed
 - Priority given to platform release over print
 - Flexible on royalty structure for fast timeline
@@ -46,6 +49,7 @@ By Q3 2026, agent compatibility will be established practice. The book needs to 
 ### Option 2: Print-First with Compressed Timeline
 
 **Timeline:**
+
 - **Week 1-2:** Contract finalization
 - **Weeks 3-6:** Editorial review (manuscript complete, minimal editing needed)
 - **Weeks 7-8:** Production (layout, cover, proofs)
@@ -53,11 +57,13 @@ By Q3 2026, agent compatibility will be established practice. The book needs to 
 - **Week 12:** Books available
 
 **Benefits:**
+
 - Traditional print publication
 - O'Reilly brand and distribution
 - Retail presence (Amazon, bookstores)
 
 **Challenges:**
+
 - Still 3 months to market
 - Less flexible than Early Release
 - Misses peak urgency window (January-March 2026)
@@ -65,15 +71,19 @@ By Q3 2026, agent compatibility will be established practice. The book needs to 
 ## Book Overview
 
 ### Title
-**"The Invisible Users: Designing the Web for AI Agents and Everyone Else"**
+
+"The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 
 ### Subtitle
+
 How Modern Web Design Fails AI Agents - And Why Fixing It Benefits Everyone
 
 ### Core Thesis
+
 The patterns that break AI agents also break humans. Semantic HTML, explicit state management, and structured data - the solutions accessibility experts have recommended for years - are now infrastructure requirements driven by commercial pressure.
 
 ### Specifications
+
 - **Length:** 465 pages (6"×9" format)
 - **Word Count:** ~78,000 words core manuscript
 - **Status:** Complete manuscript, ready for publication
@@ -85,18 +95,21 @@ The patterns that break AI agents also break humans. Semantic HTML, explicit sta
 ### Target Audience
 
 **Primary:**
+
 - CTOs and engineering managers evaluating strategic priorities
 - Software architects designing new systems
 - Product managers planning roadmaps
 - Senior developers leading implementation
 
 **Secondary:**
+
 - Business leaders understanding competitive implications
 - UX designers considering agent experiences
 - DevOps engineers implementing infrastructure
 - Security teams evaluating agent access patterns
 
 **Market Size:**
+
 - O'Reilly Learning Platform subscribers (enterprise/professional audience)
 - Technical decision-makers at e-commerce companies
 - Enterprise CMS and digital experience practitioners
@@ -107,11 +120,13 @@ The patterns that break AI agents also break humans. Semantic HTML, explicit sta
 ### Existing Titles
 
 **Similar topics in O'Reilly catalog:**
+
 - "Designing Data-Intensive Applications" (Kleppmann) - architectural patterns
 - "Web Application Security" (Hoffman) - security considerations
 - "Building Microservices" (Newman) - API-first architecture
 
 **Key differentiators:**
+
 1. **Timeliness:** Only book documenting January 2025 platform convergence
 2. **Practical focus:** Production-ready code examples, not theoretical futures
 3. **Convergence principle:** Demonstrates how agent-friendly patterns benefit all users
@@ -129,25 +144,29 @@ The patterns that break AI agents also break humans. Semantic HTML, explicit sta
 ## Chapter Summary
 
 ### Part 1: The Problem (Chapters 1-4)
+
 1. **What You Will Learn** - Introduction and accessibility connection
 2. **The Invisible Failure** - When websites break for agents
 3. **The Architectural Conflict** - How modern web architecture creates the problem
 4. **The Business Reality** - Commercial implications of agent-mediated commerce
 
 ### Part 2: The Context (Chapters 5-9)
-5. **The Content Creator's Dilemma** - Impact on advertising-funded content
-6. **The Security Maze** - Session inheritance and authentication challenges
-7. **The Legal Landscape** - Legal frameworks struggling to keep pace
-8. **The Human Cost** - Digital divide implications
-9. **The Platform Race** - January 2025 convergence and competitive urgency
+
+1. **The Content Creator's Dilemma** - Impact on advertising-funded content
+2. **The Security Maze** - Session inheritance and authentication challenges
+3. **The Legal Landscape** - Legal frameworks struggling to keep pace
+4. **The Human Cost** - Digital divide implications
+5. **The Platform Race** - January 2025 convergence and competitive urgency
 
 ### Part 3: The Solutions (Chapters 10-13)
-10. **Generative Engine Optimization** - Discovery patterns for search and agents
-11. **Designing for Both** - Patterns that work for agents without degrading human experience
-12. **Technical Advice** - Implementation code, testing strategies, practical tools
-13. **What Agent Creators Must Build** - Validation frameworks and guardrails
+
+1. **Generative Engine Optimization** - Discovery patterns for search and agents
+2. **Designing for Both** - Patterns that work for agents without degrading human experience
+3. **Technical Advice** - Implementation code, testing strategies, practical tools
+4. **What Agent Creators Must Build** - Validation frameworks and guardrails
 
 ### Supporting Materials
+
 - **Preface:** Author's journey discovering the problem
 - **Glossary:** 60+ technical terms with cross-references
 - **12 Online Appendices:** Implementation cookbook, battle-tested lessons, Web Audit Suite guide, AI-friendly HTML patterns, quick references, roadmaps, resource directory, case studies, industry developments, page patterns, proposed metadata patterns
@@ -155,22 +174,26 @@ The patterns that break AI agents also break humans. Semantic HTML, explicit sta
 ## Author Credentials
 
 ### Professional Experience
+
 - **25 years** building web experiences (early e-commerce → modern progressive web apps)
 - **Production experience:** Nissan-Renault (200+ sites), Ford, MediaMonks
 - **Enterprise CMS expertise:** AEM specialist, recognized as "The AEM Guy"
 - **Adobe EDS:** Early adopter and strategic advisory
 
 ### Industry Recognition
+
 - **Boye & Company:** CMS Experts Group member
 - **CMS Critic:** Regular contributor
 - **Speaking:** Upcoming Boye & Company webinar (Jan 21, 2026): "Websites That Work Perfectly - Until They Don't"
 
 ### Technical Authority
+
 - **Web Audit Suite:** Author of production-ready website analysis tool implementing book's patterns
 - **Real production failures documented:** Two years researching agent-website interactions
 - **Platform expertise:** Apache, Nginx, Next.js, WordPress, Adobe EDS implementation experience
 
 ### Writing Experience
+
 - **CMS Critic articles:** Established technical writing credibility
 - **Blog:** Technical analysis at allabout.network
 - **This manuscript:** 465 pages complete, professionally edited
@@ -178,17 +201,20 @@ The patterns that break AI agents also break humans. Semantic HTML, explicit sta
 ## Marketing Platform
 
 ### Existing Audience
+
 - **Website:** allabout.network (technical content, growing readership)
 - **LinkedIn:** Professional network in enterprise CMS/digital experience space
 - **CMS Critic:** Editorial visibility to web professionals
 - **Boye & Company:** Access to enterprise decision-makers
 
 ### Speaking Opportunities
+
 - **January 21, 2026:** Boye & Company members' call (confirmed)
 - **Conference potential:** O'Reilly Software Architecture, enterprise CMS conferences
 - **Corporate training:** Book content adaptable to workshop format
 
 ### Content Marketing
+
 - **12 online appendices:** Already published, driving traffic to book
 - **Web Audit Suite:** Companion tool creates implementation ecosystem
 - **Industry developments tracking:** Appendix J maintained with latest news
@@ -218,18 +244,21 @@ The patterns that break AI agents also break humans. Semantic HTML, explicit sta
 ## Why O'Reilly?
 
 ### Brand Alignment
+
 - **Technical depth with business context:** Your catalog's strength
 - **Production-ready focus:** "Make things work" philosophy
 - **Professional audience:** Enterprise decision-makers
 - **Learning platform:** Early Release model perfect for timely content
 
 ### Distribution Power
+
 - **O'Reilly Learning Platform:** Immediate access to enterprise subscribers
 - **Print distribution:** Retail presence and credibility
 - **Corporate sales:** Bulk purchases for development teams
 - **International reach:** Global technical community
 
 ### Editorial Excellence
+
 - **Technical accuracy:** Your editors understand production systems
 - **Code review:** Examples reviewed for best practices
 - **Illustration quality:** Professional standards for technical diagrams
@@ -242,12 +271,14 @@ The patterns that break AI agents also break humans. Semantic HTML, explicit sta
 **Timeline:** 12 weeks from contract to complete platform availability
 
 **Author commitments:**
+
 - Manuscript delivery: Immediate (already complete)
 - Editorial responsiveness: 24-48 hour turnaround on revisions
 - Marketing support: Active promotion through existing channels
 - Content updates: Maintain online appendices with latest developments
 
 **Flexibility offered:**
+
 - **Advance:** Negotiable (priority is speed and reach)
 - **Royalties:** Open to O'Reilly's standard Early Release structure
 - **Exclusivity:** Willing to commit exclusively to O'Reilly for 24 months
@@ -258,6 +289,7 @@ The patterns that break AI agents also break humans. Semantic HTML, explicit sta
 **Timeline:** 12 weeks from contract to print availability
 
 **Author commitments:**
+
 - Same as above
 - Accept compressed editorial timeline
 - Limited revision rounds for speed
@@ -278,10 +310,10 @@ I believe O'Reilly's Early Release model is uniquely positioned to deliver timel
 ## Contact Information
 
 **Author:** Tom Cranstoun
-**Email:** tom.cranstoun@gmail.com
-**Website:** https://allabout.network
-**LinkedIn:** https://www.linkedin.com/in/tom-cranstoun/
-**Book Preview:** https://allabout.network/invisible-users
+**Email:** <tom.cranstoun@gmail.com>
+**Website:** <https://allabout.network>
+**LinkedIn:** <https://www.linkedin.com/in/tom-cranstoun/>
+**Book Preview:** <https://allabout.network/invisible-users>
 
 **Manuscript Status:** Complete and ready for immediate delivery
 **Availability:** Responsive to editorial feedback and marketing collaboration
@@ -291,18 +323,23 @@ I believe O'Reilly's Early Release model is uniquely positioned to deliver timel
 ## Appendices to This Proposal
 
 ### A. Complete Table of Contents
+
 [Attached separately - 13 chapters with section breakdowns]
 
 ### B. Sample Chapter
+
 [Attached: Chapter 2 - The Invisible Failure, complete]
 
 ### C. Author Bio (Extended)
+
 [Attached: Detailed professional history and credentials]
 
 ### D. Market Timing Analysis
+
 [Attached: Platform convergence timeline and competitive implementation data]
 
 ### E. Comparable Title Analysis
+
 [Attached: Detailed comparison with existing O'Reilly catalog and competitor titles]
 
 ---

@@ -34,7 +34,7 @@ Subsequent chapters explore architectural conflicts (Chapter 3), business realit
 
 ---
 
-# Chapter 2 - The Invisible Failure
+## Chapter 2 - The Invisible Failure
 
 When websites break for AI agents.
 
@@ -641,6 +641,6 @@ The complete manuscript (465 pages, 13 chapters) continues from this foundation 
 
 The manuscript is complete, professionally edited, and ready for immediate publication. The market timing is critical: businesses are implementing agent compatibility patterns now, not in 12-18 months. The book's Early Release model could deliver this content to enterprise subscribers during the crucial Q1-Q2 2026 implementation window.
 
-**Contact:** tom.cranstoun@gmail.com | https://allabout.network
+**Contact:** <tom.cranstoun@gmail.com> | <https://allabout.network>
 
 ---

@@ -11,11 +11,12 @@ Currently focused on the intersection of human-optimised web design and AI agent
 
 ## Current Focus
 
-**AI Agent Compatibility Research (2023-Present)**
+### AI Agent Compatibility Research (2023-Present)
 
 Two years investigating what happens when AI agents encounter modern websites. Not web scraping. Not automated testing. Actual customer-facing agents attempting legitimate purchases with valid payment methods and delivery addresses. The research documented consistent, predictable failure patterns that were completely invisible to traditional analytics.
 
 This investigation produced:
+
 - Classification of five invisible failure categories
 - Documentation of the January 2025 platform convergence (Google, Microsoft, Amazon launching within 7 days)
 - Production-ready implementation patterns across multiple platforms
@@ -28,16 +29,18 @@ This investigation produced:
 
 ### Enterprise Content Management (2015-Present)
 
-**Adobe Experience Manager (AEM) Specialist**
+#### Adobe Experience Manager (AEM) Specialist
 
 Recognised in the enterprise CMS community as "The AEM Guy" for deep technical expertise and strategic advisory work.
 
 **Key projects:**
+
 - **Nissan-Renault Alliance:** Digital experience architecture across 200+ websites in 40+ markets. Coordinated multi-brand, multi-language content strategies with complex governance requirements.
 - **Ford Motor Company:** Enterprise content management implementation supporting global digital presence. Integrated content workflows across marketing, communications, and customer service teams.
 - **MediaMonks (Agency):** Technical leadership for enterprise client implementations. Bridged business requirements with technical delivery across multiple projects simultaneously.
 
 **Technical contributions:**
+
 - AEM component architecture and best practices
 - Performance optimization for high-traffic enterprise sites
 - Integration patterns for headless CMS architectures
@@ -48,6 +51,7 @@ Recognised in the enterprise CMS community as "The AEM Guy" for deep technical e
 Early adopter and strategic advisor for Adobe's new performance-first architecture. This experience informs the book's EDS implementation examples and provides insight into modern web architecture evolution.
 
 **Contributions:**
+
 - Production implementation patterns
 - Performance optimization strategies
 - Integration with existing enterprise infrastructure
@@ -58,6 +62,7 @@ Early adopter and strategic advisor for Adobe's new performance-first architectu
 **Progressive web application development** for clients across e-commerce, media, financial services, and consumer brands. This breadth of experience across industries informs the book's understanding of different business model implications.
 
 **Notable patterns:**
+
 - Single-page application architectures (and their agent compatibility challenges)
 - API-first design patterns
 - Performance optimization for mobile-first experiences
@@ -80,12 +85,14 @@ Member of the CMS Experts Group, participating in strategic discussions about co
 Regular contributor to CMS Critic, writing technical analysis of content management systems, digital experience platforms, and web architecture patterns.
 
 **Topics covered:**
+
 - Enterprise CMS evaluation and selection
 - Technical architecture analysis
 - Performance and scalability considerations
 - Integration patterns and best practices
 
 **Editorial relationship demonstrates:**
+
 - Established technical writing credibility
 - Ability to communicate complex concepts to professional audiences
 - Understanding of enterprise decision-making processes
@@ -95,22 +102,26 @@ Regular contributor to CMS Critic, writing technical analysis of content managem
 ### Platform Experience
 
 **Content Management Systems:**
+
 - Adobe Experience Manager (AEM) - Deep specialist expertise
 - Adobe Edge Delivery Services (EDS) - Early adopter
 - WordPress - Enterprise and small business implementations
 - Headless CMS architectures - API-first patterns
 
 **Web Server Configuration:**
+
 - Apache - Performance optimization and security hardening
 - Nginx - Reverse proxy patterns and load balancing
 - CDN integration - Cloudflare, Akamai patterns
 
 **JavaScript Frameworks:**
+
 - Next.js - Server-side rendering and static generation
 - React - Component architectures
 - Vanilla JavaScript - Progressive enhancement patterns
 
 **Development Practices:**
+
 - Semantic HTML and accessibility patterns
 - Performance optimization (Core Web Vitals)
 - SEO technical implementation
@@ -118,9 +129,10 @@ Regular contributor to CMS Critic, writing technical analysis of content managem
 
 ### Research and Analysis
 
-**Web Audit Suite Development**
+#### Web Audit Suite Development
 
 Author of production-ready website analysis tool implementing the patterns documented in this book. The tool provides actionable insights into:
+
 - SEO performance and technical optimisation
 - Accessibility compliance (WCAG 2.1)
 - Performance metrics and Core Web Vitals
@@ -130,6 +142,7 @@ Author of production-ready website analysis tool implementing the patterns docum
 The tool validates the book's patterns through automated testing across real websites, providing empirical evidence for the documented failure modes.
 
 **Methodology:**
+
 - Two years of research (2023-2025)
 - Analysis of real production websites across industries
 - Documentation of agent failure patterns
@@ -140,17 +153,19 @@ The tool validates the book's patterns through automated testing across real web
 
 ### This Book
 
-**"The Invisible Users: Designing the Web for AI Agents and Everyone Else"**
+"The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 
 465 pages bridging business implications, strategic considerations, and technical implementation. Written for both business decision-makers who need strategic understanding and technical practitioners who need implementation patterns.
 
 **Unique aspects:**
+
 - Documented January 2025 platform convergence within weeks of occurrence
 - Production-ready code examples across multiple platforms
 - Priority-based implementation roadmaps for different resource levels
 - 12 comprehensive online appendices maintained as living documents
 
 **Research basis:**
+
 - Two years investigating agent-website interactions
 - Real production failure analysis
 - Platform-specific implementation validation
@@ -159,12 +174,14 @@ The tool validates the book's patterns through automated testing across real web
 ### Technical Writing
 
 **CMS Critic Articles:**
+
 - Technical evaluation frameworks
 - Architecture decision analysis
 - Performance optimization patterns
 - Integration strategy guidance
 
 **Blog (allabout.network):**
+
 - Technical deep-dives into web architecture
 - AI agent compatibility research findings
 - Production implementation lessons
@@ -176,11 +193,12 @@ The tool validates the book's patterns through automated testing across real web
 
 ### Confirmed Presentations
 
-**January 21, 2026 - Boye & Company Members' Call**
+#### January 21, 2026 - Boye & Company Members' Call
 
 Title: "Websites That Work Perfectly - Until They Don't"
 
 Topics:
+
 - The patterns that fail silently for AI agents
 - Quick wins: changes implementable this week
 - Diagnostic approach: identifying failures without error logs
@@ -191,6 +209,7 @@ Audience: Enterprise digital experience decision-makers, content strategists, te
 ### Conference Potential
 
 **Topics available for presentation:**
+
 - The January 2025 platform convergence and its implications
 - Invisible failure patterns and detection strategies
 - AI agent compatibility as accessibility challenge
@@ -198,6 +217,7 @@ Audience: Enterprise digital experience decision-makers, content strategists, te
 - The convergence principle: why fixing agent problems benefits everyone
 
 **Target conferences:**
+
 - O'Reilly Software Architecture Conference
 - Enterprise CMS conferences (CMS Experts Group events)
 - Web performance conferences
@@ -206,6 +226,7 @@ Audience: Enterprise digital experience decision-makers, content strategists, te
 ## Education
 
 **Self-directed technical education** through 25 years of production experience, spanning:
+
 - Early web development (HTML, CSS, JavaScript fundamentals)
 - Server-side programming and database design
 - Modern JavaScript frameworks and architectures
@@ -214,6 +235,7 @@ Audience: Enterprise digital experience decision-makers, content strategists, te
 - AI agent interaction patterns
 
 **Continuous learning through:**
+
 - Production problem-solving across diverse industries
 - Platform evolution (server-rendered → AJAX → SPA → agent-accessible)
 - Open source contribution and community participation
@@ -225,22 +247,26 @@ Audience: Enterprise digital experience decision-makers, content strategists, te
 
 25 years of web development provides perspective on infrastructure transitions:
 
-**1998-2003: First e-commerce wave**
+#### 1998-2003: First e-commerce wave
+
 - Built shopping carts before standardised platforms
 - Learned infrastructure patterns through production failures
 - Experienced first dot-com boom and bust
 
-**2004-2010: AJAX and rich interfaces**
+#### 2004-2010: AJAX and rich interfaces
+
 - Single-page application architectures
 - Progressive enhancement debates
 - Mobile-first responsive design
 
-**2011-2020: Modern JavaScript frameworks**
+#### 2011-2020: Modern JavaScript frameworks
+
 - React, Angular, Vue adoption
 - API-first architectures
 - Headless CMS patterns
 
-**2021-Present: AI agent compatibility**
+#### 2021-Present: AI agent compatibility
+
 - Platform convergence (January 2025)
 - Agent-mediated commerce infrastructure
 - Return to semantic HTML and progressive enhancement
@@ -250,12 +276,14 @@ This historical perspective informs the book's analysis: AI agent compatibility 
 ### Unique Position
 
 **Both sides of the ecosystem:**
+
 - Building websites that serve millions of users
 - Developing tools that analyse those websites for agent compatibility
 - Understanding both human and agent access patterns
 - Bridging business requirements with technical implementation
 
 **This dual perspective enables:**
+
 - Practical implementation patterns validated through production use
 - Understanding of both website owner and agent creator concerns
 - Business case articulation for technical changes
@@ -266,6 +294,7 @@ This historical perspective informs the book's analysis: AI agent compatibility 
 ### Timing
 
 **Perfect convergence of experience and market timing:**
+
 - 25 years of web development experience
 - Two years of agent compatibility research
 - Documentation of January 2025 platform convergence
@@ -276,6 +305,7 @@ This historical perspective informs the book's analysis: AI agent compatibility 
 ### Unique Qualification
 
 **No other author combines:**
+
 1. **Production experience** across 25 years and multiple platforms
 2. **Real research** documenting agent failure patterns systematically
 3. **Tool development** validating patterns through automated testing
@@ -285,39 +315,44 @@ This historical perspective informs the book's analysis: AI agent compatibility 
 ### Credibility Markers
 
 **Technical authority:**
+
 - Recognised AEM specialist ("The AEM Guy")
 - Boye & Company CMS Experts Group member
 - CMS Critic contributing writer
 - Production experience at scale (Nissan-Renault 200+ sites)
 
 **Research validation:**
+
 - Two years systematic investigation
 - Web Audit Suite tool development
 - Documentation of real production failures
 - Tracking of industry developments (Appendix J)
 
 **Communication ability:**
+
 - CMS Critic articles demonstrate technical writing
 - Blog content shows accessibility to professional audiences
 - Book manuscript demonstrates ability to sustain 465 pages of clear, actionable content
 
 ## Contact Information
 
-**Email:** tom.cranstoun@gmail.com
-**Website:** https://allabout.network
-**LinkedIn:** https://www.linkedin.com/in/tom-cranstoun/
-**Book Preview:** https://allabout.network/invisible-users
-**Web Audit Suite:** https://allabout.network (tool documentation)
+**Email:** <tom.cranstoun@gmail.com>
+**Website:** <https://allabout.network>
+**LinkedIn:** <https://www.linkedin.com/in/tom-cranstoun/>
+**Book Preview:** <https://allabout.network/invisible-users>
+**Web Audit Suite:** <https://allabout.network> (tool documentation)
 
 ## Availability
 
 **Responsive to:**
+
 - Editorial collaboration and manuscript refinement
 - Marketing activities (interviews, podcasts, conference presentations)
 - Community engagement (webinars, workshops, Q&A sessions)
 - Content updates (maintaining online appendices with latest developments)
 
 **Flexible on:**
+
 - Advance and royalty structures
 - Publication timeline (prioritise speed over standard process)
 - Format (Early Release vs print, or both)
@@ -327,7 +362,7 @@ This historical perspective informs the book's analysis: AI agent compatibility 
 
 **Complete manuscript:** Ready for immediate delivery
 **Web Audit Suite:** Available for publisher evaluation
-**Online appendices:** Already published at https://allabout.network/invisible-users/web/
+**Online appendices:** Already published at <https://allabout.network/invisible-users/web/>
 **Boye & Company presentation:** January 21, 2026 (recording available after)
 
 ---
