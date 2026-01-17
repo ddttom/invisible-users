@@ -96,10 +96,10 @@ We don't need a redesign. We need **Code Remediation**.
 
 ### The Plan of Action
 
-1. **Week 1:** Run the **Web Audit Suite** to benchmark our current score.
-2. **Week 2:** Present the "Technical Debt" report with priority fixes.
+1. **Week 1:** Run the **Web Audit Suite** to benchmark our current score (includes visual dynamism detection via screenshot comparison).
+2. **Week 2:** Present the "Technical Debt" report with priority fixes (carousels, typewriter animations, visual content changes).
 3. **Week 2-3:** Test checkout flow with Claude for Chrome, Microsoft Copilot, Amazon Alexa+
-4. **Month 1:** Fix the "Critical" blockers (Checkout, Pricing, Sign-up).
+4. **Month 1:** Fix the "Critical" blockers (Checkout, Pricing, Sign-up, rotating content).
 
 **Recommendation:** Approve the Phase 1 Audit budget of £[Amount] to quantify our risk.
 

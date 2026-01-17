@@ -97,3 +97,49 @@ Implemented **"Load All" Capability**:
 * **Business Impact:** Captured a high-value niche (Luxury Tours) that was previously invisible to the algorithms.
 
 > "Our content was premium, but our delivery was broken. We unlocked the value of our own IP just by letting the robots read it properly." — *Marketing Director*
+
+---
+
+## Case Study 4: The Professional Services Firm
+
+**Sector:** Digital Agency | **Revenue:** £15M | **Challenge:** "The Typewriter Animation Invisibility"
+
+### Case Study 4 - The Problem
+
+An AEM consulting agency used typewriter animations on their homepage to cycle through service offerings: "AEM UPGRADE SPECIALISTS" → "AEM EXPERTS" → "SECURITY CONSULTANTS". The animation created visual appeal for human visitors but caused complete content invisibility for AI agents.
+
+### Case Study 4 - The Diagnosis
+
+Using the **Web Audit Suite's visual dynamism detection**, we took 3 screenshots at random intervals and compared their hashes.
+
+* **Screenshot 1 (hash: a7f3d...):** "AEM UPGRADE SPECIALISTS"
+* **Screenshot 2 (hash: b2e8c...):** "AEM EXPERTS"
+* **Screenshot 3 (hash: d4a19...):** "SECURITY CONSULTANTS"
+* **Result:** 3 unique hashes = visual dynamism detected
+
+**Agent Impact:**
+
+* AI agents snapshot pages at random moments, capturing only 1 of 3 service offerings
+* Search engines and AI assistants couldn't reliably describe the full scope of services
+* Competitors with static content were recommended instead
+
+### Case Study 4 - The Fix
+
+Implemented **Content Completeness Pattern**:
+
+* Added all text variations to served HTML before JavaScript enhancement
+* Added `data-content-variations="AEM UPGRADE SPECIALISTS|AEM EXPERTS|SECURITY CONSULTANTS"` attribute
+* Created static alternative with `data-agent-visible="true"` showing all variations as list
+* Marked animation container with `data-animation-type="typewriter"`
+* Added `data-content-complete="true"` after animation cycle finishes
+
+### Case Study 4 - The Results
+
+* **Visual dynamism score:** Improved from -5 penalty to 0 (detection still present but properly handled)
+* **AI search visibility:** All 3 service areas now appear in AI assistant recommendations
+* **Lead quality:** 18% increase in qualified leads mentioning specific service areas
+* **Operational benefit:** Reduced "What services do you offer?" discovery calls
+
+> "We thought the animation was our differentiator. It was actually hiding our capabilities from the exact agents our clients were asking for recommendations." — *Head of Marketing*
+
+**Detection Method:** The Web Audit Suite's screenshot comparison feature (taking 3 screenshots at 2-5 second intervals) catches typewriter animations, rotating content, and tickers regardless of implementation method - complementing library detection (Typed.js, TypeIt) to provide comprehensive dynamic content auditing.

@@ -84,8 +84,8 @@ Our strategic advantage: *The Invisible Users* book establishes thought leadersh
 
 - MCP server extension generating agent-ready components by default
 - Code templates with semantic HTML, ARIA attributes, structured data pre-configured
-- Validation rules identifying agent-hostile patterns (ephemeral notifications, hidden state)
-- Integration with Web Audit Suite for automated agent-compatibility scoring
+- Validation rules identifying agent-hostile patterns (ephemeral notifications, hidden state, typewriter animations)
+- Integration with Web Audit Suite for automated agent-compatibility scoring including visual dynamism detection
 
 **Deliverables:**
 
@@ -110,8 +110,8 @@ Our strategic advantage: *The Invisible Users* book establishes thought leadersh
 
 - Web Audit Suite integration with Kentico platform
 - Dashboard showing agent-compatibility metrics for Kentico-powered sites
-- Automated recommendations for fixing agent-hostile patterns
-- Pre-launch agent testing as part of Kentico's QA workflow
+- Automated recommendations for fixing agent-hostile patterns (carousels, typewriter animations, visual dynamism)
+- Pre-launch agent testing as part of Kentico's QA workflow including screenshot-based dynamism detection
 
 **Deliverables:**
 
