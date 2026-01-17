@@ -210,6 +210,11 @@ export class LLMScorer {
           renderedBonus += weights.DYNAMIC_CONTENT.animationLibraryPenalty;
         }
       }
+
+      // Visual dynamism penalty (screenshot comparison detected content changes)
+      if (dynamic.visualDynamism && dynamic.visualDynamism.detected) {
+        renderedBonus += weights.DYNAMIC_CONTENT.visualDynamismPenalty;
+      }
     }
 
     renderedBonus = Math.min(renderedBonus, weights.MAX_BONUS);

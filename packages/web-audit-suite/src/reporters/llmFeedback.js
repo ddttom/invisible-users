@@ -306,5 +306,16 @@ export class LLMFeedback {
         );
       }
     }
+
+    // Visual dynamism warnings (screenshot comparison detected changes)
+    if (dynamic.visualDynamism && dynamic.visualDynamism.detected) {
+      const uniqueStates = dynamic.visualDynamism.uniqueStates;
+      essentialIssues.push(
+        `Visual content changes detected (${uniqueStates} unique states) - typewriter animations, tickers, or rotating content`,
+      );
+      recommendations.push(
+        'Ensure all text variations are accessible in served HTML. Add data-content-complete="true" after animations finish. Provide static alternative with all content visible. Consider marking animated elements with data-animation-type="typewriter" or data-animation-type="ticker".',
+      );
+    }
   }
 }

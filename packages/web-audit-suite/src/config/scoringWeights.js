@@ -78,6 +78,7 @@ export const SCORING_WEIGHTS = {
       autoplayWithoutControlsPenalty: -8, // WCAG 2.2.2 violation
       animatedGifNoAltPenalty: -3, // Accessibility issue
       animationLibraryPenalty: -2, // Informational warning
+      visualDynamismPenalty: -5, // Visual content changes detected (typewriters, tickers, etc.)
     },
   },
 };

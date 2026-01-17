@@ -675,6 +675,10 @@ async function renderAndCacheData(url, context) {
           withAltText: gifData.hasAltText,
           withDescriptions: gifData.hasAriaDescribedBy,
         },
+        visualDynamism: {
+          detected: false, // Will be set after screenshot comparison
+          uniqueStates: 0, // Will be set after screenshot comparison
+        },
       };
 
       return {
@@ -743,7 +747,50 @@ async function renderAndCacheData(url, context) {
     const screenshotFilename = `${url.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_ipad.png`;
     await page.screenshot({ path: `./ss/${screenshotFilename}`, fullPage: false });
 
+    // Visual dynamism detection: Take 3 screenshots at random intervals
+    // and compare hashes to detect typewriter animations, carousels, tickers, etc.
+    let visualDynamismDetected = false;
+    const visualHashes = [];
+
+    try {
+      for (let i = 0; i < 3; i++) {
+        // Wait random interval between 2-5 seconds
+        const randomWait = 2000 + Math.floor(Math.random() * 3000);
+        await new Promise((resolve) => setTimeout(resolve, randomWait));
+
+        // Take screenshot to buffer
+        const screenshot = await page.screenshot({ fullPage: false });
+
+        // Calculate hash of screenshot
+        const hash = crypto.createHash('md5').update(screenshot).digest('hex');
+        visualHashes.push(hash);
+
+        context.logger.debug(`Screenshot ${i + 1}/3 hash: ${hash}`);
+      }
+
+      // Compare hashes - if any differ, visual dynamism is present
+      const uniqueHashes = new Set(visualHashes);
+      visualDynamismDetected = uniqueHashes.size > 1;
+
+      if (visualDynamismDetected) {
+        context.logger.info(`Visual dynamism detected on ${url} (${uniqueHashes.size} unique states)`);
+      } else {
+        context.logger.debug(`No visual dynamism detected on ${url}`);
+      }
+    } catch (screenshotError) {
+      context.logger.warn(`Error during visual dynamism detection: ${screenshotError.message}`);
+      // Continue without failing - visual dynamism detection is optional
+    }
+
     await browser.close();
+
+    // Merge visual dynamism results into pageData's dynamicContent
+    if (pageData.dynamicContent) {
+      pageData.dynamicContent.visualDynamism = {
+        detected: visualDynamismDetected,
+        uniqueStates: new Set(visualHashes).size,
+      };
+    }
 
     const data = {
       html,

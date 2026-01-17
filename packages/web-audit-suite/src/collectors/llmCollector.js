@@ -866,6 +866,7 @@ export class LLMCollector {
     const animations = dynamicData.animations || {};
     const autoplayMedia = dynamicData.autoplayMedia || {};
     const animatedGifs = dynamicData.animatedGifs || {};
+    const visualDynamism = dynamicData.visualDynamism || {};
 
     return {
       importance: IMPORTANCE.ESSENTIAL_RENDERED, // Browser agents can detect, CLI agents cannot
@@ -902,6 +903,10 @@ export class LLMCollector {
           count: animatedGifs.count || 0,
           withAltText: animatedGifs.hasAltText || 0,
           withDescriptions: animatedGifs.hasAriaDescribedBy || 0,
+        },
+        visualDynamism: {
+          detected: visualDynamism.detected || false,
+          uniqueStates: visualDynamism.uniqueStates || 0,
         },
       },
     };
