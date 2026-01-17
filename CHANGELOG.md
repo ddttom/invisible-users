@@ -9,6 +9,143 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Dynamic Content Patterns to Book and Web Audit Suite (2026-01-17)
+
+Added comprehensive coverage of dynamic content patterns that confuse AI agents across both book manuscript and Web Audit Suite implementation.
+
+**Book Manuscript Updates (packages/manuscript/manuscript/):**
+
+Created detailed documentation of timing-dependent content patterns across multiple chapters and appendices:
+
+- **Chapter 2**: Added "Dynamic Content Patterns" subsection (~1,100 words) covering three problematic patterns:
+  - Carousels and Rotating Content (manual advance shows only first slide, auto-advance changes content mid-parse)
+  - Animated Text and Progressive Reveals (ticker-tape, typewriter effects reveal content gradually)
+  - Background Media and Decorative Motion (video, animated GIFs convey information agents cannot perceive)
+
+- **Chapter 11**: Added "Static Alternatives for Dynamic Content" solution section (~1,300 words) with five pattern implementations:
+  - Carousel Pattern: data attributes (data-total-slides, data-current-slide, data-slide-index) with static "View all" alternatives
+  - Animated Text Pattern: full text in served HTML with animation as enhancement
+  - Background Video and Media Patterns: data-video-role attribute distinguishing decorative from informational
+  - Progressive Disclosure Pattern: server-side rendering with JavaScript enhancement
+  - Animation Control: pause controls for WCAG 2.2.2 compliance (animations >5 seconds)
+
+- **Chapter 12**: Added three new technical patterns (2a, 2b, 2c):
+  - Pattern 2a: Carousel State Attributes with good/bad code examples
+  - Pattern 2b: Animation Control Attributes (data-animation-state, data-animation-duration, data-animation-control)
+  - Pattern 2c: Media Role Disambiguation (data-video-role="decorative" vs "informational")
+
+- **Appendix D**: Added Part 13 "Dynamic Content Patterns" (~270 lines) to BOTH .txt and .md files (dual-file requirement) covering:
+  - Carousel accessibility with informational vs decorative type distinction
+  - Animated text implementation with served HTML visibility
+  - Background media role attributes and transcripts
+  - Autoplay stability with pause control requirements
+  - Progressive disclosure with static fallbacks
+
+- **Appendix E**: Enhanced quick reference with 8 new data attributes:
+  - data-total-slides, data-current-slide, data-slide-index, data-autoplay (carousel state)
+  - data-animation-state, data-animation-duration, data-animation-control (animation control)
+  - data-video-role (media disambiguation)
+  - Updated "Do Not" list: no auto-rotate carousels, no typewriter text without HTML, no informational video without descriptions, no autoplay without controls
+  - Updated "Always" list: static carousel alternatives, complete text before animation, video role marking, transcripts for informational media, pause controls for animations
+
+- **Appendix F**: Added priority-based implementation guidance:
+  - Priority 1 (Critical Quick Wins): text alternatives for animated GIFs, mark background videos with data-video-role, add pause controls for autoplay media
+  - Priority 2 (Essential Improvements): replace auto-rotating carousels with manual navigation, add "View all" options for carousel content, ensure animated text fully visible in served HTML
+
+**Web Audit Suite Implementation (packages/web-audit-suite/):**
+
+Implemented comprehensive detection, scoring, and reporting for dynamic content patterns following book's authoritative definitions:
+
+- **Detection (caching.js)**: Added Puppeteer page.evaluate logic in browser context (lines 574-713):
+  - Carousel detection with determineCarouselType helper function distinguishing informational (product, testimonial, review, portfolio, gallery classes) from decorative (hero, banner, masthead classes)
+  - Data attribute validation (data-total-slides, data-current-slide, data-slide-index)
+  - ARIA label validation (aria-label="Slide N of M")
+  - Slide counting and static alternative detection
+  - Animation library detection checking for Typed.js, TypeIt, GSAP, AOS, Animate.css presence via window objects and script tags
+  - CSS animation detection via @keyframes rules in stylesheets
+  - Autoplay media detection with controls validation (video[autoplay], audio[autoplay])
+  - Animated GIF detection with alt text compliance (img[src$=".gif"])
+  - Added dynamicContent object to pageData return value
+
+- **Data Collection (llmCollector.js)**: Added analyzeDynamicContent method (lines 856-906):
+  - Updated collect method signature to accept pageData parameter (line 26)
+  - Carousel metrics: counts by type, attribute validation status, average slides, ARIA labels
+  - Animation metrics: library presence flags, CSS animation detection, animated element counts
+  - Autoplay media metrics: video/audio counts, controls presence, muted status
+  - Animated GIF metrics: counts with alt text and aria-describedby validation
+  - All metrics marked ESSENTIAL_RENDERED importance (browser-based agents only)
+
+- **Data Flow Updates**: Modified llmMetrics.js and pageAnalyzer.js to pass pageData parameter through pipeline:
+  - llmMetrics.js collectLLMMetrics accepts pageData (line 17)
+  - llmMetrics.js updateLLMMetrics accepts and passes pageData (line 45)
+  - pageAnalyzer.js runMetricsAnalysis accepts pageData (line 217)
+  - pageAnalyzer.js analyzePageContent passes pageData to runMetricsAnalysis (line 163)
+
+- **Scoring (llmScorer.js, scoringWeights.js)**: Added severity-based penalties in calculateRenderedScore (lines 167-213):
+  - Informational carousels without attributes: -8 per carousel (high severity, hides critical content like product showcases)
+  - Decorative carousels without attributes: -3 per carousel (medium severity, accessibility issue)
+  - Autoplay media without controls: -8 per video (WCAG 2.2.2 violation, agent timing instability)
+  - Animated GIFs without alt text: -3 per GIF (accessibility and agent comprehension issue)
+  - Animation libraries detected: -2 informational warning (Typed.js, TypeIt, GSAP, AOS risk content invisibility)
+  - Added DYNAMIC_CONTENT weight constants to scoringWeights.js (lines 75-81)
+
+- **Reporting (llmReports.js)**: Added 9 new CSV columns to general LLM report (lines 72-80, 149-161):
+  - carouselsTotal (count of all carousels detected)
+  - carouselsInformational (product, testimonial, portfolio carousels)
+  - carouselsDecorative (hero, banner, masthead carousels)
+  - carouselsWithAttributes (proper data-slide-index implementation)
+  - autoplayVideos (count of video[autoplay] elements)
+  - autoplayWithControls (WCAG 2.2.2 compliant autoplay)
+  - animatedGifs (count of .gif images)
+  - gifsWithAltText (accessibility compliance)
+  - hasAnimationLibraries (Yes/No for Typed.js, TypeIt, GSAP, AOS, Animate.css)
+
+- **Feedback (llmFeedback.js)**: Added getDynamicContentFeedback method (lines 225-309):
+  - Carousel warnings distinguish informational (high severity, content loss) from decorative (medium severity, accessibility)
+  - Recommendations: add data-slide-index attributes, provide static "View all" alternatives, add aria-label attributes
+  - Animation library warnings: Typed.js/TypeIt text invisibility risk, GSAP/AOS content revelation timing issues
+  - Autoplay media warnings: WCAG 2.2.2 violation, agent page stability problems, add controls attribute
+  - Animated GIF warnings: add alt attributes, use aria-describedby for longer descriptions
+  - All feedback includes specific fixes, impact descriptions, and chapter references
+
+**Documentation Updates:**
+
+- **FEATURES.md**: Added "Dynamic Content Detection" subsection (lines 152-176) documenting carousel detection with type classification, animation library detection, autoplay WCAG compliance, and animated GIF alt text validation
+- **CONFIGURATION.md**: Added dynamic content scoring penalties to LLM Scoring reference table (lines 513-517)
+- **README.md**: Added dynamic content pattern detection to feature list (line 34)
+
+**Technical Implementation:**
+
+Data flow architecture: caching.js Puppeteer page.evaluate (browser context) → pageData object → llmMetrics.js → llmCollector.js analyzeDynamicContent → llmScorer.js calculateRenderedScore → llmReports.js CSV columns → llmFeedback.js recommendations. Carousel classification heuristic defaults to "informational" if class names ambiguous (safer assumption for penalization). All patterns align with book's authoritative definitions and terminology. Implementation passes ESLint validation with no errors.
+
+**Files Modified:**
+
+Book Manuscript (7 files, 796 insertions):
+
+- chapter-02-the-invisible-failure.md
+- chapter-11-designing-for-both.md
+- chapter-12-technical-advice.md
+- appendix-d-ai-friendly-html-guide.txt
+- appendix-d-ai-friendly-html-guide.md
+- appendix-e-ai-patterns-quick-reference.md
+- appendix-f-implementation-roadmap.md
+
+Web Audit Suite (11 files, 386 insertions):
+
+- src/utils/caching.js
+- src/collectors/llmCollector.js
+- src/utils/llmMetrics.js
+- src/utils/pageAnalyzer.js
+- src/scorers/llmScorer.js
+- src/config/scoringWeights.js
+- src/utils/reportUtils/llmReports.js
+- src/reporters/llmFeedback.js
+- docs/FEATURES.md
+- docs/CONFIGURATION.md
+- README.md
+
+**Commits:** Manuscript submodule: 8e99b64. Main repository: 5c12bff (book updates), 68a7f7c (Web Audit Suite implementation).
+
 ### Added - Professional Profile to Sales Enablement Materials (2026-01-17)
 
 Created profile.md in docs/sales-enablement/ combining agent-ready infrastructure expertise with AEM/EDS strategic advisory positioning. Profile aligns with book's convergence principle (what AI agents need is mostly what everyone needs) while maintaining strategic advisor identity. Key elements: clarity infrastructure concept (explicit state, persistent feedback, complete information), agent-ready delivery architecture using Cloudflare edge network and Adobe EDS, strategic advisory services (plan reviews, architecture strategy, AI integration, team mentoring, audits), proven track record (Nissan-Renault 200+ sites, Ford, MediaMonks), industry authority signals (Boye & Company CMS Experts Group member, "The AEM Guy"). Profile positions work as universal design implementation serving both AI agents and humans through identical patterns, references January 2026 agent commerce launches (Amazon, Microsoft, Google) for business urgency context, and connects to Agent Ecosystem standardization efforts. Updated PROJECTSTATE.md to reflect new profile.md in sales enablement materials listing.
