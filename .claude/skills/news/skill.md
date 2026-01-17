@@ -82,6 +82,68 @@ Broader shifts demonstrating AI adoption velocity and commercial pressure:
 
 The `/news` skill ensures the news page stays current in this fast-moving "rocket-fuel mode" market without requiring book republication.
 
+## Integration with Opportunity Skill
+
+**Relationship between `/news` and `/opportunity` skills:**
+
+**News skill focuses on:** Industry developments validating book thesis (thought leadership, market education)
+
+**Opportunity skill focuses on:** Business development and revenue opportunities (consulting, partnerships, services)
+
+**Handoff pattern:**
+
+When `/news` identifies a vendor launch that reveals a business gap:
+
+```text
+/news [vendor AI feature launch]
+  → Verifies facts about the launch
+  → Checks relevance to book chapters
+  → Identifies if launch reveals vendor gap
+  → If gap exists: Suggests "Run /opportunity to document business case"
+
+User: /opportunity [vendor] [gap description]
+  → Analyzes commercial opportunity
+  → Updates business-opportunities.md
+  → Generates vendor-specific materials
+  → Prepares for outreach
+```
+
+**Example flow:**
+
+```text
+User: /news Kentico launches AIRA AI marketing assistant
+
+News skill analyzes:
+✓ Verified: AIRA launched March 2025
+✓ Relevance: Productivity tool, not agent-accessible output
+✗ Doesn't meet five criteria (no chapter validation)
+→ Rejected for news.html
+
+BUT news skill identifies:
+→ Gap: Vendor builds "AI content creation" without "agent-compatible output"
+→ Business opportunity: Product integration partnership
+→ Suggests: "This reveals business opportunity. Run `/opportunity kentico AIRA lacks agent-output validation`"
+
+User: /opportunity kentico AIRA lacks agent-output validation
+
+Opportunity skill:
+✓ Analyzes gap (Product Integration type)
+✓ Updates docs/sales-enablement/business-opportunities.md
+✓ Generates kentico-opportunity-analysis.md
+✓ Generates kentico-email-templates.md
+✓ Generates kentico-pitch-one-pager.md
+→ Complete vendor package ready for outreach
+```
+
+**Key distinction:**
+
+- News = Public-facing thought leadership (validates book)
+- Opportunity = Private business development (generates revenue)
+
+**Both skills cross-reference:**
+- News entries can mention "See business-opportunities.md for partnership implications"
+- Opportunity entries reference news as market timing validation
+
 ## How to Use
 
 ```bash
