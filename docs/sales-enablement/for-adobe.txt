@@ -5,7 +5,7 @@ Regarding: LLM Optimizer and Generative Engine Optimization Strategy
 
 Dear Adobe Team,
 
-I'm reaching out to share some thoughts on LLM Optimizer and the broader approach to AI agent compatibility. I have tremendous respect for Adobe's products and your team's innovation in addressing this emerging challenge. LLM Optimizer solves real, urgent problems for enterprise clients who need immediate solutions.
+I'm reaching out to share some thoughts on LLM Optimizer and the broader approach to AI agent compatibility. I have great respect for Adobe's products and your team's innovation in addressing this emerging challenge. LLM Optimizer solves real, urgent problems for enterprise clients who need immediate solutions.
 
 ## What LLM Optimizer Gets Right
 
@@ -19,7 +19,7 @@ My concern isn't with the pre-rendering technology - it's with positioning edge-
 
 Here's the fundamental question: if content needs simpler paragraphs, clearer headings, and better summaries for AI agents, doesn't it need those things for humans too?
 
-## The Pattern I'm Seeing
+## Pattern I'm Seeing
 
 When LLM Optimizer suggests content improvements, those suggestions reveal underlying content quality issues. Sites implementing these changes only at the edge are:
 
@@ -29,7 +29,7 @@ When LLM Optimizer suggests content improvements, those suggestions reveal under
 
 **The convergence principle**: Patterns that help AI agents also help humans. When you simplify a paragraph for an agent, you're making it more scannable for humans. When you improve heading structure, you're helping screen readers and search engines too.
 
-## What I'm Building
+## My Current Work
 
 I'm writing "The Invisible Users: Designing the Web for AI Agents and Everyone Else" (publication Q1 2026). The book argues for fixing root causes rather than treating symptoms:
 
@@ -40,9 +40,9 @@ I'm writing "The Invisible Users: Designing the Web for AI Agents and Everyone E
 
 The blog post "Fix Your Content, Not Your CDN" examines LLM Optimizer as a case study. The piece is respectful but direct about the strategic implications.
 
-## The Adobe Opportunity
+## Adobe Opportunity
 
-You're uniquely positioned to lead this space, not just with edge-based fixes but with native CMS capabilities for agent-compatible content:
+Adobe can uniquely lead this space, not just with edge-based fixes but with native CMS capabilities for agent-compatible content:
 
 1. **Schema.org integration** - First-class structured data generation in Adobe Experience Manager
 2. **Semantic HTML templates** - Default to proper information architecture
@@ -69,12 +69,12 @@ Your enterprise clients face the same pressures:
 
 LLM Optimizer helps with content visibility. But it doesn't solve the business model transformation required when AI agents extract free content whilst revenue opportunities go uncited.
 
-## The Diplomatic Way Forward
+## Diplomatic Way Forward
 
 I'm not suggesting you abandon LLM Optimizer. I'm suggesting you position it differently:
 
 **Current positioning**: "Optimise content for AI agents at the edge"
-**Strategic positioning**: "Immediate fixes whilst you implement comprehensive GEO"
+**Strategic positioning**: "Immediate fixes whilst you implement complete GEO"
 
 Use LLM Optimizer's insights diagnostically. When the tool suggests simplified paragraphs or improved headings, guide clients to fix the underlying content in their CMS so everyone benefits.
 
@@ -105,13 +105,13 @@ I've built a Web Audit Suite (Node.js) that implements these patterns. It crawls
 
 ## Closing Thoughts
 
-Adobe has always led through innovation that anticipates market shifts. LLM Optimizer proves you saw this shift coming. My hope is that Adobe will lead the next phase too - not just adapting to AI agents, but defining how enterprise content management evolves for this new reality.
+Adobe has consistently led through innovation that anticipates market shifts. LLM Optimizer proves you saw this shift coming. My hope is that Adobe will lead the next phase too - not just adapting to AI agents, but defining how enterprise content management evolves for this new reality.
 
 The convergence principle isn't criticism of your tools. It's an opportunity to expand what those tools enable.
 
-I respect the engineering that went into LLM Optimizer. The pre-rendering technology is solid. My concern is strategic: edge-based content optimisation feels like the right solution for 2026 that becomes technical debt by 2028.
+I respect the engineering that went into LLM Optimizer. The pre-rendering technology is well-engineered. My concern is strategic: edge-based content optimisation appears to be the right solution for 2026 that becomes technical debt by 2028.
 
-Let's build the future where content works for everyone - humans, search engines, and AI agents - through better information architecture, not CDN workarounds.
+We can build the future where content works for everyone - humans, search engines, and AI agents - through better information architecture, not CDN workarounds.
 
 I'd welcome your thoughts.
 
