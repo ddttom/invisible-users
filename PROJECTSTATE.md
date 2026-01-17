@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-17 (Added dynamic content patterns to book and Web Audit Suite)
+**Last Updated:** 2026-01-17 (Added visual dynamism detection to Web Audit Suite)
 
 ### Monorepo Structure
 
@@ -21,7 +21,16 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~88,000 words (includes all chapters and appendices)
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 13 chapters complete (added NEW Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Added dynamic content patterns to book and Web Audit Suite (2026-01-17):
+- **Latest Change:** Added visual dynamism detection to Web Audit Suite (2026-01-17):
+  - **Screenshot-Based Detection (caching.js):** Takes 3 screenshots at random 2-5 second intervals, calculates MD5 hash of each, detects visual changes by comparing hashes (typewriter animations, rotating text, tickers)
+  - **Metrics Collection (llmCollector.js):** New visualDynamism metrics (detected boolean, uniqueStates count)
+  - **Scoring Penalty (llmScorer.js, scoringWeights.js):** -5 points for detected visual dynamism
+  - **Feedback Generation (llmFeedback.js):** Essential issue warning with recommendations to expose all text in served HTML
+  - **Comprehensive Testing (dynamicContent.test.js):** 16 tests covering visual dynamism detection, scoring penalties, and feedback generation
+  - **Documentation (Appendix C):** Visual Dynamism Detection section with real-world Arbory Digital example (typewriter animation cycling through "AEM UPGRADE SPECIALISTS" → "AEM EXPERTS" → "SECURITY")
+  - **Sales Materials Updates:** Added Case Study 4 (Professional Services Firm), updated business-opportunities.md and EXECUTIVE_PITCH_DECK.md with visual dynamism detection
+  - **Submodule commit:** 958d99a in manuscript repository
+- **Previous Change:** Added dynamic content patterns to book and Web Audit Suite (2026-01-17):
   - **Book Manuscript (7 files, 796 insertions):** Comprehensive coverage of UI patterns that confuse AI agents
   - **Chapter 2:** Added "Dynamic Content Patterns" subsection (~1,100 words) covering carousels (manual vs auto-advance), animated text (typewriter/ticker-tape), and background media
   - **Chapter 11:** Added "Static Alternatives for Dynamic Content" section (~1,300 words) with solution patterns for carousels, animations, media, and progressive disclosure
