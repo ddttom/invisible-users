@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-17 (Organized sales-enablement directory structure)
+**Last Updated:** 2026-01-17 (Fixed llms.txt detection with site-level file fetching)
 
 ### Monorepo Structure
 
@@ -21,7 +21,18 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~140,000 words total (core manuscript ~78,000 words + appendices ~58,600 words + supporting materials ~3,550 words)
 - **Appendices:** 12 appendices (~58,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 13 chapters complete (added NEW Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Organized sales-enablement directory into logical subfolders (2026-01-17):
+- **Latest Change:** Fixed llms.txt detection with site-level file fetching (2026-01-17):
+  - **Bug:** llms.txt file at <https://allabout.network/llms.txt> was not being detected despite existing
+  - **Root Cause:** Detection logic only looked for HTML references (`<link>` or `<a>` tags), never fetched the actual file from site origin
+  - **Fix:** Created `fetchSiteLevelFiles()` function in sitemap.js to fetch llms.txt, robots.txt, and ai.txt from site origin level
+  - **Implementation:** main.js calls fetchSiteLevelFiles() during Phase 1 and stores results in `results.siteFiles`
+  - **Report Updates:** executiveSummary.js and llmReports.js now use site-level detection instead of page-level HTML references
+  - **Documentation:** Added 3 missing LLM suitability reports to report-layout.md (sections 8-10: general, frontend, backend)
+  - **Documentation:** Added security_report.csv documentation (section 11)
+  - **Documentation:** Renumbered all subsequent sections (12-21) and updated report count from "15+" to "19 reports"
+  - **Documentation:** Added `llmsTxtUrl` field to executive summary JSON schema
+  - **Impact:** llms.txt is now correctly detected for all pages when present at the site root, executive summary shows "Pages with llms.txt: 1" with correct URL
+- **Previous Change:** Organized sales-enablement directory into logical subfolders (2026-01-17):
   - **Reorganization:** Moved 25 files from flat structure into 8 organized categories (business, pitches, publishers, partners, outreach, content, profiles, pricing)
   - **Documentation Updates:** Updated README.md and CLAUDE.md with new folder structure showing complete file organization
   - **Skill Updates:** Updated /opportunity skill documentation (README.md and skill.md) with new file paths for generated materials
