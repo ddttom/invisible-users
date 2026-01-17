@@ -342,7 +342,7 @@ export const defaultOptions = {
   maxRetries: RETRY.MAX_RETRIES,
   timeout: TIMEOUTS.DEFAULT_COMMAND,
   initialBackoff: TIMEOUTS.INITIAL_BACKOFF,
-  logLevel: LOG_LEVELS.DEBUG,
+  logLevel: LOG_LEVELS.INFO,
   output: OUTPUT.DEFAULT_DIR,
   sitemap: DEFAULTS.SITEMAP_URL,
   cacheDir: CACHE.DIRECTORY,
