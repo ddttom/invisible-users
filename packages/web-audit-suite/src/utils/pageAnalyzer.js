@@ -160,7 +160,7 @@ async function analyzePageContent({
       links: internalLinks,
     });
 
-    await runMetricsAnalysis($, validTestUrl, validBaseUrl, headers, results, context);
+    await runMetricsAnalysis($, validTestUrl, validBaseUrl, headers, results, context, pageData);
 
     updateResults(results, validTestUrl, pa11yResult, internalLinks, context);
 
@@ -214,7 +214,7 @@ async function runPa11yAnalysis(testUrl, html, config, context) {
   }
 }
 
-async function runMetricsAnalysis($, testUrl, baseUrl, headers, results, context) {
+async function runMetricsAnalysis($, testUrl, baseUrl, headers, results, context, pageData = null) {
   context.logger.info(`[START] Running metrics analysis for ${testUrl}`);
   try {
     // Initialize all metric objects
@@ -254,7 +254,7 @@ async function runMetricsAnalysis($, testUrl, baseUrl, headers, results, context
     updateHreflangMetrics($, results, testUrl, context);
     await updateCanonicalMetrics($, testUrl, results, context);
     await updateContentMetrics($, results, testUrl, context);
-    await updateLLMMetrics($, results, testUrl, context);
+    await updateLLMMetrics($, results, testUrl, context, 'rendered', pageData);
 
     const metricsToCheck = ['titleMetrics', 'metaDescriptionMetrics', 'h1Metrics', 'h2Metrics', 'imageMetrics', 'linkMetrics', 'securityMetrics', 'hreflangMetrics', 'canonicalMetrics', 'contentMetrics'];
     metricsToCheck.forEach((metric) => {

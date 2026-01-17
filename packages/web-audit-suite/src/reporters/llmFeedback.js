@@ -31,6 +31,7 @@ export class LLMFeedback {
     this.getNiceToHaveFeedback(metrics, niceToHaveIssues, recommendations);
     this.getSchemaDisambiguationFeedback(metrics, essentialIssues, recommendations);
     this.getInlineCSSFeedback(metrics, essentialIssues, recommendations);
+    this.getDynamicContentFeedback(metrics, essentialIssues, niceToHaveIssues, recommendations);
 
     return { essentialIssues, niceToHaveIssues, recommendations };
   }
@@ -212,6 +213,96 @@ export class LLMFeedback {
       if (css.externalStylesheetCount === 0) {
         recommendations.push(
           'Add external stylesheet references to separate styling from content',
+        );
+      }
+    }
+  }
+
+  /**
+   * Dynamic Content Feedback (Chapter 2)
+   * Detects carousels, animations, autoplay media that confuse AI agents
+   */
+  static getDynamicContentFeedback(metrics, essentialIssues, niceToHaveIssues, recommendations) {
+    const dynamic = metrics.dynamicContent?.metrics;
+
+    if (!dynamic) return;
+
+    // Carousel warnings (severity based on type)
+    if (dynamic.carousels.count > 0) {
+      const informationalCarousels = dynamic.carousels.informationalCount;
+      const decorativeCarousels = dynamic.carousels.decorativeCount;
+      const properCarousels = dynamic.carousels.withProperAttributes;
+
+      // Informational carousels: high severity
+      const improperInformational = Math.max(0, informationalCarousels - properCarousels);
+      if (improperInformational > 0) {
+        essentialIssues.push(
+          `${improperInformational} informational carousel(s) hide content from agents`,
+        );
+        recommendations.push(
+          'Add data-slide-index and aria-label attributes to carousel slides. Provide static "View all" alternative that shows all carousel items at once.',
+        );
+      }
+
+      // Decorative carousels: medium severity
+      const improperDecorative = Math.max(0, decorativeCarousels - (properCarousels - Math.min(properCarousels, informationalCarousels)));
+      if (improperDecorative > 0) {
+        niceToHaveIssues.push(
+          `${improperDecorative} decorative carousel(s) lack accessibility attributes`,
+        );
+        recommendations.push(
+          'Add aria-label="Decorative banner" and consider marking with aria-hidden="true" if purely visual.',
+        );
+      }
+    }
+
+    // Animation library warnings
+    if (dynamic.animations.libraries) {
+      const libs = dynamic.animations.libraries;
+
+      if (libs.typedJs || libs.typeIt) {
+        niceToHaveIssues.push(
+          'Typewriter animation library detected (Typed.js or TypeIt)',
+        );
+        recommendations.push(
+          'Ensure full text is present in served HTML with aria-live="off" during animation. Provide skip-animation control.',
+        );
+      }
+
+      if (libs.gsap || libs.aos) {
+        niceToHaveIssues.push(
+          'Complex animation library detected (GSAP or AOS)',
+        );
+        recommendations.push(
+          'Verify all animated content is accessible in served HTML before JavaScript enhancement.',
+        );
+      }
+    }
+
+    // Autoplay media warnings (WCAG 2.2.2 violation)
+    if (dynamic.autoplayMedia.videoCount > 0) {
+      const autoplayWithoutControls = dynamic.autoplayMedia.videoCount - dynamic.autoplayMedia.withControls;
+
+      if (autoplayWithoutControls > 0) {
+        essentialIssues.push(
+          `${autoplayWithoutControls} autoplay video(s) lack pause controls`,
+        );
+        recommendations.push(
+          'Add controls attribute to all autoplay videos. Consider removing autoplay entirely. WCAG 2.2.2 violation.',
+        );
+      }
+    }
+
+    // Animated GIF warnings
+    if (dynamic.animatedGifs.count > 0) {
+      const gifsWithoutAlt = dynamic.animatedGifs.count - dynamic.animatedGifs.withAltText;
+
+      if (gifsWithoutAlt > 0) {
+        niceToHaveIssues.push(
+          `${gifsWithoutAlt} animated GIF(s) missing alt text`,
+        );
+        recommendations.push(
+          'Add descriptive alt attributes to all informational GIFs. Use aria-describedby for longer descriptions.',
         );
       }
     }

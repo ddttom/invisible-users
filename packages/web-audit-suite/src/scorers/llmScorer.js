@@ -164,6 +164,54 @@ export class LLMScorer {
       if (err.hasAriaInvalid) renderedBonus += weights.ERROR_HANDLING.hasAriaInvalid;
     }
 
+    // Dynamic Content Patterns (Chapter 2)
+    if (metrics.dynamicContent?.metrics) {
+      const dynamic = metrics.dynamicContent.metrics;
+
+      // Carousels without proper attributes (severity based on type)
+      if (dynamic.carousels.count > 0) {
+        const informationalCarousels = dynamic.carousels.informationalCount;
+        const decorativeCarousels = dynamic.carousels.decorativeCount;
+        const properCarousels = dynamic.carousels.withProperAttributes;
+
+        // Informational carousels: high severity penalty
+        const improperInformational = informationalCarousels - properCarousels;
+        if (improperInformational > 0) {
+          renderedBonus += improperInformational * weights.DYNAMIC_CONTENT.carouselInformationalPenalty;
+        }
+
+        // Decorative carousels: medium severity penalty
+        const improperDecorative = Math.max(0, decorativeCarousels - (properCarousels - informationalCarousels));
+        if (improperDecorative > 0) {
+          renderedBonus += improperDecorative * weights.DYNAMIC_CONTENT.carouselDecorativePenalty;
+        }
+      }
+
+      // Autoplay media without controls (WCAG 2.2.2 violation)
+      if (dynamic.autoplayMedia.videoCount > 0) {
+        const autoplayWithoutControls = dynamic.autoplayMedia.videoCount - dynamic.autoplayMedia.withControls;
+        if (autoplayWithoutControls > 0) {
+          renderedBonus += autoplayWithoutControls * weights.DYNAMIC_CONTENT.autoplayWithoutControlsPenalty;
+        }
+      }
+
+      // Animated GIFs without alt text
+      if (dynamic.animatedGifs.count > 0) {
+        const gifsWithoutAlt = dynamic.animatedGifs.count - dynamic.animatedGifs.withAltText;
+        if (gifsWithoutAlt > 0) {
+          renderedBonus += gifsWithoutAlt * weights.DYNAMIC_CONTENT.animatedGifNoAltPenalty;
+        }
+      }
+
+      // Animation library warnings (informational - lighter penalty)
+      if (dynamic.animations.libraries) {
+        const libs = dynamic.animations.libraries;
+        if (libs.typedJs || libs.typeIt) {
+          renderedBonus += weights.DYNAMIC_CONTENT.animationLibraryPenalty;
+        }
+      }
+    }
+
     renderedBonus = Math.min(renderedBonus, weights.MAX_BONUS);
     return Math.min(score + renderedBonus, 100);
   }

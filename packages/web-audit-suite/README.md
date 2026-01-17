@@ -31,6 +31,7 @@ This tool is designed for:
   - Social media meta tag validation (Open Graph, Twitter Card)
   - SEO meta tag analysis (robots, keywords, theme-color)
   - Reading time metadata validation (timeRequired, educationalLevel)
+  - Dynamic content pattern detection (carousels, animations, autoplay media)
   - Three specialized reports (general, frontend, backend)
 - **Automatic Cache Management**: .cache directory creation and management
 - **Robust Error Handling**: Network error recovery and retry mechanism

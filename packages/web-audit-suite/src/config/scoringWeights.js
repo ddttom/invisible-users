@@ -72,5 +72,12 @@ export const SCORING_WEIGHTS = {
       hasPersistentErrors: 10,
       hasAriaInvalid: 5,
     },
+    DYNAMIC_CONTENT: {
+      carouselInformationalPenalty: -8, // High severity: hides content
+      carouselDecorativePenalty: -3, // Medium severity: accessibility issue
+      autoplayWithoutControlsPenalty: -8, // WCAG 2.2.2 violation
+      animatedGifNoAltPenalty: -3, // Accessibility issue
+      animationLibraryPenalty: -2, // Informational warning
+    },
   },
 };

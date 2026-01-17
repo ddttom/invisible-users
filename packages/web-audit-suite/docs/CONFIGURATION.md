@@ -510,6 +510,11 @@ All constants are now defined in `src/config/defaults.js`.
 | llms.txt | 10 | Essential (Served) |
 | Explicit State Attribute | 10 | Essential (Rendered) |
 | Agent Visible Control | 5 | Essential (Rendered) |
+| Informational Carousel (improper) | -8 per carousel | Essential (Rendered) |
+| Decorative Carousel (improper) | -3 per carousel | Essential (Rendered) |
+| Autoplay Without Controls | -8 per video | Essential (Rendered) |
+| Animated GIF Without Alt | -3 per GIF | Essential (Rendered) |
+| Animation Library (warning) | -2 | Essential (Rendered) |
 
 ## Threshold Configuration
 

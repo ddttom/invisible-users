@@ -571,6 +571,112 @@ async function renderAndCacheData(url, context) {
         textNodes: Array.from(document.body?.childNodes || []).filter((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0).length,
       };
 
+      // Dynamic Content Detection
+
+      // Helper function to determine carousel type
+      const determineCarouselType = (carouselEl) => {
+        // Informational: product showcases, testimonials, portfolios
+        const informationalClasses = ['product', 'testimonial', 'review', 'portfolio', 'gallery'];
+        const decorativeClasses = ['hero', 'banner', 'masthead'];
+
+        const className = carouselEl.className.toLowerCase();
+
+        if (informationalClasses.some((cls) => className.includes(cls))) return 'informational';
+        if (decorativeClasses.some((cls) => className.includes(cls))) return 'decorative';
+
+        // Default to informational if uncertain (safer assumption)
+        return 'informational';
+      };
+
+      // Carousel detection with type distinction
+      const carousels = Array.from(document.querySelectorAll('[class*="carousel"], [class*="slider"], [class*="swiper"]'));
+      const carouselData = carousels.map((el) => ({
+        hasDataAttributes: el.hasAttribute('data-current-slide') || el.hasAttribute('data-slide-index'),
+        hasAriaLabels: el.querySelector('[aria-label*="slide"]') !== null,
+        slideCount: el.querySelectorAll('[class*="slide"]').length,
+        hasStaticAlternative: false, // TODO: detect "view all" link
+        type: determineCarouselType(el), // 'informational' or 'decorative'
+        isHero: el.closest('.hero, [class*="hero"], header') !== null,
+      }));
+
+      // Animation detection with library-specific identification
+      const animatedElements = Array.from(document.querySelectorAll('[style*="animation"], [class*="animate"]'));
+      const hasAnimations = animatedElements.length > 0;
+      let hasCSSAnimations = false;
+      try {
+        hasCSSAnimations = Array.from(document.styleSheets).some((sheet) => {
+          try {
+            return Array.from(sheet.cssRules).some((rule) => rule.cssText.includes('@keyframes'));
+          } catch (e) {
+            return false;
+          }
+        });
+      } catch (e) {
+        // Stylesheet access error
+      }
+
+      // Detect specific animation libraries
+      const animationLibraries = {
+        typedJs: typeof window.Typed !== 'undefined'
+          || document.querySelector('script[src*="typed.js"], script[src*="typed.min.js"]') !== null,
+        typeIt: typeof window.TypeIt !== 'undefined'
+          || document.querySelector('script[src*="typeit"]') !== null,
+        animateCSS: document.querySelector('link[href*="animate.css"]') !== null
+          || Array.from(document.querySelectorAll('[class*="animate__"]')).length > 0,
+        gsap: typeof window.gsap !== 'undefined'
+          || document.querySelector('script[src*="gsap"]') !== null,
+        aos: typeof window.AOS !== 'undefined'
+          || document.querySelector('[data-aos]') !== null,
+      };
+
+      // Autoplay media detection
+      const autoplayVideos = Array.from(document.querySelectorAll('video[autoplay]'));
+      const autoplayAudios = Array.from(document.querySelectorAll('audio[autoplay]'));
+      const autoplayData = {
+        videoCount: autoplayVideos.length,
+        audioCount: autoplayAudios.length,
+        hasControls: autoplayVideos.filter((v) => v.hasAttribute('controls')).length,
+        isMuted: autoplayVideos.filter((v) => v.hasAttribute('muted')).length,
+      };
+
+      // Animated GIF detection (approximation)
+      const gifImages = Array.from(document.querySelectorAll('img[src$=".gif"]'));
+      const gifData = {
+        count: gifImages.length,
+        hasAltText: gifImages.filter((img) => img.alt && img.alt.trim()).length,
+        hasAriaDescribedBy: gifImages.filter((img) => img.hasAttribute('aria-describedby')).length,
+      };
+
+      const dynamicContent = {
+        carousels: {
+          count: carouselData.length,
+          informationalCount: carouselData.filter((c) => c.type === 'informational').length,
+          decorativeCount: carouselData.filter((c) => c.type === 'decorative').length,
+          withProperAttributes: carouselData.filter((c) => c.hasDataAttributes).length,
+          withAriaLabels: carouselData.filter((c) => c.hasAriaLabels).length,
+          averageSlides: carouselData.length > 0
+            ? carouselData.reduce((sum, c) => sum + c.slideCount, 0) / carouselData.length
+            : 0,
+        },
+        animations: {
+          hasAnimations,
+          hasCSSAnimations,
+          animatedElementCount: animatedElements.length,
+          libraries: animationLibraries,
+        },
+        autoplayMedia: {
+          videoCount: autoplayData.videoCount,
+          audioCount: autoplayData.audioCount,
+          withControls: autoplayData.hasControls,
+          mutedCount: autoplayData.isMuted,
+        },
+        animatedGifs: {
+          count: gifData.count,
+          withAltText: gifData.hasAltText,
+          withDescriptions: gifData.hasAriaDescribedBy,
+        },
+      };
+
       return {
         title: document.title,
         metaDescription: document.querySelector('meta[name="description"]')?.content || '',
@@ -604,6 +710,7 @@ async function renderAndCacheData(url, context) {
         pageSize: document.documentElement.outerHTML.length,
         allResources,
         llmReadability,
+        dynamicContent,
       };
     });
 

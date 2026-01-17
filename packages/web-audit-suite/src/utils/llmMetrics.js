@@ -14,8 +14,8 @@ import { LLMFeedback } from '../reporters/llmFeedback.js';
 /**
  * Main function to collect all LLM metrics
  */
-export function collectLLMMetrics($, url, htmlSource = 'rendered') {
-  return LLMCollector.collect($, url, htmlSource);
+export function collectLLMMetrics($, url, htmlSource = 'rendered', pageData = null) {
+  return LLMCollector.collect($, url, htmlSource, pageData);
 }
 
 /**
@@ -42,12 +42,12 @@ export function generateFeedback(metrics) {
 /**
  * Updates the results object with LLM metrics
  */
-export function updateLLMMetrics($, results, url, context, htmlSource = 'rendered') {
+export function updateLLMMetrics($, results, url, context, htmlSource = 'rendered', pageData = null) {
   if (!results.llmMetrics) {
     results.llmMetrics = [];
   }
 
-  const metrics = collectLLMMetrics($, url, htmlSource);
+  const metrics = collectLLMMetrics($, url, htmlSource, pageData);
   results.llmMetrics.push(metrics);
 
   context.logger.debug(`Updated LLM metrics for ${url} (${htmlSource} HTML)`);

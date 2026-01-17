@@ -147,6 +147,32 @@ AI agent compatibility analysis based on "The Invisible Users" patterns:
    - Agent visibility control
    - Persistent error messages
    - Dynamic validation feedback
+   - Dynamic content patterns (carousels, animations, autoplay media)
+
+#### Dynamic Content Detection
+
+Detects timing-dependent UI patterns that confuse AI agents:
+
+- **Carousels**: Distinguishes informational (product showcases, testimonials) vs decorative (hero banners)
+  - Detects proper data attributes (data-slide-index, data-total-slides)
+  - Checks for accessibility (aria-label on slides)
+  - Validates static alternatives availability
+
+- **Animations**: Identifies animation libraries and patterns
+  - Typewriter effects (Typed.js, TypeIt)
+  - Complex animations (GSAP, AOS, Animate.css)
+  - CSS animations and keyframes
+  - Animation control availability
+
+- **Autoplay Media**: WCAG 2.2.2 compliance
+  - Detects autoplay videos and audio
+  - Validates pause controls presence
+  - Checks muted state
+
+- **Animated GIFs**: Accessibility validation
+  - Counts animated GIF usage
+  - Validates alt text presence
+  - Checks for aria-describedby descriptions
 
 #### Scoring Categories
 

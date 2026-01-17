@@ -20,9 +20,10 @@ export class LLMCollector {
    * @param {CheerioAPI} $ - Cheerio instance of the page
    * @param {string} url - The URL being analyzed
    * @param {string} htmlSource - 'served' or 'rendered'
+   * @param {Object} pageData - Optional page data from caching.js (includes dynamicContent)
    * @returns {Object} Structured raw metrics data
    */
-  static collect($, url, htmlSource = 'rendered') {
+  static collect($, url, htmlSource = 'rendered', pageData = null) {
     return {
       url,
       htmlSource,
@@ -46,6 +47,7 @@ export class LLMCollector {
       htmlValidation: this.analyzeHTMLValidation($),
       schemaTypeDisambiguation: this.analyzeSchemaTypeDisambiguation($),
       inlineCSS: this.analyzeInlineCSS($),
+      dynamicContent: this.analyzeDynamicContent($, pageData),
     };
   }
 
@@ -832,6 +834,75 @@ export class LLMCollector {
         hasAnyCSS: inlineStyleCount > 0 || styleScripts > 0 || externalSheets > 0,
         inlineCSSRatio: Math.round(inlineCSSRatio * 1000) / 1000, // 3 decimal places
         totalElements,
+      },
+    };
+  }
+
+  /**
+   * Analyze dynamic content patterns (carousels, animations, autoplay media)
+   * Based on Chapter 2 "Dynamic Content Patterns" section
+   *
+   * Dynamic content poses timing challenges for AI agents that snapshot pages:
+   * - Carousels: Agent only sees first slide (manual) or wrong slide (auto-advance)
+   * - Animated text: Typewriter/ticker-tape effects incomplete at snapshot time
+   * - Autoplay media: WCAG 2.2.2 compliance, stability detection
+   * - Animated GIFs: No text alternative for motion-conveyed information
+   *
+   * NOTE: This method aggregates data collected during Puppeteer page.evaluate phase
+   * in caching.js. It does not perform detection itself, only organizes the metrics.
+   *
+   * @param {CheerioAPI} $ - Cheerio instance (not used - data comes from pageData)
+   * @param {Object} pageData - Page data from caching.js containing dynamicContent
+   * @returns {Object} Dynamic content metrics
+   */
+  static analyzeDynamicContent($, pageData = null) {
+    // NOTE: This method receives aggregated data from caching.js via pageData parameter
+    // The actual detection happens in Puppeteer's page.evaluate block
+    // If pageData is not provided, return empty metrics
+
+    const dynamicData = pageData?.dynamicContent || {};
+
+    const carousels = dynamicData.carousels || [];
+    const animations = dynamicData.animations || {};
+    const autoplayMedia = dynamicData.autoplayMedia || {};
+    const animatedGifs = dynamicData.animatedGifs || {};
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_RENDERED, // Browser agents can detect, CLI agents cannot
+      metrics: {
+        carousels: {
+          count: carousels.length || 0,
+          informationalCount: carousels.filter((c) => c.type === 'informational').length || 0,
+          decorativeCount: carousels.filter((c) => c.type === 'decorative').length || 0,
+          withProperAttributes: carousels.filter((c) => c.hasDataAttributes).length || 0,
+          withAriaLabels: carousels.filter((c) => c.hasAriaLabels).length || 0,
+          averageSlides: carousels.length > 0
+            ? carousels.reduce((sum, c) => sum + (c.slideCount || 0), 0) / carousels.length
+            : 0,
+        },
+        animations: {
+          hasAnimations: animations.hasAnimations || false,
+          hasCSSAnimations: animations.hasCSSAnimations || false,
+          animatedElementCount: animations.animatedElementCount || 0,
+          libraries: animations.libraries || {
+            typedJs: false,
+            typeIt: false,
+            animateCSS: false,
+            gsap: false,
+            aos: false,
+          },
+        },
+        autoplayMedia: {
+          videoCount: autoplayMedia.videoCount || 0,
+          audioCount: autoplayMedia.audioCount || 0,
+          withControls: autoplayMedia.hasControls || 0,
+          mutedCount: autoplayMedia.isMuted || 0,
+        },
+        animatedGifs: {
+          count: animatedGifs.count || 0,
+          withAltText: animatedGifs.hasAltText || 0,
+          withDescriptions: animatedGifs.hasAriaDescribedBy || 0,
+        },
       },
     };
   }
