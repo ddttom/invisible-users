@@ -786,7 +786,7 @@ async function renderAndCacheData(url, context) {
 
     // Price detection: Check if price appears only in rendered HTML (JavaScript-dependent)
     // This is critical for e-commerce - CLI agents and server-based agents won't see prices
-    let priceData = {
+    const priceData = {
       inServedHtml: false,
       inRenderedHtml: false,
       jsDependent: false,
@@ -795,14 +795,14 @@ async function renderAndCacheData(url, context) {
     try {
       // Common price patterns: currency symbols, price classes, schema.org price properties
       const pricePatterns = [
-        /\$\s*\d+(?:[.,]\d{2})?/,  // $99.99, $99, $ 99.99
-        /£\s*\d+(?:[.,]\d{2})?/,   // £99.99
-        /€\s*\d+(?:[.,]\d{2})?/,   // €99.99
-        /\d+(?:[.,]\d{2})?\s*(?:USD|GBP|EUR)/i,  // 99.99 USD
-        /<[^>]*class="[^"]*price[^"]*"/i,  // class="price"
-        /<[^>]*itemprop="price"/i,  // itemprop="price"
-        /"price":\s*"\d+/i,  // JSON-LD price
-        /data-price="/i,  // data-price attribute
+        /\$\s*\d+(?:[.,]\d{2})?/, // $99.99, $99, $ 99.99
+        /£\s*\d+(?:[.,]\d{2})?/, // £99.99
+        /€\s*\d+(?:[.,]\d{2})?/, // €99.99
+        /\d+(?:[.,]\d{2})?\s*(?:USD|GBP|EUR)/i, // 99.99 USD
+        /<[^>]*class="[^"]*price[^"]*"/i, // class="price"
+        /<[^>]*itemprop="price"/i, // itemprop="price"
+        /"price":\s*"\d+/i, // JSON-LD price
+        /data-price="/i, // data-price attribute
       ];
 
       // Check served HTML (before JavaScript execution)
