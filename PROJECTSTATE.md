@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-17 (Added professional profile to sales enablement materials)
+**Last Updated:** 2026-01-17 (Added dynamic content patterns to book and Web Audit Suite)
 
 ### Monorepo Structure
 
@@ -18,10 +18,26 @@ All projects share dependency management and build scripts via npm workspaces.
 
 - **Version:** 2.9.1
 - **Status:** Publication-ready (in review, due Q1 2026)
-- **Word Count:** ~62,000 words (core manuscript: preface + 13 chapters + The End + Glossary)
+- **Word Count:** ~88,000 words (includes all chapters and appendices)
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 13 chapters complete (added NEW Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Added professional profile to sales enablement materials (2026-01-17):
+- **Latest Change:** Added dynamic content patterns to book and Web Audit Suite (2026-01-17):
+  - **Book Manuscript (7 files, 796 insertions):** Comprehensive coverage of UI patterns that confuse AI agents
+  - **Chapter 2:** Added "Dynamic Content Patterns" subsection (~1,100 words) covering carousels (manual vs auto-advance), animated text (typewriter/ticker-tape), and background media
+  - **Chapter 11:** Added "Static Alternatives for Dynamic Content" section (~1,300 words) with solution patterns for carousels, animations, media, and progressive disclosure
+  - **Chapter 12:** Added three new pattern subsections (2a, 2b, 2c) with code examples for carousel state attributes, animation controls, and media role disambiguation
+  - **Appendix D:** Added Part 13 "Dynamic Content Patterns" (~270 lines) to both .txt and .md files with problem/solution format
+  - **Appendix E:** Updated data attributes table with 8 new carousel/animation attributes (data-total-slides, data-current-slide, data-slide-index, data-autoplay, data-animation-state, data-animation-duration, data-animation-control, data-video-role)
+  - **Appendix F:** Added Priority 1 (GIFs/video text alternatives, pause controls) and Priority 2 (carousel alternatives, animation HTML completeness) dynamic content items
+  - **Web Audit Suite (11 files, 386 insertions):** Full detection and reporting implementation
+  - **Detection (caching.js):** Carousel type classification (informational vs decorative), animation library detection (Typed.js, TypeIt, GSAP, AOS, Animate.css), autoplay media validation, animated GIF alt text checking
+  - **Collection (llmCollector.js):** New analyzeDynamicContent method aggregating metrics from Puppeteer page.evaluate phase
+  - **Scoring (llmScorer.js, scoringWeights.js):** Severity-based penalties: informational carousels -8, decorative carousels -3, autoplay without controls -8 (WCAG 2.2.2), GIFs without alt -3, animation libraries -2
+  - **Reporting (llmReports.js):** 9 new CSV columns tracking carousel counts, autoplay videos, animated GIFs, and animation libraries
+  - **Feedback (llmFeedback.js):** Actionable recommendations distinguishing informational vs decorative content with specific fix guidance
+  - **Documentation:** Updated FEATURES.md with dynamic content detection section, CONFIGURATION.md with scoring penalties, README.md with feature mention
+  - **Submodule commit:** d5a4a63 in manuscript repository
+- **Previous Change:** Added professional profile to sales enablement materials (2026-01-17):
   - **profile.md:** Created integrated professional statement combining agent-ready infrastructure expertise with AEM/EDS strategic advisory
   - **Core Concepts:** Clarity infrastructure (explicit state, persistent feedback, complete information)
   - **Book Alignment:** Convergence principle - what agents need is what everyone needs
