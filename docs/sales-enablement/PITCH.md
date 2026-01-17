@@ -88,6 +88,8 @@ Modern websites work beautifully for human visual browsing but fail completely f
 
 **Real Example:** An AI assistant compared two tour operators. Company A's website used pagination - the agent saw only the first day of a multi-day tour and recommended based on incomplete information. Company B showed their full itinerary on one page and won the business.
 
+**The business model crisis is real.** In January 2025, Tailwind CSS laid off 75% of its team after their traffic-dependent revenue model collapsed. When AI agents started answering developer questions without sending traffic to documentation sites, the business couldn't sustain salaries. Founder Adam Wathan explained when rejecting an llms.txt integration: "Making it easier for LLMs to read our docs just means less traffic which means less people learning about our paid products and the business being even less sustainable." This demonstrates that adaptation isn't optional - companies must transform to agent-compatible revenue models (direct transactions, paid services, subscriptions) or face revenue collapse whilst agents extract free content and paid offerings remain invisible.
+
 ### The Patterns That Break
 
 Five specific failure modes:
@@ -117,14 +119,18 @@ Businesses can't see what's broken. Modern web analytics are designed for human 
 
 ### The Accessibility Connection
 
-These same patterns break human users:
+These same patterns break human users with disabilities who use assistive technologies:
 
-- Screen reader users can't perceive visual-only state changes
-- People with cognitive disabilities struggle with transient notifications
-- Users on slow connections miss client-side state updates
-- Anyone processing pages sequentially hits pagination barriers
+- **Keyboard users** - People with hand tremors who cannot grip a mouse need skip links to bypass navigation
+- **Screen reader users** - Cannot perceive visual-only state changes or animations
+- **Voice control users** - People with mobility disabilities need explicit landmarks and semantic structure
+- **People with cognitive disabilities** - Struggle with transient notifications and complex pagination
+- **Users on slow connections** - Miss client-side state updates
+- **Anyone processing pages sequentially** - Hits pagination barriers
 
-**The insight:** We've known about these problems for years. Accessibility advocates have been explaining them. But there wasn't enough commercial pressure to fix them. Now there is.
+**The convergence principle:** Patterns that break AI agents also break humans. Skip links help keyboard users bypass navigation whilst helping AI agents identify main content. Semantic HTML benefits screen readers and AI parsing. Explicit state attributes serve assistive technologies and agents simultaneously.
+
+**The insight:** We've known about these problems for years. Accessibility advocates have been explaining them. But there wasn't enough commercial pressure to fix them. Now there is. AI agents make universal design principles commercially unavoidable.
 
 ---
 

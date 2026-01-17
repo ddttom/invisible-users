@@ -64,9 +64,11 @@ We don't need a redesign. We need **Code Remediation**.
 1. **Semantic HTML:** Replace `div` buttons with real `buttons`.
 2. **Explicit State:** Add `data-state="success"` attributes so code explains itself.
 3. **Structured Data:** Feed the robots the pricing/inventory data directly via `llms.txt`.
+4. **Skip Links:** Add navigation aids that help keyboard users and AI agents identify main content.
 
 * **Impact on Human UX:** Zero visual change.
-* **Impact on Accessibility:** Significantly improved (supports screen readers).
+* **Impact on Accessibility:** Significantly improved - benefits keyboard users, screen readers, voice control users.
+* **The Convergence Principle:** Patterns that help AI agents also help users with disabilities.
 
 ---
 

@@ -34,7 +34,8 @@
       "Read(//Users/tomcranstoun/Documents/GitHub/invisible-users/**)",
       "Bash(node test-html-validation.js:*)",
       "Bash(node debug-cheerio.js:*)",
-      "Bash(node test-complex-case.js:*)"
+      "Bash(node test-complex-case.js:*)",
+      "Bash(npx html-validate:*)"
     ],
     "deny": [],
     "ask": [
