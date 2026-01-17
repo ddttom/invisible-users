@@ -78,28 +78,59 @@ This ensures the book remains the single source of truth.
 ```text
 /
 ├── packages/
-│   ├── manuscript/           # Book manuscript (~78,000 words core)
-│   │   ├── book-plan.md
+│   ├── manuscript/           # Book manuscript (~93,649 words core)
+│   │   ├── book-plan.md      # Master plan with chapter outlines
+│   │   ├── book-svg-style.md # SVG illustration specifications
 │   │   └── manuscript/       # Core manuscript files (git submodule)
-│   │       ├── chapter-01-*.md through chapter-11-*.md
+│   │       ├── chapter-01-*.md through chapter-13-*.md  # 13 chapters
 │   │       ├── preface.md
 │   │       ├── executive-summary.md
+│   │       ├── reading-guide.md
+│   │       ├── rear-cover.md
+│   │       ├── The-End.md
 │   │       ├── Glossary.md
-│   │       ├── appendix-*.md     # Appendices A-K
-│   │       ├── appendix-live-llms.txt  # Appendix H source (llms.txt example)
-│   │       └── illustrations/    # SVG illustrations (PNG gitignored)
+│   │       ├── appendix-a-*.md through appendix-l-*.md  # 12 appendices (A-L)
+│   │       ├── appendix-h-live-llms.txt  # Appendix H source (llms.txt example)
+│   │       ├── illustrations/    # SVG illustrations (PNG gitignored)
+│   │       ├── web/              # Generated HTML appendices
+│   │       │   ├── index.html
+│   │       │   ├── llms.txt
+│   │       │   ├── sitemap.xml
+│   │       │   └── appendix-*.html  # 12 appendix pages
+│   │       ├── agent-friendly-starter-kit/  # Code examples
+│   │       ├── code-examples/    # Production-ready implementations
+│   │       ├── blog/             # Promotional materials
+│   │       └── talks/            # Presentation materials
 │   │
 │   └── web-audit-suite/      # Production-ready analysis tool
 │       ├── src/              # Source code
+│       │   ├── collectors/   # Data collection modules
+│       │   ├── config/       # Configuration management
+│       │   ├── core/         # Core utilities
+│       │   └── utils/        # Helper functions
 │       ├── docs/             # Documentation
 │       ├── examples/         # Configuration examples
+│       ├── test/             # Test suites
 │       └── README.md         # Tool documentation
 │
 ├── docs/                     # Documentation and architecture
 │   ├── doc-architecture.md         # Repository restructure documentation
 │   ├── web-audit-architecture.md   # Web Audit Suite architecture
 │   └── sales-enablement/           # Business and sales materials
+│       ├── business-plan.md        # Complete business strategy (~18,000 words)
+│       ├── PITCH.md                # Partnership pitch (~27,500 words)
+│       ├── executive-summary.md    # Executive summary (~2,900 words)
+│       ├── plan-to-market.md       # Go-to-market plan (~8,500 words)
+│       ├── book-pricing.md         # Pricing strategy
+│       ├── oreilly-proposal.md     # O'Reilly proposal
+│       └── [other sales materials]
 ├── scripts/                  # Build scripts
+│   ├── download-cover-images.js
+│   ├── generate-appendix-html.sh
+│   └── commit-and-push-all.sh
+├── .claude/                  # Claude Code configuration
+│   ├── skills/               # Custom skills
+│   └── hooks/                # Git hooks
 └── package.json              # Monorepo workspace configuration
 ```
 
@@ -149,32 +180,36 @@ After the manuscript changes are merged, update this repository's submodule refe
 
 | Chapter | Title | Status | Words |
 | --------- | ------- | -------- | ------- |
-| Preface | Author's Journey | ✅ Complete | ~1,700 |
-| 1 | What You Will Learn | ✅ Complete | ~3,200 |
-| 2 | The Invisible Failure | ✅ Complete | ~4,500 |
-| 3 | The Architectural Conflict | ✅ Complete | ~4,150 |
-| 4 | The Business Reality | ✅ Complete | ~6,200 |
-| 5 | The Content Creator's Dilemma | ✅ Complete | ~5,600 |
-| 6 | The Security Maze | ✅ Complete | ~4,000 |
-| 7 | The Legal Landscape | ✅ Complete | ~4,400 |
-| 8 | The Human Cost | ✅ Complete | ~3,650 |
-| 9 | Designing for Both | ✅ Complete | ~4,400 |
-| 10 | Technical Advice | ✅ Complete | ~8,350 |
-| 11 | What Agent Creators Must Build | ✅ Complete | ~4,700 |
+| Preface | Author's Journey | ✅ Complete | ~2,678 |
+| 1 | What You Will Learn | ✅ Complete | ~2,894 |
+| 2 | The Invisible Failure | ✅ Complete | ~5,760 |
+| 3 | The Architectural Conflict | ✅ Complete | ~4,192 |
+| 4 | The Business Reality | ✅ Complete | ~10,009 |
+| 5 | The Content Creator's Dilemma | ✅ Complete | ~6,129 |
+| 6 | The Security Maze | ✅ Complete | ~4,385 |
+| 7 | The Legal Landscape | ✅ Complete | ~4,395 |
+| 8 | The Human Cost | ✅ Complete | ~4,153 |
+| 9 | The Platform Race | ✅ Complete | ~5,377 |
+| 10 | Generative Engine Optimization | ✅ Complete | ~13,076 |
+| 11 | Designing for Both | ✅ Complete | ~6,773 |
+| 12 | Technical Advice | ✅ Complete | ~11,468 |
+| 13 | What Agent Creators Must Build | ✅ Complete | ~9,440 |
+| The End | Additional Resources | ✅ Complete | ~570 |
+| Glossary | Technical Terms | ✅ Complete | ~2,350 |
 
-**Core manuscript:** ~78,000 words (preface + 13 chapters + The End + glossary)
+**Core manuscript:** ~93,649 words (preface + 13 chapters + The End + glossary)
 
 **Web appendices** (published separately at <https://allabout.network/invisible-users/web/>):
 
-- Appendices A-L: ~58,600 words
+- Appendices A-L: ~63,238 words
 
 **Supporting materials:**
 
-- Executive Summary: ~1,800 words
-- Reading Guide: ~1,150 words
-- Rear Cover: ~600 words
+- Executive Summary: ~1,815 words
+- Reading Guide: ~1,151 words
+- Rear Cover: ~598 words
 
-**Total comprehensive content:** ~140,150 words
+**Total comprehensive content:** ~160,451 words
 
 ## Quick Start
 
