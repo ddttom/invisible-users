@@ -4,6 +4,12 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 
 ---
 
+## Array Type Validation: Always Use Array.isArray()
+
+**Rule** (2026-01-17): Encountered `TypeError: carousels.filter is not a function` during Web Audit Suite execution. Code assumed `dynamicData.carousels || []` would ensure an array, but in some cases the property existed but wasn't an array. JavaScript's `||` operator doesn't validate types, it just checks truthiness. Always use explicit type checking: `Array.isArray(data.property) ? data.property : []` when you need to guarantee array operations like `.filter()`, `.map()`, or `.reduce()` will work correctly.
+
+---
+
 ## File Location: Always Check Root Directory First
 
 **Rule** (2026-01-09): Tried to find LEARNINGS.md by searching subdirectories and checking if it existed in various locations, but the user pointed out "learnings.md is here @LEARNINGS.md this is one more eror to add, you did not look in the root." When looking for project-level files like LEARNINGS.md, README.md, CLAUDE.md, always check the root directory first before searching subdirectories. The root directory is where project-level documentation lives.

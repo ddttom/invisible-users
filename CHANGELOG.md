@@ -9,6 +9,52 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - Carousel Array TypeError in Web Audit Suite (2026-01-17)
+
+Fixed `TypeError: carousels.filter is not a function` crash during LLM metrics collection when analyzing pages with non-standard carousel implementations.
+
+**Bug Details:**
+
+- **Error:** Runtime TypeError when calling `.filter()` on carousels variable
+- **Root Cause:** Code used `dynamicData.carousels || []` assuming it would ensure array type, but property could exist with non-array value (JavaScript's `||` operator doesn't validate types, only checks truthiness)
+- **Impact:** Audit would crash mid-execution when encountering certain page structures
+
+**Fix Implementation (llmCollector.js:865):**
+
+- Changed: `const carousels = dynamicData.carousels || [];`
+- To: `const carousels = Array.isArray(dynamicData.carousels) ? dynamicData.carousels : [];`
+- Adds explicit type checking to guarantee array operations work correctly
+- Prevents crashes while maintaining backward compatibility
+
+### Added - npm Script and Documentation Updates (2026-01-17)
+
+**npm script:**
+
+- Added `audit:allabout` command for quick allabout.network audits with automatic cache clearing
+
+**Documentation updates:**
+
+- Updated word counts across all documentation files (CLAUDE.md, README.md, PROJECTSTATE.md, book-plan.md)
+- Core manuscript: ~78,000 words (was showing ~57,000-62,000 previously)
+- Web appendices: ~58,600 words (was showing ~44,600 previously)
+- Total comprehensive content: ~140,000 words
+- Updated chapter lists to reflect all 13 chapters with accurate word counts
+
+**Sales enablement materials:**
+
+- Added O'Reilly proposal package (5 new documents):
+  - oreilly-proposal.md - Complete book proposal with market analysis
+  - oreilly-toc.md - Detailed table of contents with chapter summaries
+  - oreilly-sample-chapter.md - Full Chapter 2 as sample content
+  - oreilly-author-bio.md - Comprehensive author biography and credentials
+  - book-pricing.md - Pricing strategy and market positioning
+
+**Submodule updates:**
+
+- Updated manuscript submodule with talk materials and documentation corrections
+- Added historical context slide to members call presentation
+- Fixed word counts in manuscript repository documentation
+
 ### Added - Visual Dynamism Detection to Web Audit Suite (2026-01-17)
 
 Added screenshot-based visual dynamism detection to complement library-based dynamic content detection, catching typewriter animations, rotating text, tickers, and other timing-dependent visual changes.

@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-17 (Added visual dynamism detection to Web Audit Suite)
+**Last Updated:** 2026-01-17 (Fixed carousel array bug in Web Audit Suite)
 
 ### Monorepo Structure
 
@@ -21,7 +21,15 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~140,000 words total (core manuscript ~78,000 words + appendices ~58,600 words + supporting materials ~3,550 words)
 - **Appendices:** 12 appendices (~58,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 13 chapters complete (added NEW Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Added visual dynamism detection to Web Audit Suite (2026-01-17):
+- **Latest Change:** Fixed carousel array TypeError bug in Web Audit Suite (2026-01-17):
+  - **Bug:** `TypeError: carousels.filter is not a function` during LLM metrics collection
+  - **Root Cause:** Code assumed `dynamicData.carousels || []` would ensure array type, but property could exist with non-array value
+  - **Fix:** Added explicit type check using `Array.isArray(dynamicData.carousels) ? dynamicData.carousels : []` in llmCollector.js:865
+  - **Impact:** Prevents audit crashes when analyzing pages with non-standard carousel implementations
+  - **Added npm script:** `audit:allabout` for quick allabout.network audits with cache clearing
+  - **Documentation updates:** Updated word counts across all documentation files (~78,000 words core, ~140,000 total)
+  - **Sales materials:** Added O'Reilly proposal documents (proposal, TOC, sample chapter, author bio, pricing strategy)
+- **Previous Change:** Added visual dynamism detection to Web Audit Suite (2026-01-17):
   - **Screenshot-Based Detection (caching.js):** Takes 3 screenshots at random 2-5 second intervals, calculates MD5 hash of each, detects visual changes by comparing hashes (typewriter animations, rotating text, tickers)
   - **Metrics Collection (llmCollector.js):** New visualDynamism metrics (detected boolean, uniqueStates count)
   - **Scoring Penalty (llmScorer.js, scoringWeights.js):** -5 points for detected visual dynamism
