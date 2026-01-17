@@ -18,6 +18,45 @@ import { throttle } from './rateLimiter.js';
 puppeteer.use(StealthPlugin());
 
 /**
+ * Set up stealth configuration on a Puppeteer page
+ * @param {Page} page - Puppeteer page instance
+ * @private
+ */
+async function setupStealthPage(page) {
+  // Randomize browser fingerprint
+  await page.evaluateOnNewDocument(() => {
+    Object.defineProperty(navigator, 'webdriver', {
+      get: () => false,
+    });
+    Object.defineProperty(navigator, 'languages', {
+      get: () => ['en-US', 'en'],
+    });
+    Object.defineProperty(navigator, 'plugins', {
+      get: () => [1, 2, 3],
+    });
+  });
+
+  // Set realistic headers and settings
+  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
+  await page.setExtraHTTPHeaders({
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept-Encoding': 'gzip, deflate, br',
+    Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+    Referer: 'https://www.google.com/',
+    Connection: 'keep-alive',
+  });
+
+  // Randomize viewport
+  await page.setViewport({
+    width: 1920 + Math.floor(Math.random() * 100),
+    height: 1080 + Math.floor(Math.random() * 100),
+    deviceScaleFactor: 1,
+    hasTouch: false,
+    isLandscape: false,
+  });
+}
+
+/**
  * Checks if error is a Cloudflare challenge
  *
  * @param {Error} error - Error to check
@@ -77,7 +116,7 @@ function isNetworkError(error) {
  * - Stealth mode to avoid detection
  * - Randomized browser fingerprint
  * - Realistic user behavior simulation
- * - Automatic browser cleanup
+ * - Browser pool usage (if available) or fallback to direct launch
  *
  * @param {Function} operation - Puppeteer operation to execute
  * @param {string} operationName - Name of operation for logging
@@ -86,6 +125,28 @@ function isNetworkError(error) {
  * @throws {Error} If operation fails
  */
 async function executePuppeteerOperation(operation, operationName, context, options = {}) {
+  // If browser pool is available, use it; otherwise fall back to direct launch
+  if (context.browserPool) {
+    return context.browserPool.execute(async (browser) => {
+      const page = await browser.newPage();
+      try {
+        // Set up the page with stealth configuration
+        await setupStealthPage(page);
+
+        // Execute the operation with random delays
+        const randomDelay = (min, max) => new Promise((resolve) => { setTimeout(resolve, Math.random() * (max - min) + min); });
+        await randomDelay(500, 1500);
+        const result = await operation(page);
+        await randomDelay(500, 1500);
+
+        return result;
+      } finally {
+        await page.close();
+      }
+    });
+  }
+
+  // Fallback: Launch browser directly (legacy behavior)
   let browser;
   try {
     browser = await puppeteer.launch({
@@ -104,37 +165,8 @@ async function executePuppeteerOperation(operation, operationName, context, opti
 
     const page = await browser.newPage();
 
-    // Randomize browser fingerprint
-    await page.evaluateOnNewDocument(() => {
-      Object.defineProperty(navigator, 'webdriver', {
-        get: () => false,
-      });
-      Object.defineProperty(navigator, 'languages', {
-        get: () => ['en-US', 'en'],
-      });
-      Object.defineProperty(navigator, 'plugins', {
-        get: () => [1, 2, 3],
-      });
-    });
-
-    // Set realistic headers and settings
-    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
-    await page.setExtraHTTPHeaders({
-      'Accept-Language': 'en-US,en;q=0.9',
-      'Accept-Encoding': 'gzip, deflate, br',
-      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-      Referer: 'https://www.google.com/',
-      Connection: 'keep-alive',
-    });
-
-    // Randomize viewport and mouse movements
-    await page.setViewport({
-      width: 1920 + Math.floor(Math.random() * 100),
-      height: 1080 + Math.floor(Math.random() * 100),
-      deviceScaleFactor: 1,
-      hasTouch: false,
-      isLandscape: false,
-    });
+    // Set up stealth configuration
+    await setupStealthPage(page);
 
     // Add random delays to mimic human behavior
     const randomDelay = (min, max) => new Promise((resolve) => { setTimeout(resolve, Math.random() * (max - min) + min); });
