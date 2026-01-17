@@ -87,6 +87,14 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   ├── doc-architecture.md         # Repository restructure documentation with Mermaid diagrams
 │   ├── web-audit-architecture.md   # Web Audit Suite architecture documentation
 │   └── sales-enablement/           # Sales materials, pitch decks, business plan
+│       ├── business/               # Business strategy documents
+│       ├── pitches/                # Pitch materials and case studies
+│       ├── publishers/             # O'Reilly submission materials
+│       ├── partners/               # Partner-focused materials (Kentico, toolkit)
+│       ├── outreach/               # Communication templates (Adobe, reviewers)
+│       ├── content/                # Blog and promotional content
+│       ├── profiles/               # Professional profiles (LinkedIn, general)
+│       └── pricing/                # Pricing strategy
 ├── scripts/                  # Build scripts
 │   └── download-cover-images.js    # Downloads cover images for illustrations
 ├── packages/                 # Monorepo packages

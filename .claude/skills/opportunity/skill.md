@@ -11,19 +11,21 @@ Base directory for this skill: /Users/tomcranstoun/Documents/GitHub/invisible-us
 When you identify a potential business opportunity (new vendor AI feature, agency partnership possibility, enterprise client need), this skill:
 
 1. **Analyzes opportunity viability** - Evaluates gap, market timing, competitive landscape
-2. **Updates opportunities database** - Adds structured entry to `docs/sales-enablement/business-opportunities.md`
-3. **Generates vendor materials** - Creates pitch materials, email templates, one-pagers
+2. **Updates opportunities database** - Adds structured entry to `docs/sales-enablement/business/business-opportunities.md`
+3. **Generates vendor materials** - Creates pitch materials, email templates, one-pagers in appropriate subfolders
 4. **Cross-references book content** - Links to relevant chapters validating the opportunity
 5. **Estimates engagement value** - Suggests pricing and engagement models
 
 ## Integration with News Skill
 
 **Workflow integration:**
+
 - `/news` identifies industry developments
 - If development reveals vendor gap → `/opportunity` documents business case
 - Both skills update their respective tracking documents
 
 **Example:**
+
 ```
 User: /news Adobe launches new AI content generation feature
 News skill: Verifies launch, checks relevance to book
@@ -62,12 +64,14 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 ### Phase 1: Opportunity Analysis
 
 **Automatic actions:**
+
 - Parse vendor/agency name and opportunity description
 - Identify opportunity type (CMS vendor, agency, enterprise, platform ecosystem)
 - Research vendor's current AI offerings via WebSearch if needed
 - Determine gap category (agent-accessible output, validation, training, advisory)
 
 **Gap categories:**
+
 1. **Product Integration** - Vendor AI tool lacks agent-compatible output
 2. **Platform Validation** - Vendor customers can't measure agent-readiness
 3. **Partner Training** - Agency ecosystem needs agent-readiness expertise
@@ -83,12 +87,14 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 ### Phase 2: Market Timing Assessment
 
 **Automatic actions:**
+
 - Evaluate competitive window (who else might solve this, when)
 - Assess vendor readiness (recent launches, market positioning, openness to partnerships)
 - Identify urgency drivers (customer questions, competitive pressure, platform launches)
 - Determine if timing is immediate (0-3 months), near-term (3-6 months), or future (6+ months)
 
 **Timing indicators:**
+
 - **Immediate:** Vendor just launched relevant feature, customer questions emerging now
 - **Near-term:** Industry trend accelerating, competitive window closing
 - **Future:** Market awareness building, multi-year opportunity
@@ -102,12 +108,14 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 ### Phase 3: Value and Pricing Estimation
 
 **Automatic actions:**
+
 - Determine engagement type (product integration, audit, training, advisory, retainer)
 - Estimate value range based on similar opportunities in database
 - Suggest pricing model (fixed-price, value-based, retainer, revenue share)
 - Calculate potential annual value
 
 **Pricing frameworks:**
+
 - **Product Integration:** £50k-250k (6-9 months development partnership)
 - **Platform Validation:** £75k-150k integration + £500-2k per site usage
 - **Partner Training:** £25k-50k programme + £2k-5k per partner trained
@@ -123,6 +131,7 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 ### Phase 4: Material Generation Plan
 
 **Automatic actions:**
+
 - Determine which materials to create based on opportunity type
 - Plan document structure for vendor-specific analysis
 - Identify email templates, pitch decks, or toolkits needed
@@ -131,18 +140,21 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 **Material types:**
 
 **For CMS/DXP vendors (Kentico, Adobe, Contentful, etc.):**
+
 - Vendor-specific opportunity analysis document
 - Email templates (product team, CEO, partners, community)
 - One-page pitch deck
 - Partnership proposal outline
 
 **For agencies:**
+
 - Partner toolkit sections relevant to their focus
 - White-label audit templates
 - Training curriculum outline
 - Revenue share proposal
 
 **For enterprises:**
+
 - Audit scope and methodology
 - Executive summary template
 - ROI calculation framework
@@ -157,7 +169,8 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 ### Phase 5: Update Business Opportunities Database
 
 **Automatic actions:**
-- Read current `docs/sales-enablement/business-opportunities.md`
+
+- Read current `docs/sales-enablement/business/business-opportunities.md`
 - Determine correct section (CMS Vendors, Agencies, Enterprises, Platform Ecosystems)
 - Create structured entry with consistent format
 - Insert in appropriate location (by opportunity type, then alphabetically)
@@ -165,6 +178,7 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 - Maintain existing content structure
 
 **Entry structure:**
+
 ```markdown
 ## [Vendor/Agency Name] - [Opportunity Type]
 
@@ -199,6 +213,7 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 ### Phase 6: Generate Vendor-Specific Materials
 
 **Automatic actions:**
+
 - Create vendor-specific opportunity analysis document (like `adobe-opportunity-analysis.md`)
 - Generate email templates for outreach (like `kentico-email-templates.md`)
 - Create one-page pitch summary
@@ -207,31 +222,35 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 
 **Materials created:**
 
-**1. Opportunity Analysis Document** (`docs/sales-enablement/[vendor]-opportunity-analysis.md`)
+**1. Opportunity Analysis Document** (`docs/sales-enablement/outreach/[vendor]-opportunity-analysis.md`)
+
 - Complete analysis (15-20 pages)
 - 5 partnership opportunities with deliverables and pricing
 - Competitive landscape
 - Outreach strategy
 - Success metrics
 
-**2. Email Templates** (`docs/sales-enablement/[vendor]-email-templates.md`)
+**2. Email Templates** (`docs/sales-enablement/outreach/[vendor]-email-templates.md`)
+
 - 5 email templates (executives, product team, partners, community, events)
 - 3-stage follow-up sequence
 - Subject line variations
 - Tracking section
 
-**3. One-Page Pitch** (`docs/sales-enablement/[vendor]-pitch-one-pager.md`)
+**3. One-Page Pitch** (`docs/sales-enablement/pitches/[vendor]-pitch-one-pager.md`)
+
 - Single-page summary for quick reference
 - The gap, the solution, the value
 - Why us, why now
 - Clear call-to-action
 
-**4. Partner Toolkit Sections** (if agency opportunity)
+**4. Partner Toolkit Sections** (if agency opportunity - `docs/sales-enablement/partners/`)
+
 - Relevant sections from partner-toolkit-template.md
 - Customized for agency's focus area
 - White-label templates
 
-**What I'll do:** Generate all materials and save to `docs/sales-enablement/`
+**What I'll do:** Generate all materials and save to appropriate subfolders in `docs/sales-enablement/`
 
 **What you'll do:** Review materials and request adjustments if needed
 
@@ -240,20 +259,25 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 ## File Locations
 
 **Primary database:**
-- `docs/sales-enablement/business-opportunities.md` (master opportunity tracking)
 
-**Vendor-specific materials:**
-- `docs/sales-enablement/[vendor]-opportunity-analysis.md`
-- `docs/sales-enablement/[vendor]-email-templates.md`
-- `docs/sales-enablement/[vendor]-pitch-one-pager.md`
+- `docs/sales-enablement/business/business-opportunities.md` (master opportunity tracking)
+
+**Vendor-specific materials (organized by category):**
+
+- Outreach: `docs/sales-enablement/outreach/[vendor]-opportunity-analysis.md`
+- Outreach: `docs/sales-enablement/outreach/[vendor]-email-templates.md`
+- Pitches: `docs/sales-enablement/pitches/[vendor]-pitch-one-pager.md`
+- Partners: `docs/sales-enablement/partners/[agency]-partnership-proposal.md`
 
 **Reference files (read-only):**
+
 - Book chapters: `packages/manuscript/manuscript/chapter-*.md`
 - Book plan: `packages/manuscript/book-plan.md`
 - Web Audit Suite: `packages/web-audit-suite/`
 
 **Templates:**
-- `docs/sales-enablement/partner-toolkit-template.md`
+
+- `docs/sales-enablement/partners/partner-toolkit-template.md`
 
 ---
 
@@ -270,9 +294,9 @@ Phase 3: ✓ Value - £200k-500k (product integration + partner training + strat
 Phase 4: ✓ Materials planned - Analysis doc, email templates, pitch deck
 Phase 5: Database entry created under "Replicable Pattern: Other CMS/DXP Vendors"
 Phase 6: Generated:
-  - docs/sales-enablement/contentful-opportunity-analysis.md (18 pages)
-  - docs/sales-enablement/contentful-email-templates.md (5 templates)
-  - docs/sales-enablement/contentful-pitch-one-pager.md (1 page)
+  - docs/sales-enablement/outreach/contentful-opportunity-analysis.md (18 pages)
+  - docs/sales-enablement/outreach/contentful-email-templates.md (5 templates)
+  - docs/sales-enablement/pitches/contentful-pitch-one-pager.md (1 page)
 
 Result: Complete vendor package ready for outreach
 ```
@@ -290,7 +314,7 @@ Phase 3: ✓ Value - £50k-150k (training programme + white-label audit services
 Phase 4: ✓ Materials planned - Partner toolkit sections, training outline, revenue share proposal
 Phase 5: Database entry created under "Development Agencies"
 Phase 6: Generated:
-  - docs/sales-enablement/mediamonks-partnership-proposal.md
+  - docs/sales-enablement/partners/mediamonks-partnership-proposal.md
   - Relevant partner-toolkit sections (audit templates, training curriculum)
   - Revenue share agreement template
 
@@ -310,7 +334,7 @@ Phase 3: ✓ Value - £75k-200k (comprehensive multi-site audit + remediation ro
 Phase 4: ✓ Materials planned - Audit methodology, executive summary, ROI framework
 Phase 5: Database entry created under "Enterprise In-House Teams"
 Phase 6: Generated:
-  - docs/sales-enablement/barclays-audit-proposal.md
+  - docs/sales-enablement/outreach/barclays-audit-proposal.md
   - Financial services compliance considerations
   - Multi-site audit pricing calculator
 
@@ -346,6 +370,7 @@ Result:
 ### Cross-References to Book Chapters
 
 **Opportunity skill automatically links to:**
+
 - **Chapter 2** (Invisible Failures) - Technical patterns vendors miss
 - **Chapter 3** (Architectural Conflict) - Why AI productivity tools don't ensure agent output
 - **Chapter 4** (Business Reality) - Revenue model implications for vendors and clients
@@ -357,6 +382,7 @@ Result:
 ### Links to Web Audit Suite
 
 **Proposals reference:**
+
 - Tool capabilities for validation
 - Integration opportunities for vendors
 - White-label possibilities for partners
@@ -365,6 +391,7 @@ Result:
 ### Updates Business Opportunities Database
 
 **Database structure maintained:**
+
 - Consistent formatting across all entries
 - Alphabetical within categories
 - Cross-references between related opportunities
@@ -431,6 +458,7 @@ Result:
 ## What You Control
 
 **You decide:**
+
 - Whether opportunity is worth pursuing
 - Timing assessment (if you have insider knowledge)
 - Value ranges (if you know vendor budget/market)
@@ -438,6 +466,7 @@ Result:
 - Approach strategy (warm contacts vs cold outreach)
 
 **I handle:**
+
 - Market research and gap analysis
 - Database entry formatting and placement
 - Material generation from templates
@@ -457,6 +486,7 @@ Once opportunity is documented and materials generated:
 5. **Update database** - Add contact details, outreach dates, responses received
 
 **Next steps typically:**
+
 - Research key contacts (LinkedIn, company website)
 - Customize email Template 1 with specific details
 - Send initial outreach within 7 days
@@ -481,6 +511,7 @@ Once opportunity is documented and materials generated:
 **Opportunity skill focuses on:** Business development and revenue opportunities
 
 **Handoff pattern:**
+
 ```
 /news [vendor launch]
   → Verifies facts
@@ -496,10 +527,12 @@ Once opportunity is documented and materials generated:
 ```
 
 **Both skills update different documents:**
+
 - `/news` → `appendix-j-industry-developments.md`, `blog/book-updates.md`, `web/news.html`
-- `/opportunity` → `business-opportunities.md`, vendor-specific materials
+- `/opportunity` → `business/business-opportunities.md`, vendor-specific materials in organized subfolders
 
 **Integration example:**
+
 - January 2026: Amazon/Microsoft/Google agent commerce launches
 - `/news` documents these in Appendix J (validates book predictions)
 - `/opportunity` identifies CMS vendors needing agent-readiness positioning
@@ -526,6 +559,7 @@ The goal is to maintain a current, actionable database of business opportunities
 5. **Strategic Advisory** - Vendor needs competitive positioning and roadmap
 
 **Value ranges:**
+
 - Product Integration: £50k-250k
 - Platform Validation: £75k-150k + usage fees
 - Partner Training: £25k-50k + per-partner fees

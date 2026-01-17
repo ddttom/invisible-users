@@ -117,13 +117,40 @@ This ensures the book remains the single source of truth.
 │   ├── doc-architecture.md         # Repository restructure documentation
 │   ├── web-audit-architecture.md   # Web Audit Suite architecture
 │   └── sales-enablement/           # Business and sales materials
-│       ├── business-plan.md        # Complete business strategy (~18,000 words)
-│       ├── PITCH.md                # Partnership pitch (~27,500 words)
-│       ├── executive-summary.md    # Executive summary (~2,900 words)
-│       ├── plan-to-market.md       # Go-to-market plan (~8,500 words)
-│       ├── book-pricing.md         # Pricing strategy
-│       ├── oreilly-proposal.md     # O'Reilly proposal
-│       └── [other sales materials]
+│       ├── business/               # Business strategy documents
+│       │   ├── business-plan.md    # Complete business strategy (~18,000 words)
+│       │   ├── business-opportunities.md
+│       │   ├── executive-summary.md # Executive summary (~2,900 words)
+│       │   └── plan-to-market.md   # Go-to-market plan (~8,500 words)
+│       ├── pitches/                # Pitch materials
+│       │   ├── PITCH.md            # Partnership pitch (~27,500 words)
+│       │   ├── EXECUTIVE_PITCH_DECK.md
+│       │   └── ROI_CASE_STUDIES.md
+│       ├── publishers/             # O'Reilly submission materials
+│       │   ├── oreilly-proposal.md
+│       │   ├── oreilly-toc.md
+│       │   ├── oreilly-author-bio.md
+│       │   └── oreilly-sample-chapter.md
+│       ├── partners/               # Partner-focused materials
+│       │   ├── PARTNER_KIT.md
+│       │   ├── kentico-pitch-one-pager.md
+│       │   ├── kentico-email-templates.md
+│       │   └── partner-toolkit-template.md
+│       ├── outreach/               # Communication templates
+│       │   ├── adobe-opportunity-analysis.md
+│       │   ├── for-adobe.txt
+│       │   ├── reviewer-email.md
+│       │   └── reviews.md
+│       ├── content/                # Blog and promotional content
+│       │   ├── book.md
+│       │   ├── new-blog.md
+│       │   ├── platforms-blog.md
+│       │   └── platforms-blog-teaser.md
+│       ├── profiles/               # Professional profiles
+│       │   ├── profile.md
+│       │   └── linkedin-about.md
+│       └── pricing/                # Pricing strategy
+│           └── book-pricing.md
 ├── scripts/                  # Build scripts
 │   ├── download-cover-images.js
 │   ├── generate-appendix-html.sh

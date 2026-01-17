@@ -17,7 +17,7 @@ This skill automates business opportunity tracking and vendor-specific material 
 ## What This Skill Does
 
 1. **Analyzes opportunity** - Identifies gap type, market timing, competitive window
-2. **Updates database** - Adds structured entry to `docs/sales-enablement/business-opportunities.md`
+2. **Updates database** - Adds structured entry to `docs/sales-enablement/business/business-opportunities.md`
 3. **Generates materials** - Creates vendor-specific analysis, emails, pitch decks
 4. **Estimates value** - Suggests pricing and engagement models
 5. **Prepares outreach** - Ready-to-use materials for immediate action
@@ -62,11 +62,11 @@ The `/news` and `/opportunity` skills work together:
 
 When you run `/opportunity`, the skill creates:
 
-1. **Database entry** in `docs/sales-enablement/business-opportunities.md`
-2. **Opportunity analysis** (`[vendor]-opportunity-analysis.md`) - 15-20 page detailed analysis
-3. **Email templates** (`[vendor]-email-templates.md`) - 5 templates + follow-up sequences
-4. **One-page pitch** (`[vendor]-pitch-one-pager.md`) - Executive summary for quick reference
-5. **Partner materials** (if agency opportunity) - Relevant toolkit sections
+1. **Database entry** in `docs/sales-enablement/business/business-opportunities.md`
+2. **Opportunity analysis** in `docs/sales-enablement/outreach/[vendor]-opportunity-analysis.md` - 15-20 page detailed analysis
+3. **Email templates** in `docs/sales-enablement/outreach/[vendor]-email-templates.md` - 5 templates + follow-up sequences
+4. **One-page pitch** in `docs/sales-enablement/pitches/[vendor]-pitch-one-pager.md` - Executive summary for quick reference
+5. **Partner materials** (if agency opportunity) in `docs/sales-enablement/partners/` - Relevant toolkit sections
 
 ## Typical Workflow
 
@@ -82,26 +82,31 @@ When you run `/opportunity`, the skill creates:
 ```
 
 **Day 2-3: Review materials**
+
 - Read generated opportunity analysis
 - Customize email templates with specific details
 - Review pricing and engagement models
 
 **Day 4-7: Research contacts**
+
 - Identify decision-makers on LinkedIn
 - Find warm connections if available
 - Locate speaking/thought leadership opportunities
 
 **Week 2: Initial outreach**
+
 - Send personalized Email Template 1
 - Reference recent launches or market developments
 - Offer value (book, complimentary audit, strategic session)
 
 **Week 3-4: Follow up**
+
 - Use 3-stage follow-up sequence from email templates
 - Adjust messaging based on responses (or lack thereof)
 - Escalate to different contact if needed
 
 **Month 2-3: Close engagement**
+
 - Discovery calls and needs assessment
 - Formal proposal using opportunity analysis
 - Contract negotiation and project start
@@ -115,6 +120,7 @@ When you run `/opportunity`, the skill creates:
 ```
 
 **Generated materials:**
+
 - Analysis of AIRA product integration opportunity
 - 5 engagement options (AIRA output layer, KentiCopilot enhancement, etc.)
 - Emails to Debbie Tuček (VP Product) and Dominik Pintér (CEO)
@@ -130,6 +136,7 @@ When you run `/opportunity`, the skill creates:
 ```
 
 **Generated materials:**
+
 - Partner training programme proposal
 - White-label audit services offer
 - Revenue share model (20-30%)
@@ -145,6 +152,7 @@ When you run `/opportunity`, the skill creates:
 ```
 
 **Generated materials:**
+
 - Enterprise audit methodology
 - Executive summary with compliance considerations
 - Multi-site pricing (£75k-200k for 100+ sites)
@@ -160,6 +168,7 @@ When you run `/opportunity`, the skill creates:
 ```
 
 **Generated materials:**
+
 - 12-month advisory engagement proposal
 - Competitive positioning vs Contentful/Contentstack
 - Product roadmap input framework
@@ -169,19 +178,22 @@ When you run `/opportunity`, the skill creates:
 ## Cross-References
 
 **Book chapters validated by opportunities:**
+
 - Chapter 3: Why productivity tools don't ensure agent-accessible output
 - Chapter 4: Business model implications for vendors and clients
 - Chapter 9: Platform race and first-mover advantage
 - Chapter 10-11: Patterns vendors should adopt
 
 **Tools referenced in proposals:**
+
 - Web Audit Suite for validation
 - Pattern library from book appendices
 - Enterprise implementations (BBC, Twitter, Nissan-Renault)
 
 **Related documents:**
-- `business-opportunities.md` - Master database (updated by this skill)
-- `partner-toolkit-template.md` - Agency partnership materials
+
+- `docs/sales-enablement/business/business-opportunities.md` - Master database (updated by this skill)
+- `docs/sales-enablement/partners/partner-toolkit-template.md` - Agency partnership materials
 - News skill files (cross-referenced for market timing)
 
 ## Success Metrics
@@ -234,7 +246,12 @@ If you need to modify templates or adjust the opportunity type framework, edit:
 - `skill.md` - Main workflow and phase descriptions
 - `opportunity-types.md` - Type definitions and pricing guidance
 
-All generated materials go to: `docs/sales-enablement/`
+All generated materials go to organized subfolders in `docs/sales-enablement/`:
+
+- Business strategy → `business/`
+- Pitch materials → `pitches/`
+- Outreach materials → `outreach/`
+- Partner materials → `partners/`
 
 ---
 
