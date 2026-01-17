@@ -99,9 +99,10 @@ I've built a Web Audit Suite (Node.js) that implements these patterns. It crawls
 - Author, "The Invisible Users" (forthcoming Q1 2026)
 
 **Contact:**
-- Email: tom.cranstoun@gmail.com
-- LinkedIn: https://linkedin.com/in/tomcranstoun
-- Website: https://allabout.network
+
+- Email: <tom.cranstoun@gmail.com>
+- LinkedIn: <https://linkedin.com/in/tomcranstoun>
+- Website: <https://allabout.network>
 
 ## Closing Thoughts
 
@@ -121,7 +122,7 @@ Digital Domain Technologies Ltd
 
 ---
 
-**Appendix: Resources**
+## Appendix: Resources
 
 Blog post: "Fix Your Content, Not Your CDN"
 Location: packages/manuscript/manuscript/blog/geo-blog.md
