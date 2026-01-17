@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-16 (Added Chapter 10 GEO and removed allaboutV2 auto-copy feature)
+**Last Updated:** 2026-01-17 (Updated VAT treatment and international pricing documentation)
 
 ### Monorepo Structure
 
@@ -21,7 +21,14 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~62,000 words (core manuscript: preface + 13 chapters + The End + Glossary)
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 13 chapters complete (added NEW Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Added Chapter 10 (GEO) and removed allaboutV2 auto-copy feature (2026-01-16):
+- **Latest Change:** Updated VAT treatment and international pricing documentation (2026-01-17):
+  - **Chapter 10:** Added comprehensive VAT guidance (UK eBooks 20% VAT, printed books zero-rated)
+  - **Chapter 10:** Multi-regional offer arrays with eligibleRegion property for international pricing
+  - **Appendix D:** Complete pricing structure examples with format-specific data attributes
+  - **book-product-page.html:** Added "discovery precedes commerce" principle section
+  - **book-product-page.html:** International pricing with USA customers (eBook $32.99, paperback $44.99)
+  - **geo-blog.md:** Updated pricing example to emphasize format clarity and regional attributes
+- **Previous Change:** Added Chapter 10 (GEO) and removed allaboutV2 auto-copy feature (2026-01-16):
   - **New Chapter 10:** Created "Generative Engine Optimization" chapter (~3,113 words) bridging gap between commercial urgency (Ch 9) and technical implementation (Ch 11-13)
   - **Chapter Renumbering:** Renamed chapters 10→11, 11→12, 12→13 for sequential numbering (1-13)
   - **Cross-Reference Updates:** Updated 50+ chapter references across chapters, appendices, documentation, and HTML files
