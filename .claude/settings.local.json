@@ -35,7 +35,9 @@
       "Bash(node test-html-validation.js:*)",
       "Bash(node debug-cheerio.js:*)",
       "Bash(node test-complex-case.js:*)",
-      "Bash(npx html-validate:*)"
+      "Bash(npx html-validate:*)",
+      "Bash(pdfinfo:*)",
+      "Bash(mdls:*)"
     ],
     "deny": [],
     "ask": [

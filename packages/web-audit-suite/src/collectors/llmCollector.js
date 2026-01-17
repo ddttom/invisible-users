@@ -862,7 +862,7 @@ export class LLMCollector {
 
     const dynamicData = pageData?.dynamicContent || {};
 
-    const carousels = dynamicData.carousels || [];
+    const carousels = Array.isArray(dynamicData.carousels) ? dynamicData.carousels : [];
     const animations = dynamicData.animations || {};
     const autoplayMedia = dynamicData.autoplayMedia || {};
     const animatedGifs = dynamicData.animatedGifs || {};

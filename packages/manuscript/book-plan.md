@@ -4,9 +4,7 @@
 
 **Author:** Tom Cranstoun
 
-**Target Length:** 30,000-50,000 words (expanded to 60,000-65,000 with Chapter 10 addition)
-
-**Current Status:** Complete with Chapter 10 (GEO) + Phase 1-2 Enhancements + Web Appendices ✅ (~62,000 words core manuscript)
+**Current Status:** Complete with 13 chapters + Web Appendices ✅ (~78,000 words core manuscript, ~58,600 words appendices, ~140,000 words total)
 
 **Latest Update (15 January 2026):** Added Chapter 10 on Generative Engine Optimization:
 
@@ -57,7 +55,7 @@ This book explores the technical, business, ethical, and human implications of t
 | 13 | What Agent Creators Must Build | ~9,000 | ✅ Complete |
 | The End | Additional Resources Available Online | ~400 | ✅ Complete |
 
-**Core Manuscript:** ~62,000 words (preface + 13 chapters + The End + Glossary)
+**Core Manuscript:** ~78,000 words (preface + 13 chapters + The End + Glossary)
 
 **Web Appendices** (published separately at <https://allabout.network/invisible-users/web/>):
 
@@ -65,20 +63,20 @@ These are LIVE online documents kept up to date as the field evolves. Appendix J
 
 | Appendix | Title | Words | Status |
 | -------- | ----- | ----- | ------ |
-| A | Implementation Cookbook | ~1,900 | ✅ Published |
-| B | Battle-Tested Lessons | ~1,850 | ✅ Published |
-| C | Web Audit Suite Guide | ~2,000 | ✅ Published |
-| D | AI-Friendly HTML Guide | ~9,050 | ✅ Published |
-| E | AI Patterns Quick Reference | ~1,300 | ✅ Published |
-| F | Implementation Roadmap | ~2,750 | ✅ Published |
-| G | Resource Directory | ~1,950 | ✅ Published |
-| H | Example llms.txt File | ~300 | ✅ Published |
-| I | Pipeline Failure Case Study | ~2,500 | ✅ Published |
-| J | Industry Developments | ~3,800 | ✅ Published (LIVE - updated as developments occur) |
-| K | Common Page Patterns | ~14,200 | ✅ Published |
-| L | Proposed AI Metadata Patterns | ~3,000 | ✅ Published |
+| A | Implementation Cookbook | ~3,082 | ✅ Published |
+| B | Battle-Tested Lessons | ~2,301 | ✅ Published |
+| C | Web Audit Suite Guide | ~3,782 | ✅ Published |
+| D | AI-Friendly HTML Guide | ~10,588 | ✅ Published |
+| E | AI Patterns Quick Reference | ~1,394 | ✅ Published |
+| F | Implementation Roadmap | ~4,432 | ✅ Published |
+| G | Resource Directory | ~2,120 | ✅ Published |
+| H | Example llms.txt File | ~768 | ✅ Published |
+| I | Pipeline Failure Case Study | ~2,838 | ✅ Published |
+| J | Industry Developments | ~16,460 | ✅ Published (LIVE - updated as developments occur) |
+| K | Common Page Patterns | ~12,517 | ✅ Published |
+| L | Proposed AI Metadata Patterns | ~2,956 | ✅ Published |
 
-**Total Web Appendices:** ~44,600 words (base content as of 12 January 2026)
+**Total Web Appendices:** ~58,587 words (as of 17 January 2026)
 
 ---
 

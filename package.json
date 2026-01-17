@@ -22,6 +22,7 @@
     "pdf:appendix": "bash scripts/generate-appendix-html.sh",
     "pdf:all": "npm run illustrations:generate && npm run pdf:html && npm run pdf:kindle && npm run pdf:generate && npm run pdf:appendix",
     "audit:start": "npm run start -w packages/web-audit-suite --",
+    "audit:allabout": "cd packages/web-audit-suite && rm -rf .cache results && cd ../.. && npm run start -w packages/web-audit-suite -- -s https://allabout.network/sitemap.xml",
     "audit:test": "npm test -w packages/web-audit-suite",
     "audit:lint": "npm run lint -w packages/web-audit-suite",
     "audit:install": "npm install -w packages/web-audit-suite",

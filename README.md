@@ -78,7 +78,7 @@ This ensures the book remains the single source of truth.
 ```text
 /
 ├── packages/
-│   ├── manuscript/           # Book manuscript (~57,000 words)
+│   ├── manuscript/           # Book manuscript (~78,000 words core)
 │   │   ├── book-plan.md
 │   │   └── manuscript/       # Core manuscript files (git submodule)
 │   │       ├── chapter-01-*.md through chapter-11-*.md
@@ -162,18 +162,19 @@ After the manuscript changes are merged, update this repository's submodule refe
 | 10 | Technical Advice | ✅ Complete | ~8,350 |
 | 11 | What Agent Creators Must Build | ✅ Complete | ~4,700 |
 
-**Core manuscript:** ~57,000 words
+**Core manuscript:** ~78,000 words (preface + 13 chapters + The End + glossary)
+
+**Web appendices** (published separately at <https://allabout.network/invisible-users/web/>):
+
+- Appendices A-L: ~58,600 words
 
 **Supporting materials:**
 
-- Executive Summary: ~1,100 words
-- Glossary (comprehensive): ~1,850 words
-- Implementation Checklist: ~2,750 words
-- Resource Links: ~1,950 words
-- Advice (standalone): ~9,050 words
-- AI Design Rules (quick reference): ~1,300 words
+- Executive Summary: ~1,800 words
+- Reading Guide: ~1,150 words
+- Rear Cover: ~600 words
 
-**Total content:** ~68,000 words
+**Total comprehensive content:** ~140,150 words
 
 ## Quick Start
 

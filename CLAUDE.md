@@ -27,8 +27,7 @@ This repository contains two integrated projects:
 
 **"The Invisible Users: Designing the Web for AI Agents and Everyone Else"** - a practical guide examining how modern web design optimized for human users fails for AI agents, and how fixing this benefits everyone.
 
-**Target length:** 30,000-50,000 words (13 chapters, 3,000-5,000 words each)
-**Current status:** Chapters 1-13 complete, all illustrations complete
+**Current status:** Chapters 1-13 complete (~78,000 words core manuscript), all illustrations complete, 12 appendices published online (~58,600 words)
 
 ### Publication Status
 

@@ -18,8 +18,8 @@ All projects share dependency management and build scripts via npm workspaces.
 
 - **Version:** 2.9.1
 - **Status:** Publication-ready (in review, due Q1 2026)
-- **Word Count:** ~88,000 words (includes all chapters and appendices)
-- **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
+- **Word Count:** ~140,000 words total (core manuscript ~78,000 words + appendices ~58,600 words + supporting materials ~3,550 words)
+- **Appendices:** 12 appendices (~58,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 13 chapters complete (added NEW Chapter 10: Generative Engine Optimization)
 - **Latest Change:** Added visual dynamism detection to Web Audit Suite (2026-01-17):
   - **Screenshot-Based Detection (caching.js):** Takes 3 screenshots at random 2-5 second intervals, calculates MD5 hash of each, detects visual changes by comparing hashes (typewriter animations, rotating text, tickers)
