@@ -9,6 +9,52 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - llms.txt Detection with Site-Level File Fetching (2026-01-17)
+
+Fixed llms.txt detection bug where the file was not being detected despite existing at the site root (<https://allabout.network/llms.txt>).
+
+**Bug Details:**
+
+- **Issue:** llms.txt file present at site origin was not being detected
+- **Root Cause:** Detection logic only looked for HTML references (`<link rel="alternate" type="text/plain">` or `<a href="/llms.txt">`) in page HTML, never fetched the actual file from `{origin}/llms.txt`
+- **Symptom:** Executive summary showed "Pages with llms.txt: 0" even though file existed and was accessible
+
+**Fix Implementation:**
+
+- **New Function:** Created `fetchSiteLevelFiles()` in sitemap.js to fetch site-level files (llms.txt, robots.txt, ai.txt) from origin
+- **Integration:** main.js now calls fetchSiteLevelFiles() during Phase 1 (URL collection) and stores results in `results.siteFiles`
+- **Report Updates:** Updated executiveSummary.js and llmReports.js (backend + general) to use site-level detection
+- **Detection Method:** Fetches from `{origin}/llms.txt` once per audit, applies to all pages (site-wide resource)
+
+**Code Changes:**
+
+- `packages/web-audit-suite/src/utils/sitemap.js`: Added fetchSiteLevelFiles() function (101 lines)
+- `packages/web-audit-suite/src/main.js`: Import and call fetchSiteLevelFiles(), store in results.siteFiles
+- `packages/web-audit-suite/src/utils/reportUtils/executiveSummary.js`: Use site-level detection for llms.txt, added llmsTxtUrl field
+- `packages/web-audit-suite/src/utils/reportUtils/llmReports.js`: Backend and general reports use site-level detection with globalLLMsTxtUrl
+
+**Documentation Updates:**
+
+- **report-layout.md:** Added 3 missing LLM suitability reports with comprehensive field documentation:
+  - Section 8: LLM General Suitability Report (llm_general_suitability.csv) - 44 fields documented
+  - Section 9: LLM Frontend Suitability Report (llm_frontend_suitability.csv) - Browser agent patterns
+  - Section 10: LLM Backend Suitability Report (llm_backend_suitability.csv) - CLI/server agent patterns with site-level detection methodology
+- **report-layout.md:** Added Section 11: Security Report (security_report.csv)
+- **report-layout.md:** Renumbered all subsequent sections (12-21)
+- **report-layout.md:** Updated report count from "15+" to "19 reports"
+- **report-layout.md:** Added `llmsTxtUrl` field to executive summary JSON schema
+
+**Impact:**
+
+- Executive summary now correctly shows "Pages with llms.txt: 1" with URL when file is present
+- All LLM suitability reports show accurate llms.txt detection status
+- Backend report includes `llmsTxtUrl` column with correct site-level URL
+- Documentation now comprehensively covers all 19 generated reports
+
+**Why Site-Level Detection:**
+
+llms.txt is a site-level resource (like robots.txt), not a page-specific file. The correct approach is to fetch it once from the origin and apply the detection result to all pages.
+
 ### Changed - Sales Enablement Directory Organization (2026-01-17)
 
 Reorganized docs/sales-enablement/ from flat structure with 25 files into 8 logical subdirectories for improved navigation and discovery.
