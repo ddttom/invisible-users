@@ -11,7 +11,7 @@ This document provides a comprehensive technical reference for all report struct
 
 ## Report Overview
 
-The tool generates **15+ reports** in CSV format (plus XML, Markdown, JSON, and HTML files):
+The tool generates **19 reports** in CSV format (plus XML, Markdown, JSON, and HTML files):
 
 | Report File | Primary Key | Record Type | Aggregation Level |
 | ------------- | ------------- | ------------- | ------------------- |
@@ -21,7 +21,11 @@ The tool generates **15+ reports** in CSV format (plus XML, Markdown, JSON, and 
 | `wcag_report.md` | URL | Per-page | Page-level |
 | `content_quality.csv` | URL | Per-page | Page-level |
 | `seo_scores.csv` | URL | Per-page | Page-level |
+| `security_report.csv` | URL | Per-page | Page-level |
 | `llm_readability_report.csv` | URL | Per-page | Page-level |
+| `llm_general_suitability.csv` | URL | Per-page | Page-level |
+| `llm_frontend_suitability.csv` | URL | Per-page | Page-level |
+| `llm_backend_suitability.csv` | URL | Per-page | Page-level |
 | `http_status_report.csv` | URL | Per-page | Page-level |
 | `image_optimization.csv` | Page URL + Image URL | Per-image | Image-level |
 | `link_analysis.csv` | Source URL + Target URL | Per-link | Link-level |
@@ -371,13 +375,267 @@ https://example.com/page,85.5,90.0,82.5,88.0,81.0,75.5,85,true,true,0.45,5.2,25,
 
 ---
 
-## 8. HTTP Status Report (`http_status_report.csv`)
+## 8. LLM General Suitability Report (`llm_general_suitability.csv`)
+
+**Purpose**: Comprehensive AI agent compatibility analysis showing both served and rendered HTML scores
+**Key Field**: `URL`
+**Sort Order**: Unsorted (insertion order)
+**Based on**: "The Invisible Users" book patterns
+
+### Critical Concepts
+
+**SERVED HTML vs RENDERED HTML:**
+
+- **Served HTML** (static): What CLI agents and server-based agents see - no JavaScript execution
+- **Rendered HTML** (dynamic): What browser-based agents see after JavaScript execution
+- All agents can process served HTML, only browser agents can process rendered HTML
+
+### 8. LLM General Suitability Report - Fields
+
+| Field Name | Data Type | Description | Importance | Nullable |
+| ------------ | ----------- | ------------- | ------------ | ---------- |
+| `URL` | String (URL) | Fully qualified page URL | - | No |
+| `HTML Source` | String (Enum) | `served` or `rendered` | Indicates which HTML state | No |
+| `Served HTML Score (All Agents)` | Integer | 0-100 score for CLI/server agents | **ESSENTIAL** - works for ALL agents | No |
+| `Rendered HTML Score (Browser Agents)` | Integer | 0-100 score for browser agents | Browser agents only | No |
+| `Has <main>` | Boolean | Presence of semantic main element | Essential for structure | No |
+| `Has <nav>` | Boolean | Presence of semantic nav element | Essential for navigation | No |
+| `Standard Form Fields %` | Float | Percentage using standard names | email, firstName, etc. | No |
+| `Autocomplete Fields %` | Float | Percentage with autocomplete attributes | Essential for forms | No |
+| `Has Schema.org` | Boolean | Structured data presence | **ESSENTIAL** for agents | No |
+| `Has FAQ Schema` | Boolean | FAQ structured data | Helpful for Q&A agents | No |
+| `FAQ Item Count` | Integer | Number of FAQ items | 0 to N | No |
+| `FAQ Completeness %` | Integer | FAQ items with answers | 0-100 | No |
+| `Has Dual-Format Markup` | Boolean | JSON-LD + Microdata duplication | Avoid duplication | No |
+| `Has llms.txt` | Boolean | Site-level llms.txt detected | **ESSENTIAL** for LLM agents | No |
+| `Has ai.txt` | Boolean | Site-level ai.txt detected | Helpful | No |
+| `Robot Restrictions` | Boolean | robots.txt or meta restrictions | Affects agent access | No |
+| `Bot Protection` | Boolean | CAPTCHA or bot protection | Blocks non-browser agents | No |
+| `API Discoverable` | Boolean | API documentation present | Helpful for programmatic access | No |
+| `Has data-agent-visible` | Boolean | Explicit visibility control | Proposed pattern | No |
+| `Has Open Graph` | Boolean | OpenGraph meta tags | Helpful for social agents | No |
+| `Has Twitter Card` | Boolean | Twitter Card meta tags | Helpful for social agents | No |
+| `Social Media Completeness %` | Integer | Social meta completeness | 0-100 | No |
+| `SEO Meta Completeness %` | Integer | SEO meta completeness | 0-100 | No |
+| `Has timeRequired` | Boolean | Reading time metadata | Helpful | No |
+| `Has educationalLevel` | Boolean | Educational level metadata | Helpful | No |
+| `Reading Time Completeness %` | Integer | Reading time meta completeness | 0-100 | No |
+| `Schema Type Disambiguation` | String | Schema.org @type clarity | Clear vs ambiguous | No |
+| `Total JSON-LD Schemas` | Integer | Count of JSON-LD scripts | 0 to N | No |
+| `Schemas With Multiple @types` | Integer | Schemas with type arrays | Potential ambiguity | No |
+| `Has Inline Styles` | Boolean | Presence of inline CSS | Can affect extraction | No |
+| `Elements With style= Attribute` | Integer | Count of inline style attributes | 0 to N | No |
+| `<style> Tags` | Integer | Count of style elements | 0 to N | No |
+| `External Stylesheets` | Integer | Count of external CSS files | 0 to N | No |
+| `Inline CSS Ratio` | Float | Inline CSS / Total CSS | 0-100% | No |
+| `Total Carousels` | Integer | Carousel/slider elements | Dynamic content | No |
+| `Informational Carousels` | Integer | Content-bearing carousels | Needs text extraction | No |
+| `Decorative Carousels` | Integer | Visual-only carousels | Can be ignored | No |
+| `Carousels With Proper Attributes` | Integer | Carousels with data attributes | Explicit state marking | No |
+| `Autoplay Videos` | Integer | Videos with autoplay | Dynamic content | No |
+| `Autoplay With Controls` | Integer | Autoplay videos with controls | User-controllable | No |
+| `Animated GIFs` | Integer | Animated GIF images | Dynamic content | No |
+| `GIFs With Alt Text` | Integer | GIFs with descriptive alt | Accessibility | No |
+| `Has Animation Libraries` | Boolean | Animation framework present | Dynamic content library | No |
+| `Essential Issues` | Integer | Critical compatibility issues | SERVED HTML issues | No |
+| `Nice-to-Have Issues` | Integer | Enhancement opportunities | RENDERED HTML issues | No |
+| `Top Essential Issue` | String | Most critical issue | Served HTML problem | Yes |
+| `Top Recommendation` | String | Priority improvement | Actionable advice | Yes |
+
+### 8. LLM General Suitability - Score Interpretation
+
+| Range | Served HTML | Rendered HTML |
+| ------- | ------------- | --------------- |
+| 90-100 | Excellent for all agents | Excellent for browser agents |
+| 70-89 | Good for most agents | Good for browser agents |
+| 50-69 | Fair, significant issues | Fair, needs improvements |
+| 0-49 | Poor, major barriers | Poor, major issues |
+
+### 8. LLM General Suitability Report - Example Row
+
+```csv
+URL,HTML Source,Served HTML Score (All Agents),Rendered HTML Score (Browser Agents),Has <main>,Has <nav>,Standard Form Fields %,Autocomplete Fields %,Has Schema.org,Has FAQ Schema,FAQ Item Count,FAQ Completeness %,Has Dual-Format Markup,Has llms.txt,Has ai.txt,Robot Restrictions,Bot Protection,API Discoverable,Has data-agent-visible,Has Open Graph,Has Twitter Card,Social Media Completeness %,SEO Meta Completeness %,Has timeRequired,Has educationalLevel,Reading Time Completeness %,Schema Type Disambiguation,Total JSON-LD Schemas,Schemas With Multiple @types,Has Inline Styles,Elements With style= Attribute,<style> Tags,External Stylesheets,Inline CSS Ratio,Total Carousels,Informational Carousels,Decorative Carousels,Carousels With Proper Attributes,Autoplay Videos,Autoplay With Controls,Animated GIFs,GIFs With Alt Text,Has Animation Libraries,Essential Issues,Nice-to-Have Issues,Top Essential Issue,Top Recommendation
+https://example.com/page,rendered,85,92,Yes,Yes,75.5,80.2,Yes,Yes,5,100,No,Yes,No,No,No,Yes,No,Yes,Yes,85,90,Yes,No,50,Clear,4,0,Yes,12,2,3,15.5,2,1,1,1,0,0,0,0,No,1,2,Missing autocomplete on 2 form fields,Add llms.txt file at site root
+```
+
+---
+
+## 9. LLM Frontend Suitability Report (`llm_frontend_suitability.csv`)
+
+**Purpose**: Browser agent-specific patterns (rendered HTML, dynamic content)
+**Key Field**: `URL`
+**Sort Order**: Unsorted (insertion order)
+**Focus**: Patterns requiring JavaScript execution (browser agents only)
+
+### 9. LLM Frontend Suitability Report - Fields
+
+| Field Name | Data Type | Description | Pattern Category | Nullable |
+| ------------ | ----------- | ------------- | ------------------ | ---------- |
+| `URL` | String (URL) | Fully qualified page URL | - | No |
+| `HTML Source` | String (Enum) | `served` or `rendered` | Indicates HTML state | No |
+| `Served Score (All Agents)` | Integer | 0-100 baseline score | Served HTML only | No |
+| `Rendered Score (Browser Agents)` | Integer | 0-100 enhanced score | After JavaScript | No |
+| `Semantic HTML Score` | Integer | 0-100 structural quality | Semantic elements | No |
+| `Has <main>` | Boolean | Main content element | Essential structure | No |
+| `Has <nav>` | Boolean | Navigation element | Essential structure | No |
+| `Has <article>` | Boolean | Article element | Content structure | No |
+| `Has <section>` | Boolean | Section elements | Content organization | No |
+| `Semantic Elements Count` | Integer | Total semantic elements | Higher is better | No |
+| `Form Count` | Integer | Number of forms | 0 to N | No |
+| `Standard Fields %` | Float | Standard field names | email, firstName, etc. | No |
+| `Autocomplete Fields %` | Float | Autocomplete attributes | Essential for forms | No |
+| `Fields With Labels %` | Float | Labeled form fields | Accessibility | No |
+| `Semantic Elements` | Integer | Count of semantic elements | HTML5 elements | No |
+| `Has FAQ Schema` | Boolean | FAQ structured data | Q&A support | No |
+| `FAQ Items` | Integer | Number of FAQ items | 0 to N | No |
+| `FAQ Completeness %` | Integer | FAQ items with answers | 0-100 | No |
+| `Dual-Format Markup` | Boolean | Duplicate markup formats | Avoid duplication | No |
+| `Rendered Score (Browser Agents)` | Integer | 0-100 dynamic score | Browser-specific | No |
+| `Explicit State Elements` | Integer | Elements with data-state | **ESSENTIAL_RENDERED** | No |
+| `Persistent Errors` | Integer | role="alert" elements | **ESSENTIAL_RENDERED** | No |
+| `Validation State Elements` | Integer | data-validation-state | **ESSENTIAL_RENDERED** | No |
+| `Agent Visible Elements` | Integer | data-agent-visible elements | Proposed pattern | No |
+| `Visible to Agents` | Integer | Elements explicitly visible | data-agent-visible="true" | No |
+| `Hidden from Agents` | Integer | Elements explicitly hidden | data-agent-visible="false" | No |
+| `Has CAPTCHA` | Boolean | CAPTCHA protection | Blocks non-browser agents | No |
+| `CAPTCHA Type` | String | CAPTCHA implementation | reCAPTCHA, hCaptcha, etc. | Yes |
+| `Critical Issues` | Integer | Essential rendered issues | Must fix | No |
+| `Recommendations` | String | Semicolon-separated fixes | Actionable advice | Yes |
+
+### Frontend-Specific Patterns
+
+**ESSENTIAL_RENDERED** patterns (browser agents only):
+
+- **Explicit State**: `<button data-state="loading">` instead of CSS classes
+- **Persistent Errors**: `<div role="alert">` for validation messages
+- **Validation State**: `<input data-validation-state="error">`
+- **Agent Visibility**: `<div data-agent-visible="true">` for explicit control
+
+### 9. LLM Frontend Suitability Report - Example Row
+
+```csv
+URL,HTML Source,Served Score (All Agents),Rendered Score (Browser Agents),Semantic HTML Score,Has <main>,Has <nav>,Has <article>,Has <section>,Semantic Elements Count,Form Count,Standard Fields %,Autocomplete Fields %,Fields With Labels %,Semantic Elements,Has FAQ Schema,FAQ Items,FAQ Completeness %,Dual-Format Markup,Rendered Score (Browser Agents),Explicit State Elements,Persistent Errors,Validation State Elements,Agent Visible Elements,Visible to Agents,Hidden from Agents,Has CAPTCHA,CAPTCHA Type,Critical Issues,Recommendations
+https://example.com/page,rendered,85,92,88,Yes,Yes,Yes,Yes,45,2,75,80,100,45,Yes,5,100,No,92,12,3,8,0,0,0,No,None,0,Add data-state attributes to buttons; Consider data-agent-visible for dynamic content
+```
+
+---
+
+## 10. LLM Backend Suitability Report (`llm_backend_suitability.csv`)
+
+**Purpose**: CLI/server agent patterns (served HTML, HTTP headers, site-level files)
+**Key Field**: `URL`
+**Sort Order**: Unsorted (insertion order)
+**Focus**: Patterns working without JavaScript (all agents)
+
+### Site-Level Detection
+
+**CRITICAL**: This report includes **site-level file detection** performed once per audit:
+
+- **llms.txt**: Fetched from `{origin}/llms.txt` and detected for entire site
+- **robots.txt**: Fetched from `{origin}/robots.txt`
+- **ai.txt**: Fetched from `{origin}/ai.txt`
+
+These files are checked at the domain level, not per-page, ensuring accurate detection.
+
+### 10. LLM Backend Suitability Report - Fields
+
+| Field Name | Data Type | Description | Weight | Nullable |
+| ------------ | ----------- | ------------- | -------- | ---------- |
+| `URL` | String (URL) | Fully qualified page URL | - | No |
+| `Backend Score (0-100)` | Integer | Overall served HTML score | - | No |
+| `HTTP Status Code` | Integer | Response status code | 30 points | No |
+| `Status Code Appropriate` | Boolean | Status matches content | Validation | No |
+| `HTTPS` | Boolean | Secure connection | Prerequisite | No |
+| `HSTS Header` | Boolean | Strict-Transport-Security | 15 points | No |
+| `CSP Header` | Boolean | Content-Security-Policy | 15 points | No |
+| `X-Frame-Options` | Boolean | Clickjacking protection | 5 points | No |
+| `Schema.org Structured Data` | Boolean | JSON-LD or Microdata | **30 points** | No |
+| `JSON-LD Scripts` | Integer | Count of JSON-LD blocks | 0 to N | No |
+| `Has FAQ Schema` | Boolean | FAQ structured data | Helpful | No |
+| `FAQ Items` | Integer | Number of FAQ items | 0 to N | No |
+| `FAQ Completeness %` | Integer | Items with answers | 0-100 | No |
+| `Dual-Format Markup` | Boolean | JSON-LD + Microdata | Avoid duplication | No |
+| `Has llms.txt` | Boolean | **Site-level detection** | **10 points** | No |
+| `llms.txt URL` | String (URL) | URL of detected llms.txt | Site-wide | Yes |
+| `Has ai.txt` | Boolean | Site-level ai.txt | 5 points bonus | No |
+| `Robot Restrictions` | Boolean | Agent access restrictions | -5 penalty | No |
+| `Robots Meta Content` | String | robots meta tag content | noindex, nofollow, etc. | Yes |
+| `Has API Docs` | Boolean | API documentation | Helpful | No |
+| `API Discoverability Score` | Integer | API documentation quality | 0-100 (max 10 bonus) | No |
+| `Has OpenAPI Spec` | Boolean | OpenAPI/Swagger spec | Helpful | No |
+| `Essential Issues` | String | Critical problems | Semicolon-separated | Yes |
+| `Key Recommendations` | String | Priority improvements | Actionable advice | Yes |
+
+### Backend Score Calculation
+
+```text
+Backend Score (0-100):
+  HTTP Status (200/201)         = 30 points
+  Security Headers:
+    - HSTS                      = 15 points
+    - CSP                       = 15 points
+    - X-Frame-Options           = 5 points
+    - X-Content-Type-Options    = 5 points
+  Schema.org Structured Data    = 30 points (ESSENTIAL)
+  llms.txt presence             = 10 points (ESSENTIAL)
+  ai.txt presence               = 5 points (bonus)
+  Robot restrictions            = -5 points (penalty)
+  API discoverability           = up to 10 points (bonus)
+```
+
+### llms.txt Detection Methodology
+
+The tool performs **site-level detection**:
+
+1. Extracts origin from sitemap URL (e.g., `https://example.com`)
+2. Fetches `{origin}/llms.txt` once per audit
+3. Stores result in `results.siteFiles.llmsTxt.detected`
+4. All pages show same llms.txt status (site-wide)
+
+**Why site-level?** The llms.txt file is a site-level resource (like robots.txt), not page-specific.
+
+### 10. LLM Backend Suitability Report - Example Row
+
+```csv
+URL,Backend Score (0-100),HTTP Status Code,Status Code Appropriate,HTTPS,HSTS Header,CSP Header,X-Frame-Options,Schema.org Structured Data,JSON-LD Scripts,Has FAQ Schema,FAQ Items,FAQ Completeness %,Dual-Format Markup,Has llms.txt,llms.txt URL,Has ai.txt,Robot Restrictions,Robots Meta Content,Has API Docs,API Discoverability Score,Has OpenAPI Spec,Essential Issues,Key Recommendations
+https://example.com/page,85,200,Yes,Yes,Yes,No,No,Yes,4,No,0,100,No,Yes,https://example.com/llms.txt,No,No,N/A,No,0,No,None,Good practices followed
+```
+
+---
+
+## 11. Security Report (`security_report.csv`)
+
+**Purpose**: Security headers and HTTPS configuration analysis
+**Key Field**: `URL`
+**Sort Order**: Unsorted (insertion order)
+
+### 11. Security Report - Fields
+
+| Field Name | Data Type | Description | Nullable |
+| ------------ | ----------- | ------------- | ---------- |
+| `URL` | String (URL) | Fully qualified page URL | No |
+| `HTTPS` | Boolean | Secure connection used | No |
+| `HSTS` | Boolean | Strict-Transport-Security header | No |
+| `CSP` | Boolean | Content-Security-Policy header | No |
+| `X-Frame-Options` | Boolean | X-Frame-Options header | No |
+| `X-Content-Type-Options` | Boolean | X-Content-Type-Options header | No |
+
+### 11. Security Report - Example Row
+
+```csv
+URL,HTTPS,HSTS,CSP,X-Frame-Options,X-Content-Type-Options
+https://example.com/page,Yes,Yes,No,No,No
+```
+
+---
+
+## 12. HTTP Status Report (`http_status_report.csv`)
 
 **Purpose**: Track all non-200 HTTP responses (redirects, errors, etc.)
 **Key Field**: `URL`
 **Sort Order**: By Status Code (descending)
 
-### 8. HTTP Status Report - Fields
+### 12. HTTP Status Report - Fields
 
 | Field Name | Data Type | Description | Possible Values | Nullable |
 | ------------ | ----------- | ------------- | ----------------- | ---------- |
@@ -405,7 +663,7 @@ https://example.com/page,85.5,90.0,82.5,88.0,81.0,75.5,85,true,true,0.45,5.2,25,
 | 503 | Service Unavailable | Server Error | Server temporarily unavailable |
 | 504 | Gateway Timeout | Server Error | Upstream server timeout |
 
-### 8. HTTP Status Report - Example Rows
+### 12. HTTP Status Report - Example Rows
 
 ```csv
 URL,Status Code,Status Text,Timestamp
@@ -416,13 +674,13 @@ https://example.com/error,500,Internal Server Error,2025-12-07T10:32:03.789Z
 
 ---
 
-## 9. Image Optimization (`image_optimization.csv`)
+## 13. Image Optimization (`image_optimization.csv`)
 
 **Purpose**: Per-image analysis and optimization recommendations
 **Key Fields**: `Page URL` + `Image URL` (composite key)
 **Sort Order**: By Optimization Score (ascending, worst first)
 
-### 9. Image Optimization - Fields
+### 13. Image Optimization - Fields
 
 | Field Name | Data Type | Description | Possible Values | Nullable |
 | ------------ | ----------- | ------------- | ----------------- | ---------- |
@@ -458,7 +716,7 @@ Score = (Alt Text Quality × 0.25) +
         (Lazy Loaded × 0.15)
 ```
 
-### 9. Image Optimization - Example Row
+### 13. Image Optimization - Example Row
 
 ```csv
 Page URL,Image URL,File Size (KB),Dimensions,Format,Alt Text,Alt Text Quality Score,Is Responsive,Lazy Loaded,Compression Level,Optimization Score,Recommendations
@@ -467,13 +725,13 @@ https://example.com/page,https://example.com/img/photo.jpg,245.6,1920x1080,jpg,"
 
 ---
 
-## 10. Link Analysis (`link_analysis.csv`)
+## 14. Link Analysis (`link_analysis.csv`)
 
 **Purpose**: Per-link relationship and quality analysis
 **Key Fields**: `Source URL` + `Target URL` (composite key)
 **Sort Order**: Unsorted (insertion order)
 
-### 10. Link Analysis - Fields
+### 14. Link Analysis - Fields
 
 | Field Name | Data Type | Description | Possible Values | Nullable |
 | ------------ | ----------- | ------------- | ----------------- | ---------- |
@@ -504,7 +762,7 @@ Score = (Has Link Text × 20) +
         (Link Depth Reasonable × 10)
 ```
 
-### 10. Link Analysis - Example Row
+### 14. Link Analysis - Example Row
 
 ```csv
 Source URL,Target URL,Link Text,Link Type,Follow Type,HTTP Status,Redirect Chain,Content Type,In Navigation,Link Depth,Link Quality Score
@@ -513,13 +771,13 @@ https://example.com/page,https://example.com/allabout,About Us,internal,follow,2
 
 ---
 
-## 11. All Resources Report (`all_resources_report.csv`)
+## 15. All Resources Report (`all_resources_report.csv`)
 
 **Purpose**: Site-wide inventory of ALL resources (internal + external)
 **Key Field**: `Resource URL`
 **Sort Order**: By Total Count (descending, most-used first)
 
-### 11. All Resources Report - Fields
+### 15. All Resources Report - Fields
 
 | Field Name | Data Type | Description | Possible Values | Nullable |
 | ------------ | ----------- | ------------- | ----------------- | ---------- |
@@ -548,7 +806,7 @@ Resources from ANY domain are included:
 - External CDN resources (e.g., `https://cdn.example.com/jquery.js`)
 - Third-party resources (e.g., `https://fonts.googleapis.com/font.woff2`)
 
-### 11. All Resources Report - Use Cases
+### 15. All Resources Report - Use Cases
 
 - Identify most-used resources across site
 - Find critical dependencies (high count resources)
@@ -556,7 +814,7 @@ Resources from ANY domain are included:
 - Track external dependencies and CDN usage
 - Analyze resource loading patterns
 
-### 11. All Resources Report - Example Rows
+### 15. All Resources Report - Example Rows
 
 ```csv
 Resource URL,Resource Type,Total Count
@@ -575,7 +833,7 @@ https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900
 **Key Field**: `Discovered URL`
 **Sort Order**: By Reference Count (descending, most-referenced first)
 
-### 12. Missing Sitemap URLs - Fields
+### 16. Missing Sitemap URLs - Fields
 
 | Field Name | Data Type | Description | Calculation | Nullable |
 | ------------ | ----------- | ------------- | ------------- | ---------- |
@@ -593,14 +851,14 @@ https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900
    - NOT in original sitemap
    - Successfully crawled (not 404)
 
-### 12. Missing Sitemap URLs - Use Cases
+### 16. Missing Sitemap URLs - Use Cases
 
 - **SEO Improvement**: Add missing URLs to sitemap for better search engine coverage
 - **Site Architecture**: Identify orphaned or unlisted pages
 - **Content Audit**: Find pages that should be indexed but aren't in sitemap
 - **Quality Control**: Detect pages accidentally excluded from sitemap
 
-### 12. Missing Sitemap URLs - Example Rows
+### 16. Missing Sitemap URLs - Example Rows
 
 ```csv
 Discovered URL,Reference Count,First Discovered On
@@ -617,7 +875,7 @@ https://example.com/allabout/team/member-5,5,https://example.com/allabout/team
 **Format**: XML (Sitemap Protocol)
 **Sort Order**: Original URLs first, then discovered URLs
 
-### 13. Perfected Sitemap - Structure
+### 17. Perfected Sitemap - Structure
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -662,7 +920,7 @@ This allows:
 - Programmatic filtering if needed
 - Clear distinction between original and discovered URLs
 
-### 13. Perfected Sitemap - Usage
+### 17. Perfected Sitemap - Usage
 
 1. Review the file to verify discovered URLs are legitimate
 2. Submit to Google Search Console: <https://search.google.com/search-console>
@@ -861,13 +1119,13 @@ The tool also generates cache files for debugging:
 
 ---
 
-## 14. Executive Summary (Markdown) (`executive_summary.md`)
+## 18. Executive Summary (Markdown) (`executive_summary.md`)
 
 **Purpose**: High-level overview report with key insights and recommendations
 **Generated**: When `--generate-executive-summary` flag is used
 **Format**: Markdown (human-readable)
 
-### 14. Executive Summary - Structure
+### 18. Executive Summary - Structure
 
 ```markdown
 # Executive Summary
@@ -919,7 +1177,7 @@ The tool also generates cache files for debugging:
 
 ---
 
-## 15. Executive Summary (JSON) (`executive_summary.json`)
+## 19. Executive Summary (JSON) (`executive_summary.json`)
 
 **Purpose**: Machine-readable executive summary for automation
 **Generated**: When `--generate-executive-summary` flag is used
@@ -973,6 +1231,7 @@ The tool also generates cache files for debugging:
     "servedScore": 0-100,
     "renderedScore": 0-100,
     "pagesWithLLMsTxt": "count",
+    "llmsTxtUrl": "string (URL) | null",
     "trend": { "servedScore": "%", "renderedScore": "%" }
   },
   "keyFindings": [
@@ -999,7 +1258,7 @@ The tool also generates cache files for debugging:
 
 ---
 
-## 16. Interactive Dashboard (`dashboard.html`)
+## 20. Interactive Dashboard (`dashboard.html`)
 
 **Purpose**: Visual analytics dashboard with embedded charts
 **Generated**: When `--generate-dashboard` flag is used
@@ -1024,7 +1283,7 @@ All charts are generated from `results.json` and rendered as PNG images using Ch
 
 ---
 
-## 17. Historical Results (`history/results-<timestamp>.json`)
+## 21. Historical Results (`history/results-<timestamp>.json`)
 
 **Purpose**: Timestamped snapshots for comparative analysis and trend tracking
 **Generated**: When `--enable-history` flag is used
@@ -1050,7 +1309,7 @@ All charts are generated from `results.json` and rendered as PNG images using Ch
 }
 ```
 
-### 17. Historical Results - Usage
+### 21. Historical Results - Usage
 
 - **Comparative Analysis**: Compare metrics between runs
 - **Trend Analysis**: Track changes over time
@@ -1082,7 +1341,7 @@ const comparison = compareResults(previousResult.results, currentResults);
 **Format**: JSON
 **Location**: User-specified via `--thresholds` flag
 
-### 17. Historical Results - Structure
+### 21. Historical Results - Structure
 
 ```json
 {

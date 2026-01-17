@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { getUrlsFromSitemap, processSitemapUrls } from './utils/sitemap.js';
+import { getUrlsFromSitemap, processSitemapUrls, fetchSiteLevelFiles } from './utils/sitemap.js';
 import { generateReports } from './utils/reports.js';
 import { setupShutdownHandler, updateCurrentResults } from './utils/shutdownHandler.js';
 import { executeNetworkOperation } from './utils/networkUtils.js';
@@ -79,6 +79,10 @@ export async function runTestsOnSitemap(context) {
 
       context.logger.info(`Found ${urls.length} URLs to process`);
 
+      // Fetch site-level files (llms.txt, robots.txt, ai.txt)
+      context.logger.info('Fetching site-level files...');
+      const siteFiles = await fetchSiteLevelFiles(sitemapUrl, context);
+
       // Phase 2: Process URLs through analysis pipeline
       context.logger.info('Phase 2: Processing URLs...');
       // Commander.js converts --no-recursive to recursive: false, defaults to true
@@ -96,6 +100,9 @@ export async function runTestsOnSitemap(context) {
 
       // Store original sitemap URLs for comparison with discovered URLs
       results.originalSitemapUrls = urls.map((u) => u.url);
+
+      // Store site-level files detection results
+      results.siteFiles = siteFiles;
 
       // Add schema version to results
       results.schemaVersion = RESULTS_SCHEMA_VERSION;

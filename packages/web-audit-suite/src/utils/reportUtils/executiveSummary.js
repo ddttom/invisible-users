@@ -251,11 +251,15 @@ function buildLLMSummary(results, comparisonData) {
 
   const status = avgServedScore >= 70 ? 'Good' : avgServedScore >= 50 ? 'Fair' : 'Needs Improvement';
 
+  // Check site-level llms.txt detection (from fetchSiteLevelFiles)
+  const hasLlmsTxt = results.siteFiles?.llmsTxt?.detected || false;
+
   const summary = {
     status,
     servedScore: Math.round(avgServedScore),
     renderedScore: Math.round(avgRenderedScore),
-    pagesWithLLMsTxt: metrics.filter((m) => m.hasLlmsTxt).length,
+    pagesWithLLMsTxt: hasLlmsTxt ? 1 : 0,
+    llmsTxtUrl: results.siteFiles?.llmsTxt?.url || null,
   };
 
   if (comparisonData) {
@@ -359,10 +363,9 @@ function buildKeyFindings(results) {
     });
   }
 
-  // LLM findings
-  const llmMetrics = results.llmMetrics || [];
-  const pagesWithoutLLMsTxt = llmMetrics.filter((m) => !m.hasLlmsTxt).length;
-  if (pagesWithoutLLMsTxt === llmMetrics.length && llmMetrics.length > 0) {
+  // LLM findings - check site-level detection
+  const hasLlmsTxt = results.siteFiles?.llmsTxt?.detected || false;
+  if (!hasLlmsTxt) {
     findings.push({
       category: 'LLM Suitability',
       severity: 'Low',

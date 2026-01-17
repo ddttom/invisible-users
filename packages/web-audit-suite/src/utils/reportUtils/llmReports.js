@@ -85,7 +85,9 @@ export async function generateGeneralLLMReport(results, outputDir, context) {
       ],
     });
 
-    const globalLLMsTxtExists = results.llmMetrics.some((m) => m.url.endsWith('/llms.txt') || m.url.endsWith('/llms.txt/'));
+    // Check site-level llms.txt detection (from fetchSiteLevelFiles)
+    const globalLLMsTxtExists = results.siteFiles?.llmsTxt?.detected || false;
+
     const records = results.llmMetrics.map((metrics) => {
       const servedScore = calculateServedScore(metrics);
       const renderedScore = calculateRenderedScore(metrics);
@@ -93,9 +95,9 @@ export async function generateGeneralLLMReport(results, outputDir, context) {
 
       const standardFieldRatio = metrics.formFields?.metrics?.standardNameRatio || 0;
       const autocompleteRatio = metrics.formAutocomplete?.metrics?.autocompleteRatio || 0;
-      const hasLLMsTxt = metrics.llmsTxt?.metrics?.hasLLMsTxtReference
-                         || metrics.llmsTxt?.metrics?.hasLLMsTxtMeta
-                         || (metrics.url.endsWith('/llms.txt') ? true : globalLLMsTxtExists);
+      const hasLLMsTxt = globalLLMsTxtExists
+                         || metrics.llmsTxt?.metrics?.hasLLMsTxtReference
+                         || metrics.llmsTxt?.metrics?.hasLLMsTxtMeta;
       const hasAiTxt = metrics.robotsTxt?.metrics?.hasAiTxtReference || false;
       const hasAgentVisibility = metrics.dataAttributes?.metrics?.hasAgentVisibilityControl || false;
       const hasRestrictions = metrics.robotsTxt?.metrics?.hasAgentRestrictions || false;
@@ -341,7 +343,9 @@ export async function generateBackendLLMReport(results, outputDir, context) {
       ],
     });
 
-    const globalLLMsTxtExists = results.llmMetrics.some((m) => m.url.endsWith('/llms.txt') || m.url.endsWith('/llms.txt/'));
+    // Check site-level llms.txt detection (from fetchSiteLevelFiles)
+    const globalLLMsTxtExists = results.siteFiles?.llmsTxt?.detected || false;
+    const globalLLMsTxtUrl = results.siteFiles?.llmsTxt?.url || 'N/A';
 
     const records = results.llmMetrics.map((metrics) => {
       // Get status code and security metrics
@@ -369,9 +373,10 @@ export async function generateBackendLLMReport(results, outputDir, context) {
       if (metrics.structuredData?.metrics?.hasSchemaOrg) backendScore += 30;
 
       // llms.txt presence (10 points) - ESSENTIAL for LLM agents
-      const hasLLMsTxt = metrics.llmsTxt?.metrics?.hasLLMsTxtReference
-                         || metrics.llmsTxt?.metrics?.hasLLMsTxtMeta
-                         || (metrics.url.endsWith('/llms.txt') ? true : globalLLMsTxtExists);
+      // Use site-level detection or page-level references
+      const hasLLMsTxt = globalLLMsTxtExists
+                         || metrics.llmsTxt?.metrics?.hasLLMsTxtReference
+                         || metrics.llmsTxt?.metrics?.hasLLMsTxtMeta;
       if (hasLLMsTxt) backendScore += 10;
 
       // ai.txt presence (5 points bonus)
@@ -428,7 +433,7 @@ export async function generateBackendLLMReport(results, outputDir, context) {
         faqCompleteness: Math.round((metrics.faqSchema?.metrics?.completenessRatio || 0) * 100),
         hasFAQDuplication: metrics.faqSchema?.metrics?.hasDuplicateMarkup ? 'Yes' : 'No',
         hasLLMsTxt: hasLLMsTxt ? 'Yes' : 'No',
-        llmsTxtUrl: metrics.llmsTxt?.metrics?.llmsTxtUrl || 'N/A',
+        llmsTxtUrl: hasLLMsTxt ? globalLLMsTxtUrl : 'N/A',
         hasAiTxt: hasAiTxt ? 'Yes' : 'No',
         robotRestrictions: hasRestrictions ? 'Yes' : 'No',
         robotsMetaContent: robotsMetrics.robotsMetaContent || 'N/A',

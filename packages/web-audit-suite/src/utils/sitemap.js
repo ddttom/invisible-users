@@ -498,6 +498,107 @@ function extractUrlsFromUrlset(urlset, context) {
 }
 
 /**
+ * Fetch site-level files (llms.txt, robots.txt, etc.) from root domain
+ * @param {string} baseUrl - The base URL of the site
+ * @param {Object} context - Audit context
+ * @returns {Promise<Object>} Object containing presence and content of site files
+ */
+export async function fetchSiteLevelFiles(baseUrl, context) {
+  const siteFiles = {
+    llmsTxt: { detected: false, url: null, content: null },
+    robotsTxt: { detected: false, url: null, content: null },
+    aiTxt: { detected: false, url: null, content: null },
+  };
+
+  try {
+    const urlObj = new URL(baseUrl);
+    const origin = urlObj.origin;
+
+    // Check llms.txt
+    const llmsTxtUrl = `${origin}/llms.txt`;
+    try {
+      const response = await executeNetworkOperation(
+        async () => {
+          const res = await fetch(llmsTxtUrl);
+          if (res.ok) {
+            const content = await res.text();
+            return { ok: true, content };
+          }
+          return { ok: false };
+        },
+        'llms.txt fetch',
+        context,
+      );
+
+      if (response.ok) {
+        siteFiles.llmsTxt.detected = true;
+        siteFiles.llmsTxt.url = llmsTxtUrl;
+        siteFiles.llmsTxt.content = response.content;
+        context.logger.info(`Found llms.txt at ${llmsTxtUrl}`);
+      }
+    } catch (error) {
+      context.logger.debug(`No llms.txt found at ${llmsTxtUrl}`);
+    }
+
+    // Check robots.txt
+    const robotsTxtUrl = `${origin}/robots.txt`;
+    try {
+      const response = await executeNetworkOperation(
+        async () => {
+          const res = await fetch(robotsTxtUrl);
+          if (res.ok) {
+            const content = await res.text();
+            return { ok: true, content };
+          }
+          return { ok: false };
+        },
+        'robots.txt fetch',
+        context,
+      );
+
+      if (response.ok) {
+        siteFiles.robotsTxt.detected = true;
+        siteFiles.robotsTxt.url = robotsTxtUrl;
+        siteFiles.robotsTxt.content = response.content;
+        context.logger.info(`Found robots.txt at ${robotsTxtUrl}`);
+      }
+    } catch (error) {
+      context.logger.debug(`No robots.txt found at ${robotsTxtUrl}`);
+    }
+
+    // Check ai.txt
+    const aiTxtUrl = `${origin}/ai.txt`;
+    try {
+      const response = await executeNetworkOperation(
+        async () => {
+          const res = await fetch(aiTxtUrl);
+          if (res.ok) {
+            const content = await res.text();
+            return { ok: true, content };
+          }
+          return { ok: false };
+        },
+        'ai.txt fetch',
+        context,
+      );
+
+      if (response.ok) {
+        siteFiles.aiTxt.detected = true;
+        siteFiles.aiTxt.url = aiTxtUrl;
+        siteFiles.aiTxt.content = response.content;
+        context.logger.info(`Found ai.txt at ${aiTxtUrl}`);
+      }
+    } catch (error) {
+      context.logger.debug(`No ai.txt found at ${aiTxtUrl}`);
+    }
+  } catch (error) {
+    context.logger.error('Error fetching site-level files:', error);
+  }
+
+  return siteFiles;
+}
+
+/**
  * Process sitemap URLs with the URL processor
  */
 export async function processSitemapUrls(urls, context, recursive = false) {
