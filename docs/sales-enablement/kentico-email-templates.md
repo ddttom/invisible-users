@@ -21,11 +21,13 @@ In January 2026, Amazon, Microsoft, and Google all launched agent commerce syste
 I've just published *The Invisible Users: Designing the Web for AI Agents and Everyone Else* and can help Kentico become the first CMS with genuine agent-compatibility built in, not bolted on.
 
 **What's missing:**
+
 - AIRA generates content quickly, but doesn't ensure semantic HTML or Schema.org structured data
 - KentiCopilot generates code quickly, but doesn't prioritise agent-compatible patterns
 - No visibility into whether Kentico-powered sites are agent-hostile or agent-ready
 
 **The opportunity:**
+
 - Position Kentico as "The Agent-Ready CMS" before Adobe, Contentful, Contentstack solve this
 - Integrate agent-readiness validation into AIRA, KentiCopilot, and Partner Accelerator Programme
 - Create new revenue stream: Agent-readiness audits and certifications for partners
@@ -33,6 +35,7 @@ I've just published *The Invisible Users: Designing the Web for AI Agents and Ev
 I've architected agent-ready infrastructure for BBC, Twitter, Nissan-Renault (200+ sites), Ford, and MediaMonks. Known in CMS circles as "The AEM Guy," I work with Digital Domain Technologies on strategic partnerships where experience and objectivity matter most.
 
 **Would you be open to a 30-minute discovery call to discuss:**
+
 1. AIRA/KentiCopilot integration points for agent-ready patterns
 2. Partnership models (product integration, advisory, partner programme)
 3. Competitive positioning vs Adobe, Contentful, Contentstack
@@ -43,8 +46,8 @@ Best regards,
 Tom Cranstoun
 
 **Digital Domain Technologies Ltd**
-tom.cranstoun@gmail.com
-https://allabout.network
+<tom.cranstoun@gmail.com>
+<https://allabout.network>
 
 P.S. The window is 3-6 months before competitors launch similar offerings. Stack Overflow lost 76% of developer traffic in 2 years as developers asked ChatGPT instead. The same pattern affects every content-dependent business model.
 
@@ -67,6 +70,7 @@ Amazon, Microsoft, and Google all launched agent commerce systems in January 202
 **The strategic opportunity:** Kentico becomes the first CMS to guarantee agent-compatible output, not just AI-enhanced productivity.
 
 **The gap in your current offerings:**
+
 - AIRA/KentiCopilot help teams build faster (internal efficiency)
 - But don't ensure agents can discover, parse, or transact with the output (external effectiveness)
 - Partner agencies tout six-week launches without agent-readiness validation
@@ -91,8 +95,8 @@ Best regards,
 Tom Cranstoun
 
 **Digital Domain Technologies Ltd**
-tom.cranstoun@gmail.com
-https://allabout.network
+<tom.cranstoun@gmail.com>
+<https://allabout.network>
 
 P.S. Your Partner Accelerator Programme promises six-week launches. What if those sites were also guaranteed agent-compatible? That's a differentiation competitors can't match.
 
@@ -115,16 +119,19 @@ Quick question: **Are those sites agent-compatible?**
 In January 2026, Amazon, Microsoft, and Google all launched agent commerce systems. AI agents now browse websites, compare products, and complete transactions. Sites that confuse agents get filtered out before humans ever see them.
 
 **The problem:**
+
 - AIRA accelerates content creation but doesn't ensure semantic HTML or Schema.org structured data
 - Fast launches without agent-readiness validation
 - Your clients will ask "why doesn't our site work for ChatGPT?" within 6-12 months
 
 **The opportunity:**
+
 - Differentiate from other Kentico partners with "Agent-Ready Launch Guarantee"
 - Premium service add-on: Agent-compatibility audit (£2,000-5,000 per site)
 - Protect yourself from "site doesn't work for agents" support requests
 
 I've just published *The Invisible Users: Designing the Web for AI Agents and Everyone Else* and work with agencies to:
+
 1. Train teams on agent-ready implementation patterns
 2. Provide white-label audit services
 3. Create "Agent-Ready Partner" certification positioning
@@ -132,6 +139,7 @@ I've just published *The Invisible Users: Designing the Web for AI Agents and Ev
 I've architected infrastructure for BBC, Twitter, Nissan-Renault, Ford, MediaMonks. Known as "The AEM Guy" but work across CMS platforms with MACH principles.
 
 **Would you be open to a 30-minute call to discuss:**
+
 - Agent-ready training for your Kentico team (2-day workshop)
 - White-label audit services you can offer clients
 - "Agent-Ready Partner" differentiation vs competitors
@@ -142,8 +150,8 @@ Best regards,
 Tom Cranstoun
 
 **Digital Domain Technologies Ltd**
-tom.cranstoun@gmail.com
-https://allabout.network
+<tom.cranstoun@gmail.com>
+<https://allabout.network>
 
 P.S. Attaching one-page overview. Can send the book and sample audit reports showing agent-hostile vs agent-ready patterns.
 
@@ -168,6 +176,7 @@ I'd like to contribute an article to the Kentico blog/community about agent-read
 In January 2026, Amazon, Microsoft, and Google all launched agent commerce systems. AI agents now browse websites, compare products, and complete purchases. AIRA and KentiCopilot help teams build faster, but speed without agent-compatibility leaves sites invisible to this growing traffic source.
 
 **Article would cover:**
+
 1. What "agent-ready" means (semantic HTML, Schema.org, explicit state)
 2. How AIRA-generated content can include agent-compatible patterns
 3. KentiCopilot code templates for agent-ready components
@@ -175,6 +184,7 @@ In January 2026, Amazon, Microsoft, and Google all launched agent commerce syste
 5. Case studies: Agent-hostile patterns vs agent-ready alternatives
 
 **Why I'm qualified:**
+
 - Just published *The Invisible Users: Designing the Web for AI Agents and Everyone Else* (January 2026)
 - Architected infrastructure for BBC, Twitter, Nissan-Renault (200+ sites), Ford, MediaMonks
 - Known as "The AEM Guy" but platform-agnostic, MACH principles expertise
@@ -190,8 +200,8 @@ Best regards,
 Tom Cranstoun
 
 **Digital Domain Technologies Ltd**
-tom.cranstoun@gmail.com
-https://allabout.network
+<tom.cranstoun@gmail.com>
+<https://allabout.network>
 
 ---
 
@@ -214,6 +224,7 @@ I'd like to propose a session for [Kentico Conference/Webinar] about designing a
 Amazon, Microsoft, and Google all launched agent commerce systems in January 2026. AI agents now browse websites, compare products, and complete transactions on behalf of users. But most sites - including many Kentico-powered ones - confuse agents with patterns that work brilliantly for humans but fail silently for machines.
 
 This session reveals:
+
 - Why modern web design (toast notifications, SPAs, pagination) breaks for agents
 - How AIRA and KentiCopilot can generate agent-compatible output by default
 - The convergence principle: Patterns that help agents also help accessibility
@@ -221,6 +232,7 @@ This session reveals:
 - Agent-readiness validation checklist before launch
 
 **Key takeaways:**
+
 1. Identify agent-hostile patterns in existing Kentico sites
 2. Implement agent-ready alternatives without compromising human experience
 3. Validate agent-compatibility before launch
@@ -231,6 +243,7 @@ This session reveals:
 **Audience:** Kentico developers, architects, agency partners, product managers
 
 **Why I'm qualified:**
+
 - Author: *The Invisible Users: Designing the Web for AI Agents and Everyone Else* (January 2026)
 - Architected infrastructure for BBC, Twitter, Nissan-Renault (200+ sites), Ford, MediaMonks
 - "The AEM Guy" - platform-agnostic CMS expertise
@@ -244,8 +257,8 @@ Best regards,
 Tom Cranstoun
 
 **Digital Domain Technologies Ltd**
-tom.cranstoun@gmail.com
-https://allabout.network
+<tom.cranstoun@gmail.com>
+<https://allabout.network>
 
 ---
 
@@ -260,6 +273,7 @@ https://allabout.network
 Following up on my email from last week about agent-ready output for Kentico.
 
 Since I last wrote:
+
 - OpenAI announced expanded browser automation capabilities
 - Stack Overflow reported continued traffic decline (developers using ChatGPT instead)
 - Three major retailers launched agent-mediated checkout integrations
@@ -312,41 +326,47 @@ Best regards,
 Tom Cranstoun
 
 **Digital Domain Technologies Ltd**
-tom.cranstoun@gmail.com
-https://allabout.network
+<tom.cranstoun@gmail.com>
+<https://allabout.network>
 
 ---
 
 ## Email Best Practices
 
 **Subject lines:**
+
 - Front-load value: "Agent-ready output for AIRA" not "Partnership opportunity"
 - Create urgency: "First-mover advantage" not "Interesting opportunity"
 - Be specific: "Strategic partnership opportunity" not "Quick question"
 
 **Opening paragraphs:**
+
 - Lead with their problem, not your solution
 - Use concrete examples (Amazon/Microsoft/Google January 2026 launches)
 - Create urgency (3-6 month competitive window)
 
 **Body:**
+
 - Short paragraphs (3-4 lines maximum)
 - Bullet points for scannability
 - Bold key phrases
 - One clear call-to-action
 
 **Credibility signals:**
+
 - Book publication (thought leadership)
 - Enterprise clients (BBC, Twitter, Nissan-Renault)
 - Industry reputation ("The AEM Guy")
 - Avoid resume-dumping - pick 2-3 strongest signals
 
 **Call-to-action:**
+
 - Be specific: "30-minute discovery call" not "let's chat"
 - Offer value: "Complimentary audit" or "Strategic discussion"
 - Make it easy: Offer times or calendar link
 
 **Attachments:**
+
 - One-page summary (always)
 - Book PDF (if requested)
 - Case studies (only if specifically relevant)
@@ -357,17 +377,20 @@ https://allabout.network
 ## Tracking and Notes
 
 **Email sent to:**
+
 - [ ] Debbie Tuček (VP Product) - Date: _______
 - [ ] Dominik Pintér (CEO) - Date: _______
 - [ ] Luminary (partner agency) - Date: _______
 - [ ] Other: _____________ - Date: _______
 
 **Responses received:**
+
 - Date: _______
 - Contact: _______
 - Next steps: _______
 
 **Meetings scheduled:**
+
 - Date: _______
 - Attendees: _______
 - Agenda: _______

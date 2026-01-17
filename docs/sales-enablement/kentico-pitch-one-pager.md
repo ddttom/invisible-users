@@ -1,6 +1,6 @@
 # Kentico + Agent-Ready Infrastructure Partnership
 
-**One-Page Executive Summary**
+One-Page Executive Summary
 
 ---
 
@@ -99,7 +99,7 @@ In January 2026, Amazon, Microsoft, and Google all launched agent commerce syste
 
 ## Why Us
 
-**Tom Cranstoun | Digital Domain Technologies**
+Tom Cranstoun | Digital Domain Technologies
 
 - **"The AEM Guy"** - Known in CMS circles, not vendor-locked, credible across platforms
 - **Author:** *The Invisible Users: Designing the Web for AI Agents and Everyone Else* (published January 2026)

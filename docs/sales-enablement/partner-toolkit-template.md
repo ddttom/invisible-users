@@ -9,6 +9,7 @@
 ## Toolkit Overview
 
 This partner toolkit provides everything needed to:
+
 - Audit client websites for agent compatibility
 - Present findings to clients with business justification
 - Propose remediation work with clear pricing
@@ -16,6 +17,7 @@ This partner toolkit provides everything needed to:
 - Position agency as agent-readiness expert
 
 **Who this is for:**
+
 - Digital agencies (web development, marketing, design)
 - CMS implementation partners (Adobe, Kentico, Contentful, etc.)
 - System integrators serving enterprise clients
@@ -43,6 +45,7 @@ This partner toolkit provides everything needed to:
 **Questions to ask:**
 
 **Business Context:**
+
 - What percentage of your traffic comes from search engines vs direct visits?
 - How do customers currently discover your products/services?
 - Do you track referrals from AI platforms (ChatGPT, Claude, Perplexity)?
@@ -50,6 +53,7 @@ This partner toolkit provides everything needed to:
 - Are you experiencing unexplained traffic decline or conversion drops?
 
 **Technical Context:**
+
 - What CMS/platform powers your website? (AEM, Kentico, Contentful, custom)
 - Is your site primarily server-rendered or client-side JavaScript (SPA)?
 - Do you use structured data (Schema.org, JSON-LD)?
@@ -57,11 +61,13 @@ This partner toolkit provides everything needed to:
 - Do you track accessibility compliance (WCAG 2.1)?
 
 **Competitive Context:**
+
 - Are competitors appearing in AI-generated results when you're not?
 - Do you know if competitors have implemented agent-friendly patterns?
 - What would competitive advantage in agent discovery mean to your business?
 
 **Resource Context:**
+
 - What's your development team size and capability?
 - What's your appetite for technical infrastructure changes?
 - What's your timeline for improvements? (Immediate, 3-6 months, 12+ months)
@@ -76,13 +82,15 @@ This partner toolkit provides everything needed to:
 **Purpose:** Systematic evaluation of website against agent-compatibility criteria
 
 **Scoring methodology:**
+
 - Each category scored 0-100
 - Overall score is weighted average
 - Categories: Discoverability (30%), Structure (25%), State Management (20%), Transactions (15%), Content Quality (10%)
 
 **Audit checklist:**
 
-**Category 1: Discoverability (30% weight)**
+### Category 1: Discoverability (30% weight)
+
 - [ ] robots.txt exists and allows agent access (10 points)
 - [ ] robots.txt quality score >70/100 (10 points)
 - [ ] llms.txt exists at root (10 points)
@@ -94,7 +102,8 @@ This partner toolkit provides everything needed to:
 - [ ] Canonical URLs properly configured (10 points)
 - [ ] Schema.org JSON-LD present on key pages (10 points)
 
-**Category 2: Semantic Structure (25% weight)**
+### Category 2: Semantic Structure (25% weight)
+
 - [ ] HTML5 semantic elements used (`<main>`, `<nav>`, `<article>`, `<section>`) (20 points)
 - [ ] Heading hierarchy logical (H1→H2→H3, no skips) (15 points)
 - [ ] Navigation landmarks properly labeled (15 points)
@@ -104,7 +113,8 @@ This partner toolkit provides everything needed to:
 - [ ] Tables have proper headers and captions (10 points)
 - [ ] Content readable without CSS (5 points)
 
-**Category 3: State Management (20% weight)**
+### Category 3: State Management (20% weight)
+
 - [ ] Form validation errors persistent (not ephemeral) (25 points)
 - [ ] Loading states explicit (aria-busy, data-loading-state) (20 points)
 - [ ] Error messages have role="alert" (20 points)
@@ -112,7 +122,8 @@ This partner toolkit provides everything needed to:
 - [ ] Navigation state clear (active page, breadcrumbs) (10 points)
 - [ ] No toast notifications as only feedback mechanism (10 points)
 
-**Category 4: Transactions (15% weight)**
+### Category 4: Transactions (15% weight)
+
 - [ ] Add-to-cart functionality works without JavaScript (20 points)
 - [ ] Checkout process has clear multi-step indicators (20 points)
 - [ ] Form field names use standard conventions (email, firstName, lastName) (20 points)
@@ -120,7 +131,8 @@ This partner toolkit provides everything needed to:
 - [ ] Shipping/delivery information clear upfront (15 points)
 - [ ] Order confirmation includes all details (10 points)
 
-**Category 5: Content Quality (10% weight)**
+### Category 5: Content Quality (10% weight)
+
 - [ ] Content structured with clear headings (20 points)
 - [ ] Key information not hidden in images (20 points)
 - [ ] Prices clearly displayed with currency symbols (20 points)
@@ -138,25 +150,29 @@ This partner toolkit provides everything needed to:
 
 **Testing scenarios:**
 
-**Scenario 1: Product Discovery**
+### Scenario 1: Product Discovery
+
 - **Agent prompt:** "Find [specific product/service] on [client domain]"
 - **Success criteria:** Agent locates correct page, extracts accurate information
 - **Failure patterns:** Can't find product, extracts wrong price, misses key features
 - **Test with:** ChatGPT, Claude, Perplexity
 
-**Scenario 2: Comparison Shopping**
+### Scenario 2: Comparison Shopping
+
 - **Agent prompt:** "Compare [product A] and [product B] on [client domain]"
 - **Success criteria:** Agent extracts accurate details for both, makes valid comparison
 - **Failure patterns:** Compares wrong products, missing specifications, incorrect pricing
 - **Test with:** ChatGPT, Claude
 
-**Scenario 3: Transaction Initiation**
+### Scenario 3: Transaction Initiation
+
 - **Agent prompt:** "Help me buy [product] from [client domain]"
 - **Success criteria:** Agent navigates to product, adds to cart, reaches checkout
 - **Failure patterns:** Can't find add-to-cart, confused by multi-step process, abandons
 - **Test with:** Browser automation agents (if available)
 
-**Scenario 4: Customer Support**
+### Scenario 4: Customer Support
+
 - **Agent prompt:** "What are [client's] shipping options and return policy?"
 - **Success criteria:** Agent finds and accurately summarizes policies
 - **Failure patterns:** Can't locate information, extracts from wrong section, hallucinates
@@ -173,6 +189,7 @@ This partner toolkit provides everything needed to:
 **Purpose:** Show client how competitors perform on agent compatibility
 
 **Benchmarking approach:**
+
 - Identify 3-5 direct competitors
 - Run same audit checklist on competitor sites
 - Compare scores across all categories
@@ -190,6 +207,7 @@ This partner toolkit provides everything needed to:
 | Content Quality | 65/100 | 70/100 | 75/100 | 50/100 | 65/100 |
 
 **Key insights template:**
+
 - "Competitor A is ahead on discoverability (llms.txt, Schema.org)"
 - "All competitors struggle with state management (industry-wide issue)"
 - "Client has content quality advantage but lacks structural patterns"
@@ -260,9 +278,10 @@ EXPECTED OUTCOMES
 
 **Purpose:** Flexible pricing structures for different client needs and budgets
 
-**Model 1: Fixed-Price Audit Packages**
+### Model 1: Fixed-Price Audit Packages
 
 **Basic Audit** - £2,000-5,000
+
 - Technical audit checklist (all 5 categories)
 - Agent behavior testing (4 scenarios)
 - 20-page audit report
@@ -270,6 +289,7 @@ EXPECTED OUTCOMES
 - No implementation, audit only
 
 **Comprehensive Audit** - £5,000-10,000
+
 - Everything in Basic Audit
 - Competitive benchmarking (3-5 competitors)
 - Priority-based remediation roadmap
@@ -277,6 +297,7 @@ EXPECTED OUTCOMES
 - 1-hour presentation to stakeholders
 
 **Premium Audit** - £10,000-25,000
+
 - Everything in Comprehensive Audit
 - Custom agent testing scenarios (8-10 tests)
 - Detailed implementation specifications
@@ -285,9 +306,10 @@ EXPECTED OUTCOMES
 
 ---
 
-**Model 2: Implementation Packages**
+### Model 2: Implementation Packages
 
 **Quick Wins Package** - £15,000-30,000
+
 - Audit (Comprehensive level)
 - Implementation of Priority 1 issues only
 - Validation testing post-implementation
@@ -295,6 +317,7 @@ EXPECTED OUTCOMES
 - Timeline: 4-6 weeks
 
 **Essential Transformation** - £40,000-80,000
+
 - Audit (Premium level)
 - Implementation of Priority 1 + Priority 2 issues
 - Schema.org structured data implementation
@@ -303,6 +326,7 @@ EXPECTED OUTCOMES
 - Timeline: 8-12 weeks
 
 **Complete Agent-Ready Overhaul** - £100,000-250,000
+
 - Audit (Premium level)
 - Implementation of Priority 1-3 issues
 - Comprehensive structured data strategy
@@ -313,9 +337,10 @@ EXPECTED OUTCOMES
 
 ---
 
-**Model 3: Retainer-Based Services**
+### Model 3: Retainer-Based Services
 
 **Agent-Readiness Monitoring** - £2,000-5,000/month
+
 - Monthly automated audits
 - Quarterly comprehensive reviews
 - Alert notifications for issues
@@ -323,6 +348,7 @@ EXPECTED OUTCOMES
 - Access to audit platform
 
 **Continuous Optimization** - £5,000-15,000/month
+
 - Everything in Monitoring tier
 - Monthly implementation of identified issues
 - Ongoing pattern library updates
@@ -330,6 +356,7 @@ EXPECTED OUTCOMES
 - Quarterly strategic reviews
 
 **Strategic Partnership** - £15,000-40,000/month
+
 - Everything in Continuous Optimization
 - Dedicated agent-readiness consultant
 - Custom development and integration
@@ -338,10 +365,11 @@ EXPECTED OUTCOMES
 
 ---
 
-**Model 4: Value-Based Pricing**
+### Model 4: Value-Based Pricing
 
 **Pricing calculation:**
-```
+
+```text
 Audit fee: £5,000-10,000 (fixed)
 Implementation fee: 10-20% of estimated business impact
 
@@ -353,9 +381,10 @@ Business impact calculation:
 ```
 
 **Example:**
+
 - Client monthly revenue: £500,000
 - Conservative improvement estimate: 10%
-- Annual impact: £500,000 * 0.10 * 12 = £600,000
+- Annual impact: £500,000 *0.10* 12 = £600,000
 - Implementation fee (15%): £90,000
 - Total project value: £10,000 audit + £90,000 implementation = £100,000
 
@@ -364,6 +393,7 @@ Business impact calculation:
 **Pricing Guidance Notes:**
 
 **Adjust based on:**
+
 - Client size (SMB, mid-market, enterprise)
 - Site complexity (5 pages vs 500 pages)
 - Technical debt level (modern stack vs legacy)
@@ -371,6 +401,7 @@ Business impact calculation:
 - Competitive positioning (premium vs value)
 
 **Typical margins:**
+
 - Audit work: 50-70% margin (mostly automated tooling + report writing)
 - Implementation work: 30-50% margin (depends on developer rates)
 - Retainer services: 40-60% margin (mix of automated + manual work)
@@ -492,7 +523,7 @@ Agreed and accepted:
 
 **Purpose:** Common agent-ready patterns developers can implement immediately
 
-**Pattern 1: Semantic HTML Structure**
+### Pattern 1: Semantic HTML Structure
 
 ```html
 <!-- BEFORE: Agent-hostile divs -->
@@ -518,7 +549,7 @@ Agreed and accepted:
 
 ---
 
-**Pattern 2: Persistent Error Messages**
+### Pattern 2: Persistent Error Messages
 
 ```html
 <!-- BEFORE: Ephemeral toast notification -->
@@ -536,7 +567,7 @@ Agreed and accepted:
 
 ---
 
-**Pattern 3: Schema.org Product Data**
+### Pattern 3: Schema.org Product Data
 
 ```html
 <!-- BEFORE: No structured data -->
@@ -570,7 +601,7 @@ Agreed and accepted:
 
 ---
 
-**Pattern 4: Explicit Form Field Names**
+### Pattern 4: Explicit Form Field Names
 
 ```html
 <!-- BEFORE: Custom field names -->
@@ -586,7 +617,7 @@ Agreed and accepted:
 
 ---
 
-**Pattern 5: Navigation State**
+### Pattern 5: Navigation State
 
 ```html
 <!-- BEFORE: No explicit state -->
@@ -634,6 +665,7 @@ Agreed and accepted:
 ```
 
 **Best practices:**
+
 - Keep under 100 lines (curated, not comprehensive)
 - Link to 15-25 most important pages
 - Use clear hierarchical structure
@@ -650,6 +682,7 @@ Agreed and accepted:
 **Purpose:** Step-by-step guide for adding structured data
 
 **Priority sequence:**
+
 1. Organization (homepage)
 2. Products/Services (product pages)
 3. Articles (blog posts, news)
@@ -657,11 +690,13 @@ Agreed and accepted:
 5. FAQPage (support content)
 
 **Tools:**
+
 - Google's Structured Data Testing Tool: <https://search.google.com/test/rich-results>
 - Schema.org validator: <https://validator.schema.org/>
 - Web Audit Suite structured data analysis
 
 **Implementation checklist:**
+
 - [ ] Identify page types needing structured data
 - [ ] Generate JSON-LD for each type
 - [ ] Validate with testing tools
@@ -678,23 +713,27 @@ Agreed and accepted:
 **Purpose:** Ensure implementations work correctly
 
 **Automated testing:**
+
 - Run Web Audit Suite before and after changes
 - Compare scores across all categories
 - Verify specific issues marked as resolved
 
 **Manual testing:**
+
 - Test with ChatGPT, Claude, Perplexity
 - Use same prompts from initial audit
 - Document success/failure for each scenario
 - Screenshot agent responses for comparison
 
 **Regression testing:**
+
 - Ensure human user experience not degraded
 - Check accessibility with screen readers
 - Validate forms still work correctly
 - Verify JavaScript enhancements still function
 
 **Sign-off checklist:**
+
 - [ ] All Priority 1 issues resolved
 - [ ] Agent-readiness score improved by [X] points
 - [ ] Agent testing shows [Y]% success rate
@@ -710,9 +749,10 @@ Agreed and accepted:
 
 **Purpose:** Train client development teams on agent-ready implementation
 
-**Day 1: Foundations and Principles**
+### Day 1: Foundations and Principles
 
 **Morning Session (9:00-12:00)**
+
 - Introduction: Why agent-readiness matters now (30 min)
 - The convergence principle: Agents and accessibility (45 min)
 - Common agent-hostile patterns (hands-on examples) (60 min)
@@ -720,15 +760,17 @@ Agreed and accepted:
 - Semantic HTML deep dive (60 min)
 
 **Afternoon Session (13:00-17:00)**
+
 - Schema.org structured data fundamentals (60 min)
 - Break (15 min)
 - Hands-on: Implementing structured data (90 min)
 - State management patterns (60 min)
 - Day 1 wrap-up and Q&A (15 min)
 
-**Day 2: Implementation and Practice**
+### Day 2: Implementation and Practice
 
 **Morning Session (9:00-12:00)**
+
 - Form optimization for agents and humans (60 min)
 - Transaction flow patterns (45 min)
 - Break (15 min)
@@ -736,6 +778,7 @@ Agreed and accepted:
 - Testing and validation tools (45 min)
 
 **Afternoon Session (13:00-17:00)**
+
 - Hands-on: Fix real client pages (120 min)
 - Break (15 min)
 - Priority-based implementation roadmapping (45 min)
@@ -744,6 +787,7 @@ Agreed and accepted:
 - Wrap-up and certificates (15 min)
 
 **Materials provided:**
+
 - Workshop slides (PDF)
 - Pattern library (50+ examples)
 - Code examples (GitHub repository)
@@ -758,25 +802,29 @@ Agreed and accepted:
 
 **Certification levels:**
 
-**Level 1: Agent-Readiness Practitioner**
+### Level 1: Agent-Readiness Practitioner
+
 - Requirements: Attend 2-day workshop, pass assessment
 - Assessment: 20-question multiple choice + 1 practical exercise
 - Pass score: 80%
 - Validity: 2 years
 
-**Level 2: Agent-Readiness Specialist**
+### Level 2: Agent-Readiness Specialist
+
 - Requirements: Level 1 certified + complete 3 client projects + peer review
 - Assessment: Complex implementation challenge + portfolio review
 - Pass score: 85%
 - Validity: 2 years
 
-**Level 3: Agent-Readiness Architect**
+### Level 3: Agent-Readiness Architect
+
 - Requirements: Level 2 certified + 5 years experience + thought leadership contribution
 - Assessment: Strategic case study + technical leadership interview
 - Pass score: 90%
 - Validity: 3 years
 
 **Benefits:**
+
 - Digital badge for LinkedIn
 - Listed in agent-readiness specialist directory
 - Access to advanced training and resources
@@ -787,7 +835,8 @@ Agreed and accepted:
 
 ### 4.3 Presentation Decks
 
-**Deck 1: Executive Overview (15 slides)**
+### Deck 1: Executive Overview (15 slides)
+
 - Why agent-readiness matters now
 - Business impact and competitive advantage
 - Investment required and expected ROI
@@ -798,7 +847,8 @@ Agreed and accepted:
 
 ---
 
-**Deck 2: Technical Implementation (40 slides)**
+### Deck 2: Technical Implementation (40 slides)
+
 - Agent-hostile patterns and fixes
 - Semantic HTML patterns
 - Schema.org implementation
@@ -809,7 +859,8 @@ Agreed and accepted:
 
 ---
 
-**Deck 3: Sales and Marketing (25 slides)**
+### Deck 3: Sales and Marketing (25 slides)
+
 - Agent-readiness service offerings
 - Competitive differentiation
 - Pricing and packages
@@ -826,7 +877,7 @@ Agreed and accepted:
 
 ### 5.1 Service Description Template
 
-**Agent-Readiness Audit and Implementation Services**
+### Agent-Readiness Audit and Implementation Services
 
 In January 2026, Amazon, Microsoft, and Google all launched agent commerce systems. AI agents now browse websites, compare products, and complete transactions. Sites that confuse agents lose sales before humans ever see them.
 
@@ -845,6 +896,7 @@ We train your development teams on agent-ready implementation through hands-on w
 We provide continuous monitoring and optimization through retainer-based services, ensuring your site remains agent-ready as technology evolves.
 
 **Why Choose Us:**
+
 - Certified Agent-Readiness Partner
 - Proven methodology from "The Invisible Users" book
 - 50+ agent-ready patterns library
@@ -865,11 +917,13 @@ Contact us for a complimentary discovery consultation.
 
 **Approach:**
 We conducted comprehensive agent-readiness audit identifying [N] critical issues. Implemented priority-based remediation:
+
 - Priority 1: [Specific fixes implemented]
 - Priority 2: [Specific fixes implemented]
 - Training: [Team enablement activities]
 
 **Results:**
+
 - Agent-readiness score: [X]/100 → [Y]/100 ([Z]% improvement)
 - Agent testing success rate: [X]% → [Y]%
 - [Specific business metric improvement if available]
@@ -879,6 +933,7 @@ We conducted comprehensive agent-readiness audit identifying [N] critical issues
 "[Quote from client about experience, outcomes, value delivered]"
 
 **Key Learnings:**
+
 - [Insight 1 applicable to other clients]
 - [Insight 2 about implementation]
 - [Insight 3 about business impact]
@@ -887,7 +942,7 @@ We conducted comprehensive agent-readiness audit identifying [N] critical issues
 
 ### 5.3 Social Media Content Templates
 
-**LinkedIn Post Template 1: Thought Leadership**
+### LinkedIn Post Template 1: Thought Leadership
 
 AI agents browsed your website this week. Did they succeed or fail?
 
@@ -896,6 +951,7 @@ In January 2026, Amazon, Microsoft, and Google all launched agent commerce syste
 If your site confuses agents, you're invisible before humans ever see you.
 
 Three patterns that break for agents (and humans):
+
 1. Toast notifications that disappear
 2. Pagination requiring JavaScript clicks
 3. Add-to-cart buttons with hidden state
@@ -907,7 +963,7 @@ Want to know if your site works for AI agents?
 
 ---
 
-**LinkedIn Post Template 2: Case Study Highlight**
+### LinkedIn Post Template 2: Case Study Highlight
 
 We helped [Industry] client improve their agent-readiness score from [X]/100 to [Y]/100 in [Z] weeks.
 
@@ -928,7 +984,7 @@ The convergence principle in action: Better for agents = better for everyone.
 
 ---
 
-**Twitter/X Post Templates**
+### Twitter/X Post Templates
 
 "In January 2026, Amazon, Microsoft, and Google all launched agent commerce. Your website either works for AI agents or it doesn't. There's no middle ground. [Link]"
 
@@ -943,6 +999,7 @@ The convergence principle in action: Better for agents = better for everyone.
 ### 6.1 Web Audit Suite Integration
 
 **Setup instructions:**
+
 1. Clone Web Audit Suite repository
 2. Configure for client domain
 3. Run initial audit and generate baseline report
@@ -951,6 +1008,7 @@ The convergence principle in action: Better for agents = better for everyone.
 6. Compare before/after scores
 
 **Customization:**
+
 - Add client-specific testing scenarios
 - Configure scoring weights based on industry
 - White-label reports with agency branding
@@ -965,6 +1023,7 @@ The convergence principle in action: Better for agents = better for everyone.
 **Purpose:** Real-time agent-readiness feedback during development
 
 **Features:**
+
 - Inline warnings for agent-hostile patterns
 - Semantic HTML structure visualization
 - Schema.org data validation
@@ -979,6 +1038,7 @@ The convergence principle in action: Better for agents = better for everyone.
 **Purpose:** Agent-ready pattern suggestions within development environment
 
 **Features:**
+
 - Code completion for semantic HTML
 - Schema.org snippet library
 - Validation warnings for anti-patterns
@@ -991,6 +1051,7 @@ The convergence principle in action: Better for agents = better for everyone.
 ## Revenue Share and Partnership Terms
 
 **Standard Partner Agreement:**
+
 - Partner training fee: £2,000-5,000 per person (one-time)
 - Toolkit license: £1,000-3,000 annually (includes updates)
 - Revenue share: 20-30% of audit revenue using this toolkit
@@ -998,6 +1059,7 @@ The convergence principle in action: Better for agents = better for everyone.
 - Support: Email support, quarterly partner workshops, priority bug fixes
 
 **Premium Partner Agreement:**
+
 - Higher revenue share: 30-40%
 - Co-marketing opportunities
 - Joint case study development
@@ -1006,14 +1068,14 @@ The convergence principle in action: Better for agents = better for everyone.
 
 **Contact for partnership inquiries:**
 Digital Domain Technologies Ltd
-tom.cranstoun@gmail.com
-https://allabout.network
+<tom.cranstoun@gmail.com>
+<https://allabout.network>
 
 ---
 
 ## Appendix: Toolkit File Structure
 
-```
+```text
 partner-toolkit/
 ├── README.md
 ├── templates/
@@ -1059,12 +1121,14 @@ partner-toolkit/
 ## Support and Updates
 
 **Partner support channels:**
-- Email: partners@digitaldomain.tech (response within 24 hours)
+
+- Email: <partners@digitaldomain.tech> (response within 24 hours)
 - Slack community: [invite link]
 - Monthly office hours: First Wednesday, 3pm GMT
 - Quarterly partner workshops: Virtual and in-person options
 
 **Update schedule:**
+
 - Toolkit updates: Quarterly
 - Pattern library additions: Monthly
 - Web Audit Suite releases: Continuous
@@ -1072,6 +1136,7 @@ partner-toolkit/
 
 **Feedback welcome:**
 This toolkit improves based on partner feedback. Please share:
+
 - What works well in client engagements
 - What clients ask that isn't covered
 - New patterns you've discovered
