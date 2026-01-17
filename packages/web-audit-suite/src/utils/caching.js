@@ -784,6 +784,44 @@ async function renderAndCacheData(url, context) {
       // Continue without failing - visual dynamism detection is optional
     }
 
+    // Price detection: Check if price appears only in rendered HTML (JavaScript-dependent)
+    // This is critical for e-commerce - CLI agents and server-based agents won't see prices
+    let priceData = {
+      inServedHtml: false,
+      inRenderedHtml: false,
+      jsDependent: false,
+    };
+
+    try {
+      // Common price patterns: currency symbols, price classes, schema.org price properties
+      const pricePatterns = [
+        /\$\s*\d+(?:[.,]\d{2})?/,  // $99.99, $99, $ 99.99
+        /£\s*\d+(?:[.,]\d{2})?/,   // £99.99
+        /€\s*\d+(?:[.,]\d{2})?/,   // €99.99
+        /\d+(?:[.,]\d{2})?\s*(?:USD|GBP|EUR)/i,  // 99.99 USD
+        /<[^>]*class="[^"]*price[^"]*"/i,  // class="price"
+        /<[^>]*itemprop="price"/i,  // itemprop="price"
+        /"price":\s*"\d+/i,  // JSON-LD price
+        /data-price="/i,  // data-price attribute
+      ];
+
+      // Check served HTML (before JavaScript execution)
+      priceData.inServedHtml = pricePatterns.some((pattern) => pattern.test(servedHtml));
+
+      // Check rendered HTML (after JavaScript execution)
+      priceData.inRenderedHtml = pricePatterns.some((pattern) => pattern.test(html));
+
+      // If price only appears after JS execution, it's JS-dependent
+      priceData.jsDependent = !priceData.inServedHtml && priceData.inRenderedHtml;
+
+      if (priceData.jsDependent) {
+        context.logger.warn(`JavaScript-dependent pricing detected on ${url} - invisible to CLI agents`);
+      }
+    } catch (priceError) {
+      context.logger.warn(`Error during price detection: ${priceError.message}`);
+      // Continue without failing - price detection is optional
+    }
+
     await browser.close();
 
     // Merge visual dynamism results into pageData's dynamicContent
@@ -792,6 +830,7 @@ async function renderAndCacheData(url, context) {
         detected: visualDynamismDetected,
         uniqueStates: new Set(visualHashes).size,
       };
+      pageData.dynamicContent.pricing = priceData;
     }
 
     const data = {

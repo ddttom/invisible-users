@@ -436,6 +436,11 @@
           "visualDynamism": {
             "detected": false,
             "uniqueStates": 0
+          },
+          "pricing": {
+            "inServedHtml": false,
+            "inRenderedHtml": false,
+            "jsDependent": false
           }
         }
       }

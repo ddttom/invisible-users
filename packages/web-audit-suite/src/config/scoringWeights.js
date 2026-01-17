@@ -79,6 +79,7 @@ export const SCORING_WEIGHTS = {
       animatedGifNoAltPenalty: -3, // Accessibility issue
       animationLibraryPenalty: -2, // Informational warning
       visualDynamismPenalty: -5, // Visual content changes detected (typewriters, tickers, etc.)
+      jsDependentPricingPenalty: -15, // Critical: CLI agents cannot see pricing, blocks purchase decisions
     },
   },
 };

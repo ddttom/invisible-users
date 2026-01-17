@@ -317,5 +317,15 @@ export class LLMFeedback {
         'Ensure all text variations are accessible in served HTML. Add data-content-complete="true" after animations finish. Provide static alternative with all content visible. Consider marking animated elements with data-animation-type="typewriter" or data-animation-type="ticker".',
       );
     }
+
+    // JavaScript-dependent pricing warnings (critical for e-commerce)
+    if (dynamic.pricing && dynamic.pricing.jsDependent) {
+      essentialIssues.push(
+        'Price information only appears after JavaScript execution - CLI agents and server-based agents cannot see pricing',
+      );
+      recommendations.push(
+        'CRITICAL: Render price in served HTML using server-side templating. Add Schema.org Product with "price" property in JSON-LD. Include data-price attribute on price elements. Ensure <span itemprop="price"> or <meta itemprop="price"> exists before JavaScript loads. CLI agents (like ChatGPT Shopping) require prices in initial HTML to make recommendations.',
+      );
+    }
   }
 }

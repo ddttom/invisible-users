@@ -867,6 +867,7 @@ export class LLMCollector {
     const autoplayMedia = dynamicData.autoplayMedia || {};
     const animatedGifs = dynamicData.animatedGifs || {};
     const visualDynamism = dynamicData.visualDynamism || {};
+    const pricing = dynamicData.pricing || {};
 
     return {
       importance: IMPORTANCE.ESSENTIAL_RENDERED, // Browser agents can detect, CLI agents cannot
@@ -907,6 +908,11 @@ export class LLMCollector {
         visualDynamism: {
           detected: visualDynamism.detected || false,
           uniqueStates: visualDynamism.uniqueStates || 0,
+        },
+        pricing: {
+          inServedHtml: pricing.inServedHtml || false,
+          inRenderedHtml: pricing.inRenderedHtml || false,
+          jsDependent: pricing.jsDependent || false,
         },
       },
     };

@@ -215,6 +215,11 @@ export class LLMScorer {
       if (dynamic.visualDynamism && dynamic.visualDynamism.detected) {
         renderedBonus += weights.DYNAMIC_CONTENT.visualDynamismPenalty;
       }
+
+      // JavaScript-dependent pricing penalty (critical for e-commerce)
+      if (dynamic.pricing && dynamic.pricing.jsDependent) {
+        renderedBonus += weights.DYNAMIC_CONTENT.jsDependentPricingPenalty;
+      }
     }
 
     renderedBonus = Math.min(renderedBonus, weights.MAX_BONUS);

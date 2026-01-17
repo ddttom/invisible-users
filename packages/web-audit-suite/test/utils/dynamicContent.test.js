@@ -152,6 +152,29 @@ describe('Dynamic Content Detection', () => {
       expect(result.metrics.visualDynamism.detected).to.be.true;
       expect(result.metrics.visualDynamism.uniqueStates).to.equal(3);
     });
+
+    it('should process pricing data correctly', () => {
+      const $ = cheerio.load('<html><body></body></html>');
+      const pageData = {
+        dynamicContent: {
+          carousels: [],
+          animations: {},
+          autoplayMedia: {},
+          animatedGifs: {},
+          pricing: {
+            inServedHtml: false,
+            inRenderedHtml: true,
+            jsDependent: true,
+          },
+        },
+      };
+
+      const result = LLMCollector.analyzeDynamicContent($, pageData);
+
+      expect(result.metrics.pricing.inServedHtml).to.be.false;
+      expect(result.metrics.pricing.inRenderedHtml).to.be.true;
+      expect(result.metrics.pricing.jsDependent).to.be.true;
+    });
   });
 
   describe('LLMScorer - Dynamic Content Scoring', () => {
@@ -317,6 +340,39 @@ describe('Dynamic Content Detection', () => {
       expect(score).to.be.at.least(60);
       expect(score).to.be.at.most(68);
     });
+
+    it('should apply heavy penalty for JavaScript-dependent pricing', () => {
+      const baseMetrics = {
+        semanticHTML: { metrics: { hasMain: true } },
+        formFields: { metrics: { standardNameRatio: 1, labelRatio: 1 } },
+        formAutocomplete: { metrics: { autocompleteRatio: 0 } },
+        structuredData: { metrics: { hasSchemaOrg: true } },
+        llmsTxt: { metrics: { hasLLMsTxtReference: true } },
+        robotsTxt: { metrics: {} },
+        tableData: { metrics: { tableCount: 0 } },
+        dynamicContent: {
+          metrics: {
+            carousels: { count: 0 },
+            animations: { hasAnimations: false, libraries: {} },
+            autoplayMedia: { videoCount: 0 },
+            animatedGifs: { count: 0 },
+            pricing: {
+              inServedHtml: false,
+              inRenderedHtml: true,
+              jsDependent: true,
+            },
+          },
+        },
+      };
+
+      const score = LLMScorer.calculateRenderedScore(baseMetrics);
+
+      // Base score: 66 (same as above)
+      // Penalty: JavaScript-dependent pricing -15 (critical for e-commerce)
+      // Total: 66 - 15 = 51
+      expect(score).to.be.at.least(46);
+      expect(score).to.be.at.most(56);
+    });
   });
 
   describe('LLMFeedback - Dynamic Content Feedback', () => {
@@ -471,6 +527,37 @@ describe('Dynamic Content Detection', () => {
       expect(feedback.essentialIssues.some((issue) => issue.includes('Visual content changes detected'))).to.be.true;
       expect(feedback.essentialIssues.some((issue) => issue.includes('3 unique states'))).to.be.true;
       expect(feedback.recommendations.some((r) => r.includes('data-content-complete'))).to.be.true;
+    });
+
+    it('should generate critical warnings for JavaScript-dependent pricing', () => {
+      const metrics = {
+        semanticHTML: { metrics: {} },
+        formFields: { metrics: {} },
+        formAutocomplete: { metrics: {} },
+        structuredData: { metrics: {} },
+        llmsTxt: { metrics: {} },
+        robotsTxt: { metrics: {} },
+        tableData: { metrics: {} },
+        dynamicContent: {
+          metrics: {
+            carousels: { count: 0 },
+            animations: { hasAnimations: false, libraries: {} },
+            autoplayMedia: { videoCount: 0 },
+            animatedGifs: { count: 0 },
+            pricing: {
+              inServedHtml: false,
+              inRenderedHtml: true,
+              jsDependent: true,
+            },
+          },
+        },
+      };
+
+      const feedback = LLMFeedback.generate(metrics);
+
+      expect(feedback.essentialIssues.some((issue) => issue.includes('Price information only appears after JavaScript'))).to.be.true;
+      expect(feedback.recommendations.some((r) => r.includes('CRITICAL'))).to.be.true;
+      expect(feedback.recommendations.some((r) => r.includes('Schema.org Product'))).to.be.true;
     });
   });
 });
