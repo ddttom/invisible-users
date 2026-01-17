@@ -29,6 +29,8 @@ export class LLMFeedback {
     this.getFAQFeedback(metrics, essentialIssues, niceToHaveIssues, recommendations);
     this.getRenderedFeedback(metrics, niceToHaveIssues, recommendations);
     this.getNiceToHaveFeedback(metrics, niceToHaveIssues, recommendations);
+    this.getSchemaDisambiguationFeedback(metrics, essentialIssues, recommendations);
+    this.getInlineCSSFeedback(metrics, essentialIssues, recommendations);
 
     return { essentialIssues, niceToHaveIssues, recommendations };
   }
@@ -152,6 +154,65 @@ export class LLMFeedback {
       if (metrics.tableData.metrics.tablesWithScope === 0) {
         niceToHaveIssues.push('Tables missing scope attributes');
         recommendations.push('Add scope="col" and scope="row" to table headers');
+      }
+    }
+  }
+
+  /**
+   * Get feedback for Schema.org type disambiguation
+   */
+  static getSchemaDisambiguationFeedback(metrics, essentialIssues, recommendations) {
+    const schema = metrics.schemaTypeDisambiguation?.metrics;
+    if (!schema) return;
+
+    if (!schema.hasJsonLd) {
+      // Already covered by existing structured data feedback
+      return;
+    }
+
+    if (schema.schemasWithMultipleTypes > 0) {
+      essentialIssues.push(
+        `${schema.schemasWithMultipleTypes} of ${schema.totalSchemas} Schema.org blocks have multiple @type values`,
+      );
+      recommendations.push(
+        'Each JSON-LD block should have exactly one @type to prevent agent confusion (see Chapter 10)',
+      );
+      recommendations.push(
+        'Use specific Schema.org types like MedicalScholarlyArticle, AnalysisNewsArticle, TechArticle instead of multiple types',
+      );
+    }
+  }
+
+  /**
+   * Get feedback for inline CSS usage
+   */
+  static getInlineCSSFeedback(metrics, essentialIssues, recommendations) {
+    const css = metrics.inlineCSS?.metrics;
+    if (!css) return;
+
+    if (css.hasInlineStyles) {
+      const percentage = Math.round(css.inlineCSSRatio * 100);
+      essentialIssues.push(
+        `${css.inlineStyleElementCount} elements have inline styles (${percentage}% of page)`,
+      );
+
+      if (css.inlineStyleScriptCount > 0) {
+        essentialIssues.push(
+          `${css.inlineStyleScriptCount} inline <style> tags add noise for CLI agents`,
+        );
+      }
+
+      recommendations.push(
+        'Move inline styles to external stylesheets - CLI agents cannot execute inline <style> tags or process style= attributes',
+      );
+      recommendations.push(
+        'Use semantic HTML + external CSS for maximum agent compatibility',
+      );
+
+      if (css.externalStylesheetCount === 0) {
+        recommendations.push(
+          'Add external stylesheet references to separate styling from content',
+        );
       }
     }
   }

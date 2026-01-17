@@ -103,5 +103,6 @@
   "prettier.requireConfig": true,
 
   // Claude Code settings
-  "claude-code.enableContext": true
+  "claude-code.enableContext": true,
+  "cSpell.words": ["behaviours"]
 }

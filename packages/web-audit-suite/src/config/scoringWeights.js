@@ -52,6 +52,14 @@ export const SCORING_WEIGHTS = {
       ariaMisusePenalty: -2,
       nonSemanticContainerPenalty: -1,
     },
+    SCHEMA_TYPE_DISAMBIGUATION: {
+      proper: 5,
+      multiTypePenalty: -3,
+    },
+    INLINE_CSS: {
+      externalOnlyBonus: 8,
+      inlineCSSPenalty: -10,
+    },
   },
   RENDERED: {
     MAX_BONUS: 30,

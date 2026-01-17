@@ -44,6 +44,8 @@ export class LLMCollector {
       seoMeta: this.analyzeSEOMeta($),
       readingTimeMeta: this.analyzeReadingTimeMeta($),
       htmlValidation: this.analyzeHTMLValidation($),
+      schemaTypeDisambiguation: this.analyzeSchemaTypeDisambiguation($),
+      inlineCSS: this.analyzeInlineCSS($),
     };
   }
 
@@ -737,6 +739,99 @@ export class LLMCollector {
         totalIssues,
         qualityScore,
         hasIssues: totalIssues > 0,
+      },
+    };
+  }
+
+  /**
+   * Analyze Schema.org type disambiguation (Chapter 10)
+   * Each JSON-LD block should have exactly ONE @type
+   * Multiple @type values create ambiguity for AI agents trained on entertainment scripts
+   *
+   * Without explicit types, agents may confuse professional content with fictional dialogue
+   * from films, TV shows, and scripted entertainment in their training data.
+   *
+   * @param {CheerioAPI} $ - Cheerio instance
+   * @returns {Object} Schema type disambiguation metrics
+   */
+  static analyzeSchemaTypeDisambiguation($) {
+    const jsonLdScripts = $('script[type="application/ld+json"]');
+    const issues = [];
+    let totalSchemas = 0;
+    let schemasWithMultipleTypes = 0;
+
+    jsonLdScripts.each((_, script) => {
+      try {
+        const data = JSON.parse($(script).html());
+        totalSchemas++;
+
+        // Check for multiple @type values (array with >1 element)
+        if (Array.isArray(data['@type'])) {
+          if (data['@type'].length > 1) {
+            schemasWithMultipleTypes++;
+            issues.push({
+              schemaIndex: totalSchemas,
+              problem: 'multiple_types_in_single_block',
+              types: data['@type'],
+            });
+          }
+        }
+      } catch (e) {
+        // Invalid JSON-LD, skip
+      }
+    });
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED, // Works for all agents
+      metrics: {
+        hasJsonLd: jsonLdScripts.length > 0,
+        totalSchemas,
+        schemasWithMultipleTypes,
+        hasDisambiguation: schemasWithMultipleTypes === 0 && totalSchemas > 0,
+        issues,
+      },
+    };
+  }
+
+  /**
+   * Analyze inline CSS usage (Chapter 10)
+   * Inline styles add noise for CLI agents that cannot execute them
+   * External stylesheets are preferred (invisible to agents)
+   *
+   * CLI agents (Claude Code, Cline) and server-based agents cannot execute JavaScript
+   * or process inline styles. Inline CSS adds noise to DOM without providing semantic value.
+   *
+   * @param {CheerioAPI} $ - Cheerio instance
+   * @returns {Object} Inline CSS metrics
+   */
+  static analyzeInlineCSS($) {
+    const elementsWithStyleAttr = $('[style]');
+    const styleScripts = $('style').length;
+    const externalSheets = $('link[rel="stylesheet"]').length;
+
+    let inlineStyleCount = 0;
+
+    elementsWithStyleAttr.each((_, el) => {
+      const style = $(el).attr('style');
+      if (style && style.trim().length > 0) {
+        inlineStyleCount++;
+      }
+    });
+
+    const totalElements = $('*').length;
+    const inlineCSSRatio = totalElements > 0 ? (inlineStyleCount / totalElements) : 0;
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED, // CLI agents can't execute
+      metrics: {
+        hasInlineStyles: inlineStyleCount > 0,
+        inlineStyleElementCount: inlineStyleCount,
+        inlineStyleScriptCount: styleScripts,
+        externalStylesheetCount: externalSheets,
+        totalCSSVectors: inlineStyleCount + styleScripts,
+        hasAnyCSS: inlineStyleCount > 0 || styleScripts > 0 || externalSheets > 0,
+        inlineCSSRatio: Math.round(inlineCSSRatio * 1000) / 1000, // 3 decimal places
+        totalElements,
       },
     };
   }

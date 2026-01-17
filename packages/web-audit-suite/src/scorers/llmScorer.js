@@ -111,6 +111,27 @@ export class LLMScorer {
       }
     }
 
+    // Schema Type Disambiguation
+    if (metrics.schemaTypeDisambiguation?.metrics) {
+      const schema = metrics.schemaTypeDisambiguation.metrics;
+      if (schema.hasDisambiguation && schema.totalSchemas > 0) {
+        score += weights.SCHEMA_TYPE_DISAMBIGUATION.proper;
+      } else if (schema.schemasWithMultipleTypes > 0) {
+        score += schema.schemasWithMultipleTypes * weights.SCHEMA_TYPE_DISAMBIGUATION.multiTypePenalty;
+      }
+    }
+
+    // Inline CSS Penalties
+    if (metrics.inlineCSS?.metrics) {
+      const css = metrics.inlineCSS.metrics;
+      if (!css.hasInlineStyles && css.externalStylesheetCount > 0) {
+        score += weights.INLINE_CSS.externalOnlyBonus;
+      } else if (css.hasInlineStyles) {
+        // Penalty based on prevalence
+        score += Math.round(css.inlineCSSRatio * weights.INLINE_CSS.inlineCSSPenalty);
+      }
+    }
+
     return Math.max(0, Math.min(100, Math.round(score)));
   }
 

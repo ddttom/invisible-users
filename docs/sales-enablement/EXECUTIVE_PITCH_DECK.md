@@ -26,6 +26,8 @@ Date: [Date]
 * **The Gap:** AI Agents browse by code, not sight. They can't see "Green means Go."
 * **The Result:** "Silent Conversion Failures." Agents try to buy, fail to parse our interface, and leave without a trace.
 
+**Quick Diagnostic:** Compare bounce rates for sessions under 10 seconds against your industry baseline. Unusually high short-session bounces + declining conversion despite stable traffic = agent extraction without attribution.
+
 > "We are optimizing for the 80% of humans, and completely blocking the 20% of high-intent AI traffic."
 
 ---
@@ -50,6 +52,7 @@ Date: [Date]
 * AI Agents **Learn**.
 * If an agent succeeds on our site today, it "remembers" the path for next time.
 * If it fails, it marks us as "unreliable."
+* **Citation Capture:** When users ask AI assistants for recommendations, agents cite businesses they've successfully transacted with previously. The first business in each sector to implement agent-friendly patterns becomes the default recommendation. Second place becomes invisible.
 * **The Window:** We have 12-18 months before this becomes a standard requirement.
 * **Victory:** If we fix this now, we become the "Default Capability" for every shopping assistant (ChatGPT, Gemini, etc.).
 
@@ -112,13 +115,14 @@ We don't need a redesign. We need **Code Remediation**.
 
 * **Microsoft** building proprietary identity for Copilot Checkout (January 2026)
 * **Amazon** controlling shopping through Alexa+ platform (3x purchase increase)
+* **Google** launched Business Agent with Universal Commerce Protocol (January 2026)
 * **Claude for Chrome** inheriting browser sessions through Anthropic (August-December 2025)
-* **Google and Apple** expected to build their own walled gardens
+* **Apple** expected to build their own walled garden
 * **Result:** User lock-in, agent fragmentation, business complexity
 
 **Critical implication for businesses:**
 
-Every integration with a proprietary platform creates lock-in for your customers and dependency for your business. You cannot assume your site works for "AI agents" in general - you must test against specific platforms (Microsoft, Amazon verified; Google, Apple expected) knowing each has different identity systems, different capabilities, and different failure modes.
+Every integration with a proprietary platform creates lock-in for your customers and dependency for your business. You cannot assume your site works for "AI agents" in general - you must test against specific platforms (Microsoft, Amazon, Google launched January 2026; Apple expected) knowing each has different identity systems, different capabilities, and different failure modes.
 
 **The Next Project:**
 

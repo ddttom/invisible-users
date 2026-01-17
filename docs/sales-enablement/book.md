@@ -68,6 +68,16 @@ The book launches Q1 2026, but the patterns are relevant today. The webinar cove
 
 You're reading this in the middle of that timeline. The infrastructure shipped. The question is how quickly you adapt.
 
+## Who Should Read This Book
+
+**"The Invisible Users"** is written primarily for business leaders and managers who need to understand the strategic implications of AI agent commerce - including CEOs, product managers, marketing directors, and technical managers such as software architects and lead developers.
+
+**No programming knowledge required.** Technical patterns are explained conceptually first, with code examples that can be skipped without losing the thread. If you don't write code, read straight through and gain everything needed for informed strategic decisions.
+
+**For technical readers** (developers, architects, DevOps engineers): The book can be read backwards. Start with implementation chapters (10-13) to see concrete patterns, then work backwards through business justification and strategic context. You understand the "how" - you need the "why" to advocate for these changes within your organisation.
+
+The convergence principle means both audiences benefit: business leaders understand why agent compatibility creates competitive advantage, whilst technical teams understand which patterns deliver measurable business impact rather than speculative future-proofing.
+
 ## What Happens Next
 
 The webinar is free, recorded, and focused on actionable patterns you can implement immediately. Whether you attend live or watch the recording, you'll understand:
@@ -97,4 +107,4 @@ Website: <https://allabout.network>
 
 ---
 
-*Tom Cranstoun has built web experiences for 25 years, from early e-commerce platforms to modern progressive web apps. "The Invisible Users" synthesises two years of research into how AI agents interact with websites and the patterns that work for both agents and humans.*
+*Tom Cranstoun is a regular contributor to CMS Critic (<https://cmscritic.com/>) and has built web experiences for 25 years, from early e-commerce platforms to modern progressive web apps. "The Invisible Users" synthesises two years of research into how AI agents interact with websites and the patterns that work for both agents and humans.*

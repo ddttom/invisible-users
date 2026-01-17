@@ -117,6 +117,8 @@ Businesses can't see what's broken. Modern web analytics are designed for human 
 - Read your error messages
 - Parse your dynamic content
 
+**Quick diagnostic test:** Compare your bounce rate for sessions under 10 seconds against industry averages. Unusually high short-session bounces, combined with declining conversion despite stable traffic, often indicate agent extraction without attribution. This provides immediate, quantifiable evidence of the problem.
+
 ### The Accessibility Connection
 
 These same patterns break human users with disabilities who use assistive technologies:
@@ -291,6 +293,16 @@ Plus: `results.json` (single source of truth), sitemaps, comprehensive logs
 ---
 
 ## Target Audience
+
+### Book Readership
+
+**"The Invisible Users"** is written primarily for business leaders and managers who need to understand the strategic implications of AI agent commerce - including CEOs, product managers, marketing directors, and technical managers such as software architects and lead developers.
+
+**No programming knowledge required.** Technical patterns are explained conceptually first, with code examples that can be skipped without losing the thread. If you don't write code, read straight through and gain everything needed for informed strategic decisions.
+
+**For technical readers** (developers, architects, DevOps engineers): The book can be read backwards. Start with implementation chapters (10-13) to see concrete patterns, then work backwards through business justification and strategic context. You understand the "how" - you need the "why" to advocate for changes within your organisation.
+
+### Market Segments
 
 We address four distinct segments with tailored value propositions:
 
@@ -575,6 +587,8 @@ Available as separate purchase or professional audit service:
 - First comprehensive measurement tool
 - Established methodology before competitors
 - Thought leadership position via conference speaking
+
+**Citation capture creates durable moats:** The first business in each sector to work reliably with agents becomes the default recommendation. When users ask AI assistants for product recommendations, agents cite businesses they've successfully transacted with previously. Second place often becomes invisible.
 
 ### 3. Technical Depth
 

@@ -20,7 +20,9 @@ Modern websites work beautifully for humans but fail completely for AI agents. T
 - **Silent failures** - Agents move on without error messages
 - **£6.3 trillion market** - Global e-commerce affected
 - **5-15% projected traffic** - AI agents by 2026
-- **Multiple proprietary platforms** - Amazon Alexa+, Microsoft Copilot (verified); Google/Apple expected to follow
+- **Multiple proprietary platforms** - Amazon Alexa+, Microsoft Copilot, Google Business Agent (all launched January 2026); Apple expected to follow
+
+**Quick diagnostic:** Compare bounce rates for sessions under 10 seconds against your industry baseline. Unusually high short-session bounces combined with declining conversion despite stable traffic often indicate agent extraction without attribution.
 
 **Real Example:** An AI assistant compared tour operators. Company A's pagination made the agent think a 14-day tour was only 1 day. Company B showed full content on one page and won the business.
 
@@ -28,7 +30,7 @@ Modern websites work beautifully for humans but fail completely for AI agents. T
 
 The patterns that break agents also break users with disabilities: users navigating by keyboard alone, those relying on assistive technologies like screen readers, people using voice control due to mobility limitations, and individuals with cognitive disabilities who struggle with disappearing notifications. The convergence principle: skip links that help keyboard users bypass navigation also help AI agents identify main content. Semantic HTML benefits screen readers and AI parsing simultaneously. We've known about these problems for years - now there's commercial pressure to fix them. (For detailed analysis of the accessibility-agent connection, see Chapter 1 of the manuscript.)
 
-**The proprietary lock-in reality:** Major platforms (Microsoft, Amazon verified; Google, Apple expected) are building closed identity systems to establish first-mover advantages before open standards emerge. Businesses must now test against multiple proprietary agent platforms, knowing each integration creates lock-in for customers and dependency for themselves. The industry must work to build open standards for identity delegation and agent interoperability.
+**The proprietary lock-in reality:** Major platforms (Microsoft, Amazon, Google launched January 2026; Apple expected) are building closed identity systems to establish first-mover advantages before open standards emerge. Businesses must now test against multiple proprietary agent platforms, knowing each integration creates lock-in for customers and dependency for themselves. The industry must work to build open standards for identity delegation and agent interoperability.
 
 ---
 
@@ -41,6 +43,18 @@ The patterns that break agents also break users with disabilities: users navigat
 - **2027:** Best practices become table stakes, advantage disappears
 
 **Historical parallel:** Mobile-responsive design (2010-2013) had similar 3-year advantage window. We're at the 2010 equivalent.
+
+---
+
+## Target Audience
+
+**"The Invisible Users"** is written primarily for business leaders and managers who need to understand the strategic implications of AI agent commerce - including CEOs, product managers, marketing directors, and technical managers such as software architects and lead developers.
+
+**No programming knowledge required.** Technical patterns are explained conceptually first, then demonstrated with code examples that can be skipped without losing the thread of the argument. If you don't write code, you can read straight through and gain everything needed to make informed strategic decisions.
+
+**For technical readers** (developers, architects, DevOps engineers): The book can be read backwards. Start with the implementation chapters (10-13) to see the concrete patterns, then work backwards through the business justification, conceptual framework, and strategic context. You already understand the "how" - you need to understand the "why" to advocate for these changes within your organisation.
+
+The convergence principle means both audiences benefit: business leaders understand why agent compatibility creates competitive advantage, whilst technical teams understand which patterns deliver measurable business impact rather than speculative future-proofing.
 
 ---
 
@@ -102,6 +116,8 @@ The patterns that break agents also break users with disabilities: users navigat
 5. **Complete offering** - Education → Assessment → Implementation → Monitoring
 
 **Market Position:** No established leaders, 12-18 month window to dominate
+
+**The first-mover citation advantage:** When users ask AI assistants for recommendations, agents cite businesses they've successfully transacted with previously. The first business in each sector to implement agent-friendly patterns establishes preference in agent recommendation systems. Second place often becomes invisible - agents cite whoever they found first and worked reliably. Successful agent interactions compound, increasing the likelihood of future citations. Platforms like OpenAI, Google, and Anthropic deprioritize sites where agents consistently fail. Sites that work reliably gain platform trust, leading to more frequent citations and higher visibility.
 
 ---
 

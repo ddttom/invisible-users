@@ -70,6 +70,8 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 3. **No standardised solutions:** Best practices still forming
 4. **Accessibility convergence:** Same patterns hurt disabled users (creates regulatory pressure)
 
+**Validation method:** Compare bounce rates for sessions under 10 seconds against industry baseline. Unusually high short-session bounces combined with declining conversion despite stable traffic often indicate agent extraction without attribution.
+
 ### Target Markets
 
 #### Primary Markets
@@ -1053,6 +1055,8 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 - AI + Accessibility + Business + Technical = no one else covers all four
 - Real-world implementation experience
 - Practical code, not just theory
+
+**Citation capture creates durable competitive moats:** First businesses in each sector to capture agent citations become default recommendations. When users ask AI assistants for products/services, agents cite businesses with successful transaction history. Citation capture creates durable competitive moats - second place often becomes invisible.
 
 #### 3. Complete Package
 
