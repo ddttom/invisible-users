@@ -60,6 +60,30 @@ if [[ "$FILE_PATH" == .claude/* ]] || [[ "$FILE_PATH" == */.claude/* ]]; then
     fi
 fi
 
+# MANUSCRIPT WRITING STYLE CHECK: Detect manuscript file operations
+# Remind Claude to follow writing style guide when editing manuscript content
+if [[ "$TOOL_NAME" == "Edit" ]] || [[ "$TOOL_NAME" == "Write" ]] || [[ "$TOOL_NAME" == "NotebookEdit" ]]; then
+    if [[ "$FILE_PATH" == *"packages/manuscript/manuscript"* ]]; then
+        # Check file extension for text content (not images, PDFs, etc.)
+        if [[ "$FILE_PATH" =~ \.(md|html|txt)$ ]]; then
+            echo "📝 WRITING STYLE REMINDER: Manuscript content detected"
+            echo ""
+            echo "Consult writing style guide: docs/for-ai/writing-style.md"
+            echo ""
+            echo "Key requirements:"
+            echo "  - British English (organise, colour, whilst)"
+            echo "  - Avoid forbidden vocabulary (delve, leverage, robust, seamless, etc.)"
+            echo "  - No colons in headings"
+            echo "  - Active voice, third person default"
+            echo "  - Concise, calm, concrete tone"
+            echo ""
+            echo "To review document against style guide: /review-docs [file path]"
+            echo ""
+            # Don't block - just inform
+        fi
+    fi
+fi
+
 # Check if pwd has been run recently (within last 3 tool uses)
 # Reduced threshold from 5 to 3 for more frequent reminders
 STATE_FILE="/Users/tomcranstoun/Documents/GitHub/invisible-users/.claude/.pwd-check-state"

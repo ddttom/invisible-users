@@ -942,7 +942,7 @@ This project includes custom Claude Code configuration in the `.claude/` directo
 
 ### Custom Skills
 
-Three custom skills are available via the `/` command syntax:
+Four custom skills are available via the `/` command syntax:
 
 1. **`/step-commit`** - Systematic commit workflow
    - **CRITICAL**: Checks BOTH main repository AND manuscript submodule for changes
@@ -971,9 +971,40 @@ Three custom skills are available via the `/` command syntax:
    - Only adds news that validates or challenges specific book chapters
    - **Usage:** `/news [paste news content or URL]`
 
+4. **`/review-docs`** - Review documents against writing style guide
+   - Loads complete writing style guide from [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)
+   - Analyzes documents for style violations across all rule categories
+   - Identifies issues by priority: Critical, Important, Style, Markdown
+   - Checks forbidden vocabulary (23 words), forbidden constructs (14 patterns)
+   - Validates British English spelling, heading format, voice and tone
+   - Provides specific fixes with line numbers for all violations
+   - Applies to any file (manuscript, documentation, HTML)
+   - **Usage:** `/review-docs [file paths...]`
+   - **Example:** `/review-docs packages/manuscript/manuscript/chapter-01.md`
+
 ### Git Hooks
 
-Three git hooks provide workflow reminders:
+The `pre-tool-use.sh` hook provides automatic workflow reminders:
+
+**Manuscript Style Enforcement:**
+
+- Detects when editing manuscript files (`packages/manuscript/manuscript/*.md`, `*.html`, `*.txt`)
+- Displays writing style reminder with key requirements:
+  - British English (organise, colour, whilst)
+  - Forbidden vocabulary (delve, leverage, robust, seamless, etc.)
+  - No colons in headings
+  - Active voice, third person default
+  - Concise, calm, concrete tone
+- Suggests using `/review-docs` command for comprehensive review
+- Non-blocking: reminder only, does not prevent edits
+
+**Directory Navigation Safety:**
+
+- Detects wrong-repository file path mistakes
+- Prevents accessing `.claude/` from submodule directory
+- Provides pwd reminders when navigating between main repo and submodule
+
+**Additional Hooks:**
 
 1. **`pre-commit.sh`** - Runs before commits
    - Checks staged markdown files for linting issues
