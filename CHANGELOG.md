@@ -9,6 +9,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - Sales Enablement Directory Organization (2026-01-17)
+
+Reorganized docs/sales-enablement/ from flat structure with 25 files into 8 logical subdirectories for improved navigation and discovery.
+
+**New Folder Structure:**
+
+- **business/** (4 files) - Business strategy documents (business plan, opportunities, executive summary, go-to-market plan)
+- **pitches/** (3 files) - Pitch materials and ROI case studies
+- **publishers/** (4 files) - O'Reilly submission materials (proposal, TOC, sample chapter, author bio)
+- **partners/** (4 files) - Partner-focused materials (Kentico pitch, partner kits, toolkits)
+- **outreach/** (4 files) - Communication templates (Adobe analysis, reviewer emails)
+- **content/** (4 files) - Blog posts and promotional content
+- **profiles/** (2 files) - Professional profiles (LinkedIn, general)
+- **pricing/** (1 file) - Pricing strategy
+
+**Documentation Updates:**
+
+- Updated README.md with complete new folder structure showing all files by category
+- Updated CLAUDE.md with organized subfolder descriptions
+- Updated /opportunity skill documentation (README.md and skill.md) with new file paths for generated materials
+
+**Git Tracking:**
+
+- All 25 file moves tracked as renames with 100% similarity preserved
+- Maintains full file history through git rename detection
+
+**Benefits:**
+
+- Improved discoverability - materials grouped by purpose (business strategy, pitches, outreach, etc.)
+- Better organization for /opportunity skill which generates vendor-specific materials in appropriate subfolders
+- Clearer separation between different types of sales enablement content
+
 ### Fixed - Carousel Array TypeError in Web Audit Suite (2026-01-17)
 
 Fixed `TypeError: carousels.filter is not a function` crash during LLM metrics collection when analyzing pages with non-standard carousel implementations.
