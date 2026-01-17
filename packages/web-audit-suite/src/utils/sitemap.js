@@ -511,8 +511,7 @@ export async function fetchSiteLevelFiles(baseUrl, context) {
   };
 
   try {
-    const urlObj = new URL(baseUrl);
-    const origin = urlObj.origin;
+    const { origin } = new URL(baseUrl);
 
     // Check llms.txt
     const llmsTxtUrl = `${origin}/llms.txt`;
