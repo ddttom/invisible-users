@@ -318,6 +318,126 @@
           "apiDiscoverabilityScore": 0,
           "apiLinksCount": 0
         }
+      },
+      "socialMediaMeta": {
+        "importance": "essential_served",
+        "metrics": {
+          "hasOpenGraph": false,
+          "ogTagCount": 0,
+          "hasOgType": false,
+          "hasOgUrl": false,
+          "hasOgTitle": false,
+          "hasOgDescription": false,
+          "hasOgImage": false,
+          "hasOgLocale": false,
+          "hasTwitterCard": false,
+          "twitterTagCount": 0,
+          "hasTwitterCardType": false,
+          "hasTwitterTitle": false,
+          "hasTwitterDescription": false,
+          "hasTwitterImage": false,
+          "completenessRatio": 0
+        }
+      },
+      "seoMeta": {
+        "importance": "essential_served",
+        "metrics": {
+          "hasRobotsMeta": false,
+          "robotsMetaContent": "",
+          "hasKeywords": false,
+          "keywordsCount": 0,
+          "hasThemeColor": false,
+          "themeColorValue": "",
+          "completenessRatio": 0
+        }
+      },
+      "readingTimeMeta": {
+        "importance": "essential_served",
+        "metrics": {
+          "hasTimeRequired": false,
+          "hasEducationalLevel": false,
+          "hasInLanguage": false,
+          "timeRequiredValue": null,
+          "educationalLevelValue": null,
+          "inLanguageValue": null,
+          "isValidISO8601": false,
+          "completenessRatio": 0
+        }
+      },
+      "htmlValidation": {
+        "importance": "essential_served",
+        "metrics": {
+          "unencodedAmpersands": 0,
+          "redundantRoles": 0,
+          "ariaMisuse": 0,
+          "nonSemanticContainers": 0,
+          "totalIssues": 0,
+          "qualityScore": 100,
+          "hasIssues": false
+        }
+      },
+      "schemaTypeDisambiguation": {
+        "importance": "essential_served",
+        "metrics": {
+          "hasJsonLd": false,
+          "totalSchemas": 0,
+          "schemasWithMultipleTypes": 0,
+          "hasDisambiguation": false,
+          "issues": []
+        }
+      },
+      "inlineCSS": {
+        "importance": "essential_served",
+        "metrics": {
+          "hasInlineStyles": false,
+          "inlineStyleElementCount": 0,
+          "inlineStyleScriptCount": 0,
+          "externalStylesheetCount": 0,
+          "totalCSSVectors": 0,
+          "hasAnyCSS": false,
+          "inlineCSSRatio": 0,
+          "totalElements": 10
+        }
+      },
+      "dynamicContent": {
+        "importance": "essential_rendered",
+        "metrics": {
+          "carousels": {
+            "count": 0,
+            "informationalCount": 0,
+            "decorativeCount": 0,
+            "withProperAttributes": 0,
+            "withAriaLabels": 0,
+            "averageSlides": 0
+          },
+          "animations": {
+            "hasAnimations": false,
+            "hasCSSAnimations": false,
+            "animatedElementCount": 0,
+            "libraries": {
+              "typedJs": false,
+              "typeIt": false,
+              "animateCSS": false,
+              "gsap": false,
+              "aos": false
+            }
+          },
+          "autoplayMedia": {
+            "videoCount": 0,
+            "audioCount": 0,
+            "withControls": 0,
+            "mutedCount": 0
+          },
+          "animatedGifs": {
+            "count": 0,
+            "withAltText": 0,
+            "withDescriptions": 0
+          },
+          "visualDynamism": {
+            "detected": false,
+            "uniqueStates": 0
+          }
+        }
       }
     }
   ],
