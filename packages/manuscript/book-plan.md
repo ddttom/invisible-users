@@ -8,11 +8,11 @@
 
 **Latest Update (15 January 2026):** Added Chapter 10 on Generative Engine Optimization:
 
-- **New Chapter 10** - Generative Engine Optimization (~3,100 words)
+- **New Chapter 10** - Generative Engine Optimization (~13,076 words)
 - Bridges gap between commercial urgency (Chapter 9) and technical implementation (Chapters 11-13)
 - Establishes discovery as unified strategy for both search engines and AI agents
 - Business decision framework for when to emphasize discoverability vs protect content
-- Core manuscript: ~62,000 words (preface + 12 chapters + The End + Glossary)
+- Core manuscript: ~78,000 words (preface + 13 chapters + The End + Glossary)
 
 **Previous Update (12 January 2026):** Book published with live online appendices:
 
@@ -39,21 +39,21 @@ This book explores the technical, business, ethical, and human implications of t
 
 | Chapter | Title | Words | Status |
 | ------- | ----- | ----- | ------ |
-| Preface | Author's Journey | ~1,700 | ✅ Complete |
-| 1 | What You Will Learn | ~3,200 | ✅ Complete |
-| 2 | The Invisible Failure | ~4,500 | ✅ Complete |
-| 3 | The Architectural Conflict | ~4,150 | ✅ Complete |
-| 4 | The Business Reality | ~7,350 | ✅ Complete + ROI Framework |
-| 5 | The Content Creator's Dilemma | ~5,600 | ✅ Complete |
-| 6 | The Security Maze | ~4,000 | ✅ Complete |
-| 7 | The Legal Landscape | ~4,400 | ✅ Complete |
-| 8 | The Human Cost | ~3,650 | ✅ Complete |
-| 9 | The Platform Race | ~5,200 | ✅ Complete |
-| 10 | Generative Engine Optimization | ~3,100 | ✅ Complete |
-| 11 | Designing for Both | ~5,600 | ✅ Complete |
-| 12 | Technical Advice | ~11,000 | ✅ Complete + Enhanced |
-| 13 | What Agent Creators Must Build | ~9,000 | ✅ Complete |
-| The End | Additional Resources Available Online | ~400 | ✅ Complete |
+| Preface | Author's Journey | ~2,678 | ✅ Complete |
+| 1 | What You Will Learn | ~2,894 | ✅ Complete |
+| 2 | The Invisible Failure | ~5,760 | ✅ Complete |
+| 3 | The Architectural Conflict | ~4,192 | ✅ Complete |
+| 4 | The Business Reality | ~10,009 | ✅ Complete + ROI Framework |
+| 5 | The Content Creator's Dilemma | ~6,129 | ✅ Complete |
+| 6 | The Security Maze | ~4,385 | ✅ Complete |
+| 7 | The Legal Landscape | ~4,395 | ✅ Complete |
+| 8 | The Human Cost | ~4,153 | ✅ Complete |
+| 9 | The Platform Race | ~5,377 | ✅ Complete |
+| 10 | Generative Engine Optimization | ~13,076 | ✅ Complete |
+| 11 | Designing for Both | ~6,773 | ✅ Complete |
+| 12 | Technical Advice | ~11,468 | ✅ Complete + Enhanced |
+| 13 | What Agent Creators Must Build | ~9,440 | ✅ Complete |
+| The End | Additional Resources Available Online | ~570 | ✅ Complete |
 
 **Core Manuscript:** ~78,000 words (preface + 13 chapters + The End + Glossary)
 
@@ -76,7 +76,7 @@ These are LIVE online documents kept up to date as the field evolves. Appendix J
 | K | Common Page Patterns | ~12,517 | ✅ Published |
 | L | Proposed AI Metadata Patterns | ~2,956 | ✅ Published |
 
-**Total Web Appendices:** ~58,587 words (as of 17 January 2026)
+**Total Web Appendices:** ~63,238 words (as of 17 January 2026)
 
 ---
 
@@ -271,7 +271,7 @@ Discovery patterns that work for search engines and AI agents.
 
 **Key insight:** The patterns that help AI agents cite you correctly are the same patterns that improve traditional search ranking. Structured data, semantic HTML, and clear information architecture work across the entire discovery ecosystem - Google Search, ChatGPT, Claude, Perplexity. GEO and SEO converge.
 
-**Target length:** ~3,100 words (actual)
+**Actual length:** ~13,076 words (comprehensive technical chapter)
 
 ---
 
