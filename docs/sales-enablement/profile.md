@@ -18,7 +18,7 @@ I take on interim consultancy roles and advisory engagements where strategic exp
 - **Team Mentoring** - building strategic thinking capabilities that outlast any single project
 - **Audit** - where things went well, and where they could be improved
 
-I have established first AEM practices from scratch. Strategic decisions prevented platform crashes and saved over £500,000. Teams gain capabilities to maintain and evolve solutions independently.
+I have established first AEM practices from scratch. Strategic decisions prevented platform crashes and delivered significant cost savings. Teams gain capabilities to maintain and evolve solutions independently.
 
 ## Industry Perspective
 
