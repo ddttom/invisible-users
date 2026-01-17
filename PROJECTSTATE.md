@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-17 (Added content type disambiguation guidance to Chapter 10)
+**Last Updated:** 2026-01-17 (Added professional profile to sales enablement materials)
 
 ### Monorepo Structure
 
@@ -21,7 +21,15 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~62,000 words (core manuscript: preface + 13 chapters + The End + Glossary)
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 13 chapters complete (added NEW Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Added content type disambiguation guidance to Chapter 10 (2026-01-17):
+- **Latest Change:** Added professional profile to sales enablement materials (2026-01-17):
+  - **profile.md:** Created integrated professional statement combining agent-ready infrastructure expertise with AEM/EDS strategic advisory
+  - **Core Concepts:** Clarity infrastructure (explicit state, persistent feedback, complete information)
+  - **Book Alignment:** Convergence principle - what agents need is what everyone needs
+  - **Positioning:** Strategic advisor for Adobe EDS and agent readiness
+  - **Services:** Plan reviews, architecture strategy, AI integration, team mentoring, audits
+  - **Track Record:** Nissan-Renault (200+ sites), Ford, MediaMonks
+  - **Authority Signals:** Boye & Company CMS Experts Group, "The AEM Guy"
+- **Previous Change:** Added content type disambiguation guidance to Chapter 10 (2026-01-17):
   - **Chapter 10:** New "Missing Content Type Disambiguation" section in Common Implementation Mistakes
   - **Problem Addressed:** AI agents trained on entertainment scripts may confuse professional content with fictional dialogue
   - **Solution Provided:** Three complete JSON-LD examples (legal, medical, business analysis) with precise Schema.org types
@@ -144,10 +152,10 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Location:** `docs/sales-enablement/`
 - **Status:** Complete
 - **Materials:**
-  - Business and sales materials: PITCH.md, business-plan.md, executive-summary.md, PARTNER_KIT.md, ROI_CASE_STUDIES.md
+  - Business and sales materials: PITCH.md, business-plan.md, executive-summary.md, PARTNER_KIT.md, ROI_CASE_STUDIES.md, profile.md
   - Presentation materials (talk.md, talk-slides.js, talk1.md) moved to manuscript repository at `packages/manuscript/manuscript/talks/members-call/`
 - **Target Audience:** Business leaders (CTOs, product owners)
-- **Key Features:** Priority-based roadmap, real production examples, code samples with ROI implications
+- **Key Features:** Priority-based roadmap, real production examples, code samples with ROI implications, professional profile combining agent-ready infrastructure with strategic advisory
 
 ### Repository Structure
 
