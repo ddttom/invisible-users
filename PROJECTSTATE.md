@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-17 (Updated VAT treatment and international pricing documentation)
+**Last Updated:** 2026-01-17 (Added content type disambiguation guidance to Chapter 10)
 
 ### Monorepo Structure
 
@@ -21,7 +21,14 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~62,000 words (core manuscript: preface + 13 chapters + The End + Glossary)
 - **Appendices:** 12 appendices (~44,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 13 chapters complete (added NEW Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Updated VAT treatment and international pricing documentation (2026-01-17):
+- **Latest Change:** Added content type disambiguation guidance to Chapter 10 (2026-01-17):
+  - **Chapter 10:** New "Missing Content Type Disambiguation" section in Common Implementation Mistakes
+  - **Problem Addressed:** AI agents trained on entertainment scripts may confuse professional content with fictional dialogue
+  - **Solution Provided:** Three complete JSON-LD examples (legal, medical, business analysis) with precise Schema.org types
+  - **Schema.org Types:** Comprehensive list of 10 types for disambiguation (Legislation, ScholarlyArticle, MedicalScholarlyArticle, etc.)
+  - **Real Examples:** Legal analysis vs legal drama (Ally McBeal), medical analysis vs TV scripts (Grey's Anatomy)
+  - **Markdown Linting:** Fixed pre-existing issues (code block language, bold text used as headings)
+- **Previous Change:** Updated VAT treatment and international pricing documentation (2026-01-17):
   - **Chapter 10:** Added comprehensive VAT guidance (UK eBooks 20% VAT, printed books zero-rated)
   - **Chapter 10:** Multi-regional offer arrays with eligibleRegion property for international pricing
   - **Appendix D:** Complete pricing structure examples with format-specific data attributes
