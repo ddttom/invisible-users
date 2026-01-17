@@ -82,6 +82,24 @@ program
     'Generate executive summary report',
   )
   .option(
+    '--extract-patterns',
+    'Extract successful patterns from high-scoring pages (requires LLM metrics)',
+  )
+  .option(
+    '--force-scrape',
+    'Bypass robots.txt restrictions (use with caution - respect website policies)',
+  )
+  .option(
+    '--browser-pool-size <number>',
+    'Number of concurrent browser instances in pool (default: 3, 0 to disable)',
+    (value) => parseInt(value, 10),
+  )
+  .option(
+    '--url-concurrency <number>',
+    'Number of URLs to process concurrently (default: 3)',
+    (value) => parseInt(value, 10),
+  )
+  .option(
     '--thresholds <file>',
     'Path to custom thresholds configuration file (JSON)',
   )

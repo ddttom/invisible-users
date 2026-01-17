@@ -5,7 +5,11 @@ import { generateReports } from './utils/reports.js';
 import { setupShutdownHandler, updateCurrentResults } from './utils/shutdownHandler.js';
 import { executeNetworkOperation } from './utils/networkUtils.js';
 import { RESULTS_SCHEMA_VERSION } from './utils/schemaVersion.js';
-import { storeHistoricalResult } from './utils/historicalComparison.js';
+import { storeHistoricalResult, detectRegressions, loadBaseline } from './utils/historicalComparison.js';
+import { extractPatterns } from './utils/patternExtraction.js';
+import { fetchRobotsTxt } from './utils/robotsFetcher.js';
+import BrowserPool from './utils/browserPool.js';
+import { AdaptiveRateLimiter } from './utils/rateLimiter.js';
 import {
   cleanupDirectories,
   loadExistingResults,
@@ -54,6 +58,33 @@ export async function runTestsOnSitemap(context) {
   context.logger.info(`Starting process for sitemap or page: ${sitemapUrl}`);
   context.logger.info(`Results will be saved to: ${outputDir}`);
 
+  // Initialize browser pool for performance optimization
+  if (context.options.browserPoolSize > 0) {
+    try {
+      context.logger.info(`Initializing browser pool with ${context.options.browserPoolSize} instances...`);
+      context.browserPool = new BrowserPool(context, {
+        poolSize: context.options.browserPoolSize,
+        launchOptions: {
+          headless: true,
+          args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        },
+      });
+      await context.browserPool.initialize();
+      context.logger.info('✓ Browser pool initialized successfully');
+    } catch (error) {
+      context.logger.warn(`Browser pool initialization failed: ${error.message}`);
+      context.logger.warn('Falling back to direct browser launch mode');
+      context.browserPool = null;
+    }
+  }
+
+  // Initialize adaptive rate limiter for server-friendly crawling
+  if (context.options.rateLimiting?.enabled) {
+    context.logger.info('Initializing adaptive rate limiter...');
+    context.rateLimiter = new AdaptiveRateLimiter(context, context.options.rateLimiting);
+    context.logger.info('✓ Adaptive rate limiter initialized');
+  }
+
   // Handle cleanups
   await cleanupDirectories(context.options, context);
 
@@ -64,6 +95,20 @@ export async function runTestsOnSitemap(context) {
 
   try {
     if (!results) {
+      // Phase 0: Fetch robots.txt before any URL crawling
+      context.logger.info('Phase 0: Fetching robots.txt...');
+      try {
+        context.robotsTxtData = await fetchRobotsTxt(sitemapUrl, context);
+        if (context.robotsTxtData && context.robotsTxtData.exists) {
+          context.logger.info('✓ robots.txt fetched and parsed successfully');
+        } else {
+          context.logger.info('No robots.txt found - allowing all URLs by default');
+        }
+      } catch (error) {
+        context.logger.warn(`Error fetching robots.txt: ${error.message}`);
+        context.logger.info('Proceeding without robots.txt validation');
+        context.robotsTxtData = null;
+      }
       // Phase 1: Get URLs from sitemap or process single page
       context.logger.info('Phase 1: Getting sitemap URLs...');
       const urls = await executeNetworkOperation(
@@ -132,11 +177,76 @@ export async function runTestsOnSitemap(context) {
       context,
     );
 
+    // Pattern Extraction: Identify high-scoring pages and extract successful patterns
+    if (context.options.extractPatterns && results.urls && results.urls.length > 0) {
+      context.logger.info('Phase 3b: Extracting patterns from high-scoring pages...');
+      try {
+        const patternResults = await extractPatterns(results.urls, outputDir, context, {
+          minServedScore: 70,
+          minRenderedScore: 70,
+          maxExamples: 5,
+        });
+        if (patternResults.success) {
+          context.logger.info(`✓ Pattern extraction complete: analyzed ${patternResults.pagesAnalyzed} high-scoring pages`);
+        } else {
+          context.logger.info(patternResults.message);
+        }
+      } catch (error) {
+        context.logger.warn(`Pattern extraction failed: ${error.message}`);
+      }
+    }
+
+    // Regression Detection: Compare with baseline if enabled
+    if (context.options.enableHistory) {
+      context.logger.info('Phase 3c: Checking for regressions...');
+      try {
+        const regressionResults = await detectRegressions(results.urls, outputDir, context);
+        if (regressionResults.hasBaseline) {
+          const regressionCount = regressionResults.regressions.length;
+          if (regressionCount > 0) {
+            context.logger.warn(`⚠️  Found ${regressionCount} regressions (${regressionResults.hasCriticalRegressions ? 'CRITICAL' : 'warnings'})`);
+            context.logger.info('See regression_report.md for details');
+
+            // Exit with error code if critical regressions found (for CI/CD)
+            if (regressionResults.hasCriticalRegressions) {
+              context.logger.error('Critical regressions detected - review regression_report.md');
+            }
+          } else {
+            context.logger.info('✓ No regressions detected - all metrics maintained or improved');
+          }
+        } else {
+          context.logger.info('No baseline found - establishing baseline for future comparisons');
+        }
+      } catch (error) {
+        context.logger.warn(`Regression detection failed: ${error.message}`);
+      }
+    }
+
     logExecutionSummary(results, context);
 
     return results;
   } catch (error) {
     context.logger.error('Error in runTestsOnSitemap:', error);
     throw error;
+  } finally {
+    // Cleanup: Shutdown browser pool
+    if (context.browserPool) {
+      context.logger.info('Shutting down browser pool...');
+      try {
+        await context.browserPool.shutdown();
+        context.logger.info('✓ Browser pool shutdown complete');
+      } catch (error) {
+        context.logger.warn(`Error shutting down browser pool: ${error.message}`);
+      }
+    }
+
+    // Log rate limiter statistics
+    if (context.rateLimiter) {
+      const stats = context.rateLimiter.getStatistics();
+      context.logger.info('Rate limiter statistics:');
+      context.logger.info(`  Final concurrency: ${stats.concurrency}`);
+      context.logger.info(`  Rate limit responses: ${stats.rateLimitCount}`);
+      context.logger.info(`  Total requests: ${stats.totalRequests}`);
+    }
   }
 }
