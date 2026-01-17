@@ -309,7 +309,7 @@ export class LLMFeedback {
 
     // Visual dynamism warnings (screenshot comparison detected changes)
     if (dynamic.visualDynamism && dynamic.visualDynamism.detected) {
-      const uniqueStates = dynamic.visualDynamism.uniqueStates;
+      const { uniqueStates } = dynamic.visualDynamism;
       essentialIssues.push(
         `Visual content changes detected (${uniqueStates} unique states) - typewriter animations, tickers, or rotating content`,
       );

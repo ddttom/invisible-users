@@ -756,7 +756,9 @@ async function renderAndCacheData(url, context) {
       for (let i = 0; i < 3; i++) {
         // Wait random interval between 2-5 seconds
         const randomWait = 2000 + Math.floor(Math.random() * 3000);
-        await new Promise((resolve) => setTimeout(resolve, randomWait));
+        await new Promise((resolve) => {
+          setTimeout(resolve, randomWait);
+        });
 
         // Take screenshot to buffer
         const screenshot = await page.screenshot({ fullPage: false });
