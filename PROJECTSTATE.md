@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-17 (Fixed llms.txt detection with site-level file fetching)
+**Last Updated:** 2026-01-18 (Updated presentation materials with machine-focused messaging)
 
 ### Monorepo Structure
 
@@ -20,8 +20,17 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Status:** Publication-ready (in review, due Q1 2026)
 - **Word Count:** ~140,000 words total (core manuscript ~78,000 words + appendices ~58,600 words + supporting materials ~3,550 words)
 - **Appendices:** 12 appendices (~58,600 words) published separately online at <https://allabout.network/invisible-users/web/>
-- **Chapters:** 13 chapters complete (added NEW Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Fixed llms.txt detection with site-level file fetching (2026-01-17):
+- **Chapters:** 14 chapters complete (added NEW Chapter 0: What Are AI Agents? and Chapter 10: Generative Engine Optimization)
+- **Latest Change:** Updated presentation materials with machine-focused messaging (2026-01-18):
+  - **New Content:** Added chapter-00-what-are-ai-agents.md explaining four agent types (server-side, in-browser, browser automation, local) with technical capabilities and disability equivalents
+  - **Presentation Updates:** Updated talk-slides.js and talk.md with "Design for Both" messaging (32 slides total, was 31)
+  - **New Slides:** Added "What Are AI Agents? They're Machines", "The Ally McBeal Problem" (fiction vs professional content), "Mistake #2: Vague Button Text", "The Agent Journey Through Your Website" (6 stages)
+  - **Combined Slides:** Merged slides 4 & 5 into single highlight slide for £203k cruise example
+  - **Updated Messaging:** Changed from "Design for Machines First" to "Design for Both" throughout
+  - **Citation Problem:** Added first-mover advantage messaging ("sites that work early get preferred")
+  - **Documentation:** Created SLIDE-CONTENT-LIST.md documenting all 32 slides with complete content
+  - **Submodule commit:** 7db8b34 in manuscript repository
+- **Previous Change:** Fixed llms.txt detection with site-level file fetching (2026-01-17):
   - **Bug:** llms.txt file at <https://allabout.network/llms.txt> was not being detected despite existing
   - **Root Cause:** Detection logic only looked for HTML references (`<link>` or `<a>` tags), never fetched the actual file from site origin
   - **Fix:** Created `fetchSiteLevelFiles()` function in sitemap.js to fetch llms.txt, robots.txt, and ai.txt from site origin level
