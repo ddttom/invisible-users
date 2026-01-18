@@ -1,8 +1,11 @@
-Ultrathink Analysis: Web Audit Suite Refactoring Documentation Updates
-Executive Summary
+# Ultrathink Analysis: Web Audit Suite Refactoring Documentation Updates
+
+## Executive Summary
+
 The reconcile-efficiency-optimizations branch contains 14 commits that add ~3,780 lines of production-tested code implementing major performance and analysis features. All features are fully integrated into the production pipeline. Documentation needs comprehensive updates in both the main repository and the manuscript submodule.
 
-Refactoring Scope Analysis
+## Refactoring Scope Analysis
+
 Features Added (14 Commits)
 
 1. Performance Optimizations (3-5x speedup)
@@ -81,8 +84,8 @@ CLI Options (index.js - 4 new options):
 
 --extract-patterns: Extract patterns from high-scoring pages
 --force-scrape: Bypass robots.txt restrictions
---browser-pool-size <number>: Configure pool size (default: 3)
---url-concurrency <number>: Configure concurrency (default: 3)
+--browser-pool-size `<number>`: Configure pool size (default: 3)
+--url-concurrency `<number>`: Configure concurrency (default: 3)
 Configuration (defaults.js):
 
 browserPoolSize, urlConcurrency options
@@ -100,37 +103,37 @@ Claude Code Integration (.claude/ directory):
 4 custom skills
 5 git hooks
 Pre-approved permissions
-Documentation Updates Required
-Main Repository (invisible-users/)
 
-1. CLAUDE.md - Critical Updates Needed
+## Documentation Updates Required
+
+### Main Repository (invisible-users/)
+
+#### 1. CLAUDE.md - Critical Updates Needed
+
 Section: "Web Audit Suite Commands" (lines ~115-135)
 
 ADD new commands:
 
+```bash
 # Performance optimization (now enabled by default)
-
 npm run audit:start -- -s <url>
 
 # With pattern extraction
-
 npm run audit:start -- -s <url> --extract-patterns
 
 # With regression detection
-
 npm run audit:start -- -s <url> --enable-history
 
 # Custom browser pool and concurrency
-
 npm run audit:start -- -s <url> --browser-pool-size 5 --url-concurrency 5
 
 # Force scraping (bypass robots.txt)
-
 npm run audit:start -- -s <url> --force-scrape
 
 # Full featured analysis
-
 npm run audit:start -- -s <url> --enable-history --extract-patterns --generate-dashboard
+```
+
 Section: "Web Audit Suite Architecture" (lines ~421-451)
 
 UPDATE to reflect 4-phase pipeline:
@@ -216,7 +219,7 @@ The Web Audit Suite respects robots.txt by default:
 **Bypass (use with caution)**:
 
 ```bash
-npm run audit:start -- -s <url> --force-scrape
+npm run audit:start -- -s `<url>` --force-scrape
 
 
 ADD new subsection **"Advanced Analysis Features"**:

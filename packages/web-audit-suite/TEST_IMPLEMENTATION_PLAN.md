@@ -71,7 +71,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should assign Low effort to simple patterns (semantic HTML)
 - ✅ Should assign Moderate effort to complex patterns (Schema.org)
 
-#### Report Generation (4 tests)
+#### Pattern Library Report Generation (4 tests)
 
 - ✅ Should generate pattern_library.md with all sections
 - ✅ Should include up to 5 examples per pattern
@@ -102,7 +102,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 #### Historical Storage (5 tests)
 
 - ✅ Should create history/ directory if missing
-- ✅ Should store timestamped results-<timestamp>.json
+- ✅ Should store timestamped results-`<timestamp>`.json
 - ✅ Should establish baseline if no history exists
 - ✅ Should preserve existing baseline
 - ✅ Should handle file system errors gracefully
@@ -151,7 +151,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should return exit code 0 for warnings only
 - ✅ Should return exit code 0 for no regressions
 
-#### Report Generation (4 tests)
+#### Regression Report Generation (4 tests)
 
 - ✅ Should generate regression_report.md
 - ✅ Should include executive summary with counts
@@ -884,7 +884,7 @@ For each new test file:
 
 ### Potential Issues
 
-**Issue 1: Test Suite Too Slow**
+#### Issue 1: Test Suite Too Slow
 
 - **Risk:** 276 tests may take too long to run
 - **Mitigation:**
@@ -893,7 +893,7 @@ For each new test file:
   - Use parallel test execution
   - Mock expensive operations (Puppeteer)
 
-**Issue 2: Flaky Tests**
+#### Issue 2: Flaky Tests
 
 - **Risk:** Network/timing-dependent tests may be unreliable
 - **Mitigation:**
@@ -902,7 +902,7 @@ For each new test file:
   - Use deterministic fixtures
   - Avoid real browser operations in unit tests
 
-**Issue 3: Maintenance Burden**
+#### Issue 3: Maintenance Burden
 
 - **Risk:** More tests = more maintenance
 - **Mitigation:**
@@ -911,7 +911,7 @@ For each new test file:
   - Keep test data in fixtures
   - Document test intentions
 
-**Issue 4: Breaking Existing Tests**
+#### Issue 4: Breaking Existing Tests
 
 - **Risk:** New tests may reveal bugs in existing code
 - **Mitigation:**
