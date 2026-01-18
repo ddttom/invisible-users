@@ -9,6 +9,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - Directory Structure Refactoring (2026-01-18)
+
+**Manuscript Directory Rename:**
+
+Renamed manuscript directories to better reflect their content structure:
+
+- `packages/manuscript/manuscript/` → `packages/manuscript/the-bible-of-mx/` (comprehensive manuscript)
+- `packages/manuscript/slim/` → `packages/manuscript/dont-make-ai-think/` (slim version)
+
+**Comprehensive Path Updates (49 files):**
+
+- Updated `.gitmodules` submodule path and name
+- Updated `package.json` npm scripts (15+ script references)
+- Updated core documentation (CLAUDE.md, README.md, GIT-README.md, PROJECTSTATE.md)
+- Updated all build scripts in `scripts/` directory
+- Updated Claude Code configuration (11 files in `.claude/`)
+- Updated supporting documentation (`docs/` directory)
+- Updated configuration files (.dockerignore, .gitignore, .prettierignore, .vscode/settings.json, .markdownlintignore)
+- Updated llms.txt files
+- Updated additional files (LEARNINGS.md, ONBOARDING.md, CHANGELOG-FULL.md, sales enablement materials)
+
+**Verification:**
+
+- Git submodule status: ✓ healthy
+- npm run wordcount: ✓ (88,196 words)
+- npm run status: ✓ (lists all 13 chapters correctly)
+
+**Note:** Remote repository URL remains unchanged (`invisible-users-manuscript`). Only local directory paths were updated.
+
 ### Changed - Maintenance and Code Quality (2026-01-18)
 
 **Manuscript Submodule Updates:**
