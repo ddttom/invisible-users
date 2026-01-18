@@ -23,11 +23,28 @@ Also see `.claude/pwd-reminder.md` and "Git Directory Navigation" section below 
 
 This repository contains two integrated projects:
 
-### 1. The Invisible Users (Book Manuscript)
+### 1. The Invisible Users (Book Manuscripts)
 
-**"The Invisible Users: Designing the Web for AI Agents and Everyone Else"** - a practical guide examining how modern web design optimized for human users fails for AI agents, and how fixing this benefits everyone.
+This project produces multiple books from a single manuscript repository, each targeting different audiences:
 
-**Current status:** Chapters 1-13 complete (~78,000 words core manuscript), all illustrations complete, 12 appendices published online (~58,600 words)
+**"The Invisible Users: Designing the Web for AI Agents and Everyone Else"** (The Bible)
+
+- Full comprehensive guide examining how modern web design optimized for human users fails for AI agents, and how fixing this benefits everyone
+- 13 chapters covering business, legal, security, technical, and strategic perspectives
+- 12 appendices with implementation guides, code examples, and resources
+- ~78,000 words core manuscript + ~58,600 words appendices
+- Location: `packages/manuscript/the-bible-of-mx/manuscripts/bible/`
+
+**"Don't Make AI Think: Designing Web Interfaces for AI Agents"** (Slim Version)
+
+- Focused practical implementation guide for developers and designers
+- 10 chapters covering essential patterns and anti-patterns
+- Streamlined for quick reference and immediate application
+- Location: `packages/manuscript/the-bible-of-mx/manuscripts/dont-make-ai-think/`
+
+**Future books:** The manuscript structure supports creating additional derivative works targeting specific audiences (e.g., executive summaries, industry-specific guides, technical deep-dives).
+
+**Current status:** Both manuscripts complete and ready for publication (Due Q1 2026)
 
 ### Publication Status
 
@@ -99,16 +116,21 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   └── download-cover-images.js    # Downloads cover images for illustrations
 ├── packages/                 # Monorepo packages
 │   ├── manuscript/           # Book manuscript and materials
-│   │   ├── book-plan.md      # Master plan with chapter outlines and status
-│   │   ├── book-svg-style.md # SVG illustration style guide
-│   │   ├── manuscript/       # Complete manuscript content (git submodule)
-│   │   │   ├── todo.txt       # Project task list (USER REFERENCE ONLY - see below)
-│   │   │   ├── [chapters, appendices, illustrations in separate repository]
-│   │   │   ├── agent-friendly-starter-kit/ # Code examples (good/ vs bad/)
-│   │   │   ├── code-examples/    # Production-ready code implementations
-│   │   │   ├── web/              # Generated HTML appendices for web publishing
-│   │   │   └── blog/             # Blog and promotional materials (blog.md, blog.svg, AI-Native.blog)
-│   │   └── llms.txt          # Repository llms.txt file
+│   │   ├── book-svg-style.md # SVG illustration style guide (shared across all books)
+│   │   └── the-bible-of-mx/  # Manuscript submodule (git submodule)
+│   │       ├── manuscripts/        # All book manuscripts
+│   │       │   ├── bible/          # "The Invisible Users" (full book)
+│   │       │   │   ├── bible-plan.md      # Master plan with chapter outlines and status
+│   │       │   │   ├── [13 chapters, 12 appendices, metadata, illustrations, web/]
+│   │       │   └── dont-make-ai-think/    # "Don't Make AI Think" (slim version)
+│   │       │       ├── [10 chapters focused on practical implementation]
+│   │       ├── code/               # All code examples
+│   │       │   ├── agent-friendly-starter-kit/  # Code examples (good/ vs bad/)
+│   │       │   └── examples/       # Production-ready code implementations
+│   │       ├── marketing/          # All promotional content
+│   │       │   ├── blog/           # Blog and promotional materials
+│   │       │   └── talks/          # Presentation materials
+│   │       └── todo.txt            # Project task list (USER REFERENCE ONLY - see below)
 │   ├── web-audit-suite/      # Web analysis tool (implements book's patterns)
 │   ├── index.js              # Entry point, CLI parsing, logger setup
 │   ├── package.json          # Tool-specific dependencies
@@ -160,10 +182,12 @@ The `npm run illustrations:generate` command performs these steps:
 
 1. **Downloads cover images** (if missing): Profile.png, A4-Cover.png, Kindle-Cover.png
 2. **Checks for back-cover.png**: This file must be generated manually by:
-   - Opening [packages/manuscript/the-bible-of-mx/web/back-cover.html](packages/manuscript/the-bible-of-mx/web/back-cover.html) in a browser
+   - Opening [packages/manuscript/the-bible-of-mx/manuscripts/bible/web/back-cover.html](packages/manuscript/the-bible-of-mx/manuscripts/bible/web/back-cover.html) in a browser
    - Taking a full-page screenshot
-   - Saving as `back-cover.png` in `packages/manuscript/the-bible-of-mx/illustrations/`
-3. **Converts SVG to PNG**: All .svg files in illustrations/ are converted to .png using ImageMagick
+   - Saving as `back-cover.png` in `packages/manuscript/the-bible-of-mx/manuscripts/bible/illustrations/`
+3. **Converts SVG to PNG**: All .svg files in manuscripts/bible/illustrations/ are converted to .png using ImageMagick
+
+**Note:** Each book can have its own illustrations folder. The command currently targets The Bible's illustrations.
 
 ## Project Task List (todo.txt)
 
@@ -219,13 +243,13 @@ Some appendices use a dual-file structure where content is maintained separately
 
 **Appendix H (Example llms.txt):**
 
-- **`appendix-h-live-llms.txt`** - The actual llms.txt content (source of truth, 20 curated links)
-- **`appendix-h-live-llms.md`** - Markdown wrapper that displays the .txt content in a code block
+- **`manuscripts/bible/appendix-h-live-llms.txt`** - The actual llms.txt content (source of truth, 20 curated links)
+- **`manuscripts/bible/appendix-h-live-llms.md`** - Markdown wrapper that displays the .txt content in a code block
 
 **Appendix D (AI-Friendly HTML Guide):**
 
-- **`appendix-d-ai-friendly-html-guide.txt`** - The actual guide content (source of truth, ~3,000 lines)
-- **`appendix-d-ai-friendly-html-guide.md`** - Markdown wrapper with introduction and table of contents
+- **`manuscripts/bible/appendix-d-ai-friendly-html-guide.txt`** - The actual guide content (source of truth, ~3,000 lines)
+- **`manuscripts/bible/appendix-d-ai-friendly-html-guide.md`** - Markdown wrapper with introduction and table of contents
 
 **Why both files?**
 
@@ -253,11 +277,11 @@ The PDF generation command (`pdf:generate` in package.json) uses `appendix-*.md`
 
 ```bash
 # Step 1: Edit the .txt file (add content)
-Edit packages/manuscript/the-bible-of-mx/appendix-d-ai-friendly-html-guide.txt
+Edit packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-d-ai-friendly-html-guide.txt
 # Add new "Common Validation Pitfalls" section at line 2674
 
 # Step 2: Update the .md file (update TOC)
-Edit packages/manuscript/the-bible-of-mx/appendix-d-ai-friendly-html-guide.md
+Edit packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-d-ai-friendly-html-guide.md
 # Update Part 9 description from:
 #   "Testing and Validation - Automated Playwright tests, manual validation"
 # To:
@@ -268,11 +292,11 @@ Edit packages/manuscript/the-bible-of-mx/appendix-d-ai-friendly-html-guide.md
 
 ```bash
 # Step 1: Edit the .txt file (add links)
-Edit packages/manuscript/the-bible-of-mx/appendix-h-live-llms.txt
+Edit packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-h-live-llms.txt
 # Add new curated links to the 20-link collection
 
 # Step 2: Update the .md file (update count if changed)
-Edit packages/manuscript/the-bible-of-mx/appendix-h-live-llms.md
+Edit packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-h-live-llms.md
 # Update link count in introduction if changed from 20 to a different number
 ```
 
@@ -294,7 +318,7 @@ After updating both files, verify consistency:
 
 ```bash
 # Check that .md table of contents matches .txt structure
-grep "^## Part" packages/manuscript/the-bible-of-mx/appendix-d-ai-friendly-html-guide.txt
+grep "^## Part" packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-d-ai-friendly-html-guide.txt
 # Compare against .md table of contents (lines 14-24)
 ```
 
@@ -520,9 +544,11 @@ The Web Audit Suite implements the patterns from "The Invisible Users" book:
 
 Reference Documentation:
 
-- Book manuscript: `packages/manuscript/the-bible-of-mx/` directory
-- Implementation guidance: `packages/manuscript/the-bible-of-mx/chapter-12-technical-advice.md`
-- Quick reference: `packages/manuscript/the-bible-of-mx/appendix-ai-patterns-quick-reference.md`
+- Book manuscripts: `packages/manuscript/the-bible-of-mx/manuscripts/` directory
+- The Bible (full): `packages/manuscript/the-bible-of-mx/manuscripts/bible/`
+- Don't Make AI Think (slim): `packages/manuscript/the-bible-of-mx/manuscripts/dont-make-ai-think/`
+- Implementation guidance: `packages/manuscript/the-bible-of-mx/manuscripts/bible/chapter-12-technical-advice.md`
+- Quick reference: `packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-e-ai-patterns-quick-reference.md`
 
 ### Two HTML States (Critical Distinction)
 
@@ -641,14 +667,24 @@ Use globally applicable terms, not region-specific:
 
 ### Book Manuscript Tasks
 
-When asked to review or edit a chapter:
+**When working with multiple books from the same manuscript repository:**
 
-1. Read the chapter file completely
-2. Check `packages/manuscript/book-plan.md` for chapter requirements and status
-3. Verify consistency with established themes
-4. Ensure British English and style guidelines
-5. Confirm sequential flow - don't reference future chapters
-6. Check that technical examples use simple JavaScript with minimal dependencies
+The repository contains multiple books targeting different audiences. Be aware of which book you're editing:
+
+- **The Bible** (`manuscripts/bible/`) - Full comprehensive guide with all chapters and appendices
+- **Don't Make AI Think** (`manuscripts/dont-make-ai-think/`) - Slim practical guide with focused content
+
+**When asked to review or edit a chapter:**
+
+1. Identify which book the chapter belongs to
+2. Read the chapter file completely
+3. Check the appropriate plan file:
+   - The Bible: `packages/manuscript/the-bible-of-mx/manuscripts/bible/bible-plan.md`
+   - Don't Make AI Think: `packages/manuscript/the-bible-of-mx/manuscripts/dont-make-ai-think/CHAPTERS-GUIDE.md`
+4. Verify consistency with established themes for that book
+5. Ensure British English and style guidelines
+6. Confirm sequential flow - don't reference future chapters
+7. Check that technical examples use simple JavaScript with minimal dependencies
 
 ### Web Audit Suite Development
 
@@ -928,9 +964,9 @@ When creating web pages (appendices, marketing materials, documentation):
 4. **Explicit locale** - Use `<html lang="en-GB" data-locale="en-GB">`
 5. **Contact information** - Wrap URLs in `<address>` element
 
-**Complete reference:** See [appendix-d-ai-friendly-html-guide.txt](packages/manuscript/the-bible-of-mx/appendix-d-ai-friendly-html-guide.txt) for comprehensive patterns.
+**Complete reference:** See [appendix-d-ai-friendly-html-guide.txt](packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-d-ai-friendly-html-guide.txt) for comprehensive patterns.
 
-**Real-world example:** The [back-cover.html](packages/manuscript/the-bible-of-mx/web/back-cover.html) demonstrates all patterns in production use.
+**Real-world example:** The [back-cover.html](packages/manuscript/the-bible-of-mx/manuscripts/bible/web/back-cover.html) demonstrates all patterns in production use.
 
 ### Pre-Deploy HTML Checklist
 
@@ -981,9 +1017,9 @@ When removing a file that's referenced in documentation:
 
 **Common reference locations to check:**
 
-- Repository structure diagrams: `CLAUDE.md`, `README.md`, `packages/manuscript/book-plan.md`, `llms.txt`
-- Supporting materials tables: `packages/manuscript/book-plan.md`
-- Cross-references: `packages/manuscript/the-bible-of-mx/blog/blog.md`, `resource-links.md`, `PROJECTSTATE.md`
+- Repository structure diagrams: `CLAUDE.md`, `README.md`, `llms.txt`
+- Book plan files: `packages/manuscript/the-bible-of-mx/manuscripts/bible/bible-plan.md`, `packages/manuscript/the-bible-of-mx/manuscripts/dont-make-ai-think/CHAPTERS-GUIDE.md`
+- Cross-references: `packages/manuscript/the-bible-of-mx/marketing/blog/blog.md`, `PROJECTSTATE.md`
 
 ## Cross-Document Update Patterns
 
@@ -1037,7 +1073,7 @@ Four custom skills are available via the `/` command syntax:
    - Sequences entries chronologically
    - Creates properly formatted blog entries (narrative style)
    - Creates structured appendix entries (12-section technical format)
-   - Updates both `packages/manuscript/the-bible-of-mx/blog/book-updates.md` and `appendix-j-industry-developments.md`
+   - Updates both `packages/manuscript/the-bible-of-mx/marketing/blog/book-updates.md` and `manuscripts/bible/appendix-j-industry-developments.md`
    - Includes qualifiers for unverified company-reported metrics
    - Only adds news that validates or challenges specific book chapters
    - **Usage:** `/news [paste news content or URL]`
@@ -1306,10 +1342,21 @@ git commit -m "Update manuscript submodule to latest version"
 
 ### Book Documentation
 
-- `packages/manuscript/book-plan.md` - Master plan with chapter outlines and status
-- `packages/manuscript/the-bible-of-mx/Glossary.md` - Comprehensive technical glossary
-- `packages/manuscript/the-bible-of-mx/appendix-implementation-roadmap.md` - Priority-based implementation guide
-- `packages/manuscript/the-bible-of-mx/appendix-resource-directory.md` - Curated resources and references
+**The Bible (Full Book):**
+
+- `packages/manuscript/the-bible-of-mx/manuscripts/bible/bible-plan.md` - Master plan with chapter outlines and status
+- `packages/manuscript/the-bible-of-mx/manuscripts/bible/Glossary.md` - Comprehensive technical glossary
+- `packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-f-implementation-roadmap.md` - Priority-based implementation guide
+- `packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-g-resource-directory.md` - Curated resources and references
+
+**Don't Make AI Think (Slim Version):**
+
+- `packages/manuscript/the-bible-of-mx/manuscripts/dont-make-ai-think/README.md` - Book overview and structure
+- `packages/manuscript/the-bible-of-mx/manuscripts/dont-make-ai-think/CHAPTERS-GUIDE.md` - Chapter organization guide
+
+**Shared Resources:**
+
+- `packages/manuscript/book-svg-style.md` - SVG illustration style guide (applies to all books)
 
 ### Web Audit Suite Documentation
 
