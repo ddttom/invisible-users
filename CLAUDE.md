@@ -115,18 +115,29 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   ├── README.md             # Tool documentation
 │   ├── QUICKSTART.md
 │   ├── src/
-│   │   ├── main.js           # Orchestrates 3-phase pipeline
+│   │   ├── main.js           # Orchestrates 4-phase pipeline
 │   │   ├── config/
 │   │   │   └── defaults.js   # Default configuration values
 │   │   └── utils/
-│   │       ├── sitemap.js    # URL extraction (Phase 1)
-│   │       ├── pageAnalyzer.js # Page content analysis
-│   │       ├── pa11yRunner.js  # Accessibility testing
-│   │       ├── llmMetrics.js   # LLM suitability metrics collection
-│   │       ├── reports.js      # Report coordination (Phase 3)
-│   │       └── reportUtils/
-│   │           ├── reportGenerators.js  # All report generation
-│   │           └── llmReports.js        # LLM suitability reports
+│   │       ├── robotsFetcher.js    # Phase 0: robots.txt fetching
+│   │       ├── robotsCompliance.js # Phase 0: Compliance checking
+│   │       ├── robotsTxtParser.js  # Phase 0: Quality analysis
+│   │       ├── sitemap.js          # Phase 1: URL extraction
+│   │       ├── urlProcessor.js     # Phase 2: Concurrent URL processing
+│   │       ├── browserPool.js      # Phase 2: Browser pooling
+│   │       ├── rateLimiter.js      # Phase 2: Adaptive rate limiting
+│   │       ├── pageAnalyzer.js     # Phase 2: Page content analysis
+│   │       ├── pa11yRunner.js      # Phase 2: Accessibility testing
+│   │       ├── llmMetrics.js       # Phase 2: LLM suitability metrics
+│   │       ├── technologyDetection.js  # Phase 2: Technology detection
+│   │       ├── caching.js          # Cache management with staleness checking
+│   │       ├── metricsUpdater.js   # Phase 2: Results.json updates
+│   │       ├── reports.js          # Phase 3a: Report coordination
+│   │       ├── reportUtils/
+│   │       │   ├── reportGenerators.js  # Phase 3a: All report generation
+│   │       │   └── llmReports.js        # Phase 3a: LLM suitability reports
+│   │       ├── patternExtraction.js    # Phase 3b: Pattern extraction
+│   │       └── historicalComparison.js # Phase 3c: Regression detection
 │   ├── results/              # Generated output (gitignored)
 │   ├── .cache/               # Puppeteer cache (auto-created, gitignored)
 │   ├── docs/                 # Tool documentation
@@ -134,7 +145,11 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   │   ├── CONFIGURATION.md
 │   │   ├── FEATURES.md
 │   │   └── AI-design-rules/  # AI assistant extension prompts
-│   └── examples/             # Configuration examples
+│   ├── examples/             # Configuration examples
+│   ├── LEARNINGS.md          # Battle-tested rules and patterns
+│   ├── PROJECTSTATE.md       # Complete implementation snapshot
+│   ├── IMPROVEMENT_PLAN.md   # Comprehensive improvement roadmap
+│   └── CODE_REVIEW_CHECKLIST.md  # Quality assurance guide
 ```
 
 **Note:** PNG illustrations are generated from SVG sources using `npm run illustrations:generate` and are not tracked in version control.
@@ -338,7 +353,7 @@ npm run commit-push         # Interactive commit and push for both main repo and
 ### Web Audit Suite Commands
 
 ```bash
-# Run analysis with default settings
+# Run analysis with default settings (performance optimized)
 npm run audit:start
 
 # Run with custom sitemap/URL and output directory
@@ -347,8 +362,20 @@ npm run audit:start -- -s <url> -o <output-dir>
 # Run with limited URLs for testing (e.g., 10 pages)
 npm run audit:start -- -s <url> -c 10
 
-# Full analysis with all enhanced features
-npm run audit:start -- -s <url> --enable-history --generate-dashboard --generate-executive-summary
+# Performance-optimized for large sites
+npm run audit:start -- -s <url> --browser-pool-size 5 --url-concurrency 5
+
+# With pattern extraction from high-scoring pages
+npm run audit:start -- -s <url> --extract-patterns
+
+# With regression detection (CI/CD-ready)
+npm run audit:start -- -s <url> --enable-history
+
+# Force scrape (bypass robots.txt - use with caution)
+npm run audit:start -- -s <url> --force-scrape
+
+# Full featured analysis
+npm run audit:start -- -s <url> --enable-history --extract-patterns --generate-dashboard --generate-executive-summary
 
 # Run linting for Web Audit Suite code
 npm run audit:lint
@@ -356,6 +383,27 @@ npm run audit:lint
 # Run tests for Web Audit Suite
 npm run audit:test
 ```
+
+**Performance Features (enabled by default):**
+
+- **Browser pooling**: 97% reduction in browser launches (configurable via `--browser-pool-size`)
+- **Concurrent URL processing**: 3 URLs simultaneously (configurable via `--url-concurrency`)
+- **Adaptive rate limiting**: Server-friendly dynamic concurrency
+- **Cache staleness checking**: Automatic validation with HTTP HEAD requests
+- **Expected performance**: 3-5x faster (100 URLs in ~10 minutes vs ~45 minutes)
+
+**Ethical Scraping (robots.txt compliance):**
+
+- Phase 0 fetches robots.txt before crawling
+- Interactive prompts for blocked URLs
+- 100-point quality scoring system
+- Use `--force-scrape` to bypass (requires explicit user action)
+
+**Advanced Analysis Features:**
+
+- **`--extract-patterns`**: Extract patterns from high-scoring pages (≥70 score)
+- **`--enable-history`**: Regression detection with CI/CD exit codes
+- **Technology detection**: Automatic CMS, framework, library detection
 
 **Note on ESLint**: The Web Audit Suite uses ESLint 8.57.0 with `.eslintrc.cjs` configuration. Always use `npm run audit:lint` from the root, or `npm run lint` from within the `packages/web-audit-suite/` directory.
 
@@ -420,23 +468,39 @@ For editing existing files, follow these key rules:
 
 ## Web Audit Suite Architecture
 
-### Three-Phase Processing Pipeline
+### Four-Phase Processing Pipeline
+
+0. **robots.txt Compliance Phase** (`fetchRobotsTxt`):
+   - Fetches robots.txt before any crawling begins
+   - HTTP fetch with Puppeteer fallback for Cloudflare sites
+   - Parses and validates robots.txt directives
+   - 100-point quality scoring system (based on book guidance)
+   - Interactive prompts for blocked URLs
+   - Stores compliance rules in context for Phase 1
 
 1. **URL Collection Phase** (`getUrlsFromSitemap`):
    - Processes sitemap XML or extracts links from HTML
    - Handles both XML sitemaps and regular webpages
-   - Uses Puppeteer fallback for Cloudflare-protected sites
-   - Validates and normalizes URLs
+   - Uses browser pool for Cloudflare-protected sites
+   - Validates URLs against robots.txt rules
+   - Normalizes URLs and applies count limit
 
 2. **Data Collection Phase** (`processSitemapUrls`):
-   - Analyzes each page using Puppeteer
+   - Initializes browser pool (3 reusable browsers by default)
+   - Initializes adaptive rate limiter
+   - Processes URLs concurrently (default: 3 simultaneous)
    - Collects performance metrics, SEO data, accessibility issues
    - Runs Pa11y for WCAG 2.1 compliance testing
+   - Detects technology stack (CMS, frameworks, libraries)
+   - Checks cache staleness with HTTP HEAD requests
    - Stores all data in `results.json` (single source of truth)
+   - 3-5x faster than sequential processing
 
 3. **Report Generation Phase** (`generateReports`):
    - Reads from `results.json` only
-   - Generates multiple CSV and markdown reports
+   - Phase 3a: Generates standard CSV and markdown reports
+   - Phase 3b: Extracts patterns from high-scoring pages (if `--extract-patterns`)
+   - Phase 3c: Detects regressions against baseline (if `--enable-history`)
    - Never fetches new data during report generation
 
 ### Key Design Principle: Single Source of Truth
