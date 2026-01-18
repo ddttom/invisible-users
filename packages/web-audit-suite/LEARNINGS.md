@@ -67,3 +67,5 @@ Examples of errors made:
 - Documented `pa11y[]` with 8 fields when issues have 14 fields
 
 This prevents incorrect documentation that causes confusion when developers try to use the data structures.
+
+**Nock cannot intercept Puppeteer's network requests** (2026-01-18): Tried using Nock to mock HTTP responses for Puppeteer-based tests, but tests were hitting real URLs instead of mocked responses. Discovered Nock only intercepts Node.js HTTP stack (axios, http, https modules) but NOT Chrome's internal network stack used by Puppeteer. When Puppeteer navigates with `page.goto()`, it bypasses Node.js entirely and uses Chrome's networking, making Nock's HTTP mocking ineffective. CRITICAL RULE: For Puppeteer tests, either use `page.setContent()` to directly inject HTML, run a local test server, or accept that tests will hit real URLs. Never assume Nock will intercept Puppeteer requests - it can't.
