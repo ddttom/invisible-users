@@ -527,7 +527,7 @@ export class LLMFeedback {
 
     if (pricing.pricingWithSchema > 0) {
       recommendations.push(
-        `Good: Pricing tables have Schema.org Product markup`,
+        'Good: Pricing tables have Schema.org Product markup',
       );
     }
   }

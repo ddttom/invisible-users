@@ -207,7 +207,7 @@ describe('LLM Metrics Utils', () => {
       expect(metrics.headingHierarchy.metrics.hasPerfectHierarchy).to.be.false;
 
       const feedback = generateFeedback(metrics);
-      expect(feedback.essentialIssues.some(issue => issue.includes('heading level jump'))).to.be.true;
+      expect(feedback.essentialIssues.some((issue) => issue.includes('heading level jump'))).to.be.true;
     });
 
     it('should detect multiple h1 headings', () => {
@@ -224,7 +224,7 @@ describe('LLM Metrics Utils', () => {
       expect(metrics.headingHierarchy.metrics.hasPerfectHierarchy).to.be.false;
 
       const feedback = generateFeedback(metrics);
-      expect(feedback.essentialIssues.some(issue => issue.includes('multiple <h1>'))).to.be.true;
+      expect(feedback.essentialIssues.some((issue) => issue.includes('multiple <h1>'))).to.be.true;
     });
   });
 
@@ -262,7 +262,7 @@ describe('LLM Metrics Utils', () => {
       expect(metrics.prerendering.metrics.hasEmptySPARoot).to.be.true;
 
       const feedback = generateFeedback(metrics);
-      expect(feedback.essentialIssues.some(issue => issue.includes('root element is empty'))).to.be.true;
+      expect(feedback.essentialIssues.some((issue) => issue.includes('root element is empty'))).to.be.true;
     });
 
     it('should detect Nuxt.js', () => {
@@ -316,7 +316,7 @@ describe('LLM Metrics Utils', () => {
       expect(metrics.pdfContent.metrics.hasPDFOnly).to.be.true;
 
       const feedback = generateFeedback(metrics);
-      expect(feedback.essentialIssues.some(issue => issue.includes('PDF link(s) without HTML alternatives'))).to.be.true;
+      expect(feedback.essentialIssues.some((issue) => issue.includes('PDF link(s) without HTML alternatives'))).to.be.true;
     });
   });
 
@@ -354,7 +354,7 @@ describe('LLM Metrics Utils', () => {
       expect(metrics.ssrFrameworks.metrics.ssrWithoutContent).to.be.true;
 
       const feedback = generateFeedback(metrics);
-      expect(feedback.essentialIssues.some(issue => issue.includes('but <main> element is empty'))).to.be.true;
+      expect(feedback.essentialIssues.some((issue) => issue.includes('but <main> element is empty'))).to.be.true;
     });
 
     it('should detect Next.js by script src', () => {

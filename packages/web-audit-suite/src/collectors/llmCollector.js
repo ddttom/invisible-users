@@ -949,7 +949,7 @@ export class LLMCollector {
     let multipleH1 = false;
 
     headings.each((_, el) => {
-      const level = parseInt($(el).prop('tagName').substring(1));
+      const level = parseInt($(el).prop('tagName').substring(1), 10);
       levels.push(level);
       if (level === 1) {
         if (hasH1) multipleH1 = true;
@@ -1175,7 +1175,7 @@ export class LLMCollector {
       }
     });
 
-    const hasProductSchema = schemas.some(s => s['@type'] === 'Product' && s.offers);
+    const hasProductSchema = schemas.some((s) => s['@type'] === 'Product' && s.offers);
 
     if (pricingCount > 0) {
       if (hasProductSchema) {
@@ -1212,7 +1212,7 @@ export class LLMCollector {
       }
     });
 
-    const productSchemas = schemas.filter(s => s['@type'] === 'Product');
+    const productSchemas = schemas.filter((s) => s['@type'] === 'Product');
     let hasVariants = false;
     let variantCount = 0;
 
@@ -1284,8 +1284,6 @@ export class LLMCollector {
       const $table = $(table);
       const hasTheadOrTbody = $table.find('thead, tbody').length > 0;
       const hasTh = $table.find('th').length > 0;
-      const hasCaption = $table.find('caption').length > 0;
-      const hasScope = $table.find('[scope]').length > 0;
 
       if (!hasTheadOrTbody && !hasTh) {
         layoutTables++;
@@ -1357,7 +1355,7 @@ export class LLMCollector {
     const definitionLists = $('dl');
     const dlCount = definitionLists.length;
 
-    const hasProductSchema = $('script[type="application/ld+json"]').toArray().some(el => {
+    const hasProductSchema = $('script[type="application/ld+json"]').toArray().some((el) => {
       try {
         const schema = JSON.parse($(el).html());
         return schema['@type'] === 'Product';
@@ -1446,7 +1444,7 @@ export class LLMCollector {
       }
     });
 
-    const articleSchemas = schemas.filter(s => s['@type'] === 'Article');
+    const articleSchemas = schemas.filter((s) => s['@type'] === 'Article');
     let hasMultipleAuthors = false;
     let authorCount = 0;
 
