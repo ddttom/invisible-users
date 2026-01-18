@@ -118,140 +118,138 @@ export function parseRobotsTxt(content) {
 
 /**
  * Analyze robots.txt quality for AI agent compatibility
- * @param {Object} parsed - Parsed robots.txt structure
- * @returns {Object} Quality analysis results
+ * @param {string} content - Raw robots.txt content
+ * @returns {Object} Quality analysis with score breakdown
  */
-export function analyzeRobotsTxtQuality(parsed) {
-  const analysis = {
-    score: 0,
-    maxScore: 100,
-    issues: [],
-    recommendations: [],
-    details: {
-      hasAIUserAgents: false,
-      aiUserAgentsFound: [],
+export function analyzeRobotsTxtQuality(content) {
+  const parsed = parseRobotsTxt(content);
+
+  if (!parsed.valid) {
+    return {
+      score: 0,
+      level: 'Poor',
+      breakdown: {
+        aiUserAgents: 0,
+        sitemap: 0,
+        pathProtection: 0,
+        llmsTxtReference: 0,
+        comments: 0
+      },
+      aiUserAgentCount: 0,
+      protectedPathCount: 0,
       hasSitemap: false,
-      sitemapCount: 0,
-      hasSensitivePathProtection: false,
-      protectedPaths: [],
-      hasLLMsTxtReference: false,
-      hasComments: false,
-      totalRules: 0,
-      structureQuality: 'Unknown',
-    },
+      hasLlmsTxtReference: false,
+      commentCount: 0,
+      recommendations: ['Create a valid robots.txt file']
+    };
+  }
+
+  const breakdown = {
+    aiUserAgents: 0,
+    sitemap: 0,
+    pathProtection: 0,
+    llmsTxtReference: 0,
+    comments: 0
   };
 
-  // If not valid, return early
-  if (!parsed.valid) {
-    analysis.issues.push('robots.txt file is missing or invalid');
-    analysis.recommendations.push('Create a valid robots.txt file at the site root');
-    return analysis;
-  }
+  // 1. AI User Agents Scoring (30 points max)
+  const aiAgentsFound = parsed.userAgents.filter(ua =>
+    AI_USER_AGENTS.some(aiAgent => ua.toLowerCase().includes(aiAgent.toLowerCase()))
+  );
+  const aiUserAgentCount = aiAgentsFound.length;
 
-  let score = 0;
-
-  // 1. Check for AI-specific user agents (30 points)
-  const aiAgentsFound = parsed.userAgents.filter((ua) => AI_USER_AGENTS.some((aiAgent) => ua.toLowerCase().includes(aiAgent.toLowerCase())));
-
-  analysis.details.aiUserAgentsFound = aiAgentsFound;
-  analysis.details.hasAIUserAgents = aiAgentsFound.length > 0;
-
-  if (aiAgentsFound.length >= 3) {
-    score += 30;
-    analysis.details.structureQuality = 'Excellent';
-  } else if (aiAgentsFound.length >= 1) {
-    score += 20;
-    analysis.details.structureQuality = 'Good';
-    analysis.recommendations.push(`Add more AI user-agent declarations (found ${aiAgentsFound.length}, recommend 3+)`);
+  if (aiUserAgentCount >= 3) {
+    breakdown.aiUserAgents = 30;
+  } else if (aiUserAgentCount >= 1) {
+    breakdown.aiUserAgents = 15;
   } else {
-    score += 5;
-    analysis.details.structureQuality = 'Basic';
-    analysis.issues.push('No AI-specific user agents found (e.g., GPTBot, ClaudeBot)');
-    analysis.recommendations.push('Add specific user-agent declarations for AI crawlers');
+    breakdown.aiUserAgents = 0;
   }
 
-  // 2. Check for sitemap references (20 points)
-  analysis.details.hasSitemap = parsed.sitemaps.length > 0;
-  analysis.details.sitemapCount = parsed.sitemaps.length;
+  // 2. Sitemap Declaration Scoring (20 points)
+  const hasSitemap = parsed.sitemaps.length > 0;
+  breakdown.sitemap = hasSitemap ? 20 : 0;
 
-  if (parsed.sitemaps.length > 0) {
-    score += 20;
+  // 3. Sensitive Path Protection Scoring (25 points max)
+  const protectedPaths = parsed.rules
+    .filter(rule => rule.directive === 'disallow')
+    .filter(rule => SENSITIVE_PATHS.some(sensitive =>
+      rule.path.toLowerCase().startsWith(sensitive.toLowerCase())
+    ))
+    .map(rule => rule.path);
+
+  // Remove duplicates
+  const uniqueProtectedPaths = [...new Set(protectedPaths)];
+  const protectedPathCount = uniqueProtectedPaths.length;
+
+  if (protectedPathCount >= 3) {
+    breakdown.pathProtection = 25;
+  } else if (protectedPathCount >= 1) {
+    breakdown.pathProtection = 15;
   } else {
-    analysis.issues.push('No sitemap reference found');
-    analysis.recommendations.push('Add "Sitemap: <URL>" declaration to help AI agents discover content');
+    breakdown.pathProtection = 0;
   }
 
-  // 3. Check for sensitive path protection (25 points)
-  const protectedPaths = [];
+  // 4. llms.txt Reference Scoring (15 points)
+  const hasLlmsTxtReference = parsed.comments.some(comment =>
+    comment.toLowerCase().includes('llms.txt') || comment.toLowerCase().includes('llms-txt')
+  );
+  breakdown.llmsTxtReference = hasLlmsTxtReference ? 15 : 0;
 
-  for (const rule of parsed.rules) {
-    if (rule.directive === 'disallow') {
-      const matchesSensitive = SENSITIVE_PATHS.some((sensitive) => rule.path.toLowerCase().startsWith(sensitive.toLowerCase()));
-      if (matchesSensitive && !protectedPaths.includes(rule.path)) {
-        protectedPaths.push(rule.path);
-      }
-    }
-  }
-
-  analysis.details.protectedPaths = protectedPaths;
-  analysis.details.hasSensitivePathProtection = protectedPaths.length > 0;
-
-  if (protectedPaths.length >= 3) {
-    score += 25;
-  } else if (protectedPaths.length >= 1) {
-    score += 15;
-    analysis.recommendations.push('Consider protecting more sensitive paths (admin, account, cart, checkout)');
+  // 5. Helpful Comments Scoring (10 points max)
+  const commentCount = parsed.comments.length;
+  if (commentCount >= 3) {
+    breakdown.comments = 10;
+  } else if (commentCount >= 1) {
+    breakdown.comments = 5;
   } else {
-    analysis.issues.push('No sensitive paths are protected (admin, account, cart, checkout)');
-    analysis.recommendations.push('Add Disallow rules for sensitive areas to prevent AI access');
+    breakdown.comments = 0;
   }
 
-  // 4. Check for llms.txt references in comments (15 points)
-  const hasLLMsReference = parsed.comments.some((comment) => comment.toLowerCase().includes('llms.txt') || comment.toLowerCase().includes('llms-txt'));
+  // Calculate total score
+  const score = Object.values(breakdown).reduce((sum, val) => sum + val, 0);
 
-  analysis.details.hasLLMsTxtReference = hasLLMsReference;
-
-  if (hasLLMsReference) {
-    score += 15;
+  // Determine quality level
+  let level;
+  if (score >= 80) {
+    level = 'Excellent';
+  } else if (score >= 60) {
+    level = 'Good';
+  } else if (score >= 40) {
+    level = 'Fair';
   } else {
-    analysis.recommendations.push('Add comment referencing llms.txt for comprehensive AI guidance');
+    level = 'Poor';
   }
 
-  // 5. Check for helpful comments and documentation (10 points)
-  analysis.details.hasComments = parsed.comments.length > 0;
-
-  if (parsed.comments.length >= 3) {
-    score += 10;
-  } else if (parsed.comments.length >= 1) {
-    score += 5;
-  } else {
-    analysis.recommendations.push('Add comments to explain AI access policies');
+  // Generate recommendations
+  const recommendations = [];
+  if (score < 40) {
+    if (!hasSitemap) recommendations.push('Add sitemap declaration');
+    if (aiUserAgentCount === 0) recommendations.push('Add AI-specific user agents');
+  } else if (score >= 40 && score < 60) {
+    if (protectedPathCount < 3) recommendations.push('Add protected paths');
   }
 
-  // 6. Overall structure and completeness (bonus points if everything present)
-  analysis.details.totalRules = parsed.rules.length;
+  return {
+    score,
+    level,
+    breakdown,
+    aiUserAgentCount,
+    protectedPathCount,
+    hasSitemap,
+    hasLlmsTxtReference,
+    commentCount,
+    recommendations
+  };
+}
 
-  if (analysis.details.hasAIUserAgents
-      && analysis.details.hasSitemap
-      && analysis.details.hasSensitivePathProtection
-      && analysis.details.hasLLMsTxtReference) {
-    score += 10; // Bonus for completeness
-  }
-
-  analysis.score = Math.min(score, analysis.maxScore);
-
-  // Add overall assessment
-  if (analysis.score >= 80) {
-    analysis.quality = 'Excellent';
-  } else if (analysis.score >= 60) {
-    analysis.quality = 'Good';
-  } else if (analysis.score >= 40) {
-    analysis.quality = 'Fair';
-  } else {
-    analysis.quality = 'Poor';
-  }
-
-  return analysis;
+/**
+ * Calculate robots.txt quality score
+ * @param {Object} analysis - Analysis object from analyzeRobotsTxtQuality
+ * @returns {number} Score (0-100)
+ */
+export function calculateRobotsQualityScore(analysis) {
+  return analysis.score;
 }
 
 /**
@@ -263,41 +261,44 @@ export function analyzeRobotsTxtQuality(parsed) {
  */
 export async function processRobotsTxt(robotsTxtUrl, content = null, context = null) {
   try {
-    // If content not provided, it should be fetched by the caller
     if (!content) {
       throw new Error('robots.txt content must be provided');
     }
 
-    const parsed = parseRobotsTxt(content);
-    const analysis = analyzeRobotsTxtQuality(parsed);
+    const analysis = analyzeRobotsTxtQuality(content);
 
-    if (context) {
-      context.logger.debug(`robots.txt quality score: ${analysis.score}/${analysis.maxScore} (${analysis.quality})`);
+    if (context?.logger) {
+      context.logger.debug(`robots.txt quality score: ${analysis.score}/100 (${analysis.level})`);
     }
 
     return {
+      success: true,
       url: robotsTxtUrl,
       exists: true,
       content,
-      parsed,
       analysis,
     };
   } catch (error) {
-    if (context) {
+    if (context?.logger) {
       context.logger.warn(`Error processing robots.txt: ${error.message}`);
     }
 
     return {
+      success: false,
       url: robotsTxtUrl,
       exists: false,
       error: error.message,
       analysis: {
         score: 0,
-        maxScore: 100,
-        quality: 'Missing',
-        issues: ['robots.txt file not found or inaccessible'],
-        recommendations: ['Create a robots.txt file at the site root'],
-        details: {},
+        level: 'Poor',
+        breakdown: {
+          aiUserAgents: 0,
+          sitemap: 0,
+          pathProtection: 0,
+          llmsTxtReference: 0,
+          comments: 0
+        },
+        recommendations: ['Fix robots.txt access or format issues'],
       },
     };
   }
