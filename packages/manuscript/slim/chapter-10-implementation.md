@@ -22,6 +22,7 @@ Let's build a plan that works in the real world.
 Don't try to fix everything at once. Pick high-value pages, implement improvements, measure the results, then use those results to justify expanding the work.
 
 This approach:
+
 - Shows ROI quickly
 - Builds stakeholder confidence
 - Lets you learn what works for your specific site
@@ -36,6 +37,7 @@ Before you change anything, understand what you're working with.
 **1. Inventory high-value pages (2 hours)**
 
 List your 15-25 most important pages:
+
 - Homepage
 - Top 5 landing pages (by traffic)
 - Top 5 product/service pages (by conversion)
@@ -48,6 +50,7 @@ Don't try to fix 500 pages. Fix the 20 that matter most.
 **2. Quick readability audit (4 hours)**
 
 For each page, check:
+
 - Is content in the HTML source? (View source, not inspect element)
 - Can you see an h1?
 - Is there a logical heading hierarchy?
@@ -68,6 +71,7 @@ Homepage | Yes | Yes | No | No | Partial
 **3. Run the morning-after test (2 hours)**
 
 Pick 5 representative pages. For each:
+
 1. View source
 2. Copy HTML
 3. Paste into ChatGPT/Claude
@@ -85,6 +89,7 @@ Document what works and what doesn't.
 **5. Prioritize by impact and effort (1 hour)**
 
 Score each page:
+
 - Impact: High (5), Medium (3), Low (1)
 - Effort: Easy (1), Medium (3), Hard (5)
 - Priority score = Impact / Effort
@@ -104,6 +109,7 @@ Fix high-impact, low-effort problems. These show immediate results and build mom
 **1. Add Schema.org to key pages (12 hours)**
 
 Start with:
+
 - Homepage: Organization/LocalBusiness schema
 - Top 5 products/services: Product/Service schema
 - Top 3 blog posts: Article schema
@@ -112,6 +118,7 @@ Start with:
 Use JSON-LD. Copy the patterns from Chapter 5. Each page takes 30-60 minutes once you have a template.
 
 **Example workflow per page:**
+
 1. Identify the page type (product, article, etc.)
 2. Copy the appropriate Schema.org template
 3. Fill in with actual data from the page
@@ -122,6 +129,7 @@ Use JSON-LD. Copy the patterns from Chapter 5. Each page takes 30-60 minutes onc
 **2. Fix heading hierarchy (8 hours)**
 
 For each priority page:
+
 1. Extract all headings: `document.querySelectorAll('h1, h2, h3, h4')`
 2. Check the hierarchy makes sense
 3. Fix any jumps (h1 → h4) or backwards progressions (h3 → h2)
@@ -132,6 +140,7 @@ This is often just changing div classes to proper heading elements and adjusting
 **3. Improve link text (4 hours)**
 
 Find all generic links:
+
 ```javascript
 document.querySelectorAll('a').forEach(a => {
   const text = a.textContent.toLowerCase().trim();
@@ -142,6 +151,7 @@ document.querySelectorAll('a').forEach(a => {
 ```
 
 Replace with descriptive text:
+
 - "Learn more" → "Learn about our EDS consulting services"
 - "Click here" → "View our product catalogue"
 - "Read more" → "Read the full migration guide"
@@ -149,6 +159,7 @@ Replace with descriptive text:
 **4. Add alt text to images (4 hours)**
 
 Audit images:
+
 ```javascript
 document.querySelectorAll('img').forEach(img => {
   if (!img.alt || img.alt === 'image' || img.alt === '') {
@@ -158,6 +169,7 @@ document.querySelectorAll('img').forEach(img => {
 ```
 
 Add descriptive alt text:
+
 - Not: `alt="product"`
 - But: `alt="Standing desk showing electric height adjustment control panel"`
 
@@ -166,6 +178,7 @@ Add descriptive alt text:
 **Time investment:** 28 hours total
 
 **Expected results after 2-3 weeks:**
+
 - Schema.org validation passes on key pages
 - Morning-after test shows AI can extract key information
 - Accessibility scores improve (Lighthouse)
@@ -181,6 +194,7 @@ Address deeper structural issues.
 If you don't have a sitemap, create one. If you do, ensure it's current.
 
 For static sites:
+
 ```javascript
 // build-sitemap.js
 const fs = require('fs');
@@ -224,6 +238,7 @@ Replace divs with proper semantic elements:
 **3. Implement breadcrumbs (6 hours)**
 
 Add breadcrumbs to key sections:
+
 ```html
 <nav aria-label="Breadcrumb">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -244,6 +259,7 @@ Add breadcrumbs to key sections:
 If your site is JavaScript-heavy, implement SSR for public pages.
 
 For Next.js:
+
 ```javascript
 // Convert from client-side
 export default function ProductPage() {
@@ -269,6 +285,7 @@ export default function ProductPage({ product }) {
 ```
 
 Focus on:
+
 - Homepage
 - Product/service pages
 - Blog posts
@@ -302,6 +319,7 @@ Make interactive features work without JavaScript:
 **Time investment:** 40-48 hours
 
 **Expected results after 6 weeks:**
+
 - All priority pages discoverable via sitemap
 - Content accessible without JavaScript
 - Clear site structure visible to AI
@@ -316,6 +334,7 @@ Standardize content patterns across your site.
 **1. Implement proper article structure (8 hours)**
 
 Create templates for blog posts:
+
 ```html
 <article itemscope itemtype="https://schema.org/Article">
   <header>
@@ -335,6 +354,7 @@ Create templates for blog posts:
 **2. Convert visual lists to semantic lists (4 hours)**
 
 Find divs that are really lists:
+
 ```html
 <!-- Before -->
 <div class="features">
@@ -354,6 +374,7 @@ Find divs that are really lists:
 **3. Add definition lists for key-value pairs (4 hours)**
 
 Replace custom markup with `<dl>`:
+
 ```html
 <!-- Before -->
 <div class="specs">
@@ -373,6 +394,7 @@ Replace custom markup with `<dl>`:
 **4. Fix form labels (4 hours)**
 
 Ensure every input has a label:
+
 ```html
 <!-- Before -->
 <input type="text" placeholder="Your name">
@@ -385,6 +407,7 @@ Ensure every input has a label:
 **5. Add ARIA labels where needed (4 hours)**
 
 For elements that need clarification:
+
 ```html
 <nav aria-label="Main navigation">...</nav>
 <nav aria-label="Footer links">...</nav>
@@ -399,6 +422,7 @@ For elements that need clarification:
 **6. Improve table structure (4 hours)**
 
 Add proper table semantics:
+
 ```html
 <table>
   <caption>Pricing Comparison</caption>
@@ -420,6 +444,7 @@ Add proper table semantics:
 **Time investment:** 28 hours
 
 **Expected results after 8 weeks:**
+
 - Consistent semantic patterns across pages
 - Forms fully accessible and AI-readable
 - Data relationships explicit (lists, tables)
@@ -433,6 +458,7 @@ Verify everything works.
 **1. Set up automated testing (8 hours)**
 
 Create test suite (from Chapter 8):
+
 ```javascript
 const tests = [
   {
@@ -448,6 +474,7 @@ const tests = [
 **2. Manual validation of priority pages (8 hours)**
 
 For each priority page:
+
 1. Run morning-after test
 2. Validate Schema.org (Google Rich Results Test)
 3. Check Lighthouse accessibility score
@@ -469,6 +496,7 @@ Homepage | Pass | Pass | 95 | Pass
 Document your patterns:
 
 **content-standards.md:**
+
 ```markdown
 # Content Standards
 
@@ -493,6 +521,7 @@ Share with your team so new content follows the patterns.
 **Time investment:** 20 hours
 
 **Expected results after 9 weeks:**
+
 - Automated tests catching regressions
 - All priority pages validated
 - Team has documentation to maintain standards
@@ -504,23 +533,27 @@ Keep your improvements intact.
 **Tasks:**
 
 **Weekly (30 minutes):**
+
 1. Review automated test results
 2. Check for Schema.org errors in Search Console
 3. Spot-check new pages added this week
 
 **Monthly (2 hours):**
+
 1. Audit 5-10 recent pages for compliance
 2. Run morning-after test on new content
 3. Check sitemap is current
 4. Review accessibility scores
 
 **Quarterly (4 hours):**
+
 1. Full audit of all priority pages
 2. Update documentation if patterns have evolved
 3. Review and update Schema.org markup
 4. Check for new anti-patterns creeping in
 
 **Continuous:**
+
 - New pages follow documented patterns
 - Code reviews check for semantic HTML
 - CMS templates generate proper markup
@@ -533,6 +566,7 @@ Keep your improvements intact.
 A client in the automotive sector came to me with this situation:
 
 **Their site:**
+
 - React SPA (single page application)
 - Beautiful design, won awards
 - £2 million spent on recent redesign
@@ -547,12 +581,14 @@ When someone asked an AI "Where can I get my Land Rover serviced near Birmingham
 We followed this roadmap over 12 weeks (slightly longer than the 10-week plan due to complexity):
 
 **Weeks 1-2: Assessment**
+
 - Audited 25 high-value pages
 - Identified top conversion paths
 - Documented current AI visibility (basically zero)
 - Got stakeholder buy-in with morning-after test demo
 
 **Weeks 3-4: Quick wins**
+
 - Added Schema.org to homepage (LocalBusiness)
 - Added Product schema to top 10 vehicle service pages
 - Added FAQPage schema to FAQ section
@@ -560,29 +596,34 @@ We followed this roadmap over 12 weeks (slightly longer than the 10-week plan du
 - Added alt text to all images
 
 **Weeks 5-8: Structural changes**
+
 - Implemented Next.js SSR for public pages
 - Created dynamic sitemap generation
 - Added breadcrumb navigation
 - Kept client-side rendering for dealer portal (authenticated area)
 
 **Weeks 9-10: Content patterns**
+
 - Created templates for service pages
 - Standardized location pages
 - Implemented proper navigation structure
 - Added semantic HTML throughout
 
 **Weeks 11-12: Testing and launch**
+
 - Automated test suite
 - Manual validation
 - Gradual rollout (10% → 50% → 100%)
 - Documentation for content team
 
 **The investment:**
+
 - 85 hours of consulting time (me)
 - 40 hours of developer time (their team)
 - Total cost: ~£12,000
 
 **The results (after 3 months):**
+
 - AI recommendations increased 60%
 - Organic search traffic up 35%
 - Voice search queries doubled
@@ -599,16 +640,19 @@ ROI was obvious within 3 months.
 Once your priority pages work well, expand gradually:
 
 **Months 2-3:**
+
 - Apply patterns to next 25 pages
 - Create templates for common page types
 - Train content team on standards
 
 **Months 4-6:**
+
 - Expand to all public pages
 - Automate Schema.org generation
 - Build validation into CMS
 
 **Months 7-12:**
+
 - Optimize long-tail content
 - Refine based on data
 - Update documentation
@@ -623,6 +667,7 @@ Don't try to fix 1,000 pages at once. Fix 20, measure results, then expand based
 Do Phase 0 and Phase 1 only (Weeks 1-3, 28 hours).
 
 This gives you:
+
 - Schema.org on key pages
 - Fixed heading hierarchy
 - Better link text
@@ -633,6 +678,7 @@ That's 70% of the benefit for 30% of the effort.
 **Constraint 2: "We can't change our JavaScript framework"**
 
 Focus on what you can control:
+
 - Add Schema.org (doesn't require framework changes)
 - Improve link text
 - Fix heading hierarchy
@@ -645,6 +691,7 @@ You don't need to rebuild. You can improve what exists.
 **Constraint 3: "Our CMS makes it hard to add Schema.org"**
 
 Options:
+
 1. Add Schema.org via Google Tag Manager
 2. Create a plugin/extension for your CMS
 3. Generate Schema.org server-side and inject into pages
@@ -655,6 +702,7 @@ There's always a way. It might not be elegant, but it works.
 **Constraint 4: "We have thousands of pages"**
 
 Fix the top 20 pages first. Then:
+
 1. Create templates for page types
 2. Apply templates to batches of 50-100 pages
 3. Fix opportunistically (when pages are updated anyway)
@@ -665,6 +713,7 @@ You'll never fix everything, and you don't need to. The 80/20 rule applies: 20% 
 **Constraint 5: "Our development team is fully committed"**
 
 Options:
+
 1. Hire a contractor for the initial implementation
 2. Make it a gradual background task (1-2 hours/week)
 3. Build it into regular feature work
@@ -677,6 +726,7 @@ Or demonstrate ROI with Phase 1 quick wins, then make the business case for dedi
 Track these metrics:
 
 **Technical metrics:**
+
 - % of priority pages with Schema.org
 - % with proper heading hierarchy
 - % with descriptive links
@@ -684,12 +734,14 @@ Track these metrics:
 - Lighthouse accessibility scores
 
 **AI readability metrics:**
+
 - Morning-after test pass rate
 - Schema.org validation pass rate
 - Pages in sitemap
 - JavaScript-disabled functionality
 
 **Business metrics:**
+
 - Organic search traffic
 - AI referral traffic (if trackable)
 - Voice search queries
@@ -701,6 +753,7 @@ Track these metrics:
 You won't see dramatic overnight changes. This is a 3-6 month investment that compounds over time.
 
 Expect:
+
 - Month 1: Technical improvements visible
 - Month 2: Search engines re-index updated pages
 - Month 3: Traffic patterns start changing
@@ -738,6 +791,7 @@ That usually gets attention.
 What not to do:
 
 **Don't:**
+
 - Try to fix everything at once
 - Rebuild from scratch
 - Obsess over perfection
@@ -748,6 +802,7 @@ What not to do:
 - Forget to measure results
 
 **Do:**
+
 - Start small and focused
 - Work with what you have
 - Aim for "good enough"
@@ -762,26 +817,32 @@ What not to do:
 Here's the complete timeline at a glance:
 
 **Week 1: Assessment**
+
 - 10 hours
 - Deliverable: Prioritized list of 15-25 pages with issues
 
 **Weeks 2-3: Quick wins**
+
 - 28 hours
 - Deliverable: Schema.org, headings, links, alt text on priority pages
 
 **Weeks 4-6: Structural improvements**
+
 - 40-48 hours
 - Deliverable: Sitemap, semantic HTML, SSR, progressive enhancement
 
 **Weeks 7-8: Content patterns**
+
 - 28 hours
 - Deliverable: Standardized templates, consistent semantic markup
 
 **Week 9: Testing and validation**
+
 - 20 hours
 - Deliverable: Automated tests, validation, documentation
 
 **Week 10+: Ongoing maintenance**
+
 - 2-3 hours/month
 - Deliverable: Sustained quality, continuous improvement
 

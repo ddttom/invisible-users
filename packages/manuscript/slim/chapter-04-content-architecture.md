@@ -33,6 +33,7 @@ Articles are where many sites get their first AI traffic. Someone asks a questio
 ```
 
 This might look fine visually, but AI sees:
+
 - No clear hierarchy (everything's a div)
 - No indication of document structure
 - No semantic metadata about authorship or publication date
@@ -83,6 +84,7 @@ This might look fine visually, but AI sees:
 What changed:
 
 **Document structure:**
+
 - `article` element wraps the entire post
 - `header` contains metadata
 - Proper `h1` through `h3` hierarchy creates an outline:
@@ -96,12 +98,14 @@ What changed:
     - Making the decision
 
 **Semantic metadata:**
+
 - Schema.org Article type
 - `headline` property for the title
 - `author` and `datePublished` with proper datetime format
 - `articleBody` wrapping the content
 
 **For AI, this provides:**
+
 - Clear topic from the h1
 - Outline structure from headings
 - Author attribution
@@ -109,6 +113,7 @@ What changed:
 - Distinct introduction paragraph
 
 **For humans:**
+
 - Same visual presentation with CSS
 - Better accessibility (screen readers can navigate by heading)
 - Clearer document structure when styles fail
@@ -149,6 +154,7 @@ Product pages are where the economic stakes are highest. If AI can't parse your 
 ```
 
 Problems:
+
 - Product specs hidden in JavaScript tabs (display:none means parsers might skip it)
 - No structured data about price or availability
 - Rating shown visually but not semantically
@@ -233,6 +239,7 @@ Problems:
 What this provides:
 
 **For AI parsing:**
+
 - Clear Product schema with name, description, image
 - Structured pricing with currency and availability
 - Rating as structured data, not just visual stars
@@ -240,11 +247,13 @@ What this provides:
 - All content visible regardless of JavaScript state
 
 **For humans:**
+
 - All the same information, styled however you want
 - Tabs can still work (progressive enhancement)
 - Same visual design achievable with CSS
 
 **For search engines:**
+
 - Rich snippets showing price, rating, availability
 - Better understanding of product attributes
 - Clear product identity
@@ -272,6 +281,7 @@ Navigation is interesting because it serves multiple purposes: humans use it to 
 ```
 
 Issues:
+
 - Not marked as navigation
 - Dropdown structure unclear (just nested divs)
 - No indication which page you're on
@@ -300,6 +310,7 @@ Issues:
 Improvements:
 
 **Semantic structure:**
+
 - `nav` element marks this as navigation
 - `aria-label` distinguishes this navigation from others (footer nav, breadcrumbs)
 - Nested `ul` elements show hierarchical relationships
@@ -307,11 +318,13 @@ Improvements:
 - `aria-expanded` shows dropdown state
 
 **For AI:**
+
 - Clear site structure (Services has three sub-areas)
 - Navigation relationships explicit
 - Current location indicated
 
 **For humans:**
+
 - Still works without JavaScript (nested lists)
 - Progressive enhancement adds hover/click behaviour
 - Screen readers can navigate effectively
@@ -344,6 +357,7 @@ While we're on navigation, breadcrumbs are particularly valuable for AI:
 ```
 
 This tells AI:
+
 - Where this page sits in the hierarchy
 - The path from homepage to current location
 - The relationship between levels
@@ -412,16 +426,19 @@ This is readable but provides no semantic structure.
 This pattern:
 
 **Makes questions discoverable:**
+
 - Each question is a proper heading (h3)
 - Schema.org FAQPage type marks the section
 - Each Question/Answer pair is structured
 
 **Enables direct answers:**
+
 - AI can extract question and answer pairs
 - Answers are complete and self-contained
 - Structure makes it clear which text answers which question
 
 **Works for humans:**
+
 - Visual styling unchanged
 - Can add accordion JavaScript if desired
 - Screen readers navigate by heading
@@ -454,6 +471,7 @@ Contact pages seem simple but often fail AI parsing because information is scatt
 ```
 
 Problems:
+
 - No semantic markup for address components
 - Phone number not marked as such
 - Form fields lack proper labels
@@ -526,6 +544,7 @@ Problems:
 This provides:
 
 **Structured contact information:**
+
 - `address` element for the postal address
 - Schema.org LocalBusiness with address components
 - Phone as clickable link (works on mobile)
@@ -533,12 +552,14 @@ This provides:
 - Opening hours in machine-readable format
 
 **Proper form structure:**
+
 - Every input has a `label` explicitly associated via `id`
 - Input types match data (email, tel, text)
 - Required fields marked
 - Clear purpose for the form
 
 **For AI:**
+
 - Can extract phone number to answer "What's the phone number?"
 - Can determine opening hours
 - Can parse the complete address
@@ -605,6 +626,7 @@ AI sees rows and cells but doesn't know which row is headers versus data.
 ```
 
 Now:
+
 - `caption` provides context
 - `thead` separates headers from data
 - `th` elements with `scope` indicate what they describe

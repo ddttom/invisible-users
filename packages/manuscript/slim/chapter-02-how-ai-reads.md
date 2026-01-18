@@ -81,6 +81,7 @@ Here's something that catches developers out constantly: AI reads your DOM in do
 Consider this common layout pattern:
 
 **Visual layout (what humans see):**
+
 ```
 +----------------------------------+
 | [Navigation Menu]                |
@@ -93,6 +94,7 @@ Consider this common layout pattern:
 ```
 
 **HTML order (what AI reads):**
+
 ```html
 <nav>Navigation Menu</nav>
 <aside>
@@ -136,6 +138,7 @@ Use CSS to position the sidebar where you want visually. The content order now m
 When an LLM processes your page, it has a working memory limit measured in tokens. Think of tokens as roughly chunks of text—a word might be one or two tokens, depending on length and language.
 
 Current AI models typically have context windows of:
+
 - GPT-4: 128,000 tokens
 - Claude: 200,000 tokens  
 - Gemini: 2,000,000 tokens
@@ -157,6 +160,7 @@ Now the AI is making choices about what to pay attention to. If your main conten
 Let me be specific about what AI agents typically cannot perceive:
 
 **CSS-based information:**
+
 ```html
 <div class="urgent">This requires immediate attention</div>
 ```
@@ -164,6 +168,7 @@ Let me be specific about what AI agents typically cannot perceive:
 A human sees red text, bold weight, maybe a warning icon via CSS. The AI sees a div with some text. The urgency is invisible.
 
 **JavaScript-rendered content:**
+
 ```html
 <div id="product-details"></div>
 <script>
@@ -174,6 +179,7 @@ A human sees red text, bold weight, maybe a warning icon via CSS. The AI sees a 
 A parser fetching raw HTML gets an empty div. The actual product details never appear unless the JavaScript executes. Many AI agents don't execute JavaScript—they're reading the source as delivered.
 
 **Visual hierarchy through styling:**
+
 ```html
 <div style="font-size: 48px">Big Important Text</div>
 <div style="font-size: 12px">Less important detail</div>
@@ -182,6 +188,7 @@ A parser fetching raw HTML gets an empty div. The actual product details never a
 To AI, these are just two text strings. The size difference is meaningless. Use `h1` and `p` instead, and the hierarchy becomes semantic.
 
 **Images without text alternatives:**
+
 ```html
 <img src="process-diagram.png">
 ```
@@ -189,6 +196,7 @@ To AI, these are just two text strings. The size difference is meaningless. Use 
 The AI knows an image exists. It doesn't know what the image shows. If that diagram explains your entire service process, the AI has no idea. Add `alt="Five-step service process: consultation, planning, implementation, testing, and launch"` and now it does.
 
 **Content in canvas elements:**
+
 ```html
 <canvas id="chart"></canvas>
 <script>
@@ -237,6 +245,7 @@ The vision model sees proper visual hierarchy because you've styled semantic ele
 Here's a real example from my documentation work with Adobe Edge Delivery Services. I needed documentation that both developers could read and AI could parse.
 
 **Bad approach (how many docs work):**
+
 ```html
 <div class="doc-section">
   <div class="doc-title">Installation</div>
@@ -250,6 +259,7 @@ Here's a real example from my documentation work with Adobe Edge Delivery Servic
 Humans could read this fine with CSS. AI just saw nested divs with no semantic meaning.
 
 **Better approach (semantic structure):**
+
 ```html
 <section>
   <h2>Installation</h2>
@@ -261,6 +271,7 @@ Humans could read this fine with CSS. AI just saw nested divs with no semantic m
 ```
 
 Now:
+
 - The `h2` signals a major section
 - The `pre` and `code` elements identify executable code
 - The `aside` with `role="note"` marks supplementary information

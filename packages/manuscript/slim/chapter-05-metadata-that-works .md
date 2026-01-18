@@ -13,16 +13,19 @@ Think of metadata as annotations in the margins of your HTML. The content is sti
 Before we dive into implementation, let's acknowledge that metadata exists on a spectrum from "barely worth the effort" to "critical for function."
 
 **Low value:**
+
 - Metadata that duplicates obvious structure
 - Over-specification that doesn't change AI behaviour
 - Deprecated or ignored schemas
 
 **Medium value:**
+
 - Basic Schema.org for standard content types
 - OpenGraph for social sharing
 - Standard meta tags
 
 **High value:**
+
 - Structured data that enables rich results
 - Metadata that disambiguates content
 - Machine-readable formats for data AI needs to extract
@@ -60,6 +63,7 @@ These six types cover about 90% of what most sites need. If you're doing somethi
 There are three ways to add Schema.org markup to your pages. Let me save you some time: use JSON-LD.
 
 **Microdata** embeds markup directly in your HTML attributes:
+
 ```html
 <div itemscope itemtype="https://schema.org/Person">
   <span itemprop="name">Tom Harris</span>
@@ -68,6 +72,7 @@ There are three ways to add Schema.org markup to your pages. Let me save you som
 ```
 
 **RDFa** also embeds in HTML, with different attribute names:
+
 ```html
 <div vocab="https://schema.org/" typeof="Person">
   <span property="name">Tom Harris</span>
@@ -76,6 +81,7 @@ There are three ways to add Schema.org markup to your pages. Let me save you som
 ```
 
 **JSON-LD** separates structured data from your HTML:
+
 ```html
 <script type="application/ld+json">
 {
@@ -133,6 +139,7 @@ Every site should have basic organization markup. This goes in your site-wide te
 ```
 
 This tells AI (and search engines):
+
 - Your official company name
 - Your web address
 - Where to find your logo
@@ -352,6 +359,7 @@ FAQ pages are perfect for AI because they're already in question-and-answer form
 ```
 
 This enables:
+
 - Direct answers when AI is queried
 - Rich results in search showing expandable FAQs
 - Clear question-answer pairing
@@ -410,6 +418,7 @@ Step-by-step guides benefit from explicit structure:
 ```
 
 The `totalTime` uses ISO 8601 duration format:
+
 - PT10M = 10 minutes
 - PT1H30M = 1 hour 30 minutes
 - P2D = 2 days
@@ -537,12 +546,12 @@ Choose based on your site architecture and update frequency.
 Don't trust your Schema.org markup without validation. Use these tools:
 
 **Google's Rich Results Test:**  
-https://search.google.com/test/rich-results
+<https://search.google.com/test/rich-results>
 
 Paste your URL or HTML and see if Google can parse your structured data. Shows warnings and errors.
 
 **Schema.org Validator:**  
-https://validator.schema.org/
+<https://validator.schema.org/>
 
 More lenient than Google's tool. Good for checking if your JSON-LD is valid Schema.org, even if it won't trigger rich results.
 
@@ -587,6 +596,7 @@ Check Schema.org documentation for expected types. Price is text, ratings are nu
 **Mistake 3: Incomplete required properties**
 
 For Product schema, you need:
+
 - name
 - image  
 - offers (with price, priceCurrency, availability)

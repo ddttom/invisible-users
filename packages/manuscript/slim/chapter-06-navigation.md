@@ -111,6 +111,7 @@ Forget `changefreq`. Google ignores it, and it's too hard to maintain accurately
 ```
 
 Notice the priority gradation:
+
 - Homepage: 1.0
 - Main sections: 0.9
 - Service pages: 0.8
@@ -215,6 +216,7 @@ When AI follows links, the link text provides critical context. The href tells A
 ```
 
 Problems:
+
 - "Click here" and "here" are meaningless out of context
 - "More" and "Details" don't indicate what they link to
 - AI can't build useful mental model from these links
@@ -240,6 +242,7 @@ Problems:
 ```
 
 Each link text:
+
 - Describes the destination
 - Makes sense when read aloud
 - Provides value even without surrounding context
@@ -251,6 +254,7 @@ This matters because AI (and screen readers) often process links separately from
 Extract all links from your page and read just the link text in a list. Does each one make sense? Can you tell where it goes?
 
 **Your page:**
+
 - Click here
 - Read more
 - Learn more
@@ -258,6 +262,7 @@ Extract all links from your page and read just the link text in a list. Does eac
 - More information
 
 **Better:**
+
 - EDS consulting services
 - Migration guide: AEM to Edge Delivery
 - Case study: Automotive industry transformation
@@ -341,6 +346,7 @@ Each hub page links to its spokes. Each spoke links back to its hub and to relat
 ```
 
 This creates multiple paths for discovery:
+
 - From homepage to services hub
 - From services hub to specific services
 - From services to case studies and guides
@@ -374,6 +380,7 @@ This creates multiple paths for discovery:
 ```
 
 These contextual links:
+
 - Help AI understand topic relationships
 - Provide natural discovery paths
 - Show which topics are prerequisites or related concepts
@@ -427,6 +434,7 @@ Breadcrumbs are more than a UX nicety—they tell AI exactly where a page sits i
 ```
 
 This creates explicit parent-child relationships. AI now knows:
+
 - Implementation Guide is under Edge Delivery Services
 - Edge Delivery Services is under Services
 - Services is under Home
@@ -518,6 +526,7 @@ Your main navigation creates the mental model AI builds of your site organizatio
 ```
 
 This tells AI:
+
 - You have six main sections
 - Services has three sub-categories
 - The structure is relatively flat
@@ -588,6 +597,7 @@ Don't neglect footer links. They often contain important pages that aren't in ma
 ```
 
 Notice:
+
 - Separate `nav` elements with `aria-label` to distinguish them
 - Headings for each section
 - Links to utility pages (privacy, terms, etc.)
@@ -630,6 +640,7 @@ Within your content, suggest related pages:
 ```
 
 This provides:
+
 - Discovery paths to related content
 - Context about what each link offers
 - Semantic grouping of related resources
@@ -654,12 +665,14 @@ Disallow: /api/
 ```
 
 Keep it simple. Only block:
+
 - Admin interfaces
 - Authentication pages
 - Payment processing
 - API endpoints not meant for crawling
 
 Don't block:
+
 - CSS or JavaScript files (some crawlers need them)
 - Images (AI may need to fetch them)
 - Public documentation
@@ -684,12 +697,14 @@ Good navigation doesn't just help AI find pages—it helps AI understand your bu
 **Content relationships:** How topics connect to each other
 
 Poor navigation creates confusion:
+
 - AI can't determine what you specialize in
 - Pages seem unrelated to each other
 - No clear entry points for different topics
 - Important pages are hidden or hard to find
 
 Good navigation creates clarity:
+
 - Primary services are obvious
 - Content relationships are explicit
 - Entry points match common queries

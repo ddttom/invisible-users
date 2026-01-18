@@ -46,6 +46,7 @@ When someone asked an AI "What does EnergyTech Solutions do?" the AI couldn't an
 Not all JavaScript is problematic. Let's look at the spectrum:
 
 **Harmless JavaScript:**
+
 - Visual effects (animations, transitions)
 - User interactions (dropdown menus, modals)
 - Progressive enhancements (form validation, autocomplete)
@@ -54,6 +55,7 @@ Not all JavaScript is problematic. Let's look at the spectrum:
 These don't affect content visibility. The underlying HTML contains all the information; JavaScript just makes it more interactive.
 
 **Problematic JavaScript:**
+
 - Content loaded via AJAX after page load
 - Entire page rendered client-side from JSON
 - Navigation that updates content without changing URL
@@ -152,6 +154,7 @@ Parser sees: empty div.
 Parser sees: three products with names, descriptions, and prices.
 
 The JavaScript can still add functionality:
+
 - Filter by price range
 - Sort by different criteria
 - Add to cart without page reload
@@ -381,6 +384,7 @@ This crawls your SPA and generates static HTML files for each route. Deploy thes
 ## Infinite scroll and pagination
 
 Infinite scroll is problematic for AI because:
+
 - Initial HTML only contains first page of results
 - Additional content loads as user scrolls
 - No way for AI to access page 2, 3, etc. without scrolling
@@ -494,6 +498,7 @@ Parser sees: a div with a spinner div. No indication what this section is for.
 ```
 
 Now:
+
 - The section has a heading indicating its purpose
 - There's fallback text explaining what should load
 - `noscript` provides an alternative for no-JS browsers
@@ -543,6 +548,7 @@ Sites that fetch content via AJAX and update the page without reloading need spe
 ```
 
 This works because:
+
 - Each link has a real URL
 - The URL returns full HTML (not just a fragment)
 - JavaScript intercepts clicks to make it smoother
@@ -693,6 +699,7 @@ export default function ProductPage({ product }) {
 ```
 
 Now each product page had:
+
 - Unique URL
 - Complete HTML with product information
 - Schema.org markup
@@ -701,6 +708,7 @@ Now each product page had:
 The site still felt like a SPA to users (fast navigation, smooth transitions), but every page was fully formed HTML that AI could read.
 
 Results after three months:
+
 - AI recommendations increased by 60%
 - Organic search traffic up 35%
 - Voice search queries (requiring structured data) doubled

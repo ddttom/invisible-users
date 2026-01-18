@@ -76,6 +76,7 @@ Here's the semantic version:
 ```
 
 Now we have:
+
 - `section` and `article` elements defining document structure
 - `h2`, `h3`, `h4` creating a clear hierarchy
 - `ul` indicating a list (not just vertical text)
@@ -95,6 +96,7 @@ Your HTML structure tells AI what matters and how things relate. This goes beyon
 Think of your heading levels (h1 through h6) as a table of contents that AI can parse. This isn't just good practice—it's how AI builds a mental model of your content.
 
 **Bad structure:**
+
 ```html
 <h1>Welcome to Our Site</h1>
 <h3>Our Services</h3>
@@ -106,6 +108,7 @@ Think of your heading levels (h1 through h6) as a table of contents that AI can 
 The heading levels jump around without logic. AI can't tell what's a major section versus a subsection. The structure suggests chaos.
 
 **Good structure:**
+
 ```html
 <h1>Welcome to Our Site</h1>
 <h2>Our Services</h2>
@@ -223,6 +226,7 @@ Here's a real example from a client in the automotive sector:
 ```
 
 This microdata makes explicit promises:
+
 - This is a local business
 - The name is "Manchester Motors"  
 - The address components are structured and labeled
@@ -322,22 +326,26 @@ Consider a product page:
 Look at what we're doing:
 
 **For humans:**
+
 - The image shows what it looks like
 - The layout creates visual hierarchy
 - The button is visually obvious
 
 **For screen readers:**
+
 - The `alt` text describes the image
 - The `aria-label` makes the button action explicit
 - The structure allows navigation by heading
 
 **For AI parsers:**
+
 - The Schema.org markup identifies this as a product
 - The price is marked with actual value and currency
 - The availability is explicitly stated
 - The heading provides the product name
 
 **For all audiences:**
+
 - The semantic HTML creates clear structure
 - The content is readable without CSS or JavaScript
 - The information is complete and self-contained
@@ -349,11 +357,13 @@ This is redundancy with purpose. Each layer serves specific consumers without ha
 Alt text is a perfect example of useful redundancy. Visual users see the image. Screen reader users hear the alt text. AI parsers read the alt text.
 
 Bad alt text treats this as a chore:
+
 ```html
 <img src="product-001.jpg" alt="product">
 ```
 
 Good alt text serves all audiences:
+
 ```html
 <img src="product-001.jpg" 
      alt="Standing desk raised to maximum height showing the motor housing and control panel">
@@ -400,18 +410,21 @@ I can hear the objections already:
 All valid concerns. Here's the thing: you don't need perfection. You need improvement.
 
 Start with high-value pages:
+
 - Homepage
 - Top landing pages
 - Product/service pages
 - Contact and about pages
 
 Fix the most glaring issues:
+
 - Add proper heading hierarchy
 - Mark navigation with `nav` elements
 - Use `main` for primary content
 - Add alt text to images
 
 Then incrementally improve:
+
 - Add Schema.org to key content types
 - Convert visual lists to semantic lists
 - Improve link text ("click here" → "view pricing details")

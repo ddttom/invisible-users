@@ -80,6 +80,7 @@ Make the recommendation explicit in HTML:
 ```
 
 Now:
+
 - The recommendation is text content, not just styling
 - ARIA labels provide additional context
 - The `strong` element indicates emphasis
@@ -126,6 +127,7 @@ A client had their entire service offering described in an infographic. Beautifu
 ```
 
 The image contained:
+
 - Web Development: Full-stack development with modern frameworks
 - Mobile Apps: iOS and Android native applications
 - Cloud Infrastructure: AWS and Azure deployment and management
@@ -330,6 +332,7 @@ Headings used for styling rather than structure, creating illogical hierarchies.
 ```
 
 This hierarchy makes no sense:
+
 - h1 (page title)
   - h3 (services) - skipped h2
     - h2 (web dev) - went backwards
@@ -366,6 +369,7 @@ Use heading levels logically:
 ```
 
 Now the hierarchy is logical:
+
 - h1 (page title)
   - h2 (services)
     - h3 (web dev)
@@ -527,6 +531,7 @@ Make content visible by default, hide with JavaScript as enhancement:
 ```
 
 Now:
+
 - Content is in the HTML (AI can read it)
 - JavaScript adds the accordion behaviour
 - If JavaScript fails, content remains visible
@@ -642,6 +647,7 @@ Schema.org markup that contradicts visible content or is incomplete.
 ```
 
 Problems:
+
 - Name in Schema doesn't match h1 ("Standing Desk" vs "Professional Standing Desk - White Oak Finish")
 - Price in Schema is £599 but visible price is £499
 - Sale price not reflected in Schema
@@ -694,6 +700,7 @@ Form inputs identified only by placeholder text.
 ```
 
 Problems:
+
 - Placeholders disappear when user types
 - No explicit label-input relationship
 - AI can't determine required fields or field purpose with certainty
@@ -729,6 +736,7 @@ Use proper label elements:
 ```
 
 Now:
+
 - Each input has an explicit label
 - Required fields marked with `required` attribute
 - Optional fields indicated in label
@@ -942,6 +950,7 @@ Provide information in HTML, offer PDF as alternative:
 ```
 
 If you must publish content primarily as PDF, ensure the PDF has:
+
 - Text layer (not scanned images)
 - Proper document structure
 - Meaningful alt text for images

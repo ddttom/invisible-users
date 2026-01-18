@@ -7,6 +7,7 @@ This folder contains the complete book "Don't Make AI Think: A Common Sense Appr
 ### Available Files
 
 #### Individual Chapters
+
 1. `chapter-01-the-invisible-users.md` - Introduction to AI agents and why they matter
 2. `chapter-02-how-ai-reads.md` - How AI reads web pages differently from humans
 3. `chapter-03-guiding-principles.md` - Core principles for AI-friendly design
@@ -19,6 +20,7 @@ This folder contains the complete book "Don't Make AI Think: A Common Sense Appr
 10. `chapter-10-implementation.md` - Practical roadmap for implementation
 
 #### Complete Book
+
 - `dont-make-ai-think-complete.md` - All chapters in a single file
 
 ### About This Book
@@ -53,6 +55,7 @@ Total initial investment: 85-115 hours over 9 weeks for comprehensive implementa
 ### Contact
 
 For questions or consulting enquiries:
+
 - Tom Harris, Principal Consultant
 - Digital Domain Technologies Ltd
 - 25 years specializing in Adobe Experience Manager and Edge Delivery Services
@@ -60,6 +63,7 @@ For questions or consulting enquiries:
 ---
 
 **Note**: All chapters are provided in Markdown format (.md) which can be:
+
 - Read in any text editor
 - Converted to PDF, HTML, or other formats
 - Imported into documentation systems
