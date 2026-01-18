@@ -7,6 +7,7 @@
     "packages/*"
   ],
   "scripts": {
+    "test": "npm test -w packages/web-audit-suite",
     "wordcount": "wc -w packages/manuscript/manuscript/chapter-*.md | tail -1",
     "wordcount:all": "wc -w packages/manuscript/manuscript/*.md",
     "lint:markdown": "markdownlint '**/*.md' --ignore node_modules --ignore packages/web-audit-suite/node_modules --ignore packages/manuscript/manuscript --ignore CHANGELOG.md --ignore CHANGELOG-FULL.md",
