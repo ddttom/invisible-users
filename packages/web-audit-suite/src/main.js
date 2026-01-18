@@ -5,7 +5,7 @@ import { generateReports } from './utils/reports.js';
 import { setupShutdownHandler, updateCurrentResults } from './utils/shutdownHandler.js';
 import { executeNetworkOperation } from './utils/networkUtils.js';
 import { RESULTS_SCHEMA_VERSION } from './utils/schemaVersion.js';
-import { storeHistoricalResult, detectRegressions, loadBaseline } from './utils/historicalComparison.js';
+import { storeHistoricalResult, detectRegressions } from './utils/historicalComparison.js';
 import { extractPatterns } from './utils/patternExtraction.js';
 import { fetchRobotsTxt } from './utils/robotsFetcher.js';
 import BrowserPool from './utils/browserPool.js';
