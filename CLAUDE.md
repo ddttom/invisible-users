@@ -243,13 +243,13 @@ Some appendices use a dual-file structure where content is maintained separately
 
 **Appendix H (Example llms.txt):**
 
-- **`manuscripts/bible/appendix-h-live-llms.txt`** - The actual llms.txt content (source of truth, 20 curated links)
-- **`manuscripts/bible/appendix-h-live-llms.md`** - Markdown wrapper that displays the .txt content in a code block
+- **`manuscripts/shared-appendices/appendix-h-live-llms.txt`** - The actual llms.txt content (source of truth, 20 curated links)
+- **`manuscripts/shared-appendices/appendix-h-live-llms.md`** - Markdown wrapper that displays the .txt content in a code block
 
 **Appendix D (AI-Friendly HTML Guide):**
 
-- **`manuscripts/bible/appendix-d-ai-friendly-html-guide.txt`** - The actual guide content (source of truth, ~3,000 lines)
-- **`manuscripts/bible/appendix-d-ai-friendly-html-guide.md`** - Markdown wrapper with introduction and table of contents
+- **`manuscripts/shared-appendices/appendix-d-ai-friendly-html-guide.txt`** - The actual guide content (source of truth, ~3,000 lines)
+- **`manuscripts/shared-appendices/appendix-d-ai-friendly-html-guide.md`** - Markdown wrapper with introduction and table of contents
 
 **Why both files?**
 
@@ -277,11 +277,11 @@ The PDF generation command (`pdf:generate` in package.json) uses `appendix-*.md`
 
 ```bash
 # Step 1: Edit the .txt file (add content)
-Edit packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-d-ai-friendly-html-guide.txt
+Edit packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-d-ai-friendly-html-guide.txt
 # Add new "Common Validation Pitfalls" section at line 2674
 
 # Step 2: Update the .md file (update TOC)
-Edit packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-d-ai-friendly-html-guide.md
+Edit packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-d-ai-friendly-html-guide.md
 # Update Part 9 description from:
 #   "Testing and Validation - Automated Playwright tests, manual validation"
 # To:
@@ -292,11 +292,11 @@ Edit packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-d-ai-friendl
 
 ```bash
 # Step 1: Edit the .txt file (add links)
-Edit packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-h-live-llms.txt
+Edit packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-h-live-llms.txt
 # Add new curated links to the 20-link collection
 
 # Step 2: Update the .md file (update count if changed)
-Edit packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-h-live-llms.md
+Edit packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-h-live-llms.md
 # Update link count in introduction if changed from 20 to a different number
 ```
 
@@ -318,7 +318,7 @@ After updating both files, verify consistency:
 
 ```bash
 # Check that .md table of contents matches .txt structure
-grep "^## Part" packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-d-ai-friendly-html-guide.txt
+grep "^## Part" packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-d-ai-friendly-html-guide.txt
 # Compare against .md table of contents (lines 14-24)
 ```
 
@@ -548,7 +548,7 @@ Reference Documentation:
 - The Bible (full): `packages/manuscript/the-bible-of-mx/manuscripts/bible/`
 - Don't Make AI Think (slim): `packages/manuscript/the-bible-of-mx/manuscripts/dont-make-ai-think/`
 - Implementation guidance: `packages/manuscript/the-bible-of-mx/manuscripts/bible/chapter-12-technical-advice.md`
-- Quick reference: `packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-e-ai-patterns-quick-reference.md`
+- Quick reference: `packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-e-ai-patterns-quick-reference.md`
 
 ### Two HTML States (Critical Distinction)
 
@@ -978,7 +978,7 @@ When creating web pages (appendices, marketing materials, documentation):
 4. **Explicit locale** - Use `<html lang="en-GB" data-locale="en-GB">`
 5. **Contact information** - Wrap URLs in `<address>` element
 
-**Complete reference:** See [appendix-d-ai-friendly-html-guide.txt](packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-d-ai-friendly-html-guide.txt) for comprehensive patterns.
+**Complete reference:** See [appendix-d-ai-friendly-html-guide.txt](packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-d-ai-friendly-html-guide.txt) for comprehensive patterns.
 
 **Real-world example:** The [back-cover.html](packages/manuscript/the-bible-of-mx/manuscripts/bible/web/back-cover.html) demonstrates all patterns in production use.
 
@@ -1087,7 +1087,7 @@ Four custom skills are available via the `/` command syntax:
    - Sequences entries chronologically
    - Creates properly formatted blog entries (narrative style)
    - Creates structured appendix entries (12-section technical format)
-   - Updates both `packages/manuscript/the-bible-of-mx/marketing/blog/book-updates.md` and `manuscripts/bible/appendix-j-industry-developments.md`
+   - Updates both `packages/manuscript/the-bible-of-mx/marketing/blog/book-updates.md` and `manuscripts/shared-appendices/appendix-j-industry-developments.md`
    - Includes qualifiers for unverified company-reported metrics
    - Only adds news that validates or challenges specific book chapters
    - **Usage:** `/news [paste news content or URL]`
@@ -1360,8 +1360,8 @@ git commit -m "Update manuscript submodule to latest version"
 
 - `packages/manuscript/the-bible-of-mx/manuscripts/bible/bible-plan.md` - Master plan with chapter outlines and status
 - `packages/manuscript/the-bible-of-mx/manuscripts/bible/Glossary.md` - Comprehensive technical glossary
-- `packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-f-implementation-roadmap.md` - Priority-based implementation guide
-- `packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-g-resource-directory.md` - Curated resources and references
+- `packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-f-implementation-roadmap.md` - Priority-based implementation guide
+- `packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-g-resource-directory.md` - Curated resources and references
 
 **Don't Make AI Think (Slim Version):**
 

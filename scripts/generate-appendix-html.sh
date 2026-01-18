@@ -6,7 +6,7 @@
 set -e  # Exit on error
 
 # Configuration
-MANUSCRIPT_DIR="packages/manuscript/the-bible-of-mx"
+MANUSCRIPT_DIR="packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices"
 OUTPUT_DIR="packages/manuscript/the-bible-of-mx/web"
 SCRIPTS_DIR="scripts"
 BASE_URL="https://allabout.network/invisible-users"

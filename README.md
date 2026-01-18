@@ -108,8 +108,13 @@ This ensures the book remains the single source of truth.
 │   │       ├── rear-cover.md
 │   │       ├── The-End.md
 │   │       ├── Glossary.md
-│   │       ├── appendix-a-*.md through appendix-l-*.md  # 12 appendices (A-L)
-│   │       ├── appendix-h-live-llms.txt  # Appendix H source (llms.txt example)
+│   │       ├── manuscripts/      # Multiple book variants
+│   │       │   ├── bible/        # The Bible (full book)
+│   │       │   ├── dont-make-ai-think/  # Slim practical guide
+│   │       │   └── shared-appendices/   # Shared appendices (A-L)
+│   │       │       ├── appendix-a-*.md through appendix-l-*.md
+│   │       │       ├── appendix-d-ai-friendly-html-guide.txt
+│   │       │       └── appendix-h-live-llms.txt
 │   │       ├── illustrations/    # SVG illustrations (PNG gitignored)
 │   │       ├── web/              # Generated HTML appendices
 │   │       │   ├── index.html
@@ -180,7 +185,7 @@ This ensures the book remains the single source of truth.
 └── package.json              # Monorepo workspace configuration
 ```
 
-**Note on Appendix H:** This appendix uses two files - `appendix-live-llms.txt` (the actual llms.txt content) and `appendix-live-llms.md` (markdown wrapper that displays it in a code block). The PDF includes the .md wrapper to show "here's what an llms.txt file looks like" as a formatted example, while the .txt file remains the editable source of truth.
+**Note on Dual-File Appendices:** Appendices D and H use two files each - a `.txt` file (editable source of truth) and a `.md` wrapper (displays content in a code block for PDF generation). The .txt files are located in `manuscripts/shared-appendices/` alongside their .md counterparts.
 
 ## Working with the Manuscript Submodule
 
@@ -513,8 +518,8 @@ First-time setup: VS Code will prompt to install recommended extensions automati
 
 - [packages/manuscript/book-plan.md](packages/manuscript/book-plan.md) - Master plan with chapter outlines
 - [packages/manuscript/the-bible-of-mx/Glossary.md](packages/manuscript/the-bible-of-mx/Glossary.md) - Technical glossary
-- [packages/manuscript/the-bible-of-mx/appendix-implementation-roadmap.md](packages/manuscript/the-bible-of-mx/appendix-implementation-roadmap.md) - Priority-based guide
-- [packages/manuscript/the-bible-of-mx/appendix-resource-directory.md](packages/manuscript/the-bible-of-mx/appendix-resource-directory.md) - Curated resources
+- [packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-f-implementation-roadmap.md](packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-f-implementation-roadmap.md) - Priority-based guide
+- [packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-g-resource-directory.md](packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-g-resource-directory.md) - Curated resources
 
 ### Web Audit Suite Documentation
 

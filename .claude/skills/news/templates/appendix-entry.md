@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Template for adding structured technical entries to `packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-j-industry-developments.md`.
+Template for adding structured technical entries to `packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-j-industry-developments.md`.
 
 ## Tone and Style
 

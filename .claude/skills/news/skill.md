@@ -40,7 +40,7 @@ Broader shifts demonstrating AI adoption velocity and commercial pressure:
 
 **Before publication (historical):**
 
-- Updates propagated to manuscript files (`marketing/blog/book-updates.md` and `manuscripts/bible/appendix-j-industry-developments.md`)
+- Updates propagated to manuscript files (`marketing/blog/book-updates.md` and `manuscripts/shared-appendices/appendix-j-industry-developments.md`)
 - Changes tracked in version control
 - Book republished with latest news
 
@@ -50,7 +50,7 @@ Broader shifts demonstrating AI adoption velocity and commercial pressure:
 - Post-publication news propagates to THREE locations:
   1. `manuscripts/bible/web/news.html` at `https://allabout.network/invisible-users/news.html` (public-facing HTML)
   2. `marketing/blog/book-updates.md` (changelog tracking additions to Appendix J)
-  3. `manuscripts/bible/appendix-j-industry-developments.md` (LIVE comprehensive record, new entries added to existing content)
+  3. `manuscripts/shared-appendices/appendix-j-industry-developments.md` (LIVE comprehensive record, new entries added to existing content)
 - All three files track developments that would have been in the book had they happened before publication
 - The six categories define what qualifies as significant post-publication news
 
