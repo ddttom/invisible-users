@@ -9,6 +9,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Presentation Materials (2026-01-18)
+
+**Manuscript Enhancement:**
+
+Updated presentation materials (talk-slides.js, talk.md) to strengthen "Design for Both" messaging emphasizing that what machines need is exactly what users with disabilities need.
+
+**New Content:**
+
+- **Chapter 0: What Are AI Agents?** - Foundation chapter explaining four agent types (server-side, in-browser, browser automation, local) with technical capabilities, what they see/miss, and disability equivalents. Establishes "machines" terminology and convergence principle.
+- **SLIDE-CONTENT-LIST.md** - Complete documentation of all 32 presentation slides with full content for reference.
+
+**Presentation Updates (32 slides, was 31):**
+
+- **New Slide 2:** "What Are AI Agents? They're Machines" - Introduces four agent types and their technical constraints
+- **New Slide 7:** "The Agent Journey Through Your Website" - Explains six stages (LLM training → citation → search/compare → pricing → offers → purchase)
+- **New Slide 11:** "Mistake #2: Vague Button Text" - Example of three "More" buttons without context
+- **New Slide 15:** "The Ally McBeal Problem" - Warning about AI training data including TV subtitles, need to mark professional content vs fiction explicitly
+- **Combined Slides 4 & 5:** Merged into single highlight slide for £203k cruise example with stronger messaging
+- **Updated Slide 16:** "The Citation Problem" now includes first-mover advantage ("sites that work early get preferred")
+- **Updated Slide 29:** Changed title from "Design for Machines, Benefit Everyone" to "Design for Both"
+- **Improved Transitions:** Added clear segue from cruise example to broader problem
+
+**Core Messaging:**
+
+- Consistent "Design for Both" throughout (not "machines first")
+- Every pattern shows dual benefit: machines AND screen readers
+- Emphasizes convergence: semantic structure serves accessibility AND AI
+- Real examples: £203k cruise error, vague "More" buttons, Ally McBeal confusion
+
+**Submodule commit:** 7db8b34 in invisible-users-manuscript repository
+
+---
+
 ### Added - Complete AI-Friendly HTML Pattern Implementation (2026-01-18)
 
 **Web Audit Suite Enhancement:**
