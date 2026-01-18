@@ -206,7 +206,7 @@ The `npm run illustrations:generate` command performs these steps:
 
 1. **Downloads cover images** (if missing): Profile.png, A4-Cover.png, Kindle-Cover.png
 2. **Checks for back-cover.png**: This file must be generated manually by:
-   - Opening [packages/manuscript/the-bible-of-mx/manuscripts/bible/web/back-cover.html](packages/manuscript/the-bible-of-mx/manuscripts/bible/web/back-cover.html) in a browser
+   - Opening [packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/web/back-cover.html](packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/web/back-cover.html) in a browser
    - Taking a full-page screenshot
    - Saving as `back-cover.png` in `packages/manuscript/the-bible-of-mx/manuscripts/bible/illustrations/`
 3. **Converts SVG to PNG**: All .svg files in manuscripts/bible/illustrations/ are converted to .png using ImageMagick
@@ -1004,7 +1004,7 @@ When creating web pages (appendices, marketing materials, documentation):
 
 **Complete reference:** See [appendix-d-ai-friendly-html-guide.txt](packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/appendix-d-ai-friendly-html-guide.txt) for comprehensive patterns.
 
-**Real-world example:** The [back-cover.html](packages/manuscript/the-bible-of-mx/manuscripts/bible/web/back-cover.html) demonstrates all patterns in production use.
+**Real-world example:** The [back-cover.html](packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/web/back-cover.html) demonstrates all patterns in production use.
 
 ### Pre-Deploy HTML Checklist
 

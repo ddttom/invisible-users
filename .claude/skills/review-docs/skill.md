@@ -48,7 +48,7 @@ The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-styl
 /review-docs docs/web-audit-architecture.md
 
 # Review HTML files
-/review-docs packages/manuscript/the-bible-of-mx/manuscripts/bible/web/back-cover.html
+/review-docs packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/web/back-cover.html
 ```
 
 ## 5-Phase Workflow

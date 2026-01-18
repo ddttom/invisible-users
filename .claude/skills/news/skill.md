@@ -48,7 +48,7 @@ Broader shifts demonstrating AI adoption velocity and commercial pressure:
 
 - Book manuscript frozen, but appendices are LIVE online documents kept up to date
 - Post-publication news propagates to THREE locations:
-  1. `manuscripts/bible/web/news.html` at `https://allabout.network/invisible-users/news.html` (public-facing HTML)
+  1. `manuscripts/shared-appendices/web/news.html` at `https://allabout.network/invisible-users/news.html` (public-facing HTML)
   2. `marketing/blog/book-updates.md` (changelog tracking additions to Appendix J)
   3. `manuscripts/shared-appendices/appendix-j-industry-developments.md` (LIVE comprehensive record, new entries added to existing content)
 - All three files track developments that would have been in the book had they happened before publication
@@ -392,7 +392,7 @@ Opportunity skill:
 ## File Locations
 
 **POST-PUBLICATION targets (ALL THREE updated with each news item):**
-- News page: `packages/manuscript/the-bible-of-mx/manuscripts/bible/web/news.html` (public-facing HTML at https://allabout.network/invisible-users/news.html)
+- News page: `packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/web/news.html` (public-facing HTML at https://allabout.network/invisible-users/news.html)
 - Blog: `packages/manuscript/the-bible-of-mx/marketing/blog/book-updates.md` (changelog tracking additions to Appendix J)
 - Appendix: `packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-j-industry-developments.md` (LIVE comprehensive record, new entries ADDED to existing content)
 
