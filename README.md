@@ -187,6 +187,34 @@ This ensures the book remains the single source of truth.
 
 **Note on Dual-File Appendices:** Appendices D and H use two files each - a `.txt` file (editable source of truth) and a `.md` wrapper (displays content in a code block for PDF generation). The .txt files are located in `manuscripts/shared-appendices/` alongside their .md counterparts.
 
+### Shared Appendices Structure
+
+**IMPORTANT:** All appendices (A-L) are stored in a separate shared directory, not within individual book directories.
+
+**Location:** `packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/`
+
+**Why this structure?**
+
+This repository supports multiple book variants from the same manuscript source:
+
+- **The Bible**: Full comprehensive guide (13 chapters + 12 appendices)
+- **Don't Make AI Think**: Slim practical guide (10 chapters + shared appendices)
+- **Future books**: Additional variants can reference the same appendices
+
+By storing appendices in a shared location:
+
+- ✅ Single source of truth - update once, all books benefit
+- ✅ Consistency guaranteed across all book variants
+- ✅ No duplication or drift between versions
+- ✅ Simpler maintenance and updates
+
+**For developers and AI agents:**
+
+- Always reference appendices using: `manuscripts/shared-appendices/appendix-*.md`
+- Never look for appendices in `manuscripts/bible/` - they are no longer there
+- Build scripts (`npm run pdf:appendix`) read from shared-appendices
+- Skills like `/news` update `manuscripts/shared-appendices/appendix-j-industry-developments.md`
+
 ## Working with the Manuscript Submodule
 
 The book manuscript is maintained in a separate public repository and integrated as a git submodule. When you first clone this repository, you need to initialize the submodule:
