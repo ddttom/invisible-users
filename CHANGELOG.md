@@ -9,6 +9,65 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Complete AI-Friendly HTML Pattern Implementation (2026-01-18)
+
+**Web Audit Suite Enhancement:**
+
+Implemented all 15 missing AI-friendly HTML patterns from `packages/web-audit-suite/audit-plan.md`, bringing the Web Audit Suite to complete alignment with "Don't Make AI Think" manuscript patterns.
+
+**Priority 1 Patterns (Critical - 60 points):**
+
+- Gap 3: Heading hierarchy validation - Validates h1→h2→h3 progression, detects multiple h1, awards +10 for perfect hierarchy, -5 per level jump
+- Gap 9: Pre-rendering detection - Detects Next.js/Nuxt.js SSR implementation, validates content in served HTML, awards +20 for pre-rendered content, -20 for empty SPA root
+- Gap 12: PDF-only content detection - Identifies PDFs without HTML alternatives, awards +10 for PDF+HTML, -20 per PDF-only
+- Gap 14: SSR framework detection - Validates Next.js/Nuxt.js rendering content, awards +20 for SSR with content, -20 without
+
+**Priority 2 Patterns (Important - 60 points):**
+
+- Gap 1: DOM order problems - Detects sidebar/nav before main content, awards +5 for main first, -10/-5 penalties
+- Gap 2: Pricing tables with Schema - Validates pricing with Schema.org Product markup, awards +15 with schema, -10 without
+- Gap 6: Product variants - Detects multiple offers in Product schema, awards +10 for variants
+- Gap 10: AJAX navigation - Validates real URLs vs hash-based routing, awards +10 for real URLs, -10 for hash-based
+- Gap 11: Table abuse detection - Identifies tables for layout vs data, -15 per layout table, +5 for proper data tables
+- Gap 13: Content in iframes - Detects iframes without text alternatives, awards +5 with alternative, -10 per iframe without
+
+**Priority 3 Patterns (Nice to Have - 15 points):**
+
+- Gap 4: Definition lists - Validates dl/dt/dd for product specs, awards +5 for progressive pattern
+- Gap 7: Skeleton content - Checks loading states have placeholders, awards +5 for skeleton content, -5 for empty containers
+- Gap 15: Progressive enhancement - Detects details/summary elements, awards +5 for native accordion
+
+**Priority 4 Patterns (Edge Cases - 8 points):**
+
+- Gap 5: Multiple authors - Validates Article schema author arrays, awards +3 for multi-author support
+- Gap 8: Content separation - Checks public/private content separation, awards +5 for clear separation
+
+**Implementation Details:**
+
+- Added 15 analyzer methods to `src/collectors/llmCollector.js` (~570 lines)
+- Added scoring weights to `src/config/scoringWeights.js` for all patterns
+- Added scoring logic to `src/scorers/llmScorer.js` (~145 lines)
+- Added 15 feedback generators to `src/reporters/llmFeedback.js` (~418 lines)
+- Added 12 comprehensive tests for Priority 1 patterns to `test/utils/llmMetrics.test.js`
+- Updated `docs/FEATURES.md` with complete pattern documentation
+- Deleted outdated `IMPROVEMENT_PLAN.md`
+
+**Scoring Scale:**
+
+- Expanded from ~155 points to 230+ points across ESSENTIAL_SERVED patterns
+- All patterns include source attribution to "Don't Make AI Think" chapters
+- Production-ready implementation with all 170 tests passing
+
+**Files Modified:**
+
+- `packages/web-audit-suite/src/collectors/llmCollector.js` - Pattern detection
+- `packages/web-audit-suite/src/config/scoringWeights.js` - Score weights
+- `packages/web-audit-suite/src/scorers/llmScorer.js` - Scoring logic
+- `packages/web-audit-suite/src/reporters/llmFeedback.js` - Actionable feedback
+- `packages/web-audit-suite/test/utils/llmMetrics.test.js` - Test coverage
+- `packages/web-audit-suite/docs/FEATURES.md` - Documentation
+- `packages/web-audit-suite/PROJECTSTATE.md` - Project state snapshot
+
 ### Changed - Web Directory Moved to Shared Appendices (2026-01-18)
 
 **Directory Restructuring:**
