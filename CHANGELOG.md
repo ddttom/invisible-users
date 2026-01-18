@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Renamed manuscript directories to better reflect their content structure:
 
 - `packages/manuscript/manuscript/` → `packages/manuscript/the-bible-of-mx/` (comprehensive manuscript)
-- `packages/manuscript/slim/` → `packages/manuscript/dont-make-ai-think/` (slim version)
+- `packages/manuscript/slim/` → `packages/manuscript/the-bible-of-mx/dont-make-ai-think/` (slim version, now in submodule)
 
 **Comprehensive Path Updates (49 files):**
 
@@ -57,8 +57,7 @@ Renamed manuscript directories to better reflect their content structure:
 
 **Files Modified:**
 
-- Manuscript submodule: `.gitignore`
-- dont-make-ai-think manuscript: 10 chapter and guide files
+- Manuscript submodule: `.gitignore`, `dont-make-ai-think/` folder (10 chapter and guide files)
 - Core documentation: [docs/refactor-history.md](docs/refactor-history.md)
 - Web Audit Suite: [packages/web-audit-suite/RECONCILIATION-STATUS.md](packages/web-audit-suite/RECONCILIATION-STATUS.md), [packages/web-audit-suite/TEST_IMPLEMENTATION_PLAN.md](packages/web-audit-suite/TEST_IMPLEMENTATION_PLAN.md)
 
