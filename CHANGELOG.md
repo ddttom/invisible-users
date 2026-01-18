@@ -9,6 +9,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - Maintenance and Code Quality (2026-01-18)
+
+**Manuscript Submodule Updates:**
+
+- Added `*.zip` to .gitignore for archive files
+- Removed obsolete FAQ wrapper exclusions from .gitignore
+
+**Markdown Linting Improvements:**
+
+- Fixed auto-fixable linting issues across all markdown files
+- Fixed heading hierarchy in [docs/refactor-history.md](docs/refactor-history.md)
+- Escaped inline HTML placeholders (replaced `<number>` with `` `<number>` ``)
+- Wrapped bash examples in proper code blocks
+- Converted emphasis text to headings where appropriate
+- Made duplicate headings unique with descriptive context
+- Added blank lines around headings and code blocks
+
+**Files Modified:**
+
+- Manuscript submodule: `.gitignore`
+- Slim manuscript: 10 chapter and guide files
+- Core documentation: [docs/refactor-history.md](docs/refactor-history.md)
+- Web Audit Suite: [packages/web-audit-suite/RECONCILIATION-STATUS.md](packages/web-audit-suite/RECONCILIATION-STATUS.md), [packages/web-audit-suite/TEST_IMPLEMENTATION_PLAN.md](packages/web-audit-suite/TEST_IMPLEMENTATION_PLAN.md)
+
 ### Added - Comprehensive Test Suite Implementation (2026-01-18)
 
 Implemented complete test coverage for 4 major features, achieving 100% test pass rate (158/158 tests):
