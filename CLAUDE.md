@@ -121,9 +121,13 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 │   │       ├── manuscripts/        # All book manuscripts
 │   │       │   ├── bible/          # "The Invisible Users" (full book)
 │   │       │   │   ├── bible-plan.md      # Master plan with chapter outlines and status
-│   │       │   │   ├── [13 chapters, 12 appendices, metadata, illustrations, web/]
-│   │       │   └── dont-make-ai-think/    # "Don't Make AI Think" (slim version)
-│   │       │       ├── [10 chapters focused on practical implementation]
+│   │       │   │   ├── [13 chapters, metadata, illustrations, web/]
+│   │       │   ├── dont-make-ai-think/    # "Don't Make AI Think" (slim version)
+│   │       │   │   ├── [10 chapters focused on practical implementation]
+│   │       │   └── shared-appendices/     # Shared appendices for all books
+│   │       │       ├── appendix-a-*.md through appendix-l-*.md  # 12 appendices
+│   │       │       ├── appendix-d-ai-friendly-html-guide.txt    # Dual-file source
+│   │       │       └── appendix-h-live-llms.txt                 # Dual-file source
 │   │       ├── code/               # All code examples
 │   │       │   ├── agent-friendly-starter-kit/  # Code examples (good/ vs bad/)
 │   │       │   └── examples/       # Production-ready code implementations
@@ -175,6 +179,26 @@ A comprehensive Node.js website analysis tool that implements the AI agent compa
 ```
 
 **Note:** PNG illustrations are generated from SVG sources using `npm run illustrations:generate` and are not tracked in version control.
+
+### Shared Appendices Structure
+
+**CRITICAL:** Appendices are now stored in a separate shared directory and are NOT part of individual book directories.
+
+**Location:** `packages/manuscript/the-bible-of-mx/manuscripts/shared-appendices/`
+
+**Why shared?** All book variants (The Bible, Don't Make AI Think, and future books) reference the same appendix content without duplication. This ensures consistency and simplifies maintenance - update an appendix once, all books benefit.
+
+**What's in shared-appendices:**
+
+- All 12 appendix markdown files (appendix-a through appendix-l)
+- Dual-file sources: appendix-d-ai-friendly-html-guide.txt and appendix-h-live-llms.txt
+
+**Important for file operations:**
+
+- When referencing appendices, always use the path: `manuscripts/shared-appendices/appendix-*.md`
+- Never look for appendices in `manuscripts/bible/` - they are no longer there
+- The HTML generation script (`scripts/generate-appendix-html.sh`) reads from shared-appendices
+- The `/news` skill updates `manuscripts/shared-appendices/appendix-j-industry-developments.md`
 
 **Illustration Generation Process:**
 
