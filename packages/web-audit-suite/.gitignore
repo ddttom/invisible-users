@@ -6,6 +6,7 @@ node_modules/
 
 results/
 ss/
+test/golden_output/
 
 # Optional npm cache directory
 .npm
