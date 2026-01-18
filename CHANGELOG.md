@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **Files Modified:**
 
 - Manuscript submodule: `.gitignore`
-- Slim manuscript: 10 chapter and guide files
+- dont-make-ai-think manuscript: 10 chapter and guide files
 - Core documentation: [docs/refactor-history.md](docs/refactor-history.md)
 - Web Audit Suite: [packages/web-audit-suite/RECONCILIATION-STATUS.md](packages/web-audit-suite/RECONCILIATION-STATUS.md), [packages/web-audit-suite/TEST_IMPLEMENTATION_PLAN.md](packages/web-audit-suite/TEST_IMPLEMENTATION_PLAN.md)
 

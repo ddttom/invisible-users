@@ -6,8 +6,8 @@
 set -e  # Exit on error
 
 # Configuration
-MANUSCRIPT_DIR="packages/manuscript/manuscript"
-OUTPUT_DIR="packages/manuscript/manuscript/web"
+MANUSCRIPT_DIR="packages/manuscript/the-bible-of-mx"
+OUTPUT_DIR="packages/manuscript/the-bible-of-mx/web"
 SCRIPTS_DIR="scripts"
 BASE_URL="https://allabout.network/invisible-users"
 
@@ -329,6 +329,6 @@ echo ""
 echo "Total: 18 files"
 echo ""
 echo "View locally:"
-echo "  open packages/manuscript/manuscript/web/index.html (book main page)"
-echo "  open packages/manuscript/manuscript/web/appendix-index.html (appendices)"
+echo "  open packages/manuscript/the-bible-of-mx/web/index.html (book main page)"
+echo "  open packages/manuscript/the-bible-of-mx/web/appendix-index.html (appendices)"
 echo "Target URL: $BASE_URL/"

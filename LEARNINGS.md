@@ -30,17 +30,17 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 
 ## Git Directory Navigation: Always Check pwd First
 
-**Rule** (2026-01-10): Made multiple errors trying to navigate to submodule directory with `cd packages/manuscript/manuscript` resulting in "No such file or directory" errors. The fix is simple: **always run `pwd` first** to check current working directory before attempting navigation. This repository has a git submodule at `packages/manuscript/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail. **Check `pwd`, then use correct relative or absolute paths.** When working with submodules, verify current location before every directory change.
+**Rule** (2026-01-10): Made multiple errors trying to navigate to submodule directory with `cd packages/manuscript/the-bible-of-mx` resulting in "No such file or directory" errors. The fix is simple: **always run `pwd` first** to check current working directory before attempting navigation. This repository has a git submodule at `packages/manuscript/the-bible-of-mx/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail. **Check `pwd`, then use correct relative or absolute paths.** When working with submodules, verify current location before every directory change.
 
 **CRITICAL AVOIDANCE TACTIC** (2026-01-10): This error was repeated despite being documented in both LEARNINGS.md and CLAUDE.md. The mistake is attempting to access `.claude/skills/news/` files without first checking working directory. Two repositories exist in this workspace:
 
 1. **Main repo:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/` (contains `.claude/skills/news/`)
-2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/` (does NOT contain `.claude/skills/`)
+2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/` (does NOT contain `.claude/skills/`)
 
 **Before accessing ANY `.claude/` files:**
 
 1. Run `pwd` FIRST
-2. If in submodule (`/packages/manuscript/manuscript/`), use `../../../.claude/skills/news/`
+2. If in submodule (`/packages/manuscript/the-bible-of-mx/`), use `../../../.claude/skills/news/`
 3. If in root (`/invisible-users/`), use `.claude/skills/news/`
 
 **Pattern to avoid:** Assuming file paths without checking location. Always verify with `pwd` before file operations in repos with submodules.
@@ -72,30 +72,30 @@ Critical insights for AI assistants working on this book project. Focus: actiona
 
 ## Step-Commit Submodule Path Error
 
-**Rule** (2026-01-12): During the `/step-commit` workflow, attempted to navigate to submodule with `cd packages/manuscript/manuscript && pwd && git add -A`, which failed with "No such file or directory" error. This repeated the submodule path mistake AGAIN despite:
+**Rule** (2026-01-12): During the `/step-commit` workflow, attempted to navigate to submodule with `cd packages/manuscript/the-bible-of-mx && pwd && git add -A`, which failed with "No such file or directory" error. This repeated the submodule path mistake AGAIN despite:
 
 1. Existing documentation in LEARNINGS.md (entries above)
 2. Existing documentation in CLAUDE.md ("Git Directory Navigation" section)
 3. Automated enforcement in `.claude/hooks/pre-tool-use.sh`
 
-**What happened**: During the commit phase of `/step-commit`, I tried to stage manuscript changes by changing directory to the submodule. The working directory was already at `/Users/tomcranstoun/Documents/GitHub/invisible-users` and the path `packages/manuscript/manuscript` doesn't exist as a relative path when already inside the submodule because the submodule is already initialized and appears as a normal directory.
+**What happened**: During the commit phase of `/step-commit`, I tried to stage manuscript changes by changing directory to the submodule. The working directory was already at `/Users/tomcranstoun/Documents/GitHub/invisible-users` and the path `packages/manuscript/the-bible-of-mx` doesn't exist as a relative path when already inside the submodule because the submodule is already initialized and appears as a normal directory.
 
 **Correct approach**: Simply use `git add -A` from the current directory without attempting to navigate. Git is already aware of the submodule and will stage changes correctly from the root.
 
 **Pattern**: This error occurs specifically during git workflows (commits, staging) when trying to "navigate to" the submodule instead of treating it as part of the current repository tree. The fix is always: check `pwd` first, then use git commands from current location.
 
-**Enforcement needed**: The hooks catch `.claude/` file access mistakes but do NOT catch incorrect navigation attempts during git operations. Consider adding detection for `cd packages/manuscript/manuscript` patterns during git workflows.
+**Enforcement needed**: The hooks catch `.claude/` file access mistakes but do NOT catch incorrect navigation attempts during git operations. Consider adding detection for `cd packages/manuscript/the-bible-of-mx` patterns during git workflows.
 
 ## Submodule Pointer Update After Push
 
 **Rule** (2026-01-12): After successfully pushing submodule commits to the manuscript repository, attempted to push main repository changes, but forgot the critical step of committing the updated submodule pointer in the main repository. User correctly identified: "i think the submodule pointer needs commit and push". When you push commits to a submodule, the parent repository still points to the old submodule commit hash. You MUST:
 
-1. Push submodule commits first: `cd packages/manuscript/manuscript && git push origin main`
+1. Push submodule commits first: `cd packages/manuscript/the-bible-of-mx && git push origin main`
 2. Return to main repository: `cd /path/to/main/repo`
-3. Commit submodule pointer update: `git add packages/manuscript/manuscript && git commit -m "Update manuscript submodule pointer"`
+3. Commit submodule pointer update: `git add packages/manuscript/the-bible-of-mx && git commit -m "Update manuscript submodule pointer"`
 4. Push main repository: `git push origin <branch>`
 
-**Pattern**: After ANY submodule push, the parent repository needs a commit to update the pointer. Git shows this as `modified: packages/manuscript/manuscript (new commits)` in git status. The hooks remind about this, but you still need to execute the steps. This is a two-step process that cannot be skipped.
+**Pattern**: After ANY submodule push, the parent repository needs a commit to update the pointer. Git shows this as `modified: packages/manuscript/the-bible-of-mx (new commits)` in git status. The hooks remind about this, but you still need to execute the steps. This is a two-step process that cannot be skipped.
 
 ## Accessibility: WCAG Contrast Requirements Keep Being Violated
 
@@ -141,19 +141,19 @@ The hook blocks commits with violations and provides guidance on fixing them, in
 
 ## Step-Commit Must Check Submodule Changes
 
-**Rule** (2026-01-15): During `/step-commit` execution, I completed the entire workflow for the main repository but forgot to check if the manuscript submodule had uncommitted changes. User had to point out "hmm, the manuscript has not been step-commit" after I reported the workflow complete. Git status showed `modified: packages/manuscript/manuscript (modified content, untracked content)` in the main repo, which indicates the submodule has uncommitted changes, but I didn't process this information during the workflow.
+**Rule** (2026-01-15): During `/step-commit` execution, I completed the entire workflow for the main repository but forgot to check if the manuscript submodule had uncommitted changes. User had to point out "hmm, the manuscript has not been step-commit" after I reported the workflow complete. Git status showed `modified: packages/manuscript/the-bible-of-mx (modified content, untracked content)` in the main repo, which indicates the submodule has uncommitted changes, but I didn't process this information during the workflow.
 
 **What broke**: The `/step-commit` skill completed successfully for the main repository but left the submodule in an uncommitted state. This violates the purpose of the systematic commit workflow, which should ensure ALL changes across both repositories are committed.
 
 **Correct workflow for dual-repository setup**:
 
-1. Check `git status` in main repository - look for `modified: packages/manuscript/manuscript` indicator
-2. If submodule shows modified content, navigate to submodule: `cd packages/manuscript/manuscript`
+1. Check `git status` in main repository - look for `modified: packages/manuscript/the-bible-of-mx` indicator
+2. If submodule shows modified content, navigate to submodule: `cd packages/manuscript/the-bible-of-mx`
 3. Run complete step-commit workflow IN the submodule (git status, diff, stage, commit, lint, push)
 4. Return to main repository: `cd /path/to/main/repo`
-5. Update submodule pointer: `git add packages/manuscript/manuscript && git commit -m "Update manuscript submodule pointer"`
+5. Update submodule pointer: `git add packages/manuscript/the-bible-of-mx && git commit -m "Update manuscript submodule pointer"`
 6. Push main repository
 
-**Pattern recognition**: When `git status` shows `modified: packages/manuscript/manuscript (modified content, untracked content)`, this means the submodule has uncommitted changes that need their own commit workflow BEFORE updating the submodule pointer.
+**Pattern recognition**: When `git status` shows `modified: packages/manuscript/the-bible-of-mx (modified content, untracked content)`, this means the submodule has uncommitted changes that need their own commit workflow BEFORE updating the submodule pointer.
 
 **Skill update needed**: The `/step-commit` skill should detect submodule changes and either handle them automatically or explicitly warn the user that submodule commits are required.

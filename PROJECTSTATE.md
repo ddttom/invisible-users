@@ -8,7 +8,7 @@
 
 This repository is now structured as a monorepo with npm workspaces:
 
-- **`packages/manuscript/`** - Book manuscript and materials (contains git submodule at `packages/manuscript/manuscript/`)
+- **`packages/manuscript/`** - Book manuscript and materials (contains git submodule at `packages/manuscript/the-bible-of-mx/`)
 - **`packages/web-audit-suite/`** - Web analysis tool
 - **Root level** - Shared tooling, scripts, and documentation
 
@@ -148,7 +148,7 @@ All projects share dependency management and build scripts via npm workspaces.
   - **Partners & Investors:** Agencies and investors
   - **Reading Paths:** Business Leaders, Product Owners, Content Managers/Strategists, UX Designers/Information Architects, Developers, Agent System Developers, Small Business Owners
 - **Structure:** Manuscript maintained in separate repository as git submodule
-  - **Submodule:** `packages/manuscript/manuscript/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
+  - **Submodule:** `packages/manuscript/the-bible-of-mx/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
   - Tracks main branch for easy updates
   - Core chapters (1-13), preface, executive summary in submodule
   - All twelve appendices (implementation guides, pattern references, resource directory, DDT reference, pipeline failure case study, industry developments, common page patterns, proposed AI metadata patterns) in submodule
@@ -165,7 +165,7 @@ All projects share dependency management and build scripts via npm workspaces.
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
   - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 11 pattern enhancement, generates 18 files (index.html, appendix-index.html, news.html, faq.html, llms.txt, sitemap.xml, 12 appendix pages A-L).
 - **Web Pages:**
-  - **Location** (`packages/manuscript/manuscript/web/`) - Contains both manually maintained files and generated appendices
+  - **Location** (`packages/manuscript/the-bible-of-mx/web/`) - Contains both manually maintained files and generated appendices
   - **News** (`web/news.html`) - Project news and updates (manually maintained)
   - **FAQ** (`web/faq.html`) - Frequently asked questions about the book and project (manually maintained)
   - **For Reviewers** (`web/for-reviewers.html`) - Reviewer acknowledgment page with NDA agreement and download access
@@ -203,7 +203,7 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Status:** Complete
 - **Materials:**
   - Business and sales materials: PITCH.md, business-plan.md, executive-summary.md, PARTNER_KIT.md, ROI_CASE_STUDIES.md, profile.md
-  - Presentation materials (talk.md, talk-slides.js, talk1.md) moved to manuscript repository at `packages/manuscript/manuscript/talks/members-call/`
+  - Presentation materials (talk.md, talk-slides.js, talk1.md) moved to manuscript repository at `packages/manuscript/the-bible-of-mx/talks/members-call/`
 - **Target Audience:** Business leaders (CTOs, product owners)
 - **Key Features:** Priority-based roadmap, real production examples, code samples with ROI implications, professional profile combining agent-ready infrastructure with strategic advisory
 
@@ -215,9 +215,9 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Manuscript Repository:** <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
   - Public repository for GitHub Actions access
   - Independent manuscript versioning and CI
-  - Tracked as submodule at `packages/manuscript/manuscript/`
+  - Tracked as submodule at `packages/manuscript/the-bible-of-mx/`
 - **Submodule Initialization:** `git submodule update --init --recursive`
-- **Submodule Updates:** `git submodule update --remote packages/manuscript/manuscript`
+- **Submodule Updates:** `git submodule update --remote packages/manuscript/the-bible-of-mx`
 
 ### Development Environment
 

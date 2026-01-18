@@ -36,8 +36,8 @@ fi
 if [[ "$FILE_PATH" == .claude/* ]] || [[ "$FILE_PATH" == */.claude/* ]]; then
     CURRENT_DIR=$(pwd)
 
-    # Check if we're in the submodule (path contains packages/manuscript/manuscript/)
-    if [[ "$CURRENT_DIR" == */packages/manuscript/manuscript* ]]; then
+    # Check if we're in the submodule (path contains packages/manuscript/the-bible-of-mx/)
+    if [[ "$CURRENT_DIR" == */packages/manuscript/the-bible-of-mx* ]]; then
         echo "❌ CRITICAL ERROR: Attempting to access .claude/ from submodule directory!"
         echo ""
         echo "Current directory: $CURRENT_DIR"
@@ -47,7 +47,7 @@ if [[ "$FILE_PATH" == .claude/* ]] || [[ "$FILE_PATH" == */.claude/* ]]; then
         echo "  /Users/tomcranstoun/Documents/GitHub/invisible-users/"
         echo ""
         echo "You are currently in the submodule at:"
-        echo "  /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/"
+        echo "  /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/"
         echo ""
         echo "Fix options:"
         echo "  1. Use absolute path: /Users/tomcranstoun/Documents/GitHub/invisible-users/.claude/..."
@@ -63,7 +63,7 @@ fi
 # MANUSCRIPT WRITING STYLE CHECK: Detect manuscript file operations
 # Remind Claude to follow writing style guide when editing manuscript content
 if [[ "$TOOL_NAME" == "Edit" ]] || [[ "$TOOL_NAME" == "Write" ]] || [[ "$TOOL_NAME" == "NotebookEdit" ]]; then
-    if [[ "$FILE_PATH" == *"packages/manuscript/manuscript"* ]]; then
+    if [[ "$FILE_PATH" == *"packages/manuscript/the-bible-of-mx"* ]]; then
         # Check file extension for text content (not images, PDFs, etc.)
         if [[ "$FILE_PATH" =~ \.(md|html|txt)$ ]]; then
             echo "📝 WRITING STYLE REMINDER: Manuscript content detected"
@@ -103,7 +103,7 @@ if [[ "$COUNTER" -ge "$PWD_CHECK_THRESHOLD" ]]; then
     echo ""
     echo "This workspace has TWO repositories:"
     echo "  Main:      /Users/tomcranstoun/Documents/GitHub/invisible-users/ (has .claude/)"
-    echo "  Submodule: /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/ (NO .claude/)"
+    echo "  Submodule: /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/ (NO .claude/)"
     echo ""
     echo "Current directory: $(pwd)"
     echo ""

@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **MANDATORY: Run `pwd` before accessing `.claude/` files**
 
 - Main repo: `/Users/tomcranstoun/Documents/GitHub/invisible-users/` (has `.claude/`)
-- Submodule: `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/` (NO `.claude/`)
+- Submodule: `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/` (NO `.claude/`)
 
 **📖 See [GIT-README.md](GIT-README.md) for comprehensive git workflow guidance for AI agents.**
 
@@ -160,14 +160,14 @@ The `npm run illustrations:generate` command performs these steps:
 
 1. **Downloads cover images** (if missing): Profile.png, A4-Cover.png, Kindle-Cover.png
 2. **Checks for back-cover.png**: This file must be generated manually by:
-   - Opening [packages/manuscript/manuscript/web/back-cover.html](packages/manuscript/manuscript/web/back-cover.html) in a browser
+   - Opening [packages/manuscript/the-bible-of-mx/web/back-cover.html](packages/manuscript/the-bible-of-mx/web/back-cover.html) in a browser
    - Taking a full-page screenshot
-   - Saving as `back-cover.png` in `packages/manuscript/manuscript/illustrations/`
+   - Saving as `back-cover.png` in `packages/manuscript/the-bible-of-mx/illustrations/`
 3. **Converts SVG to PNG**: All .svg files in illustrations/ are converted to .png using ImageMagick
 
 ## Project Task List (todo.txt)
 
-**Location:** `packages/manuscript/manuscript/todo.txt`
+**Location:** `packages/manuscript/the-bible-of-mx/todo.txt`
 
 **CRITICAL: This file is the USER'S personal project task list and reference.**
 
@@ -253,11 +253,11 @@ The PDF generation command (`pdf:generate` in package.json) uses `appendix-*.md`
 
 ```bash
 # Step 1: Edit the .txt file (add content)
-Edit packages/manuscript/manuscript/appendix-d-ai-friendly-html-guide.txt
+Edit packages/manuscript/the-bible-of-mx/appendix-d-ai-friendly-html-guide.txt
 # Add new "Common Validation Pitfalls" section at line 2674
 
 # Step 2: Update the .md file (update TOC)
-Edit packages/manuscript/manuscript/appendix-d-ai-friendly-html-guide.md
+Edit packages/manuscript/the-bible-of-mx/appendix-d-ai-friendly-html-guide.md
 # Update Part 9 description from:
 #   "Testing and Validation - Automated Playwright tests, manual validation"
 # To:
@@ -268,11 +268,11 @@ Edit packages/manuscript/manuscript/appendix-d-ai-friendly-html-guide.md
 
 ```bash
 # Step 1: Edit the .txt file (add links)
-Edit packages/manuscript/manuscript/appendix-h-live-llms.txt
+Edit packages/manuscript/the-bible-of-mx/appendix-h-live-llms.txt
 # Add new curated links to the 20-link collection
 
 # Step 2: Update the .md file (update count if changed)
-Edit packages/manuscript/manuscript/appendix-h-live-llms.md
+Edit packages/manuscript/the-bible-of-mx/appendix-h-live-llms.md
 # Update link count in introduction if changed from 20 to a different number
 ```
 
@@ -294,7 +294,7 @@ After updating both files, verify consistency:
 
 ```bash
 # Check that .md table of contents matches .txt structure
-grep "^## Part" packages/manuscript/manuscript/appendix-d-ai-friendly-html-guide.txt
+grep "^## Part" packages/manuscript/the-bible-of-mx/appendix-d-ai-friendly-html-guide.txt
 # Compare against .md table of contents (lines 14-24)
 ```
 
@@ -520,9 +520,9 @@ The Web Audit Suite implements the patterns from "The Invisible Users" book:
 
 Reference Documentation:
 
-- Book manuscript: `packages/manuscript/manuscript/` directory
-- Implementation guidance: `packages/manuscript/manuscript/chapter-12-technical-advice.md`
-- Quick reference: `packages/manuscript/manuscript/appendix-ai-patterns-quick-reference.md`
+- Book manuscript: `packages/manuscript/the-bible-of-mx/` directory
+- Implementation guidance: `packages/manuscript/the-bible-of-mx/chapter-12-technical-advice.md`
+- Quick reference: `packages/manuscript/the-bible-of-mx/appendix-ai-patterns-quick-reference.md`
 
 ### Two HTML States (Critical Distinction)
 
@@ -928,9 +928,9 @@ When creating web pages (appendices, marketing materials, documentation):
 4. **Explicit locale** - Use `<html lang="en-GB" data-locale="en-GB">`
 5. **Contact information** - Wrap URLs in `<address>` element
 
-**Complete reference:** See [appendix-d-ai-friendly-html-guide.txt](packages/manuscript/manuscript/appendix-d-ai-friendly-html-guide.txt) for comprehensive patterns.
+**Complete reference:** See [appendix-d-ai-friendly-html-guide.txt](packages/manuscript/the-bible-of-mx/appendix-d-ai-friendly-html-guide.txt) for comprehensive patterns.
 
-**Real-world example:** The [back-cover.html](packages/manuscript/manuscript/web/back-cover.html) demonstrates all patterns in production use.
+**Real-world example:** The [back-cover.html](packages/manuscript/the-bible-of-mx/web/back-cover.html) demonstrates all patterns in production use.
 
 ### Pre-Deploy HTML Checklist
 
@@ -983,7 +983,7 @@ When removing a file that's referenced in documentation:
 
 - Repository structure diagrams: `CLAUDE.md`, `README.md`, `packages/manuscript/book-plan.md`, `llms.txt`
 - Supporting materials tables: `packages/manuscript/book-plan.md`
-- Cross-references: `packages/manuscript/manuscript/blog/blog.md`, `resource-links.md`, `PROJECTSTATE.md`
+- Cross-references: `packages/manuscript/the-bible-of-mx/blog/blog.md`, `resource-links.md`, `PROJECTSTATE.md`
 
 ## Cross-Document Update Patterns
 
@@ -1037,7 +1037,7 @@ Four custom skills are available via the `/` command syntax:
    - Sequences entries chronologically
    - Creates properly formatted blog entries (narrative style)
    - Creates structured appendix entries (12-section technical format)
-   - Updates both `packages/manuscript/manuscript/blog/book-updates.md` and `appendix-j-industry-developments.md`
+   - Updates both `packages/manuscript/the-bible-of-mx/blog/book-updates.md` and `appendix-j-industry-developments.md`
    - Includes qualifiers for unverified company-reported metrics
    - Only adds news that validates or challenges specific book chapters
    - **Usage:** `/news [paste news content or URL]`
@@ -1051,7 +1051,7 @@ Four custom skills are available via the `/` command syntax:
    - Provides specific fixes with line numbers for all violations
    - Applies to any file (manuscript, documentation, HTML)
    - **Usage:** `/review-docs [file paths...]`
-   - **Example:** `/review-docs packages/manuscript/manuscript/chapter-01.md`
+   - **Example:** `/review-docs packages/manuscript/the-bible-of-mx/chapter-01.md`
 
 ### Git Hooks
 
@@ -1059,7 +1059,7 @@ The `pre-tool-use.sh` hook provides automatic workflow reminders:
 
 **Manuscript Style Enforcement:**
 
-- Detects when editing manuscript files (`packages/manuscript/manuscript/*.md`, `*.html`, `*.txt`)
+- Detects when editing manuscript files (`packages/manuscript/the-bible-of-mx/*.md`, `*.html`, `*.txt`)
 - Displays writing style reminder with key requirements:
   - British English (organise, colour, whilst)
   - Forbidden vocabulary (delve, leverage, robust, seamless, etc.)
@@ -1208,7 +1208,7 @@ npm run commit-push
 # ✅ Submodule committed and pushed
 #
 # 📝 Main repository has changes:
-#  M packages/manuscript/manuscript
+#  M packages/manuscript/the-bible-of-mx
 # Enter commit message for main repository (or press Enter for 'tidy'): [Enter pressed]
 # 📦 Committing main repository changes...
 # ⬆️  Pushing main repository to remote...
@@ -1219,7 +1219,7 @@ npm run commit-push
 
 **⚠️ ABSOLUTE REQUIREMENT: Run `pwd` BEFORE EVERY file operation, directory navigation, or git command in this repository. NO EXCEPTIONS.**
 
-This repository has a git submodule at `packages/manuscript/manuscript/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
+This repository has a git submodule at `packages/manuscript/the-bible-of-mx/` which can be accessed from root, but if you're already inside the submodule directory, further `cd` attempts will fail with "No such file or directory" errors.
 
 **TWO REPOSITORIES IN THIS WORKSPACE:**
 
@@ -1227,7 +1227,7 @@ This repository has a git submodule at `packages/manuscript/manuscript/` which c
    - Contains: `.claude/`, `packages/web-audit-suite/`, `docs/`, `CLAUDE.md`, `LEARNINGS.md`
    - Project-level configuration and skills
 
-2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/`
+2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/`
    - Contains: chapters, appendices, blog files
    - Does NOT contain `.claude/` directory
 
@@ -1241,7 +1241,7 @@ pwd
 # If in main repo (/invisible-users/):
 Read(file_path=".claude/skills/news/skill.md")
 
-# If in submodule (/packages/manuscript/manuscript/):
+# If in submodule (/packages/manuscript/the-bible-of-mx/):
 Read(file_path="../../.claude/skills/news/skill.md")
 ```
 
@@ -1252,7 +1252,7 @@ Read(file_path="../../.claude/skills/news/skill.md")
 pwd
 
 # STEP 2: Use git commands from current location
-# ❌ NEVER do: cd packages/manuscript/manuscript && git add -A
+# ❌ NEVER do: cd packages/manuscript/the-bible-of-mx && git add -A
 # ✅ ALWAYS do: git add -A (from current location)
 
 # Git knows about the submodule and will handle it correctly
@@ -1269,7 +1269,7 @@ Read(file_path=".claude/skills/news/skill.md")  # Fails if in submodule
 ls .claude/skills/news/  # "No such file or directory"
 
 # ❌ WRONG: Attempting to navigate to submodule during git operations
-cd packages/manuscript/manuscript && git add -A  # "No such file or directory"
+cd packages/manuscript/the-bible-of-mx && git add -A  # "No such file or directory"
 
 # ✅ CORRECT: Always start with pwd
 pwd  # Check location FIRST - NOT OPTIONAL
@@ -1295,10 +1295,10 @@ git submodule update --init --recursive
 
 ```bash
 # Update submodule to latest from tracked branch (main)
-git submodule update --remote packages/manuscript/manuscript
+git submodule update --remote packages/manuscript/the-bible-of-mx
 
 # Commit the submodule pointer update
-git add packages/manuscript/manuscript
+git add packages/manuscript/the-bible-of-mx
 git commit -m "Update manuscript submodule to latest version"
 ```
 
@@ -1307,9 +1307,9 @@ git commit -m "Update manuscript submodule to latest version"
 ### Book Documentation
 
 - `packages/manuscript/book-plan.md` - Master plan with chapter outlines and status
-- `packages/manuscript/manuscript/Glossary.md` - Comprehensive technical glossary
-- `packages/manuscript/manuscript/appendix-implementation-roadmap.md` - Priority-based implementation guide
-- `packages/manuscript/manuscript/appendix-resource-directory.md` - Curated resources and references
+- `packages/manuscript/the-bible-of-mx/Glossary.md` - Comprehensive technical glossary
+- `packages/manuscript/the-bible-of-mx/appendix-implementation-roadmap.md` - Priority-based implementation guide
+- `packages/manuscript/the-bible-of-mx/appendix-resource-directory.md` - Curated resources and references
 
 ### Web Audit Suite Documentation
 
@@ -1436,7 +1436,7 @@ Maintain consistent contact information across all projects:
 When creating web pages, marketing materials, or book covers that feature the author:
 
 - **Profile picture URL:** `https://allabout.network/media_126e99d56f06caf788bee715aff92281d2e31a206.png`
-- Used in: [back-cover.html](packages/manuscript/manuscript/web/back-cover.html), marketing materials
+- Used in: [back-cover.html](packages/manuscript/the-bible-of-mx/web/back-cover.html), marketing materials
 - Format: Square profile image suitable for circular cropping
 - Usage: Reference this URL directly in HTML `<img>` tags or download for local use
 

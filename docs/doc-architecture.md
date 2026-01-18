@@ -36,8 +36,8 @@ sequenceDiagram
 flowchart TB
     A[Developer runs npm run pdf:appendix] --> B[generate-appendix-html.sh]
 
-    B --> C[Set MANUSCRIPT_DIR packages/manuscript/manuscript]
-    C --> D[Set OUTPUT_DIR packages/manuscript/manuscript/web]
+    B --> C[Set MANUSCRIPT_DIR packages/manuscript/the-bible-of-mx]
+    C --> D[Set OUTPUT_DIR packages/manuscript/the-bible-of-mx/web]
 
     D --> E[Create appendix nav header footer fragments]
     E --> F[Run Pandoc to generate appendix HTML]

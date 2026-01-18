@@ -390,12 +390,12 @@ Opportunity skill:
 ## File Locations
 
 **POST-PUBLICATION targets (ALL THREE updated with each news item):**
-- News page: `packages/manuscript/manuscript/web/news.html` (public-facing HTML at https://allabout.network/invisible-users/news.html)
-- Blog: `packages/manuscript/manuscript/blog/book-updates.md` (changelog tracking additions to Appendix J)
-- Appendix: `packages/manuscript/manuscript/appendix-j-industry-developments.md` (LIVE comprehensive record, new entries ADDED to existing content)
+- News page: `packages/manuscript/the-bible-of-mx/web/news.html` (public-facing HTML at https://allabout.network/invisible-users/news.html)
+- Blog: `packages/manuscript/the-bible-of-mx/blog/book-updates.md` (changelog tracking additions to Appendix J)
+- Appendix: `packages/manuscript/the-bible-of-mx/appendix-j-industry-developments.md` (LIVE comprehensive record, new entries ADDED to existing content)
 
 **Reference files (read-only):**
-- Chapters: `packages/manuscript/manuscript/chapter-*.md`
+- Chapters: `packages/manuscript/the-bible-of-mx/chapter-*.md`
 - Book plan: `packages/book-plan.md`
 
 **Supporting documentation:**

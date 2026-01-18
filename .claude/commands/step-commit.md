@@ -4,18 +4,18 @@ Execute the systematic "step commit" workflow:
 
 1. Initial Commit
    - Review all current changes with git status and git diff
-   - **CRITICAL**: Check if git status shows `modified: packages/manuscript/manuscript (modified content, untracked content)` - this indicates submodule has uncommitted changes
+   - **CRITICAL**: Check if git status shows `modified: packages/manuscript/the-bible-of-mx (modified content, untracked content)` - this indicates submodule has uncommitted changes
    - If submodule has changes, handle it FIRST (see step 1a below)
    - Commit all current code changes with a clear, descriptive commit message
    - Do NOT add attribution or "Generated with" messages
 
 1a. Submodule Handling (if submodule shows modified content)
    - **See GIT-README.md "Workflow 3: Commit Changes in Both Repositories" for detailed guidance**
-   - Use `git -C packages/manuscript/manuscript` commands to avoid navigation issues
-   - Run git status and git diff in submodule: `git -C packages/manuscript/manuscript status`
-   - Stage and commit submodule changes: `git -C packages/manuscript/manuscript add -A && git -C packages/manuscript/manuscript commit -m "Message"`
-   - Push submodule commits to remote: `git -C packages/manuscript/manuscript push origin main`
-   - Stage submodule pointer update: `git add packages/manuscript/manuscript`
+   - Use `git -C packages/manuscript/the-bible-of-mx` commands to avoid navigation issues
+   - Run git status and git diff in submodule: `git -C packages/manuscript/the-bible-of-mx status`
+   - Stage and commit submodule changes: `git -C packages/manuscript/the-bible-of-mx add -A && git -C packages/manuscript/the-bible-of-mx commit -m "Message"`
+   - Push submodule commits to remote: `git -C packages/manuscript/the-bible-of-mx push origin main`
+   - Stage submodule pointer update: `git add packages/manuscript/the-bible-of-mx`
    - Commit pointer update: `git commit -m "Update manuscript submodule with [description]"`
    - Continue with main repository workflow
 
@@ -33,12 +33,12 @@ Execute the systematic "step commit" workflow:
 
 4. Cross-Project Consistency Check (CRITICAL)
    - If changes affect terminology, patterns, or concepts:
-     - Verify book manuscript (packages/manuscript/manuscript/) is the authoritative source
+     - Verify book manuscript (packages/manuscript/the-bible-of-mx/) is the authoritative source
      - Check if tool (packages/web-audit-suite/) needs updates to match book
      - Ensure all documentation uses consistent terminology
    - Terminology changes MUST flow: book → tool → documentation
    - Verify alignment across both projects:
-     - Book manuscript (packages/manuscript/manuscript/)
+     - Book manuscript (packages/manuscript/the-bible-of-mx/)
      - Web Audit Suite (packages/web-audit-suite/)
    - Check shared terminology standards (see CLAUDE.md "Cross-Project Consistency")
 

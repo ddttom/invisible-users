@@ -121,9 +121,9 @@ async function downloadCoverImages() {
     console.log('⚠️  back-cover.png is missing');
     console.log('');
     console.log('To generate back-cover.png:');
-    console.log('  1. Open packages/manuscript/manuscript/web/back-cover.html in a browser');
+    console.log('  1. Open packages/manuscript/the-bible-of-mx/web/back-cover.html in a browser');
     console.log('  2. Take a screenshot (full page screenshot recommended)');
-    console.log('  3. Save as back-cover.png in packages/manuscript/manuscript/illustrations/');
+    console.log('  3. Save as back-cover.png in packages/manuscript/the-bible-of-mx/illustrations/');
     console.log('');
   } else {
     console.log(`✓ back-cover.png exists`);

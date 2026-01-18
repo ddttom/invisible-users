@@ -27,7 +27,7 @@ This guide explains how to work with the dual-repository structure without corru
 2. **Submodule Repository:** `Digital-Domain-Technologies-Ltd/invisible-users-manuscript`
    - URL: <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
    - Contains: Book manuscript (chapters, appendices, illustrations)
-   - Location: `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/`
+   - Location: `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/`
 
 ## The Critical Rule: Check Location First
 
@@ -46,24 +46,24 @@ pwd
 
 ```bash
 # ❌ WRONG - This breaks everything
-cd packages/manuscript/manuscript && git add -A
+cd packages/manuscript/the-bible-of-mx && git add -A
 
 # ✅ CORRECT - Use git from current location
 pwd                  # Check location first
 git add -A           # Git handles submodule automatically
 ```
 
-**Why this fails:** If you're already IN the submodule directory, attempting to `cd packages/manuscript/manuscript` will fail with "No such file or directory" because that relative path doesn't exist from within the submodule.
+**Why this fails:** If you're already IN the submodule directory, attempting to `cd packages/manuscript/the-bible-of-mx` will fail with "No such file or directory" because that relative path doesn't exist from within the submodule.
 
 ### Mistake 2: Using Wrong Repository Commands
 
 ```bash
 # ❌ WRONG - Mixing up which repo you're in
-pwd                              # Shows: /packages/manuscript/manuscript/
+pwd                              # Shows: /packages/manuscript/the-bible-of-mx/
 git push origin main            # Pushes submodule changes to WRONG repo
 
 # ✅ CORRECT - Always verify location
-pwd                              # Shows: /packages/manuscript/manuscript/
+pwd                              # Shows: /packages/manuscript/the-bible-of-mx/
 # You're in submodule, so this IS correct
 git push origin main            # Pushes to manuscript repo
 ```
@@ -72,17 +72,17 @@ git push origin main            # Pushes to manuscript repo
 
 ```bash
 # ❌ WRONG - Push submodule but forget to update pointer
-cd packages/manuscript/manuscript
+cd packages/manuscript/the-bible-of-mx
 git add -A && git commit -m "Update manuscript"
 git push origin main
 # STOPPED HERE - main repo still points to old commit!
 
 # ✅ CORRECT - Always update pointer after submodule push
-cd packages/manuscript/manuscript
+cd packages/manuscript/the-bible-of-mx
 git add -A && git commit -m "Update manuscript"
 git push origin main
 cd ../../..                      # Return to main repo
-git add packages/manuscript/manuscript
+git add packages/manuscript/the-bible-of-mx
 git commit -m "Update manuscript submodule pointer"
 git push origin main
 ```
@@ -120,15 +120,15 @@ pwd
 
 # 2. Check submodule status
 git status
-# Shows: modified: packages/manuscript/manuscript (modified content)
+# Shows: modified: packages/manuscript/the-bible-of-mx (modified content)
 
 # 3. Commit in submodule (use git -C to avoid navigation)
-git -C packages/manuscript/manuscript add -A
-git -C packages/manuscript/manuscript commit -m "Update manuscript content"
-git -C packages/manuscript/manuscript push origin main
+git -C packages/manuscript/the-bible-of-mx add -A
+git -C packages/manuscript/the-bible-of-mx commit -m "Update manuscript content"
+git -C packages/manuscript/the-bible-of-mx push origin main
 
 # 4. Update pointer in main repo
-git add packages/manuscript/manuscript
+git add packages/manuscript/the-bible-of-mx
 git commit -m "Update manuscript submodule pointer"
 git push origin main
 ```
@@ -147,9 +147,9 @@ git status
 # Shows both main repo changes AND submodule changes
 
 # 3. Commit submodule changes FIRST
-git -C packages/manuscript/manuscript add -A
-git -C packages/manuscript/manuscript commit -m "Update manuscript content"
-git -C packages/manuscript/manuscript push origin main
+git -C packages/manuscript/the-bible-of-mx add -A
+git -C packages/manuscript/the-bible-of-mx commit -m "Update manuscript content"
+git -C packages/manuscript/the-bible-of-mx push origin main
 
 # 4. Commit main repo changes (including submodule pointer)
 git add -A
@@ -163,34 +163,34 @@ The `git -C <path>` flag runs git commands in a different directory without chan
 
 ```bash
 # ❌ RISKY - Requires navigation
-cd packages/manuscript/manuscript
+cd packages/manuscript/the-bible-of-mx
 git add -A
 cd ../../..
 
 # ✅ SAFE - No navigation needed
-git -C packages/manuscript/manuscript add -A
+git -C packages/manuscript/the-bible-of-mx add -A
 ```
 
 ### Common git -C Commands
 
 ```bash
 # Check submodule status
-git -C packages/manuscript/manuscript status
+git -C packages/manuscript/the-bible-of-mx status
 
 # Show submodule changes
-git -C packages/manuscript/manuscript diff
+git -C packages/manuscript/the-bible-of-mx diff
 
 # Stage changes in submodule
-git -C packages/manuscript/manuscript add -A
+git -C packages/manuscript/the-bible-of-mx add -A
 
 # Commit in submodule
-git -C packages/manuscript/manuscript commit -m "Message"
+git -C packages/manuscript/the-bible-of-mx commit -m "Message"
 
 # Push submodule
-git -C packages/manuscript/manuscript push origin main
+git -C packages/manuscript/the-bible-of-mx push origin main
 
 # View submodule log
-git -C packages/manuscript/manuscript log -3 --oneline
+git -C packages/manuscript/the-bible-of-mx log -3 --oneline
 ```
 
 ## Understanding Submodule Pointers
@@ -218,7 +218,7 @@ You MUST update the submodule pointer in the main repository whenever:
 
 ```bash
 # After pushing submodule changes:
-git add packages/manuscript/manuscript
+git add packages/manuscript/the-bible-of-mx
 git commit -m "Update manuscript submodule pointer to [brief description]"
 git push origin main
 ```
@@ -233,11 +233,11 @@ pwd
 git status
 
 # Check submodule
-git -C packages/manuscript/manuscript status
+git -C packages/manuscript/the-bible-of-mx status
 
 # Check if submodule pointer needs updating
 git status
-# Look for: modified: packages/manuscript/manuscript (new commits)
+# Look for: modified: packages/manuscript/the-bible-of-mx (new commits)
 ```
 
 ### Detailed Status Check
@@ -248,14 +248,14 @@ git status
 # Output: Your branch is ahead of 'origin/main' by N commits
 
 # Submodule commits ahead of origin
-git -C packages/manuscript/manuscript status
+git -C packages/manuscript/the-bible-of-mx status
 # Output: Your branch is ahead of 'origin/main' by N commits
 
 # View unpushed commits in main repo
 git log origin/main..HEAD --oneline
 
 # View unpushed commits in submodule
-git -C packages/manuscript/manuscript log origin/main..HEAD --oneline
+git -C packages/manuscript/the-bible-of-mx log origin/main..HEAD --oneline
 ```
 
 ## Recovering from Common Errors
@@ -265,7 +265,7 @@ git -C packages/manuscript/manuscript log origin/main..HEAD --oneline
 ```bash
 # You're probably already in the submodule
 pwd
-# Output: /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/
+# Output: /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/
 
 # Solution: Use absolute path or navigate back to root first
 cd /Users/tomcranstoun/Documents/GitHub/invisible-users
@@ -276,23 +276,23 @@ cd /Users/tomcranstoun/Documents/GitHub/invisible-users
 
 ```bash
 git status
-# Output: modified: packages/manuscript/manuscript (modified content)
+# Output: modified: packages/manuscript/the-bible-of-mx (modified content)
 
 # This means submodule has uncommitted changes
 # Solution: Commit them first
-git -C packages/manuscript/manuscript add -A
-git -C packages/manuscript/manuscript commit -m "Commit submodule changes"
+git -C packages/manuscript/the-bible-of-mx add -A
+git -C packages/manuscript/the-bible-of-mx commit -m "Commit submodule changes"
 ```
 
 ### Error: Main repo shows submodule changes but you didn't change anything
 
 ```bash
 git status
-# Output: modified: packages/manuscript/manuscript (new commits)
+# Output: modified: packages/manuscript/the-bible-of-mx (new commits)
 
 # Someone else pushed to the submodule
 # Solution: Update pointer to track their changes
-git add packages/manuscript/manuscript
+git add packages/manuscript/the-bible-of-mx
 git commit -m "Update manuscript submodule pointer to latest"
 git push origin main
 ```
@@ -302,7 +302,7 @@ git push origin main
 ```bash
 # You pushed to submodule but main repo still points to old commit
 # Solution: Update the pointer now
-git add packages/manuscript/manuscript
+git add packages/manuscript/the-bible-of-mx
 git commit -m "Update manuscript submodule pointer after recent changes"
 git push origin main
 ```
@@ -313,7 +313,7 @@ Before committing and pushing, verify:
 
 - [ ] Run `pwd` to confirm current location
 - [ ] Check `git status` in main repo
-- [ ] Check `git -C packages/manuscript/manuscript status` for submodule
+- [ ] Check `git -C packages/manuscript/the-bible-of-mx status` for submodule
 - [ ] If submodule changed: commit and push submodule FIRST
 - [ ] If submodule pushed: update pointer in main repo
 - [ ] Push main repo changes
@@ -327,13 +327,13 @@ pwd
 
 # Status checks
 git status                                          # Main repo
-git -C packages/manuscript/manuscript status        # Submodule
+git -C packages/manuscript/the-bible-of-mx status        # Submodule
 
 # Commit workflow (submodule changes)
-git -C packages/manuscript/manuscript add -A
-git -C packages/manuscript/manuscript commit -m "Message"
-git -C packages/manuscript/manuscript push origin main
-git add packages/manuscript/manuscript
+git -C packages/manuscript/the-bible-of-mx add -A
+git -C packages/manuscript/the-bible-of-mx commit -m "Message"
+git -C packages/manuscript/the-bible-of-mx push origin main
+git add packages/manuscript/the-bible-of-mx
 git commit -m "Update submodule pointer"
 git push origin main
 
@@ -344,11 +344,11 @@ git push origin main
 
 # View recent commits
 git log -3 --oneline                                # Main repo
-git -C packages/manuscript/manuscript log -3 --oneline  # Submodule
+git -C packages/manuscript/the-bible-of-mx log -3 --oneline  # Submodule
 
 # View changes
 git diff                                            # Main repo
-git -C packages/manuscript/manuscript diff          # Submodule
+git -C packages/manuscript/the-bible-of-mx diff          # Submodule
 ```
 
 ## For AI Agents: Step-by-Step Safe Workflow
@@ -365,15 +365,15 @@ git status
 
 # STEP 3: Identify which repository has changes
 # Look for:
-# - "modified: packages/manuscript/manuscript" = submodule has changes
+# - "modified: packages/manuscript/the-bible-of-mx" = submodule has changes
 # - Other files = main repo has changes
 
 # STEP 4: If submodule has changes, commit it FIRST
-git -C packages/manuscript/manuscript status        # Verify changes
-git -C packages/manuscript/manuscript diff          # Review changes
-git -C packages/manuscript/manuscript add -A
-git -C packages/manuscript/manuscript commit -m "Clear description"
-git -C packages/manuscript/manuscript push origin main
+git -C packages/manuscript/the-bible-of-mx status        # Verify changes
+git -C packages/manuscript/the-bible-of-mx diff          # Review changes
+git -C packages/manuscript/the-bible-of-mx add -A
+git -C packages/manuscript/the-bible-of-mx commit -m "Clear description"
+git -C packages/manuscript/the-bible-of-mx push origin main
 
 # STEP 5: Commit main repo (including submodule pointer if needed)
 git add -A
@@ -382,7 +382,7 @@ git push origin main
 
 # STEP 6: Verify both are clean
 git status                                          # Should show "working tree clean"
-git -C packages/manuscript/manuscript status        # Should show "working tree clean"
+git -C packages/manuscript/the-bible-of-mx status        # Should show "working tree clean"
 ```
 
 ## Why This Structure Exists

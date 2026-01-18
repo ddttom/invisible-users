@@ -18,18 +18,18 @@ the-invisible-users-kindle.pdf
 the-invisible-users-simple.pdf
 
 # Generated appendices
-packages/manuscript/manuscript/web/
+packages/manuscript/the-bible-of-mx/web/
 scripts/appendix-nav-footer.html
 scripts/appendix-index-template.md
 
 # Generated illustrations
-packages/manuscript/manuscript/illustrations/*.png
+packages/manuscript/the-bible-of-mx/illustrations/*.png
 
 # Markdown files (use markdownlint instead)
 *.md
 
 # Git submodule
-packages/manuscript/manuscript/
+packages/manuscript/the-bible-of-mx/
 
 # Logs
 *.log

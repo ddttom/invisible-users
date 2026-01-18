@@ -500,7 +500,7 @@ ADD new entry at top:
 - 97% reduction in browser launches
 - Server-friendly adaptive rate limiting
 - 100 URLs: ~10 minutes (was ~45 minutes)
-Manuscript Repository (packages/manuscript/manuscript/)
+Manuscript Repository (packages/manuscript/the-bible-of-mx/)
 1. appendix-c-web-audit-suite-guide.md - Major Update
 This is the primary user-facing documentation that needs the most updates.
 

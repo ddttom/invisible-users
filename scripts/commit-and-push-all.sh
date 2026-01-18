@@ -6,7 +6,7 @@
 set -e  # Exit on error
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SUBMODULE_PATH="$REPO_ROOT/packages/manuscript/manuscript"
+SUBMODULE_PATH="$REPO_ROOT/packages/manuscript/the-bible-of-mx"
 
 echo "🔍 Checking for changes..."
 

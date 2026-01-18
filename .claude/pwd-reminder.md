@@ -15,7 +15,7 @@ This workspace contains TWO separate git repositories:
 - All project-level configuration
 
 ### 2. Submodule Repository
-**Location:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/`
+**Location:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/`
 
 **Contains:**
 - All book chapters (`chapter-*.md`)

@@ -15,7 +15,7 @@
       "Bash(git diff:*)",
       "Bash(git log:*)",
       "Bash(git ls-files:*)",
-      "Bash(git -C packages/manuscript/manuscript:*)",
+      "Bash(git -C packages/manuscript/the-bible-of-mx:*)",
       "Bash(npm run:*)",
       "Bash(npm install)",
       "Bash(npx eslint:*)",

@@ -201,10 +201,10 @@ Since the submodule is configured to track the main branch, updating is easy:
 
 ```bash
 # Update submodule to latest commit on main branch
-git submodule update --remote packages/manuscript/manuscript
+git submodule update --remote packages/manuscript/the-bible-of-mx
 
 # Commit the submodule pointer update
-git add packages/manuscript/manuscript
+git add packages/manuscript/the-bible-of-mx
 git commit -m "Update manuscript submodule to latest version"
 ```
 
@@ -214,7 +214,7 @@ The `--remote` flag pulls the latest changes from the tracked branch (main).
 
 The manuscript is maintained in its own repository at <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>. To contribute changes:
 
-1. Navigate to the submodule: `cd packages/manuscript/manuscript`
+1. Navigate to the submodule: `cd packages/manuscript/the-bible-of-mx`
 2. Create a branch: `git checkout -b your-feature-branch`
 3. Make your changes and commit them
 4. Push to the manuscript repository: `git push origin your-feature-branch`
@@ -312,7 +312,7 @@ The Kindle PDF (`pdf:kindle`) generates a print-ready interior file only. KDP re
 6. Create your cover design using the template dimensions
 7. Export at **300 DPI** matching the exact template dimensions
 
-The current cover design at `packages/manuscript/manuscript/illustrations/cover-design.png` can be adapted, but you'll need to add the spine and back cover, sized according to the KDP template for your specific page count.
+The current cover design at `packages/manuscript/the-bible-of-mx/illustrations/cover-design.png` can be adapted, but you'll need to add the spine and back cover, sized according to the KDP template for your specific page count.
 
 ### Web Audit Suite
 
@@ -350,7 +350,7 @@ The appendices are published as separate HTML pages with full navigation:
 **Generate locally:**
 
 ```bash
-npm run pdf:appendix        # Generate HTML pages in packages/manuscript/manuscript/web/
+npm run pdf:appendix        # Generate HTML pages in packages/manuscript/the-bible-of-mx/web/
 ```
 
 This creates 18 files in the manuscript submodule:
@@ -512,9 +512,9 @@ First-time setup: VS Code will prompt to install recommended extensions automati
 ### Book Documentation
 
 - [packages/manuscript/book-plan.md](packages/manuscript/book-plan.md) - Master plan with chapter outlines
-- [packages/manuscript/manuscript/Glossary.md](packages/manuscript/manuscript/Glossary.md) - Technical glossary
-- [packages/manuscript/manuscript/appendix-implementation-roadmap.md](packages/manuscript/manuscript/appendix-implementation-roadmap.md) - Priority-based guide
-- [packages/manuscript/manuscript/appendix-resource-directory.md](packages/manuscript/manuscript/appendix-resource-directory.md) - Curated resources
+- [packages/manuscript/the-bible-of-mx/Glossary.md](packages/manuscript/the-bible-of-mx/Glossary.md) - Technical glossary
+- [packages/manuscript/the-bible-of-mx/appendix-implementation-roadmap.md](packages/manuscript/the-bible-of-mx/appendix-implementation-roadmap.md) - Priority-based guide
+- [packages/manuscript/the-bible-of-mx/appendix-resource-directory.md](packages/manuscript/the-bible-of-mx/appendix-resource-directory.md) - Curated resources
 
 ### Web Audit Suite Documentation
 
@@ -540,7 +540,7 @@ First-time setup: VS Code will prompt to install recommended extensions automati
 This repository has TWO separate git repositories:
 
 1. **Main repo:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/`
-2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/manuscript/`
+2. **Submodule:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/`
 
 **Always check `pwd` before git operations.** If you're working with an AI agent that handles git commands, ensure it follows the workflows in [GIT-README.md](GIT-README.md) to avoid corrupting the submodule pointers.
 

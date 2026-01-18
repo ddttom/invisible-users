@@ -20,7 +20,7 @@ lint_and_fix_markdown() {
     # Skip files in excluded directories
     if [[ "$file" =~ node_modules ]] || \
        [[ "$file" =~ packages/web-audit-suite/node_modules ]] || \
-       [[ "$file" =~ packages/manuscript/manuscript ]] || \
+       [[ "$file" =~ packages/manuscript/the-bible-of-mx ]] || \
        [[ "$file" =~ CHANGELOG ]] || \
        [[ "$file" =~ CHANGELOG-FULL ]]; then
         return 0

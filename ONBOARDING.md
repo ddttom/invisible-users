@@ -136,13 +136,13 @@ The manuscript is maintained in a separate repository and linked as a git submod
 
 ```bash
 # Update manuscript to latest version
-git submodule update --remote packages/manuscript/manuscript
+git submodule update --remote packages/manuscript/the-bible-of-mx
 
 # Check submodule status
 git submodule status
 
 # View manuscript changes
-cd packages/manuscript/manuscript
+cd packages/manuscript/the-bible-of-mx
 git log --oneline -10
 cd ../../..
 ```
@@ -181,9 +181,9 @@ The `npm run illustrations:generate` command:
 
 1. **Downloads cover images** if missing (Profile.png, A4-Cover.png, Kindle-Cover.png)
 2. **Checks for back-cover.png** - if missing, displays instructions to:
-   - Open `packages/manuscript/manuscript/web/back-cover.html` in a browser
+   - Open `packages/manuscript/the-bible-of-mx/web/back-cover.html` in a browser
    - Take a full-page screenshot
-   - Save as `back-cover.png` in `packages/manuscript/manuscript/illustrations/`
+   - Save as `back-cover.png` in `packages/manuscript/the-bible-of-mx/illustrations/`
 3. **Converts all SVG files** in illustrations/ to PNG using ImageMagick
 
 **Note:** ImageMagick is required for SVG conversion. Install with `brew install imagemagick` if needed.
@@ -310,8 +310,8 @@ The book is written in **British English** with these conventions:
 **Key files to read:**
 
 1. [packages/manuscript/book-plan.md](packages/manuscript/book-plan.md) - Master plan with chapter outlines
-2. [packages/manuscript/manuscript/chapter-01-what-you-will-learn.md](packages/manuscript/manuscript/chapter-01-what-you-will-learn.md) - Introduction
-3. [packages/manuscript/manuscript/Glossary.md](packages/manuscript/manuscript/Glossary.md) - Technical terms
+2. [packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md](packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md) - Introduction
+3. [packages/manuscript/the-bible-of-mx/Glossary.md](packages/manuscript/the-bible-of-mx/Glossary.md) - Technical terms
 
 ### Web Audit Suite Architecture
 
@@ -393,7 +393,7 @@ Run this checklist to verify everything is working:
 
 ```bash
 # 1. Check manuscript is available
-ls packages/manuscript/manuscript/chapter-01-what-you-will-learn.md
+ls packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md
 
 # 2. Check dependencies are installed
 npm run wordcount
@@ -441,7 +441,7 @@ This can significantly improve startup time and responsiveness.
 
 **Book-specific:**
 4. [packages/manuscript/book-plan.md](packages/manuscript/book-plan.md) - Chapter outlines and status
-5. [packages/manuscript/manuscript/Glossary.md](packages/manuscript/manuscript/Glossary.md) - Technical terms
+5. [packages/manuscript/the-bible-of-mx/Glossary.md](packages/manuscript/the-bible-of-mx/Glossary.md) - Technical terms
 
 **Tool-specific:**
 6. [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) - Tool documentation
@@ -456,7 +456,7 @@ This can significantly improve startup time and responsiveness.
 
 ### Issue: "Submodule not initialized"
 
-**Error:** `packages/manuscript/manuscript/` directory is empty
+**Error:** `packages/manuscript/the-bible-of-mx/` directory is empty
 
 **Solution:**
 
@@ -545,7 +545,7 @@ Use VS Code search to find examples:
 
 **Best way to learn the codebase:**
 
-1. Read [packages/manuscript/manuscript/chapter-01-what-you-will-learn.md](packages/manuscript/manuscript/chapter-01-what-you-will-learn.md)
+1. Read [packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md](packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md)
 2. Explore [packages/web-audit-suite/src/main.js](packages/web-audit-suite/src/main.js)
 3. Run Web Audit Suite on a test site: `npm run audit:start -- -s https://example.com -c 5`
 4. Read the generated reports in `packages/web-audit-suite/results/`
@@ -558,7 +558,7 @@ Now that you're set up:
 
    ```bash
    # Open first chapter
-   code packages/manuscript/manuscript/chapter-01-what-you-will-learn.md
+   code packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md
    ```
 
 2. **Run the Web Audit Suite:**

@@ -52,7 +52,7 @@ packages/web-audit-suite/test/
 .claude/
 
 # Generated PNG illustrations (will be generated in container)
-packages/manuscript/manuscript/illustrations/*.png
+packages/manuscript/the-bible-of-mx/illustrations/*.png
 
 # Temporary files
 scripts/appendix-nav-footer.html

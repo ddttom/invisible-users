@@ -401,7 +401,7 @@ function main() {
   const report = generateReport(scanResults);
 
   // Write report
-  const reportPath = path.join(repoRoot, 'packages/manuscript/manuscript/PATTERN-AUDIT-REPORT.md');
+  const reportPath = path.join(repoRoot, 'packages/manuscript/the-bible-of-mx/PATTERN-AUDIT-REPORT.md');
   fs.writeFileSync(reportPath, report, 'utf8');
 
   console.log(`✓ Audit complete`);
