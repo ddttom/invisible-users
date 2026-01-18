@@ -60,6 +60,66 @@ export const SCORING_WEIGHTS = {
       externalOnlyBonus: 8,
       inlineCSSPenalty: -10,
     },
+    HEADING_HIERARCHY: {
+      perfectHierarchy: 10,
+      headingJumpPenalty: -5, // Per heading level jump
+      multipleH1Penalty: -5,
+    },
+    PRERENDERING: {
+      hasPrerenderedContent: 20,
+      emptySPARootPenalty: -20,
+    },
+    PDF_CONTENT: {
+      pdfWithHTML: 10,
+      pdfOnlyPenalty: -20, // Per PDF without HTML alternative
+    },
+    SSR_FRAMEWORKS: {
+      ssrWithContent: 20,
+      ssrWithoutContentPenalty: -20,
+    },
+    // Priority 2 patterns
+    DOM_ORDER: {
+      mainFirst: 5,
+      sidebarBeforeMainPenalty: -10,
+      navBeforeMainPenalty: -5,
+    },
+    PRICING_TABLES: {
+      withSchema: 15,
+      withoutSchemaPenalty: -10,
+    },
+    PRODUCT_VARIANTS: {
+      hasVariants: 10,
+    },
+    AJAX_NAVIGATION: {
+      withRealURLs: 10,
+      hashBasedPenalty: -10,
+    },
+    TABLE_ABUSE: {
+      layoutTablePenalty: -15, // Per layout table
+      properDataTable: 5,
+    },
+    IFRAME_CONTENT: {
+      withAlternative: 5,
+      withoutAlternativePenalty: -10, // Per iframe
+    },
+    // Priority 3 patterns
+    DEFINITION_LISTS: {
+      progressivePattern: 5,
+    },
+    SKELETON_CONTENT: {
+      hasSkeletonContent: 5,
+      emptyContainerPenalty: -5,
+    },
+    PROGRESSIVE_ENHANCEMENT: {
+      hasProgressiveAccordion: 5,
+    },
+    // Priority 4 patterns
+    MULTIPLE_AUTHORS: {
+      hasMultipleAuthors: 3,
+    },
+    CONTENT_SEPARATION: {
+      hasSeparation: 5,
+    },
   },
   RENDERED: {
     MAX_BONUS: 30,

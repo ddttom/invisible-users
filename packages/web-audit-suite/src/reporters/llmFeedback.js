@@ -32,6 +32,24 @@ export class LLMFeedback {
     this.getSchemaDisambiguationFeedback(metrics, essentialIssues, recommendations);
     this.getInlineCSSFeedback(metrics, essentialIssues, recommendations);
     this.getDynamicContentFeedback(metrics, essentialIssues, niceToHaveIssues, recommendations);
+    this.getHeadingHierarchyFeedback(metrics, essentialIssues, recommendations);
+    this.getPrerenderingFeedback(metrics, essentialIssues, recommendations);
+    this.getPDFContentFeedback(metrics, essentialIssues, recommendations);
+    this.getSSRFrameworksFeedback(metrics, essentialIssues, recommendations);
+    // Priority 2 patterns
+    this.getDOMOrderFeedback(metrics, essentialIssues, recommendations);
+    this.getPricingTablesFeedback(metrics, niceToHaveIssues, recommendations);
+    this.getProductVariantsFeedback(metrics, niceToHaveIssues, recommendations);
+    this.getAJAXNavigationFeedback(metrics, essentialIssues, recommendations);
+    this.getTableAbuseFeedback(metrics, essentialIssues, recommendations);
+    this.getIframeContentFeedback(metrics, essentialIssues, recommendations);
+    // Priority 3 patterns
+    this.getDefinitionListsFeedback(metrics, niceToHaveIssues, recommendations);
+    this.getSkeletonContentFeedback(metrics, niceToHaveIssues, recommendations);
+    this.getProgressiveEnhancementFeedback(metrics, niceToHaveIssues, recommendations);
+    // Priority 4 patterns
+    this.getMultipleAuthorsFeedback(metrics, niceToHaveIssues, recommendations);
+    this.getContentSeparationFeedback(metrics, niceToHaveIssues, recommendations);
 
     return { essentialIssues, niceToHaveIssues, recommendations };
   }
@@ -327,5 +345,405 @@ export class LLMFeedback {
         'CRITICAL: Render price in served HTML using server-side templating. Add Schema.org Product with "price" property in JSON-LD. Include data-price attribute on price elements. Ensure <span itemprop="price"> or <meta itemprop="price"> exists before JavaScript loads. CLI agents (like ChatGPT Shopping) require prices in initial HTML to make recommendations.',
       );
     }
+  }
+
+  /**
+   * Heading Hierarchy Feedback (Gap 3)
+   * Validates logical heading progression (h1 → h2 → h3, not h1 → h3)
+   */
+  static getHeadingHierarchyFeedback(metrics, essentialIssues, recommendations) {
+    const heading = metrics.headingHierarchy?.metrics;
+    if (!heading) return;
+
+    if (!heading.hasH1) {
+      essentialIssues.push('Page missing <h1> heading - agents cannot identify primary topic');
+      recommendations.push('Add exactly one <h1> element describing the page topic');
+    }
+
+    if (heading.multipleH1) {
+      essentialIssues.push('Page has multiple <h1> headings - confuses content outline');
+      recommendations.push('Use only one <h1> per page, use <h2>-<h6> for subsections');
+    }
+
+    if (heading.headingJumps > 0) {
+      essentialIssues.push(
+        `${heading.headingJumps} heading level jump(s) detected (e.g., h1 → h3, skipping h2)`,
+      );
+      recommendations.push(
+        'Maintain logical heading hierarchy: h1 → h2 → h3 (never skip levels). This provides a clear document outline for agents.',
+      );
+      recommendations.push(
+        'See Chapter 3 of "Don\'t Make AI Think" for heading hierarchy examples',
+      );
+    }
+  }
+
+  /**
+   * Pre-rendering Feedback (Gap 9)
+   * Detects SPA frameworks with/without server-side rendering
+   */
+  static getPrerenderingFeedback(metrics, essentialIssues, recommendations) {
+    const prerender = metrics.prerendering?.metrics;
+    if (!prerender) return;
+
+    if (prerender.hasEmptySPARoot) {
+      essentialIssues.push(
+        'SPA framework detected but root element is empty - CLI agents see blank page',
+      );
+      recommendations.push(
+        'CRITICAL: Enable server-side rendering (SSR) or pre-rendering. Next.js/Nuxt.js provide built-in SSR. For React, use react-snap or prerender.io.',
+      );
+      recommendations.push(
+        'Without SSR, CLI agents (like Claude Code) cannot access your content because they don\'t execute JavaScript',
+      );
+      recommendations.push(
+        'See Chapter 7 examples for SSR migration patterns',
+      );
+    } else if (prerender.hasSSRFramework && !prerender.hasPrerenderedContent) {
+      essentialIssues.push(
+        'SSR framework detected but content not rendering on server',
+      );
+      recommendations.push(
+        'Verify SSR configuration: check getServerSideProps (Next.js) or asyncData (Nuxt.js) are populating content',
+      );
+    }
+  }
+
+  /**
+   * PDF Content Feedback (Gap 12)
+   * Warns about content only available as PDF downloads
+   */
+  static getPDFContentFeedback(metrics, essentialIssues, recommendations) {
+    const pdf = metrics.pdfContent?.metrics;
+    if (!pdf || pdf.pdfCount === 0) return;
+
+    if (pdf.hasPDFOnly && pdf.pdfWithoutAlternatives > 0) {
+      essentialIssues.push(
+        `${pdf.pdfWithoutAlternatives} PDF link(s) without HTML alternatives - content hidden from agents`,
+      );
+      recommendations.push(
+        'CRITICAL: Provide HTML versions of PDF content. Agents cannot extract text from PDFs reliably.',
+      );
+      recommendations.push(
+        'Example: "Download PDF" + "Read online" links, or embed HTML content with "Print as PDF" option',
+      );
+      recommendations.push(
+        'See Chapter 9 anti-patterns for PDF-only content examples',
+      );
+    }
+
+    if (pdf.hasPDFWithHTML && pdf.pdfWithAlternatives > 0) {
+      recommendations.push(
+        `Good: ${pdf.pdfWithAlternatives} PDF(s) have HTML alternatives available`,
+      );
+    }
+  }
+
+  /**
+   * SSR Framework Feedback (Gap 14)
+   * Detects framework-specific SSR implementations
+   */
+  static getSSRFrameworksFeedback(metrics, essentialIssues, recommendations) {
+    const ssr = metrics.ssrFrameworks?.metrics;
+    if (!ssr || !ssr.hasSSRFramework) return;
+
+    const framework = ssr.isNextJS ? 'Next.js' : ssr.isNuxtJS ? 'Nuxt.js' : 'Unknown SSR framework';
+
+    if (ssr.ssrWithoutContent) {
+      essentialIssues.push(
+        `${framework} detected but <main> element is empty - SSR not working`,
+      );
+      recommendations.push(
+        `Verify ${framework} SSR configuration: pages should export getServerSideProps (Next.js) or use asyncData (Nuxt.js)`,
+      );
+      recommendations.push(
+        'Check build output: ensure pages are rendering on server, not client-only',
+      );
+      recommendations.push(
+        'See Chapter 10 implementation examples for SSR setup patterns',
+      );
+    } else if (ssr.ssrWithContent) {
+      recommendations.push(
+        `Excellent: ${framework} SSR is working correctly - content visible in served HTML`,
+      );
+    }
+  }
+
+  /**
+   * DOM Order Feedback (Gap 1)
+   * Warns about sidebar/navigation appearing before main content
+   */
+  static getDOMOrderFeedback(metrics, essentialIssues, recommendations) {
+    const dom = metrics.domOrder?.metrics;
+    if (!dom) return;
+
+    if (dom.sidebarBeforeMain) {
+      essentialIssues.push(
+        'Sidebar appears before <main> in DOM - agents read navigation before content',
+      );
+      recommendations.push(
+        'Move <main> element before <aside> in DOM order. Use CSS (flexbox, grid) for visual layout, not DOM order.',
+      );
+      recommendations.push(
+        'See Chapter 2 examples for DOM order vs visual layout patterns',
+      );
+    }
+
+    if (dom.navBeforeMain) {
+      essentialIssues.push(
+        'Top-level <nav> appears before <main> in DOM - affects reading order',
+      );
+      recommendations.push(
+        'Place primary navigation after <main> in DOM, or wrap in <header> element',
+      );
+    }
+
+    if (dom.mainFirst) {
+      recommendations.push(
+        'Good: <main> element appears first in body - optimal reading order',
+      );
+    }
+  }
+
+  /**
+   * Pricing Tables Feedback (Gap 2)
+   * Validates pricing tables have Schema.org markup
+   */
+  static getPricingTablesFeedback(metrics, niceToHaveIssues, recommendations) {
+    const pricing = metrics.pricingTables?.metrics;
+    if (!pricing || pricing.pricingCount === 0) return;
+
+    if (pricing.pricingWithoutSchema > 0) {
+      niceToHaveIssues.push(
+        `${pricing.pricingCount} pricing table(s) without Schema.org Product markup`,
+      );
+      recommendations.push(
+        'Add Schema.org Product with offers array to pricing tables for agent extraction',
+      );
+      recommendations.push(
+        'Example: { "@type": "Product", "offers": { "price": "9.99", "priceCurrency": "USD" } }',
+      );
+    }
+
+    if (pricing.pricingWithSchema > 0) {
+      recommendations.push(
+        `Good: Pricing tables have Schema.org Product markup`,
+      );
+    }
+  }
+
+  /**
+   * Product Variants Feedback (Gap 6)
+   * Validates Product schema with variant offers
+   */
+  static getProductVariantsFeedback(metrics, niceToHaveIssues, recommendations) {
+    const variants = metrics.productVariants?.metrics;
+    if (!variants || !variants.hasProductSchema) return;
+
+    if (variants.hasVariants) {
+      recommendations.push(
+        `Excellent: Product schema has ${variants.variantCount} variant offers (sizes, colors, etc.)`,
+      );
+    } else {
+      niceToHaveIssues.push(
+        'Product schema has single offer - consider adding variants array for size/color options',
+      );
+      recommendations.push(
+        'Use offers array in Product schema: "offers": [{ "size": "S", "price": "19.99" }, ...]',
+      );
+    }
+  }
+
+  /**
+   * AJAX Navigation Feedback (Gap 10)
+   * Validates AJAX-enhanced navigation uses real URLs
+   */
+  static getAJAXNavigationFeedback(metrics, essentialIssues, recommendations) {
+    const ajax = metrics.ajaxNavigation?.metrics;
+    if (!ajax || ajax.ajaxLinkCount === 0) return;
+
+    if (ajax.hasHashBasedSPA) {
+      essentialIssues.push(
+        `${ajax.hashBasedLinks} AJAX link(s) use hash-based routing (#/page) - inaccessible without JavaScript`,
+      );
+      recommendations.push(
+        'Use real URLs with AJAX enhancement: /page with data-ajax attribute, not #/page',
+      );
+      recommendations.push(
+        'Example: <a href="/products" data-ajax="true"> (progressive enhancement)',
+      );
+    }
+
+    if (ajax.hasAJAXWithRealURLs) {
+      recommendations.push(
+        `Good: ${ajax.realURLLinks} AJAX link(s) use real URLs with progressive enhancement`,
+      );
+    }
+  }
+
+  /**
+   * Table Abuse Feedback (Gap 11)
+   * Detects tables used for layout instead of data
+   */
+  static getTableAbuseFeedback(metrics, essentialIssues, recommendations) {
+    const tables = metrics.tableAbuse?.metrics;
+    if (!tables || tables.totalTables === 0) return;
+
+    if (tables.hasLayoutTables) {
+      essentialIssues.push(
+        `${tables.layoutTables} table(s) used for layout (missing thead/tbody/th) - confuses agents`,
+      );
+      recommendations.push(
+        'CRITICAL: Use CSS grid/flexbox for layout, not tables. Reserve <table> for data only.',
+      );
+      recommendations.push(
+        'Data tables require: <thead>, <tbody>, <th> with scope attributes, <caption>',
+      );
+      recommendations.push(
+        'See Chapter 9 anti-patterns for table abuse examples',
+      );
+    }
+
+    if (tables.hasProperDataTables) {
+      recommendations.push(
+        `Good: ${tables.dataTables} data table(s) have proper semantic markup`,
+      );
+    }
+  }
+
+  /**
+   * Iframe Content Feedback (Gap 13)
+   * Warns about content in iframes without alternatives
+   */
+  static getIframeContentFeedback(metrics, essentialIssues, recommendations) {
+    const iframe = metrics.iframeContent?.metrics;
+    if (!iframe || iframe.iframeCount === 0) return;
+
+    if (iframe.iframesWithoutAlternatives > 0) {
+      essentialIssues.push(
+        `${iframe.iframesWithoutAlternatives} iframe(s) without text alternatives - content hidden from agents`,
+      );
+      recommendations.push(
+        'Provide HTML alternatives for iframe content. Example: Google Maps iframe + <address> with street address',
+      );
+      recommendations.push(
+        'Agents cannot access iframe content - always provide equivalent text',
+      );
+      recommendations.push(
+        'See Chapter 9 anti-patterns for iframe content examples',
+      );
+    }
+
+    if (iframe.iframesWithAlternatives > 0) {
+      recommendations.push(
+        `Good: ${iframe.iframesWithAlternatives} iframe(s) have text alternatives`,
+      );
+    }
+  }
+
+  /**
+   * Definition Lists Feedback (Gap 4)
+   * Validates use of dl/dt/dd for product specs
+   */
+  static getDefinitionListsFeedback(metrics, niceToHaveIssues, recommendations) {
+    const dl = metrics.definitionLists?.metrics;
+    if (!dl) return;
+
+    if (dl.hasProgressivePattern) {
+      recommendations.push(
+        `Good: ${dl.dlCount} definition list(s) used for product specifications`,
+      );
+    } else if (dl.hasProductSchema && dl.dlCount === 0) {
+      niceToHaveIssues.push(
+        'Product page without definition lists - consider using <dl> for specifications',
+      );
+      recommendations.push(
+        'Use <dl><dt>Weight</dt><dd>1.5 kg</dd></dl> for product specs',
+      );
+    }
+  }
+
+  /**
+   * Skeleton Content Feedback (Gap 7)
+   * Validates loading states have meaningful placeholders
+   */
+  static getSkeletonContentFeedback(metrics, niceToHaveIssues, recommendations) {
+    const skeleton = metrics.skeletonContent?.metrics;
+    if (!skeleton || skeleton.loadingElementCount === 0) return;
+
+    if (skeleton.emptyLoadingContainers > 0) {
+      niceToHaveIssues.push(
+        `${skeleton.emptyLoadingContainers} loading element(s) are empty - agents see nothing during load`,
+      );
+      recommendations.push(
+        'Add skeleton content: <div data-state="loading">Loading products...</div>',
+      );
+      recommendations.push(
+        'Provide structure even during loading: headings, placeholder text, loading messages',
+      );
+    }
+
+    if (skeleton.hasSkeletonContent) {
+      recommendations.push(
+        'Good: Loading states have meaningful placeholder content',
+      );
+    }
+  }
+
+  /**
+   * Progressive Enhancement Feedback (Gap 15)
+   * Validates use of details/summary elements
+   */
+  static getProgressiveEnhancementFeedback(metrics, niceToHaveIssues, recommendations) {
+    const pe = metrics.progressiveEnhancement?.metrics;
+    if (!pe) return;
+
+    if (pe.hasProgressiveAccordion) {
+      recommendations.push(
+        `Good: ${pe.detailsCount} <details> element(s) provide native accordion functionality`,
+      );
+    } else {
+      niceToHaveIssues.push(
+        'No <details>/<summary> elements detected - consider using for accordions',
+      );
+      recommendations.push(
+        'Use <details><summary>Question</summary>Answer</details> for native accordions',
+      );
+      recommendations.push(
+        'Progressive enhancement: works without JavaScript, enhanceable with CSS/JS',
+      );
+    }
+  }
+
+  /**
+   * Multiple Authors Feedback (Gap 5)
+   * Validates Article schema with author array
+   */
+  static getMultipleAuthorsFeedback(metrics, niceToHaveIssues, recommendations) {
+    const authors = metrics.multipleAuthors?.metrics;
+    if (!authors || !authors.hasArticleSchema) return;
+
+    if (authors.hasMultipleAuthors) {
+      recommendations.push(
+        `Good: Article schema has ${authors.authorCount} authors in array`,
+      );
+    }
+    // Not a warning if single author - that's normal
+  }
+
+  /**
+   * Content Separation Feedback (Gap 8)
+   * Validates separation of static/dynamic content
+   */
+  static getContentSeparationFeedback(metrics, niceToHaveIssues, recommendations) {
+    const separation = metrics.contentSeparation?.metrics;
+    if (!separation) return;
+
+    if (separation.hasSeparation) {
+      recommendations.push(
+        'Good: Static product info separated from dynamic user context (data-authenticated)',
+      );
+    }
+    // Not a warning if pattern not applicable
   }
 }

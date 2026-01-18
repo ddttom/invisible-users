@@ -133,6 +133,7 @@ AI agent compatibility analysis based on "The Invisible Users" patterns:
 
 1. **Served HTML** (Static) - For all agents
    - Semantic HTML structure
+   - Heading hierarchy validation (h1 → h2 → h3 progression)
    - Form field naming conventions
    - Schema.org structured data
    - llms.txt file presence
@@ -141,6 +142,9 @@ AI agent compatibility analysis based on "The Invisible Users" patterns:
    - Social media meta tags (Open Graph, Twitter Card)
    - SEO meta tags (robots, keywords, theme-color)
    - Reading time metadata (timeRequired, educationalLevel)
+   - Pre-rendering detection (Next.js, Nuxt.js, prerender.io)
+   - PDF content accessibility (HTML alternatives)
+   - SSR framework implementation (Next.js, Nuxt.js with content)
 
 2. **Rendered HTML** (Dynamic) - For browser agents
    - Explicit state attributes
@@ -174,21 +178,127 @@ Detects timing-dependent UI patterns that confuse AI agents:
   - Validates alt text presence
   - Checks for aria-describedby descriptions
 
+#### Priority 1 Patterns (Critical)
+
+These patterns have the highest impact on AI agent compatibility:
+
+- **Heading Hierarchy Validation**: Logical heading progression
+  - Validates h1 → h2 → h3 sequence (no level skipping)
+  - Detects multiple h1 headings
+  - Ensures single h1 per page for clear document outline
+  - Awards +10 points for perfect hierarchy
+  - Applies −5 points per heading level jump
+  - Source: "Don't Make AI Think" Chapter 3
+
+- **Pre-rendering Detection**: SPA framework SSR implementation
+  - Detects Next.js (`#__NEXT_DATA__` or `_next/static`)
+  - Detects Nuxt.js (`#__NUXT__` or `_nuxt`)
+  - Validates content exists in served HTML
+  - Awards +20 points for pre-rendered SPA content
+  - Applies −20 points for empty SPA root
+  - Source: "Don't Make AI Think" Chapter 7
+
+- **PDF Content Accessibility**: HTML alternatives for PDFs
+  - Identifies PDF-only content (inaccessible to agents)
+  - Validates HTML alternatives exist
+  - Awards +10 points for PDF + HTML option
+  - Applies −20 points per PDF without alternative
+  - Source: "Don't Make AI Think" Chapter 9
+
+- **SSR Framework Implementation**: Next.js/Nuxt.js with content
+  - Validates SSR framework is rendering content
+  - Checks `<main>` element has children
+  - Awards +20 points for SSR with content
+  - Applies −20 points for SSR without content
+  - Source: "Don't Make AI Think" Chapter 10
+
+#### Priority 2 Patterns (Important)
+
+These patterns have medium-high impact on AI agent compatibility:
+
+- **DOM Order Problems**: Content order in DOM vs visual layout
+  - Detects sidebar/navigation appearing before main content
+  - Awards +5 points if main appears first
+  - Applies −10 points if sidebar before main
+  - Source: "Don't Make AI Think" Chapter 2
+
+- **Pricing Tables with Schema**: Pricing grids with Schema.org Product
+  - Validates pricing tables have Product/Offer markup
+  - Awards +15 points for pricing with Schema.org
+  - Applies −10 points for pricing without markup
+  - Source: "Don't Make AI Think" Chapter 3
+
+- **Product Variants**: Multiple offers for size/color options
+  - Detects Product schema with offers array
+  - Awards +10 points for variant offers
+  - Source: "Don't Make AI Think" Chapter 5
+
+- **AJAX Navigation**: Real URLs with progressive enhancement
+  - Validates AJAX links use real URLs, not hash-based
+  - Awards +10 points for AJAX with real URLs
+  - Applies −10 points for hash-based SPA routing
+  - Source: "Don't Make AI Think" Chapter 7
+
+- **Table Abuse Detection**: Tables for data, not layout
+  - Identifies tables used for layout (missing thead/tbody/th)
+  - Applies −15 points per layout table
+  - Awards +5 points for proper data tables
+  - Source: "Don't Make AI Think" Chapter 9
+
+- **Content in Iframes**: HTML alternatives for embedded content
+  - Detects iframes without text alternatives
+  - Awards +5 points for iframe with alternative
+  - Applies −10 points per iframe without alternative
+  - Source: "Don't Make AI Think" Chapter 9
+
+#### Priority 3 Patterns (Nice to Have)
+
+These patterns provide incremental improvements:
+
+- **Definition Lists**: Using dl/dt/dd for product specifications
+  - Detects definition lists in product contexts
+  - Awards +5 points for progressive pattern
+  - Source: "Don't Make AI Think" Chapter 3
+
+- **Skeleton Content**: Meaningful placeholders during loading
+  - Validates loading states have visible content
+  - Awards +5 points for skeleton content
+  - Applies −5 points for empty loading containers
+  - Source: "Don't Make AI Think" Chapter 7
+
+- **Progressive Enhancement Accordion**: Native details/summary elements
+  - Detects use of HTML5 disclosure widgets
+  - Awards +5 points for progressive accordion
+  - Source: "Don't Make AI Think" Chapter 10
+
+#### Priority 4 Patterns (Edge Cases)
+
+These patterns apply to specific use cases:
+
+- **Multiple Authors**: Article schema with author array
+  - Validates Article schema supports multiple authors
+  - Awards +3 points for multi-author support
+  - Source: "Don't Make AI Think" Chapter 5
+
+- **Content Separation**: Static product info + dynamic user context
+  - Validates separation of public/private content
+  - Awards +5 points for clear separation
+  - Source: "Don't Make AI Think" Chapter 7
+
 #### Scoring Categories
 
-- **ESSENTIAL_SERVED** (105 points max): Critical for all agents
-  - Semantic HTML: 20 points
-  - Form fields: 25 points
-  - Structured data: 15 points
-  - FAQ schema: 13 points
-  - llms.txt: 10 points
-  - Social media meta: 20 points
-  - SEO meta: 5 points
-  - Reading time metadata: 10 points
-  - Tables: 10 points (or +10 bonus for no tables)
-  - robots.txt: 5 points (−5 for restrictions)
+- **ESSENTIAL_SERVED** (230+ points max): Critical for all agents
+  - **Priority 1** (60 points): Heading hierarchy (10), Pre-rendering (20), PDF content (10), SSR frameworks (20)
+  - **Priority 2** (60 points): DOM order (5), Pricing tables (15), Product variants (10), AJAX navigation (10), Table abuse (5), Iframe content (5)
+  - **Core patterns** (110 points): Semantic HTML (20), Form fields (25), Structured data (15), FAQ schema (13), llms.txt (10), Social media meta (20), SEO meta (5), Reading time (10), Tables (10), robots.txt (5)
+  - **Priority 3** (15 points): Definition lists (5), Skeleton content (5), Progressive enhancement (5)
+  - **Priority 4** (8 points): Multiple authors (3), Content separation (5)
 - **ESSENTIAL_RENDERED** (30 points max): Critical for browser agents
+  - Data attributes: 15 points (hasDataState, hasValidationState, hasLoadingIndicators)
+  - Error handling: 15 points (hasPersistentErrors, hasAriaInvalid)
+  - Dynamic content penalties: varies (carousels, autoplay, animations, pricing)
 - **NICE_TO_HAVE** (bonus points): Helpful but not critical
+  - Bot protection awareness, API discoverability, table enhancements
 
 **Reports Generated**:
 

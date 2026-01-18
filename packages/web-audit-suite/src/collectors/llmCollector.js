@@ -48,6 +48,24 @@ export class LLMCollector {
       schemaTypeDisambiguation: this.analyzeSchemaTypeDisambiguation($),
       inlineCSS: this.analyzeInlineCSS($),
       dynamicContent: this.analyzeDynamicContent($, pageData),
+      headingHierarchy: this.analyzeHeadingHierarchy($),
+      prerendering: this.analyzePrerendering($),
+      pdfContent: this.analyzePDFContent($),
+      ssrFrameworks: this.analyzeSSRFrameworks($),
+      // Priority 2 patterns
+      domOrder: this.analyzeDOMOrder($),
+      pricingTables: this.analyzePricingTables($),
+      productVariants: this.analyzeProductVariants($),
+      ajaxNavigation: this.analyzeAJAXNavigation($),
+      tableAbuse: this.analyzeTableAbuse($),
+      iframeContent: this.analyzeIframeContent($),
+      // Priority 3 patterns
+      definitionLists: this.analyzeDefinitionLists($),
+      skeletonContent: this.analyzeSkeletonContent($),
+      progressiveEnhancement: this.analyzeProgressiveEnhancement($),
+      // Priority 4 patterns
+      multipleAuthors: this.analyzeMultipleAuthors($),
+      contentSeparation: this.analyzeContentSeparation($),
     };
   }
 
@@ -914,6 +932,558 @@ export class LLMCollector {
           inRenderedHtml: pricing.inRenderedHtml || false,
           jsDependent: pricing.jsDependent || false,
         },
+      },
+    };
+  }
+
+  /**
+   * Gap 3: Heading Hierarchy Validation
+   * Check for logical heading progression (h1 → h2 → h3, not h1 → h3)
+   * Source: Don't Make AI Think Chapter 3, Examples 3.3-3.4
+   */
+  static analyzeHeadingHierarchy($) {
+    const headings = $('h1, h2, h3, h4, h5, h6');
+    const levels = [];
+    let headingJumps = 0;
+    let hasH1 = false;
+    let multipleH1 = false;
+
+    headings.each((_, el) => {
+      const level = parseInt($(el).prop('tagName').substring(1));
+      levels.push(level);
+      if (level === 1) {
+        if (hasH1) multipleH1 = true;
+        hasH1 = true;
+      }
+    });
+
+    // Check for level jumps (skipping levels)
+    for (let i = 1; i < levels.length; i++) {
+      const jump = levels[i] - levels[i - 1];
+      if (jump > 1) headingJumps++;
+    }
+
+    const hasPerfectHierarchy = headingJumps === 0 && hasH1 && !multipleH1;
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        totalHeadings: headings.length,
+        hasH1,
+        multipleH1,
+        headingJumps,
+        hasPerfectHierarchy,
+        levels,
+      },
+    };
+  }
+
+  /**
+   * Gap 9: Pre-rendering Detection
+   * Detect pre-rendered SPA content (react-snap, prerender.io, Next.js, Nuxt.js)
+   * Source: Don't Make AI Think Chapter 7, Example 7.10
+   */
+  static analyzePrerendering($) {
+    const hasPrerenderMeta = $('meta[name="prerender-status-code"]').length > 0;
+    const hasNextData = $('#__NEXT_DATA__').length > 0;
+    const hasNuxtData = $('#__NUXT__').length > 0;
+    const hasSPARoot = $('#root, #app, [data-reactroot], [data-reactid]').length > 0;
+
+    let spaRootHasContent = false;
+    if (hasSPARoot) {
+      const spaRoot = $('#root, #app, [data-reactroot], [data-reactid]').first();
+      spaRootHasContent = spaRoot.children().length > 0;
+    }
+
+    // Check if main content area has content (alternative to SPA root)
+    const mainElement = $('main');
+    const hasMainContent = mainElement.length > 0 && mainElement.children().length > 0;
+
+    const hasSSRFramework = hasNextData || hasNuxtData;
+    // Content can be in SPA root OR in main element
+    const hasPrerenderedContent = hasSSRFramework && (spaRootHasContent || hasMainContent);
+    const hasEmptySPARoot = hasSPARoot && !spaRootHasContent;
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        hasPrerenderMeta,
+        hasNextData,
+        hasNuxtData,
+        hasSPARoot,
+        spaRootHasContent,
+        hasSSRFramework,
+        hasPrerenderedContent,
+        hasEmptySPARoot,
+      },
+    };
+  }
+
+  /**
+   * Gap 12: PDF-Only Content Detection
+   * Check for PDF links without HTML alternatives
+   * Source: Don't Make AI Think Chapter 9, Examples 9.34-9.35
+   */
+  static analyzePDFContent($) {
+    const pdfLinks = $('a[href$=".pdf"], a[href*=".pdf?"]');
+    const pdfCount = pdfLinks.length;
+    let pdfWithAlternatives = 0;
+    let pdfWithoutAlternatives = 0;
+
+    pdfLinks.each((_, el) => {
+      const $link = $(el);
+      const parent = $link.closest('section, article, div, li');
+
+      // Check if parent has substantial HTML content (more than just the link)
+      if (parent.length > 0) {
+        const textContent = parent.text().trim();
+        const hasSubstantialContent = textContent.length > 200;
+
+        // Check if there's actual content beyond the link text
+        const linkText = $link.text().trim();
+        const remainingContent = textContent.replace(linkText, '').trim();
+
+        if (hasSubstantialContent && remainingContent.length > 100) {
+          pdfWithAlternatives++;
+        } else {
+          pdfWithoutAlternatives++;
+        }
+      } else {
+        pdfWithoutAlternatives++;
+      }
+    });
+
+    const hasPDFOnly = pdfWithoutAlternatives > 0;
+    const hasPDFWithHTML = pdfWithAlternatives > 0;
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        pdfCount,
+        pdfWithAlternatives,
+        pdfWithoutAlternatives,
+        hasPDFOnly,
+        hasPDFWithHTML,
+      },
+    };
+  }
+
+  /**
+   * Gap 14: SSR Migration Examples
+   * Detect framework-specific SSR implementations (Next.js, Nuxt.js)
+   * Source: Don't Make AI Think Chapter 10, Examples 10.5-10.6
+   */
+  static analyzeSSRFrameworks($) {
+    const hasNextData = $('#__NEXT_DATA__').length > 0;
+    const hasNuxtData = $('#__NUXT__').length > 0;
+    const hasNextScript = $('script[src*="_next/static"]').length > 0;
+    const hasNuxtScript = $('script[src*="_nuxt"]').length > 0;
+
+    // Check if main content area has content
+    const mainElement = $('main');
+    const hasMainContent = mainElement.length > 0 && mainElement.children().length > 0;
+
+    const isNextJS = hasNextData || hasNextScript;
+    const isNuxtJS = hasNuxtData || hasNuxtScript;
+    const hasSSRFramework = isNextJS || isNuxtJS;
+    const ssrWithContent = hasSSRFramework && hasMainContent;
+    const ssrWithoutContent = hasSSRFramework && !hasMainContent;
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        isNextJS,
+        isNuxtJS,
+        hasSSRFramework,
+        hasMainContent,
+        ssrWithContent,
+        ssrWithoutContent,
+      },
+    };
+  }
+
+  /**
+   * Gap 1: DOM Order Problems
+   * Check if sidebar/aside appears before main content in DOM
+   * Source: Don't Make AI Think Chapter 2, Examples 2.3-2.4
+   */
+  static analyzeDOMOrder($) {
+    const main = $('main').first();
+    const aside = $('aside').first();
+    const nav = $('nav').first();
+
+    let sidebarBeforeMain = false;
+    let navBeforeMain = false;
+    let mainFirst = false;
+
+    if (main.length > 0) {
+      const mainIndex = main.index();
+
+      if (aside.length > 0) {
+        const asideIndex = aside.index();
+        sidebarBeforeMain = asideIndex < mainIndex;
+      }
+
+      if (nav.length > 0) {
+        const navIndex = nav.index();
+        navBeforeMain = navIndex < mainIndex && nav.parent().is('body');
+      }
+
+      // Check if main is the first major content element
+      const body = $('body');
+      if (body.length > 0) {
+        const firstElement = body.children().first();
+        mainFirst = firstElement.is('main');
+      }
+    }
+
+    const hasOrderIssues = sidebarBeforeMain || navBeforeMain;
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        hasMain: main.length > 0,
+        hasAside: aside.length > 0,
+        hasNav: nav.length > 0,
+        sidebarBeforeMain,
+        navBeforeMain,
+        mainFirst,
+        hasOrderIssues,
+      },
+    };
+  }
+
+  /**
+   * Gap 2: Pricing Tables with Schema
+   * Detect pricing tables with Schema.org Product markup
+   * Source: Don't Make AI Think Chapter 3, Examples 3.1-3.2
+   */
+  static analyzePricingTables($) {
+    const pricingElements = $('[class*="pricing"], [class*="plan"], [class*="price"]');
+    const pricingCount = pricingElements.length;
+
+    let pricingWithSchema = 0;
+    let pricingWithoutSchema = 0;
+
+    const schemas = [];
+    $('script[type="application/ld+json"]').each((_, el) => {
+      try {
+        const schema = JSON.parse($(el).html());
+        schemas.push(schema);
+      } catch (e) {
+        // Ignore invalid JSON
+      }
+    });
+
+    const hasProductSchema = schemas.some(s => s['@type'] === 'Product' && s.offers);
+
+    if (pricingCount > 0) {
+      if (hasProductSchema) {
+        pricingWithSchema = pricingCount;
+      } else {
+        pricingWithoutSchema = pricingCount;
+      }
+    }
+
+    return {
+      importance: IMPORTANCE.NICE_TO_HAVE,
+      metrics: {
+        pricingCount,
+        pricingWithSchema,
+        pricingWithoutSchema,
+        hasProductSchema,
+      },
+    };
+  }
+
+  /**
+   * Gap 6: Product Variants (Multiple Offers)
+   * Check Product schema with offers array for size/color variants
+   * Source: Don't Make AI Think Chapter 5, Example 5.9
+   */
+  static analyzeProductVariants($) {
+    const schemas = [];
+    $('script[type="application/ld+json"]').each((_, el) => {
+      try {
+        const schema = JSON.parse($(el).html());
+        schemas.push(schema);
+      } catch (e) {
+        // Ignore invalid JSON
+      }
+    });
+
+    const productSchemas = schemas.filter(s => s['@type'] === 'Product');
+    let hasVariants = false;
+    let variantCount = 0;
+
+    for (const schema of productSchemas) {
+      if (schema.offers && Array.isArray(schema.offers) && schema.offers.length > 1) {
+        hasVariants = true;
+        variantCount = schema.offers.length;
+        break;
+      }
+    }
+
+    return {
+      importance: IMPORTANCE.NICE_TO_HAVE,
+      metrics: {
+        hasProductSchema: productSchemas.length > 0,
+        hasVariants,
+        variantCount,
+      },
+    };
+  }
+
+  /**
+   * Gap 10: AJAX Navigation Pattern
+   * Detect AJAX-enhanced navigation with real URLs
+   * Source: Don't Make AI Think Chapter 7, Examples 7.15-7.16
+   */
+  static analyzeAJAXNavigation($) {
+    const ajaxLinks = $('a[data-ajax], a[data-turbolinks], a[data-pjax]');
+    const ajaxLinkCount = ajaxLinks.length;
+
+    let hashBasedLinks = 0;
+    let realURLLinks = 0;
+
+    ajaxLinks.each((_, el) => {
+      const href = $(el).attr('href');
+      if (href && href.includes('#')) {
+        hashBasedLinks++;
+      } else if (href && href.startsWith('/')) {
+        realURLLinks++;
+      }
+    });
+
+    const hasAJAXWithRealURLs = realURLLinks > 0;
+    const hasHashBasedSPA = hashBasedLinks > 0;
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        ajaxLinkCount,
+        hashBasedLinks,
+        realURLLinks,
+        hasAJAXWithRealURLs,
+        hasHashBasedSPA,
+      },
+    };
+  }
+
+  /**
+   * Gap 11: Table Abuse Detection
+   * Detect tables used for layout vs data
+   * Source: Don't Make AI Think Chapter 9, Examples 9.28-9.30
+   */
+  static analyzeTableAbuse($) {
+    const tables = $('table');
+    let layoutTables = 0;
+    let dataTables = 0;
+
+    tables.each((_, table) => {
+      const $table = $(table);
+      const hasTheadOrTbody = $table.find('thead, tbody').length > 0;
+      const hasTh = $table.find('th').length > 0;
+      const hasCaption = $table.find('caption').length > 0;
+      const hasScope = $table.find('[scope]').length > 0;
+
+      if (!hasTheadOrTbody && !hasTh) {
+        layoutTables++;
+      } else {
+        dataTables++;
+      }
+    });
+
+    const hasLayoutTables = layoutTables > 0;
+    const hasProperDataTables = dataTables > 0;
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        totalTables: tables.length,
+        layoutTables,
+        dataTables,
+        hasLayoutTables,
+        hasProperDataTables,
+      },
+    };
+  }
+
+  /**
+   * Gap 13: Content in Iframes
+   * Detect iframes with content and check for alternatives
+   * Source: Don't Make AI Think Chapter 9, Examples 9.31-9.33
+   */
+  static analyzeIframeContent($) {
+    const iframes = $('iframe:not([data-video-role="decorative"])');
+    const iframeCount = iframes.length;
+
+    let iframesWithAlternatives = 0;
+    let iframesWithoutAlternatives = 0;
+
+    iframes.each((_, iframe) => {
+      const $iframe = $(iframe);
+      const parent = $iframe.parent();
+
+      // Check for alternative content nearby
+      const hasAddress = parent.find('address').length > 0;
+      const hasArticle = parent.find('article').length > 0;
+      const hasSection = parent.find('section').length > 0;
+
+      if (hasAddress || hasArticle || hasSection) {
+        iframesWithAlternatives++;
+      } else {
+        iframesWithoutAlternatives++;
+      }
+    });
+
+    return {
+      importance: IMPORTANCE.ESSENTIAL_SERVED,
+      metrics: {
+        iframeCount,
+        iframesWithAlternatives,
+        iframesWithoutAlternatives,
+        hasContentIframes: iframeCount > 0,
+      },
+    };
+  }
+
+  /**
+   * Gap 4: Definition Lists for Specs
+   * Check for product specs using definition lists
+   * Source: Don't Make AI Think Chapter 3, Examples 3.8-3.9
+   */
+  static analyzeDefinitionLists($) {
+    const definitionLists = $('dl');
+    const dlCount = definitionLists.length;
+
+    const hasProductSchema = $('script[type="application/ld+json"]').toArray().some(el => {
+      try {
+        const schema = JSON.parse($(el).html());
+        return schema['@type'] === 'Product';
+      } catch (e) {
+        return false;
+      }
+    });
+
+    const hasProgressivePattern = dlCount > 0 && hasProductSchema;
+
+    return {
+      importance: IMPORTANCE.NICE_TO_HAVE,
+      metrics: {
+        dlCount,
+        hasProductSchema,
+        hasProgressivePattern,
+      },
+    };
+  }
+
+  /**
+   * Gap 7: Skeleton Content Pattern
+   * Loading states with meaningful placeholders
+   * Source: Don't Make AI Think Chapter 7, Example 7.5
+   */
+  static analyzeSkeletonContent($) {
+    const loadingElements = $('[data-state="loading"]');
+    let hasSkeletonContent = false;
+    let emptyLoadingContainers = 0;
+
+    loadingElements.each((_, el) => {
+      const $el = $(el);
+      const textContent = $el.text().trim();
+
+      if (textContent.length > 0) {
+        hasSkeletonContent = true;
+      } else {
+        emptyLoadingContainers++;
+      }
+    });
+
+    return {
+      importance: IMPORTANCE.NICE_TO_HAVE,
+      metrics: {
+        loadingElementCount: loadingElements.length,
+        hasSkeletonContent,
+        emptyLoadingContainers,
+      },
+    };
+  }
+
+  /**
+   * Gap 15: Progressive Enhancement Accordion
+   * Check for details/summary elements
+   * Source: Don't Make AI Think Chapter 10, Examples 10.7-10.8
+   */
+  static analyzeProgressiveEnhancement($) {
+    const detailsElements = $('details');
+    const summaryElements = $('summary');
+
+    const hasProgressiveAccordion = detailsElements.length > 0 && summaryElements.length > 0;
+
+    return {
+      importance: IMPORTANCE.NICE_TO_HAVE,
+      metrics: {
+        detailsCount: detailsElements.length,
+        summaryCount: summaryElements.length,
+        hasProgressiveAccordion,
+      },
+    };
+  }
+
+  /**
+   * Gap 5: Multiple Authors in Article Schema
+   * Check Article schema for author array
+   * Source: Don't Make AI Think Chapter 5, Example 5.7
+   */
+  static analyzeMultipleAuthors($) {
+    const schemas = [];
+    $('script[type="application/ld+json"]').each((_, el) => {
+      try {
+        const schema = JSON.parse($(el).html());
+        schemas.push(schema);
+      } catch (e) {
+        // Ignore invalid JSON
+      }
+    });
+
+    const articleSchemas = schemas.filter(s => s['@type'] === 'Article');
+    let hasMultipleAuthors = false;
+    let authorCount = 0;
+
+    for (const schema of articleSchemas) {
+      if (schema.author && Array.isArray(schema.author) && schema.author.length > 1) {
+        hasMultipleAuthors = true;
+        authorCount = schema.author.length;
+        break;
+      }
+    }
+
+    return {
+      importance: IMPORTANCE.NICE_TO_HAVE,
+      metrics: {
+        hasArticleSchema: articleSchemas.length > 0,
+        hasMultipleAuthors,
+        authorCount,
+      },
+    };
+  }
+
+  /**
+   * Gap 8: Public vs Private Content Separation
+   * Check for separation of static product info + dynamic user context
+   * Source: Don't Make AI Think Chapter 7, Example 7.6
+   */
+  static analyzeContentSeparation($) {
+    const hasProductInfo = $('[itemtype*="Product"]').length > 0;
+    const hasUserContext = $('[data-authenticated]').length > 0;
+    const hasSeparation = hasProductInfo && hasUserContext;
+
+    return {
+      importance: IMPORTANCE.NICE_TO_HAVE,
+      metrics: {
+        hasProductInfo,
+        hasUserContext,
+        hasSeparation,
       },
     };
   }

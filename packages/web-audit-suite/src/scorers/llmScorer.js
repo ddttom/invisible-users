@@ -132,6 +132,151 @@ export class LLMScorer {
       }
     }
 
+    // Heading Hierarchy (Gap 3)
+    if (metrics.headingHierarchy?.metrics) {
+      const heading = metrics.headingHierarchy.metrics;
+      if (heading.hasPerfectHierarchy) {
+        score += weights.HEADING_HIERARCHY.perfectHierarchy;
+      } else {
+        score += heading.headingJumps * weights.HEADING_HIERARCHY.headingJumpPenalty;
+        if (heading.multipleH1) score += weights.HEADING_HIERARCHY.multipleH1Penalty;
+      }
+    }
+
+    // Pre-rendering (Gap 9)
+    if (metrics.prerendering?.metrics) {
+      const prerender = metrics.prerendering.metrics;
+      if (prerender.hasPrerenderedContent) {
+        score += weights.PRERENDERING.hasPrerenderedContent;
+      }
+      if (prerender.hasEmptySPARoot) {
+        score += weights.PRERENDERING.emptySPARootPenalty;
+      }
+    }
+
+    // PDF Content (Gap 12)
+    if (metrics.pdfContent?.metrics) {
+      const pdf = metrics.pdfContent.metrics;
+      if (pdf.hasPDFWithHTML) {
+        score += weights.PDF_CONTENT.pdfWithHTML;
+      }
+      score += pdf.pdfWithoutAlternatives * weights.PDF_CONTENT.pdfOnlyPenalty;
+    }
+
+    // SSR Frameworks (Gap 14)
+    if (metrics.ssrFrameworks?.metrics) {
+      const ssr = metrics.ssrFrameworks.metrics;
+      if (ssr.ssrWithContent) {
+        score += weights.SSR_FRAMEWORKS.ssrWithContent;
+      }
+      if (ssr.ssrWithoutContent) {
+        score += weights.SSR_FRAMEWORKS.ssrWithoutContentPenalty;
+      }
+    }
+
+    // DOM Order (Gap 1)
+    if (metrics.domOrder?.metrics) {
+      const dom = metrics.domOrder.metrics;
+      if (dom.mainFirst) {
+        score += weights.DOM_ORDER.mainFirst;
+      }
+      if (dom.sidebarBeforeMain) {
+        score += weights.DOM_ORDER.sidebarBeforeMainPenalty;
+      }
+      if (dom.navBeforeMain) {
+        score += weights.DOM_ORDER.navBeforeMainPenalty;
+      }
+    }
+
+    // Pricing Tables (Gap 2)
+    if (metrics.pricingTables?.metrics) {
+      const pricing = metrics.pricingTables.metrics;
+      if (pricing.pricingWithSchema > 0) {
+        score += weights.PRICING_TABLES.withSchema;
+      }
+      if (pricing.pricingWithoutSchema > 0) {
+        score += weights.PRICING_TABLES.withoutSchemaPenalty;
+      }
+    }
+
+    // Product Variants (Gap 6)
+    if (metrics.productVariants?.metrics) {
+      const variants = metrics.productVariants.metrics;
+      if (variants.hasVariants) {
+        score += weights.PRODUCT_VARIANTS.hasVariants;
+      }
+    }
+
+    // AJAX Navigation (Gap 10)
+    if (metrics.ajaxNavigation?.metrics) {
+      const ajax = metrics.ajaxNavigation.metrics;
+      if (ajax.hasAJAXWithRealURLs) {
+        score += weights.AJAX_NAVIGATION.withRealURLs;
+      }
+      if (ajax.hasHashBasedSPA) {
+        score += weights.AJAX_NAVIGATION.hashBasedPenalty;
+      }
+    }
+
+    // Table Abuse (Gap 11)
+    if (metrics.tableAbuse?.metrics) {
+      const tables = metrics.tableAbuse.metrics;
+      score += tables.layoutTables * weights.TABLE_ABUSE.layoutTablePenalty;
+      if (tables.hasProperDataTables) {
+        score += weights.TABLE_ABUSE.properDataTable;
+      }
+    }
+
+    // Iframe Content (Gap 13)
+    if (metrics.iframeContent?.metrics) {
+      const iframe = metrics.iframeContent.metrics;
+      if (iframe.iframesWithAlternatives > 0) {
+        score += weights.IFRAME_CONTENT.withAlternative;
+      }
+      score += iframe.iframesWithoutAlternatives * weights.IFRAME_CONTENT.withoutAlternativePenalty;
+    }
+
+    // Definition Lists (Gap 4)
+    if (metrics.definitionLists?.metrics) {
+      const dl = metrics.definitionLists.metrics;
+      if (dl.hasProgressivePattern) {
+        score += weights.DEFINITION_LISTS.progressivePattern;
+      }
+    }
+
+    // Skeleton Content (Gap 7)
+    if (metrics.skeletonContent?.metrics) {
+      const skeleton = metrics.skeletonContent.metrics;
+      if (skeleton.hasSkeletonContent) {
+        score += weights.SKELETON_CONTENT.hasSkeletonContent;
+      }
+      score += skeleton.emptyLoadingContainers * weights.SKELETON_CONTENT.emptyContainerPenalty;
+    }
+
+    // Progressive Enhancement (Gap 15)
+    if (metrics.progressiveEnhancement?.metrics) {
+      const pe = metrics.progressiveEnhancement.metrics;
+      if (pe.hasProgressiveAccordion) {
+        score += weights.PROGRESSIVE_ENHANCEMENT.hasProgressiveAccordion;
+      }
+    }
+
+    // Multiple Authors (Gap 5)
+    if (metrics.multipleAuthors?.metrics) {
+      const authors = metrics.multipleAuthors.metrics;
+      if (authors.hasMultipleAuthors) {
+        score += weights.MULTIPLE_AUTHORS.hasMultipleAuthors;
+      }
+    }
+
+    // Content Separation (Gap 8)
+    if (metrics.contentSeparation?.metrics) {
+      const separation = metrics.contentSeparation.metrics;
+      if (separation.hasSeparation) {
+        score += weights.CONTENT_SEPARATION.hasSeparation;
+      }
+    }
+
     return Math.max(0, Math.min(100, Math.round(score)));
   }
 

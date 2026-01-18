@@ -168,4 +168,221 @@ describe('LLM Metrics Utils', () => {
       expect(feedback.recommendations).to.include('Add llms.txt file at site root for LLM agent discovery (see llmstxt.org)');
     });
   });
+
+  describe('Heading Hierarchy (Gap 3)', () => {
+    it('should detect perfect heading hierarchy', () => {
+      const perfectHtml = `
+        <html><body>
+          <h1>Main Title</h1>
+          <h2>Section 1</h2>
+          <h3>Subsection 1.1</h3>
+          <h3>Subsection 1.2</h3>
+          <h2>Section 2</h2>
+        </body></html>
+      `;
+      const $ = cheerio.load(perfectHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.headingHierarchy.metrics.hasH1).to.be.true;
+      expect(metrics.headingHierarchy.metrics.multipleH1).to.be.false;
+      expect(metrics.headingHierarchy.metrics.headingJumps).to.equal(0);
+      expect(metrics.headingHierarchy.metrics.hasPerfectHierarchy).to.be.true;
+
+      const score = calculateServedScore(metrics);
+      expect(score).to.be.above(0);
+    });
+
+    it('should detect heading level jumps', () => {
+      const jumpHtml = `
+        <html><body>
+          <h1>Main Title</h1>
+          <h3>Skipped h2</h3>
+          <h2>Back to h2</h2>
+        </body></html>
+      `;
+      const $ = cheerio.load(jumpHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.headingHierarchy.metrics.headingJumps).to.equal(1);
+      expect(metrics.headingHierarchy.metrics.hasPerfectHierarchy).to.be.false;
+
+      const feedback = generateFeedback(metrics);
+      expect(feedback.essentialIssues.some(issue => issue.includes('heading level jump'))).to.be.true;
+    });
+
+    it('should detect multiple h1 headings', () => {
+      const multipleH1Html = `
+        <html><body>
+          <h1>First Title</h1>
+          <h1>Second Title</h1>
+        </body></html>
+      `;
+      const $ = cheerio.load(multipleH1Html);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.headingHierarchy.metrics.multipleH1).to.be.true;
+      expect(metrics.headingHierarchy.metrics.hasPerfectHierarchy).to.be.false;
+
+      const feedback = generateFeedback(metrics);
+      expect(feedback.essentialIssues.some(issue => issue.includes('multiple <h1>'))).to.be.true;
+    });
+  });
+
+  describe('Pre-rendering Detection (Gap 9)', () => {
+    it('should detect Next.js with content', () => {
+      const nextHtml = `
+        <html><body>
+          <script id="__NEXT_DATA__" type="application/json">{}</script>
+          <main><div>Rendered content</div></main>
+        </body></html>
+      `;
+      const $ = cheerio.load(nextHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.prerendering.metrics.hasNextData).to.be.true;
+      expect(metrics.prerendering.metrics.hasSSRFramework).to.be.true;
+      expect(metrics.prerendering.metrics.hasPrerenderedContent).to.be.true;
+      expect(metrics.prerendering.metrics.hasEmptySPARoot).to.be.false;
+
+      const score = calculateServedScore(metrics);
+      expect(score).to.be.above(0);
+    });
+
+    it('should detect empty SPA root', () => {
+      const emptySPAHtml = `
+        <html><body>
+          <div id="root"></div>
+        </body></html>
+      `;
+      const $ = cheerio.load(emptySPAHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.prerendering.metrics.hasSPARoot).to.be.true;
+      expect(metrics.prerendering.metrics.spaRootHasContent).to.be.false;
+      expect(metrics.prerendering.metrics.hasEmptySPARoot).to.be.true;
+
+      const feedback = generateFeedback(metrics);
+      expect(feedback.essentialIssues.some(issue => issue.includes('root element is empty'))).to.be.true;
+    });
+
+    it('should detect Nuxt.js', () => {
+      const nuxtHtml = `
+        <html><body>
+          <div id="__NUXT__"></div>
+          <main><div>Nuxt content</div></main>
+        </body></html>
+      `;
+      const $ = cheerio.load(nuxtHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.prerendering.metrics.hasNuxtData).to.be.true;
+      expect(metrics.prerendering.metrics.hasSSRFramework).to.be.true;
+    });
+  });
+
+  describe('PDF Content Detection (Gap 12)', () => {
+    it('should detect PDF with HTML alternative', () => {
+      const pdfWithAltHtml = `
+        <html><body>
+          <section>
+            <h2>Annual Report</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+            <a href="/report.pdf">Download PDF</a>
+          </section>
+        </body></html>
+      `;
+      const $ = cheerio.load(pdfWithAltHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.pdfContent.metrics.pdfCount).to.equal(1);
+      expect(metrics.pdfContent.metrics.pdfWithAlternatives).to.equal(1);
+      expect(metrics.pdfContent.metrics.hasPDFWithHTML).to.be.true;
+
+      const score = calculateServedScore(metrics);
+      expect(score).to.be.above(0);
+    });
+
+    it('should detect PDF-only content', () => {
+      const pdfOnlyHtml = `
+        <html><body>
+          <a href="/report.pdf">Report</a>
+        </body></html>
+      `;
+      const $ = cheerio.load(pdfOnlyHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.pdfContent.metrics.pdfCount).to.equal(1);
+      expect(metrics.pdfContent.metrics.pdfWithoutAlternatives).to.equal(1);
+      expect(metrics.pdfContent.metrics.hasPDFOnly).to.be.true;
+
+      const feedback = generateFeedback(metrics);
+      expect(feedback.essentialIssues.some(issue => issue.includes('PDF link(s) without HTML alternatives'))).to.be.true;
+    });
+  });
+
+  describe('SSR Framework Detection (Gap 14)', () => {
+    it('should detect Next.js with content', () => {
+      const nextHtml = `
+        <html><body>
+          <script id="__NEXT_DATA__" type="application/json">{}</script>
+          <main><article>Content</article></main>
+        </body></html>
+      `;
+      const $ = cheerio.load(nextHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.ssrFrameworks.metrics.isNextJS).to.be.true;
+      expect(metrics.ssrFrameworks.metrics.hasSSRFramework).to.be.true;
+      expect(metrics.ssrFrameworks.metrics.ssrWithContent).to.be.true;
+      expect(metrics.ssrFrameworks.metrics.ssrWithoutContent).to.be.false;
+
+      const score = calculateServedScore(metrics);
+      expect(score).to.be.above(0);
+    });
+
+    it('should detect SSR framework without content', () => {
+      const emptySSRHtml = `
+        <html><body>
+          <script id="__NEXT_DATA__" type="application/json">{}</script>
+          <main></main>
+        </body></html>
+      `;
+      const $ = cheerio.load(emptySSRHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.ssrFrameworks.metrics.hasSSRFramework).to.be.true;
+      expect(metrics.ssrFrameworks.metrics.ssrWithoutContent).to.be.true;
+
+      const feedback = generateFeedback(metrics);
+      expect(feedback.essentialIssues.some(issue => issue.includes('but <main> element is empty'))).to.be.true;
+    });
+
+    it('should detect Next.js by script src', () => {
+      const nextScriptHtml = `
+        <html><body>
+          <script src="/_next/static/chunks/main.js"></script>
+          <main><div>Content</div></main>
+        </body></html>
+      `;
+      const $ = cheerio.load(nextScriptHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.ssrFrameworks.metrics.isNextJS).to.be.true;
+    });
+
+    it('should detect Nuxt.js', () => {
+      const nuxtHtml = `
+        <html><body>
+          <div id="__NUXT__"></div>
+          <main><div>Nuxt content</div></main>
+        </body></html>
+      `;
+      const $ = cheerio.load(nuxtHtml);
+      const metrics = collectLLMMetrics($, 'https://example.com', 'served');
+
+      expect(metrics.ssrFrameworks.metrics.isNuxtJS).to.be.true;
+      expect(metrics.ssrFrameworks.metrics.hasSSRFramework).to.be.true;
+      expect(metrics.ssrFrameworks.metrics.ssrWithContent).to.be.true;
+    });
+  });
 });
