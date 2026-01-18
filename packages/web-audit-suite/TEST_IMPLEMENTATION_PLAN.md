@@ -5,12 +5,14 @@ Comprehensive plan to address critical test coverage gaps identified in the docu
 ## Executive Summary
 
 **Current State:**
+
 - 53 passing tests across 8 test files
 - ~40% feature coverage estimate
 - 7 major features with ZERO test coverage
 - 5 features partially tested (30-60% coverage)
 
 **Goal State:**
+
 - 150+ tests across 20+ test files
 - ~85% feature coverage
 - All critical path features tested
@@ -33,6 +35,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 **Test Categories:**
 
 #### Page Filtering (5 tests)
+
 - ✅ Should identify pages with served score ≥70
 - ✅ Should identify pages with rendered score ≥70
 - ✅ Should skip pages below threshold
@@ -40,6 +43,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should handle missing score data gracefully
 
 #### Pattern Category Extraction (12 tests)
+
 - ✅ **Structured Data (JSON-LD)**: Extract Schema.org implementations
   - Should extract Product schema examples
   - Should extract Article schema examples
@@ -61,23 +65,27 @@ These features have ZERO test coverage and are heavily documented as core functi
   - Should validate llms.txt quality
 
 #### Priority and Effort Rating (4 tests)
+
 - ✅ Should assign Critical priority to ESSENTIAL_SERVED patterns
 - ✅ Should assign High priority to ESSENTIAL_RENDERED patterns
 - ✅ Should assign Low effort to simple patterns (semantic HTML)
 - ✅ Should assign Moderate effort to complex patterns (Schema.org)
 
 #### Report Generation (4 tests)
+
 - ✅ Should generate pattern_library.md with all sections
 - ✅ Should include up to 5 examples per pattern
 - ✅ Should include implementation guidance
 - ✅ Should include validation tool links
 
 **Test Data Requirements:**
+
 - Mock `results.json` with 10+ pages, varied scores
 - Sample HTML snippets for each pattern category
 - Expected pattern_library.md output fixture
 
 **Dependencies to Mock:**
+
 - File system operations (fs.readFileSync, fs.writeFileSync)
 - Logger output
 
@@ -92,6 +100,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 **Test Categories:**
 
 #### Historical Storage (5 tests)
+
 - ✅ Should create history/ directory if missing
 - ✅ Should store timestamped results-<timestamp>.json
 - ✅ Should establish baseline if no history exists
@@ -99,6 +108,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should handle file system errors gracefully
 
 #### Baseline Comparison (8 tests)
+
 - ✅ Should load baseline from history/baseline.json
 - ✅ Should compare against most recent baseline
 - ✅ Should handle missing baseline gracefully
@@ -109,6 +119,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should handle new/removed URLs
 
 #### Regression Detection - Performance (5 tests)
+
 - ✅ **Critical**: Should detect >30% increase in load time
 - ✅ **Critical**: Should detect >30% increase in LCP
 - ✅ **Critical**: Should detect >30% increase in FCP
@@ -116,38 +127,45 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ **Warning**: Should detect 15-30% increase
 
 #### Regression Detection - Accessibility (3 tests)
+
 - ✅ **Critical**: Should detect ANY error count increase
 - ✅ Should detect severity level changes
 - ✅ Should detect new WCAG violation types
 
 #### Regression Detection - SEO (3 tests)
+
 - ✅ **Critical**: Should detect >10% score decrease
 - ✅ **Warning**: Should detect 5-10% score decrease
 - ✅ Should detect improvements (positive changes)
 
 #### Regression Detection - LLM Suitability (4 tests)
+
 - ✅ **Critical**: Should detect >10% served score decrease
 - ✅ **Warning**: Should detect >10% rendered score decrease
 - ✅ Should detect improvements in served scores
 - ✅ Should detect improvements in rendered scores
 
 #### Exit Codes (3 tests)
+
 - ✅ Should return exit code 1 for critical regressions
 - ✅ Should return exit code 0 for warnings only
 - ✅ Should return exit code 0 for no regressions
 
 #### Report Generation (4 tests)
+
 - ✅ Should generate regression_report.md
 - ✅ Should include executive summary with counts
 - ✅ Should list critical regressions first
 - ✅ Should include recommendations section
 
 **Test Data Requirements:**
+
 - Baseline fixture (results.json from previous run)
 - Current results with known regressions
 - Expected regression_report.md output fixture
 
 **Dependencies to Mock:**
+
 - File system operations (fs.readFileSync, fs.writeFileSync, fs.existsSync)
 - Logger output
 - process.exit() calls
@@ -163,6 +181,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 **Test Categories:**
 
 #### Fetching and Parsing (5 tests)
+
 - ✅ Should fetch robots.txt from domain root
 - ✅ Should handle HTTP fetch success
 - ✅ Should fall back to Puppeteer for Cloudflare sites
@@ -170,6 +189,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should handle malformed robots.txt gracefully
 
 #### AI User Agents Scoring (6 tests)
+
 - ✅ Should award 30 points for 3+ AI user agents
 - ✅ Should award 15 points for 1-2 AI user agents
 - ✅ Should award 0 points for no AI user agents
@@ -178,11 +198,13 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should detect other AI agents (GoogleBot-AI, etc.)
 
 #### Sitemap Declaration Scoring (3 tests)
+
 - ✅ Should award 20 points for sitemap declaration
 - ✅ Should detect multiple sitemap declarations
 - ✅ Should award 0 points for missing sitemap
 
 #### Sensitive Path Protection Scoring (5 tests)
+
 - ✅ Should award 25 points for 3+ protected paths
 - ✅ Should award 15 points for 1-2 protected paths
 - ✅ Should award 0 points for no protected paths
@@ -190,30 +212,36 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should detect wildcard patterns (e.g., /admin/*)
 
 #### llms.txt Reference Scoring (3 tests)
+
 - ✅ Should award 15 points for llms.txt reference
 - ✅ Should detect llms.txt in comments
 - ✅ Should award 0 points for missing reference
 
 #### Helpful Comments Scoring (3 tests)
+
 - ✅ Should award 10 points for 3+ comments
 - ✅ Should award 5 points for 1-2 comments
 - ✅ Should award 0 points for no comments
 
 #### Quality Level Classification (4 tests)
+
 - ✅ Should classify 80-100 as Excellent
 - ✅ Should classify 60-79 as Good
 - ✅ Should classify 40-59 as Fair
 - ✅ Should classify 0-39 as Poor
 
 #### Report Generation (1 test)
+
 - ✅ Should generate robots_quality_report.md with recommendations
 
 **Test Data Requirements:**
+
 - Sample robots.txt files (excellent, good, fair, poor examples)
 - Expected scoring for each example
 - Expected report output fixtures
 
 **Dependencies to Mock:**
+
 - HTTP fetch operations
 - Puppeteer browser operations
 - File system operations
@@ -229,12 +257,14 @@ These features have ZERO test coverage and are heavily documented as core functi
 **Test Categories:**
 
 #### Fetching and Parsing (4 tests)
+
 - ✅ Should fetch llms.txt from domain root
 - ✅ Should handle HTTP fetch success
 - ✅ Should handle missing llms.txt (404)
 - ✅ Should parse llms.txt structure
 
 #### Core Elements Scoring (5 tests)
+
 - ✅ Should award 10 points for title
 - ✅ Should award 10 points for description
 - ✅ Should award 10 points for contact
@@ -242,36 +272,43 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should award 0 points for missing elements
 
 #### Sections Scoring (4 tests)
+
 - ✅ Should award 30 points for 5+ sections
 - ✅ Should award 20 points for 3-4 sections
 - ✅ Should award 10 points for 1-2 sections
 - ✅ Should detect major sections (# headers)
 
 #### Content Length Scoring (3 tests)
+
 - ✅ Should award 15 points for substantial content (>2000 chars)
 - ✅ Should award 10 points for moderate content (1000-2000 chars)
 - ✅ Should award 5 points for minimal content (<1000 chars)
 
 #### External Links Scoring (3 tests)
+
 - ✅ Should award 10 points for 3+ external links
 - ✅ Should award 5 points for 1-2 external links
 - ✅ Should award 0 points for no external links
 
 #### Specificity Scoring (3 tests)
+
 - ✅ Should award 5 points for detailed policies
 - ✅ Should award 3 points for basic policies
 - ✅ Should award 0 points for generic content
 
 #### Bonus Points (3 tests)
+
 - ✅ Should award bonus for rate limits declared
 - ✅ Should award bonus for API documentation
 - ✅ Should award bonus for attribution requirements
 
 **Test Data Requirements:**
+
 - Sample llms.txt files (comprehensive, moderate, minimal examples)
 - Expected scoring for each example (0-105 points)
 
 **Dependencies to Mock:**
+
 - HTTP fetch operations
 - File system operations
 
@@ -286,12 +323,14 @@ These features have ZERO test coverage and are heavily documented as core functi
 **Test Categories:**
 
 #### CSV Parsing (4 tests)
+
 - ✅ Should parse CSV with domain column
 - ✅ Should skip header row
 - ✅ Should handle empty rows
 - ✅ Should handle malformed CSV gracefully
 
 #### Multi-Domain Auditing (5 tests)
+
 - ✅ Should audit all domains from CSV
 - ✅ Should generate individual reports per domain
 - ✅ Should generate bulk_audit_summary.csv
@@ -299,21 +338,25 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should continue processing after domain error
 
 #### White-Labeling (3 tests)
+
 - ✅ Should replace "Web Audit Suite" with agency name
 - ✅ Should add agency logo to dashboard header
 - ✅ Should preserve all other report content
 
 #### Output Organization (3 tests)
+
 - ✅ Should create domain-specific output directories
 - ✅ Should organize reports by domain
 - ✅ Should generate master summary report
 
 **Test Data Requirements:**
+
 - Sample CSV with 3-5 test domains
 - Mock domain responses
 - Expected bulk_audit_summary.csv output
 
 **Dependencies to Mock:**
+
 - Entire audit pipeline (main.js)
 - File system operations
 - Network requests
@@ -329,6 +372,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 **Test Categories:**
 
 #### Error Type Detection (7 tests)
+
 - ✅ Should detect DNS failures (ENOTFOUND)
 - ✅ Should detect connection timeouts (ETIMEDOUT)
 - ✅ Should detect host unreachable (EHOSTUNREACH)
@@ -338,6 +382,7 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should detect Cloudflare challenges
 
 #### Retry Mechanism (6 tests)
+
 - ✅ Should retry up to 3 times on failure
 - ✅ Should pause between retries (exponential backoff)
 - ✅ Should display error details to user
@@ -346,22 +391,26 @@ These features have ZERO test coverage and are heavily documented as core functi
 - ✅ Should succeed on retry if error resolved
 
 #### Cloudflare Bypass (3 tests)
+
 - ✅ Should detect Cloudflare challenge
 - ✅ Should attempt stealth mode bypass
 - ✅ Should report bypass success/failure
 
 #### Error Recovery (4 tests)
+
 - ✅ Should continue processing other URLs after single URL failure
 - ✅ Should log failed URLs to error.log
 - ✅ Should include failed URLs in final report
 - ✅ Should not exit process on single URL failure
 
 **Test Data Requirements:**
+
 - Mock network error responses for each error type
 - Expected retry sequences
 - Expected error log output
 
 **Dependencies to Mock:**
+
 - HTTP/HTTPS requests (axios, fetch)
 - Puppeteer navigation
 - User input (readline)
@@ -384,6 +433,7 @@ Improve test coverage for partially tested features.
 **New Test Categories:**
 
 #### Behavior Tests (6 tests)
+
 - ✅ Should reduce concurrency on 429 response
 - ✅ Should reduce concurrency on 503 response
 - ✅ Should use exponential backoff (1s, 2s, 4s, 8s)
@@ -392,6 +442,7 @@ Improve test coverage for partially tested features.
 - ✅ Should respect minimum concurrency (1)
 
 #### Integration Tests (4 tests)
+
 - ✅ Should integrate with URL processing pipeline
 - ✅ Should monitor actual server responses
 - ✅ Should adjust real-time during processing
@@ -408,19 +459,23 @@ Improve test coverage for partially tested features.
 **Test Categories:**
 
 #### Cache-Only Mode (3 tests)
+
 - ✅ Should use only cached data when --cache-only
 - ✅ Should skip URL fetching in cache-only mode
 - ✅ Should generate reports from cache
 
 #### No-Cache Mode (2 tests)
+
 - ✅ Should disable caching when --no-cache
 - ✅ Should fetch all URLs fresh
 
 #### Force Delete Cache (2 tests)
+
 - ✅ Should clear cache before starting when --force-delete-cache
 - ✅ Should recreate cache directory
 
 #### Cache Staleness Validation (5 tests)
+
 - ✅ Should send HTTP HEAD request for cached URLs
 - ✅ Should compare Last-Modified headers
 - ✅ Should invalidate cache if source newer
@@ -438,12 +493,14 @@ Improve test coverage for partially tested features.
 **New Test Categories:**
 
 #### Memory Management (4 tests)
+
 - ✅ Should restart browser after 50 pages
 - ✅ Should reset page counter after restart
 - ✅ Should preserve browser pool size during restart
 - ✅ Should handle restart failures gracefully
 
 #### Stress Testing (4 tests)
+
 - ✅ Should handle 100+ consecutive acquire/release cycles
 - ✅ Should maintain pool integrity under high concurrency
 - ✅ Should not leak browsers
@@ -460,6 +517,7 @@ Improve test coverage for partially tested features.
 **Test Categories:**
 
 #### Concurrency Boundaries (5 tests)
+
 - ✅ Should process URLs with concurrency=1 (sequential)
 - ✅ Should process URLs with concurrency=3 (default)
 - ✅ Should process URLs with concurrency=5
@@ -467,6 +525,7 @@ Improve test coverage for partially tested features.
 - ✅ Should respect maximum concurrency limit
 
 #### Performance Validation (5 tests)
+
 - ✅ Should complete faster with higher concurrency
 - ✅ Should maintain accuracy regardless of concurrency
 - ✅ Should not overwhelm server
@@ -488,6 +547,7 @@ Test feature combinations and full pipeline scenarios.
 **Test Categories:**
 
 #### Full Feature Stack (5 tests)
+
 - ✅ Should run with all flags: --extract-patterns --enable-history --generate-dashboard --generate-executive-summary
 - ✅ Should generate all expected reports
 - ✅ Should create all output directories
@@ -495,19 +555,23 @@ Test feature combinations and full pipeline scenarios.
 - ✅ Should complete without errors
 
 #### Performance + History (3 tests)
+
 - ✅ Should combine browser pooling with history tracking
 - ✅ Should combine concurrency with regression detection
 - ✅ Should maintain performance with all features enabled
 
 #### Agency + History (2 tests)
+
 - ✅ Should combine bulk auditing with historical tracking
 - ✅ Should white-label regression reports
 
 #### Cache + Pattern Extraction (2 tests)
+
 - ✅ Should extract patterns from cached data
 - ✅ Should regenerate pattern library from cache-only mode
 
 #### Error Handling + Retry (3 tests)
+
 - ✅ Should retry failed URLs during full pipeline
 - ✅ Should continue pattern extraction after URL failures
 - ✅ Should track regression despite missing URLs
@@ -523,16 +587,19 @@ Test feature combinations and full pipeline scenarios.
 **Test Categories:**
 
 #### Scale Tests (4 tests)
+
 - ✅ Should process 100 URLs successfully
 - ✅ Should process 500 URLs successfully
 - ✅ Should maintain memory under load (no leaks)
 - ✅ Should complete within reasonable time
 
 #### Batching Tests (2 tests)
+
 - ✅ Should process large sites in batches (1000 URLs, batches of 100)
 - ✅ Should preserve results across batches
 
 #### Performance Validation (2 tests)
+
 - ✅ Should demonstrate 3-5x speedup with optimizations
 - ✅ Should maintain accuracy at scale
 
@@ -547,6 +614,7 @@ Test feature combinations and full pipeline scenarios.
 **Test Categories:**
 
 #### Exit Code Validation (5 tests)
+
 - ✅ Should exit with code 0 on success
 - ✅ Should exit with code 1 on critical regression
 - ✅ Should exit with code 0 on warnings only
@@ -554,6 +622,7 @@ Test feature combinations and full pipeline scenarios.
 - ✅ Should exit with code 0 on improvements
 
 #### Pipeline Integration (5 tests)
+
 - ✅ Should run in non-interactive mode
 - ✅ Should generate machine-readable reports
 - ✅ Should output JSON summary for parsing
@@ -664,21 +733,25 @@ jobs:
 ### Phase 1: Critical Features (Weeks 1-3)
 
 **Week 1:**
+
 - Day 1-2: Pattern Extraction test suite (25 tests)
 - Day 3-4: Regression Detection test suite (35 tests)
 - Day 5: Test fixtures and helpers
 
 **Week 2:**
+
 - Day 1-2: robots.txt Quality Scoring test suite (30 tests)
 - Day 3-4: llms.txt Quality Scoring test suite (25 tests)
 - Day 5: Test fixtures and documentation
 
 **Week 3:**
+
 - Day 1-2: Bulk Auditing test suite (15 tests)
 - Day 3-4: Network Error Handling test suite (20 tests)
 - Day 5: Review, refine, document
 
 **Deliverables:**
+
 - 150 new tests
 - 6 new test files
 - Test fixtures repository
@@ -691,6 +764,7 @@ jobs:
 **Day 5:** Browser Pool + Concurrent Processing enhancements (18 tests)
 
 **Deliverables:**
+
 - 40 new tests
 - 3 enhanced/new test files
 - Performance benchmarks
@@ -698,16 +772,19 @@ jobs:
 ### Phase 3: Integration (Weeks 5-6)
 
 **Week 5:**
+
 - Day 1-2: Feature Combination tests (15 tests)
 - Day 3-4: Large Site Processing tests (8 tests)
 - Day 5: CI/CD Integration tests (10 tests)
 
 **Week 6:**
+
 - Day 1-2: End-to-end testing with real sites (optional)
 - Day 3-4: Performance regression tests
 - Day 5: Documentation and final review
 
 **Deliverables:**
+
 - 33 integration tests
 - CI/CD pipeline configuration
 - Performance benchmarks
@@ -720,16 +797,19 @@ jobs:
 ### Coverage Targets
 
 **By End of Phase 1:**
+
 - Unit test coverage: 65%
 - Critical path coverage: 80%
 - All Priority 1 features tested
 
 **By End of Phase 2:**
+
 - Unit test coverage: 75%
 - Critical path coverage: 90%
 - All partially tested features enhanced
 
 **By End of Phase 3:**
+
 - Unit test coverage: 85%
 - Integration coverage: 75%
 - All feature combinations validated
@@ -805,6 +885,7 @@ For each new test file:
 ### Potential Issues
 
 **Issue 1: Test Suite Too Slow**
+
 - **Risk:** 276 tests may take too long to run
 - **Mitigation:**
   - Run unit tests first (fast)
@@ -813,6 +894,7 @@ For each new test file:
   - Mock expensive operations (Puppeteer)
 
 **Issue 2: Flaky Tests**
+
 - **Risk:** Network/timing-dependent tests may be unreliable
 - **Mitigation:**
   - Use fixed timeouts
@@ -821,6 +903,7 @@ For each new test file:
   - Avoid real browser operations in unit tests
 
 **Issue 3: Maintenance Burden**
+
 - **Risk:** More tests = more maintenance
 - **Mitigation:**
   - Write clear, maintainable tests
@@ -829,6 +912,7 @@ For each new test file:
   - Document test intentions
 
 **Issue 4: Breaking Existing Tests**
+
 - **Risk:** New tests may reveal bugs in existing code
 - **Mitigation:**
   - This is a good thing!

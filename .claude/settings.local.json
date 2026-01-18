@@ -39,11 +39,13 @@
       "Bash(pdfinfo:*)",
       "Bash(mdls:*)",
       "Bash(npm test:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(git checkout:*)",
+
+      "Bash(git -C ../.. ls-files:*)"
     ],
     "deny": [],
     "ask": [
-      "Bash(git checkout:*)",
       "Bash(git restore:*)",
       "Bash(git reset:*)",
       "Bash(bash:*)",
