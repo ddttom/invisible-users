@@ -33,6 +33,7 @@ packages/manuscript/the-bible-of-mx/illustrations/*.png
 
 # Generated book files
 the-bible/
+dont/
 
 # Generated appendix HTML build templates (temporary)
 scripts/appendix-nav-footer.html
