@@ -3,10 +3,10 @@
     {
       "url": "https://example.com/",
       "lastmod": "2024-01-01",
-      "loadTime": 60.899999998509884,
-      "domContentLoaded": 60.80000000074506,
-      "firstPaint": 139.5,
-      "firstContentfulPaint": 139.5
+      "loadTime": 60.200000000186265,
+      "domContentLoaded": 60.10000000009313,
+      "firstPaint": 134.5,
+      "firstContentfulPaint": 134.5
     }
   ],
   "seoScores": [

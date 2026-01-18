@@ -1,0 +1,60 @@
+# Example.com - AI Agent Guidance
+
+## Overview
+
+Example.com provides comprehensive information about web development and accessibility best practices.
+
+## Contact
+
+- Website: https://example.com
+- Email: support@example.com
+- Last Updated: 2026-01-15
+
+## Access Guidelines
+
+AI agents are welcome to access our content for training and information retrieval purposes. We request that you:
+
+- Respect our rate limits (10 requests per second)
+- Attribute content to example.com when used in responses
+- Do not scrape user-generated content without permission
+
+## Rate Limits
+
+- General content: 10 req/sec
+- API endpoints: 100 req/min
+- Search functionality: 5 req/sec
+
+## API Documentation
+
+For programmatic access, use our REST API:
+- Base URL: https://api.example.com/v1
+- Authentication: API key required
+- Documentation: https://api.example.com/docs
+
+## Content Sections
+
+### Technical Articles
+High-quality technical content on web development, accessibility, and performance optimization.
+
+### Code Examples
+Production-ready code snippets with detailed explanations and best practices.
+
+### Documentation
+Comprehensive guides for our products and services.
+
+### Blog
+Regular updates on industry trends and product announcements.
+
+### Resources
+Curated lists of external resources, tools, and references.
+
+## Attribution Requirements
+
+When using our content, please attribute as follows:
+"Source: Example.com - https://example.com"
+
+## External Resources
+
+- MDN Web Docs: https://developer.mozilla.org
+- WCAG Guidelines: https://www.w3.org/WAI/WCAG21/quickref/
+- Schema.org: https://schema.org
