@@ -9,6 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - Test Suite (2026-01-18)
+
+**Golden Master Test Enhancement:**
+
+- Enabled Puppeteer in golden master test for full pipeline validation
+- Changed `noPuppeteer: true` → `false` to test browser automation
+- Increased timeout from 10s to 30s for Puppeteer operations
+- Updated test assertions to match real `https://example.com/` behavior
+- Added documentation explaining Nock cannot intercept Puppeteer's Chrome network stack
+- All 41 tests passing with Puppeteer enabled
+- Documented learning: Nock only intercepts Node.js HTTP (axios/http/https), not Chrome networking
+
+**Technical Details:**
+
+- Nock HTTP mocking works for sitemap fetching (axios-based) but not Puppeteer navigation
+- Puppeteer uses Chrome's network stack which bypasses Node.js HTTP interception
+- Test now hits real URLs when Puppeteer enabled, validating full production pipeline
+- Removed unused `loadBaseline` import from main.js (ESLint fix)
+
 ### Added - Performance Optimizations and Ethical Scraping (2026-01-18)
 
 Major performance and ethical scraping enhancements to the Web Audit Suite:
