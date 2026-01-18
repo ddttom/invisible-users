@@ -5,32 +5,21 @@
 
 import { expect } from 'chai';
 import sinon from 'sinon';
-import {
-  parseLlmsTxt,
-  analyzeLlmsTxtQuality,
-  calculateLlmsTxtScore
-} from '../../src/utils/llmsTxtParser.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import {
+  parseLlmsTxt,
+  analyzeLlmsTxtQuality,
+} from '../../src/utils/llmsTxtParser.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 describe('llms.txt Quality Scoring', () => {
-  let mockContext;
   let fetchStub;
 
   beforeEach(() => {
-    mockContext = {
-      logger: {
-        info: sinon.spy(),
-        warn: sinon.spy(),
-        error: sinon.spy(),
-        debug: sinon.spy()
-      }
-    };
-
     // Mock global fetch
     fetchStub = sinon.stub(global, 'fetch');
   });
@@ -44,7 +33,7 @@ describe('llms.txt Quality Scoring', () => {
       fetchStub.resolves({
         ok: true,
         status: 200,
-        text: async () => '# Example Site\n\nThis is example.com'
+        text: async () => '# Example Site\n\nThis is example.com',
       });
 
       const result = await global.fetch('https://example.com/llms.txt');
@@ -57,7 +46,7 @@ describe('llms.txt Quality Scoring', () => {
       fetchStub.resolves({
         ok: true,
         status: 200,
-        text: async () => '# Test\n\nContent here'
+        text: async () => '# Test\n\nContent here',
       });
 
       const result = await global.fetch('https://example.com/llms.txt');
@@ -69,7 +58,7 @@ describe('llms.txt Quality Scoring', () => {
     it('should handle missing llms.txt (404)', async () => {
       fetchStub.resolves({
         ok: false,
-        status: 404
+        status: 404,
       });
 
       const result = await global.fetch('https://example.com/llms.txt');
@@ -246,7 +235,7 @@ Content
       const parsed = parseLlmsTxt(content);
 
       // Should detect ## level headers as major sections
-      const majorSections = parsed.sections.filter(s => s.level === 2);
+      const majorSections = parsed.sections.filter((s) => s.level === 2);
       expect(majorSections.length).to.be.at.least(2);
     });
   });
@@ -497,7 +486,7 @@ Please attribute our content
       // Load comprehensive fixture
       const comprehensiveContent = fs.readFileSync(
         path.join(__dirname, '../fixtures/llms/comprehensive.txt'),
-        'utf-8'
+        'utf-8',
       );
 
       const quality = analyzeLlmsTxtQuality(comprehensiveContent);
@@ -519,7 +508,7 @@ Please attribute our content
       // Load minimal fixture
       const minimalContent = fs.readFileSync(
         path.join(__dirname, '../fixtures/llms/minimal.txt'),
-        'utf-8'
+        'utf-8',
       );
 
       const quality = analyzeLlmsTxtQuality(minimalContent);
@@ -643,7 +632,7 @@ API details.
     it('should recommend maintaining for score 90-105', () => {
       const comprehensiveContent = fs.readFileSync(
         path.join(__dirname, '../fixtures/llms/comprehensive.txt'),
-        'utf-8'
+        'utf-8',
       );
 
       const quality = analyzeLlmsTxtQuality(comprehensiveContent);

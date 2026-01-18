@@ -133,14 +133,14 @@ export function analyzeRobotsTxtQuality(content) {
         sitemap: 0,
         pathProtection: 0,
         llmsTxtReference: 0,
-        comments: 0
+        comments: 0,
       },
       aiUserAgentCount: 0,
       protectedPathCount: 0,
       hasSitemap: false,
       hasLlmsTxtReference: false,
       commentCount: 0,
-      recommendations: ['Create a valid robots.txt file']
+      recommendations: ['Create a valid robots.txt file'],
     };
   }
 
@@ -149,13 +149,11 @@ export function analyzeRobotsTxtQuality(content) {
     sitemap: 0,
     pathProtection: 0,
     llmsTxtReference: 0,
-    comments: 0
+    comments: 0,
   };
 
   // 1. AI User Agents Scoring (30 points max)
-  const aiAgentsFound = parsed.userAgents.filter(ua =>
-    AI_USER_AGENTS.some(aiAgent => ua.toLowerCase().includes(aiAgent.toLowerCase()))
-  );
+  const aiAgentsFound = parsed.userAgents.filter((ua) => AI_USER_AGENTS.some((aiAgent) => ua.toLowerCase().includes(aiAgent.toLowerCase())));
   const aiUserAgentCount = aiAgentsFound.length;
 
   if (aiUserAgentCount >= 3) {
@@ -172,11 +170,9 @@ export function analyzeRobotsTxtQuality(content) {
 
   // 3. Sensitive Path Protection Scoring (25 points max)
   const protectedPaths = parsed.rules
-    .filter(rule => rule.directive === 'disallow')
-    .filter(rule => SENSITIVE_PATHS.some(sensitive =>
-      rule.path.toLowerCase().startsWith(sensitive.toLowerCase())
-    ))
-    .map(rule => rule.path);
+    .filter((rule) => rule.directive === 'disallow')
+    .filter((rule) => SENSITIVE_PATHS.some((sensitive) => rule.path.toLowerCase().startsWith(sensitive.toLowerCase())))
+    .map((rule) => rule.path);
 
   // Remove duplicates
   const uniqueProtectedPaths = [...new Set(protectedPaths)];
@@ -191,9 +187,7 @@ export function analyzeRobotsTxtQuality(content) {
   }
 
   // 4. llms.txt Reference Scoring (15 points)
-  const hasLlmsTxtReference = parsed.comments.some(comment =>
-    comment.toLowerCase().includes('llms.txt') || comment.toLowerCase().includes('llms-txt')
-  );
+  const hasLlmsTxtReference = parsed.comments.some((comment) => comment.toLowerCase().includes('llms.txt') || comment.toLowerCase().includes('llms-txt'));
   breakdown.llmsTxtReference = hasLlmsTxtReference ? 15 : 0;
 
   // 5. Helpful Comments Scoring (10 points max)
@@ -239,7 +233,7 @@ export function analyzeRobotsTxtQuality(content) {
     hasSitemap,
     hasLlmsTxtReference,
     commentCount,
-    recommendations
+    recommendations,
   };
 }
 
@@ -296,7 +290,7 @@ export async function processRobotsTxt(robotsTxtUrl, content = null, context = n
           sitemap: 0,
           pathProtection: 0,
           llmsTxtReference: 0,
-          comments: 0
+          comments: 0,
         },
         recommendations: ['Fix robots.txt access or format issues'],
       },

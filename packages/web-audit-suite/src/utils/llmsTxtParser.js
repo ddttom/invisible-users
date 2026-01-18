@@ -32,21 +32,21 @@ export function parseLlmsTxt(content) {
       currentSection = {
         level: 1,
         title: h1Match[1],
-        content: []
+        content: [],
       };
       sections.push(currentSection);
     } else if (h2Match) {
       currentSection = {
         level: 2,
         title: h2Match[1],
-        content: []
+        content: [],
       };
       sections.push(currentSection);
     } else if (h3Match) {
       currentSection = {
         level: 3,
         title: h3Match[1],
-        content: []
+        content: [],
       };
       sections.push(currentSection);
     } else if (currentSection) {
@@ -63,7 +63,7 @@ export function parseLlmsTxt(content) {
   return {
     sections,
     links,
-    content
+    content,
   };
 }
 
@@ -78,30 +78,28 @@ export function analyzeLlmsTxtQuality(content) {
   const bonusPoints = {
     rateLimits: 0,
     apiDocs: 0,
-    attribution: 0
+    attribution: 0,
   };
 
   // Core Elements Scoring (40 points total)
-  const hasTitle = parsed.sections.some(s => s.level === 1);
+  const hasTitle = parsed.sections.some((s) => s.level === 1);
   breakdown.title = hasTitle ? 10 : 0;
 
-  const hasDescription = parsed.sections.some(s =>
-    s.title && (s.title.toLowerCase().includes('overview') ||
-                s.title.toLowerCase().includes('description'))
-  );
+  const hasDescription = parsed.sections.some((s) => s.title && (s.title.toLowerCase().includes('overview')
+                || s.title.toLowerCase().includes('description')));
   breakdown.description = hasDescription ? 10 : 0;
 
-  const hasContact = content.toLowerCase().includes('contact') ||
-                     content.toLowerCase().includes('email:') ||
-                     content.toLowerCase().includes('support@');
+  const hasContact = content.toLowerCase().includes('contact')
+                     || content.toLowerCase().includes('email:')
+                     || content.toLowerCase().includes('support@');
   breakdown.contact = hasContact ? 10 : 0;
 
-  const hasLastUpdated = /last updated:|updated:/i.test(content) ||
-                         /\d{4}-\d{2}-\d{2}/.test(content);
+  const hasLastUpdated = /last updated:|updated:/i.test(content)
+                         || /\d{4}-\d{2}-\d{2}/.test(content);
   breakdown.lastUpdated = hasLastUpdated ? 10 : 0;
 
   // Sections Scoring (30 points)
-  const level2Sections = parsed.sections.filter(s => s.level === 2);
+  const level2Sections = parsed.sections.filter((s) => s.level === 2);
   const sectionCount = level2Sections.length;
   if (sectionCount >= 5) {
     breakdown.sections = 30;
@@ -134,8 +132,8 @@ export function analyzeLlmsTxtQuality(content) {
   }
 
   // Specificity Scoring (5 points)
-  const hasDetailedPolicies = /rate limit|req\/sec|authentication|attribution/i.test(content) &&
-                             content.length > 1000;
+  const hasDetailedPolicies = /rate limit|req\/sec|authentication|attribution/i.test(content)
+                             && content.length > 1000;
   if (hasDetailedPolicies) {
     breakdown.specificity = 5;
   } else if (/rate limit|authentication|attribution/i.test(content)) {
@@ -188,7 +186,7 @@ export function analyzeLlmsTxtQuality(content) {
     hasContact,
     hasLastUpdated,
     hasDetailedPolicies,
-    recommendations
+    recommendations,
   };
 }
 

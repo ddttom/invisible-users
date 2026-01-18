@@ -9,7 +9,7 @@ export function createMockResults(options = {}) {
     renderedScoreRange = [75, 92],
     includeHtml = true,
     includeSchemaOrg = true,
-    includeAccessibilityIssues = true
+    includeAccessibilityIssues = true,
   } = options;
 
   const pages = [];
@@ -27,13 +27,13 @@ export function createMockResults(options = {}) {
         firstContentfulPaint: randomInRange(800, 1400),
         largestContentfulPaint: randomInRange(1000, 1800),
         timeToInteractive: randomInRange(1200, 2200),
-        cumulativeLayoutShift: (Math.random() * 0.15).toFixed(2)
+        cumulativeLayoutShift: (Math.random() * 0.15).toFixed(2),
       },
       hasMain: Math.random() > 0.3,
       hasNav: Math.random() > 0.2,
       hasSchemaOrg: includeSchemaOrg && Math.random() > 0.4,
       structuredDataCount: includeSchemaOrg ? randomInRange(0, 3) : 0,
-      formFieldsStandard: randomInRange(50, 100)
+      formFieldsStandard: randomInRange(50, 100),
     };
 
     if (includeAccessibilityIssues) {
@@ -42,7 +42,7 @@ export function createMockResults(options = {}) {
         critical: randomInRange(0, 2),
         serious: randomInRange(0, 3),
         moderate: randomInRange(0, 3),
-        minor: randomInRange(0, 2)
+        minor: randomInRange(0, 2),
       };
     }
 
@@ -58,10 +58,10 @@ export function createMockResults(options = {}) {
       domain: 'example.com',
       timestamp: new Date().toISOString(),
       totalUrls: urlCount,
-      version: '1.0.0'
+      version: '1.0.0',
     },
     pages,
-    summary: calculateSummary(pages)
+    summary: calculateSummary(pages),
   };
 }
 
@@ -100,12 +100,12 @@ function calculateSummary(pages) {
   const avg = (arr) => sum(arr) / arr.length;
 
   return {
-    averageServedScore: avg(pages.map(p => p.servedScore)),
-    averageRenderedScore: avg(pages.map(p => p.renderedScore)),
-    averageSeoScore: avg(pages.map(p => p.seoScore)),
-    averageAccessibilityScore: avg(pages.map(p => p.accessibilityScore)),
-    averageLoadTime: avg(pages.map(p => p.performanceMetrics.loadTime)),
-    totalAccessibilityIssues: sum(pages.map(p => p.accessibilityIssues?.total || 0))
+    averageServedScore: avg(pages.map((p) => p.servedScore)),
+    averageRenderedScore: avg(pages.map((p) => p.renderedScore)),
+    averageSeoScore: avg(pages.map((p) => p.seoScore)),
+    averageAccessibilityScore: avg(pages.map((p) => p.accessibilityScore)),
+    averageLoadTime: avg(pages.map((p) => p.performanceMetrics.loadTime)),
+    totalAccessibilityIssues: sum(pages.map((p) => p.accessibilityIssues?.total || 0)),
   };
 }
 
@@ -122,7 +122,7 @@ export function createHighScoringMockResults() {
     servedScoreRange: [75, 95],
     renderedScoreRange: [80, 98],
     includeHtml: true,
-    includeSchemaOrg: true
+    includeSchemaOrg: true,
   });
 }
 
@@ -135,6 +135,6 @@ export function createMixedScoringMockResults() {
     servedScoreRange: [40, 95],
     renderedScoreRange: [45, 92],
     includeHtml: true,
-    includeSchemaOrg: true
+    includeSchemaOrg: true,
   });
 }

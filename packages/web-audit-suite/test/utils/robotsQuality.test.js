@@ -5,15 +5,14 @@
 
 import { expect } from 'chai';
 import sinon from 'sinon';
-import {
-  parseRobotsTxt,
-  analyzeRobotsTxtQuality,
-  calculateRobotsQualityScore
-} from '../../src/utils/robotsTxtParser.js';
-import { fetchRobotsTxt } from '../../src/utils/robotsFetcher.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import {
+  parseRobotsTxt,
+  analyzeRobotsTxtQuality,
+} from '../../src/utils/robotsTxtParser.js';
+import { fetchRobotsTxt } from '../../src/utils/robotsFetcher.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,8 +27,8 @@ describe('robots.txt Quality Scoring', () => {
         info: sinon.spy(),
         warn: sinon.spy(),
         error: sinon.spy(),
-        debug: sinon.spy()
-      }
+        debug: sinon.spy(),
+      },
     };
 
     // Mock global fetch
@@ -45,7 +44,7 @@ describe('robots.txt Quality Scoring', () => {
       fetchStub.resolves({
         ok: true,
         status: 200,
-        text: async () => 'User-agent: *\nDisallow: /admin/'
+        text: async () => 'User-agent: *\nDisallow: /admin/',
       });
 
       const result = await fetchRobotsTxt('https://example.com', mockContext);
@@ -59,7 +58,7 @@ describe('robots.txt Quality Scoring', () => {
       fetchStub.resolves({
         ok: true,
         status: 200,
-        text: async () => 'User-agent: *\nAllow: /'
+        text: async () => 'User-agent: *\nAllow: /',
       });
 
       const result = await fetchRobotsTxt('https://example.com', mockContext);
@@ -72,7 +71,7 @@ describe('robots.txt Quality Scoring', () => {
     it('should handle missing robots.txt (404)', async () => {
       fetchStub.resolves({
         ok: false,
-        status: 404
+        status: 404,
       });
 
       const result = await fetchRobotsTxt('https://example.com', mockContext);
@@ -146,7 +145,7 @@ Disallow: /admin/
 
       const parsed = parseRobotsTxt(content);
 
-      const hasGPTBot = parsed.userAgents.some(ua => ua.includes('GPTBot'));
+      const hasGPTBot = parsed.userAgents.some((ua) => ua.includes('GPTBot'));
       expect(hasGPTBot).to.be.true;
     });
 
@@ -155,7 +154,7 @@ Disallow: /admin/
 
       const parsed = parseRobotsTxt(content);
 
-      const hasClaudeBot = parsed.userAgents.some(ua => ua.includes('ClaudeBot'));
+      const hasClaudeBot = parsed.userAgents.some((ua) => ua.includes('ClaudeBot'));
       expect(hasClaudeBot).to.be.true;
     });
 
@@ -272,8 +271,8 @@ Disallow: /account/
       const parsed = parseRobotsTxt(content);
 
       const disallowedPaths = parsed.rules
-        .filter(r => r.directive === 'disallow')
-        .map(r => r.path);
+        .filter((r) => r.directive === 'disallow')
+        .map((r) => r.path);
 
       expect(disallowedPaths).to.include('/admin/');
       expect(disallowedPaths).to.include('/cart/');
@@ -289,7 +288,7 @@ Disallow: /api/private/*
 
       const parsed = parseRobotsTxt(content);
 
-      const wildcardRules = parsed.rules.filter(r => r.path.includes('*'));
+      const wildcardRules = parsed.rules.filter((r) => r.path.includes('*'));
       expect(wildcardRules.length).to.be.above(0);
     });
   });
@@ -319,9 +318,7 @@ Allow: /
 
       const parsed = parseRobotsTxt(content);
 
-      const hasLlmsTxtComment = parsed.comments.some(c =>
-        c.toLowerCase().includes('llms.txt')
-      );
+      const hasLlmsTxtComment = parsed.comments.some((c) => c.toLowerCase().includes('llms.txt'));
       expect(hasLlmsTxtComment).to.be.true;
     });
 
@@ -388,7 +385,7 @@ Disallow: /admin/
       // Load excellent fixture
       const excellentContent = fs.readFileSync(
         path.join(__dirname, '../fixtures/robots/excellent.txt'),
-        'utf-8'
+        'utf-8',
       );
 
       const quality = analyzeRobotsTxtQuality(excellentContent);
@@ -448,7 +445,7 @@ Sitemap: https://example.com/sitemap.xml
       // Load poor fixture
       const poorContent = fs.readFileSync(
         path.join(__dirname, '../fixtures/robots/poor.txt'),
-        'utf-8'
+        'utf-8',
       );
 
       const quality = analyzeRobotsTxtQuality(poorContent);

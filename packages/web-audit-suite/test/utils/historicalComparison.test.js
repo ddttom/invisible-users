@@ -5,14 +5,13 @@
 
 import { expect } from 'chai';
 import sinon from 'sinon';
+import fs from 'fs/promises';
 import {
   storeHistoricalResult,
   loadHistoricalResults,
   compareWithPrevious,
-  compareResults
+  compareResults,
 } from '../../src/utils/historicalComparison.js';
-import fs from 'fs/promises';
-import path from 'path';
 
 describe('Regression Detection', () => {
   let mockContext;
@@ -25,8 +24,8 @@ describe('Regression Detection', () => {
         info: sinon.spy(),
         warn: sinon.spy(),
         error: sinon.spy(),
-        debug: sinon.spy()
-      }
+        debug: sinon.spy(),
+      },
     };
 
     mockOutputDir = '/fake/output';
@@ -36,7 +35,7 @@ describe('Regression Detection', () => {
       mkdir: sinon.stub(fs, 'mkdir').resolves(),
       writeFile: sinon.stub(fs, 'writeFile').resolves(),
       readdir: sinon.stub(fs, 'readdir').resolves([]),
-      readFile: sinon.stub(fs, 'readFile').resolves('{}')
+      readFile: sinon.stub(fs, 'readFile').resolves('{}'),
     };
   });
 
@@ -78,7 +77,7 @@ describe('Regression Detection', () => {
     it('should preserve existing baseline', async () => {
       const mockHistoryFiles = [
         'results-2026-01-15T10-00-00-000Z.json',
-        'results-2026-01-16T10-00-00-000Z.json'
+        'results-2026-01-16T10-00-00-000Z.json',
       ];
 
       fsStubs.readdir.resolves(mockHistoryFiles);
@@ -111,7 +110,7 @@ describe('Regression Detection', () => {
     it('should load baseline from history directory', async () => {
       const mockBaseline = {
         timestamp: '2026-01-15T10:00:00.000Z',
-        results: { summary: { averageLoadTime: 1200 } }
+        results: { summary: { averageLoadTime: 1200 } },
       };
 
       fsStubs.readdir.resolves(['results-2026-01-15T10-00-00-000Z.json']);
@@ -186,15 +185,15 @@ describe('Regression Detection', () => {
       const oldResults = {
         pages: [
           { url: 'https://example.com/page1' },
-          { url: 'https://example.com/page2' }
-        ]
+          { url: 'https://example.com/page2' },
+        ],
       };
 
       const newResults = {
         pages: [
           { url: 'https://example.com/page2' },
-          { url: 'https://example.com/page3' }
-        ]
+          { url: 'https://example.com/page3' },
+        ],
       };
 
       const comparison = compareResults(oldResults, newResults);
@@ -212,9 +211,7 @@ describe('Regression Detection', () => {
       const comparison = compareResults(oldResults, newResults);
       const regressions = detectRegressions(comparison);
 
-      const loadTimeRegression = regressions.critical.find(r =>
-        r.metric === 'loadTime'
-      );
+      const loadTimeRegression = regressions.critical.find((r) => r.metric === 'loadTime');
 
       expect(loadTimeRegression).to.exist;
       expect(loadTimeRegression.severity).to.equal('critical');
@@ -227,9 +224,7 @@ describe('Regression Detection', () => {
       const comparison = compareResults(oldResults, newResults);
       const regressions = detectRegressions(comparison);
 
-      const lcpRegression = regressions.critical.find(r =>
-        r.metric === 'largestContentfulPaint'
-      );
+      const lcpRegression = regressions.critical.find((r) => r.metric === 'largestContentfulPaint');
 
       expect(lcpRegression).to.exist;
       expect(lcpRegression.percentChange).to.be.above(30);
@@ -242,9 +237,7 @@ describe('Regression Detection', () => {
       const comparison = compareResults(oldResults, newResults);
       const regressions = detectRegressions(comparison);
 
-      const loadTimeWarning = regressions.warnings.find(r =>
-        r.metric === 'loadTime'
-      );
+      const loadTimeWarning = regressions.warnings.find((r) => r.metric === 'loadTime');
 
       expect(loadTimeWarning).to.exist;
       expect(loadTimeWarning.severity).to.equal('warning');
@@ -261,9 +254,7 @@ describe('Regression Detection', () => {
       const comparison = compareResults(oldResults, newResults);
       const regressions = detectRegressions(comparison);
 
-      const a11yRegression = regressions.critical.find(r =>
-        r.category === 'accessibility'
-      );
+      const a11yRegression = regressions.critical.find((r) => r.category === 'accessibility');
 
       expect(a11yRegression).to.exist;
       expect(a11yRegression.severity).to.equal('critical');
@@ -271,19 +262,17 @@ describe('Regression Detection', () => {
 
     it('should detect severity level changes', () => {
       const oldResults = {
-        pa11y: [{ issues: { critical: 1, serious: 2, moderate: 3 } }]
+        pa11y: [{ issues: { critical: 1, serious: 2, moderate: 3 } }],
       };
 
       const newResults = {
-        pa11y: [{ issues: { critical: 2, serious: 2, moderate: 3 } }]
+        pa11y: [{ issues: { critical: 2, serious: 2, moderate: 3 } }],
       };
 
       const comparison = compareResults(oldResults, newResults);
       const regressions = detectRegressions(comparison);
 
-      const criticalIncrease = regressions.critical.find(r =>
-        r.metric === 'criticalIssues'
-      );
+      const criticalIncrease = regressions.critical.find((r) => r.metric === 'criticalIssues');
 
       expect(criticalIncrease).to.exist;
     });
@@ -297,9 +286,7 @@ describe('Regression Detection', () => {
       const comparison = compareResults(oldResults, newResults);
       const regressions = detectRegressions(comparison);
 
-      const seoRegression = regressions.critical.find(r =>
-        r.category === 'seo'
-      );
+      const seoRegression = regressions.critical.find((r) => r.category === 'seo');
 
       expect(seoRegression).to.exist;
       expect(Math.abs(seoRegression.percentChange)).to.be.above(10);
@@ -312,9 +299,7 @@ describe('Regression Detection', () => {
       const comparison = compareResults(oldResults, newResults);
       const regressions = detectRegressions(comparison);
 
-      const seoWarning = regressions.warnings.find(r =>
-        r.category === 'seo'
-      );
+      const seoWarning = regressions.warnings.find((r) => r.category === 'seo');
 
       expect(seoWarning).to.exist;
       expect(seoWarning.severity).to.equal('warning');
@@ -327,9 +312,7 @@ describe('Regression Detection', () => {
       const comparison = compareResults(oldResults, newResults);
       const regressions = detectRegressions(comparison);
 
-      const seoImprovement = regressions.improvements.find(r =>
-        r.category === 'seo'
-      );
+      const seoImprovement = regressions.improvements.find((r) => r.category === 'seo');
 
       expect(seoImprovement).to.exist;
       expect(seoImprovement.percentChange).to.be.above(0);
@@ -388,7 +371,7 @@ function createMockResults(overrides = {}) {
     averageSeoScore = 85,
     averageServedScore = 80,
     averageRenderedScore = 82,
-    totalUrls = 10
+    totalUrls = 10,
   } = overrides;
 
   return {
@@ -397,15 +380,15 @@ function createMockResults(overrides = {}) {
       averageLoadTime,
       averageLCP,
       averageFCP,
-      averageCLS
+      averageCLS,
     },
     performanceAnalysis: [
       {
         loadTime: averageLoadTime,
         largestContentfulPaint: averageLCP,
         firstContentfulPaint: averageFCP,
-        cumulativeLayoutShift: averageCLS
-      }
+        cumulativeLayoutShift: averageCLS,
+      },
     ],
     pa11y: [
       {
@@ -415,22 +398,22 @@ function createMockResults(overrides = {}) {
           serious: 2,
           moderate: 1,
           minor: 1,
-          types: ['color-contrast', 'missing-alt']
-        }
-      }
+          types: ['color-contrast', 'missing-alt'],
+        },
+      },
     ],
     seoScores: {
-      average: averageSeoScore
+      average: averageSeoScore,
     },
     llmMetrics: [
       {
         servedScore: averageServedScore,
-        renderedScore: averageRenderedScore
-      }
+        renderedScore: averageRenderedScore,
+      },
     ],
     pages: Array.from({ length: totalUrls }, (_, i) => ({
-      url: `https://example.com/page${i + 1}`
-    }))
+      url: `https://example.com/page${i + 1}`,
+    })),
   };
 }
 
@@ -445,14 +428,14 @@ function detectRegressions(comparison) {
       category: 'performance',
       metric: 'loadTime',
       severity: 'critical',
-      percentChange: comparison.performance.loadTime.percentChange
+      percentChange: comparison.performance.loadTime.percentChange,
     });
   } else if (comparison.performance?.loadTime?.percentChange > 15) {
     warnings.push({
       category: 'performance',
       metric: 'loadTime',
       severity: 'warning',
-      percentChange: comparison.performance.loadTime.percentChange
+      percentChange: comparison.performance.loadTime.percentChange,
     });
   }
 
@@ -461,7 +444,7 @@ function detectRegressions(comparison) {
       category: 'performance',
       metric: 'largestContentfulPaint',
       severity: 'critical',
-      percentChange: comparison.performance.largestContentfulPaint.percentChange
+      percentChange: comparison.performance.largestContentfulPaint.percentChange,
     });
   }
 
@@ -471,7 +454,7 @@ function detectRegressions(comparison) {
       category: 'accessibility',
       metric: 'errorCount',
       severity: 'critical',
-      change: comparison.accessibility.errorCountChange
+      change: comparison.accessibility.errorCountChange,
     });
   }
 
@@ -480,7 +463,7 @@ function detectRegressions(comparison) {
       category: 'accessibility',
       metric: 'criticalIssues',
       severity: 'critical',
-      change: comparison.accessibility.criticalIssuesChange
+      change: comparison.accessibility.criticalIssuesChange,
     });
   }
 
@@ -492,21 +475,21 @@ function detectRegressions(comparison) {
         category: 'seo',
         metric: 'score',
         severity: 'critical',
-        percentChange: seoChange
+        percentChange: seoChange,
       });
     } else if (seoChange > 5) {
       warnings.push({
         category: 'seo',
         metric: 'score',
         severity: 'warning',
-        percentChange: seoChange
+        percentChange: seoChange,
       });
     }
   } else if (comparison.seo?.scoreChange > 0) {
     improvements.push({
       category: 'seo',
       metric: 'score',
-      percentChange: seoChange
+      percentChange: seoChange,
     });
   }
 

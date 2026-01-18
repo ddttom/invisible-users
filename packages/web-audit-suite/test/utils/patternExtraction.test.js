@@ -5,8 +5,8 @@
 
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { extractPatterns } from '../../src/utils/patternExtraction.js';
 import fs from 'fs/promises';
+import { extractPatterns } from '../../src/utils/patternExtraction.js';
 
 describe('Pattern Extraction', () => {
   let mockContext;
@@ -19,8 +19,8 @@ describe('Pattern Extraction', () => {
       logger: {
         info: sinon.spy(),
         warn: sinon.spy(),
-        error: sinon.spy()
-      }
+        error: sinon.spy(),
+      },
     };
 
     mockOutputDir = '/fake/output';
@@ -38,7 +38,7 @@ describe('Pattern Extraction', () => {
       const mockResults = [
         createMockPage({ servedScore: 75, renderedScore: 75 }),
         createMockPage({ servedScore: 65, renderedScore: 80 }),
-        createMockPage({ servedScore: 85, renderedScore: 90 })
+        createMockPage({ servedScore: 85, renderedScore: 90 }),
       ];
 
       const result = await extractPatterns(mockResults, mockOutputDir, mockContext);
@@ -51,7 +51,7 @@ describe('Pattern Extraction', () => {
       const mockResults = [
         createMockPage({ servedScore: 75, renderedScore: 75 }),
         createMockPage({ servedScore: 80, renderedScore: 65 }),
-        createMockPage({ servedScore: 85, renderedScore: 90 })
+        createMockPage({ servedScore: 85, renderedScore: 90 }),
       ];
 
       const result = await extractPatterns(mockResults, mockOutputDir, mockContext);
@@ -64,7 +64,7 @@ describe('Pattern Extraction', () => {
       const mockResults = [
         createMockPage({ servedScore: 60, renderedScore: 65 }),
         createMockPage({ servedScore: 65, renderedScore: 60 }),
-        createMockPage({ servedScore: 50, renderedScore: 55 })
+        createMockPage({ servedScore: 50, renderedScore: 55 }),
       ];
 
       const result = await extractPatterns(mockResults, mockOutputDir, mockContext);
@@ -78,7 +78,7 @@ describe('Pattern Extraction', () => {
       const mockResults = [
         createMockPage({ servedScore: 75, renderedScore: 65 }), // Fail: rendered too low
         createMockPage({ servedScore: 65, renderedScore: 75 }), // Fail: served too low
-        createMockPage({ servedScore: 80, renderedScore: 85 })  // Pass: both high
+        createMockPage({ servedScore: 80, renderedScore: 85 }), // Pass: both high
       ];
 
       const result = await extractPatterns(mockResults, mockOutputDir, mockContext);
@@ -90,7 +90,7 @@ describe('Pattern Extraction', () => {
     it('should handle missing score data gracefully', async () => {
       const mockResults = [
         { url: 'https://example.com/page1' }, // No llmMetrics
-        createMockPage({ servedScore: 80, renderedScore: 85 })
+        createMockPage({ servedScore: 80, renderedScore: 85 }),
       ];
 
       const result = await extractPatterns(mockResults, mockOutputDir, mockContext);
@@ -106,8 +106,8 @@ describe('Pattern Extraction', () => {
         createMockPage({
           servedScore: 80,
           renderedScore: 85,
-          html: '<script type="application/ld+json">{"@type":"Product","name":"Test Product"}</script>'
-        })
+          html: '<script type="application/ld+json">{"@type":"Product","name":"Test Product"}</script>',
+        }),
       ];
 
       const result = await extractPatterns(mockResults, mockOutputDir, mockContext);
@@ -123,8 +123,8 @@ describe('Pattern Extraction', () => {
           renderedScore: 85,
           hasMain: true,
           hasNav: true,
-          hasArticle: true
-        })
+          hasArticle: true,
+        }),
       ];
 
       const result = await extractPatterns(mockResults, mockOutputDir, mockContext);
@@ -135,21 +135,19 @@ describe('Pattern Extraction', () => {
 
     it('should limit to 5 examples per pattern', async () => {
       // Create 10 high-scoring pages
-      const mockResults = Array.from({ length: 10 }, (_, i) =>
-        createMockPage({
-          servedScore: 80,
-          renderedScore: 85,
-          url: `https://example.com/page${i}`
-        })
-      );
+      const mockResults = Array.from({ length: 10 }, (_, i) => createMockPage({
+        servedScore: 80,
+        renderedScore: 85,
+        url: `https://example.com/page${i}`,
+      }));
 
       const result = await extractPatterns(mockResults, mockOutputDir, mockContext, {
-        maxExamples: 5
+        maxExamples: 5,
       });
 
       expect(result.success).to.be.true;
       // Each pattern category should have at most 5 examples
-      Object.values(result.patterns).forEach(pattern => {
+      Object.values(result.patterns).forEach((pattern) => {
         if (pattern.examples) {
           expect(pattern.examples.length).to.be.at.most(5);
         }
@@ -160,22 +158,20 @@ describe('Pattern Extraction', () => {
   describe('Report Generation', () => {
     it('should generate pattern_library.md', async () => {
       const mockResults = [
-        createMockPage({ servedScore: 80, renderedScore: 85 })
+        createMockPage({ servedScore: 80, renderedScore: 85 }),
       ];
 
       await extractPatterns(mockResults, mockOutputDir, mockContext);
 
       expect(fsStub.called).to.be.true;
       const calls = fsStub.getCalls();
-      const patternLibraryCall = calls.find(call =>
-        call.args[0].includes('pattern_library.md')
-      );
+      const patternLibraryCall = calls.find((call) => call.args[0].includes('pattern_library.md'));
       expect(patternLibraryCall).to.exist;
     });
 
     it('should include methodology section in report', async () => {
       const mockResults = [
-        createMockPage({ servedScore: 80, renderedScore: 85 })
+        createMockPage({ servedScore: 80, renderedScore: 85 }),
       ];
 
       await extractPatterns(mockResults, mockOutputDir, mockContext);
@@ -190,12 +186,12 @@ describe('Pattern Extraction', () => {
     it('should accept custom minimum served score threshold', async () => {
       const mockResults = [
         createMockPage({ servedScore: 60, renderedScore: 75 }),
-        createMockPage({ servedScore: 75, renderedScore: 80 })
+        createMockPage({ servedScore: 75, renderedScore: 80 }),
       ];
 
       const result = await extractPatterns(mockResults, mockOutputDir, mockContext, {
         minServedScore: 60,
-        minRenderedScore: 70
+        minRenderedScore: 70,
       });
 
       expect(result.success).to.be.true;
@@ -203,20 +199,18 @@ describe('Pattern Extraction', () => {
     });
 
     it('should accept custom maximum examples count', async () => {
-      const mockResults = Array.from({ length: 10 }, (_, i) =>
-        createMockPage({
-          servedScore: 80,
-          renderedScore: 85,
-          url: `https://example.com/page${i}`
-        })
-      );
+      const mockResults = Array.from({ length: 10 }, (_, i) => createMockPage({
+        servedScore: 80,
+        renderedScore: 85,
+        url: `https://example.com/page${i}`,
+      }));
 
       const result = await extractPatterns(mockResults, mockOutputDir, mockContext, {
-        maxExamples: 3
+        maxExamples: 3,
       });
 
       expect(result.success).to.be.true;
-      Object.values(result.patterns).forEach(pattern => {
+      Object.values(result.patterns).forEach((pattern) => {
         if (pattern.examples) {
           expect(pattern.examples.length).to.be.at.most(3);
         }
@@ -235,16 +229,14 @@ describe('Pattern Extraction', () => {
     it('should log extraction progress', async () => {
       const mockResults = [
         createMockPage({ servedScore: 80, renderedScore: 85 }),
-        createMockPage({ servedScore: 75, renderedScore: 80 })
+        createMockPage({ servedScore: 75, renderedScore: 80 }),
       ];
 
       await extractPatterns(mockResults, mockOutputDir, mockContext);
 
       expect(mockContext.logger.info.called).to.be.true;
       const logCalls = mockContext.logger.info.getCalls();
-      const progressLog = logCalls.find(call =>
-        call.args[0].includes('Found 2 high-scoring pages')
-      );
+      const progressLog = logCalls.find((call) => call.args[0].includes('Found 2 high-scoring pages'));
       expect(progressLog).to.exist;
     });
   });
@@ -259,7 +251,7 @@ function createMockPage(overrides = {}) {
     hasMain = true,
     hasNav = true,
     hasArticle = false,
-    html = '<main><h1>Test</h1></main>'
+    html = '<main><h1>Test</h1></main>',
   } = overrides;
 
   // Generate features to approximate target served score
@@ -278,35 +270,35 @@ function createMockPage(overrides = {}) {
       hasHeader: isModerateServed,
       hasFooter: isModerateServed,
       hasArticle,
-      hasSection: isModerateServed
-    }
+      hasSection: isModerateServed,
+    },
   };
 
   // For 60-69 range: need more structured data and better forms
   const structuredData = {
     metrics: {
       structuredDataCount: isHighServed ? 3 : (isModerateServed ? 2 : 0),
-      structuredDataTypes: isHighServed ? ['Organization', 'WebPage', 'Article'] : (isModerateServed ? ['Organization', 'WebPage'] : [])
-    }
+      structuredDataTypes: isHighServed ? ['Organization', 'WebPage', 'Article'] : (isModerateServed ? ['Organization', 'WebPage'] : []),
+    },
   };
 
   const formPatterns = {
     metrics: {
       formCount: isModerateServed ? 1 : 0,
-      standardFieldsCount: isHighServed ? 5 : (isModerateServed ? 5 : 0),  // Changed from 3 to 5
+      standardFieldsCount: isHighServed ? 5 : (isModerateServed ? 5 : 0), // Changed from 3 to 5
       totalFieldsCount: isModerateServed ? 5 : 1,
-      autocompleteFieldsCount: isHighServed ? 5 : (isModerateServed ? 5 : 0),  // Changed from 3 to 5
-      hasValidation: isHighRendered
-    }
+      autocompleteFieldsCount: isHighServed ? 5 : (isModerateServed ? 5 : 0), // Changed from 3 to 5
+      hasValidation: isHighRendered,
+    },
   };
 
   // Include llms.txt for moderate scores too
   const llmsTxt = {
     metrics: {
-      hasLLMsTxtReference: isModerateServed,  // Changed from isHighServed
-      hasLLMsTxtMeta: isModerateServed,        // Changed from isHighServed
-      llmsTxtUrl: isModerateServed ? '/llms.txt' : null
-    }
+      hasLLMsTxtReference: isModerateServed, // Changed from isHighServed
+      hasLLMsTxtMeta: isModerateServed, // Changed from isHighServed
+      llmsTxtUrl: isModerateServed ? '/llms.txt' : null,
+    },
   };
 
   const securityHeaders = {
@@ -314,33 +306,33 @@ function createMockPage(overrides = {}) {
       hasHsts: isHighServed,
       hasCSP: isHighServed,
       hasXFrameOptions: isHighServed,
-      hasXContentTypeOptions: isHighServed
-    }
+      hasXContentTypeOptions: isHighServed,
+    },
   };
 
   const dataAttributes = {
     metrics: {
       hasValidationState: isHighRendered,
       hasLoadingState: isHighRendered,
-      hasAgentVisibilityControl: isHighRendered
-    }
+      hasAgentVisibilityControl: isHighRendered,
+    },
   };
 
   const errorHandling = {
     metrics: {
-      hasPersistentErrors: isHighRendered
-    }
+      hasPersistentErrors: isHighRendered,
+    },
   };
 
   const ariaAttributes = {
     metrics: {
       hasAriaLive: isHighRendered,
       hasAriaInvalid: isHighRendered,
-      hasRoleAlert: isHighRendered
-    }
+      hasRoleAlert: isHighRendered,
+    },
   };
 
-  const robotsScore = isHighServed ? 85 : (isModerateServed ? 70 : 30);  // Changed from 60 to 70
+  const robotsScore = isHighServed ? 85 : (isModerateServed ? 70 : 30); // Changed from 60 to 70
 
   return {
     url,
@@ -354,7 +346,7 @@ function createMockPage(overrides = {}) {
       dataAttributes,
       errorHandling,
       ariaAttributes,
-      robotsTxt: { score: robotsScore }
-    }]
+      robotsTxt: { score: robotsScore },
+    }],
   };
 }
