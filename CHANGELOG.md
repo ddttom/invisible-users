@@ -9,23 +9,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added - Web Appendices HTML Publication (2026-01-18)
+### Changed - Web Directory Moved to Shared Appendices (2026-01-18)
 
-**Generated HTML Appendices:**
+**Directory Restructuring:**
 
-Added web-accessible HTML versions of all appendices to manuscript repository:
+Moved all web content from `manuscripts/bible/web/` to `manuscripts/shared-appendices/web/` since web content is shared across all book variants (The Bible, Don't Make AI Think, future books).
 
-- Generated 14 files: 12 appendix HTML pages (A-L), appendix index, and llms.txt
-- Location: `packages/manuscript/the-bible-of-mx/web/`
-- Generated using `npm run pdf:appendix` command
-- Enables web publishing at <https://allabout.network/invisible-users/web/>
+**Files Moved (50 files):**
 
-**Submodule Updates:**
+- Generated appendices: 12 appendix HTML pages (A-L), appendix-index.html, llms.txt, sitemap.xml
+- Manually maintained pages: index.html, book.html, faq.html, news.html, for-reviewers.html, back-cover.html, book-product-page.html
+- Site examples: 24 example pages in site/ directory demonstrating AI-friendly patterns
+- Stylesheets: appendix.css, book-product-page.css
 
-- Manuscript submodule commit: 44c96c1 (added web/ directory)
-- Main repository commit: df9e797 (updated submodule pointer)
+**Generator Script Update:**
 
-**Note:** HTML files are generated from markdown sources and should be regenerated when appendices are updated.
+- Updated `scripts/generate-appendix-html.sh` to output to `manuscripts/shared-appendices/web/`
+- Updated documentation (CLAUDE.md, skills) with new paths
+
+**Submodule Commits:**
+
+- Initial web addition: 44c96c1
+- Web directory move: 4ab5efb
+- Main repository pointer updates: df9e797, 0540c0a, 5345ad0
+
+**Rationale:** Web content is shared infrastructure used by all book variants, not specific to The Bible manuscript.
 
 ### Changed - Directory Structure Refactoring (2026-01-18)
 
