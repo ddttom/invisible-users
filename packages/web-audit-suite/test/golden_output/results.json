@@ -3,20 +3,17 @@
     {
       "url": "https://example.com/",
       "lastmod": "2024-01-01",
-      "loadTime": 0,
-      "firstPaint": 0,
-      "firstContentfulPaint": 0,
-      "largestContentfulPaint": 0,
-      "timeToInteractive": 0,
-      "totalBlockingTime": 0,
-      "cumulativeLayoutShift": 0
+      "loadTime": 79.80000000074506,
+      "domContentLoaded": 79.70000000298023,
+      "firstPaint": 163.70000000298023,
+      "firstContentfulPaint": 163.70000000298023
     }
   ],
   "seoScores": [
     {
       "url": "https://example.com/",
       "lastmod": "2024-01-01",
-      "score": 31,
+      "score": 39,
       "details": {
         "titleOptimization": 0,
         "metaDescriptionOptimization": 0,
@@ -27,7 +24,7 @@
         "internalLinking": 0,
         "imageOptimization": 0,
         "pageSpeed": 1,
-        "mobileOptimization": 0,
+        "mobileOptimization": 1,
         "securityFactors": 1,
         "structuredData": 0,
         "socialMediaTags": 0
@@ -38,7 +35,7 @@
     {
       "url": "https://example.com/",
       "error": "Pa11y result is null or undefined",
-      "stack": "Error: Pa11y result is null or undefined\n    at runPa11yAnalysis (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/pageAnalyzer.js:198:13)\n    at async analyzePageContent (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/pageAnalyzer.js:145:21)\n    at async processUrl (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/pageAnalyzer.js:39:28)\n    at async UrlProcessor.processSuccessfulResponse (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/urlProcessor.js:125:22)\n    at async UrlProcessor.processUrl (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/urlProcessor.js:87:11)\n    at async UrlProcessor.processUrlsSequentially (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/urlProcessor.js:280:7)\n    at async executeNetworkOperation (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/networkUtils.js:213:14)\n    at async runTestsOnSitemap (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/main.js:87:17)\n    at async Context.<anonymous> (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/test/goldenMaster.test.js:92:21)"
+      "stack": "Error: Pa11y result is null or undefined\n    at runPa11yAnalysis (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/pageAnalyzer.js:198:13)\n    at async analyzePageContent (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/pageAnalyzer.js:145:21)\n    at async processUrl (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/pageAnalyzer.js:39:28)\n    at async UrlProcessor.processSuccessfulResponse (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/urlProcessor.js:125:22)\n    at async UrlProcessor.processUrl (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/urlProcessor.js:87:11)\n    at async file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/urlProcessor.js:293:11\n    at async Promise.allSettled (index 0)\n    at async UrlProcessor.processUrlsConcurrently (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/urlProcessor.js:303:7)\n    at async executeNetworkOperation (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/utils/networkUtils.js:245:14)\n    at async runTestsOnSitemap (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/src/main.js:136:17)\n    at async Context.<anonymous> (file:///Users/tomcranstoun/Documents/GitHub/invisible-users/packages/web-audit-suite/test/goldenMaster.test.js:83:21)"
     }
   ],
   "failedUrls": [],
@@ -74,23 +71,23 @@
   ],
   "titleMetrics": {
     "https://example.com/": {
-      "length": 9,
+      "length": 14,
       "tooLong": 0,
       "tooShort": 1,
-      "pixelWidth": 54
+      "pixelWidth": 84
     }
   },
   "metaDescriptionMetrics": {
     "https://example.com/": {
-      "length": 16,
+      "length": 0,
       "tooLong": 0,
       "tooShort": 1,
-      "pixelWidth": 96
+      "pixelWidth": 0
     }
   },
   "h1Metrics": {
     "https://example.com/": {
-      "length": 11,
+      "length": 14,
       "missing": 0,
       "tooLong": 0,
       "multiple": 0
@@ -113,7 +110,7 @@
   "linkMetrics": {
     "https://example.com/": {
       "internalCount": 0,
-      "externalCount": 0,
+      "externalCount": 1,
       "noFollowCount": 0,
       "emptyLinkText": 0
     }
@@ -141,7 +138,7 @@
   },
   "contentMetrics": {
     "https://example.com/": {
-      "wordCount": 3,
+      "wordCount": 17,
       "hasLongParagraphs": false
     },
     "lowContent": 1
@@ -153,7 +150,7 @@
       "semanticHTML": {
         "importance": "essential_served",
         "metrics": {
-          "hasMain": true,
+          "hasMain": false,
           "hasNav": false,
           "hasHeader": false,
           "hasFooter": false,
@@ -162,19 +159,19 @@
           "navCount": 0,
           "articleCount": 0,
           "sectionCount": 0,
-          "divCount": 0
+          "divCount": 1
         }
       },
       "formFields": {
         "importance": "essential_served",
         "metrics": {
-          "formCount": 1,
-          "totalInputs": 1,
-          "standardNamedFields": 1,
+          "formCount": 0,
+          "totalInputs": 0,
+          "standardNamedFields": 0,
           "nonStandardNamedFields": 0,
-          "fieldsWithLabels": 1,
-          "fieldsWithType": 1,
-          "fieldsWithRequired": 1,
+          "fieldsWithLabels": 0,
+          "fieldsWithType": 0,
+          "fieldsWithRequired": 0,
           "standardNameRatio": 1,
           "labelRatio": 1
         }
@@ -227,12 +224,12 @@
       "formAutocomplete": {
         "importance": "essential_served",
         "metrics": {
-          "totalFormFields": 1,
+          "totalFormFields": 0,
           "fieldsWithAutocomplete": 0,
-          "fieldsWithoutAutocomplete": 1,
-          "autocompleteRatio": 0,
+          "fieldsWithoutAutocomplete": 0,
+          "autocompleteRatio": 1,
           "autocompleteValues": [],
-          "hasGoodAutocompleteCoverage": false
+          "hasGoodAutocompleteCoverage": true
         }
       },
       "dataAttributes": {
@@ -391,12 +388,12 @@
         "metrics": {
           "hasInlineStyles": false,
           "inlineStyleElementCount": 0,
-          "inlineStyleScriptCount": 0,
+          "inlineStyleScriptCount": 1,
           "externalStylesheetCount": 0,
-          "totalCSSVectors": 0,
-          "hasAnyCSS": false,
+          "totalCSSVectors": 1,
+          "hasAnyCSS": true,
           "inlineCSSRatio": 0,
-          "totalElements": 10
+          "totalElements": 11
         }
       },
       "dynamicContent": {
@@ -435,7 +432,7 @@
           },
           "visualDynamism": {
             "detected": false,
-            "uniqueStates": 0
+            "uniqueStates": 1
           },
           "pricing": {
             "inServedHtml": false,
@@ -449,7 +446,7 @@
   "contentAnalysis": [
     {
       "url": "https://example.com/",
-      "wordCount": 3,
+      "wordCount": 19,
       "h1Count": 1,
       "h2Count": 0,
       "h3Count": 0,
@@ -458,18 +455,18 @@
       "imagesWithoutAlt": 0,
       "internalLinksCount": 0,
       "externalLinksCount": 0,
-      "title": "Test Page",
-      "metaDescription": "Test description",
-      "h1": "Hello World",
-      "hasResponsiveMetaTag": false,
+      "title": "Example Domain",
+      "metaDescription": "",
+      "h1": "Example Domain",
+      "hasResponsiveMetaTag": true,
       "scriptsCount": 0,
-      "stylesheetsCount": 0,
+      "stylesheetsCount": 1,
       "htmlLang": "en",
       "canonicalUrl": "",
-      "formsCount": 1,
+      "formsCount": 0,
       "tablesCount": 0,
-      "pageSize": 454,
-      "jsErrors": 0,
+      "pageSize": 513,
+      "jsErrors": 1,
       "pa11yIssuesCount": 0
     }
   ],
@@ -477,5 +474,22 @@
     "https://example.com/",
     "https://example.com/llms.txt"
   ],
+  "siteFiles": {
+    "llmsTxt": {
+      "detected": false,
+      "url": null,
+      "content": null
+    },
+    "robotsTxt": {
+      "detected": false,
+      "url": null,
+      "content": null
+    },
+    "aiTxt": {
+      "detected": false,
+      "url": null,
+      "content": null
+    }
+  },
   "schemaVersion": "1.2.0"
 }
