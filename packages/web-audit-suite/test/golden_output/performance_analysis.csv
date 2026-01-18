@@ -1,2 +1,2 @@
 URL,Load Time (ms),First Paint (ms),First Contentful Paint (ms),Largest Contentful Paint (ms),Time to Interactive (ms),Total Blocking Time (ms),Cumulative Layout Shift
-https://example.com/,80,164,164,0,0,0,0
+https://example.com/,61,140,140,0,0,0,0
