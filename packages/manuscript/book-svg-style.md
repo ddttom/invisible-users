@@ -4,7 +4,7 @@ Each chapter requires one SVG illustration following these specifications.
 
 **File location:**
 
-- All SVG files are stored in the `invisible-users/illustrations/` folder
+- All SVG files are stored in the `illustrations/` folder relative to each book
 - Naming convention: `chapter-XX-[descriptive-name].svg`
 
 **Technical specifications:**
