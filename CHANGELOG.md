@@ -9,6 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Web Appendices HTML Publication (2026-01-18)
+
+**Generated HTML Appendices:**
+
+Added web-accessible HTML versions of all appendices to manuscript repository:
+
+- Generated 14 files: 12 appendix HTML pages (A-L), appendix index, and llms.txt
+- Location: `packages/manuscript/the-bible-of-mx/web/`
+- Generated using `npm run pdf:appendix` command
+- Enables web publishing at <https://allabout.network/invisible-users/web/>
+
+**Submodule Updates:**
+
+- Manuscript submodule commit: 44c96c1 (added web/ directory)
+- Main repository commit: df9e797 (updated submodule pointer)
+
+**Note:** HTML files are generated from markdown sources and should be regenerated when appendices are updated.
+
 ### Changed - Directory Structure Refactoring (2026-01-18)
 
 **Manuscript Directory Rename:**
