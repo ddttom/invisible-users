@@ -14,6 +14,8 @@ When you provide one or more file paths, this skill:
 4. **Plans Amendments** - Proposes specific fixes with line references
 5. **Presents Report** - Shows prioritized, actionable recommendations
 
+**CRITICAL:** This skill will refuse to review files in `.claude/` directory (skills, commands, hooks). These files have their own formatting requirements that conflict with the writing style guide.
+
 ## Understanding the Writing Style Guide
 
 The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)) defines standards for "The Invisible Users" book manuscripts. The guide applies to all content in `packages/manuscript/the-bible-of-mx/manuscripts/` (including both "The Bible" and "Don't Make AI Think") but can be used to review any document.
@@ -50,6 +52,23 @@ The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-styl
 ```
 
 ## 5-Phase Workflow
+
+### Phase 0: Validate File Paths (Pre-Check)
+
+**Automatic actions:**
+
+For each file path provided:
+
+1. **Check if path contains `.claude/`**
+2. **If yes, refuse to review:**
+   ```
+   ❌ Cannot review: [file path]
+   Reason: Skill/command/hook files in .claude/ directory have their own
+   formatting requirements that conflict with the writing style guide.
+   ```
+3. **Continue with remaining files** (if any)
+
+**What I'll do:** Skip any `.claude/` files and proceed with valid files only
 
 ### Phase 1: Load Style Guide
 
