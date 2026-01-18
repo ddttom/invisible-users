@@ -70,14 +70,24 @@ Current snapshot of Web Audit Suite implementation status.
 
 - Served HTML analysis (all agents)
 - Rendered HTML analysis (browser agents)
-- llms.txt detection (NEW)
-- data-agent-visible tracking (NEW)
+- llms.txt detection
+- data-agent-visible tracking
 - Semantic HTML structure checking
 - Form field naming validation
 - Schema.org structured data detection
+- **15 additional AI-friendly patterns implemented (NEW)**:
+  - Priority 1 (Critical): Heading hierarchy, Pre-rendering, PDF content, SSR frameworks
+  - Priority 2 (Important): DOM order, Pricing tables, Product variants, AJAX navigation, Table abuse, Iframe content
+  - Priority 3 (Nice to Have): Definition lists, Skeleton content, Progressive enhancement
+  - Priority 4 (Edge Cases): Multiple authors, Content separation
+- **230+ point scoring scale** (expanded from ~155 points)
 
 **Files:**
 
+- [src/collectors/llmCollector.js](src/collectors/llmCollector.js) - Pattern detection (~1,600 lines)
+- [src/scorers/llmScorer.js](src/scorers/llmScorer.js) - Scoring logic
+- [src/config/scoringWeights.js](src/config/scoringWeights.js) - Score weights
+- [src/reporters/llmFeedback.js](src/reporters/llmFeedback.js) - Actionable feedback (~730 lines)
 - [src/utils/pageAnalyzer.js](src/utils/pageAnalyzer.js)
 - [src/utils/pa11yRunner.js](src/utils/pa11yRunner.js)
 - [src/utils/llmMetrics.js](src/utils/llmMetrics.js)
