@@ -151,6 +151,20 @@ For detailed configuration documentation, see [Configuration Guide](CONFIGURATIO
   - Overrides default behavior of only processing /en and /us variants
   - Uses enhanced URL extraction logic with automatic detection
 
+### Performance Tuning
+
+- `--browser-pool-size <number>`: Number of reusable browser instances (default: 3)
+  - Maintains browser pool for 97% reduction in launch overhead
+  - Set to 5-7 for large sites with powerful hardware
+  - Set to 0 to disable pooling for debugging
+- `--url-concurrency <number>`: Number of URLs to process simultaneously (default: 3)
+  - Integrates with adaptive rate limiting
+  - Set to 5-10 for fast servers
+  - Set to 1 for sequential processing
+- `--force-scrape`: Bypass robots.txt restrictions (use with caution)
+  - Requires explicit user action
+  - Use only with permission for sites you manage
+
 ### Cache Control
 
 - `--cache-only`: Use only cached data
@@ -176,6 +190,107 @@ For detailed configuration documentation, see [Configuration Guide](CONFIGURATIO
 - `--thresholds <file>`: Path to custom thresholds configuration (JSON)
   - Customize pass/fail criteria for all metrics
   - See [Configuration Guide](CONFIGURATION.md) for details
+- `--extract-patterns`: Extract patterns from high-scoring pages (≥70 score)
+  - Analyzes pages with served/rendered score ≥70
+  - Extracts 6 pattern categories with real examples
+  - Provides priority and effort ratings
+  - Generates pattern_library.md report
+
+### Pattern Extraction
+
+The `--extract-patterns` flag enables automatic pattern extraction from your highest-scoring pages, helping you replicate success across your site.
+
+**How it works:**
+
+1. Identifies pages with served or rendered HTML score ≥70
+2. Extracts patterns across 6 categories
+3. Provides up to 5 real examples per pattern
+4. Rates each pattern by priority and implementation effort
+
+**Pattern Categories:**
+
+- **Structured Data (JSON-LD)** - Schema.org implementations
+- **Semantic HTML Structure** - Proper use of `<main>`, `<nav>`, `<article>`
+- **Standard Form Field Naming** - email, firstName, lastName patterns
+- **Persistent Error Messages** - role="alert", aria-live patterns
+- **Explicit State Attributes** - data-state, data-validation-state
+- **llms.txt Implementation** - Site-level AI agent guidance
+
+**Priority Ratings:**
+
+- **Critical + Low effort**: Implement immediately
+- **High + Moderate effort**: Plan for next sprint
+- **Critical + Moderate effort**: Prioritize over High/Low
+
+**Use Cases:**
+
+- Replicate success patterns from best pages
+- Create training materials for developers
+- Establish quality baselines for consistency
+- Onboard new team members with real examples
+
+**Example:**
+
+```bash
+npm start -- -s https://example.com --extract-patterns
+# Generates: results/pattern_library.md
+```
+
+**Output:** The `pattern_library.md` report includes methodology, extracted patterns with real code examples, implementation guidance, and validation tool links.
+
+### Regression Detection
+
+The `--enable-history` flag enables comprehensive regression detection with CI/CD-ready exit codes.
+
+**How it works:**
+
+1. Stores timestamped results in `history/` directory
+2. Compares current run with baseline (establishes if missing)
+3. Detects regressions across 5 categories
+4. Returns non-zero exit code for critical regressions
+
+**Regression Categories:**
+
+**Critical** (Exit code 1 - CI/CD fails):
+
+- Performance: >30% increase in load time/LCP/FCP/CLS
+- Accessibility: Any error count increase
+- SEO: >10% score decrease
+- LLM Suitability (Served): >10% score decrease
+
+**Warning** (Exit code 0 - CI/CD passes with warnings):
+
+- Performance: >15% increase
+- SEO: >5% score decrease
+- LLM Suitability (Rendered): >10% score decrease
+- URL count: Significant change
+
+**Informational**:
+
+- Minor improvements or degradations
+- Non-critical metric changes
+
+**CI/CD Integration:**
+
+```bash
+# In your CI/CD pipeline
+npm start -- -s https://staging.example.com --enable-history
+
+# Returns exit code 1 if critical regressions found
+# Pipeline fails, preventing deployment
+```
+
+**Generated Reports:**
+
+- `regression_report.md` - Human-readable regression analysis
+- `history/results-<timestamp>.json` - Historical results for trending
+
+**Use Cases:**
+
+- Catch breaking changes before deployment
+- Track performance trends over time
+- Validate releases against baselines
+- Monitor for gradual degradation
 
 ### Agency & Partner Features
 
@@ -420,6 +535,100 @@ Backend/server-side patterns focusing on served HTML only (HTTP codes, headers, 
 - 30 points: Correct HTTP status codes
 - 40 points: Security headers (HSTS, CSP, X-Frame-Options, X-Content-Type-Options)
 - 30 points: Schema.org structured data
+
+#### robots.txt Quality Report (robots_txt_quality.csv, robots_quality_report.md)
+
+Evaluates robots.txt file for AI agent compatibility using a 100-point quality scoring system.
+
+**Purpose:** Assess how well your robots.txt file guides AI agents and search crawlers.
+
+**Key Columns:**
+
+- `score`: Overall quality (0-100)
+- `has_ai_user_agents`: Declares AI bot user agents (boolean)
+- `ai_user_agent_count`: Number of AI agents declared
+- `has_sitemap`: Includes sitemap declaration (boolean)
+- `has_sensitive_path_protection`: Protects admin/account paths (boolean)
+- `protected_path_count`: Number of protected paths
+- `has_llms_txt_reference`: References llms.txt file (boolean)
+- `has_helpful_comments`: Includes explanatory comments (boolean)
+
+**Scoring Breakdown:**
+
+| Component | Max Points | Criteria |
+| --------- | ---------- | -------- |
+| AI User Agents | 30 | 3+ agents = 30pts, 1-2 agents = 15pts, 0 agents = 0pts |
+| Sitemap Declaration | 20 | Present = 20pts, Missing = 0pts |
+| Path Protection | 25 | 3+ paths = 25pts, 1-2 paths = 15pts, 0 paths = 0pts |
+| llms.txt Reference | 15 | Present = 15pts, Missing = 0pts |
+| Helpful Comments | 10 | 3+ comments = 10pts, 1-2 = 5pts, 0 = 0pts |
+
+**Quality Levels:**
+
+- **80-100 (Excellent)**: Professional-grade AI agent guidance
+- **60-79 (Good)**: Solid foundation, minor improvements needed
+- **40-59 (Fair)**: Basic compliance, significant gaps
+- **0-39 (Poor)**: Critical issues, immediate action needed
+
+**Priority Fixes:**
+
+1. **Score <40**: Add sitemap declaration and 2-3 AI user agents immediately
+2. **Score 40-60**: Add protected paths and llms.txt reference
+3. **Score 60-80**: Add more AI user agents and helpful comments
+4. **Score 80-100**: Maintain and monitor
+
+**What's Checked:**
+
+- **AI-specific user agents** (30 pts): GPTBot, ClaudeBot, etc.
+- **Sitemap references** (20 pts): Sitemap: directives
+- **Sensitive path protection** (25 pts): /admin, /cart, /account
+- **llms.txt references** (15 pts): Comments referencing llms.txt
+- **Helpful comments** (10 pts): Explanatory notes for maintainability
+
+**Generated Reports:**
+
+- `robots_txt_quality.csv` - Machine-readable metrics
+- `robots_quality_report.md` - Human-readable report with recommendations
+
+#### llms.txt Quality Report (llms_txt_quality.csv)
+
+Evaluates llms.txt file quality using a 105-point scoring system (includes bonuses).
+
+**Purpose:** Assess how well your llms.txt file provides AI agent guidance.
+
+**Key Columns:**
+
+- `score`: Overall quality (0-105, includes bonuses)
+- `has_title`: Site title present (boolean)
+- `has_description`: Description present (boolean)
+- `has_contact`: Contact information present (boolean)
+- `section_count`: Number of major sections
+- `has_access_guidelines`: Access policies declared (boolean)
+- `has_rate_limits`: Rate limits specified (boolean)
+- `has_api_info`: API information provided (boolean)
+
+**Scoring Breakdown:**
+
+| Component | Points | Criteria |
+| --------- | ------ | -------- |
+| Core Elements | 40 | Title (10), Description (10), Contact (10), Last Updated (10) |
+| Sections | 30 | 5+ sections (30), 3-4 sections (20), 1-2 sections (10) |
+| Content Length | 15 | Substantial content (15), Moderate (10), Minimal (5) |
+| External Links | 10 | 3+ links (10), 1-2 links (5), None (0) |
+| Specificity | 5 | Detailed policies (5), Basic (3), Generic (0) |
+| Bonus Points | 5 | Rate limits, API docs, attribution requirements |
+
+**Priority Fixes:**
+
+1. **No file**: Create basic llms.txt with title, description, contact
+2. **Score <40**: Add access guidelines and rate limits
+3. **Score 40-70**: Add API information and external links
+4. **Score 70-90**: Increase detail and specificity
+5. **Score 90-105**: Comprehensive, maintain and update
+
+**Generated Reports:**
+
+- `llms_txt_quality.csv` - Machine-readable metrics
 
 ### Understanding LLM Scores
 
@@ -766,6 +975,389 @@ npm start -- \
    - Add data attributes to tables
    - Add button disabled explanations
    - Add auth state attributes
+
+## Performance Optimization
+
+The Web Audit Suite includes production-tested performance optimizations that reduce analysis time by 3-5x.
+
+### Performance Features Overview
+
+**Before optimization**: 100 URLs in ~45 minutes
+**After optimization**: 100 URLs in ~10 minutes
+
+### Browser Pooling
+
+**What it does:** Maintains reusable Puppeteer browser instances
+
+**Benefits:**
+
+- 97% reduction in browser launch overhead
+- Eliminates 2-5 second delay per URL
+- Automatic restart after 50 pages to prevent memory leaks
+
+**Configuration:**
+
+```bash
+# Default (3 browsers)
+npm start -- -s https://example.com
+
+# Larger pool for faster analysis
+npm start -- -s https://example.com --browser-pool-size 5
+
+# Disable pooling
+npm start -- -s https://example.com --browser-pool-size 0
+```
+
+**When to adjust:**
+
+- **Increase (5-7)**: Large sites (1000+ URLs), powerful hardware
+- **Decrease (1-2)**: Limited memory, unstable sites, debugging
+- **Disable (0)**: Troubleshooting browser issues
+
+### Concurrent URL Processing
+
+**What it does:** Processes multiple URLs simultaneously
+
+**Benefits:**
+
+- 3-5x speedup for URL processing phase
+- Efficient use of browser pool
+- Integrates with adaptive rate limiting
+
+**Configuration:**
+
+```bash
+# Default (3 concurrent)
+npm start -- -s https://example.com
+
+# Higher concurrency for large sites
+npm start -- -s https://example.com --url-concurrency 5
+
+# Sequential processing
+npm start -- -s https://example.com --url-concurrency 1
+```
+
+**When to adjust:**
+
+- **Increase (5-10)**: Fast servers, large sites, powerful hardware
+- **Decrease (1-2)**: Slow servers, rate limiting issues, debugging
+
+### Adaptive Rate Limiting
+
+**What it does:** Monitors server responses and adjusts concurrency
+
+**Benefits:**
+
+- Server-friendly (avoids overwhelming servers)
+- Automatic backoff on 429/503 responses
+- Gradual recovery when server stabilizes
+
+**How it works:**
+
+- Starts with configured concurrency (default: 3)
+- Monitors for 429 (Too Many Requests) or 503 (Service Unavailable)
+- Reduces concurrency on errors (exponential backoff)
+- Gradually increases when server recovers
+- No configuration needed - works automatically
+
+### Cache Staleness Checking
+
+**What it does:** Validates cache freshness with HTTP HEAD requests
+
+**Benefits:**
+
+- Ensures data accuracy without re-analysis
+- Automatic invalidation when source changes
+- Minimal overhead (HEAD requests only)
+
+**How it works:**
+
+- Checks Last-Modified header on cached pages
+- Compares with cache creation time
+- Invalidates cache if source is newer
+- Falls back to cache if HEAD request fails
+- No configuration needed - works automatically
+
+### Recommended Configurations
+
+**Small sites (<100 URLs):**
+
+```bash
+npm start -- -s https://example.com
+# Defaults work well
+```
+
+**Medium sites (100-500 URLs):**
+
+```bash
+npm start -- -s https://example.com --browser-pool-size 5 --url-concurrency 5
+```
+
+**Large sites (500-5000 URLs):**
+
+```bash
+npm start -- -s https://example.com --browser-pool-size 7 --url-concurrency 7
+```
+
+**Very large sites (5000+ URLs):**
+
+```bash
+# Process in batches
+npm start -- -s https://example.com -c 1000 --browser-pool-size 7 --url-concurrency 7
+```
+
+**Slow or rate-limited servers:**
+
+```bash
+npm start -- -s https://example.com --browser-pool-size 2 --url-concurrency 2
+```
+
+## Interpreting Specific Issues
+
+This section provides detailed explanations of common issues found during audits and how to fix them.
+
+### "Served HTML score significantly lower than rendered"
+
+**Meaning:** Your site relies heavily on JavaScript for critical content
+
+**Impact:** Most agents (CLI, API-based) cannot access your content
+
+**Fix:**
+
+1. Server-side render critical content
+2. Use progressive enhancement
+3. Ensure HTML contains data before JavaScript runs
+
+### "Error messages non-persistent"
+
+**Meaning:** Errors vanish or are only shown briefly
+
+**Impact:** Agents miss errors, retry without fixing issues
+
+**Fix:**
+
+1. Remove toast notifications
+2. Add persistent error summary at top of forms
+3. Keep errors visible until user corrects them
+
+### "Missing structured data"
+
+**Meaning:** No JSON-LD, microdata, or schema.org markup
+
+**Impact:** Agents cannot reliably extract product/article information
+
+**Fix:**
+
+1. Add JSON-LD script tags to pages
+2. Use schema.org vocabulary
+3. Start with Product, Article, or LocalBusiness types
+
+### "Incomplete pricing information"
+
+**Meaning:** Shows "From £99" but actual price is hidden
+
+**Impact:** Agents compare wrong prices, users surprised at checkout
+
+**Fix:**
+
+1. Display total price upfront
+2. Include VAT status
+3. Show delivery costs
+4. Use structured data for machine-readable prices
+
+### "Multiple @type values in Schema.org blocks"
+
+**Meaning:** JSON-LD blocks contain arrays like `["Article", "NewsArticle"]`
+
+**Impact:** AI agents trained on entertainment scripts may confuse professional content with fictional dialogue. Multiple types create ambiguity.
+
+**Fix:**
+
+1. Use exactly ONE `@type` per JSON-LD block
+2. Choose the most specific type: `MedicalScholarlyArticle` over `Article`
+3. For legal content: use `Legislation` or `LegalDocument`
+4. For business analysis: use `AnalysisNewsArticle`
+5. For medical content: use `MedicalScholarlyArticle`
+
+### "High inline CSS ratio"
+
+**Meaning:** Many elements have `style=` attributes or inline `<style>` tags
+
+**Impact:** CLI agents and server-based agents cannot execute inline styles. Inline CSS adds noise to DOM structure without providing semantic value.
+
+**Fix:**
+
+1. Move all styling to external CSS files
+2. Remove `style=` attributes from HTML elements
+3. Remove inline `<style>` tags from document
+4. Use semantic HTML structure (proper elements, clear hierarchy)
+5. Keep styling separate from content for maximum agent compatibility
+
+### "Carousels without proper attributes"
+
+**Meaning:** Product carousels, testimonial sliders, or portfolio galleries lack data-slide-index and aria-label attributes
+
+**Impact:** Agents see only the first slide. Manual advance requires user interaction. Auto-advance changes content mid-parse causing timing failures.
+
+**Fix:**
+
+1. Add data-total-slides="5" to carousel container
+2. Add data-slide-index="1", data-slide-index="2" to each slide
+3. Add aria-label="Slide 1 of 5" to each slide
+4. Provide static "View all" alternative using `<details>` element with data-agent-visible="true"
+5. Distinguish informational (product, testimonial) from decorative (hero, banner) carousels
+
+### "Animation libraries detected"
+
+**Meaning:** Typed.js, TypeIt, GSAP, AOS, or Animate.css libraries present on page
+
+**Impact:** Animated text may be invisible in served HTML. Content reveals gradually, causing agents to miss information.
+
+**Fix:**
+
+1. Ensure all text content exists in served HTML before JavaScript enhancement
+2. Use animation as progressive enhancement, not as primary content delivery
+3. Add data-animation-state="complete" after animation finishes
+4. Provide pause controls for animations >5 seconds (WCAG 2.2.2)
+
+### "Visual content changes detected"
+
+**Meaning:** Screenshot comparison revealed page content changing over time (typewriter animations, rotating text, tickers)
+
+**Impact:** Agents snapshot page at random moments, missing content that hasn't appeared yet or has already cycled away.
+
+**Fix:**
+
+1. Ensure ALL text variations exist in served HTML before JavaScript enhancement
+2. Add data-content-variations="variant1|variant2|variant3" attribute
+3. Add data-content-complete="true" after animation cycle completes
+4. Provide static `<noscript>` alternative showing all content
+5. Consider showing all variations in a list format for agents
+
+### "JavaScript-dependent pricing"
+
+**Meaning:** Price information only appears after JavaScript execution, making it invisible to CLI agents
+
+**Impact:** E-commerce agents cannot make purchase recommendations without visible pricing
+
+**Fix:**
+
+1. Server-side rendering: Render initial price in HTML
+2. Schema.org structured data: Add JSON-LD with Product schema including price
+3. Meta tags: Include `<meta itemprop="price" content="99.99">`
+4. Data attributes: Add `data-price="99.99"` and `data-currency="USD"`
+5. Noscript fallback: Provide `<noscript><span class="price">$99.99</span></noscript>`
+
+## Common Scenarios
+
+### Scenario 1: E-commerce Site (Low Score)
+
+**Initial Audit Results:**
+
+- Overall: 42/100
+- Served: 38/100
+- Rendered: 52/100
+- robots.txt: 25/100
+
+**Action Plan:**
+
+Week 1:
+
+- Add JSON-LD structured data to product pages
+- Make pricing complete and visible
+- Create comprehensive robots.txt
+
+Month 1:
+
+- Fix error message persistence
+- Add state attributes to cart
+- Implement inline form validation
+
+Quarter 1:
+
+- Create llms.txt file
+- Add structured data to all pages
+- Implement API endpoints
+
+**Expected Results After Quarter 1:**
+
+- Overall: 75-80/100
+- Served: 70-75/100
+- Rendered: 75-80/100
+- robots.txt: 80-85/100
+
+### Scenario 2: Content Publisher (Medium Score)
+
+**Initial Audit Results:**
+
+- Overall: 65/100
+- Served: 72/100
+- Rendered: 61/100
+- robots.txt: 55/100
+- llms.txt: Missing
+
+**Action Plan:**
+
+Week 1:
+
+- Create llms.txt with attribution requirements
+- Enhance robots.txt with AI user agents
+
+Month 1:
+
+- Add article structured data
+- Improve meta descriptions
+- Fix heading hierarchy
+
+Quarter 1:
+
+- Optimize content extraction policies
+- Implement rate limiting headers
+- Add API documentation
+
+**Expected Results After Quarter 1:**
+
+- Overall: 80-85/100
+- Served: 85-88/100
+- Rendered: 75-80/100
+- robots.txt: 80-85/100
+- llms.txt: 75-80/105
+
+### Scenario 3: SaaS Application (High Score, Maintenance)
+
+**Initial Audit Results:**
+
+- Overall: 82/100
+- Served: 85/100
+- Rendered: 80/100
+- robots.txt: 85/100
+- llms.txt: 78/105
+
+**Action Plan:**
+
+Monthly:
+
+- Run audits to detect regressions
+- Monitor for new issues
+- Update AI user agent list
+
+Quarterly:
+
+- Optimize low-scoring pages
+- Review and update llms.txt
+- Benchmark against competitors
+
+Annually:
+
+- Comprehensive review
+- Implement advanced features
+- Update documentation
+
+**Maintenance Goals:**
+
+- Keep scores above 80
+- Detect regressions immediately
+- Stay current with standards
 
 ## Support
 
