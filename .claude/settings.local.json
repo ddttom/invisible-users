@@ -41,8 +41,8 @@
       "Bash(npm test:*)",
       "Bash(npm install:*)",
       "Bash(git checkout:*)",
-
-      "Bash(git -C ../.. ls-files:*)"
+      "Bash(git -C ../.. ls-files:*)",
+      "Bash(git -C packages/manuscript/the-bible-of-mx status --short)"
     ],
     "deny": [],
     "ask": [
