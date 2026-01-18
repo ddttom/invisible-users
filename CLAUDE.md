@@ -787,6 +787,20 @@ npx markdownlint --fix path/to/file.md
 
 **Important:** File-specific npm scripts like `npm run lint:md:fix:preface` do NOT exist. Use the commands above.
 
+### Skill Files Exclusion
+
+**CRITICAL:** Never fix markdown linting issues in `.claude/skills/` files.
+
+Skill files (`.claude/skills/*.md`) have their own formatting requirements that may conflict with standard markdown rules. Leave skill files as-is even if they trigger linting warnings like:
+
+- MD032 (Lists should be surrounded by blank lines)
+- MD034 (Bare URL used)
+- Other markdown formatting rules
+
+**Rationale:** Skills are consumed by Claude Code's skill system, which has specific parsing requirements. Standard markdown linting rules may break skill functionality.
+
+**When running linting commands:** The npm scripts (`npm run lint:markdown` and `npm run lint:markdown:fix`) exclude `.claude/` directory from linting via `--ignore .claude` flag. If you encounter linting warnings in skill files during manual editing, ignore them.
+
 ### Auto-fix Limitations
 
 Some markdown issues cannot be auto-fixed and require manual correction:

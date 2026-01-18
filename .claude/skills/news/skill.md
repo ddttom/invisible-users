@@ -392,13 +392,14 @@ Opportunity skill:
 ## File Locations
 
 **POST-PUBLICATION targets (ALL THREE updated with each news item):**
-- News page: `packages/manuscript/the-bible-of-mx/web/news.html` (public-facing HTML at https://allabout.network/invisible-users/news.html)
-- Blog: `packages/manuscript/the-bible-of-mx/blog/book-updates.md` (changelog tracking additions to Appendix J)
-- Appendix: `packages/manuscript/the-bible-of-mx/appendix-j-industry-developments.md` (LIVE comprehensive record, new entries ADDED to existing content)
+- News page: `packages/manuscript/the-bible-of-mx/manuscripts/bible/web/news.html` (public-facing HTML at https://allabout.network/invisible-users/news.html)
+- Blog: `packages/manuscript/the-bible-of-mx/marketing/blog/book-updates.md` (changelog tracking additions to Appendix J)
+- Appendix: `packages/manuscript/the-bible-of-mx/manuscripts/bible/appendix-j-industry-developments.md` (LIVE comprehensive record, new entries ADDED to existing content)
 
 **Reference files (read-only):**
-- Chapters: `packages/manuscript/the-bible-of-mx/chapter-*.md`
-- Book plan: `packages/book-plan.md`
+- Chapters (The Bible): `packages/manuscript/the-bible-of-mx/manuscripts/bible/chapter-*.md`
+- Chapters (Don't Make AI Think): `packages/manuscript/the-bible-of-mx/manuscripts/dont-make-ai-think/chapter-*.md`
+- Book plan: `packages/manuscript/the-bible-of-mx/manuscripts/bible/bible-plan.md`
 
 **Supporting documentation:**
 - `verification-guidelines.md` - Fact-checking process

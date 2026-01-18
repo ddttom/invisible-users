@@ -16,7 +16,7 @@ When you provide one or more file paths, this skill:
 
 ## Understanding the Writing Style Guide
 
-The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)) defines standards for "The Invisible Users" book manuscript. The guide applies to all content in `packages/manuscript/the-bible-of-mx/` but can be used to review any document.
+The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)) defines standards for "The Invisible Users" book manuscripts. The guide applies to all content in `packages/manuscript/the-bible-of-mx/manuscripts/` (including both "The Bible" and "Don't Make AI Think") but can be used to review any document.
 
 **Core Principles:**
 
@@ -30,20 +30,23 @@ The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-styl
 ## How to Use
 
 ```bash
-# Review single file
-/review-docs packages/manuscript/the-bible-of-mx/chapter-01-the-invisible-failure.md
+# Review single file from The Bible
+/review-docs packages/manuscript/the-bible-of-mx/manuscripts/bible/chapter-01-what-you-will-learn.md
+
+# Review single file from Don't Make AI Think
+/review-docs packages/manuscript/the-bible-of-mx/manuscripts/dont-make-ai-think/chapter-01-the-invisible-users.md
 
 # Review multiple files (space-separated)
 /review-docs chapter-01.md chapter-02.md chapter-03.md
 
-# Review with glob patterns
-/review-docs packages/manuscript/the-bible-of-mx/chapter-*.md
+# Review with glob patterns (The Bible chapters)
+/review-docs packages/manuscript/the-bible-of-mx/manuscripts/bible/chapter-*.md
 
 # Review any file (not limited to manuscript)
 /review-docs docs/web-audit-architecture.md
 
 # Review HTML files
-/review-docs packages/manuscript/the-bible-of-mx/web/back-cover.html
+/review-docs packages/manuscript/the-bible-of-mx/manuscripts/bible/web/back-cover.html
 ```
 
 ## 5-Phase Workflow
