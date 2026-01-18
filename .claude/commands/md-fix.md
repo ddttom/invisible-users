@@ -1,8 +1,10 @@
 Run markdown linting and fix all issues in the repository.
 
+**CRITICAL:** Skill files (`.claude/skills/*.md`) are automatically excluded from linting by the npm scripts. Do NOT attempt to fix markdown linting issues in skill files manually.
+
 Execute the following steps:
 
-1. Run `npm run lint:markdown:fix` to automatically fix all markdown linting issues
+1. Run `npm run lint:markdown:fix` to automatically fix all markdown linting issues (excludes `.claude/` directory)
 2. Run `npm run lint:markdown` to verify all issues are resolved
 3. Report any remaining issues that couldn't be auto-fixed
 4. Show a summary of files that were modified
