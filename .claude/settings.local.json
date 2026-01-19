@@ -88,7 +88,10 @@
       "Bash(git -C packages/dont-make-ai-think push origin main)",
       "Bash(git -C packages/shared-appendices push origin main)",
       "Bash(git -C packages/shared-code-examples push origin main)",
-      "Bash(git -C outputs push origin main)"
+      "Bash(git -C outputs push origin main)",
+      "Bash(git -C packages/dont-make-ai-think mv:*)",
+      "Bash(git -C packages/dont-make-ai-think diff README.md)",
+      "Bash(git -C packages/dont-make-ai-think diff chapters/README.md)"
     ],
     "deny": [],
     "ask": [

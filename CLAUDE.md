@@ -461,6 +461,20 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 2. **Submodule-first workflow** - Commit and push submodules BEFORE updating pointers in main repo
 3. **Use `git -C <path>`** - Avoid navigation errors
 4. **Never assume location** - Multi-repository structure makes path assumptions unreliable
+5. **Always use `git mv` for renaming** - NEVER use regular `mv` command to rename tracked files. Use `git mv` or `git -C <path> mv` to preserve file history
+
+**File renaming examples:**
+
+```bash
+# ✅ CORRECT: Use git mv to preserve history
+git mv old-filename.md new-filename.md
+
+# ✅ CORRECT: Use git -C for submodules
+git -C packages/dont-make-ai-think mv "old name.md" "new-name.md"
+
+# ❌ WRONG: Regular mv breaks git tracking
+mv old-filename.md new-filename.md  # Git sees this as delete + add (loses history)
+```
 
 **Common mistakes documented in LEARNINGS.md - read before starting work.**
 
