@@ -23,10 +23,14 @@ Thumbs.db
 .env
 .env.local
 
-# symlinks for AI tools
+# Symlinks for AI tools
 .agents/
 GEMINI.md
 AGENTS.md
+
+# Symlinks created by init script (npm run init)
+books/
+blogs
 
 # PNG illustrations (generated from SVG)
 packages/bible/illustrations/*.png

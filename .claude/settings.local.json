@@ -69,7 +69,12 @@
       "Bash(readlink:*)",
       "Bash(du:*)",
       "Bash(git -C outputs log --oneline)",
-      "Bash(git -C packages/bible log --oneline)"
+      "Bash(git -C packages/bible log --oneline)",
+      "Bash(tac:*)",
+      "Bash(git -C packages/bible status)",
+      "Bash(git -C packages/bible add chapters/chapter-00-what-are-ai-agents.md)",
+      "Bash(git -C packages/bible commit -m \"$\\(cat <<''EOF''\nRewrite Chapter 0 with narrative-first approach\n\nChanged structure from technical taxonomy to personal discovery journey:\n- Opening section now tells the story of how this work began \\(CMS conferences, blog posts, conversations with Matt Bailey\\)\n- Moved from \"They 're Machines, Not Magic\" opening to \"The Journey\" opening\n- Added concrete examples upfront \\(Danube cruise pricing, Ally McBeal legal citations\\)\n- Introduced \"invisible users\" concept through narrative rather than technical definition\n- Restructured agent types section to follow discovery journey\n- Added personal context about publishing plans, website strategy, broader CMS industry implications\n\nContent changes:\n- Reduced from ~277 lines to ~145 lines \\(more focused, less repetitive\\)\n- Maintained all technical accuracy while improving readability\n- Added metadata table with enhanced longdescription and purpose fields\n- Preserved all footnote references and implementation support section\n\nRationale: This makes Chapter 0 more engaging as standalone introduction while maintaining technical depth. Narrative approach helps readers understand why this work matters before explaining technical details.\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C packages/bible push origin main)"
     ],
     "deny": [],
     "ask": [

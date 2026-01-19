@@ -13,6 +13,8 @@
  * - books/appendices -> ../packages/shared-appendices
  * - books/code-examples -> ../packages/shared-code-examples
  * - books/outputs -> ../outputs
+ * - GEMINI.md -> CLAUDE.md (AI tool compatibility)
+ * - AGENTS.md -> CLAUDE.md (AI tool compatibility)
  *
  * Expected file permissions:
  * - .claude/skills/skill.md files must be executable (for Claude Code)
@@ -223,6 +225,10 @@ function initializeRepository() {
 
   // Create blogs symlink to outputs submodule
   createSymlink('blogs', 'outputs/bible/blogs', 'Blog posts (via outputs submodule)');
+
+  // Create AI tool compatibility symlinks (GEMINI.md and AGENTS.md point to CLAUDE.md)
+  createSymlink('GEMINI.md', 'CLAUDE.md', 'Gemini AI tool compatibility');
+  createSymlink('AGENTS.md', 'CLAUDE.md', 'Generic AI agents compatibility');
 
   // Check and fix file permissions
   checkFilePermissions();
