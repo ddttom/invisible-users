@@ -18,7 +18,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        submodules: recursive
+        submodules: false
+
+    - name: Initialize public submodules
+      run: |
+        git submodule update --init --depth 1 packages/bible
+        git submodule update --init --depth 1 packages/dont-make-ai-think
+        git submodule update --init --depth 1 packages/shared-appendices
+        git submodule update --init --depth 1 packages/shared-code-examples
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
