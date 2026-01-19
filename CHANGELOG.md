@@ -7,7 +7,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2026-01-19] - Repository Purpose Documentation
+## [2026-01-19a] - Chapter 8 Addition and Git Workflow Enhancement
+
+### Added
+
+- **Chapter 8 to Don't Make AI Think book** (dont-make-ai-think submodule)
+  - New chapter: "Testing with AI Agents" (785 lines)
+  - Covers: morning-after test, testing with multiple AI tools, structured data validation, automated testing approaches, common testing mistakes, implementation roadmap
+  - Updated README.md: Changed Chapter 8 from "(Chapter 8 content TBD)" to complete description
+  - Updated CHAPTERS-GUIDE.md: Removed "(to be created)" marker and updated bullet points to match actual content
+  - Updated chapters/README.md: Fixed author information (Tom Harris → Tom Cranstoun)
+
+- **Git mv enforcement in CLAUDE.md**
+  - Added rule #5 to Git Workflows: "Always use git mv for renaming tracked files"
+  - Added file renaming examples showing correct (git mv) vs wrong (mv) approaches
+  - Prevents loss of git history when renaming files
+  - Includes examples for main repo and submodules using git -C
+
+### Fixed
+
+- **Chapter 5 filename** (dont-make-ai-think submodule)
+  - Renamed 'chapter-05-metadata-that-works .md' to chapter-05-metadata-that-works.md
+  - Removed trailing space from filename using git mv (preserves git history)
+
+### Changed
+
+- Updated .claude/settings.local.json with git mv permission patterns
+- Fixed .claude/skills/humanizer/skill.md file permissions (mode change)
+- Updated dont-make-ai-think submodule pointer to commit 74124a3
+
+### Notes
+
+- Chapter 8 has markdown linting issues (24 errors) that need fixing:
+  - MD040: Code blocks missing language specification
+  - MD034: Bare URLs need angle brackets
+  - MD032: Lists need blank lines before/after
+  - MD036: Emphasis used as heading (Phase labels)
+- These will be addressed in a future commit
+
+## [2026-01-19b] - Repository Purpose Documentation
 
 ### Added
 
