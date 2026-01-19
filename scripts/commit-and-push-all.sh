@@ -1,12 +1,21 @@
 #!/bin/bash
 
-# Script to commit and push changes in both main repository and manuscript submodule
-# Ensures proper handling of submodule commits and pointer updates
+# DEPRECATED: This script was designed for the old single-submodule structure
+# The repository now has 5 submodules (bible, dont-make-ai-think, shared-appendices, shared-code-examples, outputs)
+#
+# Recommended alternatives:
+#   - Use `/step-commit` skill in Claude Code for comprehensive multi-repository commits
+#   - Use `git -C <submodule-path>` commands for individual submodule commits
+#   - See docs/repo/GIT-README.md for multi-repository workflows
+#
+# This script remains for reference but should not be used in current structure.
+
+exit 1  # Prevent accidental execution
 
 set -e  # Exit on error
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SUBMODULE_PATH="$REPO_ROOT/packages/manuscript/the-bible-of-mx"
+# OLD PATH: SUBMODULE_PATH="$REPO_ROOT/packages/manuscript/the-bible-of-mx"
 
 echo "🔍 Checking for changes..."
 
