@@ -107,59 +107,83 @@ If all three commands complete successfully, you're ready to go!
 /
 ├── .vscode/                    # VS Code workspace configuration
 ├── packages/
-│   ├── manuscript/             # Book manuscript package
-│   │   ├── book-plan.md        # Master plan with chapter status
-│   │   └── manuscript/         # Git submodule with actual content
-│   │       ├── chapter-*.md    # 11 chapters (~57,000 words)
-│   │       ├── appendix-*.md   # 11 appendices
-│   │       └── illustrations/  # SVG illustrations
+│   ├── bible/                  # "The Invisible Users" (git submodule)
+│   │   ├── chapters/           # 13 chapters
+│   │   ├── illustrations/      # SVG and PNG images
+│   │   └── README.md           # Book overview
 │   │
-│   └── web-audit-suite/        # Web analysis tool
-│       ├── index.js            # Entry point
-│       ├── src/                # Source code
-│       │   ├── main.js         # Orchestration
-│       │   ├── config/         # Configuration
-│       │   └── utils/          # Utilities
-│       ├── test/               # Test suite
-│       ├── docs/               # Documentation
-│       └── examples/           # Configuration examples
+│   ├── dont-make-ai-think/     # "Don't Make AI Think" (git submodule)
+│   │   ├── chapters/           # 10 chapters
+│   │   └── README.md           # Slim guide overview
+│   │
+│   ├── shared-appendices/      # Shared appendices (git submodule)
+│   │   ├── appendix-*.md       # 12 appendices (A-L)
+│   │   └── web/                # HTML versions
+│   │
+│   ├── shared-code-examples/   # Code patterns (git submodule)
+│   │   ├── agent-friendly-starter-kit/
+│   │   └── examples/
+│   │
+│   ├── web-audit-suite/        # Web analysis tool (NOT a submodule)
+│   │   ├── index.js            # Entry point
+│   │   ├── src/                # Source code
+│   │   │   ├── main.js         # Orchestration
+│   │   │   ├── config/         # Configuration
+│   │   │   └── utils/          # Utilities
+│   │   ├── test/               # Test suite
+│   │   └── docs/               # Documentation
+│   │
+│   └── manuscript/             # Shared manuscript resources
+│       └── book-svg-style.md   # SVG style guide
 │
+├── outputs/                    # Generated content (git submodule - PRIVATE)
+│   ├── bible/blogs/            # Blog posts
+│   └── the-bible/              # PDF and HTML builds
+│
+├── books/                      # Symlinks for convenience
+│   ├── bible -> ../packages/bible
+│   ├── dont-make-ai-think -> ../packages/dont-make-ai-think
+│   ├── appendices -> ../packages/shared-appendices
+│   └── outputs -> ../outputs
+│
+├── blogs -> outputs/bible/blogs  # Symlink to blog posts
 ├── docs/                       # Project documentation
 ├── scripts/                    # Build scripts
 ├── CLAUDE.md                   # AI agent instructions
-├── GIT-README.md              # Git workflow guide
-└── README.md                  # Main documentation
+└── README.md                   # Main documentation
 ```
 
 ## Understanding the Submodule
 
-The manuscript is maintained in a separate repository and linked as a git submodule:
+**This repository uses multiple git submodules** for content organization:
 
 - **Main repo:** `https://github.com/ddttom/invisible-users`
-- **Manuscript repo:** `https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript`
+- **Submodules:** outputs/, bible/, dont-make-ai-think/, shared-appendices/, shared-code-examples/
 
-**Why a submodule?**
+**Why submodules?**
 
-- Manuscript can be updated independently
-- Main repo controls which version of manuscript is used
-- Keeps manuscript history clean and separate
+- Content can be updated independently
+- Main repo controls which version of each submodule is used
+- Keeps content history clean and separate
+- Allows different privacy settings (e.g., outputs is private)
 
 **Key commands:**
 
 ```bash
-# Update manuscript to latest version
-git submodule update --remote packages/manuscript/the-bible-of-mx
+# Update all submodules to latest version
+git submodule update --remote
 
-# Check submodule status
+# Update specific submodule
+git submodule update --remote packages/bible
+
+# Check all submodule status
 git submodule status
 
-# View manuscript changes
-cd packages/manuscript/the-bible-of-mx
-git log --oneline -10
-cd ../../..
+# View changes in specific submodule
+git -C packages/bible log --oneline -10
 ```
 
-**Important:** Always check your working directory with `pwd` before git operations. See [GIT-README.md](GIT-README.md) for detailed git workflows.
+**Important:** Always check your working directory with `pwd` before git operations. See [docs/repo/GIT-README.md](GIT-README.md) for detailed multi-repository workflows.
 
 ## Common Development Tasks
 
@@ -193,9 +217,9 @@ The `npm run illustrations:generate` command:
 
 1. **Downloads cover images** if missing (Profile.png, A4-Cover.png, Kindle-Cover.png)
 2. **Checks for back-cover.png** - if missing, displays instructions to:
-   - Open `packages/manuscript/the-bible-of-mx/web/back-cover.html` in a browser
+   - Open `packages/shared-appendices/web/back-cover.html` in a browser
    - Take a full-page screenshot
-   - Save as `back-cover.png` in `packages/manuscript/the-bible-of-mx/illustrations/`
+   - Save as `back-cover.png` in `packages/bible/illustrations/`
 3. **Converts all SVG files** in illustrations/ to PNG using ImageMagick
 
 **Note:** ImageMagick is required for SVG conversion. Install with `brew install imagemagick` if needed.
@@ -321,9 +345,9 @@ The book is written in **British English** with these conventions:
 
 **Key files to read:**
 
-1. [packages/manuscript/book-plan.md](packages/manuscript/book-plan.md) - Master plan with chapter outlines
-2. [packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md](packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md) - Introduction
-3. [packages/manuscript/the-bible-of-mx/Glossary.md](packages/manuscript/the-bible-of-mx/Glossary.md) - Technical terms
+1. [packages/bible/README.md](../../packages/bible/README.md) - The Bible book overview and chapter list
+2. [packages/dont-make-ai-think/README.md](../../packages/dont-make-ai-think/README.md) - Slim guide overview
+3. [packages/shared-appendices/README.md](../../packages/shared-appendices/README.md) - Appendices overview
 
 ### Web Audit Suite Architecture
 
@@ -404,8 +428,10 @@ When creating commits:
 Run this checklist to verify everything is working:
 
 ```bash
-# 1. Check manuscript is available
-ls packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md
+# 1. Check book packages are available
+ls packages/bible/README.md
+ls packages/dont-make-ai-think/README.md
+ls packages/shared-appendices/README.md
 
 # 2. Check dependencies are installed
 npm run wordcount
@@ -452,17 +478,18 @@ This can significantly improve startup time and responsiveness.
 3. [GIT-README.md](GIT-README.md) - Git workflow with submodules
 
 **Book-specific:**
-4. [packages/manuscript/book-plan.md](packages/manuscript/book-plan.md) - Chapter outlines and status
-5. [packages/manuscript/the-bible-of-mx/Glossary.md](packages/manuscript/the-bible-of-mx/Glossary.md) - Technical terms
+4. [packages/bible/README.md](../../packages/bible/README.md) - The Bible contents and status
+5. [packages/dont-make-ai-think/README.md](../../packages/dont-make-ai-think/README.md) - Slim guide contents
+6. [packages/shared-appendices/README.md](../../packages/shared-appendices/README.md) - Appendices overview
 
 **Tool-specific:**
-6. [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) - Tool documentation
-7. [packages/web-audit-suite/QUICKSTART.md](packages/web-audit-suite/QUICKSTART.md) - 5-minute guide
-8. [packages/web-audit-suite/docs/usermanual.md](packages/web-audit-suite/docs/usermanual.md) - Complete user guide
+7. [packages/web-audit-suite/README.md](../../packages/web-audit-suite/README.md) - Tool documentation
+8. [packages/web-audit-suite/QUICKSTART.md](../../packages/web-audit-suite/QUICKSTART.md) - 5-minute guide
+9. [packages/web-audit-suite/docs/usermanual.md](../../packages/web-audit-suite/docs/usermanual.md) - Complete user guide
 
 **Development environment:**
-9. [docs/vscode-extension-cleanup.md](docs/vscode-extension-cleanup.md) - Extension management
-10. [.vscode/settings.json](.vscode/settings.json) - Workspace configuration
+10. [docs/vscode-extension-cleanup.md](../vscode-extension-cleanup.md) - Extension management
+11. [.vscode/settings.json](../../.vscode/settings.json) - Workspace configuration
 
 ## Common Issues and Solutions
 
@@ -482,13 +509,14 @@ npm run init
 
 The init script is safe to run multiple times and will only make changes if needed.
 
-### Issue: "Submodule not initialized"
+### Issue: "Submodules not initialized"
 
-**Error:** `packages/manuscript/the-bible-of-mx/` directory is empty
+**Error:** Submodule directories (packages/bible/, outputs/, etc.) are empty
 
 **Solution:**
 
 ```bash
+# Initialize all submodules
 git submodule update --init --recursive
 ```
 
@@ -573,8 +601,8 @@ Use VS Code search to find examples:
 
 **Best way to learn the codebase:**
 
-1. Read [packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md](packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md)
-2. Explore [packages/web-audit-suite/src/main.js](packages/web-audit-suite/src/main.js)
+1. Read [packages/bible/README.md](../../packages/bible/README.md) for book overview
+2. Explore [packages/web-audit-suite/src/main.js](../../packages/web-audit-suite/src/main.js) for tool architecture
 3. Run Web Audit Suite on a test site: `npm run audit:start -- -s https://example.com -c 5`
 4. Read the generated reports in `packages/web-audit-suite/results/`
 
@@ -582,11 +610,14 @@ Use VS Code search to find examples:
 
 Now that you're set up:
 
-1. **Explore the manuscript:**
+1. **Explore the book content:**
 
    ```bash
-   # Open first chapter
-   code packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md
+   # Open The Bible README to see chapter list
+   code packages/bible/README.md
+
+   # Open Slim guide README
+   code packages/dont-make-ai-think/README.md
    ```
 
 2. **Run the Web Audit Suite:**
