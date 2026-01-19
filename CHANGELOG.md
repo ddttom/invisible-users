@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-19d] - Remove Legacy Manuscript Submodule References
+
+### Changed
+
+- **Documentation cleanup for current submodule structure**
+  - Updated README.md: Replaced legacy `packages/manuscript/` reference with list of 5 current submodules (bible, dont-make-ai-think, shared-appendices, shared-code-examples, outputs)
+  - Updated CLAUDE.md: Changed submodule update examples from `packages/manuscript/the-bible-of-mx` to `packages/bible`
+  - Updated GIT-README.md: Replaced all 40+ occurrences of `packages/manuscript/the-bible-of-mx` with `packages/bible` in examples
+  - Updated .claude/pwd-reminder.md: Replaced legacy example location with current submodule locations
+  - Updated .claude/commands/step-commit.md: Generalized `packages/manuscript` references to generic `submodule`
+  - Updated docs/sales-enablement/pitches/critique.md: Removed legacy archival recommendation, updated to reflect current structure
+
+### Notes
+
+- The `packages/manuscript/` directory still exists and contains `book-svg-style.md` (SVG illustration style guide)
+- This cleanup removes confusion for contributors about the legacy manuscript structure
+- All git workflow examples now use current submodule paths
+
 ## [2026-01-19c] - Chapter 8 Markdown Linting Fixes
 
 ### Fixed
