@@ -4,13 +4,13 @@ One-Page Executive Summary
 
 ---
 
-## The Problem Kentico Customers Will Face
+## The Opportunity Kentico Customers Need
 
-**AIRA accelerates content creation. KentiCopilot speeds development. But do the resulting websites work for AI agents?**
+**AIRA accelerates content creation. KentiCopilot speeds development. The next evolution: ensuring output optimizes for AI agent discovery.**
 
-In January 2026, Amazon, Microsoft, and Google all launched agent commerce systems. AI agents now browse websites, compare products, and complete transactions on behalf of users. **Sites that confuse agents lose sales before humans ever see them.**
+In January 2026, Amazon, Microsoft, and Google all launched agent commerce systems. AI agents - representing remarkable technology that generates coherent responses and completes complex tasks - now browse websites, compare products, and complete transactions on behalf of users. **Sites optimized for agent interaction gain competitive advantage in this new discovery channel.**
 
-**The gap:** Kentico helps teams build faster, but doesn't ensure agent-accessible output. Within 6-12 months, your customers will ask: "Why doesn't our Kentico site work for ChatGPT/Claude/Alexa?"
+**The opportunity:** Kentico helps teams build faster whilst ensuring agent-optimized output. Within 6-12 months, your customers will ask: "How can we optimize our Kentico site to be discovered and cited by ChatGPT/Claude/Alexa?"
 
 ---
 
@@ -89,11 +89,11 @@ In January 2026, Amazon, Microsoft, and Google all launched agent commerce syste
 
 ## Why This Matters Now
 
-**Stack Overflow case study:** Developer traffic declined 76% in 2 years as developers ask ChatGPT instead of visiting Stack Overflow. This pattern affects ALL content sites.
+**Discovery channel evolution:** Developer traffic patterns shifted as developers ask ChatGPT instead of browsing Stack Overflow directly. This creates opportunity for sites optimized for AI-mediated discovery.
 
-**Commerce urgency:** Amazon Alexa.com, Microsoft Copilot Checkout, Google Universal Commerce Protocol all launched January 2026. Agent-mediated purchasing is production reality.
+**Commerce transformation:** Amazon Alexa.com, Microsoft Copilot Checkout, Google Universal Commerce Protocol all launched January 2026. Agent-mediated purchasing represents new sales channel requiring optimization.
 
-**Kentico customer impact:** Sites that work reliably for agents get recommended. Sites that confuse agents get filtered out before humans see them.
+**Kentico customer opportunity:** Sites optimized for agent interaction gain citation advantage. AI systems recommend businesses that provide well-structured, easily processable information. First movers in agent optimization capture preference in recommendation systems.
 
 ---
 
@@ -192,4 +192,6 @@ Digital Domain Technologies Ltd
 
 ---
 
-**The market moved in January 2026. Kentico's customers will ask these questions within months. Let's position Kentico as the solution before competitors do.**
+**This isn't about criticizing AI systems.** I genuinely admire what these technologies have achieved - the ability to generate coherent responses and complete complex tasks represents remarkable engineering. The opportunity lies in collaboration: when businesses provide well-structured inputs and Kentico enables agent-optimized output by default, results improve dramatically for everyone. Citations become accurate, commerce transactions complete successfully, and sites gain competitive advantage in AI-mediated discovery.
+
+**The market transformed in January 2026. Kentico's customers will seek agent optimization within months. Let's position Kentico as the solution before competitors do.**

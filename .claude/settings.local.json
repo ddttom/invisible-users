@@ -93,7 +93,21 @@
       "Bash(git -C packages/dont-make-ai-think diff README.md)",
       "Bash(git -C packages/dont-make-ai-think diff chapters/README.md)",
       "Bash(git -C packages/dont-make-ai-think commit -m \"Fix markdown linting errors in Chapter 8\n\n- Fix MD040: Add language specification to all code blocks \\(text\\)\n- Fix MD036: Convert emphasis to proper headings \\(### Test 1, ### Phase 1, etc.\\)\n- Fix MD034: Wrap bare URLs in angle brackets \\(auto-fixed\\)\n- Fix MD032: Add blank lines around lists \\(auto-fixed\\)\n\nAll 24 linting errors resolved, chapter now passes markdownlint validation.\")",
-      "Bash(git -C packages/bible commit -m \"$\\(cat <<''EOF''\nAdd MX dedicated roles section to Chapter 0\n\nAdd comprehensive explanation of why Machine Experience \\(MX\\) requires dedicated professional roles, addressing the organizational psychology principle \"if it's everyone's job, nobody does it\".\n\nNew content covers:\n- Diffusion of responsibility research \\(85% → 31% response rates\\)\n- DevOps/QA parallel: shared awareness + dedicated specialists\n- Three-tier accountability structure \\(specialists, distributed awareness, executive ownership\\)\n- MX/accessibility convergence enabling role expansion vs new headcount\n- Commercial urgency from January 2026 platform launches\n\nIncludes three footnotes with research citations from organizational psychology, DevOps implementations, and accountability frameworks.\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git -C packages/bible commit -m \"$\\(cat <<''EOF''\nAdd MX dedicated roles section to Chapter 0\n\nAdd comprehensive explanation of why Machine Experience \\(MX\\) requires dedicated professional roles, addressing the organizational psychology principle \"if it's everyone's job, nobody does it\".\n\nNew content covers:\n- Diffusion of responsibility research \\(85% → 31% response rates\\)\n- DevOps/QA parallel: shared awareness + dedicated specialists\n- Three-tier accountability structure \\(specialists, distributed awareness, executive ownership\\)\n- MX/accessibility convergence enabling role expansion vs new headcount\n- Commercial urgency from January 2026 platform launches\n\nIncludes three footnotes with research citations from organizational psychology, DevOps implementations, and accountability frameworks.\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C packages/bible rm:*)",
+      "Bash(git -C packages/bible commit -m \"$\\(cat <<''EOF''\nMove Chapter 0 to main repository as shared content\n\nChapter 0 \\(What Are AI Agents?\\) serves as a shared introduction across\nall books in the Invisible Users series. Moved to main repository at\ndocs/shared-chapters/chapter-00-what-are-ai-agents.md to reflect its\nrole as global content.\n\nChanges:\n- Removed chapters/chapter-00-what-are-ai-agents.md \\(now in main repo\\)\n- Updated README.md with note about Chapter 0 location\n- Fixed chapter numbering in contents list \\(1-13 instead of 1,3-14\\)\n\nThis aligns with the multi-book architecture where shared content\nlives in the main repository rather than individual book repositories.\nEOF\n\\)\")",
+      "Bash(git -C packages/bible push --set-upstream origin main)",
+      "Bash(git -C packages/dont-make-ai-think commit -m \"Fix incorrect author name \\(Tom Harris → Tom Cranstoun\\)\")",
+      "Bash(git -C packages/dont-make-ai-think push)",
+      "Bash(git -C packages/dont-make-ai-think push --set-upstream origin main)",
+      "Bash(git -C packages/dont-make-ai-think commit -m \"Fix experience description \\(Adobe Experience Manager → CMS\\)\")",
+      "Bash(git -C packages/shared-appendices add:*)",
+      "Bash(git -C packages/shared-appendices commit -m \"Fix author bio \\(Adobe expert → CMS expert, 15→25 years\\)\")",
+      "Bash(git -C packages/shared-appendices push)",
+      "Bash(git -C packages/shared-appendices push --set-upstream origin main)",
+      "Bash(./scripts/fix-dont-make-ai-think-linting.sh:*)",
+      "Bash(./scripts/fix-remaining-linting.sh:*)",
+      "Bash(git -C packages/bible diff --stat)"
     ],
     "deny": [],
     "ask": [

@@ -12,9 +12,9 @@ AI agents are visiting websites and failing silently, costing businesses million
 
 ---
 
-## The Problem
+## The Opportunity
 
-Modern websites work beautifully for humans but fail completely for AI agents. These failures are invisible:
+AI agents have achieved remarkable capabilities - generating coherent responses, understanding context, and completing complex tasks across countless domains. However, these powerful systems need well-structured inputs to perform optimally. The convergence of AI capabilities with proper web infrastructure creates unprecedented opportunity:
 
 - **No analytics data** - Lost conversions never appear in metrics
 - **Silent failures** - Agents move on without error messages
@@ -24,11 +24,13 @@ Modern websites work beautifully for humans but fail completely for AI agents. T
 
 **Quick diagnostic:** Compare bounce rates for sessions under 10 seconds against your industry baseline. Unusually high short-session bounces combined with declining conversion despite stable traffic often indicate agent extraction without attribution.
 
-**Real Example:** An AI assistant compared tour operators. Company A's pagination made the agent think a 14-day tour was only 1 day. Company B showed full content on one page and won the business.
+**Real Example:** An AI assistant compared tour operators. Company A's pagination structure meant the agent could only see Day 1 of a 14-day tour. Company B's single-page layout allowed the agent to process the complete itinerary. Result: Company B won the business, not through better service, but through better-structured presentation.
 
-**The business model crisis is real.** In January 2025, Tailwind CSS laid off 75% of its team after their traffic-dependent revenue model collapsed. When AI agents started answering developer questions without sending traffic to documentation sites, the business couldn't sustain salaries. Founder Adam Wathan explained when rejecting an llms.txt integration: "Making it easier for LLMs to read our docs just means less traffic which means less people learning about our paid products and the business being even less sustainable." Companies depending on pageview-driven advertising, affiliate click-throughs, or awareness marketing requiring site visits face the same crisis. Adaptation is urgent: transform to agent-compatible revenue models (direct transactions, paid services, subscriptions) or watch revenue collapse whilst agents extract free content and paid offerings remain invisible.
+**This isn't about criticizing AI systems.** I genuinely admire what these technologies have achieved - the ability to generate coherent, contextually appropriate responses across extraordinary domains represents remarkable engineering. The opportunity lies in collaboration: when businesses provide well-structured inputs (semantic HTML, explicit metadata, clear state management) and AI creators implement appropriate guardrails, results improve dramatically for everyone. Hallucinations decrease. Citations become accurate. Commerce transactions complete successfully.
 
-The patterns that break agents also break users with disabilities: users navigating by keyboard alone, those relying on assistive technologies like screen readers, people using voice control due to mobility limitations, and individuals with cognitive disabilities who struggle with disappearing notifications. The convergence principle: skip links that help keyboard users bypass navigation also help AI agents identify main content. Semantic HTML benefits screen readers and AI parsing simultaneously. We've known about these problems for years - now there's commercial pressure to fix them. (For detailed analysis of the accessibility-agent connection, see Chapter 1 of the manuscript.)
+**The business model transformation is real.** In January 2025, Tailwind CSS laid off 75% of its team when their traffic-dependent revenue model encountered AI-mediated discovery. Developers asking ChatGPT instead of visiting documentation sites eliminated pageview-driven awareness. Founder Adam Wathan explained: "Making it easier for LLMs to read our docs just means less traffic which means less people learning about our paid products." This pattern affects businesses depending on pageviews, affiliate clicks, or awareness marketing. The adaptation opportunity: transform to agent-compatible revenue models (direct transactions, paid services, subscriptions, agent-accessible product discovery) where AI agents become sales channels rather than extraction threats.
+
+**The convergence principle creates compound value:** The patterns that optimize AI agent interaction also benefit users with disabilities. Skip links helping keyboard users bypass navigation simultaneously help agents identify main content. Semantic HTML benefits screen readers and AI parsing equally. Explicit state attributes serve keyboard navigators and agent parsers alike. We've advocated these patterns for accessibility for years - now commercial pressure accelerates adoption, creating wins for all users. (For detailed analysis of this accessibility-agent convergence, see Chapter 1 of the manuscript.)
 
 **The proprietary lock-in reality:** Major platforms (Microsoft, Amazon, Google launched January 2026; Apple expected) are building closed identity systems to establish first-mover advantages before open standards emerge. Businesses must now test against multiple proprietary agent platforms, knowing each integration creates lock-in for customers and dependency for themselves. The industry must work to build open standards for identity delegation and agent interoperability.
 
@@ -294,9 +296,9 @@ Availability: Ready to start immediately, flexible partnership agreement timelin
 
 ## One-Page Summary
 
-**Problem:** AI agents fail silently on websites, costing billions in lost conversions
+**Opportunity:** AI agents represent remarkable technology - but they need well-structured inputs to perform optimally
 
-**Solution:** Make websites work for both agents and humans using established web standards
+**Solution:** Optimize websites for AI agents whilst improving human experience using established web standards
 
 **Market:** £6.3 trillion e-commerce + adjacent markets, 12-18 month first-mover window
 

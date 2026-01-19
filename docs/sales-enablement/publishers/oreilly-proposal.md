@@ -76,11 +76,11 @@ By Q3 2026, agent compatibility will be established practice. The book needs to 
 
 ### Subtitle
 
-How Modern Web Design Fails AI Agents - And Why Fixing It Benefits Everyone
+Optimizing Websites for AI Agents and Human Users Through Better Structure
 
 ### Core Thesis
 
-The patterns that break AI agents also break humans. Semantic HTML, explicit state management, and structured data - the solutions accessibility experts have recommended for years - are now infrastructure requirements driven by commercial pressure.
+AI agents have achieved remarkable capabilities, but they need well-structured inputs to perform optimally. The patterns that optimize agent interaction - semantic HTML, explicit state management, structured data - are the same patterns that benefit human users with disabilities. This convergence creates compound value: solutions accessibility experts have recommended for years are now infrastructure requirements driven by commercial opportunity.
 
 ### Specifications
 
@@ -146,9 +146,9 @@ The patterns that break AI agents also break humans. Semantic HTML, explicit sta
 ### Part 1: The Problem (Chapters 1-4)
 
 1. **What You Will Learn** - Introduction and accessibility connection
-2. **The Invisible Failure** - When websites break for agents
-3. **The Architectural Conflict** - How modern web architecture creates the problem
-4. **The Business Reality** - Commercial implications of agent-mediated commerce
+2. **The Invisible Failure** - When websites and agents need better integration
+3. **The Architectural Conflict** - How modern web architecture evolved separately from agent needs
+4. **The Business Reality** - Commercial opportunities in agent-mediated commerce
 
 ### Part 2: The Context (Chapters 5-9)
 
