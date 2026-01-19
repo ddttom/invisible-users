@@ -7,6 +7,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-19g] - Fix PDF Footer and Update Step-Commit Workflow
+
+### Fixed
+
+- **PDF footer rendering** (dont-make-ai-think book)
+  - The `-V footer-center` pandoc flag doesn't work with default LaTeX templates
+  - Created metadata.yaml with fancyhdr LaTeX package configuration
+  - Footer now displays: "Early Draft - Commercial Work - Do Not Distribute"
+  - Page numbers appear on outer edges (left/right pages)
+  - Same approach as Bible book for consistency
+
+### Changed
+
+- **PDF generation scripts** (main repository package.json)
+  - Updated all four dont-make-ai-think scripts to include metadata.yaml
+  - Removed redundant `-V footer-center` flags (don't work)
+  - Removed redundant `--metadata` flags (now in YAML)
+  - Cleaner, more maintainable script commands
+
+- **Step-commit workflow** (.claude/commands/step-commit.md and .claude/skills/step-commit.json)
+  - Removed Step 7 (Project State / PROJECTSTATE.md)
+  - CHANGELOG.md now serves as both historical record AND current project state
+  - Renumbered: Step 8 (Changelog) → Step 6, Step 9 (Final Steps) → Step 7
+  - Enhanced Changelog step description with comprehensive entry guidelines
+
+### Added
+
+- **metadata.yaml** (dont-make-ai-think submodule)
+  - LaTeX header configuration with fancyhdr and listings packages
+  - Document metadata (title, subtitle, author, date)
+  - Code listing formatting with automatic line breaks
+  - Professional footer styling
+
+### Submodules Updated
+
+- packages/dont-make-ai-think: afd39a2 → 9dfc864 (metadata.yaml added)
+- outputs: 5ba0746 → a2b6268 (regenerated PDFs with footer)
+
+### Notes (2026-01-19g)
+
+- PDFs now include proper footer on all pages
+- Footer uses italic font styling for professional appearance
+- Approach matches Bible book for consistency across publications
+- Step-commit workflow simplified by eliminating redundant PROJECTSTATE.md
+
 ## [2026-01-19f] - Complete Don't Make AI Think Book
 
 ### Added
@@ -75,7 +120,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - packages/bible: 5ab5a86 → b2c266b (minor corrections)
 - outputs: 7dc0705 → 5ba0746 (PDFs and blog rename)
 
-### Notes
+### Notes (2026-01-19f)
 
 - The slim book now has complete front matter, all 11 chapters, and professional formatting
 - Two-directional reading approach serves both technical and business audiences
