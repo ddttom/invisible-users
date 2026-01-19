@@ -32,7 +32,7 @@ We are writing this book together.
 
 1. **Integrate, Don't Expand:** Weave the content into existing sections naturally. Do **not** add extra "value" or fluff. Keep it proportional.
 2. **No New Chapters:** Do **not** create a new chapter unless the prompt explicitly requests it. Find the best existing home.
-3. **Update Glossary:** Always check and update `packages/manuscript/the-bible-of-mx/Glossary.md` with any new terms discovered or definitions created during the process.
+3. **Update Glossary:** Always check and update `packages/bible/Glossary.md` with any new terms discovered or definitions created during the process.
 
 ---
 

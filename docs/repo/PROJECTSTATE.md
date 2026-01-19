@@ -6,10 +6,14 @@
 
 ### Monorepo Structure
 
-This repository is now structured as a monorepo with npm workspaces:
+This repository is now structured as a monorepo with npm workspaces and multiple git submodules:
 
-- **`packages/manuscript/`** - Book manuscript and materials (contains git submodule at `packages/manuscript/the-bible-of-mx/`)
-- **`packages/web-audit-suite/`** - Web analysis tool
+- **`packages/bible/`** - "The Invisible Users" full book (git submodule)
+- **`packages/dont-make-ai-think/`** - "Don't Make AI Think" slim guide (git submodule)
+- **`packages/shared-appendices/`** - Shared appendices A-L (git submodule)
+- **`packages/shared-code-examples/`** - AI-friendly code patterns (git submodule)
+- **`outputs/`** - Generated content: blogs, PDFs, presentations (git submodule, PRIVATE)
+- **`packages/web-audit-suite/`** - Web analysis tool (NOT a submodule)
 - **Root level** - Shared tooling, scripts, and documentation
 
 All projects share dependency management and build scripts via npm workspaces.
@@ -165,17 +169,24 @@ All projects share dependency management and build scripts via npm workspaces.
   - **Business Leaders & Decision Makers:** CTOs, CMOs, executives
   - **Partners & Investors:** Agencies and investors
   - **Reading Paths:** Business Leaders, Product Owners, Content Managers/Strategists, UX Designers/Information Architects, Developers, Agent System Developers, Small Business Owners
-- **Structure:** Manuscript maintained in separate repository as git submodule
-  - **Submodule:** `packages/manuscript/the-bible-of-mx/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
-  - Tracks main branch for easy updates
-  - Core chapters (1-13), preface, executive summary in submodule
-  - All twelve appendices (implementation guides, pattern references, resource directory, DDT reference, pipeline failure case study, industry developments, common page patterns, proposed AI metadata patterns) in submodule
-  - Code examples (agent-friendly-starter-kit/, code-examples/) in submodule
-  - Blog materials (blog/blog.md, blog/blog.svg, blog/AI-Native.blog) in submodule
-  - Presentation materials (talks/members-call/) in submodule
-  - Claude Code configuration in main repository (.claude/ with hooks, commands, three skills: /step-commit, /md-fix, /news)
-  - Documentation (README.md, CLAUDE.md) in submodule with comprehensive guidance
-  - Planning files (book-plan.md, book-svg-style.md) remain at main repository root level
+- **Structure:** Manuscript maintained in separate repositories as git submodules
+  - **Bible Submodule:** `packages/bible/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-bible>
+    - Core chapters (0-13), preface, executive summary, Glossary
+    - Illustrations (SVG and PNG book images)
+  - **Slim Guide Submodule:** `packages/dont-make-ai-think/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-slim>
+    - Focused 10-chapter guide for developers
+  - **Shared Appendices Submodule:** `packages/shared-appendices/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-appendices>
+    - All twelve appendices (A-L) shared across all book variants
+    - Web directory with HTML versions
+  - **Code Examples Submodule:** `packages/shared-code-examples/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-code-examples>
+    - Agent-friendly starter kit (good/ vs bad/ patterns)
+    - Platform configurations and validation tools
+  - **Outputs Submodule (PRIVATE):** `outputs/` → <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-outputs>
+    - Generated blogs, presentations, marketing materials
+    - Organized by book (bible/, dont-make-ai-think/)
+  - **Main Repository:** Claude Code configuration (.claude/ with hooks, commands, three skills: /step-commit, /md-fix, /news)
+  - **Documentation:** README.md, CLAUDE.md in main repository with comprehensive guidance
+  - **Planning files:** book-plan.md, book-svg-style.md in manuscript submodules
 - **PDF Generation:**
   - **A4 Format** (`pdf:generate`) - Professional review copy with footer "Review Copy not for publication/distribution".
   - **Kindle Format** (`pdf:kindle`) - 6"×9" KDP-ready paperback format, production-ready (no review footer)
@@ -183,7 +194,7 @@ All projects share dependency management and build scripts via npm workspaces.
   - **HTML Format** (`pdf:html`) - Browser-printable HTML version
   - **Appendix HTML** (`pdf:appendix`) - Individual HTML pages with automatic Chapter 11 pattern enhancement, generates 18 files (index.html, appendix-index.html, news.html, faq.html, llms.txt, sitemap.xml, 12 appendix pages A-L).
 - **Web Pages:**
-  - **Location** (`packages/manuscript/the-bible-of-mx/web/`) - Contains both manually maintained files and generated appendices
+  - **Location** (`packages/shared-appendices/web/`) - Contains both manually maintained files and generated appendices
   - **News** (`web/news.html`) - Project news and updates (manually maintained)
   - **FAQ** (`web/faq.html`) - Frequently asked questions about the book and project (manually maintained)
   - **For Reviewers** (`web/for-reviewers.html`) - Reviewer acknowledgment page with NDA agreement and download access
@@ -228,14 +239,16 @@ All projects share dependency management and build scripts via npm workspaces.
 ### Repository Structure
 
 - **Main Repository:** <https://github.com/ddttom/invisible-users>
-  - Contains Web Audit Suite, documentation, sales materials
-  - Manuscript integrated as git submodule
-- **Manuscript Repository:** <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript>
-  - Public repository for GitHub Actions access
-  - Independent manuscript versioning and CI
-  - Tracked as submodule at `packages/manuscript/the-bible-of-mx/`
+  - Contains Web Audit Suite, documentation, sales materials, Claude Code configuration
+  - Five manuscript repositories integrated as git submodules
+- **Submodule Repositories:**
+  - **Bible:** <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-bible>
+  - **Slim Guide:** <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-slim>
+  - **Appendices:** <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-appendices>
+  - **Code Examples:** <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-code-examples>
+  - **Outputs (PRIVATE):** <https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-outputs>
 - **Submodule Initialization:** `git submodule update --init --recursive`
-- **Submodule Updates:** `git submodule update --remote packages/manuscript/the-bible-of-mx`
+- **Submodule Updates:** `git submodule update --remote` (updates all submodules)
 
 ### Development Environment
 

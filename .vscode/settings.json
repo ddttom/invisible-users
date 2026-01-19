@@ -95,7 +95,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
 
   // Live Server settings for HTML appendices
-  "liveServer.settings.root": "/packages/manuscript/the-bible-of-mx/web",
+  "liveServer.settings.root": "/packages/shared-appendices/web",
   "liveServer.settings.port": 8080,
 
   // Prettier settings

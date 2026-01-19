@@ -171,7 +171,7 @@ Digital Domain Technologies Ltd
 ## Appendix: Resources
 
 Blog post: "Fix Your Content, Not Your CDN"
-Location: packages/manuscript/the-bible-of-mx/blog/geo-blog.md
+Location: outputs/bible/blogs/geo-blog.md
 Summary: Examines LLM Optimizer as case study, argues for fixing root causes
 
 Book: "The Invisible Users: Designing the Web for AI Agents and Everyone Else"

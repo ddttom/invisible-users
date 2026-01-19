@@ -29,7 +29,7 @@ GEMINI.md
 AGENTS.md
 
 # PNG illustrations (generated from SVG)
-packages/manuscript/the-bible-of-mx/manuscripts/bible/illustrations/*.png
+packages/bible/illustrations/*.png
 
 # Generated book files
 the-bible/

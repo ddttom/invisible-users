@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Template for adding narrative-style news entries to `packages/manuscript/the-bible-of-mx/marketing/blog/book-updates.md`.
+Template for adding narrative-style news entries to `outputs/bible/blogs/book-updates.md`.
 
 ## Tone and Style
 

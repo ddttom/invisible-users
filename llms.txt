@@ -19,42 +19,46 @@ Two integrated projects: A book manuscript examining how modern web design optim
 
 ## Book Chapters
 
-Complete 11-chapter manuscript examining web design for both humans and AI agents:
+Complete 14-chapter manuscript examining web design for both humans and AI agents:
 
-- [Preface - Author's Journey](packages/manuscript/the-bible-of-mx/preface.md): Book introduction with personal narrative, usage guide, acknowledgements, and author bio (~1,700 words)
-- [Chapter 1 - What You Will Learn](packages/manuscript/the-bible-of-mx/chapter-01-what-you-will-learn.md): Introduction and the accessibility connection (~3,200 words)
-- [Chapter 2 - The Invisible Failure](packages/manuscript/the-bible-of-mx/chapter-02-the-invisible-failure.md): When websites break for AI agents (~4,500 words)
-- [Chapter 3 - The Architectural Conflict](packages/manuscript/the-bible-of-mx/chapter-03-the-architectural-conflict.md): How modern web architecture creates the problem (~4,150 words)
-- [Chapter 4 - The Business Reality](packages/manuscript/the-bible-of-mx/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce with ROI assessment framework (~7,350 words)
-- [Chapter 5 - The Content Creator's Dilemma](packages/manuscript/the-bible-of-mx/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~5,600 words)
-- [Chapter 6 - The Security Maze](packages/manuscript/the-bible-of-mx/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~4,000 words)
-- [Chapter 7 - The Legal Landscape](packages/manuscript/the-bible-of-mx/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~4,400 words)
-- [Chapter 8 - The Human Cost](packages/manuscript/the-bible-of-mx/chapter-08-the-human-cost.md): The digital divide implications (~3,650 words)
-- [Chapter 9 - Designing for Both](packages/manuscript/the-bible-of-mx/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,400 words)
-- [Chapter 10 - Technical Advice](packages/manuscript/the-bible-of-mx/chapter-10-technical-advice.md): Implementation code, testing strategies, and practical tools (~9,650 words)
-- [Chapter 11 - What Agent Creators Must Build](packages/manuscript/the-bible-of-mx/chapter-11-what-agent-creators-must-build.md): Implementation patterns, validation layers, confidence scoring, and guardrails for reliable agent systems including incomplete data detection (~5,000 words)
+- [Chapter 0 - What Are AI Agents?](packages/bible/chapters/chapter-00-what-are-ai-agents.md): Introduction to four agent types with technical capabilities and disability equivalents
+- [Preface - Author's Journey](packages/bible/preface.md): Book introduction with personal narrative, usage guide, acknowledgements, and author bio (~1,700 words)
+- [Chapter 1 - What You Will Learn](packages/bible/chapters/chapter-01-what-you-will-learn.md): Introduction and the accessibility connection (~3,200 words)
+- [Chapter 2 - The Invisible Failure](packages/bible/chapters/chapter-02-the-invisible-failure.md): When websites break for AI agents (~4,500 words)
+- [Chapter 3 - The Architectural Conflict](packages/bible/chapters/chapter-03-the-architectural-conflict.md): How modern web architecture creates the problem (~4,150 words)
+- [Chapter 4 - The Business Reality](packages/bible/chapters/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce with ROI assessment framework (~7,350 words)
+- [Chapter 5 - The Content Creator's Dilemma](packages/bible/chapters/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~5,600 words)
+- [Chapter 6 - The Security Maze](packages/bible/chapters/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~4,000 words)
+- [Chapter 7 - The Legal Landscape](packages/bible/chapters/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~4,400 words)
+- [Chapter 8 - The Human Cost](packages/bible/chapters/chapter-08-the-human-cost.md): The digital divide implications (~3,650 words)
+- [Chapter 9 - Designing for Both](packages/bible/chapters/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,400 words)
+- [Chapter 10 - Generative Engine Optimization](packages/bible/chapters/chapter-10-generative-engine-optimization.md): Bridging commercial urgency and technical implementation (~3,113 words)
+- [Chapter 11 - Technical Advice](packages/bible/chapters/chapter-11-technical-advice.md): Implementation code, testing strategies, and practical tools (~9,650 words)
+- [Chapter 12 - What Agent Creators Must Build](packages/bible/chapters/chapter-12-what-agent-creators-must-build.md): Implementation patterns, validation layers, confidence scoring, and guardrails (~5,000 words)
+- [Chapter 13 - The Future](packages/bible/chapters/chapter-13-the-future.md): Looking ahead at emerging patterns and standards
 
 ## Practical Implementation Guides
 
 Comprehensive guides and reference materials for developers:
 
-- [Executive Summary](packages/manuscript/the-bible-of-mx/executive-summary.md): Condensed overview of the book's key insights and arguments (~1,100 words)
+- [Executive Summary](packages/bible/executive-summary.md): Condensed overview of the book's key insights and arguments (~1,100 words)
 
 ### Manuscript Appendices
 
-Reference materials integrated into the manuscript as appendices:
+Reference materials integrated into the manuscript as appendices (shared across all book variants):
 
-- [Appendix A - Implementation Cookbook](packages/manuscript/the-bible-of-mx/appendix-implementation-cookbook.md): Quick-reference recipes for common AI agent compatibility patterns with copy-paste implementations (~1,873 words). Includes persistent error messages, explicit state attributes, semantic form fields, and progressive enhancement patterns.
-- [Appendix B - Battle-Tested Lessons](packages/manuscript/the-bible-of-mx/appendix-battle-tested-lessons.md): Real-world learnings from implementing AI agent compatibility patterns in production (~1,796 words). Covers mistakes to avoid, solutions that work, and practical insights from production deployments.
-- [Appendix C - Web Audit Suite User Guide](packages/manuscript/the-bible-of-mx/appendix-web-audit-suite-guide.md): Complete guide to auditing websites for AI agent compatibility using Web Audit Suite (~2,010 words). Includes installation, usage examples, report interpretation, and CI/CD integration.
-- [Appendix D - AI-Friendly HTML Guide](packages/manuscript/the-bible-of-mx/appendix-ai-friendly-html-guide.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~9,050 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
-- [Appendix E - AI Patterns Quick Reference](packages/manuscript/the-bible-of-mx/appendix-ai-patterns-quick-reference.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,300 words). Includes data attribute reference, form field names, and practical code examples.
-- [Appendix F - Implementation Roadmap](packages/manuscript/the-bible-of-mx/appendix-implementation-roadmap.md): Priority-based implementation roadmap from critical quick wins to advanced features (~2,750 words). Organized by priority levels rather than time estimates.
-- [Appendix G - Resource Directory](packages/manuscript/the-bible-of-mx/appendix-resource-directory.md): Curated directory of 150+ resources organized by category (~1,950 words). Includes documentation, tools, specifications, and case studies.
-- [Appendix H - Live llms.txt](packages/manuscript/the-bible-of-mx/appendix-h-live-llms.md): Markdown wrapper demonstrating llms.txt example with Digital Domain Technologies reference (20 curated links). Shows what a complete llms.txt file looks like in practice.
-- [Appendix I - Pipeline Failure Case Study](packages/manuscript/the-bible-of-mx/appendix-i-pipeline-failure-case-study.md): Complete £203k cruise pricing error analysis referenced in Chapter 11 (~2,500 words). Demonstrates how agents fail when websites lack clear structured data and agents lack validation layers.
-- [Appendix J - Industry Developments](packages/manuscript/the-bible-of-mx/appendix-j-industry-developments.md): Latest verified news and updates about AI agents, commerce platforms, and industry developments. Regularly updated with sources.
-- [Appendix K - Common Page Patterns](packages/manuscript/the-bible-of-mx/appendix-k-common-page-patterns.md): Production-ready HTML templates demonstrating AI-friendly patterns for common page types (~14,200 words). Complete examples for home, about, contact, sales, collection, article, FAQ, and form pages.
+- [Appendix A - Implementation Cookbook](packages/shared-appendices/appendix-a-implementation-cookbook.md): Quick-reference recipes for common AI agent compatibility patterns with copy-paste implementations (~1,873 words). Includes persistent error messages, explicit state attributes, semantic form fields, and progressive enhancement patterns.
+- [Appendix B - Battle-Tested Lessons](packages/shared-appendices/appendix-b-battle-tested-lessons.md): Real-world learnings from implementing AI agent compatibility patterns in production (~1,796 words). Covers mistakes to avoid, solutions that work, and practical insights from production deployments.
+- [Appendix C - Web Audit Suite User Guide](packages/shared-appendices/appendix-c-web-audit-suite-guide.md): Complete guide to auditing websites for AI agent compatibility using Web Audit Suite (~2,010 words). Includes installation, usage examples, report interpretation, and CI/CD integration.
+- [Appendix D - AI-Friendly HTML Guide](packages/shared-appendices/appendix-d-ai-friendly-html-guide.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~9,050 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
+- [Appendix E - AI Patterns Quick Reference](packages/shared-appendices/appendix-e-ai-patterns-quick-reference.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,300 words). Includes data attribute reference, form field names, and practical code examples.
+- [Appendix F - Implementation Roadmap](packages/shared-appendices/appendix-f-implementation-roadmap.md): Priority-based implementation roadmap from critical quick wins to advanced features (~2,750 words). Organized by priority levels rather than time estimates.
+- [Appendix G - Resource Directory](packages/shared-appendices/appendix-g-resource-directory.md): Curated directory of 150+ resources organized by category (~1,950 words). Includes documentation, tools, specifications, and case studies.
+- [Appendix H - Live llms.txt](packages/shared-appendices/appendix-h-live-llms.md): Markdown wrapper demonstrating llms.txt example with Digital Domain Technologies reference (20 curated links). Shows what a complete llms.txt file looks like in practice.
+- [Appendix I - Pipeline Failure Case Study](packages/shared-appendices/appendix-i-pipeline-failure-case-study.md): Complete £203k cruise pricing error analysis referenced in Chapter 12 (~2,500 words). Demonstrates how agents fail when websites lack clear structured data and agents lack validation layers.
+- [Appendix J - Industry Developments](packages/shared-appendices/appendix-j-industry-developments.md): Latest verified news and updates about AI agents, commerce platforms, and industry developments. Regularly updated with sources.
+- [Appendix K - Common Page Patterns](packages/shared-appendices/appendix-k-common-page-patterns.md): Production-ready HTML templates demonstrating AI-friendly patterns for common page types (~14,200 words). Complete examples for home, about, contact, sales, collection, article, FAQ, and form pages.
+- [Appendix L - Proposed AI Metadata Patterns](packages/shared-appendices/appendix-l-proposed-ai-metadata-patterns.md): Formal W3C-style proposal document for experimental AI metadata patterns with rationale, use cases, and adoption framework.
 
 ### Web Appendices
 
@@ -69,17 +73,17 @@ Each appendix page includes table of contents, syntax highlighting, and navigati
 
 ### Code Examples
 
-- [Agent-Friendly Starter Kit](packages/manuscript/the-bible-of-mx/agent-friendly-starter-kit/): Production-ready code examples demonstrating good vs bad patterns for AI agent compatibility
-- [Code Examples](packages/manuscript/the-bible-of-mx/code-examples/): Platform configurations, validation tools, and monitoring examples
+- [Agent-Friendly Starter Kit](packages/shared-code-examples/agent-friendly-starter-kit/): Production-ready code examples demonstrating good vs bad patterns for AI agent compatibility
+- [Code Examples](packages/shared-code-examples/examples/): Platform configurations, validation tools, and monitoring examples
 - Platform Configurations: Apache, Nginx, Next.js, WordPress, Adobe EDS, Static Sites
 - Validation Tools: Development and production verification scripts
 - Monitoring Examples: Server log analysis and analytics tracking
 
 ### Reference Materials
 
-- [Glossary](packages/manuscript/the-bible-of-mx/Glossary.md): 60+ technical terms with cross-references
-- [Implementation Roadmap](packages/manuscript/the-bible-of-mx/appendix-implementation-roadmap.md): Priority-based implementation roadmap
-- [Resource Directory](packages/manuscript/the-bible-of-mx/appendix-resource-directory.md): 150+ curated resources organized by category
+- [Glossary](packages/bible/Glossary.md): 60+ technical terms with cross-references
+- [Implementation Roadmap](packages/shared-appendices/appendix-f-implementation-roadmap.md): Priority-based implementation roadmap
+- [Resource Directory](packages/shared-appendices/appendix-g-resource-directory.md): 150+ curated resources organized by category
 
 ## Key Concepts
 
