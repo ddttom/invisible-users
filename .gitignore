@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+# VS Code workspace settings - commit recommended config, ignore personal settings
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# symlinks for AI tools
+.agents/
+GEMINI.md
+AGENTS.md
+
+# PNG illustrations (generated from SVG)
+packages/manuscript/the-bible-of-mx/manuscripts/bible/illustrations/*.png
+
+# Generated book files
+the-bible/
+dont/
+
+# Generated appendix HTML build templates (temporary)
+scripts/appendix-nav-footer.html
+scripts/appendix-index-template.md

@@ -1,0 +1,173 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // Book/Manuscript tasks
+    {
+      "label": "Book: Word Count",
+      "type": "shell",
+      "command": "npm run wordcount",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Book: Generate PDF",
+      "type": "shell",
+      "command": "npm run pdf:generate",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Book: Generate Kindle PDF",
+      "type": "shell",
+      "command": "npm run pdf:kindle",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Book: Generate HTML Appendices",
+      "type": "shell",
+      "command": "npm run pdf:appendix",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Book: Generate Illustrations",
+      "type": "shell",
+      "command": "npm run illustrations:generate",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+
+    // Markdown linting
+    {
+      "label": "Markdown: Lint",
+      "type": "shell",
+      "command": "npm run lint:markdown",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Markdown: Lint and Fix",
+      "type": "shell",
+      "command": "npm run lint:markdown:fix",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+
+    // Web Audit Suite tasks
+    {
+      "label": "Web Audit Suite: Start",
+      "type": "shell",
+      "command": "npm run audit:start",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Web Audit Suite: Start with URL",
+      "type": "shell",
+      "command": "npm run audit:start -- -s ${input:sitemapUrl}",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Web Audit Suite: Test",
+      "type": "shell",
+      "command": "npm run audit:test",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Web Audit Suite: Lint",
+      "type": "shell",
+      "command": "npm run audit:lint",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": [
+        "$eslint-compact"
+      ]
+    },
+
+    // Git workflow tasks
+    {
+      "label": "Git: Commit and Push All",
+      "type": "shell",
+      "command": "npm run commit-push",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+
+    // Status tasks
+    {
+      "label": "Project: Show Chapter Status",
+      "type": "shell",
+      "command": "npm run status",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "sitemapUrl",
+      "type": "promptString",
+      "description": "Enter sitemap URL or website URL to audit",
+      "default": "https://example.com"
+    }
+  ]
+}
