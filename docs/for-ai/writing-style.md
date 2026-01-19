@@ -45,6 +45,7 @@ We are writing this book together.
   - **Third person** for analysis and technical explanation.
   - **First person ("I")** only for specific personal insights.
 - **Formatting:** No colons in headers. Use short dashes (-) only.
+- **No Time Estimates:** Never provide time estimates for implementation (hours, days, weeks, months). Use priority levels instead (Priority 1-4, Foundation, Ongoing). Implementation time depends on site size, team capacity, and existing infrastructure - time estimates create false expectations.
 
 ---
 
@@ -151,6 +152,11 @@ Use natural phrasing instead of academic or marketing variations.
 - **Headings:** Use ATX style (`# Heading`) only. **Never** use bold text (`**Heading**`) as a heading (prevents linting errors).
 - **Duplicate Headings:** Avoid using the exact same heading text multiple times in the same file.
 - **Lists:** Ensure blank lines surround all lists.
+- **Special Characters:** Use ASCII equivalents for box-drawing characters, symbols, and visual elements:
+  - **Box-drawing:** Use `+`, `-`, `|` instead of Unicode box characters (├ └ │ ─)
+  - **Checkmarks/crosses:** Use `[PASS]`, `[FAIL]`, or text equivalents instead of ✓ ✗
+  - **Stars/ratings:** Use text like "5 stars" instead of ★★★★★
+  - **Reason:** Unicode special characters cause font warnings in PDF generation and may not render correctly across all platforms
 
 **Alerts:**
 Use GitHub-style alerts for side notes or warnings. Do not use generic blockquotes.
@@ -688,3 +694,160 @@ These patterns add unnecessary words without adding meaning.
 - Section 5 (Forbidden Vocabulary) - Overlaps with AI vocabulary
 - Section 6 (Forbidden Constructs) - Overlaps with several patterns
 - Section 7 (Style Corrections) - Natural phrasing alternatives
+
+---
+
+## 10. AI Advocacy Positioning
+
+**Purpose:** Position the author as an AI advocate focused on practical improvements through collaboration, not as a critic pointing out AI failures or edge cases.
+
+**Core Principle:** The book genuinely praises AI technology whilst highlighting opportunities for better outcomes through better-structured inputs and appropriate guardrails.
+
+### Negative Framing to Avoid
+
+**Never use these patterns when discussing AI systems:**
+
+1. **"Break/fail" language:**
+   - "patterns that **break** AI agents"
+   - "websites **fail** for agents"
+   - "AI agents **fail** silently"
+   - "when websites **break** for AI agents"
+
+2. **"Problem/crisis" framing:**
+   - "**creates the problem**"
+   - "**threatens** existing business models"
+   - "what's **broken** and why it matters"
+   - "the **problem** is..."
+
+3. **Criticism-focused subtitles:**
+   - "How X **creates the problem**"
+   - "How AI **threatens** Y"
+   - "When websites **break** for Z"
+
+### Required AI Advocacy Elements
+
+#### 1. Explicit Advocacy Statement
+
+**Where the full template applies:**
+
+- **Required:** Chapter 1 (or Chapter 01, or any variation meaning "Introduction")
+  - Use the complete template below exactly as written
+
+**Where adapted versions appear:**
+
+- **Recommended:** Book preface, Chapter 0
+  - Adapt the message to context whilst maintaining same advocacy positioning
+- **Sales materials:** Executive summary, proposals, pitches
+  - Adapt to business audience whilst preserving core message
+
+**Note:** The full template below is specifically designed for Chapter 1. Other locations should adapt the message to their context whilst maintaining the same advocacy positioning.
+
+**Standard template (Chapter 1):**
+
+> I want to be clear about my stance on AI: I'm not complaining about these systems or highlighting edge cases like "How many R's in strawberry?" or users generating obvious junk. I genuinely praise/admire AI for its remarkable ability to generate coherent text that people understand. The technology has achieved something extraordinary - statistical pattern-matching that produces human-readable responses across countless domains. My focus isn't on what's wrong with AI, but on what we can do to make it work better. When creators craft proper inputs (semantic HTML, structured metadata), provide quality training data, enable effective live searches, and implement appropriate guardrails, we get dramatically better results. Hallucinations decrease. Accuracy increases. Commerce transactions complete successfully. The solution isn't to criticize AI systems - it's to recognize that better-structured inputs produce better outputs for everyone: users, agents, and businesses alike.
+
+#### 2. Opportunity Framing
+
+Use positive, opportunity-focused language:
+
+| Negative Framing | AI Advocacy Framing |
+| ---------------- | ------------------- |
+| "break/fail" | "need optimization/integration" |
+| "problem/crisis" | "opportunity/transformation" |
+| "threatens" | "transforms" |
+| "what's broken" | "what needs optimization" |
+| "how to fix it" | "how to implement solutions" |
+| "patterns that fail" | "patterns needing optimization" |
+| "invisible failures" | "integration gaps/optimization opportunities" |
+| "sites that don't work" | "sites needing optimization" |
+| "creates the problem" | "evolved separately from agent needs" |
+
+#### 3. Collaboration Emphasis
+
+Emphasize collaborative improvement:
+
+- "The opportunity lies in collaboration"
+- "When we provide well-structured inputs... results improve dramatically"
+- "Better-structured inputs produce better outputs for everyone"
+- "This is about collaboration, not criticism"
+- "AI agents become sales channels rather than extraction threats"
+
+### Examples: Before and After
+
+**Before (Negative Framing):**
+
+> The patterns that break AI agents also break humans. Modern websites fail completely for AI agents. These failures are invisible and cost businesses millions.
+
+**After (AI Advocacy):**
+
+> The patterns that need optimization for AI agents also need optimization for humans. AI agents have achieved remarkable capabilities - generating coherent responses and completing complex tasks. When we provide well-structured inputs, these powerful systems perform optimally. The convergence of AI capabilities with proper web infrastructure creates unprecedented opportunity.
+
+**Before (Problem-Focused Subtitle):**
+
+> ## How modern web architecture creates the problem
+
+**After (Opportunity-Focused Subtitle):**
+
+> ## How modern web architecture evolved separately from agent needs
+
+**Before (Crisis Language):**
+
+> Chapter 5: How AI consumption threatens existing business models
+
+**After (Transformation Language):**
+
+> Chapter 5: How AI-mediated discovery transforms existing business models
+
+### Application Checklist
+
+When writing or reviewing content, ensure:
+
+- [ ] **Introduction sections** include explicit advocacy statement
+- [ ] **Chapter/section titles** use opportunity language (not problem/crisis/threat)
+- [ ] **Opening paragraphs** emphasize AI capabilities before discussing integration gaps
+- [ ] **Tone throughout** positions issues as optimization opportunities
+- [ ] **Solutions framing** emphasizes collaboration over criticism
+- [ ] **Business case** presents AI agents as potential partners/channels, not threats
+- [ ] **Language consistency** follows the transformation table above
+
+### Where This Applies
+
+**Required locations:**
+
+1. **Book Preface** - Set advocacy tone from the start
+2. **Chapter 0 (What Are AI Agents?)** - Establish positioning in anchor chapter
+3. **Chapter 1 (Introduction)** - Reinforce advocacy in main introduction
+4. **Chapter titles and subtitles** - Use throughout for consistency
+5. **Sales materials** - Executive summaries, proposals, pitches
+
+**Recommended locations:**
+
+1. **Chapter openings** - Especially technical chapters (Ch 10-13)
+2. **Complex discussions** - When analyzing problems/gaps
+3. **Conclusion sections** - End on collaboration note
+
+### Detection and Correction
+
+**When reviewing content, flag:**
+
+1. **Negative verbs about AI:** break, fail, threaten, crisis
+2. **Problem-focused headings:** Starts with "The Problem" or "How X creates..."
+3. **Missing advocacy statements** in introduction sections
+4. **Criticism tone** without balancing AI capability recognition
+5. **Opportunity language missing** in solutions sections
+
+**Correction process:**
+
+1. Add explicit advocacy statement if missing
+2. Replace negative framing with opportunity framing (use table)
+3. Add capability recognition before discussing gaps
+4. Emphasize collaboration in solutions
+5. Update headings to use optimization/transformation language
+
+### Related Sections
+
+- **Section 3 (Core Writing Rules)** - Tone and voice guidance
+- **Section 9 (AI Pattern Detection)** - Avoiding mechanical writing
+- **Section 5 (Forbidden Vocabulary)** - Already prohibits "robust," "leverage" often used in promotional AI hype
+
+**Key distinction:** AI Pattern Detection (Section 9) removes **mechanical AI-generated writing**. AI Advocacy Positioning (Section 10) ensures **human-written content** doesn't criticize AI technology whilst exploring integration challenges.

@@ -26,6 +26,7 @@ The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-styl
 - **Concise, calm, concrete** tone
 - **Active voice** default, third person for analysis
 - **No colons** in headings
+- **No time estimates** (hours, days, weeks, months) - use priority levels instead
 - **Forbidden vocabulary** must never be used
 - **Forbidden constructs** must be avoided
 
@@ -120,18 +121,29 @@ For each file provided:
    - Colons in headings
    - "The..." prefix (check exceptions)
    - Bold text used as heading (MD036)
-9. **Check markdown quality**
-   - Code block language tags
-   - Duplicate headings
-   - Bare URLs
-   - List spacing
-   - Table formatting
-10. **Check AI patterns** (Section 9)
-   - Content patterns (significance inflation, promotional language, vague attributions)
-   - Language/grammar patterns (AI vocabulary, copula avoidance, synonym cycling)
-   - Style patterns (em dash overuse, boldface, emojis, curly quotes)
-   - Communication patterns (chatbot artifacts, disclaimers, sycophantic tone)
-   - Filler/hedging patterns (verbose constructions, excessive hedging)
+9. **Check for time estimates**
+   - Hours (2 hours, 10 hours, 85 hours)
+   - Days (3 days, 5 days)
+   - Weeks (Week 1, Weeks 2-3, 12 weeks)
+   - Months (3 months, 6-12 months when referring to implementation time)
+   - Replace with priority levels (Priority 1-4, Foundation, Ongoing)
+10. **Check markdown quality**
+    - Code block language tags
+    - Duplicate headings
+    - Bare URLs
+    - List spacing
+    - Table formatting
+11. **Check special characters** (Section 8 - Markdown Mechanics)
+    - Unicode box-drawing characters (├ └ │ ─) → Replace with ASCII (`+`, `-`, `|`)
+    - Checkmarks/crosses (✓ ✗) → Replace with `[PASS]`, `[FAIL]`
+    - Stars/ratings (★★★★★) → Replace with text ("5 stars")
+    - Reason: Prevents PDF font warnings and ensures cross-platform compatibility
+12. **Check AI patterns** (Section 9)
+    - Content patterns (significance inflation, promotional language, vague attributions)
+    - Language/grammar patterns (AI vocabulary, copula avoidance, synonym cycling)
+    - Style patterns (em dash overuse, boldface, emojis, curly quotes)
+    - Communication patterns (chatbot artifacts, disclaimers, sycophantic tone)
+    - Filler/hedging patterns (verbose constructions, excessive hedging)
 
 **What I'll do:** Build comprehensive issue list for each file
 
@@ -147,6 +159,7 @@ Categorize all findings:
 - Forbidden constructs found
 - Colons in headings
 - Bold text as headings (MD036)
+- Time estimates present (hours, days, weeks, months)
 
 **Important (Should Fix):**
 
@@ -176,6 +189,7 @@ Categorize all findings:
 - Bare URLs
 - Table formatting
 - List spacing
+- Unicode special characters (box-drawing, checkmarks, stars)
 
 **What I'll do:** Sort issues by priority and line number
 
@@ -437,6 +451,45 @@ Line 89: American spelling detected
 Fix: "We need to optimise the colour scheme."
 ```
 
+### Time Estimate Check
+
+**Method:** Pattern matching for time-based implementation estimates
+
+**Why forbidden:** Implementation time depends on site size, team capacity, and existing infrastructure. Time estimates create false expectations and don't apply universally. Use priority levels instead.
+
+**Patterns to detect:**
+
+- Hours: `\b\d+(-\d+)?\s*hours?\b` (2 hours, 10 hours, 85-115 hours)
+- Days: `\b\d+\s*days?\b` (3 days, 5 days)
+- Weeks: `\b(Week|Weeks)\s*\d+(-\d+)?\b` (Week 1, Weeks 2-3, 12 weeks)
+- Months: `\b\d+(-\d+)?\s*months?\b` (when referring to implementation time)
+- Time phrases: `Time investment:`, `Expected time:`, `Duration:`
+
+**Replacement guidance:**
+
+- Replace with priority levels: Priority 1-4, Foundation, Ongoing
+- Use qualitative descriptions: "quick", "substantial", "ongoing"
+- Focus on dependencies, not duration
+
+**Examples:**
+
+```markdown
+Time investment: 28 hours
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Line 194: Time estimate detected
+Fix: Remove line or replace with "Priority 1: Critical Quick Win"
+
+Phase 1: Quick Wins (Weeks 2-3)
+                     ^^^^^^^^^^^
+Line 111: Time estimate in heading
+Fix: "Phase 1: Quick Wins"
+
+Expected results after 2-3 weeks
+                        ^^^^^^^^^
+Line 197: Time estimate detected
+Fix: "Expected results:" (remove time reference)
+```
+
 ### Voice Check (Active vs Passive)
 
 **Method:** Passive voice pattern matching
@@ -547,6 +600,100 @@ According to Gartner's 2024 report, adoption increased 40% last year."
 ```
 
 **Priority:** Treat as "Should Fix" (same level as Style improvements) unless Communication Patterns detected (then Critical)
+
+### AI Advocacy Positioning Check
+
+**Method:** Pattern matching for negative framing about AI systems
+
+**Purpose:** Ensure the book positions the author as an AI advocate focused on practical improvements through collaboration, not as a critic pointing out AI failures.
+
+**Patterns to detect (negative framing):**
+
+1. **"Break/fail" language about AI:**
+   - "patterns that **break** AI agents"
+   - "websites **fail** for agents"
+   - "AI agents **fail** silently"
+   - "when websites **break** for AI agents"
+
+2. **"Problem/crisis" framing:**
+   - "**creates the problem**"
+   - "**threatens** existing business models"
+   - "what's **broken** and why it matters"
+   - "the **problem** is..."
+
+3. **Negative chapter subtitles:**
+   - "How X **creates the problem**"
+   - "How AI **threatens** Y"
+   - "When websites **break** for Z"
+
+**Required AI advocacy elements:**
+
+1. **Explicit advocacy statement:**
+
+   **Where the full template applies:**
+   - **Required:** Chapter 1 (or Chapter 01, or any variation meaning "Introduction")
+   - Use the complete template below exactly as written
+
+   **Where adapted versions appear:**
+   - **Recommended:** Book preface, Chapter 0
+   - **Sales materials:** Executive summary, proposals, pitches
+   - Adapt to context whilst maintaining same advocacy positioning
+
+   **Standard template (Chapter 1):**
+
+   ```markdown
+   I want to be clear about my stance on AI: I'm not complaining about
+   these systems or highlighting edge cases. I genuinely praise/admire AI
+   for its remarkable ability to generate coherent text that people understand.
+   The technology has achieved something extraordinary...
+   ```
+
+2. **Opportunity framing** instead of problem framing:
+
+   | Negative Framing | AI Advocacy Framing |
+   | ---------------- | ------------------- |
+   | "break/fail" | "need optimization/integration" |
+   | "problem/crisis" | "opportunity/transformation" |
+   | "threatens" | "transforms" |
+   | "what's broken" | "what needs optimization" |
+   | "how to fix it" | "how to implement solutions" |
+   | "patterns that fail" | "patterns needing optimization" |
+   | "invisible failures" | "integration gaps/optimization opportunities" |
+   | "sites that don't work" | "sites needing optimization" |
+   | "creates the problem" | "evolved separately from agent needs" |
+
+3. **Collaboration emphasis:**
+   - "The opportunity lies in collaboration"
+   - "When we provide well-structured inputs... results improve"
+   - "Better-structured inputs produce better outputs for everyone"
+
+**Detection examples:**
+
+```markdown
+The patterns that break AI agents are the same...
+                 ^^^^^
+Line 9: Negative framing about AI
+Fix: "The patterns that need optimization for AI agents are the same..."
+
+## How modern web architecture creates the problem
+                                ^^^^^^^^^^^^^^^^^
+Line 5: Problem-focused chapter subtitle
+Fix: "## How modern web architecture evolved separately from agent needs"
+
+I've spent nine chapters explaining what's broken and why it matters.
+                                            ^^^^^^
+Line 9: Negative framing
+Fix: "I've spent nine chapters explaining what needs optimization and why it creates opportunity."
+```
+
+**Required checks:**
+
+1. **Introduction/opening sections** - Should include advocacy statement
+2. **Chapter subtitles** - Should use opportunity/optimization language
+3. **Section headings** - Should avoid "problem/crisis/threat" framing
+4. **Tone throughout** - Should emphasize collaboration over criticism
+
+**Priority:** Important (Should Fix) - This is a book-wide positioning requirement
 
 ## HTML Content Handling
 
