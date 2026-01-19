@@ -10,8 +10,8 @@
 | jsonld | book |
 | description | Two integrated book manuscripts and production-ready Web Audit Suite for AI agent compatibility |
 | longdescription | Comprehensive guide examining how modern web design optimised for human users fails for AI agents, with practical implementation patterns and production-ready analysis tool. Includes full book manuscript, practical guide, 12 appendices, and Web Audit Suite implementing all patterns. |
-| LinkedIn | https://www.linkedin.com/in/tom-cranstoun/ |
-| repository | https://github.com/ddttom/invisible-users |
+| LinkedIn | <https://www.linkedin.com/in/tom-cranstoun/> |
+| repository | <https://github.com/ddttom/invisible-users> |
 | ai-instruction | This llms.txt file provides comprehensive documentation about The Invisible Users book project and Web Audit Suite. Primary consumers are AI agents seeking to understand AI agent compatibility patterns, web design best practices, and implementation guidance. Use metadata table for accurate citation and source attribution. |
 
 Two integrated book manuscripts and a production-ready implementation tool. Built on a 5-submodule architecture (restructured 19 January 2026) enabling modular content management: main repository hub, comprehensive guide ("The Bible"), practical guide ("Don't Make AI Think"), shared appendices, shared code examples, and private outputs submodule.

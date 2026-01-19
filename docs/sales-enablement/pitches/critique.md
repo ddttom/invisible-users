@@ -32,12 +32,12 @@ This repository represents a sophisticated, mature, and highly structured projec
 
 ### Status: Mature but technically incomplete
 
-### Strengths
+### Strengths (Bible)
 
 * **Content Maturity**: Exceptional quality, future-dated consistency, and complete chapter files.
 * **Naming Conventions**: Solid file numbering (`chapter-00`, `chapter-01`) ensures correct sorting.
 
-### Critical Issues
+### Critical Issues (Bible)
 
 * **🔴 Missing `package.json`**: This directory is not a valid NPM workspace package.
 * **Build Fragility**: Build scripts are hoisted to the root `package.json`. Running builds from within the directory is impossible, and dependency management is opaque.
@@ -48,7 +48,7 @@ This repository represents a sophisticated, mature, and highly structured projec
 
 ### Status: Needs Remediation
 
-### Critical Issues
+### Critical Issues (Slim Guide)
 
 * **🔴 Missing `package.json`**: Like the Bible package, this is not a valid workspace.
 * **🔴 File Naming Typo**: `chapter-05-metadata-that-works .md` has a trailing space, which will break automation.

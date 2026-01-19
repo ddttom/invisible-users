@@ -247,7 +247,7 @@ After (has a pulse):
 
 These patterns artificially inflate significance, add promotional language, or rely on vague attributions.
 
-#### 1. Undue Emphasis on Significance, Legacy, and Broader Trends
+### 1. Undue Emphasis on Significance, Legacy, and Broader Trends
 
 **Words to watch:** stands/serves as, is a testament/reminder, vital/significant/key role/moment, reflects broader, symbolising its ongoing/enduring/lasting, contributing to the, setting the stage for, marking/shaping the, represents/marks a shift, key turning point, evolving landscape, focal point, indelible mark, deeply rooted
 
@@ -265,7 +265,7 @@ These patterns artificially inflate significance, add promotional language, or r
 
 ---
 
-#### 2. Undue Emphasis on Notability and Media Coverage
+### 2. Undue Emphasis on Notability and Media Coverage
 
 **Words to watch:** independent coverage, local/regional/national media outlets, written by a leading expert, active social media presence
 
@@ -281,7 +281,7 @@ These patterns artificially inflate significance, add promotional language, or r
 
 ---
 
-#### 3. Superficial Analyses with -ing Endings
+### 3. Superficial Analyses with -ing Endings
 
 **Words to watch:** highlighting/underscoring/emphasising..., ensuring..., reflecting/symbolising..., contributing to..., cultivating/fostering..., encompassing..., showcasing...
 
@@ -299,7 +299,7 @@ These patterns artificially inflate significance, add promotional language, or r
 
 ---
 
-#### 4. Promotional and Advertisement-like Language
+### 4. Promotional and Advertisement-like Language
 
 **Words to watch:** boasts a, vibrant, rich (figurative), profound, nestled, in the heart of, groundbreaking (figurative), renowned, breathtaking, must-visit, stunning
 
@@ -317,7 +317,7 @@ These patterns artificially inflate significance, add promotional language, or r
 
 ---
 
-#### 5. Vague Attributions and Weasel Words
+### 5. Vague Attributions and Weasel Words
 
 **Words to watch:** Industry reports, Observers have cited, Experts argue, Some critics argue, several sources/publications (when few cited)
 
@@ -333,7 +333,7 @@ These patterns artificially inflate significance, add promotional language, or r
 
 ---
 
-#### 6. Outline-like "Challenges and Future Prospects" Sections
+### 6. Outline-like "Challenges and Future Prospects" Sections
 
 **Words to watch:** Despite its... faces several challenges..., Despite these challenges, Challenges and Legacy, Future Outlook
 
@@ -355,7 +355,7 @@ These patterns artificially inflate significance, add promotional language, or r
 
 These patterns reveal mechanical text generation through unnatural phrasing and excessive formality.
 
-#### 7. Overused "AI Vocabulary" Words
+### 7. Overused "AI Vocabulary" Words
 
 **High-frequency AI words:** Additionally, align with, key (adjective), landscape (abstract noun), valuable
 
@@ -373,7 +373,7 @@ These patterns reveal mechanical text generation through unnatural phrasing and 
 
 ---
 
-#### 8. Avoidance of "is"/"are" (Copula Avoidance)
+### 8. Avoidance of "is"/"are" (Copula Avoidance)
 
 **Words to watch:** serves as/stands as/marks/represents [a], boasts/features/offers [a]
 
@@ -389,7 +389,7 @@ These patterns reveal mechanical text generation through unnatural phrasing and 
 
 ---
 
-#### 9. Negative Parallelisms
+### 9. Negative Parallelisms
 
 **Pattern:** "Not only...but..." or "It's not just about..., it's..."
 
@@ -407,7 +407,7 @@ These patterns reveal mechanical text generation through unnatural phrasing and 
 
 ---
 
-#### 10. Rule of Three Overuse
+### 10. Rule of Three Overuse
 
 **Pattern:** Forcing ideas into groups of three to appear comprehensive
 
@@ -425,7 +425,7 @@ These patterns reveal mechanical text generation through unnatural phrasing and 
 
 ---
 
-#### 11. Elegant Variation (Synonym Cycling)
+### 11. Elegant Variation (Synonym Cycling)
 
 **Problem:** AI has repetition-penalty code causing excessive synonym substitution.
 
@@ -439,7 +439,7 @@ These patterns reveal mechanical text generation through unnatural phrasing and 
 
 ---
 
-#### 12. False Ranges
+### 12. False Ranges
 
 **Pattern:** Using "from X to Y" constructions where X and Y aren't on a meaningful scale
 
@@ -461,7 +461,7 @@ These patterns reveal mechanical text generation through unnatural phrasing and 
 
 These patterns reveal mechanical formatting choices and over-reliance on specific punctuation or emphasis.
 
-#### 13. Em Dash Overuse
+### 13. Em Dash Overuse
 
 **Problem:** LLMs use em dashes (—) more than humans, mimicking "punchy" sales writing.
 
@@ -477,7 +477,7 @@ These patterns reveal mechanical formatting choices and over-reliance on specifi
 
 ---
 
-#### 14. Overuse of Boldface
+### 14. Overuse of Boldface
 
 **Problem:** AI chatbots emphasise phrases in boldface mechanically.
 
@@ -491,7 +491,7 @@ These patterns reveal mechanical formatting choices and over-reliance on specifi
 
 ---
 
-#### 15. Inline-Header Vertical Lists
+### 15. Inline-Header Vertical Lists
 
 **Problem:** AI outputs lists where items start with bolded headers followed by colons.
 
@@ -507,7 +507,7 @@ These patterns reveal mechanical formatting choices and over-reliance on specifi
 
 ---
 
-#### 16. Title Case in Headings
+### 16. Title Case in Headings
 
 **Problem:** AI chatbots capitalise all main words in headings.
 
@@ -523,7 +523,7 @@ These patterns reveal mechanical formatting choices and over-reliance on specifi
 
 ---
 
-#### 17. Emojis
+### 17. Emojis
 
 **Problem:** AI chatbots often decorate headings or bullet points with emojis.
 
@@ -539,7 +539,7 @@ These patterns reveal mechanical formatting choices and over-reliance on specifi
 
 ---
 
-#### 18. Curly Quotation Marks
+### 18. Curly Quotation Marks
 
 **Problem:** ChatGPT uses curly quotes ("...") instead of straight quotes ("...").
 
@@ -557,7 +557,7 @@ These patterns reveal mechanical formatting choices and over-reliance on specifi
 
 These patterns reveal text written as chatbot correspondence rather than standalone content.
 
-#### 19. Collaborative Communication Artifacts
+### 19. Collaborative Communication Artifacts
 
 **Words to watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., let me know, here is a...
 
@@ -573,7 +573,7 @@ These patterns reveal text written as chatbot correspondence rather than standal
 
 ---
 
-#### 20. Knowledge-Cutoff Disclaimers
+### 20. Knowledge-Cutoff Disclaimers
 
 **Words to watch:** as of [date], Up to my last training update, Whilst specific details are limited/scarce..., based on available information...
 
@@ -589,7 +589,7 @@ These patterns reveal text written as chatbot correspondence rather than standal
 
 ---
 
-#### 21. Sycophantic/Servile Tone
+### 21. Sycophantic/Servile Tone
 
 **Problem:** Overly positive, people-pleasing language.
 
@@ -607,7 +607,7 @@ These patterns reveal text written as chatbot correspondence rather than standal
 
 These patterns add unnecessary words without adding meaning.
 
-#### 22. Filler Phrases
+### 22. Filler Phrases
 
 **Common patterns:**
 
@@ -630,7 +630,7 @@ These patterns add unnecessary words without adding meaning.
 
 ---
 
-#### 23. Excessive Hedging
+### 23. Excessive Hedging
 
 **Problem:** Over-qualifying statements.
 
@@ -644,7 +644,7 @@ These patterns add unnecessary words without adding meaning.
 
 ---
 
-#### 24. Generic Positive Conclusions
+### 24. Generic Positive Conclusions
 
 **Problem:** Vague upbeat endings.
 
