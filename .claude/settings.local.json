@@ -67,7 +67,9 @@
       "Skill(review-docs)",
       "Skill(review-docs:*)",
       "Bash(readlink:*)",
-      "Bash(du:*)"
+      "Bash(du:*)",
+      "Bash(git -C outputs log --oneline)",
+      "Bash(git -C packages/bible log --oneline)"
     ],
     "deny": [],
     "ask": [
