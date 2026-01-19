@@ -5,7 +5,7 @@
 This workspace contains MULTIPLE git repositories (1 hub + submodules):
 
 ### 1. Hub Repository (Main)
-**Location:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/`
+**Location:** `${MAIN_REPO}/` (e.g., `/path/to/invisible-users/`)
 
 **Contains:**
 - `.claude/` directory (skills, hooks, settings)
@@ -15,7 +15,7 @@ This workspace contains MULTIPLE git repositories (1 hub + submodules):
 - All project-level configuration
 
 ### 2. Submodule Repositories (Multiple)
-**Location:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/`
+**Example location:** `${MAIN_REPO}/packages/manuscript/the-bible-of-mx/`
 
 **Contains:**
 - All book chapters (`chapter-*.md`)
@@ -26,7 +26,7 @@ This workspace contains MULTIPLE git repositories (1 hub + submodules):
 **Does NOT contain:**
 - `.claude/` directory (this is only in hub repo)
 
-**Note:** Number of submodules may vary as project evolves
+**Note:** Number of submodules may vary as project evolves. Current submodules: outputs/, bible/, dont-make-ai-think/, shared-appendices/, shared-code-examples/
 
 ## Before Any File Operation
 

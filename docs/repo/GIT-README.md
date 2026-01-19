@@ -40,7 +40,7 @@ pwd
 - **Multiple submodules** (content repositories, count may change over time)
 
 ```text
-/Users/tomcranstoun/Documents/GitHub/invisible-users/           ← MAIN REPOSITORY
+${MAIN_REPO}/           ← MAIN REPOSITORY
 ├── .git/                                                        ← Main repo git data
 ├── outputs/                                                     ← SUBMODULE (private)
 │   ├── .git/                                                    ← Separate git repo
@@ -61,11 +61,13 @@ pwd
 └── [main repo files: scripts, docs, config]
 ```
 
+**Note:** Throughout this document, `${MAIN_REPO}` represents your main repository path (e.g., `/path/to/invisible-users`).
+
 ### Main Repository
 
 - **URL:** <https://github.com/ddttom/invisible-users>
 - **Contains:** Build scripts, documentation, Claude Code config, Web Audit Suite
-- **Location:** `/Users/tomcranstoun/Documents/GitHub/invisible-users/`
+- **Location:** `${MAIN_REPO}/`
 - **Role:** Orchestration and control
 
 ### Submodules (Content Repositories)
@@ -156,7 +158,7 @@ When you've only changed files outside the submodule:
 ```bash
 # 1. Check location
 pwd
-# Output: /Users/tomcranstoun/Documents/GitHub/invisible-users
+# Output: ${MAIN_REPO}
 
 # 2. Check status
 git status
@@ -176,7 +178,7 @@ When you've only changed manuscript files:
 ```bash
 # 1. Check location
 pwd
-# Output: /Users/tomcranstoun/Documents/GitHub/invisible-users
+# Output: ${MAIN_REPO}
 
 # 2. Check submodule status
 git status
@@ -200,7 +202,7 @@ When you've changed files in both locations:
 ```bash
 # 1. Check location
 pwd
-# Output: /Users/tomcranstoun/Documents/GitHub/invisible-users
+# Output: ${MAIN_REPO}
 
 # 2. Check what changed
 git status
@@ -325,10 +327,10 @@ git -C packages/manuscript/the-bible-of-mx log origin/main..HEAD --oneline
 ```bash
 # You're probably already in the submodule
 pwd
-# Output: /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/
+# Output: ${MAIN_REPO}/packages/manuscript/the-bible-of-mx/
 
 # Solution: Use absolute path or navigate back to root first
-cd /Users/tomcranstoun/Documents/GitHub/invisible-users
+cd ${MAIN_REPO}
 # Now you can navigate correctly
 ```
 

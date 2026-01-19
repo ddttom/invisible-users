@@ -36,23 +36,22 @@ fi
 if [[ "$FILE_PATH" == .claude/* ]] || [[ "$FILE_PATH" == */.claude/* ]]; then
     CURRENT_DIR=$(pwd)
 
-    # Check if we're in the submodule (path contains packages/manuscript/the-bible-of-mx/)
-    if [[ "$CURRENT_DIR" == */packages/manuscript/the-bible-of-mx* ]]; then
+    # Check if we're in a submodule (path contains /packages/ or /outputs/)
+    if [[ "$CURRENT_DIR" == */packages/* ]] || [[ "$CURRENT_DIR" == */outputs/* ]]; then
+        # Extract main repo path by removing everything after /invisible-users/
+        MAIN_REPO_PATH="${CURRENT_DIR%%/invisible-users/*}/invisible-users"
+
         echo "❌ CRITICAL ERROR: Attempting to access .claude/ from submodule directory!"
         echo ""
         echo "Current directory: $CURRENT_DIR"
         echo "Attempted path: $FILE_PATH"
         echo ""
-        echo "The .claude/ directory ONLY exists in the main repository at:"
-        echo "  /Users/tomcranstoun/Documents/GitHub/invisible-users/"
-        echo ""
-        echo "You are currently in the submodule at:"
-        echo "  /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/manuscript/the-bible-of-mx/"
+        echo "The .claude/ directory ONLY exists in the main repository."
         echo ""
         echo "Fix options:"
-        echo "  1. Use absolute path: /Users/tomcranstoun/Documents/GitHub/invisible-users/.claude/..."
-        echo "  2. Navigate to main repo: cd /Users/tomcranstoun/Documents/GitHub/invisible-users"
-        echo "  3. Use relative path from submodule: ../../../.claude/..."
+        echo "  1. Use absolute path: ${MAIN_REPO_PATH}/.claude/..."
+        echo "  2. Navigate to main repo: cd ${MAIN_REPO_PATH}"
+        echo "  3. Use relative path from submodule (adjust ../ count based on depth)"
         echo ""
 
         # BLOCK this operation - it will definitely fail
@@ -86,7 +85,9 @@ fi
 
 # Check if pwd has been run recently (within last 3 tool uses)
 # Reduced threshold from 5 to 3 for more frequent reminders
-STATE_FILE="/Users/tomcranstoun/Documents/GitHub/invisible-users/.claude/.pwd-check-state"
+# Dynamically determine main repo path
+MAIN_REPO_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+STATE_FILE="${MAIN_REPO_PATH}/.claude/.pwd-check-state"
 PWD_CHECK_THRESHOLD=3
 
 # Initialize state file if it doesn't exist
@@ -102,7 +103,7 @@ if [[ "$COUNTER" -ge "$PWD_CHECK_THRESHOLD" ]]; then
     echo "⚠️  REMINDER: Verify working directory before file operations"
     echo ""
     echo "This workspace has MULTIPLE repositories (1 hub + submodules):"
-    echo "  Hub repo:  /Users/tomcranstoun/Documents/GitHub/invisible-users/ (has .claude/)"
+    echo "  Hub repo:  ${MAIN_REPO_PATH}/ (has .claude/)"
     echo "  Submodules: Located in packages/ and outputs/ (NO .claude/ in submodules)"
     echo ""
     echo "Current directory: $(pwd)"
