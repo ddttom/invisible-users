@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-19e] - Move SVG Style Guide and Complete Manuscript Cleanup
+
+### Changed
+
+- **Moved book-svg-style.md to config/ directory**
+  - Relocated from `packages/manuscript/book-svg-style.md` to `config/book-svg-style.md`
+  - The SVG style guide is a shared configuration resource used across multiple book submodules
+  - Belongs in main repository's `config/` directory alongside `.markdownlint.json`
+
+- **Updated all references to SVG style guide**
+  - Updated CLAUDE.md: Repository structure diagrams and documentation reference list
+  - Updated docs/repo/ONBOARDING.md: Directory tree structure
+  - Updated .claude/commands/review-docs.md: Example paths updated to current submodules
+
+- **Removed packages/manuscript/ directory**
+  - Directory is now empty and has been removed
+  - Completes the cleanup of legacy manuscript structure
+
+### Notes
+
+- All references to `packages/manuscript/` have been removed or updated
+- SVG style guide is now in the correct location as a shared config file
+- Legacy manuscript structure cleanup is complete
+
 ## [2026-01-19d] - Remove Legacy Manuscript Submodule References
 
 ### Changed
@@ -21,9 +45,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Notes
 
-- The `packages/manuscript/` directory still exists and contains `book-svg-style.md` (SVG illustration style guide)
 - This cleanup removes confusion for contributors about the legacy manuscript structure
 - All git workflow examples now use current submodule paths
+- The `packages/manuscript/` directory was later removed completely in 2026-01-19e
 
 ## [2026-01-19c] - Chapter 8 Markdown Linting Fixes
 
