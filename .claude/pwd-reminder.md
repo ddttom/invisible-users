@@ -15,13 +15,19 @@ This workspace contains MULTIPLE git repositories (1 hub + submodules):
 - All project-level configuration
 
 ### 2. Submodule Repositories (Multiple)
-**Example location:** `${MAIN_REPO}/packages/manuscript/the-bible-of-mx/`
+
+**Example locations:**
+
+- `${MAIN_REPO}/packages/bible/` (full book chapters and illustrations)
+- `${MAIN_REPO}/packages/dont-make-ai-think/` (slim guide chapters)
+- `${MAIN_REPO}/packages/shared-appendices/` (appendices A-L)
+- `${MAIN_REPO}/outputs/` (generated content: blogs, PDFs, presentations)
 
 **Contains:**
-- All book chapters (`chapter-*.md`)
-- All appendices (`appendix-*.md`)
-- Blog files (`blog/`)
-- Illustrations
+
+- Book chapters (`chapter-*.md`)
+- Appendices (`appendix-*.md`)
+- Illustrations, generated content
 
 **Does NOT contain:**
 - `.claude/` directory (this is only in hub repo)

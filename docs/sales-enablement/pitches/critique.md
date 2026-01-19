@@ -19,7 +19,7 @@ The repository demonstrates a mature, well-architected separation of concerns be
 ### Architecture Notes regarding Previous Critiques
 
 * **Submodule Design**: Previous concerns about "Missing `package.json`" in submodules have been addressed by explicit documentation. The `README`s now clarify that this is an intentional design pattern for "separation of concerns," keeping content repos lightweight and dependency-free.
-* **Legacy Modules**: The `packages/manuscript` submodule is marked as `[legacy]`, correctly steering contributors to the new `bible` and `dont-make-ai-think` packages.
+* **Current Structure**: The repository now uses five active submodules (bible, dont-make-ai-think, shared-appendices, shared-code-examples, outputs) for content organization, with the main repository handling orchestration and build tooling.
 
 ## 3. Web Audit Suite
 
@@ -36,7 +36,6 @@ The `web-audit-suite` correctly positions itself as the implementation of the bo
 
 1. **Cleanup**: Fix the minor duplication in `packages/web-audit-suite/README.md`.
 2. **Refactor Documentation**: Consider moving the "Business Guide" from the `web-audit-suite` README to a dedicated sales enablement document to keep the technical README focused on developer usage.
-3. **Legacy Archival**: Consider archiving `packages/manuscript` if it is no longer active, to further reduce confusion.
 
 ## 5. Conclusion
 

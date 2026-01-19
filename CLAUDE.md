@@ -566,9 +566,13 @@ git submodule update --init --recursive
 **Updating to latest:**
 
 ```bash
-git submodule update --remote packages/manuscript/the-bible-of-mx
-git add packages/manuscript/the-bible-of-mx
-git commit -m "Update manuscript submodule to latest version"
+# Update a specific submodule
+git submodule update --remote packages/bible
+git add packages/bible
+git commit -m "Update bible submodule to latest version"
+
+# Or update all submodules
+git submodule update --remote
 ```
 
 **For comprehensive submodule workflows, see [docs/repo/GIT-README.md](docs/repo/GIT-README.md).**

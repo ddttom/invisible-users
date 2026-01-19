@@ -229,8 +229,11 @@ Each package has its own README with detailed information:
 This workspace contains multiple git repositories:
 
 1. **Main repo:** Root directory
-2. **Manuscript submodule:** `packages/manuscript/` (original manuscript source)
-3. **Outputs submodule:** `outputs/` (private, generated content)
+2. **Bible submodule:** `packages/bible/` (full manuscript)
+3. **Slim guide submodule:** `packages/dont-make-ai-think/` (practical guide)
+4. **Appendices submodule:** `packages/shared-appendices/` (shared appendices)
+5. **Code examples submodule:** `packages/shared-code-examples/` (pattern examples)
+6. **Outputs submodule:** `outputs/` (private, generated content)
 
 **Always check `pwd` before git operations.** The [LEARNINGS.md](LEARNINGS.md) file documents common mistakes and their fixes.
 

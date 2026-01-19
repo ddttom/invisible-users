@@ -4,18 +4,18 @@ Execute the systematic "step commit" workflow:
 
 1. Initial Commit
    - Review all current changes with git status and git diff
-   - **CRITICAL**: Check if git status shows `modified: packages/manuscript (modified content, untracked content)` - this indicates submodule has uncommitted changes
+   - **CRITICAL**: Check if git status shows `modified: submodule (modified content, untracked content)` - this indicates submodule has uncommitted changes
    - If submodule has changes, handle it FIRST (see step 1a below)
    - Commit all current code changes with a clear, descriptive commit message
    - Do NOT add attribution or "Generated with" messages
 
 1a. Submodule Handling (if submodule shows modified content)
    - **See GIT-README.md "Workflow 3: Commit Changes in Both Repositories" for detailed guidance**
-   - Use `git -C packages/manuscript` commands to avoid navigation issues
-   - Run git status and git diff in submodule: `git -C packages/manuscript status`
-   - Stage and commit submodule changes: `git -C packages/manuscript add -A && git -C packages/manuscript commit -m "Message"`
-   - Push submodule commits to remote: `git -C packages/manuscript push origin main`
-   - Stage submodule pointer update: `git add packages/manuscript`
+   - Use `git -C submodule` commands to avoid navigation issues
+   - Run git status and git diff in submodule: `git -C submodule status`
+   - Stage and commit submodule changes: `git -C submodule add -A && git -C submodule commit -m "Message"`
+   - Push submodule commits to remote: `git -C submodule push origin main`
+   - Stage submodule pointer update: `git add submodule`
    - Commit pointer update: `git commit -m "Update manuscript submodule with [description]"`
    - Continue with main repository workflow
 
@@ -33,12 +33,12 @@ Execute the systematic "step commit" workflow:
 
 4. Cross-Project Consistency Check (CRITICAL)
    - If changes affect terminology, patterns, or concepts:
-     - Verify book manuscript (packages/manuscript/) is the authoritative source
+     - Verify book manuscript (submodule/) is the authoritative source
      - Check if tool (packages/web-audit-suite/) needs updates to match book
      - Ensure all documentation uses consistent terminology
    - Terminology changes MUST flow: book → tool → documentation
    - Verify alignment across both projects:
-     - Book manuscript (packages/manuscript/)
+     - Book manuscript (submodule/)
      - Web Audit Suite (packages/web-audit-suite/)
    - Check shared terminology standards (see CLAUDE.md "Cross-Project Consistency")
 
