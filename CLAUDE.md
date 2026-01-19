@@ -10,29 +10,47 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **YOU WILL GET LOST IN THIS MULTI-REPOSITORY WORKSPACE. This is guaranteed. The solution is mandatory `pwd` checks.**
 
+### Setting Up Your Environment
+
+Before working in this repository, determine the main repo path:
+
+```bash
+# Option 1: If you're already in the main repo root
+pwd  # Should output: /path/to/invisible-users
+MAIN_REPO=$(pwd)
+
+# Option 2: Set absolute path explicitly
+MAIN_REPO="/absolute/path/to/invisible-users"
+
+# Verify it's set correctly
+echo ${MAIN_REPO}  # Should show your main repo path
+```
+
+Throughout this document, `${MAIN_REPO}` represents your main repository path. Replace it with your actual path when using commands.
+
 ### THE GOLDEN RULE: Never Navigate Away Without Returning
 
 **If you MUST use `cd` to enter a submodule:**
 
 ```bash
 # ❌ WRONG: Staying in submodule after operation
-cd /Users/tomcranstoun/Documents/GitHub/invisible-users/outputs
+cd ${MAIN_REPO}/outputs
 git status
 # Now you're lost in outputs/ for all future commands!
 
 # ✅ CORRECT: Immediately return to main repo
-cd /Users/tomcranstoun/Documents/GitHub/invisible-users/outputs && git status && cd /Users/tomcranstoun/Documents/GitHub/invisible-users
+cd ${MAIN_REPO}/outputs && git status && cd ${MAIN_REPO}
 pwd  # Verify you're back in main repo
 
 # ✅ BETTER: Use git -C to avoid navigation entirely
-cd /Users/tomcranstoun/Documents/GitHub/invisible-users
+cd ${MAIN_REPO}
 git -C outputs status
 pwd  # Still in main repo, never left
 ```
 
 **Enforce this rule:**
 
-- Every `cd` command MUST include `&& cd /Users/tomcranstoun/Documents/GitHub/invisible-users` at the end
+- Every `cd` command MUST include `&& cd ${MAIN_REPO}` at the end
 - OR use `git -C <submodule-path>` commands instead of navigating
 - After ANY directory change, immediately run `pwd` to verify location
 
@@ -72,11 +90,11 @@ pwd  # Still in main repo, never left
 pwd
 
 # Step 2: Based on output, construct correct path
-# If output: /Users/tomcranstoun/Documents/GitHub/invisible-users
+# If output: ${MAIN_REPO}
 #   → You're in MAIN REPO - use .claude/skills/news/skill.md
-# If output: /Users/tomcranstoun/Documents/GitHub/invisible-users/outputs
+# If output: ${MAIN_REPO}/outputs
 #   → You're in OUTPUTS SUBMODULE - use ../../.claude/skills/news/skill.md
-# If output: /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/bible
+# If output: ${MAIN_REPO}/packages/bible
 #   → You're in BIBLE SUBMODULE - use ../../.claude/skills/news/skill.md
 ```
 
@@ -84,7 +102,7 @@ pwd
 
 **This workspace has SIX git repositories (1 main hub + 5 submodules). File paths depend on your location.**
 
-- **Main repo (MASTER):** `/Users/tomcranstoun/Documents/GitHub/invisible-users/`
+- **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
@@ -101,7 +119,7 @@ pwd
 **CRITICAL:** Always run `pwd` before file operations. Here's the complete structure:
 
 ```text
-/Users/tomcranstoun/Documents/GitHub/invisible-users/  ← MAIN REPO (MASTER)
+${MAIN_REPO}/  ← MAIN REPO (MASTER)
 ├── .claude/                          ← Claude Code config (ONLY in main repo)
 │   ├── skills/                       ← /news, /review-docs, /step-commit
 │   ├── hooks/                        ← pre-tool-use.sh, post-tool-use.sh
@@ -123,24 +141,24 @@ pwd
 │   └── outputs → ../outputs
 ├── packages/
 │   ├── bible/                        ← SUBMODULE (git repo)
-│   │   └── /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/bible/
+│   │   └── ${MAIN_REPO}/packages/bible/
 │   │       ├── chapters/             ← 13 chapter markdown files
 │   │       ├── illustrations/        ← SVG and PNG images
 │   │       ├── README.md             ← Bible-specific README
 │   │       └── NO .claude/ directory
 │   ├── dont-make-ai-think/           ← SUBMODULE (git repo)
-│   │   └── /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/dont-make-ai-think/
+│   │   └── ${MAIN_REPO}/packages/dont-make-ai-think/
 │   │       ├── chapters/             ← 10 chapter markdown files
 │   │       ├── README.md             ← Slim book README
 │   │       └── NO .claude/ directory
 │   ├── shared-appendices/            ← SUBMODULE (git repo)
-│   │   └── /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/shared-appendices/
+│   │   └── ${MAIN_REPO}/packages/shared-appendices/
 │   │       ├── appendix-*.md         ← 12 appendix files (A-L)
 │   │       ├── web/                  ← HTML versions
 │   │       ├── README.md             ← Appendices README
 │   │       └── NO .claude/ directory
 │   ├── shared-code-examples/         ← SUBMODULE (git repo)
-│   │   └── /Users/tomcranstoun/Documents/GitHub/invisible-users/packages/shared-code-examples/
+│   │   └── ${MAIN_REPO}/packages/shared-code-examples/
 │   │       ├── agent-friendly-starter-kit/  ← good/ vs bad/ patterns
 │   │       ├── examples/             ← Production code
 │   │       ├── README.md             ← Code examples README
@@ -152,7 +170,7 @@ pwd
 │   └── manuscript/                   ← Shared manuscript resources
 │       └── book-svg-style.md         ← SVG style guide
 └── outputs/                          ← SUBMODULE (PRIVATE git repo)
-    └── /Users/tomcranstoun/Documents/GitHub/invisible-users/outputs/
+    └── ${MAIN_REPO}/outputs/
         ├── bible/                    ← Bible outputs
         │   ├── blogs/                ← Blog posts
         │   ├── presentations/        ← Slide decks
@@ -175,7 +193,7 @@ pwd
    - Use `git add .` from current location (don't try to cd during git commands)
 
 3. **Path construction:**
-   - Main repo files: Use relative paths from `/Users/tomcranstoun/Documents/GitHub/invisible-users/`
+   - Main repo files: Use relative paths from `${MAIN_REPO}/`
    - Submodule files: Check `pwd`, then construct correct relative path
    - When in doubt: Use absolute paths
 
