@@ -91,7 +91,8 @@
       "Bash(git -C outputs push origin main)",
       "Bash(git -C packages/dont-make-ai-think mv:*)",
       "Bash(git -C packages/dont-make-ai-think diff README.md)",
-      "Bash(git -C packages/dont-make-ai-think diff chapters/README.md)"
+      "Bash(git -C packages/dont-make-ai-think diff chapters/README.md)",
+      "Bash(git -C packages/dont-make-ai-think commit -m \"Fix markdown linting errors in Chapter 8\n\n- Fix MD040: Add language specification to all code blocks \\(text\\)\n- Fix MD036: Convert emphasis to proper headings \\(### Test 1, ### Phase 1, etc.\\)\n- Fix MD034: Wrap bare URLs in angle brackets \\(auto-fixed\\)\n- Fix MD032: Add blank lines around lists \\(auto-fixed\\)\n\nAll 24 linting errors resolved, chapter now passes markdownlint validation.\")"
     ],
     "deny": [],
     "ask": [
