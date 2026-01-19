@@ -80,6 +80,7 @@ For each file path provided:
   - Forbidden Constructs (Section 6)
   - Style Corrections (Section 7)
   - Terminology Standards (Section 8)
+  - AI Pattern Detection and Humanization (Section 9)
   - Core Writing Rules (Section 3)
   - Audience & Technical Segmentation (Section 4)
 - Build validation checklist
@@ -125,6 +126,12 @@ For each file provided:
    - Bare URLs
    - List spacing
    - Table formatting
+10. **Check AI patterns** (Section 9)
+   - Content patterns (significance inflation, promotional language, vague attributions)
+   - Language/grammar patterns (AI vocabulary, copula avoidance, synonym cycling)
+   - Style patterns (em dash overuse, boldface, emojis, curly quotes)
+   - Communication patterns (chatbot artifacts, disclaimers, sycophantic tone)
+   - Filler/hedging patterns (verbose constructions, excessive hedging)
 
 **What I'll do:** Build comprehensive issue list for each file
 
@@ -154,6 +161,14 @@ Categorize all findings:
 - Tone improvements
 - Superlatives and exaggeration
 - Terminology inconsistencies
+
+**AI Patterns (Should Fix):**
+
+- Content patterns (significance inflation, promotional language)
+- Language patterns (AI vocabulary, copula avoidance, synonym cycling)
+- Style patterns (em dash overuse, boldface abuse, emojis)
+- Communication patterns (chatbot artifacts, disclaimers)
+- Filler patterns (verbose constructions, excessive hedging)
 
 **Markdown (Technical):**
 
@@ -200,6 +215,7 @@ Generate comprehensive report:
 - Critical: XX (forbidden vocabulary, constructs, heading format)
 - Important: XX (language, voice, terminology)
 - Style: XX (tone, phrasing)
+- AI Patterns: XX (mechanical writing, chatbot artifacts)
 - Markdown: XX (technical formatting)
 
 ### Critical Issues
@@ -214,6 +230,10 @@ Generate comprehensive report:
 
 [List all style recommendations with line numbers, rules, and fixes]
 
+### AI Pattern Issues
+
+[List all AI pattern issues with line numbers, rules, and fixes]
+
 ### Markdown Fixes
 
 [List all markdown issues with line numbers, rules, and fixes]
@@ -223,7 +243,8 @@ Generate comprehensive report:
 1. Apply all Critical fixes (required)
 2. Apply all Important fixes (strongly recommended)
 3. Review Style improvements (optional but recommended)
-4. Fix Markdown issues (for linting compliance)
+4. Review AI Pattern issues (recommended for published content)
+5. Fix Markdown issues (for linting compliance)
 
 **What would you like to do?**
 
@@ -417,6 +438,75 @@ Line 78: Superlative detected (marketing tone)
 Fix: "This solution works well for agent compatibility."
    or "This solution provides strong agent compatibility."
 ```
+
+### AI Pattern Detection
+
+**Method:** Pattern matching combined with context analysis for 24 AI-generated writing patterns
+
+**Categories:**
+
+1. **Content Patterns** (6 patterns)
+   - Significance inflation: stands/serves as, testament/reminder, vital/significant role
+   - Media coverage emphasis: independent coverage, leading expert, social media presence
+   - Superficial -ing analyses: highlighting, ensuring, reflecting, symbolising
+   - Promotional language: boasts, vibrant, nestled, breathtaking, renowned
+   - Vague attributions: Industry reports, Observers, Experts argue
+   - Formulaic challenges sections: Despite these challenges, Future Outlook
+
+2. **Language/Grammar Patterns** (5 patterns)
+   - AI vocabulary: Additionally, align with, key (adj), landscape (abstract), valuable
+   - Copula avoidance: serves as/stands as instead of "is/are"
+   - Negative parallelisms: "It's not just X, it's Y"
+   - Rule of three forcing: grouping into threes artificially
+   - Elegant variation: excessive synonym cycling
+   - False ranges: "from X to Y" where X and Y aren't on a scale
+
+3. **Style Patterns** (6 patterns)
+   - Em dash overuse: using — instead of commas
+   - Boldface abuse: mechanical emphasis
+   - Inline-header lists: bolded labels followed by colons
+   - Title case headings: All Main Words Capitalised
+   - Emojis: decorative emojis in content
+   - Curly quotes: "..." instead of "..."
+
+4. **Communication Patterns** (3 patterns)
+   - Chatbot artifacts: "I hope this helps", "Of course!", "Would you like..."
+   - Knowledge disclaimers: "as of [date]", "based on available information"
+   - Sycophantic tone: "Great question!", "You're absolutely right!"
+
+5. **Filler/Hedging** (4 patterns)
+   - Verbose constructions: "in order to", "due to the fact that"
+   - Excessive hedging: "could potentially possibly be argued"
+   - Generic conclusions: "exciting times lie ahead"
+
+**Detection Strategy:**
+
+- Scan for pattern clusters (AI rarely uses just one)
+- Check context (some patterns acceptable in technical writing)
+- Look for missing personality markers (no opinions, flat rhythm)
+- Cross-check with Section 5-7 violations (often co-occur)
+
+**Example:**
+
+```markdown
+Additionally, the platform serves as a robust solution, showcasing
+cutting-edge features. Industry reports suggest it represents a
+pivotal moment in the evolution of digital tools.
+^^^^^^^^^^      ^^^^^^^^^^    ^^^^^^           ^^^^^^^^^^ ^^^^^^^^^^^^
+Line 12: Multiple AI patterns detected
+- "Additionally" → remove or use "Also"
+- "serves as" → "is"
+- "robust" → "strong" or "reliable"
+- "showcasing" → "showing"
+- "cutting-edge" → "advanced"
+- "Industry reports suggest" → cite specific source
+- "represents a pivotal moment" → remove inflated significance
+
+Fix: "The platform is a strong solution with advanced features.
+According to Gartner's 2024 report, adoption increased 40% last year."
+```
+
+**Priority:** Treat as "Should Fix" (same level as Style improvements) unless Communication Patterns detected (then Critical)
 
 ## HTML Content Handling
 
@@ -619,6 +709,7 @@ Action: SKIP - Book title exception
 ✓ All heading format issues found
 ✓ Language (British English) validated
 ✓ Voice and tone checked
+✓ AI patterns identified (24 pattern types)
 ✓ Markdown quality verified
 ✓ Line numbers accurate
 ✓ Fixes are specific and actionable
@@ -686,5 +777,6 @@ The goal is to maintain consistent, professional writing style across all manusc
 6. **Forbidden Constructs** - 14 phrases to avoid
 7. **Style Corrections** - Natural phrasing over academic/marketing
 8. **Terminology & Standards** - Capitalization, markdown mechanics
+9. **AI Pattern Detection and Humanization** - 24 AI-generated writing patterns to avoid, adding personality and voice
 
 **Source:** [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)
