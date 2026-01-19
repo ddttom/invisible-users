@@ -6,8 +6,6 @@ A comprehensive Node.js tool for analyzing websites across multiple dimensions: 
 
 The folder /docs contains prompts in .md format that are useful for extending this project.
 
-The folder /docs contains prompts in .md format that are useful for extending this project.
-
 ## Target Audience
 
 This tool is designed for:
