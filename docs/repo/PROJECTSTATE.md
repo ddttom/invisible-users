@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-19 (Added commercial disclosure and disabled MD060 linting)
+**Last Updated:** 2026-01-19 (Added humanizer skill and AI pattern detection)
 
 ### Monorepo Structure
 
@@ -25,7 +25,25 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Word Count:** ~140,000 words total (core manuscript ~78,000 words + appendices ~58,600 words + supporting materials ~3,550 words)
 - **Appendices:** 12 appendices (~58,600 words) published separately online at <https://allabout.network/invisible-users/web/>
 - **Chapters:** 14 chapters complete (added NEW Chapter 0: What Are AI Agents? and Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Added commercial purpose disclosure to Chapter 0 and disabled MD060 linting (2026-01-19):
+- **Latest Change:** Added humanizer skill, AI pattern detection, and rewrote Chapter 0 (2026-01-19):
+  - **Humanizer Skill:** New `/humanizer` skill removes AI-generated writing patterns and injects authentic human voice
+  - **24 AI Patterns:** Detects across 5 categories (content, language/grammar, style, communication, filler/hedging)
+  - **Review-Docs Enhancement:** Added AI pattern detection to `/review-docs` skill as "AI Patterns (Should Fix)" category
+  - **Writing Style Guide:** Added Section 9 (AI Pattern Detection and Humanization) to docs/for-ai/writing-style.md (524 new lines)
+  - **Markdownlint Guidance:** Added critical reminder about using project config file (`-c config/.markdownlint.json`)
+  - **Chapter 0 Rewrite:** Complete narrative-first restructure (~277 lines deleted, ~145 added)
+    - Changed from technical taxonomy to personal discovery journey
+    - Opens with "The Journey" instead of "They're Machines, Not Magic"
+    - Added personal narrative (CMS conferences, blog posts, Matt Bailey conversations)
+    - Added concrete examples upfront (Danube cruise pricing, Ally McBeal citations)
+    - Introduced "invisible users" concept through narrative
+    - Added publishing plans and broader CMS industry context
+    - Maintained all technical accuracy while improving engagement
+  - **llms.txt Updates:** Added metadata table with machine-readable structure, updated for 5-submodule architecture
+  - **Configuration Updates:** Added GEMINI.md and AGENTS.md symlinks for AI tool compatibility
+  - **Sales Materials:** Added pitch critique and meeting notes with Matt Bailey
+  - **Submodule commit:** f05c88e in bible repository
+- **Previous Change:** Added commercial purpose disclosure to Chapter 0 and disabled MD060 linting (2026-01-19):
   - **Implementation Support Section:** Added reader-focused disclosure of professional services at end of Chapter 0
   - **Services Described:** Web Audit Suite consultation and implementation consulting for agent-ready patterns
   - **Commercial Context:** Transparent disclosure that book publicizes professional services without specific pricing
