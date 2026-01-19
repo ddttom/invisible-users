@@ -43,17 +43,38 @@ A production-ready Node.js website analysis tool implementing the book's pattern
 
 Features: SEO, accessibility (WCAG 2.1), performance, security, AI agent compatibility analysis.
 
+## Why Submodules Exist: Separation of Concerns
+
+This repository uses git submodules to achieve **clean separation between content and orchestration**. Each submodule is an independent repository with its own version control, serving a specific purpose:
+
+**Key principles:**
+
+- **Main repository (`invisible-users`)** - Control hub containing build scripts, npm packages, configuration, and orchestration
+- **Content submodules** - Pure content repositories (markdown, code examples) with no dependencies or build tooling
+- **Outputs submodule** - Storage for generated materials, kept private and separate from source content
+
+**Benefits of this architecture:**
+
+1. **Independent version control** - Content changes don't pollute main repository history
+2. **No dependency sprawl** - Content repositories have no package.json, no npm install, no node_modules
+3. **Clean collaboration** - Writers work in content repos, developers work in main repo
+4. **Reusability** - Content can be referenced by other projects without pulling in build tooling
+5. **Access control** - Private outputs repository separate from public content
+6. **Build isolation** - All build processes controlled from single location (main repo)
+
+**Important:** Submodules cannot be built independently. All build commands, PDF generation, and linting run from the parent `invisible-users` repository. See individual submodule READMEs for details.
+
 ## Repository Structure
 
 ```text
 /
 ├── packages/
-│   ├── bible/                # "The Invisible Users" (full book)
-│   ├── dont-make-ai-think/   # "Don't Make AI Think" (slim guide)
-│   ├── shared-appendices/    # Shared implementation guides (A-L)
-│   ├── shared-code-examples/ # Production-ready code examples
-│   ├── manuscript/           # Original manuscript repository (git submodule)
-│   └── web-audit-suite/      # Website analysis tool
+│   ├── bible/                # "The Invisible Users" (full book) [SUBMODULE]
+│   ├── dont-make-ai-think/   # "Don't Make AI Think" (slim guide) [SUBMODULE]
+│   ├── shared-appendices/    # Shared implementation guides (A-L) [SUBMODULE]
+│   ├── shared-code-examples/ # Production-ready code examples [SUBMODULE]
+│   ├── manuscript/           # Original manuscript repository [SUBMODULE - legacy]
+│   └── web-audit-suite/      # Website analysis tool (NOT a submodule)
 ├── books/                    # Convenient symlinks to all book content
 │   ├── bible -> ../packages/bible
 │   ├── dont-make-ai-think -> ../packages/dont-make-ai-think
@@ -61,16 +82,16 @@ Features: SEO, accessibility (WCAG 2.1), performance, security, AI agent compati
 │   ├── code-examples -> ../packages/shared-code-examples
 │   └── outputs -> ../outputs
 ├── blogs -> outputs/bible/blogs  # Symlink to outputs submodule blogs
-├── outputs/                  # Generated content (private submodule)
-│   ├── the-bible/            # PDFs, HTML, marketing materials
-│   └── dont/                 # Build outputs for slim guide
-├── docs/                     # Documentation
+├── outputs/                  # Generated content [SUBMODULE - private]
+│   ├── bible/                # PDFs, HTML, marketing materials
+│   └── dont-make-ai-think/   # Build outputs for slim guide
+├── docs/                     # Documentation (main repo only)
 │   ├── architecture/         # Architecture documentation
 │   ├── repo/                 # Repository-level docs (ONBOARDING, etc.)
 │   └── sales-enablement/     # Business materials, pitches, partners
-├── config/                   # Configuration files
-├── scripts/                  # Build and deployment scripts
-└── .claude/                  # Claude Code AI assistant configuration
+├── config/                   # Configuration files (main repo only)
+├── scripts/                  # Build and deployment scripts (main repo only)
+└── .claude/                  # Claude Code AI assistant configuration (main repo only)
 ```
 
 ## Quick Start
