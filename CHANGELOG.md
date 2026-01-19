@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-19c] - Chapter 8 Markdown Linting Fixes
+
+### Fixed
+
+- **Chapter 8 markdown linting errors** (dont-make-ai-think submodule)
+  - Fixed MD040: Added language specification (`text`) to all 9 code blocks (conversation examples, error messages)
+  - Fixed MD036: Converted 7 emphasis labels to proper headings (### Test 1-3, ### Phase 1-4)
+  - Fixed MD034: Wrapped 3 bare URLs in angle brackets (auto-fixed)
+  - Fixed MD032: Added blank lines around 6 lists (auto-fixed)
+  - All 24 linting errors resolved, chapter now passes markdownlint validation
+
+### Changed
+
+- Updated dont-make-ai-think submodule pointer to commit a45fc8f
+
 ## [2026-01-19a] - Chapter 8 Addition and Git Workflow Enhancement
 
 ### Added
@@ -34,16 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated .claude/settings.local.json with git mv permission patterns
 - Fixed .claude/skills/humanizer/skill.md file permissions (mode change)
-- Updated dont-make-ai-think submodule pointer to commit 74124a3
-
-### Notes
-
-- Chapter 8 has markdown linting issues (24 errors) that need fixing:
-  - MD040: Code blocks missing language specification
-  - MD034: Bare URLs need angle brackets
-  - MD032: Lists need blank lines before/after
-  - MD036: Emphasis used as heading (Phase labels)
-- These will be addressed in a future commit
+- Updated dont-make-ai-think submodule pointer to commit 74124a3 (later updated to a45fc8f after linting fixes)
 
 ## [2026-01-19b] - Repository Purpose Documentation
 
