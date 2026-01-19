@@ -207,11 +207,13 @@ For each issue:
 
 Generate comprehensive report:
 
+**CRITICAL:** Statistics MUST accurately reflect actual findings. Never use placeholder values (XX). Count real issues found during Phase 2-3 analysis.
+
 ```markdown
 ## Review Summary: [filename]
 
 ### Statistics
-- Total issues: XX
+- Total issues: XX (MUST BE ACTUAL COUNT, NOT PLACEHOLDER)
 - Critical: XX (forbidden vocabulary, constructs, heading format)
 - Important: XX (language, voice, terminology)
 - Style: XX (tone, phrasing)
@@ -292,6 +294,44 @@ Total issues: 67
 
 Files modified: 2 (chapter-01.md, chapter-03.md)
 Files skipped: 1 (chapter-02.md)
+```
+
+### Example: Clean File (No Issues)
+
+When a file passes all checks:
+
+```markdown
+## Review Summary: chapter-00-what-are-ai-agents.md
+
+### Statistics
+- Total issues: 0
+- Critical: 0 (no forbidden vocabulary, constructs, or heading format issues)
+- Important: 0 (correct British English and terminology throughout)
+- Style: 0 (excellent voice and tone)
+- AI Patterns: 0 (no mechanical writing patterns)
+- Markdown: 0 (properly formatted)
+
+### Analysis Performed
+
+**Forbidden Vocabulary (Section 5):** ✓ None found
+- Scanned all 23 forbidden words - none present
+
+**Forbidden Constructs (Section 6):** ✓ None found
+- No problematic phrase patterns detected
+
+**British English:** ✓ Correct throughout
+- Proper spellings: "organisations", "whilst", "optimiser"
+
+**AI Patterns (Section 9):** ✓ None found
+- No significance inflation, vague attributions, or chatbot artifacts
+- Strong human voice with opinions and personality
+
+**Markdown Quality:** ✓ Excellent
+- Proper ATX headings, correct metadata table format
+
+### Conclusion
+
+**No changes needed.** The chapter meets all style guide requirements and demonstrates strong, authentic human voice throughout. The writing is publication-ready.
 ```
 
 ## Rule Detection Patterns
@@ -682,18 +722,21 @@ Action: SKIP - Book title exception
 - Never flag content incorrectly (false positives)
 - Always explain rule with style guide section reference
 - Provide context-appropriate fixes
+- **CRITICAL:** Statistics MUST match actual findings - never report placeholder numbers
 
 ### Completeness
 
 - Check all sections of style guide
 - Don't skip any categories
 - Review entire document (not just first issues)
+- Count ALL actual issues found before presenting statistics
 
 ### Clarity
 
 - Line numbers for all issues
 - Quote enough context (not just single word)
 - Explain why rule exists when not obvious
+- If no issues found, report "0 issues" - never fake statistics
 
 ### Prioritization
 
@@ -701,6 +744,7 @@ Action: SKIP - Book title exception
 - Important issues should be addressed
 - Style improvements are optional
 - Markdown fixes for linting compliance
+- **When zero issues found:** Celebrate! Report accurate "0" counts across all categories
 
 ## Success Indicators
 
