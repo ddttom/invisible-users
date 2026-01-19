@@ -215,7 +215,7 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 Multiple books from modular repositories:
 
 - **"The Invisible Users"** (The Bible) - `packages/bible/` - Full 13-chapter guide (~78,000 words + shared appendices)
-- **"Don't Make AI Think"** (Slim) - `packages/dont-make-ai-think/` - 10-chapter practical guide
+- **"Don't Make AI Think"** (Slim) - `packages/dont-make-ai-think/` - 11-chapter practical guide with business justification
 - **Shared Appendices** - `packages/shared-appendices/` - 12 appendices (A-L) shared across all books
 - **Shared Code Examples** - `packages/shared-code-examples/` - Good vs bad pattern implementations
 
