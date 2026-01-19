@@ -131,7 +131,9 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 ├── docs/                             ← Documentation
 │   ├── repo/                         ← GIT-README.md, ONBOARDING.md
 │   ├── architecture/                 ← doc-architecture.md
-│   └── sales-enablement/             ← Business materials
+│   ├── sales-enablement/             ← Business materials
+│   ├── shared-chapters/              ← Shared book content (Chapter 0)
+│   └── for-ai/                       ← AI assistant guidance
 ├── blogs → outputs/bible/blogs       ← SYMLINK to outputs submodule blogs
 ├── books/                            ← Symlinks for convenience
 │   ├── bible → ../packages/bible
@@ -142,10 +144,11 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 ├── packages/
 │   ├── bible/                        ← SUBMODULE (git repo)
 │   │   └── ${MAIN_REPO}/packages/bible/
-│   │       ├── chapters/             ← 13 chapter markdown files
+│   │       ├── chapters/             ← 13 chapter markdown files (Chapters 1-13)
 │   │       ├── illustrations/        ← SVG and PNG images
 │   │       ├── README.md             ← Bible-specific README
 │   │       └── NO .claude/ directory
+│   │       Note: Chapter 0 is in main repo at docs/shared-chapters/
 │   ├── dont-make-ai-think/           ← SUBMODULE (git repo)
 │   │   └── ${MAIN_REPO}/packages/dont-make-ai-think/
 │   │       ├── chapters/             ← 10 chapter markdown files
@@ -311,10 +314,10 @@ npm run audit:test             # Run tests
 
 ```bash
 # ✅ CORRECT: Use config file
-npx markdownlint -c config/.markdownlint.json packages/bible/chapters/chapter-00-what-are-ai-agents.md
+npx markdownlint -c config/.markdownlint.json docs/shared-chapters/chapter-00-what-are-ai-agents.md
 
 # ❌ WRONG: Running without config
-npx markdownlint packages/bible/chapters/chapter-00-what-are-ai-agents.md
+npx markdownlint docs/shared-chapters/chapter-00-what-are-ai-agents.md
 ```
 
 The config file (`config/.markdownlint.json`) disables rules that are intentional in this project:
@@ -366,7 +369,7 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 
 **Placement:** Top (frontmatter) for AI/build tools, bottom (footnote) for human readers. Avoid duplicating in both locations.
 
-**Files using metadata:** Blog posts (`outputs/bible/blogs/`), Chapter 0, future chapters progressively
+**Files using metadata:** Blog posts (`outputs/bible/blogs/`), Chapter 0 (`docs/shared-chapters/`), future chapters progressively
 
 **Implementation reference:** Appendix L Pattern 4, Chapter 10
 

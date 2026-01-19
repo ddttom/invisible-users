@@ -2,18 +2,19 @@
 
 ## Current Status
 
-**Last Updated:** 2026-01-19 (Added humanizer skill and AI pattern detection)
+**Last Updated:** 2026-01-19 (Moved Chapter 0 to shared location)
 
 ### Monorepo Structure
 
 This repository is now structured as a monorepo with npm workspaces and multiple git submodules:
 
-- **`packages/bible/`** - "The Invisible Users" full book (git submodule)
+- **`packages/bible/`** - "The Invisible Users" full book (git submodule, Chapters 1-13)
 - **`packages/dont-make-ai-think/`** - "Don't Make AI Think" slim guide (git submodule)
 - **`packages/shared-appendices/`** - Shared appendices A-L (git submodule)
 - **`packages/shared-code-examples/`** - AI-friendly code patterns (git submodule)
 - **`outputs/`** - Generated content: blogs, PDFs, presentations (git submodule, PRIVATE)
 - **`packages/web-audit-suite/`** - Web analysis tool (NOT a submodule)
+- **`docs/shared-chapters/`** - Shared book content (Chapter 0)
 - **Root level** - Shared tooling, scripts, and documentation
 
 All projects share dependency management and build scripts via npm workspaces.
@@ -24,8 +25,14 @@ All projects share dependency management and build scripts via npm workspaces.
 - **Status:** Publication-ready (in review, due Q1 2026)
 - **Word Count:** ~140,000 words total (core manuscript ~78,000 words + appendices ~58,600 words + supporting materials ~3,550 words)
 - **Appendices:** 12 appendices (~58,600 words) published separately online at <https://allabout.network/invisible-users/web/>
-- **Chapters:** 14 chapters complete (added NEW Chapter 0: What Are AI Agents? and Chapter 10: Generative Engine Optimization)
-- **Latest Change:** Added humanizer skill, AI pattern detection, and rewrote Chapter 0 (2026-01-19):
+- **Chapters:** 14 chapters complete (Chapter 0 in `docs/shared-chapters/`, Chapters 1-13 in bible submodule)
+- **Latest Change:** Moved Chapter 0 to main repository as shared content (2026-01-19):
+  - **Chapter 0 Location:** Moved from `packages/bible/chapters/` to `docs/shared-chapters/chapter-00-what-are-ai-agents.md`
+  - **Rationale:** Chapter 0 (What Are AI Agents?) serves as shared introduction across all books
+  - **Bible README Updated:** Added note about Chapter 0 location, fixed chapter numbering (1-13)
+  - **Documentation Updated:** Updated CLAUDE.md repository structure map and examples
+  - **Submodule commits:** 5ab5a86 in bible repository, b005cac in main repository
+- **Previous Change:** Added humanizer skill, AI pattern detection, and rewrote Chapter 0 (2026-01-19):
   - **Humanizer Skill:** New `/humanizer` skill removes AI-generated writing patterns and injects authentic human voice
   - **24 AI Patterns:** Detects across 5 categories (content, language/grammar, style, communication, filler/hedging)
   - **Review-Docs Enhancement:** Added AI pattern detection to `/review-docs` skill as "AI Patterns (Should Fix)" category
@@ -53,7 +60,7 @@ All projects share dependency management and build scripts via npm workspaces.
   - **Zero Linting Errors:** Chapter 0 now passes all markdown linting checks
   - **Submodule commit:** d6f5d94 in manuscript repository
 - **Previous Change:** Updated presentation materials with machine-focused messaging (2026-01-18):
-  - **New Content:** Added chapter-00-what-are-ai-agents.md explaining four agent types (server-side, in-browser, browser automation, local) with technical capabilities and disability equivalents
+  - **New Content:** Added Chapter 0 (What Are AI Agents?) explaining four agent types (server-side, in-browser, browser automation, local) with technical capabilities and disability equivalents
   - **Presentation Updates:** Updated talk-slides.js and talk.md with "Design for Both" messaging (32 slides total, was 31)
   - **New Slides:** Added "What Are AI Agents? They're Machines", "The Ally McBeal Problem" (fiction vs professional content), "Mistake #2: Vague Button Text", "The Agent Journey Through Your Website" (6 stages)
   - **Combined Slides:** Merged slides 4 & 5 into single highlight slide for £203k cruise example
