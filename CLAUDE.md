@@ -10,6 +10,32 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **YOU WILL GET LOST IN THIS MULTI-REPOSITORY WORKSPACE. This is guaranteed. The solution is mandatory `pwd` checks.**
 
+### THE GOLDEN RULE: Never Navigate Away Without Returning
+
+**If you MUST use `cd` to enter a submodule:**
+
+```bash
+# ❌ WRONG: Staying in submodule after operation
+cd /Users/tomcranstoun/Documents/GitHub/invisible-users/outputs
+git status
+# Now you're lost in outputs/ for all future commands!
+
+# ✅ CORRECT: Immediately return to main repo
+cd /Users/tomcranstoun/Documents/GitHub/invisible-users/outputs && git status && cd /Users/tomcranstoun/Documents/GitHub/invisible-users
+pwd  # Verify you're back in main repo
+
+# ✅ BETTER: Use git -C to avoid navigation entirely
+cd /Users/tomcranstoun/Documents/GitHub/invisible-users
+git -C outputs status
+pwd  # Still in main repo, never left
+```
+
+**Enforce this rule:**
+
+- Every `cd` command MUST include `&& cd /Users/tomcranstoun/Documents/GitHub/invisible-users` at the end
+- OR use `git -C <submodule-path>` commands instead of navigating
+- After ANY directory change, immediately run `pwd` to verify location
+
 ### Common Navigation Mistakes (Learn from these errors)
 
 ### MISTAKE #1: Running `ls -la blogs` from wrong directory
