@@ -309,6 +309,23 @@ npm run audit:test             # Run tests
 
 **CRITICAL: Always fix the root problem, never adjust lint configuration to suppress warnings.**
 
+**CRITICAL: Always use the project config file when running markdownlint:**
+
+```bash
+# ✅ CORRECT: Use config file
+npx markdownlint -c config/.markdownlint.json packages/bible/chapters/chapter-00-what-are-ai-agents.md
+
+# ❌ WRONG: Running without config
+npx markdownlint packages/bible/chapters/chapter-00-what-are-ai-agents.md
+```
+
+The config file (`config/.markdownlint.json`) disables rules that are intentional in this project:
+
+- **MD013**: Line length (prose can exceed 80 characters)
+- **MD041**: First line heading (LaTeX `\newpage` commands are intentional)
+- **MD051**: Link fragments (forward references are allowed)
+- **MD060**: Table column style (EDS metadata tables use `:----` format)
+
 **Key rules:**
 
 - Headings: Blank lines before/after, ATX-style (###), not bold text
@@ -449,12 +466,13 @@ npm run audit:test             # Run tests
 
 ## Claude Code Configuration
 
-**Four custom skills (`.claude/skills/`):**
+**Five custom skills (`.claude/skills/`):**
 
 1. **`/step-commit`** - Systematic commit workflow for multi-repository structure
 2. **`/md-fix`** - Markdown linting and auto-fix
 3. **`/news`** - Add verified industry news with strict relevance criteria
 4. **`/review-docs`** - Review documents against complete writing style guide
+5. **`/humanizer`** - Remove AI-generated writing patterns and inject authentic human voice
 
 **Git hooks:**
 

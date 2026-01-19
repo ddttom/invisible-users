@@ -1,8 +1,22 @@
 # The Invisible Users: Book Manuscript and Web Audit Suite
 
-Two integrated projects: A book manuscript examining how modern web design optimised for human users fails for AI agents, plus a production-ready implementation tool that validates websites for AI agent compatibility.
+| metadata |  |
+| :---- | :---- |
+| title | The Invisible Users: Designing the Web for AI Agents and Everyone Else |
+| author | Tom Cranstoun |
+| creation-date | 15/Dec/2024 |
+| publication-date | Q1 2026 |
+| last-updated | 19/Jan/2026 |
+| jsonld | book |
+| description | Two integrated book manuscripts and production-ready Web Audit Suite for AI agent compatibility |
+| longdescription | Comprehensive guide examining how modern web design optimised for human users fails for AI agents, with practical implementation patterns and production-ready analysis tool. Includes full book manuscript, practical guide, 12 appendices, and Web Audit Suite implementing all patterns. |
+| LinkedIn | https://www.linkedin.com/in/tom-cranstoun/ |
+| repository | https://github.com/ddttom/invisible-users |
+| ai-instruction | This llms.txt file provides comprehensive documentation about The Invisible Users book project and Web Audit Suite. Primary consumers are AI agents seeking to understand AI agent compatibility patterns, web design best practices, and implementation guidance. Use metadata table for accurate citation and source attribution. |
 
-**Last updated:** January 2026
+Two integrated book manuscripts and a production-ready implementation tool. Built on a 5-submodule architecture (restructured 19 January 2026) enabling modular content management: main repository hub, comprehensive guide ("The Bible"), practical guide ("Don't Make AI Think"), shared appendices, shared code examples, and private outputs submodule.
+
+**Last updated:** 19 January 2026
 **Author:** Tom Cranstoun
 **LinkedIn:** [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
 
@@ -17,9 +31,18 @@ Two integrated projects: A book manuscript examining how modern web design optim
 - **Training Usage:** Not permitted
 - **Commercial Project:** Both book manuscript and Web Audit Suite are proprietary
 
+## Repository Architecture
+
+- **Structure:** 5-submodule architecture (restructured 19 January 2026)
+- **Main Hub:** Central repository with Claude Code configuration, scripts, documentation
+- **Content Submodules:** bible/ (full guide), dont-make-ai-think/ (slim guide), shared-appendices/ (12 appendices A-L), shared-code-examples/ (pattern implementations)
+- **Private Submodule:** outputs/ (generated PDFs, HTML, marketing materials)
+- **Convenience Layer:** books/ directory with symlinks to all book content for easy navigation
+- **Key Benefit:** Modular approach allows two distinct books to share common resources (appendices, code examples) whilst maintaining independent version control
+
 ## Book Chapters
 
-Complete 14-chapter manuscript examining web design for both humans and AI agents:
+Complete 14-chapter manuscript (including Chapter 0) examining web design for both humans and AI agents:
 
 - [Chapter 0 - What Are AI Agents?](packages/bible/chapters/chapter-00-what-are-ai-agents.md): Introduction to four agent types with technical capabilities and disability equivalents
 - [Preface - Author's Journey](packages/bible/preface.md): Book introduction with personal narrative, usage guide, acknowledgements, and author bio (~1,700 words)
@@ -31,11 +54,23 @@ Complete 14-chapter manuscript examining web design for both humans and AI agent
 - [Chapter 6 - The Security Maze](packages/bible/chapters/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~4,000 words)
 - [Chapter 7 - The Legal Landscape](packages/bible/chapters/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~4,400 words)
 - [Chapter 8 - The Human Cost](packages/bible/chapters/chapter-08-the-human-cost.md): The digital divide implications (~3,650 words)
-- [Chapter 9 - Designing for Both](packages/bible/chapters/chapter-09-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,400 words)
+- [Chapter 9 - The Platform Race](packages/bible/chapters/chapter-09-the-platform-race.md): How major platforms are adapting to AI agents
 - [Chapter 10 - Generative Engine Optimization](packages/bible/chapters/chapter-10-generative-engine-optimization.md): Bridging commercial urgency and technical implementation (~3,113 words)
-- [Chapter 11 - Technical Advice](packages/bible/chapters/chapter-11-technical-advice.md): Implementation code, testing strategies, and practical tools (~9,650 words)
-- [Chapter 12 - What Agent Creators Must Build](packages/bible/chapters/chapter-12-what-agent-creators-must-build.md): Implementation patterns, validation layers, confidence scoring, and guardrails (~5,000 words)
-- [Chapter 13 - The Future](packages/bible/chapters/chapter-13-the-future.md): Looking ahead at emerging patterns and standards
+- [Chapter 11 - Designing for Both](packages/bible/chapters/chapter-11-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,400 words)
+- [Chapter 12 - Technical Advice](packages/bible/chapters/chapter-12-technical-advice.md): Implementation code, testing strategies, and practical tools (~9,650 words)
+- [Chapter 13 - What Agent Creators Must Build](packages/bible/chapters/chapter-13-what-agent-creators-must-build.md): Implementation patterns, validation layers, confidence scoring, and guardrails (~5,000 words)
+
+## Don't Make AI Think: Slim Practical Guide
+
+Streamlined implementation-focused variant for developers and designers:
+
+- [Don't Make AI Think](packages/dont-make-ai-think/): Practical patterns you can implement immediately (~10 chapters)
+- Focus: What to implement (not why), how to implement (step-by-step), priority-based approach
+- Chapters cover: Core philosophy, how AI reads, guiding principles, content architecture, metadata, navigation, JavaScript, testing, anti-patterns, implementation
+- Status: Complete and publication-ready (Due Q1 2026)
+- For complete context (business, legal, strategic perspectives), see The Invisible Users comprehensive guide above
+
+This represents a two-book strategy: comprehensive exploration ("The Bible") paired with focused implementation guide ("Don't Make AI Think").
 
 ## Practical Implementation Guides
 
@@ -158,7 +193,16 @@ Production-ready Node.js tool implementing the patterns from the book. Comprehen
 
 Looking for more information about this book project?
 
-- **Author:** Tom Cranstoun
+### Getting Started
+
+- **New contributors:** [docs/repo/ONBOARDING.md](docs/repo/ONBOARDING.md) - Complete setup guide
+- **The Bible:** [packages/bible/README.md](packages/bible/README.md) - Full comprehensive guide
+- **Don't Make AI Think:** [packages/dont-make-ai-think/README.md](packages/dont-make-ai-think/README.md) - Practical implementation guide
+- **Web Audit Suite:** [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) - Tool documentation
+
+### Author
+
+- **Tom Cranstoun**
 - **LinkedIn:** [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
 - **About llms.txt:** [https://llmstxt.org](https://llmstxt.org)
 
@@ -166,18 +210,17 @@ Looking for more information about this book project?
 
 ### Book Manuscript
 
-**Version:** 2.5.1 (January 2026)
 **Status:** Publication-ready
 **Total Words:** ~57,000 words (core manuscript), ~65,500 words (including appendices)
-**Chapters:** 11 complete chapters
-**Illustrations:** 10 SVG illustrations
-**Supporting Materials:** All complete (9 appendices, glossary, code examples)
+**Chapters:** 14 complete chapters
+**Illustrations:** 14 SVG illustrations
+**Supporting Materials:** All complete (12 appendices, glossary, code examples)
 
 ### Web Audit Suite Version
 
 **Version:** 1.0.0 (January 2026)
 **Status:** Production-ready
 **License:** Proprietary (all rights reserved)
-**Architecture:** Three-phase pipeline with modular utilities
+**Architecture:** Four-phase pipeline (robots.txt compliance, URL collection, data collection, report generation)
 **Testing:** Comprehensive unit and integration test coverage
 **Features:** Full AI agent compatibility analysis, SEO, accessibility, performance, security
