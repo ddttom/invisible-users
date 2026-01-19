@@ -29,9 +29,9 @@ This investigation produced:
 
 ### Enterprise Content Management (2015-Present)
 
-#### Adobe Experience Manager (AEM) Specialist
+#### CMS Specialist
 
-Recognised in the enterprise CMS community as "The AEM Guy" for deep technical expertise and strategic advisory work.
+Recognised in the enterprise CMS community as "The AEM Guy" for deep technical expertise and strategic advisory work across multiple platforms.
 
 **Key projects:**
 
@@ -103,7 +103,7 @@ Regular contributor to CMS Critic, writing technical analysis of content managem
 
 **Content Management Systems:**
 
-- Adobe Experience Manager (AEM) - Deep specialist expertise
+- Enterprise CMS platforms - Deep specialist expertise (25 years)
 - Adobe Edge Delivery Services (EDS) - Early adopter
 - WordPress - Enterprise and small business implementations
 - Headless CMS architectures - API-first patterns
