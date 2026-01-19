@@ -18,19 +18,19 @@ Review documents against the writing style guide and propose amendments.
 
 ```bash
 # Review single file
-/review-docs packages/manuscript/the-bible-of-mx/chapter-01-the-invisible-failure.md
+/review-docs packages/bible/chapters/chapter-00-what-are-ai-agents.md
 
 # Review multiple files
 /review-docs chapter-01.md chapter-02.md chapter-03.md
 
 # Review with glob patterns
-/review-docs packages/manuscript/the-bible-of-mx/chapter-*.md
+/review-docs packages/bible/chapters/chapter-*.md
 
 # Review any file (not limited to manuscript)
 /review-docs docs/web-audit-architecture.md
 
 # Review HTML files
-/review-docs packages/manuscript/the-bible-of-mx/web/back-cover.html
+/review-docs packages/shared-appendices/web/back-cover.html
 ```
 
 **What it checks:**

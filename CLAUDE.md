@@ -163,12 +163,10 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       ├── examples/             ← Production code
 │   │       ├── README.md             ← Code examples README
 │   │       └── NO .claude/ directory
-│   ├── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
-│   │   ├── src/                      ← Tool source code
-│   │   ├── test/                     ← Test files
-│   │   └── README.md                 ← Tool documentation
-│   └── manuscript/                   ← Shared manuscript resources
-│       └── book-svg-style.md         ← SVG style guide
+│   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
+│       ├── src/                      ← Tool source code
+│       ├── test/                     ← Test files
+│       └── README.md                 ← Tool documentation
 └── outputs/                          ← SUBMODULE (PRIVATE git repo)
     └── ${MAIN_REPO}/outputs/
         ├── bible/                    ← Bible outputs
@@ -238,7 +236,9 @@ Comprehensive Node.js website analysis tool (`packages/web-audit-suite/`) implem
 │   ├── LEARNINGS.md          # Battle-tested rules
 │   └── [CHANGELOG, PROJECTSTATE, etc.]
 ├── .claude/                  # Claude Code configuration (skills, hooks)
-├── config/                   # Project configuration (.markdownlint.json, etc.)
+├── config/                   # Project configuration
+│   ├── .markdownlint.json    # Markdown linting rules
+│   └── book-svg-style.md     # SVG illustration style guide
 ├── scripts/                  # Build and generation scripts
 ├── blogs → outputs/bible/blogs  # SYMLINK to outputs submodule blogs directory
 ├── books/                    # Symlinks for convenient access to all books
@@ -248,8 +248,6 @@ Comprehensive Node.js website analysis tool (`packages/web-audit-suite/`) implem
 │   ├── dont-make-ai-think/   # Slim book (git submodule)
 │   ├── shared-appendices/    # Shared appendices (git submodule)
 │   ├── shared-code-examples/ # Pattern examples (git submodule)
-│   ├── manuscript/           # Shared manuscript resources
-│   │   └── book-svg-style.md # SVG illustration style guide
 │   └── web-audit-suite/      # Analysis tool (not a submodule)
 └── docs/                     # Project documentation
     ├── architecture/         # Architecture diagrams
@@ -532,7 +530,7 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 - `packages/bible/chapters/bible-plan.md` - Master plan
 - `packages/bible/chapters/Glossary.md` - Technical glossary
 - `packages/shared-appendices/appendix-f-implementation-roadmap.md` - Priority-based roadmap
-- `packages/manuscript/book-svg-style.md` - SVG illustration style guide
+- `config/book-svg-style.md` - SVG illustration style guide
 - `docs/for-ai/writing-style.md` - Complete writing style guide
 
 **Web Audit Suite:** See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) and subdirectory docs/

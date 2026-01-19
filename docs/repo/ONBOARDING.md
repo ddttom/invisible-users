@@ -132,9 +132,10 @@ If all three commands complete successfully, you're ready to go!
 │   │   │   └── utils/          # Utilities
 │   │   ├── test/               # Test suite
 │   │   └── docs/               # Documentation
-│   │
-│   └── manuscript/             # Shared manuscript resources
-│       └── book-svg-style.md   # SVG style guide
+│
+├── config/                     # Project configuration
+│   ├── .markdownlint.json      # Markdown linting rules
+│   └── book-svg-style.md       # SVG illustration style guide
 │
 ├── outputs/                    # Generated content (git submodule - PRIVATE)
 │   ├── bible/blogs/            # Blog posts
