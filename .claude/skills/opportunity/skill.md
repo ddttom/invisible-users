@@ -1,4 +1,4 @@
-Base directory for this skill: /Users/tomcranstoun/Documents/GitHub/invisible-users/.claude/skills/opportunity
+Base directory for this skill: ${MAIN_REPO}/.claude/skills/opportunity
 
 # Business Opportunity Tracking Skill
 
