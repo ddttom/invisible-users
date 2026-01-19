@@ -7,6 +7,81 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-19f] - Complete Don't Make AI Think Book
+
+### Added
+
+- **Preface for Don't Make AI Think book** (dont-make-ai-think submodule)
+  - New preface: 684 words, practical tone matching slim book style
+  - Two-directional reading guidance (business leaders start at back, developers at front)
+  - Critical warning that developers must read Chapter 11 for justification
+  - Cross-references to Bible and shared online resources
+  - Role-based entry points (frontend dev, UX designer, QA, technical leads, business leaders)
+
+- **Chapter 11: Business Imperative** (dont-make-ai-think submodule)
+  - New chapter: 1,544 words abstracted from Bible's comprehensive Chapter 4
+  - Platform race coverage (Amazon, Microsoft, Google - January 2026)
+  - Revenue model collision mathematics (87% page view reduction)
+  - Stack Overflow case study (28% workforce reduction)
+  - E-commerce validation (Microsoft Copilot Checkout, 80%+ conversion)
+  - First-mover advantage and network effects
+  - Strategic assessment framework (4 exposure categories)
+  - Implementation ROI with concrete 780% example
+  - Protocol integration decisions (ACP vs UCP vs Copilot)
+  - Industry-specific implications
+
+- **Professional cover page** (dont-make-ai-think submodule)
+  - LaTeX-formatted cover with title, subtitle, author, date
+  - "EARLY DRAFT" notice and distribution warning
+  - "Commercial Work - Do Not Distribute" footer
+
+### Changed
+
+- **Updated CHAPTERS-GUIDE.md** (dont-make-ai-think submodule)
+  - Added Chapter 11 section with comprehensive bullet points
+  - New "Reading Order" section emphasizing two-directional reading approach
+  - Updated implementation paths for different roles (tech leads, developers, everyone)
+
+- **Updated README.md** (dont-make-ai-think submodule)
+  - Added "Front Matter" section (cover page, preface)
+  - Added Chapter 11 to chapter list
+  - New "Live Resources" section with allabout.network links
+  - Expanded "Target Audience" with business leaders and reading guidance
+  - Added two-directional reading concept to overview
+
+- **PDF generation scripts** (main repository)
+  - Updated all four dont-make-ai-think PDF scripts (generate, kindle, simple, all)
+  - New file order: 00-cover.md → preface.md → chapter-*.md → CHAPTERS-GUIDE.md
+  - Added universal footer: "Early Draft - Commercial Work - Do Not Distribute"
+  - Updated chapter glob to include all 11 chapters
+
+### Fixed
+
+- **Unicode character replacements** (dont-make-ai-think submodule)
+  - chapter-06-navigation.md: Box-drawing characters (├ └ │ ─) → ASCII (`+`, `-`, `|`)
+  - chapter-08-testing.md: Checkmarks (✓ ✗) → `[PASS]` and `[FAIL]`
+  - chapter-04-content-architecture.md: Stars (★★★★★) → "5 stars"
+  - Result: Zero PDF font warnings, clean 587KB PDF generation
+
+- **Documentation updates** (main repository)
+  - docs/for-ai/writing-style.md: Added ASCII character guidelines (Section 8)
+  - docs/for-ai/writing-style.md: Added "no time estimates" guidance
+  - .claude/skills/review-docs/skill.md: Added special character check (item #11)
+  - CLAUDE.md: Updated slim book description (10 → 11 chapters)
+
+### Submodules Updated
+
+- packages/dont-make-ai-think: c63fa7c → afd39a2
+- packages/bible: 5ab5a86 → b2c266b (minor corrections)
+- outputs: 7dc0705 → 5ba0746 (PDFs and blog rename)
+
+### Notes
+
+- The slim book now has complete front matter, all 11 chapters, and professional formatting
+- Two-directional reading approach serves both technical and business audiences
+- ASCII-only approach eliminates PDF font warnings across all platforms
+- Live resources at allabout.network provide continuously updated appendices and news
+
 ## [2026-01-19e] - Move SVG Style Guide and Complete Manuscript Cleanup
 
 ### Changed
