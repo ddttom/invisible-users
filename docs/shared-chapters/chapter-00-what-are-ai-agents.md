@@ -6,11 +6,11 @@ Understanding the machines reading your website.
 
 ## The Journey
 
-Over the past two years, I attended CMS Experts conferences in Frankfurt, Florida, and London. At each one, the drumbeat was relentless: "AI, AI, AI." Keynotes predicted transformations, vendors showcased AI-powered features, and conversations inevitably turned to how generative AI would change content management.
+Over the past two years, I have attended CMS Experts conferences in Frankfurt, Florida, and London, attended webinars/members calls. At each one, the drumbeat was relentless: "AI, AI, AI." Keynotes predicted transformations, presenters showcased AI-powered features, and conversations inevitably turned to how generative AI would change content management. In Frankfurt Several talks provided valuable insights on how AI systems interact with CMS-powered content, highlighting current limitations and offering concrete approaches to help AI better understand structured content—a critical consideration as these technologies become more deeply integrated. In full transparency, I was one of the speakers and I moderated one of the workshops, “Trust in AI”.
 
 I spent those two years trying to understand how AI truly works - cutting through the marketing language about machines "thinking" or "inferring" to grasp the mechanical reality underneath. I published blog posts about language problems, reasoning errors, and hallucinations in AI systems. My most popular LinkedIn post asked a deliberately provocative question about the capital of Paris. It generated significant controversy and accusations of writing "idiot prompts," but it also dramatically increased my readership. The algorithm rewards controversy, and the post demonstrated something important: people's confidence in AI systems often exceeds the systems' actual capabilities.
 
-Following a conversation with Matt Bailey from CMS Critic after the Florida conference, I initially considered trying to fix the AI LLM engines themselves. With over a million models on Hugging Face, that approach proved impractical. Getting all engines to follow a single set of rules simply wouldn't work. Matt agreed, and encouraged me to continue exploring the problem from a different angle.
+Following a conversation with Matt Bailey from CMS Critic after the Florida 2025 conference, I initially considered trying to fix the AI LLM engines themselves. With over a million models on Hugging Face, that approach proved impractical. Getting all engines to follow a single set of rules simply wouldn't work. Matt agreed, and encouraged me to continue exploring the problem from a different angle.
 
 Then I had an epiphany, inspired by Steve Krug's famous book "Don't Make Me Think." If I couldn't fix the models, I could fix what they were reading. The solution wasn't to improve a million AI systems - it was to improve the websites those systems access. I started writing "Don't Make the AI Think," and if possible, I hope to convince Steve Krug to become a joint author on the project.
 
@@ -86,9 +86,7 @@ One implementation serves three audiences:
 
 Just as we have UX (User Experience), we need MX (Machine Experience). The key insight is that organisations should design for both humans and machines simultaneously with the same content - not create separate experiences.
 
-Adobe recently released an "LLM Optimiser" tool that detects whether a page is being browsed by an LLM or a human, then serves different versions accordingly. This is the wrong approach. If you can make content better for LLMs, you'll make it better for disabled people and for everyone else. The solution isn't to serve different content but to fix the underlying web page.
-
-I've connected with Adobe and plan to propose they reposition the tool as an interim fix whilst organisations properly sort their websites, rather than marketing it as the permanent solution.
+Adobe recently released an "LLMoptimizer" tool that detects whether a page is being browsed by an LLM or a human, then serves different versions accordingly. This is not the ideal approach. If you can make content better for LLMs, you'll make it better for disabled people and for everyone else. The solution isn't to serve different content but to fix the underlying web page.
 
 ### MX Requires Dedicated Roles
 
@@ -112,13 +110,14 @@ The convergence between MX and accessibility creates practical advantages: organ
 
 This approach works because the technical patterns overlap substantially. Both disciplines require semantic structure, explicit state, persistent feedback, and clear hierarchy. The difference lies in application: accessibility focuses on user outcomes (can screen reader users navigate?), whilst MX focuses on machine outcomes (can agents extract pricing accurately?).
 
-The commercial urgency makes dedicated roles essential. Google, Microsoft, Amazon, and Apple launched agent-powered purchasing features in January 2026. First-mover advantage exists - sites that work early become trusted sources that agents return to repeatedly. Organisations treating MX as "everyone's responsibility" will fall behind competitors who assign clear accountability.
+The commercial urgency makes dedicated roles essential. Google, Microsoft, and Amazon launched agent-powered purchasing features in January 2026. First-mover advantage exists - sites that work early become trusted sources that agents return to repeatedly. Organisations treating MX as "everyone's responsibility" will fall behind competitors who assign clear accountability.
 
-I've developed an analyser that does for LLMs what Screaming Frog does for SEO. It checks whether websites implement best practices for AI consumption:
+I've developed an analyser that does for LLMs what tools like Screaming Frog does for SEO. It checks whether websites implement best practices for AI consumption:
 
 - Are elements in the right order?
 - Are there toast notifications or screen changes that LLMs won't understand?
 - Are there patterns that would confuse disabled users?
+- and many more
 
 The tool audits websites, provides management reports with actionable information, and tracks progress over time, alerting organisations to any regressions.
 
@@ -132,7 +131,7 @@ This statistical foundation explains both their capabilities and their failures:
 
 **Why agents hallucinate:** When asked about content beyond their training data, they guess based on statistical co-occurrence patterns. Without clear structured data (Schema.org, semantic HTML), they fabricate details that seem plausible but are incorrect - the same errors that produce 0% correctness on mathematical reasoning tasks despite fluent explanations.
 
-**Why linguistic bias matters:** Current AI systems tokenise English more efficiently than compound languages (German, Dutch). The prompt "think hard" allocates more processing tokens than equivalent commands in other languages, creating functional inequities in how agents process multilingual websites.
+**Why linguistic bias matters:** Current AI systems tokenizes English more efficiently than compound languages (German, Dutch). The prompt "think hard" allocates more processing tokens than equivalent commands in other languages, creating functional inequities in how agents process multilingual websites.
 
 **Why explicit structure matters:** Agents convert your HTML into mathematical representations through weighted averaging of co-occurrence patterns. `<div class="button">` and `<button>` appear similar to humans but create different statistical signatures. Semantic HTML produces distinct patterns that agents process reliably, whilst visual-only distinctions disappear in the averaging process.[^ai-internals]
 
@@ -176,7 +175,7 @@ This book examines the collision between modern web design and machine readers. 
 - How to implement these patterns practically
 - What's coming next in agent-mediated commerce
 
-It's January 2026. Google, Microsoft, Amazon, and Apple have all announced agent-powered purchasing features launching this quarter. This isn't a distant future - it's happening now.
+It's January 2026. Google, Microsoft, and Amazon have all announced agent-powered purchasing features launching this quarter. This isn't a distant future - it's happening now.
 
 I've written two books: this comprehensive guide (The Bible of Machine Experience) and a shorter practical guide ("Don't Make AI Think"). Both share appendices that will be made publicly available, including learning materials for AI and properly structured example code.
 
