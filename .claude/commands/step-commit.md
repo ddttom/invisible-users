@@ -56,17 +56,14 @@ Execute the systematic "step commit" workflow:
    - NEVER add: project knowledge, documentation refs, "We added X", architecture
    - If nothing broke or was misunderstood, SKIP this step entirely
 
-7. Project State
-   - Update or create PROJECTSTATE.md
-   - Document current state only (not historical)
-   - Keep this as a snapshot of current implementation status
-
-8. Changelog
+7. Changelog
    - Update CHANGELOG.md with all changes made in this session
-   - This is where historical "what we did" content goes
+   - CHANGELOG.md serves as both historical record AND current project state
    - Follow chronological order (newest first)
+   - Include: Added, Changed, Fixed sections as appropriate
+   - Document submodule updates with commit hashes
 
-9. Final Steps
+8. Final Steps
    - Commit changelog updates
    - Ask user if they want to push all commits to remote
 
