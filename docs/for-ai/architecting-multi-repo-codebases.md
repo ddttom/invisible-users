@@ -864,7 +864,7 @@ The test: If someone asks "How do I build the Bible PDF?" you should be able to 
 
 **Problem:** AI agents reading your repository need to understand the multi-repo structure.
 
-**Solution:** Add explicit context in READMEs, use metadata tables, and provide navigation maps.
+**Solution:** Add explicit context in READMEs, use YAML frontmatter, and provide navigation maps.
 
 ### AI-Friendly README Context
 
@@ -1023,7 +1023,7 @@ Without this, workflows will fail when attempting to access submodule content.
    - Document git workflows
 
 5. **Add metadata standards**
-   - Define metadata table format
+   - Define YAML frontmatter format
    - Add to documentation files
    - Document in style guide
 

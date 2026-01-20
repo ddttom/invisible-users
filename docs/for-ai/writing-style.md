@@ -174,28 +174,28 @@ Use GitHub-style alerts for side notes or warnings. Do not use generic blockquot
 > [!WARNING]
 > Use this for dangerous actions or breaking changes.
 
-**EDS Markdown Metadata Tables:**
+**Pandoc YAML Frontmatter:**
 
-EDS (Adobe Edge Delivery Services) metadata tables preserve structured metadata in markdown files. This repository uses the EDS convention for markdown files that need machine-readable metadata.
+This repository uses Pandoc YAML frontmatter for markdown metadata—the universal standard across Hugo, Jekyll, Gatsby, Quarto, and Pandoc.
 
-- **Format:** Table with `metadata` title row and key-value pairs
-- **Placement:** Top (frontmatter for AI/build tools) or bottom (footnote for humans)
-- **Linting:** MD060 warnings for `:----` alignment markers are intentional (EDS standard format)
+- **Format:** YAML block delimited by triple dashes (`---`)
+- **Placement:** Always at the very top of the file
 - **Purpose:** Preserves metadata that would be lost in HTML-to-markdown conversion
-- **Usage:** See Appendix L (Pattern 4) for complete implementation guide
+- **Usage:** See Appendix L (Pattern 4) and Appendix H for complete implementation guide
 
 **Example:**
 
-```markdown
-| metadata |  |
-| :---- | :---- |
-| title | Document Title |
-| author | Tom Cranstoun |
-| publication-date | 17/Jan/2026 |
-| jsonld | article |
+```yaml
+---
+title: "Document Title"
+author: "Tom Cranstoun"
+date: "2026-01-17"
+description: "Brief summary for humans and AI agents"
+keywords: [metadata, yaml, frontmatter]
+---
 ```
 
-**When reviewing markdown files:** Recognize metadata tables and do not flag as formatting issues. These tables provide essential context for AI agents and build tools.
+**When reviewing markdown files:** Recognize YAML frontmatter and do not flag as formatting issues. This metadata provides essential context for AI agents and build tools.
 
 ---
 

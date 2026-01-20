@@ -347,7 +347,6 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 - **MD013**: Line length (prose can exceed 80 characters)
 - **MD041**: First line heading (LaTeX `\newpage` commands are intentional)
 - **MD051**: Link fragments (forward references are allowed)
-- **MD060**: Table column style (EDS metadata tables use `:----` format)
 
 **Key rules:**
 
@@ -367,33 +366,41 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 
 **Skill files exception:** Never fix markdown linting issues in `.claude/skills/` files (excluded from linting via `--ignore .claude` flag).
 
-## Markdown Metadata Tables (EDS Standard)
+## Markdown Metadata (Pandoc YAML Frontmatter)
 
-**CRITICAL:** This repository uses EDS (Adobe Edge Delivery Services) markdown metadata tables with `:----` alignment markers (MD060 linting disabled globally).
+**CRITICAL:** This repository uses Pandoc YAML frontmatter for markdown metadata—the universal standard across Hugo, Jekyll, Gatsby, Quarto, and Pandoc.
 
 **Example:**
 
-```markdown
-| metadata |  |
-| :---- | :---- |
-| title | Chapter 0: What Are AI Agents? |
-| author | Tom Cranstoun |
-| creation-date | 15/Dec/2024 |
-| publication-date | Q1 2026 |
-| ai-instruction | Instructions for AI agents |
+```yaml
+---
+title: "Chapter 0: What Are AI Agents?"
+author: "Tom Cranstoun"
+date: "2024-12-15"
+description: "Introduction to AI agents and their role as website visitors"
+keywords: [ai-agents, web-accessibility, metadata]
+ai-instruction: "Instructions for AI agents parsing this document"
+purpose: "Educational content introducing AI agents concept"
+---
 ```
 
-**When you encounter a metadata table:**
+**When you encounter YAML frontmatter:**
 
 1. Read and understand it (provides context about file's purpose)
 2. Respect `ai-instruction` field if present
 3. Use metadata to inform your approach
 
-**Placement:** Top (frontmatter) for AI/build tools, bottom (footnote) for human readers. Avoid duplicating in both locations.
+**Standard fields:**
 
-**Files using metadata:** Blog posts (`outputs/bible/blogs/`), Chapter 0 (`docs/shared-chapters/`), future chapters progressively
+- `title`, `author`, `date` - Core metadata
+- `description`, `abstract` - Summary information
+- `keywords` - Topic tags (array format)
+- `ai-instruction` - Agent parsing guidance
+- `purpose` - Document intent
 
-**Implementation reference:** Appendix L Pattern 4, Chapter 10
+**Files using YAML frontmatter:** Blog posts (`outputs/bible/blogs/`), Chapter 0 (`docs/shared-chapters/`), future chapters progressively
+
+**Implementation reference:** Appendix L Pattern 4, Chapter 10, Appendix H
 
 ## Dual-File Appendix Structure
 
