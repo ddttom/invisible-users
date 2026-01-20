@@ -118,7 +118,7 @@ Websites must be accessible for humans and AI agents alike.
 
 **Rule:** Avoid "It's not just X, it's Y" - state the point directly.
 
-### Example 8: "Think about..."
+### Example 8: "Think about..." / "Think of..."
 
 **Before:**
 
@@ -132,7 +132,19 @@ Think about how a screen reader interprets form fields. Agents face similar chal
 Screen readers and AI agents face similar challenges when interpreting form fields.
 ```
 
-**Rule:** Avoid "Think about..." - state the observation directly.
+**Before:**
+
+```markdown
+Think of semantic HTML as a contract between developers and agents.
+```
+
+**After:**
+
+```markdown
+Semantic HTML acts as a contract between developers and agents.
+```
+
+**Rule:** Avoid "Think about..." and "Think of..." - state the observation directly.
 
 ### Example 9: "Not only... but also..."
 

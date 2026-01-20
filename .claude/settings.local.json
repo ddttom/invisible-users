@@ -107,7 +107,12 @@
       "Bash(git -C packages/shared-appendices push --set-upstream origin main)",
       "Bash(./scripts/fix-dont-make-ai-think-linting.sh:*)",
       "Bash(./scripts/fix-remaining-linting.sh:*)",
-      "Bash(git -C packages/bible diff --stat)"
+      "Bash(git -C packages/bible diff --stat)",
+      "Bash(git -C outputs rm:*)",
+      "Bash(git -C outputs mv:*)",
+      "Bash(git -C outputs commit -m \"$\\(cat <<''EOF''\nRemove blog files relocated to main repo docs\n\nThe architecting multi-repo blog content has been moved from outputs/bible/blogs/ to docs/for-ai/ in the main repository for better discoverability and version control alongside other AI documentation.\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C outputs push)",
+      "Bash(git -C outputs push --set-upstream origin main)"
     ],
     "deny": [],
     "ask": [

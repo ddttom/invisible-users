@@ -80,7 +80,7 @@ Deep technical content (code, specific implementation patterns) is **only** perm
 Avoid these specific phrases and patterns:
 
 - [ ] "It's not just X, it's Y"
-- [ ] "Think about..."
+- [ ] "Think about..." / "Think of..."
 - [ ] "Not only... but also..."
 - [ ] "From X to Y" flourishes
 - [ ] Rule-of-three padding (e.g., "fast, scalable, and secure")
