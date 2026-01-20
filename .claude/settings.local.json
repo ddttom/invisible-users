@@ -34,6 +34,7 @@
       "Bash(realpath:*)",
       "Bash(node scripts/:*)",
       "Bash(node e2e-test.js:*)",
+      "Bash(ls *)",
       "Bash(ls:*)",
       "Bash(tree:*)",
       "Bash(find:*)",
