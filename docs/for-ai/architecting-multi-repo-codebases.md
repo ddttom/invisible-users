@@ -837,6 +837,9 @@ Claude: [Resets to root when needed]
 3. **Path construction:**
    - Use relative paths from current location
    - When in doubt, use absolute paths
+
+```text
+(end of navigation rules section)
 ```
 
 **For AI Agents:**
@@ -954,7 +957,7 @@ parent-repo/
     └── .markdownlint.json  (Duplicate? Reference?)
 ```
 
-**Pattern: Configuration in Parent, References in Submodules**
+### Pattern: Configuration in Parent, References in Submodules
 
 Place authoritative configuration in the parent repository. Submodules reference parent configuration in their npm scripts:
 
@@ -972,7 +975,7 @@ This maintains single source of truth whilst allowing submodules to be tested in
 
 When parent and submodule both need the same npm packages:
 
-**Pattern: npm Workspaces with Submodules**
+### Pattern: npm Workspaces with Submodules
 
 Define submodules as workspaces in parent package.json:
 
@@ -1121,7 +1124,7 @@ Delete all entries - every single one. The header stays, the content goes. Git h
 
 Multi-repository projects face a documentation challenge: should the root README contain all information, or should it delegate to submodule READMEs?
 
-**Anti-pattern: Duplicating content in root README**
+#### Anti-pattern: Duplicating content in root README
 
 ```markdown
 # Root README
@@ -1147,7 +1150,7 @@ Multi-repository projects face a documentation challenge: should the root README
 - Updates require editing multiple files
 - No single source of truth for package details
 
-**Pattern: README delegation with pointers**
+#### Pattern: README delegation with pointers
 
 ```markdown
 # Root README
@@ -1270,7 +1273,7 @@ Continuous integration for multi-repository projects requires workflow coordinat
 
 Should parent CI/CD pipelines run when submodule content changes?
 
-**Pattern: Selective triggers**
+#### Pattern: Selective triggers
 
 ```yaml
 # .github/workflows/build.yml
