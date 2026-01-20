@@ -7,6 +7,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-20g] - Sales Enablement Materials Updated with CMS Pioneer Positioning
+
+### Changed
+
+- **docs/sales-enablement/profiles/tom-profile.md**: Rewritten to lead with 49-year CMS history (1977-present), emphasizing Superbase and BBC credentials before Adobe experience
+- **docs/sales-enablement/publishers/oreilly-author-bio.md**: Major update to Professional Summary emphasizing historical perspective, added "1977-1990: CMS before the term existed" section, updated timeline references from 25 years to 49 years, clarified January 2026 platform convergence
+- **docs/sales-enablement/business/executive-summary.md**: Updated Founder Commitment section with complete timeline (49 years, Superbase, BBC, 12 years AEM, 3 years EDS)
+
+### Added
+
+- **book-launch-strategy.md**: New file (untracked, added by user)
+- **docs/sales-enablement/CLAUDE.md**: New file (untracked, added by user)
+
+### Removed
+
+- **docs/for-tom/the-skillset.md**: Deleted
+- **docs/sales-enablement/profiles/linkedin-about.md**: Deleted (moved to docs/for-tom/)
+
+### Notes - Positioning Strategy
+
+**Positioning Strategy Applied:**
+
+- Primary identity: CMS Pioneer (49 years, 1977-present, started coding at age 21)
+- Origin: Co-authored Superbase (pre-CMS terminology), built BBC news distribution system
+- Recent work: 12 years Adobe AEM (including world's largest deployment), 3 years Edge Delivery Services
+- Insight: EDS showed pattern being solved throughout career
+- Framework: Machine Experience (MX) - platform-agnostic discipline
+- Credential: "The AEM Guy" repositioned as supporting credential, not primary identity
+
+**Remaining Updates Identified:**
+
+Lower-priority files still contain "25 years" references (TIER 2-3 files):
+
+- docs/sales-enablement/content/book.md
+- docs/sales-enablement/publishers/oreilly-toc.md
+- docs/sales-enablement/publishers/oreilly-author-bio.md (minor references in skills section)
+- Other partner and outreach materials
+
 ## [2026-01-20f] - Documentation updates for platform convergence
 
 ### Changed
