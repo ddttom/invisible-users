@@ -26,9 +26,11 @@ These failures matter commercially. When agents cannot cite you accurately, they
 
 ## The Invisible Users
 
-This situation parallels web accessibility in a striking way. For years, the industry has discussed making web pages accessible to disabled users, with laws and documentation supporting this goal. Yet implementation remains poor. Only about 5% of users have disabilities, so organisations pay lip service to compliance, add some alt text, pass a few tests, and declare themselves accessible.
+This situation parallels web accessibility in a striking way. For years, the industry has discussed making web pages accessible to disabled users, with laws and documentation supporting this goal. Yet implementation remains poor. Because users with disabilities represent a relatively small proportion of total visitors, organisations pay lip service to compliance, add some alt text, pass a few tests, and declare themselves accessible.
 
-Now there's a new class of user - the invisible users. These are AI agents: AI browsers, OpenAI, Perplexity, browser extensions, Claude for Chrome, Microsoft Copilot, or small LLMs running on local machines. These agents operate websites on behalf of users, and critically, the websites don't know they're interacting with robots rather than humans.
+Now there's a new class of user - the invisible users. These are AI agents visiting your website and performing actions without your awareness. Most companies don't track AI bot traffic. Some prohibit AI bots entirely through robots.txt directives or block them using services like Cloudflare Identity checks. Modern AI browsers (ChatGPT, BrowserOps, Comet, Strawberry, Neo, DIA) do identify themselves as bots in their User-Agent strings, but these strings cannot be trusted - they're trivially spoofed by any developer.
+
+Some agents operate as browser extensions running alongside human users. Others are Playwright-driven automation frameworks controlled by AI scripts. Some are AI browsers accessing sites directly. Site owners can no longer reliably distinguish between human visitors and AI agents. The traffic looks identical in analytics, but the visitor's capabilities and limitations differ fundamentally.
 
 People are building agents that monitor Slack channels for commands, then execute web actions autonomously and report back. These capabilities are expanding rapidly. In January 2026, Google, Microsoft, and Amazon all launched purchasing functionality within days of each other. Agent-mediated commerce has moved from experiment to platform strategy.
 

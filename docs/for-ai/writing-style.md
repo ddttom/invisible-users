@@ -147,6 +147,13 @@ Use natural phrasing instead of academic or marketing variations.
 - **LLM:** Acronym for Large Language Model (define on first use if necessary).
 - **Currency:** Use **GBP (£)** as the primary currency for examples. Use USD ($) only for US-specific case studies.
 
+**The Invisible Users:**
+
+- **ALWAYS use "The Invisible Users"** when referring to the book title (capitalised, with "The").
+- **Use "invisible users" (lowercase)** when referring to AI agents as a concept within text.
+- **Definition:** "The invisible users" refers to AI agents visiting websites and performing actions without site owners' awareness. Most companies don't track AI bot traffic; some prohibit it through robots.txt or block it via Cloudflare. Modern AI browsers identify as bots, but User-Agent strings cannot be trusted. Some agents are browser extensions, others are Playwright-driven automation controlled by AI. Site owners cannot reliably distinguish between human visitors and AI agents.
+- **When you encounter ambiguous phrasing** like "What Makes Users Invisible" that could be misinterpreted as making human users invisible rather than referring to AI agents as invisible users, **ASK A CLARIFICATION QUESTION** to confirm the intended meaning before proceeding.
+
 **Markdown Mechanics:**
 
 - **Headings:** Use ATX style (`# Heading`) only. **Never** use bold text (`**Heading**`) as a heading (prevents linting errors).

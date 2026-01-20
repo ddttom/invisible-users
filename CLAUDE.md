@@ -448,7 +448,9 @@ purpose: "Educational content introducing AI agents concept"
 
 ## Key Conceptual Themes (Book)
 
-**Agent Diversity:** CLI agents, browser agents, server-based agents, IDE-integrated controls
+**The Invisible Users:** AI agents visiting websites and performing actions without site owners' awareness. Most companies don't track AI bot traffic; some prohibit it entirely through robots.txt or block it via services like Cloudflare Identity checks. Modern AI browsers (ChatGPT, BrowserOps, Comet, Strawberry, Neo, DIA - see AI browser examples) identify as bots, but User-Agent strings cannot be trusted. Some agents are browser extensions, others are Playwright-driven automation scripts controlled by AI. Site owners can no longer reliably distinguish between human visitors and AI agents.
+
+**Agent Diversity:** CLI agents, browser agents, server-based agents, IDE-integrated controls, browser extensions, automation frameworks
 
 **Universal Patterns:** Semantic HTML (works for ALL agents), explicit state attributes, Schema.org structured data
 

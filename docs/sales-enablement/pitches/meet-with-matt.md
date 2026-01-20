@@ -16,7 +16,7 @@ This research led Tom to an epiphany inspired by Steve Krug's famous book "Don't
 
 ## The Problem: Invisible Users
 
-Tom drew a parallel with web accessibility. For years, the industry has discussed making web pages accessible to disabled users, with laws and documentation supporting this goal. Yet implementation remains poor - only about 5% of users have disabilities, so organisations pay lip service to compliance, add some alt text, pass a few tests, and declare themselves accessible.
+Tom drew a parallel with web accessibility. For years, the industry has discussed making web pages accessible to disabled users, with laws and documentation supporting this goal. Yet implementation remains poor - because users with disabilities represent a relatively small proportion of total visitors, organisations pay lip service to compliance, add some alt text, pass a few tests, and declare themselves accessible.
 
 Now there's a new class of user that Tom calls "the invisible users" - AI agents. These might be AI browsers, OpenAI, Perplexity, browser extensions, Claude for Chrome, Microsoft Copilot, or small LLMs running on local machines. These agents operate websites on behalf of users, and critically, the websites don't know they're interacting with robots rather than humans.
 
