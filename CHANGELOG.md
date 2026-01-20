@@ -7,9 +7,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2026-01-20g] - Sales Enablement Materials Updated with CMS Pioneer Positioning
+## [2026-01-20h] - Presentation Enhancement with Chapter 0 Insights
+
+### Added
+
+- **docs/talks/members-call/talk-slides.md**: New markdown representation of presentation for easy review (25 slides)
+- **Slide 7 (Four Types of AI Agents)**: Added technical depth explaining Server-Side, In-Browser, Browser Automation, and Local/On-Device agent constraints
+- **Slide 20 (Machine Experience - MX)**: Added organizational framing positioning MX as strategic discipline requiring dedicated roles and executive commitment
+- **Invisible Users definition**: Comprehensive definition added to CLAUDE.md Key Conceptual Themes section
+- **Terminology guidance**: Added "The Invisible Users" section to docs/for-ai/writing-style.md with clarification protocol
 
 ### Changed
+
+- **docs/talks/members-call/talk-slides.js**: Enhanced from v2.4.0 to v2.5.0 (22 → 25 slides)
+  - Slide 3: Added commerce chain emphasis ("Miss any stage → The entire commerce chain breaks")
+  - Slide 8: Softened Adobe LLM Optimizer critique from "WRONG approach" to "understandable but suboptimal"
+  - Reordered slides for better flow (Agent Journey earlier, MX after Quick Wins)
+- **docs/talks/members-call/talk.md**: Reordered speaker notes to match canonical JavaScript slide order
+- **docs/shared-chapters/chapter-00-what-are-ai-agents.md**: Expanded invisible users definition with technical details about agent types and tracking challenges
+- **docs/sales-enablement/pitches/meet-with-matt.md**: Replaced imprecise "5%" disability statistic with "relatively small proportion of total visitors"
+
+### Notes - Presentation Enhancement Strategy
+
+**Strategic Additions:**
+
+- Four agent types help CTOs understand WHY different technical constraints require semantic structure
+- MX discipline positions this as organizational change requiring dedicated roles (parallels QA engineering)
+- Agent Journey emphasis on commerce chain breakage strengthens business case
+- Adobe LLM Optimizer example provides concrete negative case while maintaining professional tone
+
+**Chapter 0 as Source:** All enhancements derived from Chapter 0 content, maintaining book as authoritative source for all concepts and terminology.
+
+**Flow Improvements:** Presentation now flows: concept definition → agent journey urgency → problem with data → root cause → agent types → technical failures → solutions → organizational framing → urgency → convergence principle
+
+## [2026-01-20g] - Sales Enablement Materials Updated with CMS Pioneer Positioning
+
+### Changed - Sales Materials
 
 - **docs/sales-enablement/profiles/tom-profile.md**: Rewritten to lead with 49-year CMS history (1977-present), emphasizing Superbase and BBC credentials before Adobe experience
 - **docs/sales-enablement/publishers/oreilly-author-bio.md**: Major update to Professional Summary emphasizing historical perspective, added "1977-1990: CMS before the term existed" section, updated timeline references from 25 years to 49 years, clarified January 2026 platform convergence
