@@ -184,7 +184,9 @@ The convergence principle means both audiences benefit: business leaders underst
 
 ### Founder Commitment
 
-- 30 years domain expertise
+- 49 years building content systems (since 1977, age 21)
+- Co-authored Superbase (pre-CMS terminology), built BBC news distribution system
+- 12 years Adobe AEM (world's largest deployment), 3 years EDS
 - Complete foundation already built
 - Clear vision and execution plan
 - Seeking partners to scale, not start
@@ -310,7 +312,7 @@ Availability: Ready to start immediately, flexible partnership agreement timelin
 
 **Returns:** Equity or revenue share based on partnership model
 
-**Founder:** 30 years web expertise, complete foundation built, seeking scale partners
+**Founder:** 49 years content systems (Superbase, BBC, Adobe AEM/EDS), complete foundation built, seeking scale partners
 
 **Next Step:** 30-minute call to explore partnership fit
 

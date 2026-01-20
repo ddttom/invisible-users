@@ -5,9 +5,11 @@ Author of "The Invisible Users: Designing the Web for AI Agents and Everyone Els
 
 ## Professional Summary
 
-Tom Cranstoun has built web experiences for 25 years, from early e-commerce platforms through enterprise content management systems to modern progressive web applications. His career spans the evolution of web architecture from server-rendered HTML through AJAX and single-page applications to today's AI-agent-accessible infrastructure.
+Tom Cranstoun has been building content systems for 49 years - since before "CMS" was a term. He co-authored Superbase, a database and content management system that predated the CMS category, and built the BBC's news distribution system that served journalists globally.
 
-Currently focused on the intersection of human-optimised web design and AI agent compatibility, Tom brings production experience from both sides of the ecosystem: building websites that serve millions of users and developing AI agents that interact with those websites.
+Over the last 12 years architecting Adobe AEM platforms—including the world's largest deployment at 200+ sites across 30+ languages—and 3 years with Edge Delivery Services, he noticed something unexpected: the structure that makes content work for AI agents is mostly what everyone needs.
+
+Currently focused on the intersection of human-optimised web design and AI agent compatibility, Tom brings production experience from both sides of the ecosystem: building websites that serve millions of users and developing AI agents that interact with those websites. Nearly five decades of pattern recognition across every generation of technology—from Superbase through BBC systems to modern Adobe platforms—informs his approach to this latest infrastructure transition.
 
 ## Current Focus
 
@@ -245,7 +247,13 @@ Audience: Enterprise digital experience decision-makers, content strategists, te
 
 ### Historical Context
 
-25 years of web development provides perspective on infrastructure transitions:
+49 years of content system development provides perspective on infrastructure transitions:
+
+#### 1977-1990: CMS before the term existed
+
+- Co-authored Superbase database and content management system
+- Built BBC news distribution system serving journalists globally
+- Established patterns for content that serves different consumers
 
 #### 1998-2003: First e-commerce wave
 
@@ -271,7 +279,7 @@ Audience: Enterprise digital experience decision-makers, content strategists, te
 - Agent-mediated commerce infrastructure
 - Return to semantic HTML and progressive enhancement
 
-This historical perspective informs the book's analysis: AI agent compatibility isn't introducing entirely new patterns. It's validating principles (semantic HTML, explicit state, structured data) that accessibility experts advocated for years.
+This historical perspective informs the book's analysis: AI agent compatibility isn't introducing entirely new patterns. It's validating principles (semantic HTML, explicit state, structured data) that have worked across nearly five decades of content systems - from Superbase through BBC systems to modern platforms.
 
 ### Unique Position
 
@@ -295,9 +303,11 @@ This historical perspective informs the book's analysis: AI agent compatibility 
 
 **Perfect convergence of experience and market timing:**
 
-- 25 years of web development experience
+- 49 years of content system development (started 1977, age 21)
+- Co-authored Superbase and built BBC news distribution system
+- 12 years Adobe AEM, 3 years Edge Delivery Services
 - Two years of agent compatibility research
-- Documentation of January 2025 platform convergence
+- Documentation of January 2026 platform convergence
 - Production validation of implementation patterns
 
 **Market urgency:** The January 2025 convergence created narrow window where this book delivers maximum value. Businesses implementing agent compatibility now need guidance now.
@@ -306,11 +316,12 @@ This historical perspective informs the book's analysis: AI agent compatibility 
 
 **No other author combines:**
 
-1. **Production experience** across 25 years and multiple platforms
-2. **Real research** documenting agent failure patterns systematically
-3. **Tool development** validating patterns through automated testing
-4. **Timing** to document January 2025 convergence immediately
-5. **Writing ability** to bridge business and technical audiences
+1. **Historical perspective** - 49 years solving content distribution problems from Superbase to modern platforms
+2. **Production experience** across multiple platform generations
+3. **Real research** documenting agent failure patterns systematically
+4. **Tool development** validating patterns through automated testing
+5. **Timing** to document January 2026 convergence immediately
+6. **Writing ability** to bridge business and technical audiences
 
 ### Credibility Markers
 
@@ -367,4 +378,4 @@ This historical perspective informs the book's analysis: AI agent compatibility 
 
 ---
 
-**This author brings the unique combination of production experience, systematic research, tool development, and communication ability required to deliver the definitive guide to AI agent compatibility exactly when the market needs it most.**
+**This author brings the unique combination of 49 years historical perspective, production experience across multiple platform generations, systematic research, tool development, and communication ability required to deliver the definitive guide to AI agent compatibility exactly when the market needs it most.**

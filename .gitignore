@@ -19,6 +19,9 @@ Thumbs.db
 # Logs
 *.log
 
+# Build outputs
+*.zip
+
 # Environment
 .env
 .env.local
@@ -42,3 +45,7 @@ dont/
 # Generated appendix HTML build templates (temporary)
 scripts/appendix-nav-footer.html
 scripts/appendix-index-template.md
+
+# Scrapboard (temporary notes and drafts)
+docs/scrapboard/*
+!docs/scrapboard/.gitkeep

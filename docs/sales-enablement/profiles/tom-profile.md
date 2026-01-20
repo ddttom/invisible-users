@@ -1,6 +1,8 @@
 # Professional Profile
 
-In the shift toward an Internet of Agents, the competitive advantage goes to enterprises that recognize a fundamental principle: what AI agents need is mostly what everyone needs. The patterns that break for AI agents—hidden state, ephemeral notifications, incomplete information—also break for humans with disabilities, cognitive load, or non-ideal conditions.
+I've been building content systems for 49 years - since before "CMS" was a term. Co-authored Superbase, a database and content management system that predated the CMS category. Built the BBC's news distribution system that served journalists globally. Last 12 years with Adobe AEM, last 3 with Edge Delivery Services.
+
+Working with EDS taught me something unexpected: the structure that makes content work for AI agents is mostly what everyone needs. The patterns that break for AI agents—hidden state, ephemeral notifications, incomplete information—also break for humans with disabilities, cognitive load, or non-ideal conditions. That insight became Machine Experience (MX).
 
 I help organisations make better strategic decisions about Adobe Experience Manager and Edge Delivery Services in this new reality. After architecting agent-ready delivery infrastructure for BBC, Twitter, Nissan-Renault (200+ websites), Ford, MediaMonks, and others, I've learned that successful implementations come from asking the right questions before building anything—particularly now, as AI agents fundamentally change how web experiences are consumed.
 
@@ -26,7 +28,9 @@ I have established first AEM practices from scratch. Strategic decisions prevent
 
 ## Industry Perspective
 
-As a member of Boye & Company's CMS Experts Group and regular industry speaker, I stay connected with emerging trends while grounding recommendations in proven approaches. My work demonstrates a practical reference model for what the Agent Ecosystem is standardizing: interoperable, multi-vendor systems where clarity serves everyone. Known in CMS circles as "The AEM Guy"—though I prefer being known for helping teams make sound strategic decisions that prepare for agentic workflows using MACH principles of modularity, openness, and composability.
+As a member of Boye & Company's CMS Experts Group and regular industry speaker, I stay connected with emerging trends while grounding recommendations in proven approaches. My work demonstrates a practical reference model for what the Agent Ecosystem is standardizing: interoperable, multi-vendor systems where clarity serves everyone. Known in CMS circles as "The AEM Guy"—a credential earned over 12 years architecting Adobe platforms—though I prefer being known for helping teams make sound strategic decisions that prepare for agentic workflows using MACH principles of modularity, openness, and composability.
+
+49 years of solving content distribution problems means I've seen these patterns work across every generation of technology. Superbase, BBC systems, Adobe AEM, Edge Delivery Services - all variations of the same fundamental challenge: content that works for different consumers. Now those consumers include AI agents, and the patterns I've been refining for nearly five decades apply more than ever.
 
 I work exclusively through Digital Domain Technologies, focusing on engagements where experience and objectivity matter most. Available for interim consultancy roles, advisory projects, and strategic reviews—not seeking full-time positions.
 
