@@ -4,12 +4,12 @@
  * @title       The Invisible Users: Designing the Web for AI Agents and Everyone Else
  * @author      Tom Cranstoun
  * @date        2026-01-20
- * @version     2.0.0
+ * @version     2.5.0
  * @description Google Apps Script to generate themed 20-minute presentation deck
  * @audience    Business leaders (CTOs, product owners)
  * @duration    20 minutes + Q&A
- * @slides      24 slides with themed layout (dark grey/cobalt blue/neon red)
- * @changes     v2.0.0 - Merged duplicate slides, added CMS/Markdown/Convergence content
+ * @slides      25 slides with themed layout (dark grey/cobalt blue/neon red)
+ * @changes     v2.5.0 - Added Agent Types, MX discipline, enhanced journey/Adobe slides
  * @usage       Run createInvisibleUsersDeck() in Google Apps Script editor
  */
 
@@ -58,28 +58,8 @@ function createInvisibleUsersDeck() {
       ],
       footer: "Tom Cranstoun | Due Q1 2026"
     },
-    
-    // 2. Opening Hook - MERGED Adobe Insights + Cruise Error
-    {
-      type: 'highlight',
-      title: "The AI Referral Surge and The £203,000 Mistake",
-      subtitle: "Adobe Holiday 2025 Data Meets Real-World Agent Failure",
-      body: [
-        "Triple-Digit Growth: AI referrals surged (Retail +693%, Travel +539%)",
-        "Conversion Flip: AI referrals moved from lagging to leading (+31%)",
-        "Engagement: AI users spend 45% longer on site, view 13% more pages",
-        "Real Example: Claude for Chrome researching Danube cruises (Jan 2025)",
-        "Returned: £203,000-£402,000 per person. Actual: £2,030-£4,020",
-        "100x multiplication error from European formatting (€2.030,00)"
-      ],
-      highlightBox: {
-        title: "£201,000",
-        text: "potential mistake\nif auto-booked"
-      },
-      footer: "From experimental to revenue driver - but errors have consequences."
-    },
 
-    // 3. Understanding Invisible Users - MOVED EARLIER
+    // 2. Understanding Invisible Users - INTRODUCE CONCEPT FIRST
     {
       type: 'standard',
       title: "Understanding Invisible Users",
@@ -94,38 +74,44 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 4. What Makes Users Invisible
+    // 3. The Agent Journey
     {
       type: 'standard',
-      title: "What Makes Users Invisible",
-      subtitle: "Five Integration Patterns",
+      title: "The Agent Journey",
+      subtitle: "AI Agents Are Buying Things Right Now",
       body: [
-        "AI agents are invisible to site owners:",
-        "  - Unless tracking agent traffic, you have no idea they're there",
-        "  - They blend into analytics or bounce immediately",
-        "Interface is invisible to agents:",
-        "  - Can't see animations, color changes, toast notifications, loading spinners",
-        "  - Must rely on HTML structure and explicit state",
-        "Exploring optimization opportunities for agent-friendly patterns"
+        "Your website has machine readers right now",
+        "Stage 1: Discovery (Training) - If you're not in their knowledge base, you don't exist",
+        "Stage 2: Citation (Recommendation) - Agents recommend sources they trust",
+        "Stage 3: Search & Compare - Agents build comparison lists",
+        "Stage 4: Price Understanding - Exact pricing or agents skip you",
+        "Stage 5: Purchase Confidence - Can they complete checkout?",
+        "Miss any stage → The entire commerce chain breaks",
+        "If agents can't find you, you don't get a look in"
       ]
     },
 
-    // 5. NEW: Why Current Systems Fail
+    // 4. Opening Hook - MERGED Adobe Insights + Cruise Error
     {
-      type: 'standard',
-      title: "Why Current Systems Fail",
-      subtitle: "The Markup Problem",
+      type: 'highlight',
+      title: "The AI Referral Surge and The £203,000 Mistake",
+      subtitle: "Adobe Holiday 2025 Data Meets Real-World Agent Failure",
       body: [
-        "Modern CMS creates divs without semantic meaning",
-        "Content served as plain HTML - JavaScript decorates it later",
-        "LLM Optimizer forks bot vs human experiences (WRONG approach)",
-        "Bots see different pages than browser-based agents see",
-        "Solution: Fix HTML for everyone together, not separate bot experiences",
-        "We are 27 years behind the times - should have fixed this for accessibility"
-      ]
+        "Triple-Digit Growth: AI referrals surged (Retail +700%, Travel +500%)",
+        "Conversion Flip: AI referrals moved from lagging to leading (+30%)",
+        "Engagement: AI users spend 50% longer on site, view more pages",
+        "Real Example: Claude for Chrome researching Danube cruises (Jan 2025)",
+        "Returned: £203,000-£402,000 per person. Actual: £2,030-£4,020",
+        "100x multiplication error from European formatting (€2.030,00)"
+      ],
+      highlightBox: {
+        title: "£203,000",
+        text: "potential mistake\nif auto-booked"
+      },
+      footer: "From experimental to revenue driver - but errors have consequences."
     },
 
-    // 6. What Caused The £203,000 Error?
+    // 5. What Caused The £203,000 Error?
     {
       type: 'standard',
       title: "What Caused This?",
@@ -141,7 +127,52 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 7. Mistake #1
+    // 6. Who Are The Invisible Users?
+    {
+      type: 'standard',
+      title: "Who Are The Invisible Users?",
+      subtitle: "AI Agents You Can't See or Track",
+      body: [
+        "Most companies don't track AI bot traffic",
+        "Some prohibit AI bots (robots.txt), some block them (Cloudflare Identity checks)",
+        "Modern AI browsers DO identify as bots (ChatGPT, BrowserOps, Comet, Neo, DIA)",
+        "BUT: User-Agent strings cannot be trusted",
+        "Some agents are browser extensions, others are Playwright-driven automation",
+        "Site owners can no longer reliably tell what is human, what is AI"
+      ]
+    },
+
+    // 7. NEW: Four Types of AI Agents
+    {
+      type: 'standard',
+      title: "Four Types of AI Agents",
+      subtitle: "Different Technical Constraints",
+      body: [
+        "Server-Side (ChatGPT, Claude) - Cannot see JavaScript/CSS, need semantic HTML",
+        "In-Browser (Copilot, extensions) - See rendered pages, need explicit state in DOM",
+        "Browser Automation (Perplexity, Playwright) - Full browser control + screenshots",
+        "Local/On-Device (Ollama) - Run on user's PC, limited context windows",
+        "Each type has different capabilities - but ALL need semantic structure",
+        "Understanding constraints helps you design solutions that work for all"
+      ]
+    },
+
+    // 8. Why Current Systems Fail
+    {
+      type: 'standard',
+      title: "Why Current Systems Fail",
+      subtitle: "The Markup Problem",
+      body: [
+        "Modern CMS creates divs without semantic meaning",
+        "Content served as plain HTML - JavaScript decorates it later",
+        "Example: Adobe's LLM Optimizer detects bots and forks experiences (understandable but suboptimal)",
+        "Bots see different pages than browser-based agents see",
+        "Solution: Fix HTML for everyone together, not separate bot experiences",
+        "We are 27 years behind the times - should have fixed this for accessibility"
+      ]
+    },
+
+    // 9. Mistake #1
     {
       type: 'standard',
       title: "Mistake #1: Toast Notifications",
@@ -156,7 +187,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 8. Mistake #2
+    // 10. Mistake #2
     {
       type: 'standard',
       title: "Mistake #2: Hidden Checkout State",
@@ -169,7 +200,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 9. Why This Happens
+    // 11. Why This Happens
     {
       type: 'standard',
       title: "Why This Happens",
@@ -183,7 +214,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 10. The Gap
+    // 12. The Gap
     {
       type: 'standard',
       title: "Two HTML States: The Gap",
@@ -198,7 +229,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 11. NEW: Myth vs Reality - Markdown
+    // 13. Myth vs Reality - Markdown
     {
       type: 'standard',
       title: "Myth vs Reality: Why Markdown Fails",
@@ -213,7 +244,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 12. The Solution
+    // 14. The Solution
     {
       type: 'standard',
       title: "The Solution",
@@ -227,7 +258,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 13. Pattern 1
+    // 15. Pattern 1
     {
       type: 'standard',
       title: "Pattern #1: Persistent Errors",
@@ -240,7 +271,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 14. Pattern 2
+    // 16. Pattern 2
     {
       type: 'standard',
       title: "Pattern #2: Complete Pricing",
@@ -254,7 +285,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 15. Pattern 3
+    // 17. Pattern 3
     {
       type: 'standard',
       title: "Pattern #3: Explicit State",
@@ -267,7 +298,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 16. Small Business Case
+    // 18. Small Business Case
     {
       type: 'standard',
       title: "Small Business Case",
@@ -281,7 +312,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 17. Quick Wins
+    // 19. Quick Wins
     {
       type: 'standard',
       title: "Quick Wins: Start Here",
@@ -295,21 +326,22 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 18. Web Audit Suite (moved from later position)
+    // 20. NEW: Machine Experience (MX)
     {
       type: 'standard',
-      title: "Web Audit Suite",
-      subtitle: "Professional audit service",
+      title: "Machine Experience (MX): A New Discipline",
+      subtitle: "Alongside UX, We Need MX",
       body: [
-        "Implements patterns from the book",
-        "Generates detailed reports",
-        "Shows exactly where sites need optimization for agents",
-        "Provides specific fix recommendations",
-        "Measure what you can't see"
+        "UX = User Experience. MX = Machine Experience.",
+        "Just as quality needs dedicated QA engineers, MX needs dedicated roles",
+        "When 'everyone's responsible,' accountability vanishes (diffusion of responsibility)",
+        "MX specialists define agent-readability standards, audit implementations",
+        "Can expand existing accessibility roles - technical patterns overlap substantially",
+        "Executive commitment essential - this requires organizational change, not just tech fixes"
       ]
     },
-    
-    // 19. MERGED: Why This Matters Now - The 7-Day Platform Race
+
+    // 21. Why This Matters Now - The 7-Day Platform Race
     {
       type: 'standard',
       title: "Why This Matters Now: The Seven-Day Platform Race",
@@ -325,52 +357,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 20. Open vs Closed Competition
-    {
-      type: 'standard',
-      title: "Open vs Closed Competition",
-      subtitle: "Two Open Protocols vs One Proprietary System",
-      body: [
-        "Two chose open: OpenAI/Stripe (ACP), Google (UCP)",
-        "One chose closed: Microsoft (Copilot Checkout)",
-        "Microsoft isolated - competing against TWO open protocols",
-        "Fragmentation risk: Will ACP and UCP converge or compete?",
-        "Retailers must choose: integrate both, wait, or pick one?"
-      ]
-    },
-
-    // 21. NEW: The Future of CMS
-    {
-      type: 'standard',
-      title: "The Future of CMS: From Presentation to Data Management",
-      subtitle: "A paradigm shift is happening",
-      body: [
-        "Old paradigm: CMS manages presentation + content together",
-        "New paradigm: Separate concerns",
-        "  - Data lake with descriptions, metadata, JSON-LD",
-        "  - Ontology that describes relationships",
-        "  - Dynamic serving layer adapts to user/agent type",
-        "Content management becomes pure data management",
-        "HTML generation happens at request time, tailored to consumer needs"
-      ]
-    },
-
-    // 22. EXPANDED: Why Guardrails Aren't Enough
-    {
-      type: 'standard',
-      title: "Why Guardrails Aren't Enough",
-      subtitle: "System prompts are insufficient",
-      body: [
-        "Browser extensions inherit network config (VPN affects location detection)",
-        "System prompts exist but work at reasoning level, NOT data extraction",
-        "The £203k cruise error proves validation MUST happen in HTML",
-        "Guardrails can't catch formatting errors or missing context",
-        "Don't rely on AI to 'think' correctly - give it facts in markup",
-        "Solution: Enriched HTML with explicit validation, not AI guesswork"
-      ]
-    },
-
-    // 23. REFRAMED: Convergence Principle - The Headline Message
+    // 22. Convergence Principle - The Headline Message
     {
       type: 'standard',
       title: "One Solution Serves Everyone: The Convergence Principle",
@@ -386,7 +373,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 24. Book & Contact
+    // 23. Book & Contact
     {
       type: 'title',
       title: "Book & Contact",

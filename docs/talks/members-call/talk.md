@@ -21,49 +21,110 @@ purpose: "Educational presentation on making websites AI agent-friendly"
 
 ---
 
-## Opening Hook: The £203,000 Cruise [TIME: 3 minutes]
+## Understanding Invisible Users [TIME: 3 minutes]
 
-Let me start with a real example from December 2024. I was using an AI assistant to research Danube cruises for May 2026. The agent came back with detailed information on three operators - departure dates, routes, ratings, all looked professional.
+AI agents are called "invisible users" for two reasons:
+
+1. **Invisible to site owners** — They blend into analytics, come once and leave. Unless you're specifically tracking agent traffic (and most aren't), you have no idea how many agents visit your site or whether they succeed.
+2. **Interface is invisible to them** — They can't see animations, color, toasts, spinners. They don't notice subtle color changes, miss three-second toast notifications, and don't understand that a loading spinner means "wait."
+
+Not theoretical futures - happening today.
+
+Same failures affect screen reader users (invisible to designers for 27 years).
+
+Visual feedback invisible to AI agents AND blind users.
+
+Sites that work get preferred by both - first-mover advantage that's hard to claw back.
+
+---
+
+## The Agent Journey [TIME: 3 minutes]
+
+**AI Agents Are Buying Things Right Now**
+
+Your website has machine readers right now:
+
+- **Stage 1: Discovery (Training)** - If you're not in their knowledge base, you don't exist
+- **Stage 2: Citation (Recommendation)** - Agents recommend sources they trust
+- **Stage 3: Search & Compare** - Agents build comparison lists
+- **Stage 4: Price Understanding** - Exact pricing or agents skip you
+- **Stage 5: Purchase Confidence** - Can they complete checkout?
+
+**Miss any stage → No commerce.** If agents can't find you, you don't get a look in.
+
+---
+
+## The AI Referral Surge and The £203,000 Mistake [TIME: 4 minutes]
+
+**Adobe Holiday 2025 Data Meets Real-World Agent Failure**
+
+Let me show you why this matters with real data and a real failure.
+
+**The Adobe Data (Holiday 2025):**
+
+- **Triple-Digit Growth:** AI referrals surged (Retail +700%, Travel +500%)
+- **Conversion Flip:** AI referrals moved from lagging to leading (+30%)
+- **Engagement:** AI users spend 50% longer on site, view more pages
+
+**Real Example from January 2025:**
+
+I was using Claude for Chrome to research Danube cruises. The agent came back with detailed information on three operators - departure dates, routes, ratings, all looked professional.
 
 But one price caught my eye: **£203,000-£402,000** per person for a week-long river cruise.
 
-The actual price was probably **£2,030-£4,020**.
+The actual price was **£2,030-£4,020**.
 
 This was a **100x multiplication error** - likely a decimal separator confusion where €2.030,00 (European format) became 2030, then got multiplied by 100 during currency conversion.
 
-**What's instructive here:** This wasn't a reasoning failure. The AI didn't think £203,000 was reasonable. The error occurred during data extraction, and no validation layers caught it:
+From experimental to revenue driver - but errors have consequences.
 
-- No range validation (£203k > £15k maximum for river cruises)
-- No comparative checks (58x higher than peer average)
+---
+
+## What Caused This? [TIME: 2 minutes]
+
+**The Error Chain**
+
+This wasn't a reasoning failure. The AI didn't think £203,000 was reasonable. The error occurred during data extraction, and no validation layers caught it:
+
+- Decimal separator confusion (€2.030,00 vs £2,030)
+- No range validation (£203k > £15k maximum)
+- No comparative checks (58x higher than peers)
 - No cross-referencing against structured data
-- No confidence scoring to flag anomalies
+- No confidence scoring
+- AI reformatting the content masked the problem
+- Error presented with same confidence as verified data
 
-The error was presented with the same confidence as verified data. Professional formatting masked the data quality issue.
-
-**The business impact:** If this agent was making a booking rather than researching, this could have been a £201,000 mistake. More concerning - if the error had been plausible (20% too high instead of 100x), would anyone have caught it?
+**The business impact:** If this agent was making a booking rather than researching, this could have been a £201,000 mistake.
 
 **Validation layers are essential, not optional.**
 
 ---
 
-## Understanding Invisible Users [TIME: 5 minutes]
+## Who Are The Invisible Users? [TIME: 2 minutes]
 
-Websites need optimization for AI agents. Not theoretical futures - this is happening today. Agents are browsing, comparing, and transacting now.
+**AI Agents You Can't See or Track**
 
-Sites that work get preferred. Sites that don't get quietly avoided.
+- Most companies don't track AI bot traffic
+- Some prohibit AI bots (robots.txt), some block them (Cloudflare Identity checks)
+- Modern AI browsers DO identify as bots (ChatGPT, BrowserOps, Comet, Neo, DIA)
+- BUT: User-Agent strings cannot be trusted
+- Some agents are browser extensions, others are Playwright-driven automation
+- Site owners can no longer reliably tell what is human, what is AI
 
-This creates a first-mover advantage that's hard to claw back.
+---
+
+## Why Current Systems Fail [TIME: 2 minutes]
+
+**The Markup Problem**
+
+- Modern CMS creates divs without semantic meaning
+- Content served as plain HTML - JavaScript decorates it later
+- LLM Optimizer forks bot vs human experiences (WRONG approach)
+- Bots see different pages than browser-based agents see
+- Solution: Fix HTML for everyone together, not separate bot experiences
+- We are 27 years behind the times - should have fixed this for accessibility
 
 **Two real production mistakes...**
-
-### Understanding Invisible Failures
-
-**What Makes Users "Invisible"?**
-
-AI agents are called "invisible users" for two reasons:
-
-1. **They're invisible to site owners** — Unless you're specifically tracking agent traffic (and most aren't), you have no idea how many agents visit your site or whether they succeed. They blend into analytics as slightly unusual sessions.
-2. **Your interface is partly invisible to them** — They can't see your beautiful animations, don't notice subtle color changes, miss three-second toast notifications, and don't understand that a loading spinner means "wait."
 
 ### Five Integration Patterns
 
