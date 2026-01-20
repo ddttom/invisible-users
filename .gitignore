@@ -32,11 +32,12 @@ GEMINI.md
 AGENTS.md
 
 # Symlinks created by init script (npm run init)
+# Note: books/ contains tracked symlinks (committed before this ignore pattern).
+#       The gitignore prevents accidental additions of new files to books/ directory
+#       while preserving the existing convenience symlinks (books/bible, etc.)
+#       Purpose: Reduces cognitive load - access books/bible instead of packages/bible/
 books/
 blogs
-
-# PNG illustrations (generated from SVG)
-packages/bible/illustrations/*.png
 
 # Generated book files
 the-bible/

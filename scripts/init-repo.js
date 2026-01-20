@@ -8,13 +8,16 @@
  *
  * Expected symlinks:
  * - blogs -> outputs/bible/blogs
- * - books/bible -> ../packages/bible
+ * - books/bible -> ../packages/bible (reduces cognitive load: books/ vs packages/)
  * - books/dont-make-ai-think -> ../packages/dont-make-ai-think
  * - books/appendices -> ../packages/shared-appendices
  * - books/code-examples -> ../packages/shared-code-examples
  * - books/outputs -> ../outputs
  * - GEMINI.md -> CLAUDE.md (AI tool compatibility)
  * - AGENTS.md -> CLAUDE.md (AI tool compatibility)
+ *
+ * Note: books/ symlinks reduce mental overhead - access books/bible instead of packages/bible/
+ *       The books/ directory is listed in .gitignore but the symlinks are tracked in git
  *
  * Expected file permissions:
  * - .claude/skills/skill.md files must be executable (for Claude Code)
@@ -214,9 +217,12 @@ function initializeRepository() {
   console.log('🔍 Checking repository structure...\n');
 
   // Ensure books/ directory exists
+  // Purpose: Reduces cognitive load when navigating - access books/bible instead of packages/bible/
+  // Note: The books/ directory is listed in .gitignore, but the symlinks inside are tracked
   ensureDirectory('books', 'Convenient access to all book content');
 
   // Create symlinks in books/ directory
+  // These symlinks eliminate the need to remember the packages/ prefix when accessing book content
   createSymlink('books/bible', '../packages/bible', 'The Bible book');
   createSymlink('books/dont-make-ai-think', '../packages/dont-make-ai-think', 'Slim practical guide');
   createSymlink('books/appendices', '../packages/shared-appendices', 'Shared appendices');

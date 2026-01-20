@@ -94,12 +94,13 @@ This repository uses git submodules to achieve **clean separation between conten
 │   ├── ucp/                  # Universal Commerce Protocol [SUBMODULE]
 │   ├── manuscript/           # Original manuscript repository [SUBMODULE - legacy]
 │   └── web-audit-suite/      # Website analysis tool (NOT a submodule)
-├── books/                    # Convenient symlinks to all book content
+├── books/                    # Convenience symlinks (reduces cognitive load when navigating)
 │   ├── bible -> ../packages/bible
 │   ├── dont-make-ai-think -> ../packages/dont-make-ai-think
 │   ├── appendices -> ../packages/shared-appendices
 │   ├── code-examples -> ../packages/shared-code-examples
 │   └── outputs -> ../outputs
+│   # Note: Access books/bible instead of packages/bible/ to reduce mental overhead
 ├── blogs -> outputs/bible/blogs  # Symlink to outputs submodule blogs
 ├── outputs/                  # Generated content [SUBMODULE - private]
 │   ├── bible/                # PDFs, HTML, marketing materials
@@ -135,7 +136,7 @@ npm install
 npm run init
 ```
 
-The `npm run init` command verifies and creates necessary symlinks:
+The `npm run init` command verifies and creates necessary symlinks for easier navigation:
 
 - `blogs -> outputs/bible/blogs` (convenient blog access)
 - `books/bible -> ../packages/bible` (convenient book access)
@@ -143,6 +144,8 @@ The `npm run init` command verifies and creates necessary symlinks:
 - `books/appendices -> ../packages/shared-appendices`
 - `books/code-examples -> ../packages/shared-code-examples`
 - `books/outputs -> ../outputs`
+
+**Why `books/` symlinks?** Reduces cognitive load when navigating. Access `books/bible/` instead of `packages/bible/` - one less directory level to remember. These symlinks are tracked in git but the `books/` directory is in `.gitignore` to prevent accidental additions.
 
 ### Building Book Manuscripts
 

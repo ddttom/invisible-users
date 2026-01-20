@@ -271,7 +271,12 @@ UCP embodies the convergence principle from the book - patterns that work for AI
 │   └── book-svg-style.md     # SVG illustration style guide
 ├── scripts/                  # Build and generation scripts
 ├── blogs → outputs/bible/blogs  # SYMLINK to outputs submodule blogs directory
-├── books/                    # Symlinks for convenient access to all books
+├── books/                    # Convenience symlinks (tracked, but directory ignored in .gitignore)
+│   ├── appendices → ../packages/shared-appendices
+│   ├── bible → ../packages/bible
+│   ├── code-examples → ../packages/shared-code-examples
+│   ├── dont-make-ai-think → ../packages/dont-make-ai-think
+│   └── outputs → ../outputs
 ├── outputs/                  # Generated content (git submodule - PRIVATE)
 ├── packages/                 # Book manuscripts and tools
 │   ├── bible/                # The Bible (git submodule)
@@ -523,6 +528,13 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 ```
 
 **Common mistakes documented in LEARNINGS.md - read before starting work.**
+
+**Git ignore patterns:**
+
+- `books/` directory is listed in `.gitignore` but the symlinks inside are tracked (committed before the ignore pattern was added)
+- The gitignore pattern prevents accidental addition of new files to `books/` while preserving existing symlinks
+- Git only ignores untracked files; already-tracked files remain tracked even if matching an ignore pattern
+- Each submodule has its own `.gitignore` file for managing submodule-specific ignored files (e.g., `packages/bible/.gitignore` ignores generated PNG files)
 
 ## Claude Code Configuration
 
