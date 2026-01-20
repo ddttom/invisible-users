@@ -7,9 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2026-01-20b] - Multi-Repository Workflow Automation
+## [2026-01-20c] - Members Call Presentation Materials
 
 ### Added
+
+- **Presentation Files** (docs/talks/members-call/)
+  - `talk.md`: 20-minute presentation script with Pandoc YAML frontmatter (v1.0.0)
+  - `talk-slides.js`: Google Apps Script for generating themed slide deck (25 slides)
+  - Version metadata: Author, date (2026-01-20), audience (business leaders), duration
+  - Content: £203,000 cruise error example, five integration patterns, Adobe Holiday 2025 insights
+  - Platform timeline: Amazon Alexa+ (Jan 5), Microsoft Copilot (Jan 8), Google UCP (Jan 11, 2026)
+  - AI advocacy framing throughout (optimization vs problem language)
+
+### Changed
+
+- **Writing Style Alignment**
+  - Applied AI advocacy positioning from writing style guide (Section 10)
+  - Replaced "break/fail/problem" language with "optimization/integration" framing
+  - Changed "The Problem: Invisible Failures" → "Understanding Invisible Users"
+  - Changed "The Five Types of Invisible Failure" → "Five Integration Patterns"
+  - Updated all references: "sites break for agents" → "sites need optimization for agents"
+  - Removed "The" prefix from "The Solution" heading (follows Section 6 guidelines)
+  - British English throughout: "optimised", "whilst", "colour"
+
+### Impact Notes - Presentation Materials
+
+These presentation materials position the speaker as an AI advocate focused on collaboration and optimization opportunities, consistent with the book's core message. The dual-file structure (markdown script + JavaScript generator) provides both human-readable content and automated slide generation. All content aligns with writing style guide requirements for forbidden vocabulary, AI advocacy positioning, and professional tone.
+
+## [2026-01-20b] - Multi-Repository Workflow Automation
+
+### Added - Permissions and Documentation
 
 - **Claude Code Permissions** (.claude/settings.local.json)
   - Added `git -C:*` wildcard permission for all submodule git operations
@@ -28,11 +55,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Maintenance guidelines for quarterly permission review
   - Clear guidance on permissions to keep in "ask" mode and never auto-approve
 
-### Changed
+### Changed - Dependencies
 
 - **package-lock.json**: Automatic dependency resolution updates
 
-### Impact Notes
+### Impact Notes - Workflow Automation
 
 These permissions eliminate repetitive approval prompts for multi-repo automation (git -C commands, linting pipelines, text processing) while maintaining security through ask-mode for destructive operations (git restore, git reset, bash scripts). The documentation ensures users understand security implications before adoption.
 
