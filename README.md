@@ -21,6 +21,16 @@ AI agents are **machines** with specific technical capabilities and limitations 
 
 **The agent journey:** Discovery (training) → Citation (recommendation) → Search (comparison) → Price understanding → Purchase confidence. Break any stage, lose the entire transaction.
 
+## Industry Context
+
+In January 2026, three major platforms launched AI agent commerce systems within seven days:
+
+- **January 5:** Amazon Alexa+ (conversational commerce)
+- **January 8:** Microsoft Copilot Checkout (proprietary ecosystem)
+- **January 11:** Google UCP + Shopping Agent (open standard)
+
+This convergence validates the book's central thesis: AI agents accessing websites is transitioning from experimental to infrastructure. The book documents these developments and provides implementation patterns that work regardless of which platforms dominate.
+
 ## About This Repository
 
 This repository contains multiple integrated projects working together to address AI agent compatibility:

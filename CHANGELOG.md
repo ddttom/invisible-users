@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-20f] - Documentation updates for platform convergence
+
+### Changed
+
+- **README.md**: Added Industry Context section documenting January 2026 platform launches (Amazon Alexa+, Microsoft Copilot Checkout, Google UCP + Shopping Agent)
+- **CLAUDE.md**: Updated Project Overview with market timing context
+- **CLAUDE.md**: Added strategic messaging concepts (Silent Failures, Platform Race, Convergence Principle) to Key Conceptual Themes section
+- **CLAUDE.md**: Documented UCP submodule as read-only reference material maintained by external UCP project
+- **packages/bible/README.md**: Added Market Context section explaining January 2026 convergence and book's coverage in Chapter 9
+- **packages/dont-make-ai-think/README.md**: Added market timing context to Overview section
+
+### Notes
+
+This update reflects factual industry developments (January 2026 platform launches) and strengthens strategic messaging consistency across repositories. Business materials (revenue models, partnerships, publication strategies) remain in docs/sales-enablement/ only. UCP repository is read-only reference material and should not be modified.
+
 ## [2026-01-20e] - Presentation Restructure Based on Transcript Feedback
 
 ### Changed

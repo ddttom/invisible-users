@@ -112,7 +112,9 @@ pwd
   - **Slim:** `packages/dont-make-ai-think/` → `invisible-users-slim` - Practical guide
   - **Appendices:** `packages/shared-appendices/` → `invisible-users-appendices` - Shared resources
   - **Code:** `packages/shared-code-examples/` → `invisible-users-code-examples` - Pattern examples
-  - **UCP:** `packages/ucp/` → `Universal-Commerce-Protocol/ucp` - Ecommerce standard for AI agents
+  - **UCP:** `packages/ucp/` → `Universal-Commerce-Protocol/ucp` - Ecommerce standard for AI agents (**READ-ONLY REFERENCE**)
+    - Role: External reference material demonstrating practical application
+    - DO NOT modify this submodule - it is maintained by the UCP project
   - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md)
 
 ### Repository Navigation Map
@@ -231,6 +233,8 @@ Multiple books from modular repositories:
 
 **Current status:** Publication-ready (Due Q1 2026, not yet published)
 
+**Market context:** January 2026 saw three major platforms (Amazon, Microsoft, Google) launch agent commerce systems within seven days, accelerating the transition from experimental to infrastructure. The book documents this convergence and provides implementation patterns applicable across all platforms.
+
 **CRITICAL WRITING REQUIREMENT:** Always write as if features have always existed. Never use narrative text like "We have added" or "This update includes". Write definitive present tense: "Meta tag validation provides scoring" not "We added meta tag validation".
 
 ### 2. Web Audit Suite (Analysis Tool)
@@ -239,7 +243,9 @@ Comprehensive Node.js website analysis tool (`packages/web-audit-suite/`) implem
 
 ### 3. Universal Commerce Protocol (UCP)
 
-Open standard for commerce interoperability (`packages/ucp/`) that demonstrates practical application of the book's patterns in real-world ecommerce contexts. UCP enables AI agents to autonomously discover capabilities, navigate product catalogs, and complete purchases through standardized protocols. Key features include:
+**Universal Commerce Protocol (UCP)** - Read-only reference submodule demonstrating practical application of the book's patterns in real-world ecommerce contexts. UCP is an external project maintained separately; this repository includes it as reference material only.
+
+Open standard for commerce interoperability (`packages/ucp/`) that enables AI agents to autonomously discover capabilities, navigate product catalogs, and complete purchases through standardized protocols. Key features include:
 
 - **Composable Architecture:** Modular capabilities (Checkout, Order, Identity Linking) with optional extensions
 - **Dynamic Discovery:** Standardized profiles allow autonomous agent configuration
@@ -451,7 +457,13 @@ purpose: "Educational content introducing AI agents concept"
 - **SERVED HTML** (static) - CLI and server-based agents
 - **RENDERED HTML** (dynamic) - Browser-based agents
 
-**Ecommerce and AI Agents:** Universal Commerce Protocol demonstrates how standardized APIs enable autonomous agent interactions for product discovery, cart management, and checkout completion. UCP's composable architecture and dynamic capability discovery embody the book's principles for machine-readable interfaces.
+**Silent Failures:** Agents failing on websites without error logs - businesses lose conversions without analytics visibility
+
+**Platform Race:** January 2026 convergence (Amazon Alexa+, Microsoft Copilot Checkout, Google UCP) as competitive inflection point
+
+**Convergence Principle:** Patterns optimising for AI agents also benefit accessibility users (accessibility 2.0)
+
+**Ecommerce and AI Agents:** Universal Commerce Protocol demonstrates how standardised APIs enable autonomous agent interactions for product discovery, cart management, and checkout completion. UCP's composable architecture and dynamic capability discovery embody the book's principles for machine-readable interfaces.
 
 **See book chapters for complete coverage of patterns, security insights, and implementation guidance.**
 
