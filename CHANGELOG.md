@@ -7,6 +7,80 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-20] - Replace EDS Metadata with Pandoc YAML Frontmatter
+
+### Changed
+
+- **Appendix L Pattern 4** (shared-appendices submodule)
+  - Complete rewrite from "EDS Markdown Metadata Tables" to "Pandoc YAML Frontmatter for Markdown Metadata"
+  - Updated status from "Proposed - Adobe EDS" to "Established Standard - Universal markdown frontmatter"
+  - Replaced all table examples with YAML frontmatter format
+  - Updated rationale, use cases, benefits, forward compatibility, adoption considerations
+  - Added Pandoc documentation reference: <https://www.codestudy.net/blog/what-can-i-control-with-yaml-header-options-in-pandoc/>
+  - Updated cross-references throughout appendix (lines 30, 885, 974)
+
+- **Chapter 10** (bible submodule)
+  - Updated markdown converter solution to reference Pandoc YAML frontmatter instead of EDS metadata tables
+  - Maintains problem description about HTML-to-markdown metadata loss
+  - Solution now recommends universal Pandoc standard
+
+- **Chapter 12** (bible submodule)
+  - Removed Adobe Edge Delivery Services code example reference (non-existent directory)
+
+- **Chapter 5** (dont-make-ai-think submodule)
+  - Updated all JSON-LD examples to remove Adobe/EDS references
+  - Organization description: "Enterprise content management and web development consultancy"
+  - Article headline: "How to Migrate from Legacy CMS to Modern Web Architecture"
+  - HowTo example: "How to Install Node.js CLI Tools"
+
+- **CLAUDE.md** (main repository)
+  - Replaced "Markdown Metadata Tables (EDS Standard)" section with "Markdown Metadata (Pandoc YAML Frontmatter)"
+  - Removed MD060 linting exception (no longer needed)
+  - Updated examples to show YAML frontmatter format
+  - Added standard fields documentation
+
+- **docs/for-ai/architecting-multi-repo-codebases.md** (main repository)
+  - Rewrote Pattern 2 from "EDS Metadata Tables" to "Pandoc YAML Frontmatter"
+  - Complete section rewrite with YAML examples
+  - Added build system integration examples
+  - Updated all references throughout document
+
+- **docs/for-ai/writing-style.md** (main repository)
+  - Updated metadata section from "EDS Markdown Metadata Tables" to "Pandoc YAML Frontmatter"
+  - Replaced table example with YAML format
+  - Removed MD060 linting reference
+
+### Added
+
+- **Appendix H** (shared-appendices submodule)
+  - New section "Markdown Metadata Standards for AI Agents"
+  - Explains how YAML frontmatter complements llms.txt (site-wide vs per-document metadata)
+  - Provides standard Pandoc fields (title, author, date, abstract, keywords)
+  - Provides custom AI agent fields (description, ai-instruction, purpose, context)
+  - Includes platform support details (Hugo, Jekyll, Gatsby, Quarto, Pandoc)
+  - Added build system integration examples showing YAML-to-HTML-meta transformation
+  - Links to Pandoc, Hugo, and Jekyll documentation
+
+### Removed
+
+- All references to "EDS metadata tables" as a proposed pattern (except historical records in PROJECTSTATE.md)
+- Adobe Edge Delivery Services mentions from book content (retained only in Appendix H author bio/expertise section)
+- MD060 linting exception from config (was specific to EDS `:----` table alignment)
+
+### Submodules Updated
+
+- packages/shared-appendices: d11b36f → b2368e8 (Appendix L Pattern 4 + Appendix H YAML section)
+- packages/bible: b2c266b → 592701e (Chapter 10 and 12 updates)
+- packages/dont-make-ai-think: 9dfc864 → 78c716b (Chapter 5 JSON-LD examples)
+
+### Notes (2026-01-20)
+
+- This change replaces the proposed Adobe-specific EDS metadata table pattern with the universal Pandoc YAML frontmatter standard
+- YAML frontmatter is supported by all major static site generators (Hugo, Jekyll, Gatsby, Quarto) and the Pandoc document converter
+- Adobe EDS expertise remains documented in Appendix H author bio section
+- All cross-references updated to point to Pattern 4 as "Pandoc YAML Frontmatter"
+- Verification confirmed zero "EDS metadata" or "metadata table" references in book content (excluding historical changelog entries)
+
 ## [2026-01-19g] - Fix PDF Footer and Update Step-Commit Workflow
 
 ### Fixed
