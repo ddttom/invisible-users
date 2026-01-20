@@ -330,6 +330,187 @@ git push
 
 This pattern prevents the common error of pushing parent commits that reference non-existent submodule SHAs.
 
+### Automated CHANGELOG.md Enforcement
+
+Multi-repository projects need comprehensive changelogs documenting changes across all submodules. Manual CHANGELOG maintenance is error-prone - developers forget, skip it under deadline pressure, or document inconsistently.
+
+**Problem:** CHANGELOG.md updates are often forgotten during the commit workflow, resulting in incomplete project history.
+
+**Solution:** Automate CHANGELOG.md enforcement using git pre-push hooks that detect missing updates and block pushes until documentation is complete.
+
+#### Pre-Push Hook Implementation
+
+Place this hook in `.claude/hooks/pre-push.sh` (or `.git/hooks/pre-push`):
+
+```bash
+#!/bin/bash
+
+# Pre-push hook to update CHANGELOG.md and remind about documentation
+# This hook runs before git push operations
+
+# Check if we're in a git repository
+if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    exit 0
+fi
+
+# Get the root directory of the repository
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+# CRITICAL: Only run in main repository, not in submodules
+if [ "$(basename "$REPO_ROOT")" != "invisible-users" ]; then
+    exit 0
+fi
+
+# Update CHANGELOG.md automatically
+CHANGELOG_FILE="${REPO_ROOT}/CHANGELOG.md"
+if [ -f "$CHANGELOG_FILE" ]; then
+    # Get the last commit message and hash
+    LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
+    LAST_COMMIT_HASH=$(git log -1 --pretty=%h)
+    LAST_COMMIT_DATE=$(date +%Y-%m-%d)
+
+    # Check if CHANGELOG has been updated for this commit
+    LAST_CHANGELOG_UPDATE=$(git log -1 --format=%ct -- CHANGELOG.md 2>/dev/null || echo 0)
+    LAST_COMMIT_TIME=$(git log -1 --format=%ct)
+
+    # If CHANGELOG wasn't updated in the last commit, prompt to update it
+    if [ "$LAST_CHANGELOG_UPDATE" -lt "$LAST_COMMIT_TIME" ]; then
+        echo ""
+        echo "📝 CHANGELOG.md hasn't been updated for recent commits."
+        echo ""
+        echo "Last commit: [$LAST_COMMIT_HASH] $LAST_COMMIT_MSG"
+        echo ""
+        echo "REMINDER: CHANGELOG.md should document:"
+        echo "  - What changed (Added/Changed/Fixed/Removed)"
+        echo "  - Which submodules were updated (with commit hashes)"
+        echo "  - Date and version identifier"
+        echo "  - Impact notes explaining why the changes matter"
+        echo ""
+        echo "The CHANGELOG serves as both a historical record AND current project state."
+        echo ""
+        read -p "Update CHANGELOG.md before pushing? (Y/n) " -n 1 -r
+        echo
+        if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+            echo ""
+            echo "Please update CHANGELOG.md manually, then:"
+            echo "  1. git add CHANGELOG.md"
+            echo "  2. git commit -m \"Update CHANGELOG.md\""
+            echo "  3. git push"
+            echo ""
+            exit 1
+        fi
+    fi
+else
+    echo "⚠️  WARNING: CHANGELOG.md not found in main repository."
+    echo "CHANGELOG.md should exist at: $CHANGELOG_FILE"
+    echo ""
+fi
+
+exit 0
+```
+
+#### Hook Behavior
+
+**When developer runs `git push`:**
+
+1. Hook checks if CHANGELOG.md was modified in the last commit
+2. If not modified, displays prompt showing:
+   - Last commit hash and message
+   - What should be documented
+   - Clear update instructions
+3. If user chooses to update (default), hook blocks push
+4. Developer updates CHANGELOG.md, commits it, then pushes again
+
+**Key features:**
+
+- **Main repository only:** Hook only runs in hub repository, not in submodules
+- **Timestamp comparison:** Compares CHANGELOG modification time vs last commit time
+- **Context-aware:** Shows developer the commit message for context
+- **User override:** Developer can bypass if CHANGELOG update isn't needed (Y/n prompt)
+- **Clear guidance:** Explains what should be documented and how
+
+#### CHANGELOG.md Format
+
+Multi-repository projects should document submodule updates with commit hashes:
+
+```markdown
+## [2026-01-20] - Feature Name
+
+### Changed
+
+- **Main repository**
+  - Updated build scripts to support new output format
+  - Modified CI/CD pipeline for parallel builds
+
+- **Content submodule** (packages/content)
+  - Updated: abc123f → def456a
+  - Added three new chapters
+  - Revised introduction for clarity
+
+- **Examples submodule** (packages/examples)
+  - Updated: 789xyz1 → 234abc5
+  - Added code examples for new patterns
+
+### Notes
+
+This change improves build performance by 3x and enables
+parallel processing of multiple content sources.
+```
+
+#### Integration with Commit Workflows
+
+Remove CHANGELOG maintenance from manual commit workflows (like `/step-commit` skills):
+
+**Before (manual workflow):**
+
+```markdown
+## Step 6: Update CHANGELOG
+- Update CHANGELOG.md with all changes
+- Document submodule updates with commit hashes
+- Commit with message: "Update CHANGELOG.md"
+
+## Step 7: Final Steps
+- Push all commits
+```
+
+**After (automated workflow):**
+
+```markdown
+## Step 6: Final Steps
+- Push all commits
+- Pre-push hook will prompt for CHANGELOG.md if needed
+```
+
+#### Benefits
+
+1. **Never forgotten:** Automatic reminder before every push
+2. **Reduced cognitive load:** One fewer manual step in workflow
+3. **Consistent format:** Hook provides template guidance
+4. **Hub-only enforcement:** Only runs where CHANGELOG lives
+5. **Flexible:** User can bypass when appropriate
+
+#### Testing the Hook
+
+```bash
+# Make a commit without updating CHANGELOG
+git commit -m "Add new feature"
+
+# Attempt to push - hook will trigger
+git push
+
+# Output:
+# 📝 CHANGELOG.md hasn't been updated for recent commits.
+#
+# Last commit: [abc123f] Add new feature
+#
+# REMINDER: CHANGELOG.md should document:
+#   - What changed (Added/Changed/Fixed/Removed)
+#   - Which submodules were updated (with commit hashes)
+#   ...
+#
+# Update CHANGELOG.md before pushing? (Y/n)
+```
+
 ## Pattern 3: Submodule-First Git Workflow
 
 **Problem:** Git submodule pointers are fragile. Incorrect commit order breaks everything.
