@@ -13,3 +13,6 @@
 [submodule "outputs"]
 	path = outputs
 	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-outputs.git
+[submodule "packages/ucp"]
+	path = packages/ucp
+	url = https://github.com/Universal-Commerce-Protocol/ucp

@@ -100,18 +100,19 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has SIX git repositories (1 main hub + 5 submodules). File paths depend on your location.**
+**This workspace has SEVEN git repositories (1 main hub + 6 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 5):**
+- **Submodules (ASSETS, currently 6):**
   - **Outputs (PRIVATE):** `outputs/` → `invisible-users-outputs` - All generated content
   - **Bible:** `packages/bible/` → `invisible-users-bible` - Full book manuscript
   - **Slim:** `packages/dont-make-ai-think/` → `invisible-users-slim` - Practical guide
   - **Appendices:** `packages/shared-appendices/` → `invisible-users-appendices` - Shared resources
   - **Code:** `packages/shared-code-examples/` → `invisible-users-code-examples` - Pattern examples
+  - **UCP:** `packages/ucp/` → `Universal-Commerce-Protocol/ucp` - Ecommerce standard for AI agents
   - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md)
 
 ### Repository Navigation Map
@@ -166,6 +167,14 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       ├── examples/             ← Production code
 │   │       ├── README.md             ← Code examples README
 │   │       └── NO .claude/ directory
+│   ├── ucp/                          ← SUBMODULE (git repo)
+│   │   └── ${MAIN_REPO}/packages/ucp/
+│   │       ├── docs/                 ← UCP documentation
+│   │       ├── generated/            ← Generated schemas and types
+│   │       ├── main.py               ← Schema generator
+│   │       ├── README.md             ← UCP overview
+│   │       └── NO .claude/ directory
+│   │       Note: Universal Commerce Protocol - standardized ecommerce API for AI agents
 │   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
 │       ├── src/                      ← Tool source code
 │       ├── test/                     ← Test files
@@ -218,6 +227,7 @@ Multiple books from modular repositories:
 - **"Don't Make AI Think"** (Slim) - `packages/dont-make-ai-think/` - 11-chapter practical guide with business justification
 - **Shared Appendices** - `packages/shared-appendices/` - 12 appendices (A-L) shared across all books
 - **Shared Code Examples** - `packages/shared-code-examples/` - Good vs bad pattern implementations
+- **Universal Commerce Protocol** - `packages/ucp/` - Open standard demonstrating AI agent ecommerce interactions
 
 **Current status:** Publication-ready (Due Q1 2026, not yet published)
 
@@ -226,6 +236,17 @@ Multiple books from modular repositories:
 ### 2. Web Audit Suite (Analysis Tool)
 
 Comprehensive Node.js website analysis tool (`packages/web-audit-suite/`) implementing book's AI agent compatibility patterns. See package README for complete documentation.
+
+### 3. Universal Commerce Protocol (UCP)
+
+Open standard for commerce interoperability (`packages/ucp/`) that demonstrates practical application of the book's patterns in real-world ecommerce contexts. UCP enables AI agents to autonomously discover capabilities, navigate product catalogs, and complete purchases through standardized protocols. Key features include:
+
+- **Composable Architecture:** Modular capabilities (Checkout, Order, Identity Linking) with optional extensions
+- **Dynamic Discovery:** Standardized profiles allow autonomous agent configuration
+- **Transport Agnostic:** Works via REST APIs, Model Context Protocol (MCP), or Agent-to-Agent (A2A)
+- **Security-First:** Built-in support for advanced security patterns and verifiable credentials
+
+UCP embodies the convergence principle from the book - patterns that work for AI agents also benefit human users through clear, semantic structure and explicit state management. See [packages/ucp/README.md](packages/ucp/README.md) and [ucp.dev](https://ucp.dev) for complete documentation.
 
 ## Repository Structure
 
@@ -251,6 +272,7 @@ Comprehensive Node.js website analysis tool (`packages/web-audit-suite/`) implem
 │   ├── dont-make-ai-think/   # Slim book (git submodule)
 │   ├── shared-appendices/    # Shared appendices (git submodule)
 │   ├── shared-code-examples/ # Pattern examples (git submodule)
+│   ├── ucp/                  # Universal Commerce Protocol (git submodule)
 │   └── web-audit-suite/      # Analysis tool (not a submodule)
 └── docs/                     # Project documentation
     ├── architecture/         # Architecture diagrams
@@ -421,6 +443,8 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 
 - **SERVED HTML** (static) - CLI and server-based agents
 - **RENDERED HTML** (dynamic) - Browser-based agents
+
+**Ecommerce and AI Agents:** Universal Commerce Protocol demonstrates how standardized APIs enable autonomous agent interactions for product discovery, cart management, and checkout completion. UCP's composable architecture and dynamic capability discovery embody the book's principles for machine-readable interfaces.
 
 **See book chapters for complete coverage of patterns, security insights, and implementation guidance.**
 

@@ -207,66 +207,92 @@ See [Hub Contributing Guide](link) for complete workflow.
 
 The README answers: "If I cloned just this one repository, what do I need to know?" Don't duplicate hub documentation—provide minimal context and link to the source of truth.
 
-## Pattern 2: Metadata Standards
+## Pattern 2: Pandoc YAML Frontmatter
 
 **Problem:** Content files need machine-readable metadata for build processes, AI agents, and search engines without proprietary tooling.
 
-**Solution:** Use EDS (Adobe Edge Delivery Services) markdown metadata tables—a standard format that works with any static site generator.
+**Solution:** Use Pandoc YAML frontmatter—the universal standard for markdown metadata across all static site generators.
 
-### The Metadata Table Format
+### The YAML Frontmatter Format
 
-```markdown
-| metadata |  |
-| :---- | :---- |
-| title | Document Title |
-| author | Author Name |
-| creation-date | 15/Jan/2026 |
-| modified-date | 19/Jan/2026 |
-| description | Brief summary for humans |
-| longdescription | Extended context for AI agents |
-| purpose | Why this document exists |
-| ai-instruction | Instructions for AI agents parsing this |
+```yaml
+---
+title: "Document Title"
+author: "Author Name"
+date: "2026-01-15"
+description: "Brief summary for humans"
+abstract: "Extended context for AI agents"
+keywords: [markdown, metadata, yaml, frontmatter]
+ai-instruction: "Instructions for AI agents parsing this"
+purpose: "Why this document exists"
+---
 ```
 
-### Placement Strategy
+### Standard Implementation
 
-**Top placement (frontmatter):** When AI agents or build tools are the primary consumers
+YAML frontmatter appears at the very top of the file, delimited by triple dashes:
 
 ```markdown
-| metadata |  |
-| :---- | :---- |
-| title | API Reference |
+---
+title: "API Reference"
+author: "Technical Team"
+date: "2026-01-15"
+description: "Complete API documentation"
+keywords: [api, reference, documentation]
+---
 
 # API Reference
 
 Content begins...
 ```
 
-**Bottom placement (footnote-style):** When humans read raw markdown directly
+### Why YAML Frontmatter?
 
-```markdown
-# User Guide
+1. **Universal standard:** Pandoc, Hugo, Jekyll, Gatsby, Quarto all support natively
+2. **Machine-readable:** Structured YAML format with full type support
+3. **Build-tool integrated:** Automatic conversion to HTML meta tags
+4. **AI-friendly:** Standard format AI agents recognize
+5. **Rich features:** Access to full Pandoc metadata capabilities
+6. **No vendor lock-in:** Industry-standard format, not platform-specific
 
-Content...
+### Standard Pandoc Fields
 
+**Core metadata:**
+
+- `title` - Document title
+- `author` - Author name(s)
+- `date` - Publication or update date
+- `abstract` - Extended summary
+- `keywords` - Array of topic tags
+
+**Custom fields for AI agents:**
+
+- `description` - SEO-style summary
+- `ai-instruction` - Agent parsing guidance
+- `purpose` - Document intent
+- `context` - Background information
+
+### Integration with Build Systems
+
+Static site generators automatically process YAML frontmatter:
+
+```yaml
 ---
-
-| metadata |  |
-| :---- | :---- |
-| title | User Guide |
+title: "User Guide"
+description: "How to use the system"
+keywords: [guide, tutorial, documentation]
+---
 ```
 
-### Why This Format?
+When built, this becomes:
 
-1. **Universal compatibility:** Any markdown parser handles tables
-2. **Machine-readable:** Structured data without YAML frontmatter
-3. **Human-readable:** Clear table format in GitHub/GitLab UI
-4. **AI-friendly:** Explicit metadata agents can reliably extract
-5. **Build-tool agnostic:** Works with Pandoc, Jekyll, Hugo, or custom parsers
-
-**Avoid Duplication:**
-
-Don't place metadata tables at both top and bottom. Choose based on primary audience: humans (bottom) or machines (top).
+```html
+<head>
+  <title>User Guide</title>
+  <meta name="description" content="How to use the system">
+  <meta name="keywords" content="guide, tutorial, documentation">
+</head>
+```
 
 ## Commit Workflow Architecture
 

@@ -43,6 +43,14 @@ A production-ready Node.js website analysis tool implementing the book's pattern
 
 Features: SEO, accessibility (WCAG 2.1), performance, security, AI agent compatibility analysis.
 
+### Universal Commerce Protocol (UCP)
+
+Reference implementation demonstrating how AI agents interact with ecommerce systems:
+
+- **[UCP](packages/ucp/)** - Open standard for commerce interoperability enabling AI agents to discover, navigate, and complete purchases
+
+UCP demonstrates the practical application of patterns from the book in a real-world ecommerce context, showing how standardized protocols enable autonomous agent interactions.
+
 ## Why Submodules Exist: Separation of Concerns
 
 This repository uses git submodules to achieve **clean separation between content and orchestration**. Each submodule is an independent repository with its own version control, serving a specific purpose:
@@ -73,6 +81,7 @@ This repository uses git submodules to achieve **clean separation between conten
 │   ├── dont-make-ai-think/   # "Don't Make AI Think" (slim guide) [SUBMODULE]
 │   ├── shared-appendices/    # Shared implementation guides (A-L) [SUBMODULE]
 │   ├── shared-code-examples/ # Production-ready code examples [SUBMODULE]
+│   ├── ucp/                  # Universal Commerce Protocol [SUBMODULE]
 │   ├── manuscript/           # Original manuscript repository [SUBMODULE - legacy]
 │   └── web-audit-suite/      # Website analysis tool (NOT a submodule)
 ├── books/                    # Convenient symlinks to all book content
@@ -233,7 +242,8 @@ This workspace contains multiple git repositories:
 3. **Slim guide submodule:** `packages/dont-make-ai-think/` (practical guide)
 4. **Appendices submodule:** `packages/shared-appendices/` (shared appendices)
 5. **Code examples submodule:** `packages/shared-code-examples/` (pattern examples)
-6. **Outputs submodule:** `outputs/` (private, generated content)
+6. **UCP submodule:** `packages/ucp/` (Universal Commerce Protocol - ecommerce standard for AI agents)
+7. **Outputs submodule:** `outputs/` (private, generated content)
 
 **Always check `pwd` before git operations.** The [LEARNINGS.md](LEARNINGS.md) file documents common mistakes and their fixes.
 
