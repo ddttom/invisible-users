@@ -7,6 +7,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-20e] - Presentation Restructure Based on Transcript Feedback
+
+### Changed
+
+- **Presentation Slides Major Restructure** (docs/talks/members-call/talk-slides.js v2.0.0)
+  - Merged slides 2-3: Combined Adobe Insights and cruise error into single opening hook with highlight box
+  - Reordered slide 3: Moved "Understanding Invisible Users" earlier for better conceptual framing
+  - Slide count: 25 → 24 slides (maintains ~20 minute timing at 50 sec/slide)
+  - Updated header metadata: version 1.0.0 → 2.0.0, added changes documentation
+
+- **New Content Added**
+  - Slide 5: "Why Current Systems Fail" - addresses EDS/markup problems, LLM Optimizer critique
+  - Slide 11: "Myth vs Reality: Why Markdown Fails" - explicit debunking of markdown for AI agents
+  - Slide 21: "The Future of CMS" - paradigm shift from presentation management to data management
+  - All new slides based on extensive transcript discussion (Tom's stutters/pauses indicated unclear content)
+
+- **Consolidated Narrative Sections**
+  - Slides 19-22: Merged "Why This Matters Now", "Our Responsibility", timeline into cohesive narrative
+  - Slide 19: Now single "Why This Matters Now: The Seven-Day Platform Race" combining urgency themes
+  - Removed duplicate Web Audit Suite slide (was at positions 17 and 23)
+  - Removed duplicate Call to Action slide (was at positions 18 and 24)
+
+- **Convergence Principle Elevated**
+  - Slide 23: Created dedicated "One Solution Serves Everyone" closing slide
+  - No longer buried as item #4 in takeaways - now headline message before contact
+  - Added "27 years behind the times" and "inflection point" messaging from transcript
+  - Emphasizes "within two years, machines will read websites, not humans"
+
+- **Guardrails Section Expanded** (Slide 22)
+  - Title changed: "VPNs and Hidden Guardrails" → "Why Guardrails Aren't Enough"
+  - Added: "System prompts work at reasoning level, NOT data extraction"
+  - Added: "£203k cruise error proves validation MUST happen in HTML"
+  - Added: "Don't rely on AI to 'think' correctly - give it facts in markup"
+  - Emphasizes enriched HTML with explicit validation over AI guesswork
+
+### Added
+
+- **File Rename** (docs/sales-enablement/profiles/)
+  - Renamed profile.md → tom-profile.md for clarity
+  - Used `git mv` to preserve file history
+
+### Impact Notes - Video Feedback Integration
+
+These updates address all critical issues identified in video transcript analysis (docs/sales-enablement/vid.txt). Tom explicitly stated he combined Adobe/cruise slides ("a bit silly" to keep separate), emphasized convergence principle repeatedly as "the key bit", and spent significant time discussing EDS failures and markdown misconceptions that weren't in original slides. Reordering puts conceptual framing before technical examples. Consolidation creates coherent narrative flow replacing scattered sections. All transcript feedback incorporated while maintaining presentation timing and professional tone.
+
 ## [2026-01-20d] - Talk Materials Platform Race and Accessibility Updates
 
 ### Changed
@@ -39,7 +84,7 @@ These updates strengthen competitive positioning (Microsoft isolation, open vs c
 
 ## [2026-01-20c] - Members Call Presentation Materials
 
-### Added
+### Added - Presentation Files
 
 - **Presentation Files** (docs/talks/members-call/)
   - `talk.md`: 20-minute presentation script with Pandoc YAML frontmatter (v1.0.0)
