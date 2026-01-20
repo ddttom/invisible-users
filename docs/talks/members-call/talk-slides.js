@@ -132,10 +132,10 @@ function createInvisibleUsersDeck() {
       body: [
         "Not theoretical futures - happening today",
         "Agents browsing, comparing, transacting now",
-        "Sites that work get preferred",
-        "Sites optimized for agents get preferred",
-        "First-mover advantage that's hard to claw back.",
-        "Two real examples..."
+        "Same failures affect screen reader users (invisible to designers)",
+        "Visual feedback invisible to AI agents AND blind users",
+        "Sites that work get preferred by both",
+        "First-mover advantage that's hard to claw back."
       ]
     },
 
@@ -191,7 +191,7 @@ function createInvisibleUsersDeck() {
         "Toast notifications and modals",
         "Loading spinners without context",
         "JavaScript-dependent navigation",
-        "These patterns need optimization for agents and screen readers."
+        "These patterns break AI agents AND screen readers - same problems, same solutions."
       ]
     },
 
@@ -201,10 +201,12 @@ function createInvisibleUsersDeck() {
       title: "Two HTML States: The Gap",
       subtitle: "Critical Distinction:",
       body: [
-        "1. Served HTML (static) - What server sends before JS. Most agents see only this.",
-        "2. Rendered HTML (dynamic) - After JS execution. Only browser-based agents see this.",
-        "Example: <div id='products'></div> then fetch().",
-        "Your product catalogue is invisible to most agents."
+        "1. Served HTML (static) - What server sends before JS",
+        "   → CLI agents, screen readers see this",
+        "2. Rendered HTML (dynamic) - After JS execution",
+        "   → Only browser-based agents see this",
+        "Example: <div id='products'></div> then fetch()",
+        "Product catalogue invisible to most agents AND some assistive tech"
       ]
     },
 
@@ -229,7 +231,8 @@ function createInvisibleUsersDeck() {
       subtitle: "Instead of vanishing toast notifications:",
       body: [
         "<form data-state='incomplete'> with <div role='alert'>",
-        "Use aria-invalid and aria-describedby",
+        "Screen readers announce role='alert' immediately",
+        "aria-invalid and aria-describedby work for agents AND users",
         "Business value: Conversion rates improve for everyone."
       ]
     },
@@ -241,9 +244,10 @@ function createInvisibleUsersDeck() {
       subtitle: "Instead of 'From £99':",
       body: [
         "Use Schema.org/Offer markup",
-        "Explicit price and currency meta tags",
-        "<details> for fee breakdown",
-        "Business value: No hidden fees. Agent-readable. Builds trust."
+        "Voice assistants for blind users read same structured data",
+        "Explicit price and currency (machines AND humans need clarity)",
+        "<details> for fee breakdown (keyboard navigable)",
+        "Business value: Builds trust, reduces cart abandonment for all users."
       ]
     },
 
@@ -254,8 +258,9 @@ function createInvisibleUsersDeck() {
       subtitle: "Make cart state visible:",
       body: [
         "DOM attributes: data-state='active', data-item-count='3'",
-        "Role='status' for live updates",
-        "Business value: State persists. Debugging easier. Integration testing reliable."
+        "role='status' announces updates to screen readers AND agents",
+        "Same state visibility benefits assistive technology users",
+        "Business value: State persists. Debugging easier. Accessible to all."
       ]
     },
 
@@ -322,9 +327,10 @@ function createInvisibleUsersDeck() {
       subtitle: "Three major platforms in one week:",
       body: [
         "Jan 5: Amazon Alexa+ (browser agent launch)",
-        "Jan 8: Microsoft expands Copilot Checkout",
-        "Jan 11: Google Universal Commerce Protocol (UCP)",
-        "Timeline compressed: 12 months -> 6-9 months"
+        "Jan 8: Microsoft expands Copilot Checkout (proprietary approach)",
+        "Jan 11: Google Universal Commerce Protocol (open standard, like ACP)",
+        "Two open vs one closed: Microsoft competitively isolated",
+        "Timeline compressed: 12 months → 6-9 months or LESS"
       ]
     },
 
@@ -370,13 +376,15 @@ function createInvisibleUsersDeck() {
     // 23. Next
     {
       type: 'standard',
-      title: "What Comes Next",
-      subtitle: "Protocol Convergence vs Fragmentation",
+      title: "Open vs Closed Competition",
+      subtitle: "Two Open Protocols vs One Proprietary System",
       body: [
-        "Agentic Commerce Protocol (ACP) - OpenAI/Stripe",
-        "Universal Commerce Protocol (UCP) - Google",
-        "Identity delegation patterns emerging",
-        "Multiple approaches under development"
+        "Two chose open: OpenAI/Stripe (ACP), Google (UCP)",
+        "One chose closed: Microsoft (Copilot Checkout)",
+        "Microsoft isolated - competing against TWO open protocols",
+        "Author position: 'I hope open wins for ecosystem health'",
+        "Fragmentation risk: Will ACP and UCP converge or compete?",
+        "Retailers must choose: integrate both, wait, or pick one?"
       ]
     },
 
@@ -386,11 +394,11 @@ function createInvisibleUsersDeck() {
       title: "Key Takeaways",
       subtitle: "Five Essential Messages:",
       body: [
-        "1. This is happening now",
-        "2. Commercial pressure exists",
-        "3. Solutions are accessible",
-        "4. Universal benefit",
-        "5. Start with quick wins"
+        "1. This is happening now (agents + screen readers need same patterns)",
+        "2. Commercial pressure exists (AI commerce adds urgency)",
+        "3. Solutions are accessible (same patterns since 1999)",
+        "4. Convergence principle: What machines need = what disabled users need",
+        "5. One solution serves everyone (no trade-offs)"
       ]
     },
 

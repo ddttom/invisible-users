@@ -112,9 +112,18 @@ function nextStep() {
 
 ## Why This Happens [TIME: 3 minutes]
 
-Modern web design is optimised for visual feedback that humans interpret through a browser. AI agents operate differently.
+**The convergence principle:** What machines need is exactly what screen reader users need.
 
-**The architectural conflict:** We've spent years optimising for:
+These patterns have broken accessibility since the early 2000s. We've known the solutions since 1999 (semantic HTML, clear structure, explicit state). AI agents encounter identical barriers:
+
+- Visual feedback is invisible to AI agents AND blind users
+- Toast notifications vanish before screen readers AND agents can process them
+- JavaScript-only state is inaccessible to CLI agents AND some assistive technology
+- Missing semantic structure makes navigation impossible for both
+
+**This isn't new. Commercial pressure from AI commerce adds urgency to long-standing accessibility obligations.**
+
+Modern web design is optimised for visual feedback that humans interpret through a browser:
 
 - Single-page applications
 - Client-side state management
@@ -122,7 +131,7 @@ Modern web design is optimised for visual feedback that humans interpret through
 - Loading spinners without context
 - JavaScript-dependent navigation
 
-These patterns need optimization for agents and screen readers. AI agents encounter the same barriers as humans with accessibility needs.
+These patterns break AI agents AND screen readers - same problems, same solutions.
 
 ### Two HTML States: The Gap
 
@@ -168,74 +177,72 @@ Instead of vanishing toast notifications:
 
 ```html
 <form data-state='incomplete'>
-  <div id='error-summary' role='alert'>
-    <h3>Please fix the following:</h3>
-    <ul id='error-list'></ul>
+  <div role='alert' aria-live='assertive'>
+    Please complete required fields
   </div>
-
-  <input aria-invalid='false'
-         aria-describedby='email-error'>
-  <div id='email-error'></div>
 </form>
 ```
 
-**Business value:** Conversion rates improve for everyone.
+**How this helps multiple audiences:**
 
-- Errors persist until fixed (no vanishing)
-- Screen readers can announce them
-- Agents can read and act on them
-- Users with cognitive disabilities have time to process
+- **Screen readers:** Announce `role='alert'` immediately, stay in document for review
+- **AI agents:** Persistent state in DOM allows validation of submission success
+- **Keyboard users:** Can navigate to error without mouse
+- **Everyone:** Clear, explicit feedback reduces confusion
+
+Use `aria-invalid` and `aria-describedby` attributes.
+
+**Business value:** Conversion rates improve for everyone.
 
 ### Pattern #2: Complete Pricing
 
-Instead of 'From £99':
+Instead of "From £99":
 
 ```html
-<div itemscope itemtype='schema.org/Offer'>
-  <meta itemprop='price' content='119.00'>
-  <meta itemprop='priceCurrency' content='GBP'>
-
-  Total: £119.00 (inc. VAT)
-
-  &lt;details&gt;
-    &lt;summary&gt;See breakdown&lt;/summary&gt;
-    Product: £99 | Delivery: £15 | Fee: £5
-  &lt;/details&gt;
+<div itemscope itemtype="https://schema.org/Offer">
+  <meta itemprop="price" content="2030.00">
+  <meta itemprop="priceCurrency" content="GBP">
+  <details>
+    <summary>Price breakdown</summary>
+    Base fare: £1,800
+    Port fees: £180
+    Service charge: £50
+  </details>
 </div>
 ```
 
-**Business value:** No hidden fees. Agent-readable. Builds trust.
+**How this helps multiple audiences:**
 
-- No hidden fees that break trust
-- Agents extract accurate pricing
-- Price comparison sites get correct data
-- Reduces support queries about charges
-- Improves conversion through transparency
+- **Voice assistants:** Read structured data (used by blind users for shopping)
+- **AI agents:** Parse exact pricing without ambiguity
+- **Humans:** `<details>` element provides expandable breakdown (keyboard accessible)
+- **Price comparison tools:** Structured data enables accurate comparison
+
+**Business value:** No hidden fees. Builds trust. Reduces cart abandonment for all users.
 
 ### Pattern #3: Explicit State
 
 Make cart state visible:
 
 ```html
-<div id='shopping-cart'
-     data-state='active'
-     data-item-count='3'
-     data-subtotal='247.97'
-     data-currency='GBP'>
-
-  <div role='status'>
-    Items: <span>3</span>
-    Subtotal: £<span>247.97</span>
+<div class="cart"
+     data-state="active"
+     data-item-count="3"
+     data-total="156.50">
+  <div role="status" aria-live="polite">
+    3 items in cart, total £156.50
   </div>
 </div>
 ```
 
-**Business value:** State persists. Debugging easier. Integration testing more reliable.
+**How this helps multiple audiences:**
 
-- Cart state visible in DOM, not just JavaScript
-- Agents verify cart contents before checkout
-- State persists through page refreshes
-- Debugging easier for your own developers
+- **Screen readers:** `role='status'` announces updates when cart changes
+- **AI agents:** Data attributes provide explicit state without parsing UI
+- **Developers:** Debugging easier with visible state in DOM
+- **Automated testing:** Reliable integration tests without fragile selectors
+
+**Business value:** State persists across sessions. Debugging easier. Works for everyone.
 
 ### The Small Business Case
 
@@ -312,6 +319,14 @@ Sites that adapt early gain advantage. Sites that don't get quietly bypassed.
   - Open protocol competing with OpenAI/Stripe ACP
   - Timeline compressed: 12 months → 6-9 months
 
+**The competitive landscape:**
+
+Two platforms chose **open standards** (Google UCP, OpenAI/Stripe ACP). One chose **proprietary** (Microsoft Copilot).
+
+Microsoft is now competing against TWO open protocols. Retailers and developers typically prefer open standards for interoperability and avoiding lock-in.
+
+**Author perspective:** I hope open wins for ecosystem health. Proprietary approaches create dependency and limit innovation.
+
 ### VPNs and Hidden Guardrails
 
 **Two realities affecting every agent:**
@@ -363,36 +378,18 @@ As designers, developers, product owners, and executives:
 
 ---
 
-## What Comes Next: Protocol Convergence [TIME: 2 minutes]
+## Open vs Closed Competition [TIME: 2 minutes]
 
-**Two open protocols launched simultaneously:**
+**The strategic divide:**
 
-1. **Agentic Commerce Protocol (ACP):** OpenAI/Stripe (Sept 2024), 1M+ merchants.
-2. **Universal Commerce Protocol (UCP):** Google (Jan 2026), 20+ major retailers.
+- **Open:** OpenAI/Stripe (ACP, Sept 2024, 1M+ Shopify/Etsy merchants), Google (UCP, Jan 2026, 20+ major retailers)
+- **Closed:** Microsoft (Copilot Checkout, proprietary integration)
 
-**Critical question:** Will they converge or fragment?
+**Microsoft's isolation:** Only major platform choosing proprietary. Enterprise leverage (Windows/Office) may not overcome consumer and SMB preference for portability.
 
-Beyond fixing websites and building validation layers, there's a critical infrastructure gap in the AI agent ecosystem.
+**Fragmentation danger:** Two open protocols (ACP vs UCP) create integration burden. Both claim compatibility with A2A, AP2, MCP, but technical convergence unknown. Best outcome: ACP/UCP merge into unified standard.
 
-**The Missing Piece:**
-
-Every major platform is building proprietary identity delegation systems:
-
-- Microsoft Copilot Checkout uses Microsoft's own identity layer
-- Claude for Chrome inherits browser sessions through Anthropic
-- Google and Apple are building their own walled gardens
-
-**The problem:** Users face lock-in. Agent creators face fragmentation. Businesses face complexity.
-
-**The Next Project:**
-
-I'm considering building an open-source universal identity delegation framework that provides:
-
-- Portable authorisation tokens that work across platforms and agents
-- User-controlled permissions and auditable delegation trails
-- OAuth 2.0 delegation extension support
-- Abstraction layers for agent creators
-- Community infrastructure before proprietary lock-in becomes entrenched
+**Identity delegation gap:** No platform offers portable identity yet. Consideration of open-source framework, but waiting to see if platforms solve this
 
 **Unlike the book and Web Audit Suite** (which are professional offerings), **this would be open-source community infrastructure** - not a commercial product. It's infrastructure the ecosystem needs. If platforms won't build interoperability, perhaps an open community effort can.
 
