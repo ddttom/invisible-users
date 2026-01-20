@@ -7,6 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-20b] - Multi-Repository Workflow Automation
+
+### Added
+
+- **Claude Code Permissions** (.claude/settings.local.json)
+  - Added `git -C:*` wildcard permission for all submodule git operations
+  - Added pipeline tools: xargs, sed, awk, sort, uniq, head, tail, cut
+  - Added path utilities: basename, dirname, realpath
+  - Added file inspection tools: file, stat, diff, comm, jq
+  - Added git commands: show, rev-parse, describe, tag, fetch, pull, for-each-ref, symbolic-ref
+  - Added GitHub CLI permissions: gh pr, gh issue, gh api
+  - Enables streamlined multi-repo automation without constant permission prompts
+
+- **Multi-Repository Permissions Documentation** (docs/for-ai/architecting-multi-repo-codebases.md)
+  - New section "Claude Code Permissions for Multi-Repository Workflows"
+  - Recommended permissions configuration with JSON examples
+  - Security warnings and considerations (critical warning about understanding permissions)
+  - Before/after workflow examples showing automation benefits
+  - Maintenance guidelines for quarterly permission review
+  - Clear guidance on permissions to keep in "ask" mode and never auto-approve
+
+### Changed
+
+- **package-lock.json**: Automatic dependency resolution updates
+
+### Impact Notes
+
+These permissions eliminate repetitive approval prompts for multi-repo automation (git -C commands, linting pipelines, text processing) while maintaining security through ask-mode for destructive operations (git restore, git reset, bash scripts). The documentation ensures users understand security implications before adoption.
+
 ## [2026-01-20] - Replace EDS Metadata with Pandoc YAML Frontmatter
 
 ### Changed
