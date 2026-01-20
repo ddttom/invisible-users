@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-20d] - Talk Materials Platform Race and Accessibility Updates
+
+### Changed
+
+- **Presentation Competitive Framing** (docs/talks/members-call/)
+  - Slide 19: Added Microsoft isolation context (proprietary vs open standards)
+  - Slide 23: Reframed "What Comes Next" as "Open vs Closed Competition"
+  - Author position stated: "I hope open wins for ecosystem health"
+  - Fragmentation risk between ACP and UCP made explicit
+  - Timeline urgency updated: 12 months → 6-9 months or LESS
+  - Major Developments section: Added competitive landscape analysis
+  - Protocol section renamed: "Protocol Convergence" → "Open vs Closed Competition"
+
+- **Accessibility Convergence Emphasis** (docs/talks/members-call/)
+  - Convergence principle made explicit: "What machines need = what disabled users need"
+  - "Machines AND screen readers" pairing added throughout both files
+  - Slide 5: Added screen reader parallels to invisible failures
+  - Slide 9: Updated to "These patterns break AI agents AND screen readers"
+  - Slide 10: Added "CLI agents, screen readers see this" for served HTML
+  - Pattern #1: Added "Screen readers announce role='alert' immediately"
+  - Pattern #2: Added "Voice assistants for blind users read same structured data"
+  - Pattern #3: Added "role='status' announces updates to screen readers AND agents"
+  - Slide 24: Key takeaways rewritten with convergence principle
+  - "Why This Happens" section: Lead with convergence principle, context added "same patterns since 1999"
+  - All three pattern sections: Added "How this helps multiple audiences" subsections
+
+### Impact Notes - Strategic Positioning
+
+These updates strengthen competitive positioning (Microsoft isolation, open vs closed) while making accessibility convergence explicit throughout. First-mover advantage language preserved as critical sales hook. Professional business tone maintained. Both files remain synchronized for 20-minute presentation format.
+
 ## [2026-01-20c] - Members Call Presentation Materials
 
 ### Added
