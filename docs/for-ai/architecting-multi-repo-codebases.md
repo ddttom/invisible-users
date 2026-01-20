@@ -302,6 +302,150 @@ When built, this becomes:
 </head>
 ```
 
+## Claude Code Permissions for Multi-Repository Workflows
+
+**Problem:** Multi-repository automation frequently triggers permission prompts for common operations like `git -C`, `ls`, and pipeline commands (`xargs`, `sed`, `awk`).
+
+**Solution:** Configure `.claude/settings.local.json` with broad permissions for standard multi-repo operations.
+
+### Recommended Permissions Configuration
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C:*)",
+      "Bash(ls:*)",
+      "Bash(xargs:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(cut:*)",
+      "Bash(basename:*)",
+      "Bash(dirname:*)",
+      "Bash(realpath:*)",
+      "Bash(file:*)",
+      "Bash(stat:*)",
+      "Bash(diff:*)",
+      "Bash(comm:*)",
+      "Bash(jq:*)",
+      "Bash(git show:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git describe:*)",
+      "Bash(git tag:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "Bash(git for-each-ref:*)",
+      "Bash(git symbolic-ref:*)",
+      "Bash(npx markdownlint:*)"
+    ],
+    "deny": [],
+    "ask": [
+      "Bash(git restore:*)",
+      "Bash(git reset:*)",
+      "Bash(bash:*)",
+      "Bash(echo:*)"
+    ]
+  }
+}
+```
+
+### What These Permissions Enable
+
+**Multi-repository git operations:**
+
+```bash
+# Work across submodules without prompts
+git -C packages/shared-appendices status
+git -C packages/bible show HEAD --name-only
+git -C outputs push
+```
+
+**Automated linting pipelines:**
+
+```bash
+# Markdown linting across submodules
+git -C packages/shared-appendices show HEAD --name-only | \
+  grep '.md$' | \
+  xargs -I {} npx markdownlint -c config/.markdownlint.json packages/shared-appendices/{}
+```
+
+**Text processing workflows:**
+
+```bash
+# Extract and process commit messages
+git -C packages/bible log --oneline | cut -d' ' -f2- | sort | uniq
+
+# Compare file lists between repos
+comm -12 <(git -C packages/bible ls-files | sort) \
+         <(git -C packages/dont-make-ai-think ls-files | sort)
+```
+
+### Security Considerations
+
+**⚠️ CRITICAL WARNING: Understand what you're allowing.**
+
+These permissions grant Claude Code broad access to run git operations and text processing commands across your entire workspace. Only add these permissions if you:
+
+1. **Understand git operations** - Know what `git fetch`, `git pull`, `git tag` do
+2. **Trust your workspace** - This repository and all submodules are under your control
+3. **Review the patterns** - You've examined the automation scripts that will use these permissions
+4. **Accept the risk** - Any AI agent mistakes with these permissions can modify your repositories
+
+**Permissions to keep in "ask" mode:**
+
+- `git restore` - Can discard uncommitted changes
+- `git reset` - Can rewrite git history
+- `bash` - Arbitrary shell script execution
+- `echo` - Can overwrite files via redirection
+
+**Never grant blanket permission to:**
+
+- Destructive git operations (`git reset --hard`, `git push --force`)
+- File deletion commands (`rm -rf`)
+- System modification commands (`chmod`, `chown`, `sudo`)
+
+### Integration with Multi-Repository Automation
+
+Once configured, automation workflows run smoothly without interruption:
+
+**Before (constant prompts):**
+
+```bash
+# Each command requires approval
+git -C packages/bible status          # ← Prompt
+git -C packages/bible add chapters/   # ← Prompt
+git -C packages/bible commit -m "..."  # ← Prompt
+```
+
+**After (streamlined workflow):**
+
+```bash
+# All commands execute without prompts
+git -C packages/bible status
+git -C packages/bible add chapters/
+git -C packages/bible commit -m "Update chapter content"
+git -C packages/bible push origin main
+```
+
+### Maintenance Guidelines
+
+**Review permissions quarterly:**
+
+1. Check `.claude/settings.local.json` for unused permissions
+2. Remove specific entries replaced by wildcards (e.g., `git -C packages/bible:*` when `git -C:*` exists)
+3. Audit for overly broad permissions that should be restricted
+4. Document any custom permissions added for project-specific workflows
+
+**When automation patterns change:**
+
+- Add new permissions as automation requirements evolve
+- Keep destructive operations in "ask" mode
+- Document why each permission is needed (in CLAUDE.md or comments)
+
 ## Commit Workflow Architecture
 
 Multi-repository architectures require careful thought about commit ordering and pointer updates.
