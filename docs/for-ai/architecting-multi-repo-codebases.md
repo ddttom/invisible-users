@@ -594,12 +594,16 @@ AI assistants maintain a working directory context. In multi-repository projects
 ../../.claude/skills/commit.md
 ```
 
+**Real-world experience with Claude Code:** Even Claude Code - Anthropic's official CLI tool designed for repository navigation - occasionally loses track of which repository it's operating in. When this happens, Claude Code runs `pwd` to verify location and resets to the root directory when needed. If a purpose-built AI coding assistant requires explicit location checks, expecting other tools or developers to remember their location without automation is unrealistic.
+
 **Architectural solution:** Implement working directory verification as a required workflow step. Git hooks can enforce this:
 
 ```bash
 # .claude/hooks/pre-tool-use.sh
 pwd  # Always verify location before file operations
 ```
+
+**Why this matters:** If Claude Code - which has deep integration with repository structures and was designed specifically for code navigation - needs `pwd` checks and automated resets, manual workflows without this safeguard will fail. The complexity isn't a training problem or a documentation gap - it's inherent to multi-repository architectures.
 
 ### The Dual-Repository Awareness Problem
 
@@ -621,6 +625,32 @@ Some directories exist only in the parent repository (configuration, CI/CD, buil
 ```
 
 This documentation becomes part of the AI assistant's context, reducing navigation errors.
+
+### Claude Code Navigation Pattern
+
+Real workflow observed with Claude Code in production multi-repository environments:
+
+```bash
+# Typical session progression
+User: "Update the content in packages/bible/"
+Claude: [Runs pwd to verify location]
+        # Output: /Users/username/projects/invisible-users
+
+Claude: [Operates on packages/bible/ submodule]
+        # Makes changes, commits to submodule
+
+# Later in same session
+User: "Now update the README"
+Claude: [Runs pwd again - may have lost context]
+        # Output: /Users/username/projects/invisible-users/packages/bible
+
+Claude: [Resets to root when needed]
+        cd /Users/username/projects/invisible-users
+```
+
+**Key observation:** Claude Code understands multi-repository architecture and navigates correctly, but occasionally needs to verify location mid-session. This isn't a bug - it's the correct defensive pattern. When uncertainty exists about working directory, explicit verification prevents cascading errors.
+
+**Implementation lesson:** If Claude Code - built specifically for repository navigation - runs `pwd` checks multiple times per session, your git hooks should enforce the same pattern. Don't rely on maintained context across operations.
 
 ## Pattern 4: Navigation Map for AI Agents
 
