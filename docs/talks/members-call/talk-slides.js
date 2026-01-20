@@ -4,11 +4,12 @@
  * @title       The Invisible Users: Designing the Web for AI Agents and Everyone Else
  * @author      Tom Cranstoun
  * @date        2026-01-20
- * @version     1.0.0
+ * @version     2.0.0
  * @description Google Apps Script to generate themed 20-minute presentation deck
  * @audience    Business leaders (CTOs, product owners)
  * @duration    20 minutes + Q&A
- * @slides      25 slides with themed layout (dark grey/cobalt blue/neon red)
+ * @slides      24 slides with themed layout (dark grey/cobalt blue/neon red)
+ * @changes     v2.0.0 - Merged duplicate slides, added CMS/Markdown/Convergence content
  * @usage       Run createInvisibleUsersDeck() in Google Apps Script editor
  */
 
@@ -58,97 +59,85 @@ function createInvisibleUsersDeck() {
       footer: "Tom Cranstoun | Due Q1 2026"
     },
     
-    // 2. Adobe Insights: Holiday 2025
-    {
-      type: 'standard',
-      title: "Adobe Insights: Holiday 2025",
-      subtitle: "AI Referrals Surge Triple-Digits Across Sectors",
-      body: [
-        "Triple-Digit Growth: AI referrals surged (Retail +693%, Travel +539%)",
-        "Conversion Flip: AI referrals moved from lagging to leading (+31% vs non-AI)",
-        "Engagement: AI users spend 45% longer on site, view 13% more pages",
-        "Trust: 81% reported improved shopping experience with AI Assistants",
-        "Seismic Shift: From experimental to primary revenue driver in 12 months."
-      ]
-    },
-
-    // 2. Opening Hook
-    {
-      type: 'standard',
-      title: "Real Example from Claude For Chrome",
-      subtitle: "January 2025: Testing Claude for Chrome whilst writing the book.",
-      body: [
-        "Multiple Danube cruises ending in Budapest (May 2026):",
-        "'Scenic Gems of the Danube 2026' - Vienna to Budapest (7 nights)",
-        "'Delightful Danube' - Various starting points to Budapest",
-        "'Romantic Danube' - Multiple options ending in Budapest",
-        "One cruise showed: 'From £203,000-£402,000'",
-        "Actual price: £2,030-£4,020",
-        "100x multiplication error from European formatting (€2.030,00)."
-      ]
-    },
-
-    // 3. The Highlight Slide (Matches the user image)
+    // 2. Opening Hook - MERGED Adobe Insights + Cruise Error
     {
       type: 'highlight',
-      title: "The £203,000 Cruise",
-      subtitle: "Real example: January 2025",
+      title: "The AI Referral Surge and The £203,000 Mistake",
+      subtitle: "Adobe Holiday 2025 Data Meets Real-World Agent Failure",
       body: [
-        "AI assistant researching Danube cruises",
-        "Returned: £203,000-£402,000 per person",
-        "Actual price: £2,030-£4,020 per person",
-        "100x multiplication error (using a European site with €2.030,00)"
+        "Triple-Digit Growth: AI referrals surged (Retail +693%, Travel +539%)",
+        "Conversion Flip: AI referrals moved from lagging to leading (+31%)",
+        "Engagement: AI users spend 45% longer on site, view 13% more pages",
+        "Real Example: Claude for Chrome researching Danube cruises (Jan 2025)",
+        "Returned: £203,000-£402,000 per person. Actual: £2,030-£4,020",
+        "100x multiplication error from European formatting (€2.030,00)"
       ],
       highlightBox: {
         title: "£201,000",
-        text: "potential mistake\nif booking."
+        text: "potential mistake\nif auto-booked"
       },
-      footer: "For Agent Creators, validation layers are essential, not optional."
+      footer: "From experimental to revenue driver - but errors have consequences."
     },
 
-    // 4. What Caused This
+    // 3. Understanding Invisible Users - MOVED EARLIER
+    {
+      type: 'standard',
+      title: "Understanding Invisible Users",
+      subtitle: "Two reasons they're called 'invisible'",
+      body: [
+        "1. Invisible to site owners - blend into analytics, come once and leave",
+        "2. Interface is invisible to them - can't see animations, color, toasts, spinners",
+        "Not theoretical futures - happening today",
+        "Same failures affect screen reader users (invisible to designers for 27 years)",
+        "Visual feedback invisible to AI agents AND blind users",
+        "Sites that work get preferred by both - first-mover advantage that's hard to claw back"
+      ]
+    },
+
+    // 4. What Makes Users Invisible
+    {
+      type: 'standard',
+      title: "What Makes Users Invisible",
+      subtitle: "Five Integration Patterns",
+      body: [
+        "AI agents are invisible to site owners:",
+        "  - Unless tracking agent traffic, you have no idea they're there",
+        "  - They blend into analytics or bounce immediately",
+        "Interface is invisible to agents:",
+        "  - Can't see animations, color changes, toast notifications, loading spinners",
+        "  - Must rely on HTML structure and explicit state",
+        "Exploring optimization opportunities for agent-friendly patterns"
+      ]
+    },
+
+    // 5. NEW: Why Current Systems Fail
+    {
+      type: 'standard',
+      title: "Why Current Systems Fail",
+      subtitle: "The Markup Problem",
+      body: [
+        "Modern CMS creates divs without semantic meaning",
+        "Content served as plain HTML - JavaScript decorates it later",
+        "LLM Optimizer forks bot vs human experiences (WRONG approach)",
+        "Bots see different pages than browser-based agents see",
+        "Solution: Fix HTML for everyone together, not separate bot experiences",
+        "We are 27 years behind the times - should have fixed this for accessibility"
+      ]
+    },
+
+    // 6. What Caused The £203,000 Error?
     {
       type: 'standard',
       title: "What Caused This?",
-      subtitle: "The Error Chain:",
+      subtitle: "The Error Chain",
       body: [
         "Decimal separator confusion (€2.030,00 vs £2,030)",
         "No range validation (£203k > £15k maximum)",
         "No comparative checks (58x higher than peers)",
         "No cross-referencing against structured data",
         "No confidence scoring",
-        "Professional formatting masked the problem.",
-        "Error presented with same confidence as verified data."
-      ]
-    },
-
-
-
-    // 5. Understanding Invisible Users (Swapped order as requested)
-    {
-      type: 'standard',
-      title: "Understanding Invisible Users",
-      subtitle: "Websites need optimization for AI agents:",
-      body: [
-        "Not theoretical futures - happening today",
-        "Agents browsing, comparing, transacting now",
-        "Same failures affect screen reader users (invisible to designers)",
-        "Visual feedback invisible to AI agents AND blind users",
-        "Sites that work get preferred by both",
-        "First-mover advantage that's hard to claw back."
-      ]
-    },
-
-    // 6. What Makes Users Invisible
-    {
-      type: 'standard',
-      title: "What Makes Users Invisible",
-      subtitle: "What Makes Users \"Invisible\"?",
-      body: [
-        "AI agents are called \"invisible users\" for two reasons:",
-        "1. Invisible to site owners — Unless tracking agent traffic, you have no idea they are there. They blend into analytics.",
-        "2. Interface is invisible to them — They can't see animations, color changes, toast notifications, or loading spinners.",
-        "Five Integration Patterns: Exploring optimization opportunities."
+        "AI reformatting the content masked the problem",
+        "Error presented with same confidence as verified data"
       ]
     },
 
@@ -188,7 +177,6 @@ function createInvisibleUsersDeck() {
       body: [
         "Single-page applications",
         "Client-side state management",
-        "Toast notifications and modals",
         "Loading spinners without context",
         "JavaScript-dependent navigation",
         "These patterns break AI agents AND screen readers - same problems, same solutions."
@@ -210,7 +198,22 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 11. The Solution
+    // 11. NEW: Myth vs Reality - Markdown
+    {
+      type: 'standard',
+      title: "Myth vs Reality: Why Markdown Fails",
+      subtitle: "Common Misconception About AI Content",
+      body: [
+        "MYTH: 'Send markdown to LLMs for clean parsing'",
+        "REALITY: Markdown STRIPS all metadata and context",
+        "What gets lost: Schema.org markup, JSON-LD, semantic HTML, ARIA attributes",
+        "Agents need enriched HTML, not stripped-down markdown",
+        "Context is data - don't make agents think, give them facts",
+        "Solution: Enriched HTML with Schema.org + JSON-LD + semantic structure"
+      ]
+    },
+
+    // 12. The Solution
     {
       type: 'standard',
       title: "The Solution",
@@ -220,55 +223,55 @@ function createInvisibleUsersDeck() {
         "No special agent-only experiences",
         "Small, well-understood changes",
         "Improve accessibility for everyone",
-        "Three concrete patterns with code and business value."
+        "Three concrete patterns with code and business value"
       ]
     },
 
-    // 12. Pattern 1
+    // 13. Pattern 1
     {
       type: 'standard',
       title: "Pattern #1: Persistent Errors",
-      subtitle: "Instead of vanishing toast notifications:",
+      subtitle: "Instead of vanishing toast notifications",
       body: [
         "<form data-state='incomplete'> with <div role='alert'>",
         "Screen readers announce role='alert' immediately",
         "aria-invalid and aria-describedby work for agents AND users",
-        "Business value: Conversion rates improve for everyone."
+        "Business value: Conversion rates improve for everyone"
       ]
     },
 
-    // 13. Pattern 2
+    // 14. Pattern 2
     {
       type: 'standard',
       title: "Pattern #2: Complete Pricing",
-      subtitle: "Instead of 'From £99':",
+      subtitle: "Instead of 'From £99'",
       body: [
         "Use Schema.org/Offer markup",
         "Voice assistants for blind users read same structured data",
         "Explicit price and currency (machines AND humans need clarity)",
         "<details> for fee breakdown (keyboard navigable)",
-        "Business value: Builds trust, reduces cart abandonment for all users."
+        "Business value: Builds trust, reduces cart abandonment for all users"
       ]
     },
 
-    // 14. Pattern 3
+    // 15. Pattern 3
     {
       type: 'standard',
       title: "Pattern #3: Explicit State",
-      subtitle: "Make cart state visible:",
+      subtitle: "Make cart state visible",
       body: [
         "DOM attributes: data-state='active', data-item-count='3'",
         "role='status' announces updates to screen readers AND agents",
         "Same state visibility benefits assistive technology users",
-        "Business value: State persists. Debugging easier. Accessible to all."
+        "Business value: State persists. Debugging easier. Accessible to all"
       ]
     },
 
-    // 15. Small Business Case
+    // 16. Small Business Case
     {
       type: 'standard',
       title: "Small Business Case",
-      subtitle: "You don't need complex infrastructure.",
+      subtitle: "You don't need complex infrastructure",
       body: [
         "Simple restaurant site example",
         "Semantic HTML (<nav>, <main>, <article>)",
@@ -278,21 +281,21 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 16. Quick Wins
+    // 17. Quick Wins
     {
       type: 'standard',
       title: "Quick Wins: Start Here",
-      subtitle: "Critical Priority 1 Changes:",
+      subtitle: "Critical Priority 1 Changes",
       body: [
         "Add persistent error messages",
         "Display complete pricing (no hidden fees)",
         "Ensure served HTML contains core content",
         "Add basic Schema.org structured data",
-        "Start with highest impact, lowest effort."
+        "Start with highest impact, lowest effort"
       ]
     },
 
-    // 17. Web Audit Suite
+    // 18. Web Audit Suite (moved from later position)
     {
       type: 'standard',
       title: "Web Audit Suite",
@@ -302,78 +305,27 @@ function createInvisibleUsersDeck() {
         "Generates detailed reports",
         "Shows exactly where sites need optimization for agents",
         "Provides specific fix recommendations",
-        "Measure what you can't see."
-      ]
-    },
-
-    // 18. Call to Action
-    {
-      type: 'standard',
-      title: "Call to Action",
-      subtitle: "Start with one pattern:",
-      body: [
-        "1. Pick highest-impact, lowest-effort change",
-        "2. Implement it",
-        "3. Measure the improvement",
-        "4. Tackle the next one",
-        "Sites that adapt early gain advantage."
+        "Measure what you can't see"
       ]
     },
     
-    // 19. Major Developments
+    // 19. MERGED: Why This Matters Now - The 7-Day Platform Race
     {
       type: 'standard',
-      title: "The Seven-Day Platform Race (Jan 2026)",
-      subtitle: "Three major platforms in one week:",
+      title: "Why This Matters Now: The Seven-Day Platform Race",
+      subtitle: "January 2026 - Three platforms launched in one week",
       body: [
         "Jan 5: Amazon Alexa+ (browser agent launch)",
-        "Jan 8: Microsoft expands Copilot Checkout (proprietary approach)",
+        "Jan 8: Microsoft Copilot Checkout (proprietary)",
         "Jan 11: Google Universal Commerce Protocol (open standard, like ACP)",
-        "Two open vs one closed: Microsoft competitively isolated",
-        "Timeline compressed: 12 months → 6-9 months or LESS"
-      ]
-    },
-
-    // 20. VPNs
-    {
-      type: 'standard',
-      title: "VPNs and Hidden Guardrails",
-      subtitle: "Two realities affecting every agent:",
-      body: [
-        "Browser extensions inherit network config (VPN exit nodes affect location)",
-        "System prompts exist but are insufficient",
-        "Guardrails work at reasoning level, not data extraction",
-        "Hallucinations will continue - validation catches them"
-      ]
-    },
-
-    // 21. Why This Matters Now
-    {
-      type: 'standard',
-      title: "Why This Matters Now",
-      subtitle: "Timeline acceleration is dramatic:",
-      body: [
-        "Dec 2024: Claude for Chrome",
-        "Jan 2025: ACP launches",
-        "Jan 2026: Three platforms in seven days",
-        "Agent commerce is infrastructure.",
-        "Implement Priority 1-2 patterns urgently."
-      ]
-    },
-
-    // 22. Responsibility
-    {
-      type: 'standard',
-      title: "Our Responsibility",
-      subtitle: "Clear professional obligation:",
-      body: [
+        "Timeline compressed: 12 months → 6-9 months or LESS to mainstream",
+        "Agent commerce is now infrastructure, not experimental",
         "Designers/Devs must ensure agents navigate successfully",
-        "When agents encounter integration gaps, these affect everyone",
-        "Integration gaps often reveal issues that affect humans too."
+        "Sites that adapt early gain first-mover advantage"
       ]
     },
 
-    // 23. Next
+    // 20. Open vs Closed Competition
     {
       type: 'standard',
       title: "Open vs Closed Competition",
@@ -382,27 +334,59 @@ function createInvisibleUsersDeck() {
         "Two chose open: OpenAI/Stripe (ACP), Google (UCP)",
         "One chose closed: Microsoft (Copilot Checkout)",
         "Microsoft isolated - competing against TWO open protocols",
-        "Author position: 'I hope open wins for ecosystem health'",
         "Fragmentation risk: Will ACP and UCP converge or compete?",
         "Retailers must choose: integrate both, wait, or pick one?"
       ]
     },
 
-    // 24. Takeaways
+    // 21. NEW: The Future of CMS
     {
       type: 'standard',
-      title: "Key Takeaways",
-      subtitle: "Five Essential Messages:",
+      title: "The Future of CMS: From Presentation to Data Management",
+      subtitle: "A paradigm shift is happening",
       body: [
-        "1. This is happening now (agents + screen readers need same patterns)",
-        "2. Commercial pressure exists (AI commerce adds urgency)",
-        "3. Solutions are accessible (same patterns since 1999)",
-        "4. Convergence principle: What machines need = what disabled users need",
-        "5. One solution serves everyone (no trade-offs)"
+        "Old paradigm: CMS manages presentation + content together",
+        "New paradigm: Separate concerns",
+        "  - Data lake with descriptions, metadata, JSON-LD",
+        "  - Ontology that describes relationships",
+        "  - Dynamic serving layer adapts to user/agent type",
+        "Content management becomes pure data management",
+        "HTML generation happens at request time, tailored to consumer needs"
       ]
     },
 
-    // 25. Book
+    // 22. EXPANDED: Why Guardrails Aren't Enough
+    {
+      type: 'standard',
+      title: "Why Guardrails Aren't Enough",
+      subtitle: "System prompts are insufficient",
+      body: [
+        "Browser extensions inherit network config (VPN affects location detection)",
+        "System prompts exist but work at reasoning level, NOT data extraction",
+        "The £203k cruise error proves validation MUST happen in HTML",
+        "Guardrails can't catch formatting errors or missing context",
+        "Don't rely on AI to 'think' correctly - give it facts in markup",
+        "Solution: Enriched HTML with explicit validation, not AI guesswork"
+      ]
+    },
+
+    // 23. REFRAMED: Convergence Principle - The Headline Message
+    {
+      type: 'standard',
+      title: "One Solution Serves Everyone: The Convergence Principle",
+      subtitle: "This is the key insight",
+      body: [
+        "What machines need = What disabled users have needed for 27 years",
+        "No trade-offs between accessibility and AI readiness",
+        "Fix HTML for everyone together, not separate bot experiences",
+        "First-mover advantage for sites that implement patterns now",
+        "This is the inflection point - like ChatGPT launch in 2022",
+        "Within two years, machines will read websites, not humans",
+        "One solution. Everyone benefits. No exceptions."
+      ]
+    },
+
+    // 24. Book & Contact
     {
       type: 'title',
       title: "Book & Contact",
