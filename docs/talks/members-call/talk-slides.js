@@ -214,6 +214,21 @@ function createInvisibleUsersDeck() {
       ]
     },
 
+    // 11a. NEW: Ally McBeal Story - Real-World Metadata Failure
+    {
+      type: 'standard',
+      title: "Real-World Consequences: The Ally McBeal Case",
+      subtitle: "When metadata fails, AI agents hallucinate dangerously",
+      body: [
+        "Lawyers caught citing fictional cases in court",
+        "AI agents confused Ally McBeal TV scripts with legal precedents",
+        "Without proper microdata/metadata distinguishing entertainment from legal docs",
+        "Agents fabricate details that seem plausible but are dangerously incorrect",
+        "Same problem affects pricing, product specs, contact info",
+        "Solution: Proper metadata (Schema.org, semantic HTML) prevents these errors"
+      ]
+    },
+
     // 12. The Gap
     {
       type: 'standard',
@@ -282,6 +297,24 @@ function createInvisibleUsersDeck() {
         "Explicit price and currency (machines AND humans need clarity)",
         "<details> for fee breakdown (keyboard navigable)",
         "Business value: Builds trust, reduces cart abandonment for all users"
+      ]
+    },
+
+    // 16a. NEW: Complete Pricing Example - JSON-LD with Breakdown
+    {
+      type: 'standard',
+      title: "Complete Pricing: JSON-LD Example",
+      subtitle: "Machine-readable pricing with full cost breakdown",
+      body: [
+        '{ "@type": "Product", "name": "Laptop", "offers": {',
+        '  "@type": "Offer", "price": "999.99", "priceCurrency": "GBP",',
+        '  "priceSpecification": [',
+        '    { "@type": "UnitPriceSpecification", "price": "899.99", "name": "Base Price" },',
+        '    { "@type": "DeliveryChargeSpecification", "price": "50.00", "name": "Delivery" },',
+        '    { "@type": "PaymentChargeSpecification", "price": "50.00", "name": "Commission" }',
+        '  ] } }',
+        "Agents can now extract: Base price + Delivery + Commission = Total",
+        "Same data powers voice assistants for blind users"
       ]
     },
 
@@ -371,6 +404,26 @@ function createInvisibleUsersDeck() {
         "Within two years, machines will read websites, not humans",
         "One solution. Everyone benefits. No exceptions."
       ]
+    },
+
+    // 22a. NEW: Anthropic's Cowork - The Agentic Era Begins
+    {
+      type: 'highlight',
+      title: "The Agentic Era: Anthropic's Claude Cowork",
+      subtitle: "From Chatbot to Digital Colleague (January 2026)",
+      body: [
+        "Jan 12, 2026: Anthropic launches Claude Cowork research preview",
+        "First truly autonomous digital colleague - manages files, orchestrates workflows",
+        "Multi-agent architecture: Claude 4 Opus leads, Claude 4.5 Sonnet executes sub-tasks",
+        "Built in 1.5 weeks using Claude Code itself",
+        "Now available to $20/month Pro subscribers",
+        "This IS the agentic era - agents are already coworkers, not just assistants"
+      ],
+      highlightBox: {
+        title: "1.5 weeks",
+        text: "to build Cowork\nusing Claude Code"
+      },
+      footer: "The shift from passive assistant to active agent is complete."
     },
 
     // 23. Book & Contact
