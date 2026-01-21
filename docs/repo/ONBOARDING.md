@@ -1,95 +1,55 @@
 # Developer Onboarding Guide
 
-Welcome to the MX Series project! This guide will help you get up and running quickly.
+Welcome to the MX Series project! This guide will get you up and running in 10 minutes.
 
-## Overview
+## What You're Building
 
-This repository contains integrated book manuscripts and implementation tools:
+This repository contains:
 
-1. **Book Manuscripts** - Three books from the MX Series:
-   - "MX-Bible" (formerly "The Invisible Users") - Full comprehensive guide (~78,000 words)
-   - "MX-Don't Make the AI Think" - Practical quick guide (11 chapters)
-   - "MX-Handbook" - Implementation handbook (11 chapters)
-2. **Web Audit Suite** - A production-ready Node.js tool that implements the book's AI agent compatibility patterns
+1. **Three Books (MX Series)** - Book manuscripts about AI agent compatibility
+   - **MX-Bible** - Full comprehensive guide (~78,000 words, 13 chapters)
+   - **MX-Don't Make the AI Think** - Practical quick guide (11 chapters)
+   - **MX-Handbook** - Implementation handbook (11 chapters)
+2. **Web Audit Suite** - Production-ready Node.js tool implementing the book's patterns
+3. **Shared Resources** - Appendices, code examples, and generated content
+
+**For complete architecture details, see [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md)**
 
 ## Prerequisites
 
-Before you begin, ensure you have:
+- **Node.js 20.0.0+** - [Download](https://nodejs.org/)
+- **Git** - [Download](https://git-scm.com/)
+- **VS Code** (recommended) - [Download](https://code.visualstudio.com/)
 
-- **Node.js 20.0.0 or higher** - [Download here](https://nodejs.org/)
-- **Git** - [Download here](https://git-scm.com/)
-- **VS Code** (recommended) - [Download here](https://code.visualstudio.com/)
-- **LaTeX distribution** (optional, for PDF generation) - See instructions below
-
-### Verify Your Environment
+Verify your environment:
 
 ```bash
-# Check Node.js version (should be 20.0.0+)
-node --version
-
-# Check npm version
-npm --version
-
-# Check Git version
+node --version  # Should show 20.0.0 or higher
 git --version
 ```
 
 ## Quick Start (5 Minutes)
 
-### 1. Clone the Repository
+### 1. Clone and Initialize
 
 ```bash
-# Clone the main repository
+# Clone the repository
 git clone https://github.com/ddttom/invisible-users.git
 cd invisible-users
 
-# Initialize the manuscript submodule
+# Initialize all submodules (9 submodules)
 git submodule update --init --recursive
-```
 
-**Important:** This repository uses a git submodule for the manuscript. The `git submodule update --init --recursive` command is required to fetch the book content.
-
-### 2. Install Dependencies
-
-```bash
-# Install root dependencies
+# Install dependencies
 npm install
 
-# This automatically runs `npm run init` as a postinstall hook,
-# which verifies and creates necessary symlinks (blogs/, books/*)
-
-# Install Web Audit Suite dependencies
-cd packages/web-audit-suite
-npm install
-cd ../..
+# The postinstall hook runs npm run init automatically,
+# which verifies and creates necessary symlinks
 ```
 
-**What `npm run init` does:**
+**Note:** This repository uses **9 git submodules** for content organization. The architecture documentation explains why: [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md#separation-of-concerns)
 
-The postinstall hook runs automatically after `npm install` to verify repository structure:
-
-- Creates `blogs -> outputs/bible/blogs` symlink (convenient blog access)
-- Creates `books/` directory with symlinks to all book packages
-- Reports "No changes needed" if structure is correct
-- Reports "Repository structure reconstructed" if symlinks were created/fixed
-
-### 3. Open in VS Code
-
-```bash
-# Open the project in VS Code
-code .
-```
-
-VS Code will prompt you to install recommended extensions. Click "Install All" - this sets up:
-
-- ESLint (code linting)
-- Markdownlint (markdown linting)
-- Prettier (code formatting)
-- Claude Code (AI assistance)
-- GitLens (Git visualization)
-- And 19 other helpful extensions
-
-### 4. Verify Everything Works
+### 2. Verify Everything Works
 
 ```bash
 # Check manuscript word count
@@ -102,87 +62,108 @@ npm run audit:test
 npm run lint:markdown
 ```
 
-If all three commands complete successfully, you're ready to go!
+If all three commands succeed, you're ready to go!
+
+### 3. Open in VS Code
+
+```bash
+code .
+```
+
+Install recommended extensions when prompted (24 extensions for optimal development experience).
+
+## Essential Commands
+
+### Book Manuscripts
+
+```bash
+npm run wordcount              # Total words across all chapters
+npm run status                 # Show all chapter files
+npm run lint:markdown          # Check markdown
+npm run lint:markdown:fix      # Auto-fix markdown issues
+npm run illustrations:generate # Generate PNG from SVG (requires ImageMagick)
+```
+
+### PDF Generation
+
+Requires LaTeX (install with `brew install --cask basictex`):
+
+```bash
+npm run pdf:bible-all          # All formats for MX-Bible
+npm run pdf:dont-all           # All formats for MX-Don't Make the AI Think
+npm run pdf:mx-all             # All formats for MX-Handbook
+npm run pdf:appendix           # HTML appendices
+```
+
+Or use HTML fallback: `npm run pdf:bible-html` (print to PDF via browser ⌘+P)
+
+### Web Audit Suite
+
+```bash
+npm run audit:start -- -s https://example.com/sitemap.xml
+npm run audit:start -- -s https://example.com -c 10  # Limited pages
+npm run audit:test             # Run tests
+npm run audit:lint             # Lint code
+```
+
+See [packages/web-audit-suite/README.md](../../packages/web-audit-suite/README.md) for complete usage.
+
+## VS Code Integration
+
+### Quick Tasks (Cmd+Shift+B or Cmd+Shift+P → "Tasks: Run Task")
+
+- `Markdown: Lint and Fix` - Fix markdown issues
+- `Web Audit Suite: Start` - Run analysis
+- `Book: Generate PDF` - Create PDF from manuscript
+
+### Debugging (F5)
+
+- **Web Audit Suite: Debug** - Debug with example URL
+- **Web Audit Suite: Debug Tests** - Debug all tests
+- **Node: Launch Current File** - Debug any Node.js file
+
+**Shortcuts:** F9 (breakpoint), F10 (step over), F11 (step into), Shift+F5 (stop)
 
 ## Repository Structure
 
+This is a **multi-repository monorepo with 10 git repositories** (1 main + 9 submodules):
+
 ```text
-/
-├── .vscode/                    # VS Code workspace configuration
+invisible-users/                    # Main repository (control hub)
 ├── packages/
-│   ├── bible/                  # "MX-Bible" (git submodule)
-│   │   ├── chapters/           # 13 chapters
-│   │   ├── illustrations/      # SVG and PNG images
-│   │   └── README.md           # Book overview
-│   │
-│   ├── dont-make-ai-think/     # "MX-Don't Make the AI Think" (git submodule)
-│   │   ├── chapters/           # 11 chapters
-│   │   └── README.md           # Practical quick guide overview
-│   │
-│   ├── mx-handbook/            # "MX-Handbook" (git submodule)
-│   │   ├── chapters/           # 11 chapters
-│   │   └── README.md           # Implementation handbook overview
-│   │
-│   ├── shared-appendices/      # Shared appendices (git submodule)
-│   │   ├── appendix-*.md       # 12 appendices (A-L)
-│   │   └── web/                # HTML versions
-│   │
-│   ├── shared-code-examples/   # Code patterns (git submodule)
-│   │   ├── agent-friendly-starter-kit/
-│   │   └── examples/
-│   │
-│   ├── web-audit-suite/        # Web analysis tool (NOT a submodule)
-│   │   ├── index.js            # Entry point
-│   │   ├── src/                # Source code
-│   │   │   ├── main.js         # Orchestration
-│   │   │   ├── config/         # Configuration
-│   │   │   └── utils/          # Utilities
-│   │   ├── test/               # Test suite
-│   │   └── docs/               # Documentation
-│
-├── config/                     # Project configuration
-│   ├── .markdownlint.json      # Markdown linting rules
-│   └── book-svg-style.md       # SVG illustration style guide
-│
-├── outputs/                    # Generated content (git submodule - PRIVATE)
-│   ├── bible/blogs/            # Blog posts
-│   └── the-bible/              # PDF and HTML builds
-│
-├── books/                      # Symlinks for convenience
-│   ├── bible -> ../packages/bible
-│   ├── dont-make-ai-think -> ../packages/dont-make-ai-think
-│   ├── appendices -> ../packages/shared-appendices
-│   └── outputs -> ../outputs
-│
-├── blogs -> outputs/bible/blogs  # Symlink to blog posts
-├── docs/                       # Project documentation
-├── scripts/                    # Build scripts
-├── CLAUDE.md                   # AI agent instructions
-└── README.md                   # Main documentation
+│   ├── bible/                      # MX-Bible [SUBMODULE]
+│   ├── dont-make-ai-think/         # MX-Don't Make the AI Think [SUBMODULE]
+│   ├── mx-handbook/                # MX-Handbook [SUBMODULE]
+│   ├── shared-appendices/          # Shared appendices [SUBMODULE]
+│   ├── shared-code-examples/       # Code patterns [SUBMODULE]
+│   ├── ucp/                        # Universal Commerce Protocol [SUBMODULE - READ-ONLY]
+│   ├── notes/                      # Development notes [SUBMODULE - READ-ONLY]
+│   ├── zettel/                     # Zettelkasten notes [SUBMODULE - READ-ONLY]
+│   └── web-audit-suite/            # Analysis tool [NOT a submodule]
+├── outputs/                        # Generated content [SUBMODULE - PRIVATE]
+├── books/                          # Convenience symlinks
+├── docs/                           # Documentation
+├── scripts/                        # Build scripts
+├── config/                         # Configuration
+└── .claude/                        # Claude Code AI config
 ```
 
-## Understanding the Submodule
+**For complete structure details with file trees, see [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md#repository-structure)**
 
-**This repository uses multiple git submodules** for content organization:
-
-- **Main repo:** `https://github.com/ddttom/invisible-users`
-- **Submodules:** outputs/, bible/, dont-make-ai-think/, shared-appendices/, shared-code-examples/
+## Understanding Submodules
 
 **Why submodules?**
 
-- Content can be updated independently
-- Main repo controls which version of each submodule is used
-- Keeps content history clean and separate
-- Allows different privacy settings (e.g., outputs is private)
+- Independent version control for content
+- Clean separation between content and build processes
+- Different privacy settings (outputs is private)
+- No dependency sprawl in content repositories
 
 **Key commands:**
 
 ```bash
-# Update all submodules to latest version
+# Update all submodules to latest
 git submodule update --remote
-
-# Update specific submodule
-git submodule update --remote packages/bible
 
 # Check all submodule status
 git submodule status
@@ -191,502 +172,134 @@ git submodule status
 git -C packages/bible log --oneline -10
 ```
 
-**Important:** Always check your working directory with `pwd` before git operations. See [docs/repo/GIT-README.md](GIT-README.md) for detailed multi-repository workflows.
-
-## Common Development Tasks
-
-### Working with the Book Manuscript
-
-```bash
-# View total word count across all chapters
-npm run wordcount
-
-# View detailed word count for all files
-npm run wordcount:all
-
-# Check chapter status
-npm run status
-
-# Lint markdown files
-npm run lint:markdown
-
-# Auto-fix markdown issues
-npm run lint:markdown:fix
-
-# Generate PNG illustrations from SVG sources
-npm run illustrations:generate
-# Note: This downloads missing cover images, checks for back-cover.png,
-# and converts all SVG files to PNG. See details below.
-```
-
-**About Illustration Generation:**
-
-The `npm run illustrations:generate` command:
-
-1. **Downloads cover images** if missing (Profile.png, A4-Cover.png, Kindle-Cover.png)
-2. **Checks for back-cover.png** - if missing, displays instructions to:
-   - Open `packages/shared-appendices/web/back-cover.html` in a browser
-   - Take a full-page screenshot
-   - Save as `back-cover.png` in `packages/bible/illustrations/`
-3. **Converts all SVG files** in illustrations/ to PNG using ImageMagick
-
-**Note:** ImageMagick is required for SVG conversion. Install with `brew install imagemagick` if needed.
-
-### Generating PDFs
-
-**Install LaTeX first (optional, for PDF generation):**
-
-```bash
-# Install BasicTeX via Homebrew (lightweight, ~100MB)
-brew install --cask basictex
-
-# Reload shell to pick up new PATH
-source ~/.zshrc
-
-# Verify installation
-which xelatex
-```
-
-**Generate PDFs:**
-
-```bash
-# Generate A4 PDF with professional formatting
-npm run pdf:generate
-
-# Generate 6"×9" Kindle Direct Publishing PDF
-npm run pdf:kindle
-
-# Generate simple PDF (no cover)
-npm run pdf:simple
-
-# Generate HTML (can print to PDF via browser ⌘+P)
-npm run pdf:html
-
-# Generate web appendices
-npm run pdf:appendix
-```
-
-**If you don't want to install LaTeX:**
-Use `npm run pdf:html` to generate HTML, then print to PDF using your browser (⌘+P).
-
-### Working with Web Audit Suite
-
-```bash
-# Run with default settings (from repository root)
-npm run audit:start
-
-# Run with specific sitemap/URL
-npm run audit:start -- -s https://example.com/sitemap.xml
-
-# Run with limited pages (for testing)
-npm run audit:start -- -s https://example.com -c 10
-
-# Full analysis with all features
-npm run audit:start -- -s https://example.com \
-  --enable-history \
-  --generate-dashboard \
-  --generate-executive-summary
-
-# Run tests
-npm run audit:test
-
-# Lint code
-npm run audit:lint
-```
-
-## VS Code Integration
-
-### Quick Tasks
-
-Press **Cmd+Shift+P** → "Tasks: Run Task" to access:
-
-**Most Common:**
-
-- `Markdown: Lint and Fix` - Fix markdown issues (also: Cmd+Shift+B)
-- `Web Audit Suite: Start` - Run analysis
-- `Book: Generate PDF` - Create PDF from manuscript
-
-**All Available Tasks:**
-
-- Book: Word Count, Generate PDF, Generate Kindle PDF, Generate HTML Appendices, Generate Illustrations
-- Code Quality: Markdown Lint, Web Audit Suite Lint
-- Development: Web Audit Suite Start/Test
-- Git: Commit and Push All
-
-### Debugging
-
-Press **F5** to start debugging with these configurations:
-
-1. **Web Audit Suite: Debug** - Debug with example URL
-2. **Web Audit Suite: Debug with Custom URL** - Prompts for URL input
-3. **Web Audit Suite: Debug Tests** - Debug all tests
-4. **Web Audit Suite: Debug Current Test File** - Debug open test file
-5. **Node: Launch Current File** - Debug any Node.js file
-
-**Debugging shortcuts:**
-
-- **F5** - Start debugging
-- **F9** - Toggle breakpoint
-- **F10** - Step over
-- **F11** - Step into
-- **Shift+F5** - Stop debugging
-
-### Auto-Formatting
-
-Files automatically format on save:
-
-- **JavaScript/JSON** - Prettier
-- **Markdown** - Markdownlint
-- **ESLint** - Auto-fix for Web Audit Suite code
-
-## Understanding the Codebase
-
-### Book Manuscript
-
-The book is written in **British English** with these conventions:
-
-- First-person narrative voice
-- Real, concrete examples (not theoretical)
-- Sequential chapters (each builds on previous)
-- No colons in chapter titles
-- Short dashes only (not em-dashes)
-
-**Key files to read:**
-
-1. [packages/bible/README.md](../../packages/bible/README.md) - MX-Bible overview and chapter list
-2. [packages/dont-make-ai-think/README.md](../../packages/dont-make-ai-think/README.md) - MX-Don't Make the AI Think overview
-3. [packages/mx-handbook/README.md](../../packages/mx-handbook/README.md) - MX-Handbook overview
-4. [packages/shared-appendices/README.md](../../packages/shared-appendices/README.md) - Appendices overview
-
-### Web Audit Suite Architecture
-
-The tool uses a **three-phase processing pipeline:**
-
-1. **URL Collection Phase** (`getUrlsFromSitemap`)
-   - Extracts URLs from sitemap or HTML
-   - Validates and normalizes URLs
-
-2. **Data Collection Phase** (`processSitemapUrls`)
-   - Analyzes each page with Puppeteer
-   - Collects metrics, runs Pa11y tests
-   - Stores all data in `results.json` (single source of truth)
-
-3. **Report Generation Phase** (`generateReports`)
-   - Reads from `results.json` only
-   - Generates CSV and markdown reports
-   - Never fetches new data
-
-**Critical principle:** `results.json` is the single source of truth. All reports must be generated from this file.
-
-**Key files to read:**
-
-1. [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) - Tool overview
-2. [packages/web-audit-suite/src/main.js](packages/web-audit-suite/src/main.js) - Pipeline orchestration
-3. [packages/web-audit-suite/docs/web-audit-architecture.md](packages/web-audit-suite/docs/web-audit-architecture.md) - Architecture details
-
-### Module System
-
-The Web Audit Suite uses **ES Modules**:
-
-- `"type": "module"` in package.json
-- All imports must include `.js` extension: `import { foo } from './utils/bar.js'`
-- Uses dependency injection via `AuditContext` object (no global state)
+**Critical:** Always check `pwd` before git operations. See [docs/repo/GIT-README.md](GIT-README.md) for comprehensive multi-repository workflow guidance.
 
 ## Code Quality Standards
 
 ### JavaScript (Web Audit Suite)
 
-- **Linter:** ESLint with Airbnb base config
-- **Style:** Single quotes, 2-space indentation, 100-char line width
-- **Testing:** Mocha with Chai assertions
-- **Run checks:**
+- ESLint with Airbnb base config
+- Single quotes, 2-space indentation
+- ES Modules (must include `.js` in imports)
+- Run: `npm run audit:lint` and `npm run audit:test`
 
-  ```bash
-  npm run audit:lint        # Check
-  npm run audit:test        # Test
-  ```
+### Markdown (Book Manuscripts)
 
-### Markdown (Book Manuscript)
+- British English throughout
+- ATX-style headings (`###` not underlines)
+- Blank lines around lists
+- Run: `npm run lint:markdown:fix`
 
-- **Linter:** Markdownlint
-- **Style:** British English, ATX-style headings, blank lines around lists
-- **Run checks:**
+**For complete quality standards, see [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md#version-control-strategy)**
 
-  ```bash
-  npm run lint:markdown     # Check
-  npm run lint:markdown:fix # Fix
-  ```
+## Writing Style (Book Manuscripts)
 
-**Common linting errors:**
+- **British English** (organise, colour, whilst)
+- **First-person narrative**
+- **Real examples only** (no theoretical scenarios)
+- **Sequential chapters** (each builds on previous)
+- **No colons in chapter titles**
+- **Short dashes only** (not em-dashes)
 
-- **MD024:** Duplicate headings (must make unique with context)
-- **MD032:** Lists need blank lines before/after
-- **MD040:** Code blocks must have language specified
+**Timeless Manuscript Rule:** Write as if the book has always existed. Never include publication dates, "we added", or meta-commentary about the book's development.
 
-### Git Commit Standards
-
-When creating commits:
-
-- Clear, descriptive commit messages
-- No co-author attribution or "Generated with" messages
-- Use `npm run commit-push` for interactive workflow
-- Or use `/step-commit` skill if using Claude Code
-
-## Testing Your Setup
-
-Run this checklist to verify everything is working:
-
-```bash
-# 1. Check book packages are available
-ls packages/bible/README.md
-ls packages/dont-make-ai-think/README.md
-ls packages/shared-appendices/README.md
-
-# 2. Check dependencies are installed
-npm run wordcount
-
-# 3. Run Web Audit Suite tests
-npm run audit:test
-
-# 4. Lint markdown files
-npm run lint:markdown
-
-# 5. Try generating an illustration (requires ImageMagick)
-npm run illustrations:generate
-```
-
-All commands should complete without errors.
-
-## Performance Optimization
-
-### Extension Cleanup (Recommended)
-
-You likely have many VS Code extensions installed. This project only needs ~24 of them.
-
-See [docs/vscode-extension-cleanup.md](docs/vscode-extension-cleanup.md) for:
-
-- List of recommended extensions
-- 100+ extensions to disable for better performance
-- Performance impact details
-
-**Quick wins:**
-
-1. Open Extensions panel (Cmd+Shift+X)
-2. Search for "Java" - right-click → "Disable (Workspace)"
-3. Repeat for: C#, PHP, Swift, Python extensions
-4. Reload VS Code
-
-This can significantly improve startup time and responsiveness.
-
-## Key Documentation Files
-
-**Start here:**
-
-1. [README.md](README.md) - Project overview
-2. [CLAUDE.md](CLAUDE.md) - AI agent instructions (comprehensive project guide)
-3. [GIT-README.md](GIT-README.md) - Git workflow with submodules
-
-**Book-specific:**
-4. [packages/bible/README.md](../../packages/bible/README.md) - MX-Bible contents and status
-5. [packages/dont-make-ai-think/README.md](../../packages/dont-make-ai-think/README.md) - MX-Don't Make the AI Think contents
-6. [packages/mx-handbook/README.md](../../packages/mx-handbook/README.md) - MX-Handbook contents
-7. [packages/shared-appendices/README.md](../../packages/shared-appendices/README.md) - Appendices overview
-
-**Tool-specific:**
-7. [packages/web-audit-suite/README.md](../../packages/web-audit-suite/README.md) - Tool documentation
-8. [packages/web-audit-suite/QUICKSTART.md](../../packages/web-audit-suite/QUICKSTART.md) - 5-minute guide
-9. [packages/web-audit-suite/docs/usermanual.md](../../packages/web-audit-suite/docs/usermanual.md) - Complete user guide
-
-**Development environment:**
-10. [docs/vscode-extension-cleanup.md](../vscode-extension-cleanup.md) - Extension management
-11. [.vscode/settings.json](../../.vscode/settings.json) - Workspace configuration
+**For complete style guide, see [docs/for-ai/writing-style.md](../for-ai/writing-style.md)**
 
 ## Common Issues and Solutions
 
-### Issue: "Missing symlinks or books/ directory"
-
-**Error:** `blogs/` or `books/` directory doesn't exist, or symlinks are broken
-
-**Solution:**
+### Missing Symlinks
 
 ```bash
-# Run the init script to verify/recreate symlinks
-npm run init
-
-# If you see "Repository structure reconstructed", the symlinks were created
-# If you see "No changes needed", everything was already correct
+npm run init  # Recreates blogs/ and books/ symlinks if needed
 ```
 
-The init script is safe to run multiple times and will only make changes if needed.
-
-### Issue: "Submodules not initialized"
-
-**Error:** Submodule directories (packages/bible/, outputs/, etc.) are empty
-
-**Solution:**
+### Empty Submodules
 
 ```bash
-# Initialize all submodules
 git submodule update --init --recursive
 ```
 
-### Issue: "Cannot find module" errors
-
-**Error:** Import errors when running Web Audit Suite
-
-**Solution:**
+### Missing Dependencies
 
 ```bash
-cd packages/web-audit-suite
-npm install
-cd ../..
+cd packages/web-audit-suite && npm install && cd ../..
 ```
 
-### Issue: "xelatex: command not found"
-
-**Error:** PDF generation fails
-
-**Solution:**
+### PDF Generation Fails
 
 ```bash
-# Install LaTeX
-brew install --cask basictex
-source ~/.zshrc
-
-# Or use HTML fallback
-npm run pdf:html
+brew install --cask basictex  # Install LaTeX
+source ~/.zshrc               # Reload shell
+# Or use HTML fallback: npm run pdf:bible-html
 ```
 
-### Issue: Markdown linting fails
+### VS Code Performance Issues
 
-**Error:** MD024, MD032, MD040 errors
+Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/vscode-extension-cleanup.md](../vscode-extension-cleanup.md) for recommendations.
 
-**Solution:**
+## Key Documentation
 
-```bash
-# Auto-fix most issues
-npm run lint:markdown:fix
+**Start here (in order):**
 
-# Manually fix remaining issues (MD024 duplicate headings, MD036 emphasis)
-```
+1. **[README.md](../../README.md)** - Project overview
+2. **[docs/architecture/doc-architecture.md](../architecture/doc-architecture.md)** - Complete architecture documentation (827 lines, comprehensive)
+3. **[CLAUDE.md](../../CLAUDE.md)** - AI agent instructions and project guide
+4. **[docs/repo/GIT-README.md](GIT-README.md)** - Git workflow with submodules
 
-### Issue: Git operations seem confusing
+**Book-specific:**
 
-**Error:** Changes in wrong repository, submodule pointer issues
+- [packages/bible/README.md](../../packages/bible/README.md) - MX-Bible contents
+- [packages/dont-make-ai-think/README.md](../../packages/dont-make-ai-think/README.md) - MX-Don't Make the AI Think contents
+- [packages/mx-handbook/README.md](../../packages/mx-handbook/README.md) - MX-Handbook contents
+- [packages/shared-appendices/README.md](../../packages/shared-appendices/README.md) - Appendices overview
 
-**Solution:**
+**Tool-specific:**
 
-- Always run `pwd` before git operations
-- Read [GIT-README.md](GIT-README.md) for comprehensive workflow guide
-- Use `npm run commit-push` for interactive commits
-
-### Issue: VS Code is slow
-
-**Error:** Startup takes >30 seconds, sluggish performance
-
-**Solution:**
-
-- Follow [docs/vscode-extension-cleanup.md](docs/vscode-extension-cleanup.md)
-- Disable Java, C#, PHP, Swift extensions for this workspace
-- Keep only the 24 recommended extensions enabled
-
-## Getting Help
-
-### Documentation Resources
-
-- **Project overview:** [README.md](README.md)
-- **AI agent instructions:** [CLAUDE.md](CLAUDE.md)
-- **Git workflows:** [GIT-README.md](GIT-README.md)
-- **Web Audit Suite:** [packages/web-audit-suite/docs/usermanual.md](packages/web-audit-suite/docs/usermanual.md)
-
-### Code Exploration
-
-Use VS Code search to find examples:
-
-- **Cmd+Shift+F** - Search across all files
-- **Cmd+P** - Quick file open
-- **Cmd+T** - Go to symbol
-
-### Understanding Patterns
-
-**Best way to learn the codebase:**
-
-1. Read [packages/bible/README.md](../../packages/bible/README.md) for book overview
-2. Explore [packages/web-audit-suite/src/main.js](../../packages/web-audit-suite/src/main.js) for tool architecture
-3. Run Web Audit Suite on a test site: `npm run audit:start -- -s https://example.com -c 5`
-4. Read the generated reports in `packages/web-audit-suite/results/`
+- [packages/web-audit-suite/README.md](../../packages/web-audit-suite/README.md) - Complete tool documentation
+- [packages/web-audit-suite/QUICKSTART.md](../../packages/web-audit-suite/QUICKSTART.md) - 5-minute guide
 
 ## Next Steps
 
-Now that you're set up:
-
-1. **Explore the book content:**
+1. **Explore the architecture:**
 
    ```bash
-   # Open MX-Bible README to see chapter list
-   code packages/bible/README.md
-
-   # Open Slim guide README
-   code packages/dont-make-ai-think/README.md
+   code docs/architecture/doc-architecture.md
    ```
 
-2. **Run the Web Audit Suite:**
+2. **Read a book chapter:**
 
    ```bash
-   # Analyze a website
-   npm run audit:start -- -s https://example.com -c 10
+   code packages/bible/chapters/chapter-01-what-you-will-learn.md
+   ```
 
-   # View results
+3. **Run the Web Audit Suite:**
+
+   ```bash
+   npm run audit:start -- -s https://example.com -c 10
    ls packages/web-audit-suite/results/
    ```
 
-3. **Read the architecture:**
-   - [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md) - Repository structure
-   - [docs/architecture/web-audit-architecture.md](../architecture/web-audit-architecture.md) - Tool architecture
-
-4. **Try a task:**
-   - Press **Cmd+Shift+P** → "Tasks: Run Task"
-   - Try "Markdown: Lint and Fix"
-
-5. **Set up debugging:**
-   - Open [packages/web-audit-suite/index.js](packages/web-audit-suite/index.js)
-   - Press **F9** to set a breakpoint
-   - Press **F5** to start debugging
+4. **Try debugging:**
+   - Open [packages/web-audit-suite/index.js](../../packages/web-audit-suite/index.js)
+   - Press F9 to set a breakpoint
+   - Press F5 to start debugging
 
 ## Project Principles
 
-Understanding these principles will help you contribute effectively:
+1. **The Book is Authoritative** - Book manuscripts are the source of truth for terminology
+2. **The Tool Implements the Book** - Web Audit Suite demonstrates book patterns
+3. **Documentation Must Align** - Consistent terminology everywhere
+4. **Quality Over Speed** - Code must pass linting and tests before commit
 
-### 1. The Book is Authoritative
-
-The book manuscript is the source of truth for terminology and patterns. If there's a conflict between book and code, update the code.
-
-### 2. The Tool Implements the Book
-
-Web Audit Suite demonstrates the book's patterns in production code. Tool development should reference book chapters.
-
-### 3. Documentation Must Align
-
-All documentation uses consistent terminology. Changes flow: book → tool → documentation.
-
-### 4. Quality Over Speed
-
-- Code must pass linting before commit
-- Tests must pass before merge
-- Markdown must be clean
-- No shortcuts on quality
-
-### 5. Real Examples Only
-
-The book uses concrete, real-world examples. Don't make up hypothetical scenarios - use existing source material.
+**For complete principles and architecture patterns, see [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md#key-organizational-principles)**
 
 ## Welcome Aboard
 
-You're now ready to contribute to the MX Series project. Remember:
+You're ready to contribute! Remember:
 
-- **Ask questions** - Use the documentation as your guide
+- **Read the architecture doc first** - [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md)
 - **Test your changes** - Run tests and linting before committing
-- **Follow conventions** - British English for book, ES Modules for code
-- **Keep it simple** - Prefer clarity over cleverness
+- **Follow conventions** - British English for books, ES Modules for code
+- **Ask questions** - Use documentation as your guide
 
 Happy coding! 🚀
