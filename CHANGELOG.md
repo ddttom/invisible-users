@@ -7,6 +7,56 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22] - Timeless Manuscript Rule and YAML Frontmatter Implementation
+
+### Added
+
+- **Timeless Manuscript Rule**: Comprehensive system to enforce "write as if features have always existed" across all book manuscripts
+  - **docs/for-ai/writing-style.md**: Added Section 3 Timeless Manuscript Rule with forbidden patterns and required writing style
+  - **CLAUDE.md**: Added CRITICAL WRITING REQUIREMENT section listing all affected directories and enforcement approach
+  - **docs/for-ai/yaml-frontmatter-template.md**: Complete template with examples for Bible, Slim, and Appendices (420 lines)
+  - **docs/repo/TIMELESS-MANUSCRIPT-RULE.md**: Implementation summary with remaining work checklist and verification commands
+
+- **YAML Frontmatter to All Book Manuscripts**: Added Pandoc YAML frontmatter to 38 book files across three submodules
+  - **Bible submodule (b88d099)**: 13 chapter files with complete metadata
+  - **Don't Make AI Think submodule (1025705)**: 11 chapters + preface with complete metadata
+  - **Shared Appendices submodule (4a837ce)**: 12 appendix files with complete metadata
+  - **docs/shared-chapters/chapter-00-what-are-ai-agents.md**: Added YAML frontmatter, removed old table-based metadata
+
+- **Three-Book Ecosystem Documentation**:
+  - Added comprehensive three-book strategy section to Chapter 0 explaining MX Bible, Don't Make AI Think, and The MX Handbook
+  - Documented different audiences (executives, practitioners, architects) and reading pathways
+  - Explained shared appendices hosted at allabout.network
+
+### Changed
+
+- **docs/shared-chapters/chapter-00-what-are-ai-agents.md**: Removed temporal language "launching simultaneously on April 2, 2026" → "part of a three-book ecosystem"
+- **packages/dont-make-ai-think/chapters/preface.md**: Removed temporal language "launching April 2, 2026" → "part of a three-book series"
+- **YAML Frontmatter Structure**: H1 headings stay in markdown content (not duplicated in YAML `title` field)
+
+### Key Implementation Details
+
+- **Mandatory `ai-instruction` field** in all book manuscript YAML frontmatter:
+
+  ```yaml
+  ai-instruction: |
+    This is a book manuscript chapter. Write as if it has always existed.
+    NEVER include: publication dates, "we added", "new feature", "launching",
+    "this update", or any meta-commentary about the book's development.
+    Write definitive present tense. Historical context about subject matter
+    (industry events, product launches) is allowed.
+  ```
+
+- **Submodule-first workflow**: All three submodules committed and pushed before updating pointers in main repository
+- **Quality assurance**: All files pass markdown linting, word counts calculated accurately
+- **Documentation standards**: Enforcement through CLAUDE.md, writing-style.md, and YAML frontmatter template
+
+### Submodule Updates
+
+- **packages/bible**: Updated to commit b88d099
+- **packages/dont-make-ai-think**: Updated to commit 1025705
+- **packages/shared-appendices**: Updated to commit 4a837ce
+
 ## [2026-01-20h] - Presentation Enhancement with Chapter 0 Insights
 
 ### Added
