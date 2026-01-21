@@ -100,13 +100,13 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has NINE git repositories (1 main hub + 8 submodules). File paths depend on your location.**
+**This workspace has TEN git repositories (1 main hub + 9 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 8):**
+- **Submodules (ASSETS, currently 9):**
   - **Outputs (PRIVATE):** `outputs/` → `invisible-users-outputs` - All generated content
   - **Bible:** `packages/bible/` → `invisible-users-bible` - Full book manuscript
   - **Slim:** `packages/dont-make-ai-think/` → `invisible-users-slim` - Practical guide
@@ -118,6 +118,9 @@ pwd
     - DO NOT modify this submodule - it is maintained by the UCP project
   - **Notes (READ-ONLY):** `packages/notes/` → `Notes` - Development notes, coding standards, and architectural guidelines (**READ-ONLY REFERENCE**)
     - Role: Coding standards and development practices reference
+    - DO NOT modify this submodule - it is maintained separately
+  - **Zettel (READ-ONLY):** `packages/zettel/` → `Zettel` - Zettelkasten note-taking repository (**READ-ONLY REFERENCE**)
+    - Role: Personal knowledge management and note-taking system
     - DO NOT modify this submodule - it is maintained separately
   - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md)
 
@@ -196,6 +199,11 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       ├── README.md             ← Notes README
 │   │       └── Other development guidelines
 │   │       Note: Development notes and coding standards (READ-ONLY for AI assistants unless explicitly authorized)
+│   ├── zettel/                       ← SUBMODULE (git repo) - READ-ONLY REFERENCE
+│   │   └── ${MAIN_REPO}/packages/zettel/
+│   │       ├── README.md             ← Zettel README
+│   │       └── Zettelkasten notes
+│   │       Note: Personal Zettelkasten note-taking system (READ-ONLY for AI assistants unless explicitly authorized)
 │   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
 │       ├── src/                      ← Tool source code
 │       ├── test/                     ← Test files
