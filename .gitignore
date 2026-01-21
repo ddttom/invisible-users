@@ -47,6 +47,3 @@ dont/
 scripts/appendix-nav-footer.html
 scripts/appendix-index-template.md
 
-# Scrap folder (temporary notes and drafts - READ-ONLY REFERENCE)
-docs/scrap/*
-!docs/scrap/.gitkeep

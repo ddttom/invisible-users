@@ -144,9 +144,7 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 ├── docs/                             ← Documentation
 │   ├── architecture/                 ← GIT-README.md, TIMELESS-MANUSCRIPT-RULE.md, doc-architecture.md
 │   ├── shared-chapters/              ← Shared book content (Chapter 0)
-│   ├── for-ai/                       ← AI assistant guidance
-│   └── scrap/                        ← READ-ONLY REFERENCE (temporary working files)
-│       Note: Temporary notes and drafts (READ-ONLY for AI assistants unless explicitly authorized)
+│   └── for-ai/                       ← AI assistant guidance
 ├── blogs → outputs/bible/blogs       ← SYMLINK to outputs submodule blogs
 ├── books/                            ← Symlinks for convenience
 │   ├── bible → ../packages/bible
@@ -196,10 +194,9 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   ├── notes/                        ← SUBMODULE (git repo) - READ-ONLY REFERENCE
 │   │   └── ${MAIN_REPO}/packages/notes/
 │   │       ├── .claude/              ← Claude Code configuration
+│   │       ├── scrap/                ← Temporary working files (gitignored, READ-ONLY for AI unless authorized)
 │   │       ├── Starter.md            ← Coding standards and project setup
 │   │       ├── Vibe coding backend.md ← Backend architecture guidelines
-│   │       ├── Things to avoid.md    ← UI/UX anti-patterns for AI
-│   │       ├── README.md             ← Notes README
 │   │       └── Other development guidelines
 │   │       Note: READ-ONLY for AI assistants - commit only if user explicitly adds/edits/deletes files
 │   ├── sales-enablement/             ← SUBMODULE (PRIVATE git repo) - READ-ONLY REFERENCE
@@ -317,8 +314,8 @@ git commit -m "Update sales-enablement submodule pointer"
 | **dont**       | "MX-Don't Make the AI Think" (the practical quick guide)                               |
 | **books**      | All three books above                                                                  |
 | **manuscript** | All three books above                                                                  |
-| **project**    | Everything in workspace EXCEPT read-only repos (Notes, UCP) and scrap/                 |
-| **workspace**  | Everything in workspace EXCEPT read-only repos (Notes, UCP) and scrap/                 |
+| **project**    | Everything in workspace EXCEPT read-only repos (Notes, UCP)                            |
+| **workspace**  | Everything in workspace EXCEPT read-only repos (Notes, UCP)                            |
 
 **IMPORTANT:** Directory names and repository names remain unchanged. This mapping only affects how books are referenced in documentation and prompts.
 
@@ -418,8 +415,7 @@ UCP embodies the convergence principle from the book - patterns that work for AI
     ├── for-ai/               # AI assistant guidance (writing-style.md, yaml-frontmatter-template.md)
     ├── shared-chapters/      # Shared book content (Chapter 0)
     ├── talks/                # Presentation materials
-    ├── for-tom/              # Personal working notes
-    └── scrap/                # Temporary working files (READ-ONLY for AI unless authorized)
+    └── for-tom/              # Personal working notes
 ```
 
 **See individual package READMEs for detailed contents, build commands, and usage.**

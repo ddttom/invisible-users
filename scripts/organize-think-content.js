@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const baseDir = path.resolve(__dirname, '../docs/scrap/think');
+const baseDir = path.resolve(__dirname, '../packages/notes/scrap/think');
 const textPath = path.join(baseDir, 'full_text.txt');
 const illustrationsDir = path.join(baseDir, 'illustrations');
 const chaptersDir = path.join(baseDir, 'chapters');
