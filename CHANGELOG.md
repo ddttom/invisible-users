@@ -7,6 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22] - Documentation Structure Reorganization
+
+### Changed
+
+- **Documentation Structure**: Reorganized repository documentation for better clarity
+  - Moved `docs/repo/GIT-README.md` → `docs/architecture/GIT-README.md` (architectural documentation)
+  - Moved `docs/repo/TIMELESS-MANUSCRIPT-RULE.md` → `docs/architecture/TIMELESS-MANUSCRIPT-RULE.md` (architectural documentation)
+  - Moved `docs/repo/ONBOARDING.md` → `ONBOARDING.md` (root directory for easy discovery)
+  - Moved `docs/repo/PR_TEMPLATE.md` → `.github/PULL_REQUEST_TEMPLATE.md` (standard GitHub location)
+  - Removed empty `docs/repo/` directory
+  - Updated all references across 17 main repo files and 6 submodule README files
+  - Reorganized `docs/architecture/doc-architecture.md` structure to reflect new organization
+
+- **Submodule Updates**: Updated GIT-README.md path references in all submodules
+  - Bible submodule (4539310): Updated README.md with new docs/architecture/ path
+  - Don't Make AI Think submodule (7f9a05c): Updated README.md with new docs/architecture/ path
+  - MX-Handbook submodule (e1641cb): Updated README.md with new docs/architecture/ path
+  - Shared Appendices submodule (3930b98): Updated README.md with new docs/architecture/ path
+  - Shared Code Examples submodule (e4d17bb): Updated README.md with new docs/architecture/ path
+  - Outputs submodule (6042978): Updated README.md with new docs/architecture/ path
+
+### Removed
+
+- `book-launch-strategy.md` - Moved to sales-enablement submodule
+- `docs/repo/possible-topics.md` - Moved to sales-enablement submodule
+
+### Rationale
+
+- GIT-README.md and TIMELESS-MANUSCRIPT-RULE.md document architectural decisions and patterns, better grouped with other architecture documentation
+- ONBOARDING.md belongs at repository root for immediate visibility alongside README.md
+- PR template moved to standard GitHub `.github/` location for automatic GitHub integration
+- Simplifies documentation structure by consolidating architecture docs and eliminating intermediate `docs/repo/` directory
+
 ## [2026-01-22] - Book Rebranding with Public Names and Shorthand Reference System
 
 ### Added
@@ -173,7 +206,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Independent git version control
   - YAML frontmatter in all chapter files with `ai-instruction` field
 - Build scripts tested successfully: HTML generation produces 909KB output
-- All changes follow git submodule-first workflow from GIT-README.md
+- All changes follow git submodule-first workflow from docs/architecture/GIT-README.md
 
 ## [2026-01-22b] - Don't Make AI Think Pattern Integration
 
@@ -325,7 +358,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - **docs/for-ai/writing-style.md**: Added Section 3 Timeless Manuscript Rule with forbidden patterns and required writing style
   - **CLAUDE.md**: Added CRITICAL WRITING REQUIREMENT section listing all affected directories and enforcement approach
   - **docs/for-ai/yaml-frontmatter-template.md**: Complete template with examples for Bible, Slim, and Appendices (420 lines)
-  - **docs/repo/TIMELESS-MANUSCRIPT-RULE.md**: Implementation summary with remaining work checklist and verification commands
+  - **docs/architecture/TIMELESS-MANUSCRIPT-RULE.md**: Implementation summary with remaining work checklist and verification commands
 
 - **YAML Frontmatter to All Book Manuscripts**: Added Pandoc YAML frontmatter to 38 book files across three submodules
   - **Bible submodule (b88d099)**: 13 chapter files with complete metadata
@@ -789,7 +822,7 @@ These permissions eliminate repetitive approval prompts for multi-repo automatio
 
 - **Updated all references to SVG style guide**
   - Updated CLAUDE.md: Repository structure diagrams and documentation reference list
-  - Updated docs/repo/ONBOARDING.md: Directory tree structure
+  - Updated ONBOARDING.md: Directory tree structure
   - Updated .claude/commands/review-docs.md: Example paths updated to current submodules
 
 - **Removed packages/manuscript/ directory**
@@ -809,7 +842,7 @@ These permissions eliminate repetitive approval prompts for multi-repo automatio
 - **Documentation cleanup for current submodule structure**
   - Updated README.md: Replaced legacy `packages/manuscript/` reference with list of 5 current submodules (bible, dont-make-ai-think, shared-appendices, shared-code-examples, outputs)
   - Updated CLAUDE.md: Changed submodule update examples from `packages/manuscript/the-bible-of-mx` to `packages/bible`
-  - Updated GIT-README.md: Replaced all 40+ occurrences of `packages/manuscript/the-bible-of-mx` with `packages/bible` in examples
+  - Updated docs/architecture/GIT-README.md: Replaced all 40+ occurrences of `packages/manuscript/the-bible-of-mx` with `packages/bible` in examples
   - Updated .claude/pwd-reminder.md: Replaced legacy example location with current submodule locations
   - Updated .claude/commands/step-commit.md: Generalized `packages/manuscript` references to generic `submodule`
   - Updated docs/sales-enablement/pitches/critique.md: Removed legacy archival recommendation, updated to reflect current structure
@@ -875,7 +908,7 @@ These permissions eliminate repetitive approval prompts for multi-repo automatio
   - packages/shared-code-examples/README.md - Emphasizes reference library nature
   - outputs/README.md - Clarifies storage-only purpose for generated content
   - All sections explain: no package.json, no dependencies, no scripts, no build tooling
-  - Cross-references to parent repository CLAUDE.md and GIT-README.md
+  - Cross-references to parent repository CLAUDE.md and docs/architecture/GIT-README.md
 
 - **Main README Enhancement**: Added "Why Submodules Exist: Separation of Concerns" section
   - Documents key principles of multi-repository architecture
