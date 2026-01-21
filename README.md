@@ -108,8 +108,9 @@ This repository uses git submodules to achieve **clean separation between conten
 │   └── dont-make-ai-think/   # Build outputs for slim guide
 ├── docs/                     # Documentation (main repo only)
 │   ├── architecture/         # Architecture documentation
-│   ├── repo/                 # Repository-level docs (ONBOARDING, etc.)
-│   └── for-ai/               # AI assistant guidance files
+│   ├── for-ai/               # AI assistant guidance files
+│   ├── shared-chapters/      # Shared book content (Chapter 0)
+│   └── talks/                # Presentation materials
 ├── config/                   # Configuration files (main repo only)
 ├── scripts/                  # Build and deployment scripts (main repo only)
 └── .claude/                  # Claude Code AI assistant configuration (main repo only)
