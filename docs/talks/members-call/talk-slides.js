@@ -3,13 +3,13 @@
  *
  * @title       The Invisible Users: Designing the Web for AI Agents and Everyone Else
  * @author      Tom Cranstoun
- * @date        2026-01-20
- * @version     2.5.0
+ * @date        2026-01-21
+ * @version     2.6.0
  * @description Google Apps Script to generate themed 20-minute presentation deck
  * @audience    Business leaders (CTOs, product owners)
  * @duration    20 minutes + Q&A
- * @slides      25 slides with themed layout (dark grey/cobalt blue/neon red)
- * @changes     v2.5.0 - Added Agent Types, MX discipline, enhanced journey/Adobe slides
+ * @slides      28 slides with themed layout (dark grey/cobalt blue/neon red)
+ * @changes     v2.6.0 - Added Ally McBeal case study, pricing JSON-LD example, Anthropic Cowork agentic era slide
  * @usage       Run createInvisibleUsersDeck() in Google Apps Script editor
  */
 
