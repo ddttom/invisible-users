@@ -37,10 +37,11 @@ This repository contains multiple integrated projects working together to addres
 
 ### Book Manuscripts
 
-Two book variants derived from a shared manuscript source:
+Three book variants derived from a shared manuscript source:
 
 - **[The Bible](packages/bible/)** - Full comprehensive guide (13 chapters + appendices)
 - **[Don't Make AI Think](packages/dont-make-ai-think/)** - Slim practical guide (10 chapters)
+- **[MX-The Handbook](packages/mx-handbook/)** - Practical implementation guide (11 chapters, rebranded)
 - **[Shared Appendices](packages/shared-appendices/)** - Implementation guides and resources (13 appendices)
 
 See individual package READMEs for chapter lists, word counts, and build commands.
