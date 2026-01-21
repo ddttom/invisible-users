@@ -3,6 +3,7 @@
 ## The Problem You Identified
 
 Book manuscript files were incorrectly including temporal language like:
+
 - "launching April 2, 2026"
 - "We have added..."
 - "This update includes..."
@@ -15,9 +16,11 @@ Book manuscript files were incorrectly including temporal language like:
 ### 1. Documentation Updated
 
 #### [docs/for-ai/writing-style.md](../for-ai/writing-style.md)
+
 Added **Section 3: Timeless Manuscript Rule** with explicit guidance:
 
 **NEVER include:**
+
 - Publication dates or launch dates about the book itself
 - "This update includes..." or "We have added..."
 - "New in this version..." or "Recently launched..."
@@ -25,6 +28,7 @@ Added **Section 3: Timeless Manuscript Rule** with explicit guidance:
 - Meta-commentary about the writing process
 
 **ALWAYS write:**
+
 - Definitive present tense: "The analysis provides..." not "We added analysis..."
 - Timeless descriptions: "This book is part of a three-book series:" not "launching April 2, 2026"
 - Established fact tone: Features described as if they've always existed
@@ -32,7 +36,9 @@ Added **Section 3: Timeless Manuscript Rule** with explicit guidance:
 **Exception:** Historical context about *subject matter* is allowed (e.g., "Google launched UCP in January 2026" describes an industry event, not the book)
 
 #### [CLAUDE.md](../../CLAUDE.md)
+
 Added comprehensive **"CRITICAL WRITING REQUIREMENT - Timeless Manuscript Rule"** section:
+
 - Lists all affected directories (`packages/bible/chapters/`, `packages/dont-make-ai-think/chapters/`, `packages/shared-appendices/`, `docs/shared-chapters/`)
 - Specifies forbidden patterns
 - Defines required present-tense writing style
@@ -41,9 +47,11 @@ Added comprehensive **"CRITICAL WRITING REQUIREMENT - Timeless Manuscript Rule"*
 ### 2. YAML Frontmatter Template Created
 
 #### [docs/for-ai/yaml-frontmatter-template.md](../for-ai/yaml-frontmatter-template.md)
+
 Complete template for book manuscript frontmatter with:
 
 **Required fields:**
+
 - `title` - Chapter title
 - `author` - Always "Tom Cranstoun"
 - `date` - Last modification date (YYYY-MM-DD)
@@ -55,6 +63,7 @@ Complete template for book manuscript frontmatter with:
 - **`ai-instruction`** - **CRITICAL FIELD** containing timeless manuscript rule
 
 **Standard ai-instruction text:**
+
 ```yaml
 ai-instruction: |
   This is a book manuscript chapter. Write as if it has always existed.
@@ -67,13 +76,16 @@ ai-instruction: |
 ### 3. Example Implementation
 
 #### [packages/dont-make-ai-think/chapters/preface.md](../../packages/dont-make-ai-think/chapters/preface.md)
+
 Added YAML frontmatter as first implementation:
+
 - Complete frontmatter with all required fields
 - Removed duplicate H1 heading (title now in frontmatter only)
 - Passes markdown linting (MD025 compliance)
 - Contains ai-instruction field with timeless rule
 
 **BEFORE:**
+
 ```markdown
 # Preface
 
@@ -81,6 +93,7 @@ You're reading this because something's changed...
 ```
 
 **AFTER:**
+
 ```yaml
 ---
 title: "Preface"
@@ -118,12 +131,13 @@ You're reading this because something's changed...
 
 ### Secondary (Medium Priority)
 
-3. **Update /review-docs skill** - Add check for timeless manuscript rule violations:
+1. **Update /review-docs skill** - Add check for timeless manuscript rule violations:
    - Scan for forbidden patterns ("launching", "we added", "this update")
    - Verify YAML frontmatter exists in book files
    - Check ai-instruction field is present
 
-4. **Create pre-tool-use.sh hook reminder** - Add warning when editing book files:
+2. **Create pre-tool-use.sh hook reminder** - Add warning when editing book files:
+
    ```bash
    # If editing book manuscript file, remind about timeless rule
    if [[ "$file" =~ (packages/(bible|dont-make-ai-think|shared-appendices)/|docs/shared-chapters/) ]]; then
@@ -133,7 +147,8 @@ You're reading this because something's changed...
 
 ### Ongoing
 
-5. **Audit existing chapters** - Search for and fix violations:
+1. **Audit existing chapters** - Search for and fix violations:
+
    ```bash
    # Find potential violations in book files
    grep -r "launching\|we added\|this update\|new feature\|recently launched" \
@@ -143,7 +158,7 @@ You're reading this because something's changed...
      docs/shared-chapters/
    ```
 
-6. **Update related documentation**:
+2. **Update related documentation**:
    - Add note to README files in each package
    - Update contribution guidelines if they exist
    - Add example to book-specific documentation
@@ -181,6 +196,7 @@ find packages/*/chapters/ docs/shared-chapters/ -name "*.md" -exec grep -l "^---
 ## Questions?
 
 If unclear about whether language violates the timeless manuscript rule, ask:
+
 1. Does this reference when the book was written/published?
 2. Does this describe the book's development process?
 3. Could this become dated or outdated?

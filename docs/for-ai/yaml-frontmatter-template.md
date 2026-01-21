@@ -31,35 +31,42 @@ ai-instruction: |
 **author:** Always `"Tom Cranstoun"`
 
 **date:** Last modification date in ISO format
+
 - Format: `"YYYY-MM-DD"`
 - Example: `"2026-01-22"`
 - Update whenever file content changes
 
 **description:** Brief chapter summary
+
 - 1-2 sentences
 - Describes chapter purpose and scope
 - Example: `"Explores patterns that need optimization for AI agents and shows how these same patterns affect users with disabilities"`
 
 **keywords:** Array of relevant topics
+
 - 3-8 keywords
 - Lowercase unless proper nouns
 - Example: `[ai-agents, web-accessibility, semantic-html, schema-org]`
 
 **book:** Which book this chapter belongs to
+
 - Values: `"The MX Bible"`, `"Don't Make the AI Think"`, or `"The MX Handbook"`
 - Use exact book title
 - Use `"Shared"` for Chapter 0 and shared content
 
 **chapter:** Chapter number (integer or letter)
+
 - Examples: `0`, `1`, `2`, `3`, or `"A"`, `"B"` for appendices
 - Use `0` for preface/Chapter 0
 
 **wordcount:** Approximate word count (integer)
+
 - Update after major edits
 - Use `wc -w filename.md` to calculate
 - Example: `4750`
 
 **ai-instruction:** **CRITICAL - MUST BE INCLUDED**
+
 - Multi-line string using `|` YAML syntax
 - Contains the timeless manuscript rule
 - Copy exactly from template above
@@ -68,13 +75,16 @@ ai-instruction: |
 ### Optional Fields
 
 **longdescription:** Extended chapter summary (paragraph length)
+
 - Use for complex chapters needing more context
 - Example: See Chapter 0 frontmatter
 
 **purpose:** Intended use or goal of the chapter
+
 - Example: `"Educational content introducing AI agents concept"`
 
 **status:** Draft status indicator
+
 - Values: `draft`, `review`, `ready`, `published`
 - Omit if not tracking status
 
