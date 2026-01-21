@@ -7,6 +7,56 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22a] - Markdown Linting and Schema.org Documentation Enhancement
+
+### Added
+
+- **Appendix M: Index of Metadata** (shared-appendices d2c14f7): Comprehensive categorized reference covering 150+ metadata elements
+  - Schema.org types (18 categories): Product, Article, TVEpisode, Restaurant, Event, etc.
+  - ARIA attributes: Status communication, form states, labels, roles
+  - Data attributes: State tracking, content classification, carousel/animation control
+  - YAML frontmatter fields: Core metadata, ai-instruction field for manuscript enforcement
+  - HTML meta tags: Established standards and proposed AI-specific patterns
+  - JSON-LD, microdata, semantic HTML elements
+  - Testing patterns, strategic decisions, error prevention patterns
+  - Complete with 17 categorized sections and Priority 1/2/3 quick reference guide
+
+- **scripts/update_invisible_users_presentation.py**: Python utility for programmatically modifying PowerPoint presentations
+  - Comprehensive AI assistant guidance for customization
+  - Common modification patterns and examples
+  - Dependencies: python-pptx library
+
+### Changed
+
+- **Chapter 10 Schema.org Guidance** (bible 796e89d): Expanded disambiguation for court opinions vs TV legal dramas
+  - Court opinions: Article type with `genre="Judicial Opinion"` and `articleSection="Case Law"`
+  - TV shows: TVEpisode type with `genre="Legal Drama"` and `partOfSeries` markup
+  - Documented Ally McBeal citation incident where lawyers cited fictional cases in real court proceedings
+  - Explained how fan transcripts without proper `@type` markup appear identical to legal precedents to AI agents
+
+- **Chapter 0** (docs/shared-chapters/): Applied same Schema.org guidance to Ally McBeal example for consistency
+- **Presentation slides** (docs/talks/members-call/): Updated Ally McBeal slide with explicit Schema.org markup requirements
+
+### Fixed
+
+- **Markdown Linting**: Fixed MD040 violations in docs/sales-enablement/CLAUDE.md (4 code blocks missing language specifications)
+- **Markdown Linting**: Fixed 26 violations in Appendix M (MD032 blank lines around lists, MD031 blank lines around fences, MD034 bare URLs, MD036 emphasis as heading)
+
+### Changed - Configuration
+
+- **.claude/settings.local.json**: Added `Bash(python:*)` permission for Python script execution
+
+### Submodule Updates
+
+- **packages/shared-appendices**: Updated to commit d2c14f7 (Appendix M addition with markdown linting fixes)
+- **packages/bible**: Updated to commit 796e89d (Chapter 10 Schema.org disambiguation expansion)
+
+### Cross-Project Consistency
+
+- All Schema.org terminology consistent across Bible (Chapter 10), Appendices (Appendix M), Chapter 0, and presentation slides
+- Book manuscript remains authoritative source for all terminology and patterns
+- Terminology flow: Bible → Appendices → Shared Chapters → Presentations
+
 ## [2026-01-22] - Timeless Manuscript Rule and YAML Frontmatter Implementation
 
 ### Added
