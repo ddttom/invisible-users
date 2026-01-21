@@ -41,7 +41,7 @@ Two book variants derived from a shared manuscript source:
 
 - **[The Bible](packages/bible/)** - Full comprehensive guide (13 chapters + appendices)
 - **[Don't Make AI Think](packages/dont-make-ai-think/)** - Slim practical guide (10 chapters)
-- **[Shared Appendices](packages/shared-appendices/)** - Implementation guides and resources (12 appendices)
+- **[Shared Appendices](packages/shared-appendices/)** - Implementation guides and resources (13 appendices)
 
 See individual package READMEs for chapter lists, word counts, and build commands.
 
