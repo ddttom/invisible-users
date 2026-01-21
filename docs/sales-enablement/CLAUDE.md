@@ -43,7 +43,7 @@ If this directory documents factual industry developments (like the January 2026
 
 ## Directory Structure
 
-```
+```text
 docs/sales-enablement/
 ├── business/          # Business plans, executive summaries, revenue models
 ├── content/           # Blog posts, articles, marketing content
@@ -81,7 +81,7 @@ docs/sales-enablement/
 
 ### ❌ INCORRECT: Auto-including business content
 
-```
+```text
 User: "Update the main README with recent changes"
 AI: Adds revenue projections and partnership strategies from sales-enablement/
 ```
@@ -90,7 +90,7 @@ This violates separation of concerns. Public documentation should focus on factu
 
 ### ✅ CORRECT: Keeping business content private
 
-```
+```text
 User: "Update the main README with recent changes"
 AI: Updates README with factual changes (new features, industry context, technical improvements)
     Does NOT include revenue models, partnership proposals, or business strategies
@@ -98,7 +98,7 @@ AI: Updates README with factual changes (new features, industry context, technic
 
 ### ✅ CORRECT: Extracting factual events when requested
 
-```
+```text
 User: "Add the January 2026 platform convergence to the README"
 AI: Extracts factual dates and platform names from sales materials
     Adds factual industry context to public documentation
