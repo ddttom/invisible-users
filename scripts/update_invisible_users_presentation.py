@@ -85,8 +85,8 @@ def main():
 
     CUSTOMIZATION: Update file paths here to work with different presentations.
     """
-    input_file = "docs/scrapboard/MX-Bible Presentation-final.pptx"
-    output_file = "docs/scrapboard/MX-Bible Presentation-final-updated.pptx"
+    input_file = "docs/scrap/MX-Bible Presentation-final.pptx"
+    output_file = "docs/scrap/MX-Bible Presentation-final-updated.pptx"
 
     print(f"Loading presentation from: {input_file}")
     prs = Presentation(input_file)

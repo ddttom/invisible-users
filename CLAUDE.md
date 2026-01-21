@@ -143,7 +143,9 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   ├── architecture/                 ← doc-architecture.md
 │   ├── sales-enablement/             ← Business materials
 │   ├── shared-chapters/              ← Shared book content (Chapter 0)
-│   └── for-ai/                       ← AI assistant guidance
+│   ├── for-ai/                       ← AI assistant guidance
+│   └── scrap/                        ← READ-ONLY REFERENCE (temporary working files)
+│       Note: Temporary notes and drafts (READ-ONLY for AI assistants unless explicitly authorized)
 ├── blogs → outputs/bible/blogs       ← SYMLINK to outputs submodule blogs
 ├── books/                            ← Symlinks for convenience
 │   ├── bible → ../packages/bible
@@ -279,8 +281,8 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 | **dont**       | "MX-Don't Make the AI Think" (the practical quick guide)                               |
 | **books**      | All three books above                                                                  |
 | **manuscript** | All three books above                                                                  |
-| **project**    | Everything in workspace EXCEPT read-only repos (Notes, Zettel, UCP)                    |
-| **workspace**  | Everything in workspace EXCEPT read-only repos (Notes, Zettel, UCP)                    |
+| **project**    | Everything in workspace EXCEPT read-only repos (Notes, Zettel, UCP) and scrap/         |
+| **workspace**  | Everything in workspace EXCEPT read-only repos (Notes, Zettel, UCP) and scrap/         |
 
 **IMPORTANT:** Directory names and repository names remain unchanged. This mapping only affects how books are referenced in documentation and prompts.
 

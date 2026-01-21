@@ -45,7 +45,7 @@ Three integrated book manuscripts and a production-ready implementation tool. Bu
   - dont-make-ai-think/ (MX-Don't Make the AI Think - practical quick guide, 11 chapters)
   - mx-handbook/ (MX-Handbook - implementation handbook, 11 chapters)
 - **Shared Resources:** shared-appendices/ (12 appendices A-L shared across all books), shared-code-examples/ (production-ready pattern implementations)
-- **Reference Submodules (READ-ONLY):** ucp/ (Universal Commerce Protocol), notes/ (coding standards), zettel/ (note-taking system)
+- **Reference Submodules (READ-ONLY):** ucp/ (Universal Commerce Protocol), notes/ (coding standards), zettel/ (note-taking system), docs/scrap/ (temporary working files)
 - **Private Submodule:** outputs/ (generated PDFs, HTML, blog posts, marketing materials)
 - **Convenience Layer:** books/ directory with symlinks to all book content, blogs/ symlink to outputs/bible/blogs
 - **Key Benefits:**
