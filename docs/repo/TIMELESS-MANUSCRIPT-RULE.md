@@ -57,7 +57,7 @@ Complete template for book manuscript frontmatter with:
 - `date` - Last modification date (YYYY-MM-DD)
 - `description` - Brief chapter summary
 - `keywords` - Array of relevant topics
-- `book` - Which book (The MX Bible, Don't Make AI Think, The MX Handbook)
+- `book` - Which book (MX-Bible, MX-Don't Make the AI Think, MX-Handbook)
 - `chapter` - Chapter number
 - `wordcount` - Approximate word count
 - **`ai-instruction`** - **CRITICAL FIELD** containing timeless manuscript rule
@@ -101,7 +101,7 @@ author: "Tom Cranstoun"
 date: "2026-01-22"
 description: "Introduction to the practical guide for making websites work for AI agents"
 keywords: [preface, book-structure, reading-guide, ai-agents]
-book: "Don't Make the AI Think"
+book: "MX-Don't Make the AI Think"
 chapter: 0
 wordcount: 850
 ai-instruction: |

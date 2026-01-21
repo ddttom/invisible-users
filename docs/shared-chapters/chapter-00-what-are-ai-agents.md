@@ -46,7 +46,7 @@ Consider another scenario: a user signs into their banking app, completing all t
 
 These failures matter commercially. When agents cannot cite you accurately, they recommend competitors instead. When agents cannot compare your pricing, they skip your products. When agents cannot complete checkout, they abandon the cart. First-mover advantage exists - sites that work early become trusted sources that agents return to repeatedly.
 
-## The Invisible Users
+## MX-Bible
 
 This situation parallels web accessibility in a striking way. For years, the industry has discussed making web pages accessible to disabled users, with laws and documentation supporting this goal. Yet implementation remains poor. Because users with disabilities represent a relatively small proportion of total visitors, organisations pay lip service to compliance, add some alt text, pass a few tests, and declare themselves accessible.
 

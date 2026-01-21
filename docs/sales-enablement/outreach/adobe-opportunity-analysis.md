@@ -381,7 +381,7 @@ s LLM Optimizer strategically (transitional tool, not primary solution)
 - No ask, just value-first relationship building
 
 **Sample message:**
-> "Hi [Name], hope you're well. I've just published 'The Invisible Users' about designing websites for AI agents. Given Adobe's work on LLM Optimizer, thought you'd find it relevant. The book argues for native CMS agent-readiness with edge optimization as transitional tool. Would love to send you a copy and hear your thoughts. How's [X project we worked on] going?"
+> "Hi [Name], hope you're well. I've just published 'MX-Bible' about designing websites for AI agents. Given Adobe's work on LLM Optimizer, thought you'd find it relevant. The book argues for native CMS agent-readiness with edge optimization as transitional tool. Would love to send you a copy and hear your thoughts. How's [X project we worked on] going?"
 
 ---
 

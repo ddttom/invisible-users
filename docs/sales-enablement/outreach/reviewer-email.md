@@ -2,7 +2,7 @@
 
 ## Subject Line Options
 
-**Option 1 (Direct):** Request: Book manuscript review - "The Invisible Users"
+**Option 1 (Direct):** Request: Book manuscript review - "MX-Bible"
 
 **Option 2 (Context):** AI agents are breaking websites - would you review my book?
 
@@ -20,7 +20,7 @@ I'm reaching out because of your expertise in [web development/accessibility/AI 
 
 **The problem:** AI agents are visiting websites and failing silently. The same design patterns that work beautifully for human users - toast notifications, visual state changes, paginated content - break completely for AI agents. And critically, these are the exact patterns that have been creating accessibility barriers for years.
 
-I've documented this in a ~57,000-word manuscript called "The Invisible Users: Designing the Web for AI Agents and Everyone Else" with 10 comprehensive appendices published separately online. It covers:
+I've documented this in a ~57,000-word manuscript called "MX-Bible: Designing the Web for AI Agents and Everyone Else" with 10 comprehensive appendices published separately online. It covers:
 
 - **Technical failures** - What breaks and why (with code examples)
 - **Business implications** - ROI frameworks and strategic considerations
@@ -63,7 +63,7 @@ Tom Cranstoun
 ---
 
 **About the book:**
-"The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+"MX-Bible: Designing the Web for AI Agents and Everyone Else"
 ~57,000 words | 11 chapters + 10 appendices online at <https://allabout.network/invisible-users/web/>
 Publication: Early 2026
 
@@ -80,7 +80,7 @@ Hi [Name],
 
 Quick question: Have you noticed AI agents struggling with websites that work perfectly for humans?
 
-I've spent the past [timeframe] documenting this problem and building solutions. The result is a ~57,000-word technical book called "The Invisible Users" with 10 comprehensive appendices published online - and I'd value your feedback before publishing.
+I've spent the past [timeframe] documenting this problem and building solutions. The result is a ~57,000-word technical book called "MX-Bible" with 10 comprehensive appendices published online - and I'd value your feedback before publishing.
 
 **The core issue:**
 
@@ -193,7 +193,7 @@ I'm reaching out because you'll recognize the patterns I'm writing about - they'
 
 The difference now: AI agents are failing on these patterns too, and suddenly there's commercial pressure to fix them.
 
-I've written a ~57,000-word book called "The Invisible Users" with 10 comprehensive appendices (published online) that documents this connection and provides technical solutions. I'd value your perspective before publication.
+I've written a ~57,000-word book called "MX-Bible" with 10 comprehensive appendices (published online) that documents this connection and provides technical solutions. I'd value your perspective before publication.
 
 **The uncomfortable parallel:**
 

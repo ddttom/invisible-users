@@ -1,4 +1,4 @@
-# Business Plan: The Invisible Users
+# Business Plan: MX-Bible
 
 **Document Version:** 1.0
 **Date:** December 2025
@@ -6,7 +6,7 @@
 
 ## Executive Summary
 
-"The Invisible Users: Designing the Web for AI Agents and Everyone Else" addresses a critical emerging problem: AI agents are visiting websites on behalf of users, and common web design patterns cause these agents to fail silently. This creates invisible conversion losses for businesses and accessibility barriers for humans.
+"MX-Bible: Designing the Web for AI Agents and Everyone Else" addresses a critical emerging problem: AI agents are visiting websites on behalf of users, and common web design patterns cause these agents to fail silently. This creates invisible conversion losses for businesses and accessibility barriers for humans.
 
 **The opportunity exists because:**
 
@@ -159,7 +159,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 ### Stream 1: Book Sales (Digital + Print)
 
-#### Primary Product: "The Invisible Users" Book
+#### Primary Product: "MX-Bible" Book
 
 **Digital formats:**
 
@@ -1352,7 +1352,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 2. **Intellectual Property:**
    - Copyright registration
-   - Trademark "The Invisible Users" (if scaling)
+   - Trademark "MX-Bible" (if scaling)
    - Cost: £500-2,000
 
 3. **Contracts & Terms:**

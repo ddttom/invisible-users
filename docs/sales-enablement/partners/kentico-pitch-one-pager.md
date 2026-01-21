@@ -102,7 +102,7 @@ In January 2026, Amazon, Microsoft, and Google all launched agent commerce syste
 Tom Cranstoun | Digital Domain Technologies
 
 - **"The AEM Guy"** - Known in CMS circles, not vendor-locked, credible across platforms
-- **Author:** *The Invisible Users: Designing the Web for AI Agents and Everyone Else* (published January 2026)
+- **Author:** *MX-Bible: Designing the Web for AI Agents and Everyone Else* (published January 2026)
 - **Enterprise scale:** Architected delivery infrastructure for BBC, Twitter, Nissan-Renault (200+ sites), Ford, MediaMonks
 - **MACH principles expertise:** Aligns with Kentico's architectural direction
 - **Boye & Company CMS Experts Group:** Industry-recognized thought leadership
@@ -184,7 +184,7 @@ Digital Domain Technologies Ltd
 
 ## Supporting Materials
 
-- *The Invisible Users* book (physical copy + PDF available)
+- *MX-Bible* book (physical copy + PDF available)
 - Web Audit Suite demo and architecture documentation
 - Case studies: BBC, Twitter, Nissan-Renault implementations
 - Executive summary: "Why CMS Vendors Need Agent-Ready Strategy"

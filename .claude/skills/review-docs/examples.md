@@ -247,7 +247,7 @@ Agent-friendly design benefits everyone.
 **Exception:**
 
 ```markdown
-## The Invisible Users
+## MX-Bible
 
 ✓ CORRECT - Book title exception, always preserve
 ```

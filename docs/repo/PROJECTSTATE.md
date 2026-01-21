@@ -8,10 +8,14 @@
 
 This repository is now structured as a monorepo with npm workspaces and multiple git submodules:
 
-- **`packages/bible/`** - "The Invisible Users" full book (git submodule, Chapters 1-13)
-- **`packages/dont-make-ai-think/`** - "Don't Make AI Think" slim guide (git submodule)
+- **`packages/bible/`** - "MX-Bible" full comprehensive guide (git submodule, Chapters 1-13)
+- **`packages/dont-make-ai-think/`** - "MX-Don't Make the AI Think" practical quick guide (git submodule, 11 chapters)
+- **`packages/mx-handbook/`** - "MX-Handbook" implementation handbook (git submodule, 11 chapters)
 - **`packages/shared-appendices/`** - Shared appendices A-L (git submodule)
 - **`packages/shared-code-examples/`** - AI-friendly code patterns (git submodule)
+- **`packages/ucp/`** - Universal Commerce Protocol (git submodule, READ-ONLY reference)
+- **`packages/notes/`** - Coding standards and development practices (git submodule, READ-ONLY reference)
+- **`packages/zettel/`** - Personal note-taking system (git submodule, READ-ONLY reference)
 - **`outputs/`** - Generated content: blogs, PDFs, presentations (git submodule, PRIVATE)
 - **`packages/web-audit-suite/`** - Web analysis tool (NOT a submodule)
 - **`docs/shared-chapters/`** - Shared book content (Chapter 0)

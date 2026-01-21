@@ -44,7 +44,7 @@ I'm presenting at the Boye & Company members' call on **Wednesday, January 21st*
 - **The diagnostic approach** - How to identify where your site fails for agents without waiting for error logs that never arrive
 - **The business case** - Why this becomes competitive infrastructure, not optional enhancement
 
-This isn't theoretical architecture. We're examining real breakage patterns from real sites, documented over two years of research for "The Invisible Users."
+This isn't theoretical architecture. We're examining real breakage patterns from real sites, documented over two years of research for "MX-Bible."
 
 ## Why I Wrote The Book
 
@@ -54,7 +54,7 @@ That assumption broke.
 
 I spent two years investigating what happens when AI agents encounter modern websites. Not scraping. Not automated testing. Actual customer-facing agents attempting legitimate purchases with valid payment methods and delivery addresses. The failure patterns were consistent, predictable, and completely invisible to traditional analytics.
 
-"The Invisible Users: Designing the Web for AI Agents and Everyone Else" documents what breaks, why it breaks, and the specific patterns that fix it. Semantic HTML. Structured data. Explicit state management. Progressive enhancement. None of these are new technologies—they're established best practices that suddenly became infrastructure requirements.
+"MX-Bible: Designing the Web for AI Agents and Everyone Else" documents what breaks, why it breaks, and the specific patterns that fix it. Semantic HTML. Structured data. Explicit state management. Progressive enhancement. None of these are new technologies—they're established best practices that suddenly became infrastructure requirements.
 
 The book launches Q1 2026, but the patterns are relevant today. The webinar covers the critical issues you can address immediately.
 
@@ -70,7 +70,7 @@ You're reading this in the middle of that timeline. The infrastructure shipped. 
 
 ## Who Should Read This Book
 
-**"The Invisible Users"** is written primarily for business leaders and managers who need to understand the strategic implications of AI agent commerce - including CEOs, product managers, marketing directors, and technical managers such as software architects and lead developers.
+**"MX-Bible"** is written primarily for business leaders and managers who need to understand the strategic implications of AI agent commerce - including CEOs, product managers, marketing directors, and technical managers such as software architects and lead developers.
 
 **No programming knowledge required.** Technical patterns are explained conceptually first, with code examples that can be skipped without losing the thread. If you don't write code, read straight through and gain everything needed for informed strategic decisions.
 
@@ -107,4 +107,4 @@ Website: <https://allabout.network>
 
 ---
 
-*Tom Cranstoun is a regular contributor to CMS Critic (<https://cmscritic.com/>) and has built web experiences for 25 years, from early e-commerce platforms to modern progressive web apps. "The Invisible Users" synthesises two years of research into how AI agents interact with websites and the patterns that work for both agents and humans.*
+*Tom Cranstoun is a regular contributor to CMS Critic (<https://cmscritic.com/>) and has built web experiences for 25 years, from early e-commerce platforms to modern progressive web apps. "MX-Bible" synthesises two years of research into how AI agents interact with websites and the patterns that work for both agents and humans.*

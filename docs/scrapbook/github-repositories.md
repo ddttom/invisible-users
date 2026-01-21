@@ -70,12 +70,12 @@ Complete list of repositories from ddttom and Digital-Domain-Technologies-Ltd or
 
 | Repository | Owner | Description | Last Modified |
 |------------|-------|-------------|---------------|
-| [invisible-users-outputs](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-outputs) | DDT | Generated content and materials for The Invisible Users book series - blogs, presentations, marketin | 2026-01-21 |
+| [invisible-users-outputs](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-outputs) | DDT | Generated content and materials for MX-Bible book series - blogs, presentations, marketin | 2026-01-21 |
 | [invisible-users](https://github.com/ddttom/invisible-users) | ddttom |  | 2026-01-21 |
 | [MX-The-Handbook](https://github.com/Digital-Domain-Technologies-Ltd/MX-The-Handbook) | DDT | MX-The Handbook: Designing Web Interfaces for AI Agents - Practical implementation guide | 2026-01-21 |
-| [invisible-users-slim](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-slim) | DDT | Don't Make AI Think: Designing Web Interfaces for AI Agents - Practical implementation guide | 2026-01-21 |
-| [invisible-users-bible](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-bible) | DDT | The Invisible Users: Designing the Web for AI Agents and Everyone Else - Full comprehensive guide | 2026-01-21 |
-| [invisible-users-appendices](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-appendices) | DDT | Shared appendices for The Invisible Users book series - Implementation guides, patterns, resources | 2026-01-21 |
+| [invisible-users-slim](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-slim) | DDT | MX-Don't Make the AI Think: Designing Web Interfaces for AI Agents - Practical implementation guide | 2026-01-21 |
+| [invisible-users-bible](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-bible) | DDT | MX-Bible: Designing the Web for AI Agents and Everyone Else - Full comprehensive guide | 2026-01-21 |
+| [invisible-users-appendices](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-appendices) | DDT | Shared appendices for MX-Bible book series - Implementation guides, patterns, resources | 2026-01-21 |
 | [Notes](https://github.com/ddttom/Notes) | ddttom | My notes | 2026-01-21 |
 | [invisible-users-code-examples](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-code-examples) | DDT | AI-friendly web patterns - Code examples demonstrating good vs bad implementations | 2026-01-19 |
 | [invisible-users-manuscript](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript) | DDT |  | 2026-01-19 |

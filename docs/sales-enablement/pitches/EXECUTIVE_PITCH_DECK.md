@@ -8,7 +8,7 @@
 
 ## Slide 1: Title
 
-The Invisible Users
+MX-Bible
 
 Why AI Agents are Your Most Valuable (and Neglected) Customer
 

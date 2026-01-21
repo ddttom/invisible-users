@@ -29,7 +29,7 @@ The `pdf:appendix` npm script now generates Pandoc-based HTML pages enhanced wit
   "@context": "https://schema.org",
   "@type": "TechArticle", // or "CollectionPage" for index
   "name": "Appendix A: Implementation Cookbook",
-  "description": "Practical guidance from The Invisible Users book...",
+  "description": "Practical guidance from MX-Bible book...",
   "author": {
     "@type": "Person",
     "name": "Tom Cranstoun",
@@ -41,7 +41,7 @@ The `pdf:appendix` npm script now generates Pandoc-based HTML pages enhanced wit
   "dateModified": "2026-01-10",
   "isPartOf": {
     "@type": "Book",
-    "name": "The Invisible Users"
+    "name": "MX-Bible"
   },
   "position": 1 // Appendix letter position (A=1, B=2, etc.)
 }
@@ -189,4 +189,4 @@ When updating:
 Questions about the enhancement pipeline:
 
 - Email: <tom.cranstoun@gmail.com>
-- Context: Chapter 10 of "The Invisible Users"
+- Context: Chapter 10 of "MX-Bible"

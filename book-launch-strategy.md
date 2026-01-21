@@ -1,4 +1,5 @@
-# Book Launch Strategy: "Don't Make AI Think"
+# Book Launch Strategy: MX Series
+
 ## Launch Date: Wednesday, 2 April 2026
 
 ---
@@ -89,7 +90,7 @@ Known in the industry as "The AEM Guy"
 
 ## The Three Books
 
-### Book 1: "Don't Make AI Think"
+### Book 1: "MX-Don't Make the AI Think"
 **The accessible introduction**
 - Homage to Steve Krug's approach
 - 2-hour read for anyone
@@ -126,7 +127,7 @@ Known in the industry as "The AEM Guy"
 
 **Three books. Three audiences. One framework.**
 
-- "Don't Make AI Think" → Accessible understanding for everyone
+- "MX-Don't Make the AI Think" → Accessible understanding for everyone
 - "The Handbook" → Practical implementation for practitioners  
 - "The MX Bible" → Complete reference for going deep
 
@@ -147,7 +148,7 @@ Readers choose their entry point based on their needs, then reference the others
 
 ### Journey 1: Executive Decision Maker
 
-**Entry point:** "Don't Make AI Think" (2 hours)
+**Entry point:** "MX-Don't Make the AI Think" (2 hours)
 - Understands business problem and impact
 - Gets strategic context without technical detail
 - Can make informed decisions
@@ -160,7 +161,7 @@ Readers choose their entry point based on their needs, then reference the others
 
 ### Journey 2: Practitioner (Developer/Designer)
 
-**Entry point:** "Don't Make AI Think" (quick read)
+**Entry point:** "MX-Don't Make the AI Think" (quick read)
 - Gets conceptual understanding
 - Sees why this matters
 
@@ -187,7 +188,7 @@ Readers choose their entry point based on their needs, then reference the others
 - Points team to practical guidance
 - Uses documented patterns
 
-**Uses:** "Don't Make AI Think" for client conversations
+**Uses:** "MX-Don't Make the AI Think" for client conversations
 - Explains concepts accessibly
 - Builds business case
 
@@ -195,7 +196,7 @@ Readers choose their entry point based on their needs, then reference the others
 
 ### Journey 4: Small Business Owner
 
-**Entry point:** "Don't Make AI Think" (2 hours)
+**Entry point:** "MX-Don't Make the AI Think" (2 hours)
 - Understands if this affects them
 - Gets business context
 
@@ -217,7 +218,7 @@ Readers choose their entry point based on their needs, then reference the others
 - Can teach from any entry point
 
 **Uses:**
-- "Don't Make AI Think" for accessible explanations
+- "MX-Don't Make the AI Think" for accessible explanations
 - "The Handbook" for practical demonstrations
 - "The MX Bible" for authoritative citations
 
@@ -225,7 +226,7 @@ Readers choose their entry point based on their needs, then reference the others
 
 ### Cross-Referencing Strategy
 
-**In "Don't Make AI Think":**
+**In "MX-Don't Make the AI Think":**
 - "For implementation details, see The Handbook, Chapter X"
 - "For complete technical specifications, see The MX Bible, Section Y"
 - Focus: Concept and context
@@ -570,7 +571,7 @@ Why three?
 
 Because different people need different entry points:
 
-📘 "Don't Make AI Think" - Accessible guide for anyone
+📘 "MX-Don't Make the AI Think" - Accessible guide for anyone
 • 2-hour read
 • Business context
 • No technical prerequisites
@@ -597,7 +598,7 @@ All free. 2 April.
 
 **Friday 28 February:**
 ```
-Preview from "Don't Make AI Think":
+Preview from "MX-Don't Make the AI Think":
 
 "The patterns that break AI agents also break humans. We just didn't notice.
 
@@ -731,7 +732,7 @@ You need MX.
 
 Three books, three audiences:
 
-Executives → "Don't Make AI Think" (business case)
+Executives → "MX-Don't Make the AI Think" (business case)
 Practitioners → "The Handbook" (implementation)
 Architects → "The MX Bible" (complete framework)
 
@@ -756,7 +757,7 @@ Because:
 
 MX scales down beautifully.
 
-"Don't Make AI Think" includes small business specific guidance.
+"MX-Don't Make the AI Think" includes small business specific guidance.
 
 2 April. Free download.
 
@@ -772,7 +773,7 @@ One week until launch.
 
 Three books. Complete MX literature.
 
-📘 "Don't Make AI Think"
+📘 "MX-Don't Make the AI Think"
 Why AI agents struggle. Why it matters. What to do about it.
 (For everyone)
 
@@ -866,7 +867,7 @@ Tomorrow.
 
 Three books. One framework. Complete MX documentation.
 
-📘 "Don't Make AI Think" - accessible understanding
+📘 "MX-Don't Make the AI Think" - accessible understanding
 📗 "The Handbook" - practical implementation
 📕 "The MX Bible" - comprehensive reference
 
@@ -891,7 +892,7 @@ Today: Machine Experience has its literature.
 
 Three books. One launch.
 
-📘 "Don't Make AI Think" - accessible guide for everyone
+📘 "MX-Don't Make the AI Think" - accessible guide for everyone
 📗 "The Handbook" - practical implementation for practitioners  
 📕 "The MX Bible" - comprehensive reference (800 pages)
 
@@ -915,12 +916,12 @@ Choose your entry point. Get all three if you want the complete picture.
 Six hours in. The response has been remarkable.
 
 Three books serving different needs:
-- Executives reading "Don't Make AI Think" for context
+- Executives reading "MX-Don't Make the AI Think" for context
 - Practitioners diving into "The Handbook" for implementation
 - Architects referencing "The MX Bible" for depth
 
 Where to start?
-- Need the business case? → "Don't Make AI Think" 
+- Need the business case? → "MX-Don't Make the AI Think" 
 - Ready to implement? → "The Handbook"
 - Want complete mastery? → "The MX Bible"
 
@@ -976,7 +977,7 @@ Launch day: 1,247 downloads across all three books.
 
 What's resonating:
 
-📘 "Don't Make AI Think" - Most downloaded
+📘 "MX-Don't Make the AI Think" - Most downloaded
 Executives and business owners wanting the strategic view.
 
 📗 "The Handbook" - Close second
@@ -1012,7 +1013,7 @@ Most common question: "Where do I start?"
 
 Answer: Depends on your role.
 
-Executive → "Don't Make AI Think" (2 hours)
+Executive → "MX-Don't Make the AI Think" (2 hours)
 Developer → "The Handbook" (start coding today)
 Architect → "The MX Bible" (complete framework)
 
@@ -1101,7 +1102,7 @@ Enjoy your weekend.
 ```
 Weekend reading:
 
-"Don't Make AI Think" - 2 hours
+"MX-Don't Make the AI Think" - 2 hours
 "The Handbook" - practical guide
 "The MX Bible" - 800 pages deep
 
@@ -1159,7 +1160,7 @@ Credit to the accessibility community. You got here first.
 Week 1 numbers:
 
 📊 2,847 total downloads
-📘 "Don't Make AI Think" - 1,456 downloads
+📘 "MX-Don't Make the AI Think" - 1,456 downloads
 📗 "The Handbook" - 982 downloads  
 📕 "The MX Bible" - 409 downloads
 
@@ -1395,17 +1396,17 @@ So I wrote three."
 ### Post-Launch Benefits
 
 **Different books appeal to different audiences:**
-- "Don't Make AI Think" gets social shares (accessible, quotable)
+- "MX-Don't Make the AI Think" gets social shares (accessible, quotable)
 - "The Handbook" gets implementation success stories (practical results)
 - "The MX Bible" gets professional citations (authoritative reference)
 
 **Track which resonates where:**
-- Twitter/X: Probably "Don't Make AI Think"
+- Twitter/X: Probably "MX-Don't Make the AI Think"
 - LinkedIn: Probably "The Handbook"  
 - Academic/consultant circles: Probably "The MX Bible"
 
 **Content from all three:**
-- Quote "Don't Make AI Think" for accessibility
+- Quote "MX-Don't Make the AI Think" for accessibility
 - Reference "The Handbook" for how-to content
 - Cite "The MX Bible" for authority
 
@@ -1819,7 +1820,7 @@ Known in the industry as "The AEM Guy," I've architected the world's largest AEM
 
 Currently documenting Machine Experience (MX) - a framework for building websites that work for both human users and AI agents. Three books launching 2 April 2026:
 
-📘 "Don't Make AI Think" - accessible guide
+📘 "MX-Don't Make the AI Think" - accessible guide
 📗 "The Handbook" - practical implementation  
 📕 "The MX Bible" - comprehensive reference (800 pages)
 
@@ -1873,7 +1874,7 @@ Current Work: Machine Experience (MX)
 I'm documenting patterns from 25 years of enterprise web development into a framework for building websites that serve both human users and AI agents.
 
 Three books launching 2 April 2026:
-• "Don't Make AI Think" - accessible understanding
+• "MX-Don't Make the AI Think" - accessible understanding
 • "The Handbook" - practical implementation
 • "The MX Bible" - comprehensive reference
 
@@ -1950,7 +1951,7 @@ Available for interim consultancy and strategic advisory work.
 ### Required Before Launch
 
 - [ ] Final PDFs for all three books ready for download
-- [ ] "Don't Make AI Think" - final version
+- [ ] "MX-Don't Make the AI Think" - final version
 - [ ] "The Handbook" - final version  
 - [ ] "The MX Bible" - final version
 - [ ] Download hosting configured and tested for all three

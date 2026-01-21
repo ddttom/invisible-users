@@ -1,13 +1,13 @@
 # Sample Chapter - Chapter 2: The Invisible Failure
 
-**From: "The Invisible Users: Designing the Web for AI Agents and Everyone Else"**
+**From: "MX-Bible: Designing the Web for AI Agents and Everyone Else"**
 **Author:** Tom Cranstoun
 
 ---
 
 ## About This Book
 
-"The Invisible Users" examines how modern web design optimised for human users fails for AI agents, and how fixing this benefits everyone. This sample chapter demonstrates the book's approach: concrete examples, real-world failures, and practical insights for both business leaders and technical practitioners.
+"MX-Bible" examines how modern web design optimised for human users fails for AI agents, and how fixing this benefits everyone. This sample chapter demonstrates the book's approach: concrete examples, real-world failures, and practical insights for both business leaders and technical practitioners.
 
 **Complete manuscript specifications:**
 

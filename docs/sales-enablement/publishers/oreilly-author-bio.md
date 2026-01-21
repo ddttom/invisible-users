@@ -1,7 +1,7 @@
 # Author Biography - Extended
 
 **Tom Cranstoun**
-Author of "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+Author of "MX-Bible: Designing the Web for AI Agents and Everyone Else"
 
 ## Professional Summary
 
@@ -155,7 +155,7 @@ The tool validates the book's patterns through automated testing across real web
 
 ### This Book
 
-"The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+"MX-Bible: Designing the Web for AI Agents and Everyone Else"
 
 465 pages bridging business implications, strategic considerations, and technical implementation. Written for both business decision-makers who need strategic understanding and technical practitioners who need implementation patterns.
 

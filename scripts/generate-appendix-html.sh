@@ -91,10 +91,10 @@ for appendix_file in "$MANUSCRIPT_DIR"/appendix-*.md; do
         --toc \
         --toc-depth=2 \
         --metadata title="Appendix ${letter_upper}: $title" \
-        --metadata subtitle="The Invisible Users" \
+        --metadata subtitle="MX-Bible" \
         --metadata author="Tom Cranstoun" \
         --metadata date="January 2026" \
-        --metadata description="Practical guidance from The Invisible Users book on designing AI agent-friendly websites" \
+        --metadata description="Practical guidance from MX-Bible book on designing AI agent-friendly websites" \
         --metadata lang="en-GB" \
         --include-before-body="$SCRIPTS_DIR/appendix-nav-header.html" \
         --include-after-body="$SCRIPTS_DIR/appendix-nav-footer.html"
@@ -113,11 +113,11 @@ echo -e "${GREEN}✓ Generated individual appendix HTML files${NC}"
 echo -e "${BLUE}Generating appendix index page...${NC}"
 
 cat > "$SCRIPTS_DIR/appendix-index-template.md" << 'INDEXEOF'
-# The Invisible Users - Appendices
+# MX-Bible - Appendices
 
 Practical guides for designing AI agent-friendly websites
 
-These appendices accompany the book "The Invisible Users: Designing the Web for AI Agents and Everyone Else" by Tom Cranstoun.
+These appendices accompany the book "MX-Bible: Designing the Web for AI Agents and Everyone Else" by Tom Cranstoun.
 
 ## Available Appendices
 
@@ -175,7 +175,7 @@ These pages use semantic HTML, proper heading structure, and explicit data attri
 
 ## About the Book
 
-"The Invisible Users" examines how modern web design optimised for human users fails for AI agents, and how fixing this benefits everyone. The book provides practical guidance for developers, designers, and business stakeholders navigating the shift to agent-mediated commerce.
+"MX-Bible" examines how modern web design optimised for human users fails for AI agents, and how fixing this benefits everyone. The book provides practical guidance for developers, designers, and business stakeholders navigating the shift to agent-mediated commerce.
 
 **Contact:** <tom.cranstoun@gmail.com>
 
@@ -189,7 +189,7 @@ INDEXEOF
 pandoc "$SCRIPTS_DIR/appendix-index-template.md" \
     -o "$OUTPUT_DIR/appendix-index.html" \
     --standalone \
-    --metadata title="The Invisible Users - Appendices" \
+    --metadata title="MX-Bible - Appendices" \
     --metadata author="Tom Cranstoun" \
     --metadata date="January 2026" \
     --metadata description="Practical guides for designing AI agent-friendly websites" \
@@ -205,7 +205,7 @@ echo -e "${GREEN}✓ Generated appendix-index.html${NC}"
 echo -e "${BLUE}Generating llms.txt...${NC}"
 
 cat > "$OUTPUT_DIR/llms.txt" << 'LLMSEOF'
-# The Invisible Users - Appendices
+# MX-Bible - Appendices
 
 > Practical guides for designing AI agent-friendly websites
 
@@ -219,7 +219,7 @@ cat > "$OUTPUT_DIR/llms.txt" << 'LLMSEOF'
 
 ## About
 
-These appendices accompany "The Invisible Users: Designing the Web for AI Agents and Everyone Else" by Tom Cranstoun.
+These appendices accompany "MX-Bible: Designing the Web for AI Agents and Everyone Else" by Tom Cranstoun.
 
 The book examines how modern web design optimised for human users fails for AI agents, and how fixing this benefits everyone. These appendices provide practical implementation guidance, quick references, and real-world case studies.
 
@@ -237,7 +237,7 @@ The book examines how modern web design optimised for human users fails for AI a
 
 - **Copyright:** © 2026 Tom Cranstoun. All rights reserved.
 - **Content Usage:** All rights reserved, not licensed for public distribution
-- **Attribution Format:** "The Invisible Users by Tom Cranstoun"
+- **Attribution Format:** "MX-Bible by Tom Cranstoun"
 - **Training Usage:** Not permitted
 - **Rate Limits:** Please respect reasonable crawling rates (max 1 request per second)
 - **Commercial Use:** Content is proprietary; contact for licensing inquiries

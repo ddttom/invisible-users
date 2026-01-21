@@ -397,8 +397,10 @@ Opportunity skill:
 - Appendix: `packages/shared-appendices/appendix-j-industry-developments.md` (LIVE comprehensive record, new entries ADDED to existing content)
 
 **Reference files (read-only):**
-- Chapters (The Bible): `packages/bible/chapter-*.md`
-- Chapters (Don't Make AI Think): `packages/dont-make-ai-think/chapter-*.md`
+
+- Chapters (MX-Bible): `packages/bible/chapter-*.md`
+- Chapters (MX-Don't Make the AI Think): `packages/dont-make-ai-think/chapter-*.md`
+- Chapters (MX-Handbook): `packages/mx-handbook/chapter-*.md`
 - Book plan: `packages/bible/bible-plan.md`
 
 **Supporting documentation:**

@@ -11,7 +11,7 @@ The repository demonstrates a mature, well-architected separation of concerns be
 
 ### Strengths
 
-* **Logical Separation**: The distinction between "The Bible" (comprehensive theory) and "Don't Make AI Think" (practical guide) is excellent. It allows targeting different audiences without diluting the message.
+* **Logical Separation**: The distinction between "The Bible" (comprehensive theory) and "MX-Don't Make the AI Think" (practical guide) is excellent. It allows targeting different audiences without diluting the message.
 * **Clear Governance**: The "Book is Authoritative" principle (`book -> tool -> docs`) is a strong model that prevents drift.
 * **Consistent Onboarding**: The `README.md` files across the root and submodules follow a clear, consistent template. The "Context", "Repository Purpose", and "Status" sections provide immediate situational awareness.
 * **Integrated Ecosystem**: The connection between the manuscript, the `web-audit-suite`, and `shared-code-examples` is well-articulated.

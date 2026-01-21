@@ -1,5 +1,5 @@
 ---
-title: "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+title: "MX-Bible: Designing the Web for AI Agents and Everyone Else"
 author: "Tom Cranstoun"
 date: "2026-01-21"
 version: "2.7.0"
@@ -19,11 +19,11 @@ theme:
 changes: "v2.7.0 - Updated to match final PowerPoint presentation (25 slides, condensed Ally McBeal, removed Cowork slide, reorganized agent types)"
 ---
 
-# The Invisible Users Presentation - 20 Minutes
+# MX-Bible Presentation - 20 Minutes
 
 ---
 
-## Slide 1: The Invisible Users
+## Slide 1: MX-Bible
 
 **Subtitle:** Designing the Web for AI Agents and Everyone Else
 
@@ -49,7 +49,7 @@ changes: "v2.7.0 - Updated to match final PowerPoint presentation (25 slides, co
 
 ---
 
-## Slide 3: Who Are The Invisible Users?
+## Slide 3: Who Are MX-Bible?
 
 **Subtitle:** AI Agents You Can't See or Track
 
@@ -331,7 +331,7 @@ if auto-booked
 
 ## Slide 25: Book & Contact
 
-**Subtitle:** The Invisible Users
+**Subtitle:** MX-Bible
 
 - Tom Cranstoun
 - tom.cranstoun@gmail.com | https://allabout.network

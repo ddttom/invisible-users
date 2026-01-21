@@ -1,4 +1,4 @@
-# The Invisible Users: Executive Summary
+# MX-Bible: Executive Summary
 
 An opportunity in AI agent-compatible web design
 
@@ -50,7 +50,7 @@ AI agents have achieved remarkable capabilities - generating coherent responses,
 
 ## Target Audience
 
-**"The Invisible Users"** is written primarily for business leaders and managers who need to understand the strategic implications of AI agent commerce - including CEOs, product managers, marketing directors, and technical managers such as software architects and lead developers.
+**"MX-Bible"** is written primarily for business leaders and managers who need to understand the strategic implications of AI agent commerce - including CEOs, product managers, marketing directors, and technical managers such as software architects and lead developers.
 
 **No programming knowledge required.** Technical patterns are explained conceptually first, then demonstrated with code examples that can be skipped without losing the thread of the argument. If you don't write code, you can read straight through and gain everything needed to make informed strategic decisions.
 

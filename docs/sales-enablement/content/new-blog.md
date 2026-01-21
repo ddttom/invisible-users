@@ -68,7 +68,7 @@ specific traffic patterns, conversion rates, and agent compatibility issues.
 
 **Example Fix Approach:**
 
-Following the implementation cookbook from "The Invisible Users":
+Following the implementation cookbook from "MX-Bible":
 
 1. **Priority 1 fixes**:
    - Displayed full pricing upfront (not "from £X")
@@ -275,7 +275,7 @@ Using the prioritised implementation roadmap (Appendix F):
 
 ## The Complete Package: Book + Tool + Implementation Framework
 
-### 1. The Book: "The Invisible Users"
+### 1. The Book: "MX-Bible"
 
 **What You Get:**
 

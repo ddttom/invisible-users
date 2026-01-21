@@ -1,5 +1,5 @@
 ---
-title: "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+title: "MX-Bible: Designing the Web for AI Agents and Everyone Else"
 author: "Tom Cranstoun"
 date: "2026-01-20"
 version: "1.0.0"
@@ -100,7 +100,7 @@ This wasn't a reasoning failure. The AI didn't think £203,000 was reasonable. T
 
 ---
 
-## Who Are The Invisible Users? [TIME: 2 minutes]
+## Who Are MX-Bible? [TIME: 2 minutes]
 
 **AI Agents You Can't See or Track**
 
@@ -474,7 +474,7 @@ As designers, developers, product owners, and executives:
 
 ## Book & Contact
 
-**The Invisible Users:** Designing the Web for AI Agents and Everyone Else
+**MX-Bible:** Designing the Web for AI Agents and Everyone Else
 
 Due Q1 2026
 

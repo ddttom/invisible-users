@@ -18,7 +18,7 @@ When you provide one or more file paths, this skill:
 
 ## Understanding the Writing Style Guide
 
-The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)) defines standards for "The Invisible Users" book manuscripts. The guide applies to all content in `packages/bible/`, `packages/dont-make-ai-think/`, and `packages/shared-appendices/` but can be used to review any document.
+The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)) defines standards for "MX-Bible" book manuscripts. The guide applies to all content in `packages/bible/`, `packages/dont-make-ai-think/`, and `packages/shared-appendices/` but can be used to review any document.
 
 **Core Principles:**
 
@@ -33,16 +33,19 @@ The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-styl
 ## How to Use
 
 ```bash
-# Review single file from The Bible
+# Review single file from MX-Bible
 /review-docs packages/bible/chapter-01-what-you-will-learn.md
 
-# Review single file from Don't Make AI Think
+# Review single file from MX-Don't Make the AI Think
 /review-docs packages/dont-make-ai-think/chapter-01-the-invisible-users.md
+
+# Review single file from MX-Handbook
+/review-docs packages/mx-handbook/chapter-01-dont-make-ai-think.md
 
 # Review multiple files (space-separated)
 /review-docs chapter-01.md chapter-02.md chapter-03.md
 
-# Review with glob patterns (The Bible chapters)
+# Review with glob patterns (MX-Bible chapters)
 /review-docs packages/bible/chapter-*.md
 
 # Review any file (not limited to manuscript)
@@ -402,7 +405,7 @@ Fix: "Consider how agents interact with forms."
 1. **Colons:** `^#{1,6}\s+.*:.*$`
    - Exception: None (all colons forbidden)
 2. **"The..." prefix:** `^#{1,6}\s+The\s+[A-Z]`
-   - Exceptions: "The Invisible Users", "The Web We Built", "The Price That Grew"
+   - Exceptions: "MX-Bible", "The Web We Built", "The Price That Grew"
    - Rule: Remove unless grammatically incorrect without it
 3. **Bold as heading:** `^\*\*[^*]+\*\*$` on its own line
    - Always forbidden (use proper ATX headings)
@@ -849,14 +852,14 @@ If found: Flag as violation of ai-instruction metadata
 
 **Always preserve:**
 
-- "The Invisible Users" (book title)
+- "MX-Bible" (book title)
 - "The Web We Built" (grammatically required)
 - "The Price That Grew" (grammatically required)
 
 **Example:**
 
 ```markdown
-## The Invisible Users
+## MX-Bible
 
 Line 1: "The" prefix in heading
 Action: SKIP - Book title exception

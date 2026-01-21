@@ -108,9 +108,9 @@ pwd
 
 - **Submodules (ASSETS, currently 9):**
   - **Outputs (PRIVATE):** `outputs/` → `invisible-users-outputs` - All generated content
-  - **Bible:** `packages/bible/` → `invisible-users-bible` - Full book manuscript
-  - **Slim:** `packages/dont-make-ai-think/` → `invisible-users-slim` - Practical guide
-  - **MX Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Rebranded practical guide
+  - **MX-Bible:** `packages/bible/` → `invisible-users-bible` - Full comprehensive guide (formerly "The Invisible Users")
+  - **MX-Don't Make the AI Think:** `packages/dont-make-ai-think/` → `invisible-users-slim` - Practical quick guide
+  - **MX-Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Implementation handbook for developers and designers
   - **Appendices:** `packages/shared-appendices/` → `invisible-users-appendices` - Shared resources
   - **Code:** `packages/shared-code-examples/` → `invisible-users-code-examples` - Pattern examples
   - **UCP:** `packages/ucp/` → `Universal-Commerce-Protocol/ucp` - Ecommerce standard for AI agents (**READ-ONLY REFERENCE**)
@@ -157,18 +157,18 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │   └── ${MAIN_REPO}/packages/bible/
 │   │       ├── chapters/             ← 13 chapter markdown files (Chapters 1-13)
 │   │       ├── illustrations/        ← SVG and PNG images
-│   │       ├── README.md             ← Bible-specific README
+│   │       ├── README.md             ← MX-Bible README
 │   │       └── NO .claude/ directory
 │   │       Note: Chapter 0 is in main repo at docs/shared-chapters/
 │   ├── dont-make-ai-think/           ← SUBMODULE (git repo)
 │   │   └── ${MAIN_REPO}/packages/dont-make-ai-think/
-│   │       ├── chapters/             ← 10 chapter markdown files
-│   │       ├── README.md             ← Slim book README
+│   │       ├── chapters/             ← 11 chapter markdown files
+│   │       ├── README.md             ← MX-Don't Make the AI Think README
 │   │       └── NO .claude/ directory
 │   ├── mx-handbook/                  ← SUBMODULE (git repo)
 │   │   └── ${MAIN_REPO}/packages/mx-handbook/
 │   │       ├── chapters/             ← 11 chapter markdown files
-│   │       ├── README.md             ← MX Handbook README
+│   │       ├── README.md             ← MX-Handbook README
 │   │       └── NO .claude/ directory
 │   ├── shared-appendices/            ← SUBMODULE (git repo)
 │   │   └── ${MAIN_REPO}/packages/shared-appendices/
@@ -210,11 +210,11 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │       └── README.md                 ← Tool documentation
 └── outputs/                          ← SUBMODULE (PRIVATE git repo)
     └── ${MAIN_REPO}/outputs/
-        ├── bible/                    ← Bible outputs
+        ├── bible/                    ← MX-Bible outputs
         │   ├── blogs/                ← Blog posts
         │   ├── presentations/        ← Slide decks
         │   └── marketing/            ← Marketing materials
-        ├── dont-make-ai-think/       ← Slim book outputs
+        ├── dont-make-ai-think/       ← MX-Don't Make the AI Think outputs
         ├── README.md                 ← Outputs README
         └── NO .claude/ directory
 ```
@@ -246,15 +246,55 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 
 ---
 
+## Book Names and Shorthand Reference
+
+**This workspace contains three books with public brand names. The user will use shorthand terms in prompts that map to these public names.**
+
+### Public Names (Official Titles)
+
+- **"MX-Bible"** - The full comprehensive guide (formerly "The Invisible Users")
+  - Directory: `packages/bible/`
+  - Repository: `invisible-users-bible`
+  - ~78,000 words + shared appendices, 13 chapters
+
+- **"MX-Don't Make the AI Think"** - The practical quick guide
+  - Directory: `packages/dont-make-ai-think/`
+  - Repository: `invisible-users-slim`
+  - 11-chapter practical guide with business justification
+
+- **"MX-Handbook"** - The implementation handbook
+  - Directory: `packages/mx-handbook/`
+  - Repository: `MX-The-Handbook`
+  - 11-chapter practical implementation guide for developers and designers
+
+### Shorthand Reference (for use in prompts)
+
+**When the user says:** → **They mean:**
+
+| Shorthand      | Refers to                                                                              |
+| -------------- | -------------------------------------------------------------------------------------- |
+| **bible**      | "MX-Bible" (the full comprehensive guide)                                              |
+| **handbook**   | "MX-Handbook" (the implementation handbook)                                            |
+| **slim**       | "MX-Handbook" (synonym for handbook)                                                   |
+| **dont**       | "MX-Don't Make the AI Think" (the practical quick guide)                               |
+| **books**      | All three books above                                                                  |
+| **manuscript** | All three books above                                                                  |
+| **project**    | Everything in workspace EXCEPT read-only repos (Notes, Zettel, UCP)                    |
+| **workspace**  | Everything in workspace EXCEPT read-only repos (Notes, Zettel, UCP)                    |
+
+**IMPORTANT:** Directory names and repository names remain unchanged. This mapping only affects how books are referenced in documentation and prompts.
+
+---
+
 ## Project Overview
 
-### 1. The Invisible Users (Book Manuscripts)
+### 1. Book Manuscripts (MX Series)
 
 Multiple books from modular repositories:
 
-- **"The Invisible Users"** (The Bible) - `packages/bible/` - Full 13-chapter guide (~78,000 words + shared appendices)
-- **"Don't Make AI Think"** (Slim) - `packages/dont-make-ai-think/` - 11-chapter practical guide with business justification
-- **"MX-The Handbook"** - `packages/mx-handbook/` - Practical implementation guide for developers and designers (rebranded from "Don't Make AI Think")
+- **"MX-Bible"** - `packages/bible/` - Full 13-chapter comprehensive guide (~78,000 words + shared appendices). Formerly titled "The Invisible Users".
+- **"MX-Don't Make the AI Think"** - `packages/dont-make-ai-think/` - 11-chapter practical quick guide with business justification. Shorthand: **dont**
+- **"MX-Handbook"** - `packages/mx-handbook/` - 11-chapter practical implementation guide for developers and designers. Shorthand: **handbook** or **slim**
 - **Shared Appendices** - `packages/shared-appendices/` - 12 appendices (A-L) shared across all books
 - **Shared Code Examples** - `packages/shared-code-examples/` - Good vs bad pattern implementations
 - **Universal Commerce Protocol** - `packages/ucp/` - Open standard demonstrating AI agent ecommerce interactions
@@ -329,9 +369,9 @@ UCP embodies the convergence principle from the book - patterns that work for AI
 │   └── outputs → ../outputs
 ├── outputs/                  # Generated content (git submodule - PRIVATE)
 ├── packages/                 # Book manuscripts and tools
-│   ├── bible/                # The Bible (git submodule)
-│   ├── dont-make-ai-think/   # Slim book (git submodule)
-│   ├── mx-handbook/          # MX Handbook (git submodule)
+│   ├── bible/                # MX-Bible (git submodule)
+│   ├── dont-make-ai-think/   # MX-Don't Make the AI Think (git submodule)
+│   ├── mx-handbook/          # MX-Handbook (git submodule)
 │   ├── shared-appendices/    # Shared appendices (git submodule)
 │   ├── shared-code-examples/ # Pattern examples (git submodule)
 │   ├── ucp/                  # Universal Commerce Protocol (git submodule)

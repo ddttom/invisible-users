@@ -10,7 +10,7 @@ This document tracks business development opportunities identified through marke
 
 The agent-ready infrastructure market has clear gaps where established vendors (CMS platforms, development agencies, enterprise software) have launched "AI features" without addressing the fundamental question: **Do the resulting websites work for AI agents?**
 
-Our strategic advantage: *The Invisible Users* book establishes thought leadership on agent-website compatibility patterns. Most vendors focus on internal AI productivity tools (content generation, code assistance) rather than agent-accessible output.
+Our strategic advantage: *MX-Bible* book establishes thought leadership on agent-website compatibility patterns. Most vendors focus on internal AI productivity tools (content generation, code assistance) rather than agent-accessible output.
 
 ---
 
@@ -190,7 +190,7 @@ Our strategic advantage: *The Invisible Users* book establishes thought leadersh
 - Dominik Pintér (CEO)
 
 **Initial pitch:**
-> "AIRA accelerates content creation, but doesn't ensure that content works for AI agents accessing your customers' sites. I've just published *The Invisible Users* and can help Kentico become the first CMS with genuine agent-compatibility built in, not bolted on. Amazon, Microsoft, and Google all launched agent commerce in January 2026. Your customers will face 'why doesn't our site work for agents?' questions within months. Let's position Kentico as the solution before competitors do."
+> "AIRA accelerates content creation, but doesn't ensure that content works for AI agents accessing your customers' sites. I've just published *MX-Bible* and can help Kentico become the first CMS with genuine agent-compatibility built in, not bolted on. Amazon, Microsoft, and Google all launched agent commerce in January 2026. Your customers will face 'why doesn't our site work for agents?' questions within months. Let's position Kentico as the solution before competitors do."
 
 **Supporting materials:**
 
@@ -230,7 +230,7 @@ Our strategic advantage: *The Invisible Users* book establishes thought leadersh
 **Talk/article ideas:**
 
 - "Why Fast Isn't Enough: Building Agent-Ready Kentico Sites"
-- "The Invisible Users: What AIRA Can't Fix (Yet)"
+- "MX-Bible: What AIRA Can't Fix (Yet)"
 - "From Six-Week Launches to Agent-Proof Infrastructure"
 - "How Kentico Customers Can Prepare for Agent Commerce"
 
@@ -492,7 +492,7 @@ The Kentico analysis revealed a consistent pattern: **vendors build AI productiv
 
 **Strategic positioning:**
 
-- *The Invisible Users* book = thought leadership
+- *MX-Bible* book = thought leadership
 - Enterprise implementation experience (BBC, Twitter, etc.) = credibility
 - Web Audit Suite = tangible tooling
 - "The AEM Guy" reputation = multi-platform trust

@@ -97,7 +97,7 @@ Avoid these specific phrases and patterns:
 
 **Exceptions:**
 
-- **ALWAYS** preserve "The" in the book title: **"The Invisible Users"**
+- **ALWAYS** preserve "The" in the book title: **"MX-Bible"**
 - Preserve "The" if removing it makes the heading grammatically incorrect or awkward
   - Example: "The Web We Built", "The Price That Grew"
 
@@ -269,7 +269,7 @@ Context-dependent exceptions:
 
 Always preserve:
 
-- [ ] "The Invisible Users" (book title)
+- [ ] "MX-Bible" (book title)
 - [ ] "The Web We Built" (grammatically required)
 - [ ] "The Price That Grew" (grammatically required)
 

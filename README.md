@@ -39,10 +39,10 @@ This repository contains multiple integrated projects working together to addres
 
 Three book variants derived from a shared manuscript source:
 
-- **[The Bible](packages/bible/)** - Full comprehensive guide (13 chapters + appendices)
-- **[Don't Make AI Think](packages/dont-make-ai-think/)** - Slim practical guide (10 chapters)
-- **[MX-The Handbook](packages/mx-handbook/)** - Practical implementation guide (11 chapters, rebranded)
-- **[Shared Appendices](packages/shared-appendices/)** - Implementation guides and resources (13 appendices)
+- **[MX-Bible](packages/bible/)** - Full comprehensive guide (13 chapters + appendices). Formerly "The Invisible Users".
+- **[MX-Don't Make the AI Think](packages/dont-make-ai-think/)** - Practical quick guide (11 chapters)
+- **[MX-Handbook](packages/mx-handbook/)** - Practical implementation guide (11 chapters)
+- **[Shared Appendices](packages/shared-appendices/)** - Implementation guides and resources (12 appendices A-L)
 
 See individual package READMEs for chapter lists, word counts, and build commands.
 
@@ -88,12 +88,12 @@ This repository uses git submodules to achieve **clean separation between conten
 ```text
 /
 ├── packages/
-│   ├── bible/                # "The Invisible Users" (full book) [SUBMODULE]
-│   ├── dont-make-ai-think/   # "Don't Make AI Think" (slim guide) [SUBMODULE]
+│   ├── bible/                # "MX-Bible" (full comprehensive guide) [SUBMODULE]
+│   ├── dont-make-ai-think/   # "MX-Don't Make the AI Think" (practical quick guide) [SUBMODULE]
+│   ├── mx-handbook/          # "MX-Handbook" (implementation handbook) [SUBMODULE]
 │   ├── shared-appendices/    # Shared implementation guides (A-L) [SUBMODULE]
 │   ├── shared-code-examples/ # Production-ready code examples [SUBMODULE]
 │   ├── ucp/                  # Universal Commerce Protocol [SUBMODULE]
-│   ├── manuscript/           # Original manuscript repository [SUBMODULE - legacy]
 │   └── web-audit-suite/      # Website analysis tool (NOT a submodule)
 ├── books/                    # Convenience symlinks (reduces cognitive load when navigating)
 │   ├── bible -> ../packages/bible
@@ -227,8 +227,9 @@ Changes must flow: **book → tool → documentation**
 
 Each package has its own README with detailed information:
 
-- [The Bible README](packages/bible/README.md) - Full book contents, build commands, status
-- [Don't Make AI Think README](packages/dont-make-ai-think/README.md) - Slim guide contents
+- [MX-Bible README](packages/bible/README.md) - Full book contents, build commands, status
+- [MX-Don't Make the AI Think README](packages/dont-make-ai-think/README.md) - Practical quick guide contents
+- [MX-Handbook README](packages/mx-handbook/README.md) - Implementation handbook contents
 - [Shared Appendices README](packages/shared-appendices/README.md) - Implementation guides
 - [Web Audit Suite README](packages/web-audit-suite/README.md) - Complete tool documentation
 
@@ -252,12 +253,13 @@ Each package has its own README with detailed information:
 This workspace contains multiple git repositories:
 
 1. **Main repo:** Root directory
-2. **Bible submodule:** `packages/bible/` (full manuscript)
-3. **Slim guide submodule:** `packages/dont-make-ai-think/` (practical guide)
-4. **Appendices submodule:** `packages/shared-appendices/` (shared appendices)
-5. **Code examples submodule:** `packages/shared-code-examples/` (pattern examples)
-6. **UCP submodule:** `packages/ucp/` (Universal Commerce Protocol - ecommerce standard for AI agents)
-7. **Outputs submodule:** `outputs/` (private, generated content)
+2. **MX-Bible submodule:** `packages/bible/` (full comprehensive guide)
+3. **MX-Don't Make the AI Think submodule:** `packages/dont-make-ai-think/` (practical quick guide)
+4. **MX-Handbook submodule:** `packages/mx-handbook/` (implementation handbook)
+5. **Appendices submodule:** `packages/shared-appendices/` (shared appendices)
+6. **Code examples submodule:** `packages/shared-code-examples/` (pattern examples)
+7. **UCP submodule:** `packages/ucp/` (Universal Commerce Protocol - ecommerce standard for AI agents)
+8. **Outputs submodule:** `outputs/` (private, generated content)
 
 **Always check `pwd` before git operations.** The [LEARNINGS.md](LEARNINGS.md) file documents common mistakes and their fixes.
 

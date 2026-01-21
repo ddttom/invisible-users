@@ -20,7 +20,7 @@ function enhanceHTML(filePath) {
 
   // Extract title from existing title tag
   const titleMatch = html.match(/<title>(.*?)<\/title>/);
-  const pageTitle = titleMatch ? titleMatch[1] : 'The Invisible Users';
+  const pageTitle = titleMatch ? titleMatch[1] : 'MX-Bible';
 
   // Extract appendix letter if present
   const appendixMatch = pageTitle.match(/Appendix ([A-K]):/i);
@@ -43,7 +43,7 @@ function enhanceHTML(filePath) {
   <meta name="ai-content-policy" content="summaries-allowed, full-extraction-allowed">
   <meta name="ai-freshness" content="monthly">
   <meta name="ai-structured-data" content="json-ld">
-  <meta name="ai-attribution" content="required" text="Source: The Invisible Users by Tom Cranstoun, https://allabout.network/invisible-users/">
+  <meta name="ai-attribution" content="required" text="Source: MX-Bible by Tom Cranstoun, https://allabout.network/invisible-users/">
   <meta name="llms-txt" content="/llms.txt">`;
 
   // Build social media and SEO meta tags
@@ -52,16 +52,16 @@ function enhanceHTML(filePath) {
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:title" content="${pageTitle.replace(/"/g, '\\"')}">
-  <meta property="og:description" content="Practical guidance from The Invisible Users book on designing AI agent-friendly websites">
+  <meta property="og:description" content="Practical guidance from MX-Bible book on designing AI agent-friendly websites">
   <meta property="og:image" content="https://allabout.network/images/invisible-users-appendix-og.jpg">
-  <meta property="og:site_name" content="The Invisible Users">
+  <meta property="og:site_name" content="MX-Bible">
   <meta property="og:locale" content="en_GB">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="${canonicalUrl}">
   <meta name="twitter:title" content="${pageTitle.replace(/"/g, '\\"')}">
-  <meta name="twitter:description" content="Implementation guide from The Invisible Users book">
+  <meta name="twitter:description" content="Implementation guide from MX-Bible book">
   <meta name="twitter:image" content="https://allabout.network/images/invisible-users-appendix-og.jpg">
   <meta name="twitter:creator" content="@tomcranstoun">
 
@@ -78,7 +78,7 @@ function enhanceHTML(filePath) {
     "@context": "https://schema.org",
     "@type": "${schemaType}",
     "name": "${pageTitle.replace(/"/g, '\\"')}",
-    "description": "Practical guidance from The Invisible Users book on designing AI agent-friendly websites",
+    "description": "Practical guidance from MX-Bible book on designing AI agent-friendly websites",
     "author": {
       "@type": "Person",
       "name": "Tom Cranstoun",
@@ -92,7 +92,7 @@ function enhanceHTML(filePath) {
     "dateModified": "2026-01-10",
     "isPartOf": {
       "@type": "Book",
-      "name": "The Invisible Users",
+      "name": "MX-Bible",
       "author": {
         "@type": "Person",
         "name": "Tom Cranstoun"

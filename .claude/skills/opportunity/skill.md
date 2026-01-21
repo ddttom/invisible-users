@@ -271,8 +271,9 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 
 **Reference files (read-only):**
 
-- Book chapters (The Bible): `packages/bible/chapter-*.md`
-- Book chapters (Don't Make AI Think): `packages/dont-make-ai-think/chapter-*.md`
+- Book chapters (MX-Bible): `packages/bible/chapter-*.md`
+- Book chapters (MX-Don't Make the AI Think): `packages/dont-make-ai-think/chapter-*.md`
+- Book chapters (MX-Handbook): `packages/mx-handbook/chapter-*.md`
 - Book plan: `packages/bible/bible-plan.md`
 - Web Audit Suite: `packages/web-audit-suite/`
 

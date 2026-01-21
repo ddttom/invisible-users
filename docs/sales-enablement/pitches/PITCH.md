@@ -1,4 +1,4 @@
-# The Invisible Users: Complete Partnership Pitch
+# MX-Bible: Complete Partnership Pitch
 
 ## A New Business Opportunity in AI Agent-Compatible Web Design
 
@@ -140,7 +140,7 @@ These same patterns break human users with disabilities who use assistive techno
 
 ### Part 1: The Methodology (Book)
 
-"The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+"MX-Bible: Designing the Web for AI Agents and Everyone Else"
 
 11 Chapters, ~57,000 words core manuscript:
 
@@ -234,7 +234,7 @@ These same patterns break human users with disabilities who use assistive techno
 
 ### Scoring Methodology
 
-Based on "The Invisible Users" methodology:
+Based on "MX-Bible" methodology:
 
 **Essential_Served (Heavily Weighted):**
 
@@ -296,7 +296,7 @@ Plus: `results.json` (single source of truth), sitemaps, comprehensive logs
 
 ### Book Readership
 
-**"The Invisible Users"** is written primarily for business leaders and managers who need to understand the strategic implications of AI agent commerce - including CEOs, product managers, marketing directors, and technical managers such as software architects and lead developers.
+**"MX-Bible"** is written primarily for business leaders and managers who need to understand the strategic implications of AI agent commerce - including CEOs, product managers, marketing directors, and technical managers such as software architects and lead developers.
 
 **No programming knowledge required.** Technical patterns are explained conceptually first, with code examples that can be skipped without losing the thread. If you don't write code, read straight through and gain everything needed for informed strategic decisions.
 
@@ -459,7 +459,7 @@ Strong margins with scalable delivery model
 
 **Customer Journey:**
 
-1. **Awareness:** Read "The Invisible Users"
+1. **Awareness:** Read "MX-Bible"
 2. **Assessment:** Run Web Audit Suite trial
 3. **Subscription:** Choose SaaS plan
 4. **Implementation:** Fix issues using book guidance
@@ -630,7 +630,7 @@ Available as separate purchase or professional audit service:
 **Market Position:**
 
 - First comprehensive AI agent compatibility solution
-- Author of "The Invisible Users" (thought leadership)
+- Author of "MX-Bible" (thought leadership)
 - 12-18 month first-mover advantage
 - Clear differentiation from competitors
 
@@ -908,7 +908,7 @@ LinkedIn: [Profile]
 
 **Current Projects:**
 
-- **Book:** "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+- **Book:** "MX-Bible: Designing the Web for AI Agents and Everyone Else"
 - **Tool:** Web Audit Suite (available as separate purchase or professional audit service)
 - **Project News:** <https://allabout.network/invisible-users/news.html>
 
@@ -933,7 +933,7 @@ LinkedIn: [Profile]
    - Agencies need to offer AI optimization
 
 3. **Methodology Established**
-   - "The Invisible Users" documents patterns
+   - "MX-Bible" documents patterns
    - Web Audit Suite provides measurement
    - Accessibility community validates approach
    - W3C standards provide foundation
@@ -949,7 +949,7 @@ LinkedIn: [Profile]
 
 **First Mover Advantages:**
 
-1. **Brand Association:** "The Invisible Users" + "Web Audit Suite" become synonymous with AI agent compatibility
+1. **Brand Association:** "MX-Bible" + "Web Audit Suite" become synonymous with AI agent compatibility
 2. **Customer Lock-In:** Historical data creates switching costs
 3. **Agency Partnerships:** Early relationships hard to displace
 4. **Enterprise Contracts:** Long sales cycles favor established players

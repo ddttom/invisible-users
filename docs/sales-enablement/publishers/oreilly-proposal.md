@@ -3,13 +3,13 @@
 **To:** <authorreln@oreilly.com>
 **From:** Tom Cranstoun
 **Date:** January 2026
-**Subject:** Book Proposal - "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+**Subject:** Book Proposal - "MX-Bible: Designing the Web for AI Agents and Everyone Else"
 
 ## Executive Summary
 
 Between January 6-13, 2025, three major platforms (Google, Microsoft, Amazon) launched agent commerce infrastructure within seven days of each other. This convergence transformed AI agent compatibility from experimental technology to production infrastructure requirement.
 
-I'm proposing **"The Invisible Users"** - a complete, production-ready manuscript (465 pages, 13 chapters) that documents this shift and provides the implementation patterns required to adapt. The timing is critical: businesses are implementing agent-compatible patterns **now**, not in 12-18 months.
+I'm proposing **"MX-Bible"** - a complete, production-ready manuscript (465 pages, 13 chapters) that documents this shift and provides the implementation patterns required to adapt. The timing is critical: businesses are implementing agent-compatible patterns **now**, not in 12-18 months.
 
 ## The Market Timing Problem
 
@@ -72,7 +72,7 @@ By Q3 2026, agent compatibility will be established practice. The book needs to 
 
 ### Title
 
-"The Invisible Users: Designing the Web for AI Agents and Everyone Else"
+"MX-Bible: Designing the Web for AI Agents and Everyone Else"
 
 ### Subtitle
 

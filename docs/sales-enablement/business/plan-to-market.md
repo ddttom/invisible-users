@@ -1,4 +1,4 @@
-# The Invisible Users: Go-to-Market Plan
+# MX-Bible: Go-to-Market Plan
 
 Launch strategy and email templates for book and services
 
@@ -224,7 +224,7 @@ Launch strategy and email templates for book and services
 
 ### 1. Launch Announcement (Warm List)
 
-**Subject:** The Invisible Users is here (+ 20% launch discount)
+**Subject:** MX-Bible is here (+ 20% launch discount)
 
 **Preheader:** AI agents are failing on websites - here's how to fix it
 
@@ -233,7 +233,7 @@ Launch strategy and email templates for book and services
 ```text
 Hi [First Name],
 
-After months of work, I'm excited to announce that "The Invisible Users: Designing the Web for AI Agents and Everyone Else" is now available.
+After months of work, I'm excited to announce that "MX-Bible: Designing the Web for AI Agents and Everyone Else" is now available.
 
 THE PROBLEM
 
@@ -296,7 +296,7 @@ P.S. Launch pricing ends in 48 hours. After that, prices return to normal.
 
 ### 2. Free Chapter Lead Magnet
 
-**Subject:** Your free chapter: The Invisible Users
+**Subject:** Your free chapter: MX-Bible
 
 **Preheader:** Chapter 1 + implementation checklist inside
 
@@ -305,7 +305,7 @@ P.S. Launch pricing ends in 48 hours. After that, prices return to normal.
 ```text
 Hi [First Name],
 
-Thank you for requesting Chapter 1 of "The Invisible Users."
+Thank you for requesting Chapter 1 of "MX-Bible."
 
 WHAT'S INCLUDED
 
@@ -786,7 +786,7 @@ P.S. Even if you haven't implemented yet, I'd love to hear what's blocking you. 
 
 ### 8. Conference Speaking Pitch
 
-**Subject:** Speaking proposal: "The Invisible Users" for [Conference]
+**Subject:** Speaking proposal: "MX-Bible" for [Conference]
 
 **Preheader:** AI agent compatibility - the new accessibility challenge
 
@@ -800,7 +800,7 @@ I'd like to propose a talk for [Conference] on AI agent-compatible web design - 
 
 TALK TITLE
 
-"The Invisible Users: Why AI Agents Are Failing on Your Website (And How to Fix It)"
+"MX-Bible: Why AI Agents Are Failing on Your Website (And How to Fix It)"
 
 ABSTRACT
 
@@ -841,7 +841,7 @@ Half-day masterclass (deep implementation)
 WHY ME
 
 • 30 years web development experience
-• Author of "The Invisible Users" (~57,000 words core manuscript, 11 chapters + 10 appendices online)
+• Author of "MX-Bible" (~57,000 words core manuscript, 11 chapters + 10 appendices online)
 • Created production-ready implementation framework
 • Built Web Audit Suite (comprehensive analysis tool)
 • Delivered agent compatibility audits for [X] companies
@@ -1035,7 +1035,7 @@ P.S. I'm speaking with several agencies. If you're interested, I recommend actin
 
 ### 10. Re-Engagement (Abandoned Cart)
 
-**Subject:** Still thinking about The Invisible Users?
+**Subject:** Still thinking about MX-Bible?
 
 **Preheader:** Here's what others are saying...
 
@@ -1045,7 +1045,7 @@ P.S. I'm speaking with several agencies. If you're interested, I recommend actin
 
 Hi [First Name],
 
-I noticed you started to purchase "The Invisible Users" but didn't complete checkout. No worries - I wanted to reach out in case you had questions.
+I noticed you started to purchase "MX-Bible" but didn't complete checkout. No worries - I wanted to reach out in case you had questions.
 
 COMMON QUESTIONS
 

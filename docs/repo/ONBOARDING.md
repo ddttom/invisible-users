@@ -1,12 +1,15 @@
 # Developer Onboarding Guide
 
-Welcome to The Invisible Users project! This guide will help you get up and running quickly.
+Welcome to the MX Series project! This guide will help you get up and running quickly.
 
 ## Overview
 
-This repository contains two integrated projects:
+This repository contains integrated book manuscripts and implementation tools:
 
-1. **Book Manuscript** - "The Invisible Users: Designing the Web for AI Agents and Everyone Else" (~57,000 words)
+1. **Book Manuscripts** - Three books from the MX Series:
+   - "MX-Bible" (formerly "The Invisible Users") - Full comprehensive guide (~78,000 words)
+   - "MX-Don't Make the AI Think" - Practical quick guide (11 chapters)
+   - "MX-Handbook" - Implementation handbook (11 chapters)
 2. **Web Audit Suite** - A production-ready Node.js tool that implements the book's AI agent compatibility patterns
 
 ## Prerequisites
@@ -107,14 +110,18 @@ If all three commands complete successfully, you're ready to go!
 /
 ├── .vscode/                    # VS Code workspace configuration
 ├── packages/
-│   ├── bible/                  # "The Invisible Users" (git submodule)
+│   ├── bible/                  # "MX-Bible" (git submodule)
 │   │   ├── chapters/           # 13 chapters
 │   │   ├── illustrations/      # SVG and PNG images
 │   │   └── README.md           # Book overview
 │   │
-│   ├── dont-make-ai-think/     # "Don't Make AI Think" (git submodule)
-│   │   ├── chapters/           # 10 chapters
-│   │   └── README.md           # Slim guide overview
+│   ├── dont-make-ai-think/     # "MX-Don't Make the AI Think" (git submodule)
+│   │   ├── chapters/           # 11 chapters
+│   │   └── README.md           # Practical quick guide overview
+│   │
+│   ├── mx-handbook/            # "MX-Handbook" (git submodule)
+│   │   ├── chapters/           # 11 chapters
+│   │   └── README.md           # Implementation handbook overview
 │   │
 │   ├── shared-appendices/      # Shared appendices (git submodule)
 │   │   ├── appendix-*.md       # 12 appendices (A-L)
@@ -346,9 +353,10 @@ The book is written in **British English** with these conventions:
 
 **Key files to read:**
 
-1. [packages/bible/README.md](../../packages/bible/README.md) - The Bible book overview and chapter list
-2. [packages/dont-make-ai-think/README.md](../../packages/dont-make-ai-think/README.md) - Slim guide overview
-3. [packages/shared-appendices/README.md](../../packages/shared-appendices/README.md) - Appendices overview
+1. [packages/bible/README.md](../../packages/bible/README.md) - MX-Bible overview and chapter list
+2. [packages/dont-make-ai-think/README.md](../../packages/dont-make-ai-think/README.md) - MX-Don't Make the AI Think overview
+3. [packages/mx-handbook/README.md](../../packages/mx-handbook/README.md) - MX-Handbook overview
+4. [packages/shared-appendices/README.md](../../packages/shared-appendices/README.md) - Appendices overview
 
 ### Web Audit Suite Architecture
 
@@ -479,9 +487,10 @@ This can significantly improve startup time and responsiveness.
 3. [GIT-README.md](GIT-README.md) - Git workflow with submodules
 
 **Book-specific:**
-4. [packages/bible/README.md](../../packages/bible/README.md) - The Bible contents and status
-5. [packages/dont-make-ai-think/README.md](../../packages/dont-make-ai-think/README.md) - Slim guide contents
-6. [packages/shared-appendices/README.md](../../packages/shared-appendices/README.md) - Appendices overview
+4. [packages/bible/README.md](../../packages/bible/README.md) - MX-Bible contents and status
+5. [packages/dont-make-ai-think/README.md](../../packages/dont-make-ai-think/README.md) - MX-Don't Make the AI Think contents
+6. [packages/mx-handbook/README.md](../../packages/mx-handbook/README.md) - MX-Handbook contents
+7. [packages/shared-appendices/README.md](../../packages/shared-appendices/README.md) - Appendices overview
 
 **Tool-specific:**
 7. [packages/web-audit-suite/README.md](../../packages/web-audit-suite/README.md) - Tool documentation
@@ -614,7 +623,7 @@ Now that you're set up:
 1. **Explore the book content:**
 
    ```bash
-   # Open The Bible README to see chapter list
+   # Open MX-Bible README to see chapter list
    code packages/bible/README.md
 
    # Open Slim guide README
@@ -673,7 +682,7 @@ The book uses concrete, real-world examples. Don't make up hypothetical scenario
 
 ## Welcome Aboard
 
-You're now ready to contribute to The Invisible Users project. Remember:
+You're now ready to contribute to the MX Series project. Remember:
 
 - **Ask questions** - Use the documentation as your guide
 - **Test your changes** - Run tests and linting before committing

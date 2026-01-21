@@ -1,6 +1,12 @@
-# Writing Style Guide: The Invisible Users
+# Writing Style Guide: MX Series
 
-**Book Purpose:** "The Invisible Users" examines how modern web interfaces fail AI agents and proposes solutions that benefit both automated and human users. **It is not a book about AI, HTML, or coding; it is for business first, though technical roles are catered for.** The central thesis is the **Convergence Principle**: patterns that break AI agents also harm humans with accessibility needs. Solving for agents improves the web for everyone.
+**Book Series Purpose:** The MX Series examines how modern web interfaces fail AI agents and proposes solutions that benefit both automated and human users. **These are not books about AI, HTML, or coding; they are for business first, though technical roles are catered for.** The central thesis is the **Convergence Principle**: patterns that break AI agents also harm humans with accessibility needs. Solving for agents improves the web for everyone.
+
+**Books in the series:**
+
+- **MX-Bible** (formerly "The Invisible Users") - Full comprehensive guide
+- **MX-Don't Make the AI Think** - Practical quick guide
+- **MX-Handbook** - Implementation handbook
 
 **Primary Audience:**
 
@@ -123,7 +129,7 @@ Avoid these specific phrases and patterns:
 - "It is important to remember..."
 - **Headings starting with "The..."**: Generally, remove "The" from headings for a more concise, business-like tone (e.g., "The Security Maze" -> "Security Maze").
   - **Exceptions**:
-    - **ALWAYS** preserve "The" in the book title: **"The Invisible Users"**.
+    - **ALWAYS** use the official book titles: **"MX-Bible"**, **"MX-Don't Make the AI Think"**, **"MX-Handbook"**
     - Preserve "The" if removing it makes the heading grammatically incorrect or awkward (e.g., "The Web We Built", "The Price That Grew").
 
 ---
@@ -155,9 +161,10 @@ Use natural phrasing instead of academic or marketing variations.
 - **LLM:** Acronym for Large Language Model (define on first use if necessary).
 - **Currency:** Use **GBP (£)** as the primary currency for examples. Use USD ($) only for US-specific case studies.
 
-**The Invisible Users:**
+**Book Titles:**
 
-- **ALWAYS use "The Invisible Users"** when referring to the book title (capitalised, with "The").
+- **ALWAYS use official titles:** "MX-Bible", "MX-Don't Make the AI Think", "MX-Handbook"
+- **Legacy reference:** The MX-Bible was formerly titled "The Invisible Users"
 - **Use "invisible users" (lowercase)** when referring to AI agents as a concept within text.
 - **Definition:** "The invisible users" refers to AI agents visiting websites and performing actions without site owners' awareness. Most companies don't track AI bot traffic; some prohibit it through robots.txt or block it via Cloudflare. Modern AI browsers identify as bots, but User-Agent strings cannot be trusted. Some agents are browser extensions, others are Playwright-driven automation controlled by AI. Site owners cannot reliably distinguish between human visitors and AI agents.
 - **When you encounter ambiguous phrasing** like "What Makes Users Invisible" that could be misinterpreted as making human users invisible rather than referring to AI agents as invisible users, **ASK A CLARIFICATION QUESTION** to confirm the intended meaning before proceeding.

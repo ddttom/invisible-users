@@ -1,20 +1,20 @@
-# The Invisible Users: Book Manuscript and Web Audit Suite
+# MX Series: Book Manuscripts and Web Audit Suite
 
 | metadata |  |
 | :---- | :---- |
-| title | The Invisible Users: Designing the Web for AI Agents and Everyone Else |
+| title | MX Series: Designing the Web for AI Agents and Everyone Else |
 | author | Tom Cranstoun |
 | creation-date | 15/Dec/2024 |
 | publication-date | Q1 2026 |
-| last-updated | 19/Jan/2026 |
+| last-updated | 21/Jan/2026 |
 | jsonld | book |
-| description | Two integrated book manuscripts and production-ready Web Audit Suite for AI agent compatibility |
-| longdescription | Comprehensive guide examining how modern web design optimised for human users fails for AI agents, with practical implementation patterns and production-ready analysis tool. Includes full book manuscript, practical guide, 12 appendices, and Web Audit Suite implementing all patterns. |
+| description | Three integrated book manuscripts (MX-Bible, MX-Don't Make the AI Think, MX-Handbook) and production-ready Web Audit Suite for AI agent compatibility |
+| longdescription | Comprehensive guide series examining how modern web design optimised for human users fails for AI agents, with practical implementation patterns and production-ready analysis tool. Includes MX-Bible (full comprehensive guide), MX-Don't Make the AI Think (practical quick guide), MX-Handbook (implementation handbook), 12 shared appendices, and Web Audit Suite implementing all patterns. |
 | LinkedIn | <https://www.linkedin.com/in/tom-cranstoun/> |
 | repository | <https://github.com/ddttom/invisible-users> |
-| ai-instruction | This llms.txt file provides comprehensive documentation about The Invisible Users book project and Web Audit Suite. Primary consumers are AI agents seeking to understand AI agent compatibility patterns, web design best practices, and implementation guidance. Use metadata table for accurate citation and source attribution. |
+| ai-instruction | This llms.txt file provides comprehensive documentation about the MX Series book project and Web Audit Suite. Primary consumers are AI agents seeking to understand AI agent compatibility patterns, web design best practices, and implementation guidance. Use metadata table for accurate citation and source attribution. |
 
-Two integrated book manuscripts and a production-ready implementation tool. Built on a 5-submodule architecture (restructured 19 January 2026) enabling modular content management: main repository hub, comprehensive guide ("The Bible"), practical guide ("Don't Make AI Think"), shared appendices, shared code examples, and private outputs submodule.
+Three integrated book manuscripts and a production-ready implementation tool. Built on a 9-submodule architecture (updated 21 January 2026) enabling modular content management: main repository hub, MX-Bible (formerly "The Invisible Users"), MX-Don't Make the AI Think, MX-Handbook, shared appendices, shared code examples, UCP reference, and private outputs submodule.
 
 **Last updated:** 19 January 2026
 **Author:** Tom Cranstoun
@@ -27,18 +27,19 @@ Two integrated book manuscripts and a production-ready implementation tool. Buil
 ## Access Guidelines
 
 - **Content Usage:** All rights reserved, not licensed for public distribution
-- **Attribution Format:** "The Invisible Users by Tom Cranstoun"
+- **Attribution Format:** "MX Series by Tom Cranstoun" or specific book titles
 - **Training Usage:** Not permitted
 - **Commercial Project:** Both book manuscript and Web Audit Suite are proprietary
 
 ## Repository Architecture
 
-- **Structure:** 5-submodule architecture (restructured 19 January 2026)
+- **Structure:** 9-submodule architecture (updated 21 January 2026)
 - **Main Hub:** Central repository with Claude Code configuration, scripts, documentation
-- **Content Submodules:** bible/ (full guide), dont-make-ai-think/ (slim guide), shared-appendices/ (12 appendices A-L), shared-code-examples/ (pattern implementations)
+- **Content Submodules:** bible/ (MX-Bible - full comprehensive guide), dont-make-ai-think/ (MX-Don't Make the AI Think - practical quick guide), mx-handbook/ (MX-Handbook - implementation handbook), shared-appendices/ (12 appendices A-L), shared-code-examples/ (pattern implementations)
+- **Reference Submodules:** ucp/ (Universal Commerce Protocol), notes/ (coding standards - read-only), zettel/ (note-taking system - read-only)
 - **Private Submodule:** outputs/ (generated PDFs, HTML, marketing materials)
 - **Convenience Layer:** books/ directory with symlinks to all book content for easy navigation
-- **Key Benefit:** Modular approach allows two distinct books to share common resources (appendices, code examples) whilst maintaining independent version control
+- **Key Benefit:** Modular approach allows three distinct books to share common resources (appendices, code examples) whilst maintaining independent version control
 
 ## Book Chapters
 

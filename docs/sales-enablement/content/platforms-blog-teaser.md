@@ -4,7 +4,7 @@ When Target and Walmart - fierce competitors - endorse the same open protocol, i
 
 The timeline just compressed. When an agent fails to navigate your site, it silently excludes you from recommendations. You lose thousands of potential customers who never knew you existed.
 
-I've been documenting this shift for two years in "The Invisible Users: Designing the Web for AI Agents and Everyone Else" (Q1 2026). The book provides technical patterns that work regardless of which protocol wins - semantic HTML, structured data, explicit state management, persistent feedback.
+I've been documenting this shift for two years in "MX-Bible: Designing the Web for AI Agents and Everyone Else" (Q1 2026). The book provides technical patterns that work regardless of which protocol wins - semantic HTML, structured data, explicit state management, persistent feedback.
 
 I'm presenting at the Boye & Company members call on Wednesday, January 21st. Free registration, recording provided. We'll cover invisible barriers, practical fixes, and what the 6-9 month timeline means for your business.
 

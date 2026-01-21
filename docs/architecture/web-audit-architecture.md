@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Web Audit Suite is a Node.js application that analyzes websites for AI agent compatibility, accessibility, performance, and SEO. It implements the patterns described in "The Invisible Users" book to help website owners understand how well their sites work for both human users and AI agents.
+The Web Audit Suite is a Node.js application that analyzes websites for AI agent compatibility, accessibility, performance, and SEO. It implements the patterns described in "MX-Bible" book to help website owners understand how well their sites work for both human users and AI agents.
 
 ## Core Design Principles
 
@@ -1010,7 +1010,7 @@ Example log output:
 [INFO] Analysis complete!
 ```
 
-## Integration with "The Invisible Users" Book
+## Integration with "MX-Bible" Book
 
 The Web Audit Suite directly implements patterns from the book:
 

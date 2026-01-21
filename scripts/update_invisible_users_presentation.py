@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Update The Invisible Users presentation with new slides and content.
+Update MX-Bible presentation with new slides and content.
 
 This script demonstrates how to programmatically modify PowerPoint presentations using
 python-pptx library. It was created to add three specific changes to the presentation:
@@ -61,8 +61,8 @@ METADATA:
 ---------
 Created: 2026-01-21
 Purpose: Batch update presentation slides programmatically
-Original presentation: The Invisible Users Presentation-final.pptx (23 slides)
-Updated presentation: The Invisible Users Presentation-final-updated.pptx (25 slides)
+Original presentation: MX-Bible Presentation-final.pptx (23 slides)
+Updated presentation: MX-Bible Presentation-final-updated.pptx (25 slides)
 Changes: +2 new slides, 1 modified slide
 """
 import sys
@@ -85,8 +85,8 @@ def main():
 
     CUSTOMIZATION: Update file paths here to work with different presentations.
     """
-    input_file = "docs/scrapboard/The Invisible Users Presentation-final.pptx"
-    output_file = "docs/scrapboard/The Invisible Users Presentation-final-updated.pptx"
+    input_file = "docs/scrapboard/MX-Bible Presentation-final.pptx"
+    output_file = "docs/scrapboard/MX-Bible Presentation-final-updated.pptx"
 
     print(f"Loading presentation from: {input_file}")
     prs = Presentation(input_file)

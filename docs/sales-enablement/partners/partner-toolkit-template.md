@@ -898,7 +898,7 @@ We provide continuous monitoring and optimization through retainer-based service
 **Why Choose Us:**
 
 - Certified Agent-Readiness Partner
-- Proven methodology from "The Invisible Users" book
+- Proven methodology from "MX-Bible" book
 - 50+ agent-ready patterns library
 - Enterprise client experience
 - Measurable outcomes (scoring improvement, success rates)

@@ -1,6 +1,6 @@
 # Book Pricing Strategy
 
-The Invisible Users: Designing the Web for AI Agents and Everyone Else
+MX-Bible: Designing the Web for AI Agents and Everyone Else
 
 ## Book Specifications
 

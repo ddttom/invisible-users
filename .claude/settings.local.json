@@ -149,7 +149,8 @@
       "Bash(git symbolic-ref:*)",
       "Bash(python:*)",
       "Bash(gh repo view:*)",
-      "Bash(gh repo list:*)"
+      "Bash(gh repo list:*)",
+      "Bash(node -e:*)"
     ],
     "deny": [],
     "ask": [

@@ -11,7 +11,7 @@
 
 In January 2026, three of the world's largest technology companies launched AI agent commerce systems within seven days. They made different strategic choices that will shape the future of online shopping.
 
-I've been writing a book about this moment. "The Invisible Users \- Designing the Web for AI Agents and Everyone Else" examines how AI agents are changing web design. Chapter 9 documents this week when the future arrived faster than anyone expected.
+I've been writing a book about this moment. "MX-Bible \- Designing the Web for AI Agents and Everyone Else" examines how AI agents are changing web design. Chapter 9 documents this week when the future arrived faster than anyone expected.
 
 **January 5, 2026:** Amazon announced Alexa+, enabling complete purchase transactions through natural conversation.
 
@@ -227,7 +227,7 @@ Why attend: Three major platforms just launched agent commerce systems. The 6-9 
 
 ## Why I'm Writing This Book
 
-"The Invisible Users" isn't just about commerce protocols. It concerns the shift occurring as machines become our primary interface to the web.
+"MX-Bible" isn't just about commerce protocols. It concerns the shift occurring as machines become our primary interface to the web.
 
 The book covers:
 

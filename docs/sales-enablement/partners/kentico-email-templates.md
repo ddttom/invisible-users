@@ -18,7 +18,7 @@ In January 2026, Amazon, Microsoft, and Google all launched agent commerce syste
 
 **The question your customers will ask within 6-12 months:** "Why doesn't our Kentico site work for ChatGPT/Claude/Alexa?"
 
-I've just published *The Invisible Users: Designing the Web for AI Agents and Everyone Else* and can help Kentico become the first CMS with genuine agent-compatibility built in, not bolted on.
+I've just published *MX-Bible: Designing the Web for AI Agents and Everyone Else* and can help Kentico become the first CMS with genuine agent-compatibility built in, not bolted on.
 
 **What's missing:**
 
@@ -77,7 +77,7 @@ Amazon, Microsoft, and Google all launched agent commerce systems in January 202
 
 **The competitive window:** 3-6 months before Adobe, Contentful, Contentstack close this gap.
 
-I've just published *The Invisible Users: Designing the Web for AI Agents and Everyone Else* and have identified five partnership opportunities:
+I've just published *MX-Bible: Designing the Web for AI Agents and Everyone Else* and have identified five partnership opportunities:
 
 1. **Agent-compatible output for AIRA** (Schema.org, semantic HTML, explicit state)
 2. **KentiCopilot agent-ready code generation** (patterns library, validation, testing)
@@ -130,7 +130,7 @@ In January 2026, Amazon, Microsoft, and Google all launched agent commerce syste
 - Premium service add-on: Agent-compatibility audit (£2,000-5,000 per site)
 - Protect yourself from "site doesn't work for agents" support requests
 
-I've just published *The Invisible Users: Designing the Web for AI Agents and Everyone Else* and work with agencies to:
+I've just published *MX-Bible: Designing the Web for AI Agents and Everyone Else* and work with agencies to:
 
 1. Train teams on agent-ready implementation patterns
 2. Provide white-label audit services
@@ -185,7 +185,7 @@ In January 2026, Amazon, Microsoft, and Google all launched agent commerce syste
 
 **Why I'm qualified:**
 
-- Just published *The Invisible Users: Designing the Web for AI Agents and Everyone Else* (January 2026)
+- Just published *MX-Bible: Designing the Web for AI Agents and Everyone Else* (January 2026)
 - Architected infrastructure for BBC, Twitter, Nissan-Renault (200+ sites), Ford, MediaMonks
 - Known as "The AEM Guy" but platform-agnostic, MACH principles expertise
 - Member of Boye & Company CMS Experts Group
@@ -207,7 +207,7 @@ Tom Cranstoun
 
 ## Template 5: Kentico Conference/Webinar Speaking Proposal
 
-**Subject:** Speaker proposal: "The Invisible Users - Designing Kentico Sites for AI Agents"
+**Subject:** Speaker proposal: "MX-Bible - Designing Kentico Sites for AI Agents"
 
 **To:** [Kentico Events Team]
 
@@ -217,7 +217,7 @@ Tom Cranstoun
 
 I'd like to propose a session for [Kentico Conference/Webinar] about designing agent-ready Kentico sites.
 
-**Session title:** "The Invisible Users: Designing Kentico Sites for AI Agents and Everyone Else"
+**Session title:** "MX-Bible: Designing Kentico Sites for AI Agents and Everyone Else"
 
 **Session description:**
 
@@ -244,7 +244,7 @@ This session reveals:
 
 **Why I'm qualified:**
 
-- Author: *The Invisible Users: Designing the Web for AI Agents and Everyone Else* (January 2026)
+- Author: *MX-Bible: Designing the Web for AI Agents and Everyone Else* (January 2026)
 - Architected infrastructure for BBC, Twitter, Nissan-Renault (200+ sites), Ford, MediaMonks
 - "The AEM Guy" - platform-agnostic CMS expertise
 - Member of Boye & Company CMS Experts Group
