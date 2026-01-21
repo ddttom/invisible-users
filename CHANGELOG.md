@@ -7,6 +7,62 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22] - Book Rebranding with Public Names and Shorthand Reference System
+
+### Added
+
+- **CLAUDE.md**: New "Book Names and Shorthand Reference" section documenting public brand names and shorthand terms
+  - Public names: "MX-Bible", "MX-Don't Make the AI Think", "MX-Handbook"
+  - Shorthand mappings: bible → MX-Bible, dont → MX-Don't Make the AI Think, handbook/slim → MX-Handbook
+  - Scope definitions: books/manuscript → all three books, project/workspace → everything except read-only repos
+  - Clear distinction between public names (for external reference), shorthand (for prompts), directory names (for file operations), and repository names (for git operations)
+
+### Changed
+
+- **Main Repository**: Updated all book name references across 51 files
+  - CLAUDE.md: Updated Repository Architecture, Navigation Map, Project Overview sections with new book names
+  - README.md: Updated book manuscript listings with new public names and former name notes
+  - llms.txt: Updated title and metadata to reference "MX Series"
+  - package.json: Updated PDF generation commands to use new filenames (mx-bible.pdf, etc.) and metadata titles
+  - docs/: Updated all documentation files (repo/, for-ai/, sales-enablement/, architecture/, scrapboard/, talks/, shared-chapters/)
+  - .claude/skills/: Updated news, opportunity, and review-docs skills with new book names
+  - scripts/: Updated all scripts with new book names
+
+- **Submodule: outputs**: Updated blog posts and generated HTML files (9 files)
+  - Replaced "The Invisible Users" with "MX-Bible"
+  - Replaced "Don't Make AI Think" with "MX-Don't Make the AI Think"
+  - Updated all cross-references to sibling books
+
+- **Submodule: packages/bible**: Updated all chapters, README, and metadata (22 files)
+  - Updated book name from "The Invisible Users" to "MX-Bible"
+  - Updated metadata.yaml and metadata-kindle.yaml with new title
+  - Updated cross-references to sibling books throughout all chapters
+
+- **Submodule: packages/mx-handbook**: Updated all chapters, README, and metadata (17 files)
+  - Confirmed book name is "MX-Handbook" throughout
+  - Updated cross-references to MX-Bible and MX-Don't Make the AI Think
+  - Updated metadata.yaml with consistent naming
+
+- **Submodule: packages/shared-appendices**: Updated all appendices and HTML files (53 files)
+  - Updated references to MX-Bible (formerly "The Invisible Users")
+  - Updated references to MX-Don't Make the AI Think and MX-Handbook
+  - Updated all markdown appendix files (appendix-a through appendix-m)
+  - Updated all HTML files in web/ directory
+  - Updated llms.txt with new book names
+
+- **Submodule: packages/shared-code-examples**: Updated code examples and documentation (6 files)
+  - Updated README.md with new book names
+  - Updated HTML examples with MX-Bible references
+  - Updated JavaScript and identity delegation examples
+  - Ensured consistency across all code examples
+
+### Notes
+
+- packages/dont-make-ai-think submodule intentionally not updated (separate plan per user request)
+- Directory names and repository names remain unchanged for stability
+- Legacy references to "The Invisible Users" retained where providing historical context
+- All markdown files pass linting (config/.markdownlint.json)
+
 ## [2026-01-22] - YAML Frontmatter Title Duplication Fix
 
 ### Changed
