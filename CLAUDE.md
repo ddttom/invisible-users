@@ -115,13 +115,16 @@ pwd
   - **Code:** `packages/shared-code-examples/` → `invisible-users-code-examples` - Pattern examples
   - **UCP:** `packages/ucp/` → `Universal-Commerce-Protocol/ucp` - Ecommerce standard for AI agents (**READ-ONLY REFERENCE**)
     - Role: External reference material demonstrating practical application
-    - DO NOT modify this submodule - it is maintained by the UCP project
+    - AI assistants: DO NOT autonomously modify this submodule - it is maintained by the UCP project
+    - Exception: If user explicitly adds/edits/deletes files, commit those changes
   - **Notes (READ-ONLY):** `packages/notes/` → `Notes` - Development notes, coding standards, and architectural guidelines (**READ-ONLY REFERENCE**)
     - Role: Coding standards and development practices reference
-    - DO NOT modify this submodule - it is maintained separately
+    - AI assistants: DO NOT autonomously modify this submodule - it is maintained separately
+    - Exception: If user explicitly adds/edits/deletes files, commit those changes
   - **Sales Enablement (READ-ONLY):** `packages/sales-enablement/` → `MX-Sales-enablement` - Private business development materials (**READ-ONLY REFERENCE**)
     - Role: Business materials, pitches, partnerships, pricing strategies
-    - DO NOT access this submodule unless explicitly authorized by user
+    - AI assistants: DO NOT autonomously modify this submodule unless explicitly authorized by user
+    - Exception: If user explicitly adds/edits/deletes files, commit those changes
   - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in Notes and Sales Enablement)
 
 ### Repository Navigation Map
@@ -189,7 +192,7 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       ├── main.py               ← Schema generator
 │   │       ├── README.md             ← UCP overview
 │   │       └── NO .claude/ directory
-│   │       Note: Universal Commerce Protocol - standardized ecommerce API for AI agents
+│   │       Note: Universal Commerce Protocol - standardized ecommerce API for AI agents (READ-ONLY unless user makes explicit changes)
 │   ├── notes/                        ← SUBMODULE (git repo) - READ-ONLY REFERENCE
 │   │   └── ${MAIN_REPO}/packages/notes/
 │   │       ├── .claude/              ← Claude Code configuration
@@ -198,7 +201,7 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       ├── Things to avoid.md    ← UI/UX anti-patterns for AI
 │   │       ├── README.md             ← Notes README
 │   │       └── Other development guidelines
-│   │       Note: Development notes and coding standards (READ-ONLY for AI assistants unless explicitly authorized)
+│   │       Note: READ-ONLY for AI assistants - commit only if user explicitly adds/edits/deletes files
 │   ├── sales-enablement/             ← SUBMODULE (PRIVATE git repo) - READ-ONLY REFERENCE
 │   │   └── ${MAIN_REPO}/packages/sales-enablement/
 │   │       ├── business/             ← Business plans and strategies
@@ -208,7 +211,7 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       ├── CLAUDE.md             ← Sales enablement guidance
 │   │       ├── README.md             ← Sales enablement README
 │   │       └── Other business materials
-│   │       Note: Private business development materials (READ-ONLY for AI assistants unless explicitly authorized)
+│   │       Note: READ-ONLY for AI assistants - commit only if user explicitly adds/edits/deletes files
 │   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
 │       ├── src/                      ← Tool source code
 │       ├── test/                     ← Test files
@@ -242,6 +245,36 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
    - When in doubt: Use absolute paths
 
 **MANDATORY: Run `pwd` before accessing `.claude/` files**
+
+### READ-ONLY Submodule Policy for AI Assistants
+
+**Three submodules are marked as READ-ONLY REFERENCE:**
+
+- `packages/ucp/` - External UCP project
+- `packages/notes/` - Development standards
+- `packages/sales-enablement/` - Private business materials
+
+**AI Assistant Behavior:**
+
+1. **DO NOT autonomously modify** these submodules (no proactive edits, additions, or deletions)
+2. **DO commit user changes** if the user explicitly:
+   - Adds new files to these submodules
+   - Edits existing files in these submodules
+   - Deletes files from these submodules
+   - Reorganizes structure within these submodules
+3. When committing user changes in READ-ONLY submodules, use standard git workflow (commit to submodule first, then update pointer in main repo)
+
+**Example:**
+
+```bash
+# User explicitly reorganizes sales-enablement structure
+# AI should commit these changes:
+git -C packages/sales-enablement add -A
+git -C packages/sales-enablement commit -m "Reorganize business materials"
+git -C packages/sales-enablement push origin main
+git add packages/sales-enablement
+git commit -m "Update sales-enablement submodule pointer"
+```
 
 **📖 CRITICAL REFERENCES FOR AI ASSISTANTS:**
 
