@@ -83,6 +83,26 @@ if [[ "$TOOL_NAME" == "Edit" ]] || [[ "$TOOL_NAME" == "Write" ]] || [[ "$TOOL_NA
     fi
 fi
 
+# MARKDOWN WORKFLOW CHECK: Detect markdown file operations
+# Remind Claude about YAML frontmatter and heading structure
+if [[ "$TOOL_NAME" == "Edit" ]] || [[ "$TOOL_NAME" == "Write" ]]; then
+    if [[ "$FILE_PATH" =~ \.md$ ]]; then
+        echo "📝 MARKDOWN WORKFLOW REMINDER: Editing markdown file"
+        echo ""
+        echo "CRITICAL: Avoid title duplication in YAML frontmatter"
+        echo ""
+        echo "If markdown has H1 heading:"
+        echo "  - DO NOT include 'title:' field in YAML frontmatter (redundant duplication)"
+        echo "  - Choose ONE: H1 in content (preferred) OR title in frontmatter"
+        echo "  - Duplication causes MD025 warnings and redundancy"
+        echo ""
+        echo "Use /md-workflow skill for comprehensive guidance"
+        echo "Use npm run lint:markdown:fix after editing"
+        echo ""
+        # Don't block - just inform
+    fi
+fi
+
 # Check if pwd has been run recently (within last 3 tool uses)
 # Reduced threshold from 5 to 3 for more frequent reminders
 # Dynamically determine main repo path

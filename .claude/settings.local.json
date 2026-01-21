@@ -147,7 +147,9 @@
       "Bash(git pull:*)",
       "Bash(git for-each-ref:*)",
       "Bash(git symbolic-ref:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh repo list:*)"
     ],
     "deny": [],
     "ask": [
