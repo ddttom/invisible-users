@@ -7,6 +7,62 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-21] - MX-The Handbook Repository Setup
+
+### Added
+
+- **MX-The Handbook Repository** (MX-The-Handbook 3463bf8): New practical implementation guide as independent submodule
+  - Created private GitHub repository: Digital-Domain-Technologies-Ltd/MX-The-Handbook
+  - Copied and rebranded from dont-make-ai-think structure
+  - 11 chapters + preface + CHAPTERS-GUIDE.md
+  - Updated all branding:
+    - Cover page (00-cover.md): "MX-The Handbook"
+    - README.md: Complete rebranding with MX build commands
+    - metadata.yaml: Title updated for Pandoc generation
+    - All chapter YAML frontmatter: `book: "MX-The Handbook"`
+  - Maintains same focus as "Don't Make AI Think" with different branding
+  - Complete commit history: 067e931 (initial) → 3463bf8 (metadata updates)
+
+- **Build Scripts** (package.json): Five npm scripts following established "dont" pattern
+  - `pdf:mx-html` - Generate HTML version
+  - `pdf:mx-generate` - Generate A4 PDF
+  - `pdf:mx-kindle` - Generate 6"×9" Kindle PDF
+  - `pdf:mx-simple` - Generate simple PDF without headers/footers
+  - `pdf:mx-all` - Generate all formats in sequence
+  - Output directory: `outputs/mx/`
+
+- **Submodule Integration**:
+  - Added at `packages/mx-handbook/` (main repo commit 1df28cf)
+  - Convenience symlink created at `books/mx-handbook`
+  - Submodule pointer updated to 3463bf8 (main repo commit 22093bb)
+  - Repository count increased from 7 to 8 git repositories
+
+### Changed
+
+- **CLAUDE.md**: Updated with MX-The Handbook references
+  - Added to book manuscripts list (line 230)
+  - Updated repository count: "EIGHT git repositories (1 main hub + 7 submodules)"
+  - Updated submodules count from 6 to 7
+  - Added to Repository Navigation Map with complete directory structure
+  - Added to books symlinks section
+  - Updated manuscript file paths to include `packages/mx-handbook/chapters/`
+
+- **README.md**: Added MX-The Handbook to book manuscripts list
+  - Changed from "Two book variants" to "Three book variants"
+  - Listed as "Practical implementation guide (11 chapters, rebranded)"
+
+- **Markdown Linting** (package.json): Added `--ignore packages/mx-handbook` to `lint:markdown:all` script
+
+### Technical Notes
+
+- Repository structure follows established submodule pattern:
+  - Content-only repository (no package.json, no build tooling)
+  - All build commands orchestrated from parent `invisible-users` repo
+  - Independent git version control
+  - YAML frontmatter in all chapter files with `ai-instruction` field
+- Build scripts tested successfully: HTML generation produces 909KB output
+- All changes follow git submodule-first workflow from GIT-README.md
+
 ## [2026-01-22b] - Don't Make AI Think Pattern Integration
 
 ### Added
