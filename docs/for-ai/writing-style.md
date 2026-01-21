@@ -46,6 +46,14 @@ We are writing this book together.
   - **First person ("I")** only for specific personal insights.
 - **Formatting:** No colons in headers. Use short dashes (-) only.
 - **No Time Estimates:** Never provide time estimates for implementation (hours, days, weeks, months). Use priority levels instead (Priority 1-4, Foundation, Ongoing). Implementation time depends on site size, team capacity, and existing infrastructure - time estimates create false expectations.
+- **Timeless Manuscript Rule:** Book manuscript files must be written as if they've always existed. **NEVER** include:
+  - Publication dates or launch dates
+  - "This update includes..." or "We have added..."
+  - "New in this version..." or "Recently launched..."
+  - Future-tense statements about the book itself
+  - Meta-commentary about the writing process
+  - **Write definitive present tense:** "The analysis provides..." not "We added analysis..."
+  - **Exception:** Historical context about the *subject matter* is allowed (e.g., "Google launched UCP in January 2026" describes an industry event, not the book)
 
 ---
 
@@ -190,19 +198,41 @@ This repository uses Pandoc YAML frontmatter for markdown metadata—the univers
 - **Purpose:** Preserves metadata that would be lost in HTML-to-markdown conversion
 - **Usage:** See Appendix L (Pattern 4) and Appendix H for complete implementation guide
 
-**Example:**
+**Standard Book Manuscript Frontmatter Template:**
 
 ```yaml
 ---
-title: "Document Title"
+title: "Chapter N: Chapter Title"
 author: "Tom Cranstoun"
-date: "2026-01-17"
+date: "2026-01-22"
 description: "Brief summary for humans and AI agents"
-keywords: [metadata, yaml, frontmatter]
+keywords: [keyword1, keyword2, keyword3]
+book: "The MX Bible"  # or "Don't Make the AI Think" or "The MX Handbook"
+chapter: N
+wordcount: NNNN
+ai-instruction: |
+  This is a book manuscript chapter. Write as if it has always existed.
+  NEVER include: publication dates, "we added", "new feature", "launching",
+  "this update", or any meta-commentary about the book's development.
+  Write definitive present tense. Historical context about subject matter
+  (industry events, product launches) is allowed.
 ---
 ```
 
+**Required Fields for Book Manuscripts:**
+
+- `title` - Chapter title with number
+- `author` - Always "Tom Cranstoun"
+- `date` - Last modification date (YYYY-MM-DD format)
+- `description` - Brief chapter summary
+- `keywords` - Array of relevant topics
+- `book` - Which book this chapter belongs to
+- `chapter` - Chapter number
+- `ai-instruction` - **MUST include timeless manuscript rule**
+
 **When reviewing markdown files:** Recognize YAML frontmatter and do not flag as formatting issues. This metadata provides essential context for AI agents and build tools.
+
+**When creating or editing book manuscript files:** Always include complete YAML frontmatter with the `ai-instruction` field containing the timeless manuscript rule. This ensures AI systems processing these files understand they must not add temporal or meta-commentary language.
 
 ---
 

@@ -235,7 +235,28 @@ Multiple books from modular repositories:
 
 **Market context:** January 2026 saw three major platforms (Amazon, Microsoft, Google) launch agent commerce systems within seven days, accelerating the transition from experimental to infrastructure. The book documents this convergence and provides implementation patterns applicable across all platforms.
 
-**CRITICAL WRITING REQUIREMENT:** Always write as if features have always existed. Never use narrative text like "We have added" or "This update includes". Write definitive present tense: "Meta tag validation provides scoring" not "We added meta tag validation".
+**CRITICAL WRITING REQUIREMENT - Timeless Manuscript Rule:**
+
+Book manuscript files (.md files in `packages/bible/chapters/`, `packages/dont-make-ai-think/chapters/`, `packages/shared-appendices/`, `docs/shared-chapters/`) must be written as if they've always existed.
+
+**NEVER include:**
+
+- Publication dates or launch dates about the book itself
+- "This update includes..." or "We have added..."
+- "New in this version..." or "Recently launched..." or "launching April 2, 2026..."
+- Future-tense statements about the book
+- Meta-commentary about the writing/editing process
+- "This chapter will cover..." (use "This chapter covers...")
+
+**ALWAYS write:**
+
+- Definitive present tense: "The analysis provides..." not "We added analysis..."
+- Timeless descriptions: "This book is part of a three-book series:" not "launching April 2, 2026"
+- Established fact tone: Features described as if they've always existed
+
+**Exception:** Historical context about the *subject matter* is allowed (e.g., "Google launched UCP in January 2026" describes an industry event, not the book).
+
+**Enforcement:** All book manuscript files MUST include YAML frontmatter with an `ai-instruction` field reminding AI systems of this rule. See [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md) for the standard template.
 
 ### 2. Web Audit Suite (Analysis Tool)
 
