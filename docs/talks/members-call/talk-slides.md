@@ -177,12 +177,13 @@ if auto-booked
 
 **Subtitle:** When metadata fails, AI agents hallucinate dangerously
 
-- Lawyers caught citing fictional cases in court
-- AI agents confused Ally McBeal TV scripts with legal precedents
-- Without proper microdata/metadata distinguishing entertainment from legal docs
-- Agents fabricate details that seem plausible but are dangerously incorrect
-- Same problem affects pricing, product specs, contact info
-- Solution: Proper metadata (Schema.org, semantic HTML) prevents these errors
+- Lawyers caught citing fictional Ally McBeal cases in real court proceedings
+- Court opinions should use: Article + genre="Judicial Opinion" + articleSection="Case Law"
+- TV shows should use: TVEpisode + genre="Legal Drama" + partOfSeries markup
+- Reality: Fan transcripts had no @type markup - appeared identical to court cases
+- AI couldn't distinguish fiction from fact without Schema.org differentiation
+- Same problem: Pricing errors (£203k), product specs, contact details
+- Solution: Proper Schema.org markup prevents hallucinations for all content types
 
 ---
 
