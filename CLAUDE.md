@@ -414,11 +414,12 @@ UCP embodies the convergence principle from the book - patterns that work for AI
 │   ├── ucp/                  # Universal Commerce Protocol (git submodule)
 │   └── web-audit-suite/      # Analysis tool (not a submodule)
 └── docs/                     # Project documentation
-    ├── architecture/         # Architecture diagrams
-    ├── repo/                 # Repository-level docs
-    ├── sales-enablement/     # Sales materials
-    └── for-ai/               # AI assistant guidance
-        └── writing-style.md  # Complete writing style guide
+    ├── architecture/         # Architecture docs (GIT-README.md, TIMELESS-MANUSCRIPT-RULE.md, doc-architecture.md)
+    ├── for-ai/               # AI assistant guidance (writing-style.md, yaml-frontmatter-template.md)
+    ├── shared-chapters/      # Shared book content (Chapter 0)
+    ├── talks/                # Presentation materials
+    ├── for-tom/              # Personal working notes
+    └── scrap/                # Temporary working files (READ-ONLY for AI unless authorized)
 ```
 
 **See individual package READMEs for detailed contents, build commands, and usage.**
