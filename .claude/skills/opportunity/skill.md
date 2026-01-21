@@ -11,7 +11,7 @@ Base directory for this skill: ${MAIN_REPO}/.claude/skills/opportunity
 When you identify a potential business opportunity (new vendor AI feature, agency partnership possibility, enterprise client need), this skill:
 
 1. **Analyzes opportunity viability** - Evaluates gap, market timing, competitive landscape
-2. **Updates opportunities database** - Adds structured entry to `docs/sales-enablement/business/business-opportunities.md`
+2. **Updates opportunities database** - Adds structured entry to `packages/sales-enablement/business/business-opportunities.md`
 3. **Generates vendor materials** - Creates pitch materials, email templates, one-pagers in appropriate subfolders
 4. **Cross-references book content** - Links to relevant chapters validating the opportunity
 5. **Estimates engagement value** - Suggests pricing and engagement models
@@ -170,7 +170,7 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 
 **Automatic actions:**
 
-- Read current `docs/sales-enablement/business/business-opportunities.md`
+- Read current `packages/sales-enablement/business/business-opportunities.md`
 - Determine correct section (CMS Vendors, Agencies, Enterprises, Platform Ecosystems)
 - Create structured entry with consistent format
 - Insert in appropriate location (by opportunity type, then alphabetically)
@@ -222,7 +222,7 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 
 **Materials created:**
 
-**1. Opportunity Analysis Document** (`docs/sales-enablement/outreach/[vendor]-opportunity-analysis.md`)
+**1. Opportunity Analysis Document** (`packages/sales-enablement/outreach/[vendor]-opportunity-analysis.md`)
 
 - Complete analysis (15-20 pages)
 - 5 partnership opportunities with deliverables and pricing
@@ -230,27 +230,27 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 - Outreach strategy
 - Success metrics
 
-**2. Email Templates** (`docs/sales-enablement/outreach/[vendor]-email-templates.md`)
+**2. Email Templates** (`packages/sales-enablement/outreach/[vendor]-email-templates.md`)
 
 - 5 email templates (executives, product team, partners, community, events)
 - 3-stage follow-up sequence
 - Subject line variations
 - Tracking section
 
-**3. One-Page Pitch** (`docs/sales-enablement/pitches/[vendor]-pitch-one-pager.md`)
+**3. One-Page Pitch** (`packages/sales-enablement/pitches/[vendor]-pitch-one-pager.md`)
 
 - Single-page summary for quick reference
 - The gap, the solution, the value
 - Why us, why now
 - Clear call-to-action
 
-**4. Partner Toolkit Sections** (if agency opportunity - `docs/sales-enablement/partners/`)
+**4. Partner Toolkit Sections** (if agency opportunity - `packages/sales-enablement/partners/`)
 
 - Relevant sections from partner-toolkit-template.md
 - Customized for agency's focus area
 - White-label templates
 
-**What I'll do:** Generate all materials and save to appropriate subfolders in `docs/sales-enablement/`
+**What I'll do:** Generate all materials and save to appropriate subfolders in `packages/sales-enablement/`
 
 **What you'll do:** Review materials and request adjustments if needed
 
@@ -260,14 +260,14 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 
 **Primary database:**
 
-- `docs/sales-enablement/business/business-opportunities.md` (master opportunity tracking)
+- `packages/sales-enablement/business/business-opportunities.md` (master opportunity tracking)
 
 **Vendor-specific materials (organized by category):**
 
-- Outreach: `docs/sales-enablement/outreach/[vendor]-opportunity-analysis.md`
-- Outreach: `docs/sales-enablement/outreach/[vendor]-email-templates.md`
-- Pitches: `docs/sales-enablement/pitches/[vendor]-pitch-one-pager.md`
-- Partners: `docs/sales-enablement/partners/[agency]-partnership-proposal.md`
+- Outreach: `packages/sales-enablement/outreach/[vendor]-opportunity-analysis.md`
+- Outreach: `packages/sales-enablement/outreach/[vendor]-email-templates.md`
+- Pitches: `packages/sales-enablement/pitches/[vendor]-pitch-one-pager.md`
+- Partners: `packages/sales-enablement/partners/[agency]-partnership-proposal.md`
 
 **Reference files (read-only):**
 
@@ -279,7 +279,7 @@ Opportunity skill: Analyzes Adobe gap, updates business-opportunities.md, genera
 
 **Templates:**
 
-- `docs/sales-enablement/partners/partner-toolkit-template.md`
+- `packages/sales-enablement/partners/partner-toolkit-template.md`
 
 ---
 
@@ -296,9 +296,9 @@ Phase 3: ✓ Value - £200k-500k (product integration + partner training + strat
 Phase 4: ✓ Materials planned - Analysis doc, email templates, pitch deck
 Phase 5: Database entry created under "Replicable Pattern: Other CMS/DXP Vendors"
 Phase 6: Generated:
-  - docs/sales-enablement/outreach/contentful-opportunity-analysis.md (18 pages)
-  - docs/sales-enablement/outreach/contentful-email-templates.md (5 templates)
-  - docs/sales-enablement/pitches/contentful-pitch-one-pager.md (1 page)
+  - packages/sales-enablement/outreach/contentful-opportunity-analysis.md (18 pages)
+  - packages/sales-enablement/outreach/contentful-email-templates.md (5 templates)
+  - packages/sales-enablement/pitches/contentful-pitch-one-pager.md (1 page)
 
 Result: Complete vendor package ready for outreach
 ```
@@ -316,7 +316,7 @@ Phase 3: ✓ Value - £50k-150k (training programme + white-label audit services
 Phase 4: ✓ Materials planned - Partner toolkit sections, training outline, revenue share proposal
 Phase 5: Database entry created under "Development Agencies"
 Phase 6: Generated:
-  - docs/sales-enablement/partners/mediamonks-partnership-proposal.md
+  - packages/sales-enablement/partners/mediamonks-partnership-proposal.md
   - Relevant partner-toolkit sections (audit templates, training curriculum)
   - Revenue share agreement template
 
@@ -336,7 +336,7 @@ Phase 3: ✓ Value - £75k-200k (comprehensive multi-site audit + remediation ro
 Phase 4: ✓ Materials planned - Audit methodology, executive summary, ROI framework
 Phase 5: Database entry created under "Enterprise In-House Teams"
 Phase 6: Generated:
-  - docs/sales-enablement/outreach/barclays-audit-proposal.md
+  - packages/sales-enablement/outreach/barclays-audit-proposal.md
   - Financial services compliance considerations
   - Multi-site audit pricing calculator
 

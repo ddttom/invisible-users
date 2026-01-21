@@ -62,11 +62,11 @@ The `/news` and `/opportunity` skills work together:
 
 When you run `/opportunity`, the skill creates:
 
-1. **Database entry** in `docs/sales-enablement/business/business-opportunities.md`
-2. **Opportunity analysis** in `docs/sales-enablement/outreach/[vendor]-opportunity-analysis.md` - 15-20 page detailed analysis
-3. **Email templates** in `docs/sales-enablement/outreach/[vendor]-email-templates.md` - 5 templates + follow-up sequences
-4. **One-page pitch** in `docs/sales-enablement/pitches/[vendor]-pitch-one-pager.md` - Executive summary for quick reference
-5. **Partner materials** (if agency opportunity) in `docs/sales-enablement/partners/` - Relevant toolkit sections
+1. **Database entry** in `packages/sales-enablement/business/business-opportunities.md`
+2. **Opportunity analysis** in `packages/sales-enablement/outreach/[vendor]-opportunity-analysis.md` - 15-20 page detailed analysis
+3. **Email templates** in `packages/sales-enablement/outreach/[vendor]-email-templates.md` - 5 templates + follow-up sequences
+4. **One-page pitch** in `packages/sales-enablement/pitches/[vendor]-pitch-one-pager.md` - Executive summary for quick reference
+5. **Partner materials** (if agency opportunity) in `packages/sales-enablement/partners/` - Relevant toolkit sections
 
 ## Typical Workflow
 

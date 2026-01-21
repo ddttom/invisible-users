@@ -40,7 +40,7 @@ packages/web-audit-suite/error.log
 packages/web-audit-suite/combined.log
 
 # Documentation that's not needed for build
-docs/sales-enablement/
+packages/sales-enablement/
 docs/imp-plan.md
 docs/manuscript-critique.md
 

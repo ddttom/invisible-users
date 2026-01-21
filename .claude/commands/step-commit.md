@@ -29,7 +29,7 @@ Execute the systematic "step commit" workflow:
    - Review if these files need updates based on recent changes
    - Use CHANGELOG.md to understand past changes if needed
    - Review all project documents mentioned in CLAUDE.md
-   - Check if changes affect synchronized files: docs/sales-enablement/PITCH.md, BLOG.md, CLAUDE.md, README.md
+   - Check if changes affect synchronized files: packages/sales-enablement/pitches/PITCH.md, BLOG.md, CLAUDE.md, README.md
 
 4. Cross-Project Consistency Check (CRITICAL)
    - If changes affect terminology, patterns, or concepts:
@@ -44,7 +44,7 @@ Execute the systematic "step commit" workflow:
 
 5. Documentation Updates
    - Update any necessary documentation files
-   - Verify docs/sales-enablement/PITCH.md and BLOG.md reflect current features and approach
+   - Verify packages/sales-enablement/pitches/PITCH.md and BLOG.md reflect current features and approach
    - Ensure contact information is consistent (<tom.cranstoun@gmail.com>)
    - Commit documentation changes
 

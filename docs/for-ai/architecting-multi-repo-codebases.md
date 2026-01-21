@@ -150,6 +150,124 @@ monorepo/
 
 **Benefits:** Single build pipeline processes multiple content sources. Content repositories can be independently versioned and shared across projects.
 
+### Pattern 4: READ-ONLY Reference Submodules
+
+**Problem:** Some repositories contain reference material that AI assistants and developers should access rarely and only with explicit permission - private business materials, external project references, or sensitive configuration.
+
+**Solution:** Create private submodules marked as READ-ONLY in documentation, requiring explicit opt-in for AI and developer access.
+
+**When to use:**
+
+- Private business materials (pricing strategies, partnerships, confidential business plans)
+- Development notes and coding standards maintained separately
+- External project references that shouldn't be modified
+- Proprietary configuration or credentials
+- Any material where accidental disclosure or modification would be problematic
+
+**Implementation:**
+
+```text
+main-repo/                        (Control and orchestration - PUBLIC)
+├── .claude/                      (AI assistant configuration)
+├── README.md                     (Documents READ-ONLY pattern)
+├── CLAUDE.md                     (Enforces READ-ONLY boundaries)
+└── packages/
+    ├── content/                  (Regular submodule - freely accessible)
+    ├── examples/                 (Regular submodule - freely accessible)
+    ├── notes/                    (READ-ONLY - coding standards reference)
+    ├── sales-enablement/         (READ-ONLY - private business materials)
+    └── ucp/                      (READ-ONLY - external project reference)
+```
+
+**Documentation pattern in hub CLAUDE.md:**
+
+```markdown
+## READ-ONLY Reference Submodules
+
+These submodules contain reference material. AI assistants and developers MUST NOT
+access or modify these directories unless explicitly authorized by the user:
+
+- **packages/notes/** - Development notes and coding standards (maintained separately)
+- **packages/sales-enablement/** - Private business development materials (PRIVATE)
+- **packages/ucp/** - External project reference (maintained by UCP project)
+
+**Access control:** AI assistants should refuse to read, edit, or reference these
+directories unless the user explicitly grants permission for the specific operation.
+```
+
+**Submodule CLAUDE.md pattern:**
+
+Each READ-ONLY submodule should have its own CLAUDE.md file documenting:
+
+```markdown
+# Sales-enablement - Private Materials
+
+**🔒 PRIVATE REPOSITORY: These files are for internal business development only.**
+
+## Critical Guidance for AI Assistants
+
+**This is a READ-ONLY reference submodule. AI assistants MUST NOT access this
+repository unless explicitly authorized by the user.**
+
+## Repository Context
+
+This repository is mounted as a READ-ONLY submodule in the main workspace at
+`packages/sales-enablement/`. It maintains its own git history and version
+control independently from the main repository.
+
+## Access Control
+
+AI assistants working in the main repository should NOT access this directory
+unless explicitly authorized. This includes:
+
+- Reading files
+- Editing content
+- Referencing in documentation
+- Copying content to other locations
+```
+
+**Benefits:**
+
+- **Clear access boundaries** - AI assistants understand when to refuse access
+- **Private materials in git ecosystem** - Business-sensitive documents remain version-controlled
+- **Version control for sensitive documents** - Full git history with proper separation
+- **Explicit opt-in prevents accidents** - No accidental disclosure or modification
+- **External references stay clean** - Projects maintained elsewhere remain unmodified
+
+**Real-world example (from this repository):**
+
+```text
+invisible-users/                           (Main hub - PUBLIC)
+├── packages/
+│   ├── bible/                             (Book manuscript - PUBLIC)
+│   ├── dont-make-ai-think/                (Book manuscript - PUBLIC)
+│   ├── mx-handbook/                       (Book manuscript - PUBLIC)
+│   ├── shared-appendices/                 (Shared content - PUBLIC)
+│   ├── notes/                             (READ-ONLY - coding standards)
+│   ├── sales-enablement/                  (READ-ONLY - private business materials)
+│   └── ucp/                               (READ-ONLY - external reference)
+└── outputs/                               (Generated content - PRIVATE)
+```
+
+**Key principles:**
+
+1. **Separation of concerns** - Main repo = control/orchestration, READ-ONLY submodules = reference materials
+2. **Explicit documentation** - CLAUDE.md in both hub and submodule documents the pattern
+3. **AI assistant enforcement** - Clear instructions prevent accidental access
+4. **Private repository option** - Business materials can be private GitHub repositories
+5. **Independent maintenance** - External references (like UCP) maintained by their projects
+
+**Common mistakes to avoid:**
+
+- ❌ Forgetting to add READ-ONLY warning to hub CLAUDE.md
+- ❌ Not creating CLAUDE.md in the submodule itself
+- ❌ Assuming AI assistants will infer READ-ONLY status from privacy
+- ❌ Mixing READ-ONLY reference materials with regular content submodules
+
+**Control flow:**
+
+Main repository controls build, documentation, and workflows. READ-ONLY submodules provide reference material or private business context. Changes to READ-ONLY submodules happen in their own repositories with explicit commits, then submodule pointers update in main repo to reference new commits.
+
 ## Pattern 1: README Delegation
 
 **Problem:** Users cloning individual submodules need context about the overall project without duplicating documentation across repositories.
