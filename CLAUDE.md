@@ -726,6 +726,17 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 - Git only ignores untracked files; already-tracked files remain tracked even if matching an ignore pattern
 - Each submodule has its own `.gitignore` file for managing submodule-specific ignored files (e.g., `packages/bible/.gitignore` ignores generated PNG files)
 
+**GitHub CLI (`gh`):**
+
+- GitHub CLI is available in this environment
+- Use `gh` commands freely without requiring user confirmation
+- Common operations: pull requests (`gh pr`), issues (`gh issue`), repository queries (`gh repo`)
+- Examples:
+  - `gh pr create --title "Title" --body "Description"`
+  - `gh pr list`
+  - `gh issue list`
+  - `gh repo view`
+
 ## Claude Code Configuration
 
 **Five custom skills (`.claude/skills/`):**
