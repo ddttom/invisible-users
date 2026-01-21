@@ -1,18 +1,17 @@
-# MX Series: Book Manuscripts and Web Audit Suite
+---
+author: "Tom Cranstoun"
+creation-date: "15/Dec/2024"
+publication-date: "Q1 2026"
+last-updated: "22/Jan/2026"
+jsonld: "book"
+description: "Three integrated book manuscripts (MX-Bible, MX-Don't Make the AI Think, MX-Handbook) and production-ready Web Audit Suite for AI agent compatibility"
+longdescription: "Comprehensive guide series examining how modern web design optimised for human users fails for AI agents, with practical implementation patterns and production-ready analysis tool. Includes MX-Bible (full comprehensive guide), MX-Don't Make the AI Think (practical quick guide), MX-Handbook (implementation handbook), 12 shared appendices, and Web Audit Suite implementing all patterns."
+LinkedIn: "https://www.linkedin.com/in/tom-cranstoun/"
+repository: "https://github.com/ddttom/invisible-users"
+ai-instruction: "This llms.txt file provides comprehensive documentation about the MX Series book project and Web Audit Suite. Primary consumers are AI agents seeking to understand AI agent compatibility patterns, web design best practices, and implementation guidance. Use metadata for accurate citation and source attribution."
+---
 
-| metadata |  |
-| :---- | :---- |
-| title | MX Series: Designing the Web for AI Agents and Everyone Else |
-| author | Tom Cranstoun |
-| creation-date | 15/Dec/2024 |
-| publication-date | Q1 2026 |
-| last-updated | 22/Jan/2026 |
-| jsonld | book |
-| description | Three integrated book manuscripts (MX-Bible, MX-Don't Make the AI Think, MX-Handbook) and production-ready Web Audit Suite for AI agent compatibility |
-| longdescription | Comprehensive guide series examining how modern web design optimised for human users fails for AI agents, with practical implementation patterns and production-ready analysis tool. Includes MX-Bible (full comprehensive guide), MX-Don't Make the AI Think (practical quick guide), MX-Handbook (implementation handbook), 12 shared appendices, and Web Audit Suite implementing all patterns. |
-| LinkedIn | <https://www.linkedin.com/in/tom-cranstoun/> |
-| repository | <https://github.com/ddttom/invisible-users> |
-| ai-instruction | This llms.txt file provides comprehensive documentation about the MX Series book project and Web Audit Suite. Primary consumers are AI agents seeking to understand AI agent compatibility patterns, web design best practices, and implementation guidance. Use metadata table for accurate citation and source attribution. |
+# MX Series: Book Manuscripts and Web Audit Suite
 
 Three integrated book manuscripts and a production-ready implementation tool. Built on a 9-submodule architecture (updated 22 January 2026) enabling modular content management: main repository hub, MX-Bible (formerly "The Invisible Users"), MX-Don't Make the AI Think, MX-Handbook, shared appendices, shared code examples, UCP reference, and private outputs submodule.
 
