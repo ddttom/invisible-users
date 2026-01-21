@@ -8,6 +8,7 @@
  *
  * Expected symlinks:
  * - blogs -> outputs/bible/blogs
+ * - scrap -> packages/notes/scrap (convenient access to temporary working files)
  * - books/bible -> ../packages/bible (reduces cognitive load: books/ vs packages/)
  * - books/dont-make-ai-think -> ../packages/dont-make-ai-think
  * - books/appendices -> ../packages/shared-appendices
@@ -231,6 +232,9 @@ function initializeRepository() {
 
   // Create blogs symlink to outputs submodule
   createSymlink('blogs', 'outputs/bible/blogs', 'Blog posts (via outputs submodule)');
+
+  // Create scrap symlink to notes submodule
+  createSymlink('scrap', 'packages/notes/scrap', 'Temporary working files');
 
   // Create AI tool compatibility symlinks (GEMINI.md and AGENTS.md point to CLAUDE.md)
   createSymlink('GEMINI.md', 'CLAUDE.md', 'Gemini AI tool compatibility');
