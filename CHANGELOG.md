@@ -7,6 +7,98 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22b] - Don't Make AI Think Pattern Integration
+
+### Added
+
+- **Appendix N: Anti-Patterns Catalog** (shared-appendices 5810744): Comprehensive reference of 13 common mistakes that break AI agent compatibility
+  - Visual-only information (pricing tiers without semantic markup)
+  - Content in images (service infographics without alt text)
+  - Generic link text ("Learn more" without context)
+  - Broken heading hierarchy (h1→h3→h2 chaos)
+  - JavaScript-only navigation (empty nav elements)
+  - Hidden content with no fallback (display:none accordions)
+  - No/outdated sitemap (404 or stale links)
+  - Inconsistent Schema.org (markup doesn't match visible content)
+  - Forms without labels (placeholder-only inputs)
+  - Table abuse (layout tables, missing th elements)
+  - Content in iframes (news widgets without fallbacks)
+  - PDF-only content (brochure downloads without HTML alternatives)
+  - Auto-playing content (carousels, testimonials without pause controls)
+  - Each pattern includes: problem description, real-world example with code, what AI sees vs humans see, complete fix with before/after code
+  - Quick Wins Summary: 5 fixes that solve 80% of problems in 6-8 hours
+  - ~3,000 words
+
+- **Chapter 10 Enhancements** (bible 48520d2): Added foundational AI reader concepts
+  - "Understanding AI Reader Types" section: Three types taxonomy (Raw Parsers, Browser-Based Agents, Vision Models)
+  - "Token Budgets and Content Priority" section: Context window limits (GPT-4: 128k, Claude: 200k, Gemini: 2M tokens)
+  - DOM order optimization principle: main content before navigation/sidebar for token efficiency
+  - Schema.org type prioritization: six essential types covering 90% of use cases
+  - ~950 words added
+
+- **Chapter 11 Enhancements** (bible 48520d2): Added design decision framework
+  - "Four Guiding Principles" section: Semantic Clarity Over Visual Clarity, Structure Reveals Intent, Metadata Makes Promises Explicit, Redundancy Serves Different Consumers
+  - Strategic Redundancy concept: why duplication across visual/semantic/metadata layers serves different consumers
+  - ~1,100 words added
+
+- **Chapter 12 Enhancements** (bible 48520d2): Added comprehensive testing and implementation guidance
+  - "Testing for AI Readability" section: Five practical testing methodologies
+    - The Morning-After Test (copy HTML, ask AI what's on page)
+    - Disable JavaScript Test (site usability check)
+    - View Source Test (content in served HTML)
+    - Link Text Extraction Test (self-explanatory links)
+    - Heading Hierarchy Validation (logical structure check)
+  - 10-Point Quick Audit Checklist with scoring system (8-10 = excellent, 5-7 = moderate, 0-4 = significant problems)
+  - "Progressive Enhancement for Agents" section: Skeleton content, modal/accordion handling, pagination, loading states, AJAX navigation
+  - "Implementation Roadmap" section: Five-phase approach (Assessment → Quick Wins → Structural → Content Patterns → Testing & Validation)
+  - Real ROI case study: Automotive client, £12k investment, 60% AI recommendation increase, 35% organic search increase
+  - Cost/resource planning by site size (small: £8k-£12k, medium: £15k-£25k, large: £50k-£150k)
+  - ~2,400 words added (Chapter 12 now ~9,900 words total)
+
+- **Appendix M Enhancements** (shared-appendices 5810744): Added three new sections
+  - Section 18: Testing Methodologies (5 testing methods with chapter references)
+  - Section 19: Anti-Patterns Reference (complete list with cross-references to Appendix N)
+  - Section 20: Terminology Framework (Strategic Redundancy, Token Budget, Three Types of AI Readers, Morning-After Test, DOM Order, Visual vs Semantic Clarity)
+  - YAML frontmatter added for consistency with other appendices
+  - Document updated from v1.0 to v1.1
+  - ~450 words added
+
+- **YAML Frontmatter Standardization** (shared-appendices 5810744): Added frontmatter to Appendices M and N
+  - All 14 shared appendices now have consistent YAML frontmatter (author, date, description, keywords, ai-instruction)
+  - Maintains consistency with Bible chapter structure
+
+### Changed
+
+- **Bible wordcounts** (bible 48520d2): Core manuscript increased from ~78,000 to ~82,300 words
+  - Chapter 10: ~13,076 → ~14,026 words
+  - Chapter 11: ~6,773 → ~7,873 words
+  - Chapter 12: ~11,468 → ~13,868 words
+
+- **Appendices wordcounts** (shared-appendices 5810744): Total increased from ~58,600 to ~61,600 words
+  - Appendix M: ~5,000 → ~5,450 words
+  - Appendix N: ~3,000 words (new)
+
+- **Main repository documentation**: Updated README.md to reflect 13 appendices (was 12)
+
+### Integration Strategy
+
+- Patterns from "Don't Make AI Think" (practical guide) integrated into "The Bible" (comprehensive guide)
+- Bible provides conceptual framework with full examples
+- Don't Make AI Think remains focused on tactical implementation
+- No unnecessary duplication - content adapted to Bible's voice and depth
+- Clear distinction maintained: Bible = why/what, Don't Make AI Think = how/quickly
+
+### Submodule Updates
+
+- **packages/bible**: Updated to commit 48520d2 (pattern integration across Chapters 10, 11, 12)
+- **packages/shared-appendices**: Updated to commit 5810744 (Appendix N creation, Appendix M enhancement, YAML frontmatter standardization)
+
+### Cross-Project Consistency
+
+- New terminology documented in Appendix M Section 20 (Terminology Framework)
+- Bible remains authoritative source for all terminology and patterns
+- All markdown linting checks pass for modified files
+
 ## [2026-01-22a] - Markdown Linting and Schema.org Documentation Enhancement
 
 ### Added
