@@ -157,7 +157,7 @@ packages/bible/
 packages/dont-make-ai-think/
 ├── chapters/
 │   ├── metadata.yaml              # PDF generation metadata
-│   ├── 00-cover.md                # Cover page
+│   ├── 0-cover.md                 # Cover page
 │   ├── preface.md                 # Book preface
 │   ├── chapter-01-*.md through chapter-11-*.md
 │   └── CHAPTERS-GUIDE.md          # Chapter navigation guide
@@ -176,7 +176,7 @@ packages/dont-make-ai-think/
 packages/mx-handbook/
 ├── chapters/
 │   ├── metadata.yaml              # PDF generation metadata
-│   ├── 00-cover.md                # Cover page
+│   ├── 0-cover.md                 # Cover page
 │   ├── preface.md                 # Book preface
 │   ├── chapter-01-*.md through chapter-11-*.md
 │   └── CHAPTERS-GUIDE.md          # Chapter navigation guide

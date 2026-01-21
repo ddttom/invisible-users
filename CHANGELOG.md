@@ -128,7 +128,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Copied and rebranded from dont-make-ai-think structure
   - 11 chapters + preface + CHAPTERS-GUIDE.md
   - Updated all branding:
-    - Cover page (00-cover.md): "MX-The Handbook"
+    - Cover page (0-cover.md, formerly 00-cover.md): "MX-The Handbook"
     - README.md: Complete rebranding with MX build commands
     - metadata.yaml: Title updated for Pandoc generation
     - All chapter YAML frontmatter: `book: "MX-The Handbook"`
@@ -747,7 +747,7 @@ These permissions eliminate repetitive approval prompts for multi-repo automatio
 
 - **PDF generation scripts** (main repository)
   - Updated all four dont-make-ai-think PDF scripts (generate, kindle, simple, all)
-  - New file order: 00-cover.md → preface.md → chapter-*.md → CHAPTERS-GUIDE.md
+  - New file order: 0-cover.md (formerly 00-cover.md) → preface.md → chapter-*.md → CHAPTERS-GUIDE.md
   - Added universal footer: "Early Draft - Commercial Work - Do Not Distribute"
   - Updated chapter glob to include all 11 chapters
 
