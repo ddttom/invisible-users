@@ -100,16 +100,17 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has SEVEN git repositories (1 main hub + 6 submodules). File paths depend on your location.**
+**This workspace has EIGHT git repositories (1 main hub + 7 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 6):**
+- **Submodules (ASSETS, currently 7):**
   - **Outputs (PRIVATE):** `outputs/` → `invisible-users-outputs` - All generated content
   - **Bible:** `packages/bible/` → `invisible-users-bible` - Full book manuscript
   - **Slim:** `packages/dont-make-ai-think/` → `invisible-users-slim` - Practical guide
+  - **MX Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Rebranded practical guide
   - **Appendices:** `packages/shared-appendices/` → `invisible-users-appendices` - Shared resources
   - **Code:** `packages/shared-code-examples/` → `invisible-users-code-examples` - Pattern examples
   - **UCP:** `packages/ucp/` → `Universal-Commerce-Protocol/ucp` - Ecommerce standard for AI agents (**READ-ONLY REFERENCE**)
@@ -141,6 +142,7 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 ├── books/                            ← Symlinks for convenience
 │   ├── bible → ../packages/bible
 │   ├── dont-make-ai-think → ../packages/dont-make-ai-think
+│   ├── mx-handbook → ../packages/mx-handbook
 │   ├── appendices → ../packages/shared-appendices
 │   ├── code-examples → ../packages/shared-code-examples
 │   └── outputs → ../outputs
@@ -156,6 +158,11 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │   └── ${MAIN_REPO}/packages/dont-make-ai-think/
 │   │       ├── chapters/             ← 10 chapter markdown files
 │   │       ├── README.md             ← Slim book README
+│   │       └── NO .claude/ directory
+│   ├── mx-handbook/                  ← SUBMODULE (git repo)
+│   │   └── ${MAIN_REPO}/packages/mx-handbook/
+│   │       ├── chapters/             ← 11 chapter markdown files
+│   │       ├── README.md             ← MX Handbook README
 │   │       └── NO .claude/ directory
 │   ├── shared-appendices/            ← SUBMODULE (git repo)
 │   │   └── ${MAIN_REPO}/packages/shared-appendices/
@@ -227,6 +234,7 @@ Multiple books from modular repositories:
 
 - **"The Invisible Users"** (The Bible) - `packages/bible/` - Full 13-chapter guide (~78,000 words + shared appendices)
 - **"Don't Make AI Think"** (Slim) - `packages/dont-make-ai-think/` - 11-chapter practical guide with business justification
+- **"MX-The Handbook"** - `packages/mx-handbook/` - Practical implementation guide for developers and designers (rebranded from "Don't Make AI Think")
 - **Shared Appendices** - `packages/shared-appendices/` - 12 appendices (A-L) shared across all books
 - **Shared Code Examples** - `packages/shared-code-examples/` - Good vs bad pattern implementations
 - **Universal Commerce Protocol** - `packages/ucp/` - Open standard demonstrating AI agent ecommerce interactions
@@ -237,7 +245,7 @@ Multiple books from modular repositories:
 
 **CRITICAL WRITING REQUIREMENT - Timeless Manuscript Rule:**
 
-Book manuscript files (.md files in `packages/bible/chapters/`, `packages/dont-make-ai-think/chapters/`, `packages/shared-appendices/`, `docs/shared-chapters/`) must be written as if they've always existed.
+Book manuscript files (.md files in `packages/bible/chapters/`, `packages/dont-make-ai-think/chapters/`, `packages/mx-handbook/chapters/`, `packages/shared-appendices/`, `docs/shared-chapters/`) must be written as if they've always existed.
 
 **NEVER include:**
 
@@ -297,11 +305,13 @@ UCP embodies the convergence principle from the book - patterns that work for AI
 │   ├── bible → ../packages/bible
 │   ├── code-examples → ../packages/shared-code-examples
 │   ├── dont-make-ai-think → ../packages/dont-make-ai-think
+│   ├── mx-handbook → ../packages/mx-handbook
 │   └── outputs → ../outputs
 ├── outputs/                  # Generated content (git submodule - PRIVATE)
 ├── packages/                 # Book manuscripts and tools
 │   ├── bible/                # The Bible (git submodule)
 │   ├── dont-make-ai-think/   # Slim book (git submodule)
+│   ├── mx-handbook/          # MX Handbook (git submodule)
 │   ├── shared-appendices/    # Shared appendices (git submodule)
 │   ├── shared-code-examples/ # Pattern examples (git submodule)
 │   ├── ucp/                  # Universal Commerce Protocol (git submodule)

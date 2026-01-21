@@ -16,3 +16,6 @@
 [submodule "packages/ucp"]
 	path = packages/ucp
 	url = https://github.com/Universal-Commerce-Protocol/ucp
+[submodule "packages/mx-handbook"]
+	path = packages/mx-handbook
+	url = https://github.com/Digital-Domain-Technologies-Ltd/MX-The-Handbook.git
