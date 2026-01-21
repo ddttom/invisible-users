@@ -100,13 +100,13 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has EIGHT git repositories (1 main hub + 7 submodules). File paths depend on your location.**
+**This workspace has NINE git repositories (1 main hub + 8 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 7):**
+- **Submodules (ASSETS, currently 8):**
   - **Outputs (PRIVATE):** `outputs/` → `invisible-users-outputs` - All generated content
   - **Bible:** `packages/bible/` → `invisible-users-bible` - Full book manuscript
   - **Slim:** `packages/dont-make-ai-think/` → `invisible-users-slim` - Practical guide
@@ -116,6 +116,9 @@ pwd
   - **UCP:** `packages/ucp/` → `Universal-Commerce-Protocol/ucp` - Ecommerce standard for AI agents (**READ-ONLY REFERENCE**)
     - Role: External reference material demonstrating practical application
     - DO NOT modify this submodule - it is maintained by the UCP project
+  - **Notes (READ-ONLY):** `packages/notes/` → `Notes` - Development notes, coding standards, and architectural guidelines (**READ-ONLY REFERENCE**)
+    - Role: Coding standards and development practices reference
+    - DO NOT modify this submodule - it is maintained separately
   - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md)
 
 ### Repository Navigation Map
@@ -184,6 +187,15 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       ├── README.md             ← UCP overview
 │   │       └── NO .claude/ directory
 │   │       Note: Universal Commerce Protocol - standardized ecommerce API for AI agents
+│   ├── notes/                        ← SUBMODULE (git repo) - READ-ONLY REFERENCE
+│   │   └── ${MAIN_REPO}/packages/notes/
+│   │       ├── .claude/              ← Claude Code configuration
+│   │       ├── Starter.md            ← Coding standards and project setup
+│   │       ├── Vibe coding backend.md ← Backend architecture guidelines
+│   │       ├── Things to avoid.md    ← UI/UX anti-patterns for AI
+│   │       ├── README.md             ← Notes README
+│   │       └── Other development guidelines
+│   │       Note: Development notes and coding standards (READ-ONLY for AI assistants unless explicitly authorized)
 │   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
 │       ├── src/                      ← Tool source code
 │       ├── test/                     ← Test files
@@ -409,37 +421,55 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 **Important exceptions:**
 
 - **Skill files:** Never fix markdown linting issues in `.claude/skills/` files (excluded from linting via `--ignore .claude` flag)
-- **Files with YAML frontmatter (MD025):** ANY markdown file with YAML frontmatter (in any directory - blogs, chapters, docs, etc.) may trigger MD025 warnings. When the YAML `title` field is used for metadata only (stripped during processing and NOT displayed as a heading), the first content heading MUST be H1 (#). Markdown linters may incorrectly flag this as "multiple H1s" - this is expected and correct for files where frontmatter is processed but not rendered as content.
 
 ## Markdown Metadata (Pandoc YAML Frontmatter)
 
 **CRITICAL:** This repository uses Pandoc YAML frontmatter for markdown metadata—the universal standard across Hugo, Jekyll, Gatsby, Quarto, and Pandoc.
 
-**Example:**
+### CRITICAL PRINCIPLE: Avoid Title Duplication
+
+If your markdown content has an H1 heading (`# Title`), do NOT include a `title:` field in the YAML frontmatter. This is redundant duplication. Choose ONE approach:
+
+#### Option 1: H1 in content (PREFERRED for most documents)
+
+```yaml
+---
+author: "Tom Cranstoun"
+date: "2024-12-15"
+description: "Introduction to AI agents and their role as website visitors"
+keywords: [ai-agents, web-accessibility, metadata]
+ai-instruction: "Instructions for AI agents parsing this document"
+---
+
+# Chapter 0: What Are AI Agents?
+
+Content starts here...
+```
+
+#### Option 2: Title in frontmatter only (for special build processes)
 
 ```yaml
 ---
 title: "Chapter 0: What Are AI Agents?"
 author: "Tom Cranstoun"
 date: "2024-12-15"
-description: "Introduction to AI agents and their role as website visitors"
-keywords: [ai-agents, web-accessibility, metadata]
-ai-instruction: "Instructions for AI agents parsing this document"
-purpose: "Educational content introducing AI agents concept"
 ---
+
+## First Section
+
+Content with no H1 (frontmatter title is used instead)...
 ```
 
-**YAML Frontmatter Processing:**
+#### When to use each approach
 
-YAML frontmatter is processed differently depending on the build system:
+1. **H1 in content (no title in frontmatter):** Most markdown documents, blog posts, chapters, documentation
+   - Content is self-contained and readable without processing
+   - Avoids MD025 "multiple H1s" warnings
+   - Single source of truth for the document title
 
-1. **Metadata only (stripped from output):** When frontmatter is used purely for HTML meta tags, page titles, or build system configuration, it is NOT rendered as visible content. In these cases:
-   - The YAML `title` field becomes HTML `<title>` and meta tags
-   - The first content heading MUST be H1 (#)
-   - Markdown linters may incorrectly flag MD025 (multiple H1s) - this is expected
-   - Common in: blog posts, generated HTML pages, static site generators
-
-2. **Included in output:** Some build processes (like Pandoc for PDFs) may include frontmatter data in the output. Context determines usage.
+2. **Title in frontmatter only:** Special cases like Pandoc book generation where frontmatter is rendered into cover pages or chapter headings
+   - Used in: `packages/bible/chapters/`, `packages/mx-handbook/chapters/` (for PDF generation)
+   - Build process renders frontmatter title as part of the document structure
 
 **When you encounter YAML frontmatter:**
 
