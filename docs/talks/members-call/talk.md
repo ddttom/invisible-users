@@ -30,7 +30,7 @@ AI agents are called "invisible users" for two reasons:
 
 Not theoretical futures - happening today.
 
-Same failures affect screen reader users (invisible to designers for 27 years).
+Same failures affect screen reader users (invisible to designers for many years).
 
 Visual feedback invisible to AI agents AND blind users.
 
@@ -122,7 +122,7 @@ This wasn't a reasoning failure. The AI didn't think £203,000 was reasonable. T
 - LLM Optimizer forks bot vs human experiences (WRONG approach)
 - Bots see different pages than browser-based agents see
 - Solution: Fix HTML for everyone together, not separate bot experiences
-- We are 27 years behind the times - should have fixed this for accessibility
+- We are many years behind the times - should have fixed this for accessibility
 
 **Two real production mistakes...**
 

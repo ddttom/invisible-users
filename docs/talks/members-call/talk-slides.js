@@ -4,12 +4,12 @@
  * @title       The Invisible Users: Designing the Web for AI Agents and Everyone Else
  * @author      Tom Cranstoun
  * @date        2026-01-21
- * @version     2.6.0
+ * @version     2.7.0
  * @description Google Apps Script to generate themed 20-minute presentation deck
  * @audience    Business leaders (CTOs, product owners)
  * @duration    20 minutes + Q&A
- * @slides      28 slides with themed layout (dark grey/cobalt blue/neon red)
- * @changes     v2.6.0 - Added Ally McBeal case study, pricing JSON-LD example, Anthropic Cowork agentic era slide
+ * @slides      25 slides with themed layout (dark grey/cobalt blue/neon red)
+ * @changes     v2.7.0 - Updated to match final PowerPoint presentation (25 slides, condensed Ally McBeal, removed Cowork slide, reorganized agent types)
  * @usage       Run createInvisibleUsersDeck() in Google Apps Script editor
  */
 
@@ -68,13 +68,44 @@ function createInvisibleUsersDeck() {
         "1. Invisible to site owners - blend into analytics, come once and leave",
         "2. Interface is invisible to them - can't see animations, color, toasts, spinners",
         "Not theoretical futures - happening today",
-        "Same failures affect screen reader users (invisible to designers for 27 years)",
+        "Same failures affect screen reader users (invisible to designers for many years)",
         "Visual feedback invisible to AI agents AND blind users",
         "Sites that work get preferred by both - first-mover advantage that's hard to claw back"
       ]
     },
 
-    // 3. The Agent Journey
+    // 3. Who Are The Invisible Users?
+    {
+      type: 'standard',
+      title: "Who Are The Invisible Users?",
+      subtitle: "AI Agents You Can't See or Track",
+      body: [
+        "Most companies don't track AI bot traffic",
+        "Some prohibit AI bots (robots.txt), some block them (Cloudflare Identity checks)",
+        "Modern AI browsers DO identify as bots (ChatGPT, BrowserOps, Comet, Neo, DIA)",
+        "BUT: User-Agent strings cannot be trusted",
+        "Some agents are browser extensions, others are Playwright-driven automation",
+        "Site owners can no longer reliably tell what is human, what is AI"
+      ]
+    },
+
+    // 4. Five Types of AI Agents
+    {
+      type: 'standard',
+      title: "Five Types of AI Agents",
+      subtitle: "Different Technical Constraints",
+      body: [
+        "Server-Side (ChatGPT, Claude) - Cannot see JavaScript/CSS, need semantic HTML",
+        "In-Browser (Copilot, extensions) - See rendered pages, need explicit state in DOM",
+        "Browser Automation (Perplexity, Playwright) - Full browser control + screenshots",
+        "Local/On-Device (Ollama) - Run on user's PC, limited context windows",
+        "Agentic OS (Cowork) - Orchestrates multiple agents in unified environment",
+        "Each type has different capabilities - but ALL need semantic structure",
+        "Understanding constraints helps you design solutions that work for all"
+      ]
+    },
+
+    // 5. The Agent Journey
     {
       type: 'standard',
       title: "The Agent Journey",
@@ -91,7 +122,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 4. Opening Hook - MERGED Adobe Insights + Cruise Error
+    // 6. Opening Hook - MERGED Adobe Insights + Cruise Error
     {
       type: 'highlight',
       title: "The AI Referral Surge and The £203,000 Mistake",
@@ -111,7 +142,7 @@ function createInvisibleUsersDeck() {
       footer: "From experimental to revenue driver - but errors have consequences."
     },
 
-    // 5. What Caused The £203,000 Error?
+    // 7. What Caused The £203,000 Error?
     {
       type: 'standard',
       title: "What Caused This?",
@@ -127,48 +158,17 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 6. Who Are The Invisible Users?
-    {
-      type: 'standard',
-      title: "Who Are The Invisible Users?",
-      subtitle: "AI Agents You Can't See or Track",
-      body: [
-        "Most companies don't track AI bot traffic",
-        "Some prohibit AI bots (robots.txt), some block them (Cloudflare Identity checks)",
-        "Modern AI browsers DO identify as bots (ChatGPT, BrowserOps, Comet, Neo, DIA)",
-        "BUT: User-Agent strings cannot be trusted",
-        "Some agents are browser extensions, others are Playwright-driven automation",
-        "Site owners can no longer reliably tell what is human, what is AI"
-      ]
-    },
-
-    // 7. NEW: Four Types of AI Agents
-    {
-      type: 'standard',
-      title: "Four Types of AI Agents",
-      subtitle: "Different Technical Constraints",
-      body: [
-        "Server-Side (ChatGPT, Claude) - Cannot see JavaScript/CSS, need semantic HTML",
-        "In-Browser (Copilot, extensions) - See rendered pages, need explicit state in DOM",
-        "Browser Automation (Perplexity, Playwright) - Full browser control + screenshots",
-        "Local/On-Device (Ollama) - Run on user's PC, limited context windows",
-        "Each type has different capabilities - but ALL need semantic structure",
-        "Understanding constraints helps you design solutions that work for all"
-      ]
-    },
-
     // 8. Why Current Systems Fail
     {
       type: 'standard',
       title: "Why Current Systems Fail",
-      subtitle: "The Markup Problem",
+      subtitle: "We are many years behind the times - should have fixed this for accessibility",
       body: [
         "Modern CMS creates divs without semantic meaning",
         "Content served as plain HTML - JavaScript decorates it later",
         "Example: Adobe's LLM Optimizer detects bots and forks experiences (understandable but suboptimal)",
         "Bots see different pages than browser-based agents see",
-        "Solution: Fix HTML for everyone together, not separate bot experiences",
-        "We are 27 years behind the times - should have fixed this for accessibility"
+        "Solution: Fix HTML for everyone together, not separate bot experiences"
       ]
     },
 
@@ -187,7 +187,20 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 10. Mistake #2
+    // 10. Real-World Consequences: The Ally McBeal Case
+    {
+      type: 'standard',
+      title: "Real-World Consequences: The Ally McBeal Case",
+      subtitle: "When metadata fails, AI agents hallucinate dangerously",
+      body: [
+        "Lawyers caught citing fictional cases in court",
+        "AI agents confused Ally McBeal TV scripts with legal precedents",
+        "Without proper microdata/metadata distinguishing entertainment from legal docs",
+        "Agents fabricate details that seem plausible but are dangerously incorrect"
+      ]
+    },
+
+    // 11. Mistake #2
     {
       type: 'standard',
       title: "Mistake #2: Hidden Checkout State",
@@ -200,7 +213,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 11. Why This Happens
+    // 12. Why This Happens
     {
       type: 'standard',
       title: "Why This Happens",
@@ -214,22 +227,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 11a. NEW: Ally McBeal Story - Real-World Metadata Failure
-    {
-      type: 'standard',
-      title: "Real-World Consequences: The Ally McBeal Case",
-      subtitle: "When metadata fails, AI agents hallucinate dangerously",
-      body: [
-        "Lawyers caught citing fictional cases in court",
-        "AI agents confused Ally McBeal TV scripts with legal precedents",
-        "Without proper microdata/metadata distinguishing entertainment from legal docs",
-        "Agents fabricate details that seem plausible but are dangerously incorrect",
-        "Same problem affects pricing, product specs, contact info",
-        "Solution: Proper metadata (Schema.org, semantic HTML) prevents these errors"
-      ]
-    },
-
-    // 12. The Gap
+    // 13. The Gap
     {
       type: 'standard',
       title: "Two HTML States: The Gap",
@@ -244,36 +242,35 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 13. Myth vs Reality - Markdown
+    // 14. Myth vs Reality - Markdown
     {
       type: 'standard',
       title: "Myth vs Reality: Why Markdown Fails",
-      subtitle: "Common Misconception About AI Content",
+      subtitle: "Common Misconception About AI ContentContext is data - don't make agents think, give them facts",
       body: [
-        "MYTH: 'Send markdown to LLMs for clean parsing'",
+        "MYTH: 'Send markdown to LLMs for clean parsing' – brilliant for Chatbots",
         "REALITY: Markdown STRIPS all metadata and context",
         "What gets lost: Schema.org markup, JSON-LD, semantic HTML, ARIA attributes",
         "Agents need enriched HTML, not stripped-down markdown",
-        "Context is data - don't make agents think, give them facts",
         "Solution: Enriched HTML with Schema.org + JSON-LD + semantic structure"
       ]
     },
 
-    // 14. The Solution
+    // 15. The Solution
     {
       type: 'standard',
       title: "The Solution",
       subtitle: "Make Implicit State Explicit",
       body: [
-        "No rebuilding interfaces",
+        "No rebuilding interfaces in JS",
         "No special agent-only experiences",
-        "Small, well-understood changes",
+        "Make lots of small, well-understood changes",
         "Improve accessibility for everyone",
-        "Three concrete patterns with code and business value"
+        "The patterns that add business value, follows"
       ]
     },
 
-    // 15. Pattern 1
+    // 16. Pattern 1
     {
       type: 'standard',
       title: "Pattern #1: Persistent Errors",
@@ -286,7 +283,19 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 16. Pattern 2
+    // 17. Complete Pricing Example - JSON-LD with Breakdown
+    {
+      type: 'standard',
+      title: "Complete Pricing: JSON-LD Example",
+      subtitle: "Machine-readable pricing with full cost breakdown, does not change human UI",
+      body: [
+        '{ "@type": "Product", "name": "Laptop", "offers": {  "@type": "Offer", "price": "999.99", "priceCurrency": "GBP",  "priceSpecification": [    { "@type": "UnitPriceSpecification", "price": "899.99", "name": "Base Price" },    { "@type": "DeliveryChargeSpecification", "price": "50.00", "name": "Delivery" },    { "@type": "PaymentChargeSpecification", "price": "50.00", "name": "Commission" }  ]}',
+        "Agents can now extract: Base price + Delivery + Commission = Total",
+        "Same data powers voice assistants for blind users"
+      ]
+    },
+
+    // 18. Pattern 2
     {
       type: 'standard',
       title: "Pattern #2: Complete Pricing",
@@ -300,25 +309,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 16a. NEW: Complete Pricing Example - JSON-LD with Breakdown
-    {
-      type: 'standard',
-      title: "Complete Pricing: JSON-LD Example",
-      subtitle: "Machine-readable pricing with full cost breakdown",
-      body: [
-        '{ "@type": "Product", "name": "Laptop", "offers": {',
-        '  "@type": "Offer", "price": "999.99", "priceCurrency": "GBP",',
-        '  "priceSpecification": [',
-        '    { "@type": "UnitPriceSpecification", "price": "899.99", "name": "Base Price" },',
-        '    { "@type": "DeliveryChargeSpecification", "price": "50.00", "name": "Delivery" },',
-        '    { "@type": "PaymentChargeSpecification", "price": "50.00", "name": "Commission" }',
-        '  ] } }',
-        "Agents can now extract: Base price + Delivery + Commission = Total",
-        "Same data powers voice assistants for blind users"
-      ]
-    },
-
-    // 17. Pattern 3
+    // 19. Pattern 3
     {
       type: 'standard',
       title: "Pattern #3: Explicit State",
@@ -331,7 +322,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 18. Small Business Case
+    // 20. Small Business Case
     {
       type: 'standard',
       title: "Small Business Case",
@@ -345,7 +336,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 19. Quick Wins
+    // 21. Quick Wins
     {
       type: 'standard',
       title: "Quick Wins: Start Here",
@@ -359,7 +350,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 20. NEW: Machine Experience (MX)
+    // 22. Machine Experience (MX)
     {
       type: 'standard',
       title: "Machine Experience (MX): A New Discipline",
@@ -370,11 +361,11 @@ function createInvisibleUsersDeck() {
         "When 'everyone's responsible,' accountability vanishes (diffusion of responsibility)",
         "MX specialists define agent-readability standards, audit implementations",
         "Can expand existing accessibility roles - technical patterns overlap substantially",
-        "Executive commitment essential - this requires organizational change, not just tech fixes"
+        "Executive commitment essential - this requires organization change, not just tech fix"
       ]
     },
 
-    // 21. Why This Matters Now - The 7-Day Platform Race
+    // 23. Why This Matters Now - The 7-Day Platform Race
     {
       type: 'standard',
       title: "Why This Matters Now: The Seven-Day Platform Race",
@@ -383,20 +374,19 @@ function createInvisibleUsersDeck() {
         "Jan 5: Amazon Alexa+ (browser agent launch)",
         "Jan 8: Microsoft Copilot Checkout (proprietary)",
         "Jan 11: Google Universal Commerce Protocol (open standard, like ACP)",
-        "Timeline compressed: 12 months → 6-9 months or LESS to mainstream",
+        "Timeline compressed: 12-24 months → 6-9 months or LESS to mainstream",
         "Agent commerce is now infrastructure, not experimental",
-        "Designers/Devs must ensure agents navigate successfully",
         "Sites that adapt early gain first-mover advantage"
       ]
     },
 
-    // 22. Convergence Principle - The Headline Message
+    // 24. Convergence Principle - The Headline Message
     {
       type: 'standard',
       title: "One Solution Serves Everyone: The Convergence Principle",
       subtitle: "This is the key insight",
       body: [
-        "What machines need = What disabled users have needed for 27 years",
+        "What machines need = What disabled users have needed for many years",
         "No trade-offs between accessibility and AI readiness",
         "Fix HTML for everyone together, not separate bot experiences",
         "First-mover advantage for sites that implement patterns now",
@@ -406,27 +396,7 @@ function createInvisibleUsersDeck() {
       ]
     },
 
-    // 22a. NEW: Anthropic's Cowork - The Agentic Era Begins
-    {
-      type: 'highlight',
-      title: "The Agentic Era: Anthropic's Claude Cowork",
-      subtitle: "From Chatbot to Digital Colleague (January 2026)",
-      body: [
-        "Jan 12, 2026: Anthropic launches Claude Cowork research preview",
-        "First truly autonomous digital colleague - manages files, orchestrates workflows",
-        "Multi-agent architecture: Claude 4 Opus leads, Claude 4.5 Sonnet executes sub-tasks",
-        "Built in 1.5 weeks using Claude Code itself",
-        "Now available to $20/month Pro subscribers",
-        "This IS the agentic era - agents are already coworkers, not just assistants"
-      ],
-      highlightBox: {
-        title: "1.5 weeks",
-        text: "to build Cowork\nusing Claude Code"
-      },
-      footer: "The shift from passive assistant to active agent is complete."
-    },
-
-    // 23. Book & Contact
+    // 25. Book & Contact
     {
       type: 'title',
       title: "Book & Contact",

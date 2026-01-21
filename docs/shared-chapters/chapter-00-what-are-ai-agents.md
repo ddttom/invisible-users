@@ -34,7 +34,11 @@ Then I had an epiphany, inspired by Steve Krug's famous book "Don't Make Me Thin
 
 ## The Problem Emerges
 
-When researching Danube river cruises from Germany to Croatia in late 2024, I asked Claude for Chrome to find options. One result quoted a price of £203,000 for a one-week cruise. The AI lacked guardrails to recognise this obviously incorrect figure. The problem was European currency formatting - which uses commas and dots differently from British conventions - had been misinterpreted, throwing the price off by a factor of 100. The actual price was £2,030. The metadata on pricing hadn't specified currency correctly, and the AI couldn't sort or reason about prices sensibly.
+These failures matter commercially. Adobe's Holiday 2025 data reveals the scale of transformation underway: AI referrals surged dramatically (Retail +700%, Travel +500%), whilst conversion rates flipped from AI referrals lagging behind human traffic to leading by 30%. AI-referred users spend 50% longer on sites and view more pages than direct visitors. The technology has moved from experimental to revenue driver in a single quarter.
+
+When researching Danube river cruises from Germany to Croatia in late 2024, I asked Claude for Chrome to find options. One result quoted a price of £203,000 for a one-week cruise. The AI lacked guardrails to recognise this obviously incorrect figure. The problem was European currency formatting - which uses commas and dots differently from British conventions - had been misinterpreted, throwing the price off by a factor of 100. The actual price was £2,030.
+
+This error reveals a complete failure of validation: decimal separator confusion (€2.030,00 vs £2,030), no range validation (£203,000 exceeds £15,000 maximum cruise prices), no comparative checks (58 times higher than peer cruises), no cross-referencing against structured data, no confidence scoring, AI reformatting that masked the problem, and the error presented with the same confidence as verified data. Had an autonomous agent auto-booked this cruise, the financial consequences would have been severe. The metadata on pricing hadn't specified currency correctly, and the AI couldn't sort or reason about prices sensibly.
 
 This wasn't an isolated incident. Lawyers have been caught citing fictional cases in court because AI agents confused Ally McBeal television scripts with legal precedents. Court opinions should use Schema.org Article type with `genre="Judicial Opinion"` and `articleSection="Case Law"`, whilst TV shows should use TVEpisode type with `genre="Legal Drama"` and `partOfSeries` markup. Without this Schema.org differentiation - particularly when fan sites publish TV transcripts without proper `@type` markup - content appears identical to AI agents. They cannot distinguish fiction from fact, fabricating details that seem plausible but are dangerously incorrect.
 
@@ -46,11 +50,13 @@ These failures matter commercially. When agents cannot cite you accurately, they
 
 This situation parallels web accessibility in a striking way. For years, the industry has discussed making web pages accessible to disabled users, with laws and documentation supporting this goal. Yet implementation remains poor. Because users with disabilities represent a relatively small proportion of total visitors, organisations pay lip service to compliance, add some alt text, pass a few tests, and declare themselves accessible.
 
-Now there's a new class of user - the invisible users. These are AI agents visiting your website and performing actions without your awareness. Most companies don't track AI bot traffic. Some prohibit AI bots entirely through robots.txt directives or block them using services like Cloudflare Identity checks. Modern AI browsers (ChatGPT, BrowserOps, Comet, Strawberry, Neo, DIA) do identify themselves as bots in their User-Agent strings, but these strings cannot be trusted - they're trivially spoofed by any developer.
+Now there's a new class of user - the invisible users. They're called "invisible" for two reasons: they're invisible to site owners (blending into analytics, coming once and leaving) and the interface is invisible to them (they cannot see animations, colour, toast notifications, or loading spinners). These are AI agents visiting your website and performing actions without your awareness. The same failures that affect AI agents have affected screen reader users for many years - invisible to designers who optimised for visual feedback alone. Sites that work for both audiences early gain first-mover advantage that competitors find difficult to claw back.
+
+Most companies don't track AI bot traffic. Some prohibit AI bots entirely through robots.txt directives or block them using services like Cloudflare Identity checks. Modern AI browsers (ChatGPT, BrowserOps, Comet, Strawberry, Neo, DIA) do identify themselves as bots in their User-Agent strings, but these strings cannot be trusted - they're trivially spoofed by any developer.
 
 Some agents operate as browser extensions running alongside human users. Others are Playwright-driven automation frameworks controlled by AI scripts. Some are AI browsers accessing sites directly. Site owners can no longer reliably distinguish between human visitors and AI agents. The traffic looks identical in analytics, but the visitor's capabilities and limitations differ fundamentally.
 
-People are building agents that monitor Slack channels for commands, then execute web actions autonomously and report back. These capabilities are expanding rapidly. In January 2026, Google, Microsoft, and Amazon all launched purchasing functionality within days of each other. Agent-mediated commerce has moved from experiment to platform strategy.
+People are building agents that monitor Slack channels for commands, then execute web actions autonomously and report back. These capabilities are expanding rapidly. In January 2026, three major platforms launched agent commerce systems within a single week: Amazon Alexa+ (browser agent launch, 5 January), Microsoft Copilot Checkout (proprietary, 8 January), and Google Universal Commerce Protocol (open standard, 11 January). The timeline compressed dramatically - what industry analysts predicted would take 12-24 months to reach mainstream adoption is now expected within 6-9 months or less. Agent-mediated commerce has moved from experiment to infrastructure.
 
 The shift from passive assistant to active agent is now complete. Anthropic's Claude Cowork, launched in January 2026, represents the first truly autonomous digital colleague - managing local file systems, orchestrating complex project workflows, and executing multi-step tasks without constant human prompting. Built on a multi-agent architecture where Claude 4 Opus acts as lead planner whilst Claude 4.5 Sonnet models handle parallel sub-tasks, the system operates as a coworker rather than a tool. Remarkably, the entire feature was built in approximately a week and a half using Claude Code itself. This is the agentic era: machines reading websites, comparing options, making recommendations, and completing purchases on behalf of humans.[^cowork]
 
@@ -80,13 +86,15 @@ The patterns that help AI agents are the same patterns that help users with disa
 
 **Explicit State:** Keyboard users need visible focus indicators. AI agents need `data-state` attributes in DOM. Both need state reflected in HTML, not just JavaScript variables.
 
+What machines need equals what disabled users have needed for many years. This is the inflection point - comparable to the ChatGPT launch in 2022 - where agent-mediated commerce transitions from experimental to infrastructure. Within two years, machines will read websites more frequently than humans. The convergence principle means one solution serves everyone: fix HTML for all audiences together, not separate bot experiences.
+
 ## The Solution - Fix the Source, Not the Model
 
 You cannot fix the million-plus models on Hugging Face, but you can fix the source - the internet itself, or at least your corner of it. The solution requires enriching HTML with proper metadata so AI agents don't have to guess or invent information.
 
 As the Ally McBeal example demonstrates, without proper metadata, an AI cannot distinguish between a television script and a legal document. Proper microdata and metadata prevent these errors. However, retrofitting the entire internet isn't feasible. The real value lies in going forward - properly structured pages help with live web search, improving sales and conversions that might otherwise be missed.
 
-This isn't a new concept. My colleague Janus Boye wrote about RDF (Resource Description Framework) 27 years ago, but nobody listened. Now there's a commercial imperative driving adoption.
+This isn't a new concept. My colleague Janus Boye wrote about RDF (Resource Description Framework) many years ago, but nobody listened. Now there's a commercial imperative driving adoption.
 
 One concern with current practices: the trend of converting web pages to markdown before sending them to AI agents. This process strips all metadata - pricing information, geographical context, document type indicators. It's dangerous. I'm proposing updates to the markdown specification to allow metadata inclusion in a way that's readable for humans but processable by AI.
 
@@ -112,9 +120,9 @@ Adobe recently released an "LLMoptimizer" tool that detects whether a page is be
 
 ### MX Requires Dedicated Roles
 
-Organisational psychology research demonstrates a consistent principle: when responsibility is shared across everyone, accountability evaporates. This phenomenon, known as diffusion of responsibility, shows that as group size increases, individual accountability decreases. Studies document this pattern clearly: 85% of individuals respond to emergencies when alone, but only 31% respond when four other people are present.[^responsibility]
+Just as quality needs dedicated QA engineers, Machine Experience needs dedicated roles. Organisational psychology research demonstrates a consistent principle: when responsibility is shared across everyone, accountability evaporates. This phenomenon, known as diffusion of responsibility, shows that as group size increases, individual accountability decreases. Studies document this pattern clearly: 85% of individuals respond to emergencies when alone, but only 31% respond when four other people are present.[^responsibility]
 
-The workplace manifestation is predictable. When "quality is everyone's responsibility," organisations may proclaim quality as a shared value but assign no one specific accountability for maintaining standards. Research across DevOps implementations confirms this pattern: whilst successful DevOps cultures spread quality awareness throughout teams, they simultaneously maintain dedicated QA engineers who focus specifically on defining quality standards, designing validation frameworks, and preventing defects before production deployment.[^devops-qa]
+The workplace manifestation is predictable. When "quality is everyone's responsibility," organisations may proclaim quality as a shared value but assign no one specific accountability for maintaining standards. When "everyone's responsible," accountability vanishes. Research across DevOps implementations confirms this pattern: whilst successful DevOps cultures spread quality awareness throughout teams, they simultaneously maintain dedicated QA engineers who focus specifically on defining quality standards, designing validation frameworks, and preventing defects before production deployment.[^devops-qa]
 
 MX follows the same organisational pattern. Whilst everyone should understand MX principles - just as everyone should understand security principles or accessibility guidelines - accountability must rest with specific roles. Without designated MX ownership, organisations default to reactive fixes rather than proactive design.
 
@@ -128,7 +136,7 @@ Successful organisations structure MX accountability clearly:
 
 **Executive Accountability:** Senior leadership assigns clear ownership for MX outcomes, provides resources for specialist roles, and tracks MX metrics alongside traditional performance indicators. Without executive commitment, MX specialists lack authority to influence architectural decisions.[^organizational]
 
-The convergence between MX and accessibility creates practical advantages: organisations can expand existing accessibility roles rather than create entirely new teams. A senior accessibility specialist who understands semantic HTML already possesses foundational MX knowledge. Adding Schema.org expertise, agent behaviour patterns, and metadata validation to their skill set creates an MX specialist without requiring separate headcount.
+The convergence between MX and accessibility creates practical advantages: organisations can expand existing accessibility roles rather than create entirely new teams. The technical patterns overlap substantially - both disciplines require semantic structure, explicit state, persistent feedback, and clear hierarchy. A senior accessibility specialist who understands semantic HTML already possesses foundational MX knowledge. Adding Schema.org expertise, agent behaviour patterns, and metadata validation to their skill set creates an MX specialist without requiring separate headcount.
 
 This approach works because the technical patterns overlap substantially. Both disciplines require semantic structure, explicit state, persistent feedback, and clear hierarchy. The difference lies in application: accessibility focuses on user outcomes (can screen reader users navigate?), whilst MX focuses on machine outcomes (can agents extract pricing accurately?).
 
@@ -161,7 +169,7 @@ Calling them "machines" instead of "AI assistants" or "intelligent agents" count
 
 I want to be clear about my stance on AI: I'm not complaining about these systems or highlighting edge cases like "How many R's in strawberry?" or users generating obvious junk. I genuinely praise AI for its remarkable ability to generate coherent text that people understand. The technology has achieved something extraordinary - statistical pattern-matching that produces human-readable responses across countless domains. My focus isn't on what's wrong with AI, but on what we can do to make it work better. When creators craft proper inputs (semantic HTML, structured metadata), provide quality training data, enable effective live searches, and implement appropriate guardrails, we get dramatically better results. Hallucinations decrease. Accuracy increases. Commerce transactions complete successfully. The solution isn't to criticize AI systems - it's to recognize that better-structured inputs produce better outputs for everyone: users, agents, and businesses alike.
 
-AI agents come in four forms, each with different capabilities:
+AI agents come in five forms, each with different capabilities:
 
 **Server-Side Agents (OpenAI ChatGPT, Anthropic Claude)** run on remote servers and process websites as raw text. They fetch HTML from URLs and parse text content and HTML structure, but cannot execute JavaScript or render CSS. They see raw HTML source code, text content, semantic structure, metadata, and link relationships. They miss JavaScript-rendered content, dynamic updates, toast notifications, visual hierarchy from CSS, and client-side state changes. Like a blind user with a basic screen reader that cannot execute JavaScript, they need semantic HTML and server-side rendering.
 
@@ -171,23 +179,25 @@ AI agents come in four forms, each with different capabilities:
 
 **Local Agents (Ollama, On-Device LLMs)** run on users' personal computers with limited resources. Similar to server-side agents, they use smaller models with limited context windows but offer faster response times and privacy-preserving operation. They see raw HTML but are limited to most important content due to token budget constraints. They miss everything server-side agents miss, plus may miss content due to smaller context windows. Like a user with cognitive disabilities who needs simple, clear structure, they cannot process excessive information.
 
+**Agentic Operating Systems (Anthropic Cowork)** orchestrate multiple agents in unified environments. These systems act as lead planners, distributing sub-tasks to specialized agents that run in parallel. They combine capabilities of other agent types - managing local file systems, executing browser automation, processing server-side content - whilst coordinating complex multi-step workflows. They see aggregated information from multiple agent types simultaneously but need semantic structure across all interaction points. Like a project manager coordinating a team with diverse abilities, they need consistent patterns that work reliably for all their constituent agents.
+
 ## The Agent Journey
 
 Your website has machine readers right now. People are asking ChatGPT about your products, using Copilot to compare your services, and running agents to check your availability.
 
 When AI agents interact with your website, they follow a predictable journey:
 
-**Stage 1: Discovery (LLM Training)** - Agents read websites during training to build knowledge about products, services, and businesses. If your content is JavaScript-rendered with no semantic markup, it's invisible to this training data. Your business doesn't exist in the agent's knowledge base.
+**Stage 1: Discovery (LLM Training)** - Agents read websites during training to build knowledge about products, services, and businesses. If your content is JavaScript-rendered with no semantic markup, it's invisible to this training data. If you're not in their knowledge base, you don't exist.
 
-**Stage 2: Citation (Recommendation)** - When users ask agents for recommendations, agents cite sources they trust. Without clear structured data (Schema.org JSON-LD), agents hallucinate details or skip your site entirely. Sites that work early gain first-mover advantage - agents return to sources that provided reliable information before.
+**Stage 2: Citation (Recommendation)** - When users ask agents for recommendations, agents cite sources they trust. Without clear structured data (Schema.org JSON-LD), agents hallucinate details or skip your site entirely. Agents recommend sources they trust - sites that work early gain first-mover advantage.
 
 **Stage 3: Search and Compare** - Agents build comparison lists, sort by features, and evaluate options. Without semantic HTML and explicit metadata, agents cannot understand what you offer or how you compare to competitors.
 
-**Stage 4: Price Understanding** - Agents need exact pricing to make recommendations. Without clear price markup, agents misunderstand costs by orders of magnitude. The Danube cruise example demonstrates this: a price of £2,030 was read as £203,000 - a 100x multiplication error from European decimal formatting.
+**Stage 4: Price Understanding** - Agents need exact pricing to make recommendations. Without clear price markup, agents misunderstand costs by orders of magnitude or skip you entirely. The Danube cruise example demonstrates this: a price of £2,030 was read as £203,000 - a 100x multiplication error from European decimal formatting.
 
-**Stage 5: Purchase Confidence** - If agents cannot see what buttons do (`<div class="btn">` vs `<button>`), they cannot complete transactions. If state changes are visual-only (no `data-state` attributes), agents cannot track checkout progress.
+**Stage 5: Purchase Confidence** - If agents cannot see what buttons do (`<div class="btn">` vs `<button>`), they cannot complete transactions. If state changes are visual-only (no `data-state` attributes), agents cannot track checkout progress. Can they complete checkout with confidence?
 
-At every stage, your website's structure determines success or failure. Discovery requires semantic HTML. Citation requires structured data. Confidence requires explicit state. Miss any stage, and the entire commerce journey breaks down.
+Miss any stage and the entire commerce chain breaks. Discovery requires semantic HTML. Citation requires structured data. Confidence requires explicit state. At every stage, your website's structure determines success or failure.
 
 ## What This Book Offers
 

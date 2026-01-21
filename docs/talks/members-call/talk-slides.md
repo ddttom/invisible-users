@@ -2,12 +2,12 @@
 title: "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 author: "Tom Cranstoun"
 date: "2026-01-21"
-version: "2.6.0"
+version: "2.7.0"
 description: "Google Apps Script themed 20-minute presentation deck"
 audience: "Business leaders (CTOs, product owners)"
 duration: "20 minutes + Q&A"
-estimated_presentation_time: "24-27 minutes"
-slides: 28
+estimated_presentation_time: "22-25 minutes"
+slides: 25
 theme:
   background: "#1C1C1C"
   header: "#0046B5"
@@ -16,7 +16,7 @@ theme:
   fonts:
     title: "Georgia"
     body: "Roboto"
-changes: "v2.6.0 - Added Ally McBeal case study, pricing JSON-LD example, Anthropic Cowork agentic era slide"
+changes: "v2.7.0 - Updated to match final PowerPoint presentation (25 slides, condensed Ally McBeal, removed Cowork slide, reorganized agent types)"
 ---
 
 # The Invisible Users Presentation - 20 Minutes
@@ -43,13 +43,40 @@ changes: "v2.6.0 - Added Ally McBeal case study, pricing JSON-LD example, Anthro
 - 1. Invisible to site owners - blend into analytics, come once and leave
 - 2. Interface is invisible to them - can't see animations, color, toasts, spinners
 - Not theoretical futures - happening today
-- Same failures affect screen reader users (invisible to designers for 27 years)
+- Same failures affect screen reader users (invisible to designers for many years)
 - Visual feedback invisible to AI agents AND blind users
 - Sites that work get preferred by both - first-mover advantage that's hard to claw back
 
 ---
 
-## Slide 3: The Agent Journey
+## Slide 3: Who Are The Invisible Users?
+
+**Subtitle:** AI Agents You Can't See or Track
+
+- Most companies don't track AI bot traffic
+- Some prohibit AI bots (robots.txt), some block them (Cloudflare Identity checks)
+- Modern AI browsers DO identify as bots (ChatGPT, BrowserOps, Comet, Neo, DIA)
+- BUT: User-Agent strings cannot be trusted
+- Some agents are browser extensions, others are Playwright-driven automation
+- Site owners can no longer reliably tell what is human, what is AI
+
+---
+
+## Slide 4: Five Types of AI Agents
+
+**Subtitle:** Different Technical Constraints
+
+- Server-Side (ChatGPT, Claude) - Cannot see JavaScript/CSS, need semantic HTML
+- In-Browser (Copilot, extensions) - See rendered pages, need explicit state in DOM
+- Browser Automation (Perplexity, Playwright) - Full browser control + screenshots
+- Local/On-Device (Ollama) - Run on user's PC, limited context windows
+- Agentic OS (Cowork) - Orchestrates multiple agents in unified environment
+- Each type has different capabilities - but ALL need semantic structure
+- Understanding constraints helps you design solutions that work for all
+
+---
+
+## Slide 5: The Agent Journey
 
 **Subtitle:** AI Agents Are Buying Things Right Now
 
@@ -64,7 +91,7 @@ changes: "v2.6.0 - Added Ally McBeal case study, pricing JSON-LD example, Anthro
 
 ---
 
-## Slide 4: The AI Referral Surge and The £203,000 Mistake
+## Slide 6: The AI Referral Surge and The £203,000 Mistake
 
 **Subtitle:** Adobe Holiday 2025 Data Meets Real-World Agent Failure
 
@@ -84,7 +111,7 @@ if auto-booked
 
 ---
 
-## Slide 5: What Caused This?
+## Slide 7: What Caused This?
 
 **Subtitle:** The Error Chain
 
@@ -98,42 +125,15 @@ if auto-booked
 
 ---
 
-## Slide 6: Who Are The Invisible Users?
-
-**Subtitle:** AI Agents You Can't See or Track
-
-- Most companies don't track AI bot traffic
-- Some prohibit AI bots (robots.txt), some block them (Cloudflare Identity checks)
-- Modern AI browsers DO identify as bots (ChatGPT, BrowserOps, Comet, Neo, DIA)
-- BUT: User-Agent strings cannot be trusted
-- Some agents are browser extensions, others are Playwright-driven automation
-- Site owners can no longer reliably tell what is human, what is AI
-
----
-
-## Slide 7: Four Types of AI Agents
-
-**Subtitle:** Different Technical Constraints
-
-- Server-Side (ChatGPT, Claude) - Cannot see JavaScript/CSS, need semantic HTML
-- In-Browser (Copilot, extensions) - See rendered pages, need explicit state in DOM
-- Browser Automation (Perplexity, Playwright) - Full browser control + screenshots
-- Local/On-Device (Ollama) - Run on user's PC, limited context windows
-- Each type has different capabilities - but ALL need semantic structure
-- Understanding constraints helps you design solutions that work for all
-
----
-
 ## Slide 8: Why Current Systems Fail
 
-**Subtitle:** The Markup Problem
+**Subtitle:** We are many years behind the times - should have fixed this for accessibility
 
 - Modern CMS creates divs without semantic meaning
 - Content served as plain HTML - JavaScript decorates it later
 - Example: Adobe's LLM Optimizer detects bots and forks experiences (understandable but suboptimal)
 - Bots see different pages than browser-based agents see
 - Solution: Fix HTML for everyone together, not separate bot experiences
-- We are 27 years behind the times - should have fixed this for accessibility
 
 ---
 
@@ -150,7 +150,18 @@ if auto-booked
 
 ---
 
-## Slide 10: Mistake #2: Hidden Checkout State
+## Slide 10: Real-World Consequences: The Ally McBeal Case
+
+**Subtitle:** When metadata fails, AI agents hallucinate dangerously
+
+- Lawyers caught citing fictional cases in court
+- AI agents confused Ally McBeal TV scripts with legal precedents
+- Without proper microdata/metadata distinguishing entertainment from legal docs
+- Agents fabricate details that seem plausible but are dangerously incorrect
+
+---
+
+## Slide 11: Mistake #2: Hidden Checkout State
 
 **Subtitle:** State Invisible to Agents:
 
@@ -161,7 +172,7 @@ if auto-booked
 
 ---
 
-## Slide 11: Why This Happens
+## Slide 12: Why This Happens
 
 **Subtitle:** Modern web design optimised for visual feedback:
 
@@ -173,21 +184,7 @@ if auto-booked
 
 ---
 
-## Slide 11a: Real-World Consequences: The Ally McBeal Case
-
-**Subtitle:** When metadata fails, AI agents hallucinate dangerously
-
-- Lawyers caught citing fictional Ally McBeal cases in real court proceedings
-- Court opinions should use: Article + genre="Judicial Opinion" + articleSection="Case Law"
-- TV shows should use: TVEpisode + genre="Legal Drama" + partOfSeries markup
-- Reality: Fan transcripts had no @type markup - appeared identical to court cases
-- AI couldn't distinguish fiction from fact without Schema.org differentiation
-- Same problem: Pricing errors (£203k), product specs, contact details
-- Solution: Proper Schema.org markup prevents hallucinations for all content types
-
----
-
-## Slide 12: Two HTML States: The Gap
+## Slide 13: Two HTML States: The Gap
 
 **Subtitle:** Critical Distinction:
 
@@ -200,32 +197,31 @@ if auto-booked
 
 ---
 
-## Slide 13: Myth vs Reality: Why Markdown Fails
+## Slide 14: Myth vs Reality: Why Markdown Fails
 
-**Subtitle:** Common Misconception About AI Content
+**Subtitle:** Common Misconception About AI ContentContext is data - don't make agents think, give them facts
 
-- MYTH: 'Send markdown to LLMs for clean parsing'
+- MYTH: 'Send markdown to LLMs for clean parsing' – brilliant for Chatbots
 - REALITY: Markdown STRIPS all metadata and context
 - What gets lost: Schema.org markup, JSON-LD, semantic HTML, ARIA attributes
 - Agents need enriched HTML, not stripped-down markdown
-- Context is data - don't make agents think, give them facts
 - Solution: Enriched HTML with Schema.org + JSON-LD + semantic structure
 
 ---
 
-## Slide 14: The Solution
+## Slide 15: The Solution
 
 **Subtitle:** Make Implicit State Explicit
 
-- No rebuilding interfaces
+- No rebuilding interfaces in JS
 - No special agent-only experiences
-- Small, well-understood changes
+- Make lots of small, well-understood changes
 - Improve accessibility for everyone
-- Three concrete patterns with code and business value
+- The patterns that add business value, follows
 
 ---
 
-## Slide 15: Pattern #1: Persistent Errors
+## Slide 16: Pattern #1: Persistent Errors
 
 **Subtitle:** Instead of vanishing toast notifications
 
@@ -236,7 +232,17 @@ if auto-booked
 
 ---
 
-## Slide 16: Pattern #2: Complete Pricing
+## Slide 17: Complete Pricing: JSON-LD Example
+
+**Subtitle:** Machine-readable pricing with full cost breakdown, does not change human UI
+
+- { "@type": "Product", "name": "Laptop", "offers": {  "@type": "Offer", "price": "999.99", "priceCurrency": "GBP",  "priceSpecification": [    { "@type": "UnitPriceSpecification", "price": "899.99", "name": "Base Price" },    { "@type": "DeliveryChargeSpecification", "price": "50.00", "name": "Delivery" },    { "@type": "PaymentChargeSpecification", "price": "50.00", "name": "Commission" }  ]}
+- Agents can now extract: Base price + Delivery + Commission = Total
+- Same data powers voice assistants for blind users
+
+---
+
+## Slide 18: Pattern #2: Complete Pricing
 
 **Subtitle:** Instead of 'From £99'
 
@@ -248,23 +254,7 @@ if auto-booked
 
 ---
 
-## Slide 16a: Complete Pricing: JSON-LD Example
-
-**Subtitle:** Machine-readable pricing with full cost breakdown
-
-- { "@type": "Product", "name": "Laptop", "offers": {
--   "@type": "Offer", "price": "999.99", "priceCurrency": "GBP",
--   "priceSpecification": [
--     { "@type": "UnitPriceSpecification", "price": "899.99", "name": "Base Price" },
--     { "@type": "DeliveryChargeSpecification", "price": "50.00", "name": "Delivery" },
--     { "@type": "PaymentChargeSpecification", "price": "50.00", "name": "Commission" }
--   ] } }
-- Agents can now extract: Base price + Delivery + Commission = Total
-- Same data powers voice assistants for blind users
-
----
-
-## Slide 17: Pattern #3: Explicit State
+## Slide 19: Pattern #3: Explicit State
 
 **Subtitle:** Make cart state visible
 
@@ -275,7 +265,7 @@ if auto-booked
 
 ---
 
-## Slide 18: Small Business Case
+## Slide 20: Small Business Case
 
 **Subtitle:** You don't need complex infrastructure
 
@@ -287,7 +277,7 @@ if auto-booked
 
 ---
 
-## Slide 19: Quick Wins: Start Here
+## Slide 21: Quick Wins: Start Here
 
 **Subtitle:** Critical Priority 1 Changes
 
@@ -299,7 +289,7 @@ if auto-booked
 
 ---
 
-## Slide 20: Machine Experience (MX): A New Discipline
+## Slide 22: Machine Experience (MX): A New Discipline
 
 **Subtitle:** Alongside UX, We Need MX
 
@@ -308,29 +298,28 @@ if auto-booked
 - When 'everyone's responsible,' accountability vanishes (diffusion of responsibility)
 - MX specialists define agent-readability standards, audit implementations
 - Can expand existing accessibility roles - technical patterns overlap substantially
-- Executive commitment essential - this requires organizational change, not just tech fixes
+- Executive commitment essential - this requires organization change, not just tech fix
 
 ---
 
-## Slide 21: Why This Matters Now: The Seven-Day Platform Race
+## Slide 23: Why This Matters Now: The Seven-Day Platform Race
 
 **Subtitle:** January 2026 - Three platforms launched in one week
 
 - Jan 5: Amazon Alexa+ (browser agent launch)
 - Jan 8: Microsoft Copilot Checkout (proprietary)
 - Jan 11: Google Universal Commerce Protocol (open standard, like ACP)
-- Timeline compressed: 12 months → 6-9 months or LESS to mainstream
+- Timeline compressed: 12-24 months → 6-9 months or LESS to mainstream
 - Agent commerce is now infrastructure, not experimental
-- Designers/Devs must ensure agents navigate successfully
 - Sites that adapt early gain first-mover advantage
 
 ---
 
-## Slide 22: One Solution Serves Everyone: The Convergence Principle
+## Slide 24: One Solution Serves Everyone: The Convergence Principle
 
 **Subtitle:** This is the key insight
 
-- What machines need = What disabled users have needed for 27 years
+- What machines need = What disabled users have needed for many years
 - No trade-offs between accessibility and AI readiness
 - Fix HTML for everyone together, not separate bot experiences
 - First-mover advantage for sites that implement patterns now
@@ -340,27 +329,7 @@ if auto-booked
 
 ---
 
-## Slide 22a: The Agentic Era: Anthropic's Claude Cowork
-
-**Subtitle:** From Chatbot to Digital Colleague (January 2026)
-
-- Jan 12, 2026: Anthropic launches Claude Cowork research preview
-- First truly autonomous digital colleague - manages files, orchestrates workflows
-- Multi-agent architecture: Claude 4 Opus leads, Claude 4.5 Sonnet executes sub-tasks
-- Built in 1.5 weeks using Claude Code itself
-- Now available to $20/month Pro subscribers
-- This IS the agentic era - agents are already coworkers, not just assistants
-
-**Highlight Box:**
-**1.5 weeks**
-to build Cowork
-using Claude Code
-
-*Footer: The shift from passive assistant to active agent is complete.*
-
----
-
-## Slide 23: Book & Contact
+## Slide 25: Book & Contact
 
 **Subtitle:** The Invisible Users
 
