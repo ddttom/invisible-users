@@ -603,11 +603,12 @@ npm run pdf:generate  # No package.json in submodule
    - yaml-frontmatter-template.md - Metadata template
    - architecting-multi-repo-codebases.md - Multi-repo patterns
 
-5. **Business Materials** (`docs/sales-enablement/`)
+5. **Business Materials** (`packages/sales-enablement/` - READ-ONLY private submodule)
    - Business plans
    - Partner kits
    - Publisher proposals
    - Pricing strategies
+   - **Access Control:** AI assistants must have explicit authorization to access
 
 ### Documentation Flow
 

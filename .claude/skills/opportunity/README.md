@@ -17,7 +17,7 @@ This skill automates business opportunity tracking and vendor-specific material 
 ## What This Skill Does
 
 1. **Analyzes opportunity** - Identifies gap type, market timing, competitive window
-2. **Updates database** - Adds structured entry to `docs/sales-enablement/business/business-opportunities.md`
+2. **Updates database** - Adds structured entry to `packages/sales-enablement/business/business-opportunities.md`
 3. **Generates materials** - Creates vendor-specific analysis, emails, pitch decks
 4. **Estimates value** - Suggests pricing and engagement models
 5. **Prepares outreach** - Ready-to-use materials for immediate action
@@ -192,8 +192,8 @@ When you run `/opportunity`, the skill creates:
 
 **Related documents:**
 
-- `docs/sales-enablement/business/business-opportunities.md` - Master database (updated by this skill)
-- `docs/sales-enablement/partners/partner-toolkit-template.md` - Agency partnership materials
+- `packages/sales-enablement/business/business-opportunities.md` - Master database (updated by this skill)
+- `packages/sales-enablement/partners/partner-toolkit-template.md` - Agency partnership materials
 - News skill files (cross-referenced for market timing)
 
 ## Success Metrics
@@ -246,7 +246,7 @@ If you need to modify templates or adjust the opportunity type framework, edit:
 - `skill.md` - Main workflow and phase descriptions
 - `opportunity-types.md` - Type definitions and pricing guidance
 
-All generated materials go to organized subfolders in `docs/sales-enablement/`:
+All generated materials go to organized subfolders in `packages/sales-enablement/`:
 
 - Business strategy → `business/`
 - Pitch materials → `pitches/`

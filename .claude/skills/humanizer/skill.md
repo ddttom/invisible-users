@@ -31,7 +31,7 @@ This skill transforms AI-generated or sterile text into writing that sounds genu
 
 # Common use cases
 /humanizer outputs/bible/blogs/blog-post-draft.md
-/humanizer docs/sales-enablement/pitch-deck-copy.md
+/humanizer packages/sales-enablement/pitches/pitch-deck-copy.md
 /humanizer packages/bible/chapters/chapter-intro.md
 ```
 

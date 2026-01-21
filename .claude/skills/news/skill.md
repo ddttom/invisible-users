@@ -130,7 +130,7 @@ User: /opportunity kentico AIRA lacks agent-output validation
 
 Opportunity skill:
 ✓ Analyzes gap (Product Integration type)
-✓ Updates docs/sales-enablement/business-opportunities.md
+✓ Updates packages/sales-enablement/business/business-opportunities.md
 ✓ Generates kentico-opportunity-analysis.md
 ✓ Generates kentico-email-templates.md
 ✓ Generates kentico-pitch-one-pager.md
