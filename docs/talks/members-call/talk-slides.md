@@ -1,13 +1,13 @@
 ---
 title: "The Invisible Users: Designing the Web for AI Agents and Everyone Else"
 author: "Tom Cranstoun"
-date: "2026-01-20"
-version: "2.5.0"
+date: "2026-01-21"
+version: "2.6.0"
 description: "Google Apps Script themed 20-minute presentation deck"
 audience: "Business leaders (CTOs, product owners)"
 duration: "20 minutes + Q&A"
-estimated_presentation_time: "22-25 minutes"
-slides: 25
+estimated_presentation_time: "24-27 minutes"
+slides: 28
 theme:
   background: "#1C1C1C"
   header: "#0046B5"
@@ -16,7 +16,7 @@ theme:
   fonts:
     title: "Georgia"
     body: "Roboto"
-changes: "v2.5.0 - Added Agent Types, MX discipline, enhanced journey/Adobe slides"
+changes: "v2.6.0 - Added Ally McBeal case study, pricing JSON-LD example, Anthropic Cowork agentic era slide"
 ---
 
 # The Invisible Users Presentation - 20 Minutes
@@ -173,6 +173,19 @@ if auto-booked
 
 ---
 
+## Slide 11a: Real-World Consequences: The Ally McBeal Case
+
+**Subtitle:** When metadata fails, AI agents hallucinate dangerously
+
+- Lawyers caught citing fictional cases in court
+- AI agents confused Ally McBeal TV scripts with legal precedents
+- Without proper microdata/metadata distinguishing entertainment from legal docs
+- Agents fabricate details that seem plausible but are dangerously incorrect
+- Same problem affects pricing, product specs, contact info
+- Solution: Proper metadata (Schema.org, semantic HTML) prevents these errors
+
+---
+
 ## Slide 12: Two HTML States: The Gap
 
 **Subtitle:** Critical Distinction:
@@ -231,6 +244,22 @@ if auto-booked
 - Explicit price and currency (machines AND humans need clarity)
 - <details> for fee breakdown (keyboard navigable)
 - Business value: Builds trust, reduces cart abandonment for all users
+
+---
+
+## Slide 16a: Complete Pricing: JSON-LD Example
+
+**Subtitle:** Machine-readable pricing with full cost breakdown
+
+- { "@type": "Product", "name": "Laptop", "offers": {
+-   "@type": "Offer", "price": "999.99", "priceCurrency": "GBP",
+-   "priceSpecification": [
+-     { "@type": "UnitPriceSpecification", "price": "899.99", "name": "Base Price" },
+-     { "@type": "DeliveryChargeSpecification", "price": "50.00", "name": "Delivery" },
+-     { "@type": "PaymentChargeSpecification", "price": "50.00", "name": "Commission" }
+-   ] } }
+- Agents can now extract: Base price + Delivery + Commission = Total
+- Same data powers voice assistants for blind users
 
 ---
 
@@ -307,6 +336,26 @@ if auto-booked
 - This is the inflection point - like ChatGPT launch in 2022
 - Within two years, machines will read websites, not humans
 - One solution. Everyone benefits. No exceptions.
+
+---
+
+## Slide 22a: The Agentic Era: Anthropic's Claude Cowork
+
+**Subtitle:** From Chatbot to Digital Colleague (January 2026)
+
+- Jan 12, 2026: Anthropic launches Claude Cowork research preview
+- First truly autonomous digital colleague - manages files, orchestrates workflows
+- Multi-agent architecture: Claude 4 Opus leads, Claude 4.5 Sonnet executes sub-tasks
+- Built in 1.5 weeks using Claude Code itself
+- Now available to $20/month Pro subscribers
+- This IS the agentic era - agents are already coworkers, not just assistants
+
+**Highlight Box:**
+**1.5 weeks**
+to build Cowork
+using Claude Code
+
+*Footer: The shift from passive assistant to active agent is complete.*
 
 ---
 
