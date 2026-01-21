@@ -22,6 +22,3 @@
 [submodule "packages/notes"]
 	path = packages/notes
 	url = https://github.com/ddttom/Notes
-[submodule "packages/zettel"]
-	path = packages/zettel
-	url = https://github.com/ddttom/Zettel

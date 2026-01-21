@@ -138,7 +138,6 @@ invisible-users/                    # Main repository (control hub)
 │   ├── shared-code-examples/       # Code patterns [SUBMODULE]
 │   ├── ucp/                        # Universal Commerce Protocol [SUBMODULE - READ-ONLY]
 │   ├── notes/                      # Development notes [SUBMODULE - READ-ONLY]
-│   ├── zettel/                     # Zettelkasten notes [SUBMODULE - READ-ONLY]
 │   └── web-audit-suite/            # Analysis tool [NOT a submodule]
 ├── outputs/                        # Generated content [SUBMODULE - PRIVATE]
 ├── books/                          # Convenience symlinks

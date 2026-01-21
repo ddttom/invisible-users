@@ -40,7 +40,6 @@ graph TB
 
     subgraph ReadOnly[Reference Materials - Submodules]
         Notes[Notes<br/>READ-ONLY]
-        Zettel[Zettel<br/>READ-ONLY]
     end
 
     MainRepo --> Books
@@ -353,12 +352,6 @@ outputs/
 
 **Contains:** Coding standards, project setup guidelines, backend architecture patterns, UI/UX anti-patterns
 
-#### Zettel (packages/zettel/)
-
-**Repository:** `Zettel`
-**Purpose:** Personal Zettelkasten note-taking repository
-**Status:** READ-ONLY for AI assistants unless explicitly authorized
-
 ## Build System Architecture
 
 ### PDF Generation Pipeline
@@ -483,7 +476,6 @@ flowchart TB
 7. **UCP:** `Universal-Commerce-Protocol/ucp` (READ-ONLY)
 8. **Outputs:** `invisible-users-outputs` (PRIVATE)
 9. **Notes:** `Notes` (READ-ONLY)
-10. **Zettel:** `Zettel` (READ-ONLY)
 
 **Navigation Safety:**
 

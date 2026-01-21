@@ -15,7 +15,6 @@ This repository is now structured as a monorepo with npm workspaces and multiple
 - **`packages/shared-code-examples/`** - AI-friendly code patterns (git submodule)
 - **`packages/ucp/`** - Universal Commerce Protocol (git submodule, READ-ONLY reference)
 - **`packages/notes/`** - Coding standards and development practices (git submodule, READ-ONLY reference)
-- **`packages/zettel/`** - Personal note-taking system (git submodule, READ-ONLY reference)
 - **`outputs/`** - Generated content: blogs, PDFs, presentations (git submodule, PRIVATE)
 - **`packages/web-audit-suite/`** - Web analysis tool (NOT a submodule)
 - **`docs/shared-chapters/`** - Shared book content (Chapter 0)
