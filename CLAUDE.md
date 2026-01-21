@@ -406,7 +406,10 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 - MD036: Emphasis as heading (`**Date**` standalone → `Date` or `## Date`)
 - MD040: Specify code block language (use `text` for email templates)
 
-**Skill files exception:** Never fix markdown linting issues in `.claude/skills/` files (excluded from linting via `--ignore .claude` flag).
+**Important exceptions:**
+
+- **Skill files:** Never fix markdown linting issues in `.claude/skills/` files (excluded from linting via `--ignore .claude` flag)
+- **Blog posts with YAML frontmatter (MD025):** Files in `outputs/bible/blogs/` use YAML frontmatter for metadata only (not displayed). The first content heading MUST be H1 (#) because the frontmatter title doesn't create a displayed heading. Markdown linters may incorrectly flag this as "multiple H1s" - this is expected and correct. The YAML `title` field is stripped during markdown-to-HTML processing and only used for page metadata.
 
 ## Markdown Metadata (Pandoc YAML Frontmatter)
 
