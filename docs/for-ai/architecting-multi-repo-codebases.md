@@ -1137,7 +1137,7 @@ Multi-repository projects face a documentation challenge: should the root README
 - Chapter 3: Implementation
 ... (50 lines of chapter descriptions)
 
-### Don't Make AI Think
+### MX-Don't Make the AI Think
 - Chapter 1: Principles
 - Chapter 2: Patterns
 ... (30 lines of chapter descriptions)
@@ -1160,7 +1160,7 @@ Multi-repository projects face a documentation challenge: should the root README
 Two book variants derived from shared manuscript source:
 
 - **[The Bible](packages/bible/)** - Full comprehensive guide
-- **[Don't Make AI Think](packages/dont-make-ai-think/)** - Slim practical guide
+- **[MX-Don't Make the AI Think](packages/dont-make-ai-think/)** - Slim practical guide
 - **[Shared Appendices](packages/shared-appendices/)** - Implementation guides
 
 See individual package READMEs for chapter lists, word counts, and build commands.

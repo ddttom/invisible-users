@@ -211,7 +211,7 @@ When adding frontmatter to existing files:
 3. **Copy ai-instruction exactly** - From template
 4. **Keep H1 in content** - Do NOT duplicate title in YAML frontmatter (avoids redundancy)
 5. **Calculate wordcount** - Use `wc -w filename.md`
-6. **Set correct book value** - Bible, Don't Make AI Think, or Handbook (or "Shared")
+6. **Set correct book value** - Bible, MX-Don't Make the AI Think, or Handbook (or "Shared")
 7. **Update date field** - Use ISO format (YYYY-MM-DD)
 8. **Write clear description** - 1-2 sentences summarizing chapter
 9. **Choose relevant keywords** - 3-8 keywords covering main topics
