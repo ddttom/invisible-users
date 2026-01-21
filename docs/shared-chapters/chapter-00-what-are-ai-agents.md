@@ -1,3 +1,21 @@
+---
+author: "Tom Cranstoun"
+date: "2026-01-22"
+description: "Understanding AI agents as machines with technical capabilities and limitations that parallel human disabilities"
+keywords: [ai-agents, web-accessibility, metadata, semantic-html, machine-experience]
+book: "Shared"
+chapter: 0
+wordcount: 4750
+ai-instruction: |
+  This is a book manuscript chapter. Write as if it has always existed.
+  NEVER include: publication dates, "we added", "new feature", "launching",
+  "this update", or any meta-commentary about the book's development.
+  Write definitive present tense. Historical context about subject matter
+  (industry events, product launches) is allowed.
+longdescription: "This introductory chapter traces the journey from observing AI failures to understanding the solution: fixing websites rather than fixing models. Through personal narrative and concrete examples (Danube cruise pricing errors, Ally McBeal legal citations), it introduces the concept of 'invisible users' - AI agents operating on behalf of humans - and establishes the convergence principle: patterns that help AI agents are the same patterns that help users with disabilities. The chapter introduces Machine Experience (MX) as a new discipline alongside User Experience (UX), explains what AI agents actually are through their technical capabilities, describes their journey through websites (discovery → citation → comparison → purchase), and demonstrates why semantic structure matters more than intelligence."
+purpose: "This chapter serves as the book's anchor, explaining what AI agents are through the lens of personal discovery and establishing the core principle that designing for AI agents means designing for accessibility. It provides background context, introduces key concepts, and sets the commercial urgency (January 2026 launches) whilst maintaining a conversational, expert-to-peer tone."
+---
+
 \newpage
 
 # Chapter 0 - What Are AI Agents?
@@ -183,9 +201,19 @@ This book examines the collision between modern web design and machine readers. 
 
 It's January 2026. Google, Microsoft, and Amazon have all announced agent-powered purchasing features launching this quarter. This isn't a distant future - it's happening now.
 
-I've written two books: this comprehensive guide (The Bible of Machine Experience) and a shorter practical guide ("Don't Make AI Think"). Both share appendices that will be made publicly available, including learning materials for AI and properly structured example code.
+## The Three-Book MX Ecosystem
 
-The publishing plan is to self-publish in Q1 2026, then approach traditional publishers for broader distribution. I've also established a website at allabout.network where appendices will be continuously updated, with news pages and change logs tracking developments. Whilst the books themselves won't change, the living appendices will evolve with the field.
+This comprehensive guide (The MX Bible) is part of a three-book ecosystem, each serving different audiences and needs:
+
+**"Don't Make the AI Think"** (~150-200 pages) - An accessible introduction for everyone: UX designers, product managers, marketers, and executives. Written as a homage to Steve Krug's "Don't Make Me Think," it explains why AI agents hallucinate when websites lack clear, structured information. If you're new to Machine Experience or need to convince stakeholders, start here.
+
+**"The MX Handbook"** (~300-400 pages) - A practical implementation guide for developers, UX designers, and content strategists. It bridges the accessible Krug-style introduction and this comprehensive reference, offering step-by-step platform-specific implementations, content strategies, testing approaches, and patterns across major CMS platforms.
+
+**"The MX Bible" (this book)** (~800 pages) - The definitive technical reference for architects, consultants, and serious practitioners who need complete coverage of Machine Experience. This is the book for those implementing MX at scale or establishing organizational practices.
+
+All three books share continuously updated appendices hosted at allabout.network, including learning materials for AI, properly structured example code, and evolving case studies. Whilst the books themselves maintain stable content, the living appendices track developments in this rapidly evolving field.
+
+The three-book strategy serves readers at different stages: executives who need quick understanding, practitioners seeking immediate implementation guidance, and architects requiring comprehensive technical depth. Each book cross-references the others, creating an ecosystem where readers can move between accessibility levels as their needs evolve.
 
 Chapter 1 begins with the patterns that break agents and humans alike. We start with real examples of AI agents failing on well-designed websites - and discover these failures have been happening to human users for years.
 
@@ -220,17 +248,3 @@ These services apply the book's patterns in practical client work. The same prin
 [^organizational]: Research shows 82% of respondents have limited ability to hold others accountable, and only 14% of employees feel their performance is managed in ways that inspire responsibility. Clear ownership structures address this gap. See [Accountability in Organizational Design](https://www.forrestadvisors.com/insights/organizational-design/accountability-organizational-design-fostering-responsibility/) and [Responsibility, Accountability, and Ownership](https://medium.com/@csw11235/responsibility-accountability-and-ownership-da054169fcce) for frameworks implementing effective accountability.
 
 [^cowork]: Anthropic launched Claude Cowork on 12 January 2026, marking a fundamental shift from chatbot to autonomous digital colleague. The system manages local file systems, orchestrates workflows, and executes complex tasks through multi-agent architecture. Initially available to Max subscribers, it expanded to Pro tier subscribers ($20/month) shortly after launch. See [Anthropic launches Cowork, a Claude Desktop agent that works in your files](https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no), [Anthropic Unveils 'Claude Cowork': The First Truly Autonomous Digital Colleague](https://markets.financialcontent.com/stocks/article/tokenring-2026-1-19-anthropic-unveils-claude-cowork-the-first-truly-autonomous-digital-colleague), and [Anthropic's new Cowork tool offers Claude Code without the code](https://techcrunch.com/2026/01/12/anthropics-new-cowork-tool-offers-claude-code-without-the-code/) for comprehensive coverage of capabilities and architecture.
-
----
-
-| metadata |  |
-| :---- | :---- |
-| title | Chapter 0: What Are AI Agents? |
-| author | Tom Cranstoun |
-| creation-date | 15/Dec/2024 |
-| publication-date | Q1 2026 |
-| modified-date | 21/Jan/2026 |
-| description | Understanding AI agents as machines with technical capabilities and limitations that parallel human disabilities |
-| longdescription | This introductory chapter traces the journey from observing AI failures to understanding the solution: fixing websites rather than fixing models. Through personal narrative and concrete examples (Danube cruise pricing errors, Ally McBeal legal citations), it introduces the concept of "invisible users" - AI agents operating on behalf of humans - and establishes the convergence principle: patterns that help AI agents are the same patterns that help users with disabilities. The chapter introduces Machine Experience (MX) as a new discipline alongside User Experience (UX), explains what AI agents actually are through their technical capabilities, describes their journey through websites (discovery → citation → comparison → purchase), and demonstrates why semantic structure matters more than intelligence. |
-| purpose | This chapter serves as the book's anchor, explaining what AI agents are through the lens of personal discovery and establishing the core principle that designing for AI agents means designing for accessibility. It provides background context, introduces key concepts, and sets the commercial urgency (January 2026 launches) whilst maintaining a conversational, expert-to-peer tone. |
-| ai-instruction | This markdown is self-contained and should not forward reference the book. Treat this chapter as standalone documentation that introduces AI agents through narrative discovery, concrete examples, and business context. |
