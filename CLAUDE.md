@@ -470,7 +470,9 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 
 - **Skill files:** Never fix markdown linting issues in `.claude/skills/` files (excluded from linting via `--ignore .claude` flag)
 
-## Markdown Metadata (Pandoc YAML Frontmatter)
+## Markdown Metadata Standards
+
+### Pandoc YAML Frontmatter (Markdown Files)
 
 **CRITICAL:** This repository uses Pandoc YAML frontmatter for markdown metadata—the universal standard across Hugo, Jekyll, Gatsby, Quarto, and Pandoc.
 
@@ -537,6 +539,75 @@ Content with no H1 (frontmatter title is used instead)...
 **Files using YAML frontmatter:** Can appear in ANY markdown file - blog posts (`outputs/bible/blogs/`), chapters (`docs/shared-chapters/`, `packages/*/chapters/`), documentation, or any other markdown file.
 
 **Implementation reference:** Appendix L Pattern 4, Chapter 10, Appendix H
+
+### llms.txt YAML Frontmatter (AI Agent Discovery)
+
+**CRITICAL:** llms.txt files use YAML frontmatter metadata despite the `.txt` extension—this is markdown in disguise.
+
+**Why the `.txt` extension?**
+
+The tech world wanted to use markdown for AI agent discovery files, but `robots.txt` established the `.txt` pattern for machine-readable site configuration. The llms.txt standard adopted this naming convention for consistency, even though the content is markdown with YAML frontmatter.
+
+**Standard llms.txt structure:**
+
+```markdown
+# Project Title
+
+| metadata |  |
+| :---- | :---- |
+| title | Full project title |
+| author | Author Name |
+| creation-date | DD/Mon/YYYY |
+| last-updated | DD/Mon/YYYY |
+| description | Brief summary |
+| longdescription | Extended context for AI agents |
+| LinkedIn | <https://www.linkedin.com/in/username/> |
+| repository | <https://github.com/org/repo> |
+| ai-instruction | Instructions for AI agents parsing this file |
+| jsonld | Document type (book, BlogPosting, SoftwareApplication) |
+
+Project overview content follows...
+```
+
+**Usage in this repository:**
+
+- **Root llms.txt:** [llms.txt](llms.txt) - Complete project documentation for AI agent discovery
+- **Submodule llms.txt:** Each submodule can have its own llms.txt providing package-specific context
+- **Web llms.txt:** [packages/shared-appendices/web/llms.txt](packages/shared-appendices/web/llms.txt) - Appendix-specific discovery
+
+**Repository decoration pattern:**
+
+Use llms.txt files throughout the repository to ensure all content is discoverable by AI assistants:
+
+```text
+/
+├── llms.txt                           ← Root project documentation
+├── packages/
+│   ├── bible/
+│   │   └── llms.txt                   ← MX-Bible specific context
+│   ├── dont-make-ai-think/
+│   │   └── llms.txt                   ← MX-Don't Make the AI Think context
+│   ├── shared-appendices/
+│   │   ├── llms.txt                   ← Appendices overview
+│   │   └── web/
+│   │       └── llms.txt               ← Web appendices discovery
+│   └── web-audit-suite/
+│       └── llms.txt                   ← Tool documentation
+```
+
+**Key fields for AI agents:**
+
+- `title` - Project/package name
+- `author` - Attribution
+- `description` - Brief summary (1-2 sentences)
+- `longdescription` - Extended context (2-3 paragraphs)
+- `ai-instruction` - Specific guidance for AI agents parsing the content
+- `repository` - Link to source code
+- `jsonld` - Schema.org type for structured data context
+
+**Standard fields:**
+
+See [Appendix H - Example llms.txt](packages/shared-appendices/appendix-h-example-llms-txt.md) for complete field reference and real-world examples.
 
 ## Dual-File Appendix Structure
 

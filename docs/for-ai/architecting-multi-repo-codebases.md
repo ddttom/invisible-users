@@ -215,11 +215,15 @@ See [Hub Contributing Guide](link) for complete workflow.
 
 The README answers: "If I cloned just this one repository, what do I need to know?" Don't duplicate hub documentation—provide minimal context and link to the source of truth.
 
-## Pattern 2: Pandoc YAML Frontmatter
+## Pattern 2: YAML Frontmatter for Markdown Metadata
 
 **Problem:** Content files need machine-readable metadata for build processes, AI agents, and search engines without proprietary tooling.
 
-**Solution:** Use Pandoc YAML frontmatter—the universal standard for markdown metadata across all static site generators.
+**Solution:** Use YAML frontmatter—the universal standard for markdown metadata across all static site generators and AI agent discovery files.
+
+### Pandoc YAML Frontmatter (Standard Markdown)
+
+Standard markdown files use Pandoc YAML frontmatter for metadata.
 
 ### The YAML Frontmatter Format
 
@@ -301,6 +305,144 @@ When built, this becomes:
   <meta name="keywords" content="guide, tutorial, documentation">
 </head>
 ```
+
+### llms.txt YAML Frontmatter (AI Agent Discovery)
+
+**The llms.txt Pattern:** Despite the `.txt` extension, llms.txt files are markdown with YAML frontmatter—markdown in disguise.
+
+**Why `.txt` not `.md`?**
+
+The tech world wanted to use markdown for AI agent discovery files, but `robots.txt` established the `.txt` pattern for machine-readable site configuration files that live at the root of websites. The llms.txt standard adopted this naming convention for consistency with existing web standards, even though the content is markdown.
+
+#### llms.txt Metadata Table Format
+
+llms.txt files use a markdown table for metadata instead of traditional YAML frontmatter delimiters:
+
+```markdown
+# Project Title
+
+| metadata |  |
+| :---- | :---- |
+| title | Full project title |
+| author | Author Name |
+| creation-date | DD/Mon/YYYY |
+| last-updated | DD/Mon/YYYY |
+| description | Brief summary (1-2 sentences) |
+| longdescription | Extended context for AI agents (2-3 paragraphs) |
+| ai-instruction | Specific guidance for AI agents parsing this file |
+| jsonld | Schema.org type (book, BlogPosting, SoftwareApplication) |
+| repository | https://github.com/org/repo |
+| LinkedIn | https://www.linkedin.com/in/username/ |
+
+Project overview content follows in markdown...
+
+## Section 1
+Content...
+
+## Section 2
+More content...
+```
+
+**Why table format instead of YAML delimiters?**
+
+The table format (`| metadata | |`) provides:
+
+1. **Visual clarity:** Metadata is immediately visible without parsing YAML
+2. **AI-readable structure:** Tables are semantic markdown that AI agents parse natively
+3. **Flexibility:** Can mix with other markdown content without delimiter conflicts
+4. **Backward compatibility:** Works in any markdown parser, even if YAML frontmatter isn't supported
+
+#### Repository Decoration Pattern
+
+Use llms.txt files throughout multi-repository workspaces to ensure all content is discoverable:
+
+```text
+main-project/
+├── llms.txt                           ← Root project documentation
+├── packages/
+│   ├── content/
+│   │   └── llms.txt                   ← Content package context
+│   ├── examples/
+│   │   └── llms.txt                   ← Examples package context
+│   └── tool/
+│       └── llms.txt                   ← Tool documentation
+└── outputs/
+    └── llms.txt                       ← Generated content index
+```
+
+**Benefits of repository decoration:**
+
+1. **AI agent navigation:** Agents can discover package purpose without reading source code
+2. **Context hierarchy:** Root llms.txt provides overview, package llms.txt provides details
+3. **Submodule documentation:** Each submodule documents itself for independent usage
+4. **Search optimization:** AI agents can index and search across the workspace efficiently
+
+#### Standard llms.txt Fields
+
+**Required fields:**
+
+- `title` - Project or package name
+- `author` - Attribution and contact
+- `description` - Brief summary (1-2 sentences for AI agent context)
+- `ai-instruction` - Specific guidance for AI agents parsing this content
+
+**Recommended fields:**
+
+- `longdescription` - Extended context (2-3 paragraphs)
+- `repository` - Link to source code
+- `creation-date` - When project was created
+- `last-updated` - Last significant update
+- `jsonld` - Schema.org type for structured data context
+
+**Optional fields:**
+
+- `LinkedIn` - Professional profile link
+- `publication-date` - When project was published
+- `purpose` - Specific use case or intent
+- Custom fields as needed for your domain
+
+#### Multi-Repository llms.txt Strategy
+
+**Root llms.txt (hub repository):**
+
+```markdown
+# Main Project
+
+| metadata |  |
+| :---- | :---- |
+| title | Main Project |
+| description | Multi-repository workspace with coordinated builds |
+| repository | https://github.com/org/main-project |
+| ai-instruction | This is the hub repository. See packages/ for submodules. |
+
+Multi-repository project with hub-and-spoke architecture...
+
+## Submodules
+
+- [Content Package](packages/content/) - Source material
+- [Examples Package](packages/examples/) - Code examples
+```
+
+**Submodule llms.txt (spoke repository):**
+
+```markdown
+# Content Package
+
+| metadata |  |
+| :---- | :---- |
+| title | Content Package |
+| description | Source material for documentation project |
+| repository | https://github.com/org/content-package |
+| ai-instruction | This is a submodule. Hub repository: https://github.com/org/main-project |
+
+This package contains source content for the main project...
+
+## Context
+
+Part of [Main Project](https://github.com/org/main-project).
+```
+
+**Key insight:** Each llms.txt file should be self-contained enough for AI agents discovering a single repository, whilst providing links to the broader context.
 
 ## Claude Code Permissions for Multi-Repository Workflows
 
