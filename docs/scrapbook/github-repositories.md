@@ -1,4 +1,70 @@
-# GitHub Repositories
+---
+title: "GitHub Repositories Inventory"
+author: "Tom Cranstoun"
+date: "2026-01-21"
+description: "Complete inventory of all GitHub repositories from ddttom and Digital-Domain-Technologies-Ltd organizations"
+keywords: [github, repositories, inventory, ddttom, digital-domain-technologies]
+ai-instruction: |
+  This file is an automatically generated inventory of GitHub repositories.
+
+  To regenerate this file, use the following commands:
+
+  1. Fetch repository data from both GitHub accounts:
+     ```bash
+     gh repo list ddttom --json name,description,updatedAt --limit 100 > /tmp/ddttom-repos.json
+     gh repo list Digital-Domain-Technologies-Ltd --json name,description,updatedAt --limit 100 > /tmp/digital-domain-repos.json
+     ```
+
+  2. Combine, sort, and format as markdown table:
+     ```bash
+     node -e "
+     const ddttom = $(cat /tmp/ddttom-repos.json);
+     const digital = $(cat /tmp/digital-domain-repos.json);
+
+     // Add owner info
+     ddttom.forEach(r => r.owner = 'ddttom');
+     digital.forEach(r => r.owner = 'Digital-Domain-Technologies-Ltd');
+
+     // Combine and sort by updatedAt (newest first)
+     const all = [...ddttom, ...digital].sort((a, b) =>
+       new Date(b.updatedAt) - new Date(a.updatedAt)
+     );
+
+     // Format as markdown table with YAML frontmatter
+     console.log('---');
+     console.log('title: \"GitHub Repositories Inventory\"');
+     console.log('author: \"Tom Cranstoun\"');
+     console.log('date: \"' + new Date().toISOString().split('T')[0] + '\"');
+     console.log('[... rest of frontmatter ...]');
+     console.log('---');
+     console.log('');
+     console.log('Complete list of repositories from ddttom and Digital-Domain-Technologies-Ltd organizations, sorted by last modified date.');
+     console.log('');
+     console.log('');
+     console.log('| Repository | Owner | Description | Last Modified |');
+     console.log('|------------|-------|-------------|---------------|');
+
+     all.forEach(repo => {
+       const name = repo.name;
+       const owner = repo.owner === 'Digital-Domain-Technologies-Ltd' ? 'DDT' : repo.owner;
+       const desc = (repo.description || '').replace(/\|/g, '\\\\|').substring(0, 100);
+       const date = new Date(repo.updatedAt).toISOString().split('T')[0];
+       const url = \`https://github.com/\${repo.owner}/\${repo.name}\`;
+       console.log(\`| [\${name}](\${url}) | \${owner} | \${desc} | \${date} |\`);
+     });
+     " > docs/scrapbook/github-repositories.md
+     ```
+
+  Requirements:
+  - GitHub CLI (gh) must be installed and authenticated
+  - Node.js must be available
+  - User must have access to both GitHub accounts/organizations
+
+  The script fetches live data from GitHub API, combines repositories from both accounts,
+  sorts by last modified date (newest first), and generates a markdown table with clickable links.
+
+  Total repositories will vary as repos are added/archived over time.
+---
 
 Complete list of repositories from ddttom and Digital-Domain-Technologies-Ltd organizations, sorted by last modified date.
 
