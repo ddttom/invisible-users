@@ -414,8 +414,7 @@ UCP embodies the convergence principle from the book - patterns that work for AI
     ├── architecture/         # Architecture docs (GIT-README.md, TIMELESS-MANUSCRIPT-RULE.md, doc-architecture.md)
     ├── for-ai/               # AI assistant guidance (writing-style.md, yaml-frontmatter-template.md)
     ├── shared-chapters/      # Shared book content (Chapter 0)
-    ├── talks/                # Presentation materials
-    └── for-tom/              # Personal working notes
+    └── talks/                # Presentation materials
 ```
 
 **See individual package READMEs for detailed contents, build commands, and usage.**
