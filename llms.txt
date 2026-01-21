@@ -232,10 +232,10 @@ Looking for more information about this book project?
 
 **Documentation Structure (Start Here):**
 
-1. **[docs/repo/ONBOARDING.md](docs/repo/ONBOARDING.md)** - Quick start guide (10 minutes, 303 lines)
+1. **[ONBOARDING.md](ONBOARDING.md)** - Quick start guide (10 minutes, 303 lines)
 2. **[docs/architecture/doc-architecture.md](docs/architecture/doc-architecture.md)** - Comprehensive architecture (827 lines, complete details)
 3. **[CLAUDE.md](CLAUDE.md)** - AI agent instructions and project guide
-4. **[docs/repo/GIT-README.md](docs/repo/GIT-README.md)** - Git workflow with submodules
+4. **[docs/architecture/GIT-README.md](docs/architecture/GIT-README.md)** - Git workflow with submodules
 
 **Book Manuscripts:**
 

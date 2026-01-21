@@ -4,7 +4,7 @@
 
 A practical guide to the collision between modern web design and AI agents, with a production-ready implementation tool.
 
-**New to this project?** Start with [docs/repo/ONBOARDING.md](docs/repo/ONBOARDING.md) for a complete setup guide.
+**New to this project?** Start with [ONBOARDING.md](ONBOARDING.md) for a complete setup guide.
 
 ## What Are AI Agents?
 
@@ -218,10 +218,10 @@ Changes must flow: **book → tool → documentation**
 
 ### Getting Started
 
-- [ONBOARDING.md](docs/repo/ONBOARDING.md) - Complete developer onboarding guide (start here!)
+- [ONBOARDING.md](ONBOARDING.md) - Complete developer onboarding guide (start here!)
 - [CLAUDE.md](CLAUDE.md) - AI agent instructions and comprehensive project guide
 - [LEARNINGS.md](LEARNINGS.md) - Battle-tested rules from actual mistakes
-- [GIT-README.md](docs/repo/GIT-README.md) - Git workflow guide for submodule management
+- [GIT-README.md](docs/architecture/GIT-README.md) - Git workflow guide for submodule management
 
 ### Package-Specific Documentation
 
@@ -250,7 +250,7 @@ Each package has its own README with detailed information:
 
 **⚠️ CRITICAL: This repository uses git submodules that require careful handling.**
 
-**📖 See [GIT-README.md](docs/repo/GIT-README.md) for comprehensive git workflow guidance.**
+**📖 See [GIT-README.md](docs/architecture/GIT-README.md) for comprehensive git workflow guidance.**
 
 This workspace contains multiple git repositories:
 

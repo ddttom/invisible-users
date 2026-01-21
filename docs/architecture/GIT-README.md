@@ -460,7 +460,7 @@ The main repository integrates the manuscript as a submodule, allowing the book 
 
 ## Additional Resources
 
-- [CLAUDE.md](CLAUDE.md) - Full project documentation
-- [README.md](README.md) - Project overview and setup
-- [LEARNINGS.md](LEARNINGS.md) - Documented mistakes and lessons learned
+- [CLAUDE.md](../../CLAUDE.md) - Full project documentation
+- [README.md](../../README.md) - Project overview and setup
+- [LEARNINGS.md](../repo/LEARNINGS.md) - Documented mistakes and lessons learned
 - Git Submodule Documentation: <https://git-scm.com/book/en/v2/Git-Tools-Submodules>

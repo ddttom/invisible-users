@@ -139,8 +139,7 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 ├── README.md                         ← Main repo README
 ├── package.json                      ← Root workspace config
 ├── docs/                             ← Documentation
-│   ├── repo/                         ← GIT-README.md, ONBOARDING.md
-│   ├── architecture/                 ← doc-architecture.md
+│   ├── architecture/                 ← GIT-README.md, TIMELESS-MANUSCRIPT-RULE.md, doc-architecture.md
 │   ├── shared-chapters/              ← Shared book content (Chapter 0)
 │   ├── for-ai/                       ← AI assistant guidance
 │   └── scrap/                        ← READ-ONLY REFERENCE (temporary working files)
@@ -247,7 +246,7 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 **📖 CRITICAL REFERENCES FOR AI ASSISTANTS:**
 
 - **[LEARNINGS.md](LEARNINGS.md)** - Recent mistakes and battle-tested rules. **Read this file at the start of each session** to learn from documented errors and avoid repeating them.
-- **[docs/repo/GIT-README.md](docs/repo/GIT-README.md)** - Comprehensive git workflow guidance for AI agents (multi-repository structure, submodule-first workflow, safe patterns)
+- **[docs/architecture/GIT-README.md](docs/architecture/GIT-README.md)** - Comprehensive git workflow guidance for AI agents (multi-repository structure, submodule-first workflow, safe patterns)
 - **[.claude/pwd-reminder.md](.claude/pwd-reminder.md)** - Working directory verification requirements
 
 ---
@@ -356,10 +355,9 @@ UCP embodies the convergence principle from the book - patterns that work for AI
 ```text
 /
 ├── CLAUDE.md                 # This file (single source of truth)
-├── docs/repo/                # Critical documentation
-│   ├── GIT-README.md         # Git workflow guide for AI agents
-│   ├── LEARNINGS.md          # Battle-tested rules
-│   └── [CHANGELOG, etc.]
+├── ONBOARDING.md             # Developer onboarding guide
+├── LEARNINGS.md              # Battle-tested rules
+├── README.md                 # Project overview
 ├── .claude/                  # Claude Code configuration (skills, hooks)
 ├── config/                   # Project configuration
 │   ├── .markdownlint.json    # Markdown linting rules
@@ -706,7 +704,7 @@ See [Appendix H - Example llms.txt](packages/shared-appendices/appendix-h-exampl
 
 ## Git Workflows
 
-**⚠️ CRITICAL:** See [docs/repo/GIT-README.md](docs/repo/GIT-README.md) for comprehensive multi-repository git workflow guidance.
+**⚠️ CRITICAL:** See [docs/architecture/GIT-README.md](docs/architecture/GIT-README.md) for comprehensive multi-repository git workflow guidance.
 
 **Essential rules:**
 
@@ -846,7 +844,7 @@ git commit -m "Update bible submodule to latest version"
 git submodule update --remote
 ```
 
-**For comprehensive submodule workflows, see [docs/repo/GIT-README.md](docs/repo/GIT-README.md).**
+**For comprehensive submodule workflows, see [docs/architecture/GIT-README.md](docs/architecture/GIT-README.md).**
 
 ## Notes for Future Development
 

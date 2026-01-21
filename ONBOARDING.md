@@ -171,7 +171,7 @@ git submodule status
 git -C packages/bible log --oneline -10
 ```
 
-**Critical:** Always check `pwd` before git operations. See [docs/repo/GIT-README.md](GIT-README.md) for comprehensive multi-repository workflow guidance.
+**Critical:** Always check `pwd` before git operations. See [docs/architecture/GIT-README.md](../architecture/GIT-README.md) for comprehensive multi-repository workflow guidance.
 
 ## Code Quality Standards
 
@@ -189,7 +189,7 @@ git -C packages/bible log --oneline -10
 - Blank lines around lists
 - Run: `npm run lint:markdown:fix`
 
-**For complete quality standards, see [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md#version-control-strategy)**
+**For complete quality standards, see [docs/architecture/doc-architecture.md](docs/architecture/doc-architecture.md#version-control-strategy)**
 
 ## Writing Style (Book Manuscripts)
 
@@ -202,7 +202,7 @@ git -C packages/bible log --oneline -10
 
 **Timeless Manuscript Rule:** Write as if the book has always existed. Never include publication dates, "we added", or meta-commentary about the book's development.
 
-**For complete style guide, see [docs/for-ai/writing-style.md](../for-ai/writing-style.md)**
+**For complete style guide, see [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)**
 
 ## Common Issues and Solutions
 
@@ -234,23 +234,23 @@ source ~/.zshrc               # Reload shell
 
 ### VS Code Performance Issues
 
-Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/vscode-extension-cleanup.md](../vscode-extension-cleanup.md) for recommendations.
+Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/vscode-extension-cleanup.md](docs/vscode-extension-cleanup.md) for recommendations.
 
 ## Key Documentation
 
 **Start here (in order):**
 
-1. **[README.md](../../README.md)** - Project overview
-2. **[docs/architecture/doc-architecture.md](../architecture/doc-architecture.md)** - Complete architecture documentation (827 lines, comprehensive)
-3. **[CLAUDE.md](../../CLAUDE.md)** - AI agent instructions and project guide
-4. **[docs/repo/GIT-README.md](GIT-README.md)** - Git workflow with submodules
+1. **[README.md](README.md)** - Project overview
+2. **[docs/architecture/doc-architecture.md](docs/architecture/doc-architecture.md)** - Complete architecture documentation (827 lines, comprehensive)
+3. **[CLAUDE.md](CLAUDE.md)** - AI agent instructions and project guide
+4. **[docs/architecture/GIT-README.md](docs/architecture/GIT-README.md)** - Git workflow with submodules
 
 **Book-specific:**
 
-- [packages/bible/README.md](../../packages/bible/README.md) - MX-Bible contents
-- [packages/dont-make-ai-think/README.md](../../packages/dont-make-ai-think/README.md) - MX-Don't Make the AI Think contents
-- [packages/mx-handbook/README.md](../../packages/mx-handbook/README.md) - MX-Handbook contents
-- [packages/shared-appendices/README.md](../../packages/shared-appendices/README.md) - Appendices overview
+- [packages/bible/README.md](packages/bible/README.md) - MX-Bible contents
+- [packages/dont-make-ai-think/README.md](packages/dont-make-ai-think/README.md) - MX-Don't Make the AI Think contents
+- [packages/mx-handbook/README.md](packages/mx-handbook/README.md) - MX-Handbook contents
+- [packages/shared-appendices/README.md](packages/shared-appendices/README.md) - Appendices overview
 
 **Tool-specific:**
 

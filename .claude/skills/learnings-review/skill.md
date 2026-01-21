@@ -304,4 +304,4 @@ After running this skill:
 - **Hooks** - `.claude/hooks/`
 - **Skills** - `.claude/skills/`
 - **CLAUDE.md** - Root directory
-- **Archive** - `docs/repo/learnings-archive.md` (if created)
+- **Archive** - `learnings-archive.md` (if created, in root directory)

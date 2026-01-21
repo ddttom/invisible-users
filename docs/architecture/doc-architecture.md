@@ -82,8 +82,7 @@ graph TB
   - `enhance-appendix-html.js` - HTML post-processing
   - `download-cover-images.js` - Illustration management
 - `docs/` - Documentation (main repo only)
-  - `repo/` - Repository-level docs (ONBOARDING.md, GIT-README.md, LEARNINGS.md)
-  - `architecture/` - Architecture documentation
+  - `architecture/` - Architecture documentation (GIT-README.md, TIMELESS-MANUSCRIPT-RULE.md, doc-architecture.md)
   - `for-ai/` - AI assistant guidance
   - `sales-enablement/` - Business materials
   - `shared-chapters/` - Chapter 0 (shared across books)
@@ -581,12 +580,11 @@ npm run pdf:generate  # No package.json in submodule
 
 ### Levels of Documentation
 
-1. **Repository-level** (main repo `docs/repo/`)
+1. **Repository-level** (main repo root)
    - ONBOARDING.md - Developer onboarding
-   - GIT-README.md - Git workflow guide
    - LEARNINGS.md - Battle-tested rules
-   - PROJECTSTATE.md - Current status
-   - TIMELESS-MANUSCRIPT-RULE.md - Writing guidelines
+   - CLAUDE.md - AI agent instructions and project guide
+   - README.md - Project overview
 
 2. **Package-level** (each submodule `README.md`)
    - Package-specific contents
@@ -597,6 +595,8 @@ npm run pdf:generate  # No package.json in submodule
 3. **Architecture** (`docs/architecture/`)
    - doc-architecture.md - This file
    - web-audit-architecture.md - Tool architecture
+   - GIT-README.md - Git workflow guide for multi-repository structure
+   - TIMELESS-MANUSCRIPT-RULE.md - Writing guidelines for book manuscripts
 
 4. **AI Assistant Guidance** (`docs/for-ai/`)
    - writing-style.md - Complete style guide
@@ -814,6 +814,6 @@ cat packages/bible/README.md
 - [README.md](../../README.md) - Main project documentation
 - [CLAUDE.md](../../CLAUDE.md) - AI agent instructions
 - [LEARNINGS.md](../../LEARNINGS.md) - Battle-tested rules
-- [GIT-README.md](../repo/GIT-README.md) - Git workflow guide
-- [ONBOARDING.md](../repo/ONBOARDING.md) - Developer onboarding
+- [GIT-README.md](GIT-README.md) - Git workflow guide
+- [ONBOARDING.md](../../ONBOARDING.md) - Developer onboarding
 - [web-audit-architecture.md](web-audit-architecture.md) - Web Audit Suite architecture
