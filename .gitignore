@@ -43,6 +43,8 @@ blogs
 the-bible/
 dont/
 
+*.png
+
 # Generated appendix HTML build templates (temporary)
 scripts/appendix-nav-footer.html
 scripts/appendix-index-template.md
