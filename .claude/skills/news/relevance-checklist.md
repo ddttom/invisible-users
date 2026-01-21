@@ -237,7 +237,7 @@ News must score YES on all five criteria:
 - ⚠ Ecosystem shift: Could be significant when launched
 
 **Verdict:** Reject for now - Re-evaluate when actually launched
-**Alternative:** Note in PROJECTSTATE.md as "watching"
+**Alternative:** Note in CHANGELOG.md as "watching"
 
 ### Scenario 5: Qualifies - Direct Agent Tool
 
@@ -290,7 +290,7 @@ News must score YES on all five criteria:
 **Question:** News validates one chapter but doesn't meet other criteria. Qualify?
 
 **Answer:** NO - Must meet all five criteria. Suggest alternative documentation:
-- Add to PROJECTSTATE.md as supporting evidence for chapter
+- Add to CHANGELOG.md as supporting evidence for chapter
 - Reference in chapter revision if updating book
 - Not suitable for blog/appendix
 
@@ -327,7 +327,7 @@ This news is interesting but doesn't demonstrate the patterns discussed in the b
 
 ### Alternative
 
-- Document in PROJECTSTATE.md as industry watching
+- Document in CHANGELOG.md as industry watching
 - Consider for social media mention
 - Revisit if future developments make it more relevant
 ```

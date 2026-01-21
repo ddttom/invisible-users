@@ -119,7 +119,10 @@ pwd
   - **Notes (READ-ONLY):** `packages/notes/` → `Notes` - Development notes, coding standards, and architectural guidelines (**READ-ONLY REFERENCE**)
     - Role: Coding standards and development practices reference
     - DO NOT modify this submodule - it is maintained separately
-  - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md)
+  - **Sales Enablement (READ-ONLY):** `packages/sales-enablement/` → `MX-Sales-enablement` - Private business development materials (**READ-ONLY REFERENCE**)
+    - Role: Business materials, pitches, partnerships, pricing strategies
+    - DO NOT access this submodule unless explicitly authorized by user
+  - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in Notes and Sales Enablement)
 
 ### Repository Navigation Map
 
@@ -138,7 +141,6 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 ├── docs/                             ← Documentation
 │   ├── repo/                         ← GIT-README.md, ONBOARDING.md
 │   ├── architecture/                 ← doc-architecture.md
-│   ├── sales-enablement/             ← Business materials
 │   ├── shared-chapters/              ← Shared book content (Chapter 0)
 │   ├── for-ai/                       ← AI assistant guidance
 │   └── scrap/                        ← READ-ONLY REFERENCE (temporary working files)
@@ -198,6 +200,16 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       ├── README.md             ← Notes README
 │   │       └── Other development guidelines
 │   │       Note: Development notes and coding standards (READ-ONLY for AI assistants unless explicitly authorized)
+│   ├── sales-enablement/             ← SUBMODULE (PRIVATE git repo) - READ-ONLY REFERENCE
+│   │   └── ${MAIN_REPO}/packages/sales-enablement/
+│   │       ├── business/             ← Business plans and strategies
+│   │       ├── partners/             ← Partnership materials
+│   │       ├── pitches/              ← Sales presentations
+│   │       ├── publishers/           ← Publisher submissions
+│   │       ├── CLAUDE.md             ← Sales enablement guidance
+│   │       ├── README.md             ← Sales enablement README
+│   │       └── Other business materials
+│   │       Note: Private business development materials (READ-ONLY for AI assistants unless explicitly authorized)
 │   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
 │       ├── src/                      ← Tool source code
 │       ├── test/                     ← Test files
@@ -347,7 +359,7 @@ UCP embodies the convergence principle from the book - patterns that work for AI
 ├── docs/repo/                # Critical documentation
 │   ├── GIT-README.md         # Git workflow guide for AI agents
 │   ├── LEARNINGS.md          # Battle-tested rules
-│   └── [CHANGELOG, PROJECTSTATE, etc.]
+│   └── [CHANGELOG, etc.]
 ├── .claude/                  # Claude Code configuration (skills, hooks)
 ├── config/                   # Project configuration
 │   ├── .markdownlint.json    # Markdown linting rules

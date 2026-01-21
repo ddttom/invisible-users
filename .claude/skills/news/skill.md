@@ -443,7 +443,7 @@ Phase 2: ✗ Does not meet criteria
   - No ecosystem shift
 
 Result: Rejected with explanation
-Alternative: Document in PROJECTSTATE.md if desired
+Alternative: Document in CHANGELOG.md if desired
 ```
 
 ### Scenario 3: Verification Fails

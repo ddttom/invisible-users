@@ -109,7 +109,7 @@ This repository uses git submodules to achieve **clean separation between conten
 ├── docs/                     # Documentation (main repo only)
 │   ├── architecture/         # Architecture documentation
 │   ├── repo/                 # Repository-level docs (ONBOARDING, etc.)
-│   └── sales-enablement/     # Business materials, pitches, partners
+│   └── for-ai/               # AI assistant guidance files
 ├── config/                   # Configuration files (main repo only)
 ├── scripts/                  # Build and deployment scripts (main repo only)
 └── .claude/                  # Claude Code AI assistant configuration (main repo only)
@@ -238,11 +238,13 @@ Each package has its own README with detailed information:
 - [Repository Architecture](docs/architecture/doc-architecture.md) - Repository structure and design decisions
 - [Web Audit Suite Architecture](docs/architecture/web-audit-architecture.md) - Tool architecture and pipeline design
 
-### Business Materials
+### Business Materials (Private Submodule)
 
-- [Business Plan](docs/sales-enablement/business/business-plan.md) - Complete business strategy
-- [Partner Kit](docs/sales-enablement/partners/PARTNER_KIT.md) - Partner resources
-- [Publisher Proposal](docs/sales-enablement/publishers/oreilly-proposal.md) - O'Reilly submission
+**Note:** Sales enablement materials are in a private submodule at [packages/sales-enablement/](packages/sales-enablement/). This is a READ-ONLY reference for AI assistants.
+
+- [Business Plan](packages/sales-enablement/business/business-plan.md) - Complete business strategy
+- [Partner Kit](packages/sales-enablement/partners/PARTNER_KIT.md) - Partner resources
+- [Publisher Proposal](packages/sales-enablement/publishers/oreilly-proposal.md) - O'Reilly submission
 
 ## Working with Git Submodules
 
@@ -258,8 +260,10 @@ This workspace contains multiple git repositories:
 4. **MX-Handbook submodule:** `packages/mx-handbook/` (implementation handbook)
 5. **Appendices submodule:** `packages/shared-appendices/` (shared appendices)
 6. **Code examples submodule:** `packages/shared-code-examples/` (pattern examples)
-7. **UCP submodule:** `packages/ucp/` (Universal Commerce Protocol - ecommerce standard for AI agents)
-8. **Outputs submodule:** `outputs/` (private, generated content)
+7. **UCP submodule:** `packages/ucp/` (Universal Commerce Protocol - READ-ONLY reference)
+8. **Notes submodule:** `packages/notes/` (development notes - READ-ONLY reference)
+9. **Sales enablement submodule:** `packages/sales-enablement/` (private business materials - READ-ONLY reference)
+10. **Outputs submodule:** `outputs/` (private, generated content)
 
 **Always check `pwd` before git operations.** The [LEARNINGS.md](LEARNINGS.md) file documents common mistakes and their fixes.
 

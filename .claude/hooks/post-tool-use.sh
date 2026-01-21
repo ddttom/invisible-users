@@ -60,7 +60,7 @@ if [ "$TOOL_NAME" = "Bash" ]; then
     # Check if the command involved git commit
     if echo "$TOOL_OUTPUT" | grep -q "git commit"; then
         # Check if this looks like a step-commit workflow
-        if ! echo "$TOOL_OUTPUT" | grep -q "step-commit" && ! echo "$TOOL_OUTPUT" | grep -q "LEARNINGS.md" && ! echo "$TOOL_OUTPUT" | grep -q "PROJECTSTATE.md"; then
+        if ! echo "$TOOL_OUTPUT" | grep -q "step-commit" && ! echo "$TOOL_OUTPUT" | grep -q "LEARNINGS.md"; then
             echo ""
             echo "💡 TIP: Consider using the step-commit workflow for comprehensive commits:"
             echo "   /step-commit"
@@ -69,7 +69,6 @@ if [ "$TOOL_NAME" = "Bash" ]; then
             echo "  ✓ Proper linting"
             echo "  ✓ Documentation updates"
             echo "  ✓ Learning documentation"
-            echo "  ✓ Project state tracking"
             echo "  ✓ Proper attribution"
             echo ""
         fi

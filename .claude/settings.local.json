@@ -151,7 +151,8 @@
       "Bash(gh repo view:*)",
       "Bash(gh repo list:*)",
       "Bash(node -e:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(git subtree split:*)"
     ],
     "deny": [],
     "ask": [
