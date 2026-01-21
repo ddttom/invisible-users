@@ -348,14 +348,18 @@ s LLM Optimizer strategically (transitional tool, not primary solution)
 - Revenue impact visible NOW (Stack Overflow, Tailwind CSS precedents)
 - Competitive advantage available for first movers NOW
 
-### Book Publication (January 2026)
+### MX Series Publication (January 2026)
 
 **Thought leadership timing:**
 
-- Only comprehensive book on agent-website compatibility
-- Establishes patterns that become standards
-- PR opportunity for Adobe to partner with book author
+- Only comprehensive three-book series on agent-website compatibility
+  - **MX-Bible** - Technical reference for Adobe architects and consultants
+  - **MX-Don't Make the AI Think** - Executive guide for Adobe leadership
+  - **MX-Handbook** - Implementation guide for Adobe agency partners
+- Establishes patterns that become standards across the complete Adobe ecosystem
+- PR opportunity for Adobe to partner with series author
 - Window before competitors establish their own thought leadership
+- Addresses all stakeholders: C-suite, architects, agencies
 
 ### Platform Trust Compounding
 
@@ -375,13 +379,16 @@ s LLM Optimizer strategically (transitional tool, not primary solution)
 **Approach:**
 
 - Personal email/call to existing Adobe contacts
-- "I've just published a book on agent-website compatibility..."
+- "I've just published the MX Series - three books on agent-website compatibility..."
 - "Given your work on LLM Optimizer, thought you'd find this interesting..."
-- Offer complimentary copy of book (physical + PDF)
+- Offer complimentary books tailored to recipient:
+  - **Executives:** MX-Don't Make the AI Think
+  - **Architects:** MX-Bible
+  - **Agency Partners:** MX-Handbook
 - No ask, just value-first relationship building
 
 **Sample message:**
-> "Hi [Name], hope you're well. I've just published 'MX-Bible' about designing websites for AI agents. Given Adobe's work on LLM Optimizer, thought you'd find it relevant. The book argues for native CMS agent-readiness with edge optimization as transitional tool. Would love to send you a copy and hear your thoughts. How's [X project we worked on] going?"
+> "Hi [Name], hope you're well. I've just published the **MX Series** - three books about designing websites for AI agents (executives, architects, and developers). Given Adobe's work on LLM Optimizer, thought you'd find it relevant. The series argues for native CMS agent-readiness with edge optimization as transitional tool. I'd love to send you the appropriate books for your role and hear your thoughts. How's [X project we worked on] going?"
 
 ---
 

@@ -102,7 +102,10 @@ In January 2026, Amazon, Microsoft, and Google all launched agent commerce syste
 Tom Cranstoun | Digital Domain Technologies
 
 - **"The AEM Guy"** - Known in CMS circles, not vendor-locked, credible across platforms
-- **Author:** *MX-Bible: Designing the Web for AI Agents and Everyone Else* (published January 2026)
+- **Author:** *MX Series* - Three books on Machine Experience (published January 2026):
+  - *MX-Bible* - Comprehensive technical reference
+  - *MX-Don't Make the AI Think* - Executive guide
+  - *MX-Handbook* - Implementation handbook
 - **Enterprise scale:** Architected delivery infrastructure for BBC, Twitter, Nissan-Renault (200+ sites), Ford, MediaMonks
 - **MACH principles expertise:** Aligns with Kentico's architectural direction
 - **Boye & Company CMS Experts Group:** Industry-recognized thought leadership
@@ -111,9 +114,10 @@ Tom Cranstoun | Digital Domain Technologies
 **What differentiates us:**
 
 - Platform-level solutions (not single-site fixes)
-- Working code and patterns (book appendices + Web Audit Suite)
-- Thought leadership (only book on agent-website compatibility)
+- Working code and patterns (three-book series + appendices + Web Audit Suite)
+- Thought leadership (only comprehensive book series on agent-website compatibility)
 - Enterprise credibility (Fortune 500 implementations)
+- Complete ecosystem: Executive strategy (MX-Don't), Architecture (MX-Bible), Implementation (MX-Handbook)
 
 ---
 
@@ -184,7 +188,10 @@ Digital Domain Technologies Ltd
 
 ## Supporting Materials
 
-- *MX-Bible* book (physical copy + PDF available)
+- **MX Series** - Three-book ecosystem (physical copies + PDFs available):
+  - *MX-Don't Make the AI Think* - For Kentico executive team
+  - *MX-Bible* - For Kentico architects and product team
+  - *MX-Handbook* - For Kentico agency partners
 - Web Audit Suite demo and architecture documentation
 - Case studies: BBC, Twitter, Nissan-Renault implementations
 - Executive summary: "Why CMS Vendors Need Agent-Ready Strategy"

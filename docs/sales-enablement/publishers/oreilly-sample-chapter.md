@@ -1,5 +1,7 @@
 # Sample Chapter - Chapter 2: The Invisible Failure
 
+> **Status Note:** This material is maintained as reference for potential traditional publishing opportunities. Primary publishing strategy is independent (self-published via Amazon KDP and direct sales). Last updated: January 2026.
+
 **From: "MX-Bible: Designing the Web for AI Agents and Everyone Else"**
 **Author:** Tom Cranstoun
 
@@ -632,7 +634,7 @@ The complete manuscript (465 pages, 13 chapters) continues from this foundation 
 - **Architectural conflicts** (Chapter 3) - Why modern web design creates these problems
 - **Business realities** (Chapters 4-5) - The commercial pressures driving adoption
 - **Security and legal challenges** (Chapters 6-7) - Session inheritance and regulatory frameworks
-- **The platform race** (Chapter 9) - January 2025 convergence of Google, Microsoft, and Amazon
+- **The platform race** (Chapter 9) - January 2026 convergence of Google, Microsoft, and Amazon
 - **Implementation patterns** (Chapters 10-13) - Production-ready code and testing strategies
 
 **12 online appendices** (~58,600 words) provide implementation cookbooks, quick references, roadmaps, and case studies.

@@ -1,5 +1,7 @@
 # O'Reilly Media Book Proposal
 
+> **Status Note:** This material is maintained as reference for potential traditional publishing opportunities. Primary publishing strategy is independent (self-published via Amazon KDP and direct sales). Last updated: January 2026.
+
 **To:** <authorreln@oreilly.com>
 **From:** Tom Cranstoun
 **Date:** January 2026
@@ -7,7 +9,7 @@
 
 ## Executive Summary
 
-Between January 6-13, 2025, three major platforms (Google, Microsoft, Amazon) launched agent commerce infrastructure within seven days of each other. This convergence transformed AI agent compatibility from experimental technology to production infrastructure requirement.
+Between January 6-13, 2026, three major platforms (Google, Microsoft, Amazon) launched agent commerce infrastructure within seven days of each other. This convergence transformed AI agent compatibility from experimental technology to production infrastructure requirement.
 
 I'm proposing **"MX-Bible"** - a complete, production-ready manuscript (465 pages, 13 chapters) that documents this shift and provides the implementation patterns required to adapt. The timing is critical: businesses are implementing agent-compatible patterns **now**, not in 12-18 months.
 
@@ -17,7 +19,7 @@ I'm proposing **"MX-Bible"** - a complete, production-ready manuscript (465 page
 
 **Market reality:** Competitors are implementing agent compatibility **this quarter**
 
-**The convergence window:** January 2025 convergence → Q2 2026 implementation surge → Q3 2026 becomes standard infrastructure
+**The convergence window:** January 2026 convergence → Q2 2026 implementation surge → Q3 2026 becomes standard infrastructure
 
 By Q3 2026, agent compatibility will be established practice. The book needs to reach decision-makers **during** the implementation surge (Q1-Q2 2026), not after.
 
@@ -88,7 +90,7 @@ AI agents have achieved remarkable capabilities, but they need well-structured i
 - **Word Count:** ~78,000 words core manuscript
 - **Status:** Complete manuscript, ready for publication
 - **Format:** 13 chapters + preface + glossary
-- **Bonus Materials:** 12 online appendices (~58,600 words) maintained by author
+- **Bonus Materials:** 12+ online appendices (~58,600 words) maintained by author
 - **Code Examples:** Production-ready patterns for Apache, Nginx, Next.js, WordPress, Adobe EDS, static sites
 - **Illustrations:** 13 custom SVG/PNG illustrations
 
@@ -127,11 +129,11 @@ AI agents have achieved remarkable capabilities, but they need well-structured i
 
 **Key differentiators:**
 
-1. **Timeliness:** Only book documenting January 2025 platform convergence
+1. **Timeliness:** Only book documenting January 2026 platform convergence
 2. **Practical focus:** Production-ready code examples, not theoretical futures
 3. **Convergence principle:** Demonstrates how agent-friendly patterns benefit all users
 4. **Business + technical:** Bridges C-suite strategy with developer implementation
-5. **Living content:** 12 online appendices updated as field evolves
+5. **Living content:** 12+ online appendices updated as field evolves
 
 ### Books from Other Publishers
 
@@ -156,7 +158,7 @@ AI agents have achieved remarkable capabilities, but they need well-structured i
 2. **The Security Maze** - Session inheritance and authentication challenges
 3. **The Legal Landscape** - Legal frameworks struggling to keep pace
 4. **The Human Cost** - Digital divide implications
-5. **The Platform Race** - January 2025 convergence and competitive urgency
+5. **The Platform Race** - January 2026 convergence and competitive urgency
 
 ### Part 3: The Solutions (Chapters 10-13)
 
@@ -169,7 +171,7 @@ AI agents have achieved remarkable capabilities, but they need well-structured i
 
 - **Preface:** Author's journey discovering the problem
 - **Glossary:** 60+ technical terms with cross-references
-- **12 Online Appendices:** Implementation cookbook, battle-tested lessons, Web Audit Suite guide, AI-friendly HTML patterns, quick references, roadmaps, resource directory, case studies, industry developments, page patterns, proposed metadata patterns
+- **12+ Online Appendices:** Implementation cookbook, battle-tested lessons, Web Audit Suite guide, AI-friendly HTML patterns, quick references, roadmaps, resource directory, case studies, industry developments, page patterns, proposed metadata patterns
 
 ## Author Credentials
 
@@ -215,7 +217,7 @@ AI agents have achieved remarkable capabilities, but they need well-structured i
 
 ### Content Marketing
 
-- **12 online appendices:** Already published, driving traffic to book
+- **12+ online appendices:** Already published, driving traffic to book
 - **Web Audit Suite:** Companion tool creates implementation ecosystem
 - **Industry developments tracking:** Appendix J maintained with latest news
 
@@ -303,7 +305,7 @@ I'm available to discuss:
 3. **Platform vs. print:** Which format serves this content best given timing urgency?
 4. **Marketing collaboration:** How to maximize launch impact in Q1 2026
 
-The January 2025 convergence created a narrow window where this book delivers maximum value. Businesses implementing agent compatibility **now** need guidance **now**. By Q3 2026, agent compatibility becomes established infrastructure and the opportunity shifts from "how to implement" to "how to optimize."
+The January 2026 convergence created a narrow window where this book delivers maximum value. Businesses implementing agent compatibility **now** need guidance **now**. By Q3 2026, agent compatibility becomes established infrastructure and the opportunity shifts from "how to implement" to "how to optimize."
 
 I believe O'Reilly's Early Release model is uniquely positioned to deliver timely content to the professional audience that needs it most urgently.
 

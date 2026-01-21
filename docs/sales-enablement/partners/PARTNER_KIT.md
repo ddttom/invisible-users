@@ -36,7 +36,7 @@ Most websites are built for human eyes only. When AI agents visit them, they bre
 
 We help forward-thinking companies like [Company Name] ensure their digital infrastructure is "Agent Ready." This isn't just about future-proofing; it's about fixing accessibility debt that is likely hurting your human users right now.
 
-I've attached a one-page executive summary on "MX-Bible" problem. I'd love to share how we can turn this into a competitive advantage for you.
+I've attached materials from the **MX Series** (three books on Machine Experience) including an executive summary. The series covers agent-website compatibility from executive strategy to technical implementation. I'd love to share how we can turn this into a competitive advantage for you.
 
 Best,
 

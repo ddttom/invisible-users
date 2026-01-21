@@ -64,7 +64,11 @@ The convergence principle means both audiences benefit: business leaders underst
 
 **Complete foundation for immediate market entry:**
 
-1. **~62,000-word book manuscript** (13 chapters) + 12 appendices published separately online - Establishes thought leadership
+1. **Three-book MX Series** - Complete ecosystem serving all stakeholders:
+   - **MX-Bible** - ~78,000-word comprehensive technical reference (13 chapters, 465 pages)
+   - **MX-Don't Make the AI Think** - Practical quick guide for executives
+   - **MX-Handbook** - Implementation handbook for developers and designers
+   - Shared 12+ online appendices across all three books
 2. **Production-ready code examples** - HTML, React, WordPress, Next.js implementations
 3. **Web Audit Suite** - Comprehensive Node.js analysis tool implementing all patterns
 4. **Implementation methodology** - 4-priority-level systematic rollout
@@ -261,7 +265,7 @@ The convergence principle means both audiences benefit: business leaders underst
 
 **Materials Available:**
 
-- Complete ~62,000-word manuscript (13 chapters) + 12 appendices published online
+- Three-book MX Series (MX-Bible complete at ~78,000 words/13 chapters, MX-Don't Make the AI Think and MX-Handbook in development) + 12+ shared appendices published online
 - Web Audit Suite (production-ready analysis tool)
 - Code repository and implementation examples
 - Financial model spreadsheet
@@ -304,7 +308,7 @@ Availability: Ready to start immediately, flexible partnership agreement timelin
 
 **Market:** £6.3 trillion e-commerce + adjacent markets, 12-18 month first-mover window
 
-**What's Built:** ~62,000-word manuscript (13 chapters) + 12 appendices online, Web Audit Suite, code examples, methodology, website
+**What's Built:** Three-book MX Series (MX-Bible ~78,000 words/13 chapters complete, plus MX-Don't Make the AI Think and MX-Handbook) + 12+ shared appendices, Web Audit Suite, code examples, methodology, website
 
 **Revenue:** £2M-£5M Year 1 potential across multiple streams
 

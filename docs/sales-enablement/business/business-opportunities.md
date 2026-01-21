@@ -10,7 +10,13 @@ This document tracks business development opportunities identified through marke
 
 The agent-ready infrastructure market has clear gaps where established vendors (CMS platforms, development agencies, enterprise software) have launched "AI features" without addressing the fundamental question: **Do the resulting websites work for AI agents?**
 
-Our strategic advantage: *MX-Bible* book establishes thought leadership on agent-website compatibility patterns. Most vendors focus on internal AI productivity tools (content generation, code assistance) rather than agent-accessible output.
+Our strategic advantage: The **MX Series** (three books) establishes comprehensive thought leadership on agent-website compatibility patterns:
+
+- **MX-Bible** - Technical reference for CMS architects and consultants
+- **MX-Don't Make the AI Think** - Executive guide for vendor leadership teams
+- **MX-Handbook** - Implementation guide for agency partners and developers
+
+Most vendors focus on internal AI productivity tools (content generation, code assistance) rather than agent-accessible output. The MX Series addresses the complete vendor ecosystem - from executive strategy to partner implementation.
 
 ---
 
@@ -190,11 +196,13 @@ Our strategic advantage: *MX-Bible* book establishes thought leadership on agent
 - Dominik Pintér (CEO)
 
 **Initial pitch:**
-> "AIRA accelerates content creation, but doesn't ensure that content works for AI agents accessing your customers' sites. I've just published *MX-Bible* and can help Kentico become the first CMS with genuine agent-compatibility built in, not bolted on. Amazon, Microsoft, and Google all launched agent commerce in January 2026. Your customers will face 'why doesn't our site work for agents?' questions within months. Let's position Kentico as the solution before competitors do."
+> "AIRA accelerates content creation, but doesn't ensure that content works for AI agents accessing your customers' sites. I've just published the **MX Series** - three books covering agent compatibility from executive strategy to implementation. This can help Kentico become the first CMS with genuine agent-compatibility built in, not bolted on. Amazon, Microsoft, and Google all launched agent commerce in January 2026. Your customers will face 'why doesn't our site work for agents?' questions within months. Let's position Kentico as the solution before competitors do."
 
 **Supporting materials:**
 
-- Book (physical copy + PDF)
+- **MX-Don't Make the AI Think** - For Kentico executive team (business case)
+- **MX-Bible** - For Kentico product architects (comprehensive technical patterns)
+- **MX-Handbook** - For Kentico's agency partners (implementation guidance)
 - Executive summary highlighting CMS vendor opportunities
 - One-page capability statement
 - Case study: BBC/Twitter/Nissan-Renault implementations

@@ -26,7 +26,7 @@ When Target and Walmart—fierce retail competitors—both implement the same ag
 
 ## The Seven-Day Window That Changed Everything
 
-Between January 6th and 13th, 2025:
+Between January 6th and 13th, 2026:
 
 - Google launched Shopping Agent with real-time inventory integration
 - Microsoft announced Copilot Checkout across retail partners
@@ -62,7 +62,7 @@ The book launches Q1 2026, but the patterns are relevant today. The webinar cove
 
 - **2023**: Early agent experiments, limited capability
 - **2024**: Platform infrastructure development, closed testing
-- **January 2025**: Major platforms launch within seven days
+- **January 2026**: Major platforms launch within seven days
 - **Q2 2025**: Agent commerce becomes standard competitive infrastructure
 - **Q3 2025**: Sites without agent compatibility face measurable disadvantage
 

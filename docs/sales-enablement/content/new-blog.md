@@ -279,9 +279,9 @@ Using the prioritised implementation roadmap (Appendix F):
 
 **What You Get:**
 
-- **~57,000 words** of practical, actionable guidance
+- **~78,000 words** of practical, actionable guidance
 - **11 chapters** covering technical, business, ethical implications
-- **10 appendices** (published online at <https://allabout.network/invisible-users/web/>) including implementation cookbook and validation patterns
+- **12+ appendices** (published online at <https://allabout.network/invisible-users/web/>) including implementation cookbook and validation patterns
 - **Real-world examples** with before/after code
 - **Priority-based roadmap** (not time-based - Priority 1-4)
 - **Agent validation frameworks** (Chapter 12: for developers building agents)
@@ -820,7 +820,7 @@ You can identify issues preventing agent-mediated transactions. You can implemen
 
 ### Book + Web Audit Suite + Implementation Framework
 
-- Comprehensive methodology (~57,000 words + 10 appendices online)
+- Comprehensive methodology (~78,000 words + 12+ appendices online)
 - Production-ready analysis tool
 - Copy-paste implementation recipes
 - Agent validation frameworks
@@ -831,7 +831,7 @@ You can identify issues preventing agent-mediated transactions. You can implemen
 
 **Package includes:**
 
-- Complete book manuscript (11 chapters + 10 appendices online)
+- Complete book manuscript (11 chapters + 12+ appendices online)
 - Implementation cookbook with code examples
 - Priority-based roadmap templates
 

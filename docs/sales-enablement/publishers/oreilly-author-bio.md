@@ -1,5 +1,7 @@
 # Author Biography - Extended
 
+> **Status Note:** This material is maintained as reference for potential traditional publishing opportunities. Primary publishing strategy is independent (self-published via Amazon KDP and direct sales). Last updated: January 2026.
+
 **Tom Cranstoun**
 Author of "MX-Bible: Designing the Web for AI Agents and Everyone Else"
 
@@ -20,7 +22,7 @@ Two years investigating what happens when AI agents encounter modern websites. N
 This investigation produced:
 
 - Classification of five invisible failure categories
-- Documentation of the January 2025 platform convergence (Google, Microsoft, Amazon launching within 7 days)
+- Documentation of the January 2026 platform convergence (Google, Microsoft, Amazon launching within 7 days)
 - Production-ready implementation patterns across multiple platforms
 - Web Audit Suite tool for detecting agent compatibility issues
 - This book: comprehensive guide from business implications through technical implementation
@@ -161,7 +163,7 @@ The tool validates the book's patterns through automated testing across real web
 
 **Unique aspects:**
 
-- Documented January 2025 platform convergence within weeks of occurrence
+- Documented January 2026 platform convergence within weeks of occurrence
 - Production-ready code examples across multiple platforms
 - Priority-based implementation roadmaps for different resource levels
 - 12 comprehensive online appendices maintained as living documents
@@ -212,7 +214,7 @@ Audience: Enterprise digital experience decision-makers, content strategists, te
 
 **Topics available for presentation:**
 
-- The January 2025 platform convergence and its implications
+- The January 2026 platform convergence and its implications
 - Invisible failure patterns and detection strategies
 - AI agent compatibility as accessibility challenge
 - Production implementation patterns across platforms
@@ -275,7 +277,7 @@ Audience: Enterprise digital experience decision-makers, content strategists, te
 
 #### 2021-Present: AI agent compatibility
 
-- Platform convergence (January 2025)
+- Platform convergence (January 2026)
 - Agent-mediated commerce infrastructure
 - Return to semantic HTML and progressive enhancement
 
@@ -310,7 +312,7 @@ This historical perspective informs the book's analysis: AI agent compatibility 
 - Documentation of January 2026 platform convergence
 - Production validation of implementation patterns
 
-**Market urgency:** The January 2025 convergence created narrow window where this book delivers maximum value. Businesses implementing agent compatibility now need guidance now.
+**Market urgency:** The January 2026 convergence created narrow window where this book delivers maximum value. Businesses implementing agent compatibility now need guidance now.
 
 ### Unique Qualification
 

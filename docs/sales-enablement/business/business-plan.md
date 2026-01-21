@@ -1,4 +1,4 @@
-# Business Plan: MX-Bible
+# Business Plan: MX Series (Machine Experience Books)
 
 **Document Version:** 1.0
 **Date:** December 2025
@@ -6,7 +6,15 @@
 
 ## Executive Summary
 
-"MX-Bible: Designing the Web for AI Agents and Everyone Else" addresses a critical emerging problem: AI agents are visiting websites on behalf of users, and common web design patterns cause these agents to fail silently. This creates invisible conversion losses for businesses and accessibility barriers for humans.
+The MX Series - three interconnected books on Machine Experience - addresses a critical emerging problem: AI agents are visiting websites on behalf of users, and common web design patterns cause these agents to fail silently. This creates invisible conversion losses for businesses and accessibility barriers for humans.
+
+**Three-Book Ecosystem:**
+
+- **MX-Bible** - Comprehensive technical reference (~78,000 words, 13 chapters, 465 pages) for architects and consultants
+- **MX-Don't Make the AI Think** - Practical quick guide for executives and decision-makers
+- **MX-Handbook** - Implementation handbook for developers and designers
+
+All three books share 12+ online appendices, creating a complete solution for organizations at every level.
 
 **The opportunity exists because:**
 
@@ -25,13 +33,15 @@
 
 **Competitive advantage:**
 
-- Complete, publication-ready manuscript (~57,000 words: 11 chapters + 10 appendices published separately online)
+- **Three-book ecosystem** serving all stakeholders (executives to implementers)
+- Complete, publication-ready manuscripts (~78,000 words core for MX-Bible: 13 chapters + 12+ appendices published separately online, ~140,000 words total)
 - Web Audit Suite (production-ready analysis tool)
 - Practical, working code examples
 - Interactive notebook companion
 - Established author platform (allabout.network)
 - Real-world implementation experience
 - Business + technical + ethical coverage (not just technical guides)
+- Audience segmentation: MX-Bible (architects), MX-Don't Make the AI Think (executives), MX-Handbook (developers)
 
 ---
 
@@ -594,7 +604,7 @@ Websites built for human visual browsing fail for AI agents that parse sequentia
 
 **Deliverables:**
 
-1. ✅ **Manuscript complete** (DONE - ~57,000 words: 11 chapters + 10 appendices published separately at <https://allabout.network/invisible-users/web/>)
+1. ✅ **Manuscript complete** (DONE - ~78,000 words core manuscript: 13 chapters + 12+ appendices published separately at <https://allabout.network/invisible-users/web/>, ~140,000 words total)
 2. ✅ **Supporting materials complete** (DONE)
 3. **Publication preparation:**
    - Professional editing (copy edit + technical review): 4-6 weeks

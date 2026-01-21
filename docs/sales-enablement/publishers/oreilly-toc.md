@@ -1,5 +1,7 @@
 # MX-Bible: Designing the Web for AI Agents and Everyone Else
 
+> **Status Note:** This material is maintained as reference for potential traditional publishing opportunities. Primary publishing strategy is independent (self-published via Amazon KDP and direct sales). Last updated: January 2026.
+
 ## Complete Table of Contents
 
 **Author:** Tom Cranstoun
@@ -48,7 +50,7 @@ Introduction establishing the collision between human-optimised web design and A
 3. The accessibility parallel - Why fixing agent problems benefits everyone
 4. Who should read this - Four primary audiences with distinct needs
 5. How the book is structured - Three-part progression from problem to solution
-6. The urgency of now - January 2025 platform convergence
+6. The urgency of now - January 2026 platform convergence
 
 **Key concepts introduced:**
 
@@ -216,7 +218,7 @@ Platform competition, urgency, and the open vs closed dynamic. This chapter brid
 
 **Sections:**
 
-1. The Seven-Day Acceleration (January 2025: Amazon, Microsoft, Google)
+1. The Seven-Day Acceleration (January 2026: Amazon, Microsoft, Google)
 2. Open vs Closed Competition (ACP, UCP vs Copilot Checkout)
 3. The Players and Their Strategies
 4. Microsoft's Isolation - Proprietary approach
@@ -382,7 +384,7 @@ Final page directing readers to online appendices with full descriptions of each
 **Content:**
 
 - Brief explanation of why appendices are online (rapid field evolution)
-- Description of all 12 appendices (A-L)
+- Description of all 12+ appendices (A-L)
 - URL for access: <https://allabout.network/invisible-users/web/>
 - Invitation to join ongoing conversation
 

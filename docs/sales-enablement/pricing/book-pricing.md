@@ -1,8 +1,18 @@
 # Book Pricing Strategy
 
-MX-Bible: Designing the Web for AI Agents and Everyone Else
+## Three-Book Ecosystem
 
-## Book Specifications
+This pricing strategy covers the MX series - three interconnected books serving different audiences:
+
+- **MX-Bible** - Comprehensive technical reference (~78,000 words, 13 chapters, 465 pages)
+- **MX-Don't Make the AI Think** - Practical quick guide for executives and decision-makers
+- **MX-Handbook** - Implementation handbook for developers and designers
+
+All three books share 12+ online appendices maintained at allabout.network.
+
+This document focuses primarily on **MX-Bible** pricing, with notes on bundle opportunities across the series.
+
+## Book Specifications (MX-Bible)
 
 - **Format:** 6"×9" paperback
 - **Pages:** 465 pages (from generated Kindle PDF)
@@ -36,16 +46,23 @@ Similar technical books in web development, architecture, and AI/ML space:
 
 3. **Comprehensive Reference Materials**
    - Free online appendices (regularly updated)
-   - 12 appendices covering implementation patterns, case studies, quick references
+   - 12+ appendices covering implementation patterns, case studies, quick references
    - Live Industry Developments appendix tracking latest news
 
-4. **Professional Target Audience**
+4. **Three-Book Ecosystem Strategy**
+   - **MX-Bible** - Comprehensive technical reference for deep implementation
+   - **MX-Don't Make the AI Think** - Accessible executive guide for decision-makers
+   - **MX-Handbook** - Practical implementation guide for developers
+   - Shared appendices across all three books (updated continuously)
+   - Addresses all stakeholders from C-suite to implementation teams
+
+5. **Professional Target Audience**
    - CTOs, architects, product owners, engineering managers
    - Business decision-makers evaluating strategic impact
    - Professional developers implementing patterns
    - Higher price tolerance for business-critical content
 
-5. **Web Audit Suite Integration**
+6. **Web Audit Suite Integration**
    - Companion analysis tool available separately
    - Book + tool creates comprehensive solution ecosystem
    - Enables premium bundle opportunities
@@ -94,6 +111,29 @@ Similar technical books in web development, architecture, and AI/ML space:
 - Demonstrates permanence and authority
 
 ## Bundle Opportunities
+
+### Three-Book Series Bundle
+
+**Package Positioning:**
+
+The complete MX series provides coverage for all stakeholders:
+
+- **MX-Bible** (£30) - Technical reference for architects and consultants
+- **MX-Don't Make the AI Think** (TBD) - Executive quick guide for decision-makers
+- **MX-Handbook** (TBD) - Implementation guide for developers and designers
+
+**Pricing Strategy:**
+
+- Individual books: Standard pricing per book
+- Two-book bundle: 10% discount
+- Complete three-book series: 15% discount
+- Corporate packages (team access to all three): Custom pricing with volume discounts
+
+**Target Audiences:**
+
+- **Consultancies:** Need all three books to serve clients at every level
+- **Agencies:** MX-Bible + MX-Handbook for technical teams
+- **Enterprises:** Complete series for cross-functional teams (executives, architects, developers)
 
 ### Book + Web Audit Suite Consultation
 

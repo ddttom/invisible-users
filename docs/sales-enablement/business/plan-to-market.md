@@ -245,7 +245,7 @@ The patterns that break agents also break screen reader users, people with cogni
 
 WHAT'S IN THE BOOK
 
-• ~57,000 words across 11 chapters + 10 appendices published separately online
+• ~78,000 words across 13 chapters + 12+ appendices published separately online
 • Agent validation guardrails (Chapter 12)
 • Production-ready code examples (HTML, React, WordPress, Next.js)
 • Web Audit Suite (comprehensive analysis tool)
@@ -841,7 +841,7 @@ Half-day masterclass (deep implementation)
 WHY ME
 
 • 30 years web development experience
-• Author of "MX-Bible" (~57,000 words core manuscript, 11 chapters + 10 appendices online)
+• Author of "MX-Bible" (~78,000 words core manuscript, 13 chapters + 12+ appendices online)
 • Created production-ready implementation framework
 • Built Web Audit Suite (comprehensive analysis tool)
 • Delivered agent compatibility audits for [X] companies

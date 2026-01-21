@@ -37,13 +37,22 @@ AI agents are visiting websites right now and failing silently. These failures c
 
 **What We've Built:**
 
-**1. Complete Methodology (Book):**
+**1. Complete Methodology (Three-Book MX Series):**
 
-- ~57,000-word manuscript (11 chapters) + 10 appendices published separately online
+- **MX-Bible** - ~78,000-word comprehensive technical reference (13 chapters, 465 pages) for architects and consultants
+- **MX-Don't Make the AI Think** - Practical quick guide for executives and decision-makers
+- **MX-Handbook** - Implementation handbook for developers and designers
+- Shared 12+ appendices published separately online across all three books
 - Implementation cookbook with 10 copy-paste recipes
 - Battle-tested lessons from real implementations
-- Agent validation guardrails (Chapter 12)
+- Agent validation guardrails (Chapter 12 in MX-Bible)
 - 60+ term glossary, 150+ resource links
+
+**Audience Segmentation:**
+
+- Executives need business justification → MX-Don't Make the AI Think
+- Architects need comprehensive patterns → MX-Bible
+- Developers need implementation guides → MX-Handbook
 
 **2. Production-Ready Measurement Tool (Web Audit Suite):**
 
@@ -142,7 +151,7 @@ These same patterns break human users with disabilities who use assistive techno
 
 "MX-Bible: Designing the Web for AI Agents and Everyone Else"
 
-11 Chapters, ~57,000 words core manuscript:
+11 Chapters, ~78,000 words core manuscript:
 
 1. What You Will Learn
 2. The Invisible Failure
@@ -507,12 +516,12 @@ Scalable business model with strong growth potential across all revenue streams.
 
 | Component | Details |
 | --------- | ------- |
-| **Book Manuscript** | ~57,000 words core manuscript (11 chapters), deep domain expertise |
+| **Book Manuscript** | ~78,000 words core manuscript (13 chapters), deep domain expertise |
 | **Ten Appendices** | Implementation guides, case studies, resources, published separately online at <https://allabout.network/invisible-users/web/> |
 | **Business Strategy** | Business plan, pitch deck, executive summary, go-to-market materials |
 | **Web Audit Suite** | 15,000+ lines production JavaScript, 18+ reports, 3-phase pipeline |
 | **Code Examples** | Production-ready examples, Playwright test suite (14 tests) |
-| **Design & Illustrations** | 13 custom SVG illustrations (11 chapters + cover + decision tree), website design |
+| **Design & Illustrations** | 13 custom SVG illustrations (13 chapters + cover + decision tree), website design |
 | **Supporting Materials** | Glossary (60+ terms), checklist, resource links (150+) |
 | **Project Management** | Coordination, QA, standards compliance, documentation |
 
@@ -528,7 +537,7 @@ Substantial professional development investment completed.
 
 ✅ **Complete Methodology**
 
-- ~57,000-word book manuscript (11 chapters) + 10 appendices published online
+- ~78,000-word book manuscript (13 chapters) + 12+ appendices published online
 - Implementation cookbook with recipes
 - Agent validation guardrails (Chapter 12)
 - Battle-tested lessons from real implementations
