@@ -409,7 +409,7 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 **Important exceptions:**
 
 - **Skill files:** Never fix markdown linting issues in `.claude/skills/` files (excluded from linting via `--ignore .claude` flag)
-- **Blog posts with YAML frontmatter (MD025):** Files in `outputs/bible/blogs/` use YAML frontmatter for metadata only (not displayed). The first content heading MUST be H1 (#) because the frontmatter title doesn't create a displayed heading. Markdown linters may incorrectly flag this as "multiple H1s" - this is expected and correct. The YAML `title` field is stripped during markdown-to-HTML processing and only used for page metadata.
+- **Files with YAML frontmatter (MD025):** ANY markdown file with YAML frontmatter (in any directory - blogs, chapters, docs, etc.) may trigger MD025 warnings. When the YAML `title` field is used for metadata only (stripped during processing and NOT displayed as a heading), the first content heading MUST be H1 (#). Markdown linters may incorrectly flag this as "multiple H1s" - this is expected and correct for files where frontmatter is processed but not rendered as content.
 
 ## Markdown Metadata (Pandoc YAML Frontmatter)
 
@@ -429,11 +429,24 @@ purpose: "Educational content introducing AI agents concept"
 ---
 ```
 
+**YAML Frontmatter Processing:**
+
+YAML frontmatter is processed differently depending on the build system:
+
+1. **Metadata only (stripped from output):** When frontmatter is used purely for HTML meta tags, page titles, or build system configuration, it is NOT rendered as visible content. In these cases:
+   - The YAML `title` field becomes HTML `<title>` and meta tags
+   - The first content heading MUST be H1 (#)
+   - Markdown linters may incorrectly flag MD025 (multiple H1s) - this is expected
+   - Common in: blog posts, generated HTML pages, static site generators
+
+2. **Included in output:** Some build processes (like Pandoc for PDFs) may include frontmatter data in the output. Context determines usage.
+
 **When you encounter YAML frontmatter:**
 
 1. Read and understand it (provides context about file's purpose)
 2. Respect `ai-instruction` field if present
 3. Use metadata to inform your approach
+4. Check if file is processed (blog posts, HTML generation) to determine correct heading structure
 
 **Standard fields:**
 
@@ -443,7 +456,7 @@ purpose: "Educational content introducing AI agents concept"
 - `ai-instruction` - Agent parsing guidance
 - `purpose` - Document intent
 
-**Files using YAML frontmatter:** Blog posts (`outputs/bible/blogs/`), Chapter 0 (`docs/shared-chapters/`), future chapters progressively
+**Files using YAML frontmatter:** Can appear in ANY markdown file - blog posts (`outputs/bible/blogs/`), chapters (`docs/shared-chapters/`, `packages/*/chapters/`), documentation, or any other markdown file.
 
 **Implementation reference:** Appendix L Pattern 4, Chapter 10, Appendix H
 
