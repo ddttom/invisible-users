@@ -7,6 +7,62 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22] - YAML Frontmatter Title Duplication Fix
+
+### Changed
+
+- **CLAUDE.md**: Corrected YAML frontmatter guidance to avoid title duplication
+  - Removed incorrect advice about title in frontmatter + H1 in content being acceptable
+  - Added "CRITICAL PRINCIPLE: Avoid Title Duplication" section
+  - Documented two patterns: H1 in content (preferred) OR title in frontmatter (special cases only)
+  - Updated heading structure guidance to reflect correct principle
+
+- **Markdown Workflow Skill** (.claude/skills/md-workflow/skill.md): Corrected frontmatter pattern guidance
+  - Replaced "metadata-only vs included" framework with "avoid duplication" principle
+  - Pattern 1: H1 in content, no title in frontmatter (preferred for most documents)
+  - Pattern 2: Title in frontmatter only (book chapters using Pandoc)
+  - Updated "Avoiding MD025 Warnings" section to show old pattern (causes warnings) vs new pattern (no warnings)
+
+- **Pre-tool-use Hook** (.claude/hooks/pre-tool-use.sh): Updated markdown workflow reminder
+  - Changed from "frontmatter metadata-only → H1 required" to "avoid title duplication"
+  - New message: "If markdown has H1 heading: DO NOT include 'title:' field in YAML frontmatter"
+  - Emphasizes choosing ONE approach, not both
+
+### Fixed
+
+- **Blog Post** (outputs/bible/blogs/boye-co-member-call-review.md): Removed redundant title field from YAML frontmatter
+  - Kept H1 heading in content
+  - Removed `title:` field from frontmatter (was duplicating H1)
+  - Eliminates MD025 warning and redundancy
+
+## [2026-01-21] - Markdown Workflow Skill and Hook
+
+### Added
+
+- **Markdown Workflow Skill** (.claude/skills/md-workflow/): Comprehensive guidance for creating, editing, and linting markdown files with YAML frontmatter awareness
+  - skill.md: 244-line documentation covering:
+    - YAML frontmatter processing (metadata-only vs included in output)
+    - Markdown linting rules and project configuration
+    - Workflow steps (creating, editing, linting files)
+    - Troubleshooting MD025 warnings (expected for frontmatter files)
+    - Integration with /review-docs, /md-fix, /step-commit skills
+  - md-workflow.json: Skill configuration with detailed AI agent instructions
+  - Critical pattern documentation: When YAML frontmatter is metadata-only (stripped during processing), first content heading MUST be H1 (#)
+  - Applies to ANY markdown file in ANY directory (blogs, chapters, docs, etc.)
+
+- **Pre-tool-use Hook Enhancement** (.claude/hooks/pre-tool-use.sh): Markdown workflow reminder
+  - Triggers on Edit/Write operations for .md files
+  - Reminds about YAML frontmatter + heading structure pattern
+  - Warns against incorrectly changing H1 to H2 to suppress MD025
+  - Suggests /md-workflow skill for comprehensive guidance
+
+### Changed
+
+- **CLAUDE.md**: Generalized YAML frontmatter documentation (lines 409-435)
+  - Updated from blog-specific to apply to ANY markdown file
+  - Added "YAML Frontmatter Processing" section explaining two processing modes
+  - Documented MD025 warnings as expected for metadata-only frontmatter files
+
 ## [2026-01-21] - MX-The Handbook Repository Setup
 
 ### Added
