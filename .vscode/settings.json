@@ -104,5 +104,8 @@
 
   // Claude Code settings
   "claude-code.enableContext": true,
-  "cSpell.words": ["behaviours"]
+  "cSpell.words": [
+    "behaviours"
+  ],
+  "xcodeIntegration.projectPath": "/Users/tomcranstoun/Documents/GitHub/invisible-users"
 }
