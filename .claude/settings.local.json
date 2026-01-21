@@ -150,7 +150,8 @@
       "Bash(python:*)",
       "Bash(gh repo view:*)",
       "Bash(gh repo list:*)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "Bash(git config:*)"
     ],
     "deny": [],
     "ask": [
