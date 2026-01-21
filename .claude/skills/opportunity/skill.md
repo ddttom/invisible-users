@@ -16,6 +16,8 @@ When you identify a potential business opportunity (new vendor AI feature, agenc
 4. **Cross-references book content** - Links to relevant chapters validating the opportunity
 5. **Estimates engagement value** - Suggests pricing and engagement models
 
+**Note:** The `packages/sales-enablement/` submodule is marked as READ-ONLY in CLAUDE.md, meaning AI assistants should not autonomously modify it. However, when you explicitly invoke this skill, you are authorizing the AI to create and update files in this submodule. All changes will be committed using standard git workflow.
+
 ## Integration with News Skill
 
 **Workflow integration:**
