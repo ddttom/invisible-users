@@ -34,6 +34,8 @@ Some agents operate as browser extensions running alongside human users. Others 
 
 People are building agents that monitor Slack channels for commands, then execute web actions autonomously and report back. These capabilities are expanding rapidly. In January 2026, Google, Microsoft, and Amazon all launched purchasing functionality within days of each other. Agent-mediated commerce has moved from experiment to platform strategy.
 
+The shift from passive assistant to active agent is now complete. Anthropic's Claude Cowork, launched in January 2026, represents the first truly autonomous digital colleague - managing local file systems, orchestrating complex project workflows, and executing multi-step tasks without constant human prompting. Built on a multi-agent architecture where Claude 4 Opus acts as lead planner whilst Claude 4.5 Sonnet models handle parallel sub-tasks, the system operates as a coworker rather than a tool. Remarkably, the entire feature was built in approximately a week and a half using Claude Code itself. This is the agentic era: machines reading websites, comparing options, making recommendations, and completing purchases on behalf of humans.[^cowork]
+
 These agents struggle with patterns that also confuse users with disabilities. They're blind to visual cues like flashes of information. They struggle to differentiate between European, American, and British monetary formats. They don't understand what spinners mean. When faced with five "Read More" buttons on a page, they can't easily determine which relates to which content. They process form validation errors differently from humans - whilst humans iteratively fix issues one by one, AIs may simply abandon difficult websites.
 
 ## The Accessibility Connection
@@ -217,6 +219,8 @@ These services apply the book's patterns in practical client work. The same prin
 
 [^organizational]: Research shows 82% of respondents have limited ability to hold others accountable, and only 14% of employees feel their performance is managed in ways that inspire responsibility. Clear ownership structures address this gap. See [Accountability in Organizational Design](https://www.forrestadvisors.com/insights/organizational-design/accountability-organizational-design-fostering-responsibility/) and [Responsibility, Accountability, and Ownership](https://medium.com/@csw11235/responsibility-accountability-and-ownership-da054169fcce) for frameworks implementing effective accountability.
 
+[^cowork]: Anthropic launched Claude Cowork on 12 January 2026, marking a fundamental shift from chatbot to autonomous digital colleague. The system manages local file systems, orchestrates workflows, and executes complex tasks through multi-agent architecture. Initially available to Max subscribers, it expanded to Pro tier subscribers ($20/month) shortly after launch. See [Anthropic launches Cowork, a Claude Desktop agent that works in your files](https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no), [Anthropic Unveils 'Claude Cowork': The First Truly Autonomous Digital Colleague](https://markets.financialcontent.com/stocks/article/tokenring-2026-1-19-anthropic-unveils-claude-cowork-the-first-truly-autonomous-digital-colleague), and [Anthropic's new Cowork tool offers Claude Code without the code](https://techcrunch.com/2026/01/12/anthropics-new-cowork-tool-offers-claude-code-without-the-code/) for comprehensive coverage of capabilities and architecture.
+
 ---
 
 | metadata |  |
@@ -225,7 +229,7 @@ These services apply the book's patterns in practical client work. The same prin
 | author | Tom Cranstoun |
 | creation-date | 15/Dec/2024 |
 | publication-date | Q1 2026 |
-| modified-date | 19/Jan/2026 |
+| modified-date | 21/Jan/2026 |
 | description | Understanding AI agents as machines with technical capabilities and limitations that parallel human disabilities |
 | longdescription | This introductory chapter traces the journey from observing AI failures to understanding the solution: fixing websites rather than fixing models. Through personal narrative and concrete examples (Danube cruise pricing errors, Ally McBeal legal citations), it introduces the concept of "invisible users" - AI agents operating on behalf of humans - and establishes the convergence principle: patterns that help AI agents are the same patterns that help users with disabilities. The chapter introduces Machine Experience (MX) as a new discipline alongside User Experience (UX), explains what AI agents actually are through their technical capabilities, describes their journey through websites (discovery → citation → comparison → purchase), and demonstrates why semantic structure matters more than intelligence. |
 | purpose | This chapter serves as the book's anchor, explaining what AI agents are through the lens of personal discovery and establishing the core principle that designing for AI agents means designing for accessibility. It provides background context, introduces key concepts, and sets the commercial urgency (January 2026 launches) whilst maintaining a conversational, expert-to-peer tone. |
