@@ -146,6 +146,110 @@ After extraction:
 - **Placeholder:** `[SVG:1:5-stage-agent-journey]`
 - **Alt text:** "Diagram showing the 5-stage agent journey: Discovery, Citation, Compare, Pricing, and Confidence stages with warning that missing any stage breaks the entire chain"
 
+### Step 5.5: Convert ASCII Diagrams to SVG
+
+**CRITICAL:** Detect ASCII diagrams in code blocks and convert them to proper SVG visualizations for better accessibility and AI agent understanding.
+
+**Detection criteria:**
+
+1. **Scan for ASCII diagrams** in code blocks (language: `text`, `plaintext`, or no language specified)
+2. **Identify diagram patterns:**
+   - Flow arrows (→, ↓, ←, ↑, ↘, ↗, ↙, ↖)
+   - Box-drawing characters (─, │, ┌, ┐, └, ┘, ├, ┤, ┬, ┴, ┼)
+   - Multi-line structural content suggesting relationships
+   - Hierarchical indentation patterns
+   - Repetitive arrow patterns indicating flow
+
+**ASCII diagram types to detect:**
+
+- **Flow diagrams:** Vertical or horizontal flows with arrows
+- **Hierarchical diagrams:** Tree structures with indentation
+- **Sequence diagrams:** Step-by-step processes
+- **Relationship diagrams:** Connections between entities
+
+**Conversion process:**
+
+1. **Analyze ASCII structure:**
+   - Parse line-by-line content
+   - Identify key entities (text blocks between arrows/lines)
+   - Determine flow direction (vertical, horizontal, diagonal)
+   - Extract relationships (what connects to what)
+
+2. **Generate SVG representation:**
+   - Create viewBox based on content complexity
+   - Position text elements based on ASCII layout
+   - Add arrow paths connecting elements
+   - Use readable fonts (Arial, sans-serif, 14-16px)
+   - Apply consistent spacing and alignment
+   - Use MX brand colors (#0066cc for primary, #2d3748 for text)
+
+3. **Create semantic filename:**
+   - Analyze diagram content for key concepts
+   - Generate descriptive slug (e.g., `entity-asset-layer-flow.svg`)
+   - Fallback to `ascii-diagram-N.svg` if content unclear
+
+4. **Add accessibility attributes:**
+   - Include `<title>` element in SVG with diagram description
+   - Add `<desc>` element explaining diagram structure
+   - Generate alt text describing the flow/relationships
+   - Use ARIA labels when embedded
+
+5. **Replace in markdown:**
+   - Remove original ASCII code block
+   - Insert SVG placeholder: `[SVG:N:filename]`
+   - Will be converted to `<object>` tag in Step 6
+
+**Example conversion:**
+
+Original ASCII diagram:
+```markdown
+```text
+Entity Asset Layer (your sovereign database)
+    ↓  ↓  ↓
+Platforms consume your assets (not own them)
+    ↓  ↓  ↓
+MX publishes assets as portable HTML metadata
+    ↓
+AI agents read your assets regardless of platform
+\`\`\`
+```
+
+Generated SVG structure:
+```xml
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <title>Entity Asset Layer Flow Diagram</title>
+  <desc>Vertical flow showing Entity Asset Layer as source, flowing through platforms and MX publication to AI agents</desc>
+
+  <!-- Entity Asset Layer box -->
+  <rect x="100" y="20" width="400" height="40" fill="#e8f4ff" stroke="#0066cc" stroke-width="2" rx="4"/>
+  <text x="300" y="45" text-anchor="middle" font-size="14" font-family="Arial, sans-serif">Entity Asset Layer (your sovereign database)</text>
+
+  <!-- Arrows down -->
+  <path d="M 250 60 L 250 80" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 300 60 L 300 80" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 350 60 L 350 80" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Platforms box -->
+  <rect x="100" y="90" width="400" height="40" fill="#f8f9fa" stroke="#2d3748" stroke-width="2" rx="4"/>
+  <text x="300" y="115" text-anchor="middle" font-size="14" font-family="Arial, sans-serif">Platforms consume your assets (not own them)</text>
+
+  <!-- More arrows and boxes... -->
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
+    </marker>
+  </defs>
+</svg>
+```
+
+**Semantic filename:** `entity-asset-layer-flow.svg`
+
+**Alt text:** "Flow diagram showing Entity Asset Layer as sovereign database at top, flowing through platforms that consume (not own) assets, then MX publishing as portable HTML metadata, finally reaching AI agents regardless of platform"
+
+**Note:** If ASCII diagram conversion fails or structure is too complex, keep original code block and log warning.
+
 ### Step 6: Convert Markdown to HTML
 
 **CRITICAL:** Strip metadata tables before conversion to prevent rendering in final HTML.
@@ -469,7 +573,8 @@ Metadata:
 - Title: [title]
 - Word count: [count]
 - Reading time: [minutes] min
-- Content SVGs extracted: [number]
+- Inline SVGs extracted: [number]
+- ASCII diagrams converted: [number]
 
 Accessibility:
 - WCAG 2.1 AA compliant CSS
@@ -577,7 +682,8 @@ If bio table missing, generate using pattern:
 
 - [ ] HTML file validates without errors
 - [ ] CSS file has no syntax errors
-- [ ] SVGs extracted to separate files with semantic filenames
+- [ ] Inline SVGs extracted to separate files with semantic filenames
+- [ ] ASCII diagrams converted to accessible SVG with proper ARIA labels
 - [ ] Blog introduction renders with introduction message
 - [ ] Index (TOC) is collapsible and pre-collapsed
 - [ ] All H2-H6 headings have anchor IDs

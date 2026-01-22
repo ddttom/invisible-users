@@ -75,6 +75,7 @@ Generated blogs are optimized for AI agent parsing:
 
 - **SVG embedding via `<object>` tags**: AI agents can parse SVG content directly (unlike `<img>` tags which treat SVGs as opaque images)
 - **Semantic SVG filenames**: Descriptive names like `5-stage-agent-journey.svg` help AI agents understand diagram content
+- **ASCII diagram conversion**: Detects ASCII diagrams in code blocks and converts to accessible SVG with proper ARIA labels and descriptions
 - **Metadata table cleanup**: EDS directives and parsing tables stripped from final HTML
 - **Clean semantic structure**: No visual-only elements like "Blogroll" labels that confuse AI parsing
 
