@@ -1348,11 +1348,13 @@ The `/create-blog` skill transforms markdown blog posts into semantic, AI-agent-
 **Change:** Moved from dated folder structure to semantic topic-based URLs
 
 **Before:**
+
 ```text
 outputs/bible/blogs/published/2026-01-22/MX-The-blog.html
 ```
 
 **After:**
+
 ```text
 outputs/bible/blogs/mx/content-operations/
 ├── index.html
@@ -1499,6 +1501,7 @@ The create-blog skill embodies core MX principles:
 - `CLAUDE.md` - Blog Post URL Structure section (lines 241-262)
 
 **Generated blog structure:**
+
 ```text
 outputs/bible/blogs/mx/[topic-slug]/
 ├── index.html          # Main blog post with inline/object SVGs
