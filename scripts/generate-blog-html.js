@@ -442,7 +442,7 @@ function generateTOC(markdown) {
 // PHASE 9: Calculate Metadata
 //=============================================================================
 
-function calculateDerivedMetadata(metadata, articleHTML) {
+function calculateDerivedMetadata(metadata, articleHTML, htmlFilename = 'index.html') {
   // Word count
   const textOnly = articleHTML.replace(/<[^>]*>/g, '').trim();
   const wordCount = textOnly.split(/\s+/).filter(w => w.length > 0).length;
@@ -462,8 +462,12 @@ function calculateDerivedMetadata(metadata, articleHTML) {
     .substring(0, 50)
     .replace(/^-|-$/g, '');
 
-  const ogUrl = `https://allabout.network/blogs/mx/${topicSlug}`;
-  const socialImageUrl = `${ogUrl}/social-card.svg`;
+  // Construct OG URL - include HTML filename if not index.html
+  const baseUrl = `https://allabout.network/blogs/mx/${topicSlug}`;
+  const ogUrl = htmlFilename === 'index.html'
+    ? `${baseUrl}/`
+    : `${baseUrl}/${htmlFilename}`;
+  const socialImageUrl = `${baseUrl}/social-card.svg`;
 
   // Keywords formatting
   const keywordsArray = Array.isArray(metadata.keywords)
@@ -622,8 +626,11 @@ function main() {
   // PHASE 8: Generate TOC
   const tocHTML = generateTOC(cleanMarkdown);
 
+  // Determine HTML filename for URL generation
+  const htmlFilename = customFilename ? `${customFilename}.html` : 'index.html';
+
   // PHASE 9: Calculate derived metadata
-  const derivedMeta = calculateDerivedMetadata(metadata, articleHTML);
+  const derivedMeta = calculateDerivedMetadata(metadata, articleHTML, htmlFilename);
 
   // PHASE 10: Replace template placeholders
   const template = fs.readFileSync(TEMPLATE_HTML, 'utf8');
@@ -636,8 +643,6 @@ function main() {
   }
 
   // Write output files
-  // Use custom filename if provided, otherwise default to 'index.html'
-  const htmlFilename = customFilename ? `${customFilename}.html` : 'index.html';
   const htmlPath = path.join(outputDir, htmlFilename);
   fs.writeFileSync(htmlPath, finalHTML, 'utf8');
 
