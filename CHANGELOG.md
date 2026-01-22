@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22] - Documentation Consistency: MX/HTML Distinction and Style Guide
+
+### Changed
+
+- **MX/HTML Distinction**: Clarified relationship across all documentation
+  - Updated blog post (`outputs/bible/blogs/MX-The-blog.md`): "HTML, informed by MX, is the publication point"
+  - Updated strategic plan (`docs/structure/MX-plan.md`): Changed 4 instances from "MX is the publication mechanism" to "MX is the practice"
+  - Updated Chapter 0 (`docs/shared-chapters/chapter-00-what-are-ai-agents.md`): Updated 3 locations for consistency
+  - Maintains principle: MX is the methodology/practice; HTML is the delivery mechanism
+
+- **Writing Style Guide Compliance** in blog post (`outputs/bible/blogs/MX-The-blog.md`):
+  - British English: `web-optimization` → `web-optimisation`
+  - Removed "The" prefixes: 6 headings (Numbers Tell..., Invisible User Problem, 5-Stage MX Framework, etc.)
+  - Fixed forbidden vocabulary: `optimising` → `improving machine visitor compatibility`
+  - Removed colons from headings: 4 non-standard headings (Entity Asset Layer and Sovereign Portability, etc.)
+  - Fixed forbidden construct: "From Identity to Strategic Asset Vault" → "Identity Evolves into Strategic Asset Vault"
+
+### Submodule Updates
+
+- outputs: ae4b8d2 (style guide fixes to blog post)
+
 ## [2026-01-22] - EAL Documentation: Clarity and Strategic Positioning
 
 ### Added
