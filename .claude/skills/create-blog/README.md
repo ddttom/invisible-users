@@ -20,6 +20,7 @@ Transform markdown blog posts into semantic, AI-agent-friendly HTML with complet
 ### HTML Template (`blog-template.html`)
 
 The HTML skeleton with placeholders using `{{PLACEHOLDER}}` syntax:
+
 - `{{TITLE}}` - Blog post title
 - `{{AUTHOR}}` - Author name
 - `{{DESCRIPTION}}` - Meta description
@@ -50,14 +51,21 @@ The single source of truth for blog styling. It includes:
 ## Output Structure
 
 ```text
-outputs/bible/blogs/published/YYYY-MM-DD/
-├── blog-name.html
-├── blog-name.css (copied from blog-template.css)
-├── blog-name-social.svg
+outputs/bible/blogs/mx/[topic-slug]/
+├── index.html (main blog post)
+├── styles.css (copied from blog-template.css)
+├── social-card.svg (social media card)
 ├── 5-stage-agent-journey.svg (semantic names, AI-friendly)
 ├── human-vs-agent-behavior.svg
 └── content-pipeline.svg
 ```
+
+**Path structure:**
+
+- All MX-related blog posts stored under `outputs/bible/blogs/mx/[topic-slug]/`
+- Topic slug generated from blog title (lowercase, hyphens, no special chars)
+- Example: "Content Operations" → `outputs/bible/blogs/mx/content-operations/`
+- Web URL: `https://allabout.network/blogs/mx/content-operations/`
 
 **Note:** SVG files use semantic filenames (e.g., `5-stage-agent-journey.svg`) instead of generic numbered names (e.g., `blog-name-fig-1.svg`) for better AI agent discoverability.
 
@@ -75,7 +83,7 @@ Generated blogs are optimized for AI agent parsing:
 All generated blogs meet WCAG 2.1 AA standards:
 
 | Criterion | Requirement | Implementation |
-|-----------|-------------|----------------|
+| --------- | ----------- | -------------- |
 | **1.4.3** | Contrast 4.5:1 | #0066cc links (4.58:1) |
 | **2.4.1** | Bypass Blocks | Skip link to #main |
 | **2.4.7** | Focus Visible | 2px outline all interactive |

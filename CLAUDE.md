@@ -238,6 +238,27 @@ The outputs submodule directory structure:
 - `mx/` - Outputs for MX-Handbook
 - `the-bible/` - Legacy/alternate content (historical)
 
+**Blog Post URL Structure:**
+
+All MX-related blog posts follow a topic-based URL structure:
+
+- **Repository path:** `outputs/bible/blogs/mx/[topic-slug]/`
+- **Web URL:** `https://allabout.network/blogs/mx/[topic-slug]/`
+- **Topic slug generation:** Lowercase, hyphens, no special characters
+- **Example:** Blog title "Content Operations for AI Agents" → `outputs/bible/blogs/mx/content-operations/`
+- **Published URL:** `https://allabout.network/blogs/mx/content-operations/`
+
+**Blog directory structure:**
+
+```text
+outputs/bible/blogs/mx/[topic-slug]/
+├── index.html           # Main blog post
+├── styles.css           # WCAG 2.1 AA compliant styling
+├── social-card.svg      # Social media card (1200x630px)
+├── [diagram-name].svg   # Semantic SVG filenames
+└── [diagram-name].svg   # Additional diagrams as needed
+```
+
 **Top-level convenience symlinks:**
 
 - `AGENTS.md → CLAUDE.md` - Multi-AI system compatibility (allows agents to find guidance file as AGENTS.md)

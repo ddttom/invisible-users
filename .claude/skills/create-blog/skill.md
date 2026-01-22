@@ -315,8 +315,8 @@ Save as `[blog-basename]-social.svg` in output directory.
 | `{{TOC_ITEMS}}` | TOC list items HTML | `<li><a href="#section">Section</a></li>` |
 | `{{ARTICLE_CONTENT}}` | Converted markdown | Full article HTML |
 | `{{CSS_FILENAME}}` | CSS filename | "MX-The-blog.css" |
-| `{{OG_URL}}` | Canonical URL | "https://allabout.network/blog/2026-01-22/MX-The-blog" |
-| `{{SOCIAL_IMAGE_URL}}` | Social media image | "https://allabout.network/blog/2026-01-22/MX-The-blog-social.svg" |
+| `{{OG_URL}}` | Canonical URL | "https://allabout.network/blogs/mx/content-operations" |
+| `{{SOCIAL_IMAGE_URL}}` | Social media image | "https://allabout.network/blogs/mx/content-operations/MX-The-blog-social.svg" |
 | `{{LINKEDIN_URL}}` | Author LinkedIn | "https://www.linkedin.com/in/tom-cranstoun/" |
 
 3. **Write populated template** to output file: `[blog-basename].html`
@@ -434,9 +434,12 @@ The template includes all required styling:
 
 ### Step 11: Write Output Files
 
-1. **Create output directory**: `outputs/bible/blogs/published/[YYYY-MM-DD]/`
-   - Use today's date in ISO format
+1. **Create output directory**: `outputs/bible/blogs/mx/[topic-slug]/`
+   - Generate topic slug from blog title (lowercase, hyphens, no special chars)
+   - Example: "Content Operations for AI Agents" → `content-operations`
    - Create directory if it doesn't exist
+   - **Path structure**: All MX-related blog posts stored under `outputs/bible/blogs/mx/[topic-slug]/`
+   - **Web URL pattern**: `https://allabout.network/blogs/mx/[topic-slug]/`
 
 2. **Write HTML file**: `[blog-basename].html`
 3. **Copy CSS template**: Read `.claude/skills/create-blog/blog-template.css` and write to `[blog-basename].css`
@@ -453,12 +456,14 @@ Report to user:
 Blog generated successfully!
 
 Output files:
-- outputs/bible/blogs/published/2026-01-22/MX-The-blog.html
-- outputs/bible/blogs/published/2026-01-22/MX-The-blog.css (WCAG 2.1 AA compliant)
-- outputs/bible/blogs/published/2026-01-22/MX-The-blog-social.svg (social media card)
-- outputs/bible/blogs/published/2026-01-22/5-stage-agent-journey.svg
-- outputs/bible/blogs/published/2026-01-22/human-vs-agent-behavior.svg
-- outputs/bible/blogs/published/2026-01-22/content-pipeline.svg
+- outputs/bible/blogs/mx/content-operations/index.html
+- outputs/bible/blogs/mx/content-operations/styles.css (WCAG 2.1 AA compliant)
+- outputs/bible/blogs/mx/content-operations/social-card.svg (social media card)
+- outputs/bible/blogs/mx/content-operations/5-stage-agent-journey.svg
+- outputs/bible/blogs/mx/content-operations/human-vs-agent-behavior.svg
+- outputs/bible/blogs/mx/content-operations/content-pipeline.svg
+
+Published URL: <https://allabout.network/blogs/mx/content-operations>
 
 Metadata:
 - Title: [title]
