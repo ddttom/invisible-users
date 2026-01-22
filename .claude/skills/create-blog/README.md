@@ -23,10 +23,12 @@ The HTML skeleton with placeholders using `{{PLACEHOLDER}}` syntax:
 - `{{TITLE}}` - Blog post title
 - `{{AUTHOR}}` - Author name
 - `{{DESCRIPTION}}` - Meta description
-- `{{BIO_CATCH}}` - Bio section catch text
+- `{{BIO_CATCH}}` - Blog introduction message (tagline/key message)
 - `{{TOC_ITEMS}}` - Table of contents list items
 - `{{ARTICLE_CONTENT}}` - Converted markdown content
 - Plus 10 more placeholders for dates, URLs, keywords, etc.
+
+**Note:** The placeholder name `{{BIO_CATCH}}` is maintained for backward compatibility with existing markdown files that use `| bio |` tables, but the output component is semantically correct as `blog-introduction` with `aria-label="Blog introduction"` (not author biography).
 
 The skill reads this template, replaces all placeholders with actual values, and writes the populated HTML.
 

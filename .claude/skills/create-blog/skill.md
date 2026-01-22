@@ -52,14 +52,19 @@ When this skill is invoked, follow these steps systematically:
 - `jsonld`: "article" (maps to BlogPosting)
 - `LinkedIn`: "https://www.linkedin.com/in/tom-cranstoun/"
 
-### Step 3: Extract Bio Catch Text
+### Step 3: Extract Blog Introduction Text
 
-**If bio table exists**:
-- Use text from second column
+**Purpose:** Extract introductory tagline/message for the blog introduction section (displayed with author image).
+
+**Note:** Markdown source may use `| bio |` table for backward compatibility, but the output component is semantically correct as "blog-introduction" not "author-bio".
+
+**If bio table exists in markdown**:
+- Use text from second column as blog introduction message
 - Verify it doesn't repeat first paragraph of article
+- This is typically a tagline or key message about the blog topic
 
 **If bio table missing**:
-- Generate catch text based on title and description
+- Generate introduction text based on title and description
 - Pattern: "[Brief engaging statement about the blog topic]"
 - Example: "Machine Experience (MX) is the practice of adding metadata and instructions to internet assets so AI agents don't have to guess."
 - Keep it to 1-2 sentences
@@ -299,7 +304,7 @@ Save as `[blog-basename]-social.svg` in output directory.
 | `{{DISPLAY_DATE}}` | Formatted date | "22 January 2026" |
 | `{{WORD_COUNT}}` | Article word count | 7200 |
 | `{{READING_TIME}}` | Minutes to read | 36 |
-| `{{BIO_CATCH}}` | Bio catch text | "Machine Experience (MX) is the practice..." |
+| `{{BIO_CATCH}}` | Blog introduction message | "Machine Experience (MX) is the practice..." |
 | `{{TOC_ITEMS}}` | TOC list items HTML | `<li><a href="#section">Section</a></li>` |
 | `{{ARTICLE_CONTENT}}` | Converted markdown | Full article HTML |
 | `{{CSS_FILENAME}}` | CSS filename | "MX-The-blog.css" |
@@ -416,7 +421,7 @@ The template includes all required styling:
 
 - Back to Top button: `position: fixed; bottom: 2rem; left: 2rem; background-color: #0066cc;`
 - TOC markers: `▶` when closed, `▼` when open
-- Bio section: Light gray background, blue left border
+- Blog introduction: Light gray background, blue left border
 - Mobile touch targets: Minimum 44x44px for back-to-top button
 - No inline CSS - all styling in separate file
 
@@ -561,7 +566,7 @@ If bio table missing, generate using pattern:
 - [ ] HTML file validates without errors
 - [ ] CSS file has no syntax errors
 - [ ] SVGs extracted to separate files
-- [ ] Bio section renders with catch text
+- [ ] Blog introduction renders with introduction message
 - [ ] Index (TOC) is collapsible and pre-collapsed
 - [ ] All H2 headings have anchor IDs
 - [ ] Back to Top button floats bottom-left
@@ -569,4 +574,4 @@ If bio table missing, generate using pattern:
 - [ ] Meta tags are complete
 - [ ] Semantic HTML throughout
 - [ ] Accessible (ARIA labels, alt text, proper structure)
-- [ ] AI-agent compatible (data attributes, explicit state)
+- [ ] AI-agent compatible (data attributes, explicit state, correct aria-label usage)
