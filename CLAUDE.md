@@ -789,7 +789,7 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 
 ## Claude Code Configuration
 
-**Eight custom skills (`.claude/skills/`):**
+**Nine custom skills (`.claude/skills/`):**
 
 1. **`/step-commit`** - Systematic commit workflow for multi-repository structure
 2. **`/md-fix`** - Markdown linting and auto-fix
@@ -799,6 +799,7 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 6. **`/learnings-review`** - Review and update LEARNINGS.md with battle-tested patterns
 7. **`/md-workflow`** - Advanced markdown workflow automation
 8. **`/opportunity`** - Analyze and document business opportunities
+9. **`/create-blog`** - Transform markdown blog posts into WCAG 2.1 AA compliant HTML with templates
 
 **Git hooks:**
 
