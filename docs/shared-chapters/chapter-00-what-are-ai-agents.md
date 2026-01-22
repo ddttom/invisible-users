@@ -108,6 +108,8 @@ The MX-first principle is clear: design for machines with zero-tolerance require
 
 You cannot fix the million-plus models on Hugging Face, but you can fix the source - the internet itself, or at least your corner of it. **Machine Experience (MX) is the practice of adding metadata and instructions to your web assets so AI agents don't have to think.** When agents must "think" (infer meaning from incomplete context), they hallucinate. When all context is explicitly present, they extract accurate information.
 
+**MX is the practice: HTML is the delivery mechanism.** This distinction matters - we're not just making HTML adjustments. MX is the strategic discipline of ensuring complete context reaches AI agents. HTML is simply the universal format that makes this possible.
+
 As the Ally McBeal example demonstrates, without proper metadata, an AI cannot distinguish between a television script and a legal document - it must guess based on statistical patterns, producing confident but incorrect answers. Proper microdata and metadata prevent these errors by providing complete context. However, retrofitting the entire internet isn't feasible. The real value lies in going forward - properly structured pages help with live web search, improving goal completion (sales, contact forms, information retrieval) that might otherwise be missed.
 
 This isn't a new concept. RDF (Resource Description Framework) was proposed many years ago, but nobody listened. Now there's a commercial imperative driving adoption through Machine Experience requirements: when agents can't complete your desired action (purchase, contact, inform), they move to competitors who provide explicit structure.
@@ -137,6 +139,160 @@ Think of the content pipeline: Content Operations builds semantic structure at t
 Content Operations is essential for AI at the construction point, ensuring semantic structure is created from the start. But Content Operations alone is not enough. If the publication layer (MX) doesn't preserve and expose this structure, agents at the delivery point never see it. MX is the critical bridge - what you build in Content Operations reaches agents only if MX preserves it during publication.
 
 In content delivery systems and CMS environments, an ontology is a semantic model that defines concepts and their relationships so content can be understood, linked, filtered, and delivered in a more intelligent and context-aware way. Ontologies differ from traditional CMS metadata (flat tags and categories) by modeling concepts with many-to-many relationships designed for machines to reason over. Ontology defines the semantic model at the construction point. MX ensures the semantic model reaches agents at the publication point. Without MX, beautiful ontology in the CMS is lost in publication - agents cannot use it.
+
+### The Entity Asset Layer: Your Strategic Asset Vault
+
+Understanding the content pipeline leads to a critical insight: the most valuable assets your organisation owns must remain sovereign and portable across any platform or AI agent. This is the **Entity Asset Layer (EAL)**—a strategic evolution from simple identity verification to comprehensive asset ownership.
+
+#### The Shift from Identity to Assets
+
+When AI agents interact with your organisation, they need more than identity verification ("Who you are"). They need access to your **Entity Assets**—the complete strategic capital that determines success or failure in agent-mediated interactions.
+
+**The fundamental shift:**
+
+- **FROM:** Simple identity ("Who you are")
+- **TO:** Strategic Asset Vault ("What you own, how you operate, why you matter")
+
+If identity is the *who*, the Entity Asset Layer is the *what, how, and why*.
+
+#### Asset Taxonomy and AI Agent Needs
+
+Entity Assets can be categorized into four types, each serving specific purposes when AI agents visit your website:
+
+| Category | Examples | Purpose in AI Interaction |
+| -------- | -------- | ------------------------- |
+| **Identity Assets** | Loyalty status, location preferences, currency settings, tax identification | Establish "Who" is interacting |
+| **Reputation Assets** | Verified reviews, trust scores, industry certifications, quality ratings | Establish "Why" agents should trust this entity |
+| **Knowledge Assets** | Ontologies, product specifications, brand logic, intellectual property | Establish "What" you know or sell |
+| **Transactional Assets** | Spending history, preference maps, past interactions, cart patterns | Enable agent personalization and prediction |
+
+**Critical distinction:** These assets are not metadata about products or services—they are your organisation's strategic capital that must remain portable across platforms and readable by any AI agent.
+
+#### Sovereign Portability as Competitive Advantage
+
+The central problem in January 2026 is **platform lock-in**. Consider these scenarios:
+
+**Review portability:** You have 10,000 five-star reviews on Amazon. If you migrate to Shopify or a custom ecommerce platform, you have zero reviews—you're effectively "nobody" despite years of reputation building. Your Reputation Assets are trapped.
+
+**Knowledge portability:** Your product ontology is defined in a proprietary CMS. Years of carefully structured product relationships and domain expertise cannot be exported. When you switch platforms, you start from scratch. Your Knowledge Assets are lost.
+
+**Customer continuity:** Customer loyalty status, purchase patterns, and wishlists exist only in your commerce platform's database. When customers encounter your brand through a different channel, none of this context transfers. Your Identity and Transactional Assets are isolated.
+
+**The strategic metaphor:** You've put all your eggs (Entity Assets) in other people's baskets (platforms). When you need to move, the eggs stay behind.
+
+#### The Platform Lock-in Problem
+
+Current CMS and commerce platforms trap Entity Assets in proprietary formats:
+
+```text
+CMS/Commerce Platform (proprietary database)
+    ↓
+Platform Renderer (strips metadata)
+    ↓
+HTML Output (unstructured, not portable)
+    ↓
+AI Agents (cannot extract Entity Assets)
+```
+
+**Result:** Entity Assets trapped in platform, lost on migration, invisible to AI agents that don't integrate directly with that specific platform.
+
+#### The EAL Solution
+
+The Entity Asset Layer provides a fundamental architectural innovation—sovereign, portable asset ownership:
+
+```text
+Entity Asset Layer (sovereign database)
+    ↓  ↓  ↓
+CMS → Commerce → Marketing (platforms consume EAL)
+    ↓  ↓  ↓
+MX Publication Layer (preserves structure)
+    ↓  ↓  ↓
+HTML Output (Entity Assets as structured metadata)
+    ↓
+AI Agents (extract and trust Entity Assets)
+```
+
+**Result:** Entity Assets sovereign, portable across platforms, readable by all agents regardless of architecture.
+
+**The architectural principle:** Platforms become "view layers" that render Entity Assets for specific channels (web, mobile, voice, agent), not the source of truth. You own the assets; platforms temporarily host the rendering.
+
+#### MX as the Technical Enabler
+
+Understanding how Entity Asset Layer (EAL) and Machine Experience (MX) work together reveals why MX patterns are strategically critical:
+
+**MX is the publication mechanism; EAL is the content:**
+
+| Aspect | MX (Machine Experience) | EAL (Entity Asset Layer) |
+| ------ | ----------------------- | ------------------------ |
+| **Focus** | *How* data is published | *What* data is published |
+| **Role** | Technical delivery | Strategic asset repository |
+| **Purpose** | Agents can read structure | Assets remain portable |
+| **Scope** | Publication process | Asset ownership |
+
+**The integration in practice:**
+
+1. **Content Operations builds Entity Assets** at the construction point: Define product ontologies, structure review data with Schema.org, model customer relationships, encode brand logic as structured data.
+
+2. **MX ensures Entity Assets survive publication** at the publication point: Preserve structured data during rendering, expose metadata in HTML (not stripped), maintain semantic relationships, make implicit context explicit.
+
+3. **AI Agents consume Entity Assets** at the delivery point: Extract pricing, reviews, specifications; build trust scores from reputation assets; personalize based on transactional assets; use knowledge assets to prevent hallucination.
+
+**Critical insight:** MX patterns (semantic HTML, Schema.org, explicit state, JSON-LD) are the technical implementation of EAL sovereignty. They are not separate initiatives—they are two aspects of the same strategic imperative.
+
+**Without MX:** Entity Assets trapped in platform-specific formats → lost during publication → invisible to agents → platform lock-in permanent
+
+**With MX:** Entity Assets published as portable HTML metadata → readable by any agent → sovereign to your organisation → platform independence achieved
+
+#### Example: Review as Portable Entity Asset
+
+Instead of reviews trapped in a platform database, Entity Assets are published as portable structured data:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "@id": "https://yoursite.com/reviews/abc123",
+  "itemReviewed": {
+    "@type": "Product",
+    "@id": "https://yoursite.com/products/xyz789"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jane Smith"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "reviewBody": "Exceptional quality and service.",
+  "datePublished": "2026-01-15",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Your Company"
+  }
+}
+```
+
+This review is now a **portable Entity Asset:**
+
+- Certified by your organisation (not platform)
+- Readable by any AI agent (platform-agnostic format)
+- Migratable to new platforms (JSON-LD exports/imports cleanly)
+- Verifiable provenance (linked to verified customer identity)
+
+#### Strategic Timing: The January 2026 Inflection Point
+
+In January 2026, three major platforms launched agent commerce systems within a single week: Amazon Alexa+ (5 January), Microsoft Copilot Checkout (8 January), and Google Universal Commerce Protocol (11 January). This convergence marks an inflection point.
+
+**First-mover advantage exists:** Sites that implement EAL early will gain "computational trust" from AI agents—a form of learned behaviour where agents preferentially recommend proven-successful entities. This trust compounds over time:
+
+- Agent recommends Entity A → successful transaction → increased trust score → higher future recommendation probability
+- Entity B without EAL → agent cannot extract data → skipped in recommendations → never builds trust → permanent invisibility
+
+**The timeline is compressed:** Within two years (by January 2028), human browsing will likely be the exception rather than the norm. Organisations that build sovereign Entity Assets now will dominate agent-mediated interactions. Those that remain platform-dependent will face insurmountable catch-up costs.
+
+**The strategic question:** Can you afford to remain platform-dependent whilst competitors build portable Entity Assets and gain computational trust?
 
 ## UX/MX - A New Discipline
 
@@ -333,6 +489,7 @@ This book examines the collision between modern web design and machine readers. 
 - What MX patterns prevent hallucination and enable goal completion
 - How to implement these patterns practically across platforms
 - Why explicit structure benefits multiple audiences as a side effect
+- **How the Entity Asset Layer (EAL) enables sovereign portability** across platforms and agents
 - What's coming next in agent-mediated activities (commerce, information retrieval, lead generation, and more)
 
 **MX applies to every web goal:** Whether you're selling products, informing readers about product recalls, establishing credibility, collecting contact information, or enabling downloads, agents need explicit structure to complete those actions. When agents hallucinate or fail to extract accurate information, they move to competitors with better MX implementation.

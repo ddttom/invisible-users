@@ -44,6 +44,8 @@ Chapter 0 already contains the 5-stage agent journey framework (lines 184-200), 
 
 **Core Definition:** MX is the act of adding metadata and instructions to internet assets such that AI agents don't have to think. MX is the publication mechanism that ensures context built in Content Operations reaches agents at the delivery point.
 
+**MX is the practice: HTML is the delivery mechanism.**
+
 **Why this matters:** When AI has to "think" (generate answers without complete context), it must produce confident answers even when context is missing, leading to hallucination. MX ensures all context is explicitly present, helping everyone - not just "The Invisible Users."
 
 ### MX is NOT Just About Ecommerce
@@ -68,6 +70,24 @@ Chapter 0 already contains the 5-stage agent journey framework (lines 184-200), 
 **After:** "Focus on agent goal completion (commerce, contact, inform, establish trust, etc.)"
 
 **Key principle:** MX is universal - it applies to every type of web asset with every type of goal. Hallucination prevention and explicit context provision benefit all use cases.
+
+### MX and the Entity Asset Layer (EAL)
+
+**Critical connection:** MX is the publication mechanism that makes Entity Assets portable across platforms.
+
+**Entity Assets** are what you own:
+
+- Reviews, ratings, trust scores (Reputation Assets)
+- Product ontologies, brand logic, IP (Knowledge Assets)
+- Customer loyalty, preferences, history (Identity & Transactional Assets)
+
+**MX is how you publish them** so they remain sovereign and readable by any AI agent, not trapped in platform-specific formats.
+
+Without MX: Entity Assets locked in CMS/commerce platform databases, lost on migration
+
+With MX: Entity Assets published as portable HTML metadata, readable by any agent, owned by you
+
+**See "The Entity Asset Layer (EAL): Beyond Identity to Sovereign Portability" section below for complete strategic analysis.**
 
 ---
 
@@ -421,6 +441,350 @@ Build semantics    Preserve them   Agents use them
 
 ---
 
+## The Entity Asset Layer (EAL): Beyond Identity to Sovereign Portability
+
+**Date identified:** January 22, 2026
+**Strategic imperative:** Sovereign ownership of corporate and personal assets in the AI ecosystem
+
+### EAL Overview and Strategic Context
+
+The competitive advantage in 2026 is no longer about who has the best AI, but who owns the **Entity Assets** that AI agents consume. This section introduces the **Entity Asset Layer (EAL)**—a decoupled, sovereign repository of a company's or individual's most valuable data. By separating these assets from the platform (CMS/Commerce) and the agent (LLM), entities can ensure their intellectual and commercial value is never trapped in a single provider's ecosystem.
+
+### From Identity Card to Strategic Asset Vault
+
+While identity (Who you are) is the entry point for AI agent interactions, **Entity Assets** represent the total value of the organization that must be shared with AI agents to facilitate transactions, establish trust, or enable research.
+
+**The fundamental shift:**
+
+- **FROM:** Simple identity verification ("Who you are")
+- **TO:** Strategic Asset Vault ("What you own, how you operate, why you matter")
+
+If the Identity Layer is the *who*, the **Entity Asset Layer** is the *what, how, and why*. It includes everything a company owns—reviews, product data, brand logic, and proprietary knowledge—that must remain sovereign and portable across any AI agent platform.
+
+**The core principle:** Entity Assets are not platform features; they are organizational property that must travel with the entity regardless of technology choices.
+
+### The Asset Taxonomy
+
+Entity Assets can be categorized into four distinct types, each serving specific purposes when AI agents interact with your organization:
+
+| Category | Examples | Purpose in AI Interaction | Strategic Value |
+| -------- | -------- | ------------------------- | --------------- |
+| **Identity Assets** | Loyalty status, location preferences, currency settings, tax identification, verified credentials | Establish "Who" is interacting with the agent | Enable personalized experiences, cross-platform recognition, regulatory compliance |
+| **Reputation Assets** | Verified reviews, trust scores, industry certifications, quality ratings, third-party endorsements | Establish "Why" the agent should trust this entity | Build computational trust, influence agent recommendations, differentiate from competitors |
+| **Knowledge Assets** | Ontologies, product specifications, brand logic, intellectual property, domain expertise, technical documentation | Establish "What" the entity knows or sells | Enable accurate agent responses, prevent hallucination, maintain brand consistency |
+| **Transactional Assets** | Spending history, preference maps, past interactions, cart patterns, support history | Enable agent personalization and prediction | Improve conversion rates, reduce friction, anticipate needs |
+
+**Key distinction:** These assets are not metadata about products or services—they are the entity's strategic capital that determines success or failure in agent-mediated interactions.
+
+### The Core Innovation: Sovereign Portability
+
+The central problem identified through strategic analysis is **Platform Lock-in**. Currently, if you have 10,000 five-star reviews on a specific commerce platform, you are effectively "nobody" if you move to a different platform. Your reputation, customer knowledge, and brand logic are trapped.
+
+**The Platform Lock-in Problem - Concrete Examples:**
+
+1. **Reviews trapped on Amazon:** 10,000 five-star reviews = zero reputation when switching to Shopify or custom ecommerce
+
+2. **Product ontology locked in proprietary CMS:** Years of carefully structured product relationships = start from scratch on new system
+
+3. **Customer preference data owned by commerce platform:** Loyalty status, purchase patterns, wishlists = lost on migration, cannot follow customer to new channels
+
+4. **Brand logic buried in platform-specific code:** Business rules, pricing logic, recommendation algorithms = not portable, must be rebuilt for each platform
+
+#### The EAL Solution - Shiftable Value
+
+The Entity Asset Layer provides a fundamental architectural innovation:
+
+- **The Shared Database:** EAL is an independent database that travels *with* the entity, not tied to any specific platform
+- **Agent-to-Agent Mobility:** Whether the customer uses Gemini, OpenAI, Claude, or a proprietary brand agent, the EAL provides a consistent "Source of Truth"
+- **Decoupling from the Agent:** The AI should not "own" the knowledge about you; it should simply be a "service provider" that reads the assets you permit it to access
+- **Platform Independence:** Your Entity Assets exist independently of your CMS, commerce platform, or marketing automation
+
+**The strategic metaphor:** Stop putting all your eggs (Entity Assets) in other people's baskets (platforms). Build your own basket (EAL) that travels with you.
+
+**Business impact:**
+
+- **Reputation portability:** Your five-star reviews follow you across platforms, readable by any AI agent
+- **Knowledge sovereignty:** Your product ontology, brand logic, and IP remain under your control
+- **Customer continuity:** Loyalty status and preferences work across any commerce experience
+- **Competitive advantage:** First-movers with EAL implementation gain "computational trust" that compounds over time
+
+### Technical Delivery: Writing for Machines
+
+To make Entity Assets shiftable across platforms and readable by diverse AI agents, we must fundamentally change how we surface information.
+
+**HTML as the Delivery Vehicle:**
+
+The delivery mechanism for Entity Assets is structured HTML metadata. HTML is the "simile of the computer's eyes"—the universal language that all AI agents can consume regardless of their underlying architecture.
+
+**MX is the practice: HTML is the delivery mechanism.** This distinction is critical—we're not just making HTML adjustments. MX is the strategic discipline of ensuring complete context reaches AI agents. HTML is simply the universal format that makes this possible.
+
+**Critical technical principles:**
+
+1. **Begin at the Beginning:** You cannot "add" EAL later as an afterthought. Content Operations must treat metadata as the primary output, with human-readable text as the secondary byproduct.
+
+2. **Machine-First, Human-Readable Second:** Entity Assets must be structured for machine consumption first, with human presentation derived from that structure.
+
+3. **Metadata Preservation:** The publication process (MX) must ensure Entity Assets survive the journey from CMS to delivered HTML without stripping or corrupting structured data.
+
+4. **Schema.org as Foundation:** Use established vocabularies (Product, Offer, Review, Organization) to ensure broad agent compatibility.
+
+5. **JSON-LD for Portability:** Embed structured data as JSON-LD within HTML for easy extraction, validation, and migration.
+
+#### Example - Review as Entity Asset
+
+Instead of reviews trapped in platform database:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "@id": "https://yoursite.com/reviews/abc123",
+  "itemReviewed": {
+    "@type": "Product",
+    "@id": "https://yoursite.com/products/xyz789"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jane Smith",
+    "sameAs": "https://yoursite.com/customers/jane-smith"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "reviewBody": "Exceptional quality and service.",
+  "datePublished": "2026-01-15",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Your Company"
+  }
+}
+```
+
+This review is now a **portable Entity Asset:**
+
+- Certified by your organization (not platform)
+- Readable by any AI agent (not platform-specific format)
+- Migratable to new platforms (JSON-LD can be exported/imported)
+- Verifiable provenance (linked to customer identity)
+
+### Strategic Inflection Point (January 2026)
+
+We are at a critical inflection point. In January 2026, three major platforms launched agent commerce systems within a single week:
+
+- Amazon Alexa+ (browser agent, 5 January)
+- Microsoft Copilot Checkout (proprietary, 8 January)
+- Google Universal Commerce Protocol (open standard, 11 January)
+
+**The Two-Year Horizon:**
+
+Within two years (by January 2028), human browsing will be the exception rather than the norm. Strategic focus must shift now to ensuring Entity Assets are indexed and "consumable" by machine agents.
+
+**Why This Creates a Defensible Moat:**
+
+The general market treats AI as "magic." They see the interface (ChatGPT, Copilot, Gemini) but ignore the **Asset Layer** that determines which businesses succeed in agent-mediated interactions.
+
+> "Nobody can pinch this idea from us because they don't understand it... they only think it's about accessibility."
+
+By building an EAL, we create a **defensible competitive advantage:**
+
+1. **While competitors optimize for SEO rankings:** We're optimizing for agent trust and computational recommendations
+
+2. **While competitors add chatbots to websites:** We're making our entire business machine-readable at the asset level
+
+3. **While competitors focus on platform features:** We're building platform-independent sovereign assets
+
+4. **While competitors think about accessibility compliance:** We're thinking about machine-first architecture with accessibility as side benefit
+
+**First-Mover Advantage is Real:**
+
+Sites that successfully implement EAL early will gain "computational trust" from AI agents—a form of learned behaviour where agents preferentially recommend proven-successful entities. This trust compounds over time and creates network effects:
+
+- Agent recommends Entity A → successful transaction → increased trust score → higher future recommendation probability
+- Entity B without EAL → agent cannot extract data → skipped in recommendations → never builds trust → permanent invisibility
+
+**The window for first-mover advantage is measured in months, not years.**
+
+### EAL and MX: The Relationship
+
+Understanding how Entity Asset Layer (EAL) and Machine Experience (MX) work together is critical for implementation success.
+
+**MX is the Publication Mechanism; EAL is the Content:**
+
+| Aspect | MX (Machine Experience) | EAL (Entity Asset Layer) |
+| ------ | ----------------------- | ------------------------ |
+| **Focus** | *How* data is published | *What* data is published |
+| **Role** | Technical delivery system | Strategic asset repository |
+| **Purpose** | Ensure agents can read structure | Ensure assets are portable |
+| **Scope** | Publication process | Asset ownership |
+
+**The Integration:**
+
+1. **Content Operations builds Entity Assets** at the construction point:
+   - Define product ontologies
+   - Structure review data with Schema.org
+   - Model customer relationships
+   - Encode brand logic as structured data
+
+2. **MX ensures Entity Assets survive publication** at the publication point:
+   - Preserve structured data during rendering
+   - Expose metadata in HTML (not stripped)
+   - Maintain semantic relationships
+   - Make implicit context explicit
+
+3. **AI Agents consume Entity Assets** at the delivery point:
+   - Extract pricing, reviews, specifications
+   - Build trust scores from reputation assets
+   - Personalize based on transactional assets
+   - Use knowledge assets to prevent hallucination
+
+**Without MX:** Entity Assets are trapped in platform-specific formats, lost during publication, invisible to agents
+
+**With MX:** Entity Assets are published as portable HTML metadata, readable by any agent, sovereign to the entity
+
+**Critical insight:** MX patterns (semantic HTML, Schema.org, explicit state, JSON-LD) are the technical implementation of EAL sovereignty. They are not separate initiatives—they are two aspects of the same strategic imperative.
+
+### The Operational Pivot: From Platform Dependency to Asset Sovereignty
+
+**Current State (Platform-Dependent):**
+
+Most organizations structure their operations around platforms:
+
+```text
+CMS (WordPress, Drupal, AEM)
+    ↓
+Platform Database (proprietary format)
+    ↓
+Platform Renderer (strips metadata)
+    ↓
+HTML Output (unstructured for agents)
+    ↓
+AI Agents (cannot extract Entity Assets)
+```
+
+**Result:** Entity Assets trapped in platform, lost on migration, invisible to AI agents.
+
+**Target State (Asset-Sovereign):**
+
+Organizations must restructure around Entity Assets:
+
+```text
+Entity Asset Layer (sovereign database)
+    ↓  ↓  ↓
+CMS → Commerce → Marketing Automation (platforms consume EAL)
+    ↓  ↓  ↓
+MX Publication Layer (preserves structure)
+    ↓  ↓  ↓
+HTML Output (Entity Assets as structured metadata)
+    ↓
+AI Agents (extract and trust Entity Assets)
+```
+
+**Result:** Entity Assets sovereign, portable across platforms, readable by all agents.
+
+**The Architectural Principle:** Platforms become "view layers" that render Entity Assets for specific channels (web, mobile, voice, agent), not the source of truth.
+
+### Action Plan: Asset Audit and Operational Pivot
+
+#### Step 1 - Asset Audit
+
+Identify all corporate "eggs" currently in other people's "baskets":
+
+1. **Review Assets:**
+   - Where are customer reviews stored? (Amazon, Shopify, Google, platform database)
+   - Are they exportable in structured format?
+   - Do they include Schema.org markup?
+   - Can they be verified as authentic?
+
+2. **Knowledge Assets:**
+   - Where is product ontology defined? (CMS, commerce platform, custom code)
+   - Is it exportable?
+   - Can it be represented as structured data?
+   - Does it survive platform migration?
+
+3. **Identity Assets:**
+   - Where is customer identity stored? (Auth0, platform database, social login)
+   - Can loyalty status transfer across platforms?
+   - Are preferences portable?
+
+4. **Transactional Assets:**
+   - Where is purchase history stored? (Commerce platform, analytics tool)
+   - Can it inform agent interactions?
+   - Is it accessible across channels?
+
+#### Step 2 - Prioritize Critical Assets
+
+Not all assets have equal strategic value. Prioritize based on:
+
+- **Business impact:** Which assets drive conversions, recommendations, trust?
+- **Risk of loss:** Which assets are most vulnerable to platform lock-in?
+- **Migration cost:** Which assets are hardest to rebuild?
+- **Agent dependency:** Which assets do AI agents require for successful interactions?
+
+**Example priority order:**
+
+1. Reviews (high impact, high risk, critical for agent trust)
+2. Product specifications (high impact, medium risk, critical for comparisons)
+3. Customer loyalty status (medium impact, high risk, critical for personalization)
+4. Brand logic (medium impact, low risk, important for consistency)
+
+#### Step 3 - Implement EAL for Priority Assets
+
+Execute the plan to centralize priority assets into a sovereign EAL:
+
+1. **Create Entity Asset Database:** Independent of CMS/commerce platform
+
+2. **Structure as Schema.org:** Use established vocabularies for broad compatibility
+
+3. **Implement MX Publication:** Ensure assets survive rendering process
+
+4. **Verify Agent Readability:** Test with multiple AI agents (ChatGPT, Claude, Gemini)
+
+5. **Maintain Provenance:** Link assets to verified sources (your organization, not platform)
+
+#### Step 4 - Operational Pivot
+
+Re-engineer the content pipeline to prioritize Entity Assets:
+
+1. **Content Ops Priority Shift:** Metadata becomes primary output, human text becomes byproduct
+
+2. **Publication Process Redesign:** MX patterns ensure structured data preserved
+
+3. **Platform Relationship Change:** CMS/commerce become "view layers" consuming EAL, not source of truth
+
+4. **Agent Testing Integration:** Validate Entity Asset readability alongside human UX testing
+
+#### Step 5 - Measure Success
+
+Track metrics that matter for Entity Asset sovereignty:
+
+- **Agent recommendation rate:** How often do AI agents cite your entity?
+- **Structured data coverage:** What percentage of pages include Entity Asset markup?
+- **Cross-platform portability:** Can Entity Assets migrate without data loss?
+- **Agent trust score:** How reliably do agents complete goals on your properties?
+
+### The Strategic Imperative
+
+Entity Asset Layer is not a nice-to-have future enhancement—it is a strategic imperative for organizations that want to succeed in the agent economy.
+
+**The choice is binary:**
+
+- **Build EAL now:** Own your assets, portable across platforms, readable by all agents, first-mover advantage
+- **Remain platform-dependent:** Trapped assets, lost on migration, invisible to agents, permanent disadvantage
+
+**The timeline is measured in months:**
+
+- Q1 2026: Agent commerce launches (Amazon, Microsoft, Google)
+- Q2-Q3 2026: Early adopters implement EAL and gain computational trust
+- Q4 2026: Market begins to understand competitive disadvantage of platform lock-in
+- 2027-2028: Human browsing becomes exception; agent-mediated interactions become norm
+- 2028+: First-movers with computational trust dominate; late adopters face insurmountable catch-up costs
+
+The question is not "Should we build EAL?" but "Can we afford not to?"
+
+---
+
 ## Core Feedback: The 5-Stage MX Agent Journey
 
 **CRITICAL:** These are MX requirements. When implemented, they automatically improve SEO, GEO, and WCAG - but we're doing MX, not those disciplines separately.
@@ -486,7 +850,7 @@ Build semantics    Preserve them   Agents use them
 **The Human vs Agent Persistence Gap:**
 
 | Behavior | Humans | AI Agents |
-|----------|--------|-----------|
+| -------- | ------ | --------- |
 | **Retry attempts** | Persistent, will try multiple times | Time out in ~30 seconds |
 | **Workarounds** | Ask friends, call support, use phone | None - just fails |
 | **Tolerance for spinners** | Minutes acceptable | "Forever for a machine, no time at all" |
