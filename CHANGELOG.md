@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22 - Content Improvements] - Blog Post Refinements and Documentation Updates
+
+### Changed
+
+- **MX Blog Post**: Improved "Diversity Explosion" section formatting
+  - Added proper H3 heading (was plain text)
+  - Converted statistics to bulleted list for better readability
+  - Loosened precise percentages to approximations (e.g., "92%" → "Over 90%")
+  - Clarified final sentence emphasizing intensifying diversity problem
+
+### Added
+
+- **Appendix D**: New anti-pattern documentation for ASCII diagrams
+  - Explains why ASCII diagrams fail for agents and screen readers
+  - Provides bad example (ASCII in code block)
+  - Shows good examples (SVG with accessibility markup)
+  - Includes inline SVG alternative for smaller diagrams
+  - Clarifies when ASCII is acceptable (internal docs only)
+- **MX-plan.md**: Comprehensive blog generation implementation documentation
+  - Topic-based URL structure vs dated folders
+  - ASCII diagram to SVG conversion algorithm
+  - H4-H6 heading support implementation
+  - MX principles demonstrated in practice
+  - Strategic alignment with EAL and 5-stage journey
+
+### Submodule Updates
+
+- outputs: d770acd (blog post Diversity Explosion section improvements)
+- shared-appendices: 26ce9e4 (ASCII diagram anti-pattern documentation)
+
 ## [2026-01-22 - Skill Updates] - Blog Skill AI Agent Compatibility Improvements
 
 ### Fixed
