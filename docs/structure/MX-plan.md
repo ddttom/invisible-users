@@ -1332,4 +1332,216 @@ None - all decisions have been made.
 
 ---
 
+## Blog Generation: MX-First Implementation (create-blog skill)
+
+**Date added:** 2026-01-22
+**Context:** Recent enhancements to the `/create-blog` skill demonstrate practical MX principles in action
+
+### Overview
+
+The `/create-blog` skill transforms markdown blog posts into semantic, AI-agent-friendly HTML with complete WCAG 2.1 AA accessibility compliance. Recent updates strengthen MX focus and eliminate anti-patterns that confuse AI agents.
+
+### Recent Enhancements (January 2026)
+
+#### 1. Topic-Based URL Structure (Not Dated Folders)
+
+**Change:** Moved from dated folder structure to semantic topic-based URLs
+
+**Before:**
+```text
+outputs/bible/blogs/published/2026-01-22/MX-The-blog.html
+```
+
+**After:**
+```text
+outputs/bible/blogs/mx/content-operations/
+├── index.html
+├── styles.css
+└── social-card.svg
+```
+
+**MX Benefits:**
+
+- **Agent discovery:** Semantic URLs help agents understand content context before fetching
+- **SEO improvement:** Topic slugs are keyword-rich and human/machine readable
+- **Persistence:** URLs remain stable regardless of publication date
+- **Link sharing:** Clean URLs (`/blogs/mx/content-operations/`) more shareable than dated paths
+
+**Web URL pattern:** `https://allabout.network/blogs/mx/[topic-slug]/`
+
+**Slug generation:** Lowercase, hyphens, no special characters (e.g., "Content Operations for AI Agents" → `content-operations`)
+
+#### 2. ASCII Diagram to SVG Conversion
+
+**Change:** Automatic detection and conversion of ASCII diagrams in markdown to proper accessible SVG visualizations
+
+**Problem:**
+
+ASCII diagrams in code blocks fail completely for:
+
+- Screen readers (announce individual characters, not structure)
+- AI agents (see text, not diagram semantics)
+- Search engines (cannot index relationships)
+- Responsive design (break at different widths)
+
+**Example ASCII diagram detected:**
+
+```text
+Entity Asset Layer (your sovereign database)
+    ↓  ↓  ↓
+Platforms consume your assets (not own them)
+    ↓  ↓  ↓
+MX publishes assets as portable HTML metadata
+    ↓
+AI agents read your assets regardless of platform
+```
+
+**Solution:**
+
+The skill now:
+
+1. Detects ASCII diagrams in code blocks (flow arrows, box-drawing characters, hierarchical patterns)
+2. Analyzes structure and relationships
+3. Generates SVG with boxes, arrows, and proper layout
+4. Adds full accessibility markup (`<title>`, `<desc>`, ARIA labels)
+5. Uses semantic filenames (e.g., `content-distribution-model.svg`)
+6. Embeds via `<object>` tags (AI agents can parse SVG structure)
+
+**MX Benefits:**
+
+- **Agent parsing:** SVG structure is semantically parseable (boxes, arrows, text relationships)
+- **Accessibility:** Proper ARIA markup ensures screen reader compatibility
+- **SEO:** SVG text content is indexable by search engines
+- **Responsive:** Vector graphics scale perfectly at any size
+- **Explicit structure:** Relationships between diagram elements are machine-readable
+
+**Implementation:** See `.claude/skills/create-blog/skill.md` Step 5.5 for complete algorithm
+
+#### 3. H4-H6 Heading Support
+
+**Change:** Extended heading support from H1-H3 to H1-H6 with consistent anchor IDs
+
+**MX Benefits:**
+
+- **Deep linking:** All heading levels get anchor IDs for direct navigation
+- **Document structure:** Proper semantic hierarchy readable by agents
+- **Agent comprehension:** Clear content organization helps agents extract information accurately
+- **SEO:** Rich heading structure improves search engine understanding
+
+**Implementation:**
+
+- All H2-H6 headings receive anchor IDs (generated from heading text slugs)
+- Only H2 appears in table of contents (prevents TOC bloat)
+- CSS styling ensures consistent visual hierarchy
+- Accessible focus indicators on all headings
+
+#### 4. Appendix D Documentation
+
+**Change:** Added comprehensive anti-pattern documentation for ASCII diagrams in production HTML
+
+**Location:** `packages/shared-appendices/appendix-d-ai-friendly-html-guide.txt` (new pattern in Part 2)
+
+**Content:** Complete pattern showing:
+
+- Why ASCII diagrams fail for agents and screen readers
+- Bad example (ASCII in code block)
+- Good example (proper SVG with accessibility)
+- Alternative approaches (inline SVG vs `<object>` tag)
+- When ASCII is acceptable (internal docs only)
+
+**MX Context:**
+
+- Demonstrates zero-tolerance parsing requirement (agents cannot infer structure from ASCII characters)
+- Shows explicit structure principle (SVG boxes and arrows vs text approximation)
+- Reinforces MX-first approach (accessible SVG benefits agents AND humans)
+
+### MX Principles Demonstrated
+
+The create-blog skill embodies core MX principles:
+
+1. **Explicit Structure Over Visual Approximation**
+   - ASCII diagrams replaced with semantic SVG
+   - Component names match actual use (not misleading labels)
+   - Machine-readable relationships (not visual-only cues)
+
+2. **Semantic URLs and File Naming**
+   - Topic-based slugs provide context
+   - SVG files use descriptive names (`5-stage-agent-journey.svg`)
+   - Clean URL structure benefits agents and humans
+
+3. **Accessibility as Side Benefit (Not Primary Driver)**
+   - MX patterns (SVG with ARIA, semantic HTML) create agent-friendly structure
+   - WCAG 2.1 AA compliance achieved as automatic outcome
+   - Focus remains on machine readability with human accessibility following
+
+4. **Zero-Tolerance Parsing**
+   - No ambiguous content (ASCII diagrams eliminated)
+   - Explicit state in attributes
+   - Schema.org structured data in HTML output
+
+5. **Universal Compatibility**
+   - SVG structure readable by worst agents (therefore compatible with all)
+   - Semantic HTML works for CLI agents and browser agents
+   - Explicit metadata survives any parsing approach
+
+### Files and Documentation
+
+**Skill files:**
+
+- `.claude/skills/create-blog/skill.md` - Complete workflow and algorithm
+- `.claude/skills/create-blog/blog-template.html` - HTML template with placeholders
+- `.claude/skills/create-blog/blog-template.css` - WCAG 2.1 AA compliant styles
+- `.claude/skills/create-blog/README.md` - Usage documentation
+
+**Reference documentation:**
+
+- `packages/shared-appendices/appendix-d-ai-friendly-html-guide.txt` - AI-Friendly HTML patterns
+- `CLAUDE.md` - Blog Post URL Structure section (lines 241-262)
+
+**Generated blog structure:**
+```text
+outputs/bible/blogs/mx/[topic-slug]/
+├── index.html          # Main blog post with inline/object SVGs
+├── styles.css          # Copied from template
+├── social-card.svg     # Social media card
+└── [diagram].svg       # Extracted SVGs (if any exceed 50KB)
+```
+
+### Strategic Alignment
+
+The create-blog skill demonstrates MX-first implementation at a tactical level:
+
+- **Tools support strategy:** Blog generation automates MX best practices
+- **Patterns propagate:** Every generated blog follows MX principles consistently
+- **Education through example:** Published blogs serve as working examples of MX patterns
+- **Lower barrier to entry:** Skill handles complexity, users write markdown
+
+**Connection to EAL:** Blog posts become portable Entity Assets:
+
+- Structured metadata (Schema.org JSON-LD)
+- Semantic HTML survives platform migration
+- Machine-readable content independent of CMS
+- Entity owns the asset (not trapped in platform)
+
+**Connection to 5-Stage Journey:**
+
+- Stage 1 (Discovery): Semantic URLs and HTML improve crawlability
+- Stage 2 (Citation): Structured metadata enables accurate citations
+- Stage 3 (Compare): Clear content structure supports comparison tasks
+- Stage 4 (Price): Not applicable to blog posts (informational content)
+- Stage 5 (Confidence): Clean HTML structure reduces agent confusion
+
+### Commits and Timeline
+
+**Recent commits (January 2026):**
+
+- H4-H6 heading support (commit 358ee09)
+- Topic-based URL structure (commit d43ef63)
+- ASCII diagram conversion (commit 5963280)
+- Appendix D anti-pattern documentation (pending commit)
+
+**Status:** Production-ready, actively used for MX blog post generation
+
+---
+
 End of Plan
