@@ -7,9 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2026-01-22 - Flat Blog Structure] - Simplified Directory Layout
+## [2026-01-22 - Blog SVG Fallback Improvement] - Simpler Diagram Fallback Pattern
 
 ### Changed
+
+- **SVG Fallback Pattern**: Simplified fallback content in blog SVG diagrams
+  - **Old pattern**: Redundant `<img>` tag inside `<object>` duplicating figcaption content
+  - **New pattern**: Simple "Diagram not available" text message
+  - Benefits: No duplication, works for both AI agents and humans, cleaner HTML
+  - Updated in: `scripts/generate-blog-html.js` and `.claude/skills/create-blog/skill.md`
+
+### Added
+
+- **Development Tooling**: Added http-server for local blog testing
+  - New dependency: `http-server` (^14.1.1)
+  - New script: `npm run debug` - Serves blog with CORS enabled for testing
+  - Opens `machine-experience-adding-metadata.html` in default browser
+  - Disables caching (-c-1) for immediate updates during development
+
+### Submodule Updates (SVG Fallback)
+
+- outputs: 9bed084 (Update blog post: fix SVG diagram filenames and fallback content)
+
+## [2026-01-22 - Flat Blog Structure] - Simplified Directory Layout
+
+### Changed (Directory Structure)
 
 - **Blog Directory Structure**: Restructured from nested subdirectories to flat layout
   - **Old structure**: `outputs/bible/blogs/mx/[topic-slug]/index.html`
