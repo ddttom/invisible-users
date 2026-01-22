@@ -93,7 +93,7 @@ Complete list of repositories from ddttom and Digital-Domain-Technologies-Ltd or
 | [cloudflare-worker](https://github.com/ddttom/cloudflare-worker) | ddttom |  | 2025-12-13 |
 | [ai-with-mac](https://github.com/ddttom/ai-with-mac) | ddttom | Introduction to AI with Mac | 2025-12-10 |
 | [aem-worker](https://github.com/ddttom/aem-worker) | ddttom |  | 2025-12-09 |
-| [helix-website](https://github.com/ddttom/helix-website) | ddttom | The Helix website https://www.aem.live/ | 2025-12-08 |
+| [helix-website](https://github.com/ddttom/helix-website) | ddttom | The Helix website <https://www.aem.live/> | 2025-12-08 |
 | [prompt-master](https://github.com/ddttom/prompt-master) | ddttom | master prompt library | 2025-12-07 |
 | [bun-docs](https://github.com/ddttom/bun-docs) | ddttom | Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one | 2025-12-05 |
 | [fixEcalendar](https://github.com/ddttom/fixEcalendar) | ddttom |  | 2025-12-05 |
