@@ -380,7 +380,7 @@ function postProcessHTML(html) {
   // Remove any H1 from article content (template has H1 in header)
   processed = processed.replace(/<h1[^>]*>.*?<\/h1>/gi, '');
 
-  // Remove duplicate table content (paragraph before table)
+  // Remove duplicate table content (paragraph with pipes before table - old markdown rendering artifacts)
   processed = processed.replace(/<p>([^<]*\|[^<]*)<\/p>\s*(<table[\s\S]*?<\/table>)/g, '$2');
 
   // Clean up invalid <p> tags inside SVG elements
@@ -392,16 +392,17 @@ function postProcessHTML(html) {
       .replace(/<\/p>/g, ''); // Remove orphan </p> tags
   });
 
-  // Replace SVG placeholders with <object> tags (WITH EXPLICIT DIMENSIONS)
+  // Replace SVG placeholders with <object> tags (WITH EXPLICIT DIMENSIONS) - MUST HAPPEN BEFORE TABLE CAPTION PROCESSING
   processed = processed.replace(/\[SVG:(\d+):([\w-]+)\]/g, (match, num, filename) => {
     const title = generateTitleFromFilename(filename);
     return `
-<figure role="img" aria-label="${title}">
+<figure>
   <object type="image/svg+xml"
           data="${filename}.svg"
           width="800"
           height="400"
-          class="diagram">
+          class="diagram"
+          title="${title}">
     <p>Diagram not available</p>
   </object>
   <figcaption>${title}</figcaption>
@@ -411,7 +412,53 @@ function postProcessHTML(html) {
   // Remove <p> wrappers around <figure> elements (markdown-it artifact)
   processed = processed.replace(/<p>\s*(<figure[\s\S]*?<\/figure>)\s*<\/p>/g, '$1');
 
-  console.log('✓ Post-processed HTML (cleaned SVG markup, removed table duplicates)');
+  // NOW process table captions (after SVG placeholders are converted to figures)
+  // Pattern 1: Bold text in paragraph before table (e.g., "**The Four Asset Categories:**")
+  processed = processed.replace(/<p><strong>([^<]+):<\/strong><\/p>\s*(<table>)/g, (match, captionText, tableTag) => {
+    return `<table>\n  <caption>${captionText}</caption>`;
+  });
+
+  // Pattern 2: Plain bold text before table without colon
+  processed = processed.replace(/<p><strong>([^<]+)<\/strong><\/p>\s*(<table>)/g, (match, captionText, tableTag) => {
+    return `<table>\n  <caption>${captionText}</caption>`;
+  });
+
+  // Pattern 3: Add captions to tables that follow figures
+  // Match tables with or without captions: <table> followed by optional <caption>, then <thead> or <tbody>
+  const tableRegex = /<table>(?:\s*<caption>.*?<\/caption>)?\s*(<thead>|<tbody>)/gs;
+  let match;
+  let lastIndex = 0;
+  let result = '';
+
+  while ((match = tableRegex.exec(processed)) !== null) {
+    const tableStart = match.index;
+    const beforeTable = processed.substring(lastIndex, tableStart);
+
+    // Check if this table already has a caption
+    const tableOpenTag = processed.substring(tableStart, tableStart + 300);
+    const hasCaption = /<table>[\s\S]*?<caption>/.test(tableOpenTag);
+
+    if (!hasCaption) {
+      // Look for figcaption in the preceding content
+      const figcaptionMatch = beforeTable.match(/<figcaption>([^<]+)<\/figcaption>\s*<\/figure>\s*$/);
+      if (figcaptionMatch) {
+        const captionText = figcaptionMatch[1];
+        result += beforeTable + `<table>\n  <caption>${captionText}</caption>\n` + match[1];
+        lastIndex = tableRegex.lastIndex;
+        continue;
+      }
+    }
+
+    // No caption added or already has one
+    result += beforeTable + match[0];
+    lastIndex = tableRegex.lastIndex;
+  }
+
+  // Add remaining content
+  result += processed.substring(lastIndex);
+  processed = result;
+
+  console.log('✓ Post-processed HTML (added table captions, cleaned SVG markup)');
   return processed;
 }
 

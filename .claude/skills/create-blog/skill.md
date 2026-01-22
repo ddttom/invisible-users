@@ -374,14 +374,20 @@ All of this should be stripped BEFORE markdown-to-HTML conversion.
 8. **SVG Placeholders**:
    - Replace `[SVG:N:filename]` placeholder with `<object>` tag (AI-parseable):
    ```html
-   <figure class="illustration">
-     <object type="image/svg+xml" data="[semantic-filename].svg" aria-label="[descriptive text]">
+   <figure>
+     <object type="image/svg+xml"
+             data="[semantic-filename].svg"
+             width="800"
+             height="400"
+             class="diagram"
+             title="[descriptive text]">
        <p>Diagram not available</p>
      </object>
-     <figcaption>Figure N: [description]</figcaption>
+     <figcaption>[description]</figcaption>
    </figure>
    ```
    - **Why `<object>` instead of `<img>`:** AI agents can parse SVG content directly through `<object>` tags, unlike `<img>` which treats SVG as opaque image data
+   - **WCAG 2.1 Level A compliance:** The `title` attribute on the `<object>` element provides alternative text to satisfy Deque's `object-alt` accessibility rule (required for screen readers)
    - **Semantic filename:** Use the generated semantic name (e.g., `5-stage-agent-journey.svg` not `MX-The-blog-fig-1.svg`)
    - **Simple fallback:** Generic "Diagram not available" message displays only if SVG fails to load - doesn't duplicate figcaption content
 

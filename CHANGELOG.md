@@ -7,9 +7,80 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22 - Blog Accessibility Fixes] - WCAG 2.1 Level A Compliance
+
+### Fixed
+
+- **Blog SVG Accessibility**: Added `title` attribute to `<object>` elements to fix Deque `object-alt` accessibility rule violations
+  - **Issue**: WCAG 2.1 Level A violation - `<object>` elements lacked alternative text for screen readers
+  - **Solution**: Added `title` attribute to all SVG `<object>` tags with diagram descriptions
+  - **Previous incorrect approach**: Used `aria-label` on `<figure>` wrapper (wrong element) or on `<object>` (triggers html-validate warning)
+  - **Correct approach**: Use native HTML `title` attribute on `<object>` element
+  - Benefits: Screen reader compatibility, no validation warnings, cleaner semantic HTML
+  - Updated in: [scripts/generate-blog-html.js](scripts/generate-blog-html.js:395-410)
+  - Regenerated: All existing blog posts with corrected pattern
+
+- **Blog Table Accessibility**: Added `<caption>` elements to all data tables
+  - **Issue**: WCAG 2.1 Level A violation - tables lacked captions, making them inaccessible to screen readers
+  - **Solution**: Automatically generate `<caption>` elements from context:
+    - Pattern 1: Bold text before table (e.g., "**The Four Asset Categories:**") → `<caption>`
+    - Pattern 2: Figcaption from preceding `<figure>` element → `<caption>` (for tables following diagrams)
+  - **Critical fix**: Reordered post-processing to convert SVG placeholders BEFORE extracting table captions
+  - Benefits: Screen readers can associate descriptive text with table data, improved table navigation
+  - Updated in: [scripts/generate-blog-html.js](scripts/generate-blog-html.js:416-456)
+  - Regenerated: All existing blog posts with proper table captions
+
+- **Blog Color Contrast**: Fixed insufficient color contrast ratios to meet WCAG 2.1 AA standards
+  - **Issue**: WCAG 2.1 Level AA violation - color `#718096` (medium gray) had insufficient contrast on white background (fails 4.5:1 requirement for normal text)
+  - **Solution**: Replaced `#718096` with `#595959` (darker gray with ~8:1 contrast ratio) in:
+    - Article metadata (date, reading time)
+    - Figure captions
+    - Footer text
+  - Benefits: All text meets WCAG AA contrast standards, passes WAVE accessibility checker
+  - Updated in: [.claude/skills/create-blog/blog-template.css](.claude/skills/create-blog/blog-template.css)
+  - Regenerated: All existing blog posts with corrected colors
+
+- **Blog SEO Meta Tags**: Added robots meta tags to blog template
+  - **Issue**: Missing `robots` and `X-Robots-Tag` meta tags for search engine crawlers
+  - **Solution**: Added standard SEO robots meta tags with `index, follow` directives
+  - Benefits: Explicit search engine indexing instructions, improved SEO compliance, passes WAVE checker
+  - Updated in: [.claude/skills/create-blog/blog-template.html](.claude/skills/create-blog/blog-template.html)
+  - Applied to: All existing blog posts
+
+### Added
+
+- **Blog AI Attribution Text**: Enhanced AI attribution meta tag with explicit attribution text
+  - **Implementation**: Added `text` attribute to `ai-attribution` meta tag per Appendix L Pattern 1
+  - **Format**: `text="Source: [Blog Title] by Tom Cranstoun, Digital Domain Technologies Ltd, [Blog URL]"`
+  - Benefits: AI agents receive explicit, consistent attribution text for citations
+  - Reference: [Appendix L lines 140-157](packages/shared-appendices/appendix-l-proposed-ai-metadata-patterns.md#L140-L157)
+  - Updated in: [.claude/skills/create-blog/blog-template.html](.claude/skills/create-blog/blog-template.html)
+  - Applied to: All existing blog posts
+
+- **Blog llms.txt Discovery**: Added llms.txt reference meta tag to blog template
+  - **Implementation**: `<meta name="llms-txt" content="/llms.txt">` per Appendix L Pattern 1
+  - Benefits: Helps AI agents discover site-wide AI documentation at root location
+  - Reference: [Appendix L lines 159-169](packages/shared-appendices/appendix-l-proposed-ai-metadata-patterns.md#L159-L169)
+  - Updated in: [.claude/skills/create-blog/blog-template.html](.claude/skills/create-blog/blog-template.html)
+  - Applied to: All existing blog posts
+
+### Changed (Semantic HTML Cleanup)
+
+- **HTML Structure**: Removed redundant `role="img"` from `<figure>` wrappers
+  - Semantic `<figure>` elements already have implicit ARIA role
+  - Cleaner HTML5 markup following best practices
+
+### Changed (Appendix L - AI Metadata Documentation)
+
+- **ai-structured-data Values**: Updated Appendix L to document both value conventions
+  - Added `schema.org-jsonld` as valid alternative to `json-ld`
+  - Rationale: `schema.org-jsonld` is more specific (indicates Schema.org vocabulary), while `json-ld` is simpler
+  - Both values are valid - choose based on preference for specificity vs simplicity
+  - Updated in: [packages/shared-appendices/appendix-l-proposed-ai-metadata-patterns.md](packages/shared-appendices/appendix-l-proposed-ai-metadata-patterns.md#L124-L138)
+
 ## [2026-01-22 - Blog SVG Fallback Improvement] - Simpler Diagram Fallback Pattern
 
-### Changed
+### Changed (SVG Fallback Pattern)
 
 - **SVG Fallback Pattern**: Simplified fallback content in blog SVG diagrams
   - **Old pattern**: Redundant `<img>` tag inside `<object>` duplicating figcaption content
