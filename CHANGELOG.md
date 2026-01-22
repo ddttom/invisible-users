@@ -7,6 +7,88 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22 - Blog Generation Automation] - Complete HTML Blog Generation Pipeline
+
+### Added
+
+- **Blog Generation Infrastructure**: Automated 11-phase pipeline for markdown to HTML conversion
+  - `scripts/generate-blog-html.js`: Complete blog generation with WCAG 2.1 AA compliance
+    - Parses YAML frontmatter and EDS metadata tables
+    - Extracts inline SVGs to separate files with semantic filenames
+    - Converts ASCII diagrams to SVG (detects arrow characters: →, ↓, ↑, ←)
+    - Generates table of contents from H2 headings with anchor IDs
+    - Calculates word count and reading time (200 words/minute)
+    - Populates HTML template with 14 metadata fields
+    - Creates Schema.org JSON-LD structured data
+    - Validates output (H1 count, metadata artifacts, ASCII diagrams)
+  - `scripts/preprocess-ascii-to-svg.js`: ASCII diagram to SVG converter
+    - Detects arrow characters in code blocks
+    - Generates professional SVG with boxes and arrows
+    - Multi-branch arrow support (parallel flows: ↓ ↓ ↓)
+    - Accessibility attributes (title, description, ARIA labels)
+  - `.htmlvalidate.json`: HTML validation configuration
+  - `markdown-it-anchor` dependency: Heading anchor ID generation
+
+- **Blog Output**: Generated MX blog post with complete infrastructure
+  - `outputs/bible/blogs/mx/machine-experience-adding-metadata-so-ai-agents-do/`
+    - `machine-experience-adding-metadata.html` (4,714 words, 24 min read)
+    - `styles.css` (WCAG 2.1 AA compliant, 372 lines)
+    - `social-card.svg` (1200x630px for social media)
+    - 6 semantic SVG diagrams:
+      - `the-5-stage-agent-journey.svg`
+      - `human-vs-ai-agent-behaviour.svg`
+      - `the-content-pipeline-where-mx-fits.svg`
+      - `content-operations-mx-content-delivery.svg`
+      - `platform-database-amazon-shopify-proprietary-cms.svg`
+      - `entity-asset-layer-your-sovereign-database.svg`
+
+- **Documentation**: Blog generation commands section in CLAUDE.md
+  - Documents `generate-blog-html.js` usage and features
+  - Documents `preprocess-ascii-to-svg.js` for ASCII diagrams
+  - Includes HTML validation command reference
+  - Links to create-blog skill documentation
+
+### Changed
+
+- **create-blog Skill**: Added filename confirmation step (Step 2.5)
+  - User chooses from 3 filename suggestions (full/medium/short slug)
+  - Custom filename option with validation
+  - Updated Step 11 to reflect automated script workflow
+  - Clarified social media card generation status (not yet automated)
+
+- **Claude Settings**: Added blog generation script to allowed commands
+  - Permits `node scripts/generate-blog-html.js` execution
+  - Enables automated blog generation in Claude Code environment
+
+### Fixed
+
+- **Appendix D**: Added JSON-LD validation guidance
+  - Document ISO 8601 date format requirements (YYYY-MM-DD)
+  - Provide JavaScript conversion function for DD/Mon/YYYY format
+  - Help developers avoid Schema.org validation failures
+
+### Submodule Updates
+
+- outputs: ea00866 (Add MX blog with WCAG 2.1 AA compliance)
+- shared-appendices: 379c5a1 (Add JSON-LD validation guidance)
+
+### Features
+
+- **WCAG 2.1 AA Compliance**:
+  - Color contrast: #0066cc links (4.58:1 ratio exceeds 4.5:1 minimum)
+  - Skip to content link (keyboard navigation)
+  - Focus indicators on all interactive elements (2px solid outline)
+  - Touch targets: 44x44px minimum on mobile
+  - Reduced motion support (`prefers-reduced-motion` media query)
+
+- **AI Agent Compatibility**:
+  - Schema.org JSON-LD with BlogPosting type
+  - AI-specific meta tags (ai-preferred-access, ai-content-policy, etc.)
+  - SVG object tags (parseable by AI agents, not opaque images)
+  - Semantic SVG filenames (machine-readable descriptions)
+  - Heading anchor IDs (H2-H6) for direct linking
+  - Data attributes for machine parsing
+
 ## [2026-01-22 - Content Improvements] - Blog Post Refinements and Documentation Updates
 
 ### Changed
