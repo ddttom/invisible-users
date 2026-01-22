@@ -7,7 +7,66 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2026-01-22] - Documentation Structure Reorganization
+## [2026-01-22] - Two-Book Restructure: Remove MX-Don't Make AI Think
+
+### Removed
+
+- **Submodule Removal**: Removed packages/dont-make-ai-think submodule completely
+  - Removed submodule from .gitmodules (7 submodules instead of 8)
+  - Removed books/dont-make-ai-think symlink
+  - Updated repository count from NINE to EIGHT git repositories (1 main + 7 submodules)
+
+### Changed
+
+- **CLAUDE.md**: Updated to reflect two-book structure
+  - Changed workspace description from "three books" to "two books"
+  - Removed all dont-make-ai-think references from Repository Architecture section
+  - Removed dont-make-ai-think from Navigation Map (books symlinks and packages structure)
+  - Updated shorthand reference table (removed "dont" entry, kept "bible" and "handbook/slim")
+  - Updated Project Overview section (two books instead of three)
+  - Updated Timeless Manuscript Rule file paths (removed dont-make-ai-think/chapters/)
+  - Updated outputs submodule naming note (removed dont/ directory reference)
+  - Updated llms.txt decoration pattern (replaced dont-make-ai-think with mx-handbook)
+  - Updated git command examples (changed from dont-make-ai-think to mx-handbook)
+
+- **README.md**: Updated to reflect two-book structure
+  - Changed "Three book variants" to "Two books with shared appendices"
+  - Removed MX-Don't Make the AI Think from book manuscripts list
+  - Removed dont-make-ai-think from packages structure
+  - Removed dont-make-ai-think symlink from books structure
+  - Updated symlink initialization list (removed books/dont-make-ai-think)
+  - Removed MX-Don't Make the AI Think README from package documentation
+  - Updated submodule list from 10 to 9 items
+  - Removed outputs/dont/ directory from structure
+
+### Added
+
+- **Strategic Planning Documentation**: New docs/structure/ directory
+  - MX-plan.md (46 KB): Machine Experience strategic review and positioning
+  - github-repositories.md (16 KB): Complete repository structure mapping
+  - steve-krug.md (24 KB): UX research insights from "Don't Make Me Think"
+
+- **Presentation Organization**: Reorganized docs/talks/ structure
+  - Created docs/talks/historical/ for archived presentations
+  - Moved members-call/ → historical/members-call-21-jan-26/
+  - Added presentation PPTX file and review notes
+  - Created docs/talks/template/ for reusable presentation templates
+
+- **Outputs Submodule**: Blog content reorganization (c96c230)
+  - Updated AI-Native.blog with latest content
+  - Added MX-The-blog.md for new MX-focused blog post
+  - Created published/ directory for organized blog structure
+  - Removed outdated blog drafts and documentation files
+
+### Rationale
+
+- Project focus narrowed to two complementary books: MX-Bible (comprehensive) and MX-Handbook (practical implementation)
+- MX-Don't Make the AI Think content merged into other books or deprecated
+- Simplified repository structure and documentation maintenance
+- Strategic planning documents provide context for MX positioning and repository organization
+- Presentation reorganization separates historical content from reusable templates
+
+## [2026-01-22] - Documentation Structure Reorganization (Earlier)
 
 ### Changed
 
