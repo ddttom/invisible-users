@@ -42,15 +42,6 @@ body {
   border-radius: 4px;
 }
 
-.bio-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #0066cc;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
-}
-
 .bio-content {
   display: flex;
   gap: 1.5rem;

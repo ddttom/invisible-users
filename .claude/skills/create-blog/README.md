@@ -52,9 +52,21 @@ outputs/bible/blogs/published/YYYY-MM-DD/
 ├── blog-name.html
 ├── blog-name.css (copied from blog-template.css)
 ├── blog-name-social.svg
-├── blog-name-fig-1.svg
-└── blog-name-fig-2.svg
+├── 5-stage-agent-journey.svg (semantic names, AI-friendly)
+├── human-vs-agent-behavior.svg
+└── content-pipeline.svg
 ```
+
+**Note:** SVG files use semantic filenames (e.g., `5-stage-agent-journey.svg`) instead of generic numbered names (e.g., `blog-name-fig-1.svg`) for better AI agent discoverability.
+
+## AI Agent Compatibility
+
+Generated blogs are optimized for AI agent parsing:
+
+- **SVG embedding via `<object>` tags**: AI agents can parse SVG content directly (unlike `<img>` tags which treat SVGs as opaque images)
+- **Semantic SVG filenames**: Descriptive names like `5-stage-agent-journey.svg` help AI agents understand diagram content
+- **Metadata table cleanup**: EDS directives and parsing tables stripped from final HTML
+- **Clean semantic structure**: No visual-only elements like "Blogroll" labels that confuse AI parsing
 
 ## Accessibility Compliance
 

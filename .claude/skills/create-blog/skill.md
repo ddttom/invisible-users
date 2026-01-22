@@ -75,44 +75,113 @@ When this skill is invoked, follow these steps systematically:
    - Example: "The Pattern That Breaks" → "the-pattern-that-breaks"
 4. Store array of `{text, id}` objects
 
-### Step 5: Extract Inline SVGs
+### Step 5: Extract and Name SVGs Semantically
 
-**CRITICAL:** Always extract inline SVGs to separate files. This is essential for:
+**CRITICAL:** Always extract inline SVGs to separate files with semantic names. This is essential for:
+- AI agent compatibility (parseable via `<object>` tags)
 - Performance (smaller HTML files)
 - Reusability (SVGs can be referenced from multiple pages)
-- Accessibility (separate SVG files can have proper alt text and descriptions)
-- Social sharing (SVGs display correctly in embeds)
+- Machine readability (semantic filenames help AI agents understand content)
 
 **Extraction process:**
 
 1. Scan markdown for SVG blocks (between `<svg>` and `</svg>` tags)
 2. For each SVG found:
    - Extract complete SVG code (from `<svg` to `</svg>`)
-   - Generate filename: `[blog-basename]-fig-N.svg` (N = 1, 2, 3...)
+   - Generate semantic filename (see naming strategy below)
    - Save to output directory
    - Replace in markdown with placeholder reference
-3. Generate descriptive alt text:
+3. Generate descriptive text for accessibility and AI agents:
    - Check for `<title>` element inside SVG
    - Check for descriptive text elements in SVG
    - Use surrounding markdown content as context
-   - Fallback: "Figure N: [diagram type]"
+   - Extract figure caption from paragraph following SVG
+
+**Semantic SVG filename generation:**
+
+1. **Analyze SVG content and context:**
+   - Extract `<title>` element if present in SVG
+   - Read H2/H3 heading directly above the SVG
+   - Identify key concepts from SVG text elements
+   - Check paragraph following SVG (typically "Figure N: description")
+
+2. **Generate semantic slug:**
+   - Extract 2-4 key words describing the diagram
+   - Convert to lowercase
+   - Remove special characters (keep only letters, numbers, hyphens)
+   - Replace spaces with hyphens
+   - Limit to 30 characters maximum
+
+3. **Naming examples:**
+   - SVG title "The 5-Stage Agent Journey" → `5-stage-agent-journey.svg`
+   - Heading "Human vs AI Agent Behavior" → `human-vs-agent-behavior.svg`
+   - Caption "Content Pipeline Diagram" → `content-pipeline.svg`
+   - Generic fallback if analysis fails → `figure-N.svg` (N = 1, 2, 3...)
 
 **Example extraction:**
 
 Original markdown:
 ```markdown
-## The 5-Stage MX Framework
+## 5-Stage MX Framework
+
+When AI agents interact with your website, they follow a predictable 5-stage journey...
 
 <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- SVG content -->
+  <title>5-Stage Agent Journey</title>
+  <!-- SVG content with stages: Discovery, Citation, Compare, Pricing, Confidence -->
 </svg>
+
+Figure 1: The 5-Stage Agent Journey - miss any stage and the entire chain breaks
 ```
 
 After extraction:
-- File: `MX-The-blog-fig-1.svg` (complete SVG saved)
-- HTML reference: `<figure><img src="MX-The-blog-fig-1.svg" alt="The 5-Stage Agent Journey diagram showing Discovery, Citation, Compare, Pricing, and Confidence stages" width="800" height="400"><figcaption>Figure 1: The 5-Stage Agent Journey</figcaption></figure>`
+- **Filename:** `5-stage-agent-journey.svg` (semantic, AI-friendly)
+- **Placeholder:** `[SVG:1:5-stage-agent-journey]`
+- **Alt text:** "Diagram showing the 5-stage agent journey: Discovery, Citation, Compare, Pricing, and Confidence stages with warning that missing any stage breaks the entire chain"
 
 ### Step 6: Convert Markdown to HTML
+
+**CRITICAL:** Strip metadata tables before conversion to prevent rendering in final HTML.
+
+**Pre-conversion cleanup:**
+
+1. **Remove metadata tables** (typically at end of document):
+   - Pattern: Tables starting with `| metadata |` or `| bio |` or `| returntotop |` or `| Blogroll |` or `| code-expander |`
+   - These are parsing instructions and EDS directives, not content
+   - Delete entire table including headers and all rows
+   - Use regex pattern: `^\|.*\|$` (lines starting and ending with pipes)
+
+2. **Remove EDS fragment references:**
+   - Pattern: Lines like `| :---- |` followed by `| /fragments/... |`
+   - These are Adobe Experience Digital Services directives
+   - Delete these lines completely
+
+3. **Remove horizontal rules followed by metadata:**
+   - Pattern: `---` followed by metadata tables
+   - Common at document end after main content
+   - Strip from first `---` after main article content through end of file
+
+**Example markdown requiring cleanup:**
+
+```markdown
+[... main article content ...]
+
+---
+
+| metadata |
+| :---- |
+| title | Machine Experience... |
+| description | ... |
+
+| Blogroll |
+| :---- |
+
+| returntotop |
+| :---- |
+| Back to Top |
+```
+
+All of this should be stripped BEFORE markdown-to-HTML conversion.
 
 **Convert markdown content following semantic HTML patterns:**
 
@@ -148,16 +217,19 @@ After extraction:
    - Italic: `<em>`
 
 8. **SVG Placeholders**:
-   - Replace `[SVG:N]` with:
+   - Replace `[SVG:N:filename]` placeholder with `<object>` tag (AI-parseable):
    ```html
    <figure class="illustration">
-     <img src="[blog-name]-fig-N.svg"
-          alt="[descriptive text]"
-          width="800"
-          height="600">
+     <object type="image/svg+xml" data="[semantic-filename].svg" aria-label="[descriptive text]">
+       <!-- Fallback for browsers that don't support object -->
+       <img src="[semantic-filename].svg" alt="[descriptive text]" width="800" height="600">
+     </object>
      <figcaption>Figure N: [description]</figcaption>
    </figure>
    ```
+   - **Why `<object>` instead of `<img>`:** AI agents can parse SVG content directly through `<object>` tags, unlike `<img>` which treats SVG as opaque image data
+   - **Semantic filename:** Use the generated semantic name (e.g., `5-stage-agent-journey.svg` not `MX-The-blog-fig-1.svg`)
+   - **Fallback:** Include `<img>` inside `<object>` for browser compatibility
 
 ### Step 7: Generate Social Media Image
 
@@ -357,7 +429,9 @@ The template includes all required styling:
 2. **Write HTML file**: `[blog-basename].html`
 3. **Copy CSS template**: Read `.claude/skills/create-blog/blog-template.css` and write to `[blog-basename].css`
 4. **Write social media card**: `[blog-basename]-social.svg`
-5. **Write content SVG files**: `[blog-basename]-fig-1.svg`, `[blog-basename]-fig-2.svg`, etc.
+5. **Write content SVG files with semantic names**: `5-stage-agent-journey.svg`, `human-vs-agent-behavior.svg`, `content-pipeline.svg`, etc.
+   - Use the semantic filenames generated in Step 5
+   - NOT generic names like `[blog-basename]-fig-1.svg`
 
 ### Step 12: Report Completion
 
@@ -370,8 +444,9 @@ Output files:
 - outputs/bible/blogs/published/2026-01-22/MX-The-blog.html
 - outputs/bible/blogs/published/2026-01-22/MX-The-blog.css (WCAG 2.1 AA compliant)
 - outputs/bible/blogs/published/2026-01-22/MX-The-blog-social.svg (social media card)
-- outputs/bible/blogs/published/2026-01-22/MX-The-blog-fig-1.svg
-- outputs/bible/blogs/published/2026-01-22/MX-The-blog-fig-2.svg
+- outputs/bible/blogs/published/2026-01-22/5-stage-agent-journey.svg
+- outputs/bible/blogs/published/2026-01-22/human-vs-agent-behavior.svg
+- outputs/bible/blogs/published/2026-01-22/content-pipeline.svg
 
 Metadata:
 - Title: [title]
@@ -385,6 +460,11 @@ Accessibility:
 - Focus indicators on all interactive elements
 - Reduced motion support
 - Print styles included
+
+AI Agent Compatibility:
+- SVGs use <object> tags (parseable by AI agents)
+- Semantic SVG filenames (machine-readable)
+- Metadata tables stripped from output
 ```
 
 ## Error Handling
