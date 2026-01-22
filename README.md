@@ -37,10 +37,9 @@ This repository contains multiple integrated projects working together to addres
 
 ### Book Manuscripts
 
-Three book variants derived from a shared manuscript source:
+Two books with shared appendices and code examples:
 
 - **[MX-Bible](packages/bible/)** - Full comprehensive guide (13 chapters + appendices). Formerly "The Invisible Users".
-- **[MX-Don't Make the AI Think](packages/dont-make-ai-think/)** - Practical quick guide (11 chapters)
 - **[MX-Handbook](packages/mx-handbook/)** - Practical implementation guide (11 chapters)
 - **[Shared Appendices](packages/shared-appendices/)** - Implementation guides and resources (12 appendices A-L)
 
@@ -89,28 +88,34 @@ This repository uses git submodules to achieve **clean separation between conten
 /
 ├── packages/
 │   ├── bible/                # "MX-Bible" (full comprehensive guide) [SUBMODULE]
-│   ├── dont-make-ai-think/   # "MX-Don't Make the AI Think" (practical quick guide) [SUBMODULE]
 │   ├── mx-handbook/          # "MX-Handbook" (implementation handbook) [SUBMODULE]
 │   ├── shared-appendices/    # Shared implementation guides (A-L) [SUBMODULE]
 │   ├── shared-code-examples/ # Production-ready code examples [SUBMODULE]
 │   ├── ucp/                  # Universal Commerce Protocol [SUBMODULE]
+│   ├── notes/                # Development notes [SUBMODULE - READ-ONLY]
+│   ├── sales-enablement/     # Business materials [SUBMODULE - READ-ONLY, PRIVATE]
 │   └── web-audit-suite/      # Website analysis tool (NOT a submodule)
 ├── books/                    # Convenience symlinks (reduces cognitive load when navigating)
 │   ├── bible -> ../packages/bible
-│   ├── dont-make-ai-think -> ../packages/dont-make-ai-think
+│   ├── mx-handbook -> ../packages/mx-handbook
 │   ├── appendices -> ../packages/shared-appendices
 │   ├── code-examples -> ../packages/shared-code-examples
 │   └── outputs -> ../outputs
 │   # Note: Access books/bible instead of packages/bible/ to reduce mental overhead
 ├── blogs -> outputs/bible/blogs  # Symlink to outputs submodule blogs
+├── scrap/                    # Working directory for temporary files
 ├── outputs/                  # Generated content [SUBMODULE - private]
 │   ├── bible/                # PDFs, HTML, marketing materials
-│   └── dont-make-ai-think/   # Build outputs for slim guide
+│   ├── mx/                   # Build outputs for MX-Handbook
+│   └── the-bible/            # Legacy/alternate content
 ├── docs/                     # Documentation (main repo only)
 │   ├── architecture/         # Architecture documentation
 │   ├── for-ai/               # AI assistant guidance files
 │   ├── shared-chapters/      # Shared book content (Chapter 0)
+│   ├── structure/            # Strategic planning documents
 │   └── talks/                # Presentation materials
+│       ├── historical/       # Archived presentations
+│       └── template/         # Presentation templates
 ├── config/                   # Configuration files (main repo only)
 ├── scripts/                  # Build and deployment scripts (main repo only)
 └── .claude/                  # Claude Code AI assistant configuration (main repo only)
@@ -142,7 +147,7 @@ The `npm run init` command verifies and creates necessary symlinks for easier na
 
 - `blogs -> outputs/bible/blogs` (convenient blog access)
 - `books/bible -> ../packages/bible` (convenient book access)
-- `books/dont-make-ai-think -> ../packages/dont-make-ai-think`
+- `books/mx-handbook -> ../packages/mx-handbook`
 - `books/appendices -> ../packages/shared-appendices`
 - `books/code-examples -> ../packages/shared-code-examples`
 - `books/outputs -> ../outputs`
@@ -229,7 +234,6 @@ Changes must flow: **book → tool → documentation**
 Each package has its own README with detailed information:
 
 - [MX-Bible README](packages/bible/README.md) - Full book contents, build commands, status
-- [MX-Don't Make the AI Think README](packages/dont-make-ai-think/README.md) - Practical quick guide contents
 - [MX-Handbook README](packages/mx-handbook/README.md) - Implementation handbook contents
 - [Shared Appendices README](packages/shared-appendices/README.md) - Implementation guides
 - [Web Audit Suite README](packages/web-audit-suite/README.md) - Complete tool documentation
@@ -238,6 +242,12 @@ Each package has its own README with detailed information:
 
 - [Repository Architecture](docs/architecture/doc-architecture.md) - Repository structure and design decisions
 - [Web Audit Suite Architecture](docs/architecture/web-audit-architecture.md) - Tool architecture and pipeline design
+
+### Strategic Planning
+
+- [MX Strategic Review](docs/structure/MX-plan.md) - Machine Experience positioning and strategy
+- [Repository Mapping](docs/structure/github-repositories.md) - Complete repository structure
+- [UX Research Insights](docs/structure/steve-krug.md) - Don't Make Me Think analysis
 
 ### Business Materials (Private Submodule)
 
@@ -257,14 +267,13 @@ This workspace contains multiple git repositories:
 
 1. **Main repo:** Root directory
 2. **MX-Bible submodule:** `packages/bible/` (full comprehensive guide)
-3. **MX-Don't Make the AI Think submodule:** `packages/dont-make-ai-think/` (practical quick guide)
-4. **MX-Handbook submodule:** `packages/mx-handbook/` (implementation handbook)
-5. **Appendices submodule:** `packages/shared-appendices/` (shared appendices)
-6. **Code examples submodule:** `packages/shared-code-examples/` (pattern examples)
-7. **UCP submodule:** `packages/ucp/` (Universal Commerce Protocol - READ-ONLY reference)
-8. **Notes submodule:** `packages/notes/` (development notes - READ-ONLY reference)
-9. **Sales enablement submodule:** `packages/sales-enablement/` (private business materials - READ-ONLY reference)
-10. **Outputs submodule:** `outputs/` (private, generated content)
+3. **MX-Handbook submodule:** `packages/mx-handbook/` (implementation handbook)
+4. **Appendices submodule:** `packages/shared-appendices/` (shared appendices)
+5. **Code examples submodule:** `packages/shared-code-examples/` (pattern examples)
+6. **UCP submodule:** `packages/ucp/` (Universal Commerce Protocol - READ-ONLY reference)
+7. **Notes submodule:** `packages/notes/` (development notes - READ-ONLY reference)
+8. **Sales enablement submodule:** `packages/sales-enablement/` (private business materials - READ-ONLY reference)
+9. **Outputs submodule:** `outputs/` (private, generated content)
 
 **Always check `pwd` before git operations.** The [LEARNINGS.md](LEARNINGS.md) file documents common mistakes and their fixes.
 

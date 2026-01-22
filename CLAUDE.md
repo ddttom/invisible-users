@@ -100,16 +100,15 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has NINE git repositories (1 main hub + 8 submodules). File paths depend on your location.**
+**This workspace has EIGHT git repositories (1 main hub + 7 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 8):**
+- **Submodules (ASSETS, currently 7):**
   - **Outputs (PRIVATE):** `outputs/` → `invisible-users-outputs` - All generated content
   - **MX-Bible:** `packages/bible/` → `invisible-users-bible` - Full comprehensive guide (formerly "The Invisible Users")
-  - **MX-Don't Make the AI Think:** `packages/dont-make-ai-think/` → `invisible-users-slim` - Practical quick guide
   - **MX-Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Implementation handbook for developers and designers
   - **Appendices:** `packages/shared-appendices/` → `invisible-users-appendices` - Shared resources
   - **Code:** `packages/shared-code-examples/` → `invisible-users-code-examples` - Pattern examples
@@ -134,21 +133,32 @@ pwd
 ```text
 ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 ├── .claude/                          ← Claude Code config (ONLY in main repo)
-│   ├── skills/                       ← /news, /review-docs, /step-commit
+│   ├── skills/                       ← 8 skills (see Claude Code Configuration section)
 │   ├── hooks/                        ← pre-tool-use.sh, post-tool-use.sh
 │   └── settings.local.json           ← Permissions and configuration
 ├── CLAUDE.md                         ← This file (ONLY in main repo)
+├── AGENTS.md → CLAUDE.md             ← Symlink for multi-AI system compatibility
+├── GEMINI.md → CLAUDE.md             ← Symlink for Google Gemini
+├── CHANGELOG.md                      ← Version history and release notes
 ├── LEARNINGS.md                      ← Battle-tested rules
 ├── README.md                         ← Main repo README
+├── ONBOARDING.md                     ← Developer onboarding guide
 ├── package.json                      ← Root workspace config
 ├── docs/                             ← Documentation
 │   ├── architecture/                 ← GIT-README.md, TIMELESS-MANUSCRIPT-RULE.md, doc-architecture.md
+│   ├── for-ai/                       ← AI assistant guidance
 │   ├── shared-chapters/              ← Shared book content (Chapter 0)
-│   └── for-ai/                       ← AI assistant guidance
+│   ├── structure/                    ← Strategic planning documents
+│   │   ├── MX-plan.md                ← Machine Experience strategic review
+│   │   ├── github-repositories.md    ← Repository structure mapping
+│   │   └── steve-krug.md             ← UX research and insights
+│   └── talks/                        ← Presentation materials
+│       ├── historical/               ← Archived presentations (dated subdirectories)
+│       └── template/                 ← Reusable presentation templates
 ├── blogs → outputs/bible/blogs       ← SYMLINK to outputs submodule blogs
+├── scrap/                            ← Working directory for temporary files
 ├── books/                            ← Symlinks for convenience
 │   ├── bible → ../packages/bible
-│   ├── dont-make-ai-think → ../packages/dont-make-ai-think
 │   ├── mx-handbook → ../packages/mx-handbook
 │   ├── appendices → ../packages/shared-appendices
 │   ├── code-examples → ../packages/shared-code-examples
@@ -161,11 +171,6 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       ├── README.md             ← MX-Bible README
 │   │       └── NO .claude/ directory
 │   │       Note: Chapter 0 is in main repo at docs/shared-chapters/
-│   ├── dont-make-ai-think/           ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/dont-make-ai-think/
-│   │       ├── chapters/             ← 11 chapter markdown files
-│   │       ├── README.md             ← MX-Don't Make the AI Think README
-│   │       └── NO .claude/ directory
 │   ├── mx-handbook/                  ← SUBMODULE (git repo)
 │   │   └── ${MAIN_REPO}/packages/mx-handbook/
 │   │       ├── chapters/             ← 11 chapter markdown files
@@ -219,10 +224,25 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
         │   ├── blogs/                ← Blog posts
         │   ├── presentations/        ← Slide decks
         │   └── marketing/            ← Marketing materials
-        ├── dont-make-ai-think/       ← MX-Don't Make the AI Think outputs
+        ├── mx/                       ← MX-Handbook outputs
+        ├── the-bible/                ← Legacy/alternate content
         ├── README.md                 ← Outputs README
         └── NO .claude/ directory
 ```
+
+**Note on outputs submodule directory naming:**
+
+The outputs submodule directory structure:
+
+- `bible/` - Outputs for MX-Bible
+- `mx/` - Outputs for MX-Handbook
+- `the-bible/` - Legacy/alternate content (historical)
+
+**Top-level convenience symlinks:**
+
+- `AGENTS.md → CLAUDE.md` - Multi-AI system compatibility (allows agents to find guidance file as AGENTS.md)
+- `GEMINI.md → CLAUDE.md` - Google Gemini compatibility
+- `blogs → outputs/bible/blogs` - Direct access to blog content from repository root
 
 **Key navigation rules:**
 
@@ -283,7 +303,7 @@ git commit -m "Update sales-enablement submodule pointer"
 
 ## Book Names and Shorthand Reference
 
-**This workspace contains three books with public brand names. The user will use shorthand terms in prompts that map to these public names.**
+**This workspace contains two books with public brand names. The user will use shorthand terms in prompts that map to these public names.**
 
 ### Public Names (Official Titles)
 
@@ -291,11 +311,6 @@ git commit -m "Update sales-enablement submodule pointer"
   - Directory: `packages/bible/`
   - Repository: `invisible-users-bible`
   - ~78,000 words + shared appendices, 13 chapters
-
-- **"MX-Don't Make the AI Think"** - The practical quick guide
-  - Directory: `packages/dont-make-ai-think/`
-  - Repository: `invisible-users-slim`
-  - 11-chapter practical guide with business justification
 
 - **"MX-Handbook"** - The implementation handbook
   - Directory: `packages/mx-handbook/`
@@ -311,9 +326,8 @@ git commit -m "Update sales-enablement submodule pointer"
 | **bible**      | "MX-Bible" (the full comprehensive guide)                                              |
 | **handbook**   | "MX-Handbook" (the implementation handbook)                                            |
 | **slim**       | "MX-Handbook" (synonym for handbook)                                                   |
-| **dont**       | "MX-Don't Make the AI Think" (the practical quick guide)                               |
-| **books**      | All three books above                                                                  |
-| **manuscript** | All three books above                                                                  |
+| **books**      | Both books above                                                                       |
+| **manuscript** | Both books above                                                                       |
 | **project**    | Everything in workspace EXCEPT read-only repos (Notes, UCP)                            |
 | **workspace**  | Everything in workspace EXCEPT read-only repos (Notes, UCP)                            |
 
@@ -325,12 +339,11 @@ git commit -m "Update sales-enablement submodule pointer"
 
 ### 1. Book Manuscripts (MX Series)
 
-Multiple books from modular repositories:
+Two books from modular repositories:
 
 - **"MX-Bible"** - `packages/bible/` - Full 13-chapter comprehensive guide (~78,000 words + shared appendices). Formerly titled "The Invisible Users".
-- **"MX-Don't Make the AI Think"** - `packages/dont-make-ai-think/` - 11-chapter practical quick guide with business justification. Shorthand: **dont**
 - **"MX-Handbook"** - `packages/mx-handbook/` - 11-chapter practical implementation guide for developers and designers. Shorthand: **handbook** or **slim**
-- **Shared Appendices** - `packages/shared-appendices/` - 12 appendices (A-L) shared across all books
+- **Shared Appendices** - `packages/shared-appendices/` - 12 appendices (A-L) shared across both books
 - **Shared Code Examples** - `packages/shared-code-examples/` - Good vs bad pattern implementations
 - **Universal Commerce Protocol** - `packages/ucp/` - Open standard demonstrating AI agent ecommerce interactions
 
@@ -340,7 +353,7 @@ Multiple books from modular repositories:
 
 **CRITICAL WRITING REQUIREMENT - Timeless Manuscript Rule:**
 
-Book manuscript files (.md files in `packages/bible/chapters/`, `packages/dont-make-ai-think/chapters/`, `packages/mx-handbook/chapters/`, `packages/shared-appendices/`, `docs/shared-chapters/`) must be written as if they've always existed.
+Book manuscript files (.md files in `packages/bible/chapters/`, `packages/mx-handbook/chapters/`, `packages/shared-appendices/`, `docs/shared-chapters/`) must be written as if they've always existed.
 
 **NEVER include:**
 
@@ -354,7 +367,7 @@ Book manuscript files (.md files in `packages/bible/chapters/`, `packages/dont-m
 **ALWAYS write:**
 
 - Definitive present tense: "The analysis provides..." not "We added analysis..."
-- Timeless descriptions: "This book is part of a three-book series:" not "launching April 2, 2026"
+- Timeless descriptions: "This book is part of a two-book series:" not "launching April 2, 2026"
 - Established fact tone: Features described as if they've always existed
 
 **Exception:** Historical context about the *subject matter* is allowed (e.g., "Google launched UCP in January 2026" describes an industry event, not the book).
@@ -398,13 +411,11 @@ UCP embodies the convergence principle from the book - patterns that work for AI
 │   ├── appendices → ../packages/shared-appendices
 │   ├── bible → ../packages/bible
 │   ├── code-examples → ../packages/shared-code-examples
-│   ├── dont-make-ai-think → ../packages/dont-make-ai-think
 │   ├── mx-handbook → ../packages/mx-handbook
 │   └── outputs → ../outputs
 ├── outputs/                  # Generated content (git submodule - PRIVATE)
 ├── packages/                 # Book manuscripts and tools
 │   ├── bible/                # MX-Bible (git submodule)
-│   ├── dont-make-ai-think/   # MX-Don't Make the AI Think (git submodule)
 │   ├── mx-handbook/          # MX-Handbook (git submodule)
 │   ├── shared-appendices/    # Shared appendices (git submodule)
 │   ├── shared-code-examples/ # Pattern examples (git submodule)
@@ -618,8 +629,8 @@ Use llms.txt files throughout the repository to ensure all content is discoverab
 ├── packages/
 │   ├── bible/
 │   │   └── llms.txt                   ← MX-Bible specific context
-│   ├── dont-make-ai-think/
-│   │   └── llms.txt                   ← MX-Don't Make the AI Think context
+│   ├── mx-handbook/
+│   │   └── llms.txt                   ← MX-Handbook specific context
 │   ├── shared-appendices/
 │   │   ├── llms.txt                   ← Appendices overview
 │   │   └── web/
@@ -750,7 +761,7 @@ See [Appendix H - Example llms.txt](packages/shared-appendices/appendix-h-exampl
 git mv old-filename.md new-filename.md
 
 # ✅ CORRECT: Use git -C for submodules
-git -C packages/dont-make-ai-think mv "old name.md" "new-name.md"
+git -C packages/mx-handbook mv "old name.md" "new-name.md"
 
 # ❌ WRONG: Regular mv breaks git tracking
 mv old-filename.md new-filename.md  # Git sees this as delete + add (loses history)
@@ -778,13 +789,16 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 
 ## Claude Code Configuration
 
-**Five custom skills (`.claude/skills/`):**
+**Eight custom skills (`.claude/skills/`):**
 
 1. **`/step-commit`** - Systematic commit workflow for multi-repository structure
 2. **`/md-fix`** - Markdown linting and auto-fix
 3. **`/news`** - Add verified industry news with strict relevance criteria
 4. **`/review-docs`** - Review documents against complete writing style guide
 5. **`/humanizer`** - Remove AI-generated writing patterns and inject authentic human voice
+6. **`/learnings-review`** - Review and update LEARNINGS.md with battle-tested patterns
+7. **`/md-workflow`** - Advanced markdown workflow automation
+8. **`/opportunity`** - Analyze and document business opportunities
 
 **Git hooks:**
 
@@ -832,6 +846,12 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 - `packages/shared-appendices/appendix-f-implementation-roadmap.md` - Priority-based roadmap
 - `config/book-svg-style.md` - SVG illustration style guide
 - `docs/for-ai/writing-style.md` - Complete writing style guide
+
+**Strategic planning documents:**
+
+- `docs/structure/MX-plan.md` - Machine Experience (MX) strategic review and positioning
+- `docs/structure/github-repositories.md` - Complete repository structure mapping
+- `docs/structure/steve-krug.md` - UX research and insights from "Don't Make Me Think"
 
 **Web Audit Suite:** See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) and subdirectory docs/
 

@@ -1,9 +1,6 @@
 [submodule "packages/bible"]
 	path = packages/bible
 	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-bible.git
-[submodule "packages/dont-make-ai-think"]
-	path = packages/dont-make-ai-think
-	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-slim.git
 [submodule "packages/shared-appendices"]
 	path = packages/shared-appendices
 	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-appendices.git

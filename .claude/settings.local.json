@@ -152,7 +152,16 @@
       "Bash(gh repo list:*)",
       "Bash(node -e:*)",
       "Bash(git config:*)",
-      "Bash(git subtree split:*)"
+      "Bash(git subtree split:*)",
+      "Bash(killall:*)",
+      "Bash(system_profiler:*)",
+      "Bash(ioreg:*)",
+      "Bash(open \"https://github.com/waydabber/BetterDisplay\")",
+      "Bash(brew install:*)",
+      "Bash(brew search:*)",
+      "Bash(brew info:*)",
+      "Bash(screenresolution list:*)",
+      "Bash(defaults write:*)"
     ],
     "deny": [],
     "ask": [
