@@ -7,9 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22 - Executive Sales Reports] - CMS Critic Audit Reports
+
+### Added (Sales Enablement)
+
+- **Sales Enablement Materials**: Created executive sales reports for CMS Critic web audit
+  - **cmscritic.md**: Complete executive sales report analyzing web audit findings
+    - 144 WCAG AA accessibility errors identified
+    - Missing semantic HTML structure (`<main>` element)
+    - Agent optimization opportunities
+    - Three-tier engagement options (£18k-£85k)
+    - Priority-based action plan (Critical → High → Medium)
+  - **template.md**: Reusable template for future client reports
+    - Placeholder-based structure for rapid customization
+    - Embedded instructions and examples
+    - Usage guide with placeholder reference table
+    - Consistent with sales-enablement format
+  - Location: [packages/sales-enablement/outreach/](packages/sales-enablement/outreach/)
+  - Submodule commit: 79a2cb2
+
+### Fixed (Markdown Linting)
+
+- **Markdown Linting**: Fixed all 48 linting errors in cmscritic.md
+  - Added blank lines before/after all list blocks (43 instances)
+  - Added language specifiers to code blocks (2 instances)
+  - Converted bold text to proper heading (1 instance)
+  - Wrapped bare URLs in angle brackets (2 instances)
+  - File now passes all markdownlint checks
+
 ## [2026-01-22 - Blog Accessibility Fixes] - WCAG 2.1 Level A Compliance
 
-### Fixed
+### Fixed (Blog Accessibility)
 
 - **Blog SVG Accessibility**: Added `title` attribute to `<object>` elements to fix Deque `object-alt` accessibility rule violations
   - **Issue**: WCAG 2.1 Level A violation - `<object>` elements lacked alternative text for screen readers
@@ -47,7 +75,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Updated in: [.claude/skills/create-blog/blog-template.html](.claude/skills/create-blog/blog-template.html)
   - Applied to: All existing blog posts
 
-### Added
+### Added (Blog AI Metadata)
 
 - **Blog AI Attribution Text**: Enhanced AI attribution meta tag with explicit attribution text
   - **Implementation**: Added `text` attribute to `ai-attribution` meta tag per Appendix L Pattern 1
@@ -88,7 +116,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Benefits: No duplication, works for both AI agents and humans, cleaner HTML
   - Updated in: `scripts/generate-blog-html.js` and `.claude/skills/create-blog/skill.md`
 
-### Added
+### Added (Development Tooling)
 
 - **Development Tooling**: Added http-server for local blog testing
   - New dependency: `http-server` (^14.1.1)
