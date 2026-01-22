@@ -7,7 +7,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2026-01-22] - Create /create-blog Skill with WCAG 2.1 AA Accessibility
+## [2026-01-22] - EAL Documentation: Clarity and Strategic Positioning
+
+### Added
+
+- **EAL Glossary Entry**: Added comprehensive Entity Asset Layer definition to `packages/bible/chapters/Glossary.md`
+  - Defines EAL as independent asset database owned by organizations
+  - Clarifies relationship with MX patterns (Schema.org, JSON-LD, semantic HTML)
+  - Emphasizes sovereign portability across technology choices
+
+- **EAL Section Enhancements** in `outputs/bible/blogs/MX-The-blog.md`:
+  - Clear EAL definition for dual audience (business and technical readers)
+  - Enhanced asset table with "Purpose" and "Strategic Value" columns
+  - "Getting Started with Entity Assets" section with separate guidance for business leaders and technical teams
+  - Product Specification example demonstrating Knowledge Asset pattern
+  - Open source EAL implementation call-to-action with core features, rationale, and invitation to collaborate
+
+- **Strategic MX Tagline**: Added "MX is the practice: HTML is the delivery mechanism" across key documents
+  - Blog post: Added as closing flourish to reinforce strategic positioning
+  - MX-plan.md: Added in 2 locations with explanatory context
+  - Chapter 0: Added in MX introduction section with explanation
+  - Purpose: Emphasize MX as strategic discipline, not just HTML adjustments
+
+### Changed
+
+- **Simplified Technical Language**: Replaced jargon in blog post EAL section
+  - "Sovereign, portable asset ownership" → "You own your assets, and they travel with you"
+  - "Entity Assets published as structured HTML metadata" → "Your assets embedded as machine-readable data in web pages"
+
+### Submodule Updates
+
+- outputs: 27296da (blog EAL section enhancements + tagline)
+- packages/bible: 64b6962 (glossary EAL entry)
+
+## [2026-01-22] - Blog Skill: WCAG 2.1 AA Accessibility
 
 ### Added
 
@@ -63,7 +96,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - outputs: fa1f18f (MX-The-blog generated HTML with accessibility)
 - packages/shared-appendices: 1600035 (blog pattern added to Appendix D)
 
-## [2026-01-22] - Two-Book Restructure: Remove MX-Don't Make AI Think
+## [2026-01-22] - Restructure: Remove MX-Don't Make AI Think
 
 ### Removed
 
