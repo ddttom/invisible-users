@@ -894,6 +894,57 @@ The question is not "Should we build EAL?" but "Can we afford not to?"
 
 The book is about **Machine Experience (MX)**, not accessibility. Any accessibility benefits are secondary and incidental.
 
+### Critical Principle: Component Names Must Match Use
+
+**The problem:** Component names and ARIA labels that don't accurately describe their actual purpose mislead AI agents, causing catastrophic parsing failures and incorrect content extraction.
+
+**Real-world example from create-blog skill:**
+
+**WRONG (misleading to agents):**
+
+```html
+<aside class="bio-section"
+       aria-label="Author biography"
+       data-component="author-bio">
+  <div class="bio-catch">Quick take on today's agent commerce news</div>
+  <div class="author-name">Author: <strong>Tom Cranstoun</strong></div>
+</aside>
+```
+
+**Why this fails for AI agents:**
+
+- `aria-label="Author biography"` signals this contains biographical information about the author
+- Agent expects: education, career history, professional background, personal details
+- Agent receives: blog introduction tagline + author name
+- Result: Agent extracts incorrect data (treats introduction as biography), hallucinates author details, or skips section entirely
+
+**RIGHT (semantically accurate):**
+
+```html
+<aside class="blog-introduction"
+       aria-label="Blog introduction"
+       data-component="blog-header">
+  <div class="introduction-message">Quick take on today's agent commerce news</div>
+  <div class="author-name">Author: <strong>Tom Cranstoun</strong></div>
+</aside>
+```
+
+**Why this works:**
+
+- Component name matches actual use: introduction, not biography
+- ARIA label accurately describes content: "Blog introduction"
+- Agent extracts correct information without inference
+- No hallucination risk from semantic mismatch
+
+**The MX distinction from accessibility:**
+
+- **Human user with mislabeled component:** Reads content, understands context, ignores incorrect label, completes task successfully
+- **AI agent with mislabeled component:** Parses label as source of truth, extracts wrong data, hallucinates details based on expected schema, fails silently and never returns
+
+**The zero-tolerance parsing principle:** Humans can infer meaning from context and work around mislabeled components. AI agents cannot. When component names contradict actual use, agents must choose between the label (wrong) or guessing from content (hallucination). Both paths lead to failure.
+
+**Backward compatibility note:** The `/create-blog` skill maintains `{{BIO_CATCH}}` placeholder name in markdown source for existing files, whilst outputting semantically correct HTML with `blog-introduction` and `aria-label="Blog introduction"`. Source format (input) and semantic accuracy (output) can differ when necessary.
+
 ### The Wild West Problem: "AI Will Figure It Out" Fallacy
 
 **The common objection:** "AI is getting better all the time, why worry? It will work itself out."
