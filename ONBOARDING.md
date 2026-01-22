@@ -132,7 +132,6 @@ This is a **multi-repository monorepo with 10 git repositories** (1 main + 9 sub
 invisible-users/                    # Main repository (control hub)
 ├── packages/
 │   ├── bible/                      # MX-Bible [SUBMODULE]
-│   ├── dont-make-ai-think/         # MX-Don't Make the AI Think [SUBMODULE]
 │   ├── mx-handbook/                # MX-Handbook [SUBMODULE]
 │   ├── shared-appendices/          # Shared appendices [SUBMODULE]
 │   ├── shared-code-examples/       # Code patterns [SUBMODULE]
@@ -248,7 +247,6 @@ Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/v
 **Book-specific:**
 
 - [packages/bible/README.md](packages/bible/README.md) - MX-Bible contents
-- [packages/dont-make-ai-think/README.md](packages/dont-make-ai-think/README.md) - MX-Don't Make the AI Think contents
 - [packages/mx-handbook/README.md](packages/mx-handbook/README.md) - MX-Handbook contents
 - [packages/shared-appendices/README.md](packages/shared-appendices/README.md) - Appendices overview
 

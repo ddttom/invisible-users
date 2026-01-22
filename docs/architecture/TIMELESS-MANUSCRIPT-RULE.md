@@ -39,7 +39,7 @@ Added **Section 3: Timeless Manuscript Rule** with explicit guidance:
 
 Added comprehensive **"CRITICAL WRITING REQUIREMENT - Timeless Manuscript Rule"** section:
 
-- Lists all affected directories (`packages/bible/chapters/`, `packages/dont-make-ai-think/chapters/`, `packages/shared-appendices/`, `docs/shared-chapters/`)
+- Lists all affected directories (`packages/bible/chapters/`, `packages/shared-appendices/`, `docs/shared-chapters/`)
 - Specifies forbidden patterns
 - Defines required present-tense writing style
 - Requires YAML frontmatter with `ai-instruction` field
@@ -73,59 +73,15 @@ ai-instruction: |
   (industry events, product launches) is allowed.
 ```
 
-### 3. Example Implementation
-
-#### [packages/dont-make-ai-think/chapters/preface.md](../../packages/dont-make-ai-think/chapters/preface.md)
-
-Added YAML frontmatter as first implementation:
-
-- Complete frontmatter with all required fields
-- Removed duplicate H1 heading (title now in frontmatter only)
-- Passes markdown linting (MD025 compliance)
-- Contains ai-instruction field with timeless rule
-
-**BEFORE:**
-
-```markdown
-# Preface
-
-You're reading this because something's changed...
-```
-
-**AFTER:**
-
-```yaml
----
-title: "Preface"
-author: "Tom Cranstoun"
-date: "2026-01-22"
-description: "Introduction to the practical guide for making websites work for AI agents"
-keywords: [preface, book-structure, reading-guide, ai-agents]
-book: "MX-Don't Make the AI Think"
-chapter: 0
-wordcount: 850
-ai-instruction: |
-  This is a book manuscript chapter. Write as if it has always existed.
-  NEVER include: publication dates, "we added", "new feature", "launching",
-  "this update", or any meta-commentary about the book's development.
-  Write definitive present tense. Historical context about subject matter
-  (industry events, product launches) is allowed.
----
-
-You're reading this because something's changed...
-```
-
 ## Remaining Work
 
 ### Immediate (High Priority)
 
-1. **Fix Chapter 0 and preface** - Remove "launching April 2, 2026" and similar language
+1. **Fix Chapter 0** - Remove "launching April 2, 2026" and similar language
    - [docs/shared-chapters/chapter-00-what-are-ai-agents.md](../shared-chapters/chapter-00-what-are-ai-agents.md) - Line 188
-   - [packages/dont-make-ai-think/chapters/preface.md](../../packages/dont-make-ai-think/chapters/preface.md) - Already fixed publication date language
 
 2. **Add YAML frontmatter to all book chapters** - Systematic rollout:
    - `packages/bible/chapters/*.md` (13 chapters)
-   - `packages/dont-make-ai-think/chapters/*.md` (11 chapters)
    - `packages/shared-appendices/appendix-*.md` (12 appendices)
    - `docs/shared-chapters/chapter-00-what-are-ai-agents.md` (1 chapter)
 
@@ -140,7 +96,7 @@ You're reading this because something's changed...
 
    ```bash
    # If editing book manuscript file, remind about timeless rule
-   if [[ "$file" =~ (packages/(bible|dont-make-ai-think|shared-appendices)/|docs/shared-chapters/) ]]; then
+   if [[ "$file" =~ (packages/(bible|shared-appendices)/|docs/shared-chapters/) ]]; then
      echo "⚠️  BOOK MANUSCRIPT: Write as if it has always existed (no publication dates/launch dates)"
    fi
    ```
@@ -153,7 +109,6 @@ You're reading this because something's changed...
    # Find potential violations in book files
    grep -r "launching\|we added\|this update\|new feature\|recently launched" \
      packages/bible/chapters/ \
-     packages/dont-make-ai-think/chapters/ \
      packages/shared-appendices/ \
      docs/shared-chapters/
    ```
@@ -174,10 +129,6 @@ You're reading this because something's changed...
 ## Verification Commands
 
 ```bash
-# Verify preface has frontmatter and passes linting
-head -n 20 packages/dont-make-ai-think/chapters/preface.md
-npx markdownlint -c config/.markdownlint.json packages/dont-make-ai-think/chapters/preface.md
-
 # Search for violation patterns in all book files
 grep -rn "launching.*202[0-9]" packages/*/chapters/ docs/shared-chapters/
 grep -rn "we.*added\|this update\|new feature" packages/*/chapters/ docs/shared-chapters/

@@ -42,7 +42,6 @@ jobs:
     - name: Initialize public submodules
       run: |
         git submodule update --init --depth 1 packages/bible
-        git submodule update --init --depth 1 packages/dont-make-ai-think
         git submodule update --init --depth 1 packages/shared-appendices
         git submodule update --init --depth 1 packages/shared-code-examples
 

@@ -100,13 +100,13 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has EIGHT git repositories (1 main hub + 7 submodules). File paths depend on your location.**
+**This workspace has SEVEN git repositories (1 main hub + 6 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 7):**
+- **Submodules (ASSETS, currently 6):**
   - **Outputs (PRIVATE):** `outputs/` → `invisible-users-outputs` - All generated content
   - **MX-Bible:** `packages/bible/` → `invisible-users-bible` - Full comprehensive guide (formerly "The Invisible Users")
   - **MX-Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Implementation handbook for developers and designers

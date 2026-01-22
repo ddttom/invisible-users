@@ -19,7 +19,6 @@ This workspace contains MULTIPLE git repositories (1 hub + submodules):
 **Example locations:**
 
 - `${MAIN_REPO}/packages/bible/` (full book chapters and illustrations)
-- `${MAIN_REPO}/packages/dont-make-ai-think/` (slim guide chapters)
 - `${MAIN_REPO}/packages/shared-appendices/` (appendices A-L)
 - `${MAIN_REPO}/outputs/` (generated content: blogs, PDFs, presentations)
 
@@ -32,7 +31,7 @@ This workspace contains MULTIPLE git repositories (1 hub + submodules):
 **Does NOT contain:**
 - `.claude/` directory (this is only in hub repo)
 
-**Note:** Number of submodules may vary as project evolves. Current submodules: outputs/, bible/, dont-make-ai-think/, shared-appendices/, shared-code-examples/
+**Note:** Number of submodules may vary as project evolves. Current submodules: outputs/, bible/, shared-appendices/, shared-code-examples/
 
 ## Before Any File Operation
 

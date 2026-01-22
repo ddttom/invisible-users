@@ -89,7 +89,6 @@ graph TB
   - `talks/` - Presentation materials
 - `books/` - Convenience symlinks (tracked but directory ignored)
   - `bible -> ../packages/bible`
-  - `dont-make-ai-think -> ../packages/dont-make-ai-think`
   - `mx-handbook -> ../packages/mx-handbook`
   - `appendices -> ../packages/shared-appendices`
   - `code-examples -> ../packages/shared-code-examples`
@@ -142,25 +141,6 @@ packages/bible/
 │   └── rear-cover.md              # Back cover copy
 ├── illustrations/                  # SVG and PNG images
 └── README.md                       # Bible-specific documentation
-```
-
-#### MX-Don't Make the AI Think (packages/dont-make-ai-think/)
-
-**Repository:** `invisible-users-slim`
-**Purpose:** Practical quick guide (11 chapters)
-**Status:** Intentionally not updated in recent rebranding (separate plan per user request)
-
-**Structure:**
-
-```text
-packages/dont-make-ai-think/
-├── chapters/
-│   ├── metadata.yaml              # PDF generation metadata
-│   ├── 0-cover.md                 # Cover page
-│   ├── preface.md                 # Book preface
-│   ├── chapter-01-*.md through chapter-11-*.md
-│   └── CHAPTERS-GUIDE.md          # Chapter navigation guide
-└── README.md
 ```
 
 #### MX-Handbook (packages/mx-handbook/)
@@ -331,7 +311,6 @@ outputs/
 │   │   └── chapter-0-blog.md
 │   ├── presentations/             # Slide decks
 │   └── marketing/                 # Marketing materials
-├── dont-make-ai-think/            # MX-Don't Make the AI Think outputs
 ├── mx/                            # MX-Handbook outputs
 ├── the-bible/                     # Legacy directory name
 │   ├── mx-bible.html              # HTML output
@@ -654,7 +633,6 @@ Located in `books/` directory:
 
 ```text
 books/bible -> ../packages/bible
-books/dont-make-ai-think -> ../packages/dont-make-ai-think
 books/mx-handbook -> ../packages/mx-handbook
 books/appendices -> ../packages/shared-appendices
 books/code-examples -> ../packages/shared-code-examples

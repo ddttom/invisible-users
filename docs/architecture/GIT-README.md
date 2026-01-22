@@ -49,9 +49,6 @@ ${MAIN_REPO}/           ← MAIN REPOSITORY
 │   ├── bible/                                                   ← SUBMODULE
 │   │   ├── .git/                                                ← Separate git repo
 │   │   └── [full book chapters, illustrations]
-│   ├── dont-make-ai-think/                                      ← SUBMODULE
-│   │   ├── .git/                                                ← Separate git repo
-│   │   └── [slim guide chapters]
 │   ├── shared-appendices/                                       ← SUBMODULE
 │   │   ├── .git/                                                ← Separate git repo
 │   │   └── [appendices A-L]
@@ -83,7 +80,6 @@ Each submodule is a separate git repository with its own:
 
 - `outputs/` - Generated content (PRIVATE repository)
 - `packages/bible/` - Full book manuscript
-- `packages/dont-make-ai-think/` - Slim guide manuscript
 - `packages/shared-appendices/` - Shared appendices A-L
 - `packages/shared-code-examples/` - Code pattern examples
 
