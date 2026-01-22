@@ -52,12 +52,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Technical Details
 
 **Template Placeholders**:
+
 - `{{TITLE}}`, `{{AUTHOR}}`, `{{DESCRIPTION}}`, `{{KEYWORDS}}`, `{{KEYWORDS_ARRAY}}`
 - `{{ISO_DATE}}`, `{{DISPLAY_DATE}}`, `{{WORD_COUNT}}`, `{{READING_TIME}}`
 - `{{BIO_CATCH}}`, `{{TOC_ITEMS}}`, `{{ARTICLE_CONTENT}}`
 - `{{CSS_FILENAME}}`, `{{OG_URL}}`, `{{SOCIAL_IMAGE_URL}}`, `{{LINKEDIN_URL}}`
 
 **Submodule Updates**:
+
 - outputs: fa1f18f (MX-The-blog generated HTML with accessibility)
 - packages/shared-appendices: 1600035 (blog pattern added to Appendix D)
 
