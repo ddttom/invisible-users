@@ -52,6 +52,45 @@ When this skill is invoked, follow these steps systematically:
 - `jsonld`: "article" (maps to BlogPosting)
 - `LinkedIn`: "https://www.linkedin.com/in/tom-cranstoun/"
 
+### Step 2.5: Confirm Output Filename
+
+**CRITICAL:** Ask user to confirm the HTML output filename before generating files.
+
+**Generate filename suggestions from title:**
+
+1. **Full slug** (from complete title, max 50 chars):
+   - Convert title to lowercase
+   - Remove special characters (keep letters, numbers, spaces)
+   - Replace spaces with hyphens
+   - Truncate to 50 characters
+   - Example: "Machine Experience: Adding Metadata So AI Agents Don't Have to Think" → "machine-experience-adding-metadata-so-ai-agents-do"
+
+2. **Medium slug** (first 3-4 key words, ~30 chars):
+   - Extract key concepts from title
+   - Example: "Machine Experience: Adding Metadata So AI Agents Don't Have to Think" → "machine-experience-adding-metadata"
+
+3. **Short slug** (first 2-3 words, ~20 chars):
+   - Use first significant words
+   - Example: "Machine Experience: Adding Metadata So AI Agents Don't Have to Think" → "machine-experience"
+
+**Ask user with AskUserQuestion:**
+
+```
+Question: "Choose HTML filename (without .html extension):"
+Header: "Output filename"
+Options:
+1. [Full slug] - "machine-experience-adding-metadata-so-ai-agents-do" (Recommended)
+   Description: "Generated from full title (50 char limit)"
+2. [Medium slug] - "machine-experience-adding-metadata"
+   Description: "First 3-4 key words from title"
+3. [Short slug] - "machine-experience"
+   Description: "Short, memorable filename"
+4. Other - [User enters custom filename]
+   Description: "Type your own filename (lowercase, hyphens only)"
+```
+
+**Store chosen filename** for use in Step 11 when writing output files.
+
 ### Step 3: Extract Blog Introduction Text
 
 **Purpose:** Extract introductory tagline/message for the blog introduction section (displayed with author image).
@@ -538,6 +577,20 @@ The template includes all required styling:
 
 ### Step 11: Write Output Files
 
+**Run the blog generation script with chosen filename:**
+
+```bash
+node scripts/generate-blog-html.js [markdown-file-path] [chosen-filename]
+```
+
+- `[markdown-file-path]`: Path to the markdown source file
+- `[chosen-filename]`: The filename chosen by user in Step 2.5 (without .html extension)
+  - If user chooses "Other", use their custom input
+  - Pass as second argument to script
+  - Example: `node scripts/generate-blog-html.js outputs/bible/blogs/MX-The-blog.md machine-experience`
+
+**The script will automatically:**
+
 1. **Create output directory**: `outputs/bible/blogs/mx/[topic-slug]/`
    - Generate topic slug from blog title (lowercase, hyphens, no special chars)
    - Example: "Content Operations for AI Agents" → `content-operations`
@@ -545,12 +598,13 @@ The template includes all required styling:
    - **Path structure**: All MX-related blog posts stored under `outputs/bible/blogs/mx/[topic-slug]/`
    - **Web URL pattern**: `https://allabout.network/blogs/mx/[topic-slug]/`
 
-2. **Write HTML file**: `[blog-basename].html`
-3. **Copy CSS template**: Read `.claude/skills/create-blog/blog-template.css` and write to `[blog-basename].css`
-4. **Write social media card**: `[blog-basename]-social.svg`
-5. **Write content SVG files with semantic names**: `5-stage-agent-journey.svg`, `human-vs-agent-behavior.svg`, `content-pipeline.svg`, etc.
-   - Use the semantic filenames generated in Step 5
+2. **Write HTML file**: `[chosen-filename].html` (or `index.html` if no custom filename provided)
+3. **Copy CSS template**: Read `.claude/skills/create-blog/blog-template.css` and write to `styles.css`
+4. **Write content SVG files with semantic names**: `5-stage-agent-journey.svg`, `human-vs-agent-behavior.svg`, `content-pipeline.svg`, etc.
+   - Use the semantic filenames generated during conversion
    - NOT generic names like `[blog-basename]-fig-1.svg`
+
+**Note:** Social media card generation is handled by a separate process (not yet automated).
 
 ### Step 12: Report Completion
 

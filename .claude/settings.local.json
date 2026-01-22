@@ -161,7 +161,8 @@
       "Bash(brew search:*)",
       "Bash(brew info:*)",
       "Bash(screenresolution list:*)",
-      "Bash(defaults write:*)"
+      "Bash(defaults write:*)",
+      "Bash(node scripts/generate-blog-html.js:*)"
     ],
     "deny": [],
     "ask": [

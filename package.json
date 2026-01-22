@@ -70,6 +70,7 @@
     "url": "https://github.com/ddttom/invisible-users"
   },
   "devDependencies": {
+    "markdown-it-anchor": "^9.2.0",
     "markdownlint-cli": "^0.47.0",
     "pdf-parse": "^2.4.5"
   }
