@@ -7,6 +7,60 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22] - Create /create-blog Skill with WCAG 2.1 AA Accessibility
+
+### Added
+
+- **`/create-blog` Skill**: New skill for transforming markdown blog posts into WCAG 2.1 AA compliant HTML
+  - Template-based approach with `blog-template.html` (17 placeholders) and `blog-template.css`
+  - Complete WCAG 2.1 Level AA compliance:
+    - Skip to content link (2.4.1 Bypass Blocks)
+    - Focus indicators 2px outline on all interactive elements (2.4.7 Focus Visible)
+    - Color contrast #0066cc 4.58:1 ratio (1.4.3 Contrast Minimum)
+    - Touch targets 44x44px mobile (2.5.5 Target Size)
+    - Reduced motion support via prefers-reduced-motion (2.3.3 Animation from Interactions)
+  - Semantic HTML landmarks: `<aside>`, `<nav>`, `<main>`, `<article>` with proper `aria-label`
+  - Complete metadata: Open Graph, Twitter Card, Schema.org JSON-LD (BlogPosting)
+  - SVG extraction to separate files for performance and accessibility
+  - Social media card generation (1200x630px SVG)
+  - Collapsible table of contents (pre-collapsed `<details>` element)
+  - Bio section with author image and catch text
+  - Floating back-to-top button (fixed position, bottom-left)
+  - Print styles with visible URLs
+  - Responsive design with mobile-optimized touch targets
+
+- **Appendix D Enhancement**: Added complete blog accessibility pattern to `appendix-d-ai-friendly-html-guide.txt`
+  - Comprehensive WCAG 2.1 AA implementation guide
+  - Complete HTML and CSS examples
+  - Testing checklist and common mistakes to avoid
+  - Demonstrates convergence principle (accessibility benefits everyone including AI agents)
+
+- **Blog Example**: Generated MX-The-blog as reference implementation
+  - Published to `outputs/bible/blogs/published/2026-01-22/`
+  - 6 files: HTML, CSS, social SVG, 3 content SVGs
+  - Validates with zero HTML errors
+  - Passes all WCAG 2.1 AA criteria
+
+- **LEARNINGS.md**: Added WCAG accessibility battle-tested rules
+  - Redundant ARIA roles on semantic HTML5 elements (causes validation errors)
+  - Link color contrast requirements (#3498db fails AA, #0066cc passes)
+
+### Changed
+
+- **CLAUDE.md**: Updated skill count from eight to nine, added `/create-blog` description
+
+### Technical Details
+
+**Template Placeholders**:
+- `{{TITLE}}`, `{{AUTHOR}}`, `{{DESCRIPTION}}`, `{{KEYWORDS}}`, `{{KEYWORDS_ARRAY}}`
+- `{{ISO_DATE}}`, `{{DISPLAY_DATE}}`, `{{WORD_COUNT}}`, `{{READING_TIME}}`
+- `{{BIO_CATCH}}`, `{{TOC_ITEMS}}`, `{{ARTICLE_CONTENT}}`
+- `{{CSS_FILENAME}}`, `{{OG_URL}}`, `{{SOCIAL_IMAGE_URL}}`, `{{LINKEDIN_URL}}`
+
+**Submodule Updates**:
+- outputs: fa1f18f (MX-The-blog generated HTML with accessibility)
+- packages/shared-appendices: 1600035 (blog pattern added to Appendix D)
+
 ## [2026-01-22] - Two-Book Restructure: Remove MX-Don't Make AI Think
 
 ### Removed
