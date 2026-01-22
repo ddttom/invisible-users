@@ -7,7 +7,47 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2026-01-22] - Documentation Consistency: MX/HTML Distinction and Style Guide
+## [2026-01-22 - Skill Updates] - Blog Skill AI Agent Compatibility Improvements
+
+### Fixed
+
+- **create-blog Skill**: Enhanced AI agent compatibility and cleaned up generated HTML
+  - Removed misleading "Blogroll" label from bio section (semantically incorrect term)
+  - Updated SVG handling to use `<object>` tags instead of `<img>` tags
+    - AI agents can now parse SVG content directly through `<object>` elements
+    - Maintains browser compatibility with `<img>` fallback
+  - Implemented semantic SVG filenames (e.g., `5-stage-agent-journey.svg` instead of `MX-The-blog-fig-1.svg`)
+    - Analyzes SVG title, surrounding headings, and text content
+    - Generates descriptive slugs for better machine readability
+  - Added metadata table cleanup to prevent EDS directives appearing in final HTML
+    - Strips `| metadata |`, `| bio |`, `| Blogroll |`, and other parsing tables
+    - Removes Adobe EDS fragment references
+    - Cleans up document-end metadata sections
+
+### Changed
+
+- **blog-template.html**: Removed `<div class="bio-label">Blogroll</div>` from bio section
+- **blog-template.css**: Removed orphaned `.bio-label` styles
+- **skill.md**:
+  - Step 5: Updated SVG extraction process for semantic naming
+  - Step 6: Added pre-conversion metadata table cleanup
+  - Step 9: Changed placeholder replacement to use `<object>` tags
+  - Step 11: Updated output file documentation for semantic names
+- **README.md**: Documented AI agent compatibility features
+
+### Documentation
+
+- **Repository Structure Updates**: Corrected repository count from 8 to 7
+  - Removed references to discontinued `dont-make-ai-think` submodule
+  - Updated CLAUDE.md, pwd-reminder.md, ONBOARDING.md
+  - Simplified architecture documentation
+  - Minor workflow file formatting cleanup
+
+### Submodule Updates
+
+- outputs: 78902d9 (refined blog post content, title changes, British spelling fixes)
+
+## [2026-01-22 - Documentation] - MX/HTML Distinction and Style Guide
 
 ### Changed
 
@@ -28,7 +68,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - outputs: ae4b8d2 (style guide fixes to blog post)
 
-## [2026-01-22] - EAL Documentation: Clarity and Strategic Positioning
+## [2026-01-22 - EAL] - Entity Asset Layer Documentation and Strategic Positioning
 
 ### Added
 
