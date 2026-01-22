@@ -402,7 +402,7 @@ function postProcessHTML(html) {
           width="800"
           height="400"
           class="diagram">
-    <p>Your browser does not support SVG. <a href="${filename}.svg">View the diagram</a>.</p>
+    <p>Diagram not available</p>
   </object>
   <figcaption>${title}</figcaption>
 </figure>`;

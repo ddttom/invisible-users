@@ -376,15 +376,14 @@ All of this should be stripped BEFORE markdown-to-HTML conversion.
    ```html
    <figure class="illustration">
      <object type="image/svg+xml" data="[semantic-filename].svg" aria-label="[descriptive text]">
-       <!-- Fallback for browsers that don't support object -->
-       <img src="[semantic-filename].svg" alt="[descriptive text]" width="800" height="600">
+       <p>Diagram not available</p>
      </object>
      <figcaption>Figure N: [description]</figcaption>
    </figure>
    ```
    - **Why `<object>` instead of `<img>`:** AI agents can parse SVG content directly through `<object>` tags, unlike `<img>` which treats SVG as opaque image data
    - **Semantic filename:** Use the generated semantic name (e.g., `5-stage-agent-journey.svg` not `MX-The-blog-fig-1.svg`)
-   - **Fallback:** Include `<img>` inside `<object>` for browser compatibility
+   - **Simple fallback:** Generic "Diagram not available" message displays only if SVG fails to load - doesn't duplicate figcaption content
 
 ### Step 7: Generate Social Media Image
 

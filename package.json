@@ -17,6 +17,7 @@
     "lint:markdown:all": "markdownlint --config config/.markdownlint.json '**/*.md' --ignore CHANGELOG.md --ignore node_modules --ignore packages/web-audit-suite/node_modules --ignore packages/bible --ignore packages/dont-make-ai-think --ignore packages/mx-handbook --ignore packages/shared-appendices --ignore packages/shared-code-examples --ignore .claude --ignore docs/repo --ignore config --ignore books --ignore blogs --ignore outputs",
     "validate:links": "markdown-link-check --config .markdown-link-check.json packages/bible/chapters/chapter-*.md packages/bible/chapters/bible-plan.md",
     "serve": "npx live-server --port=8080 --entry-file=packages/bible/chapters/bible-plan.md",
+    "debug": "http-server -p 8080 -c-1 --cors -o blogs/mx/machine-experience-adding-metadata.html",
     "status": "node -e \"console.log('Book Status:'); require('fs').readdirSync('packages/bible/chapters').filter(f => f.startsWith('chapter-')).sort().forEach(f => console.log('  ✓', f))\"",
     "illustrations:generate": "node scripts/download-cover-images.js && cd packages/bible/illustrations && for svg in *.svg; do png=\"${svg%.svg}.png\"; echo \"Converting $svg to $png...\"; magick convert -density 300 -background white -alpha remove -alpha off -depth 8 \"$svg\" \"$png\" 2>/dev/null || convert -density 300 -background white -alpha remove -alpha off -depth 8 \"$svg\" \"$png\"; done && echo \"✓ All PNG illustrations generated (8-bit RGB)\"",
     "pdf:bible-html": "pandoc packages/bible/chapters/executive-summary.md packages/bible/chapters/preface.md packages/bible/chapters/chapter-*.md packages/bible/chapters/Glossary.md packages/bible/chapters/The-End.md -o outputs/the-bible/mx-bible.html --resource-path=packages/bible--standalone --toc --toc-depth=2 --metadata title='MX-Bible' --metadata subtitle='Designing the Web for AI Agents and Everyone Else' --metadata author='Tom Cranstoun' --metadata date='January 2026' && echo '✓ HTML generated: outputs/the-bible/mx-bible.html (open and print to PDF using ⌘+P)'",
@@ -70,6 +71,7 @@
     "url": "https://github.com/ddttom/invisible-users"
   },
   "devDependencies": {
+    "http-server": "^14.1.1",
     "markdown-it-anchor": "^9.2.0",
     "markdownlint-cli": "^0.47.0",
     "pdf-parse": "^2.4.5"

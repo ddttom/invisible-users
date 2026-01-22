@@ -1,0 +1,15 @@
+/Users/tomcranstoun/Desktop/Dumps2/CleanShot 2026-01-22 at 18.03.12@2x.png
+
+The blog post is ready tor publication!
+
+The message "your browser does not support svg" is weird, especially as it offers to open the svg. this wil not work for Al or for Humans. fix this in the skiil, just display the mesasage and the alt text
+
+machine-experience-adding-metadata.html
+
+• Thinking v
+
+• You're absolutely right! The fallback is confusing and won't work well for either Al agents or humans. Let me fix the skill documentation to use a simpler, clearer fallback.
+Original problem: "Your browser does not support SVG" was confusing and didn't work for AI agents
+First fix attempt: Added descriptive text inside <object> - but this duplicated the figcaption
+Final solution: Empty fallback - figcaption already provides all necessary context without redundancy
+Trade-off: If an SVG fails to load, there's no inline warning message. However, the figcaption still tells users wha
