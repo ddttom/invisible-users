@@ -23,7 +23,7 @@ Chapter 0 already contains the 5-stage agent journey framework (lines 184-200), 
 - ✅ **Agent behavior:** Conceptual without specific timeouts (explain lack of persistence, avoid "30 seconds" specifics)
 - ✅ **Terminology:** Use "MX patterns" (NOT "accessible patterns"), "explicit structure" or "unambiguous patterns" (NOT "extreme handholding")
 - ✅ **Blog strategy:** Write original standalone piece with MX-first messaging (appeal to both business and technical readers)
-- ✅ **Content Pipeline Positioning:** MX is the publication mechanism (not CMS, not CDS, not Ontology) that bridges construction to delivery
+- ✅ **Content Pipeline Positioning:** MX is the practice (not CMS, not CDS, not Ontology) that informs the publication point. HTML informed by MX bridges construction to delivery.
 
 **What Needs Enhancement:**
 
@@ -42,7 +42,7 @@ Chapter 0 already contains the 5-stage agent journey framework (lines 184-200), 
 
 ### What is Machine Experience (MX)?
 
-**Core Definition:** MX is the act of adding metadata and instructions to internet assets such that AI agents don't have to think. MX is the publication mechanism that ensures context built in Content Operations reaches agents at the delivery point.
+**Core Definition:** MX is the act of adding metadata and instructions to internet assets such that AI agents don't have to think. HTML, informed by MX, is the publication point that ensures context built in Content Operations reaches agents at the delivery point.
 
 **MX is the practice: HTML is the delivery mechanism.**
 
@@ -73,7 +73,7 @@ Chapter 0 already contains the 5-stage agent journey framework (lines 184-200), 
 
 ### MX and the Entity Asset Layer (EAL)
 
-**Critical connection:** MX is the publication mechanism that makes Entity Assets portable across platforms.
+**Critical connection:** MX is the practice that informs how Entity Assets are published. HTML with proper MX patterns makes Entity Assets portable across platforms.
 
 **Entity Assets** are what you own:
 
@@ -347,7 +347,7 @@ MX is often confused with adjacent disciplines in the content stack. Here's what
 
 ### What MX Actually Is
 
-**MX is the publication mechanism that makes context get through to the goal of the site.**
+**MX is the practice that ensures context gets through to the goal of the site. HTML, informed by MX, is the publication point.**
 
 Think of the content pipeline:
 
