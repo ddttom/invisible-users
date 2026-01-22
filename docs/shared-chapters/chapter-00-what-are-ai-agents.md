@@ -24,7 +24,7 @@ Understanding the machines reading your website.
 
 ## What This Book Is About
 
-This book focuses on **Machine Experience (MX)** - the practice of adding metadata and instructions to internet assets such that AI agents don't have to think. MX is the publication mechanism that ensures context built in Content Operations reaches agents at the delivery point. When we talk about AI agents, we're not discussing sentient software or artificial general intelligence. We're talking about machines - software programs with specific technical capabilities and limitations - that visit your website to complete tasks on behalf of humans.
+This book focuses on **Machine Experience (MX)** - the practice of adding metadata and instructions to internet assets such that AI agents don't have to think. HTML, informed by MX, is the publication point that ensures context built in Content Operations reaches agents at the delivery point. When we talk about AI agents, we're not discussing sentient software or artificial general intelligence. We're talking about machines - software programs with specific technical capabilities and limitations - that visit your website to complete tasks on behalf of humans.
 
 **The core principle:** When AI has to "think" (generate answers without complete context), it must produce confident answers even when context is missing, leading to hallucination. MX ensures all context is explicitly present in your website's structure, helping everyone - not just "The Invisible Users."
 
@@ -132,7 +132,7 @@ One MX implementation serves three audiences:
 
 ### MX in the Content Pipeline
 
-MX is often confused with adjacent disciplines in the content stack. MX is not a Content Management System (where content is created and stored), not a Content Delivery System (infrastructure for serving content), and not an ontology (semantic model of concepts and relationships). **MX is the publication mechanism that makes context get through to the goal of the site.**
+MX is often confused with adjacent disciplines in the content stack. MX is not a Content Management System (where content is created and stored), not a Content Delivery System (infrastructure for serving content), and not an ontology (semantic model of concepts and relationships). **MX is the practice that ensures context gets through to the goal of the site. HTML, informed by MX, is the publication point.**
 
 Think of the content pipeline: Content Operations builds semantic structure at the construction point, MX ensures that structure survives publication, and Content Delivery serves it to agents. Without MX, well-structured content with rich metadata in the CMS becomes stripped metadata at delivery - agents cannot understand context.
 
@@ -220,12 +220,12 @@ AI Agents (extract and trust Entity Assets)
 
 Understanding how Entity Asset Layer (EAL) and Machine Experience (MX) work together reveals why MX patterns are strategically critical:
 
-**MX is the publication mechanism; EAL is the content:**
+**MX is the practice that informs publication; EAL is the content:**
 
 | Aspect | MX (Machine Experience) | EAL (Entity Asset Layer) |
 | ------ | ----------------------- | ------------------------ |
 | **Focus** | *How* data is published | *What* data is published |
-| **Role** | Technical delivery | Strategic asset repository |
+| **Role** | Technical practice/discipline | Strategic asset repository |
 | **Purpose** | Agents can read structure | Assets remain portable |
 | **Scope** | Publication process | Asset ownership |
 
