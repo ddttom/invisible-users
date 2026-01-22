@@ -13,3 +13,22 @@ Original problem: "Your browser does not support SVG" was confusing and didn't w
 First fix attempt: Added descriptive text inside <object> - but this duplicated the figcaption
 Final solution: Empty fallback - figcaption already provides all necessary context without redundancy
 Trade-off: If an SVG fails to load, there's no inline warning message. However, the figcaption still tells users wha
+
+---
+
+
+Alt text on svg
+---
+
+What It Means
+Text appears to be a table caption, but is not a caption element.
+Why It Matters
+A table caption should be associated with a table using the <caption> element so it will be read by a screen reader with the table content.
+What To Do
+If the text is a description of the table, associate the text with the table using the <caption> element (<caption> should be the first element within the <table>).
+The Algorithm... in English
+A data table (has at least one table header) that does not already have a caption has: - A colspan attribute value of 3 or greater on the first cell of the table. - A <p> element immediately before the table that contains less than 50 characters or contains less than 100 characters and is bold and/or centered.
+
+--
+
+contrast is an issue
