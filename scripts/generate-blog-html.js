@@ -244,7 +244,7 @@ function generateSemanticFilename(asciiText, index) {
   return keywords || `diagram-flow-${index}`;
 }
 
-function convertAsciiDiagrams(markdown, outputDir) {
+function convertAsciiDiagrams(markdown, outputDir, fileBase = '') {
   let processed = markdown;
   const asciiRegex = /```text\n([\s\S]*?(?:→|↓|↑|←)[\s\S]*?)\n```/g;
   const svgFiles = [];
@@ -254,7 +254,7 @@ function convertAsciiDiagrams(markdown, outputDir) {
   while ((match = asciiRegex.exec(markdown)) !== null) {
     const asciiText = match[1];
     const filename = generateSemanticFilename(asciiText, index);
-    const svgFilename = `${filename}.svg`;
+    const svgFilename = fileBase ? `${fileBase}-${filename}.svg` : `${filename}.svg`;
     const svgContent = convertAsciiToSVG(asciiText, svgFilename);
 
     // Write SVG file
@@ -272,7 +272,7 @@ function convertAsciiDiagrams(markdown, outputDir) {
   return { markdown: processed, svgFiles };
 }
 
-function extractInlineSVGs(markdown, outputDir) {
+function extractInlineSVGs(markdown, outputDir, fileBase = '') {
   let processed = markdown;
   const svgRegex = /<svg[\s\S]*?<\/svg>/g;
   const svgFiles = [];
@@ -316,7 +316,7 @@ function extractInlineSVGs(markdown, outputDir) {
       .substring(0, 50)
       .replace(/^-|-$/g, '');
 
-    const svgFilename = `${filename}.svg`;
+    const svgFilename = fileBase ? `${fileBase}-${filename}.svg` : `${filename}.svg`;
 
     // Write SVG file
     const svgPath = path.join(outputDir, svgFilename);
@@ -454,20 +454,13 @@ function calculateDerivedMetadata(metadata, articleHTML, htmlFilename = 'index.h
                   'July', 'August', 'September', 'October', 'November', 'December'];
   const displayDate = `${parseInt(day)} ${months[parseInt(month) - 1]} ${year}`;
 
-  // Topic slug and URLs
-  const topicSlug = metadata.title
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .substring(0, 50)
-    .replace(/^-|-$/g, '');
+  // Construct OG URL - flat structure, files directly under mx/
+  const baseUrl = `https://allabout.network/blogs/mx`;
+  const ogUrl = `${baseUrl}/${htmlFilename}`;
 
-  // Construct OG URL - include HTML filename if not index.html
-  const baseUrl = `https://allabout.network/blogs/mx/${topicSlug}`;
-  const ogUrl = htmlFilename === 'index.html'
-    ? `${baseUrl}/`
-    : `${baseUrl}/${htmlFilename}`;
-  const socialImageUrl = `${baseUrl}/social-card.svg`;
+  // Social image uses same file base as HTML (without .html extension)
+  const fileBase = htmlFilename.replace(/\.html$/, '');
+  const socialImageUrl = `${baseUrl}/${fileBase}-social.svg`;
 
   // Keywords formatting
   const keywordsArray = Array.isArray(metadata.keywords)
@@ -483,7 +476,6 @@ function calculateDerivedMetadata(metadata, articleHTML, htmlFilename = 'index.h
     readingTime,
     displayDate,
     isoDate: metadata.date,
-    topicSlug,
     ogUrl,
     socialImageUrl,
     keywordsString,
@@ -495,7 +487,7 @@ function calculateDerivedMetadata(metadata, articleHTML, htmlFilename = 'index.h
 // PHASE 10: Replace Template Placeholders
 //=============================================================================
 
-function replaceTemplatePlaceholders(template, metadata, derived, tocHTML, articleHTML) {
+function replaceTemplatePlaceholders(template, metadata, derived, tocHTML, articleHTML, cssFilename) {
   let html = template;
 
   const replacements = {
@@ -511,7 +503,7 @@ function replaceTemplatePlaceholders(template, metadata, derived, tocHTML, artic
     '{{BIO_CATCH}}': metadata.bioCatch,
     '{{TOC_ITEMS}}': tocHTML,
     '{{ARTICLE_CONTENT}}': articleHTML,
-    '{{CSS_FILENAME}}': 'styles.css',
+    '{{CSS_FILENAME}}': cssFilename,
     '{{OG_URL}}': derived.ogUrl,
     '{{SOCIAL_IMAGE_URL}}': derived.socialImageUrl,
     '{{LINKEDIN_URL}}': metadata.LinkedIn
@@ -586,32 +578,32 @@ function main() {
   // PHASE 2: Merge metadata
   const metadata = mergeMetadata(markdown);
 
-  // Calculate output directory
-  const derived = {
-    topicSlug: metadata.title
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .substring(0, 50)
-      .replace(/^-|-$/g, '')
-  };
-  const outputDir = path.join(OUTPUT_BASE, derived.topicSlug);
+  // Output directly to mx/ directory (flat structure, no subdirectories)
+  const outputDir = OUTPUT_BASE;
 
-  // Create output directory
+  // Ensure output directory exists
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
     console.log(`✓ Created output directory: ${outputDir}`);
   }
 
+  // Use custom filename as base for all output files (or default to title slug)
+  const fileBase = customFilename || metadata.title
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .substring(0, 50)
+    .replace(/^-|-$/g, '');
+
   // PHASE 3: Strip metadata tables
   let cleanMarkdown = stripMetadataTables(markdown);
 
   // PHASE 4-5: Convert ASCII diagrams and extract inline SVGs
-  const asciiResult = convertAsciiDiagrams(cleanMarkdown, outputDir);
+  const asciiResult = convertAsciiDiagrams(cleanMarkdown, outputDir, fileBase);
   cleanMarkdown = asciiResult.markdown;
 
   // Extract inline SVGs (from preprocessing or original markdown)
-  const inlineSvgResult = extractInlineSVGs(cleanMarkdown, outputDir);
+  const inlineSvgResult = extractInlineSVGs(cleanMarkdown, outputDir, fileBase);
   cleanMarkdown = inlineSvgResult.markdown;
 
   // Merge SVG file lists
@@ -632,9 +624,12 @@ function main() {
   // PHASE 9: Calculate derived metadata
   const derivedMeta = calculateDerivedMetadata(metadata, articleHTML, htmlFilename);
 
+  // Determine CSS filename for template
+  const cssFilename = `${fileBase}.css`;
+
   // PHASE 10: Replace template placeholders
   const template = fs.readFileSync(TEMPLATE_HTML, 'utf8');
-  const finalHTML = replaceTemplatePlaceholders(template, metadata, derivedMeta, tocHTML, articleHTML);
+  const finalHTML = replaceTemplatePlaceholders(template, metadata, derivedMeta, tocHTML, articleHTML, cssFilename);
 
   // PHASE 11: Validate output
   if (!validateOutput(finalHTML)) {
@@ -649,12 +644,12 @@ function main() {
   if (customFilename) {
     console.log(`✓ Wrote: ${htmlPath} (custom filename: ${customFilename})`);
   } else {
-    console.log(`✓ Wrote: ${htmlPath} (default: index.html)`);
+    console.log(`✓ Wrote: ${htmlPath} (default: ${htmlFilename})`);
   }
 
   // Copy CSS template
   const cssContent = fs.readFileSync(TEMPLATE_CSS, 'utf8');
-  const cssPath = path.join(outputDir, 'styles.css');
+  const cssPath = path.join(outputDir, cssFilename);
   fs.writeFileSync(cssPath, cssContent, 'utf8');
   console.log(`✓ Wrote: ${cssPath}`);
 
@@ -662,7 +657,7 @@ function main() {
   console.log(`Output directory: ${outputDir}`);
   console.log(`Generated files:`);
   console.log(`  - ${htmlFilename} (${derivedMeta.wordCount} words, ${derivedMeta.readingTime} min read)`);
-  console.log(`  - styles.css`);
+  console.log(`  - ${cssFilename}`);
   svgFiles.forEach(svg => console.log(`  - ${svg}`));
   console.log(`\nPublic URL: ${derivedMeta.ogUrl}`);
 
