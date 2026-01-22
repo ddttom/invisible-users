@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22 - Flat Blog Structure] - Simplified Directory Layout
+
+### Changed
+
+- **Blog Directory Structure**: Restructured from nested subdirectories to flat layout
+  - **Old structure**: `outputs/bible/blogs/mx/[topic-slug]/index.html`
+  - **New structure**: `outputs/bible/blogs/mx/[filename].html`
+  - All blog assets now use filename prefix to avoid conflicts
+  - File naming: `[filename].html`, `[filename].css`, `[filename]-[diagram].svg`
+  - Simplified URLs: `https://allabout.network/blogs/mx/[filename].html`
+  - No more nested directories - all files at same level
+
+- **Blog Generation Script**: Updated `scripts/generate-blog-html.js` for flat structure
+  - Output directly to `mx/` directory (not `mx/[topic-slug]/`)
+  - Prefix all SVG diagrams with blog filename
+  - Prefix CSS file with blog filename
+  - Updated URL generation (removed topic-slug subdirectory)
+  - Functions updated: `calculateDerivedMetadata()`, `extractInlineSVGs()`, `convertAsciiDiagrams()`
+
+- **Documentation**: Updated CLAUDE.md and create-blog skill.md to reflect flat structure
+  - New file naming patterns and URL examples
+  - Simplified output directory explanation
+
+### Submodule Updates
+
+- outputs: 9ad520e (Restructure blog to flat directory layout)
+
 ## [2026-01-22 - Blog URL Fixes] - Correct Metadata URLs for Custom Filenames
 
 ### Fixed
