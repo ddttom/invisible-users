@@ -71,7 +71,7 @@ When this skill is invoked, follow these steps systematically:
 
 ### Step 4: Generate Table of Contents
 
-1. Scan markdown content for all H2 headings (`##`)
+1. Scan markdown content for all H2 headings (`##`) - these are the top-level sections
 2. Extract heading text
 3. Generate anchor ID for each:
    - Lowercase all characters
@@ -79,6 +79,8 @@ When this skill is invoked, follow these steps systematically:
    - Remove special characters except hyphens
    - Example: "The Pattern That Breaks" → "the-pattern-that-breaks"
 4. Store array of `{text, id}` objects
+
+**Note:** TOC includes only H2 headings for simplicity. H3-H5 headings will have anchor IDs for direct linking but won't appear in the collapsible TOC to avoid clutter.
 
 ### Step 5: Extract and Name SVGs Semantically
 
@@ -191,9 +193,14 @@ All of this should be stripped BEFORE markdown-to-HTML conversion.
 **Convert markdown content following semantic HTML patterns:**
 
 1. **Headings**:
-   - H1: Wrap in `<h1>` (article title only)
-   - H2: Wrap in `<h2 id="[anchor-id]">` (section headings with anchor IDs)
-   - H3: Wrap in `<h3>` (subsections)
+   - H1 (`#`): Wrap in `<h1>` (article title only, no anchor ID)
+   - H2 (`##`): Wrap in `<h2 id="[anchor-id]">` (section headings with anchor IDs, included in TOC)
+   - H3 (`###`): Wrap in `<h3 id="[anchor-id]">` (subsections with anchor IDs)
+   - H4 (`####`): Wrap in `<h4 id="[anchor-id]">` (sub-subsections with anchor IDs)
+   - H5 (`#####`): Wrap in `<h5 id="[anchor-id]">` (deep subsections with anchor IDs)
+   - H6 (`######`): Wrap in `<h6 id="[anchor-id]">` (deepest level with anchor IDs)
+   - **Anchor ID generation:** Apply same slugification to all headings H2-H6 (lowercase, hyphens, no special chars)
+   - **Example:** `#### Identity Evolves into Strategic Asset Vault` → `<h4 id="identity-evolves-into-strategic-asset-vault">Identity Evolves into Strategic Asset Vault</h4>`
 
 2. **Paragraphs**:
    - Wrap text blocks in `<p>` tags
@@ -326,10 +333,10 @@ The template includes all required styling:
 
 1. **Skip Link**: Visually hidden, appears on keyboard focus (WCAG accessibility)
 2. **Reset and Base Styles**: Body, typography, colors
-3. **Bio Section**: Background, border, flexbox layout, author image
+3. **Blog Introduction**: Background, border, flexbox layout, author image
 4. **Table of Contents**: Collapsible details/summary styling, arrow indicators
 5. **Article Header**: H1 styling, article metadata
-6. **Article Content**: H2/H3 headings, paragraphs, lists
+6. **Article Content**: H2/H3/H4/H5/H6 headings (all levels styled), paragraphs, lists
 7. **Code Blocks**: Pre/code styling with syntax highlighting background
 8. **Links**: Color, hover states, focus indicators
 9. **Tables**: Borders, spacing, header styling
@@ -489,7 +496,7 @@ After generation, validate:
 
 1. **HTML syntax**: Use `npx html-validate [output-file].html`
 2. **Schema.org JSON-LD**: Check valid JSON structure
-3. **Anchor IDs**: Verify all H2 headings have unique IDs
+3. **Anchor IDs**: Verify all H2-H6 headings have unique IDs
 4. **CSS syntax**: Check no syntax errors
 5. **File references**: Verify all image/SVG src paths exist
 
@@ -565,10 +572,11 @@ If bio table missing, generate using pattern:
 
 - [ ] HTML file validates without errors
 - [ ] CSS file has no syntax errors
-- [ ] SVGs extracted to separate files
+- [ ] SVGs extracted to separate files with semantic filenames
 - [ ] Blog introduction renders with introduction message
 - [ ] Index (TOC) is collapsible and pre-collapsed
-- [ ] All H2 headings have anchor IDs
+- [ ] All H2-H6 headings have anchor IDs
+- [ ] All heading levels (H2-H6) styled appropriately
 - [ ] Back to Top button floats bottom-left
 - [ ] Schema.org JSON-LD is valid
 - [ ] Meta tags are complete
