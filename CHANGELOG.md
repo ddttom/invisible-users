@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-22 - Blog URL Fixes] - Correct Metadata URLs for Custom Filenames
+
+### Fixed
+
+- **Blog Generation URLs**: Fixed og:url, twitter:url, and JSON-LD @id to include HTML filename
+  - When custom HTML filenames are used (not `index.html`), URLs now include the filename
+  - Example: `https://allabout.network/blogs/mx/topic/custom-filename.html` (was: `.../topic/`)
+  - Affects social media cards (Facebook, Twitter, LinkedIn) and structured data
+  - Updated `calculateDerivedMetadata()` to accept `htmlFilename` parameter
+  - Moved `htmlFilename` construction before metadata calculation
+
+### Added
+
+- **Canonical Tag**: Added `<link rel="canonical">` to blog template for SEO
+  - Automatically uses correct URL (includes HTML filename when applicable)
+  - Helps search engines identify authoritative URL for the page
+
+### Submodule Updates
+
+- outputs: 4dc4e02 (Fix blog metadata URLs to include HTML filename)
+
 ## [2026-01-22 - Blog Generation Automation] - Complete HTML Blog Generation Pipeline
 
 ### Added
