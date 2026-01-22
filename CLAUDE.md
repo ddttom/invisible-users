@@ -468,6 +468,29 @@ npm run status                 # Show all chapter files
 npm run commit-push            # Interactive commit (for humans, not Claude)
 ```
 
+### Blog Generation Commands
+
+```bash
+# Main blog generation (automated)
+node scripts/generate-blog-html.js <markdown-file> [custom-filename]
+# Generates complete WCAG 2.1 AA compliant HTML blog with:
+# - Semantic HTML with heading anchor IDs (H2-H6)
+# - Schema.org JSON-LD metadata
+# - SVG extraction with semantic filenames
+# - Table of contents from H2 headings
+# - Word count and reading time calculation
+
+# Optional: ASCII diagram preprocessing
+node scripts/preprocess-ascii-to-svg.js <markdown-file>
+# Converts ASCII diagrams (arrows: →, ↓, ↑, ←) to inline SVG
+# Run before generate-blog-html.js if markdown contains ASCII diagrams
+
+# HTML validation
+npx html-validate <generated-html-file>
+```
+
+**See [.claude/skills/create-blog/skill.md](.claude/skills/create-blog/skill.md) for complete workflow documentation.**
+
 ### Web Audit Suite Commands
 
 ```bash
