@@ -5,9 +5,11 @@
 This workspace contains MULTIPLE git repositories (1 hub + submodules):
 
 ### 1. Hub Repository (Main)
+
 **Location:** `${MAIN_REPO}/` (e.g., `/path/to/invisible-users/`)
 
 **Contains:**
+
 - `.claude/` directory (skills, hooks, settings)
 - `packages/` directory with all workspace packages
 - `docs/` directory
@@ -29,6 +31,7 @@ This workspace contains MULTIPLE git repositories (1 hub + submodules):
 - Illustrations, generated content
 
 **Does NOT contain:**
+
 - `.claude/` directory (this is only in hub repo)
 
 **Note:** Number of submodules may vary as project evolves. Current submodules: outputs/, bible/, shared-appendices/, shared-code-examples/
@@ -42,6 +45,7 @@ pwd
 ```
 
 Then use the correct path:
+
 - If you're in hub repo → `.claude/skills/news/skill.md`
 - If you're in any submodule → `../../.claude/skills/news/skill.md` or similar
 
