@@ -591,18 +591,18 @@ node scripts/generate-blog-html.js [markdown-file-path] [chosen-filename]
 
 **The script will automatically:**
 
-1. **Create output directory**: `outputs/bible/blogs/mx/[topic-slug]/`
-   - Generate topic slug from blog title (lowercase, hyphens, no special chars)
-   - Example: "Content Operations for AI Agents" → `content-operations`
-   - Create directory if it doesn't exist
-   - **Path structure**: All MX-related blog posts stored under `outputs/bible/blogs/mx/[topic-slug]/`
-   - **Web URL pattern**: `https://allabout.network/blogs/mx/[topic-slug]/`
+1. **Output directly to mx/ directory**: All files placed in `outputs/bible/blogs/mx/` (flat structure, no subdirectories)
+   - **Path structure**: All blog assets stored directly under `outputs/bible/blogs/mx/`
+   - **Web URL pattern**: `https://allabout.network/blogs/mx/[filename].html`
 
-2. **Write HTML file**: `[chosen-filename].html` (or `index.html` if no custom filename provided)
-3. **Copy CSS template**: Read `.claude/skills/create-blog/blog-template.css` and write to `styles.css`
-4. **Write content SVG files with semantic names**: `5-stage-agent-journey.svg`, `human-vs-agent-behavior.svg`, `content-pipeline.svg`, etc.
-   - Use the semantic filenames generated during conversion
-   - NOT generic names like `[blog-basename]-fig-1.svg`
+2. **Write HTML file**: `[chosen-filename].html` (e.g., `machine-experience-adding-metadata.html`)
+3. **Copy CSS template**: Write to `[chosen-filename].css` (e.g., `machine-experience-adding-metadata.css`)
+4. **Write social media card**: `[chosen-filename]-social.svg` (e.g., `machine-experience-adding-metadata-social.svg`)
+5. **Write content SVG files with prefixed names**: All SVG diagrams prefixed with blog filename
+   - `[chosen-filename]-5-stage-agent-journey.svg`
+   - `[chosen-filename]-human-vs-agent-behavior.svg`
+   - `[chosen-filename]-content-pipeline.svg`
+   - Ensures no filename conflicts between different blog posts
 
 **Note:** Social media card generation is handled by a separate process (not yet automated).
 
@@ -614,14 +614,14 @@ Report to user:
 Blog generated successfully!
 
 Output files:
-- outputs/bible/blogs/mx/content-operations/index.html
-- outputs/bible/blogs/mx/content-operations/styles.css (WCAG 2.1 AA compliant)
-- outputs/bible/blogs/mx/content-operations/social-card.svg (social media card)
-- outputs/bible/blogs/mx/content-operations/5-stage-agent-journey.svg
-- outputs/bible/blogs/mx/content-operations/human-vs-agent-behavior.svg
-- outputs/bible/blogs/mx/content-operations/content-pipeline.svg
+- outputs/bible/blogs/mx/machine-experience-adding-metadata.html
+- outputs/bible/blogs/mx/machine-experience-adding-metadata.css (WCAG 2.1 AA compliant)
+- outputs/bible/blogs/mx/machine-experience-adding-metadata-social.svg (social media card)
+- outputs/bible/blogs/mx/machine-experience-adding-metadata-5-stage-agent-journey.svg
+- outputs/bible/blogs/mx/machine-experience-adding-metadata-human-vs-agent-behavior.svg
+- outputs/bible/blogs/mx/machine-experience-adding-metadata-content-pipeline.svg
 
-Published URL: <https://allabout.network/blogs/mx/content-operations>
+Published URL: <https://allabout.network/blogs/mx/machine-experience-adding-metadata.html>
 
 Metadata:
 - Title: [title]

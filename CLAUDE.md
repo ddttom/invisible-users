@@ -240,23 +240,34 @@ The outputs submodule directory structure:
 
 **Blog Post URL Structure:**
 
-All MX-related blog posts follow a topic-based URL structure:
+All MX-related blog posts stored directly in flat structure under `mx/` directory:
 
-- **Repository path:** `outputs/bible/blogs/mx/[topic-slug]/`
-- **Web URL:** `https://allabout.network/blogs/mx/[topic-slug]/`
-- **Topic slug generation:** Lowercase, hyphens, no special characters
-- **Example:** Blog title "Content Operations for AI Agents" → `outputs/bible/blogs/mx/content-operations/`
-- **Published URL:** `https://allabout.network/blogs/mx/content-operations/`
+- **Repository path:** `outputs/bible/blogs/mx/[filename].html`
+- **Web URL:** `https://allabout.network/blogs/mx/[filename].html`
+- **Filename generation:** Lowercase, hyphens, no special characters (user chooses from suggestions)
+- **Example:** Blog title "Content Operations for AI Agents" → `machine-experience-adding-metadata.html`
+- **Published URL:** `https://allabout.network/blogs/mx/machine-experience-adding-metadata.html`
 
-**Blog directory structure:**
+**Blog file naming pattern (all files at same level):**
 
 ```text
-outputs/bible/blogs/mx/[topic-slug]/
-├── index.html           # Main blog post
-├── styles.css           # WCAG 2.1 AA compliant styling
-├── social-card.svg      # Social media card (1200x630px)
-├── [diagram-name].svg   # Semantic SVG filenames
-└── [diagram-name].svg   # Additional diagrams as needed
+outputs/bible/blogs/mx/
+├── [filename].html              # Main blog post
+├── [filename].css               # WCAG 2.1 AA compliant styling (scoped to this blog)
+├── [filename]-social.svg        # Social media card (1200x630px)
+├── [filename]-[diagram-name].svg # Prefixed SVG diagrams
+└── [filename]-[diagram-name].svg # Additional diagrams as needed
+```
+
+**Example for one blog post:**
+
+```text
+outputs/bible/blogs/mx/
+├── machine-experience-adding-metadata.html
+├── machine-experience-adding-metadata.css
+├── machine-experience-adding-metadata-social.svg
+├── machine-experience-adding-metadata-5-stage-agent-journey.svg
+└── machine-experience-adding-metadata-human-vs-agent-behavior.svg
 ```
 
 **Top-level convenience symlinks:**
