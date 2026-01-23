@@ -643,29 +643,44 @@ Content with no H1 (frontmatter title is used instead)...
 
 **CRITICAL:** llms.txt files use YAML frontmatter metadata despite the `.txt` extension—this is markdown in disguise.
 
-**Why the `.txt` extension?**
+**Why the `.txt` extension with YAML frontmatter?**
 
-The tech world wanted to use markdown for AI agent discovery files, but `robots.txt` established the `.txt` pattern for machine-readable site configuration. The llms.txt standard adopted this naming convention for consistency, even though the content is markdown with YAML frontmatter.
+The llms.txt standard adopted the `.txt` extension for consistency with `robots.txt`, but the content is markdown with YAML frontmatter. The YAML frontmatter block (delimited by `---`) must appear at the very start of the file, followed by markdown content. This hybrid approach provides machine-readable metadata (YAML) and human-readable documentation (markdown) in a single file using the standard `.txt` extension for site-wide configuration files.
 
 **Standard llms.txt structure:**
 
 ```markdown
+---
+title: "Project Title"
+author: "Author Name"
+creation-date: "DD/Mon/YYYY"
+last-updated: "DD/Mon/YYYY"
+description: "Brief summary"
+longdescription: "Extended context for AI agents"
+LinkedIn: "https://www.linkedin.com/in/username/"
+repository: "https://github.com/org/repo"
+ai-instruction: "Instructions for AI agents parsing this file"
+jsonld: "book"
+---
+
 # Project Title
 
-| metadata |  |
-| :---- | :---- |
-| title | Full project title |
-| author | Author Name |
-| creation-date | DD/Mon/YYYY |
-| last-updated | DD/Mon/YYYY |
-| description | Brief summary |
-| longdescription | Extended context for AI agents |
-| LinkedIn | <https://www.linkedin.com/in/username/> |
-| repository | <https://github.com/org/repo> |
-| ai-instruction | Instructions for AI agents parsing this file |
-| jsonld | Document type (book, BlogPosting, SoftwareApplication) |
-
 Project overview content follows...
+```
+
+**CRITICAL - YAML Frontmatter Placement:**
+
+YAML frontmatter MUST be placed at the **very start** of the llms.txt file (line 0). The opening delimiter `---` must be the first line, with no content (comments, whitespace, etc.) appearing before it. The closing delimiter `---` separates frontmatter from markdown content. This applies even though the file has a `.txt` extension.
+
+**Example of correct placement:**
+
+```text
+---                          ← Line 0: Opening delimiter
+title: "Project Name"        ← Line 1-N: YAML metadata
+author: "Author Name"
+---                          ← Closing delimiter
+                             ← Blank line (optional)
+# Project Title             ← Markdown content starts here
 ```
 
 **Usage in this repository:**
@@ -696,13 +711,15 @@ Use llms.txt files throughout the repository to ensure all content is discoverab
 
 **Key fields for AI agents:**
 
-- `title` - Project/package name
-- `author` - Attribution
-- `description` - Brief summary (1-2 sentences)
-- `longdescription` - Extended context (2-3 paragraphs)
-- `ai-instruction` - Specific guidance for AI agents parsing the content
-- `repository` - Link to source code
-- `jsonld` - Schema.org type for structured data context
+- `title:` - Project/package name (quoted string)
+- `author:` - Attribution (quoted string)
+- `description:` - Brief summary, 1-2 sentences (quoted string)
+- `longdescription:` - Extended context, 2-3 paragraphs (quoted string)
+- `ai-instruction:` - Specific guidance for AI agents parsing the content (quoted string)
+- `repository:` - Link to source code (quoted URL)
+- `jsonld:` - Schema.org type for structured data context (e.g., "book", "BlogPosting", "SoftwareApplication")
+- `creation-date:` - When content was created (date format: "DD/Mon/YYYY")
+- `last-updated:` - Most recent update date (date format: "DD/Mon/YYYY")
 
 **Standard fields:**
 

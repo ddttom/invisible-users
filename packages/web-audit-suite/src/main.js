@@ -242,10 +242,10 @@ export async function runTestsOnSitemap(context) {
 
     // Log rate limiter statistics
     if (context.rateLimiter) {
-      const stats = context.rateLimiter.getStatistics();
+      const stats = context.rateLimiter.getStats();
       context.logger.info('Rate limiter statistics:');
-      context.logger.info(`  Final concurrency: ${stats.concurrency}`);
-      context.logger.info(`  Rate limit responses: ${stats.rateLimitCount}`);
+      context.logger.info(`  Final concurrency: ${stats.currentConcurrency}`);
+      context.logger.info(`  Rate limit responses: ${stats.rateLimitedRequests}`);
       context.logger.info(`  Total requests: ${stats.totalRequests}`);
     }
   }
