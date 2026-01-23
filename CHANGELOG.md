@@ -56,6 +56,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Updated mx-handbook pointer to 84e4d02
   - Updated outputs pointer to f8f8f5e
 
+## [2026-01-23 - HTML Linting Compliance] - Code Quality
+
+### Fixed (HTML Standards Compliance)
+
+- **Reviewer Page HTML Validation** (shared-appendices submodule 1daa183):
+  - Removed redundant `role="main"` from `<main>` element (semantic HTML5 elements have implicit ARIA roles)
+  - Removed redundant `role="contentinfo"` from `<footer>` element
+  - Moved all inline styles to CSS classes in stylesheet
+  - Added new CSS classes: `.download-intro-text`, `.download-book-container`, `.download-description`, `.nda-agreement-text`, `.closing-signature`, `.btn-large`
+  - Removed 12 inline style attributes from HTML elements
+  - HTML now passes `html-validate` with zero errors
+  - Maintains WCAG 2.1 AA compliance and semantic structure
+  - "Practice what we preach" - demonstrating the standards documented in the book
+
+### Technical (HTML Linting)
+
+- **Submodule Update** (main repo 3174736):
+  - Updated shared-appendices pointer to 1daa183
+
 ## [2026-01-23 - MX-Handbook Promotional Content] - The End Chapter
 
 ### Added (Promotional Content)
