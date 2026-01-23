@@ -7,6 +7,47 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Two-Book Ecosystem] - Repository-Wide Update
+
+### Changed (Book Structure)
+
+- **Updated entire repository** from three-book to two-book MX Series structure:
+  - Removed all references to "MX-Don't Make the AI Think" (third book discontinued)
+  - Updated ecosystem to focus on **MX-Bible** (comprehensive reference) and **MX-Handbook** (practical implementation)
+  - Main repo files: llms.txt, ONBOARDING.md, architecture docs, Chapter 0, historical talks
+  - Submodule updates:
+    - packages/bible (2dcbb5f): Updated Chapter 13 MX foundation context and Preface
+    - packages/mx-handbook (b4b905e): Added MX definition, updated two-book ecosystem section
+    - packages/sales-enablement (a647466): Updated all materials (strategy, pricing, opportunities, business plan)
+    - outputs (58bb782): Updated mx-handbook.html two-book ecosystem
+
+- **Updated Chapter 0** ([docs/shared-chapters/chapter-00-what-are-ai-agents.md](docs/shared-chapters/chapter-00-what-are-ai-agents.md)):
+  - Changed "Three-Book MX Ecosystem" section to "Two-Book MX Ecosystem"
+  - Maintained all MX content and organizational models
+  - Preserved timeless present tense throughout
+
+- **Updated sales-enablement materials** (6 files in packages/sales-enablement/):
+  - book-launch-strategy.md: Two-book reader journeys, cross-references, bundles
+  - pricing/book-pricing.md: Two-book bundle pricing strategy
+  - outreach/adobe-opportunity-analysis.md: Updated MX Series pitch materials
+  - business/business-plan.md: Updated ecosystem and competitive advantages
+  - business/executive-summary.md: Updated foundation and materials lists
+  - business/business-opportunities.md: Updated strategic advantage descriptions
+
+- **Updated documentation** (6 files):
+  - docs/architecture/doc-architecture.md: Updated Mermaid diagram and descriptions
+  - docs/architecture/TIMELESS-MANUSCRIPT-RULE.md: Updated example references
+  - docs/talks/historical/members-call-21-jan-26/boye-co-member-call-review.md: Updated book ecosystem
+  - ONBOARDING.md: Updated quick start guide
+  - outputs/mx/mx-handbook.html: Updated HTML rendering
+
+### Technical Notes (Two-Book Update)
+
+- All markdown linting passes cleanly on main repository files
+- Submodules committed and pushed before main repository commit (proper git workflow)
+- Cross-referencing maintained between MX-Bible and MX-Handbook throughout
+- No breaking changes to APIs, tools, or build processes
+
 ## [2026-01-23 - Shared CSS Architecture] - Blog Styling Consolidation
 
 ### Added (CSS Infrastructure)
