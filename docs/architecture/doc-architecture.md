@@ -156,8 +156,7 @@ packages/mx-handbook/
 │   ├── metadata.yaml              # PDF generation metadata
 │   ├── 0-cover.md                 # Cover page
 │   ├── preface.md                 # Book preface
-│   ├── chapter-01-*.md through chapter-11-*.md
-│   └── CHAPTERS-GUIDE.md          # Chapter navigation guide
+│   └── chapter-01-*.md through chapter-11-*.md
 └── README.md
 ```
 
