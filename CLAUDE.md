@@ -100,13 +100,13 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has SEVEN git repositories (1 main hub + 6 submodules). File paths depend on your location.**
+**This workspace has EIGHT git repositories (1 main hub + 7 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 6):**
+- **Submodules (ASSETS, currently 7):**
   - **Outputs (PRIVATE):** `outputs/` → `invisible-users-outputs` - All generated content
   - **MX-Bible:** `packages/bible/` → `invisible-users-bible` - Full comprehensive guide (formerly "The Invisible Users")
   - **MX-Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Implementation handbook for developers and designers
@@ -120,11 +120,15 @@ pwd
     - Role: Coding standards and development practices reference
     - AI assistants: DO NOT autonomously modify this submodule - it is maintained separately
     - Exception: If user explicitly adds/edits/deletes files, commit those changes
-  - **Sales Enablement (READ-ONLY):** `packages/sales-enablement/` → `MX-Sales-enablement` - Private business development materials (**READ-ONLY REFERENCE**)
-    - Role: Business materials, pitches, partnerships, pricing strategies
+  - **Sales Enablement (READ-ONLY):** `packages/sales-enablement/` → `MX-Sales-enablement` - Private sales execution materials (**READ-ONLY REFERENCE**)
+    - Role: Sales execution, pitches, outreach, partnerships, publisher submissions
     - AI assistants: DO NOT autonomously modify this submodule unless explicitly authorized by user
     - Exception: If user explicitly adds/edits/deletes files, commit those changes
-  - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in Notes and Sales Enablement)
+  - **Business Planning (READ-ONLY):** `packages/business-planning/` → `MX-business-planning` - Private business strategy and planning documents (**READ-ONLY REFERENCE**)
+    - Role: Strategic business planning, market analysis, financial models, pricing strategies
+    - AI assistants: DO NOT autonomously modify this submodule unless explicitly authorized by user
+    - Exception: If user explicitly adds/edits/deletes files, commit those changes
+  - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in Notes, Sales Enablement, and Business Planning)
 
 ### Repository Navigation Map
 
@@ -149,7 +153,6 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   ├── for-ai/                       ← AI assistant guidance
 │   ├── shared-chapters/              ← Shared book content (Chapter 0)
 │   ├── structure/                    ← Strategic planning documents
-│   │   ├── MX-plan.md                ← Machine Experience strategic review
 │   │   ├── github-repositories.md    ← Repository structure mapping
 │   │   └── steve-krug.md             ← UX research and insights
 │   └── talks/                        ← Presentation materials
@@ -206,13 +209,25 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       Note: READ-ONLY for AI assistants - commit only if user explicitly adds/edits/deletes files
 │   ├── sales-enablement/             ← SUBMODULE (PRIVATE git repo) - READ-ONLY REFERENCE
 │   │   └── ${MAIN_REPO}/packages/sales-enablement/
-│   │       ├── business/             ← Business plans and strategies
+│   │       ├── content/              ← Marketing and promotional content
+│   │       ├── outreach/             ← Partner and reviewer outreach
 │   │       ├── partners/             ← Partnership materials
 │   │       ├── pitches/              ← Sales presentations
+│   │       ├── profiles/             ← Author profiles
 │   │       ├── publishers/           ← Publisher submissions
 │   │       ├── CLAUDE.md             ← Sales enablement guidance
 │   │       ├── README.md             ← Sales enablement README
-│   │       └── Other business materials
+│   │       └── Other sales execution materials
+│   │       Note: READ-ONLY for AI assistants - commit only if user explicitly adds/edits/deletes files
+│   ├── business-planning/            ← SUBMODULE (PRIVATE git repo) - READ-ONLY REFERENCE
+│   │   └── ${MAIN_REPO}/packages/business-planning/
+│   │       ├── plans/                ← Business plans, executive summaries
+│   │       ├── strategy/             ← Strategic positioning, MX-plan
+│   │       ├── opportunities/        ← Market opportunity analysis
+│   │       ├── pricing/              ← Pricing strategies and financial models
+│   │       ├── products/             ← Product business context
+│   │       ├── README.md             ← Business planning README
+│   │       └── CLAUDE.md             ← AI guidance
 │   │       Note: READ-ONLY for AI assistants - commit only if user explicitly adds/edits/deletes files
 │   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
 │       ├── src/                      ← Tool source code
@@ -297,11 +312,12 @@ outputs/bible/blogs/mx/
 
 ### READ-ONLY Submodule Policy for AI Assistants
 
-**Three submodules are marked as READ-ONLY REFERENCE:**
+**Four submodules are marked as READ-ONLY REFERENCE:**
 
 - `packages/ucp/` - External UCP project
 - `packages/notes/` - Development standards
-- `packages/sales-enablement/` - Private business materials
+- `packages/sales-enablement/` - Private sales execution materials
+- `packages/business-planning/` - Private business strategy and planning
 
 **AI Assistant Behavior:**
 
