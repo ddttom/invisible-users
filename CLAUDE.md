@@ -571,6 +571,7 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 **Important exceptions:**
 
 - **Skill files:** Never fix markdown linting issues in `.claude/skills/` files (excluded from linting via `--ignore .claude` flag)
+- **Blog markdown files with inline SVG:** MD033 errors (inline HTML) for SVG elements in blog markdown files (`outputs/bible/blogs/*.md`) should NOT be "fixed" by removing the SVG. Inline SVG indicates **historic files** that haven't been regenerated with the modern workflow. The modern blog generation process (`scripts/generate-blog-html.js`) extracts SVGs to separate files during HTML generation. Historic files with inline SVG are preserved as-is unless explicitly regenerated.
 
 ### CRITICAL: Global Search/Replace Safety
 
