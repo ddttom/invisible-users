@@ -7,6 +7,57 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Shared CSS Architecture] - Blog Styling Consolidation
+
+### Added (CSS Infrastructure)
+
+- **Shared CSS architecture** for MX blog posts in `outputs/bible/blogs/mx/`:
+  - Created `shared-mx.css` (539 lines) consolidating styles across all MX blogs
+  - Modern CSS architecture with 16 custom properties (variables) for colors, typography, spacing
+  - **Dark mode support** via `@media (prefers-color-scheme: dark)` with complete dark palette
+  - **High contrast support** via `@media (prefers-contrast: high)` for accessibility
+  - Smooth scrolling, footnotes styling, author contact section
+  - Safari compatibility with `-webkit-user-select` prefix
+  - Benefits: Single source of truth, consistent styling, browser caching, easy maintenance
+  - Submodule commits: 592c928, 653ddc6
+
+### Changed (Blog Infrastructure)
+
+- **Updated all 4 MX blog posts** to reference shared stylesheet:
+  - `machine-experience-adding-metadata.html` → links to `shared-mx.css`
+  - `mx-a-new-role.html` → links to `shared-mx.css`
+  - `what-is-machine-experience.html` → links to `shared-mx.css`
+  - `about.tom.cranstoun.html` → links to `shared-mx.css`
+  - All pages now automatically support dark mode and high contrast
+  - Submodule commit: 653ddc6
+
+- **Deprecated individual CSS files** with clear notices:
+  - Added deprecation headers to 4 individual CSS files
+  - Documentation: Files replaced by `shared-mx.css`, kept for reference only
+  - Clear guidance: "Do not make changes to this file. Update shared-mx.css instead."
+  - Submodule commit: 653ddc6
+
+### Added (Blog Generation - Shared CSS)
+
+- **Shared CSS pattern** in `/create-blog` skill (`.claude/skills/create-blog/skill.md`):
+  - Updated Step 10 to implement `shared-{foldername}.css` pattern
+  - Logic: Check if shared CSS exists, use it; if not, create from template
+  - Documented benefits: consistency, performance, maintainability, dark mode
+  - Future blogs automatically detect and use shared stylesheets
+
+- **Modernized CSS template** (`.claude/skills/create-blog/blog-template.css`):
+  - Updated from 430 lines to 571 lines with modern architecture
+  - CSS custom properties replacing hardcoded colors
+  - Dark mode and high contrast support included by default
+  - Template serves as base for future shared CSS files in new folders (e.g., `shared-ux.css`)
+
+### Technical Details
+
+- **Pattern**: `shared-{foldername}.css` (e.g., `outputs/bible/blogs/mx/shared-mx.css`)
+- **Workflow**: Create-blog skill detects existing shared CSS or creates from modernized template
+- **Scope**: All MX blogs share one stylesheet; future folders get their own shared CSS
+- **Rollout**: Immediate effect on existing blogs, automatic for future blogs
+
 ## [2026-01-23 - Blog Posts and Link Patterns] - MX Blog Content and Appendix Updates
 
 ### Added (Blog Content)
