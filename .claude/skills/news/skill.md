@@ -22,7 +22,7 @@ When you provide industry news about AI agents, web automation, or agent-mediate
 Technical patterns where AI agents interact with websites:
 - Browser automation tools (Claude for Chrome, ChatGPT browser features)
 - Agent-mediated commerce (Copilot Checkout, Agentic Commerce Protocol)
-- Session inheritance, identity delegation, structured data
+- Session inheritance, EAL delegation, structured data
 - Patterns from Chapters 2, 3, 6, 9, 10, 11
 
 ### 2. Ecosystem Maturity Signals
@@ -62,11 +62,11 @@ Broader shifts demonstrating AI adoption velocity and commercial pressure:
 
 2. **Commerce protocol developments (ACP, UCP, proprietary systems)**
    - Examples: New protocols, protocol updates, merchant integrations, proprietary launches
-   - Validates: Chapters 4, 9, 12 (commerce incentives, platform race, identity layer)
+   - Validates: Chapters 4, 9, 12 (commerce incentives, platform race, EAL)
 
 3. **Identity delegation and authentication standards**
    - Examples: OAuth developments, delegation protocols, authentication standards
-   - Validates: Chapters 4, 6, 12 (identity delegation, security, missing identity layer)
+   - Validates: Chapters 4, 6, 12 (EAL delegation, security, missing EAL)
 
 4. **Legal and regulatory changes affecting agent access**
    - Examples: Bot detection laws, agent access regulations, liability frameworks
