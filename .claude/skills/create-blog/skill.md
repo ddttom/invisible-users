@@ -645,15 +645,46 @@ Save as `[blog-basename]-social.svg` in output directory.
 - Relative path from blog: `about.tom.cranstoun.html`
 - File: `outputs/bible/blogs/mx/about.tom.cranstoun.html`
 
-### Step 10: Copy CSS Template
+### Step 10: Use Shared CSS or Create From Template
 
-**IMPORTANT:** Do NOT generate CSS dynamically. Use the template file.
+**IMPORTANT:** MX blogs use shared CSS files to ensure consistency and maintainability.
 
-1. **Read template**: `.claude/skills/create-blog/blog-template.css`
-2. **Copy template** to output directory: `[blog-basename].css`
-3. **No modifications**: Template is complete and WCAG 2.1 AA compliant
+**Shared CSS Pattern**: `shared-{foldername}.css`
 
-The template includes all required styling:
+- Example: For `outputs/bible/blogs/mx/` → `shared-mx.css`
+- Example: For `outputs/bible/blogs/ux/` → `shared-ux.css`
+
+**Process:**
+
+1. **Determine output folder name**:
+   - Extract folder name from output path (e.g., `mx` from `outputs/bible/blogs/mx/`)
+   - Generate shared CSS filename: `shared-{foldername}.css`
+
+2. **Check if shared CSS exists**:
+   - Look for `shared-{foldername}.css` in output directory
+   - Example: Check if `outputs/bible/blogs/mx/shared-mx.css` exists
+
+3. **If shared CSS exists**:
+   - Use it! Set `{{CSS_FILENAME}}` to `shared-{foldername}.css`
+   - No CSS file creation needed
+   - Shared CSS already contains all required styling
+
+4. **If shared CSS does NOT exist**:
+   - Read CSS template: `.claude/skills/create-blog/blog-template.css`
+   - Create new shared CSS file: `shared-{foldername}.css` in output directory
+   - Set `{{CSS_FILENAME}}` to `shared-{foldername}.css`
+   - Log: "Created new shared CSS file for future blog posts"
+
+**Shared CSS Benefits:**
+
+- Single source of truth for all blogs in folder
+- Consistent styling across all posts
+- CSS variables for easy theme customization
+- Dark mode and high contrast support
+- Browser caching improves performance
+- Bug fixes apply to all blogs automatically
+
+The shared CSS template includes all required styling:
 
 1. **Skip Link**: Visually hidden, appears on keyboard focus (WCAG accessibility)
 2. **Reset and Base Styles**: Body, typography, colors
@@ -777,7 +808,10 @@ node scripts/generate-blog-html.js [markdown-file-path] [chosen-filename]
    - **Web URL pattern**: `https://allabout.network/blogs/mx/[filename].html`
 
 2. **Write HTML file**: `[chosen-filename].html` (e.g., `machine-experience-adding-metadata.html`)
-3. **Copy CSS template**: Write to `[chosen-filename].css` (e.g., `machine-experience-adding-metadata.css`)
+3. **Use or create shared CSS**: Link to `shared-{foldername}.css` (e.g., `shared-mx.css`)
+   - If `shared-mx.css` exists, use it (no file creation needed)
+   - If `shared-mx.css` doesn't exist, create it from template
+   - All blogs in folder share the same CSS file for consistency
 4. **Write social media card**: `[chosen-filename]-social.svg` (e.g., `machine-experience-adding-metadata-social.svg`)
 5. **Write content SVG files with prefixed names**: All SVG diagrams prefixed with blog filename
    - `[chosen-filename]-5-stage-agent-journey.svg`
@@ -796,11 +830,16 @@ Blog generated successfully!
 
 Output files:
 - outputs/bible/blogs/mx/machine-experience-adding-metadata.html
-- outputs/bible/blogs/mx/machine-experience-adding-metadata.css (WCAG 2.1 AA compliant)
+- outputs/bible/blogs/mx/shared-mx.css (WCAG 2.1 AA compliant shared stylesheet)
 - outputs/bible/blogs/mx/machine-experience-adding-metadata-social.svg (social media card)
 - outputs/bible/blogs/mx/machine-experience-adding-metadata-5-stage-agent-journey.svg
 - outputs/bible/blogs/mx/machine-experience-adding-metadata-human-vs-agent-behavior.svg
 - outputs/bible/blogs/mx/machine-experience-adding-metadata-content-pipeline.svg
+
+CSS:
+- Using shared-mx.css (shared across all MX blog posts)
+- Dark mode and high contrast support included
+- CSS variables enable easy theming
 
 Published URL: <https://allabout.network/blogs/mx/machine-experience-adding-metadata.html>
 
