@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Schema.org Type Documentation] - Technical Documentation
+
+### Added (Schema.org Guidance)
+
+- **Appendix D Enhancement** (shared-appendices submodule cb549ec):
+  - Added "Article vs WebPage: Choosing the Right Type" section to AI-Friendly HTML Guide
+  - Documented when to use Article type (editorial content: blogs, news, tutorials)
+  - Documented when to use WebPage type (functional pages: download portals, forms, dashboards)
+  - Included real-world example from reviewer page implementation
+  - Explained semantic distinction for accurate AI agent classification
+  - 56 new lines of guidance in appendix-d-ai-friendly-html-guide.txt
+  - "Practice what we preach" - documenting patterns used in the project's own HTML
+
+### Technical (Documentation Update)
+
+- **Submodule Update** (main repo):
+  - Updated shared-appendices pointer to cb549ec
+
 ## [2026-01-23 - External Stylesheet Architecture] - Code Organization
 
 ### Changed (Stylesheet Extraction)
