@@ -7,6 +7,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Code Block Syntax Fixes] - MX-Handbook
+
+### Fixed
+
+- **Code Block Closing Markers** (MX-Handbook submodule e37d738):
+  - Fixed 100+ code blocks across 9 chapter files with incorrect closing markers
+  - Changed closing triple-backtick-text to triple-backtick for language-specific blocks (html, javascript, css, bash)
+  - Affected files: chapters 2-10 in MX-Handbook
+  - Root cause: Previous global replace incorrectly modified closing markers
+  - Ensures PDF generation works correctly
+
+- **Markdown Style Issues** (MX-Handbook chapter-07-javascript.md):
+  - Converted 7 bold emphasis headings to proper H3 headings (MD036 fixes)
+  - Changed patterns like "**Pattern 1:**" to "### Pattern 1:"
+  - Improves markdown structure and accessibility
+
+### Added
+
+- **Global Search/Replace Safety Documentation** (CLAUDE.md):
+  - Added comprehensive section on code block safety rules
+  - Documented dangers of global replace in markdown files
+  - Provided safe alternatives (manual edits, context-aware scripts)
+  - Included verification steps after global changes (PDF generation, grep checks)
+  - Documented historical issue and recovery effort required
+
+- **Learning Documentation** (LEARNINGS.md):
+  - New entry: "Code Block Global Replace" warning
+  - Documents that global replace on markdown breaks code block syntax
+  - Recommends targeted edits or context-aware Python scripts instead
+
+### Technical Notes (Code Block Fixes)
+
+- Verification: All 24 chapter files (MX-Bible + MX-Handbook) confirmed clean
+- Testing: Markdown linting passes, PDF generation ready
+- Pattern: Code blocks opening with language identifier (e.g., ```html) must close with just triple-backtick, not triple-backtick-text
+
 ## [2026-01-23 - Enhanced /audit-site Skill] - Manual Verification and Template Selection
 
 ### Added
@@ -976,7 +1012,7 @@ Main repository now points to updated submodules:
 
 - **Markdown Linting** (package.json): Added `--ignore packages/mx-handbook` to `lint:markdown:all` script
 
-### Technical Notes
+### Technical Notes (MX-Handbook Setup)
 
 - Repository structure follows established submodule pattern:
   - Content-only repository (no package.json, no build tooling)
