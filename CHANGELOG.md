@@ -7,6 +7,55 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Dual-Book Reviewer Support] - Documentation Updates
+
+### Added (Dual-Book Support)
+
+- **Reviewer Page Dual-Book Support** (shared-appendices submodule 8ca001f):
+  - Updated web/for-reviewers.html to support both MX-Bible and MX-Handbook
+  - Added separate paragraphs describing each book's purpose and scope
+  - Added two stacked download buttons with semantic structure optimized for AI agents
+  - Each download button includes aria-label, data attributes, and descriptive text
+  - Header subtitle changed to "Two Books Available for Review"
+
+- **MX-Handbook Enhanced Closing** (mx-handbook submodule 84e4d02):
+  - Expanded The-End.md with January 2026 platform convergence context
+  - Added comprehensive MX-Bible companion book description with key topics list
+  - Promoted Web Audit Suite analysis service offer earlier in chapter structure
+  - Added compelling final section: "The invisible users are here. Now you can see them."
+
+- **Generated PDF Files** (outputs submodule f8f8f5e):
+  - Added mx-handbook.pdf (standard A4 format)
+  - Added mx-handbook-simple.pdf (simplified formatting)
+  - Added mx-handbook-kindle.pdf (6"×9" KDP format)
+  - Added mx-bible-simple.pdf (simplified Bible format)
+
+### Changed
+
+- **Reviewer Page Content** (shared-appendices submodule 8ca001f):
+  - Updated all singular "book" references to plural "books"
+  - Updated Schema.org JSON-LD from Article to WebPage type
+  - Updated meta description to mention both books
+  - Modified acknowledgment policy to clarify it applies to reviewers of either/both books
+  - Updated Review Copy Status box to use plural "versions" and "manuscripts"
+
+- **MX-Handbook Chapter Structure** (mx-handbook submodule 84e4d02):
+  - Reorganized "Additional Resources" → "Continuing Your Journey"
+  - Moved Web Audit Suite section earlier under "Practical Implementation Support"
+  - Enhanced closing message emphasizing convergence principle and computational trust
+  - Updated attribution format to "MX-Handbook by Tom Cranstoun"
+
+- **Outputs HTML Generation** (outputs submodule f8f8f5e):
+  - Regenerated mx/mx-handbook.html with updated The-End chapter content
+  - Updated table of contents reflecting new chapter structure
+
+### Technical
+
+- **Submodule Updates** (main repo 1a1d806):
+  - Updated shared-appendices pointer to 8ca001f
+  - Updated mx-handbook pointer to 84e4d02
+  - Updated outputs pointer to f8f8f5e
+
 ## [2026-01-23 - MX-Handbook Promotional Content] - The End Chapter
 
 ### Added (Promotional Content)
