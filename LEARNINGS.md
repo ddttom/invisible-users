@@ -15,3 +15,7 @@ Critical insights for AI assistants working on this project. Focus: actionable g
 ## HTML Post-Processing
 
 **Table Caption Processing Order** (2026-01-22): Tried processing table captions before converting SVG placeholders to `<figure>` elements, but Pattern 3 (extract figcaption for table caption) failed because figcaptions didn't exist yet in the HTML. Always process SVG placeholder conversion BEFORE table caption extraction - the order matters for patterns that depend on generated HTML structure.
+
+## Markdown Editing
+
+**Code Block Global Replace** (2026-01-23): Tried using global search/replace to modify text in markdown files, but this broke code block syntax by changing closing triple-backtick markers to triple-backtick-text for language-specific blocks (html, javascript, etc.). This broke PDF generation and required manual fixes across 100+ code blocks in 15 files. Always use targeted edits with Edit tool or context-aware Python scripts that track code block state. Never use sed/awk global replace on markdown files without code block awareness.
