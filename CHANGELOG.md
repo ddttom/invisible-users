@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Build Script Cleanup] - Package Configuration
+
+### Changed
+
+- **MX-Handbook PDF Table of Contents** (package.json):
+  - Updated all four pdf:mx-* commands to use `--toc-depth=1` (previously `--toc-depth=2`)
+  - Applies to: pdf:mx-html, pdf:mx-generate, pdf:mx-kindle, pdf:mx-simple
+  - Result: TOC now shows chapter-level headings only, not section-level headings
+  - Rationale: Cleaner, more focused table of contents for handbook format
+
+### Removed
+
+- **Legacy pdf:dont-* Commands** (package.json):
+  - Removed 5 obsolete build scripts for defunct "dont-make-ai-think" book
+  - Removed: pdf:dont-html, pdf:dont-generate, pdf:dont-kindle, pdf:dont-simple, pdf:dont-all
+  - Project now maintains only MX-Bible and MX-Handbook build scripts
+
+- **Documentation Updates** (README.md):
+  - Removed reference to pdf:dont-all command
+  - Added reference to pdf:mx-all command
+  - Updated book name references to current naming (MX-Bible, MX-Handbook)
+
 ## [2026-01-23 - Code Block Syntax Fixes] - MX-Handbook
 
 ### Fixed
