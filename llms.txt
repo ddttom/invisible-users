@@ -4,8 +4,8 @@ creation-date: "15/Dec/2024"
 publication-date: "Q1 2026"
 last-updated: "22/Jan/2026"
 jsonld: "book"
-description: "Three integrated book manuscripts (MX-Bible, MX-Don't Make the AI Think, MX-Handbook) and production-ready Web Audit Suite for AI agent compatibility"
-longdescription: "Comprehensive guide series examining how modern web design optimised for human users fails for AI agents, with practical implementation patterns and production-ready analysis tool. Includes MX-Bible (full comprehensive guide), MX-Don't Make the AI Think (practical quick guide), MX-Handbook (implementation handbook), 12 shared appendices, and Web Audit Suite implementing all patterns."
+description: "Two integrated book manuscripts (MX-Bible, MX-Handbook) and production-ready Web Audit Suite for AI agent compatibility"
+longdescription: "Comprehensive guide series examining how modern web design optimised for human users fails for AI agents, with practical implementation patterns and production-ready analysis tool. Includes MX-Bible (comprehensive strategic guide), MX-Handbook (practical implementation handbook), 12 shared appendices, and Web Audit Suite implementing all patterns."
 LinkedIn: "https://www.linkedin.com/in/tom-cranstoun/"
 repository: "https://github.com/ddttom/invisible-users"
 ai-instruction: "This llms.txt file provides comprehensive documentation about the MX Series book project and Web Audit Suite. Primary consumers are AI agents seeking to understand AI agent compatibility patterns, web design best practices, and implementation guidance. Use metadata for accurate citation and source attribution."
@@ -13,7 +13,7 @@ ai-instruction: "This llms.txt file provides comprehensive documentation about t
 
 # MX Series: Book Manuscripts and Web Audit Suite
 
-Three integrated book manuscripts and a production-ready implementation tool. Built on a 9-submodule architecture (updated 22 January 2026) enabling modular content management: main repository hub, MX-Bible (formerly "The Invisible Users"), MX-Don't Make the AI Think, MX-Handbook, shared appendices, shared code examples, UCP reference, and private outputs submodule.
+Two integrated book manuscripts and a production-ready implementation tool. Built on a multi-submodule architecture (updated 22 January 2026) enabling modular content management: main repository hub, MX-Bible (formerly "The Invisible Users"), MX-Handbook, shared appendices, shared code examples, UCP reference, and private outputs submodule.
 
 **Recent Updates (22 January 2026):**
 
@@ -41,9 +41,8 @@ Three integrated book manuscripts and a production-ready implementation tool. Bu
 - **Structure:** 10 git repositories (1 main + 9 submodules) - Multi-repository monorepo architecture (updated 22 January 2026)
 - **Main Hub:** Central repository (invisible-users) with Claude Code configuration, build scripts, comprehensive documentation
 - **Book Submodules:**
-  - bible/ (MX-Bible - full comprehensive guide, 13 chapters, ~78,000 words)
-  - dont-make-ai-think/ (MX-Don't Make the AI Think - practical quick guide, 11 chapters)
-  - mx-handbook/ (MX-Handbook - implementation handbook, 11 chapters)
+  - bible/ (MX-Bible - comprehensive strategic guide, 13 chapters, ~78,000 words)
+  - mx-handbook/ (MX-Handbook - practical implementation handbook, 11 chapters)
 - **Shared Resources:** shared-appendices/ (12 appendices A-L shared across all books), shared-code-examples/ (production-ready pattern implementations)
 - **Reference Submodules (READ-ONLY):** ucp/ (Universal Commerce Protocol), notes/ (coding standards, includes scrap/ for temporary working files)
 - **Private Submodule:** outputs/ (generated PDFs, HTML, blog posts, marketing materials)
@@ -76,28 +75,19 @@ Complete 14-chapter manuscript (including Chapter 0) examining web design for bo
 - [Chapter 12 - Technical Advice](packages/bible/chapters/chapter-12-technical-advice.md): Implementation code, testing strategies, and practical tools (~9,650 words)
 - [Chapter 13 - What Agent Creators Must Build](packages/bible/chapters/chapter-13-what-agent-creators-must-build.md): Implementation patterns, validation layers, confidence scoring, and guardrails (~5,000 words)
 
-## MX Series: Three-Book Strategy
+## MX Series: Two-Book Strategy
 
-Three integrated books serving different audiences and use cases:
-
-### MX-Don't Make the AI Think (Practical Quick Guide)
-
-- [MX-Don't Make the AI Think](packages/dont-make-ai-think/): Streamlined implementation-focused guide (~11 chapters)
-- **Target Audience:** Developers and designers who need immediate practical guidance
-- **Focus:** What to implement (not why), how to implement (step-by-step), priority-based approach
-- **Chapters Cover:** Core philosophy, how AI reads, guiding principles, content architecture, metadata, navigation, JavaScript, testing, anti-patterns, implementation
-- **Status:** Complete and publication-ready (Due Q1 2026)
-- **When to Use:** Quick reference, team onboarding, implementation sprints
+Two integrated books serving different audiences and use cases:
 
 ### MX-Handbook (Implementation Handbook)
 
 - [MX-Handbook](packages/mx-handbook/): Practical implementation handbook for developers and designers (~11 chapters)
 - **Target Audience:** Development teams and designers implementing AI-friendly patterns
-- **Focus:** Step-by-step implementation guidance with code examples
+- **Focus:** Step-by-step implementation guidance with code examples and immediate practical guidance
 - **Status:** Complete and publication-ready (Due Q1 2026)
-- **When to Use:** Detailed implementation projects, technical training, design system development
+- **When to Use:** Quick reference, team onboarding, implementation sprints, detailed implementation projects, technical training, design system development
 
-### MX-Bible (Comprehensive Guide)
+### MX-Bible (Comprehensive Strategic Guide)
 
 - [MX-Bible](packages/bible/): Full comprehensive exploration (~13 chapters, ~78,000 words)
 - **Target Audience:** Technical leaders, architects, strategists needing complete context
@@ -105,7 +95,7 @@ Three integrated books serving different audiences and use cases:
 - **Status:** Complete and publication-ready (Due Q1 2026)
 - **When to Use:** Strategic planning, executive buy-in, understanding business implications
 
-This represents a three-book strategy: comprehensive exploration (MX-Bible), focused implementation guide (MX-Don't Make the AI Think), and practical handbook (MX-Handbook), all sharing common appendices and code examples.
+This represents a two-book strategy: comprehensive exploration (MX-Bible) and focused implementation guide (MX-Handbook), both sharing common appendices and code examples.
 
 ## Practical Implementation Guides
 
@@ -239,9 +229,8 @@ Looking for more information about this book project?
 
 **Book Manuscripts:**
 
-- **MX-Bible:** [packages/bible/README.md](packages/bible/README.md) - Full comprehensive guide
-- **MX-Don't Make the AI Think:** [packages/dont-make-ai-think/README.md](packages/dont-make-ai-think/README.md) - Practical quick guide
-- **MX-Handbook:** [packages/mx-handbook/README.md](packages/mx-handbook/README.md) - Implementation handbook
+- **MX-Bible:** [packages/bible/README.md](packages/bible/README.md) - Comprehensive strategic guide
+- **MX-Handbook:** [packages/mx-handbook/README.md](packages/mx-handbook/README.md) - Practical implementation handbook
 - **Appendices:** [packages/shared-appendices/README.md](packages/shared-appendices/README.md) - Shared appendices A-L
 
 **Tool Documentation:**

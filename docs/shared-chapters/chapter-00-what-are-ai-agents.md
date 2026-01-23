@@ -26,6 +26,14 @@ Understanding the machines reading your website.
 
 This book focuses on **Machine Experience (MX)** - the practice of adding metadata and instructions to internet assets such that AI agents don't have to think. HTML, informed by MX, is the publication point that ensures context built in Content Operations reaches agents at the delivery point. When we talk about AI agents, we're not discussing sentient software or artificial general intelligence. We're talking about machines - software programs with specific technical capabilities and limitations - that visit your website to complete tasks on behalf of humans.
 
+MX is distinct from related disciplines:
+
+- **Not UX (User Experience):** MX optimises for machine comprehension of structure and metadata, not human visual design
+- **Not SEO (Search Engine Optimisation):** MX focuses on semantic clarity and complete context, not ranking signals
+- **Not accessibility (WCAG):** Though MX patterns benefit accessibility users, MX specifically addresses machine readers who cannot infer visual cues
+
+The convergence happens because all three audiences—AI agents, search engines, accessibility users—rely on explicit structure rather than visual design. One MX implementation serves multiple audiences automatically.
+
 **The core principle:** When AI has to "think" (generate answers without complete context), it must produce confident answers even when context is missing, leading to hallucination. MX ensures all context is explicitly present in your website's structure, helping everyone - not just "The Invisible Users."
 
 These invisible users are visiting your website right now. People ask ChatGPT about your products, use Copilot to compare your services, and run agents to check your availability. The goal of any web asset is to drive users to action - whether that's purchasing a product, informing readers of a product recall, establishing credibility, completing a contact form, downloading a whitepaper, or registering for an event. When agents successfully complete the full journey and take the desired action, they build trust in your site. When they fail at any stage, they disappear from recommendations and never return.
@@ -141,6 +149,30 @@ Think of the content pipeline: Content Operations builds semantic structure at t
 Content Operations is essential for AI at the construction point, ensuring semantic structure is created from the start. But Content Operations alone is not enough. If the publication layer (MX) doesn't preserve and expose this structure, agents at the delivery point never see it. MX is the critical bridge - what you build in Content Operations reaches agents only if MX preserves it during publication.
 
 In content delivery systems and CMS environments, an ontology is a semantic model that defines concepts and their relationships so content can be understood, linked, filtered, and delivered in a more intelligent and context-aware way. Ontologies differ from traditional CMS metadata (flat tags and categories) by modeling concepts with many-to-many relationships designed for machines to reason over. Ontology defines the semantic model at the construction point. MX ensures the semantic model reaches agents at the publication point. Without MX, beautiful ontology in the CMS is lost in publication - agents cannot use it.
+
+#### MX as Publication Point Governance
+
+MX operates at a specific stage in the content lifecycle:
+
+**Content Operations (Construction Point):** Teams create content with semantic structure, define taxonomies, build ontologies, and establish metadata schemas. This work happens in CMS platforms, content databases, and authoring tools.
+
+**MX (Publication Point):** MX ensures the semantic structure built in Content Operations survives the publication process. This means:
+
+- HTML rendering preserves semantic elements (`<main>`, `<nav>`, `<article>`)
+- Metadata schemas transform to Schema.org JSON-LD
+- State attributes become DOM-reflected (data-state, aria-invalid)
+- Ontology relationships become machine-readable links
+
+**Content Delivery (Delivery Point):** Infrastructure serves the structured content to agents. CDNs, caching layers, and hosting platforms deliver the content MX has structured.
+
+**The MX gap:** Most organisations have sophisticated Content Operations and robust Content Delivery. The gap is at publication—where CMS-rich metadata gets stripped during HTML rendering. MX closes this gap by governing what reaches the delivery point.
+
+**MX is not a tool or platform.** MX is the practice—the governance layer—that ensures publication preserves structure. Implementation requires:
+
+- Development standards (semantic HTML patterns)
+- Template requirements (Schema.org integration)
+- QA validation (agent compatibility testing)
+- Organizational roles (MX specialists who bridge content and development)
 
 ### The Entity Asset Layer: Your Strategic Asset Vault
 
@@ -319,6 +351,34 @@ Successful organisations structure MX accountability clearly:
 **Distributed MX Awareness:** Frontend developers, content creators, and UX designers understand MX principles as part of their core competencies - just as they understand responsive design or browser compatibility. They implement MX patterns in daily work but rely on specialists for complex decisions and validation.
 
 **Executive Accountability:** Senior leadership assigns clear ownership for MX outcomes, provides resources for specialist roles, and tracks MX metrics alongside traditional performance indicators. Without executive commitment, MX specialists lack authority to influence architectural decisions.[^organizational]
+
+#### MX Organizational Models
+
+Successful MX implementation requires clear organizational ownership. Three common models emerge:
+
+**Model 1: Expanded Accessibility Team**
+Organizations with mature accessibility practices can expand existing roles. A senior accessibility specialist who understands semantic HTML already possesses foundational MX knowledge. Adding Schema.org expertise, agent behaviour patterns, and metadata validation creates an MX specialist without separate headcount. This model works because technical patterns overlap substantially—both disciplines require semantic structure, explicit state, persistent feedback, and clear hierarchy.
+
+**Model 2: Cross-Functional MX Practice**
+Larger organizations create MX as a dedicated practice area reporting to CTO, CDO, or VP Engineering. The team includes:
+
+- MX Architects: Define standards, audit implementations, prevent failures
+- MX Engineers: Implement patterns in templates and publication layers
+- MX Analysts: Measure agent compatibility, track conversion rates, identify gaps
+
+This model treats MX as infrastructure—similar to security or performance—requiring specialized expertise and executive accountability.
+
+**Model 3: Distributed MX Ownership**
+Organizations embed MX responsibilities across existing roles:
+
+- Frontend developers implement semantic patterns
+- Content strategists define metadata requirements
+- QA engineers validate agent compatibility
+- Accessibility specialists advise on convergence patterns
+
+This model requires strong MX governance documentation and clear standards, as accountability is distributed rather than centralized.
+
+**Selection criteria:** Model choice depends on organizational maturity, existing accessibility investment, and strategic importance of agent-mediated traffic. Organizations with 10%+ AI referral traffic typically adopt Model 2 (dedicated practice). Those just starting typically adopt Model 3 (distributed) and migrate to Model 1 or 2 as agent traffic grows.
 
 The convergence between MX and accessibility creates practical advantages: organisations can expand existing accessibility roles rather than create entirely new teams. The technical patterns overlap substantially - both disciplines require semantic structure, explicit state, persistent feedback, and clear hierarchy. A senior accessibility specialist who understands semantic HTML already possesses foundational MX knowledge. Adding Schema.org expertise, agent behaviour patterns, and metadata validation to their skill set creates an MX specialist without requiring separate headcount.
 
@@ -520,19 +580,17 @@ This book examines the collision between modern web design and machine readers. 
 
 It's January 2026. Google, Microsoft, and Amazon have all announced agent-powered purchasing features launching this quarter. This isn't a distant future - it's happening now.
 
-## The Three-Book MX Ecosystem
+## The Two-Book MX Ecosystem
 
-This comprehensive guide (The MX Bible) is part of a three-book ecosystem, each serving different audiences and needs:
+This comprehensive guide (The MX Bible) is part of a two-book ecosystem, each serving different audiences and needs:
 
-**"Don't Make the AI Think"** (~150-200 pages) - An accessible introduction for everyone: UX designers, product managers, marketers, and executives. Written as a homage to Steve Krug's "Don't Make Me Think," it explains why AI agents hallucinate when websites lack clear, structured information. If you're new to Machine Experience or need to convince stakeholders, start here.
-
-**"The MX Handbook"** (~300-400 pages) - A practical implementation guide for developers, UX designers, and content strategists. It bridges the accessible Krug-style introduction and this comprehensive reference, offering step-by-step platform-specific implementations, content strategies, testing approaches, and patterns across major CMS platforms.
+**"The MX Handbook"** (~300-400 pages) - A practical implementation guide for developers, UX designers, and content strategists. It offers step-by-step platform-specific implementations, content strategies, testing approaches, and patterns across major CMS platforms. Start here if you need immediate, actionable implementation guidance.
 
 **"The MX Bible" (this book)** (~800 pages) - The definitive technical reference for architects, consultants, and serious practitioners who need complete coverage of Machine Experience. This is the book for those implementing MX at scale or establishing organizational practices.
 
-All three books share continuously updated appendices hosted at allabout.network, including learning materials for AI, properly structured example code, and evolving case studies. Whilst the books themselves maintain stable content, the living appendices track developments in this rapidly evolving field.
+Both books share continuously updated appendices hosted at allabout.network, including learning materials for AI, properly structured example code, and evolving case studies. Whilst the books themselves maintain stable content, the living appendices track developments in this rapidly evolving field.
 
-The three-book strategy serves readers at different stages: executives who need quick understanding, practitioners seeking immediate implementation guidance, and architects requiring comprehensive technical depth. Each book cross-references the others, creating an ecosystem where readers can move between detail levels as their needs evolve.
+The two-book strategy serves readers at different stages: practitioners seeking immediate implementation guidance (Handbook) and architects requiring comprehensive technical depth (Bible). Each book cross-references the other, creating an ecosystem where readers can move between detail levels as their needs evolve.
 
 Chapter 1 begins with the patterns that break agents and humans alike. We start with real examples of AI agents failing on well-designed websites - and discover these failures have been happening to human users for years.
 

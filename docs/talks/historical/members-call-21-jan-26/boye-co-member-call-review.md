@@ -146,13 +146,12 @@ Participants expressed interest in *MX-Bible: Designing the Web for AI Agents an
 - How to implement these patterns practically
 - What's coming next in agent-mediated commerce
 
-The book is part of a three-book ecosystem:
+The book is part of a two-book ecosystem:
 
-- **"Don't Make the AI Think"** - An accessible introduction for UX designers, product managers, and executives
 - **"The MX Handbook"** - A practical implementation guide for developers and content strategists
 - **"The MX Bible"** - The definitive technical reference for architects and serious practitioners
 
-All three books share continuously updated appendices at allabout.network, tracking developments in this rapidly evolving field.
+Both books share continuously updated appendices at allabout.network, tracking developments in this rapidly evolving field.
 
 ## Final Reflection
 

@@ -6,10 +6,9 @@ Welcome to the MX Series project! This guide will get you up and running in 10 m
 
 This repository contains:
 
-1. **Three Books (MX Series)** - Book manuscripts about AI agent compatibility
+1. **Two Books (MX Series)** - Book manuscripts about AI agent compatibility
    - **MX-Bible** - Full comprehensive guide (~78,000 words, 13 chapters)
-   - **MX-Don't Make the AI Think** - Practical quick guide (11 chapters)
-   - **MX-Handbook** - Implementation handbook (11 chapters)
+   - **MX-Handbook** - Practical implementation handbook (11 chapters)
 2. **Web Audit Suite** - Production-ready Node.js tool implementing the book's patterns
 3. **Shared Resources** - Appendices, code examples, and generated content
 

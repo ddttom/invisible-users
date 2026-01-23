@@ -30,7 +30,7 @@ Added **Section 3: Timeless Manuscript Rule** with explicit guidance:
 **ALWAYS write:**
 
 - Definitive present tense: "The analysis provides..." not "We added analysis..."
-- Timeless descriptions: "This book is part of a three-book series:" not "launching April 2, 2026"
+- Timeless descriptions: "This book is part of a two-book series:" not "launching April 2, 2026"
 - Established fact tone: Features described as if they've always existed
 
 **Exception:** Historical context about *subject matter* is allowed (e.g., "Google launched UCP in January 2026" describes an industry event, not the book)

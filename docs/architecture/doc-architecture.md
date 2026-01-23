@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `invisible-users` repository is a multi-project monorepo containing three book manuscripts (MX Series), a production-ready web analysis tool, and supporting infrastructure. The architecture uses git submodules for separation of concerns and npm workspaces for coordinated builds.
+The `invisible-users` repository is a multi-project monorepo containing two book manuscripts (MX Series), a production-ready web analysis tool, and supporting infrastructure. The architecture uses git submodules for separation of concerns and npm workspaces for coordinated builds.
 
 ## High-Level Architecture
 
@@ -20,7 +20,6 @@ graph TB
 
     subgraph Books[Book Manuscripts - Submodules]
         Bible[MX-Bible<br/>13 chapters]
-        Dont[MX-Don't Make the AI Think<br/>11 chapters]
         Handbook[MX-Handbook<br/>11 chapters]
         Appendices[Shared Appendices<br/>12 appendices]
     end
