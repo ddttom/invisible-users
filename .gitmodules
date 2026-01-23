@@ -22,3 +22,6 @@
 [submodule "packages/sales-enablement"]
 	path = packages/sales-enablement
 	url = https://github.com/ddttom/MX-Sales-enablement.git
+[submodule "packages/business-planning"]
+	path = packages/business-planning
+	url = https://github.com/Digital-Domain-Technologies-Ltd/MX-business-planning.git
