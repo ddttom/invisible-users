@@ -8,13 +8,15 @@ ai-instruction: |
   planning documents for the MX (Machine Experience) book series project.
 
   Key files in this directory:
-  - MX-plan.md: Strategic review of Machine Experience framework, 5-stage agent journey
   - github-repositories.md: Auto-generated inventory of all GitHub repositories
   - steve-krug.md: Analysis of "Don't Make Me Think" from AI agent perspective
   - todo.txt: Task list and action items
 
+  Note: Strategic business planning documents (including MX-plan.md) are maintained
+  in the business-planning submodule (packages/business-planning/).
+
   When working on strategic decisions:
-  1. Check MX-plan.md for current MX positioning and terminology standards
+  1. Check packages/business-planning/strategy/MX-plan.md for current MX positioning
   2. Reference Decision Log section for past strategic decisions
   3. Follow "Usage Guidelines" when adding new planning documents
   4. Update this README when adding new strategic planning files
@@ -33,35 +35,9 @@ ai-instruction: |
 
 ## Directory Contents
 
-### 1. MX-plan.md
+**Note:** Strategic business planning documents (including MX-plan.md) have been moved to the **business-planning** submodule at `packages/business-planning/` for improved separation of concerns.
 
-Strategic review and implementation plan for Machine Experience (MX) framework
-
-**Key Contents:**
-
-- Definition of Machine Experience (MX) vs accessibility focus
-- 5-stage agent journey framework (Discovery → Citation → Comparison → Purchase → Retention)
-- Technical requirements at each stage (SEO → GEO → JSON-LD → Schema.org → State management)
-- Dual-audience strategy (MX-Bible for technical, MX-Handbook for business)
-- Terminology decisions ("MX patterns" not "accessible patterns")
-- Content pipeline positioning (MX informs HTML publication point)
-- Counter to "AI will figure it out" fallacy
-
-**Status:** Ready for implementation
-
-**When to reference:**
-
-- Writing or updating Chapter 0 (shared across both books)
-- Defining MX messaging and positioning
-- Explaining agent journey stages
-- Addressing technical requirements for AI agents
-- Discussing relationship between MX and accessibility
-
-**Last Updated:** 2026-01-22
-
----
-
-### 2. github-repositories.md
+### 1. github-repositories.md
 
 Complete inventory of GitHub repositories from both organizations
 
@@ -100,7 +76,7 @@ node -e "[see file for complete script]"
 
 ---
 
-### 3. steve-krug.md
+### 2. steve-krug.md
 
 Analysis of "Don't Make Me Think, Revisited" from AI agent perspective
 
@@ -130,7 +106,7 @@ Analysis of "Don't Make Me Think, Revisited" from AI agent perspective
 
 ---
 
-### 4. todo.txt
+### 3. todo.txt
 
 Task list and action items
 
@@ -149,34 +125,36 @@ Task list and action items
 ### How These Files Connect to Main Project
 
 ```text
-docs/structure/                         # Strategic planning (this directory)
-│
-├── MX-plan.md ─────────────────────┐
-│                                    │
-│                                    ├──→ Informs Chapter 0 content
-│                                    │    (docs/shared-chapters/chapter-00-what-are-ai-agents.md)
-│                                    │
-│                                    ├──→ Defines MX messaging
-│                                    │    (used throughout both books)
-│                                    │
-│                                    └──→ Sets terminology standards
-│                                         (packages/bible/, packages/mx-handbook/)
+docs/structure/                         # Technical strategic planning (this directory)
 │
 ├── github-repositories.md ─────────┐
 │                                    │
 │                                    ├──→ Maps to CLAUDE.md repository structure
-│                                    │    (main repo + 6 submodules)
+│                                    │    (main repo + 7 submodules)
 │                                    │
 │                                    └──→ References in docs/architecture/
 │                                         (GIT-README.md, doc-architecture.md)
 │
-└── steve-krug.md ──────────────────┐
+├── steve-krug.md ──────────────────┐
+│                                    │
+│                                    ├──→ Research foundation for MX principles
+│                                    │    (usability theory → agent behavior)
+│                                    │
+│                                    └──→ Supporting material for book arguments
+│                                         (why UX principles apply to agents)
+│
+packages/business-planning/          # Business strategic planning (submodule)
+│
+└── strategy/MX-plan.md ────────────┐
                                      │
-                                     ├──→ Research foundation for MX principles
-                                     │    (usability theory → agent behavior)
+                                     ├──→ Informs Chapter 0 content
+                                     │    (docs/shared-chapters/chapter-00-what-are-ai-agents.md)
                                      │
-                                     └──→ Supporting material for book arguments
-                                          (why UX principles apply to agents)
+                                     ├──→ Defines MX messaging
+                                     │    (used throughout both books)
+                                     │
+                                     └──→ Sets terminology standards
+                                          (packages/bible/, packages/mx-handbook/)
 ```
 
 ---
@@ -239,25 +217,23 @@ docs/structure/                         # Strategic planning (this directory)
 - `packages/bible/chapters/bible-plan.md` - Master plan for MX-Bible book
 - `packages/mx-handbook/chapters/README.md` - MX-Handbook structure
 
-**Sales & Business:**
+**Business & Sales:**
 
-- `packages/sales-enablement/` - Business plans, pricing, outreach
-  - `business/business-plan.md` - Complete business strategy
+- `packages/business-planning/` - Business strategy and planning (PRIVATE)
+  - `plans/business-plan.md` - Complete business strategy
   - `pricing/book-pricing.md` - Book pricing strategy
-  - `strategy.md` - Comprehensive pricing and economics strategy (created 2026-01-23)
+  - `strategy/MX-plan.md` - Machine Experience strategic review
+  - `strategy/strategy.md` - Comprehensive pricing and economics strategy
+- `packages/sales-enablement/` - Sales execution materials (PRIVATE)
+  - `pitches/` - Sales presentations
+  - `outreach/` - Partner and reviewer engagement
+  - `publishers/` - Publisher submissions
 
 ---
 
 ## File Maintenance
 
 ### Updating Files in This Directory
-
-**MX-plan.md:**
-
-- Update when MX definition or framework changes
-- Add implementation notes when changes are completed
-- Track decisions made (move to "User Decisions Made" section)
-- Keep status current (Planning → Ready for implementation → Implemented)
 
 **github-repositories.md:**
 
@@ -286,10 +262,11 @@ docs/structure/                         # Strategic planning (this directory)
 
 | Date | Decision | File | Impact |
 |------|----------|------|--------|
-| 2026-01-22 | MX-first positioning (accessibility is bonus) | MX-plan.md | Terminology, messaging, Chapter 0 rewrite |
-| 2026-01-22 | 5-stage agent journey framework | MX-plan.md | Core selling point, technical requirements |
-| 2026-01-22 | Dual-audience strategy (Bible + Handbook) | MX-plan.md | Two books, shared Chapter 0, different depth |
-| 2026-01-21 | Multi-repository structure via submodules | github-repositories.md | 1 main + 6 submodules |
+| 2026-01-23 | Separate business planning from sales execution | business-planning submodule created | Increased separation of concerns |
+| 2026-01-22 | MX-first positioning (accessibility is bonus) | packages/business-planning/strategy/MX-plan.md | Terminology, messaging, Chapter 0 rewrite |
+| 2026-01-22 | 5-stage agent journey framework | packages/business-planning/strategy/MX-plan.md | Core selling point, technical requirements |
+| 2026-01-22 | Dual-audience strategy (Bible + Handbook) | packages/business-planning/strategy/MX-plan.md | Two books, shared Chapter 0, different depth |
+| 2026-01-23 | Multi-repository structure via submodules | github-repositories.md | 1 main + 7 submodules |
 | 2026-01-22 | Steve Krug analysis for agent UX | steve-krug.md | Research foundation |
 
 ---
@@ -300,12 +277,13 @@ docs/structure/                         # Strategic planning (this directory)
 
 | Document Type | Location | Example |
 |--------------|----------|---------|
-| **Strategic planning** | `docs/structure/` | This directory |
+| **Technical strategic planning** | `docs/structure/` | This directory (repository inventory, UX research) |
+| **Business strategic planning** | `packages/business-planning/` | MX-plan.md, business-plan.md, pricing strategies |
+| **Sales execution** | `packages/sales-enablement/` | Pitches, outreach, publisher submissions |
 | **Technical architecture** | `docs/architecture/` | GIT-README.md, hosting maps |
 | **Writing guidance** | `docs/for-ai/` | writing-style.md |
 | **Shared content** | `docs/shared-chapters/` | Chapter 0 |
 | **Book planning** | `packages/*/chapters/` | bible-plan.md |
-| **Business strategy** | `packages/sales-enablement/` | business-plan.md, strategy.md |
 | **Implementation guides** | `packages/shared-appendices/` | Appendices A-L |
 | **Code examples** | `packages/shared-code-examples/` | Pattern implementations |
 
