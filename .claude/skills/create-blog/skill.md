@@ -156,7 +156,8 @@ Options:
 
 - **If 5 or more H2 headings found:**
   - Generate `{{TOC_ITEMS}}` placeholder content: `<li><a href="#anchor">Heading</a></li>` for each H2
-  - Keep entire `<details id="index" class="table-of-contents">` section in HTML template
+  - Keep entire `<details id="index" class="table-of-contents" data-state="initially-collapsed">` section in HTML template
+  - `data-state="initially-collapsed"` makes the default collapsed state explicit in served HTML (MX principle: no missing state)
 
 - **If fewer than 5 H2 headings:**
   - Set `{{TOC_ITEMS}}` to empty string
