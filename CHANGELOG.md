@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Add The End Chapter] - MX-Handbook
+
+### Added
+
+- **The End Chapter** (MX-Handbook submodule 4f6790c):
+  - Added new final chapter: chapters/The-End.md
+  - Contains appendix references, online resources, contact information
+  - Completes MX-Handbook manuscript structure with proper ending
+
+- **Build Script Integration** (package.json):
+  - Updated all four pdf:mx-* commands to include The-End.md as final chapter
+  - Updated: pdf:mx-html, pdf:mx-generate, pdf:mx-kindle, pdf:mx-simple
+  - The-End.md now appears after all numbered chapters (1-11) in all generated formats
+  - Follows same pattern as MX-Bible scripts
+
 ## [2026-01-23 - Build Script Cleanup] - Package Configuration
 
 ### Changed
