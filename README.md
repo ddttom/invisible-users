@@ -168,8 +168,8 @@ npm run lint:markdown
 npm run lint:markdown:fix
 
 # Generate PDFs and HTML (see package READMEs for details)
-npm run pdf:bible-all        # The Bible (all formats)
-npm run pdf:dont-all         # Don't Make AI Think (all formats)
+npm run pdf:bible-all        # MX-Bible (all formats)
+npm run pdf:mx-all           # MX-Handbook (all formats)
 npm run pdf:appendix         # HTML appendix pages
 ```
 
