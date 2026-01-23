@@ -7,9 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - MX-Handbook Promotional Content] - The End Chapter
+
+### Added (Promotional Content)
+
+- **MX-Bible Promotion Section** (MX-Handbook submodule e41bbc6):
+  - Added "The Companion Book - MX-Bible" section to chapters/The-End.md
+  - Describes MX-Bible as comprehensive 13-chapter companion volume
+  - Lists key topics: case studies, agent architectures, UCP, business strategy, security
+  - Explains how the two books complement each other (handbook for implementation, Bible for strategy)
+  - Includes link to allabout.network for details
+
+- **Web Audit Suite Analysis Service** (MX-Handbook submodule e41bbc6):
+  - Added "Complimentary Analysis Offer" subsection to chapters/The-End.md
+  - Describes 4-page website analysis service using Web Audit Suite tool
+  - Lists analysis components: AI agent compatibility, WCAG 2.1 AA, Schema.org, performance, security
+  - Includes contact information for extended analysis pricing
+  - Promotes Appendix C documentation and patterns from the book
+
+### Changed (Promotional Content)
+
+- **Web Audit Suite Section Title** (MX-Handbook submodule e41bbc6):
+  - Renamed "Web Audit Suite" to "Web Audit Suite Analysis Service"
+  - Updated description to emphasize service offering
+  - Changed opening line to past tense ("examined" instead of "examines")
+
 ## [2026-01-23 - Add The End Chapter] - MX-Handbook
 
-### Added
+### Added (The End Chapter)
 
 - **The End Chapter** (MX-Handbook submodule 4f6790c):
   - Added new final chapter: chapters/The-End.md
@@ -24,7 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2026-01-23 - Build Script Cleanup] - Package Configuration
 
-### Changed
+### Changed (Build Scripts)
 
 - **MX-Handbook PDF Table of Contents** (package.json):
   - Updated all four pdf:mx-* commands to use `--toc-depth=1` (previously `--toc-depth=2`)
