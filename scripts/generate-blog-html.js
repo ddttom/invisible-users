@@ -537,6 +537,16 @@ function calculateDerivedMetadata(metadata, articleHTML, htmlFilename = 'index.h
 function replaceTemplatePlaceholders(template, metadata, derived, tocHTML, articleHTML, cssFilename) {
   let html = template;
 
+  // Generate author bio link HTML if author is Tom Cranstoun
+  const authorBioHTML = metadata.author === 'Tom Cranstoun'
+    ? `
+      <!-- Author Bio Link -->
+      <aside class="author-bio-link" aria-label="About the author">
+        <hr>
+        <p><strong>About the author:</strong> <a href="about.tom.cranstoun.html">Tom Cranstoun</a> has been building content systems since 1977, specializing in Adobe Experience Manager, Edge Delivery Services, and Machine Experience (MX) strategic advisory.</p>
+      </aside>`
+    : '';
+
   const replacements = {
     '{{TITLE}}': metadata.title,
     '{{AUTHOR}}': metadata.author,
@@ -553,7 +563,8 @@ function replaceTemplatePlaceholders(template, metadata, derived, tocHTML, artic
     '{{CSS_FILENAME}}': cssFilename,
     '{{OG_URL}}': derived.ogUrl,
     '{{SOCIAL_IMAGE_URL}}': derived.socialImageUrl,
-    '{{LINKEDIN_URL}}': metadata.LinkedIn
+    '{{LINKEDIN_URL}}': metadata.LinkedIn,
+    '{{AUTHOR_BIO_LINK}}': authorBioHTML
   };
 
   // Replace all placeholders (global regex)
