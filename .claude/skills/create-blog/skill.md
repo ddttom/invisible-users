@@ -141,6 +141,8 @@ Options:
 
 ### Step 4: Generate Table of Contents
 
+**CRITICAL:** Only generate TOC if there are 5 or more H2 headings. Short blog posts with fewer sections don't need a table of contents.
+
 1. Scan markdown content for all H2 headings (`##`) - these are the top-level sections
 2. Extract heading text
 3. Generate anchor ID for each:
@@ -150,7 +152,18 @@ Options:
    - Example: "The Pattern That Breaks" → "the-pattern-that-breaks"
 4. Store array of `{text, id}` objects
 
-**Note:** TOC includes only H2 headings for simplicity. H3-H5 headings will have anchor IDs for direct linking but won't appear in the collapsible TOC to avoid clutter.
+**TOC generation logic:**
+
+- **If 5 or more H2 headings found:**
+  - Generate `{{TOC_ITEMS}}` placeholder content: `<li><a href="#anchor">Heading</a></li>` for each H2
+  - Keep entire `<details id="index" class="table-of-contents">` section in HTML template
+
+- **If fewer than 5 H2 headings:**
+  - Set `{{TOC_ITEMS}}` to empty string
+  - Remove entire `<details id="index" class="table-of-contents">...</details>` block from HTML output
+  - This prevents displaying an empty/sparse TOC that adds no value
+
+**Note:** TOC includes only H2 headings for simplicity. H3-H6 headings will have anchor IDs for direct linking but won't appear in the collapsible TOC to avoid clutter.
 
 ### Step 5: Extract and Name SVGs Semantically
 
