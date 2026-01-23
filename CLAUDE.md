@@ -872,7 +872,7 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 7. **`/md-workflow`** - Advanced markdown workflow automation
 8. **`/opportunity`** - Analyze and document business opportunities
 9. **`/create-blog`** - Transform markdown blog posts into WCAG 2.1 AA compliant HTML with templates
-10. **`/audit-site`** - Run web audit and generate executive sales report for client websites
+10. **`/audit-site`** - Run web audit and generate executive sales report for client websites. Includes automated Web Audit Suite analysis plus manual HTML verification, with intelligent template selection based on robots.txt availability
 
 **Git hooks:**
 
