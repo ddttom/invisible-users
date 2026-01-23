@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Audit Site Skill] - Automated Client Audit Workflow
+
+### Added (Claude Code Skills)
+
+- **`/audit-site` Skill**: New skill for automated client website audits and executive report generation
+  - **Workflow automation**: Complete end-to-end audit and report generation
+    - Runs web-audit-suite with cache clearing
+    - Analyzes all result files (accessibility, performance, SEO, LLM suitability)
+    - Checks llms.txt and robots.txt with critiques
+    - Generates customized executive sales report from template
+  - **Template integration**: Uses [web-audit-suite-template.md](packages/sales-enablement/outreach/web-audit-suite-template.md)
+    - Replaces all `[PLACEHOLDER]` values with actual audit data
+    - Customizes business context for client industry
+    - Researches and names actual competitors
+    - Removes template instructions
+  - **YAML Frontmatter**: Comprehensive metadata including:
+    - Client information (name, URL, slug)
+    - Audit metrics (scores, issue counts, pages analyzed)
+    - Engagement options with pricing
+    - Document metadata (version, date, confidential status)
+  - **Output structure**: Creates dated directories in `packages/sales-enablement/outreach/YYYY-MM-DD/`
+  - **Quality assurance**: Runs markdownlint and fixes errors automatically
+  - **Business focus**: Emphasis on ROI, competitive advantage, and business impact
+  - Location: [.claude/skills/audit-site/skill.md](.claude/skills/audit-site/skill.md)
+  - Usage: `/audit-site [URL]` or with context in prompt
+
+### Changed (Documentation)
+
+- **CLAUDE.md**: Updated skill count from nine to ten, added audit-site skill documentation
+
 ## [2026-01-22 - Executive Sales Reports] - CMS Critic Audit Reports
 
 ### Added (Sales Enablement)
