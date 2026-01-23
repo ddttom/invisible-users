@@ -1,6 +1,6 @@
 # AllAbout.Network - Hosting Folder Structure (ASCII Sitemap)
 
-**Visual map of where HTML files are deployed on allabout.network**
+Visual map of where HTML files are deployed on allabout.network
 
 ---
 
@@ -212,6 +212,7 @@ allabout.network/invisible-users/site/
 ### Blog Posts - All Files at Same Level
 
 ✅ **CORRECT:**
+
 ```text
 /blogs/mx/
 ├── data-sovereignty.html
@@ -224,6 +225,7 @@ allabout.network/invisible-users/site/
 ```
 
 ❌ **WRONG (Don't create subdirectories):**
+
 ```text
 /blogs/mx/
 ├── data-sovereignty/
@@ -238,6 +240,7 @@ allabout.network/invisible-users/site/
 ### Appendices - All Files at Same Level
 
 ✅ **CORRECT:**
+
 ```text
 /invisible-users/
 ├── appendix-a.html
@@ -248,6 +251,7 @@ allabout.network/invisible-users/site/
 ```
 
 ❌ **WRONG (Don't create subdirectories):**
+
 ```text
 /invisible-users/
 ├── appendices/

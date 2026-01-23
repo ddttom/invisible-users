@@ -71,6 +71,7 @@ Repository Path                          →  Web URL
 | `sitemap.xml` | `https://allabout.network/invisible-users/sitemap.xml` |
 
 **CSS Files (same directory):**
+
 - `appendix.css` → `https://allabout.network/invisible-users/appendix.css`
 - `book-product-page.css` → `https://allabout.network/invisible-users/book-product-page.css`
 - `for-reviewers.css` → `https://allabout.network/invisible-users/for-reviewers.css`
@@ -188,6 +189,7 @@ https://allabout.network/blogs/mx/data-sovereignty-diagram-1.svg
 **Pattern:** `https://allabout.network/invisible-users/appendix-[letter].html`
 
 **Example:** Appendix D (AI-Friendly HTML Guide)
+
 - URL: `https://allabout.network/invisible-users/appendix-d.html`
 - Repository: `/packages/shared-appendices/web/appendix-d.html`
 
@@ -196,6 +198,7 @@ https://allabout.network/blogs/mx/data-sovereignty-diagram-1.svg
 **Pattern:** `https://allabout.network/blogs/mx/[lowercase-title-with-hyphens].html`
 
 **Example:** Blog post "Data Sovereignty and the Web We're Building"
+
 - URL: `https://allabout.network/blogs/mx/data-sovereignty.html`
 - Repository: `/outputs/bible/blogs/mx/data-sovereignty.html`
 
@@ -204,6 +207,7 @@ https://allabout.network/blogs/mx/data-sovereignty-diagram-1.svg
 **Pattern:** `https://allabout.network/invisible-users/site/[page-type].html`
 
 **Example:** Product page pattern
+
 - URL: `https://allabout.network/invisible-users/site/product.html`
 - Repository: `/packages/shared-appendices/web/site/product.html`
 
@@ -222,6 +226,7 @@ npm run pdf:appendix
 ```
 
 **Output locations:**
+
 - Blogs: `/outputs/bible/blogs/mx/`
 - Appendices: `/packages/shared-appendices/web/`
 
@@ -250,6 +255,7 @@ Local Repository                         →  Server Path
 ```
 
 **Deployment methods:**
+
 - FTP/SFTP
 - rsync
 - Git deployment hook
@@ -328,11 +334,13 @@ curl https://allabout.network/invisible-users/llms.txt
 **Examples:**
 
 ✅ **Correct:**
+
 - `https://allabout.network/blogs/mx/machine-experience-adding-metadata.html`
 - `https://allabout.network/invisible-users/appendix-k.html`
 - `https://allabout.network/invisible-users/` (directory index)
 
 ❌ **Incorrect:**
+
 - `https://allabout.network/blogs/mx/Machine-Experience-Adding-Metadata.html` (uppercase)
 - `https://allabout.network/blogs/mx/machine_experience_adding_metadata.html` (underscores)
 - `https://allabout.network/blogs/mx/machine-experience-adding-metadata` (no extension)
@@ -386,11 +394,13 @@ curl https://allabout.network/invisible-users/llms.txt
 ### Recommended File Permissions
 
 **HTML/CSS/TXT files:**
+
 - Permissions: `644` (rw-r--r--)
 - Owner: web server user
 - Group: web server group
 
 **Directories:**
+
 - Permissions: `755` (rwxr-xr-x)
 - Owner: web server user
 - Group: web server group
@@ -473,12 +483,14 @@ When creating or deploying new content:
 ### Issue: 404 Not Found
 
 **Possible causes:**
+
 1. File not uploaded to correct server directory
 2. Incorrect file permissions
 3. URL doesn't match actual filename (case sensitivity)
 4. Missing file extension in URL
 
 **Solution:**
+
 ```bash
 # Check file exists on server
 ssh user@server "ls -la /public_html/blogs/mx/"
@@ -493,12 +505,14 @@ curl -I https://allabout.network/blogs/mx/[filename].html
 ### Issue: Assets Not Loading
 
 **Possible causes:**
+
 1. Asset files not uploaded
 2. Incorrect paths in HTML
 3. MIME type misconfiguration
 4. CORS issues (for CDN assets)
 
 **Solution:**
+
 ```bash
 # Check asset exists
 curl -I https://allabout.network/blogs/mx/[filename]-social.svg
@@ -511,11 +525,13 @@ grep "src=" outputs/bible/blogs/mx/[filename].html
 ### Issue: Canonical URL Mismatch
 
 **Possible causes:**
+
 1. Canonical URL still points to local/test domain
 2. Canonical URL uses wrong path structure
 3. Multiple canonical tags in HTML
 
 **Solution:**
+
 ```bash
 # Check canonical tag
 curl -s https://allabout.network/blogs/mx/[filename].html | grep canonical
@@ -529,12 +545,14 @@ curl -s https://allabout.network/blogs/mx/[filename].html | grep canonical
 ## Additional Resources
 
 **Related Documentation:**
+
 - [CLAUDE.md](/CLAUDE.md) - Complete project documentation
 - [Blog Creation Skill](/.claude/skills/create-blog/skill.md) - Blog generation workflow
 - [Appendix Generation Script](/scripts/generate-appendix-html.sh) - HTML generation
 - [Sitemap Generator](/scripts/generate-sitemap.js) - Sitemap creation
 
 **External Standards:**
+
 - [llms.txt standard](https://llmstxt.org/) - AI discovery file format
 - [Schema.org](https://schema.org/) - Structured data vocabulary
 - [Sitemap Protocol](https://www.sitemaps.org/) - XML sitemap specification

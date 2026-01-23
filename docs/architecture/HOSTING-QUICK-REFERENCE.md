@@ -1,6 +1,6 @@
 # AllAbout.Network Hosting - Quick Reference
 
-**One-page reference for deploying HTML files to allabout.network**
+One-page reference for deploying HTML files to allabout.network
 
 ---
 
@@ -20,7 +20,7 @@ Repository                               →  Live Website
 
 ### Appendices (MX-Bible Resources)
 
-```
+```text
 packages/shared-appendices/web/
 ├── index.html              → allabout.network/invisible-users/
 ├── appendix-a.html         → allabout.network/invisible-users/appendix-a.html
@@ -43,7 +43,7 @@ packages/shared-appendices/web/
 
 ### Blog Posts (MX Series)
 
-```
+```text
 outputs/bible/blogs/mx/
 ├── data-sovereignty.html                        → allabout.network/blogs/mx/data-sovereignty.html
 ├── data-sovereignty.css                         → allabout.network/blogs/mx/data-sovereignty.css
@@ -56,7 +56,7 @@ outputs/bible/blogs/mx/
 
 ### Pattern Examples (Reference)
 
-```
+```text
 packages/shared-appendices/web/site/
 ├── index.html              → allabout.network/invisible-users/site/index.html
 ├── product.html            → allabout.network/invisible-users/site/product.html
@@ -70,11 +70,13 @@ packages/shared-appendices/web/site/
 ## URL Rules
 
 ✅ **Correct:**
+
 - `https://allabout.network/blogs/mx/machine-experience-adding-metadata.html`
 - `https://allabout.network/invisible-users/appendix-k.html`
 - `https://allabout.network/invisible-users/`
 
 ❌ **Wrong:**
+
 - ~~`Machine-Experience-Adding-Metadata.html`~~ (no uppercase)
 - ~~`machine_experience_adding_metadata.html`~~ (hyphens not underscores)
 - ~~`machine-experience-adding-metadata`~~ (include .html)
@@ -145,6 +147,7 @@ chown www-data:www-data -R /public_html/invisible-users/
 ## Need More Detail?
 
 See [allabout-network-hosting-map.md](./allabout-network-hosting-map.md) for complete documentation including:
+
 - Deployment workflows
 - Troubleshooting
 - MIME types
