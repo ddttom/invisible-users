@@ -431,7 +431,7 @@ Fix: "## Important Note"
 
 ### Language Check (British English)
 
-**Method:** Dictionary-based replacement
+**Method:** Dictionary-based replacement with code/metadata exceptions
 
 **Common American → British:**
 
@@ -445,7 +445,19 @@ Fix: "## Important Note"
 - gotten → got
 - while → whilst (in formal contexts)
 
-**Example:**
+**CRITICAL EXCEPTION - Code/JSON/Metadata:**
+
+Do NOT flag American spelling in:
+
+- Code blocks (between ``` markers or ` inline code)
+- Schema.org vocabulary: `"@type": "Organization"` (standard)
+- HTML attributes: `lang="en-GB"` (ISO standard)
+- JSON property names: `streetAddress`, `postalCode` (camelCase convention)
+- HTTP headers: `Content-Type`, `Authorization` (established standards)
+
+**Rationale:** Technical standards define specific spelling for interoperability. Prose uses British English; code follows international standards.
+
+**Example (prose text):**
 
 ```markdown
 We need to optimize the color scheme.
@@ -453,6 +465,17 @@ We need to optimize the color scheme.
 Line 89: American spelling detected
 Fix: "We need to optimise the colour scheme."
 ```
+
+**Example (code - no change):**
+
+```html
+<!-- Prose uses British English, code follows Schema.org standard -->
+<div itemscope itemtype="https://schema.org/Organization">
+  <span itemprop="name">Digital Domain Technologies</span>
+</div>
+```
+
+**Action:** Skip "Organization" in Schema.org markup - this is correct per international standard.
 
 ### Time Estimate Check
 

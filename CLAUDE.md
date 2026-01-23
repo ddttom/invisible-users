@@ -519,7 +519,10 @@ npm run audit:test             # Run tests
 
 **Language and Voice:**
 
-- British English (organise, colour, whilst)
+- British English (organise, colour, whilst, recognised, organisation)
+  - **Prose text**: Always use British English spelling and grammar
+  - **Code/JSON/metadata**: Follow international standards (e.g., Schema.org `"@type": "Organization"`, HTML `lang="en-GB"`, JSON property names)
+  - **Exception rationale**: Technical standards and APIs use established conventions; forcing British spelling would break compatibility
 - First-person narrative
 - No colons in chapter titles
 - Short dashes only (not em-dashes)

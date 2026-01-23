@@ -44,7 +44,10 @@ We are writing this book together.
 
 ## 3. Core Writing Rules
 
-- **British English:** Use British spelling and phrasing (e.g., *optimisation*, *centre*, *programme*).
+- **British English:** Use British spelling and phrasing (e.g., *optimisation*, *centre*, *programme*, *recognised*, *organisation*).
+  - **Prose text:** Always use British English spelling and grammar
+  - **Code/JSON/metadata:** Follow international standards (e.g., Schema.org `"@type": "Organization"`, HTML `lang="en-GB"`, JSON property names)
+  - **Exception rationale:** Technical standards and APIs use established conventions; forcing British spelling would break compatibility
 - **Tone:** Concise, calm, concrete. Speak as a domain expert.
 - **Voice:**
   - **Active voice** is the default.
