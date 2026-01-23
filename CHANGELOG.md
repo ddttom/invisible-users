@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - External Stylesheet Architecture] - Code Organization
+
+### Changed (Stylesheet Extraction)
+
+- **Reviewer Page Stylesheet** (shared-appendices submodule c249cf0):
+  - Extracted embedded `<style>` block to external stylesheet: `web/for-reviewers.css`
+  - Replaced 313-line embedded style block with single `<link rel="stylesheet">` tag
+  - Improves separation of concerns (CSS decoupled from HTML structure)
+  - Enables browser caching of stylesheet (better performance)
+  - Facilitates potential reuse across multiple pages
+  - Maintains all existing styling and WCAG 2.1 AA compliance
+  - HTML validation still passes with zero errors
+  - Modern web development best practice
+  - Demonstrates architectural patterns advocated in the book
+
+### Technical (Stylesheet Architecture)
+
+- **Submodule Update** (main repo cb9a40c):
+  - Updated shared-appendices pointer to c249cf0
+
 ## [2026-01-23 - Dual-Book Reviewer Support] - Documentation Updates
 
 ### Added (Dual-Book Support)
