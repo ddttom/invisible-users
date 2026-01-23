@@ -569,6 +569,73 @@ The config file (`config/.markdownlint.json`) disables rules that are intentiona
 
 - **Skill files:** Never fix markdown linting issues in `.claude/skills/` files (excluded from linting via `--ignore .claude` flag)
 
+### CRITICAL: Global Search/Replace Safety
+
+**⚠️ DANGER: Global search/replace operations in markdown files can break code block syntax and PDF generation.**
+
+**Code Block Safety Rules:**
+
+1. **NEVER use global search/replace** to modify text that could appear in code blocks
+2. **Code block markers must remain balanced:**
+   - Opening: ` ```language` (e.g., ` ```html`, ` ```javascript`, ` ```css`)
+   - Closing: ` ``` ` (just three backticks, NO language identifier)
+3. **Common breaking pattern:**
+   - ❌ WRONG: Changing ` ``` ` → ` ```text` when closing language-specific blocks
+   - ✅ CORRECT: Opening ` ```html` closes with ` ``` ` (not ` ```text`)
+
+**Safe Alternatives to Global Replace:**
+
+```bash
+# ❌ DANGEROUS: Global replace without context
+sed -i 's/old/new/g' packages/*/chapters/*.md
+
+# ✅ SAFE: Manual verification with Edit tool
+# Read each file first, verify context, use Edit tool for each change
+
+# ✅ SAFE: Python script with code block awareness
+# Parse markdown, track code block state, only replace outside blocks
+```
+
+**After Any Global Change:**
+
+1. **Test PDF generation immediately:**
+
+   ```bash
+   npm run pdf:generate
+   # If fails, code blocks are likely broken
+   ```
+
+2. **Verify code block integrity:**
+
+   ```bash
+   # Check for broken patterns
+   grep -n '```text$' packages/*/chapters/*.md
+   # Should only match blocks that OPEN with ```text (not close them)
+   ```
+
+3. **Scan for unbalanced markers:**
+
+   ```python
+   # Use Python script to validate all code blocks
+   # Check opening language identifiers match closing markers
+   ```
+
+**Historical Issue (Learn from this):**
+
+A global replace changed closing ` ``` ` to ` ```text`, breaking PDF generation across 15+ chapter files. The pattern affected:
+
+- ` ```html` blocks closing with ` ```text` instead of ` ``` `
+- ` ```javascript` blocks closing with ` ```text` instead of ` ``` `
+- ` ```css` blocks closing with ` ```text` instead of ` ``` `
+
+**Recovery required:**
+
+- Manual inspection of each error
+- Individual Edit tool fixes (10+ files, 100+ code blocks)
+- Full verification across all chapters
+
+**Lesson: Always prefer targeted edits over global operations in markdown files.**
+
 ## Markdown Metadata Standards
 
 ### Pandoc YAML Frontmatter (Markdown Files)
