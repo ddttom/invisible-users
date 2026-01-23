@@ -31,26 +31,57 @@ When this skill is invoked, follow these steps systematically:
 - Look for pipe table with `| metadata |` header
 - Extract all key-value pairs from two-column table
 - Store in `tableMeta` object
-- Common fields: title, description, author, jsonld, image, LinkedIn, publication-date, longdescription
+- Common fields: title, description, author, author-name, jsonld, image, LinkedIn, publication-date, longdescription
 
 **Parse Bio Table**:
 - Look for pipe table with `| bio |` header
 - Extract catch text from second column of first data row
 - Store in `bioCatch` variable
 
+**Load Author Profile Metadata** (for default values):
+
+1. **Determine author name**:
+   - Look for `author-name` field in metadata table
+   - If not found, look for `author` field in YAML frontmatter
+   - If not found, default to "Tom Cranstoun"
+
+2. **Generate profile filename**:
+   - Trim whitespace from author name
+   - Convert to lowercase
+   - Replace spaces with dots (`.`)
+   - Add `.md` extension
+   - Example: "Tom Cranstoun" → "tom.cranstoun.md"
+   - Example: "John Smith" → "john.smith.md"
+
+3. **Load profile file**:
+   - Look in `packages/sales-enablement/profiles/` directory
+   - If profile file exists, read it and extract YAML frontmatter metadata
+   - If profile file not found, use `packages/sales-enablement/profiles/unknown.md` as fallback
+   - Store profile metadata in `authorProfile` object
+
+4. **Use author profile as defaults**:
+   - Profile metadata provides default values for: `author`, `email`, `linkedin`, `image`, `organization`, `website`, `language`, `site_name`
+   - These defaults are lowest priority in merge order (see below)
+
 **Merge Metadata** (priority order):
 1. Metadata table (highest priority)
 2. YAML frontmatter
-3. Default values (lowest priority)
+3. Author profile defaults
+4. Hard-coded default values (lowest priority)
 
 **Required final metadata**:
 - `title`: From metadata, or extract from first H1 heading, or use filename
-- `author`: Default "Tom Cranstoun"
+- `author`: From metadata, author profile, or default "Tom Cranstoun"
 - `date`: Today's date in ISO format (YYYY-MM-DD)
 - `description`: From metadata or generate from first paragraph
 - `keywords`: Array of tags (default: ["machine-experience", "ai-agents"])
 - `jsonld`: "article" (maps to BlogPosting)
-- `LinkedIn`: "https://www.linkedin.com/in/tom-cranstoun/"
+- `linkedin`: From metadata, author profile, or default "https://www.linkedin.com/in/tom-cranstoun/"
+- `image`: Author image URL from profile or default
+- `language`: From author profile or default "en-GB"
+- `organization`: From author profile or default "Digital Domain Technologies"
+- `website`: From author profile or default "https://allabout.network"
+- `site_name`: From author profile or default "AllAbout.Network"
 
 ### Step 2.5: Confirm Output Filename
 
@@ -438,6 +469,65 @@ Save as `[blog-basename]-social.svg` in output directory.
 
 - **Word count**: Count words in converted HTML content (strip tags first)
 - **Reading time**: `Math.ceil(wordCount / 200)` minutes
+
+### Step 8.5: Identify Primary Question and Generate Schema.org Question Metadata
+
+**CRITICAL:** Identify the main question this blog post answers to improve AI agent citation.
+
+**Analysis process:**
+
+1. **Identify the primary question:**
+   - Analyze the blog title, description, and first 2-3 paragraphs
+   - Determine the core question readers are asking that led them to this content
+   - Question should be specific, searchable, and citation-worthy
+   - Examples:
+     - "How do AI agents discover and navigate websites?"
+     - "What is Machine Experience (MX) and why does it matter?"
+     - "How can I make my website compatible with AI agents?"
+   - If title is already a question, use it directly
+   - Otherwise, convert title/topic into a question format
+
+2. **Extract the answer:**
+   - Use the blog description as the primary answer
+   - If description is too short, extract key points from first 2-3 paragraphs
+   - Answer should be concise (2-4 sentences) but complete
+   - Should directly address the question
+
+3. **Generate Schema.org Question JSON-LD:**
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Question",
+  "name": "[Primary question in short form]",
+  "text": "[Full question text]",
+  "answerCount": 1,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "[Concise answer extracted from blog description and opening paragraphs]",
+    "url": "[Blog URL]"
+  }
+}
+```
+
+**Example for a blog titled "Machine Experience: Adding Metadata So AI Agents Don't Have to Think":**
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Question",
+  "name": "How do you optimize websites for AI agent compatibility?",
+  "text": "What is Machine Experience (MX) and how can you add metadata to websites so AI agents can discover, cite, compare, understand pricing, and complete goals without guessing?",
+  "answerCount": 1,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Machine Experience (MX) enables AI agents to discover, cite, compare, understand pricing, and complete goals on your website through explicit metadata and semantic HTML. The 5-stage agent journey requires clear structure: discovery (via llms.txt and robots.txt), citation (with Schema.org metadata), comparison (explicit product attributes), pricing (machine-readable formats), and confidence (complete information in served HTML). Missing any stage breaks the entire chain.",
+    "url": "https://allabout.network/blogs/mx/machine-experience-adding-metadata.html"
+  }
+}
+```
+
+**Store Question JSON-LD** for inclusion in HTML template (separate from BlogPosting JSON-LD).
 
 ### Step 9: Generate HTML File from Template
 
