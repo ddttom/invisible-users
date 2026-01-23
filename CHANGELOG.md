@@ -7,6 +7,54 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Enhanced /audit-site Skill] - Manual Verification and Template Selection
+
+### Added
+
+- **Manual HTML Verification** (Step 4.5 in /audit-site skill):
+  - Comprehensive WebFetch-based analysis of DOM structure, metadata, accessibility, and code quality
+  - Automatic skip for sitemap.xml URLs
+  - Structured findings by severity with WCAG violation codes and code examples
+  - Graceful error handling for WebFetch timeouts/failures
+  - Identifies positive patterns (well-implemented features)
+
+- **Sales Enablement Report Templates** (packages/sales-enablement submodule b42886f):
+  - manual-report-template.md: Reusable technical audit template for manual analysis
+  - deepersonalised-report.md: Sales-focused strategic assessment template with ROI framing
+
+### Changed
+
+- **Template Selection Logic** (Step 5 in /audit-site skill):
+  - Intelligent template selection based on audit data quality and robots.txt availability
+  - Uses manual-report-template.md when: robots.txt unavailable/invalid, limited scope (<3 pages), or incomplete metrics
+  - Uses web-audit-suite-template.md when full automated data available
+  - Stores template type and reason for transparent reporting
+
+- **Report Generation** (Step 6 in /audit-site skill):
+  - Manual template: Integrates manual findings into Priority 1/2/3 sections with code examples
+  - Automated template: Enhances existing findings with "Manual Verification" subsections
+  - Both templates: Removes instruction blocks, fills placeholders, customizes business context
+
+- **Summary Output** (Step 12 in /audit-site skill):
+  - Reports template used (manual/automated) with reason
+  - Reports manual verification status (completed/skipped/failed)
+  - Adds conditional note when manual template used
+
+- **llms.txt Context** (Step 4 in /audit-site skill):
+  - Added framing that llms.txt is emerging standard (not yet universal)
+  - Notes adoption growing as Machine Experience (MX) practices spread
+  - Emphasizes first-mover advantage for early adopters
+
+- **CLAUDE.md**: Updated /audit-site skill description to reflect new manual verification and template selection capabilities
+
+### Technical Notes (Audit-Site Enhancement)
+
+- Main repo commits: ce139a9, b7d73b3
+- Sales-enablement submodule: b42886f (pushed to remote)
+- All markdown linting passes cleanly
+- Submodule committed and pushed before main repository pointer update (proper git workflow)
+- Backward compatible: existing audit-site functionality preserved
+
 ## [2026-01-23 - Two-Book Ecosystem] - Repository-Wide Update
 
 ### Changed (Book Structure)
