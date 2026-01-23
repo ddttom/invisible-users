@@ -482,6 +482,28 @@ Explicit structure and unambiguous MX patterns make you compatible with the wors
 
 The alternative (hoping AI improves) leaves you incompatible with 40%+ of agents visiting your site right now. Design for the worst agent = compatible with all agents.
 
+### Strategic Redundancy: Multiple Formats for Unknown Capabilities
+
+Because you cannot detect which agent is visiting your site or what capabilities it possesses, MX principles require providing information redundantly across multiple formats. This isn't bloat or inefficiency - it's strategic redundancy that ensures the worst agent can extract critical information whilst better agents can leverage richer formats.
+
+**The detection problem is unsolvable:** User-Agent strings are trivially spoofed. No standardized capability announcement protocol exists. You cannot serve different HTML based on agent sophistication because you have no reliable way to identify agent capabilities. Therefore, you must assume the worst whilst providing for the best.
+
+**MX redundancy patterns:**
+
+**Information in multiple semantic layers:** Pricing appears in visible text ("£2,030"), Schema.org JSON-LD structured data (`"price": "2030", "priceCurrency": "GBP"`), and HTML data attributes (`data-price="2030" data-currency="GBP"`). A basic text parser gets the visible price. A structured data parser gets machine-readable values. An HTML attribute parser gets explicit semantics.
+
+**State declared redundantly:** Checkout progress exists as visible text ("Step 2 of 4"), ARIA attributes (`aria-current="step"`), data attributes (`data-checkout-step="2" data-total-steps="4"`), and Schema.org BreadcrumbList. Screen readers announce current position. Simple parsers read data attributes. Sophisticated agents extract full navigation context from structured data.
+
+**Metadata in multiple formats:** OpenGraph tags for social platforms, Twitter Cards for Twitter-specific display, Schema.org JSON-LD for structured extraction, Dublin Core for academic contexts, and llms.txt for agent discovery. Each format serves different consumers, but all describe the same underlying content.
+
+**Product information at multiple specificity levels:** Product title in H1 heading, short description in meta description, detailed description in Schema.org Product type, specifications in structured data tables, and downloadable PDF datasheet. Basic agents extract the title. Advanced agents parse full specifications. Human users download detailed documentation.
+
+This redundancy serves a critical strategic purpose: you're building for an unknown audience with unknown capabilities visiting at unknown times. A small mobile LLM with 100M parameters needs explicit text and simple structure. A frontier model with 200B+ parameters can extract from complex JSON-LD schemas. A browser extension agent reads data attributes. A CLI agent parses only served HTML. By providing information in multiple formats simultaneously, you ensure all agent types can extract what they need at the level they can process.
+
+**The efficiency argument fails:** Some developers resist redundancy as "bloating" HTML. This misunderstands the problem. An extra 2KB of Schema.org JSON-LD that enables a £2,030 purchase to complete correctly (rather than failing or auto-booking for £203,000) isn't bloat - it's infrastructure. The redundancy pays for itself in the first successful agent-mediated transaction.
+
+Strategic redundancy is an MX principle, not a bug. When you don't know which machine is reading your content or what capabilities it possesses, you provide information at multiple levels to ensure universal compatibility. This approach mirrors accessibility best practices - alt text AND visible captions AND ARIA labels - because both disciplines design for unknown capabilities.
+
 ## What This Book Offers
 
 This book examines the collision between modern web design and machine readers. It explores:
