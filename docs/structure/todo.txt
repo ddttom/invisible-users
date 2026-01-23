@@ -32,3 +32,35 @@ A data table (has at least one table header) that does not already have a captio
 --
 
 contrast is an issue
+
+
+-------
+
+Pitch
+
+
+Your website has invisible users right now—AI agents visiting on behalf of humans, comparing products, checking pricing, attempting purchases. Adobe's Holiday 2025 data reveals the transformation: AI referrals up 700% in retail, 500% in travel, with conversion rates now leading human traffic by 30%.
+
+The problem? Five different types of agents, each with different technical constraints:
+
+Server-side agents (ChatGPT, Claude) - Can't see JavaScript or CSS, need semantic HTML
+In-browser agents (Copilot, extensions) - See rendered pages, need explicit state in DOM
+Browser automation (Perplexity, Playwright) - Full browser control plus screenshots
+Local agents (Ollama, on-device) - Limited context windows, need concise structure
+Agentic OS (Cowork) - Orchestrate multiple agents, need consistent patterns across all
+When these agents must "think"—infer meaning from incomplete context—they hallucinate. That £2,030 Danube cruise becomes £203,000. Lawyers cite fictional Ally McBeal episodes as legal precedent. Modern CMS platforms create divs without semantic meaning, serve plain HTML that JavaScript decorates later. Agents see one version, browsers see another.
+
+Machine Experience (MX) is the practice of adding metadata and instructions so AI agents don't have to think. The 5-stage agent journey shows exactly where sites fail:
+
+Discovery - Without semantic structure, you're not in their training data
+Citation - Without Schema.org, agents can't confidently recommend you
+Search & Compare - Without JSON-LD, agents can't extract product features
+Price Understanding - Without proper currency markup, agents misread pricing by 100x
+Purchase Confidence - Without a persistent state, agents abandon checkout
+Miss any stage and the entire commerce chain breaks. Toast notifications vanish before agents read them. JavaScript-only state (let currentStep = 1) means agents can't track progress. Hidden fees prevent accurate price comparison.
+
+Here's the convergence principle: what machines need equals what disabled users have needed for years. Semantic HTML helps server-side agents AND screen readers. Explicit state attributes (data-state="active") help browser agents AND keyboard users. Schema.org structured data helps price comparison agents AND voice assistants for blind users. One implementation serves multiple audiences, but the business case—agent commerce, conversions, revenue—drives the requirements.
+
+MX requires dedicated roles—just like QA engineering. When "everyone's responsible," accountability vanishes (diffusion of responsibility research confirms this). Successful organizations need MX specialists who define agent-readability standards, audit implementations, prevent agent failures before deployment. Can expand existing accessibility roles since technical patterns overlap substantially.
+
+January 2026 marked the inflection point: Amazon Alexa+, Microsoft Copilot Checkout, and Google Universal Commerce Protocol all launched within seven days. What analysts predicted would take 12-24 months is now expected in 6-9 months or less. Sites that work early gain "computational trust"—agents preferentially recommend proven-successful sources through learned behavior. Sites that fail disappear from recommendations with no analytics visibility and no recovery opportunity. Within two years, machines will read websites, not humans. This isn't distant future—it's today.
