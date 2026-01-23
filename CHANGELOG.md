@@ -7,6 +7,55 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Sales Materials Reorganization] - Planning Docs and Outreach Templates
+
+### Changed (Sales Enablement)
+
+- **Sales-enablement submodule reorganization**: Restructured outreach materials for better organization
+  - **Renamed files**:
+    - `reviews.md` → `target-audience.md` (expanded with buyer personas)
+    - `template.md` → `web-audit-suite-template.md` (made audit-specific)
+  - **target-audience.md**: Comprehensive buyer personas and decision criteria
+    - Agency decision-makers and their pain points
+    - Budget authority levels and approval workflows
+    - Certification program interest
+    - Social proof requirements
+  - **web-audit-suite-template.md**: Complete template for client audit reports
+    - Placeholder-based structure with `[BRACKET]` notation
+    - Comprehensive instructions for customization
+    - Investment range guidance
+    - llms.txt and robots.txt critique sections
+  - Submodule commit: df3aff5
+
+### Added (Project Planning)
+
+- **New project planning documents**: Added AI assistant guidance for new project structure
+  - **docs/for-ai/new-project/Contributing.md**: Contribution guidelines template
+    - Roles and responsibilities
+    - Workflow guidance
+    - Writing and code standards
+    - MX governance principles
+  - **docs/for-ai/new-project/Plan.md**: Documentation structure plan
+    - Core documentation files (overview, checklist, governance)
+    - Schema.org examples
+    - Writing style guide
+    - UCP integration guide
+    - Example templates and workflows
+  - **docs/for-ai/new-project/planned.md**: Implementation phases
+    - Phase 1: Foundation (HTML, Schema, Crawlability)
+    - Phase 2: Documentation (Structure, Clarity, Agent-Friendly)
+    - Phase 3: Ecosystem (Visibility, Governance, Community)
+  - **docs/for-ai/new-project/PULL_REQUEST_TEMPLATE.md**: PR template
+  - Location: [docs/for-ai/new-project/](docs/for-ai/new-project/)
+
+### Changed (Notes)
+
+- **docs/structure/todo.txt**: Added pitch content and accessibility notes
+  - Machine Experience pitch framework
+  - 5-stage agent journey explanation
+  - January 2026 convergence timeline
+  - SVG alt text and contrast issue notes
+
 ## [2026-01-23 - Audit Site Skill] - Automated Client Audit Workflow
 
 ### Added (Claude Code Skills)
