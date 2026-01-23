@@ -335,6 +335,33 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Author Bio Link */
+.author-bio-link {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+.author-bio-link hr {
+  display: none; /* Use border-top instead for cleaner look */
+}
+
+.author-bio-link p {
+  font-size: 0.95rem;
+  color: #595959;
+}
+
+.author-bio-link a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.author-bio-link a:hover {
+  text-decoration: underline;
+  color: #004499;
+}
+
 /* Reduced Motion Support (WCAG 2.3.3) */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -386,6 +413,11 @@ footer {
 
   .bio-content {
     flex-direction: column;
+  }
+
+  .author-bio-link {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
   }
 
   .back-to-top {

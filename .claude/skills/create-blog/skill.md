@@ -556,8 +556,80 @@ Save as `[blog-basename]-social.svg` in output directory.
 | `{{OG_URL}}` | Canonical URL | "https://allabout.network/blogs/mx/content-operations" |
 | `{{SOCIAL_IMAGE_URL}}` | Social media image | "https://allabout.network/blogs/mx/content-operations/MX-The-blog-social.svg" |
 | `{{LINKEDIN_URL}}` | Author LinkedIn | "https://www.linkedin.com/in/tom-cranstoun/" |
+| `{{AUTHOR_BIO_LINK}}` | Author bio section HTML | `<aside class="author-bio-link">...</aside>` or empty string |
 
 3. **Write populated template** to output file: `[blog-basename].html`
+
+### Step 9.5: Add Author Bio Link
+
+**CRITICAL:** Add an author bio link at the end of blog posts by Tom Cranstoun.
+
+**Implementation:**
+
+1. **Check author name** (after all metadata merging):
+   - If author is "Tom Cranstoun", add author bio section
+   - For other authors, skip this step
+
+2. **Insert bio section** after `{{ARTICLE_CONTENT}}` but before `</article>`:
+
+```html
+      <!-- Author Bio Link -->
+      <aside class="author-bio-link" aria-label="About the author">
+        <hr>
+        <p><strong>About the author:</strong> <a href="about.tom.cranstoun.html">Tom Cranstoun</a> has been building content systems since 1977, specializing in Adobe Experience Manager, Edge Delivery Services, and Machine Experience (MX) strategic advisory.</p>
+      </aside>
+```
+
+3. **Bio section styling requirements**:
+   - Add to CSS template if not present
+   - Semantic `<aside>` with clear ARIA label
+   - Horizontal rule separator
+   - Link styled consistently with site links
+   - Responsive design (stacks on mobile)
+
+**CSS for author bio link** (add to blog-template.css if not present):
+
+```css
+/* Author Bio Link */
+.author-bio-link {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border-color);
+}
+
+.author-bio-link hr {
+  display: none; /* Use border-top instead for cleaner look */
+}
+
+.author-bio-link p {
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+}
+
+.author-bio-link a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.author-bio-link a:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+  .author-bio-link {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+}
+```
+
+**Profile page location:**
+
+- URL: `https://allabout.network/blogs/mx/about.tom.cranstoun.html`
+- Relative path from blog: `about.tom.cranstoun.html`
+- File: `outputs/bible/blogs/mx/about.tom.cranstoun.html`
 
 ### Step 10: Copy CSS Template
 
