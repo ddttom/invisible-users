@@ -994,9 +994,19 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 
 **Strategic planning documents:**
 
+- `docs/structure/README.md` - Directory guide to strategic planning documents
 - `docs/structure/MX-plan.md` - Machine Experience (MX) strategic review and positioning
 - `docs/structure/github-repositories.md` - Complete repository structure mapping
 - `docs/structure/steve-krug.md` - UX research and insights from "Don't Make Me Think"
+
+**Architecture documentation:**
+
+- `docs/architecture/GIT-README.md` - Comprehensive git workflow guidance
+- `docs/architecture/allabout-network-hosting-map.md` - Complete hosting path mapping and deployment guide
+- `docs/architecture/HOSTING-SITEMAP-ASCII.md` - ASCII visual sitemap of hosting structure
+- `docs/architecture/HOSTING-QUICK-REFERENCE.md` - One-page deployment reference
+- `docs/architecture/TIMELESS-MANUSCRIPT-RULE.md` - Writing standards for book manuscripts
+- `docs/architecture/doc-architecture.md` - Repository structure and design decisions
 
 **Web Audit Suite:** See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) and subdirectory docs/
 
