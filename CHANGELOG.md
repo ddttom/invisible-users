@@ -7,6 +7,75 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Blog Posts and Link Patterns] - MX Blog Content and Appendix Updates
+
+### Added (Blog Content)
+
+- **Two new MX blog posts** in `outputs/bible/blogs/mx/`:
+  - **"MX: A New Role"** (4,188 words, 21 min read)
+    - Defines Machine Experience as fourth web discipline alongside UX/SEO/a11y
+    - Explains 5-stage agent journey (Discovery, Citation, Compare, Pricing, Confidence)
+    - Documents convergence principle (MX patterns benefit both agents and accessibility users)
+    - Describes Web Audit Suite capabilities without pricing/timescales
+    - Includes 4 semantic SVG diagrams (mx-relationship-diagram, gap-visualization, 5-stage-agent-journey, served-vs-rendered-html)
+    - Published URL: <https://allabout.network/blogs/mx/mx-a-new-role.html>
+  - **"What Is Machine Experience?"** (1,351 words, 7 min read)
+    - Business-focused definition targeting non-technical audience
+    - Explains context transfer concept for AI agents
+    - Introduces MX Community and open-source guidance strategy
+    - Documents January 2026 platform convergence (Amazon, Microsoft, Google)
+    - Final tagline: "I practise what I preach. Feel free to view the page source—if you're human, that is."
+    - Published URL: <https://allabout.network/blogs/mx/what-is-machine-experience.html>
+  - **Cross-linking**: First blog links to second for foundational MX definition
+  - **WCAG 2.1 AA compliant**: Skip links, focus indicators, reduced motion support, touch targets
+  - **AI agent compatible**: Semantic HTML, Schema.org BlogPosting, anchor IDs on all H2-H6 headings
+  - Generated using `/create-blog` skill with template-based workflow
+  - Submodule commit: fd58e53
+
+### Added (Documentation)
+
+- **Internal vs external link patterns** in `packages/shared-appendices/appendix-d-ai-friendly-html-guide.txt`:
+  - Comprehensive section documenting UX best practices for link behaviour
+  - **Internal links** (same site): Open in same tab (no target attribute)
+  - **External links** (different domains): Optionally open in new tabs with `target="_blank" rel="noopener"`
+  - Security requirement: Always use `rel="noopener"` to prevent window.opener vulnerability
+  - Accessibility impact: Screen readers and keyboard users need predictable navigation
+  - Exception cases: PDFs, media players, print versions where new tabs acceptable
+  - Real-world reference: Blog posts demonstrate correct implementation
+  - Submodule commit: 97a66ef
+
+### Changed (Documentation - llms.txt Format)
+
+- **CLAUDE.md llms.txt documentation updates**:
+  - Clarified YAML frontmatter placement: MUST be at line 0 (very start of file)
+  - Improved llms.txt structure examples with proper YAML syntax (no pipe tables)
+  - Added example showing correct YAML frontmatter placement with line numbers
+  - Documented hybrid approach: YAML frontmatter for machine-readable metadata, markdown for human-readable content
+  - Updated key fields documentation with quoted string format requirements
+
+- **llms.txt updates across submodules**:
+  - `packages/shared-appendices/web/llms.txt`: Updated with latest content structure
+  - `packages/shared-code-examples/examples/site-files/llms.txt`: Updated example structure
+  - Submodule commits: 97a66ef (appendices), df86e81 (code-examples)
+
+### Added (Sales Enablement)
+
+- **Boye & Company web audit report** (`packages/sales-enablement/outreach/2026-01-23/boye-co-report.md`):
+  - Comprehensive web audit analysis used as source material for MX blog posts
+  - Contains depersonalized findings demonstrating MX patterns and gaps
+  - Reference document for Web Audit Suite capabilities and report structure
+  - Submodule commit: f453970
+
+### Changed (Submodule Pointers)
+
+Main repository now points to updated submodules:
+
+- `outputs`: fd58e53 (Add two MX blog posts with cross-linking)
+- `packages/shared-appendices`: 97a66ef (Add internal vs external link patterns to Appendix D)
+- `packages/shared-code-examples`: df86e81 (Update llms.txt example with latest structure)
+- `packages/sales-enablement`: f453970 (Add Boye & Company web audit report)
+- `packages/ucp`: f3f5eee (upstream updates)
+
 ## [2026-01-23 - Sales Materials Reorganization] - Planning Docs and Outreach Templates
 
 ### Changed (Sales Enablement)
@@ -82,7 +151,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Location: [.claude/skills/audit-site/skill.md](.claude/skills/audit-site/skill.md)
   - Usage: `/audit-site [URL]` or with context in prompt
 
-### Changed (Documentation)
+### Changed (Documentation - Skill Count)
 
 - **CLAUDE.md**: Updated skill count from nine to ten, added audit-site skill documentation
 
