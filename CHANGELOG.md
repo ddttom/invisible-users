@@ -7,6 +7,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Entity Asset Layer (EAL) Terminology Update] - Major Terminology Change
+
+### Changed (Major Terminology Update)
+
+- **Identity Layer → Entity Asset Layer (EAL)** across entire project (~150 references in 40+ files):
+  - Renamed strategic concept from "Identity Layer" to "Entity Asset Layer (EAL)"
+  - Added Digital Passport messaging: "EAL is a Digital Passport - a shared, independent database that travels from agent to agent"
+  - Clarified Identity Layer as "who" component (authentication/identification) within broader EAL concept
+  - EAL encompasses: identity, reputation, knowledge, and transactional data
+  - Updated "identity delegation" → "EAL delegation" throughout project
+
+### Changed (Files Renamed - git mv)
+
+- **Business Planning** (business-planning 19791ab):
+  - `strategic-frameworks/The Identity Layer Strategy Paper.md` → `The Entity Asset Layer Strategy Paper.md`
+
+- **Code Examples** (shared-code-examples 5b76314):
+  - `examples/identity-delegation-README.md` → `eal-delegation-README.md`
+  - `examples/identity-delegation-worker.js` → `eal-delegation-worker.js`
+
+### Changed (Book Manuscript)
+
+- **Bible Submodule** (bible 7c74e7a):
+  - Updated Glossary entries: "Identity Layer", "Missing Identity Layer" → "Missing Entity Asset Layer (EAL)", "Identity Token" → "EAL Token"
+  - Chapter 13: Updated "Missing Identity Layer" section (~95 lines) with EAL terminology and code examples
+  - Chapter 4: Updated "Identity Delegation Patterns" → "EAL Delegation Patterns"
+  - Chapter 6: Updated security discussion of delegation patterns
+  - Chapter 9: Updated platform race analysis
+  - Chapter 11: Updated UI design guidance
+  - Chapter 12: Updated technical advice (~30 references)
+  - executive-summary.md: Updated delegation references
+  - bible-plan.md: Updated outline structure
+
+- **Appendices** (shared-appendices 2da0848):
+  - Appendix F: "Identity Layer (for E-commerce)" → "Entity Asset Layer (EAL) for E-commerce"
+  - Appendix G: Updated JWT security references
+  - Appendix J: Updated industry developments and cross-references to Chapter 13
+  - Appendix K: Updated common page patterns
+
+### Changed (Business Planning & Sales)
+
+- **Business Planning** (business-planning 19791ab):
+  - Updated all strategic frameworks and roadmap documents
+  - MX Roadmap: Week 9 "Decoupling the Identity Layer" → "Decoupling the Entity Asset Layer (EAL)"
+  - plans/executive-summary.md: Updated delegation terminology
+
+- **Sales Enablement** (sales-enablement 7d1f78d):
+  - PITCH.md: Updated all Identity Layer references
+  - EXECUTIVE_PITCH_DECK.md: Updated slide 8 "Universal Identity Layer" → "Universal Entity Asset Layer"
+  - outreach/target-audience.md: Updated Identity Delegation → EAL Delegation
+
+### Changed (Main Repository)
+
+- **Skills** (main bc2487f):
+  - `.claude/skills/news/skill.md`: Updated validation criteria
+
+### Technical Details
+
+- **Submodule Commits**:
+  - bible: 7c74e7a
+  - business-planning: 19791ab
+  - shared-appendices: 2da0848
+  - shared-code-examples: 5b76314
+  - sales-enablement: 7d1f78d
+  - main: bc2487f
+
+- **Verification**: All terminology updated consistently except READ-ONLY UCP submodule (correctly preserved)
+
 ## [2026-01-23 - Hosting Documentation and Pricing Strategy] - Documentation and Business
 
 ### Added (Documentation)
