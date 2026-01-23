@@ -7,6 +7,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - British English Language Conventions] - Documentation Standards
+
+### Added (Language Guidelines)
+
+- **British English with Code Exceptions** (main repo d37a2b0):
+  - Clarified that British English applies to prose text throughout documentation
+  - Added explicit exceptions for code/JSON/metadata following international standards
+  - Schema.org vocabulary: `"@type": "Organization"` (not "Organisation") - per standard
+  - JSON property names: `streetAddress`, `postalCode` (camelCase convention)
+  - HTML attributes: `lang="en-GB"` (ISO standard)
+  - HTTP headers: `Content-Type`, `Authorization` (established standards)
+  - Rationale: Technical standards define specific spelling for interoperability
+  - Updated CLAUDE.md Writing Style Guidelines section
+  - Updated docs/for-ai/writing-style.md Core Writing Rules section
+  - Updated .claude/skills/review-docs/skill.md Language Check with CRITICAL EXCEPTION
+  - Prevents confusion when reviewing files with British prose + standards-compliant code
+
+- **Appendix D Language Conventions** (shared-appendices submodule 99231be):
+  - Added "Language and Spelling Conventions" section to AI-Friendly HTML Guide
+  - Explains British English for prose, international standards for code
+  - Provides concrete example: British prose describing Schema.org `Organization` markup
+  - 24 new lines of guidance in appendix-d-ai-friendly-html-guide.txt
+
+### Changed (Reviewer Page Content)
+
+- **For Reviewers Page Polish** (shared-appendices submodule 99231be):
+  - Reorganized structure with clear "About the Two Books" section using bulleted feature lists
+  - Improved acknowledgment policy clarity and conciseness
+  - Added "Optional Feedback Template" subsection with severity levels
+  - Created standalone "Timeline" section with clear expectations
+  - Simplified NDA section title to "Confidentiality (Informal NDA)"
+  - More professional and polished tone throughout
+  - Updated meta descriptions and Schema.org structured data for better SEO
+  - Header updated to "For Reviewers — MX Series"
+  - Better readability and user experience for book reviewers
+
+### Technical (Documentation Consistency)
+
+- **Submodule Update** (main repo d37a2b0):
+  - Updated shared-appendices pointer to 99231be
+- **Cross-file Alignment**:
+  - All documentation files now consistently explain British English policy
+  - /review-docs skill will correctly skip American spelling in technical standards
+  - Eliminates false positives when validating HTML with Schema.org markup
+
 ## [2026-01-23 - Schema.org Type Documentation] - Technical Documentation
 
 ### Added (Schema.org Guidance)
