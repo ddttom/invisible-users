@@ -7,6 +7,71 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Hosting Documentation and Pricing Strategy] - Documentation and Business
+
+### Added (Documentation)
+
+- **Hosting Path Documentation** (main 654034a, a283b5d, 48fadaa, b2b73bc):
+  - `docs/architecture/allabout-network-hosting-map.md` - Complete hosting path mapping guide
+  - `docs/architecture/HOSTING-SITEMAP-ASCII.md` - ASCII visual sitemap of hosting structure
+  - `docs/architecture/HOSTING-QUICK-REFERENCE.md` - One-page deployment reference
+  - Maps repository paths to live web URLs at allabout.network
+  - Documents flat file structure for blogs (`/blogs/mx/`) and appendices (`/invisible-users/`)
+  - Deployment workflows, troubleshooting, MIME types, permissions guidance
+  - URL naming conventions and canonical URL patterns
+
+- **Strategic Planning Directory Documentation** (main a283b5d):
+  - `docs/structure/README.md` - Comprehensive directory guide with YAML frontmatter
+  - Documents MX-plan.md, github-repositories.md, steve-krug.md, todo.txt
+  - Usage guidelines for adding new strategic planning documents
+  - Decision log tracking major project decisions
+  - Relationship mapping to other docs/ directories
+
+- **Pricing and Economics Strategy** (sales-enablement e26c5ae):
+  - `packages/sales-enablement/strategy.md` - Complete business strategy document
+  - Production cost analysis: £3,689-20,369 (realistic ~£6,589)
+  - Recommended pricing: MX-Bible £30/£18, MX-Handbook £20/£14
+  - Bundle pricing strategy with 16-25% discounts
+  - Print-on-demand economics (Amazon KDP cost structure)
+  - Revenue projections: £6k-112k Year 1
+  - Distribution strategy (Amazon + direct sales hybrid)
+  - ROI analysis and break-even calculations
+
+### Changed (Documentation)
+
+- **CLAUDE.md Markdown Linting Guidance** (main a283b5d):
+  - Added exception for blog markdown files with inline SVG (MD033 errors)
+  - Inline SVG indicates historic files not yet regenerated with modern workflow
+  - Modern blog generation extracts SVGs to separate files
+  - Historic files with inline SVG preserved as-is unless explicitly regenerated
+
+- **CLAUDE.md Documentation Structure** (main b2b73bc):
+  - Added `docs/structure/README.md` to Strategic planning documents section
+  - Created new Architecture documentation section with 6 key files
+  - Organized references to hosting docs, git workflows, and architecture decisions
+
+### Fixed (Linting)
+
+- **Markdown Linting Issues** (main 48fadaa):
+  - Fixed MD032 errors (blank lines around lists) in all hosting documentation
+  - Fixed MD031 errors (blank lines around fences) in HOSTING-SITEMAP-ASCII.md
+  - Fixed MD036 errors (emphasis as heading) in HOSTING-QUICK-REFERENCE.md, HOSTING-SITEMAP-ASCII.md
+  - Fixed MD040 errors (code block language) in HOSTING-QUICK-REFERENCE.md
+  - All new documentation files now pass markdownlint validation
+
+- **Blog Markdown Linting** (outputs c4db90e):
+  - Fixed MD032 errors in `bible/blogs/published/blog.md`
+  - Added blank lines around lists for proper markdown formatting
+
+### Technical
+
+- **Submodule Updates** (main 654034a):
+  - Updated outputs submodule pointer (df22bd2 → e0bfd86)
+    - Markdown lint fixes (c4db90e)
+    - PDF timestamp refresh (e0bfd86)
+  - Updated sales-enablement submodule pointer (b42886f → e26c5ae)
+    - Added comprehensive strategy.md document (e26c5ae)
+
 ## [2026-01-23 - Data Sovereignty Blog and AI Jurisdiction Meta Tag] - Content and Standards
 
 ### Added (Blog Content)
