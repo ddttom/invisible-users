@@ -7,6 +7,79 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-23 - Data Sovereignty Blog and AI Jurisdiction Meta Tag] - Content and Standards
+
+### Added (Blog Content)
+
+- **Data Sovereignty Blog Post** (outputs submodule df22bd2):
+  - Generated WCAG 2.1 AA compliant HTML blog post from markdown source
+  - Title: "Data Sovereignty and the Web We're Building"
+  - URL: <https://allabout.network/blogs/mx/data-sovereignty.html>
+  - 1,102 words, 6 min read, 8 H2 sections with table of contents
+  - Semantic HTML with heading anchor IDs (H2-H6)
+  - Schema.org JSON-LD metadata (BlogPosting type)
+  - Discusses jurisdictional and ownership aspects of data sovereignty
+  - Introduces proposed `ai-jurisdiction-restriction` meta tag
+  - Links to MX-Bible Chapter 7 and Appendix L for technical details
+  - Published: 24 January 2025
+
+- **Proposed AI Meta Tag: ai-jurisdiction-restriction** (bible b48116f, shared-appendices c9ff1a3):
+  - Added 7th proposed AI meta tag to Appendix L specification
+  - Signals content originates from jurisdiction with content restrictions
+  - Values: ISO 3166-1 country codes (CN, RU, IR, EU, etc.) or "none"
+  - Optional `reason` attribute for constraint explanation
+  - Use cases: GDPR right-to-be-forgotten, China/Russia content controls, legal disclosure
+  - Rationale explains nuanced alternative to robots.txt/noindex blocking
+  - Allows content discoverability whilst signaling jurisdictional constraints
+  - Updated Appendix L summary from 6 to 7 proposed meta tags
+
+- **Chapter 7 Legal Discussion Enhancement** (bible b48116f):
+  - Added "Data Ingestion in Restricted Jurisdictions" section (~650 words)
+  - Explores jurisdictional questions about LLM training data
+  - Discusses GDPR "right to be forgotten" implications for AI models
+  - Covers China/Russia content restriction persistence in deployed models
+  - Guidance for content creators, AI platforms, and users
+  - References proposed `ai-jurisdiction-restriction` meta tag
+  - Footnote linking to Data Sovereignty blog post
+  - Explains robots.txt/noindex vs nuanced meta tag signaling
+
+- **Cross-Reference Content** (shared-appendices c9ff1a3):
+  - Appendix D: Added "Why Machine Experience Matters" section
+  - Links to Data Sovereignty blog demonstrating MX/data portability connection
+  - Emphasizes "Structure is freedom. Make it machine-readable and you make it portable."
+  - for-reviewers.html: Added "Why Machine Experience Matters" section after introduction
+  - Styled tagline with .tagline CSS class (prominent blue text)
+  - Creates cohesive narrative across technical documentation and reviewer materials
+
+### Fixed (Script and Validation)
+
+- **Blog Generation Script Bug** (main repo da49c07):
+  - Fixed missing `{{AUTHOR_BIO_LINK}}` placeholder in generate-blog-html.js
+  - Added conditional author bio HTML generation for "Tom Cranstoun"
+  - Resolves validation error: "Unreplaced placeholders found"
+  - Script now generates complete HTML without placeholder artifacts
+
+- **HTML Validation Compliance** (shared-appendices 0c4599e):
+  - Fixed inline style error in for-reviewers.html
+  - Moved inline styling to CSS class (.tagline)
+  - Passes html-validate without errors
+  - Maintains identical visual styling
+
+### Technical (Submodule Updates)
+
+- **Submodule Pointers Updated** (main repo da49c07, 788a707):
+  - outputs: df22bd2 (blog post generation)
+  - packages/bible: b48116f (Chapter 7 legal discussion)
+  - packages/shared-appendices: c9ff1a3 → 0c4599e (Appendix L, Appendix D, reviewer page, lint fix)
+
+### Related Documentation
+
+- Blog post available at: <https://allabout.network/blogs/mx/data-sovereignty.html>
+- Chapter 7 section: "Data Ingestion in Restricted Jurisdictions"
+- Appendix L: Pattern 1 (AI Meta Tag Namespace) - ai-jurisdiction-restriction specification
+- Appendix D: "Why Machine Experience Matters" section
+- for-reviewers.html: "Why Machine Experience Matters" section
+
 ## [2026-01-23 - British English Language Conventions] - Documentation Standards
 
 ### Added (Language Guidelines)
