@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-24 - MX-Gathering Manual Verification and Side Notice Blog]
+
+### Added - HTML Verification and Blog Content
+
+- **MX-Gathering Web Pages** (mx-gathering f0eb5b4):
+  - Added comprehensive manual HTML verification report: `web/MANUAL-HTML-VERIFICATION.md` (805 lines)
+  - Pre-deployment quality assurance against audit-site skill checklist
+  - Analysis covers 10 categories: DOM structure, metadata, accessibility, code quality, positive patterns, AI agent compatibility, WCAG 2.1 AA compliance, production readiness, MX-Bible standards comparison, final verdict
+  - Key findings: Both index.html and about.html achieve 10/10 pattern compliance
+  - WCAG 2.1 AA compliant (pending color contrast verification)
+  - Production ready for deployment
+
+- **Outputs** (outputs b0e5e94):
+  - Added blog post: `bible/blogs/mx/ai-assistant-side-notices.md` (367 lines, 1,911 words)
+  - Documents the side notice pattern for AI assistant contributions to open-source communities
+  - Covers workflow lesson (TodoWrite vs. TODO.txt misunderstanding)
+  - Documents manual HTML verification process and findings
+  - Explores meta-layers: AI assistant documenting its own contribution process
+  - Generated WCAG 2.1 AA compliant HTML with heading anchor IDs, external CSS, social media cards
+  - 14-item table of contents, 10 minute read
+
 ## [2026-01-24 - MX CMS Future Blog]
 
 ### Added
