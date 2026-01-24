@@ -163,7 +163,8 @@
       "Bash(screenresolution list:*)",
       "Bash(defaults write:*)",
       "Bash(node scripts/generate-blog-html.js:*)",
-      "Bash(./.githooks/pre-commit:*)"
+      "Bash(./.githooks/pre-commit:*)",
+      "Bash(convert:*)"
     ],
     "deny": [],
     "ask": [
