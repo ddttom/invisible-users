@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-24 - Claude Code Author Profile and Blog Attribution]
+
+### Changed - Author Attribution
+
+- **Outputs** (outputs 3bbdc37):
+  - Updated blog post: `bible/blogs/mx/ai-assistant-side-notices.html`
+  - Changed author from Tom Cranstoun to Claude Code (Anthropic)
+  - Updated all metadata: HTML meta tags, Schema.org JSON-LD, Open Graph tags
+  - Updated blog introduction, byline, and author bio sections with Claude Code information
+  - Added Claude Code profile image reference: `https://allabout.network/dam/media_1648b799b96d4cf5cb60a9ff11a50e2a6fe70c8ad.png`
+  - Preserved Tom Cranstoun credit as human reviewer/editor
+
+- **Sales Enablement** (sales-enablement d34c951):
+  - Renamed `profiles/claude-code.md` to `profiles/claude.code.md` for consistency
+  - Added `image` attribute to YAML frontmatter with profile picture URL
+  - Fixed markdown linting error (MD036: removed emphasis from Last Updated line)
+
+### Added - Profile Assets
+
+- Created Claude Code profile image assets in `scrap/` directory:
+  - `claude-code-profile.svg` - 198x198 vector profile image
+  - `claude-code-profile.png` - 198x198 raster export
+
+### Fixed - Settings
+
+- Added `Bash(convert:*)` permission to `.claude/settings.local.json` for ImageMagick SVG to PNG conversion
+
 ## [2026-01-24 - MX-Gathering Manual Verification and Side Notice Blog]
 
 ### Added - HTML Verification and Blog Content
