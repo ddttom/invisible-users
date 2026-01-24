@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-24 - MX CMS Future Blog]
+
+### Added
+
+- **Business Planning** (business-planning 25cde19, 2b4dcdb):
+  - Added comprehensive blog post: `mx-cms-future-blog.md` (510 lines)
+  - Explains CMS architecture built on Digital Passport (Entity Asset Layer)
+  - Consolidated EAL terminology for conciseness:
+    - Lead with Digital Passport as primary, authoritative metaphor
+    - Define Entity Asset Layer (EAL) as technical term
+    - Merged duplicate asset types explanations into single comprehensive definition
+    - Consistent use of "EAL" abbreviation (28 occurrences) after first definition
+    - Ultra-concise sovereignty bullets (1 sentence each)
+    - Context-dependent metaphors: "broker" for agents, "connector" for subsystems
+    - Personal, engaging tone with "your EAL"
+  - Sections: Where We're Heading, What Your Digital Passport Enables, How Machine Experience Works, Building Blocks of Data Sovereignty, Assessing Your Foundation, Why Now Is the Right Time, Your First Steps, The Path Forward
+  - Includes 4 inline SVG diagrams illustrating EAL architecture
+
 ## [2026-01-23 - Entity Asset Layer (EAL) Terminology Update] - Major Terminology Change
 
 ### Changed (Major Terminology Update)
