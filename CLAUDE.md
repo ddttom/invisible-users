@@ -683,6 +683,17 @@ A global replace changed closing ` ``` ` to ` ```text`, breaking PDF generation 
 
 ## Markdown Metadata Standards
 
+**🚨 MANDATORY REQUIREMENT: All markdown files (.md) in all repositories MUST include YAML frontmatter metadata.**
+
+This applies to:
+
+- All new markdown files created from this point forward
+- All existing markdown files when edited (add frontmatter during any edit)
+- All repositories in the workspace (main repo and all submodules)
+- Documentation, README files, chapter files, guides, everything
+
+**No exceptions.** YAML frontmatter is now a standard requirement across the entire workspace.
+
 ### Pandoc YAML Frontmatter (Markdown Files)
 
 **CRITICAL:** This repository uses Pandoc YAML frontmatter for markdown metadata—the universal standard across Hugo, Jekyll, Gatsby, Quarto, and Pandoc.
