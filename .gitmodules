@@ -25,3 +25,6 @@
 [submodule "packages/business-planning"]
 	path = packages/business-planning
 	url = https://github.com/Digital-Domain-Technologies-Ltd/MX-business-planning.git
+[submodule "packages/mx-gathering"]
+	path = packages/mx-gathering
+	url = https://github.com/Digital-Domain-Technologies-Ltd/MX-Gathering.git

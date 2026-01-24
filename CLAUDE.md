@@ -100,16 +100,19 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has EIGHT git repositories (1 main hub + 7 submodules). File paths depend on your location.**
+**This workspace has NINE git repositories (1 main hub + 8 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 7):**
+- **Submodules (ASSETS, currently 8):**
   - **Outputs (PRIVATE):** `outputs/` → `invisible-users-outputs` - All generated content
   - **MX-Bible:** `packages/bible/` → `invisible-users-bible` - Full comprehensive guide (formerly "The Invisible Users")
   - **MX-Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Implementation handbook for developers and designers
+  - **MX-Gathering:** `packages/mx-gathering/` → `MX-Gathering` - Community resources, event templates, discussion archives, and thought leadership (PUBLIC, EDITABLE)
+    - Role: Open-source community repository for shared resources, contribution guidelines, and collaborative content
+    - AI assistants: Editable content-only repository following bible/handbook pattern
   - **Appendices:** `packages/shared-appendices/` → `invisible-users-appendices` - Shared resources
   - **Code:** `packages/shared-code-examples/` → `invisible-users-code-examples` - Pattern examples
   - **UCP:** `packages/ucp/` → `Universal-Commerce-Protocol/ucp` - Ecommerce standard for AI agents (**READ-ONLY REFERENCE**)
@@ -128,7 +131,7 @@ pwd
     - Role: Strategic business planning, market analysis, financial models, pricing strategies
     - AI assistants: DO NOT autonomously modify this submodule unless explicitly authorized by user
     - Exception: If user explicitly adds/edits/deletes files, commit those changes
-  - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in Notes, Sales Enablement, and Business Planning)
+  - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in MX-Gathering, Notes, Sales Enablement, and Business Planning)
 
 ### Repository Navigation Map
 
