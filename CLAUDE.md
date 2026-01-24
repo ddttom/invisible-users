@@ -848,6 +848,40 @@ Use llms.txt files throughout the repository to ensure all content is discoverab
 
 See [Appendix H - Example llms.txt](packages/shared-appendices/appendix-h-example-llms-txt.md) for complete field reference and real-world examples.
 
+### Context-Preserving Cross-Document References
+
+**🚨 CRITICAL: Relative links lose context when files are extracted from repository structure.**
+
+When markdown files are printed to PDF, downloaded, fed to AI agents, or otherwise separated from their repository context, relative links like `[README.md](../../README.md)` become meaningless. The solution is to provide both relative links (for IDE navigation) and absolute URLs (for context preservation).
+
+**Pattern to use:**
+
+```markdown
+[filename](relative-path) ("Document Title" at <absolute-url>)
+```
+
+**Real examples:**
+
+```markdown
+**For complete overview, see:** [README.md](../../README.md) ("MX-Gathering: Community Resources and Thought Leadership" at <https://github.com/Digital-Domain-Technologies-Ltd/MX-Gathering/blob/main/README.md>)
+
+**For development workflow, see:** [ENVIRONMENTS.md](../development/ENVIRONMENTS.md) ("MX-Gathering Development Environments" at <https://github.com/Digital-Domain-Technologies-Ltd/MX-Gathering/blob/main/docs/development/ENVIRONMENTS.md>)
+```
+
+**What this accomplishes:**
+
+- **For humans in IDEs:** Clickable relative links work normally
+- **For machines/extracted files:** Full document title and absolute URL provide complete context
+- **For AI agents:** Can understand relationships even when file is processed outside repository
+
+**When to apply:**
+
+- ✅ **Use this pattern:** All cross-document references (links to other files)
+- ❌ **Not needed:** Internal section anchors within same document (like `#contents`)
+- ❌ **Not needed:** External links (already absolute)
+
+**This is Anti-pattern 14:** Context-Free References. See Chapter 9 and Appendix N for complete documentation.
+
 ## Dual-File Appendix Structure
 
 **Appendix D (AI-Friendly HTML Guide):**
