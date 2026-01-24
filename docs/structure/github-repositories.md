@@ -70,6 +70,7 @@ Complete list of repositories from ddttom and Digital-Domain-Technologies-Ltd or
 
 | Repository | Owner | Description | Last Modified |
 |------------|-------|-------------|---------------|
+| [MX-Gathering](https://github.com/Digital-Domain-Technologies-Ltd/MX-Gathering) | DDT | Community building resources for MX Series - Events, discussions, contributor guidelines, member sup | 2026-01-24 |
 | [invisible-users-outputs](https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-outputs) | DDT | Generated content and materials for MX-Bible book series - blogs, presentations, marketin | 2026-01-21 |
 | [invisible-users](https://github.com/ddttom/invisible-users) | ddttom |  | 2026-01-21 |
 | [MX-The-Handbook](https://github.com/Digital-Domain-Technologies-Ltd/MX-The-Handbook) | DDT | MX-The Handbook: Designing Web Interfaces for AI Agents - Practical implementation guide | 2026-01-21 |

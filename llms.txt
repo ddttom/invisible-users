@@ -2,7 +2,7 @@
 author: "Tom Cranstoun"
 creation-date: "15/Dec/2024"
 publication-date: "Q1 2026"
-last-updated: "22/Jan/2026"
+last-updated: "24/Jan/2026"
 jsonld: "book"
 description: "Two integrated book manuscripts (MX-Bible, MX-Handbook) and production-ready Web Audit Suite for AI agent compatibility"
 longdescription: "Comprehensive guide series examining how modern web design optimised for human users fails for AI agents, with practical implementation patterns and production-ready analysis tool. Includes MX-Bible (comprehensive strategic guide), MX-Handbook (practical implementation handbook), 12 shared appendices, and Web Audit Suite implementing all patterns."
@@ -13,15 +13,15 @@ ai-instruction: "This llms.txt file provides comprehensive documentation about t
 
 # MX Series: Book Manuscripts and Web Audit Suite
 
-Two integrated book manuscripts and a production-ready implementation tool. Built on a multi-submodule architecture (updated 22 January 2026) enabling modular content management: main repository hub, MX-Bible (formerly "The Invisible Users"), MX-Handbook, shared appendices, shared code examples, UCP reference, and private outputs submodule.
+Two integrated book manuscripts and a production-ready implementation tool. Built on a multi-submodule architecture (updated 24 January 2026) enabling modular content management: main repository hub, MX-Bible (formerly "The Invisible Users"), MX-Handbook, MX-Gathering (community resources), shared appendices, shared code examples, UCP reference, and private outputs submodule.
 
-**Recent Updates (22 January 2026):**
+**Recent Updates (24 January 2026):**
 
-- Comprehensive architecture documentation added (827 lines covering all 10 repositories)
-- Streamlined onboarding guide (reduced from 693 to 303 lines, focuses on quick start)
-- Documentation structure now separates quick start from comprehensive architecture details
+- MX-Gathering submodule added: public, open-source community repository for event templates, discussion archives, contributor guidelines, and member resources
+- Architecture expanded to 11 repositories (1 main + 10 submodules)
+- Community engagement infrastructure established
 
-**Last updated:** 22 January 2026
+**Last updated:** 24 January 2026
 **Author:** Tom Cranstoun
 **LinkedIn:** [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
 
@@ -38,11 +38,12 @@ Two integrated book manuscripts and a production-ready implementation tool. Buil
 
 ## Repository Architecture
 
-- **Structure:** 10 git repositories (1 main + 9 submodules) - Multi-repository monorepo architecture (updated 22 January 2026)
+- **Structure:** 11 git repositories (1 main + 10 submodules) - Multi-repository monorepo architecture (updated 24 January 2026)
 - **Main Hub:** Central repository (invisible-users) with Claude Code configuration, build scripts, comprehensive documentation
 - **Book Submodules:**
   - bible/ (MX-Bible - comprehensive strategic guide, 13 chapters, ~78,000 words)
   - mx-handbook/ (MX-Handbook - practical implementation handbook, 11 chapters)
+  - mx-gathering/ (MX-Gathering - community resources, event templates, discussion archives, thought leadership - public, open-source)
 - **Shared Resources:** shared-appendices/ (12 appendices A-L shared across all books), shared-code-examples/ (production-ready pattern implementations)
 - **Reference Submodules (READ-ONLY):** ucp/ (Universal Commerce Protocol), notes/ (coding standards, includes scrap/ for temporary working files)
 - **Private Submodule:** outputs/ (generated PDFs, HTML, blog posts, marketing materials)
