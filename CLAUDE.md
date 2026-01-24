@@ -341,6 +341,28 @@ git add packages/sales-enablement
 git commit -m "Update sales-enablement submodule pointer"
 ```
 
+**Submodule Pointer Updates After Pulling:**
+
+When you pull updates from a read-only submodule's remote repository, the main repository will show the submodule as "modified (new commits)". This is **expected git behavior** and is NOT a violation of the read-only policy.
+
+**What happens:**
+
+- Running `git submodule update --remote packages/ucp` or navigating into the submodule and running `git pull` updates the submodule's HEAD to a new commit
+- The main repository detects that its stored pointer (SHA reference) no longer matches the submodule's current HEAD
+- Git status shows: `modified: packages/ucp (new commits)`
+
+**Required action:**
+
+Update the main repository's pointer by committing the change:
+
+```bash
+# After pulling from a read-only submodule
+git add packages/ucp
+git commit -m "Update UCP submodule pointer to latest version"
+```
+
+**Clarification:** This pointer update is reference maintenance, not content modification. The read-only policy applies to files *inside* the submodule, not to the main repository's pointer that tracks which commit the submodule should reference.
+
 **📖 CRITICAL REFERENCES FOR AI ASSISTANTS:**
 
 - **[LEARNINGS.md](LEARNINGS.md)** - Recent mistakes and battle-tested rules. **Read this file at the start of each session** to learn from documented errors and avoid repeating them.
