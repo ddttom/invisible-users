@@ -162,7 +162,8 @@
       "Bash(brew info:*)",
       "Bash(screenresolution list:*)",
       "Bash(defaults write:*)",
-      "Bash(node scripts/generate-blog-html.js:*)"
+      "Bash(node scripts/generate-blog-html.js:*)",
+      "Bash(./.githooks/pre-commit:*)"
     ],
     "deny": [],
     "ask": [

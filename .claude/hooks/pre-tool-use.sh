@@ -103,6 +103,32 @@ if [[ "$TOOL_NAME" == "Edit" ]] || [[ "$TOOL_NAME" == "Write" ]]; then
     fi
 fi
 
+# MX-GATHERING HTML VALIDATION: Detect HTML file operations in MX-Gathering
+# Remind Claude to follow AI-Friendly HTML Guide patterns (Appendix D)
+if [[ "$TOOL_NAME" == "Edit" ]] || [[ "$TOOL_NAME" == "Write" ]]; then
+    if [[ "$FILE_PATH" =~ \.html$ ]] && [[ "$FILE_PATH" == *"packages/mx-gathering"* ]]; then
+        echo "🤖 MX-GATHERING HTML REMINDER: Creating/editing HTML for MX platform"
+        echo ""
+        echo "CRITICAL: Follow AI-Friendly HTML Guide patterns (Appendix D)"
+        echo ""
+        echo "Required patterns:"
+        echo "  ✓ Schema.org JSON-LD structured data"
+        echo "  ✓ Explicit state with data-* attributes"
+        echo "  ✓ Semantic HTML elements (<main>, <article>, <section>)"
+        echo "  ✓ ARIA attributes for accessibility"
+        echo "  ✓ Language attribute on <html> element"
+        echo "  ✓ Meta tags (charset, viewport)"
+        echo "  ✓ Skip-to-content link"
+        echo ""
+        echo "Reference: packages/shared-appendices/appendix-d-ai-friendly-html-guide.md"
+        echo ""
+        echo "After editing, the pre-commit hook will validate these patterns."
+        echo "Hook location: packages/mx-gathering/.githooks/pre-commit"
+        echo ""
+        # Don't block - just inform
+    fi
+fi
+
 # Check if pwd has been run recently (within last 3 tool uses)
 # Reduced threshold from 5 to 3 for more frequent reminders
 # Dynamically determine main repo path
