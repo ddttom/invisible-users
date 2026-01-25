@@ -1085,6 +1085,14 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 - `docs/structure/github-repositories.md` - Complete repository structure mapping
 - `docs/structure/steve-krug.md` - UX research and insights from "Don't Make Me Think"
 
+**Task tracking files:**
+
+- `docs/structure/todo.txt` - Private development task tracking (internal, main repository only)
+- `packages/mx-gathering/TODO.txt` - Public deployment and community task tracking (version controlled, visible to community)
+- `packages/bible/update plan.md` - Strategic roadmap for 2026 MX-Bible completion
+
+**Important distinction:** The main repository todo file (`docs/structure/todo.txt`) is for private internal development tracking, whilst submodule todo files (like `packages/mx-gathering/TODO.txt`) are public-facing and committed to version control for community visibility.
+
 **Architecture documentation:**
 
 - `docs/architecture/GIT-README.md` - Comprehensive git workflow guidance

@@ -1,3 +1,90 @@
+---
+title: "Private Development TODO"
+author: "Tom Cranstoun"
+creation-date: "25/Jan/2026"
+last-updated: "25/Jan/2026"
+purpose: "Private task tracking for main repository development work"
+visibility: "private"
+audience: "internal"
+---
+
+📋 STRATEGIC PLAN: See packages/bible/update plan.md for comprehensive 2026 roadmap
+   - Core manuscript finalization
+   - Appendix K completion (MX Page Patterns)
+   - Agent Information Architecture chapter
+   - Metadata canon development
+   - Case studies & failure analyses
+   - Publication package preparation
+
+---
+
+📚 FRESH DOCUMENTATION ADDED (25/Jan/2026):
+
+**NEW: docs/claude/** (AI Assistant Deep Dives)
+- ai-dynamic-challenges.md - Dynamic content challenges for AI agents
+- ai-dynamic-examples-and-implementation.md - Practical implementation examples
+- machine-experience-manifesto.md - MX principles and philosophy
+- why-llms-dont-execute-javascript.md - Technical constraints explanation
+
+**NEW: blogs/**
+- MX-The-blog.md - Main MX blog post
+- data-sovereignty.md - Data sovereignty and AI agents
+
+**docs/for-ai/** (AI Guidance Updates)
+- architecting-multi-repo-codebases.md - Multi-repository architecture patterns
+- yaml-frontmatter-template.md - Standard YAML frontmatter template
+- writing-style.md - Complete writing style guide (updated)
+- new-project/ - Full project template directory (PULL_REQUEST_TEMPLATE.md, Contributing.md, Plan.md, planned.md)
+
+**docs/talks/** (Presentation Materials)
+- template/ - Reusable presentation templates (talk.md, talk-slides.md)
+- historical/members-call-21-jan-26/ - Boye & Co member call materials (boye-co-member-call-review.md, talk.md, talk-slides.md)
+
+**docs/architecture/** (Technical Architecture)
+- allabout-network-hosting-map.md - Complete hosting path mapping and deployment guide
+- web-audit-architecture.md - Web audit suite architecture documentation
+- TIMELESS-MANUSCRIPT-RULE.md - Writing standards for book manuscripts
+- HOSTING-QUICK-REFERENCE.md - One-page deployment reference
+- doc-architecture.md - Repository structure and design decisions
+- GIT-README.md - Comprehensive git workflow guidance (updated)
+- HOSTING-SITEMAP-ASCII.md - ASCII visual sitemap of hosting structure
+
+**docs/structure/** (Strategic Planning)
+- README.md - Directory guide to strategic planning documents
+- steve-krug.md - UX research and insights from "Don't Make Me Think"
+- github-repositories.md - Complete repository structure mapping
+
+**docs/shared-chapters/** (Book Content)
+- chapter-00-what-are-ai-agents.md - Shared introductory chapter
+
+**packages/mx-gathering/** (MX-Gathering Submodule - PUBLIC)
+- CLAUDE.md - Updated AI assistant guidance with public/private todo distinction
+- TODO.txt - Updated with YAML metadata (visibility: public, audience: community-contributors)
+- launch-statement.md - MX-Gathering launch statement
+- docs/blog-awesom.md - Blog awesomeness guide
+- docs/Excellence.md - Excellence standards
+- docs/for-ai/mx-constitution.md - MX Constitution document
+- standard/checklist.md - MX standards checklist
+- standard/standard.md - MX-STD-001 standard document
+- standard/standard.xmp - XMP metadata template for MX standards
+- templates/appendix-k-yaml-metadata.md - YAML frontmatter template for Appendix K patterns
+- templates/blog-yaml-metadata.md - YAML frontmatter template for blog posts
+- templates/documentation-yaml-metadata.md - YAML frontmatter template for documentation
+- templates/schema.json - JSON Schema for YAML frontmatter validation
+
+**packages/bible/** (MX-Bible Submodule)
+- update plan.md - Comprehensive 2026 strategic plan for MX-Bible completion
+- pdf.xmp - XMP metadata template for PDF generation
+
+**outputs/** (Outputs Submodule - PRIVATE)
+- bible/blogs/mx/drafts/copilot.md - Draft blog post about Copilot
+- bible/blogs/mx/drafts/puff.md - Draft blog post
+
+**packages/shared-appendices/** (Shared Appendices Submodule)
+- (Submodule pointer updated - commit 485483f1)
+
+---
+
 /Users/tomcranstoun/Desktop/Dumps2/CleanShot 2026-01-22 at 18.03.12@2x.png
 
 The blog post is ready tor publication!
