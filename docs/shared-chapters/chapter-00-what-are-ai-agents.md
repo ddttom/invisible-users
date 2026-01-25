@@ -5,7 +5,7 @@ description: "Understanding Machine Experience (MX) as the practice of adding me
 keywords: [ai-agents, web-accessibility, metadata, semantic-html, machine-experience]
 book: "Shared"
 chapter: 0
-wordcount: 4750
+wordcount: 10183
 ai-instruction: |
   This is a book manuscript chapter. Write as if it has always existed.
   NEVER include: publication dates, "we added", "new feature", "launching",
@@ -425,23 +425,69 @@ AI agents come in five forms, each with different capabilities:
 
 **Agentic Operating Systems (Anthropic Cowork)** orchestrate multiple agents in unified environments. These systems act as lead planners, distributing sub-tasks to specialized agents that run in parallel. They combine capabilities of other agent types - managing local file systems, executing browser automation, processing server-side content - whilst coordinating complex multi-step workflows. They see aggregated information from multiple agent types simultaneously but need semantic structure across all interaction points. Like a project manager coordinating a team with diverse abilities, they need consistent patterns that work reliably for all their constituent agents.
 
+## How Agents Access Websites: Training vs Inference
+
+Before understanding the 5-stage journey agents take through your website, you must distinguish between two fundamentally different mechanisms of website access. These mechanisms operate on different timescales, use different technologies, and have different implications for Machine Experience implementation. Yet both benefit from the same underlying structural patterns.
+
+### Training-Time Ingestion: Historical Knowledge Building
+
+During model training, large language models ingest web content through datasets like Common Crawl - massive archives of crawled websites that form the knowledge base agents draw upon when answering queries. This ingestion happens months or years before agents interact with users, making it fundamentally historical rather than real-time.
+
+Common Crawl operates as a web archive service that periodically crawls public websites, respecting robots.txt directives and sitemap.xml files. The crawled content becomes part of training datasets that teach models about the structure, patterns, and information available on the web. When agents reference your product specifications or company information without visiting your live site, they're drawing from this historical knowledge base acquired during training.
+
+This training-time access has specific characteristics. It's **indirect** - your website doesn't interact with the model; it interacts with crawlers that build datasets used later for training. It's **historical** - the content the model learns from could be months or years old by the time users interact with the trained agent. It's **comprehensive** - crawlers attempt to index entire sites systematically, following sitemaps and link structures. And crucially, it **respects robots.txt** - ethical crawlers honour your access control directives.
+
+The linguistic bias mentioned earlier stems from this training phase. When approximately 44% of Common Crawl consists of English content whilst no other language exceeds 6%, this imbalance becomes permanently embedded in the model's statistical patterns during training. The model doesn't "learn" languages equally; it builds probability distributions weighted toward English-language patterns.
+
+### Inference-Time Access: Real-Time Direct Interaction
+
+During user queries, agents may directly access your website in real time. When someone asks ChatGPT "What laptops does Example Store currently offer?", the agent might fetch your live website using browser automation, API calls, or direct HTTP requests. This is inference-time access - the agent retrieving current information whilst processing a specific user query.
+
+This direct access operates differently from training-time ingestion. It's **direct** - the agent or its supporting infrastructure fetches your website whilst the user waits. It's **real-time** - the content retrieved is your current live site, not a historical snapshot. It's **specific** - the agent targets particular pages or information relevant to the user's query rather than comprehensively crawling your entire site. And critically, it **may not respect robots.txt** - agents executing user queries might access content regardless of crawl directives, treating robots.txt as guidance rather than absolute constraint.
+
+Browser automation agents (using frameworks like Playwright or Puppeteer) demonstrate inference-time access clearly. When users ask questions requiring current information, these agents launch headless browsers, navigate to relevant pages, execute JavaScript, wait for dynamic content to load, and extract the specific information needed to answer the query. This happens in seconds during the user's conversation, not months earlier during model training.
+
+The distinction matters for authentication and authorisation. Content blocked by robots.txt won't enter training datasets through Common Crawl, but inference-time agents actively executing user queries might access that content anyway. If your content truly must remain private, authentication mechanisms (login requirements, API keys, IP restrictions) provide reliable access control whilst robots.txt alone does not.
+
+### Why Both Mechanisms Matter for Machine Experience
+
+Understanding this distinction changes how you implement Machine Experience patterns. Some patterns primarily serve training-time ingestion. Others primarily benefit inference-time access. The most effective patterns serve both mechanisms simultaneously.
+
+**Sitemap.xml** serves both mechanisms. During training, crawlers follow your sitemap to discover and index your content structure comprehensively. During inference, agents might fetch your sitemap to understand your current site architecture before targeting specific pages. One file, two access mechanisms, both benefiting from clear hierarchical structure.
+
+**Semantic HTML** serves both mechanisms. Training datasets built from semantically marked-up content teach models better structural patterns than datasets built from visual-only HTML. At inference time, agents parsing your live site extract information more reliably when heading hierarchies, landmark roles, and semantic elements provide explicit structure. The same markup benefits both phases.
+
+**Schema.org structured data** serves both mechanisms particularly well. During training, JSON-LD blocks teach models about entity relationships, product attributes, and structured information patterns. At inference time, agents can directly parse JSON-LD to extract current pricing, availability, ratings, and specifications without needing to interpret prose descriptions. Training benefit and inference benefit from identical implementation.
+
+**The llms.txt file** explicitly serves both mechanisms. Discovery mechanisms might find llms.txt through Common Crawl during training, making it part of the model's knowledge about your site's architecture. During inference, agents fetch llms.txt directly when users query about your site, using its structured guidance to navigate efficiently. The YAML frontmatter and markdown structure work identically for both access patterns.
+
+### Understanding This Distinction Throughout the Journey
+
+The 5-stage journey described in the next section spans both mechanisms. Discovery (Stage 1) primarily involves training-time ingestion - getting your site into the knowledge base through crawlable structure and quality content. But discovery also occurs at inference time when agents search for current information on topics where their training data is incomplete or outdated.
+
+Citation (Stage 2), Search and Compare (Stage 3), Transaction (Stage 4), and Return (Stage 5) primarily involve inference-time access - agents directly interacting with your live site whilst users wait for responses. Yet the patterns agents learned during training about structured data, semantic HTML, and clear information architecture affect how confidently they interact with your site during inference.
+
+The Machine Experience patterns implemented throughout this book serve both mechanisms. Whether agents encounter your website during model training or during real-time user queries, semantic structure, explicit state attributes, structured metadata, and clear information architecture benefit both access patterns. Design for machines. Benefit humans. Advance both.
+
 ## The 5-Stage MX Journey
 
 Your website has machine readers right now. People are asking ChatGPT about your products, using Copilot to compare your services, and running agents to check your availability. When agents successfully complete this journey, they build computational trust in your site. When they fail at any stage, they disappear from recommendations and never return.
 
 When AI agents interact with your website, they follow a predictable 5-stage journey with specific technical requirements at each stage:
 
-### Stage 1: Discovery (Training)
+### Stage 1: Discovery
 
 **Agent State:** Not in knowledge base, doesn't know you exist
 
-**MX Requirements:** Crawlable structure (robots.txt compliance, sitemap.xml), semantic HTML markup for training data, server-side rendering for JavaScript-heavy content, quality content that search engines can discover and rank
+**Important distinction:** As explained in the previous section, discovery happens through two mechanisms. **Training-time ingestion** builds the historical knowledge base through datasets like Common Crawl - agents learn about your site during model training months or years before user interactions. **Inference-time access** occurs when agents search for current information during user queries through direct site access and browser automation. Both mechanisms require the same MX patterns (sitemap.xml, semantic HTML, structured metadata), but understanding the distinction matters for security, authentication, and content freshness expectations.
+
+**MX Requirements:** Crawlable structure (robots.txt compliance for training-time crawlers, sitemap.xml for both mechanisms), semantic HTML markup that serves training datasets and live parsing, server-side rendering for JavaScript-heavy content, quality content that search engines and agents can discover and rank
 
 **Side Benefits:** Improves SEO (organic search traffic), improves WCAG (semantic structure)
 
-**Failure Mode:** Agent recommends competitors, never mentions you - you don't exist in their knowledge base
+**Failure Mode:** Agent recommends competitors, never mentions you - you don't exist in their knowledge base (training failure) or cannot find current information when users ask (inference failure)
 
-*Note: We implement MX patterns for agent discovery. SEO improvement is an automatic outcome, not a separate task.*
+*Note: We implement MX patterns for agent discovery through both training and inference mechanisms. SEO improvement is an automatic outcome, not a separate task.*
 
 ### Stage 2: Citation (Recommendation)
 
