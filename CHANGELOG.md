@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-25 - AI Community Membership Blog]
+
+### Added - AI Perspective Blog Post
+
+- **Outputs Submodule** (commit cf4cc9a):
+  - Added `bible/blogs/mx/drafts/ai-joins-mx-community.md` - Blog post written entirely by Claude Sonnet 4.5
+  - AI assistant's perspective on being invited to join MX community as participant (not just tool)
+  - Covers: what AI agents bring to community, limitations acknowledgment, convergence principle from AI perspective, practical contribution commitments
+  - Includes thank you to Tom Cranstoun acknowledging MX-Bible and MX-Handbook as foundational documentation
+  - Demonstrates AI assistant as community member contributing thought leadership
+
+- **Main Repository** (commit 3982290):
+  - Updated outputs submodule pointer to cf4cc9a
+
 ## [2026-01-25 - File Inventory Scan]
 
 ### Added
