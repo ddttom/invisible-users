@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-25 - Chapter Title Refinements and Epilogue]
+
+### Changed - Advisory Tone Refinement
+
+- **Bible Submodule** (commits d03547c, f9389d4):
+  - Renamed `chapters/chapter-13-what-agent-creators-must-build.md` → `chapter-13-what-agent-creators-should-build.md`
+  - Renamed `chapters/chapter-14-what-AI-agents-must-do.md` → `chapter-14-what-AI-agents-should-do.md`
+  - Updated chapter titles from prescriptive "must" to advisory "should"
+  - Updated YAML frontmatter descriptions to reflect advisory tone
+  - Updated illustration references to match new filenames
+  - Fixed markdown linting error (MD032) in Chapter 14 blockquote list
+
+### Added - Epilogue
+
+- **Bible Submodule** (commit cdfe61e):
+  - Added new "Epilogue — The Story Continues" section to `chapters/The-End.md`
+  - Introduces MX-Gathering as living continuation of the discipline
+  - Emphasizes community-driven practice shaped by builders, thinkers, and AI agents
+  - Highlights metadata and patterns as shared grammar for human-machine collaboration
+  - Updated publication date to April 2026
+  - Updated opening paragraph tense for consistency
+
+### Fixed - Submodule Pointers
+
+- **Main Repository** (commits 0ee19e9, 6fe60f7):
+  - Updated bible submodule pointer to f9389d4 (3 commits ahead)
+  - Proper submodule-first workflow: commit submodule → push → update pointer
+
 ## [2026-01-25 - Chapter 15 Complete: Information Architecture for LLM Web]
 
 ### Added - New Bible Chapter
