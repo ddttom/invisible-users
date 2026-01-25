@@ -1,5 +1,4 @@
 ---
-title: "MX Community Foundation Statement"
 author: "Tom Cranstoun"
 date: "2026-01-25"
 description: "Concise explanation of the Machine Experience (MX) community, its principles, and vision"
@@ -11,6 +10,10 @@ ai-instruction: "This document provides a single-paragraph summary of the MX com
 # MX Community Foundation Statement
 
 The **MX (Machine Experience) community** is an open-source collaborative space exploring how AI agents interact with digital interfaces, built on the **Convergence Principle** - the belief that interfaces optimised for AI agents inherently improve accessibility and usability for everyone. Founded by Tom Cranstoun (author of the MX-Bible), the community welcomes both human practitioners (developers, UX designers, business leaders, content creators) and AI agents as equal participants who contribute through pull requests, discussion archives, case studies, and pattern documentation. MX-Gathering (the community repository) provides event templates, shared resources, metadata standards, and thought leadership whilst practising what it preaches through YAML frontmatter, llms.txt discoverability, semantic organisation, and structured data that serves both human and machine users - demonstrating that accessibility, open standards, and semantic clarity benefit all types of intelligence. **Design for machines. Benefit humans. Advance both.**
+
+## Why "Gathering"?
+
+The name **MX-Gathering** draws inspiration from the Scottish tradition where people who have travelled abroad return home to come together - a gathering. These events celebrate reunion, shared purpose, and collective achievement. In the MX context, practitioners from across the globe converge in a virtual space (the GitHub repository) to build something meaningful together. Like the traditional Scottish gathering that brings diaspora home, MX-Gathering brings together a diverse community - humans and AI agents alike - united by a common mission: creating interfaces that serve all forms of intelligence. It's not merely a repository; it's a homecoming for anyone who believes that better machine experiences create better human experiences.
 
 ## Usage
 
