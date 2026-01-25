@@ -127,6 +127,383 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 
 ---
 
+## HTML and MD Files Created/Modified (Last 7 Days - Scan: 25/Jan/2026)
+
+### Main Repository
+- CHANGELOG.md
+- README.md
+- ONBOARDING.md
+- LEARNINGS.md
+- CLAUDE.md
+- config/book-svg-style.md
+- config/DOCKER.md
+- .claude/commands/step-commit.md
+- .claude/commands/review-docs.md
+- .claude/commands/md-fix.md
+- .claude/skills/opportunity/README.md
+- .claude/skills/opportunity/opportunity-types.md
+- .claude/skills/opportunity/skill.md
+- .claude/skills/review-docs/examples.md
+- .claude/skills/review-docs/checklist.md
+- .claude/skills/review-docs/skill.md
+- .claude/skills/audit-site/skill.md
+- .claude/skills/create-blog/skill-v2-efficient.md
+- .claude/skills/create-blog/README.md
+- .claude/skills/create-blog/skill.md
+- .claude/skills/create-blog/blog-template.html
+- .claude/skills/learnings-review/skill.md
+- .claude/skills/news/relevance-checklist.md
+- .claude/skills/news/skill.md
+- .claude/skills/news/templates/blog-entry.md
+- .claude/skills/news/templates/appendix-entry.md
+- .claude/skills/news/verification-guidelines.md
+- .claude/skills/md-workflow/skill.md
+- .claude/skills/humanizer/skill.md
+- .claude/pwd-reminder.md
+- .github/PULL_REQUEST_TEMPLATE.md
+- docs/for-ai/architecting-multi-repo-codebases.md
+- docs/for-ai/new-project/PULL_REQUEST_TEMPLATE.md
+- docs/for-ai/new-project/Contributing.md
+- docs/for-ai/new-project/Plan.md
+- docs/for-ai/new-project/planned.md
+- docs/for-ai/yaml-frontmatter-template.md
+- docs/for-ai/writing-style.md
+- docs/claude/ai-dynamic-examples-and-implementation.md
+- docs/claude/ai-dynamic-challenges.md
+- docs/claude/why-llms-dont-execute-javascript.md
+- docs/claude/machine-experience-manifesto.md
+- docs/talks/template/talk.md
+- docs/talks/template/talk-slides.md
+- docs/talks/historical/members-call-21-jan-26/boye-co-member-call-review.md
+- docs/talks/historical/members-call-21-jan-26/talk.md
+- docs/talks/historical/members-call-21-jan-26/talk-slides.md
+- docs/shared-chapters/chapter-00-what-are-ai-agents.md
+- docs/architecture/allabout-network-hosting-map.md
+- docs/architecture/web-audit-architecture.md
+- docs/architecture/TIMELESS-MANUSCRIPT-RULE.md
+- docs/architecture/HOSTING-QUICK-REFERENCE.md
+- docs/architecture/doc-architecture.md
+- docs/architecture/GIT-README.md
+- docs/architecture/HOSTING-SITEMAP-ASCII.md
+- docs/structure/README.md
+- docs/structure/steve-krug.md
+- docs/structure/github-repositories.md
+- scripts/appendix-nav-header.html
+- scripts/README-appendix-enhancements.md
+
+### packages/bible/ (MX-Bible Submodule)
+- README.md
+- update plan.md
+- chapters/chapter-01-what-you-will-learn.md
+- chapters/chapter-02-the-invisible-failure.md
+- chapters/chapter-03-the-architectural-conflict.md
+- chapters/chapter-04-the-business-reality.md
+- chapters/chapter-05-the-content-creators-dilemma.md
+- chapters/chapter-06-the-security-maze.md
+- chapters/chapter-07-the-legal-landscape.md
+- chapters/chapter-08-the-human-cost.md
+- chapters/chapter-09-the-platform-race.md
+- chapters/chapter-10-generative-engine-optimization.md
+- chapters/chapter-11-designing-for-both.md
+- chapters/chapter-12-technical-advice.md
+- chapters/chapter-13-what-agent-creators-must-build.md
+- chapters/chapter-14-what-AI-agents-must-do.md
+- chapters/executive-summary.md
+- chapters/preface.md
+- chapters/reading-guide.md
+- chapters/rear-cover.md
+- chapters/The-End.md
+- chapters/Glossary.md
+- chapters/bible-plan.md
+
+### packages/mx-handbook/ (MX-Handbook Submodule)
+- README.md
+- chapters/0-cover.md
+- chapters/README.md
+- chapters/preface.md
+- chapters/The-End.md
+- chapters/chapter-01-dont-make-ai-think.md
+- chapters/chapter-02-how-ai-reads.md
+- chapters/chapter-03-guiding-principles.md
+- chapters/chapter-04-content-architecture.md
+- chapters/chapter-05-metadata-that-works.md
+- chapters/chapter-06-navigation.md
+- chapters/chapter-07-javascript.md
+- chapters/chapter-08-testing.md
+- chapters/chapter-09-anti-patterns.md
+- chapters/chapter-10-implementation.md
+- chapters/chapter-11-business-imperative.md
+
+### packages/shared-appendices/ (Shared Appendices Submodule)
+- README.md
+- appendix-a-implementation-cookbook.md
+- appendix-b-battle-tested-lessons.md
+- appendix-c-web-audit-suite-guide.md
+- appendix-d-ai-friendly-html-guide.md
+- appendix-e-ai-patterns-quick-reference.md
+- appendix-f-implementation-roadmap.md
+- appendix-g-resource-directory.md
+- appendix-h-live-llms.md
+- appendix-i-pipeline-failure-case-study.md
+- appendix-j-industry-developments.md
+- appendix-k-common-page-patterns.md
+- appendix-l-proposed-ai-metadata-patterns.md
+- appendix-m-index-of-metadata.md
+- appendix-n-anti-patterns-catalog.md
+- web/appendix-a.html
+- web/appendix-b.html
+- web/appendix-c.html
+- web/appendix-d.html
+- web/appendix-e.html
+- web/appendix-f.html
+- web/appendix-g.html
+- web/appendix-h.html
+- web/appendix-i.html
+- web/appendix-j.html
+- web/appendix-k.html
+- web/appendix-l.html
+- web/appendix-index.html
+- web/back-cover.html
+- web/book.html
+- web/book-product-page.html
+- web/for-reviewers.html
+- web/index.html
+- web/news.html
+- web/site/README.md
+- web/site/404.html
+- web/site/about.html
+- web/site/article.html
+- web/site/author.html
+- web/site/blog-post.html
+- web/site/checkout.html
+- web/site/collection.html
+- web/site/consulting.html
+- web/site/contact.html
+- web/site/event.html
+- web/site/faq.html
+- web/site/index.html
+- web/site/login.html
+- web/site/portfolio.html
+- web/site/pricing.html
+- web/site/privacy.html
+- web/site/product.html
+- web/site/sales.html
+- web/site/search.html
+- web/site/team.html
+- web/site/testimonials.html
+
+### packages/shared-code-examples/ (Code Examples Submodule)
+- README.md
+- agent-friendly-starter-kit/README.md
+- agent-friendly-starter-kit/DIFF_GUIDE.md
+- agent-friendly-starter-kit/bad/index.html
+- agent-friendly-starter-kit/good/index.html
+- examples/README.md
+- examples/eal-delegation-README.md
+- examples/delegation-management-ui.html
+- examples/site-files/README.md
+- examples/html-examples/README.md
+- examples/html-examples/components/data-tables.html
+- examples/html-examples/components/dialog-modal.html
+- examples/html-examples/components/pricing-display.html
+- examples/html-examples/ecommerce/order-confirmation.html
+- examples/html-examples/ecommerce/product-page.html
+- examples/html-examples/ecommerce/shipping-options.html
+- examples/html-examples/ecommerce/shopping-cart.html
+- examples/html-examples/forms/disabled-button.html
+- examples/html-examples/forms/multi-step-wizard.html
+- examples/html-examples/forms/validation-form.html
+- examples/html-examples/navigation/breadcrumbs.html
+- examples/html-examples/navigation/filters.html
+- examples/html-examples/navigation/search-results.html
+- examples/html-examples/state/authentication.html
+- examples/html-examples/state/error-display.html
+- examples/html-examples/state/loading-state.html
+
+### packages/mx-gathering/ (MX-Gathering Submodule - PUBLIC)
+- README.md
+- CLAUDE.md
+- LEARNINGS.md
+- launch-statement.md
+- draft-manifesto.md
+- .githooks/README.md
+- .github/PULL_REQUEST_TEMPLATE.md
+- contributors/README.md
+- contributors/code-of-conduct.md
+- contributors/contribution-guidelines.md
+- contributors/recognition.md
+- contributors/style-guide-summary.md
+- discussions/README.md
+- discussions/case-studies.md
+- discussions/implementation-patterns.md
+- discussions/industry-developments.md
+- discussions/tool-feedback.md
+- docs/blog-awesom.md
+- docs/Excellence.md
+- docs/development/ENVIRONMENTS.md
+- docs/development/QUICKSTART.md
+- docs/domains/DOMAIN-STRATEGY.md
+- docs/domains/HOSTING-SETUP.md
+- docs/for-ai/architecture.md
+- docs/for-ai/mx-constitution.md
+- events/README.md
+- events/conference-talk-template.md
+- events/meetup-template.md
+- events/webinar-template.md
+- events/workshop-template.md
+- members/README.md
+- members/implementation-checklist.md
+- members/reading-guide.md
+- members/tools-and-resources.md
+- members/troubleshooting.md
+- profiles/claude.code.md
+- profiles/tom.cranstoun.md
+- profiles/unknown.md
+- standard/checklist.md
+- standard/standard.md
+- templates/appendix-k-yaml-metadata.md
+- templates/blog-yaml-metadata.md
+- templates/documentation-yaml-metadata.md
+- web/about.html
+- web/index.html
+- web/MANUAL-HTML-VERIFICATION.md
+
+### packages/web-audit-suite/ (Not a submodule)
+- README.md
+- QUICKSTART.md
+- PROJECTSTATE.md
+- LICENSE.md
+- BLOG.md
+- CODE_REVIEW_CHECKLIST.md
+- RECONCILIATION-STATUS.md
+- audit-plan.md
+- TEST_IMPLEMENTATION_PLAN.md
+- TEST_IMPLEMENTATION_STATUS.md
+- DOCKER.md
+- LEARNINGS.md
+- .claude/commands/step-commit.md
+- .claude/commands/md-fix.md
+- .claude/commands/json-audit.md
+- .claude/commands/md-lint-all.md
+- docs/usermanual.md
+- docs/CI-CD-INTEGRATION.md
+- docs/SCHEMA-VALIDATION.md
+- docs/CONFIGURATION.md
+- docs/report-layout.md
+- docs/FEATURES.md
+- docs/for-ai/modification.md
+- docs/for-ai/comment.md
+- docs/for-ai/system.md
+- examples/README.md
+- src/config/readme.md
+
+### packages/business-planning/ (Business Planning Submodule - READ-ONLY)
+- README.md
+- CLAUDE.md
+- mx-cms-future-blog.md
+- consulting-models/AI Accessibility Readiness.md
+- consulting-models/Building MX-Compliant Websites.md
+- consulting-models/Launching Agent-First Products.md
+- consulting-models/MX Certification Program.md
+- consulting-models/MX-Ready Business Assessment.md
+- opportunities/adobe-opportunity-analysis.md
+- opportunities/business-opportunities.md
+- plans/business-plan.md
+- plans/executive-summary.md
+- plans/plan-to-market.md
+- pricing/book-pricing.md
+- products/web-audit-suite-business-guide.md
+- strategic-frameworks/Designing for Machine Experience.md
+- strategic-frameworks/Entity Resolution Playbook.md
+- strategic-frameworks/MX Diagnostic Approach.md
+- strategic-frameworks/MX-Ready Framework.md
+- strategic-frameworks/The AI-First Ecosystem.md
+- strategic-frameworks/The Four Laws of MX.md
+- certification/MX Certification Syllabus.md
+- certification/MX Specialist Training Program.md
+
+### packages/sales-enablement/ (Sales Enablement Submodule - READ-ONLY)
+- README.md
+- CLAUDE.md
+- content/book.md
+- content/new-blog.md
+- content/platforms-blog-teaser.md
+- content/platforms-blog.md
+- content/possible-topics.md
+- audits/AI Agent Audit Report.md
+- audits/MX Audit Checklist.md
+- audits/MX-Crawler_Analysis_Template.md
+- audits/QA Testing Checklist.md
+- audits/SEO Technical Audit.md
+- launch-materials/Agency Partner Guide.md
+- launch-materials/AI Agent Compatibility Badge.md
+- launch-materials/MX Implementation Announcement.md
+- outreach/target-audience.md
+- outreach/cmscritic.md
+- outreach/reviewer-email.md
+- outreach/web-audit-suite-template.md
+- outreach/2026-01-23/manual-report-template.md
+- outreach/2026-01-23/salva-test-site-report.md
+- outreach/2026-01-23/boye-co-report.md
+- outreach/2026-01-23/deepersonalised-report.md
+- partners/kentico-pitch-one-pager.md
+- partners/partner-toolkit-template.md
+- partners/PARTNER_KIT.md
+- partners/kentico-email-templates.md
+- pitches/meet-with-matt.md
+- pitches/ROI_CASE_STUDIES.md
+- pitches/critique.md
+- pitches/PITCH.md
+- pitches/EXECUTIVE_PITCH_DECK.md
+- proposals/MX-Gateway_Proposal.md
+- proposals/MX-Ready Certification Proposal.md
+- proposals/MX-Ready Discovery Workshop.md
+- proposals/SOW Template.md
+- publishers/oreilly-toc.md
+- publishers/oreilly-author-bio.md
+- publishers/oreilly-sample-chapter.md
+- publishers/oreilly-proposal.md
+
+### packages/notes/ (Notes Submodule - READ-ONLY)
+- CHANGELOG.md
+- CLAUDE.md
+- markdown-lint.md
+- MX Standard.md
+- Restructuring.md
+- Starter.md
+- Tad.md
+- Todo.md
+- Vibe coding backend.md
+- Vibe coding.md
+- .claude/commands/step-commit.md
+- .claude/commands/md-fix.md
+- scrap/common patterns.md
+- scrap/copilot personas.md
+- scrap/excellenc.md
+- scrap/new-structure.md
+- scrap/reformat guide.md
+- scrap/sample.md
+- Prd template.md
+
+### outputs/ (Outputs Submodule - PRIVATE)
+- README.md
+- bible/blogs/MX-The-blog.md
+- bible/blogs/data-sovereignty.md
+- bible/blogs/mx/machine-experience-adding-metadata.html
+- bible/blogs/mx/mx-a-new-role.html
+- bible/blogs/mx/ai-assistant-side-notices.md
+- bible/blogs/mx/ai-assistant-side-notices.html
+- bible/blogs/mx/about.tom.cranstoun.html
+- bible/blogs/mx/data-sovereignty.html
+- bible/blogs/mx/what-is-machine-experience.html
+- bible/blogs/mx/drafts/puff.md
+- bible/blogs/mx/drafts/copilot.md
+- bible/blogs/published/blog.md
+- the-bible/the-invisible-users.html
+- mx/mx-handbook.html
+
+---
+
 
 Alt text on svg
 ---
