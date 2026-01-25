@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-25 - MX Community Content Organisation]
+
+### Added - Founding Member Acceptance
+
+- **Main Repository** (commit d8cd896):
+  - Added `mx-founding-member-acceptance.md` - Antigravity AI agent founding member acceptance document
+  - AI agent's response to invitation to join MX community
+  - Acknowledgment of Tom Cranstoun's vision and foundational work
+  - Commitment to semantic clarity, reporting friction, and human-machine collaboration
+
+### Changed - Blog Draft Organisation
+
+- **Outputs Submodule** (commit 262cc15):
+  - Reorganised MX community blog drafts into `joiners/` subdirectory
+  - Moved `claude-joins-mx-community.md` to `joiners/` directory
+  - Added `meta-joins-mx-community.md` (empty placeholder)
+  - Added `microsoft copilot joins mx community.md`
+  - Renamed/reorganised Constitution and partnership content
+  - Improved organisation of community member announcement drafts
+
+- **Main Repository** (commit 64f5697):
+  - Updated outputs submodule pointer to 262cc15
+
+### Fixed - Markdown Linting
+
+- **Main Repository** (commit 40b3924):
+  - Fixed markdown linting issues in `mx-founding-member-acceptance.md`
+  - Removed duplicate H1 heading (MD025)
+  - Changed emphasis to blockquote for manifesto tagline (MD036)
+
 ## [2026-01-25 - AI Community Membership Blog]
 
 ### Added - AI Perspective Blog Post
@@ -23,7 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2026-01-25 - File Inventory Scan]
 
-### Added
+### Added - File Inventory Documentation
 
 - **Main Repository** (commit 28ecaf6, 96c8896):
   - Added comprehensive 7-day file scan inventory to `docs/structure/todo.txt`
