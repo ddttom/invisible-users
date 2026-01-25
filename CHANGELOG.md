@@ -7,6 +7,66 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-25 - Task Tracking and Documentation Inventory]
+
+### Added - Task Tracking System
+
+- **Main Repository** (commit 15bd19c):
+  - Added YAML frontmatter to `docs/structure/todo.txt` with metadata:
+    - `visibility: "private"` - Internal development tracking
+    - `audience: "internal"` - Main repository team only
+  - Added strategic plan reference linking to `packages/bible/update plan.md`
+  - Added comprehensive inventory of fresh documentation (25/Jan/2026):
+    - NEW: `docs/claude/` - 4 AI assistant deep dive documents
+    - NEW: `blogs/` - 2 blog markdown files
+    - Updated: `docs/for-ai/`, `docs/talks/`, `docs/architecture/`, `docs/structure/`, `docs/shared-chapters/`
+    - Documented all submodule changes with file lists
+  - Updated `CLAUDE.md` with task tracking files section:
+    - Documents distinction between private (main repo) and public (submodule) todo files
+    - Added references to strategic roadmap files
+
+- **MX-Gathering Submodule** (commit 2e20bf9):
+  - Updated `TODO.txt` with YAML frontmatter:
+    - `visibility: "public"` - Community-facing task tracking
+    - `audience: "community-contributors"` - Open to all contributors
+  - Added strategic plan reference to MX-Bible 2026 roadmap
+  - Updated `CLAUDE.md` with public/private todo distinction guidance
+  - Added `launch-statement.md` for MX-Gathering
+  - Added `docs/Excellence.md` and `docs/blog-awesom.md` guides
+  - Added `docs/for-ai/mx-constitution.md`
+  - Added `standard/` directory:
+    - `checklist.md` - MX standards checklist
+    - `standard.md` - MX-STD-001 standard document
+    - `standard.xmp` - XMP metadata template
+  - Added `templates/` directory:
+    - `appendix-k-yaml-metadata.md` - YAML template for Appendix K patterns
+    - `blog-yaml-metadata.md` - YAML template for blog posts
+    - `documentation-yaml-metadata.md` - YAML template for documentation
+    - `schema.json` - JSON Schema for YAML frontmatter validation
+
+- **MX-Bible Submodule** (commit 7c126fc):
+  - Added `update plan.md` - Comprehensive 2026 strategic plan for MX-Bible completion:
+    - Finalise core manuscript (9 core chapters)
+    - Complete Appendix K (MX Page Patterns)
+    - Add Agent Information Architecture chapter
+    - Build metadata canon (MX-META-001)
+    - Add case studies and failure analyses
+    - Add "How to Adopt MX" chapter
+    - Prepare publication package
+    - Post-publication roadmap
+  - Added `pdf.xmp` - XMP metadata template for PDF generation
+
+- **Outputs Submodule** (commit 8851dc1):
+  - Added `bible/blogs/mx/drafts/copilot.md` - Draft blog post about Copilot
+  - Added `bible/blogs/mx/drafts/puff.md` - Draft blog post
+
+### Changed - Submodule Pointers
+
+- **Main Repository** (commit 3eafbb3):
+  - Updated `packages/mx-gathering` pointer to 2e20bf9 (YAML metadata, strategic plan reference, MX standards)
+  - Updated `packages/bible` pointer to 7c126fc (2026 strategic plan and PDF XMP template)
+  - Updated `outputs` pointer to 8851dc1 (draft blog posts)
+
 ## [2026-01-24 - Claude Code Author Profile and Blog Attribution]
 
 ### Changed - Author Attribution
