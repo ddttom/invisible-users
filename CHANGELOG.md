@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-25 - IA Chapter Planning and Framework Terminology]
+
+### Added - Chapter Planning Documentation
+
+- **Main Repository** (commit e2d1b94):
+  - Added `docs/plans/ia-llm-web-chapter-plan.md` - Comprehensive planning document for new MX Bible chapter on Information Architecture for the LLM Web
+  - Interview results clarifying framework terminology (Three-Layer IA Framework vs 5-stage journey)
+  - Critical distinction between training-time ingestion (Common Crawl) and inference-time direct access
+  - Six-phase remediation plan to fix scattered "5-stage journey" references throughout book
+  - Complete chapter outline with 10 sections covering site, page, and content-level IA
+  - Cross-reference matrix, code samples, and diagram requirements
+  - Chapter-by-chapter remediation guidance for Chapters 0, 2, 3, 10, 12
+
+### Changed - Markdown Linting Improvements
+
+- **Main Repository** (commit 876a1db):
+  - Applied markdown linting fixes to `docs/plans/ia-llm-web-chapter-plan.md`
+  - Converted 60+ bold emphasis instances to proper headings (MD036)
+  - Removed duplicate H1 heading (MD025 - title exists in YAML frontmatter)
+  - Fixed heading hierarchy for placement options
+  - Removed trailing colons from headings (MD026)
+  - Reduced multiple consecutive blank lines (MD012)
+  - Note: ~20 minor spacing warnings remain (planning document formatting preferences)
+
+### Fixed - Repository Policy Compliance
+
+- **Main Repository** (commit 6aaf82a):
+  - Added learning to LEARNINGS.md about markdown linting in READ-ONLY submodules
+  - Documented that `npm run lint:markdown:fix` inadvertently modified files in packages/sales-enablement (READ-ONLY submodule)
+  - Solution: Always revert changes with `git -C packages/sales-enablement restore .`
+  - Recommendation: Consider excluding READ-ONLY submodules from npm lint script glob patterns
+
 ## [2026-01-25 - MX Community Content Organisation]
 
 ### Added - Founding Member Acceptance
