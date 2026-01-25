@@ -130,6 +130,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 ## HTML and MD Files Created/Modified (Last 7 Days - Scan: 25/Jan/2026)
 
 ### Main Repository
+
 - CHANGELOG.md
 - README.md
 - ONBOARDING.md
@@ -192,6 +193,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 - scripts/README-appendix-enhancements.md
 
 ### packages/bible/ (MX-Bible Submodule)
+
 - README.md
 - update plan.md
 - chapters/chapter-01-what-you-will-learn.md
@@ -217,6 +219,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 - chapters/bible-plan.md
 
 ### packages/mx-handbook/ (MX-Handbook Submodule)
+
 - README.md
 - chapters/0-cover.md
 - chapters/README.md
@@ -235,6 +238,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 - chapters/chapter-11-business-imperative.md
 
 ### packages/shared-appendices/ (Shared Appendices Submodule)
+
 - README.md
 - appendix-a-implementation-cookbook.md
 - appendix-b-battle-tested-lessons.md
@@ -293,6 +297,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 - web/site/testimonials.html
 
 ### packages/shared-code-examples/ (Code Examples Submodule)
+
 - README.md
 - agent-friendly-starter-kit/README.md
 - agent-friendly-starter-kit/DIFF_GUIDE.md
@@ -321,6 +326,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 - examples/html-examples/state/loading-state.html
 
 ### packages/mx-gathering/ (MX-Gathering Submodule - PUBLIC)
+
 - README.md
 - CLAUDE.md
 - LEARNINGS.md
@@ -369,6 +375,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 - web/MANUAL-HTML-VERIFICATION.md
 
 ### packages/web-audit-suite/ (Not a submodule)
+
 - README.md
 - QUICKSTART.md
 - PROJECTSTATE.md
@@ -398,6 +405,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 - src/config/readme.md
 
 ### packages/business-planning/ (Business Planning Submodule - READ-ONLY)
+
 - README.md
 - CLAUDE.md
 - mx-cms-future-blog.md
@@ -423,6 +431,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 - certification/MX Specialist Training Program.md
 
 ### packages/sales-enablement/ (Sales Enablement Submodule - READ-ONLY)
+
 - README.md
 - CLAUDE.md
 - content/book.md
@@ -465,6 +474,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 - publishers/oreilly-proposal.md
 
 ### packages/notes/ (Notes Submodule - READ-ONLY)
+
 - CHANGELOG.md
 - CLAUDE.md
 - markdown-lint.md
@@ -486,6 +496,7 @@ Trade-off: If an SVG fails to load, there's no inline warning message. However, 
 - Prd template.md
 
 ### outputs/ (Outputs Submodule - PRIVATE)
+
 - README.md
 - bible/blogs/MX-The-blog.md
 - bible/blogs/data-sovereignty.md
