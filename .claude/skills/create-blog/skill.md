@@ -54,9 +54,9 @@ When this skill is invoked, follow these steps systematically:
    - Example: "John Smith" → "john.smith.md"
 
 3. **Load profile file**:
-   - Look in `packages/sales-enablement/profiles/` directory
+   - Look in `packages/mx-gathering/profiles/` directory
    - If profile file exists, read it and extract YAML frontmatter metadata
-   - If profile file not found, use `packages/sales-enablement/profiles/unknown.md` as fallback
+   - If profile file not found, use `packages/mx-gathering/profiles/unknown.md` as fallback
    - Store profile metadata in `authorProfile` object
 
 4. **Use author profile as defaults**:
