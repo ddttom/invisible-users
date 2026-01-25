@@ -7,6 +7,115 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2026-01-25 - Chapter 15 Complete: Information Architecture for LLM Web]
+
+### Added - New Bible Chapter
+
+- **Bible Submodule** (commit b80ec74):
+  - Added `chapters/chapter-15-information-architecture-llm-web.md` - Complete 9,134-word chapter
+  - Comprehensive Three-Layer IA Framework (Site/Page/Content architecture)
+  - Training-time vs inference-time access mechanisms explained
+  - 10 sections covering discovery, navigation, metadata, anti-patterns, testing
+  - Cross-references to Chapters 0, 3, 6, 10, 12 and Appendices D, F, H, K
+  - Real-world code samples for sitemap.xml, semantic HTML, Schema.org, llms.txt
+  - Added 7 SVG diagrams following established style guidelines:
+    - `chapter-15-three-layer-ia-pyramid.svg` (900x600px, 3.5KB)
+    - `chapter-15-url-structure-comparison.svg` (800x500px, 4.9KB)
+    - `chapter-15-heading-hierarchy.svg` (800x500px, 4.9KB)
+    - `chapter-15-navigation-hierarchy.svg` (900x600px, 6.4KB)
+    - `chapter-15-antipattern-flat-structure.svg` (800x500px, 9.1KB)
+    - `chapter-15-sitemap-as-toc.svg` (900x600px, 8.4KB)
+    - `chapter-15-training-inference-paths.svg` (900x600px, 8.5KB)
+
+### Changed - Chapter 0 Remediation
+
+- **Main Repository** (commit 4807ba5):
+  - Added `docs/shared-chapters/chapter-00-what-are-ai-agents.md` - New section "How Agents Access Websites: Training vs Inference"
+  - Placed before 5-Stage MX Journey for contextual foundation
+  - Explains training-time ingestion via Common Crawl (historical, indirect, comprehensive)
+  - Explains inference-time access via browser automation (real-time, direct, specific)
+  - Updated Stage 1 heading from "Discovery (Training)" to "Discovery"
+  - Added clarification paragraph explaining both mechanisms serve same MX patterns
+  - Updated word count: 4,750 → 10,183 words (added ~5,433 words)
+  - Key insight: robots.txt respected during training, may be ignored during inference
+
+### Fixed - LaTeX PDF Generation
+
+- **Bible Submodule** (commit b80ec74):
+  - Fixed Unicode characters in `chapters/chapter-14-what-AI-agents-must-do.md`
+  - Replaced ✓ with [+] and ✗ with [-] for LaTeX compatibility
+  - Fixes PDF compilation errors (Unicode character U+2713 not set up for LaTeX)
+  - Applied to 9 instances across validation failure examples
+
+### Added - Generated Outputs
+
+- **Outputs Submodule** (commit c7ffbb5):
+  - Added `chapter-15-information-architecture-llm-web.pdf` - Standalone review PDF (130KB)
+  - Updated `the-bible/mx-bible-simple.pdf` - Regenerated with Chapter 15 included (1.3MB)
+  - Both PDFs compile successfully with all Unicode fixes applied
+  - Total Bible word count: 110,562 words across all chapters
+
+### Changed - Remediation Audit
+
+- **Main Repository**:
+  - Created `.claude/plans/remediation-audit-results.md` - Comprehensive audit report
+  - Findings: "5-stage journey" terminology localized to Chapter 0 only
+  - Training/inference distinction missing from Chapter 0 and Chapter 15
+  - Chapters 5, 8 use Common Crawl correctly (training data linguistic bias context)
+  - Recommended Option C: Add new section to Chapter 0 before 5-stage journey
+  - All recommendations implemented successfully
+
+### Technical Details
+
+**Submodule Workflow:**
+
+- Bible submodule: 3772d49 → b80ec74 (Chapter 15 + Unicode fixes)
+- Outputs submodule: 262cc15 → c7ffbb5 (PDFs generated)
+- Main repository: Updated pointers (commit 0b3f33e)
+
+**Cross-References Added:**
+
+- Chapter 0 ↔ Chapter 15 (training/inference mechanisms)
+- Chapter 15 → Chapters 3, 6, 10, 12 (semantic HTML, security, Schema.org, implementation)
+- Chapter 15 → Appendices D, F, H, K (HTML guide, roadmap, llms.txt, patterns)
+
+**Standards Compliance:**
+
+- British English throughout prose text
+- Timeless Manuscript Rule (no publication dates or meta-commentary)
+- YAML frontmatter with complete metadata
+- Markdown linting passed (config/.markdownlint.json)
+- All code blocks properly language-specified
+
+## [2026-01-25 - TODO File Cleanup and Pitch Extraction]
+
+### Changed - Task Tracking Cleanup
+
+- **Main Repository**:
+  - Cleaned up `docs/structure/todo.txt` - Removed 500+ lines of historical clutter
+  - Fixed broken YAML frontmatter (merged text on line 8)
+  - Reorganised content into clear sections: Active Tasks, Strategic References, Recent Work, Key New Documentation
+  - Extracted actionable items: Blog post issues, accessibility items for review
+  - Removed historical file scan inventory (lines 134-519 - moved context to this CHANGELOG)
+  - Removed incomplete notes and clipboard fragments
+
+### Added - Sales Pitch Documentation
+
+- **Sales Enablement Submodule**:
+  - Added `pitches/mx-convergence-pitch.md` - Comprehensive MX business case pitch
+  - Extracted pitch content previously buried in todo.txt (lines 542-570)
+  - Includes: Five agent types analysis, hallucination risks, MX principles, convergence principle, January 2026 inflection point
+  - Added proper YAML frontmatter with audience and purpose metadata
+  - Structured for C-Suite and strategic partner presentations
+
+### Fixed - Document Structure
+
+- **Main Repository**:
+  - Removed 500+ lines of noise from todo.txt
+  - Kept strategic plan reference (packages/bible/update plan.md)
+  - Maintained historical reference to profile folder move (25/Jan/2026)
+  - Added clear documentation of new files added on 25/Jan/2026
+
 ## [2026-01-25 - IA Chapter Planning and Framework Terminology]
 
 ### Added - Chapter Planning Documentation
