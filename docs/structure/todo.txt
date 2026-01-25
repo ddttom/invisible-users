@@ -8,6 +8,30 @@ visibility: "private"
 audience: "internal"
 ---
 
+## Changes Made (25/Jan/2026)
+
+**Move profiles folder from sales-enablement to mx-gathering**
+
+Files Moved:
+- claude.code.md
+- tom.cranstoun.md
+- unknown.md
+
+References Updated:
+- .claude/skills/create-blog/skill.md - Updated profile file path references
+- packages/sales-enablement/CLAUDE.md - Removed profiles from directory structure
+- packages/sales-enablement/README.md - Removed profiles section and directory reference
+- packages/mx-gathering/README.md - Added new profiles section documenting the folder
+
+Commits Created:
+- mx-gathering: Added profiles folder and updated README
+- sales-enablement: Removed profiles folder and updated documentation
+- main repo: Updated submodule pointers and skill file references
+
+All changes have been pushed to the remote repositories following the submodule-first workflow.
+
+---
+
 📋 STRATEGIC PLAN: See packages/bible/update plan.md for comprehensive 2026 roadmap
    - Core manuscript finalization
    - Appendix K completion (MX Page Patterns)
