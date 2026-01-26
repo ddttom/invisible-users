@@ -1,0 +1,298 @@
+---
+title: "Private Development TODO"
+author: "Tom Cranstoun"
+creation-date: "25/Jan/2026"
+last-updated: "26/Jan/2026"
+purpose: "Private task tracking for main repository development work"
+visibility: "private"
+audience: "internal"
+---
+
+## Active Tasks
+
+### Blog Workflow Documentation
+
+- [x] Add blog workflow and metadata system to MX-Bible book ✅ COMPLETED 26/Jan/2026
+  - Location: Appendix P (Blog Generation Workflow)
+  - Content: Complete documentation added covering:
+    - Metadata schema (YAML frontmatter for markdown, meta tags for HTML)
+    - State tracking system (draft, in-review, published, archived)
+    - File organization (docs/structure/blog-drafts/ for drafts, outputs/bible/blogs/mx/ for review/published)
+    - Generation workflow using scripts/generate-blog-html.js
+    - WCAG 2.1 AA compliance requirements
+    - State transition rules
+  - Cross-reference added to Chapter 12 (Technical Advice)
+  - Files modified:
+    - packages/shared-appendices/appendix-p-blog-generation-workflow.md (new file, ~5,800 words)
+    - packages/bible/chapters/chapter-12-technical-advice.md (cross-reference added)
+  - Reference: [docs/structure/blog-metadata-schema.md](blog-metadata-schema.md) (complete schema definition)
+  - Reference: [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md#blog-content-workflow) (workflow documentation)
+  - Rationale: Blog generation demonstrates MX principles in practice (metadata-driven, AI-friendly HTML, semantic structure)
+
+- [ ] Create MX-compatible publishing workflow
+  - Purpose: Define the workflow from final committee review to live publication on allabout.network
+  - Current state: All HTML files in outputs/bible/blogs/mx/ are in "final-committee-review" status
+  - Required steps:
+    - Committee review process and sign-off criteria
+    - Pre-publication validation checklist (HTML validation, WCAG 2.1 AA compliance, metadata completeness)
+    - Deployment process to allabout.network (hosting platform, deployment method, URL structure)
+    - Post-publication state updates (update blog-state to "published", add publication-date, add blog-url to markdown)
+    - Archival workflow (when to archive, how to mark archived content)
+  - MX compatibility requirements:
+    - Preserve all metadata during deployment
+    - Maintain canonical URLs in meta tags
+    - Ensure robots.txt and llms.txt are properly configured
+    - Verify Schema.org JSON-LD remains intact
+    - Test AI agent accessibility post-deployment
+  - Documentation location: Create docs/workflows/blog-publishing.md
+  - Integration: Link from blog-metadata-schema.md and doc-architecture.md
+  - Reference: See blog-review-status meta tag in all HTML files (currently "final-committee-review")
+
+### Blog Post Issues
+
+- [ ] Review SVG fallback pattern in blog generation workflow
+  - Current issue: "Your browser does not support SVG" message is confusing for AI agents and humans
+  - Location: `.claude/skills/create-blog/skill.md`
+  - Resolution: Empty fallback (figcaption provides all necessary context)
+
+- [ ] Review published blog post: machine-experience-adding-metadata.html
+  - Status: Ready for publication
+  - Screenshot reference: `/Users/tomcranstoun/Desktop/Dumps2/CleanShot 2026-01-22 at 18.03.12@2x.png`
+
+- [ ] Claude skills static snapshot blog post
+  - Draft location: [docs/structure/blog-drafts/claude-skills-static-not-subroutines.md](blog-drafts/claude-skills-static-not-subroutines.md)
+  - Status: Draft created 26/Jan/2026
+  - Key concept: Skills are static snapshots locked into time at creation, not dynamic subroutines
+  - **Summary:** Claude Code skills are NOT subroutines that execute dynamically. When a skill is created, it reads the authoritative source (e.g., a template file, documentation), extracts patterns, and hard-codes instructions into the skill.md file. If the authoritative source changes later, the skill does NOT understand those changes - it remains locked into the state from creation time. Skills must be manually regenerated to incorporate updated source material. Common misconception: developers expect skills to re-read sources on each invocation (they don't). This is an architectural constraint, not a bug.
+  - Questions to resolve:
+    - Should this concept be added to MX-Bible book?
+    - Where in the book? (Chapter 12 Technical Advice? New appendix on AI tooling?)
+    - Should we create a paragraph or two documenting this architectural principle?
+    - Does this relate to the broader MX pattern of "documentation as static snapshot vs dynamic reference"?
+  - Next steps: Review for technical accuracy, decide on book integration
+
+### Accessibility Items for Review
+
+- [ ] Table caption accessibility
+  - Issue: Text appearing as table description but not using `<caption>` element
+  - Action: Review table structures across generated HTML files
+  - Reference: Wave accessibility checker finding
+
+- [ ] Contrast ratio compliance
+  - Issue: Some colour combinations may not meet WCAG 2.1 AA standards
+  - Action: Audit blog post colour schemes with contrast checker
+
+### MX Patterns Project (26/Jan/2026)
+
+**Planning Documents Created:**
+- [docs/structure/plan-1-extract-patterns-to-bible.md](plan-1-extract-patterns-to-bible.md)
+- [docs/structure/plan-2-mx-patterns-book-structure.md](plan-2-mx-patterns-book-structure.md)
+- [docs/structure/project-roadmap-mx-patterns.md](project-roadmap-mx-patterns.md)
+
+**Plan 1: Extract Patterns to MX-Bible (8 weeks)** ✅ COMPLETED 26/Jan/2026
+
+Phase 1: Content Mapping (Week 1) ✅
+- [x] Review all Futures/*.md files (completed)
+- [x] Create planning documents (completed)
+- [x] Begin Appendix O creation (Pattern Documentation Templates)
+- [x] Design ADR transformation template
+- [x] Create Quick Start Card format
+- [x] Write Appendix O outline
+
+Phase 2: Appendix N Enhancement (Weeks 2-3) ✅
+- [x] Convert Anti-Pattern 1-4 to ADR format
+- [x] Convert Anti-Pattern 5-8 to ADR format
+- [x] Convert Anti-Pattern 9-14 to ADR format
+- [x] Add cross-references to patterns
+- [x] Editorial review of enhanced Appendix N
+
+Phase 3: Chapter Integration (Weeks 4-7) ✅
+- [x] Complete Appendix O (Pattern Templates) - exists with YAML frontmatter
+- [x] Add pattern cards to Chapter 12 (3 comprehensive Quick Start Cards)
+- [x] Integrate pattern philosophy into Chapter 11 (6 subsections)
+- [x] Add GEO patterns to Chapter 10 (6 patterns: 25-30)
+- [x] Internal review of all integrations
+- [x] Address review feedback (cross-reference corrections)
+
+Phase 4: Validation (Week 8) ✅
+- [x] Run validation checklist
+- [x] Editorial review
+- [x] Technical review
+- [x] Fix all linting errors (all chapters pass markdownlint)
+- [x] Verify cross-references (corrected and validated)
+- [x] Regenerate PDF (mx-bible-simple.pdf generated successfully)
+
+**Plan 2: MX Patterns Book Structure (16 weeks)**
+
+Phase 1: Content Consolidation (Weeks 2-5)
+- [ ] Create `packages/mx-patterns/` repository structure
+- [ ] Copy Futures/*.md files to new structure
+- [ ] Add YAML frontmatter to all chapters (12 chapters)
+- [ ] Format Appendices A-C
+- [ ] Design cross-reference system
+- [ ] Initial word count assessment
+
+Phase 2: Content Creation (Weeks 6-11)
+- [ ] Write preface and executive summary
+- [ ] Create Appendix D (validation checklist)
+- [ ] Create Appendix E (glossary)
+- [ ] Write chapter transitions
+- [ ] Establish working cross-references
+
+Phase 3: Editorial Review (Weeks 12-14)
+- [ ] Voice consistency review
+- [ ] Technical accuracy review
+- [ ] Cross-reference verification
+- [ ] Markdown linting
+
+Phase 4: Production (Weeks 15-16)
+- [ ] Generate bibliography
+- [ ] Generate index
+- [ ] Design cover
+- [ ] Generate PDF formats (A4, 6"×9")
+- [ ] Create HTML version
+- [ ] Community preview launch
+
+**Supporting Materials to Create:**
+- [ ] Pattern intent template (for Appendix O)
+- [ ] ADR transformation template (for Appendix N)
+- [ ] ADR principle documentation (explain Architecture Decision Records methodology)
+- [ ] Quick Start Card template (YAML format)
+- [ ] Pattern validation checklist (for Appendix D)
+- [ ] Cross-reference tracking system
+- [ ] Automated link checker setup
+
+**Review and Refinement:**
+- [x] Weekly progress reviews against project-roadmap-mx-patterns.md
+- [ ] Bi-weekly coordination points between Plan 1 and Plan 2
+- [x] Quality gate assessments at each phase completion (Plan 1 complete)
+- [ ] Risk register updates
+- [ ] Timeline adjustments as needed
+
+**Plan 1 Completion Summary (26/Jan/2026):**
+
+✅ **All 4 phases completed successfully**
+- Total lines added: ~638 lines across 3 chapters
+- Pattern documentation: 6 GEO patterns (Chapter 10), pattern philosophy framework (Chapter 11), 3 Quick Start Cards (Chapter 12)
+- Anti-patterns enhanced: All 14 anti-patterns in Appendix N converted to full ADR format
+- Quality gates: All markdown linting passed, cross-references validated, PDF generation verified
+- Files modified:
+  - packages/bible/chapters/chapter-10-generative-engine-optimization.md (GEO Pattern Summary: 219 lines)
+  - packages/bible/chapters/chapter-11-designing-for-both.md (Pattern Philosophy: 119 lines)
+  - packages/bible/chapters/chapter-12-technical-advice.md (Quick Start Cards: ~300 lines)
+  - packages/shared-appendices/appendix-n-anti-patterns-catalog.md (14 anti-patterns to ADR format)
+
+**Current Priority:** Plan 1 complete. Next decision point: Begin Plan 2 (MX Patterns Book) or other work.
+
+## Strategic References
+
+📋 **STRATEGIC PLAN:** See [packages/bible/update plan.md](../../packages/bible/update%20plan.md) for comprehensive 2026 roadmap
+
+Key priorities:
+- Core manuscript finalization
+- ✅ Appendix K completion (MX Page Patterns) - COMPLETED 26/Jan/2026
+- Agent Information Architecture chapter
+- Metadata canon development
+- Case studies & failure analyses
+- Publication package preparation
+
+## Recent Work (Archive Reference)
+
+### Completed: Move profiles folder (25/Jan/2026)
+
+**Action:** Moved profiles folder from sales-enablement to mx-gathering
+
+**Files Moved:**
+- claude.code.md
+- tom.cranstoun.md
+- unknown.md
+
+**References Updated:**
+- `.claude/skills/create-blog/skill.md` - Updated profile file path references
+- `packages/sales-enablement/CLAUDE.md` - Removed profiles from directory structure
+- `packages/sales-enablement/README.md` - Removed profiles section
+- `packages/mx-gathering/README.md` - Added profiles section
+
+**Commits:** All pushed following submodule-first workflow (see CHANGELOG.md for details)
+
+### Completed: Appendix K Enhancement (26/Jan/2026)
+
+**Action:** Added three comprehensive reference sections to Appendix K (Common Page Patterns)
+
+**Sections Added:**
+- K.3: JSON-LD Schema.org Templates - Quick reference templates for 9 core Schema.org types
+- K.4: Call-to-Action (CTA) Patterns - 8 production-ready CTA implementations with accessibility
+- K.5: Resource Lists & Machine-Parsable Structures - 7 list patterns with Schema.org markup
+
+**Metrics:**
+- Lines added: ~1,654 (from 3,378 to 5,032 lines)
+- Words added: ~4,561 (from 12,517 to 17,078 words)
+- Validation: All markdown linting passed (fixed MD024, MD032 warnings)
+
+**File Modified:**
+- packages/shared-appendices/appendix-k-common-page-patterns.md
+
+**Rationale:** Strategic plan identified Appendix K as Priority 2 ("the practical heart of the book"). These reference sections provide quick-reference templates that practitioners will use daily for implementing AI-friendly patterns.
+
+### Completed: Core Manuscript Finalization (26/Jan/2026) ✅
+
+**Action:** Strategic Plan Section 1.2 - Finalise the Core Manuscript
+
+**All Four Actions Completed:**
+1. ✅ Terminology consistency audit (technical terms "bot", "scraper" verified as legitimate in server logs/configuration contexts)
+2. ✅ Cross-references added: 7 new cross-references to appendices
+   - Chapter 4 → Appendix H (llms.txt implementation)
+   - Chapter 11 → Appendix H (llms.txt) + Appendix F (implementation roadmap)
+   - Chapter 12 → Appendix H (llms.txt) + Appendix C (Web Audit Suite)
+   - Chapter 15 → Appendix N (anti-patterns catalog) + Appendix C (Web Audit Suite)
+3. ✅ Metadata examples verified as appropriately distributed (chapters 10-12 have technical examples per writing style guide)
+4. ✅ Diagrams added: 9 total illustration references added
+   - Chapter 1: Same website different reality (what humans see vs agents parse)
+   - Chapter 11: Convergence principle (one pattern helps everyone)
+   - Chapter 15: Seven IA diagrams (three-layer framework, heading hierarchy, training-inference paths, URL structure comparison, navigation hierarchy, antipattern flat structure, sitemap as TOC)
+
+**Files Modified:**
+- packages/bible/chapters/chapter-01-what-you-will-learn.md (1 diagram reference)
+- packages/bible/chapters/chapter-04-the-business-reality.md (1 cross-reference)
+- packages/bible/chapters/chapter-11-designing-for-both.md (2 cross-references + 1 diagram reference)
+- packages/bible/chapters/chapter-12-technical-advice.md (2 cross-references)
+- packages/bible/chapters/chapter-15-information-architecture-llm-web.md (2 cross-references + 7 diagram references)
+
+**Rationale:** Strategic Plan Section 1.2 identified four core actions to finalise the manuscript. All completed systematically with appropriate balance between technical depth and business focus per writing style guide.
+
+## Key New Documentation (25/Jan/2026)
+
+### Main Repository
+
+**docs/claude/** (NEW - AI Assistant Deep Dives)
+- ai-dynamic-challenges.md
+- ai-dynamic-examples-and-implementation.md
+- machine-experience-manifesto.md
+- why-llms-dont-execute-javascript.md
+
+**docs/talks/** (NEW - Presentation Materials)
+- template/ - Reusable presentation templates
+- historical/members-call-21-jan-26/ - Boye & Co member call materials
+
+**docs/for-ai/** (Updated)
+- architecting-multi-repo-codebases.md
+- yaml-frontmatter-template.md
+- new-project/ - Project template directory
+
+### Submodules
+
+**packages/bible/**
+- update plan.md - Comprehensive 2026 strategic plan for MX-Bible completion
+
+**packages/mx-gathering/** (PUBLIC)
+- templates/ - YAML metadata templates (appendix-k, blog, documentation)
+- profiles/ - Moved from sales-enablement (3 profile files)
+
+**outputs/** (PRIVATE)
+- bible/blogs/mx/drafts/ - Two draft blog posts (copilot.md, puff.md)
+
+## Notes
+
+- For complete file inventory across all repositories, see CHANGELOG.md
+- For git workflows in multi-repository structure, see [docs/architecture/GIT-README.md](../../docs/architecture/GIT-README.md)
+- For public community tasks, see [packages/mx-gathering/TODO.txt](../../packages/mx-gathering/TODO.txt)

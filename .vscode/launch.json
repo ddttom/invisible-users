@@ -1,0 +1,117 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Web Audit Suite: Debug",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/packages/web-audit-suite/index.js",
+      "cwd": "${workspaceFolder}/packages/web-audit-suite",
+      "args": [
+        "-s",
+        "https://example.com",
+        "-c",
+        "5"
+      ],
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "Web Audit Suite: Debug with Custom URL",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/packages/web-audit-suite/index.js",
+      "cwd": "${workspaceFolder}/packages/web-audit-suite",
+      "args": [
+        "-s",
+        "${input:debugUrl}",
+        "-c",
+        "${input:maxPages}"
+      ],
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "Web Audit Suite: Attach to Process",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Web Audit Suite: Debug Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/packages/web-audit-suite/node_modules/mocha/bin/_mocha",
+      "cwd": "${workspaceFolder}/packages/web-audit-suite",
+      "args": [
+        "--recursive",
+        "test/**/*.test.js",
+        "--timeout",
+        "10000"
+      ],
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "Web Audit Suite: Debug Current Test File",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/packages/web-audit-suite/node_modules/mocha/bin/_mocha",
+      "cwd": "${workspaceFolder}/packages/web-audit-suite",
+      "args": [
+        "${file}",
+        "--timeout",
+        "10000"
+      ],
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "Node: Launch Current File",
+      "type": "node",
+      "request": "launch",
+      "program": "${file}",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "console": "integratedTerminal"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "debugUrl",
+      "type": "promptString",
+      "description": "Enter URL to audit",
+      "default": "https://example.com"
+    },
+    {
+      "id": "maxPages",
+      "type": "promptString",
+      "description": "Maximum number of pages to process",
+      "default": "5"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+# VS Code workspace settings - commit recommended config, ignore personal settings
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Build outputs
+*.zip
+
+# Environment
+.env
+.env.local
+
+# Symlinks for AI tools
+.agents/
+GEMINI.md
+AGENTS.md
+
+# Symlinks created by init script (npm run init)
+# Note: books/ contains tracked symlinks (committed before this ignore pattern).
+#       The gitignore prevents accidental additions of new files to books/ directory
+#       while preserving the existing convenience symlinks (books/bible, etc.)
+#       Purpose: Reduces cognitive load - access books/bible instead of packages/bible/
+books/
+blogs
+
+# Generated book files
+the-bible/
+dont/
+
+*.png
+
+# Generated appendix HTML build templates (temporary)
+scripts/appendix-nav-footer.html
+scripts/appendix-index-template.md
+

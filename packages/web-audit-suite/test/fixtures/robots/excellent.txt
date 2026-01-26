@@ -1,0 +1,28 @@
+# robots.txt for example.com
+# This file provides guidance for web crawlers and AI agents
+
+# AI-specific user agents
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: CCBot
+Allow: /
+
+# General crawlers
+User-agent: *
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /account/
+Disallow: /checkout/
+Disallow: /api/
+Allow: /
+
+# Sitemap declarations
+Sitemap: https://example.com/sitemap.xml
+Sitemap: https://example.com/sitemap-news.xml
+
+# For AI agent guidance, see our llms.txt file
+# llms.txt: https://example.com/llms.txt
+
+# Crawl delay for aggressive bots
+Crawl-delay: 1

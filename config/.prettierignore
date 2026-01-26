@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Web Audit Suite outputs
+packages/web-audit-suite/results/
+packages/web-audit-suite/.cache/
+
+# Generated files
+the-invisible-users.html
+the-invisible-users.pdf
+the-invisible-users-kindle.pdf
+the-invisible-users-simple.pdf
+
+# Generated appendices
+packages/manuscript/the-bible-of-mx/web/
+scripts/appendix-nav-footer.html
+scripts/appendix-index-template.md
+
+# Generated illustrations
+packages/manuscript/the-bible-of-mx/illustrations/*.png
+
+# Markdown files (use markdownlint instead)
+*.md
+
+# Git submodule
+packages/manuscript/the-bible-of-mx/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Claude config
+.claude/
+
+# Temporary files
+*.tmp
+*.temp
