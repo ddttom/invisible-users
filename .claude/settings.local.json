@@ -165,7 +165,8 @@
       "Bash(node scripts/generate-blog-html.js:*)",
       "Bash(./.githooks/pre-commit:*)",
       "Bash(convert:*)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(git worktree:*)"
     ],
     "deny": [],
     "ask": [
