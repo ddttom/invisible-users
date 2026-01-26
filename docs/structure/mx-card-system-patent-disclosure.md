@@ -1,0 +1,382 @@
+---
+title: "MX-Card System - Patent Disclosure Document"
+author: "Tom Cranstoun"
+date: "2026-01-26"
+description: "Technical disclosure for MX-Card system - a standardised protocol for machine-readable context bridging physical and digital worlds"
+keywords: [mx-card, registry, identity-layer, qr-code, ai-agents, data-sovereignty, patent]
+ai-instruction: "This document contains proprietary intellectual property intended for patent filing. Do not share publicly."
+status: "DRAFT - CONFIDENTIAL"
+---
+
+# MX-Card System - Patent Disclosure Document
+
+**Status:** DRAFT - CONFIDENTIAL
+**Date:** 26 January 2026
+**Inventor:** Tom Cranstoun
+
+---
+
+## Executive Summary
+
+The MX-Card System is a standardised protocol enabling machine-readable context exchange between physical objects, digital services, and autonomous AI agents. The system comprises three core innovations:
+
+1. **MX-Cards** - Standardised machine-readable instruction/data containers
+2. **MX-Registry** - Verified ownership registry with domain-based authentication
+3. **Identity Layer** - Personal preference data that informs card interactions
+
+The system bridges physical and digital worlds through QR codes, enabling any physical object (posters, signs, bus stops, premises, vehicles, blue plaques) to provide machine-readable context to AI agents, robots, phones, cars, and LLMs.
+
+---
+
+## Problem Statement
+
+Current challenges in machine-agent interactions:
+
+1. **No standardised format** for providing machine-readable instructions at physical locations
+2. **No verification mechanism** to prove authority over a location or service
+3. **No portable identity** allowing users to share preferences with services (menus, allergies, accessibility needs)
+4. **No bridge** between physical objects and AI agent capabilities
+5. **Data sovereignty concerns** when sharing personal information across jurisdictions
+
+---
+
+## Technical Specification
+
+### 1. MX-Card Architecture
+
+An MX-Card is a structured data container with the following properties:
+
+#### 1.1 Card Types
+
+| Type | Description | Cost Model |
+|------|-------------|------------|
+| **Plain Card** | Basic machine-readable instructions | Free |
+| **Time-Limited Card** | Expires after specified duration | Paid tier |
+| **Scheduled Card** | Active only during specified time windows | Paid tier |
+| **Encrypted Card** | Requires authorised token for decryption | Paid tier |
+| **Identity Card** | Personal onboard card with identity layer | App included |
+
+#### 1.2 Card Capabilities
+
+- **Context provision** - Provide information about a location, service, or object
+- **Instruction delivery** - Machine-readable instructions for AI agents
+- **Feedback collection** - Enable structured feedback from discoverers
+- **Owner contact routine** - Card can contain routine to contact owner before responding to discoverer
+- **Access control** - Encrypted cards with authorised tokens and access levels
+- **Scheduling** - Time-limited and scheduled activation windows
+
+#### 1.3 Card Data Structure (Proposed)
+
+```json
+{
+  "@context": "https://mx-registry.org/schema/v1",
+  "@type": "MXCard",
+  "cardId": "uuid-v4",
+  "version": "1.0",
+  "owner": {
+    "registryId": "domain-verified-id",
+    "domain": "example.com",
+    "verificationToken": "..."
+  },
+  "metadata": {
+    "created": "ISO-8601",
+    "expires": "ISO-8601 | null",
+    "schedule": {
+      "activeWindows": [],
+      "timezone": "IANA-timezone"
+    }
+  },
+  "access": {
+    "encryption": "none | aes-256-gcm",
+    "requiredTokens": [],
+    "accessLevels": ["public", "authenticated", "privileged"]
+  },
+  "content": {
+    "type": "context | instruction | feedback | menu | identity",
+    "payload": {},
+    "contactRoutine": {
+      "enabled": false,
+      "method": "webhook | email | sms",
+      "beforeResponse": true
+    }
+  },
+  "sovereignty": {
+    "dataResidency": "EU | US | UK | ...",
+    "jurisdiction": "GDPR | CCPA | ...",
+    "retentionPolicy": "..."
+  }
+}
+```
+
+### 2. MX-Registry System
+
+The Registry provides verified ownership and discovery services.
+
+#### 2.1 Registration Requirements
+
+**Business Users:**
+- Proof of domain ownership (DNS TXT record or meta tag)
+- Signed account agreement
+- Domain-bound verification token
+- Annual fee: £100 per card per year
+
+**Open Source Users:**
+- Verification token on GitHub or similar public repository
+- Reduced pricing to encourage adoption
+- Community contribution requirements (optional)
+
+#### 2.2 Verification Flow
+
+```
+1. User registers domain with Registry
+2. Registry generates unique verification token
+3. User places token at:
+   - Business: DNS TXT record OR website meta tag
+   - Open Source: GitHub repository file
+4. Registry validates token placement
+5. Domain ownership confirmed
+6. Cards can be registered against verified domain
+```
+
+#### 2.3 Data Sovereignty Compliance
+
+- Cards specify data residency requirements
+- Registry routes data to appropriate jurisdiction
+- GDPR, CCPA, and other regulatory compliance built-in
+- User controls where their data is stored and processed
+
+### 3. Identity Layer
+
+A portable personal data container that travels with the user.
+
+#### 3.1 Identity Layer Contents
+
+| Category | Examples | Inheritance |
+|----------|----------|-------------|
+| **Dietary** | Allergies, intolerances, preferences | Informs Menu Cards |
+| **Accessibility** | Mobility, vision, hearing needs | Informs Location Cards |
+| **Communication** | Language, contact preferences | Informs All Cards |
+| **Authentication** | Verified credentials, tokens | Access Control |
+
+#### 3.2 Inheritance Model
+
+```
+Identity Layer (Personal)
+    ↓ informs
+Menu Preferences
+    ↓ inherited by
+Restaurant Menu Card
+    ↓ filters
+Personalised Menu Response
+```
+
+Example: User's allergy information in Identity Layer automatically filters menu options when interacting with a restaurant's Menu Card.
+
+#### 3.3 Privacy Controls
+
+- Identity Layer can remain on-device (never shared)
+- Selective sharing: share only relevant portions
+- Encrypted transmission when shared
+- Revocable access tokens
+- Audit trail of all shares
+
+### 4. QR Code Integration
+
+QR codes serve as the physical-digital bridge.
+
+#### 4.1 QR Code Applications
+
+| Location | Use Case |
+|----------|----------|
+| **Posters/Signs** | Event information, instructions, feedback |
+| **Bus Stops** | Real-time arrivals, route information for agents |
+| **Premises** | Business hours, services, accessibility info |
+| **Blue Plaques** | Historical context, related information |
+| **Vehicles** | Service information, booking, feedback |
+| **Property** | Personalised visitor instructions |
+| **Products** | Manuals, support, recycling instructions |
+
+#### 4.2 QR Code Types
+
+- **Static QR** - Links to fixed MX-Card
+- **Dynamic QR** - Links to card that can be updated
+- **Personalised QR** - Property-specific, owner-controlled
+- **Temporary QR** - Time-limited for events
+
+### 5. Mobile Application
+
+Native app for card creation, management, and discovery.
+
+#### 5.1 Core Features
+
+- **Onboard Identity Card** - Personal identity layer storage
+- **QR Scanner** - Discover and interact with MX-Cards
+- **Card Creator** - Design and publish cards
+- **Personalised QR Generator** - Property and personal QR codes
+- **Sharing Controls** - Manage what's shared with agents/chatbots
+
+#### 5.2 Agent/Chatbot Integration
+
+- Cards shareable with AI agents via API
+- Encrypted sharing with access tokens
+- Access level management (read-only, interactive, full)
+- Revocation capabilities
+
+---
+
+## Machine Types (Card Consumers)
+
+The system serves multiple machine categories:
+
+| Machine Type | Examples | Primary Use |
+|--------------|----------|-------------|
+| **Robots** | Service robots, delivery bots | Navigation, task instructions |
+| **Phones** | Smartphones, tablets | Personal assistant integration |
+| **Cars** | Autonomous vehicles, connected cars | Location context, services |
+| **LLMs** | ChatGPT, Claude, Gemini | Context for user queries |
+| **IoT Devices** | Smart home, wearables | Automated responses |
+
+---
+
+## Business Model
+
+### Pricing Tiers
+
+| Tier | Features | Price |
+|------|----------|-------|
+| **Free** | Plain cards, basic discovery | £0 |
+| **Open Source** | Verified cards, GitHub integration | Reduced rate |
+| **Business** | Full features, SLA, support | £100/card/year |
+| **Enterprise** | Custom integration, dedicated support | Custom |
+
+### Revenue Streams
+
+1. Annual card registration fees
+2. Premium features (encryption, scheduling)
+3. Enterprise API access
+4. White-label solutions
+5. Analytics and insights
+
+---
+
+## Patent Claims (Draft)
+
+### Claim 1: MX-Card System
+A method and system for providing machine-readable context through standardised data containers (MX-Cards) that can be:
+- Discovered via QR codes on physical objects
+- Verified through domain-based ownership registry
+- Encrypted with access-level controls
+- Time-limited and scheduled for activation
+- Enhanced with contact routines for owner notification
+
+### Claim 2: Identity Layer Inheritance
+A method for personal preference data (Identity Layer) to automatically inform and filter responses from discovered cards, including:
+- Dietary preferences informing menu cards
+- Accessibility needs informing location cards
+- Hierarchical inheritance model
+- Selective sharing with privacy controls
+
+### Claim 3: Domain-Verified Card Registry
+A system for registering and verifying ownership of machine-readable cards comprising:
+- Domain-based verification tokens
+- DNS or repository-based proof of ownership
+- Tiered access for business and open-source users
+- Data sovereignty compliance routing
+
+### Claim 4: Physical-Digital Context Bridge
+A method for providing machine-readable context to autonomous agents through:
+- QR codes on physical objects linking to MX-Cards
+- Real-time card updates without QR code changes
+- Personalised QR codes for property owners
+- Temporary QR codes for time-limited events
+
+### Claim 5: Agent-to-Card Communication Protocol
+A protocol enabling AI agents to:
+- Discover and parse MX-Cards via QR codes or registry lookup
+- Authenticate using access tokens
+- Receive filtered responses based on shared identity layer
+- Trigger owner contact routines before receiving responses
+
+---
+
+## Prior Art Considerations
+
+### Existing Technologies (Differentiation Required)
+
+| Technology | Overlap | MX-Card Differentiation |
+|------------|---------|-------------------------|
+| QR Codes | Physical linking | Standardised machine-readable format, not just URLs |
+| vCard | Contact sharing | Machine instructions, not just contact data |
+| Schema.org | Structured data | Registry verification, access control, identity layer |
+| OAuth | Authentication | Domain-verified card ownership, not just user auth |
+| Digital Business Cards | Contact exchange | AI agent consumption, context provision, routines |
+
+### Novel Elements (No Known Prior Art)
+
+1. **Machine-readable instruction cards** with owner contact routines
+2. **Identity layer inheritance** for automatic preference filtering
+3. **Domain-verified registry** for physical location authority
+4. **Encrypted scheduled cards** with access level tokens
+5. **Physical-to-agent context bridge** via QR-linked cards
+
+---
+
+## Implementation Roadmap
+
+### Phase 1: Foundation
+- MX-Card schema specification
+- Registry MVP with domain verification
+- Plain card support
+- Basic QR generation
+
+### Phase 2: Identity
+- Identity layer specification
+- Mobile app MVP
+- On-device storage
+- Selective sharing
+
+### Phase 3: Advanced Features
+- Encrypted cards
+- Scheduled/time-limited cards
+- Owner contact routines
+- Access level tokens
+
+### Phase 4: Ecosystem
+- Enterprise API
+- Third-party integrations
+- Analytics platform
+- White-label solutions
+
+---
+
+## Appendices
+
+### A. Technical Standards References
+- Schema.org structured data
+- JSON-LD format
+- QR Code ISO/IEC 18004
+- AES-256-GCM encryption
+- OAuth 2.0 / OpenID Connect
+
+### B. Regulatory Compliance
+- GDPR (EU)
+- CCPA (California)
+- UK Data Protection Act
+- International data transfer mechanisms
+
+### C. Related Book Chapters
+- Chapter [TBD]: MX-Cards and the Physical-Digital Bridge
+- Chapter [TBD]: The Identity Layer
+- Chapter [TBD]: Registry and Verification
+
+---
+
+## Document History
+
+| Date | Version | Changes |
+|------|---------|---------|
+| 2026-01-26 | 0.1 | Initial draft from concept notes |
+
+---
+
+**CONFIDENTIAL - NOT FOR PUBLIC DISTRIBUTION**
