@@ -16,6 +16,22 @@ status: "DRAFT - CONFIDENTIAL"
 
 ---
 
+## Inventor's Statement: Origin of the Invention
+
+I didn't set out to write a book about AI agents. I set out to book a holiday.
+
+It was late 2024, and I was comparing tour operators for a trip through Southeast Asia. I'd delegated the research to an AI assistant, expecting it to save me hours of clicking through brochures. Instead, it gave me confident but wrong advice about which company had the better itinerary.
+
+The agent had looked at one tour operator's paginated day-by-day breakdown for a 14-day tour, seen only Day 1, and concluded that was the entire trip. The competitor's single-page itinerary was readable in full. Based on this, my assistant recommended the wrong company.
+
+I caught the error, and that led me down a path I hadn't anticipated. I started examining why the agent had failed, and found a pattern. The same design choices that confused my AI assistant also confused users with disabilities: people who rely on keyboards rather than mice, those using screen readers to navigate, voice control users who cannot make precise movements, and people with cognitive processing differences who find sequential navigation challenging.
+
+This convergence - between AI agent accessibility and human accessibility - became the foundation of everything that followed. The book that emerged from this investigation documented these patterns. The MX-Card System arose as the natural solution: if AI agents fail because they lack verified context, and humans with disabilities face similar barriers, then providing machine-readable context at the source solves both problems simultaneously.
+
+The invention described in this document was not conceived as a patent opportunity. It emerged organically from solving real-world problems encountered during research into AI agent failures and their surprising connection to accessibility design patterns.
+
+---
+
 ## Executive Summary
 
 The MX-Card System is a standardised protocol enabling machine-readable context exchange between physical objects, digital services, and autonomous AI agents. The system comprises three core innovations:
@@ -731,6 +747,7 @@ Browser agent encounters image file
 | 2026-01-26 | 0.3 | Added Bluetooth beacon discovery, accessibility use cases, Claim 7 |
 | 2026-01-26 | 0.4 | Added context-switching identity layers, environmental benefits, universal consumer protocol, Claims 8-10 |
 | 2026-01-26 | 0.5 | Added media file metadata embedding (EXIF, XMP, PDF, ID3), Claim 11 |
+| 2026-01-26 | 0.6 | Added Inventor's Statement documenting problem-driven origin of invention |
 
 ---
 
