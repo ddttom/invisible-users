@@ -1265,6 +1265,19 @@ Paid content purchase → Venue (70-80%) + Platform (15-25%) + Processing (5%)
 
 ---
 
+## Related Documents
+
+| Document | Purpose |
+|----------|---------|
+| [Patent Application Plan](mx-card-patent-plan.md) | Filing strategy, timeline, costs |
+| [Copyright Protection Plan](mx-card-copyright-plan.md) | Copyright protection strategy |
+| [Book Update Plan](mx-card-book-update-plan.md) | Integration into MX-Bible and MX-Handbook |
+| [NDA Template](mx-card-nda-template.md) | Confidentiality agreement for discussions |
+| [Provisional Application](mx-card-provisional-application.md) | Ready-to-file UK provisional patent |
+| [Safe to Share Overview](mx-card-safe-to-share.md) | Public overview (no confidential details) |
+
+---
+
 ## Document History
 
 | Date | Version | Changes |
@@ -1277,6 +1290,7 @@ Paid content purchase → Venue (70-80%) + Platform (15-25%) + Processing (5%)
 | 2026-01-26 | 0.6 | Added Inventor's Statement documenting problem-driven origin of invention |
 | 2026-01-26 | 0.7 | Added error recovery, M2M response protocol, emergency services integration, Claims 12-14 |
 | 2026-01-26 | 0.8 | Added permission guards, hierarchical identity, government credentials, venue onboarding, Claims 15-18 |
+| 2026-01-26 | 0.9 | Added Related Documents section with links to support materials |
 
 ---
 
