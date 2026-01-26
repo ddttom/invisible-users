@@ -434,6 +434,185 @@ Native app for card creation, management, and discovery.
 - Access level management (read-only, interactive, full)
 - Revocation capabilities
 
+### 6. Error Recovery and Assistance
+
+Humans struggle with websites. What does a spinner mean? What does 404 mean? MX-Cards provide help at the point of confusion.
+
+#### 6.1 Error Screen Cards
+
+Every error screen can include an MX-Card QR code providing contextual help:
+
+| Error Type | Card Content |
+|------------|--------------|
+| **404 Not Found** | "Page moved to [new location]. Try [alternatives]. Contact support: [link]" |
+| **Spinner/Loading** | "Processing your request. Expected time: 30 seconds. If longer, [troubleshooting steps]" |
+| **500 Server Error** | "Technical issue. Status page: [link]. Try again in [time]. Save your work." |
+| **Form Validation** | "Required: valid email format. Example: name@example.com" |
+| **Payment Failed** | "Card declined. Reason: [specific]. Alternative payment options: [list]" |
+| **Session Timeout** | "For security, you've been logged out. Your cart is saved. Log in to continue." |
+
+**Example: 404 Error with MX-Card**
+```
+┌────────────────────────────────────────┐
+│  404 - Page Not Found                  │
+│                                        │
+│  The page you requested doesn't exist. │
+│                                        │
+│  ┌──────┐  Scan for help              │
+│  │ QR   │  or visit:                  │
+│  │ CODE │  example.com/help/404       │
+│  └──────┘                              │
+└────────────────────────────────────────┘
+
+QR links to MX-Card:
+  "You tried to access /old-product-page.
+   This product was discontinued in 2025.
+   Similar products: [links]
+   Search our catalog: [link]
+   Contact support: [phone, email, chat]"
+```
+
+#### 6.2 Product Assistance Beacons
+
+Physical products can include QR codes or Bluetooth beacons for assistance:
+
+| Product Type | Assistance Card Content |
+|--------------|------------------------|
+| **Appliances** | Setup guide, troubleshooting, warranty registration |
+| **Electronics** | Pairing instructions, firmware updates, support |
+| **Furniture** | Assembly video, missing parts request, care instructions |
+| **Medications** | Dosage, interactions, pharmacy contact |
+| **Equipment** | Safety procedures, maintenance schedule, parts ordering |
+
+**Key Innovation:** The responder to an assistance beacon might not be a human - it could be a household robot or MX-compliant computer system.
+
+### 7. Machine-to-Machine Response Protocol
+
+When a device broadcasts an assistance beacon, the responder's identity layer determines the response.
+
+#### 7.1 Responder Types
+
+| Responder | Identity Layer | Response Capability |
+|-----------|----------------|---------------------|
+| **Human with App** | Personal preferences, language | Full interaction, decision-making |
+| **Household Robot** | Device capabilities, permissions | Physical assistance, task execution |
+| **Smart Home Hub** | Connected devices, automation rules | System coordination, alerts |
+| **Business System** | Service parameters, operating hours | Automated responses, escalation |
+| **Emergency Services** | Authority level, jurisdiction | Priority response, interrogation rights |
+
+#### 7.2 Priority-Based Escalation
+
+Cards can specify response priorities with automatic escalation:
+
+```
+Assistance Request Card:
+  priority_chain:
+    1. human_first: true
+       timeout: 5 minutes
+    2. household_robot: true
+       timeout: 2 minutes
+    3. emergency_services: false
+       conditions: [fire, medical, security]
+```
+
+**Example: Elderly Person Needs Help**
+```
+1. Beacon activated (fall detected or button pressed)
+2. Card specifies: "Call human family member first"
+3. No response in 5 minutes
+4. Card escalates: "Alert household robot for physical check"
+5. Robot confirms situation requires help
+6. Card escalates: "Contact emergency services"
+```
+
+### 8. Emergency Services Integration
+
+MX-Cards enable automated emergency response with verified identity and location.
+
+#### 8.1 Emergency Card Structure
+
+```json
+{
+  "@type": "EmergencyCard",
+  "location": {
+    "address": "123 High Street, London, W1A 1AA",
+    "coordinates": {"lat": 51.5074, "lng": -0.1278},
+    "access_instructions": "Blue door, code 4521, flat 3B"
+  },
+  "occupants": {
+    "registered": ["John Smith (82, mobility impaired)", "Jane Smith (79)"],
+    "pets": ["Dog - friendly", "Cat"]
+  },
+  "hazards": ["Gas heating", "Oxygen equipment in bedroom"],
+  "emergency_contacts": [
+    {"name": "Son - Michael", "phone": "+44..."},
+    {"name": "Neighbour - Mrs Jones", "phone": "+44..."}
+  ],
+  "alerting_device": {
+    "device_id": "smoke-detector-kitchen-001",
+    "type": "smoke_detector",
+    "last_test": "2026-01-15",
+    "battery_status": "good"
+  }
+}
+```
+
+#### 8.2 Emergency Flow
+
+```
+1. FIRE DETECTED
+   Smoke detector activates emergency card
+
+2. IMMEDIATE ALERT
+   Card sends to fire brigade agent:
+   - Location (address + coordinates + access instructions)
+   - Occupant details (elderly, mobility issues)
+   - Known hazards (oxygen equipment)
+   - Alerting device ID
+
+3. SYNCHRONIZATION
+   Fire brigade system acknowledges receipt
+   Household system confirms: "Alert received by [Fire Station X]"
+
+4. AUTHORIZATION CHECK
+   Fire brigade can interrogate alerting device:
+   - "Confirm smoke detection?" → "Yes, kitchen sensor, high reading"
+   - "Other sensors?" → "No smoke in other rooms"
+   - "Occupant status?" → "Motion detected in living room 2 mins ago"
+
+5. FALSE ALARM PREVENTION
+   Household system can:
+   - Cancel alert within 60 seconds (burnt toast scenario)
+   - Require confirmation from second sensor
+   - Allow authorized occupant to dismiss with code
+
+6. RESPONSE DISPATCH
+   Fire brigade dispatches with full context:
+   - Exact location and access
+   - Vulnerable occupants known
+   - Hazards pre-identified
+   - Contact numbers ready
+```
+
+#### 8.3 Authorization and Verification
+
+| Action | Authorization Required |
+|--------|----------------------|
+| **Raise alarm** | Device registration + active status |
+| **Cancel alarm** | Occupant authentication (code, voice, app) |
+| **Interrogate device** | Emergency services credential |
+| **Access location data** | Emergency services credential |
+| **Contact occupants** | Any authorized responder |
+| **Dispatch response** | Emergency services internal |
+
+#### 8.4 False Alarm Mitigation
+
+- **Confirmation window:** 60-second cancel period for accidental triggers
+- **Multi-sensor verification:** Require 2+ sensors before emergency escalation
+- **Pattern detection:** Learn normal patterns (cooking smoke vs fire)
+- **Human checkpoint:** "Press button to confirm emergency" before dispatch
+- **Interrogation protocol:** Emergency services can query device state before dispatch
+
 ---
 
 ## Card Consumers (Humans and Machines)
@@ -635,6 +814,59 @@ Browser agent encounters image file
 | OCR: partial text extraction | Complete document summary |
 | Audio transcription: error-prone | Verified audio description |
 
+### Claim 12: Error Recovery Context Cards
+A method for providing contextual assistance to users encountering errors comprising:
+- QR codes embedded in error screens (404, 500, timeouts, validation errors)
+- MX-Cards containing specific recovery instructions for each error type
+- Contextual help based on what the user was attempting
+- Alternative pathways and escalation options
+- Multi-format delivery (visual, audio, simplified) based on identity layer
+- Applicable to: websites, applications, physical products, kiosks, and any user interface
+
+**Key Innovation:** Transforms confusing error states into actionable assistance.
+
+### Claim 13: Machine-to-Machine Response Protocol
+A protocol enabling automated response chains between MX-Card-enabled devices comprising:
+- Responder identity layer determining response capability
+- Priority-based escalation chains (human first → robot → emergency services)
+- Configurable timeout-based automatic escalation
+- Responder type detection (human app, household robot, smart hub, business system)
+- Bi-directional communication between alerting device and responder
+- Authorization levels determining permissible actions per responder type
+
+**Example Flow:**
+```
+Assistance needed → Human notified (5 min timeout)
+→ No response → Household robot alerted (2 min timeout)
+→ Robot confirms emergency → Emergency services contacted
+```
+
+### Claim 14: Emergency Services Integration Protocol
+A method for automated emergency response with verified context comprising:
+- Emergency cards containing location, occupant details, hazards, and access instructions
+- Automatic alert transmission to emergency services with full context
+- Device interrogation capability allowing emergency services to query alerting devices
+- Synchronization protocol confirming alert receipt
+- False alarm mitigation through confirmation windows, multi-sensor verification, and cancellation codes
+- Authorization hierarchy (occupant cancel, emergency services interrogate, dispatch authority)
+- Household/business identity layer providing address and access details to responders
+
+**Authorization Controls:**
+| Action | Required Authorization |
+|--------|----------------------|
+| Raise alarm | Registered device |
+| Cancel alarm | Occupant authentication |
+| Interrogate device | Emergency services credential |
+| Access location data | Emergency services credential |
+| Dispatch response | Emergency services internal |
+
+**False Alarm Prevention:**
+- 60-second confirmation window
+- Multi-sensor verification requirement
+- Pattern learning (cooking smoke vs fire)
+- Human checkpoint option
+- Device state interrogation before dispatch
+
 ---
 
 ## Prior Art Considerations
@@ -653,6 +885,10 @@ Browser agent encounters image file
 | Wayfinding Apps | Navigation | Universal card format with personalised instructions |
 | EXIF/XMP Metadata | File descriptions | Structured card reference, not free-text descriptions |
 | PDF Metadata | Document properties | Verified context, not just author/title |
+| Smart Home Systems | Device automation | Universal protocol, identity layer, priority escalation |
+| Emergency Alert Systems | Fire/medical alerts | Device interrogation, false alarm mitigation, context delivery |
+| Error Pages | User notification | Contextual help cards, recovery instructions, accessibility |
+| Home Robots | Physical assistance | Identity-aware responses, escalation chains, authorization |
 
 ### Novel Elements (No Known Prior Art)
 
@@ -674,6 +910,12 @@ Browser agent encounters image file
 16. **Universal consumer protocol** - Humans and machines as equal card consumers
 17. **Media metadata embedding** - MX-Card references in EXIF, XMP, PDF, ID3 metadata
 18. **Content analysis elimination** - Verified context replaces vision/audio model inference
+19. **Error recovery cards** - QR codes on error screens providing contextual help
+20. **Machine-to-machine response** - Robots and systems as first-class responders
+21. **Priority-based escalation** - Timeout-triggered response chain (human → robot → emergency)
+22. **Emergency services integration** - Automated alerts with verified location and context
+23. **Device interrogation protocol** - Emergency services querying alerting devices
+24. **False alarm mitigation** - Multi-sensor verification, confirmation windows, cancellation codes
 
 ---
 
@@ -748,6 +990,7 @@ Browser agent encounters image file
 | 2026-01-26 | 0.4 | Added context-switching identity layers, environmental benefits, universal consumer protocol, Claims 8-10 |
 | 2026-01-26 | 0.5 | Added media file metadata embedding (EXIF, XMP, PDF, ID3), Claim 11 |
 | 2026-01-26 | 0.6 | Added Inventor's Statement documenting problem-driven origin of invention |
+| 2026-01-26 | 0.7 | Added error recovery, M2M response protocol, emergency services integration, Claims 12-14 |
 
 ---
 
