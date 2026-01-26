@@ -24,7 +24,34 @@ The MX-Card System is a standardised protocol enabling machine-readable context 
 2. **MX-Registry** - Verified ownership registry with domain-based authentication
 3. **Identity Layer** - Personal preference data that informs card interactions
 
-The system bridges physical and digital worlds through QR codes, enabling any physical object (posters, signs, bus stops, premises, vehicles, blue plaques) to provide machine-readable context to AI agents, robots, phones, cars, and LLMs.
+The system bridges physical and digital worlds through QR codes, enabling any physical object to provide machine-readable context to AI agents, robots, phones, cars, and LLMs.
+
+**Core Value Proposition: Anti-Hallucination Infrastructure**
+
+MX-Cards provide verified, authoritative context directly to AI agents, eliminating the need for LLMs to:
+- Guess or infer information about physical objects
+- Spend tokens researching context that could be provided directly
+- Risk hallucination when authoritative information is unavailable
+
+By embedding verified context at the source, MX-Cards reduce both computational cost and error rates for AI agent interactions.
+
+---
+
+## Universal Application
+
+MX-Cards are designed for ubiquitous deployment across all contexts where machines need verified information:
+
+| Domain | Applications |
+|--------|-------------|
+| **Cultural** | Artworks, museum exhibits, sculptures, monuments, blue plaques |
+| **Commercial** | Shop fronts, product displays, point-of-sale, receipts |
+| **Legal** | Contracts, certificates, licenses, permits, deeds |
+| **Infrastructure** | Bus stops, street signs, parking meters, utilities |
+| **Property** | Buildings, rooms, equipment, vehicles, assets |
+| **Events** | Posters, tickets, programmes, schedules |
+| **Documents** | Reports, invoices, warranties, manuals |
+
+Every physical object that an AI agent might need to understand becomes a potential MX-Card location.
 
 ---
 
@@ -32,11 +59,21 @@ The system bridges physical and digital worlds through QR codes, enabling any ph
 
 Current challenges in machine-agent interactions:
 
-1. **No standardised format** for providing machine-readable instructions at physical locations
-2. **No verification mechanism** to prove authority over a location or service
-3. **No portable identity** allowing users to share preferences with services (menus, allergies, accessibility needs)
-4. **No bridge** between physical objects and AI agent capabilities
-5. **Data sovereignty concerns** when sharing personal information across jurisdictions
+1. **AI hallucination risk** - LLMs forced to guess or infer information about physical objects, locations, and services when authoritative data is unavailable
+2. **Token expenditure waste** - Agents spend computational resources researching context that could be provided directly at source
+3. **No standardised format** for providing machine-readable instructions at physical locations
+4. **No verification mechanism** to prove authority over a location or service
+5. **No portable identity** allowing users to share preferences with services (menus, allergies, accessibility needs)
+6. **No bridge** between physical objects and AI agent capabilities
+7. **Data sovereignty concerns** when sharing personal information across jurisdictions
+
+**The Hallucination Problem:**
+
+When an AI agent encounters a physical object (artwork, legal document, shop front, certificate), it currently has two options:
+1. **Guess** based on training data → Risk of hallucination
+2. **Research** by fetching web content → Token expenditure, latency, still may hallucinate
+
+MX-Cards solve this by providing verified, authoritative context at the point of need.
 
 ---
 
@@ -188,6 +225,10 @@ QR codes serve as the physical-digital bridge.
 
 | Location | Use Case |
 |----------|----------|
+| **Artworks** | Artist, provenance, context, interpretation, purchase info |
+| **Legal Documents** | Verification, signing authority, amendment history |
+| **Certificates** | Authenticity verification, issuer details, validity period |
+| **Shop Fronts** | Business hours, services, accessibility, real-time availability |
 | **Posters/Signs** | Event information, instructions, feedback |
 | **Bus Stops** | Real-time arrivals, route information for agents |
 | **Premises** | Business hours, services, accessibility info |
@@ -195,6 +236,8 @@ QR codes serve as the physical-digital bridge.
 | **Vehicles** | Service information, booking, feedback |
 | **Property** | Personalised visitor instructions |
 | **Products** | Manuals, support, recycling instructions |
+| **Receipts/Invoices** | Transaction verification, warranty activation |
+| **Permits/Licenses** | Validity verification, authority details |
 
 #### 4.2 QR Code Types
 
@@ -297,6 +340,14 @@ A protocol enabling AI agents to:
 - Receive filtered responses based on shared identity layer
 - Trigger owner contact routines before receiving responses
 
+### Claim 6: Anti-Hallucination Context Provision
+A method for reducing AI agent hallucination and token expenditure comprising:
+- Embedding verified, authoritative context at physical locations via QR-linked cards
+- Providing structured data that eliminates need for inference or web research
+- Registry verification ensuring context authenticity and ownership authority
+- Direct context injection reducing computational overhead for AI agents
+- Applicable to: artworks, legal documents, certificates, shop fronts, infrastructure, and any physical object requiring machine understanding
+
 ---
 
 ## Prior Art Considerations
@@ -313,11 +364,14 @@ A protocol enabling AI agents to:
 
 ### Novel Elements (No Known Prior Art)
 
-1. **Machine-readable instruction cards** with owner contact routines
-2. **Identity layer inheritance** for automatic preference filtering
-3. **Domain-verified registry** for physical location authority
-4. **Encrypted scheduled cards** with access level tokens
-5. **Physical-to-agent context bridge** via QR-linked cards
+1. **Anti-hallucination infrastructure** - Verified context eliminating AI inference/guessing
+2. **Token expenditure reduction** - Direct context provision vs. web research
+3. **Machine-readable instruction cards** with owner contact routines
+4. **Identity layer inheritance** for automatic preference filtering
+5. **Domain-verified registry** for physical location authority
+6. **Encrypted scheduled cards** with access level tokens
+7. **Physical-to-agent context bridge** via QR-linked cards
+8. **Universal application** - Single standard for artworks to legal documents
 
 ---
 
@@ -376,6 +430,7 @@ A protocol enabling AI agents to:
 | Date | Version | Changes |
 |------|---------|---------|
 | 2026-01-26 | 0.1 | Initial draft from concept notes |
+| 2026-01-26 | 0.2 | Added anti-hallucination value proposition, universal application scope, Claim 6 |
 
 ---
 
