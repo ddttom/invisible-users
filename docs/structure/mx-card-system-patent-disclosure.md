@@ -282,6 +282,126 @@ Example: User's allergy information in Identity Layer automatically filters menu
 - Revocable access tokens
 - Audit trail of all shares
 
+#### 3.4 Permission Guards
+
+Any facet of the identity layer can have a **permission guard** controlling access:
+
+```
+Identity Layer:
+  dietary:
+    allergies: [peanuts, shellfish]
+    guard: public  # Shared with any menu card
+
+  medical:
+    conditions: [diabetes, heart condition]
+    guard: emergency_only  # Only emergency services
+
+  financial:
+    income_bracket: medium
+    guard: never  # Never shared
+
+  age:
+    verified: true
+    date_of_birth: [REDACTED]
+    guard: age_verification_only  # Only shares "over 18" status
+```
+
+**Key Privacy Principles:**
+- AI agents are NOT told why access to a facet is denied
+- Agents may not even know if an identity layer exists
+- Users can adjust permissions at will
+- Denial appears as "not available" not "access denied"
+
+#### 3.5 Hierarchical Identity Layers
+
+Identity layers support parent-child inheritance relationships:
+
+**Family Hierarchy:**
+```
+Parent Identity Layer (Adult)
+    ↓ creates and manages
+Child Identity Layer
+    ↓ inherits (with overrides)
+    - Dietary restrictions (inherited)
+    - Emergency contacts (inherited)
+    - Spending limits (parent-controlled)
+    - Content filters (parent-controlled)
+    - Location sharing (parent-controlled)
+```
+
+**Business Hierarchy:**
+```
+Business Identity Layer (Company)
+    ↓ creates and manages
+Employee Identity Layer
+    ↓ inherits
+    - Business contact details
+    - Office location access
+    - Corporate dietary policies (events)
+    - Expense authorisation levels
+    - System access permissions
+```
+
+**Key Features:**
+- Adults can create identity layers for children
+- Child layers inherit from parent with overrides
+- Employees effectively "children" of business identity
+- Inheritance can be mandatory or optional per facet
+- Revocation cascades through hierarchy
+
+#### 3.6 Government and Official Credentials
+
+Governments and authorised bodies can issue verified credentials for identity layers:
+
+| Credential Type | Issuer | Use Case |
+|-----------------|--------|----------|
+| **Age Verification** | Government | Alcohol, gambling, adult content access |
+| **Social Security** | Government | Official identification, benefits |
+| **Professional License** | Regulatory body | Doctor, lawyer, engineer verification |
+| **Disability Status** | Health authority | Accessibility accommodations |
+| **Immigration Status** | Border agency | Travel, work authorisation |
+| **Educational Credential** | Institution | Degree, certification verification |
+
+**Example: Age Verification**
+```
+User approaches venue with age restriction
+→ Beacon requests age verification
+→ Identity layer checks permission guard
+→ If permitted: returns "verified over 18" (NOT birthdate)
+→ If denied: returns "not available"
+→ Venue never sees actual date of birth
+```
+
+#### 3.7 Identity Layer Portability
+
+Identity layers must be portable across devices and recoverable:
+
+**Transfer Mechanisms:**
+- Signed secure transfer to backup (encrypted)
+- Transfer to owner's new phone or laptop
+- Cloud backup with encryption keys held by owner
+- QR code on smartwatch triggers sync with phone
+
+**Lifecycle Management:**
+- **Create:** New identity layer with optional inheritance
+- **Backup:** Encrypted export to secure storage
+- **Transfer:** Signed migration to new device
+- **Merge:** Combine identity layers (with conflict resolution)
+- **Delete:** Global deletion by signed application (GDPR right to erasure)
+
+**Cross-Device Configuration:**
+```
+Smartwatch with QR code
+    + Phone with identity layer
+    = Configured connection
+
+1. Smartwatch displays device QR code
+2. Phone scans QR code
+3. Identity layer authorises pairing
+4. Smartwatch receives permitted identity facets
+5. Both devices share coordinated identity
+```
+
 ### 4. Discovery Mechanisms
 
 MX-Cards can be discovered through multiple channels, not limited to visual interfaces.
@@ -613,6 +733,102 @@ MX-Cards enable automated emergency response with verified identity and location
 - **Human checkpoint:** "Press button to confirm emergency" before dispatch
 - **Interrogation protocol:** Emergency services can query device state before dispatch
 
+### 9. Venue Discovery and Onboarding
+
+When users encounter unknown venues with MX-Card beacons, a structured onboarding flow enables personalised experiences.
+
+#### 9.1 Unknown Beacon Discovery
+
+```
+1. User enters premise with unknown beacon
+2. If identity layer allows notifications:
+   → App prompts: "This venue offers MX-Card services. Enable?"
+3. If user accepts:
+   → Identity layer searches for matching data set
+   → If no match: downloads venue's default configuration
+4. User can adjust settings:
+   → Add inheritance from personal preferences
+   → Modify options (route preferences, notifications)
+   → Enable/disable specific features
+```
+
+**Example: Museum Visit**
+```
+User enters National Gallery (first visit)
+→ Beacon detected, prompt shown
+→ User enables MX-Card
+→ No matching data found
+→ Museum default downloaded:
+    - Suggested route: "Highlights Tour (90 mins)"
+    - Alternative: "Impressionist Focus (45 mins)"
+    - Alternative: "Accessibility Route (60 mins)"
+→ User selects route
+→ Identity layer stores preferences for future visits
+```
+
+#### 9.2 Venue Route Menus
+
+Venues can offer a **menu of experiences** via MX-Cards:
+
+| Venue Type | Route Options |
+|------------|---------------|
+| **Museum** | Highlights, themed tours, accessibility, kids, expert |
+| **Shopping Centre** | Quick essentials, browse all, specific stores, food focus |
+| **Hospital** | Patient visit, outpatient, emergency, staff |
+| **Airport** | Fast track, lounge access, family, accessibility |
+| **Stadium** | Seat finder, food/drink, facilities, exit routes |
+
+#### 9.3 Revenue Sharing Model
+
+When venues charge for premium MX-Card experiences:
+
+```
+Paid Experience Flow:
+1. Venue offers premium content (audio guide, exclusive access)
+2. User purchases via MX-Card system
+3. Revenue split:
+   - Venue: 70-80%
+   - MX-Card hosting/registry: 15-25%
+   - Payment processing: 5%
+```
+
+**Revenue Scenarios:**
+| Content Type | Example Price | Venue Share | Platform Share |
+|--------------|---------------|-------------|----------------|
+| Audio guide | £5 | £4 | £1 |
+| Premium route | £10 | £8 | £2 |
+| Exclusive access | £25 | £20 | £5 |
+| Annual membership | £50 | £40 | £10 |
+
+#### 9.4 Restaurant and Menu Integration
+
+Restaurants can integrate MX-Cards for personalised dining:
+
+```
+Guest arrives at restaurant
+→ Beacon offers menu card
+→ Identity layer shares (if permitted):
+    - Dietary restrictions (allergies, vegetarian)
+    - Cuisine preferences
+    - Budget range (if shared)
+→ Menu card returns:
+    - Personalised recommendations
+    - Filtered menu (allergens removed)
+    - Special offers matching preferences
+→ Recipe cards available for specific dishes
+```
+
+**Recipe Table Cards:**
+```
+Table QR code links to:
+- Current order status
+- Dish descriptions and ingredients
+- Recipe cards (if restaurant shares)
+- Feedback/rating option
+- Bill request
+- Loyalty program integration
+```
+
 ---
 
 ## Card Consumers (Humans and Machines)
@@ -867,6 +1083,62 @@ A method for automated emergency response with verified context comprising:
 - Human checkpoint option
 - Device state interrogation before dispatch
 
+### Claim 15: Permission Guards for Identity Facets
+A method for granular privacy control in identity layers comprising:
+- Per-facet permission guards (public, restricted, emergency-only, never)
+- Silent denial: AI agents not informed why access is denied
+- Agents unaware whether identity layer exists if all facets denied
+- User-adjustable permissions at any time
+- Denial appears as "not available" not "access denied"
+- Different permissions for different requester types (venue, emergency, government)
+
+**Privacy Principle:** Agents cannot distinguish between "no data" and "access denied."
+
+### Claim 16: Hierarchical Identity Inheritance
+A method for managing identity layers in hierarchical relationships comprising:
+- Parent-child identity structures (adult creates for child)
+- Inheritance with selective overrides
+- Business-employee hierarchies (employee as "child" of business)
+- Mandatory vs optional inheritance per facet
+- Revocation cascading through hierarchy
+- Spending limits, content filters, location sharing (parent-controlled)
+- Corporate policies inherited to employee identity layers
+
+**Example Hierarchies:**
+```
+Parent → Child (family)
+Business → Employee (corporate)
+School → Student (educational)
+Hospital → Patient (medical, temporary)
+```
+
+### Claim 17: Government and Official Credential Integration
+A method for incorporating verified government and institutional credentials comprising:
+- Age verification certificates (reveals "over 18" not birthdate)
+- Social security/national ID integration
+- Professional license verification (doctor, lawyer, engineer)
+- Disability status from health authorities
+- Educational credentials from institutions
+- Immigration/travel authorisation status
+- Credentials protected by permission guards
+- Minimal disclosure principle (only necessary information revealed)
+
+### Claim 18: Venue Discovery and Onboarding Protocol
+A method for personalised venue experiences comprising:
+- Unknown beacon triggers opt-in prompt (if identity layer permits)
+- Identity layer searches for matching configuration
+- Default venue configuration downloaded if no match
+- User adjustable settings with inheritance from personal preferences
+- Menu of routes/experiences offered by venue (museum tours, shopping paths)
+- Revenue sharing model for paid premium content
+- Preference storage for return visits
+- Restaurant integration (dietary filtering, recipe tables, bill management)
+
+**Revenue Sharing:**
+```
+Paid content purchase → Venue (70-80%) + Platform (15-25%) + Processing (5%)
+```
+
 ---
 
 ## Prior Art Considerations
@@ -889,6 +1161,10 @@ A method for automated emergency response with verified context comprising:
 | Emergency Alert Systems | Fire/medical alerts | Device interrogation, false alarm mitigation, context delivery |
 | Error Pages | User notification | Contextual help cards, recovery instructions, accessibility |
 | Home Robots | Physical assistance | Identity-aware responses, escalation chains, authorization |
+| Digital ID/eID | Identity verification | Permission guards, silent denial, hierarchical inheritance |
+| Parental Controls | Child restrictions | Identity inheritance, cascading revocation, multi-hierarchy |
+| Museum Audio Guides | Venue tours | Universal protocol, menu of routes, revenue sharing |
+| Restaurant Apps | Menu/ordering | Identity-informed filtering, recipe integration, table cards |
 
 ### Novel Elements (No Known Prior Art)
 
@@ -916,6 +1192,15 @@ A method for automated emergency response with verified context comprising:
 22. **Emergency services integration** - Automated alerts with verified location and context
 23. **Device interrogation protocol** - Emergency services querying alerting devices
 24. **False alarm mitigation** - Multi-sensor verification, confirmation windows, cancellation codes
+25. **Permission guards** - Per-facet privacy with silent denial (agents unaware of denied data)
+26. **Hierarchical identity inheritance** - Parent-child, business-employee relationships
+27. **Government credential integration** - Age verification, ID, licenses with minimal disclosure
+28. **Identity layer portability** - Secure backup, transfer, global deletion
+29. **Cross-device identity sync** - Smartwatch QR + phone identity coordination
+30. **Venue onboarding protocol** - Unknown beacon opt-in, default configuration download
+31. **Menu of experiences** - Venues offer route options (museum tours, shopping paths)
+32. **Revenue sharing model** - Platform fees for paid premium venue content
+33. **Restaurant identity integration** - Dietary filtering, recipe tables, bill management
 
 ---
 
@@ -991,6 +1276,7 @@ A method for automated emergency response with verified context comprising:
 | 2026-01-26 | 0.5 | Added media file metadata embedding (EXIF, XMP, PDF, ID3), Claim 11 |
 | 2026-01-26 | 0.6 | Added Inventor's Statement documenting problem-driven origin of invention |
 | 2026-01-26 | 0.7 | Added error recovery, M2M response protocol, emergency services integration, Claims 12-14 |
+| 2026-01-26 | 0.8 | Added permission guards, hierarchical identity, government credentials, venue onboarding, Claims 15-18 |
 
 ---
 
