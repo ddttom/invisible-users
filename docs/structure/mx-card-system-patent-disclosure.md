@@ -35,6 +35,16 @@ MX-Cards provide verified, authoritative context directly to AI agents, eliminat
 
 By embedding verified context at the source, MX-Cards reduce both computational cost and error rates for AI agent interactions.
 
+**Environmental Impact: Reducing AI Energy Consumption**
+
+Every AI inference consumes energy. When agents must guess, research, or make multiple attempts to understand context, energy is wasted. MX-Cards provide a direct pathway to verified information, dramatically reducing:
+- Inference cycles (no guessing, no retries)
+- Web scraping and research operations
+- Token generation for context-building prompts
+- Failed interactions requiring human intervention
+
+At scale, this represents significant energy savings - a critical consideration as AI usage grows exponentially.
+
 ---
 
 ## Universal Application
@@ -184,7 +194,7 @@ The Registry provides verified ownership and discovery services.
 
 ### 3. Identity Layer
 
-A portable personal data container that travels with the user.
+A portable personal data container that travels with the user. Supports **context-switching** for different situations.
 
 #### 3.1 Identity Layer Contents
 
@@ -194,8 +204,47 @@ A portable personal data container that travels with the user.
 | **Accessibility** | Mobility, vision, hearing needs | Informs Location Cards |
 | **Communication** | Language, contact preferences | Informs All Cards |
 | **Authentication** | Verified credentials, tokens | Access Control |
+| **Interests** | Topics, hobbies, professional focus | Informs Discovery Alerts |
+| **Context Mode** | Work, transport, vacation, event | Modifies All Responses |
 
-#### 3.2 Inheritance Model
+#### 3.2 Context-Switching Identity Layers
+
+Users can maintain **multiple identity layer profiles** and switch between them based on context:
+
+| Context | Active Interests | Notifications |
+|---------|------------------|---------------|
+| **Work Mode** | Professional topics, industry news | Meeting rooms, office services |
+| **Transport Mode** | Route info, accessibility | Arrivals, connections, delays |
+| **Vacation Mode** | Tourism, restaurants, attractions | Local experiences, discounts |
+| **Event Mode** | Event-specific (museum, sports, concert) | Exhibits, facilities, schedules |
+| **Home Mode** | Local services, community | Neighbourhood updates |
+
+**Event-Specific Temporary Layers:**
+
+When visiting a museum, sports ground, or venue, the app can create a **temporary identity layer** exposing different interests than normal:
+
+```
+Normal Identity Layer:
+  interests: [technology, cooking, cycling]
+
+Museum Visit Layer (temporary):
+  interests: [art history, impressionism, sculpture]
+  accessibility: [audio descriptions preferred]
+  expires: end of visit
+```
+
+**Beacon Interest Matching:**
+
+When a beacon is detected, the system checks if the card matches the user's active identity layer interests:
+
+```
+1. Beacon detected → Card retrieved
+2. Card topics: [impressionism, Monet, 19th century]
+3. User interests: [impressionism, art history]
+4. Match found → Notification: "Monet's Water Lilies ahead - audio guide available"
+```
+
+#### 3.3 Inheritance Model
 
 ```
 Identity Layer (Personal)
@@ -306,17 +355,42 @@ Native app for card creation, management, and discovery.
 
 ---
 
-## Machine Types (Card Consumers)
+## Card Consumers (Humans and Machines)
 
-The system serves multiple machine categories:
+MX-Cards serve **all types of consumers equally** - humans and machines are first-class citizens in the system.
+
+### Human Consumers
+
+| User Type | Use Case | Identity Layer Focus |
+|-----------|----------|---------------------|
+| **General Public** | Museums, shops, transport, events | Interests, accessibility, language |
+| **Blind/Low Vision** | Audio navigation, spoken instructions | Vision accessibility, audio preferences |
+| **Deaf/Hard of Hearing** | Visual alerts, text instructions | Hearing accessibility, visual preferences |
+| **Mobility Impaired** | Accessible routes, facility locations | Mobility needs, assistance requirements |
+| **Tourists** | Local information, translation | Language, vacation mode interests |
+| **Workers** | Professional context, office services | Work mode, professional interests |
+
+### Machine Consumers
 
 | Machine Type | Examples | Primary Use |
 |--------------|----------|-------------|
-| **Robots** | Service robots, delivery bots | Navigation, task instructions |
-| **Phones** | Smartphones, tablets | Personal assistant integration |
-| **Cars** | Autonomous vehicles, connected cars | Location context, services |
+| **Robots** | Service robots, delivery bots, warehouse automation | Navigation, task instructions, obstacle info |
+| **Phones** | Smartphones, tablets, wearables | Personal assistant integration |
+| **Cars** | Autonomous vehicles, connected cars | Location context, services, charging |
 | **LLMs** | ChatGPT, Claude, Gemini | Context for user queries |
-| **IoT Devices** | Smart home, wearables | Automated responses |
+| **IoT Devices** | Smart home, industrial sensors | Automated responses |
+| **Drones** | Delivery drones, inspection drones | Landing zones, no-fly areas, delivery points |
+
+### Universal Consumer Principle
+
+The same MX-Card serves a robot navigating a museum and a blind person touring the same space. Both receive context appropriate to their capabilities:
+
+```
+Museum Exhibit Card:
+  → Robot: "Exhibit 47. Clearance: 2.1m. No touch. Photography permitted."
+  → Blind User: "You're approaching Monet's Water Lilies. Audio description available. Touch prohibited."
+  → Sighted Tourist: "Claude Monet, Water Lilies, 1906. Tap for more information."
+```
 
 ---
 
@@ -410,6 +484,48 @@ Identity layer shares "vision: blind" → Card returns audio:
 Board the third carriage for accessible seating."
 ```
 
+### Claim 8: Context-Switching Identity Layers
+A method for maintaining and switching between multiple identity layer profiles comprising:
+- Multiple named identity profiles per user (work, transport, vacation, event, home)
+- Automatic or manual context switching based on location, time, or user action
+- Event-specific temporary identity layers with automatic expiration
+- Interest matching between identity layer and discovered cards
+- Notification when beacon/card matches active identity interests
+- Profile inheritance (base preferences inherited by context-specific layers)
+
+**Example:**
+```
+User enters museum → App suggests "Museum Mode"
+→ Activates temporary identity layer with art interests
+→ Beacons now trigger notifications for matching exhibits
+→ Layer expires when user leaves venue
+```
+
+### Claim 9: Energy-Efficient AI Context Provision
+A method for reducing energy consumption in AI systems comprising:
+- Direct provision of verified context eliminating inference cycles
+- Reduced token generation through pre-structured information
+- Elimination of web scraping and research operations for context building
+- Prevention of failed interactions requiring retry or human intervention
+- Measurable reduction in computational resources per interaction
+- Scalable energy savings as deployment increases
+
+**Environmental Impact:**
+At scale, the reduction in AI inference cycles represents significant energy savings:
+- Each eliminated inference cycle saves computational resources
+- Reduced web scraping eliminates redundant data transfer
+- Verified context prevents retry loops from failed understanding
+- Direct context injection replaces multi-step research processes
+
+### Claim 10: Universal Consumer Protocol
+A protocol enabling identical MX-Cards to serve both human and machine consumers comprising:
+- Single card definition serving multiple consumer types
+- Consumer-type detection (human app, robot, LLM, IoT device)
+- Automatic response format adaptation based on consumer capabilities
+- Consistent information across all consumer types
+- Machine-specific metadata (clearances, permissions, technical specs)
+- Human-specific formatting (language, accessibility, presentation)
+
 ---
 
 ## Prior Art Considerations
@@ -438,6 +554,13 @@ Board the third carriage for accessible seating."
 7. **Physical-to-agent context bridge** via QR-linked cards
 8. **Universal application** - Single standard for artworks to legal documents
 9. **Bluetooth beacon discovery** - Non-visual MX-Card discovery for accessibility
+10. **Accessibility-informed responses** - Same card, multiple formats based on user needs
+11. **Multi-modal delivery** - Audio, visual, haptic output from single card source
+12. **Context-switching identity layers** - Work, transport, vacation, event modes
+13. **Event-specific temporary layers** - Auto-expiring interest profiles for venues
+14. **Interest-beacon matching** - Notifications when cards match active interests
+15. **Energy-efficient AI operations** - Reduced inference cycles, environmental benefit
+16. **Universal consumer protocol** - Humans and machines as equal card consumers
 10. **Accessibility-informed responses** - Same card, multiple formats based on user needs
 11. **Multi-modal delivery** - Audio, visual, haptic output from single card source
 
@@ -511,6 +634,7 @@ Board the third carriage for accessible seating."
 | 2026-01-26 | 0.1 | Initial draft from concept notes |
 | 2026-01-26 | 0.2 | Added anti-hallucination value proposition, universal application scope, Claim 6 |
 | 2026-01-26 | 0.3 | Added Bluetooth beacon discovery, accessibility use cases, Claim 7 |
+| 2026-01-26 | 0.4 | Added context-switching identity layers, environmental benefits, universal consumer protocol, Claims 8-10 |
 
 ---
 
