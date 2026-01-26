@@ -153,33 +153,96 @@ Consider design patents for:
 
 ## Budget Estimate
 
-### Minimum Viable Patent Protection
+### Cost Comparison: DIY vs. With Attorney
 
-| Item | Cost (GBP) | Notes |
-|------|------------|-------|
-| UK Provisional Filing | £230 | Self-file or attorney |
-| US Provisional Filing | £260 | Self-file or attorney |
-| Attorney Consultation | £500-1,000 | Initial review |
-| Prior Art Search | £500-1,500 | Professional search |
-| **Subtotal (Provisional)** | **£1,500-3,000** | |
+#### UK Patent Costs
 
-### Full Patent (Year 1)
+| Stage | DIY Cost | With Attorney | Notes |
+|-------|----------|---------------|-------|
+| **Provisional Application** | £60 | £1,500-3,000 | UKIPO fee only vs. full drafting |
+| **Search Fee** | £150 | Included | UKIPO official search |
+| **Examination Fee** | £100 | Included | UKIPO examination |
+| **Full Application** | £310 | £4,000-8,000 | Filing + claims fees |
+| **Grant Fee** | £100 | Included | Upon allowance |
+| **Total UK** | **£620** | **£5,500-11,000** | |
 
-| Item | Cost (GBP) | Notes |
-|------|------------|-------|
-| UK Full Patent Application | £3,000-8,000 | With attorney |
-| US Full Patent Application | £5,000-15,000 | With attorney |
-| USPTO/UKIPO Examination Fees | £1,000-2,000 | Variable |
-| Office Action Responses | £1,000-3,000 | Per response |
-| **Subtotal (Full Filing)** | **£10,000-28,000** | |
+#### US Patent Costs
+
+| Stage | DIY Cost | With Attorney | Notes |
+|-------|----------|---------------|-------|
+| **Provisional Application** | $320 (£260) | £2,000-4,000 | USPTO fee vs. full drafting |
+| **Full Application (Utility)** | $1,800 (£1,450) | £8,000-15,000 | Small entity rate |
+| **Search + Examination** | $800 (£650) | Included | USPTO fees |
+| **Issue Fee** | $600 (£480) | Included | Upon allowance |
+| **Total US** | **$3,520 (£2,840)** | **£10,000-19,000** | |
+
+### Recommended Budget Scenarios
+
+#### Scenario A: Defensive Protection (UK Only)
+*Prevent others from patenting; establish priority date*
+
+| Item | Cost |
+|------|------|
+| UK Provisional (DIY) | £60 |
+| Prior Art Search (DIY) | £0 |
+| Full UK Application (DIY) | £310 |
+| **Total** | **£370** |
+
+**Risk:** Higher rejection rate without professional drafting
+
+#### Scenario B: UK + US Protection (Recommended)
+*Coverage in two major AI/tech markets*
+
+| Item | Cost |
+|------|------|
+| Attorney Consultation | £500-1,000 |
+| Prior Art Search (Professional) | £1,000-2,000 |
+| UK Provisional (Attorney) | £1,500-2,500 |
+| US Provisional (Attorney) | £2,000-3,500 |
+| UK Full Application | £4,000-8,000 |
+| US Full Application | £8,000-15,000 |
+| Office Action Responses (2-3) | £2,000-6,000 |
+| **Total** | **£19,000-38,000** |
+
+**Timeline:** 3-5 years to grant
+
+#### Scenario C: International Protection (Maximum)
+*Global coverage for licensing/enforcement*
+
+| Item | Cost |
+|------|------|
+| All Scenario B costs | £19,000-38,000 |
+| PCT Application | £3,000-5,000 |
+| National Phase (5 countries) | £10,000-25,000 |
+| EPO Validation (8 countries) | £5,000-15,000 |
+| **Total** | **£37,000-83,000** |
+
+### Ongoing Maintenance Costs
+
+#### UK Renewal Fees (After Grant)
+| Year | Fee |
+|------|-----|
+| Year 5 | £70 |
+| Year 10 | £200 |
+| Year 15 | £400 |
+| Year 20 | £600 |
+
+#### US Maintenance Fees (After Grant)
+| Milestone | Fee (Small Entity) |
+|-----------|-------------------|
+| 3.5 years | $1,600 |
+| 7.5 years | $3,600 |
+| 11.5 years | $7,400 |
 
 ### International Protection (Optional)
 
 | Item | Cost (GBP) | Notes |
 |------|------------|-------|
-| PCT Application | £3,000-5,000 | Preserves 150+ countries |
+| PCT Application | £3,000-5,000 | Preserves rights in 150+ countries for 30 months |
 | National Phase Entry (per country) | £2,000-5,000 each | Selected countries only |
-| EPO Validation | £5,000-15,000 | European coverage |
+| EPO Validation | £5,000-15,000 | Single filing covers 38 European countries |
+| China (CNIPA) | £3,000-8,000 | Large market, complex process |
+| Japan (JPO) | £4,000-10,000 | Translation costs significant |
 
 ---
 
@@ -189,22 +252,52 @@ Consider design patents for:
 
 - Experience with software/method patents
 - Understanding of AI/ML technology
-- UK and US filing capability
+- UK and US filing capability (or partnership with US firm)
 - Reasonable hourly rates (£200-400/hour typical)
 - Clear communication style
+- Fixed-fee options for provisional filing
 
 ### Recommended Approach
 
-1. **Initial consultation** with 2-3 attorneys
-2. **Share patent disclosure document** for feedback
+1. **Initial consultation** with 2-3 attorneys (many offer free 30-min calls)
+2. **Share patent disclosure document** for feedback on patentability
 3. **Request fixed-fee quote** for provisional filing
-4. **Check references** from other tech clients
+4. **Ask about rejection rates** and examination success
+5. **Check references** from other tech/AI clients
 
-### UK Patent Attorney Resources
+### UK Patent Attorney Firms (Software/AI Specialists)
 
-- Chartered Institute of Patent Attorneys (CIPA): cipa.org.uk
-- IP Inclusive directory
-- Law Society patent attorney finder
+Research these firms for initial consultations:
+
+| Firm Type | Examples | Notes |
+|-----------|----------|-------|
+| **Boutique IP Firms** | Mathys & Squire, Mewburn Ellis, Marks & Clerk | Strong software/AI practice |
+| **Tech-Focused** | Reddie & Grose, Carpmaels & Ransford | Cambridge/London tech corridor |
+| **Startup-Friendly** | Dehns, Appleyard Lees | Often offer fixed fees, startup discounts |
+| **Solo Practitioners** | CIPA directory search | Lower overhead, potentially lower cost |
+
+### Finding the Right Attorney
+
+**CIPA Directory Search:**
+1. Visit: cipa.org.uk/find-an-attorney
+2. Filter by: Technology area → "Computing & IT" or "Electronics"
+3. Filter by: Location → Your region
+4. Look for: "AI", "software", "method patents" in profiles
+
+**Questions to Ask in Consultation:**
+- "What's your experience with software method patents?"
+- "Have you filed AI-related patents before?"
+- "What's your typical allowance rate for software patents?"
+- "Can you provide a fixed fee for provisional filing?"
+- "Do you have US filing capability or a US partner firm?"
+
+### Cost-Saving Strategies
+
+1. **DIY Provisional + Attorney Full:** File provisional yourself (£60), then engage attorney for full application
+2. **Fixed-Fee Packages:** Many firms offer fixed fees for provisional (£1,500-2,500)
+3. **Startup Discounts:** Some firms offer 20-30% discount for startups
+4. **Academic Rates:** If affiliated with university, may qualify for reduced rates
+5. **Deferred Payment:** Some attorneys offer payment plans tied to grant
 
 ---
 
