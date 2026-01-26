@@ -217,11 +217,13 @@ Example: User's allergy information in Identity Layer automatically filters menu
 - Revocable access tokens
 - Audit trail of all shares
 
-### 4. QR Code Integration
+### 4. Discovery Mechanisms
 
-QR codes serve as the physical-digital bridge.
+MX-Cards can be discovered through multiple channels, not limited to visual interfaces.
 
-#### 4.1 QR Code Applications
+#### 4.1 QR Code Discovery
+
+QR codes serve as the primary visual physical-digital bridge.
 
 | Location | Use Case |
 |----------|----------|
@@ -245,6 +247,43 @@ QR codes serve as the physical-digital bridge.
 - **Dynamic QR** - Links to card that can be updated
 - **Personalised QR** - Property-specific, owner-controlled
 - **Temporary QR** - Time-limited for events
+
+#### 4.3 Bluetooth Beacon Discovery
+
+Bluetooth Low Energy (BLE) beacons broadcast MX-Card references for proximity-based discovery, enabling **accessibility without visual interaction**.
+
+**How it works:**
+
+```
+1. Beacon broadcasts MX-Card identifier (UUID + card reference)
+2. User's device detects beacon in range
+3. App retrieves MX-Card from registry
+4. Identity layer informs response (e.g., accessibility needs)
+5. Personalised instructions delivered (audio, haptic, visual)
+```
+
+**Accessibility Use Case: Blind Users**
+
+A blind user with the MX-Card app approaches a location (museum, shop, bus stop):
+
+1. **Beacon detection** - Phone detects Bluetooth beacon
+2. **Card retrieval** - App fetches the location's MX-Card
+3. **Identity sharing** - User's identity layer indicates vision impairment
+4. **Personalised response** - Card returns audio instructions tailored to their needs:
+   - "You are entering the National Gallery. The information desk is 10 metres ahead. Touch screens have audio descriptions enabled."
+   - "Bus 73 arrives in 4 minutes. Board at the front door. Tell the driver your destination."
+
+**Key Innovation:** The same MX-Card serves both sighted users (visual info) and blind users (audio instructions) based on identity layer preferences.
+
+#### 4.4 Other Discovery Methods
+
+| Method | Use Case |
+|--------|----------|
+| **NFC Tap** | Close-proximity discovery (tap phone to object) |
+| **URL/Deep Link** | Direct link in digital contexts |
+| **Registry Lookup** | Search by location, domain, or category |
+| **Geofencing** | Automatic discovery when entering area |
+| **Voice Query** | "What MX-Card is at this location?" |
 
 ### 5. Mobile Application
 
@@ -329,9 +368,11 @@ A system for registering and verifying ownership of machine-readable cards compr
 ### Claim 4: Physical-Digital Context Bridge
 A method for providing machine-readable context to autonomous agents through:
 - QR codes on physical objects linking to MX-Cards
-- Real-time card updates without QR code changes
-- Personalised QR codes for property owners
-- Temporary QR codes for time-limited events
+- Bluetooth Low Energy (BLE) beacons broadcasting card references
+- NFC tags for tap-based discovery
+- Real-time card updates without physical medium changes
+- Personalised codes for property owners
+- Temporary codes for time-limited events
 
 ### Claim 5: Agent-to-Card Communication Protocol
 A protocol enabling AI agents to:
@@ -348,6 +389,27 @@ A method for reducing AI agent hallucination and token expenditure comprising:
 - Direct context injection reducing computational overhead for AI agents
 - Applicable to: artworks, legal documents, certificates, shop fronts, infrastructure, and any physical object requiring machine understanding
 
+### Claim 7: Accessibility-Informed Context Delivery
+A method for delivering personalised, accessible information to users with disabilities comprising:
+- Bluetooth beacon broadcast of MX-Card references for non-visual discovery
+- Identity layer containing accessibility preferences (vision, hearing, mobility, cognitive)
+- Automatic format adaptation based on user needs:
+  - Audio instructions for blind/low-vision users
+  - Visual/text for deaf/hard-of-hearing users
+  - Simplified content for cognitive accessibility
+  - Navigation assistance for mobility needs
+- Same MX-Card serving multiple accessibility formats based on identity layer
+- Real-time, location-aware assistance without requiring visual scanning
+- Integration with screen readers, voice assistants, and assistive devices
+
+**Example Flow (Blind User):**
+```
+Beacon broadcasts → Phone detects → App retrieves card →
+Identity layer shares "vision: blind" → Card returns audio:
+"You are at Platform 3. The 10:15 to Edinburgh departs in 6 minutes.
+Board the third carriage for accessible seating."
+```
+
 ---
 
 ## Prior Art Considerations
@@ -361,6 +423,9 @@ A method for reducing AI agent hallucination and token expenditure comprising:
 | Schema.org | Structured data | Registry verification, access control, identity layer |
 | OAuth | Authentication | Domain-verified card ownership, not just user auth |
 | Digital Business Cards | Contact exchange | AI agent consumption, context provision, routines |
+| iBeacon/Eddystone | Proximity broadcast | Identity-informed adaptive responses, not just URLs |
+| Screen Readers | Accessibility | Proactive context delivery, not reactive page reading |
+| Wayfinding Apps | Navigation | Universal card format with personalised instructions |
 
 ### Novel Elements (No Known Prior Art)
 
@@ -372,6 +437,9 @@ A method for reducing AI agent hallucination and token expenditure comprising:
 6. **Encrypted scheduled cards** with access level tokens
 7. **Physical-to-agent context bridge** via QR-linked cards
 8. **Universal application** - Single standard for artworks to legal documents
+9. **Bluetooth beacon discovery** - Non-visual MX-Card discovery for accessibility
+10. **Accessibility-informed responses** - Same card, multiple formats based on user needs
+11. **Multi-modal delivery** - Audio, visual, haptic output from single card source
 
 ---
 
@@ -395,11 +463,19 @@ A method for reducing AI agent hallucination and token expenditure comprising:
 - Owner contact routines
 - Access level tokens
 
-### Phase 4: Ecosystem
+### Phase 4: Accessibility & Discovery
+- Bluetooth beacon SDK
+- Multi-modal response formats (audio, visual, haptic)
+- Screen reader integration
+- Accessibility identity layer profiles
+- NFC tag support
+
+### Phase 5: Ecosystem
 - Enterprise API
 - Third-party integrations
 - Analytics platform
 - White-label solutions
+- Beacon hardware partnerships
 
 ---
 
@@ -411,6 +487,9 @@ A method for reducing AI agent hallucination and token expenditure comprising:
 - QR Code ISO/IEC 18004
 - AES-256-GCM encryption
 - OAuth 2.0 / OpenID Connect
+- Bluetooth Low Energy (BLE) / iBeacon / Eddystone
+- NFC Forum specifications
+- WCAG 2.1 accessibility guidelines
 
 ### B. Regulatory Compliance
 - GDPR (EU)
@@ -431,6 +510,7 @@ A method for reducing AI agent hallucination and token expenditure comprising:
 |------|---------|---------|
 | 2026-01-26 | 0.1 | Initial draft from concept notes |
 | 2026-01-26 | 0.2 | Added anti-hallucination value proposition, universal application scope, Claim 6 |
+| 2026-01-26 | 0.3 | Added Bluetooth beacon discovery, accessibility use cases, Claim 7 |
 
 ---
 
