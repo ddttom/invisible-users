@@ -334,6 +334,71 @@ A blind user with the MX-Card app approaches a location (museum, shop, bus stop)
 | **Geofencing** | Automatic discovery when entering area |
 | **Voice Query** | "What MX-Card is at this location?" |
 
+#### 4.5 Media File Metadata Embedding
+
+MX-Card references can be embedded directly in media file metadata, enabling AI agents to understand content **without expensive analysis or guessing**.
+
+**Supported Media Types:**
+
+| File Type | Metadata Standard | MX-Card Field |
+|-----------|-------------------|---------------|
+| **Images** (JPEG, PNG, TIFF) | EXIF, XMP, IPTC | `XMP:MXCard` or custom EXIF tag |
+| **PDF Documents** | PDF metadata, XMP | `pdf:MXCard` in document properties |
+| **Videos** (MP4, MOV, WebM) | XMP, ID3, Matroska tags | `XMP:MXCard` sidecar or embedded |
+| **Audio** (MP3, WAV, FLAC) | ID3v2, Vorbis comments | `TXXX:MXCard` frame |
+| **Screenshots** | EXIF, PNG metadata | Automatic from source application |
+| **Office Documents** | Custom properties | `MXCard` document property |
+
+**How it Works:**
+
+```
+1. Creator embeds MX-Card URL/ID in file metadata
+2. Browser agent encounters file (image, PDF, video)
+3. Agent reads metadata BEFORE analysing content
+4. MX-Card provides verified context about the file
+5. No vision model inference, no guessing, no hallucination
+```
+
+**Example: Image with Embedded MX-Card**
+
+```
+Photo: museum_exhibit_47.jpg
+EXIF Metadata:
+  MXCard: mx://registry.mx-card.org/cards/nat-gallery-exhibit-47
+
+Agent reads metadata → retrieves card:
+  "Exhibit 47: Water Lilies by Claude Monet, 1906.
+   Oil on canvas, 89.9 × 94.1 cm.
+   Acquired 1927. Conservation status: Excellent.
+   Photography permitted, no flash."
+```
+
+**Example: PDF Document with Embedded MX-Card**
+
+```
+Contract: lease-agreement-2026.pdf
+PDF Metadata:
+  MXCard: mx://registry.mx-card.org/cards/legal/lease-12345
+
+Agent reads metadata → retrieves card:
+  "Commercial lease agreement between ABC Ltd and XYZ Corp.
+   Property: 123 High Street, London.
+   Term: 5 years from 1 Jan 2026.
+   Status: Executed. Amendments: None.
+   Governing law: England and Wales."
+```
+
+**Benefits:**
+
+| Without MX-Card | With MX-Card |
+|-----------------|--------------|
+| Vision model analyses image (expensive) | Metadata read (cheap) |
+| OCR extracts text from PDF (error-prone) | Structured data retrieved (accurate) |
+| Agent guesses video content (hallucination risk) | Verified description provided |
+| Multiple inference cycles | Single metadata lookup |
+
+**Key Innovation:** Media files become self-describing to AI agents through embedded MX-Card references, eliminating the need for expensive content analysis.
+
 ### 5. Mobile Application
 
 Native app for card creation, management, and discovery.
@@ -526,6 +591,34 @@ A protocol enabling identical MX-Cards to serve both human and machine consumers
 - Machine-specific metadata (clearances, permissions, technical specs)
 - Human-specific formatting (language, accessibility, presentation)
 
+### Claim 11: Media File Metadata Embedding
+A method for embedding MX-Card references in digital media file metadata comprising:
+- Standardised metadata fields for MX-Card URLs/identifiers across file formats:
+  - EXIF/XMP for images (JPEG, PNG, TIFF)
+  - PDF document properties
+  - ID3/XMP for audio and video files
+  - Custom properties for office documents
+- Enabling AI agents to retrieve verified context before content analysis
+- Eliminating need for expensive vision/audio model inference
+- Preventing hallucination by providing authoritative file descriptions
+- Supporting screenshots, PDFs, images, videos, audio files, and documents
+- Automatic metadata inheritance from source applications
+
+**Example Flow:**
+```
+Browser agent encounters image file
+→ Reads EXIF metadata: MXCard: mx://registry/card-id
+→ Retrieves card: "Photo of Exhibit 47, Monet's Water Lilies"
+→ No vision model needed, verified context provided
+```
+
+**Anti-Hallucination for Media:**
+| Without MX-Card | With MX-Card |
+|-----------------|--------------|
+| Vision model: "appears to be a painting" | Verified: "Monet's Water Lilies, 1906" |
+| OCR: partial text extraction | Complete document summary |
+| Audio transcription: error-prone | Verified audio description |
+
 ---
 
 ## Prior Art Considerations
@@ -542,6 +635,8 @@ A protocol enabling identical MX-Cards to serve both human and machine consumers
 | iBeacon/Eddystone | Proximity broadcast | Identity-informed adaptive responses, not just URLs |
 | Screen Readers | Accessibility | Proactive context delivery, not reactive page reading |
 | Wayfinding Apps | Navigation | Universal card format with personalised instructions |
+| EXIF/XMP Metadata | File descriptions | Structured card reference, not free-text descriptions |
+| PDF Metadata | Document properties | Verified context, not just author/title |
 
 ### Novel Elements (No Known Prior Art)
 
@@ -561,8 +656,8 @@ A protocol enabling identical MX-Cards to serve both human and machine consumers
 14. **Interest-beacon matching** - Notifications when cards match active interests
 15. **Energy-efficient AI operations** - Reduced inference cycles, environmental benefit
 16. **Universal consumer protocol** - Humans and machines as equal card consumers
-10. **Accessibility-informed responses** - Same card, multiple formats based on user needs
-11. **Multi-modal delivery** - Audio, visual, haptic output from single card source
+17. **Media metadata embedding** - MX-Card references in EXIF, XMP, PDF, ID3 metadata
+18. **Content analysis elimination** - Verified context replaces vision/audio model inference
 
 ---
 
@@ -635,6 +730,7 @@ A protocol enabling identical MX-Cards to serve both human and machine consumers
 | 2026-01-26 | 0.2 | Added anti-hallucination value proposition, universal application scope, Claim 6 |
 | 2026-01-26 | 0.3 | Added Bluetooth beacon discovery, accessibility use cases, Claim 7 |
 | 2026-01-26 | 0.4 | Added context-switching identity layers, environmental benefits, universal consumer protocol, Claims 8-10 |
+| 2026-01-26 | 0.5 | Added media file metadata embedding (EXIF, XMP, PDF, ID3), Claim 11 |
 
 ---
 
