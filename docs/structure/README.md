@@ -28,8 +28,112 @@ ai-instruction: |
   - docs/shared-chapters/ = Actual book content shared across both books
 ---
 
+# Strategic Planning and MX Compliance Specifications
 
-**Purpose:** This directory contains strategic planning documents, structural analysis, and high-level architectural decisions for the MX book series and related projects.
+**Purpose:** This directory contains strategic planning documents, structural analysis, high-level architectural decisions, and **MX Compliance Specifications** for the MX book series and related projects.
+
+---
+
+## MX Compliance Specifications
+
+### What is an MX Compliance Specification?
+
+An **MX Compliance Specification** defines the metadata and structural requirements that content must meet to be considered "Machine Experience compliant." These specifications ensure content is equally accessible and understandable to both humans and AI agents.
+
+**Core Principle:** Compliance specifications are **platform-agnostic** and **media-agnostic**. They define *what* must be present, not *how* it's implemented. A compliant system can use any technology stack as long as the required metadata and structure are present.
+
+### The MX Compliance Trilogy
+
+Three specifications cover the complete content lifecycle:
+
+| Specification | Scope | Key Question Answered |
+|---------------|-------|----------------------|
+| **[cms-compliance.md](./cms-compliance.md)** | Internal CMS storage and workflow | "How should content be managed internally?" |
+| **[mx-compliance.md](./mx-compliance.md)** | Rendered webpage output (HTML) | "What must the published page contain?" |
+| **[mx-compliance-markdown.md](./mx-compliance-markdown.md)** | Source markdown files | "How should authors structure source content?" |
+
+### How They Relate
+
+```text
+┌─────────────────────────────┐
+│  AUTHOR CREATES             │
+│  Markdown Source            │  ← mx-compliance-markdown.md
+│  (YAML frontmatter +        │     defines source requirements
+│   structured content)       │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│  CMS STORES & MANAGES       │
+│  Content Objects            │  ← cms-compliance.md
+│  (database records,         │     defines internal metadata
+│   file system, API)         │     and workflow states
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│  SYSTEM PUBLISHES           │
+│  Rendered Webpage           │  ← mx-compliance.md
+│  (HTML with meta tags,      │     defines output requirements
+│   Schema.org, semantic      │     for browsers and AI agents
+│   structure)                │
+└─────────────────────────────┘
+```
+
+### Why Three Specifications?
+
+**Different audiences, different concerns:**
+
+1. **Authors** need to know how to write source content (markdown spec)
+2. **Developers** need to know how to store and process content (CMS spec)
+3. **QA/Publishers** need to know what the output must contain (webpage spec)
+
+**Separation enables flexibility:**
+
+- Use any CMS (WordPress, Drupal, Contentful, custom)
+- Use any static site generator (Hugo, Jekyll, Eleventy)
+- Use any database (SQL, NoSQL, file-based)
+- Use any templating system
+
+As long as each layer meets its specification, the system is MX-compliant.
+
+### Certification Levels
+
+Each specification defines three certification levels:
+
+| Level | Name | Description |
+|-------|------|-------------|
+| **1** | MX Basic | Minimum viable compliance - essential metadata present |
+| **2** | MX Standard | Full compliance - complete metadata, accessibility, validation |
+| **3** | MX Advanced | Excellence - AI optimisation, automation, API compliance |
+
+### Quick Reference: What Each Spec Covers
+
+**cms-compliance.md:**
+- `mx_` prefixed metadata fields for content objects
+- Five-stage lifecycle (draft → edit → preview → stage → publish)
+- State transition rules and validation hooks
+- Storage patterns (SQL, NoSQL, file-based, key-value)
+
+**mx-compliance.md:**
+- MX meta tags (`mx-compliant`, `mx-version`, `mx-content-type`, `mx-state`)
+- SEO and Open Graph requirements
+- Schema.org JSON-LD by content type
+- Semantic HTML structure and ARIA landmarks
+- WCAG 2.1 AA compliance
+
+**mx-compliance-markdown.md:**
+- YAML frontmatter schema (required and optional fields)
+- Document structure (heading hierarchy, title handling)
+- Content patterns (code blocks, lists, links, images)
+- File naming and organisation conventions
+- Validation checklist and lint rules
+
+### AI Assistant Guidance
+
+For detailed guidance on MX concepts for AI assistants, see **[CLAUDE.md](./CLAUDE.md)** in this directory.
+
+---
 
 ---
 
