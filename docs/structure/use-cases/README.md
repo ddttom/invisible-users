@@ -27,6 +27,7 @@ MX compliance means different things to different people. A CEO needs to underst
 | **[CMS Vendors](./cms-vendors.md)** | WordPress, Drupal, Ghost, etc. | Platform features, competitive positioning |
 | **[CMS Agencies](./cms-agencies.md)** | Digital agencies, web shops | Service offerings, client delivery |
 | **[Platform Creators](./platform-creators.md)** | SaaS, e-commerce platforms | Architecture, API design |
+| **[Conference Organisers](./conference-organisers.md)** | Event planners, conference teams | Schema.org Event, discovery, registration |
 
 ### By Role
 
@@ -57,6 +58,9 @@ MX compliance means different things to different people. A CEO needs to underst
 ### "I want to design MX-compliant interfaces"
 → Start with **[Designers Guide](./designers.md)**
 
+### "I want my conference to be AI-discoverable"
+→ Start with **[Conference Organisers Guide](./conference-organisers.md)**
+
 ## What Each Guide Contains
 
 ### CMS Vendors
@@ -78,6 +82,16 @@ MX compliance means different things to different people. A CEO needs to underst
 - Implementation patterns by platform type
 - UI/UX patterns for MX metadata
 - API design guidelines
+
+### Conference Organisers
+- Why AI discovery matters for events
+- Schema.org Event implementation
+- Schedule and session structured data
+- Speaker profiles with Schema.org Person
+- Registration form accessibility
+- iCalendar integration
+- Platform-specific guidance (WordPress, Squarespace, custom)
+- Budget and timeline estimates
 - Testing strategies
 
 ### CEOs
