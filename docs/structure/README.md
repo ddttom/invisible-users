@@ -28,8 +28,132 @@ ai-instruction: |
   - docs/shared-chapters/ = Actual book content shared across both books
 ---
 
+# Strategic Planning and MX Compliance Specifications
 
-**Purpose:** This directory contains strategic planning documents, structural analysis, and high-level architectural decisions for the MX book series and related projects.
+**Purpose:** This directory contains strategic planning documents, structural analysis, high-level architectural decisions, and **MX Compliance Specifications** for the MX book series and related projects.
+
+---
+
+## MX Compliance Specifications
+
+### What is an MX Compliance Specification?
+
+An **MX Compliance Specification** defines the metadata and structural requirements that content must meet to be considered "Machine Experience compliant." These specifications ensure content is equally accessible and understandable to both humans and AI agents.
+
+**Core Principle:** Compliance specifications are **platform-agnostic** and **media-agnostic**. They define *what* must be present, not *how* it's implemented. A compliant system can use any technology stack as long as the required metadata and structure are present.
+
+### The MX Compliance Specifications
+
+Five specifications cover content, code, and styling:
+
+| Specification | Scope | Key Question Answered |
+|---------------|-------|----------------------|
+| **[cms-compliance.md](./cms-compliance.md)** | Internal CMS storage and workflow | "How should content be managed internally?" |
+| **[mx-compliance.md](./mx-compliance.md)** | Rendered webpage output (HTML) | "What must the published page contain?" |
+| **[mx-compliance-markdown.md](./mx-compliance-markdown.md)** | Source markdown files | "How should authors structure source content?" |
+| **[mx-compliance-javascript.md](./mx-compliance-javascript.md)** | JavaScript/TypeScript files | "How should scripts expose state and handle errors?" |
+| **[mx-compliance-css.md](./mx-compliance-css.md)** | CSS/SCSS files | "How should styles support accessibility?" |
+
+### How They Relate
+
+```text
+                        ┌─────────────────────────────┐
+                        │  AUTHOR CREATES             │
+                        │  Markdown Source            │  ← mx-compliance-markdown.md
+                        │  (YAML frontmatter +        │
+                        │   structured content)       │
+                        └──────────────┬──────────────┘
+                                       │
+                                       ▼
+                        ┌─────────────────────────────┐
+                        │  CMS STORES & MANAGES       │
+                        │  Content Objects            │  ← cms-compliance.md
+                        │  (database records,         │
+                        │   file system, API)         │
+                        └──────────────┬──────────────┘
+                                       │
+                                       ▼
+┌───────────────────┐   ┌─────────────────────────────┐   ┌───────────────────┐
+│  CSS STYLES       │   │  SYSTEM PUBLISHES           │   │  JS BEHAVIOUR     │
+│  Visual design    │ → │  Rendered Webpage           │ ← │  Interactivity    │
+│  + accessibility  │   │  (HTML with meta tags)      │   │  + state mgmt     │
+│                   │   │                             │   │                   │
+│  mx-compliance-   │   │  mx-compliance.md           │   │  mx-compliance-   │
+│  css.md           │   │                             │   │  javascript.md    │
+└───────────────────┘   └─────────────────────────────┘   └───────────────────┘
+```
+
+### Why Three Specifications?
+
+**Different audiences, different concerns:**
+
+1. **Authors** need to know how to write source content (markdown spec)
+2. **Developers** need to know how to store and process content (CMS spec)
+3. **QA/Publishers** need to know what the output must contain (webpage spec)
+
+**Separation enables flexibility:**
+
+- Use any CMS (WordPress, Drupal, Contentful, custom)
+- Use any static site generator (Hugo, Jekyll, Eleventy)
+- Use any database (SQL, NoSQL, file-based)
+- Use any templating system
+
+As long as each layer meets its specification, the system is MX-compliant.
+
+### Certification Levels
+
+Each specification defines three certification levels:
+
+| Level | Name | Description |
+|-------|------|-------------|
+| **1** | MX Basic | Minimum viable compliance - essential metadata present |
+| **2** | MX Standard | Full compliance - complete metadata, accessibility, validation |
+| **3** | MX Advanced | Excellence - AI optimisation, automation, API compliance |
+
+### Quick Reference: What Each Spec Covers
+
+**cms-compliance.md:**
+- `mx_` prefixed metadata fields for content objects
+- Five-stage lifecycle (draft → edit → preview → stage → publish)
+- State transition rules and validation hooks
+- Storage patterns (SQL, NoSQL, file-based, key-value)
+
+**mx-compliance.md:**
+- MX meta tags (`mx-compliant`, `mx-version`, `mx-content-type`, `mx-state`)
+- SEO and Open Graph requirements
+- Schema.org JSON-LD by content type
+- Semantic HTML structure and ARIA landmarks
+- WCAG 2.1 AA compliance
+
+**mx-compliance-markdown.md:**
+- YAML frontmatter schema (required and optional fields)
+- Document structure (heading hierarchy, title handling)
+- Content patterns (code blocks, lists, links, images)
+- File naming and organisation conventions
+- Validation checklist and lint rules
+
+**mx-compliance-javascript.md:**
+- File and function JSDoc documentation requirements
+- State management patterns with DOM exposure
+- Error handling with typed errors and DOM reflection
+- Async operation patterns with loading state
+- ARIA and accessibility integration in scripts
+- ES Module and CommonJS structure patterns
+
+**mx-compliance-css.md:**
+- Design tokens (colours with contrast ratios, typography, spacing)
+- WCAG 2.1 AA colour contrast compliance
+- Focus indicator requirements
+- Motion and animation with `prefers-reduced-motion`
+- State styling via `data-*` and ARIA attributes
+- Responsive design and touch target sizes
+- Print styles and accessibility utilities
+
+### AI Assistant Guidance
+
+For detailed guidance on MX concepts for AI assistants, see **[CLAUDE.md](./CLAUDE.md)** in this directory.
+
+---
 
 ---
 
