@@ -42,42 +42,45 @@ An **MX Compliance Specification** defines the metadata and structural requireme
 
 **Core Principle:** Compliance specifications are **platform-agnostic** and **media-agnostic**. They define *what* must be present, not *how* it's implemented. A compliant system can use any technology stack as long as the required metadata and structure are present.
 
-### The MX Compliance Trilogy
+### The MX Compliance Specifications
 
-Three specifications cover the complete content lifecycle:
+Five specifications cover content, code, and styling:
 
 | Specification | Scope | Key Question Answered |
 |---------------|-------|----------------------|
 | **[cms-compliance.md](./cms-compliance.md)** | Internal CMS storage and workflow | "How should content be managed internally?" |
 | **[mx-compliance.md](./mx-compliance.md)** | Rendered webpage output (HTML) | "What must the published page contain?" |
 | **[mx-compliance-markdown.md](./mx-compliance-markdown.md)** | Source markdown files | "How should authors structure source content?" |
+| **[mx-compliance-javascript.md](./mx-compliance-javascript.md)** | JavaScript/TypeScript files | "How should scripts expose state and handle errors?" |
+| **[mx-compliance-css.md](./mx-compliance-css.md)** | CSS/SCSS files | "How should styles support accessibility?" |
 
 ### How They Relate
 
 ```text
-┌─────────────────────────────┐
-│  AUTHOR CREATES             │
-│  Markdown Source            │  ← mx-compliance-markdown.md
-│  (YAML frontmatter +        │     defines source requirements
-│   structured content)       │
-└──────────────┬──────────────┘
-               │
-               ▼
-┌─────────────────────────────┐
-│  CMS STORES & MANAGES       │
-│  Content Objects            │  ← cms-compliance.md
-│  (database records,         │     defines internal metadata
-│   file system, API)         │     and workflow states
-└──────────────┬──────────────┘
-               │
-               ▼
-┌─────────────────────────────┐
-│  SYSTEM PUBLISHES           │
-│  Rendered Webpage           │  ← mx-compliance.md
-│  (HTML with meta tags,      │     defines output requirements
-│   Schema.org, semantic      │     for browsers and AI agents
-│   structure)                │
-└─────────────────────────────┘
+                        ┌─────────────────────────────┐
+                        │  AUTHOR CREATES             │
+                        │  Markdown Source            │  ← mx-compliance-markdown.md
+                        │  (YAML frontmatter +        │
+                        │   structured content)       │
+                        └──────────────┬──────────────┘
+                                       │
+                                       ▼
+                        ┌─────────────────────────────┐
+                        │  CMS STORES & MANAGES       │
+                        │  Content Objects            │  ← cms-compliance.md
+                        │  (database records,         │
+                        │   file system, API)         │
+                        └──────────────┬──────────────┘
+                                       │
+                                       ▼
+┌───────────────────┐   ┌─────────────────────────────┐   ┌───────────────────┐
+│  CSS STYLES       │   │  SYSTEM PUBLISHES           │   │  JS BEHAVIOUR     │
+│  Visual design    │ → │  Rendered Webpage           │ ← │  Interactivity    │
+│  + accessibility  │   │  (HTML with meta tags)      │   │  + state mgmt     │
+│                   │   │                             │   │                   │
+│  mx-compliance-   │   │  mx-compliance.md           │   │  mx-compliance-   │
+│  css.md           │   │                             │   │  javascript.md    │
+└───────────────────┘   └─────────────────────────────┘   └───────────────────┘
 ```
 
 ### Why Three Specifications?
@@ -128,6 +131,23 @@ Each specification defines three certification levels:
 - Content patterns (code blocks, lists, links, images)
 - File naming and organisation conventions
 - Validation checklist and lint rules
+
+**mx-compliance-javascript.md:**
+- File and function JSDoc documentation requirements
+- State management patterns with DOM exposure
+- Error handling with typed errors and DOM reflection
+- Async operation patterns with loading state
+- ARIA and accessibility integration in scripts
+- ES Module and CommonJS structure patterns
+
+**mx-compliance-css.md:**
+- Design tokens (colours with contrast ratios, typography, spacing)
+- WCAG 2.1 AA colour contrast compliance
+- Focus indicator requirements
+- Motion and animation with `prefers-reduced-motion`
+- State styling via `data-*` and ARIA attributes
+- Responsive design and touch target sizes
+- Print styles and accessibility utilities
 
 ### AI Assistant Guidance
 
