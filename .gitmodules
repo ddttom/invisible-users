@@ -22,3 +22,6 @@
 [submodule "packages/business/mx-business"]
 	path = packages/business/mx-business
 	url = https://github.com/Digital-Domain-Technologies-Ltd/MX-business-planning.git
+[submodule "packages/notes"]
+	path = packages/notes
+	url = https://github.com/ddttom/Notes.git
