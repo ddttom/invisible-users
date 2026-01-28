@@ -3,6 +3,26 @@
  *
  * Responsible for extracting raw LLM compatibility metrics from a Cheerio instance.
  * Pure data extraction only - no scoring or feedback logic.
+ *
+ * @mx
+ * audience: machine
+ * purpose: "Extract AI agent compatibility metrics from HTML"
+ * stability: stable
+ * owner: audit-team
+ * dependencies:
+ *   - cheerio
+ * ai:
+ *   editable: true
+ *   confidence: 0.9
+ *   test_coverage: true
+ *   context_required:
+ *     - src/config/scoringWeights.js
+ *     - src/core/AuditContext.js
+ *   context_provides:
+ *     - "LLM compatibility patterns"
+ *     - "Semantic HTML detection"
+ *     - "Structured data extraction"
+ *   generation_notes: "Pure data extraction - no business logic or scoring"
  */
 
 // Constants for importance levels used in data structure
@@ -17,6 +37,20 @@ const IMPORTANCE = {
 export class LLMCollector {
   /**
    * Collect all LLM metrics from a page
+   *
+   * @mx
+   * pure: true
+   * idempotent: true
+   * complexity: O(n) where n = DOM nodes
+   * throws: []
+   * ai:
+   *   confidence: 0.95
+   *   test_coverage: true
+   *   edge_cases:
+   *     - "Handles malformed HTML gracefully"
+   *     - "Returns empty metrics for missing elements"
+   *     - "Works with both served and rendered HTML"
+   *
    * @param {CheerioAPI} $ - Cheerio instance of the page
    * @param {string} url - The URL being analyzed
    * @param {string} htmlSource - 'served' or 'rendered'

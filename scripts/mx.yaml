@@ -1,0 +1,25 @@
+mx:
+  inherits: ../mx.yaml
+
+  context:
+    purpose: "Build tools and automation scripts"
+    domain: "build automation"
+    constraints:
+      - "Scripts must work on macOS and Linux"
+      - "Node.js built-ins preferred over dependencies"
+      - "Clear error messages for user-facing scripts"
+
+  ai:
+    assistance: welcome
+    editable: true
+    generation:
+      allowed: true
+      review_required: false
+    context_provides:
+      - "Blog HTML generation workflow"
+      - "PDF generation with Pandoc"
+      - "Repository initialization"
+
+  mx:inheritable:
+    - ai.editable
+    - context

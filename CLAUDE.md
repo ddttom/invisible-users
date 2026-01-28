@@ -916,6 +916,137 @@ When markdown files are printed to PDF, downloaded, fed to AI agents, or otherwi
 
 **This is Anti-pattern 14:** Context-Free References. See Chapter 9 and Appendix N for complete documentation.
 
+## MX Code Metadata Specification
+
+**🎯 REFERENCE IMPLEMENTATION:** This repository implements the MX Code Metadata Specification - a comprehensive framework for making codebases maximally understandable to AI agents.
+
+**Specification Document:** `/Users/tomcranstoun/Downloads/mx-complete-collection/mx-code-metadata-spec.md`
+
+### Overview
+
+The MX Code Metadata Specification defines how code repositories, files, and inline code declare metadata for machine processors. This enables AI agents to understand code context, constraints, and intent without parsing implementation details.
+
+### Implementation Layers
+
+**1. Repository-Level Metadata (`/mx.yaml`):**
+
+- Project context, constraints, and conventions
+- AI assistance preferences and training conditions
+- Technology stack and dependencies
+- Inheritable properties for directory and file levels
+
+**2. Directory-Level Metadata (`packages/*/mx.yaml`):**
+
+- Package-specific context and purpose
+- Override repository defaults
+- Declare what context this directory provides
+- Control AI editability and generation permissions
+
+**3. File-Level Annotations (`@mx` in JSDoc/docstrings):**
+
+- Purpose, audience, stability
+- Dependencies and ownership
+- AI editing permissions and context requirements
+- Test coverage and confidence levels
+
+**4. Function-Level Metadata (`@mx` in function docs):**
+
+- Pure/idempotent declarations
+- Time complexity and error handling
+- AI confidence and edge cases
+- Context requirements for modifications
+
+**5. Inline Annotations (`@mx:begin`, `@mx:end`, `@mx:ai`):**
+
+- Security-critical code blocks
+- Performance-critical sections
+- Intentional workarounds
+- AI-specific instructions
+
+### Key Files
+
+**Repository Configuration:**
+
+```text
+/mx.yaml                                  # Root project metadata
+/packages/web-audit-suite/mx.yaml        # Audit suite context
+/scripts/mx.yaml                         # Build tools metadata
+/package.json (mx property)              # Dependency metadata
+```
+
+**Annotated Source Files:**
+
+```text
+/scripts/generate-blog-html.js           # Blog generation with MX annotations
+/packages/web-audit-suite/src/collectors/llmCollector.js  # Metrics extraction
+/packages/web-audit-suite/src/core/AuditContext.js        # Context pattern
+```
+
+### Core MX Properties
+
+**AI Properties:**
+
+- `ai.assistance`: `welcome`, `cautious`, `prohibited`
+- `ai.editable`: `true`, `false`, `cautious`
+- `ai.training`: `permitted`, `conditional`, `prohibited`
+- `ai.context_required`: Array of files to read first
+- `ai.context_provides`: What this code defines for others
+- `ai.confidence`: 0-1 scale of implementation correctness
+- `ai.test_coverage`: Boolean indicating test presence
+
+**Metadata Properties:**
+
+- `audience`: `human`, `machine`, `both`
+- `purpose`: What this code does
+- `stability`: `experimental`, `unstable`, `stable`, `frozen`
+- `owner`: Team or person responsible
+- `dependencies`: Key dependencies
+
+**Function Properties:**
+
+- `pure`: Boolean (no side effects)
+- `idempotent`: Boolean (repeated calls safe)
+- `complexity`: Big O notation
+- `throws`/`raises`: Possible exceptions
+
+### Inheritance Model
+
+Metadata flows downward through the hierarchy:
+
+```text
+/mx.yaml (repository)
+  → packages/web-audit-suite/mx.yaml (directory)
+    → src/collectors/llmCollector.js (file)
+      → collect() method (function)
+```
+
+Child levels inherit from parents unless explicitly overridden. Use `mx:inheritable` to declare which properties children can inherit.
+
+### Implementation Benefits
+
+1. **First Reference Implementation**: Canonical example of MX Code Metadata
+2. **AI Agent Friendly**: Maximally understandable to Claude, Copilot, Cursor, etc.
+3. **Documentation as Code**: Metadata stays adjacent to code
+4. **Inheritance**: Set defaults once, override where needed
+5. **Discoverability**: AI agents understand constraints and permissions
+6. **Alignment**: Embodies the book's theme (designing for AI agents)
+
+### Extensions Framework
+
+The specification supports custom extensions via namespaced properties:
+
+- `{namespace}:{property}` format
+- Organisation-specific metadata
+- Tool-specific configuration
+- Security/compliance classifications
+
+### Related Documentation
+
+- **MX Code Metadata Spec**: Complete specification document
+- **Appendix L Pattern 4**: Function metadata patterns
+- **Chapter 10**: Structured data for code
+- **Appendix H**: llms.txt implementation examples
+
 ## Dual-File Appendix Structure
 
 **Appendix D (AI-Friendly HTML Guide):**

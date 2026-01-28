@@ -71,5 +71,38 @@
     "markdown-it-anchor": "^9.2.0",
     "markdownlint-cli": "^0.47.0",
     "pdf-parse": "^2.4.5"
+  },
+  "mx": {
+    "dependencies": {
+      "markdown-it-anchor": {
+        "purpose": "Generate heading anchor IDs for table of contents navigation",
+        "critical": true,
+        "upgrade_policy": "conservative",
+        "alternatives_considered": ["remark-slug", "custom implementation"],
+        "decision_date": "2024-06-15",
+        "ai": {
+          "replacement_permitted": false,
+          "reason": "Integrated with blog generation workflow"
+        }
+      },
+      "html-validate": {
+        "purpose": "Validate generated HTML for WCAG 2.1 AA compliance",
+        "critical": true,
+        "upgrade_policy": "latest",
+        "ai": {
+          "replacement_permitted": false,
+          "reason": "Core quality assurance tool for blog output"
+        }
+      },
+      "markdownlint-cli": {
+        "purpose": "Enforce markdown formatting standards across documentation",
+        "critical": true,
+        "upgrade_policy": "latest",
+        "ai": {
+          "replacement_permitted": false,
+          "reason": "Configuration customized for book manuscript requirements"
+        }
+      }
+    }
   }
 }

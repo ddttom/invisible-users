@@ -6,6 +6,25 @@
  * using markdown-it instead of pandoc to avoid artifacts and provide
  * better control over HTML output.
  *
+ * @mx
+ * audience: machine
+ * purpose: "Generate WCAG 2.1 AA compliant HTML from markdown blog posts"
+ * stability: stable
+ * owner: content-team
+ * dependencies:
+ *   - markdown-it
+ *   - markdown-it-anchor
+ *   - js-yaml
+ * ai:
+ *   editable: true
+ *   confidence: 0.95
+ *   test_coverage: false
+ *   context_required:
+ *     - .claude/skills/create-blog/blog-template.html
+ *     - .claude/skills/create-blog/blog-template.css
+ *     - docs/structure/blog-metadata-schema.md
+ *   generation_notes: "Follow WCAG 2.1 AA standards, use semantic HTML5, extract SVGs to separate files"
+ *
  * Usage: node scripts/generate-blog-html.js <markdown-file-path>
  */
 

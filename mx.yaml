@@ -1,0 +1,70 @@
+mx:
+  version: "1.0"
+
+  project:
+    name: "The Invisible Users"
+    description: "Book manuscript and Web Audit Suite for designing websites that work for AI agents"
+    repository: https://github.com/ddttom/invisible-users
+    documentation: https://allabout.network
+
+  audience:
+    primary: both
+    languages: [en-GB]
+
+  context:
+    domain: "publishing and web development"
+    purpose: "Document patterns for AI agent compatibility and provide tools to audit websites"
+    constraints:
+      - "Book manuscripts must use timeless language (no publication dates)"
+      - "Code must work with Node.js 20+"
+      - "British English for prose, international standards for code"
+      - "WCAG 2.1 AA compliance for generated HTML"
+      - "Multi-repository structure with submodules"
+
+  stack:
+    language: javascript
+    runtime: node
+    version: "20.x"
+
+  conventions:
+    style: prettier
+    testing: mocha
+    documentation: jsdoc
+    markdown: markdownlint
+    commits: conventional
+
+  ai:
+    assistance: welcome
+    training: conditional
+    training_conditions:
+      - "Exclude files in outputs/ submodule (private content)"
+      - "Exclude packages/sales-enablement (private)"
+      - "Exclude packages/business-planning (private)"
+      - "Exclude packages/mx-legal (private)"
+    generation:
+      allowed: true
+      review_required: true
+      permitted_areas:
+        - "scripts/**"
+        - "docs/**"
+        - "packages/web-audit-suite/**"
+      prohibited_areas:
+        - "packages/sales-enablement/**"
+        - "packages/business-planning/**"
+        - "packages/mx-legal/**"
+        - "outputs/**"
+    sensitive_paths:
+      - "packages/sales-enablement/**"
+      - "packages/business-planning/**"
+      - "packages/mx-legal/**"
+      - "outputs/**"
+      - ".env*"
+      - "*.key"
+      - "*.pem"
+
+  mx:inheritable:
+    - ai.assistance
+    - ai.training
+    - conventions
+    - context.domain
+    - audience.languages

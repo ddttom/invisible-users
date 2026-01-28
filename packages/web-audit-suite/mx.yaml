@@ -1,0 +1,33 @@
+mx:
+  inherits: ../../mx.yaml
+
+  context:
+    purpose: "Analyze websites for AI agent compatibility"
+    domain: "web auditing and analysis"
+    constraints:
+      - "Must handle large sitemaps (10,000+ URLs)"
+      - "Concurrent processing with browser pooling"
+      - "Pa11y for accessibility testing"
+      - "Lighthouse for performance metrics"
+
+  stack:
+    type: module
+    testing: mocha
+    linting: eslint
+    framework: none
+
+  ai:
+    assistance: welcome
+    editable: true
+    generation:
+      allowed: true
+      review_required: false
+    context_provides:
+      - "Website audit patterns"
+      - "AI agent compatibility metrics"
+      - "Robots.txt compliance scoring"
+
+  mx:inheritable:
+    - ai.editable
+    - stack
+    - context
