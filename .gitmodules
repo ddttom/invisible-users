@@ -10,3 +10,6 @@
 [submodule "packages/mx-handbook"]
 	path = packages/mx-handbook
 	url = https://github.com/Digital-Domain-Technologies-Ltd/MX-The-Handbook
+[submodule "packages/mx-gathering"]
+	path = packages/mx-gathering
+	url = https://github.com/Digital-Domain-Technologies-Ltd/MX-Gathering
