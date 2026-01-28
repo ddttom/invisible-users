@@ -260,6 +260,9 @@ This workspace contains multiple git repositories:
 5. **Appendices submodule:** `packages/mx-appendices/` (shared appendices)
 6. **Code examples submodule:** `packages/mx-code-examples/` (pattern examples)
 7. **Outputs submodule:** `packages/mx-outputs/` (private, generated content)
+8. **UCP submodule:** `packages/external/ucp/` (Universal Commerce Protocol reference)
+9. **Business submodule:** `packages/business/mx-business/` (business strategy and planning)
+10. **Notes submodule:** `packages/notes/` (coding standards and development practices)
 
 **Always check `pwd` before git operations.** The [LEARNINGS.md](LEARNINGS.md) file documents common mistakes and their fixes.
 

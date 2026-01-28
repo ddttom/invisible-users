@@ -100,13 +100,13 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has SEVEN git repositories (1 main hub + 6 submodules). File paths depend on your location.**
+**This workspace has TEN git repositories (1 main hub + 9 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 6):**
+- **Submodules (ASSETS, currently 9):**
   - **MX-Bible:** `packages/mx-the-bible/` → `invisible-users-manuscript` - Full comprehensive guide (formerly "The Invisible Users")
   - **MX-Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Implementation handbook for developers and designers
   - **MX-Gathering:** `packages/mx-gathering/` → `MX-Gathering` - Community resources, event templates, discussion archives, and thought leadership (PUBLIC, EDITABLE)
@@ -115,7 +115,10 @@ pwd
   - **Appendices:** `packages/mx-appendices/` → `invisible-users-appendices` - Shared resources
   - **Code Examples:** `packages/mx-code-examples/` → `invisible-users-code-examples` - Pattern examples
   - **Outputs (PRIVATE):** `packages/mx-outputs/` → `invisible-users-outputs` - All generated content
-  - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in MX-Gathering)
+  - **UCP (External Reference):** `packages/external/ucp/` → `Universal-Commerce-Protocol/ucp` - Universal Commerce Protocol standard
+  - **Business Planning:** `packages/business/mx-business/` → `MX-business-planning` - Private business strategy and planning
+  - **Development Notes:** `packages/notes/` → `Notes` - Coding standards and development practices
+  - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in MX-Gathering and Notes)
 
 ### Repository Navigation Map
 
@@ -203,6 +206,33 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   │       ├── the-bible/            ← Legacy/alternate content
 │   │       ├── README.md             ← Outputs README
 │   │       └── NO .claude/ directory
+│   ├── external/                     ← External reference submodules
+│   │   └── ucp/                      ← SUBMODULE (git repo)
+│   │       └── ${MAIN_REPO}/packages/external/ucp/
+│   │           ├── docs/             ← UCP documentation
+│   │           ├── generated/        ← Generated schemas and types
+│   │           ├── main.py           ← Schema generator
+│   │           ├── README.md         ← UCP overview
+│   │           └── NO .claude/ directory
+│   │           Note: Universal Commerce Protocol - standardized ecommerce API for AI agents
+│   ├── business/                     ← Business strategy submodules
+│   │   └── mx-business/              ← SUBMODULE (PRIVATE git repo)
+│   │       └── ${MAIN_REPO}/packages/business/mx-business/
+│   │           ├── plans/            ← Business plans, executive summaries
+│   │           ├── strategy/         ← Strategic positioning, MX-plan
+│   │           ├── opportunities/    ← Market opportunity analysis
+│   │           ├── pricing/          ← Pricing strategies and financial models
+│   │           ├── products/         ← Product business context
+│   │           ├── README.md         ← Business planning README
+│   │           └── CLAUDE.md         ← AI guidance
+│   ├── notes/                        ← SUBMODULE (git repo)
+│   │   └── ${MAIN_REPO}/packages/notes/
+│   │       ├── .claude/              ← Claude Code configuration
+│   │       ├── scrap/                ← Temporary working files (gitignored)
+│   │       ├── Starter.md            ← Coding standards and project setup
+│   │       ├── Vibe coding backend.md ← Backend architecture guidelines
+│   │       └── Other development guidelines
+│   │       Note: Coding standards and development practices reference
 │   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
 │       ├── src/                      ← Tool source code
 │       ├── test/                     ← Test files
