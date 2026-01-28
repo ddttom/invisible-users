@@ -16,3 +16,6 @@
 [submodule "packages/mx-code-examples"]
 	path = packages/mx-code-examples
 	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-code-examples
+[submodule "packages/mx-manuscript"]
+	path = packages/mx-manuscript
+	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript
