@@ -68,9 +68,9 @@ pwd  # Still in main repo, never left
 ### MISTAKE #2: Trying to `cd` into submodule during git operations
 
 ```bash
-# You ran: cd packages/bible && git add -A
+# You ran: cd packages/mx-the-bible && git add -A
 # Error: "No such file or directory"
-# Why: You were already inside outputs/ submodule
+# Why: You were already inside packages/mx-outputs/ submodule
 # Fix: Check pwd, use git from current location
 ```
 
@@ -92,50 +92,30 @@ pwd
 # Step 2: Based on output, construct correct path
 # If output: ${MAIN_REPO}
 #   → You're in MAIN REPO - use .claude/skills/news/skill.md
-# If output: ${MAIN_REPO}/outputs
+# If output: ${MAIN_REPO}/packages/mx-outputs
 #   → You're in OUTPUTS SUBMODULE - use ../../.claude/skills/news/skill.md
-# If output: ${MAIN_REPO}/packages/bible
+# If output: ${MAIN_REPO}/packages/mx-the-bible
 #   → You're in BIBLE SUBMODULE - use ../../.claude/skills/news/skill.md
 ```
 
 ### Repository Architecture
 
-**This workspace has TEN git repositories (1 main hub + 9 submodules). File paths depend on your location.**
+**This workspace has SEVEN git repositories (1 main hub + 6 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 9):**
-  - **Outputs (PRIVATE):** `outputs/` → `invisible-users-outputs` - All generated content
-  - **MX-Bible:** `packages/bible/` → `invisible-users-bible` - Full comprehensive guide (formerly "The Invisible Users")
+- **Submodules (ASSETS, currently 6):**
+  - **MX-Bible:** `packages/mx-the-bible/` → `invisible-users-manuscript` - Full comprehensive guide (formerly "The Invisible Users")
   - **MX-Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Implementation handbook for developers and designers
   - **MX-Gathering:** `packages/mx-gathering/` → `MX-Gathering` - Community resources, event templates, discussion archives, and thought leadership (PUBLIC, EDITABLE)
     - Role: Open-source community repository for shared resources, contribution guidelines, and collaborative content
     - AI assistants: Editable content-only repository following bible/handbook pattern
-  - **Appendices:** `packages/shared-appendices/` → `invisible-users-appendices` - Shared resources
-  - **Code:** `packages/shared-code-examples/` → `invisible-users-code-examples` - Pattern examples
-  - **UCP:** `packages/ucp/` → `Universal-Commerce-Protocol/ucp` - Ecommerce standard for AI agents (**READ-ONLY REFERENCE**)
-    - Role: External reference material demonstrating practical application
-    - AI assistants: DO NOT autonomously modify this submodule - it is maintained by the UCP project
-    - Exception: If user explicitly adds/edits/deletes files, commit those changes
-  - **Notes (READ-ONLY):** `packages/notes/` → `Notes` - Development notes, coding standards, and architectural guidelines (**READ-ONLY REFERENCE**)
-    - Role: Coding standards and development practices reference
-    - AI assistants: DO NOT autonomously modify this submodule - it is maintained separately
-    - Exception: If user explicitly adds/edits/deletes files, commit those changes
-  - **Sales Enablement (READ-ONLY):** `packages/sales-enablement/` → `MX-Sales-enablement` - Private sales execution materials (**READ-ONLY REFERENCE**)
-    - Role: Sales execution, pitches, outreach, partnerships, publisher submissions
-    - AI assistants: DO NOT autonomously modify this submodule unless explicitly authorized by user
-    - Exception: If user explicitly adds/edits/deletes files, commit those changes
-  - **Business Planning (READ-ONLY):** `packages/business-planning/` → `MX-business-planning` - Private business strategy and planning documents (**READ-ONLY REFERENCE**)
-    - Role: Strategic business planning, market analysis, financial models, pricing strategies
-    - AI assistants: DO NOT autonomously modify this submodule unless explicitly authorized by user
-    - Exception: If user explicitly adds/edits/deletes files, commit those changes
-  - **Legal (READ-ONLY):** `packages/mx-legal/` → `MX-Legal` - Private intellectual property and legal documentation (**READ-ONLY REFERENCE**)
-    - Role: Patent applications, patent disclosures, NDAs, and other confidential legal materials
-    - AI assistants: DO NOT autonomously modify this submodule unless explicitly authorized by user
-    - Exception: If user explicitly adds/edits/deletes files, commit those changes
-  - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in MX-Gathering, Notes, Sales Enablement, Business Planning, and MX-Legal)
+  - **Appendices:** `packages/mx-appendices/` → `invisible-users-appendices` - Shared resources
+  - **Code Examples:** `packages/mx-code-examples/` → `invisible-users-code-examples` - Pattern examples
+  - **Outputs (PRIVATE):** `packages/mx-outputs/` → `invisible-users-outputs` - All generated content
+  - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in MX-Gathering)
 
 ### Repository Navigation Map
 
@@ -165,99 +145,68 @@ ${MAIN_REPO}/  ← MAIN REPO (MASTER)
 │   └── talks/                        ← Presentation materials
 │       ├── historical/               ← Archived presentations (dated subdirectories)
 │       └── template/                 ← Reusable presentation templates
-├── blogs → outputs/bible/blogs       ← SYMLINK to outputs submodule blogs
+├── blogs → packages/mx-outputs/bible/blogs  ← SYMLINK to outputs submodule blogs
 ├── scrap/                            ← Working directory for temporary files
 ├── books/                            ← Symlinks for convenience
-│   ├── bible → ../packages/bible
+│   ├── bible → ../packages/mx-the-bible
 │   ├── mx-handbook → ../packages/mx-handbook
-│   ├── appendices → ../packages/shared-appendices
-│   ├── code-examples → ../packages/shared-code-examples
-│   └── outputs → ../outputs
+│   ├── appendices → ../packages/mx-appendices
+│   ├── code-examples → ../packages/mx-code-examples
+│   └── outputs → ../packages/mx-outputs
 ├── packages/
-│   ├── bible/                        ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/bible/
-│   │       ├── chapters/             ← 13 chapter markdown files (Chapters 1-13)
-│   │       ├── illustrations/        ← SVG and PNG images
+│   ├── mx-the-bible/                 ← SUBMODULE (git repo)
+│   │   └── ${MAIN_REPO}/packages/mx-the-bible/
+│   │       ├── .claude/              ← Claude Code configuration
+│   │       ├── manuscripts/          ← Manuscript files
+│   │       ├── code/                 ← Code examples
+│   │       ├── marketing/            ← Marketing materials
+│   │       ├── web/                  ← Web content
+│   │       ├── CLAUDE.md             ← Submodule guidance
 │   │       ├── README.md             ← MX-Bible README
-│   │       └── NO .claude/ directory
-│   │       Note: Chapter 0 is in main repo at docs/shared-chapters/
+│   │       └── todo.txt              ← Task tracking
+│   │       Note: invisible-users-manuscript repository
 │   ├── mx-handbook/                  ← SUBMODULE (git repo)
 │   │   └── ${MAIN_REPO}/packages/mx-handbook/
 │   │       ├── chapters/             ← 11 chapter markdown files
 │   │       ├── README.md             ← MX-Handbook README
 │   │       └── NO .claude/ directory
-│   ├── shared-appendices/            ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/shared-appendices/
-│   │       ├── appendix-*.md         ← 12 appendix files (A-L)
-│   │       ├── web/                  ← HTML versions
+│   ├── mx-gathering/                 ← SUBMODULE (git repo)
+│   │   └── ${MAIN_REPO}/packages/mx-gathering/
+│   │       ├── .claude/              ← Claude Code configuration
+│   │       ├── Futures/              ← Future developments
+│   │       ├── contributors/         ← Contributor information
+│   │       ├── discussions/          ← Discussion archives
+│   │       ├── docs/                 ← Documentation
+│   │       ├── events/               ← Event materials
+│   │       ├── CLAUDE.md             ← Submodule guidance
+│   │       ├── README.md             ← MX-Gathering README
+│   │       ├── TODO.txt              ← Task tracking
+│   │       └── llms.txt              ← AI discovery file
+│   ├── mx-appendices/                ← SUBMODULE (git repo)
+│   │   └── ${MAIN_REPO}/packages/mx-appendices/
+│   │       ├── appendix-*.md         ← 12 appendix files (A-M)
 │   │       ├── README.md             ← Appendices README
 │   │       └── NO .claude/ directory
-│   ├── shared-code-examples/         ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/shared-code-examples/
+│   ├── mx-code-examples/             ← SUBMODULE (git repo)
+│   │   └── ${MAIN_REPO}/packages/mx-code-examples/
 │   │       ├── agent-friendly-starter-kit/  ← good/ vs bad/ patterns
 │   │       ├── examples/             ← Production code
 │   │       ├── README.md             ← Code examples README
 │   │       └── NO .claude/ directory
-│   ├── ucp/                          ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/ucp/
-│   │       ├── docs/                 ← UCP documentation
-│   │       ├── generated/            ← Generated schemas and types
-│   │       ├── main.py               ← Schema generator
-│   │       ├── README.md             ← UCP overview
+│   ├── mx-outputs/                   ← SUBMODULE (PRIVATE git repo)
+│   │   └── ${MAIN_REPO}/packages/mx-outputs/
+│   │       ├── bible/                ← MX-Bible outputs
+│   │       │   ├── blogs/            ← Blog posts
+│   │       │   ├── presentations/    ← Slide decks
+│   │       │   └── marketing/        ← Marketing materials
+│   │       ├── mx/                   ← MX-Handbook outputs
+│   │       ├── the-bible/            ← Legacy/alternate content
+│   │       ├── README.md             ← Outputs README
 │   │       └── NO .claude/ directory
-│   │       Note: Universal Commerce Protocol - standardized ecommerce API for AI agents (READ-ONLY unless user makes explicit changes)
-│   ├── notes/                        ← SUBMODULE (git repo) - READ-ONLY REFERENCE
-│   │   └── ${MAIN_REPO}/packages/notes/
-│   │       ├── .claude/              ← Claude Code configuration
-│   │       ├── scrap/                ← Temporary working files (gitignored, READ-ONLY for AI unless authorized)
-│   │       ├── Starter.md            ← Coding standards and project setup
-│   │       ├── Vibe coding backend.md ← Backend architecture guidelines
-│   │       └── Other development guidelines
-│   │       Note: READ-ONLY for AI assistants - commit only if user explicitly adds/edits/deletes files
-│   ├── sales-enablement/             ← SUBMODULE (PRIVATE git repo) - READ-ONLY REFERENCE
-│   │   └── ${MAIN_REPO}/packages/sales-enablement/
-│   │       ├── content/              ← Marketing and promotional content
-│   │       ├── outreach/             ← Partner and reviewer outreach
-│   │       ├── partners/             ← Partnership materials
-│   │       ├── pitches/              ← Sales presentations
-│   │       ├── profiles/             ← Author profiles
-│   │       ├── publishers/           ← Publisher submissions
-│   │       ├── CLAUDE.md             ← Sales enablement guidance
-│   │       ├── README.md             ← Sales enablement README
-│   │       └── Other sales execution materials
-│   │       Note: READ-ONLY for AI assistants - commit only if user explicitly adds/edits/deletes files
-│   ├── business-planning/            ← SUBMODULE (PRIVATE git repo) - READ-ONLY REFERENCE
-│   │   └── ${MAIN_REPO}/packages/business-planning/
-│   │       ├── plans/                ← Business plans, executive summaries
-│   │       ├── strategy/             ← Strategic positioning, MX-plan
-│   │       ├── opportunities/        ← Market opportunity analysis
-│   │       ├── pricing/              ← Pricing strategies and financial models
-│   │       ├── products/             ← Product business context
-│   │       ├── README.md             ← Business planning README
-│   │       └── CLAUDE.md             ← AI guidance
-│   │       Note: READ-ONLY for AI assistants - commit only if user explicitly adds/edits/deletes files
-│   ├── mx-legal/                     ← SUBMODULE (PRIVATE git repo) - READ-ONLY REFERENCE
-│   │   └── ${MAIN_REPO}/packages/mx-legal/
-│   │       ├── mx-card-system-patent-disclosure.md  ← Patent disclosure
-│   │       ├── mx-card-patent-plan.md               ← Patent application plan
-│   │       ├── mx-card-nda-template.md              ← NDA template
-│   │       ├── README.md             ← Legal repository README
-│   │       └── CLAUDE.md             ← AI guidance
-│   │       Note: READ-ONLY for AI assistants - commit only if user explicitly adds/edits/deletes files
 │   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
 │       ├── src/                      ← Tool source code
 │       ├── test/                     ← Test files
 │       └── README.md                 ← Tool documentation
-└── outputs/                          ← SUBMODULE (PRIVATE git repo)
-    └── ${MAIN_REPO}/outputs/
-        ├── bible/                    ← MX-Bible outputs
-        │   ├── blogs/                ← Blog posts
-        │   ├── presentations/        ← Slide decks
-        │   └── marketing/            ← Marketing materials
-        ├── mx/                       ← MX-Handbook outputs
-        ├── the-bible/                ← Legacy/alternate content
-        ├── README.md                 ← Outputs README
-        └── NO .claude/ directory
 ```
 
 **Note on outputs submodule directory naming:**
@@ -272,7 +221,7 @@ The outputs submodule directory structure:
 
 All MX-related blog posts stored directly in flat structure under `mx/` directory:
 
-- **Repository path:** `outputs/bible/blogs/mx/[filename].html`
+- **Repository path:** `packages/mx-outputs/bible/blogs/mx/[filename].html`
 - **Web URL:** `https://allabout.network/blogs/mx/[filename].html`
 - **Filename generation:** Lowercase, hyphens, no special characters (user chooses from suggestions)
 - **Example:** Blog title "Content Operations for AI Agents" → `machine-experience-adding-metadata.html`
@@ -281,7 +230,7 @@ All MX-related blog posts stored directly in flat structure under `mx/` director
 **Blog file naming pattern (all files at same level):**
 
 ```text
-outputs/bible/blogs/mx/
+packages/mx-outputs/bible/blogs/mx/
 ├── [filename].html              # Main blog post
 ├── [filename].css               # WCAG 2.1 AA compliant styling (scoped to this blog)
 ├── [filename]-social.svg        # Social media card (1200x630px)
@@ -292,7 +241,7 @@ outputs/bible/blogs/mx/
 **Example for one blog post:**
 
 ```text
-outputs/bible/blogs/mx/
+packages/mx-outputs/bible/blogs/mx/
 ├── machine-experience-adding-metadata.html
 ├── machine-experience-adding-metadata.css
 ├── machine-experience-adding-metadata-social.svg
@@ -304,14 +253,14 @@ outputs/bible/blogs/mx/
 
 - `AGENTS.md → CLAUDE.md` - Multi-AI system compatibility (allows agents to find guidance file as AGENTS.md)
 - `GEMINI.md → CLAUDE.md` - Google Gemini compatibility
-- `blogs → outputs/bible/blogs` - Direct access to blog content from repository root
+- `blogs → packages/mx-outputs/bible/blogs` - Direct access to blog content from repository root
 
 **Key navigation rules:**
 
 1. **Accessing .claude/ files:**
    - ✅ FROM MAIN: `.claude/skills/news/skill.md`
    - ✅ FROM SUBMODULE: `../../.claude/skills/news/skill.md`
-   - ❌ NEVER: `cd packages/bible && .claude/` (doesn't exist)
+   - ❌ NEVER: `cd packages/mx-the-bible && .claude/` (main .claude/ is at repo root, submodules have their own)
 
 2. **Git operations:**
    - Run `pwd` first - ALWAYS
@@ -327,17 +276,11 @@ outputs/bible/blogs/mx/
 
 ### READ-ONLY Submodule Policy for AI Assistants
 
-**Five submodules are marked as READ-ONLY REFERENCE:**
+**Note:** Currently, all submodules in the packages/ directory are content repositories that can be edited. The READ-ONLY policy applies to external reference submodules only if they are added in the future.
 
-- `packages/ucp/` - External UCP project
-- `packages/notes/` - Development standards
-- `packages/sales-enablement/` - Private sales execution materials
-- `packages/business-planning/` - Private business strategy and planning
-- `packages/mx-legal/` - Private intellectual property and legal documentation
+**AI Assistant Behavior for future READ-ONLY submodules:**
 
-**AI Assistant Behavior:**
-
-1. **DO NOT autonomously modify** these submodules (no proactive edits, additions, or deletions)
+1. **DO NOT autonomously modify** READ-ONLY submodules (no proactive edits, additions, or deletions)
 2. **DO commit user changes** if the user explicitly:
    - Adds new files to these submodules
    - Edits existing files in these submodules
@@ -345,36 +288,24 @@ outputs/bible/blogs/mx/
    - Reorganizes structure within these submodules
 3. When committing user changes in READ-ONLY submodules, use standard git workflow (commit to submodule first, then update pointer in main repo)
 
-**Example:**
-
-```bash
-# User explicitly reorganizes sales-enablement structure
-# AI should commit these changes:
-git -C packages/sales-enablement add -A
-git -C packages/sales-enablement commit -m "Reorganize business materials"
-git -C packages/sales-enablement push origin main
-git add packages/sales-enablement
-git commit -m "Update sales-enablement submodule pointer"
-```
-
 **Submodule Pointer Updates After Pulling:**
 
 When you pull updates from a read-only submodule's remote repository, the main repository will show the submodule as "modified (new commits)". This is **expected git behavior** and is NOT a violation of the read-only policy.
 
 **What happens:**
 
-- Running `git submodule update --remote packages/ucp` or navigating into the submodule and running `git pull` updates the submodule's HEAD to a new commit
+- Running `git submodule update --remote packages/mx-the-bible` or navigating into the submodule and running `git pull` updates the submodule's HEAD to a new commit
 - The main repository detects that its stored pointer (SHA reference) no longer matches the submodule's current HEAD
-- Git status shows: `modified: packages/ucp (new commits)`
+- Git status shows: `modified: packages/mx-the-bible (new commits)`
 
 **Required action:**
 
 Update the main repository's pointer by committing the change:
 
 ```bash
-# After pulling from a read-only submodule
-git add packages/ucp
-git commit -m "Update UCP submodule pointer to latest version"
+# After pulling from a submodule
+git add packages/mx-the-bible
+git commit -m "Update mx-the-bible submodule pointer to latest version"
 ```
 
 **Clarification:** This pointer update is reference maintenance, not content modification. The read-only policy applies to files *inside* the submodule, not to the main repository's pointer that tracks which commit the submodule should reference.
@@ -404,7 +335,7 @@ git commit -m "Update UCP submodule pointer to latest version"
 **Usage pattern:**
 
 1. User says: "Add this to bible chapter 5"
-2. If unclear, consult vocabulary.md to understand "bible" → `packages/bible/chapters/`
+2. If unclear, consult vocabulary.md to understand "bible" → `packages/mx-the-bible/manuscripts/`
 3. Proceed with full context
 
 **Key official names (always use these in formal documentation):**
@@ -423,11 +354,10 @@ git commit -m "Update UCP submodule pointer to latest version"
 
 Two books from modular repositories:
 
-- **"MX-Bible"** - `packages/bible/` - Full 13-chapter comprehensive guide (~78,000 words + shared appendices). Formerly titled "The Invisible Users".
+- **"MX-Bible"** - `packages/mx-the-bible/` - Full comprehensive guide. Formerly titled "The Invisible Users".
 - **"MX-Handbook"** - `packages/mx-handbook/` - 11-chapter practical implementation guide for developers and designers. Shorthand: **handbook** or **slim**
-- **Shared Appendices** - `packages/shared-appendices/` - 12 appendices (A-L) shared across both books
-- **Shared Code Examples** - `packages/shared-code-examples/` - Good vs bad pattern implementations
-- **Universal Commerce Protocol** - `packages/ucp/` - Open standard demonstrating AI agent ecommerce interactions
+- **Shared Appendices** - `packages/mx-appendices/` - 12 appendices (A-M) shared across both books
+- **Shared Code Examples** - `packages/mx-code-examples/` - Good vs bad pattern implementations
 
 **Current status:** Publication-ready (Due Q1 2026, not yet published)
 
@@ -435,7 +365,7 @@ Two books from modular repositories:
 
 **CRITICAL WRITING REQUIREMENT - Timeless Manuscript Rule:**
 
-Book manuscript files (.md files in `packages/bible/chapters/`, `packages/mx-handbook/chapters/`, `packages/shared-appendices/`, `docs/shared-chapters/`) must be written as if they've always existed.
+Book manuscript files (.md files in `packages/mx-the-bible/manuscripts/`, `packages/mx-handbook/chapters/`, `packages/mx-appendices/`, `docs/shared-chapters/`) must be written as if they've always existed.
 
 **NEVER include:**
 
@@ -460,18 +390,9 @@ Book manuscript files (.md files in `packages/bible/chapters/`, `packages/mx-han
 
 Comprehensive Node.js website analysis tool (`packages/web-audit-suite/`) implementing book's AI agent compatibility patterns. See package README for complete documentation.
 
-### 3. Universal Commerce Protocol (UCP)
+### 3. Web Audit Suite (Analysis Tool)
 
-**Universal Commerce Protocol (UCP)** - Read-only reference submodule demonstrating practical application of the book's patterns in real-world ecommerce contexts. UCP is an external project maintained separately; this repository includes it as reference material only.
-
-Open standard for commerce interoperability (`packages/ucp/`) that enables AI agents to autonomously discover capabilities, navigate product catalogs, and complete purchases through standardized protocols. Key features include:
-
-- **Composable Architecture:** Modular capabilities (Checkout, Order, Identity Linking) with optional extensions
-- **Dynamic Discovery:** Standardized profiles allow autonomous agent configuration
-- **Transport Agnostic:** Works via REST APIs, Model Context Protocol (MCP), or Agent-to-Agent (A2A)
-- **Security-First:** Built-in support for advanced security patterns and verifiable credentials
-
-UCP embodies the convergence principle from the book - patterns that work for AI agents also benefit human users through clear, semantic structure and explicit state management. See [packages/ucp/README.md](packages/ucp/README.md) and [ucp.dev](https://ucp.dev) for complete documentation.
+Comprehensive Node.js website analysis tool (`packages/web-audit-suite/`) implementing book's AI agent compatibility patterns. See package README for complete documentation.
 
 ## Repository Structure
 
@@ -488,20 +409,20 @@ UCP embodies the convergence principle from the book - patterns that work for AI
 │   ├── .markdownlint.json    # Markdown linting rules
 │   └── book-svg-style.md     # SVG illustration style guide
 ├── scripts/                  # Build and generation scripts
-├── blogs → outputs/bible/blogs  # SYMLINK to outputs submodule blogs directory
+├── blogs → packages/mx-outputs/bible/blogs  # SYMLINK to outputs submodule blogs directory
 ├── books/                    # Convenience symlinks (tracked, but directory ignored in .gitignore)
-│   ├── appendices → ../packages/shared-appendices
-│   ├── bible → ../packages/bible
-│   ├── code-examples → ../packages/shared-code-examples
+│   ├── appendices → ../packages/mx-appendices
+│   ├── bible → ../packages/mx-the-bible
+│   ├── code-examples → ../packages/mx-code-examples
 │   ├── mx-handbook → ../packages/mx-handbook
-│   └── outputs → ../outputs
-├── outputs/                  # Generated content (git submodule - PRIVATE)
+│   └── outputs → ../packages/mx-outputs
 ├── packages/                 # Book manuscripts and tools
-│   ├── bible/                # MX-Bible (git submodule)
+│   ├── mx-the-bible/         # MX-Bible (git submodule)
 │   ├── mx-handbook/          # MX-Handbook (git submodule)
-│   ├── shared-appendices/    # Shared appendices (git submodule)
-│   ├── shared-code-examples/ # Pattern examples (git submodule)
-│   ├── ucp/                  # Universal Commerce Protocol (git submodule)
+│   ├── mx-gathering/         # MX-Gathering (git submodule)
+│   ├── mx-appendices/        # Shared appendices (git submodule)
+│   ├── mx-code-examples/     # Pattern examples (git submodule)
+│   ├── mx-outputs/           # Generated content (git submodule - PRIVATE)
 │   └── web-audit-suite/      # Analysis tool (not a submodule)
 └── docs/                     # Project documentation
     ├── architecture/         # Architecture docs (GIT-README.md, TIMELESS-MANUSCRIPT-RULE.md, doc-architecture.md)
@@ -559,11 +480,11 @@ All blog posts follow a state-tracked workflow with mandatory metadata:
    - Required fields: title, author, date, blog-filename, blog-url, publication-date, description, keywords, ai-instruction
 
 2. **Generate HTML** - Run `scripts/generate-blog-html.js` to create HTML/CSS/SVG files
-   - Files created in `outputs/bible/blogs/mx/` (symlinked as `blogs/mx/`)
+   - Files created in `packages/mx-outputs/bible/blogs/mx/` (symlinked as `blogs/mx/`)
    - Update markdown to `blog-state: "in-review"`
    - HTML includes meta tags with `blog-state: "in-review"` and `blog-review-status: "final-committee-review"`
 
-3. **Review Stage** - HTML files remain in `outputs/bible/blogs/mx/` for committee review
+3. **Review Stage** - HTML files remain in `packages/mx-outputs/bible/blogs/mx/` for committee review
    - Validate HTML, check WCAG 2.1 AA compliance, verify metadata completeness
    - Files stay in "final-committee-review" status until approved for publication
 
@@ -774,7 +695,7 @@ Content with no H1 (frontmatter title is used instead)...
    - Single source of truth for the document title
 
 2. **Title in frontmatter only:** Special cases like Pandoc book generation where frontmatter is rendered into cover pages or chapter headings
-   - Used in: `packages/bible/chapters/`, `packages/mx-handbook/chapters/` (for PDF generation)
+   - Used in: `packages/mx-the-bible/manuscripts/`, `packages/mx-handbook/chapters/` (for PDF generation)
    - Build process renders frontmatter title as part of the document structure
 
 **When you encounter YAML frontmatter:**
@@ -844,7 +765,7 @@ author: "Author Name"
 
 - **Root llms.txt:** [llms.txt](llms.txt) - Complete project documentation for AI agent discovery
 - **Submodule llms.txt:** Each submodule can have its own llms.txt providing package-specific context
-- **Web llms.txt:** [packages/shared-appendices/web/llms.txt](packages/shared-appendices/web/llms.txt) - Appendix-specific discovery
+- **MX-Gathering llms.txt:** [packages/mx-gathering/llms.txt](packages/mx-gathering/llms.txt) - Community resources discovery
 
 **Repository decoration pattern:**
 
@@ -854,14 +775,14 @@ Use llms.txt files throughout the repository to ensure all content is discoverab
 /
 ├── llms.txt                           ← Root project documentation
 ├── packages/
-│   ├── bible/
+│   ├── mx-the-bible/
 │   │   └── llms.txt                   ← MX-Bible specific context
 │   ├── mx-handbook/
 │   │   └── llms.txt                   ← MX-Handbook specific context
-│   ├── shared-appendices/
-│   │   ├── llms.txt                   ← Appendices overview
-│   │   └── web/
-│   │       └── llms.txt               ← Web appendices discovery
+│   ├── mx-gathering/
+│   │   └── llms.txt                   ← Community resources discovery
+│   ├── mx-appendices/
+│   │   └── llms.txt                   ← Appendices overview
 │   └── web-audit-suite/
 │       └── llms.txt                   ← Tool documentation
 ```
@@ -880,7 +801,7 @@ Use llms.txt files throughout the repository to ensure all content is discoverab
 
 **Standard fields:**
 
-See [Appendix H - Example llms.txt](packages/shared-appendices/appendix-h-example-llms-txt.md) for complete field reference and real-world examples.
+See [Appendix H - Example llms.txt](packages/mx-appendices/appendix-h-live-llms.md) for complete field reference and real-world examples.
 
 ### Context-Preserving Cross-Document References
 
@@ -1168,7 +1089,7 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 - `books/` directory is listed in `.gitignore` but the symlinks inside are tracked (committed before the ignore pattern was added)
 - The gitignore pattern prevents accidental addition of new files to `books/` while preserving existing symlinks
 - Git only ignores untracked files; already-tracked files remain tracked even if matching an ignore pattern
-- Each submodule has its own `.gitignore` file for managing submodule-specific ignored files (e.g., `packages/bible/.gitignore` ignores generated PNG files)
+- Each submodule has its own `.gitignore` file for managing submodule-specific ignored files
 
 **GitHub CLI (`gh`):**
 
@@ -1238,9 +1159,6 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 
 **Key reference files:**
 
-- `packages/bible/chapters/bible-plan.md` - Master plan
-- `packages/bible/chapters/Glossary.md` - Technical glossary
-- `packages/shared-appendices/appendix-f-implementation-roadmap.md` - Priority-based roadmap
 - `config/book-svg-style.md` - SVG illustration style guide
 - `docs/for-ai/writing-style.md` - Complete writing style guide
 
@@ -1255,7 +1173,7 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 
 - `docs/structure/todo.txt` - Private development task tracking (internal, main repository only)
 - `packages/mx-gathering/TODO.txt` - Public deployment and community task tracking (version controlled, visible to community)
-- `packages/bible/update plan.md` - Strategic roadmap for 2026 MX-Bible completion
+- `packages/mx-the-bible/todo.txt` - Bible repository task tracking
 
 **Important distinction:** The main repository todo file (`docs/structure/todo.txt`) is for private internal development tracking, whilst submodule todo files (like `packages/mx-gathering/TODO.txt`) are public-facing and committed to version control for community visibility.
 
@@ -1284,9 +1202,7 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 3. `aria-label` on non-interactive elements (need `role="img"` or similar)
 4. Missing semantic structure (`<main>`, `<article>`, `<section>`)
 
-**AI-Friendly HTML patterns:** See [packages/shared-appendices/appendix-d-ai-friendly-html-guide.txt](packages/shared-appendices/appendix-d-ai-friendly-html-guide.txt)
-
-**Real-world example:** [packages/shared-appendices/web/back-cover.html](packages/shared-appendices/web/back-cover.html)
+**AI-Friendly HTML patterns:** See [packages/mx-appendices/appendix-d-ai-friendly-html-guide.txt](packages/mx-appendices/appendix-d-ai-friendly-html-guide.txt)
 
 ## Working with Submodules
 
@@ -1300,9 +1216,9 @@ git submodule update --init --recursive
 
 ```bash
 # Update a specific submodule
-git submodule update --remote packages/bible
-git add packages/bible
-git commit -m "Update bible submodule to latest version"
+git submodule update --remote packages/mx-the-bible
+git add packages/mx-the-bible
+git commit -m "Update mx-the-bible submodule to latest version"
 
 # Or update all submodules
 git submodule update --remote

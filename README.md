@@ -39,9 +39,9 @@ This repository contains multiple integrated projects working together to addres
 
 Two books with shared appendices and code examples:
 
-- **[MX-Bible](packages/bible/)** - Full comprehensive guide (13 chapters + appendices). Formerly "The Invisible Users".
+- **[MX-Bible](packages/mx-the-bible/)** - Full comprehensive guide. Formerly "The Invisible Users".
 - **[MX-Handbook](packages/mx-handbook/)** - Practical implementation guide (11 chapters)
-- **[Shared Appendices](packages/shared-appendices/)** - Implementation guides and resources (12 appendices A-L)
+- **[Shared Appendices](packages/mx-appendices/)** - Implementation guides and resources (12 appendices A-M)
 
 See individual package READMEs for chapter lists, word counts, and build commands.
 
@@ -53,13 +53,11 @@ A production-ready Node.js website analysis tool implementing the book's pattern
 
 Features: SEO, accessibility (WCAG 2.1), performance, security, AI agent compatibility analysis.
 
-### Universal Commerce Protocol (UCP)
+### MX-Gathering
 
-Reference implementation demonstrating how AI agents interact with ecommerce systems:
+Community resources and thought leadership repository:
 
-- **[UCP](packages/ucp/)** - Open standard for commerce interoperability enabling AI agents to discover, navigate, and complete purchases
-
-UCP demonstrates the practical application of patterns from the book in a real-world ecommerce context, showing how standardized protocols enable autonomous agent interactions.
+- **[MX-Gathering](packages/mx-gathering/)** - Open-source community repository for shared resources, contribution guidelines, and collaborative content
 
 ## Why Submodules Exist: Separation of Concerns
 
@@ -87,27 +85,22 @@ This repository uses git submodules to achieve **clean separation between conten
 ```text
 /
 ├── packages/
-│   ├── bible/                # "MX-Bible" (full comprehensive guide) [SUBMODULE]
+│   ├── mx-the-bible/         # "MX-Bible" (full comprehensive guide) [SUBMODULE]
 │   ├── mx-handbook/          # "MX-Handbook" (implementation handbook) [SUBMODULE]
-│   ├── shared-appendices/    # Shared implementation guides (A-L) [SUBMODULE]
-│   ├── shared-code-examples/ # Production-ready code examples [SUBMODULE]
-│   ├── ucp/                  # Universal Commerce Protocol [SUBMODULE]
-│   ├── notes/                # Development notes [SUBMODULE - READ-ONLY]
-│   ├── sales-enablement/     # Business materials [SUBMODULE - READ-ONLY, PRIVATE]
+│   ├── mx-gathering/         # "MX-Gathering" (community resources) [SUBMODULE]
+│   ├── mx-appendices/        # Shared implementation guides (A-M) [SUBMODULE]
+│   ├── mx-code-examples/     # Production-ready code examples [SUBMODULE]
+│   ├── mx-outputs/           # Generated content [SUBMODULE - PRIVATE]
 │   └── web-audit-suite/      # Website analysis tool (NOT a submodule)
 ├── books/                    # Convenience symlinks (reduces cognitive load when navigating)
-│   ├── bible -> ../packages/bible
+│   ├── bible -> ../packages/mx-the-bible
 │   ├── mx-handbook -> ../packages/mx-handbook
-│   ├── appendices -> ../packages/shared-appendices
-│   ├── code-examples -> ../packages/shared-code-examples
-│   └── outputs -> ../outputs
-│   # Note: Access books/bible instead of packages/bible/ to reduce mental overhead
-├── blogs -> outputs/bible/blogs  # Symlink to outputs submodule blogs
+│   ├── appendices -> ../packages/mx-appendices
+│   ├── code-examples -> ../packages/mx-code-examples
+│   └── outputs -> ../packages/mx-outputs
+│   # Note: Access books/bible instead of packages/mx-the-bible/ to reduce mental overhead
+├── blogs -> packages/mx-outputs/bible/blogs  # Symlink to outputs submodule blogs
 ├── scrap/                    # Working directory for temporary files
-├── outputs/                  # Generated content [SUBMODULE - private]
-│   ├── bible/                # PDFs, HTML, marketing materials
-│   ├── mx/                   # Build outputs for MX-Handbook
-│   └── the-bible/            # Legacy/alternate content
 ├── docs/                     # Documentation (main repo only)
 │   ├── architecture/         # Architecture documentation
 │   ├── for-ai/               # AI assistant guidance files
@@ -145,14 +138,14 @@ npm run init
 
 The `npm run init` command verifies and creates necessary symlinks for easier navigation:
 
-- `blogs -> outputs/bible/blogs` (convenient blog access)
-- `books/bible -> ../packages/bible` (convenient book access)
+- `blogs -> packages/mx-outputs/bible/blogs` (convenient blog access)
+- `books/bible -> ../packages/mx-the-bible` (convenient book access)
 - `books/mx-handbook -> ../packages/mx-handbook`
-- `books/appendices -> ../packages/shared-appendices`
-- `books/code-examples -> ../packages/shared-code-examples`
-- `books/outputs -> ../outputs`
+- `books/appendices -> ../packages/mx-appendices`
+- `books/code-examples -> ../packages/mx-code-examples`
+- `books/outputs -> ../packages/mx-outputs`
 
-**Why `books/` symlinks?** Reduces cognitive load when navigating. Access `books/bible/` instead of `packages/bible/` - one less directory level to remember. These symlinks are tracked in git but the `books/` directory is in `.gitignore` to prevent accidental additions.
+**Why `books/` symlinks?** Reduces cognitive load when navigating. Access `books/bible/` instead of `packages/mx-the-bible/` - one less directory level to remember. These symlinks are tracked in git but the `books/` directory is in `.gitignore` to prevent accidental additions.
 
 ### Building Book Manuscripts
 
@@ -233,9 +226,12 @@ Changes must flow: **book → tool → documentation**
 
 Each package has its own README with detailed information:
 
-- [MX-Bible README](packages/bible/README.md) - Full book contents, build commands, status
+- [MX-Bible README](packages/mx-the-bible/README.md) - Full book contents, build commands, status
 - [MX-Handbook README](packages/mx-handbook/README.md) - Implementation handbook contents
-- [Shared Appendices README](packages/shared-appendices/README.md) - Implementation guides
+- [MX-Gathering README](packages/mx-gathering/README.md) - Community resources
+- [Shared Appendices README](packages/mx-appendices/README.md) - Implementation guides
+- [MX-Code Examples README](packages/mx-code-examples/README.md) - Pattern examples
+- [MX-Outputs README](packages/mx-outputs/README.md) - Generated content
 - [Web Audit Suite README](packages/web-audit-suite/README.md) - Complete tool documentation
 
 ### Architecture Documentation
@@ -249,14 +245,6 @@ Each package has its own README with detailed information:
 - [Repository Mapping](docs/structure/github-repositories.md) - Complete repository structure
 - [UX Research Insights](docs/structure/steve-krug.md) - Don't Make Me Think analysis
 
-### Business Materials (Private Submodule)
-
-**Note:** Sales enablement materials are in a private submodule at [packages/sales-enablement/](packages/sales-enablement/). This is a READ-ONLY reference for AI assistants.
-
-- [Business Plan](packages/sales-enablement/business/business-plan.md) - Complete business strategy
-- [Partner Kit](packages/sales-enablement/partners/PARTNER_KIT.md) - Partner resources
-- [Publisher Proposal](packages/sales-enablement/publishers/oreilly-proposal.md) - O'Reilly submission
-
 ## Working with Git Submodules
 
 **⚠️ CRITICAL: This repository uses git submodules that require careful handling.**
@@ -266,14 +254,12 @@ Each package has its own README with detailed information:
 This workspace contains multiple git repositories:
 
 1. **Main repo:** Root directory
-2. **MX-Bible submodule:** `packages/bible/` (full comprehensive guide)
+2. **MX-Bible submodule:** `packages/mx-the-bible/` (full comprehensive guide)
 3. **MX-Handbook submodule:** `packages/mx-handbook/` (implementation handbook)
-4. **Appendices submodule:** `packages/shared-appendices/` (shared appendices)
-5. **Code examples submodule:** `packages/shared-code-examples/` (pattern examples)
-6. **UCP submodule:** `packages/ucp/` (Universal Commerce Protocol - READ-ONLY reference)
-7. **Notes submodule:** `packages/notes/` (development notes - READ-ONLY reference)
-8. **Sales enablement submodule:** `packages/sales-enablement/` (private business materials - READ-ONLY reference)
-9. **Outputs submodule:** `outputs/` (private, generated content)
+4. **MX-Gathering submodule:** `packages/mx-gathering/` (community resources)
+5. **Appendices submodule:** `packages/mx-appendices/` (shared appendices)
+6. **Code examples submodule:** `packages/mx-code-examples/` (pattern examples)
+7. **Outputs submodule:** `packages/mx-outputs/` (private, generated content)
 
 **Always check `pwd` before git operations.** The [LEARNINGS.md](LEARNINGS.md) file documents common mistakes and their fixes.
 
