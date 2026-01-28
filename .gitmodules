@@ -7,3 +7,6 @@
 [submodule "packages/mx-outputs"]
 	path = packages/mx-outputs
 	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-outputs
+[submodule "packages/mx-handbook"]
+	path = packages/mx-handbook
+	url = https://github.com/Digital-Domain-Technologies-Ltd/MX-The-Handbook
