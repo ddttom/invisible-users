@@ -43,6 +43,25 @@ Added six new git submodules under packages/ directory with new mx-* naming conv
    - Replaces old packages/shared-code-examples/ structure
    - Commit: 05efa2a
 
+#### Additional Submodules Added
+
+Three additional submodules were added after the initial restructure:
+
+1. **packages/external/ucp/** (Universal-Commerce-Protocol/ucp)
+   - Universal Commerce Protocol reference documentation
+   - External project demonstrating AI agent ecommerce patterns
+   - Commit: 28cf694
+
+2. **packages/business/mx-business/** (MX-business-planning)
+   - Private business strategy and planning documents
+   - Strategic positioning, market analysis, financial models
+   - Commit: 1c82d7a
+
+3. **packages/notes/** (Notes)
+   - Coding standards and development practices reference
+   - Architecture guidelines and project setup documentation
+   - Commit: 5360e80
+
 **Removed Old Submodules:**
 
 The following submodules from the old structure no longer exist:
@@ -60,11 +79,12 @@ The following submodules from the old structure no longer exist:
 **Repository Count Change:**
 
 - Previous: 10 git repositories (1 main + 9 submodules)
-- Current: 7 git repositories (1 main + 6 submodules)
+- After initial restructure: 7 git repositories (1 main + 6 submodules)
+- Current: 10 git repositories (1 main + 9 submodules)
 
 ### Changed - 2026-01-28
 
-**Documentation Updates** (Commit: a0ed8d2)
+**Documentation Updates - Round 1** (Commit: a0ed8d2)
 
 Updated CLAUDE.md and README.md to reflect new submodule structure:
 
@@ -90,6 +110,17 @@ Updated CLAUDE.md and README.md to reflect new submodule structure:
 - `books/code-examples` symlink → now points to `packages/mx-code-examples/`
 - `books/outputs` symlink → now points to `packages/mx-outputs/`
 
+**Documentation Updates - Round 2** (Commit: ce4fdde)
+
+Updated CLAUDE.md and README.md to reflect all 9 submodules:
+
+- Repository Architecture updated from 7 to 10 repositories (1 main + 9 submodules)
+- Added external/ucp submodule to navigation map
+- Added business/mx-business submodule to navigation map
+- Added notes submodule to navigation map
+- Updated README.md "Working with Git Submodules" section with complete list
+- Documentation now accurately reflects current repository structure
+
 **Commits in this session:**
 
 1. cf81b8e - Add invisible-users-manuscript as submodule at packages/mx-the-bible
@@ -101,6 +132,10 @@ Updated CLAUDE.md and README.md to reflect new submodule structure:
 7. 7b86454 - Add invisible-users-manuscript as submodule at packages/mx-manuscript (temporary)
 8. 4a83536 - Remove mx-manuscript submodule (duplicate of mx-the-bible)
 9. a0ed8d2 - Update documentation to reflect new submodule structure
+10. 28cf694 - Add Universal Commerce Protocol (UCP) as external submodule
+11. 1c82d7a - Add MX-business-planning as submodule at packages/business/mx-business
+12. 5360e80 - Add Notes as submodule at packages/notes
+13. ce4fdde - Update documentation to reflect all 9 submodules
 
 ### Notes - 2026-01-28
 
