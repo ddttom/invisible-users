@@ -1,0 +1,112 @@
+{
+  // Editor settings
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.rulers": [100],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+
+  // Language-specific settings
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "davidanson.vscode-markdownlint",
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on"
+  },
+
+  // ESLint settings for Web Audit Suite
+  "eslint.enable": true,
+  "eslint.validate": ["javascript"],
+  "eslint.workingDirectories": [
+    {
+      "pattern": "packages/web-audit-suite"
+    }
+  ],
+
+  // Markdownlint settings
+  "markdownlint.config": {
+    "default": true,
+    "MD013": false,
+    "MD041": false,
+    "MD051": false
+  },
+
+  // File associations
+  "files.associations": {
+    "*.md": "markdown",
+    "llms.txt": "plaintext",
+    ".markdownlint.json": "jsonc",
+    ".eslintrc.cjs": "javascript"
+  },
+
+  // File exclusions (for search and file tree)
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/*.log": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/packages/web-audit-suite/results": true,
+    "**/packages/web-audit-suite/.cache": true,
+    "**/.git": true,
+    "**/the-invisible-users*.pdf": true,
+    "**/the-invisible-users*.html": true
+  },
+
+  // Git settings
+  "git.enableSmartCommit": false,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "git.detectSubmodules": true,
+  "git.detectSubmodulesLimit": 10,
+
+  // Terminal settings
+  "terminal.integrated.env.osx": {
+    "NODE_ENV": "development"
+  },
+
+  // Path intellisense for monorepo
+  "path-intellisense.mappings": {
+    "/": "${workspaceRoot}"
+  },
+
+  // Breadcrumbs
+  "breadcrumbs.enabled": true,
+
+  // Minimap
+  "editor.minimap.enabled": true,
+
+  // IntelliSense
+  "javascript.suggest.paths": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // Live Server settings for HTML appendices
+  "liveServer.settings.root": "/packages/shared-appendices/web",
+  "liveServer.settings.port": 8080,
+
+  // Prettier settings
+  "prettier.enable": true,
+  "prettier.requireConfig": true,
+
+  // Claude Code settings
+  "claude-code.enableContext": true,
+  "cSpell.words": [
+    "behaviours",
+    "figcaption"
+  ],
+  "xcodeIntegration.projectPath": "/Users/tomcranstoun/Documents/GitHub/invisible-users"
+}

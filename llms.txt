@@ -1,0 +1,268 @@
+---
+copyright: "Copyright © 2026 Tom Cranstoun. All rights reserved."
+author: "Tom Cranstoun 'The MX Guy'"
+attribution: "Concepts by Tom Cranstoun 'The MX Guy'"
+creation-date: "15/Dec/2024"
+publication-date: "Q1 2026"
+last-updated: "26/Jan/2026"
+jsonld: "book"
+description: "Two integrated book manuscripts (MX-Bible, MX-Handbook) and production-ready Web Audit Suite for AI agent compatibility"
+longdescription: "Comprehensive guide series examining how modern web design optimised for human users fails for AI agents, with practical implementation patterns and production-ready analysis tool. Includes MX-Bible (comprehensive strategic guide), MX-Handbook (practical implementation handbook), 12 shared appendices, and Web Audit Suite implementing all patterns."
+LinkedIn: "https://www.linkedin.com/in/tom-cranstoun/"
+repository: "https://github.com/ddttom/invisible-users"
+ai-instruction: "This llms.txt file provides comprehensive documentation about the MX Series book project and Web Audit Suite. Primary consumers are AI agents seeking to understand AI agent compatibility patterns, web design best practices, and implementation guidance. Use metadata for accurate citation and source attribution. Book manuscripts are copyrighted; open source components require attribution to Tom Cranstoun 'The MX Guy'."
+---
+
+# MX Series: Book Manuscripts and Web Audit Suite
+
+Two integrated book manuscripts and a production-ready implementation tool. Built on a multi-submodule architecture (updated 24 January 2026) enabling modular content management: main repository hub, MX-Bible (formerly "The Invisible Users"), MX-Handbook, MX-Gathering (community resources), shared appendices, shared code examples, UCP reference, and private outputs submodule.
+
+**Recent Updates (24 January 2026):**
+
+- MX-Gathering submodule added: public, open-source community repository for event templates, discussion archives, contributor guidelines, and member resources
+- Architecture expanded to 11 repositories (1 main + 10 submodules)
+- Community engagement infrastructure established
+
+**Last updated:** 26 January 2026
+**Author:** Tom Cranstoun "The MX Guy"
+**LinkedIn:** [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
+
+**Site Type:** Book Manuscript, Technical Documentation, Educational Resource, Implementation Tool
+**Purpose:** Developer Education, Web Design Guidance, AI Integration Best Practices, Website Analysis
+**Status:** Both projects complete and production-ready
+
+## Access Guidelines
+
+- **Content Usage:** Book manuscripts: All rights reserved, not licensed for public distribution
+- **Attribution Required:** "Based on Machine Experience (MX) patterns by Tom Cranstoun 'The MX Guy'"
+- **Open Source Components:** Web Audit Suite and code examples licensed under MIT License (attribution required)
+- **Training Usage:** Not permitted for book content
+- **Copyright:** Copyright © 2026 Tom Cranstoun. All rights reserved.
+
+## Repository Architecture
+
+- **Structure:** 11 git repositories (1 main + 10 submodules) - Multi-repository monorepo architecture (updated 24 January 2026)
+- **Main Hub:** Central repository (invisible-users) with Claude Code configuration, build scripts, comprehensive documentation
+- **Book Submodules:**
+  - bible/ (MX-Bible - comprehensive strategic guide, 13 chapters, ~78,000 words)
+  - mx-handbook/ (MX-Handbook - practical implementation handbook, 11 chapters)
+  - mx-gathering/ (MX-Gathering - community resources, event templates, discussion archives, thought leadership - public, open-source)
+- **Shared Resources:** shared-appendices/ (12 appendices A-L shared across all books), shared-code-examples/ (production-ready pattern implementations)
+- **Reference Submodules (READ-ONLY):** ucp/ (Universal Commerce Protocol), notes/ (coding standards, includes scrap/ for temporary working files)
+- **Private Submodule:** outputs/ (generated PDFs, HTML, blog posts, marketing materials)
+- **Convenience Layer:** books/ directory with symlinks to all book content, blogs/ symlink to outputs/bible/blogs
+- **Key Benefits:**
+  - Independent version control for each book
+  - Shared resources (appendices, code) without duplication
+  - Clean separation between content and build processes
+  - Different privacy settings (outputs is private)
+  - No dependency sprawl in content repositories
+- **Complete Architecture:** See [docs/architecture/doc-architecture.md](docs/architecture/doc-architecture.md) for comprehensive documentation (827 lines, includes Mermaid diagrams, detailed file structures, build system architecture, git workflows)
+
+## Book Chapters
+
+Complete 14-chapter manuscript (including Chapter 0) examining web design for both humans and AI agents:
+
+- [Chapter 0 - What Are AI Agents?](packages/bible/chapters/chapter-00-what-are-ai-agents.md): Introduction to four agent types with technical capabilities and disability equivalents
+- [Preface - Author's Journey](packages/bible/preface.md): Book introduction with personal narrative, usage guide, acknowledgements, and author bio (~1,700 words)
+- [Chapter 1 - What You Will Learn](packages/bible/chapters/chapter-01-what-you-will-learn.md): Introduction and the accessibility connection (~3,200 words)
+- [Chapter 2 - The Invisible Failure](packages/bible/chapters/chapter-02-the-invisible-failure.md): When websites break for AI agents (~4,500 words)
+- [Chapter 3 - The Architectural Conflict](packages/bible/chapters/chapter-03-the-architectural-conflict.md): How modern web architecture creates the problem (~4,150 words)
+- [Chapter 4 - The Business Reality](packages/bible/chapters/chapter-04-the-business-reality.md): Commercial implications of agent-mediated commerce with ROI assessment framework (~7,350 words)
+- [Chapter 5 - The Content Creator's Dilemma](packages/bible/chapters/chapter-05-the-content-creators-dilemma.md): How AI consumption threatens existing business models (~5,600 words)
+- [Chapter 6 - The Security Maze](packages/bible/chapters/chapter-06-the-security-maze.md): Security implications of AI agents acting on user behalf (~4,000 words)
+- [Chapter 7 - The Legal Landscape](packages/bible/chapters/chapter-07-the-legal-landscape.md): Legal frameworks struggling to keep pace (~4,400 words)
+- [Chapter 8 - The Human Cost](packages/bible/chapters/chapter-08-the-human-cost.md): The digital divide implications (~3,650 words)
+- [Chapter 9 - The Platform Race](packages/bible/chapters/chapter-09-the-platform-race.md): How major platforms are adapting to AI agents
+- [Chapter 10 - Generative Engine Optimization](packages/bible/chapters/chapter-10-generative-engine-optimization.md): Bridging commercial urgency and technical implementation (~3,113 words)
+- [Chapter 11 - Designing for Both](packages/bible/chapters/chapter-11-designing-for-both.md): Solutions that work for agents without degrading human experience (~4,400 words)
+- [Chapter 12 - Technical Advice](packages/bible/chapters/chapter-12-technical-advice.md): Implementation code, testing strategies, and practical tools (~9,650 words)
+- [Chapter 13 - What Agent Creators Must Build](packages/bible/chapters/chapter-13-what-agent-creators-must-build.md): Implementation patterns, validation layers, confidence scoring, and guardrails (~5,000 words)
+
+## MX Series: Two-Book Strategy
+
+Two integrated books serving different audiences and use cases:
+
+### MX-Handbook (Implementation Handbook)
+
+- [MX-Handbook](packages/mx-handbook/): Practical implementation handbook for developers and designers (~11 chapters)
+- **Target Audience:** Development teams and designers implementing AI-friendly patterns
+- **Focus:** Step-by-step implementation guidance with code examples and immediate practical guidance
+- **Status:** Complete and publication-ready (Due Q1 2026)
+- **When to Use:** Quick reference, team onboarding, implementation sprints, detailed implementation projects, technical training, design system development
+
+### MX-Bible (Comprehensive Strategic Guide)
+
+- [MX-Bible](packages/bible/): Full comprehensive exploration (~13 chapters, ~78,000 words)
+- **Target Audience:** Technical leaders, architects, strategists needing complete context
+- **Focus:** Why patterns matter, business implications, legal considerations, security insights, strategic perspectives
+- **Status:** Complete and publication-ready (Due Q1 2026)
+- **When to Use:** Strategic planning, executive buy-in, understanding business implications
+
+This represents a two-book strategy: comprehensive exploration (MX-Bible) and focused implementation guide (MX-Handbook), both sharing common appendices and code examples.
+
+## Practical Implementation Guides
+
+Comprehensive guides and reference materials for developers:
+
+- [Executive Summary](packages/bible/executive-summary.md): Condensed overview of the book's key insights and arguments (~1,100 words)
+
+### Manuscript Appendices
+
+Reference materials integrated into the manuscript as appendices (shared across all book variants):
+
+- [Appendix A - Implementation Cookbook](packages/shared-appendices/appendix-a-implementation-cookbook.md): Quick-reference recipes for common AI agent compatibility patterns with copy-paste implementations (~1,873 words). Includes persistent error messages, explicit state attributes, semantic form fields, and progressive enhancement patterns.
+- [Appendix B - Battle-Tested Lessons](packages/shared-appendices/appendix-b-battle-tested-lessons.md): Real-world learnings from implementing AI agent compatibility patterns in production (~1,796 words). Covers mistakes to avoid, solutions that work, and practical insights from production deployments.
+- [Appendix C - Web Audit Suite User Guide](packages/shared-appendices/appendix-c-web-audit-suite-guide.md): Complete guide to auditing websites for AI agent compatibility using Web Audit Suite (~2,010 words). Includes installation, usage examples, report interpretation, and CI/CD integration.
+- [Appendix D - AI-Friendly HTML Guide](packages/shared-appendices/appendix-d-ai-friendly-html-guide.md): Comprehensive prescriptive guide for creating web interfaces that work for both humans and AI agents (~9,050 words). Covers HTML patterns, form design, structured data, server-side patterns, testing, and implementation priorities.
+- [Appendix E - AI Patterns Quick Reference](packages/shared-appendices/appendix-e-ai-patterns-quick-reference.md): Quick reference for AI assistants generating HTML with explicit state, semantic markup, and machine-readable attributes (~1,300 words). Includes data attribute reference, form field names, and practical code examples.
+- [Appendix F - Implementation Roadmap](packages/shared-appendices/appendix-f-implementation-roadmap.md): Priority-based implementation roadmap from critical quick wins to advanced features (~2,750 words). Organized by priority levels rather than time estimates.
+- [Appendix G - Resource Directory](packages/shared-appendices/appendix-g-resource-directory.md): Curated directory of 150+ resources organized by category (~1,950 words). Includes documentation, tools, specifications, and case studies.
+- [Appendix H - Live llms.txt](packages/shared-appendices/appendix-h-live-llms.md): Markdown wrapper demonstrating llms.txt example with Digital Domain Technologies reference (20 curated links). Shows what a complete llms.txt file looks like in practice.
+- [Appendix I - Pipeline Failure Case Study](packages/shared-appendices/appendix-i-pipeline-failure-case-study.md): Complete £203k cruise pricing error analysis referenced in Chapter 12 (~2,500 words). Demonstrates how agents fail when websites lack clear structured data and agents lack validation layers.
+- [Appendix J - Industry Developments](packages/shared-appendices/appendix-j-industry-developments.md): Latest verified news and updates about AI agents, commerce platforms, and industry developments. Regularly updated with sources.
+- [Appendix K - Common Page Patterns](packages/shared-appendices/appendix-k-common-page-patterns.md): Production-ready HTML templates demonstrating AI-friendly patterns for common page types (~14,200 words). Complete examples for home, about, contact, sales, collection, article, FAQ, and form pages.
+- [Appendix L - Proposed AI Metadata Patterns](packages/shared-appendices/appendix-l-proposed-ai-metadata-patterns.md): Formal W3C-style proposal document for experimental AI metadata patterns with rationale, use cases, and adoption framework.
+
+### Web Appendices
+
+Individual appendix pages published as standalone HTML for easy reference and sharing:
+
+- [Appendices Index](https://allabout.network/invisible-users/web/): Landing page with all 11 appendices available as separate HTML pages
+- Implementation Guides: Appendices A-D (cookbook recipes, battle-tested lessons, audit tool guide, comprehensive HTML guide)
+- Quick References: Appendices E-G (patterns reference, implementation roadmap, resource directory)
+- Case Studies & Templates: Appendices H-K (llms.txt example, pipeline failure analysis, industry developments, page patterns)
+
+Each appendix page includes table of contents, syntax highlighting, and navigation between appendices. Designed for AI agent compatibility with semantic HTML, proper heading structure, and responsive layout.
+
+### Code Examples
+
+- [Agent-Friendly Starter Kit](packages/shared-code-examples/agent-friendly-starter-kit/): Production-ready code examples demonstrating good vs bad patterns for AI agent compatibility
+- [Code Examples](packages/shared-code-examples/examples/): Platform configurations, validation tools, and monitoring examples
+- Platform Configurations: Apache, Nginx, Next.js, WordPress, Adobe EDS, Static Sites
+- Validation Tools: Development and production verification scripts
+- Monitoring Examples: Server log analysis and analytics tracking
+
+### Reference Materials
+
+- [Glossary](packages/bible/Glossary.md): 60+ technical terms with cross-references
+- [Implementation Roadmap](packages/shared-appendices/appendix-f-implementation-roadmap.md): Priority-based implementation roadmap
+- [Resource Directory](packages/shared-appendices/appendix-g-resource-directory.md): 150+ curated resources organized by category
+
+## Key Concepts
+
+### The Convergence Principle
+
+What AI agents need is mostly what everyone needs. Solutions that work for agents typically improve experiences for users with accessibility needs, people with ADHD, stressed parents, and others. The book argues that fixing invisible failures for AI benefits all users.
+
+### Session Inheritance Problem
+
+Critical security insight explored in Chapter 6: In-browser agents inherit authenticated sessions rather than failing to authenticate. Banks cannot detect AI involvement because agents inherit proof-of-humanity tokens from the authenticated user's session.
+
+### Identity Delegation
+
+When agents make purchases, businesses lose customer identity. Discussed briefly in Chapters 4, 6, 9, and 10 as one emerging solution pattern. Multiple approaches acknowledged (retailer-specific tokens, centralised repositories, blockchain attestations, browser-native delegation) without prescribing a specific implementation.
+
+### Dual Responsibility Framework
+
+The book addresses two audiences with distinct responsibilities:
+
+- **For Developers:** Fix technical patterns (clear state, persistent errors, semantic structure) that improve experiences for all users
+- **For Users:** Exercise care with prompts when dealing with banking, legal services, or commercial transactions where mistakes have serious consequences
+
+Not everything can be fixed with better HTML design. Users bear responsibility for the instructions they give to AI agents when interacting with high-stakes services. Covered in Preface.
+
+### Established vs Emerging Standards
+
+The book clearly distinguishes between:
+
+- **Established Standards:** Schema.org, semantic HTML, ARIA - use with confidence
+- **Emerging Conventions:** llms.txt - early adoption phase
+- **Proposed Patterns:** ai-* meta tags, data-agent-visible - experimental but forward-compatible
+
+## Web Audit Suite
+
+Production-ready Node.js tool implementing the patterns from the book. Comprehensive website analysis for AI agent compatibility.
+
+### Overview
+
+- **Version:** 1.0.0
+- **Status:** Production-ready
+- **License:** Proprietary (all rights reserved)
+- **Node.js:** 20.0.0 or higher required
+- **Installation:** `npm install` from repository root or web-audit-suite directory
+
+### Key Features
+
+- **AI Agent Compatibility Analysis:** LLM suitability scoring based on served vs rendered HTML states
+- **SEO Performance:** Page-by-page SEO metrics and recommendations
+- **Accessibility Compliance:** WCAG 2.1 testing with Pa11y integration
+- **Performance Metrics:** Load times, resource sizes, and optimization opportunities
+- **Security Headers:** HTTP security header validation
+- **Content Quality:** Semantic HTML, structured data, and readability analysis
+- **Dashboard Generation:** Interactive HTML dashboard with charts and visualizations
+- **Historical Tracking:** Compare changes over time with trend analysis
+- **Executive Summaries:** High-level reports for stakeholders
+- **Agency White-labeling:** Custom branding with `--agency-name` and `--agency-logo` options
+- **Bulk Audits:** Analyze multiple domains from CSV files
+- **Rate Limiting:** Configurable request throttling using token bucket algorithm
+- **Flexible Configuration:** CLI flags, environment variables, and threshold files
+
+### Documentation
+
+- [QUICKSTART.md](web-audit-suite/QUICKSTART.md): 5-minute getting started guide
+- [README.md](web-audit-suite/README.md): Complete tool documentation
+- [User Manual](web-audit-suite/docs/usermanual.md): Comprehensive usage guide
+- [Configuration Guide](web-audit-suite/docs/CONFIGURATION.md): Environment variables and thresholds
+- [Features Overview](web-audit-suite/docs/FEATURES.md): Detailed feature descriptions
+- [CI/CD Integration](web-audit-suite/docs/CI-CD-INTEGRATION.md): Quality gates for automated pipelines with threshold configuration
+- [Report Layout](web-audit-suite/docs/report-layout.md): Report structure and data schema reference explaining all generated outputs
+
+## For Human Visitors
+
+Looking for more information about this book project?
+
+### Getting Started
+
+**Documentation Structure (Start Here):**
+
+1. **[ONBOARDING.md](ONBOARDING.md)** - Quick start guide (10 minutes, 303 lines)
+2. **[docs/architecture/doc-architecture.md](docs/architecture/doc-architecture.md)** - Comprehensive architecture (827 lines, complete details)
+3. **[CLAUDE.md](CLAUDE.md)** - AI agent instructions and project guide
+4. **[docs/architecture/GIT-README.md](docs/architecture/GIT-README.md)** - Git workflow with submodules
+
+**Book Manuscripts:**
+
+- **MX-Bible:** [packages/bible/README.md](packages/bible/README.md) - Comprehensive strategic guide
+- **MX-Handbook:** [packages/mx-handbook/README.md](packages/mx-handbook/README.md) - Practical implementation handbook
+- **Appendices:** [packages/shared-appendices/README.md](packages/shared-appendices/README.md) - Shared appendices A-L
+
+**Tool Documentation:**
+
+- **Web Audit Suite:** [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) - Complete tool documentation
+- **Quick Start:** [packages/web-audit-suite/QUICKSTART.md](packages/web-audit-suite/QUICKSTART.md) - 5-minute guide
+
+### Author
+
+- **Tom Cranstoun**
+- **LinkedIn:** [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
+- **About llms.txt:** [https://llmstxt.org](https://llmstxt.org)
+
+## Version Information
+
+### Book Manuscript
+
+**Status:** Publication-ready
+**Total Words:** ~57,000 words (core manuscript), ~65,500 words (including appendices)
+**Chapters:** 14 complete chapters
+**Illustrations:** 14 SVG illustrations
+**Supporting Materials:** All complete (12 appendices, glossary, code examples)
+
+### Web Audit Suite Version
+
+**Version:** 1.0.0 (January 2026)
+**Status:** Production-ready
+**License:** Proprietary (all rights reserved)
+**Architecture:** Four-phase pipeline (robots.txt compliance, URL collection, data collection, report generation)
+**Testing:** Comprehensive unit and integration test coverage
+**Features:** Full AI agent compatibility analysis, SEO, accessibility, performance, security

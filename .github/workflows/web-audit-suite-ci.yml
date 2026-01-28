@@ -1,0 +1,38 @@
+name: Web Audit Suite CI
+
+on:
+  push:
+    paths:
+      - 'packages/web-audit-suite/**'
+      - '.github/workflows/web-audit-suite-ci.yml'
+  pull_request:
+    paths:
+      - 'packages/web-audit-suite/**'
+      - '.github/workflows/web-audit-suite-ci.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: packages/web-audit-suite
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: packages/web-audit-suite/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Lint
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm test

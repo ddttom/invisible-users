@@ -1,0 +1,7 @@
+{
+  "name": "learnings-review",
+  "description": "Review and clean up LEARNINGS.md using the feedback loop pattern",
+  "version": "1.0.0",
+  "author": "Tom Cranstoun",
+  "instructions": ".claude/skills/learnings-review/skill.md"
+}

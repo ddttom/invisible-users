@@ -1,0 +1,3 @@
+# Example Site
+
+This is example.com. Contact: info@example.com
