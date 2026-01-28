@@ -166,7 +166,10 @@
       "Bash(./.githooks/pre-commit:*)",
       "Bash(convert:*)",
       "Bash(cd:*)",
-      "Bash(git worktree:*)"
+      "Bash(git worktree:*)",
+      "Bash(gh repo edit:*)",
+      "Bash(git stash show:*)",
+      "Bash(git ls-tree:*)"
     ],
     "deny": [],
     "ask": [
