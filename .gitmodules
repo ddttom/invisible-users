@@ -4,3 +4,6 @@
 [submodule "packages/mx-appendices"]
 	path = packages/mx-appendices
 	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-appendices
+[submodule "packages/mx-outputs"]
+	path = packages/mx-outputs
+	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-outputs
