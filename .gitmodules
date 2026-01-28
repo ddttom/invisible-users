@@ -1,3 +1,6 @@
 [submodule "packages/mx-the-bible"]
 	path = packages/mx-the-bible
 	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-manuscript
+[submodule "packages/mx-appendices"]
+	path = packages/mx-appendices
+	url = https://github.com/Digital-Domain-Technologies-Ltd/invisible-users-appendices
