@@ -169,7 +169,10 @@
       "Bash(git worktree:*)",
       "Bash(gh repo edit:*)",
       "Bash(git stash show:*)",
-      "Bash(git ls-tree:*)"
+      "Bash(git ls-tree:*)",
+      "WebFetch(domain:www.lpcprint.co.uk)",
+      "WebFetch(domain:ucp.dev)",
+      "WebFetch(domain:docs.google.com)"
     ],
     "deny": [],
     "ask": [
