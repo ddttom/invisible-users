@@ -6,59 +6,44 @@ The `invisible-users` repository is a multi-project monorepo containing two book
 
 ## High-Level Architecture
 
-```mermaid
-graph TB
-    subgraph MainRepo[Main Repository - invisible-users]
-        Config[Configuration & Orchestration]
-        Scripts[Build Scripts]
-        Claude[Claude Code AI Config]
-        Docs[Documentation]
+```text
+                    ┌─────────────────────────────────────────┐
+                    │   Main Repository (invisible-users)     │
+                    │                                         │
+                    │  • Configuration & Orchestration        │
+                    │  • Build Scripts                        │
+                    │  • Claude Code AI Config                │
+                    │  • Documentation                        │
+                    └──────────────┬──────────────────────────┘
+                                   │
+                    ┌──────────────┼──────────────┬───────────────┐
+                    │              │              │               │
+                    ↓              ↓              ↓               ↓
+         ┌──────────────────┐  ┌─────────────────────┐  ┌──────────────────┐
+         │ Book Manuscripts │  │ Code & Examples     │  │ Infrastructure   │
+         │   (Submodules)   │  │   (Submodules)      │  │                  │
+         ├──────────────────┤  ├─────────────────────┤  ├──────────────────┤
+         │ • MX-Bible       │  │ • Code Examples     │  │ • Web Audit Suite│
+         │   (13 chapters)  │  │ • UCP (READ-ONLY)   │  │   (NOT submodule)│
+         │ • MX-Handbook    │  │ • MX-Gathering      │  └──────────────────┘
+         │   (11 chapters)  │  │   (PUBLIC)          │
+         │ • Appendices     │  └─────────────────────┘
+         │   (12 appendices)│
+         └──────────────────┘
+                    │
+         ┌──────────┴──────────┬────────────────────┐
+         ↓                     ↓                    ↓
+┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
+│ Generated Output │  │ Business/Notes   │  │ Build Process    │
+│   (Submodule)    │  │  (Submodules)    │  │                  │
+├──────────────────┤  ├──────────────────┤  │  Scripts  →      │
+│ • Outputs        │  │ • mx-business    │  │  generate:       │
+│   (PDFs, HTML,   │  │   (PRIVATE)      │  │  • PDFs          │
+│    Marketing)    │  │ • Notes          │  │  • HTML          │
+│   (PRIVATE)      │  │   (READ-ONLY)    │  │  • Appendices    │
+└──────────────────┘  └──────────────────┘  └──────────────────┘
 
-        Config --> Scripts
-        Claude --> Scripts
-    end
-
-    subgraph Books[Book Manuscripts - Submodules]
-        Bible[MX-Bible<br/>13 chapters]
-        Handbook[MX-Handbook<br/>11 chapters]
-        Appendices[Shared Appendices<br/>12 appendices]
-    end
-
-    subgraph Code[Code & Examples - Submodules]
-        Examples[Shared Code Examples]
-        UCP[Universal Commerce Protocol<br/>READ-ONLY]
-    end
-
-    subgraph Tools[Tools & Infrastructure]
-        Audit[Web Audit Suite<br/>NOT a submodule]
-    end
-
-    subgraph Output[Generated Content - Submodule]
-        OutputsPrivate[Outputs<br/>PDFs, HTML, Marketing<br/>PRIVATE]
-    end
-
-    subgraph ReadOnly[Reference Materials - Submodules]
-        Notes[Notes<br/>READ-ONLY]
-    end
-
-    MainRepo --> Books
-    MainRepo --> Code
-    MainRepo --> Tools
-    MainRepo --> Output
-    MainRepo --> ReadOnly
-
-    Scripts --> Bible
-    Scripts --> Dont
-    Scripts --> Handbook
-    Scripts --> Appendices
-    Scripts --> OutputsPrivate
-
-    style MainRepo fill:#1a237e,stroke:#3949ab,color:#fff
-    style Books fill:#004d40,stroke:#00897b,color:#fff
-    style Code fill:#4a148c,stroke:#7b1fa2,color:#fff
-    style Tools fill:#2e7d32,stroke:#43a047,color:#fff
-    style Output fill:#b71c1c,stroke:#d32f2f,color:#fff
-    style ReadOnly fill:#f57f17,stroke:#fbc02d,color:#000
+Total: 10 git repositories (1 main + 9 submodules)
 ```
 
 ## Repository Structure
@@ -121,38 +106,50 @@ This section focuses on architectural concepts and relationships rather than det
 
 ### PDF Generation Pipeline
 
-```mermaid
-flowchart TB
-    A[npm run pdf:bible-all] --> B[npm run illustrations:generate]
-    B --> C[Download cover images]
-    C --> D[Convert SVG to PNG]
-    D --> E[npm run pdf:bible-html]
-    E --> F[npm run pdf:bible-kindle]
-    F --> G[npm run pdf:bible-generate]
-    G --> H[npm run pdf:appendix]
-
-    H --> I[generate-appendix-html.sh]
-    I --> J[Pandoc: Generate HTML]
-    J --> K[enhance-appendix-html.js]
-
-    subgraph enhance[HTML Enhancement]
-        K1[Insert xml:lang=en-GB]
-        K2[Remove embedded styles]
-        K3[Add canonical links]
-        K4[Inject AI meta tags]
-        K5[Add Schema.org JSON-LD]
-        K6[Link external CSS]
-        K7[Add semantic roles]
-    end
-
-    K --> K1 --> K2 --> K3 --> K4 --> K5 --> K6 --> K7
-    K7 --> L[Generate sitemap.xml]
-    L --> M[Output to packages/shared-appendices/web/]
-
-    style A fill:#2e7d32,stroke:#43a047,color:#fff
-    style I fill:#1a237e,stroke:#3949ab,color:#fff
-    style enhance fill:#004d40,stroke:#00897b,color:#fff
-    style M fill:#2e7d32,stroke:#43a047,color:#fff
+```text
+npm run pdf:bible-all
+         │
+         ↓
+npm run illustrations:generate
+         │
+         ├─→ Download cover images
+         │
+         └─→ Convert SVG to PNG
+         │
+         ↓
+npm run pdf:bible-html
+         │
+         ↓
+npm run pdf:bible-kindle
+         │
+         ↓
+npm run pdf:bible-generate
+         │
+         ↓
+npm run pdf:appendix
+         │
+         ↓
+generate-appendix-html.sh
+         │
+         ↓
+Pandoc: Generate HTML
+         │
+         ↓
+enhance-appendix-html.js
+         │
+         ├─→ Insert xml:lang="en-GB"
+         ├─→ Remove embedded styles
+         ├─→ Add canonical links
+         ├─→ Inject AI meta tags
+         ├─→ Add Schema.org JSON-LD
+         ├─→ Link external CSS
+         └─→ Add semantic roles
+         │
+         ↓
+Generate sitemap.xml
+         │
+         ↓
+Output to packages/shared-appendices/web/
 ```
 
 ### Appendix HTML Enhancement Process
@@ -179,31 +176,44 @@ flowchart TB
 
 ### News Update Workflow
 
-```mermaid
-sequenceDiagram
-    actor User
-    participant ClaudeNewsSkill as /news skill
-    participant WebSearch as Web Search
-    participant BlogFile as blog.md
-    participant AppendixJ as appendix-j-industry-developments.md
-    participant NewsHTML as web/news.html
-
-    User->>ClaudeNewsSkill: /news <industry_development>
-
-    ClaudeNewsSkill->>WebSearch: Verify claims and dates
-    WebSearch-->>ClaudeNewsSkill: Verified information
-
-    ClaudeNewsSkill->>ClaudeNewsSkill: Check relevance criteria
-    ClaudeNewsSkill->>User: Present summary and proposed entry
-    User-->>ClaudeNewsSkill: Approve or request changes
-
-    ClaudeNewsSkill->>BlogFile: Add changelog entry at top
-    ClaudeNewsSkill->>AppendixJ: Add full 12-section entry
-    ClaudeNewsSkill->>NewsHTML: Add HTML article at top
-    ClaudeNewsSkill->>NewsHTML: Update last updated footer date
-
-    ClaudeNewsSkill->>ClaudeNewsSkill: Run markdown and HTML validation
-    ClaudeNewsSkill-->>User: Present final diff for review
+```text
+User
+  │
+  │  /news <industry_development>
+  ├──────────────────────────────────────→ /news skill
+  │                                             │
+  │                                             │  Verify claims/dates
+  │                                             ├──────────────→ Web Search
+  │                                             │
+  │                                             │  ← Verified info
+  │                                             │
+  │                                             │  Check relevance
+  │                                             │  criteria
+  │                                             │
+  │  ← Present summary                          │
+  │    and proposed entry                       │
+  │                                             │
+  │  Approve or request changes                 │
+  ├──────────────────────────────────────────→ │
+  │                                             │
+  │                                             ├──→ blog.md
+  │                                             │    (Add changelog entry)
+  │                                             │
+  │                                             ├──→ appendix-j-industry-developments.md
+  │                                             │    (Add full 12-section entry)
+  │                                             │
+  │                                             ├──→ web/news.html
+  │                                             │    (Add HTML article at top)
+  │                                             │
+  │                                             ├──→ web/news.html
+  │                                             │    (Update footer date)
+  │                                             │
+  │                                             │  Run markdown and
+  │                                             │  HTML validation
+  │                                             │
+  │  ← Present final diff for review            │
+  │                                             │
+  └─────────────────────────────────────────────┘
 ```
 
 ## Git Workflow Architecture
@@ -212,20 +222,30 @@ sequenceDiagram
 
 **Critical Principle:** Always commit and push submodules BEFORE updating pointers in main repository.
 
-```mermaid
-flowchart TB
-    A[Make changes in submodule] --> B[cd submodule-directory]
-    B --> C[git add -A]
-    C --> D[git commit -m 'message']
-    D --> E[git push]
-    E --> F[cd back to main repo]
-    F --> G[git add submodule-path]
-    G --> H[git commit -m 'Update submodule pointer']
-    H --> I[git push main repo]
+```text
+Step 1: Work in Submodule
+   │
+   ├─→ Make changes in submodule
+   │
+   ├─→ cd submodule-directory
+   │
+   ├─→ git add -A
+   │
+   ├─→ git commit -m "message"
+   │
+   ├─→ git push  ← CRITICAL: Push submodule first!
+   │
+   ↓
 
-    style A fill:#2e7d32,stroke:#43a047,color:#fff
-    style E fill:#1a237e,stroke:#3949ab,color:#fff
-    style I fill:#2e7d32,stroke:#43a047,color:#fff
+Step 2: Update Main Repository
+   │
+   ├─→ cd back to main repo
+   │
+   ├─→ git add submodule-path
+   │
+   ├─→ git commit -m "Update submodule pointer"
+   │
+   └─→ git push main repo
 ```
 
 ### Multi-Repository Structure
