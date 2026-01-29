@@ -390,6 +390,22 @@ packages/notes/
 └── node_modules/                     ← Dependencies (gitignored)
 ```
 
+## Submodule 10: MX-Sales-enablement (packages/business/mx-sales-enablement/)
+
+**Repository:** `MX-Sales-enablement`
+**Purpose:** Sales and marketing resources (PRIVATE)
+
+```text
+packages/business/mx-sales-enablement/
+├── .git
+├── .gitignore
+├── README.md                         ← Sales enablement README
+├── pitches/                          ← Sales pitch materials
+├── presentations/                    ← Sales presentations
+├── case-studies/                     ← Customer success stories
+└── [sales and marketing resources]
+```
+
 ## Navigation Notes
 
 ### Symlinks (REMOVED as of 2026-01-29)
@@ -412,7 +428,7 @@ The following symlinks were removed to reduce navigation confusion:
 ## Repository Count
 
 - **Main repository:** 1 (invisible-users)
-- **Submodules:** 9
+- **Submodules:** 10
   - mx-the-bible
   - mx-handbook
   - mx-gathering
@@ -421,8 +437,9 @@ The following symlinks were removed to reduce navigation confusion:
   - mx-outputs
   - external/ucp
   - business/mx-business
+  - business/mx-sales-enablement
   - notes
-- **Total git repositories:** 10
+- **Total git repositories:** 11
 
 ## Maintenance
 
