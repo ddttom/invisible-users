@@ -172,7 +172,8 @@
       "Bash(git ls-tree:*)",
       "WebFetch(domain:www.lpcprint.co.uk)",
       "WebFetch(domain:ucp.dev)",
-      "WebFetch(domain:docs.google.com)"
+      "WebFetch(domain:docs.google.com)",
+      "Bash(git check-ignore:*)"
     ],
     "deny": [],
     "ask": [
