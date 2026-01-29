@@ -88,11 +88,30 @@ invisible-users/  (Main Repository - Hub)
 │   │   ├── github-repositories.md    ← Repository structure mapping
 │   │   ├── steve-krug.md             ← UX research insights
 │   │   ├── blog-metadata-schema.md   ← Blog metadata and state tracking
-│   │   ├── todo.txt                  ← Private development tasks
-│   │   └── blog-drafts/              ← Blog post drafts
+│   │   └── todo.txt                  ← Private development tasks
 │   └── talks/                        ← Presentation materials
 │       ├── historical/               ← Archived presentations
 │       └── template/                 ← Reusable templates
+├── ingest/                           ← Content ingest and drafts
+│   ├── blog-drafts/                  ← Blog post drafts and ideas
+│   │   ├── contrasts/                ← Comparative analysis posts
+│   │   └── joiners/                  ← Community announcement posts
+│   ├── mx-the-idea/                  ← MX concept exploration
+│   │   ├── README.md
+│   │   ├── energy-efficiency.md
+│   │   ├── hallucination-reduction.md
+│   │   ├── knowledge-distribution.md
+│   │   └── manifesto.md
+│   └── use-cases/                    ← Audience-specific use cases
+│       ├── README.md
+│       ├── ceo.md
+│       ├── cms-agencies.md
+│       ├── cms-vendors.md
+│       ├── conference-organisers.md
+│       ├── designers.md
+│       ├── developers.md
+│       ├── platform-creators.md
+│       └── product-owners.md
 ├── scripts/                          ← Build and generation scripts
 │   ├── .mx.yaml                      ← MX metadata for scripts
 │   ├── generate-blog-html.js         ← Blog generation (main)
@@ -108,7 +127,8 @@ invisible-users/  (Main Repository - Hub)
 │   ├── external/                     ← External reference submodules
 │   │   └── ucp/                      ← SUBMODULE: UCP (see below)
 │   ├── business/                     ← Business strategy submodules
-│   │   └── mx-business/              ← SUBMODULE: Business Planning (see below)
+│   │   ├── mx-business/              ← SUBMODULE: Business Planning (see below)
+│   │   └── mx-sales-enablement/      ← SUBMODULE: Sales Enablement (see below)
 │   ├── notes/                        ← SUBMODULE: Development Notes (see below)
 │   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
 │       ├── .mx.yaml                  ← MX metadata
