@@ -6,7 +6,7 @@
 # Recommended alternatives:
 #   - Use `/step-commit` skill in Claude Code for comprehensive multi-repository commits
 #   - Use `git -C <submodule-path>` commands for individual submodule commits
-#   - See docs/architecture/GIT-README.md for multi-repository workflows
+#   - See config/system/GIT-README.md for multi-repository workflows
 #
 # This script remains for reference but should not be used in current structure.
 

@@ -66,15 +66,15 @@ invisible-users/  (Main Repository - Hub)
 │   │   └── vocabulary.md             ← Conversational shorthand reference
 │   └── system/                       ← System documentation
 │       ├── folder-layout.md          ← This file
-│       └── repo-philosophy.md        ← Design principles and technical philosophy
+│       ├── repo-philosophy.md        ← Design principles and technical philosophy
+│       ├── doc-architecture.md       ← Repository structure design
+│       ├── GIT-README.md             ← Comprehensive git workflow guidance
+│       ├── allabout-network-hosting-map.md ← Hosting path mapping
+│       ├── HOSTING-SITEMAP-ASCII.md  ← ASCII visual sitemap
+│       └── HOSTING-QUICK-REFERENCE.md ← Deployment reference
 ├── docs/                             ← Documentation
 │   ├── architecture/                 ← Architecture documentation
-│   │   ├── GIT-README.md             ← Comprehensive git workflow guidance
-│   │   ├── TIMELESS-MANUSCRIPT-RULE.md ← Writing standards
-│   │   ├── doc-architecture.md       ← Repository structure design
-│   │   ├── allabout-network-hosting-map.md ← Hosting path mapping
-│   │   ├── HOSTING-SITEMAP-ASCII.md  ← ASCII visual sitemap
-│   │   └── HOSTING-QUICK-REFERENCE.md ← Deployment reference
+│   │   └── TIMELESS-MANUSCRIPT-RULE.md ← Writing standards
 │   ├── for-ai/                       ← AI assistant guidance
 │   │   ├── writing-style.md          ← Complete writing style guide
 │   │   └── yaml-frontmatter-template.md ← YAML metadata templates
@@ -381,11 +381,11 @@ The following symlinks were removed to reduce navigation confusion:
 
 ### Key File References
 
-- **For detailed architecture and workflows:** See [docs/architecture/doc-architecture.md](../../docs/architecture/doc-architecture.md) - Build systems, workflows, diagrams
-- **For git workflows:** See [docs/architecture/GIT-README.md](../../docs/architecture/GIT-README.md)
-- **For writing style:** See [docs/for-ai/writing-style.md](../../docs/for-ai/writing-style.md)
-- **For navigation rules:** See [CLAUDE.md](../../CLAUDE.md) - Section "Repository Navigation Map"
-- **For MX metadata specification:** See [packages/mx-gathering/specifications/mx-code-metadata-spec.md](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md)
+- **For detailed architecture and workflows:** See [doc-architecture.md](doc-architecture.md) - Build systems, workflows, diagrams
+- **For git workflows:** See [GIT-README.md](GIT-README.md)
+- **For writing style:** See [../../docs/for-ai/writing-style.md](../../docs/for-ai/writing-style.md)
+- **For navigation rules:** See [../../CLAUDE.md](../../CLAUDE.md) - Section "Repository Navigation Map"
+- **For MX metadata specification:** See [../../packages/mx-gathering/specifications/mx-code-metadata-spec.md](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md)
 
 ## Repository Count
 

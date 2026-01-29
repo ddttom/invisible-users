@@ -1001,7 +1001,7 @@ After remediation, validate:
 |------|-----------|
 | docs/shared-chapters/chapter-00-what-are-ai-agents.md | Foundation concepts, 5-stage journey |
 | docs/for-ai/writing-style.md | Writing standards, forbidden vocabulary |
-| docs/architecture/doc-architecture.md | Repository structure, chapter organisation |
+| config/system/doc-architecture.md | Repository structure, chapter organisation |
 | docs/claude/machine-experience-manifesto.md | Core MX principles, semantic patterns |
 | docs/structure/steve-krug.md | IA analysis, navigation patterns, usability |
 | docs/claude/why-llms-dont-execute-javascript.md | Discovery, Common Crawl, llms.txt |

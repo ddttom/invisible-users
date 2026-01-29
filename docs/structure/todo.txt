@@ -26,7 +26,7 @@ audience: "internal"
     - packages/shared-appendices/appendix-p-blog-generation-workflow.md (new file, ~5,800 words)
     - packages/bible/chapters/chapter-12-technical-advice.md (cross-reference added)
   - Reference: [docs/structure/blog-metadata-schema.md](blog-metadata-schema.md) (complete schema definition)
-  - Reference: [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md#blog-content-workflow) (workflow documentation)
+  - Reference: [config/system/doc-architecture.md](../../config/system/doc-architecture.md#blog-content-workflow) (workflow documentation)
   - Rationale: Blog generation demonstrates MX principles in practice (metadata-driven, AI-friendly HTML, semantic structure)
 
 - [ ] Create MX-compatible publishing workflow
@@ -294,5 +294,5 @@ Key priorities:
 ## Notes
 
 - For complete file inventory across all repositories, see CHANGELOG.md
-- For git workflows in multi-repository structure, see [docs/architecture/GIT-README.md](../../docs/architecture/GIT-README.md)
+- For git workflows in multi-repository structure, see [config/system/GIT-README.md](../../config/system/GIT-README.md)
 - For public community tasks, see [packages/mx-gathering/TODO.txt](../../packages/mx-gathering/TODO.txt)

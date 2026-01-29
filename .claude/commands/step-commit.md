@@ -1,6 +1,6 @@
 Execute the systematic "step commit" workflow:
 
-**IMPORTANT**: This repository has dual git repositories (main + submodule). For comprehensive git workflow guidance, see docs/architecture/GIT-README.md which explains safe patterns using `git -C` to avoid navigation errors.
+**IMPORTANT**: This repository has dual git repositories (main + submodule). For comprehensive git workflow guidance, see config/system/GIT-README.md which explains safe patterns using `git -C` to avoid navigation errors.
 
 1. Initial Commit
    - Review all current changes with git status and git diff
@@ -10,7 +10,7 @@ Execute the systematic "step commit" workflow:
    - Do NOT add attribution or "Generated with" messages
 
 1a. Submodule Handling (if submodule shows modified content)
-   - **See docs/architecture/GIT-README.md "Workflow 3: Commit Changes in Both Repositories" for detailed guidance**
+   - **See config/system/GIT-README.md "Workflow 3: Commit Changes in Both Repositories" for detailed guidance**
    - Use `git -C submodule` commands to avoid navigation issues
    - Run git status and git diff in submodule: `git -C submodule status`
    - Stage and commit submodule changes: `git -C submodule add -A && git -C submodule commit -m "Message"`

@@ -285,7 +285,7 @@ If "blog" could mean markdown draft OR generated HTML, specify both in the vocab
 "Commit outputs" isn't just a git command - it implies the submodule-first workflow (commit submodule, push, then update pointer in main repo).
 
 **5. Reference authoritative sources**
-Link vocabulary terms to detailed documentation: "For complete git workflow, see docs/architecture/GIT-README.md"
+Link vocabulary terms to detailed documentation: "For complete git workflow, see config/system/GIT-README.md"
 
 **6. Test with real prompts**
 After creating vocabulary.md, try using shorthand in conversations. Does your AI assistant understand correctly? Refine based on actual usage.
@@ -356,7 +356,7 @@ That's the convergence principle at work: **better for machines, better for huma
 
 - [vocabulary.md](../../../config/book/vocabulary.md) - The actual vocabulary reference
 - [CLAUDE.md](../../CLAUDE.md) - Main project instructions
-- [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md) - Documentation strategy
+- [config/system/doc-architecture.md](../../../config/system/doc-architecture.md) - Documentation strategy
 
 **Related Patterns:**
 

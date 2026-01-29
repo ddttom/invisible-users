@@ -393,7 +393,7 @@ When updating HTML meta tags, use Edit tool to replace meta tags:
 
 - **Appendix P** - Blog Generation Workflow (complete workflow documentation)
 - **docs/structure/blog-metadata-schema.md** - Metadata schema and state tracking
-- **docs/architecture/doc-architecture.md#blog-content-workflow** - Workflow architecture
+- **config/system/doc-architecture.md#blog-content-workflow** - Workflow architecture
 - **.claude/skills/create-blog/skill.md** - Blog generation skill (legacy)
 
 ## Examples

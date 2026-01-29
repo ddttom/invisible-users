@@ -47,7 +47,7 @@ ai-instruction: "Context for AI agents parsing this content"
 **Complete Documentation:**
 
 - [docs/structure/blog-metadata-schema.md](../../docs/structure/blog-metadata-schema.md) - Complete metadata schema and state tracking rules
-- [docs/architecture/doc-architecture.md](../../docs/architecture/doc-architecture.md#blog-content-workflow) - Workflow architecture
+- [config/system/doc-architecture.md](../../config/system/doc-architecture.md#blog-content-workflow) - Workflow architecture
 
 ## Workflow
 

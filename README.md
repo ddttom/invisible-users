@@ -209,7 +209,7 @@ Changes must flow: **book → tool → documentation**
 - [ONBOARDING.md](ONBOARDING.md) - Complete developer onboarding guide (start here!)
 - [CLAUDE.md](CLAUDE.md) - AI agent instructions and comprehensive project guide
 - [LEARNINGS.md](LEARNINGS.md) - Battle-tested rules from actual mistakes
-- [GIT-README.md](docs/architecture/GIT-README.md) - Git workflow guide for submodule management
+- [GIT-README.md](config/system/GIT-README.md) - Git workflow guide for submodule management
 
 ### Package-Specific Documentation
 
@@ -225,7 +225,7 @@ Each package has its own README with detailed information:
 
 ### Architecture Documentation
 
-- [Repository Architecture](docs/architecture/doc-architecture.md) - Repository structure and design decisions
+- [Repository Architecture](config/system/doc-architecture.md) - Repository structure and design decisions
 - [Web Audit Suite Architecture](docs/architecture/web-audit-architecture.md) - Tool architecture and pipeline design
 
 ### Strategic Planning
@@ -238,7 +238,7 @@ Each package has its own README with detailed information:
 
 **⚠️ CRITICAL: This repository uses git submodules that require careful handling.**
 
-**📖 See [GIT-README.md](docs/architecture/GIT-README.md) for comprehensive git workflow guidance.**
+**📖 See [GIT-README.md](config/system/GIT-README.md) for comprehensive git workflow guidance.**
 
 This workspace contains multiple git repositories:
 

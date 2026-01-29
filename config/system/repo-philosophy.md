@@ -18,11 +18,11 @@ mx:
     context_required:
       - ../../CLAUDE.md
       - folder-layout.md
-      - ../../docs/architecture/doc-architecture.md
+      - doc-architecture.md
   related_files:
     - ../../CLAUDE.md
     - folder-layout.md
-    - ../../docs/architecture/doc-architecture.md
+    - doc-architecture.md
     - ../../LEARNINGS.md
   see_also: "CLAUDE.md contains operational guidance. This file documents the underlying philosophy and design decisions."
 ---
@@ -168,7 +168,7 @@ This document captures the "why" behind architectural decisions, establishing a 
 
 **Examples:**
 - **Folder structure:** `config/system/folder-layout.md`
-- **Git workflows:** `docs/architecture/GIT-README.md`
+- **Git workflows:** `config/system/GIT-README.md`
 - **Writing style:** `docs/for-ai/writing-style.md`
 - **AI guidance:** `CLAUDE.md`
 - **Battle-tested rules:** `LEARNINGS.md`
@@ -296,7 +296,7 @@ config/
 - Maintains referential integrity
 - Predictable behavior
 
-**See:** [docs/architecture/GIT-README.md](../../docs/architecture/GIT-README.md) for complete workflow.
+**See:** [config/system/GIT-README.md](../../config/system/GIT-README.md) for complete workflow.
 
 ### Commit Message Standards
 
@@ -393,9 +393,9 @@ Add new sections to this file as architectural decisions solidify.
 ## Related Documentation
 
 - **Folder Structure:** [folder-layout.md](folder-layout.md) - Complete repository structure
-- **Architecture:** [docs/architecture/doc-architecture.md](../../docs/architecture/doc-architecture.md) - Build systems and workflows
+- **Architecture:** [docs/architecture/doc-architecture.md](doc-architecture.md) - Build systems and workflows
 - **AI Guidance:** [CLAUDE.md](../../CLAUDE.md) - Operational guidance for AI assistants
-- **Git Workflows:** [docs/architecture/GIT-README.md](../../docs/architecture/GIT-README.md) - Multi-repository git patterns
+- **Git Workflows:** [config/system/GIT-README.md](../../config/system/GIT-README.md) - Multi-repository git patterns
 - **Writing Style:** [docs/for-ai/writing-style.md](../../docs/for-ai/writing-style.md) - Content standards
 - **Lessons Learned:** [LEARNINGS.md](../../LEARNINGS.md) - Battle-tested rules from mistakes
 

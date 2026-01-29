@@ -257,7 +257,7 @@ git commit -m "Update mx-the-bible submodule pointer to latest version"
 **📖 CRITICAL REFERENCES FOR AI ASSISTANTS:**
 
 - **[LEARNINGS.md](LEARNINGS.md)** - Recent mistakes and battle-tested rules. **Read this file at the start of each session** to learn from documented errors and avoid repeating them.
-- **[docs/architecture/GIT-README.md](docs/architecture/GIT-README.md)** - Comprehensive git workflow guidance for AI agents (multi-repository structure, submodule-first workflow, safe patterns)
+- **[config/system/GIT-README.md](config/system/GIT-README.md)** - Comprehensive git workflow guidance for AI agents (multi-repository structure, submodule-first workflow, safe patterns)
 - **[.claude/pwd-reminder.md](.claude/pwd-reminder.md)** - Working directory verification requirements
 
 ---
@@ -429,7 +429,7 @@ All blog posts follow a state-tracked workflow with mandatory metadata:
 
 - [.claude/skills/create-blog/skill.md](.claude/skills/create-blog/skill.md) - Complete workflow
 - [docs/structure/blog-metadata-schema.md](docs/structure/blog-metadata-schema.md) - Metadata schema and state tracking
-- [docs/architecture/doc-architecture.md](docs/architecture/doc-architecture.md#blog-content-workflow) - Workflow architecture
+- [config/system/doc-architecture.md](config/system/doc-architecture.md#blog-content-workflow) - Workflow architecture
 
 ### Web Audit Suite Commands
 
@@ -1155,7 +1155,7 @@ The specification supports custom extensions via namespaced properties:
 
 ## Git Workflows
 
-**⚠️ CRITICAL:** See [docs/architecture/GIT-README.md](docs/architecture/GIT-README.md) for comprehensive multi-repository git workflow guidance.
+**⚠️ CRITICAL:** See [config/system/GIT-README.md](config/system/GIT-README.md) for comprehensive multi-repository git workflow guidance.
 
 **Essential rules:**
 
@@ -1275,12 +1275,12 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 
 **Architecture documentation:**
 
-- `docs/architecture/GIT-README.md` - Comprehensive git workflow guidance
-- `docs/architecture/allabout-network-hosting-map.md` - Complete hosting path mapping and deployment guide
-- `docs/architecture/HOSTING-SITEMAP-ASCII.md` - ASCII visual sitemap of hosting structure
-- `docs/architecture/HOSTING-QUICK-REFERENCE.md` - One-page deployment reference
+- `config/system/GIT-README.md` - Comprehensive git workflow guidance
+- `config/system/allabout-network-hosting-map.md` - Complete hosting path mapping and deployment guide
+- `config/system/HOSTING-SITEMAP-ASCII.md` - ASCII visual sitemap of hosting structure
+- `config/system/HOSTING-QUICK-REFERENCE.md` - One-page deployment reference
 - `docs/architecture/TIMELESS-MANUSCRIPT-RULE.md` - Writing standards for book manuscripts
-- `docs/architecture/doc-architecture.md` - Repository structure and design decisions
+- `config/system/doc-architecture.md` - Repository structure and design decisions
 
 **Web Audit Suite:** See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) and subdirectory docs/
 
@@ -1320,7 +1320,7 @@ git commit -m "Update mx-the-bible submodule to latest version"
 git submodule update --remote
 ```
 
-**For comprehensive submodule workflows, see [docs/architecture/GIT-README.md](docs/architecture/GIT-README.md).**
+**For comprehensive submodule workflows, see [config/system/GIT-README.md](config/system/GIT-README.md).**
 
 ## Notes for Future Development
 

@@ -140,7 +140,7 @@ Renamed all `mx.yaml` files to `.mx.yaml` (dot prefix) for consistency with esta
 
 **Documentation Removed:**
 - docs/for-ai/architecting-multi-repo-codebases.md (1,724 lines)
-  - Obsolete content superseded by docs/architecture/GIT-README.md
+  - Obsolete content superseded by config/system/GIT-README.md
   - Duplicate guidance consolidated into primary git workflow documentation
 
 #### Submodule Updates

@@ -12,7 +12,7 @@ This repository contains:
 2. **Web Audit Suite** - Production-ready Node.js tool implementing the book's patterns
 3. **Shared Resources** - Appendices, code examples, and generated content
 
-**For complete architecture details, see [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md)**
+**For complete architecture details, see [config/system/doc-architecture.md](../architecture/doc-architecture.md)**
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ npm install
 # which verifies and creates necessary symlinks
 ```
 
-**Note:** This repository uses **9 git submodules** for content organization. The architecture documentation explains why: [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md#separation-of-concerns)
+**Note:** This repository uses **9 git submodules** for content organization. The architecture documentation explains why: [config/system/doc-architecture.md](../architecture/doc-architecture.md#separation-of-concerns)
 
 ### 2. Verify Everything Works
 
@@ -157,7 +157,7 @@ invisible-users/                    # Main repository (control hub)
 **Key documentation:**
 - [config/system/folder-layout.md](config/system/folder-layout.md) - Complete folder structure (single source of truth)
 - [config/system/repo-philosophy.md](config/system/repo-philosophy.md) - Design principles and technical philosophy
-- [docs/architecture/doc-architecture.md](docs/architecture/doc-architecture.md) - Build systems, workflows, and architecture
+- [config/system/doc-architecture.md](config/system/doc-architecture.md) - Build systems, workflows, and architecture
 
 ## Understanding Submodules
 
@@ -181,7 +181,7 @@ git submodule status
 git -C packages/bible log --oneline -10
 ```
 
-**Critical:** Always check `pwd` before git operations. See [docs/architecture/GIT-README.md](../architecture/GIT-README.md) for comprehensive multi-repository workflow guidance.
+**Critical:** Always check `pwd` before git operations. See [config/system/GIT-README.md](../architecture/GIT-README.md) for comprehensive multi-repository workflow guidance.
 
 ## Code Quality Standards
 
@@ -199,7 +199,7 @@ git -C packages/bible log --oneline -10
 - Blank lines around lists
 - Run: `npm run lint:markdown:fix`
 
-**For complete quality standards, see [docs/architecture/doc-architecture.md](docs/architecture/doc-architecture.md#version-control-strategy)**
+**For complete quality standards, see [config/system/doc-architecture.md](config/system/doc-architecture.md#version-control-strategy)**
 
 ## Writing Style (Book Manuscripts)
 
@@ -253,9 +253,9 @@ Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/v
 **Start here (in order):**
 
 1. **[README.md](README.md)** - Project overview
-2. **[docs/architecture/doc-architecture.md](docs/architecture/doc-architecture.md)** - Complete architecture documentation (827 lines, comprehensive)
+2. **[config/system/doc-architecture.md](config/system/doc-architecture.md)** - Complete architecture documentation (827 lines, comprehensive)
 3. **[CLAUDE.md](CLAUDE.md)** - AI agent instructions and project guide
-4. **[docs/architecture/GIT-README.md](docs/architecture/GIT-README.md)** - Git workflow with submodules
+4. **[config/system/GIT-README.md](config/system/GIT-README.md)** - Git workflow with submodules
 
 **Book-specific:**
 
@@ -273,7 +273,7 @@ Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/v
 1. **Explore the architecture:**
 
    ```bash
-   code docs/architecture/doc-architecture.md
+   code config/system/doc-architecture.md
    ```
 
 2. **Read a book chapter:**
@@ -301,13 +301,13 @@ Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/v
 3. **Documentation Must Align** - Consistent terminology everywhere
 4. **Quality Over Speed** - Code must pass linting and tests before commit
 
-**For complete principles and architecture patterns, see [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md#key-organizational-principles)**
+**For complete principles and architecture patterns, see [config/system/doc-architecture.md](../architecture/doc-architecture.md#key-organizational-principles)**
 
 ## Welcome Aboard
 
 You're ready to contribute! Remember:
 
-- **Read the architecture doc first** - [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md)
+- **Read the architecture doc first** - [config/system/doc-architecture.md](../architecture/doc-architecture.md)
 - **Test your changes** - Run tests and linting before committing
 - **Follow conventions** - British English for books, ES Modules for code
 - **Ask questions** - Use documentation as your guide
