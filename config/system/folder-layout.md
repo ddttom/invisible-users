@@ -68,6 +68,7 @@ invisible-users/  (Main Repository - Hub)
 │   └── system/                       ← System documentation
 │       ├── folder-layout.md          ← This file
 │       ├── repo-philosophy.md        ← Design principles and technical philosophy
+│       ├── mx-philosophy.md          ← Machine Experience design philosophy
 │       ├── doc-architecture.md       ← Repository structure design
 │       ├── GIT-README.md             ← Comprehensive git workflow guidance
 │       ├── allabout-network-hosting-map.md ← Hosting path mapping
