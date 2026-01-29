@@ -44,7 +44,7 @@ Without a shared vocabulary, every conversation includes this translation layer.
 
 ## The Solution: Introspected Vocabulary
 
-We created [vocabulary.md](../../../config/repo/vocabulary.md) by **introspecting our conversation patterns**. I analyzed:
+We created [vocabulary.md](../../../config/system/repo-vocabulary.md) by **introspecting our conversation patterns**. I analyzed:
 
 1. **Shorthand terms Tom uses repeatedly**
    - "bible" → `packages/bible/` submodule (MX-Bible)
@@ -104,7 +104,7 @@ We updated the main project instructions (CLAUDE.md) to reference the vocabulary
 🔄 DYNAMIC REFERENCE: When you encounter unfamiliar shorthand,
 CONSULT the vocabulary reference file.
 
-**Reference file:** config/repo/vocabulary.md
+**Reference file:** config/system/repo-vocabulary.md
 ```
 
 This is crucial. The vocabulary isn't embedded as static content - it's **consulted when needed**. This means:
@@ -354,7 +354,7 @@ That's the convergence principle at work: **better for machines, better for huma
 
 **Documentation in this project:**
 
-- [vocabulary.md](../../../config/repo/vocabulary.md) - The actual vocabulary reference
+- [vocabulary.md](../../../config/system/repo-vocabulary.md) - The actual vocabulary reference
 - [CLAUDE.md](../../CLAUDE.md) - Main project instructions
 - [config/system/doc-architecture.md](../../../config/system/doc-architecture.md) - Documentation strategy
 

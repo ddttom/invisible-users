@@ -39,7 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Moved vocabulary.md to config/book/:**
 
-- Relocated docs/structure/vocabulary.md → config/repo/vocabulary.md using git mv (preserved history)
+- Relocated docs/structure/vocabulary.md → config/system/repo-vocabulary.md using git mv (preserved history)
 - Groups with other book-specific configuration (book-svg-style.md)
 - Updated all references:
   - CLAUDE.md line 269
@@ -66,7 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - docs/for-ai/writing-style.md: Updated Glossary path to packages/mx-the-bible/Glossary.md
 - .claude/skills/create-blog/skill.md: Updated template paths (mx-appendices, mx-outputs)
-- config/repo/vocabulary.md: Updated internal path mappings for all shorthand terms
+- config/system/repo-vocabulary.md: Updated internal path mappings for all shorthand terms
 
 **Result:** All documentation uses current repository paths and references the centralized folder structure documentation as the single source of truth.
 
