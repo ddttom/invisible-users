@@ -1044,9 +1044,9 @@ If bio table missing, generate using pattern:
 ## Reference Files
 
 - **CSS Template**: `.claude/skills/create-blog/blog-template.css` (WCAG 2.1 AA compliant)
-- **HTML Template**: `packages/shared-appendices/web/site/blog-post.html`
-- **AI-Friendly Patterns**: `packages/shared-appendices/appendix-d-ai-friendly-html-guide.txt`
-- **Example Blog**: `outputs/bible/blogs/published/blog.md`
+- **HTML Template**: `packages/mx-appendices/web/site/blog-post.html`
+- **AI-Friendly Patterns**: `packages/mx-appendices/appendix-d-ai-friendly-html-guide.txt`
+- **Example Blog**: `packages/mx-outputs/bible/blogs/published/blog.md`
 
 ## Success Criteria
 

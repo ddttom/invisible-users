@@ -62,7 +62,8 @@ invisible-users/  (Main Repository - Hub)
 ├── config/                           ← Project configuration
 │   ├── .markdownlint.json            ← Markdown linting rules
 │   ├── book/                         ← Book-specific configuration
-│   │   └── book-svg-style.md         ← SVG illustration style guide
+│   │   ├── book-svg-style.md         ← SVG illustration style guide
+│   │   └── vocabulary.md             ← Conversational shorthand reference
 │   └── system/                       ← System documentation
 │       ├── folder-layout.md          ← This file
 │       └── repo-philosophy.md        ← Design principles and technical philosophy
@@ -84,7 +85,6 @@ invisible-users/  (Main Repository - Hub)
 │   │   ├── MX-plan.md                ← Machine Experience strategy
 │   │   ├── github-repositories.md    ← Repository structure mapping
 │   │   ├── steve-krug.md             ← UX research insights
-│   │   ├── vocabulary.md             ← Conversational shorthand reference
 │   │   ├── blog-metadata-schema.md   ← Blog metadata and state tracking
 │   │   ├── todo.txt                  ← Private development tasks
 │   │   └── blog-drafts/              ← Blog post drafts

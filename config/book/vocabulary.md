@@ -8,19 +8,18 @@
 
 | You say           | Claude understands                                                |
 | ----------------- | ----------------------------------------------------------------- |
-| **main repo**     | `/Users/tomcranstoun/Documents/GitHub/!My Book/invisible-users/`  |
+| **main repo**     | `/Users/tomcranstoun/Documents/GitHub/invisible-users/`           |
 | **root**          | Main repo root (same as above)                                    |
-| **outputs**       | `outputs/` submodule (invisible-users-outputs)                    |
-| **bible**         | `packages/bible/` submodule (invisible-users-bible)               |
+| **outputs**       | `packages/mx-outputs/` submodule (invisible-users-outputs)        |
+| **bible**         | `packages/mx-the-bible/` submodule (invisible-users-bible)        |
 | **handbook**      | `packages/mx-handbook/` submodule (MX-The-Handbook)               |
 | **slim**          | Same as handbook (synonym)                                        |
 | **gathering**     | `packages/mx-gathering/` submodule (MX-Gathering)                 |
-| **appendices**    | `packages/shared-appendices/` submodule                           |
-| **code examples** | `packages/shared-code-examples/` submodule                        |
-| **ucp**           | `packages/ucp/` submodule (Universal Commerce Protocol)           |
-| **notes**         | `packages/notes/` submodule (READ-ONLY development standards)     |
-| **sales**         | `packages/sales-enablement/` submodule (READ-ONLY)                |
-| **business**      | `packages/business-planning/` submodule (READ-ONLY)               |
+| **appendices**    | `packages/mx-appendices/` submodule                               |
+| **code examples** | `packages/mx-code-examples/` submodule                            |
+| **ucp**           | `packages/external/ucp/` submodule (Universal Commerce Protocol)  |
+| **notes**         | `packages/notes/` submodule (development standards)               |
+| **business**      | `packages/business/mx-business/` submodule (PRIVATE)              |
 
 ## Books & Products
 
@@ -38,16 +37,16 @@
 
 | You say                  | Claude understands                                          |
 | ------------------------ | ----------------------------------------------------------- |
-| **blogs**                | `outputs/bible/blogs/mx/` (published HTML files)            |
-| **blog drafts**          | `docs/structure/blog-drafts/` (markdown drafts)             |
-| **structure**            | `docs/structure/` (strategic planning docs)                 |
-| **architecture**         | `docs/architecture/` (system design docs)                   |
-| **skills**               | `.claude/skills/` (Claude Code custom skills)               |
-| **bible chapters**       | `packages/bible/chapters/` (chapter markdown files)         |
-| **handbook chapters**    | `packages/mx-handbook/chapters/` (chapter markdown files)   |
-| **shared chapters**      | `docs/shared-chapters/` (Chapter 0)                         |
-| **appendices**           | `packages/shared-appendices/` (Appendix A-L markdown files) |
-| **scrap**                | `scrap/` (temporary working files in main repo)             |
+| **blogs**                | `packages/mx-outputs/bible/blogs/mx/` (published HTML files)       |
+| **blog drafts**          | `docs/structure/blog-drafts/` (markdown drafts)                    |
+| **structure**            | `docs/structure/` (strategic planning docs)                        |
+| **architecture**         | `docs/architecture/` (system design docs)                          |
+| **skills**               | `.claude/skills/` (Claude Code custom skills)                      |
+| **bible chapters**       | `packages/mx-the-bible/manuscripts/bible/` (chapter markdown files)|
+| **handbook chapters**    | `packages/mx-handbook/chapters/` (chapter markdown files)          |
+| **shared chapters**      | `docs/shared-chapters/` (Chapter 0)                                |
+| **appendices**           | `packages/mx-appendices/` (Appendix A-M markdown files)            |
+| **scrap**                | `scrap/` (temporary working files in main repo)                    |
 
 ## Workflows & Skills
 
@@ -117,7 +116,7 @@
 
 ```text
 You: "Add this to bible chapter 5"
-Claude: ✅ Understands: packages/bible/chapters/chapter-05-*.md
+Claude: ✅ Understands: packages/mx-the-bible/manuscripts/bible/chapter-05-*.md
 
 You: "Generate the blog"
 Claude: ✅ Understands: Run scripts/generate-blog-html.js on draft markdown

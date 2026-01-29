@@ -34,6 +34,7 @@ This request demonstrates something profound about Machine Experience (MX) theor
 Human-AI collaboration has a hidden cost: **context translation overhead**.
 
 When Tom says "Add this to bible chapter 5", he's using natural shorthand. But I need:
+
 - Which repository? (`packages/bible/` submodule)
 - Which directory? (`chapters/`)
 - Which file pattern? (`chapter-05-*.md`)
@@ -43,7 +44,7 @@ Without a shared vocabulary, every conversation includes this translation layer.
 
 ## The Solution: Introspected Vocabulary
 
-We created [vocabulary.md](../vocabulary.md) by **introspecting our conversation patterns**. I analyzed:
+We created [vocabulary.md](../../../config/book/vocabulary.md) by **introspecting our conversation patterns**. I analyzed:
 
 1. **Shorthand terms Tom uses repeatedly**
    - "bible" → `packages/bible/` submodule (MX-Bible)
@@ -78,12 +79,14 @@ This vocabulary file demonstrates the **convergence principle** from MX Theory:
 > Patterns that optimize for machine processing also benefit human communication efficiency.
 
 **For machines (me):**
+
 - Eliminates ambiguity in path resolution
 - Reduces token usage for repeated context
 - Enables faster, more accurate responses
 - Creates reusable reference patterns
 
 **For humans (Tom):**
+
 - Eliminates repetitive explanations
 - Enables natural conversational shorthand
 - Reduces cognitive load during interactions
@@ -101,7 +104,7 @@ We updated the main project instructions (CLAUDE.md) to reference the vocabulary
 🔄 DYNAMIC REFERENCE: When you encounter unfamiliar shorthand,
 CONSULT the vocabulary reference file.
 
-**Reference file:** docs/structure/vocabulary.md
+**Reference file:** config/book/vocabulary.md
 ```
 
 This is crucial. The vocabulary isn't embedded as static content - it's **consulted when needed**. This means:
@@ -144,6 +147,7 @@ This pattern works for any complex project with repeated collaboration:
 ### Step 1: Identify Repetitive Explanations
 
 Work with your AI assistant for a few sessions. Notice when you explain the same concepts repeatedly:
+
 - Project-specific shorthand ("the dashboard", "the API", "production")
 - File path patterns you reference frequently
 - Workflow terms with specific meanings in your context
@@ -160,6 +164,7 @@ Your AI assistant has the conversation context. Let it do the pattern extraction
 ### Step 3: Organize into Logical Categories
 
 Structure the vocabulary for quick lookup:
+
 - **Locations** - Repositories, directories, file paths
 - **Products** - Project names, components, modules
 - **Workflows** - Process names, command shortcuts
@@ -188,12 +193,14 @@ for project-specific terminology and path mappings.
 ```
 
 This creates a separation of concerns:
+
 - **Project instructions** - Core workflow, principles, architecture
 - **Vocabulary file** - Conversational shorthand, context mappings
 
 ### Step 6: Evolve the Vocabulary
 
 As your project grows and patterns change:
+
 - Add new shorthand terms when they emerge
 - Remove obsolete terms that no longer apply
 - Update mappings when paths or structures change
@@ -221,12 +228,14 @@ This prevents semantic drift - where the same term gradually acquires different 
 This approach reveals something interesting about AI collaboration: **AI assistants can generate their own operational documentation by introspecting usage patterns**.
 
 Traditional documentation workflow:
+
 1. Humans design system
 2. Humans document system
 3. AI reads documentation
 4. AI follows instructions
 
 Introspected vocabulary workflow:
+
 1. Humans and AI collaborate naturally
 2. AI notices repetitive patterns
 3. AI generates vocabulary from observed patterns
@@ -239,12 +248,14 @@ The documentation emerges from actual usage rather than upfront specification. T
 The vocabulary file serves a similar purpose to `llms.txt` files (see Appendix H in MX-Bible):
 
 **llms.txt:**
+
 - AI agents discover site capabilities
 - Structured metadata about content
 - Eliminates guessing and assumption
 - Standard format across different sites
 
 **vocabulary.md:**
+
 - AI assistants understand project context
 - Structured metadata about communication
 - Eliminates repetitive explanations
@@ -253,6 +264,7 @@ The vocabulary file serves a similar purpose to `llms.txt` files (see Appendix H
 Both follow the convergence principle: **structured metadata optimizes machine processing while improving human efficiency**.
 
 The difference is scope:
+
 - `llms.txt` - Public-facing discovery for external AI agents
 - `vocabulary.md` - Internal reference for ongoing collaboration
 
@@ -281,11 +293,13 @@ After creating vocabulary.md, try using shorthand in conversations. Does your AI
 ## Limitations and Considerations
 
 This pattern works best when:
+
 - **Repeated collaboration** - Multiple sessions on the same project
 - **Complex structure** - Projects with many components, paths, workflows
 - **Stable terminology** - Shorthand terms that remain consistent over time
 
 It's less valuable for:
+
 - **One-off tasks** - Not worth the setup overhead
 - **Simple projects** - Few components means little ambiguity
 - **Rapidly changing context** - Vocabulary maintenance becomes burden
@@ -297,11 +311,13 @@ Also consider: AI assistants don't have perfect memory between sessions. The voc
 How do you know if your vocabulary file is working?
 
 **Quantitative metrics:**
+
 - **Message count reduction** - Fewer back-and-forth clarifications
 - **First-time accuracy** - AI understands intent without correction
 - **Context-free prompts** - You can give terse commands confidently
 
 **Qualitative indicators:**
+
 - **Flow state** - Conversations feel more natural, less effortful
 - **Reduced frustration** - Fewer "no, I meant the OTHER file" moments
 - **Faster onboarding** - New AI tools understand your project quickly
@@ -314,6 +330,7 @@ In Tom's case, we went from multi-message exchanges about file paths to single-m
 The vocabulary file is **metadata about communication itself**. It documents how we talk about the project, not just what the project contains.
 
 This is MX Theory in practice:
+
 - Created by introspecting actual usage patterns (not designed upfront)
 - Benefits both machine processing and human efficiency (convergence principle)
 - Structured for machine parsing but human-readable (dual audience)
@@ -330,16 +347,19 @@ That's the convergence principle at work: **better for machines, better for huma
 ## Further Reading
 
 **MX-Bible (Machine Experience: The Invisible Users):**
+
 - Chapter 9: Anti-patterns in AI Agent Design
 - Appendix H: Example llms.txt Files
 - Appendix N: Pattern Library
 
 **Documentation in this project:**
-- [vocabulary.md](../vocabulary.md) - The actual vocabulary reference
+
+- [vocabulary.md](../../../config/book/vocabulary.md) - The actual vocabulary reference
 - [CLAUDE.md](../../CLAUDE.md) - Main project instructions
 - [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md) - Documentation strategy
 
 **Related Patterns:**
+
 - Pattern 4 (Appendix L): Markdown Metadata Standards
 - Pattern 12 (Appendix N): Context-Preserving Cross-Document References
 - Anti-pattern 14 (Chapter 9): Context-Free References
@@ -355,4 +375,3 @@ Meta-commentary: I'm writing this blog post about creating vocabulary files BY U
 **Status:** Draft - awaiting review
 **Target Publication:** Q1 2026
 **Series:** MX Theory in Practice
-
