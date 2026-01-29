@@ -378,12 +378,14 @@ npm run pdf:generate  # No package.json in submodule
    - Chapter lists
    - Word counts
 
-3. **Architecture** (`docs/architecture/`)
+3. **Book Configuration** (`config/book/`)
    - TIMELESS-MANUSCRIPT-RULE.md - Writing guidelines for book manuscripts
+   - book-svg-style.md - SVG illustration style guide
 
    **Note:** Architecture documentation has been reorganized:
    - doc-architecture.md → config/system/doc-architecture.md
    - GIT-README.md → config/system/GIT-README.md
+   - TIMELESS-MANUSCRIPT-RULE.md → config/book/TIMELESS-MANUSCRIPT-RULE.md
    - web-audit-architecture.md → packages/web-audit-suite/web-audit-architecture.md
 
 4. **AI Assistant Guidance** (`docs/for-ai/`)

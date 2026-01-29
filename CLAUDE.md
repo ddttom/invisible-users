@@ -1279,7 +1279,7 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 - `config/system/allabout-network-hosting-map.md` - Complete hosting path mapping and deployment guide
 - `config/system/HOSTING-SITEMAP-ASCII.md` - ASCII visual sitemap of hosting structure
 - `config/system/HOSTING-QUICK-REFERENCE.md` - One-page deployment reference
-- `docs/architecture/TIMELESS-MANUSCRIPT-RULE.md` - Writing standards for book manuscripts
+- `config/book/TIMELESS-MANUSCRIPT-RULE.md` - Writing standards for book manuscripts
 - `config/system/doc-architecture.md` - Repository structure and design decisions
 
 **Web Audit Suite:** See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) and subdirectory docs/

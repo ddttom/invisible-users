@@ -73,10 +73,10 @@ invisible-users/  (Main Repository - Hub)
 │       ├── GIT-README.md             ← Comprehensive git workflow guidance
 │       ├── allabout-network-hosting-map.md ← Hosting path mapping
 │       ├── HOSTING-SITEMAP-ASCII.md  ← ASCII visual sitemap
-│       └── HOSTING-QUICK-REFERENCE.md ← Deployment reference
+│       ├── HOSTING-QUICK-REFERENCE.md ← Deployment reference
+│       └── repo-vocabulary.md        ← Conversational shorthand reference
 ├── docs/                             ← Documentation
-│   ├── architecture/                 ← Architecture documentation
-│   │   └── TIMELESS-MANUSCRIPT-RULE.md ← Writing standards
+│   ├── architecture/                 ← (Empty - files moved to config/)
 │   ├── for-ai/                       ← AI assistant guidance
 │   │   ├── writing-style.md          ← Complete writing style guide
 │   │   └── yaml-frontmatter-template.md ← YAML metadata templates
