@@ -27,7 +27,7 @@ Review documents against the writing style guide and propose amendments.
 /review-docs packages/bible/chapters/chapter-*.md
 
 # Review any file (not limited to manuscript)
-/review-docs docs/web-audit-architecture.md
+/review-docs packages/web-audit-suite/web-audit-architecture.md
 
 # Review HTML files
 /review-docs packages/shared-appendices/web/back-cover.html

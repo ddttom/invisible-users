@@ -49,7 +49,7 @@ The writing style guide ([docs/for-ai/writing-style.md](docs/for-ai/writing-styl
 /review-docs packages/bible/chapter-*.md
 
 # Review any file (not limited to manuscript)
-/review-docs docs/architecture/web-audit-architecture.md
+/review-docs packages/web-audit-suite/web-audit-architecture.md
 
 # Review HTML files
 /review-docs packages/shared-appendices/web/back-cover.html

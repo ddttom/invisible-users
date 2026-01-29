@@ -226,7 +226,7 @@ Each package has its own README with detailed information:
 ### Architecture Documentation
 
 - [Repository Architecture](config/system/doc-architecture.md) - Repository structure and design decisions
-- [Web Audit Suite Architecture](docs/architecture/web-audit-architecture.md) - Tool architecture and pipeline design
+- [Web Audit Suite Architecture](packages/web-audit-suite/web-audit-architecture.md) - Tool architecture and pipeline design
 
 ### Strategic Planning
 

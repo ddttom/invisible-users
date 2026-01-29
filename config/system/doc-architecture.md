@@ -379,10 +379,12 @@ npm run pdf:generate  # No package.json in submodule
    - Word counts
 
 3. **Architecture** (`docs/architecture/`)
-   - doc-architecture.md - This file
-   - web-audit-architecture.md - Tool architecture
-   - GIT-README.md - Git workflow guide for multi-repository structure
    - TIMELESS-MANUSCRIPT-RULE.md - Writing guidelines for book manuscripts
+
+   **Note:** Architecture documentation has been reorganized:
+   - doc-architecture.md → config/system/doc-architecture.md
+   - GIT-README.md → config/system/GIT-README.md
+   - web-audit-architecture.md → packages/web-audit-suite/web-audit-architecture.md
 
 4. **AI Assistant Guidance** (`docs/for-ai/`)
    - writing-style.md - Complete style guide
@@ -666,4 +668,4 @@ See [docs/structure/blog-metadata-schema.md](../structure/blog-metadata-schema.m
 - [LEARNINGS.md](../../LEARNINGS.md) - Battle-tested rules
 - [GIT-README.md](GIT-README.md) - Git workflow guide
 - [ONBOARDING.md](../../ONBOARDING.md) - Developer onboarding
-- [web-audit-architecture.md](web-audit-architecture.md) - Web Audit Suite architecture
+- [web-audit-architecture.md](../../packages/web-audit-suite/web-audit-architecture.md) - Web Audit Suite architecture
