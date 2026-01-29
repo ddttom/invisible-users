@@ -127,25 +127,37 @@ See [packages/web-audit-suite/README.md](../../packages/web-audit-suite/README.m
 
 This is a **multi-repository monorepo with 10 git repositories** (1 main + 9 submodules):
 
+**📁 Complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) for the authoritative, detailed folder structure including all submodules.
+
+**High-level overview:**
+
 ```text
 invisible-users/                    # Main repository (control hub)
 ├── packages/
-│   ├── bible/                      # MX-Bible [SUBMODULE]
+│   ├── mx-the-bible/               # MX-Bible [SUBMODULE]
 │   ├── mx-handbook/                # MX-Handbook [SUBMODULE]
-│   ├── shared-appendices/          # Shared appendices [SUBMODULE]
-│   ├── shared-code-examples/       # Code patterns [SUBMODULE]
-│   ├── ucp/                        # Universal Commerce Protocol [SUBMODULE - READ-ONLY]
-│   ├── notes/                      # Development notes [SUBMODULE - READ-ONLY]
+│   ├── mx-gathering/               # Community resources [SUBMODULE - PUBLIC]
+│   ├── mx-appendices/              # Shared appendices [SUBMODULE]
+│   ├── mx-code-examples/           # Code patterns [SUBMODULE]
+│   ├── mx-outputs/                 # Generated content [SUBMODULE - PRIVATE]
+│   ├── external/ucp/               # Universal Commerce Protocol [SUBMODULE - READ-ONLY]
+│   ├── business/mx-business/       # Business planning [SUBMODULE - PRIVATE]
+│   ├── notes/                      # Development notes [SUBMODULE]
 │   └── web-audit-suite/            # Analysis tool [NOT a submodule]
-├── outputs/                        # Generated content [SUBMODULE - PRIVATE]
-├── books/                          # Convenience symlinks
 ├── docs/                           # Documentation
 ├── scripts/                        # Build scripts
 ├── config/                         # Configuration
+│   ├── book/                       # Book-specific config
+│   └── system/                     # System documentation
+│       ├── folder-layout.md        # Complete structure reference
+│       └── repo-philosophy.md      # Design principles
 └── .claude/                        # Claude Code AI config
 ```
 
-**For complete structure details with file trees, see [docs/architecture/doc-architecture.md](../architecture/doc-architecture.md#repository-structure)**
+**Key documentation:**
+- [config/system/folder-layout.md](config/system/folder-layout.md) - Complete folder structure (single source of truth)
+- [config/system/repo-philosophy.md](config/system/repo-philosophy.md) - Design principles and technical philosophy
+- [docs/architecture/doc-architecture.md](docs/architecture/doc-architecture.md) - Build systems, workflows, and architecture
 
 ## Understanding Submodules
 
@@ -204,10 +216,12 @@ git -C packages/bible log --oneline -10
 
 ## Common Issues and Solutions
 
-### Missing Symlinks
+### Submodule Issues
+
+If submodules aren't initialized properly:
 
 ```bash
-npm run init  # Recreates blogs/ and books/ symlinks if needed
+git submodule update --init --recursive
 ```
 
 ### Empty Submodules
@@ -245,9 +259,9 @@ Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/v
 
 **Book-specific:**
 
-- [packages/bible/README.md](packages/bible/README.md) - MX-Bible contents
+- [packages/mx-the-bible/README.md](packages/mx-the-bible/README.md) - MX-Bible contents
 - [packages/mx-handbook/README.md](packages/mx-handbook/README.md) - MX-Handbook contents
-- [packages/shared-appendices/README.md](packages/shared-appendices/README.md) - Appendices overview
+- [packages/mx-appendices/README.md](packages/mx-appendices/README.md) - Appendices overview
 
 **Tool-specific:**
 
