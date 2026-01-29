@@ -122,121 +122,35 @@ pwd
 
 ### Repository Navigation Map
 
-**CRITICAL:** Always run `pwd` before file operations. Here's the complete structure:
+**CRITICAL:** Always run `pwd` before file operations.
+
+**📁 For complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) - Single source of truth for repository structure across main repo and all 9 submodules.
+
+**Hub Repository Quick Reference:**
+
+- **Main repo:** Controls and orchestrates the entire workspace
+  - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md`, documentation, scripts
+  - Role: Configuration hub, git workflow management, build tools
+
+- **9 Submodules under packages/:**
+  - `mx-the-bible/` - MX-Bible manuscript (13 chapters)
+  - `mx-handbook/` - MX-Handbook (11 chapters)
+  - `mx-gathering/` - Community resources (PUBLIC, EDITABLE)
+  - `mx-appendices/` - Shared appendices (A-M)
+  - `mx-code-examples/` - Pattern implementations
+  - `mx-outputs/` - Generated content (PRIVATE)
+  - `external/ucp/` - Universal Commerce Protocol reference
+  - `business/mx-business/` - Business planning (PRIVATE)
+  - `notes/` - Development practices
+
+**Quick Navigation Paths:**
 
 ```text
-${MAIN_REPO}/  ← MAIN REPO (MASTER)
-├── .claude/                          ← Claude Code config (ONLY in main repo)
-│   ├── skills/                       ← 11 skills (see Claude Code Configuration section)
-│   ├── hooks/                        ← pre-tool-use.sh, post-tool-use.sh
-│   └── settings.local.json           ← Permissions and configuration
-├── CLAUDE.md                         ← This file (ONLY in main repo)
-├── AGENTS.md → CLAUDE.md             ← Symlink for multi-AI system compatibility
-├── GEMINI.md → CLAUDE.md             ← Symlink for Google Gemini
-├── CHANGELOG.md                      ← Version history and release notes
-├── LEARNINGS.md                      ← Battle-tested rules
-├── README.md                         ← Main repo README
-├── ONBOARDING.md                     ← Developer onboarding guide
-├── package.json                      ← Root workspace config
-├── docs/                             ← Documentation
-│   ├── architecture/                 ← GIT-README.md, TIMELESS-MANUSCRIPT-RULE.md, doc-architecture.md
-│   ├── for-ai/                       ← AI assistant guidance
-│   ├── shared-chapters/              ← Shared book content (Chapter 0)
-│   ├── structure/                    ← Strategic planning documents
-│   │   ├── github-repositories.md    ← Repository structure mapping
-│   │   └── steve-krug.md             ← UX research and insights
-│   └── talks/                        ← Presentation materials
-│       ├── historical/               ← Archived presentations (dated subdirectories)
-│       └── template/                 ← Reusable presentation templates
-├── blogs → packages/mx-outputs/bible/blogs  ← SYMLINK to outputs submodule blogs
-├── scrap/                            ← Working directory for temporary files
-├── books/                            ← Symlinks for convenience
-│   ├── bible → ../packages/mx-the-bible
-│   ├── mx-handbook → ../packages/mx-handbook
-│   ├── appendices → ../packages/mx-appendices
-│   ├── code-examples → ../packages/mx-code-examples
-│   └── outputs → ../packages/mx-outputs
-├── packages/
-│   ├── mx-the-bible/                 ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/mx-the-bible/
-│   │       ├── .claude/              ← Claude Code configuration
-│   │       ├── manuscripts/          ← Manuscript files
-│   │       ├── code/                 ← Code examples
-│   │       ├── marketing/            ← Marketing materials
-│   │       ├── web/                  ← Web content
-│   │       ├── CLAUDE.md             ← Submodule guidance
-│   │       ├── README.md             ← MX-Bible README
-│   │       └── todo.txt              ← Task tracking
-│   │       Note: invisible-users-manuscript repository
-│   ├── mx-handbook/                  ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/mx-handbook/
-│   │       ├── chapters/             ← 11 chapter markdown files
-│   │       ├── README.md             ← MX-Handbook README
-│   │       └── NO .claude/ directory
-│   ├── mx-gathering/                 ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/mx-gathering/
-│   │       ├── .claude/              ← Claude Code configuration
-│   │       ├── Futures/              ← Future developments
-│   │       ├── contributors/         ← Contributor information
-│   │       ├── discussions/          ← Discussion archives
-│   │       ├── docs/                 ← Documentation
-│   │       ├── events/               ← Event materials
-│   │       ├── CLAUDE.md             ← Submodule guidance
-│   │       ├── README.md             ← MX-Gathering README
-│   │       ├── TODO.txt              ← Task tracking
-│   │       └── llms.txt              ← AI discovery file
-│   ├── mx-appendices/                ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/mx-appendices/
-│   │       ├── appendix-*.md         ← 12 appendix files (A-M)
-│   │       ├── README.md             ← Appendices README
-│   │       └── NO .claude/ directory
-│   ├── mx-code-examples/             ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/mx-code-examples/
-│   │       ├── agent-friendly-starter-kit/  ← good/ vs bad/ patterns
-│   │       ├── examples/             ← Production code
-│   │       ├── README.md             ← Code examples README
-│   │       └── NO .claude/ directory
-│   ├── mx-outputs/                   ← SUBMODULE (PRIVATE git repo)
-│   │   └── ${MAIN_REPO}/packages/mx-outputs/
-│   │       ├── bible/                ← MX-Bible outputs
-│   │       │   ├── blogs/            ← Blog posts
-│   │       │   ├── presentations/    ← Slide decks
-│   │       │   └── marketing/        ← Marketing materials
-│   │       ├── mx/                   ← MX-Handbook outputs
-│   │       ├── the-bible/            ← Legacy/alternate content
-│   │       ├── README.md             ← Outputs README
-│   │       └── NO .claude/ directory
-│   ├── external/                     ← External reference submodules
-│   │   └── ucp/                      ← SUBMODULE (git repo)
-│   │       └── ${MAIN_REPO}/packages/external/ucp/
-│   │           ├── docs/             ← UCP documentation
-│   │           ├── generated/        ← Generated schemas and types
-│   │           ├── main.py           ← Schema generator
-│   │           ├── README.md         ← UCP overview
-│   │           └── NO .claude/ directory
-│   │           Note: Universal Commerce Protocol - standardized ecommerce API for AI agents
-│   ├── business/                     ← Business strategy submodules
-│   │   └── mx-business/              ← SUBMODULE (PRIVATE git repo)
-│   │       └── ${MAIN_REPO}/packages/business/mx-business/
-│   │           ├── plans/            ← Business plans, executive summaries
-│   │           ├── strategy/         ← Strategic positioning, MX-plan
-│   │           ├── opportunities/    ← Market opportunity analysis
-│   │           ├── pricing/          ← Pricing strategies and financial models
-│   │           ├── products/         ← Product business context
-│   │           ├── README.md         ← Business planning README
-│   │           └── CLAUDE.md         ← AI guidance
-│   ├── notes/                        ← SUBMODULE (git repo)
-│   │   └── ${MAIN_REPO}/packages/notes/
-│   │       ├── .claude/              ← Claude Code configuration
-│   │       ├── scrap/                ← Temporary working files (gitignored)
-│   │       ├── Starter.md            ← Coding standards and project setup
-│   │       ├── Vibe coding backend.md ← Backend architecture guidelines
-│   │       └── Other development guidelines
-│   │       Note: Coding standards and development practices reference
-│   └── web-audit-suite/              ← NOT A SUBMODULE (regular directory)
-│       ├── src/                      ← Tool source code
-│       ├── test/                     ← Test files
-│       └── README.md                 ← Tool documentation
+Main repo root:     /Users/tomcranstoun/Documents/GitHub/invisible-users/
+.claude/ config:    .claude/skills/, .claude/hooks/
+Documentation:      docs/architecture/, docs/for-ai/, docs/structure/
+Scripts:            scripts/
+Submodules:         packages/[submodule-name]/
 ```
 
 **Note on outputs submodule directory naming:**
@@ -426,40 +340,29 @@ Comprehensive Node.js website analysis tool (`packages/web-audit-suite/`) implem
 
 ## Repository Structure
 
-**Key directories:**
+**📁 Complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) for the full repository structure including all submodules.
 
-```text
-/
-├── CLAUDE.md                 # This file (single source of truth)
-├── ONBOARDING.md             # Developer onboarding guide
-├── LEARNINGS.md              # Battle-tested rules
-├── README.md                 # Project overview
-├── .claude/                  # Claude Code configuration (skills, hooks)
-├── config/                   # Project configuration
-│   ├── .markdownlint.json    # Markdown linting rules
-│   └── book-svg-style.md     # SVG illustration style guide
-├── scripts/                  # Build and generation scripts
-├── blogs → packages/mx-outputs/bible/blogs  # SYMLINK to outputs submodule blogs directory
-├── books/                    # Convenience symlinks (tracked, but directory ignored in .gitignore)
-│   ├── appendices → ../packages/mx-appendices
-│   ├── bible → ../packages/mx-the-bible
-│   ├── code-examples → ../packages/mx-code-examples
-│   ├── mx-handbook → ../packages/mx-handbook
-│   └── outputs → ../packages/mx-outputs
-├── packages/                 # Book manuscripts and tools
-│   ├── mx-the-bible/         # MX-Bible (git submodule)
-│   ├── mx-handbook/          # MX-Handbook (git submodule)
-│   ├── mx-gathering/         # MX-Gathering (git submodule)
-│   ├── mx-appendices/        # Shared appendices (git submodule)
-│   ├── mx-code-examples/     # Pattern examples (git submodule)
-│   ├── mx-outputs/           # Generated content (git submodule - PRIVATE)
-│   └── web-audit-suite/      # Analysis tool (not a submodule)
-└── docs/                     # Project documentation
-    ├── architecture/         # Architecture docs (GIT-README.md, TIMELESS-MANUSCRIPT-RULE.md, doc-architecture.md)
-    ├── for-ai/               # AI assistant guidance (writing-style.md, yaml-frontmatter-template.md)
-    ├── shared-chapters/      # Shared book content (Chapter 0)
-    └── talks/                # Presentation materials
-```
+**Key directories (hub repository):**
+
+- **Configuration & Documentation:**
+  - `CLAUDE.md` - This file (single source of truth for AI assistants)
+  - `.claude/` - Claude Code configuration (skills, hooks, settings)
+  - `config/` - Project configuration (.markdownlint.json, book-svg-style.md, system/)
+  - `docs/` - Documentation (architecture/, for-ai/, shared-chapters/, structure/, talks/)
+
+- **Content & Tools:**
+  - `packages/` - All submodules and tools
+    - `mx-the-bible/` - MX-Bible manuscript (submodule)
+    - `mx-handbook/` - MX-Handbook (submodule)
+    - `mx-gathering/` - Community resources (submodule, PUBLIC)
+    - `mx-appendices/` - Shared appendices (submodule)
+    - `mx-code-examples/` - Pattern examples (submodule)
+    - `mx-outputs/` - Generated content (submodule, PRIVATE)
+    - `external/ucp/` - UCP reference (submodule)
+    - `business/mx-business/` - Business planning (submodule, PRIVATE)
+    - `notes/` - Development practices (submodule)
+    - `web-audit-suite/` - Analysis tool (NOT a submodule)
+  - `scripts/` - Build and generation scripts
 
 **See individual package READMEs for detailed contents, build commands, and usage.**
 

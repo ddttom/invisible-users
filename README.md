@@ -82,37 +82,26 @@ This repository uses git submodules to achieve **clean separation between conten
 
 ## Repository Structure
 
-```text
-/
-├── packages/
-│   ├── mx-the-bible/         # "MX-Bible" (full comprehensive guide) [SUBMODULE]
-│   ├── mx-handbook/          # "MX-Handbook" (implementation handbook) [SUBMODULE]
-│   ├── mx-gathering/         # "MX-Gathering" (community resources) [SUBMODULE]
-│   ├── mx-appendices/        # Shared implementation guides (A-M) [SUBMODULE]
-│   ├── mx-code-examples/     # Production-ready code examples [SUBMODULE]
-│   ├── mx-outputs/           # Generated content [SUBMODULE - PRIVATE]
-│   └── web-audit-suite/      # Website analysis tool (NOT a submodule)
-├── books/                    # Convenience symlinks (reduces cognitive load when navigating)
-│   ├── bible -> ../packages/mx-the-bible
-│   ├── mx-handbook -> ../packages/mx-handbook
-│   ├── appendices -> ../packages/mx-appendices
-│   ├── code-examples -> ../packages/mx-code-examples
-│   └── outputs -> ../packages/mx-outputs
-│   # Note: Access books/bible instead of packages/mx-the-bible/ to reduce mental overhead
-├── blogs -> packages/mx-outputs/bible/blogs  # Symlink to outputs submodule blogs
-├── scrap/                    # Working directory for temporary files
-├── docs/                     # Documentation (main repo only)
-│   ├── architecture/         # Architecture documentation
-│   ├── for-ai/               # AI assistant guidance files
-│   ├── shared-chapters/      # Shared book content (Chapter 0)
-│   ├── structure/            # Strategic planning documents
-│   └── talks/                # Presentation materials
-│       ├── historical/       # Archived presentations
-│       └── template/         # Presentation templates
-├── config/                   # Configuration files (main repo only)
-├── scripts/                  # Build and deployment scripts (main repo only)
-└── .claude/                  # Claude Code AI assistant configuration (main repo only)
-```
+**📁 Complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) for the full repository structure including all submodules.
+
+**High-level overview:**
+
+- **packages/** - All submodules and tools
+  - `mx-the-bible/` - "MX-Bible" (full comprehensive guide) [SUBMODULE]
+  - `mx-handbook/` - "MX-Handbook" (implementation handbook) [SUBMODULE]
+  - `mx-gathering/` - "MX-Gathering" (community resources) [SUBMODULE, PUBLIC]
+  - `mx-appendices/` - Shared implementation guides (A-M) [SUBMODULE]
+  - `mx-code-examples/` - Production-ready code examples [SUBMODULE]
+  - `mx-outputs/` - Generated content [SUBMODULE, PRIVATE]
+  - `external/ucp/` - Universal Commerce Protocol reference [SUBMODULE]
+  - `business/mx-business/` - Business planning [SUBMODULE, PRIVATE]
+  - `notes/` - Development practices [SUBMODULE]
+  - `web-audit-suite/` - Website analysis tool (NOT a submodule)
+
+- **docs/** - Documentation (architecture/, for-ai/, shared-chapters/, structure/, talks/)
+- **config/** - Configuration files (.markdownlint.json, system/folder-layout.md, etc.)
+- **scripts/** - Build and deployment scripts
+- **.claude/** - Claude Code AI assistant configuration
 
 ## Quick Start
 
