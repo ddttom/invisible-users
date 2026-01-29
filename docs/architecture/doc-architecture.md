@@ -63,39 +63,21 @@ graph TB
 
 ## Repository Structure
 
+**📁 Complete folder structure:** See [config/system/folder-layout.md](../../config/system/folder-layout.md) for the authoritative, detailed folder structure of the main repository and all 9 submodules.
+
+This section focuses on architectural concepts and relationships rather than detailed directory listings.
+
 ### Main Repository (Control Hub)
 
 **Purpose:** Orchestration, build processes, configuration, and documentation
 
-**Key Directories:**
+**Key Architectural Components:**
 
-- `.claude/` - Claude Code AI assistant configuration
-  - `skills/` - Custom skills (/news, /review-docs, /step-commit, /md-fix, /humanizer)
-  - `hooks/` - Git hooks (pre-tool-use.sh, post-tool-use.sh, pre-commit.sh, pre-push.sh)
-  - `settings.local.json` - Permissions and configuration
-- `config/` - Project-wide configuration
-  - `.markdownlint.json` - Markdown linting rules
-  - `book/book-svg-style.md` - SVG illustration style guide
-- `scripts/` - Build and generation scripts
-  - `generate-appendix-html.sh` - Appendix HTML generation
-  - `enhance-appendix-html.js` - HTML post-processing
-  - `download-cover-images.js` - Illustration management
-- `docs/` - Documentation (main repo only)
-  - `architecture/` - Architecture documentation (GIT-README.md, TIMELESS-MANUSCRIPT-RULE.md, doc-architecture.md)
-  - `for-ai/` - AI assistant guidance
-  - `sales-enablement/` - Business materials
-  - `shared-chapters/` - Chapter 0 (shared across books)
-  - `structure/` - Strategic planning documents and blog drafts
-    - `blog-drafts/` - Work-in-progress blog content (markdown, drafts)
-    - Strategic planning files (MX-plan.md, github-repositories.md, steve- h.md, etc.)
-  - `talks/` - Presentation materials
-- `books/` - Convenience symlinks (tracked but directory ignored)
-  - `bible -> ../packages/bible`
-  - `mx-handbook -> ../packages/mx-handbook`
-  - `appendices -> ../packages/shared-appendices`
-  - `code-examples -> ../packages/shared-code-examples`
-  - `outputs -> ../outputs`
-- `blogs -> outputs/bible/blogs` - Symlink to published blog content (HTML/CSS/SVG only)
+- **`.claude/`** - Claude Code AI assistant configuration (skills, hooks, settings)
+- **`config/`** - Project-wide configuration (markdown linting, book styles, system docs)
+- **`scripts/`** - Build and generation automation
+- **`docs/`** - Documentation hub (architecture, AI guidance, strategic planning, presentations)
+- **`packages/`** - All submodules and tools (9 submodules + web-audit-suite)
 
 **Critical Files:**
 
@@ -106,232 +88,34 @@ graph TB
 - `CHANGELOG.md` - Project change history
 - `llms.txt` - AI agent discovery file
 
-### Book Manuscripts (Content Submodules)
+### Book Manuscripts & Tools (Submodules)
 
-#### MX-Bible (packages/bible/)
+**📁 For detailed folder structures:** See [config/system/folder-layout.md](../../config/system/folder-layout.md) - Complete structure of all 9 submodules.
 
-**Repository:** `invisible-users-bible`
-**Purpose:** Full comprehensive guide (13 chapters, ~78,000 words)
-**Former Name:** "The Invisible Users"
+**High-level overview:**
 
-**Structure:**
+- **MX-Bible** (`packages/mx-the-bible/`) - Full comprehensive guide (13 chapters, ~78,000 words)
+- **MX-Handbook** (`packages/mx-handbook/`) - Implementation handbook (11 chapters)
+- **MX-Gathering** (`packages/mx-gathering/`) - Community resources (PUBLIC, EDITABLE)
+- **Shared Appendices** (`packages/mx-appendices/`) - 12 appendices (A-M) shared across books
+- **Code Examples** (`packages/mx-code-examples/`) - Good vs bad pattern implementations
+- **Universal Commerce Protocol** (`packages/external/ucp/`) - READ-ONLY external reference
+- **Business Planning** (`packages/business/mx-business/`) - PRIVATE business strategy
+- **Notes** (`packages/notes/`) - Development practices and coding standards
+- **Outputs** (`packages/mx-outputs/`) - PRIVATE generated content (PDFs, HTML, marketing)
+- **Web Audit Suite** (`packages/web-audit-suite/`) - NOT a submodule, production analysis tool
 
-```text
-packages/bible/
-├── chapters/
-│   ├── metadata.yaml              # PDF generation metadata
-│   ├── metadata-kindle.yaml       # Kindle-specific metadata
-│   ├── executive-summary.md       # Executive summary
-│   ├── preface.md                 # Book preface
-│   ├── chapter-01-what-you-will-learn.md
-│   ├── chapter-02-the-invisible-failure.md
-│   ├── chapter-03-the-architectural-conflict.md
-│   ├── chapter-04-the-business-reality.md
-│   ├── chapter-05-the-content-creators-dilemma.md
-│   ├── chapter-06-the-security-maze.md
-│   ├── chapter-07-the-legal-landscape.md
-│   ├── chapter-08-the-human-cost.md
-│   ├── chapter-09-the-platform-race.md
-│   ├── chapter-10-generative-engine-optimization.md
-│   ├── chapter-11-designing-for-both.md
-│   ├── chapter-12-technical-advice.md
-│   ├── chapter-13-what-agent-creators-must-build.md
-│   ├── Glossary.md                # Technical glossary
-│   ├── The-End.md                 # Closing material
-│   ├── bible-plan.md              # Master book plan
-│   ├── reading-guide.md           # Reader guidance
-│   └── rear-cover.md              # Back cover copy
-├── illustrations/                  # SVG and PNG images
-└── README.md                       # Bible-specific documentation
-```
+**Important Patterns:**
 
-#### MX-Handbook (packages/mx-handbook/)
+**Dual-File Pattern (Appendices):**
+- **Appendix D & H:** `.txt` file is source of truth, `.md` file is wrapper
+- **Critical:** Update BOTH files when making content changes
 
-**Repository:** `MX-The-Handbook`
-**Purpose:** Implementation handbook for developers and designers (11 chapters)
-**Former Name:** "MX-The Handbook"
+**Web Audit Suite Architecture:**
+- Four-phase pipeline: (0) robots.txt compliance, (1) URL collection, (2) data collection, (3) report generation
+- `results/results.json` is single source of truth
+- Report generation NEVER fetches new data
 
-**Structure:**
-
-```text
-packages/mx-handbook/
-├── chapters/
-│   ├── metadata.yaml              # PDF generation metadata
-│   ├── 0-cover.md                 # Cover page
-│   ├── preface.md                 # Book preface
-│   └── chapter-01-*.md through chapter-11-*.md
-└── README.md
-```
-
-#### Shared Appendices (packages/shared-appendices/)
-
-**Repository:** `invisible-users-appendices`
-**Purpose:** Implementation guides shared across all three books (12 appendices A-L)
-
-**Structure:**
-
-```text
-packages/shared-appendices/
-├── appendix-a-glossary.md
-├── appendix-b-battle-tested-lessons.md
-├── appendix-c-resource-directory.md
-├── appendix-d-ai-friendly-html-guide.md
-├── appendix-d-ai-friendly-html-guide.txt  # Source of truth for Appendix D
-├── appendix-e-schema-reference.md
-├── appendix-f-implementation-roadmap.md
-├── appendix-g-resource-directory.md
-├── appendix-h-example-llms-txt.md
-├── appendix-h-example-llms-txt.txt        # Source of truth for Appendix H
-├── appendix-i-common-pitfalls.md
-├── appendix-j-industry-developments.md
-├── appendix-k-common-page-patterns.md
-├── appendix-l-proposed-ai-metadata-patterns.md
-├── appendix-m-index-of-metadata.md
-├── web/                            # Generated HTML appendices
-│   ├── appendix-a.html through appendix-l.html
-│   ├── appendix-index.html        # Appendix navigation
-│   ├── book.html                  # Book overview
-│   ├── book-product-page.html     # Product page example
-│   ├── back-cover.html            # Back cover
-│   ├── for-reviewers.html         # Reviewer guide
-│   ├── faq.html                   # FAQ
-│   ├── news.html                  # Industry news
-│   ├── llms.txt                   # AI agent discovery
-│   ├── sitemap.xml                # Sitemap
-│   ├── site/                      # Example site templates
-│   │   ├── index.html, about.html, blog-post.html, etc.
-│   │   └── llms.txt
-│   └── [50+ HTML files total]
-└── README.md
-```
-
-**Dual-File Pattern:**
-
-- **Appendix D:** `.txt` file is source of truth (~3,000 lines), `.md` file is wrapper with TOC
-- **Appendix H:** `.txt` file is source of truth (20 curated links), `.md` file is wrapper with introduction
-
-**Critical:** Update BOTH files when making content changes.
-
-### Code & Examples (Content Submodules)
-
-#### Shared Code Examples (packages/shared-code-examples/)
-
-**Repository:** `invisible-users-code-examples`
-**Purpose:** Production-ready code examples demonstrating patterns from the books
-
-**Structure:**
-
-```text
-packages/shared-code-examples/
-├── agent-friendly-starter-kit/
-│   ├── good/                      # Best practice examples
-│   │   └── index.html
-│   └── bad/                       # Anti-pattern examples
-│       └── index.html
-├── examples/
-│   ├── html-examples/
-│   │   └── structured-data/
-│   │       └── book-schema.json
-│   ├── identity-delegation-README.md
-│   ├── identity-delegation-worker.js
-│   └── site-files/
-│       └── README.md
-└── README.md
-```
-
-#### Universal Commerce Protocol (packages/ucp/)
-
-**Repository:** `Universal-Commerce-Protocol/ucp`
-**Purpose:** Reference implementation of ecommerce standard for AI agents
-**Status:** READ-ONLY (external project maintained separately)
-
-**Structure:**
-
-```text
-packages/ucp/
-├── docs/                          # UCP documentation
-├── generated/                     # Generated schemas and types
-├── main.py                        # Schema generator
-└── README.md
-```
-
-### Tools & Infrastructure
-
-#### Web Audit Suite (packages/web-audit-suite/)
-
-**Status:** NOT a submodule (regular directory)
-**Purpose:** Production-ready Node.js website analysis tool implementing book patterns
-
-**Structure:**
-
-```text
-packages/web-audit-suite/
-├── src/
-│   ├── cli.js                     # Command-line interface
-│   ├── config/                    # Configuration
-│   ├── core/                      # Core audit logic
-│   ├── phases/                    # Four-phase pipeline
-│   │   ├── 0-robots-compliance/
-│   │   ├── 1-url-collection/
-│   │   ├── 2-data-collection/
-│   │   └── 3-report-generation/
-│   ├── utils/                     # Shared utilities
-│   └── index.js
-├── test/                          # Test files
-├── .cache/                        # Cache directory
-├── results/                       # Output directory
-│   └── results.json               # Single source of truth
-└── README.md
-```
-
-**Architecture:** Four-phase pipeline
-
-0. **robots.txt Compliance** - Fetch, parse, validate (100-point quality score)
-1. **URL Collection** - Sitemap processing with robots.txt validation
-2. **Data Collection** - Concurrent URL processing, browser pooling, Pa11y, LLM metrics
-3. **Report Generation** - CSV/markdown reports, pattern extraction, regression detection
-
-**Critical:** `results/results.json` is single source of truth. Report generation NEVER fetches new data.
-
-### Generated Content (Private Submodule)
-
-#### Outputs (outputs/)
-
-**Repository:** `invisible-users-outputs` (PRIVATE)
-**Purpose:** Storage for all generated materials, kept separate from source content
-
-**Structure:**
-
-```text
-outputs/
-├── bible/                         # MX-Bible outputs
-│   ├── blogs/                     # Published blog posts (HTML, CSS, SVG only - final staging)
-│   │   ├── mx/                    # MX-series published blogs
-│   │   │   ├── *.html             # Published HTML blog posts
-│   │   │   ├── *.css              # WCAG 2.1 AA compliant styling
-│   │   │   └── *.svg              # Blog diagrams and social cards
-│   │   └── published/             # Legacy published content
-│   │       └── blog.svg           # Legacy blog assets
-│   ├── presentations/             # Slide decks
-│   └── marketing/                 # Marketing materials
-├── mx/                            # MX-Handbook outputs
-├── the-bible/                     # Legacy directory name
-│   ├── mx-bible.html              # HTML output
-│   ├── mx-bible.pdf               # A4 PDF
-│   ├── mx-bible-kindle.pdf        # 6"×9" Kindle PDF
-│   └── mx-bible-simple.pdf        # Simple PDF
-└── README.md
-```
-
-### Reference Materials (Read-Only Submodules)
-
-#### Notes (packages/notes/)
-
-**Repository:** `Notes`
-**Purpose:** Development notes, coding standards, and architectural guidelines
-**Status:** READ-ONLY for AI assistants unless explicitly authorized
-
-**Contains:** Coding standards, project setup guidelines, backend architecture patterns, UI/UX anti-patterns
 
 ## Build System Architecture
 
@@ -714,47 +498,22 @@ See [docs/structure/blog-metadata-schema.md](../structure/blog-metadata-schema.m
 - File organization
 - Implementation notes
 
-## Symlink Architecture
+## Repository Navigation (Historical: Symlinks Removed)
 
-### Purpose
+### Change History
 
-Reduce cognitive load when navigating the repository by providing shorter paths.
+**As of 2026-01-29:** All convenience symlinks were removed from the repository to reduce navigation confusion in the multi-repository workspace.
 
-### Symlinks (tracked but directory ignored)
+**Removed symlinks:**
 
-Located in `books/` directory:
+- `AGENTS.md` → `CLAUDE.md`
+- `GEMINI.md` → `CLAUDE.md`
+- `blogs` → `packages/mx-outputs/bible/blogs`
+- `books/` directory (all convenience symlinks)
 
-```text
-books/bible -> ../packages/bible
-books/mx-handbook -> ../packages/mx-handbook
-books/appendices -> ../packages/shared-appendices
-books/code-examples -> ../packages/shared-code-examples
-books/outputs -> ../outputs
-```
+**Rationale:** Symlinks created confusion in multi-repository navigation and some pointed to non-existent paths. Direct path references are now used throughout the documentation.
 
-Located at root:
-
-```text
-blogs -> outputs/bible/blogs
-```
-
-### Usage Pattern
-
-```bash
-# ✅ SHORTER: Use symlink
-cat books/bible/README.md
-
-# ❌ LONGER: Use full path
-cat packages/bible/README.md
-
-# Both work, symlink is preferred for reduced cognitive overhead
-```
-
-### Git Behavior
-
-- Symlinks are tracked in git (committed before ignore pattern was added)
-- `books/` directory is in `.gitignore` to prevent accidental additions
-- Git only ignores untracked files; already-tracked symlinks remain tracked
+**See:** [config/system/folder-layout.md](../../config/system/folder-layout.md) for current repository structure
 
 ## Technology Stack
 

@@ -380,6 +380,7 @@ The following symlinks were removed to reduce navigation confusion:
 
 ### Key File References
 
+- **For detailed architecture and workflows:** See [docs/architecture/doc-architecture.md](../../docs/architecture/doc-architecture.md) - Build systems, workflows, diagrams
 - **For git workflows:** See [docs/architecture/GIT-README.md](../../docs/architecture/GIT-README.md)
 - **For writing style:** See [docs/for-ai/writing-style.md](../../docs/for-ai/writing-style.md)
 - **For navigation rules:** See [CLAUDE.md](../../CLAUDE.md) - Section "Repository Navigation Map"
