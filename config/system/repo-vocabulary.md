@@ -38,7 +38,7 @@
 | You say                  | Claude understands                                          |
 | ------------------------ | ----------------------------------------------------------- |
 | **blogs**                | `packages/mx-outputs/bible/blogs/mx/` (published HTML files)       |
-| **blog drafts**          | `docs/structure/blog-drafts/` (markdown drafts)                    |
+| **blog drafts**          | `ingest/blog-drafts/` (markdown drafts)                    |
 | **structure**            | `docs/structure/` (strategic planning docs)                        |
 | **architecture**         | `docs/architecture/` (system design docs)                          |
 | **skills**               | `.claude/skills/` (Claude Code custom skills)                      |
@@ -66,8 +66,8 @@
 
 | You say                | Claude understands                                              |
 | ---------------------- | --------------------------------------------------------------- |
-| **blog file**          | Markdown file in `docs/structure/blog-drafts/` OR HTML in blogs |
-| **blog markdown**      | Source markdown in `docs/structure/blog-drafts/*.md`            |
+| **blog file**          | Markdown file in `ingest/blog-drafts/` OR HTML in blogs |
+| **blog markdown**      | Source markdown in `ingest/blog-drafts/*.md`            |
 | **blog HTML**          | Generated HTML in `outputs/bible/blogs/mx/*.html`               |
 | **blog CSS**           | Scoped stylesheet `outputs/bible/blogs/mx/*-style.css`          |
 | **social card**        | SVG social media card `outputs/bible/blogs/mx/*-social.svg`     |
