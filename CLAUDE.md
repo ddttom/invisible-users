@@ -266,7 +266,7 @@ git commit -m "Update mx-the-bible submodule pointer to latest version"
 
 **🔄 DYNAMIC REFERENCE: The user uses conversational shorthand to communicate efficiently. When you encounter unfamiliar shorthand or need to understand context-specific terminology, CONSULT the vocabulary reference file.**
 
-**Reference file:** [config/book/vocabulary.md](config/book/vocabulary.md)
+**Reference file:** [config/repo/vocabulary.md](config/repo/vocabulary.md)
 
 **This file contains:**
 

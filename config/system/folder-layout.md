@@ -62,7 +62,8 @@ invisible-users/  (Main Repository - Hub)
 ├── config/                           ← Project configuration
 │   ├── .markdownlint.json            ← Markdown linting rules
 │   ├── book/                         ← Book-specific configuration
-│   │   ├── book-svg-style.md         ← SVG illustration style guide
+│   │   └── book-svg-style.md         ← SVG illustration style guide
+│   ├── repo/                         ← Repository collaboration tools
 │   │   └── vocabulary.md             ← Conversational shorthand reference
 │   └── system/                       ← System documentation
 │       ├── folder-layout.md          ← This file
