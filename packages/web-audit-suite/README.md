@@ -251,26 +251,6 @@ The tool includes robust network error handling that:
 npm install
 ```
 
-### Docker Installation
-
-No local installation required! Run audits in a containerized environment with all dependencies included:
-
-```bash
-# Build the Docker image
-docker build -t web-audit-suite .
-
-# Run an audit
-docker run --rm -v $(pwd)/results:/app/results \
-  web-audit-suite node index.js -s https://example.com/sitemap.xml -c 10
-```
-
-See [DOCKER.md](DOCKER.md) for comprehensive Docker usage guide including:
-
-- Quick start examples
-- CI/CD integration
-- Advanced configuration
-- Troubleshooting tips
-
 ## Usage
 
 ```bash

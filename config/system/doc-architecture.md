@@ -643,9 +643,8 @@ See [docs/structure/blog-metadata-schema.md](../structure/blog-metadata-schema.m
 
 1. **Automated Testing** - Add test suite for build scripts
 2. **CI/CD Pipeline** - GitHub Actions for automated builds
-3. **Docker Support** - Containerized build environment
-4. **API Documentation** - OpenAPI spec for Web Audit Suite
-5. **Performance Monitoring** - Track build times and optimization
+3. **API Documentation** - OpenAPI spec for Web Audit Suite
+4. **Performance Monitoring** - Track build times and optimization
 
 ### Scalability Concerns
 

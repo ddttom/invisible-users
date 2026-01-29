@@ -528,7 +528,6 @@ MAX_RETRIES=5
 
 **Use Cases**:
 
-- Docker deployments
 - CI/CD pipelines
 - Multi-environment setups
 - Configuration management
@@ -546,7 +545,6 @@ Complete configuration reference and guides.
   - Constants reference tables
   - Best practices
   - CI/CD examples
-  - Docker deployment examples
 
 - `README.md` - Quick start and overview
 - `CLAUDE.md` - Developer guidance
@@ -582,37 +580,6 @@ fi
 
 # Parse results and fail if critical issues
 node scripts/check-results.js results/executive_summary.json
-```
-
-### Docker Support
-
-Container-ready with environment variable configuration:
-
-**Dockerfile Example**:
-
-```dockerfile
-FROM node:20-alpine
-
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-
-COPY . .
-
-ENV NODE_ENV=production
-ENV LOG_LEVEL=info
-ENV OUTPUT_DIR=/app/results
-
-CMD ["npm", "start"]
-```
-
-**Run in Docker**:
-
-```bash
-docker run -v $(pwd)/results:/app/results \
-  -e SITEMAP_URL=https://example.com/sitemap.xml \
-  -e GENERATE_DASHBOARD=true \
-  web-audit-suite
 ```
 
 ### JSON Output

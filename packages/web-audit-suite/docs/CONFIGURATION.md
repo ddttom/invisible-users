@@ -644,32 +644,6 @@ fi
 
 A pre-configured workflow is available at `.github/workflows/quality-gate.yml`. See [CI/CD Integration Guide](CI-CD-INTEGRATION.md) for details.
 
-### Docker Deployment
-
-```dockerfile
-# Dockerfile
-FROM node:20-alpine
-
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-
-COPY . .
-
-ENV NODE_ENV=production
-ENV LOG_LEVEL=info
-ENV OUTPUT_DIR=/app/results
-
-CMD ["npm", "start"]
-```
-
-```bash
-# Run in Docker
-docker run -v $(pwd)/results:/app/results \
-  -e SITEMAP_URL=https://example.com/sitemap.xml \
-  web-audit-suite
-```
-
 ## Configuration Priority
 
 When the same option is specified in multiple places:

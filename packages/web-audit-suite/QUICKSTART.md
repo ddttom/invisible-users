@@ -264,11 +264,6 @@ npm install chart.js chartjs-node-canvas
    - Configure in your CI pipeline
    - Fail builds on quality violations
 
-4. **Docker Deployment**:
-   - See [Configuration Guide](docs/CONFIGURATION.md#docker-deployment)
-   - Use environment variables
-   - Mount results volume
-
 ## Support
 
 For issues or questions:
