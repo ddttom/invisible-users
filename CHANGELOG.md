@@ -9,6 +9,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added - 2026-01-29
 
+#### New Submodules (commit c14d276)
+
+**MX-Sales-enablement Repository:**
+- Added packages/business/mx-sales-enablement/ submodule from https://github.com/ddttom/MX-Sales-enablement.git
+- Private sales and marketing resources repository
+- Updated CLAUDE.md repository count: 10 → 11 total repositories (1 main + 10 submodules)
+- Added sales enablement entry to all submodule lists in documentation
+- This is the 10th submodule in the workspace
+
+#### Repository Structure - Ingest Directory (commits 0a3b4a3, 573f18f, a9c2432)
+
+**Created ingest/ directory for content staging:**
+- New top-level directory for draft content and AI assistant analysis documents
+- Provides clear separation between strategic planning (docs/structure/) and content staging (ingest/)
+
+**Moved blog-drafts to ingest/ (commit 0a3b4a3):**
+- Relocated docs/structure/blog-drafts/ → ingest/blog-drafts/
+- 16 markdown files moved including contrasts/ and joiners/ subdirectories
+- Updated repo-vocabulary.md with new paths (commit b9d8aee)
+
+**Moved mx-the-idea to ingest/ (commit 573f18f):**
+- Relocated docs/structure/mx-the-idea/ → ingest/mx-the-idea/
+- 5 files: README.md, energy-efficiency.md, hallucination-reduction.md, knowledge-distribution.md, manifesto.md
+- No reference updates needed (no files referenced old path)
+
+**Moved use-cases to ingest/ (commit a9c2432):**
+- Relocated docs/structure/use-cases/ → ingest/use-cases/
+- 9 files: README.md, ceo.md, cms-agencies.md, cms-vendors.md, conference-organisers.md, designers.md, developers.md, platform-creators.md, product-owners.md
+- No reference updates needed (no files referenced old path)
+
 #### MX Metadata Standardization
 
 **AI Exclusion Patterns**
