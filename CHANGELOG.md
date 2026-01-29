@@ -7,6 +7,113 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2026-01-29
+
+#### MX Metadata Standardization
+
+**AI Exclusion Patterns**
+
+- Added `.mxignore` file (411 lines) with comprehensive AI agent exclusion patterns
+  - Instructs AI agents which files to ignore unless explicitly requested
+  - Filters infrastructure files, build artifacts, documentation boilerplate
+  - Uses gitignore-style patterns with inheritance from .gitignore
+  - Includes MX metadata header with YAML format
+  - Purpose: Reduce AI context noise and focus on project content
+
+**Markdown Linting Configuration**
+
+- Added `.markdownlintignore` file to exclude paths from markdown linting
+  - Excludes .claude/ skills directory
+  - Excludes node_modules/
+  - Excludes all submodules (packages/*)
+
+### Changed - 2026-01-29
+
+#### MX Configuration File Standardization
+
+Renamed all `mx.yaml` files to `.mx.yaml` (dot prefix) for consistency with established conventions:
+
+- Root: `mx.yaml` → `.mx.yaml`
+- packages/web-audit-suite: `mx.yaml` → `.mx.yaml`
+- scripts: `mx.yaml` → `.mx.yaml`
+
+**Rationale:** Dot-prefix follows "design for both" principle:
+- For humans: Hides configuration files from default directory listings (reduced clutter)
+- For machines: Remains fully discoverable and machine-readable
+- Consistency: Aligns with .gitignore, .env, .editorconfig conventions
+
+#### .gitignore Comprehensive Update (v2.0.0)
+
+**MX Metadata Enhancement:**
+- Converted from `@mx:` annotation style to proper YAML structure within comments
+- Updated version: 1.0.0 → 2.0.0
+- Added `ai.editable: true` and `ai.assistance: welcome`
+- Expanded `context_provides` to include cache-patterns and temporary-files
+
+**Pattern Additions:**
+- **OS files**: .AppleDouble, .LSOverride, ._*, Desktop.ini, $RECYCLE.BIN/
+- **Editor files**: *.code-workspace, .fleet/, *.swo, *.sublime-*
+- **Logs**: npm-debug.log*, yarn-debug.log*, yarn-error.log*
+- **Cache directories**: .cache/, .npm/, .eslintcache, *.cache, .parcel-cache/
+- **Test coverage**: coverage/, .nyc_output/, test-results/, *.lcov
+- **Build artifacts**: dist/, build/, out/, .next/, *.tsbuildinfo
+- **Build outputs**: *.tar.gz, *.tgz, package-lock.json.backup
+- **Environment**: .env.*.local
+- **Temporary files**: *.tmp, *.temp, *.bak, *~.backup, *.orig
+- **Working directories**: scratch/, working/, temp/, tmp/
+
+**Pattern Removals (Obsolete):**
+- Removed symlink patterns (GEMINI.md, AGENTS.md, books/, blogs, .agents/)
+- Removed non-existent directories (the-bible/, dont/)
+
+#### Documentation Updates
+
+**CLAUDE.md Enhancements:**
+- Added comprehensive `.mxignore` documentation and usage patterns
+- Added mandatory `.mx.yaml` filename specification section
+- Added AI exclusion patterns guidance
+- Updated MX specification path references (Downloads → mx-gathering/specifications/)
+- Added reference to complete collection of 21 MX specification documents
+- Updated repository navigation map to reflect current state
+- Documented symlink removal and structure cleanup
+
+**README.md Clarification:**
+- Updated AI agent definition: "convert HTML into mathematical representations" → "convert HTML and text and images into mathematical representations"
+
+**docs/for-ai/writing-style.md:**
+- Minor formatting and content updates
+
+### Removed - 2026-01-29
+
+#### Repository Structure Cleanup
+
+**Symlinks Removed:**
+- Root level: AGENTS.md, GEMINI.md, blogs, scrap
+- books/ directory: All convenience symlinks (bible, appendices, code-examples, dont-make-ai-think, outputs)
+
+**Rationale:** Symlinks were convenience shortcuts but:
+- Some pointed to non-existent paths (dont-make-ai-think, old package names)
+- Created confusion in multi-repository navigation
+- Not essential for development workflow
+- Can be recreated if needed
+
+**Documentation Removed:**
+- docs/for-ai/architecting-multi-repo-codebases.md (1,724 lines)
+  - Obsolete content superseded by docs/architecture/GIT-README.md
+  - Duplicate guidance consolidated into primary git workflow documentation
+
+#### Submodule Updates
+
+**packages/mx-the-bible (8422525):**
+- Removed obsolete vdiff comparison file: invisible-users vs web.vdiff
+
+**packages/notes (11cb757):**
+- Removed unused scrap/ directory (contained only empty .gitkeep)
+- Note: Local commits rebased on top of 5 remote commits (891d972..11cb757)
+
+**packages/mx-gathering:**
+- Pointer update to latest commit
+
 ### Added - 2026-01-28
 
 #### Repository Restructure: New Submodule Architecture
