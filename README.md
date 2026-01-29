@@ -8,7 +8,7 @@ A practical guide to the collision between modern web design and AI agents, with
 
 ## What Are AI Agents?
 
-AI agents are **machines** with specific technical capabilities and limitations that process websites on behalf of users. They're not intelligent - they're statistical pattern-matching systems that convert HTML into mathematical representations.
+AI agents are **machines** with specific technical capabilities and limitations that process websites on behalf of users. They're not intelligent - they're statistical pattern-matching systems that convert HTML and  text and images into mathematical representations.
 
 **Four types of agents:**
 

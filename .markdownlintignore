@@ -1,0 +1,29 @@
+# .markdownlintignore
+# Files to exclude from markdown linting
+
+# MX metadata files (plain text configuration, not markdown)
+.mxignore
+.mx.yaml
+**/.mx.yaml
+
+# Standard exclusions
+CHANGELOG.md
+node_modules/
+packages/web-audit-suite/node_modules/
+
+# Submodule directories
+packages/bible/
+packages/dont-make-ai-think/
+packages/mx-handbook/
+packages/shared-appendices/
+packages/shared-code-examples/
+
+# Infrastructure directories
+.claude/
+.github/
+docs/repo/
+config/
+books/
+blogs/
+outputs/
+scrap/

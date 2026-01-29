@@ -1,9 +1,53 @@
+# .gitignore
+# Git Version Control Exclusion File
+#
+# ---
+# mx:
+#   purpose: "Exclude generated files, dependencies, environment-specific content, and build artifacts from version control"
+#   audience: both
+#   stability: stable
+#   version: "2.0.0"
+#   last_updated: "2026-01-29"
+#   ai:
+#     context_provides:
+#       - version-control-exclusions
+#       - build-artifacts
+#       - environment-config
+#       - cache-patterns
+#       - temporary-files
+#     editable: true
+#     assistance: welcome
+#   related_files:
+#     - .mxignore
+#   see_also: ".mxignore defines patterns for AI agent analysis exclusions (infrastructure files)"
+# ---
+#
+# This file defines patterns for files that should NOT be tracked by Git.
+# For AI agent analysis exclusions, see .mxignore (filters infrastructure files).
+#
+# Pattern syntax:
+#   - Lines starting with # are comments
+#   - Blank lines are ignored
+#   - * matches anything except /
+#   - ** matches zero or more directories
+#   - ? matches any single character
+#   - [abc] matches any character in brackets
+#   - ! negates a pattern (includes files that would otherwise be ignored)
+#
+# ============================================================================
+
 # Dependencies
 node_modules/
+package-lock.json.backup
 
 # OS files
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
 Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
 # Editor files
 # VS Code workspace settings - commit recommended config, ignore personal settings
@@ -12,40 +56,71 @@ Thumbs.db
 !.vscode/extensions.json
 !.vscode/tasks.json
 !.vscode/launch.json
+*.code-workspace
 .idea/
+.fleet/
 *.swp
+*.swo
 *~
+*.sublime-project
+*.sublime-workspace
 
 # Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Build outputs
+# Cache directories
+.cache/
+.npm/
+.eslintcache
+*.cache
+.parcel-cache/
+
+# Test coverage and output
+coverage/
+.nyc_output/
+test-results/
+*.lcov
+
+# Build artifacts
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+
+# Build outputs (legacy/generated files)
 *.zip
+*.tar.gz
+*.tgz
 
 # Environment
 .env
 .env.local
+.env.*.local
 
-# Symlinks for AI tools
-.agents/
-GEMINI.md
-AGENTS.md
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~.backup
+*.orig
 
-# Symlinks created by init script (npm run init)
-# Note: books/ contains tracked symlinks (committed before this ignore pattern).
-#       The gitignore prevents accidental additions of new files to books/ directory
-#       while preserving the existing convenience symlinks (books/bible, etc.)
-#       Purpose: Reduces cognitive load - access books/bible instead of packages/bible/
-books/
-blogs
+# Working directories
+scratch/
+working/
+temp/
+tmp/
 
 # Generated book files
-the-bible/
-dont/
-
 *.png
 
 # Generated appendix HTML build templates (temporary)
 scripts/appendix-nav-footer.html
 scripts/appendix-index-template.md
 
+# ============================================================================
+# End of .gitignore
+# ============================================================================

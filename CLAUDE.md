@@ -871,22 +871,93 @@ When markdown files are printed to PDF, downloaded, fed to AI agents, or otherwi
 
 **🎯 REFERENCE IMPLEMENTATION:** This repository implements the MX Code Metadata Specification - a comprehensive framework for making codebases maximally understandable to AI agents.
 
-**Specification Document:** `/Users/tomcranstoun/Downloads/mx-complete-collection/mx-code-metadata-spec.md`
+**Specification Document:** [packages/mx-gathering/specifications/mx-code-metadata-spec.md](packages/mx-gathering/specifications/mx-code-metadata-spec.md)
+
+**All MX Specifications:** Complete collection of 21 specification documents in [packages/mx-gathering/specifications/](packages/mx-gathering/specifications/) including:
+
+- Core specifications: base, code-metadata, content-fragment, data-lake, database-metadata, media-metadata, structured-data
+- MX Specifications Book: 10 chapters + 3 appendices
+- Announcement: structured-data-spec-announcement
 
 ### Overview
 
 The MX Code Metadata Specification defines how code repositories, files, and inline code declare metadata for machine processors. This enables AI agents to understand code context, constraints, and intent without parsing implementation details.
 
+### Filename Specification
+
+**MANDATORY FILENAME: `.mx.yaml`**
+
+MX Code Metadata configuration files MUST be named `.mx.yaml` (with dot prefix), not `mx.yaml`. This follows the "design for both" principle - a core tenet of machine experience design:
+
+- **For humans:** Dot-prefix hides configuration files from default directory listings, decluttering the workspace
+- **For machines:** Files remain fully discoverable and machine-readable through standard filesystem APIs
+- **Consistency:** Aligns with established conventions (.gitignore, .env, .editorconfig, etc.)
+
+The hidden file pattern respects human cognitive load while maintaining complete machine accessibility.
+
+### AI Exclusion Patterns (.mxignore)
+
+**BEST PRACTICE: `.mxignore` File**
+
+The `.mxignore` file instructs AI agents (Claude, Copilot, Cursor, etc.) which files to ignore unless explicitly requested by the user. This prevents AI assistants from wasting context on infrastructure files, reducing noise and improving focus on actual project content.
+
+**Purpose:**
+
+- Filter out infrastructure files (READMEs, configuration, build artifacts)
+- Exclude documentation boilerplate (LICENSE, CHANGELOG, CONTRIBUTING)
+- Remove IDE and tooling files (.vscode/, .github/, node_modules/)
+- Focus AI agent attention on primary project content
+
+**Pattern Syntax:**
+
+Uses gitignore-style patterns:
+
+```text
+README.md              # Exact filename
+**/README.md          # Recursive match in any directory
+*.png                 # Wildcard extension
+node_modules/         # Directory exclusion
+!.env.example         # Negation (include this file)
+```
+
+**Inheritance Model:**
+
+The `.mxignore` file should inherit from `.gitignore` using the `@mx:inherits` attribute. Files excluded from version control should typically also be ignored by AI agents.
+
+**Example .mxignore Header:**
+
+```text
+# .mxignore
+# MX AI Instruction File
+#
+# @mx:purpose: Instruct AI agents to ignore these files unless specifically requested by user
+# @mx:audience: ai-agents
+# @mx:stability: stable
+# @mx:inherits: .gitignore
+# @mx:ai.context_provides: ["ai-exclusion-patterns", "infrastructure-patterns", "non-content-files"]
+# @mx:related_files: [".gitignore"]
+# @mx:see_also: ".gitignore defines patterns for version control exclusions (generated files)"
+# @mx:version: 1.0.0
+# @mx:last-updated: 2026-01-29
+```
+
+**Complementary Roles:**
+
+- **`.gitignore`**: Excludes generated files, dependencies, and sensitive data from version control
+- **`.mxignore`**: Excludes infrastructure and boilerplate from AI agent analysis
+
+**Implementation Note:** AI agents should respect `.mxignore` patterns by default but allow explicit user overrides (e.g., "read the README file" or "show me the .github/workflows").
+
 ### Implementation Layers
 
-**1. Repository-Level Metadata (`/mx.yaml`):**
+**1. Repository-Level Metadata (`/.mx.yaml`):**
 
 - Project context, constraints, and conventions
 - AI assistance preferences and training conditions
 - Technology stack and dependencies
 - Inheritable properties for directory and file levels
 
-**2. Directory-Level Metadata (`packages/*/mx.yaml`):**
+**2. Directory-Level Metadata (`packages/*/.mx.yaml`):**
 
 - Package-specific context and purpose
 - Override repository defaults
@@ -914,14 +985,106 @@ The MX Code Metadata Specification defines how code repositories, files, and inl
 - Intentional workarounds
 - AI-specific instructions
 
+### Cross-File Metadata Application
+
+**Problem:** Some files or directories cannot have sidecar `.mx.yaml` files due to structural constraints:
+
+- **`node_modules/`**: Third-party dependencies (cannot modify)
+- **`.git/`**: Version control internals (should not modify)
+- **Generated directories**: Build artifacts like `dist/`, `build/`
+- **Binary files**: Images, fonts, compiled assets
+
+#### Solution: `@mx:applies_to` Attribute
+
+Files that CAN contain MX metadata (like `package.json`, `.mx.yaml`, or source files with comments) can declare that their metadata applies to other paths using the `@mx:applies_to` attribute.
+
+#### Syntax
+
+```yaml
+# In .mx.yaml file
+mx:
+  applies_to:
+    - "node_modules/"
+    - "dist/"
+    - ".git/"
+```
+
+```javascript
+// In package.json
+{
+  "mx": {
+    "applies_to": ["node_modules/"],
+    "purpose": "Third-party dependencies installed via npm",
+    "ai.editable": false,
+    "ai.context_provides": ["dependencies", "package-versions"]
+  }
+}
+```
+
+```javascript
+// In source file comments
+/**
+ * @mx:applies_to ["./generated/", "./dist/"]
+ * @mx:purpose: Build output generated from this source file
+ * @mx:ai.editable: false
+ */
+```
+
+#### Common Use Cases
+
+1. **package.json → node_modules/**: Declare that dependency metadata applies to the entire dependencies directory
+2. **build config → output dirs**: Webpack/Vite config declares metadata for `dist/` or `build/`
+3. **.gitignore → ignored paths**: Declare why certain paths are ignored and how AI should treat them
+4. **Source file → generated files**: Declare relationship between source and build artifacts
+
+#### Inheritance Rules
+
+- `@mx:applies_to` creates a metadata overlay for the target paths
+- Target paths inherit metadata from the declaring file
+- More specific metadata (closer to target) overrides less specific
+- Local `.mx.yaml` files take precedence over remote `applies_to` declarations
+
+#### Example: package.json with Cross-File Metadata
+
+```json
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "mx": {
+    "applies_to": [
+      "node_modules/",
+      "package-lock.json"
+    ],
+    "purpose": "Dependency management for project",
+    "ai.editable": false,
+    "ai.assistance": "prohibited",
+    "ai.context_provides": [
+      "dependencies",
+      "package-versions",
+      "scripts"
+    ],
+    "stability": "stable"
+  }
+}
+```
+
+#### Discovery Pattern
+
+When AI agents encounter a file/directory without a sidecar `.mx.yaml`, they should:
+
+1. Check for local `.mx.yaml` first (highest priority)
+2. Search parent directories for `.mx.yaml` with matching `applies_to` patterns
+3. Search sibling files (like `package.json`) for `applies_to` declarations
+4. Fall back to inherited metadata from parent directory
+
 ### Key Files
 
 **Repository Configuration:**
 
 ```text
-/mx.yaml                                  # Root project metadata
-/packages/web-audit-suite/mx.yaml        # Audit suite context
-/scripts/mx.yaml                         # Build tools metadata
+/.mx.yaml                                 # Root project metadata
+/packages/web-audit-suite/.mx.yaml       # Audit suite context
+/scripts/.mx.yaml                        # Build tools metadata
 /package.json (mx property)              # Dependency metadata
 ```
 
@@ -965,8 +1128,8 @@ The MX Code Metadata Specification defines how code repositories, files, and inl
 Metadata flows downward through the hierarchy:
 
 ```text
-/mx.yaml (repository)
-  → packages/web-audit-suite/mx.yaml (directory)
+/.mx.yaml (repository)
+  → packages/web-audit-suite/.mx.yaml (directory)
     → src/collectors/llmCollector.js (file)
       → collect() method (function)
 ```

@@ -1,0 +1,411 @@
+# .mxignore
+# MX AI Instruction File
+#
+# @mx:purpose: Instruct AI agents to ignore these files unless specifically requested by user
+# @mx:audience: ai-agents
+# @mx:stability: stable
+# @mx:inherits: .gitignore
+# @mx:also_in: [".markdownlintignore"]
+# @mx:applies_when: ["ai-analysis", "markdown-linting"]
+# @mx:ai.context_provides: ["ai-exclusion-patterns", "infrastructure-patterns", "non-content-files"]
+# @mx:related_files: [".gitignore", ".markdownlintignore"]
+# @mx:see_also: ".gitignore defines patterns for version control exclusions (generated files); .markdownlintignore uses these patterns for lint exclusions"
+# @mx:version: 1.0.0
+# @mx:last-updated: 2026-01-29
+#
+# This file instructs AI agents (Claude, Copilot, etc.) to NOT read, analyze, or reference
+# files matching these patterns unless the user explicitly requests them.
+# These are typically infrastructure, configuration, and documentation files that don't
+# contain primary project content.
+#
+# For version control exclusions, see .gitignore (filters generated files from Git).
+#
+# Pattern syntax:
+#   - Lines starting with # are comments
+#   - Blank lines are ignored
+#   - * matches anything except /
+#   - ** matches zero or more directories
+#   - ? matches any single character
+#   - [] matches any character in brackets
+#   - ! negates a pattern
+
+# ============================================================================
+
+# Documentation Files
+
+# Standard documentation files that appear in every directory/submodule
+
+# ============================================================================
+
+README.md
+**/README.md
+
+# ============================================================================
+
+# AI Discovery Files
+
+# llms.txt files for AI agent discovery (expected in multiple locations)
+
+# ============================================================================
+
+llms.txt
+**/llms.txt
+
+# ============================================================================
+
+# Configuration Files
+
+# Standard configuration files for build tools and package management
+
+# ============================================================================
+
+package.json
+package-lock.json
+**/package.json
+**/package-lock.json
+
+# MX metadata configuration (hidden files)
+
+.mx.yaml
+**/.mx.yaml
+
+# Markdown linting configuration
+
+.markdownlint.json
+**/.markdownlint.json
+.markdownlintignore
+**/.markdownlintignore
+
+# ============================================================================
+
+# Learning & Battle-tested Documentation
+
+# Project-specific learning files that may exist in multiple locations
+
+# ============================================================================
+
+LEARNINGS.md
+**/LEARNINGS.md
+
+# ============================================================================
+
+# Git Infrastructure
+
+# Version control system files
+
+# ============================================================================
+
+.gitignore
+.gitkeep
+.gitattributes
+.githooks/
+.github/
+**/.gitignore
+**/.gitkeep
+**/.gitattributes
+**/.githooks/
+**/.github/
+
+# ============================================================================
+
+# Claude Code Infrastructure
+
+# AI assistant configuration and guidance files
+
+# ============================================================================
+
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+**/CLAUDE.md
+**/AGENTS.md
+**/GEMINI.md
+
+# Claude Code directories
+
+.claude/
+**/.claude/
+
+# Claude Code hooks
+
+**/.claude/hooks/
+**/.claude/commands/
+**/.claude/skills/
+**/.claude/settings.local.json
+**/.claude/prompt-master/
+
+# ============================================================================
+
+# Node.js & Build Artifacts
+
+# Generated files and dependencies
+
+# ============================================================================
+
+# Build output directories
+
+dist/
+build/
+.cache/
+**/dist/
+**/build/
+**/.cache/
+
+# ============================================================================
+
+# Temporary & Scratch Files
+
+# Working directories for temporary content
+
+# ============================================================================
+
+scrap/
+**/scrap/
+.tmp/
+**/.tmp/
+
+# ============================================================================
+
+# IDE & Editor Files
+
+# Editor-specific configuration
+
+# ============================================================================
+
+.phcode.json
+**/.phcode.json
+
+# Cursor AI editor
+
+.cursorignore
+**/.cursorignore
+
+# ============================================================================
+
+# Test & Coverage Files
+
+# Testing infrastructure and output
+
+# ============================================================================
+
+coverage/
+.nyc_output/
+**/coverage/
+**/.nyc_output/
+
+# ============================================================================
+
+# Documentation Metadata
+
+# YAML frontmatter and metadata files for documentation
+
+# ============================================================================
+
+**/metadata.yaml
+**/metadata-kindle.yaml
+
+# ============================================================================
+
+# License & Legal Files
+
+# Standard legal files
+
+# ============================================================================
+
+LICENSE
+LICENSE.md
+**/LICENSE
+**/LICENSE.md
+
+# ============================================================================
+
+# Changelog & History
+
+# Version history and changelog files
+
+# ============================================================================
+
+CHANGELOG.md
+**/CHANGELOG.md
+
+# ============================================================================
+
+# Contributing Guidelines
+
+# Contribution documentation
+
+# ============================================================================
+
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+**/CONTRIBUTING.md
+**/CODE_OF_CONDUCT.md
+
+# ============================================================================
+
+# Security & Governance
+
+# Security policies and governance documentation
+
+# ============================================================================
+
+SECURITY.md
+GOVERNANCE.md
+MAINTAINERS.md
+**/SECURITY.md
+**/GOVERNANCE.md
+**/MAINTAINERS.md
+
+# ============================================================================
+
+# Docker & Container Files
+
+# Container configuration
+
+# ============================================================================
+
+Dockerfile
+.dockerignore
+docker-compose.yml
+**/Dockerfile
+**/.dockerignore
+**/docker-compose.yml
+
+# ============================================================================
+
+# Environment Files
+
+# Environment configuration (covered by .gitignore)
+
+# ============================================================================
+
+# Additional environment file patterns beyond .gitignore
+.env.*
+**/.env.*
+
+# ============================================================================
+
+# CI/CD Configuration
+
+# Continuous integration and deployment configuration
+
+# ============================================================================
+
+.github/workflows/
+**/.github/workflows/
+
+# ============================================================================
+
+# Linting & Code Quality
+
+# Code quality tool configuration
+
+# ============================================================================
+
+.eslintrc.*
+.prettierrc
+.prettierignore
+.stylelintrc.json
+biome.json
+**/.eslintrc.*
+**/.prettierrc
+**/.prettierignore
+**/.stylelintrc.json
+**/biome.json
+
+# ============================================================================
+
+# Spell Checking
+
+# Spell checker configuration
+
+# ============================================================================
+
+.cspell/
+.cspell.json
+**/.cspell/
+**/.cspell.json
+
+# ============================================================================
+
+# Pre-commit Hooks
+
+# Pre-commit framework configuration
+
+# ============================================================================
+
+.pre-commit-config.yaml
+**/.pre-commit-config.yaml
+
+# ============================================================================
+
+# Python Virtual Environments & Dependencies
+
+# Python project files (for UCP submodule)
+
+# ============================================================================
+
+venv/
+.venv/
+__pycache__/
+*.pyc
+pyproject.toml
+uv.lock
+**/venv/
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/pyproject.toml
+**/uv.lock
+
+# ============================================================================
+
+# Zettelkasten Notes
+
+# Personal note-taking system files
+
+# ============================================================================
+
+.zettel-notes/
+**/.zettel-notes/
+
+# ============================================================================
+
+# MkDocs Documentation
+
+# Documentation site generator configuration
+
+# ============================================================================
+
+mkdocs.yml
+**/mkdocs.yml
+
+# ============================================================================
+
+# GitHub Issue Templates
+
+# Issue and PR templates
+
+# ============================================================================
+
+.github/ISSUE_TEMPLATE/
+.github/pull_request_template.md
+**/.github/ISSUE_TEMPLATE/
+**/.github/pull_request_template.md
+
+# ============================================================================
+
+# Development Notes Repository
+
+# Personal development notes and coding standards
+
+# ============================================================================
+
+packages/notes/
+**/packages/notes/
+
+# ============================================================================
+
+# End of .mxignore
+
+# ============================================================================

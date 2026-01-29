@@ -4,8 +4,7 @@
 
 **Books in the series:**
 
-- **MX-Bible** (formerly "The Invisible Users") - Full comprehensive guide
-- **MX-Don't Make the AI Think** - Practical quick guide
+- **MX-The-Bible** (formerly "The Invisible Users") - Full comprehensive guide
 - **MX-Handbook** - Implementation handbook
 
 **Primary Audience:**
