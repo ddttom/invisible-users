@@ -75,7 +75,7 @@ graph TB
   - `settings.local.json` - Permissions and configuration
 - `config/` - Project-wide configuration
   - `.markdownlint.json` - Markdown linting rules
-  - `book-svg-style.md` - SVG illustration style guide
+  - `book/book-svg-style.md` - SVG illustration style guide
 - `scripts/` - Build and generation scripts
   - `generate-appendix-html.sh` - Appendix HTML generation
   - `enhance-appendix-html.js` - HTML post-processing

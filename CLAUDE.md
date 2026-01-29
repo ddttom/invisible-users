@@ -347,7 +347,7 @@ Comprehensive Node.js website analysis tool (`packages/web-audit-suite/`) implem
 - **Configuration & Documentation:**
   - `CLAUDE.md` - This file (single source of truth for AI assistants)
   - `.claude/` - Claude Code configuration (skills, hooks, settings)
-  - `config/` - Project configuration (.markdownlint.json, book-svg-style.md, system/)
+  - `config/` - Project configuration (.markdownlint.json, book/, system/)
   - `docs/` - Documentation (architecture/, for-ai/, shared-chapters/, structure/, talks/)
 
 - **Content & Tools:**
@@ -1255,7 +1255,7 @@ mv old-filename.md new-filename.md  # Git sees this as delete + add (loses histo
 
 **Key reference files:**
 
-- `config/book-svg-style.md` - SVG illustration style guide
+- `config/book/book-svg-style.md` - SVG illustration style guide
 - `docs/for-ai/writing-style.md` - Complete writing style guide
 
 **Strategic planning documents:**

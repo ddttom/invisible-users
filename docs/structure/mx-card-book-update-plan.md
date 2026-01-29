@@ -244,7 +244,7 @@ Follow existing book SVG style:
 - Clean, minimal design
 - Consistent colour palette
 - Accessible contrast ratios
-- See `config/book-svg-style.md`
+- See `config/book/book-svg-style.md`
 
 ---
 
