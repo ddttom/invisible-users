@@ -100,13 +100,13 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has TEN git repositories (1 main hub + 9 submodules). File paths depend on your location.**
+**This workspace has ELEVEN git repositories (1 main hub + 10 submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 9):**
+- **Submodules (ASSETS, currently 10):**
   - **MX-Bible:** `packages/mx-the-bible/` → `invisible-users-manuscript` - Full comprehensive guide (formerly "The Invisible Users")
   - **MX-Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Implementation handbook for developers and designers
   - **MX-Gathering:** `packages/mx-gathering/` → `MX-Gathering` - Community resources, event templates, discussion archives, and thought leadership (PUBLIC, EDITABLE)
@@ -117,6 +117,7 @@ pwd
   - **Outputs (PRIVATE):** `packages/mx-outputs/` → `invisible-users-outputs` - All generated content
   - **UCP (External Reference):** `packages/external/ucp/` → `Universal-Commerce-Protocol/ucp` - Universal Commerce Protocol standard
   - **Business Planning:** `packages/business/mx-business/` → `MX-business-planning` - Private business strategy and planning
+  - **Sales Enablement:** `packages/business/mx-sales-enablement/` → `MX-Sales-enablement` - Sales and marketing resources (PRIVATE)
   - **Development Notes:** `packages/notes/` → `Notes` - Coding standards and development practices
   - Role: Version-controlled content (NO `.claude/`, NO CLAUDE.md except in MX-Gathering and Notes)
 
@@ -124,7 +125,7 @@ pwd
 
 **CRITICAL:** Always run `pwd` before file operations.
 
-**📁 For complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) - Single source of truth for repository structure across main repo and all 9 submodules.
+**📁 For complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) - Single source of truth for repository structure across main repo and all 10 submodules.
 
 **Hub Repository Quick Reference:**
 
@@ -132,7 +133,7 @@ pwd
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md`, documentation, scripts
   - Role: Configuration hub, git workflow management, build tools
 
-- **9 Submodules under packages/:**
+- **10 Submodules under packages/:**
   - `mx-the-bible/` - MX-Bible manuscript (13 chapters)
   - `mx-handbook/` - MX-Handbook (11 chapters)
   - `mx-gathering/` - Community resources (PUBLIC, EDITABLE)
@@ -141,6 +142,7 @@ pwd
   - `mx-outputs/` - Generated content (PRIVATE)
   - `external/ucp/` - Universal Commerce Protocol reference
   - `business/mx-business/` - Business planning (PRIVATE)
+  - `business/mx-sales-enablement/` - Sales enablement resources (PRIVATE)
   - `notes/` - Development practices
 
 **Quick Navigation Paths:**
@@ -408,7 +410,7 @@ npx html-validate <generated-html-file>
 
 All blog posts follow a state-tracked workflow with mandatory metadata:
 
-1. **Draft Stage** - Create markdown in `docs/structure/` or `docs/structure/blog-drafts/`
+1. **Draft Stage** - Create markdown in `docs/structure/` or `ingest/blog-drafts/`
    - Add YAML frontmatter with `blog-state: "draft"`
    - Required fields: title, author, date, blog-filename, blog-url, publication-date, description, keywords, ai-instruction
 

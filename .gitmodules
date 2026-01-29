@@ -25,3 +25,6 @@
 [submodule "packages/notes"]
 	path = packages/notes
 	url = https://github.com/ddttom/Notes.git
+[submodule "packages/business/mx-sales-enablement"]
+	path = packages/business/mx-sales-enablement
+	url = https://github.com/ddttom/MX-Sales-enablement.git
