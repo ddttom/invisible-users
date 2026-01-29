@@ -64,7 +64,8 @@ invisible-users/  (Main Repository - Hub)
 │   ├── book/                         ← Book-specific configuration
 │   │   └── book-svg-style.md         ← SVG illustration style guide
 │   └── system/                       ← System documentation
-│       └── folder-layout.md          ← This file
+│       ├── folder-layout.md          ← This file
+│       └── repo-philosophy.md        ← Design principles and technical philosophy
 ├── docs/                             ← Documentation
 │   ├── architecture/                 ← Architecture documentation
 │   │   ├── GIT-README.md             ← Comprehensive git workflow guidance
