@@ -39,6 +39,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 9 files: README.md, ceo.md, cms-agencies.md, cms-vendors.md, conference-organisers.md, designers.md, developers.md, platform-creators.md, product-owners.md
 - No reference updates needed (no files referenced old path)
 
+### Changed - 2026-01-29
+
+#### Documentation Updates (commit 9888a43)
+
+**Updated folder-layout.md with current structure:**
+- Removed blog-drafts/ from docs/structure/ listing
+- Added new ingest/ directory section documenting three subdirectories:
+  - blog-drafts/ (content drafts and ideas)
+  - mx-the-idea/ (MX concept exploration documents)
+  - use-cases/ (audience-specific use case documentation)
+- Added mx-sales-enablement/ submodule to business/ directory listing
+- Added detailed Submodule 10 section for mx-sales-enablement
+- Updated repository count: 9 → 10 submodules (total 11 repositories)
+- Brings folder-layout.md in sync with actual repository structure
+
 #### MX Metadata Standardization
 
 **AI Exclusion Patterns**
