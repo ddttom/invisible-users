@@ -29,6 +29,47 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed - 2026-01-29
 
+#### Repository Structure Refactoring (commit d674b5c)
+
+**Centralized Folder Structure Documentation:**
+
+- Established config/system/folder-layout.md as single source of truth for complete repository structure
+- All documentation now references centralized structure instead of duplicating folder trees
+- Removed 178 lines from CLAUDE.md, 280 lines from doc-architecture.md
+
+**Moved vocabulary.md to config/book/:**
+
+- Relocated docs/structure/vocabulary.md → config/book/vocabulary.md using git mv (preserved history)
+- Groups with other book-specific configuration (book-svg-style.md)
+- Updated all references:
+  - CLAUDE.md line 269
+  - config/system/folder-layout.md (added to config/book/ section, removed from docs/structure/)
+  - docs/structure/blog-drafts/vocabulary-driven-collaboration.md (3 references)
+
+**Updated llms.txt (AI Discovery File):**
+
+- Fixed repository count: 11 → 10 (1 main + 9 submodules)
+- Updated all outdated paths to current naming convention:
+  - bible/ → packages/mx-the-bible/
+  - shared-appendices/ → packages/mx-appendices/
+  - shared-code-examples/ → packages/mx-code-examples/
+  - outputs/ → packages/mx-outputs/
+  - ucp/ → packages/external/ucp/
+- Removed references to deleted symlinks (books/, blogs/, AGENTS.md, GEMINI.md)
+- Added reference to config/system/folder-layout.md as authoritative source
+- Updated doc-architecture.md description (now mentions ASCII diagrams, not Mermaid)
+- Fixed appendix count: A-L → A-M (12 appendices)
+- Updated all chapter paths to correct submodule locations
+- Updated last-updated: 29/Jan/2026
+
+**Updated Path References Across Documentation:**
+
+- docs/for-ai/writing-style.md: Updated Glossary path to packages/mx-the-bible/Glossary.md
+- .claude/skills/create-blog/skill.md: Updated template paths (mx-appendices, mx-outputs)
+- config/book/vocabulary.md: Updated internal path mappings for all shorthand terms
+
+**Result:** All documentation uses current repository paths and references the centralized folder structure documentation as the single source of truth.
+
 #### MX Configuration File Standardization
 
 Renamed all `mx.yaml` files to `.mx.yaml` (dot prefix) for consistency with established conventions:
