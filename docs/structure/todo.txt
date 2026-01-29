@@ -264,7 +264,7 @@ Key priorities:
 
 ### Main Repository
 
-**docs/claude/** (NEW - AI Assistant Deep Dives)
+**ingest/** (NEW - AI Assistant Deep Dives)
 - ai-dynamic-challenges.md
 - ai-dynamic-examples-and-implementation.md
 - machine-experience-manifesto.md

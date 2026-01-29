@@ -94,7 +94,7 @@ Establish that human-centred IA principles don't automatically translate to mach
 
 - Chapter 0: "Don't Make the AI Think" concept
 - docs/structure/steve-krug.md: Detailed analysis of Krug's principles for AI
-- docs/claude/machine-experience-manifesto.md: Principle 6 (semantic markup structures information)
+- ingest/machine-experience-manifesto.md: Principle 6 (semantic markup structures information)
 
 ##### Examples needed
 
@@ -137,7 +137,7 @@ Introduce a framework for thinking about IA at different scales.
 
 ##### Cross-references
 
-- docs/claude/machine-experience-manifesto.md: Principles 6, 10, 13
+- ingest/machine-experience-manifesto.md: Principles 6, 10, 13
 - docs/for-ai/new-project/planned.md: Section 1.1 (Discovery) and 2.1 (Structure)
 - Chapter 10: Schema.org patterns extend content-level architecture
 
@@ -183,7 +183,7 @@ Introduce a framework for thinking about IA at different scales.
 
 ##### Cross-references
 
-- docs/claude/why-llms-dont-execute-javascript.md: Common Crawl discovery sections
+- ingest/why-llms-dont-execute-javascript.md: Common Crawl discovery sections
 - Chapter 10: llms.txt implementation patterns
 - Appendix H: Example llms.txt files
 
@@ -246,7 +246,7 @@ Introduce a framework for thinking about IA at different scales.
 ##### Cross-references
 
 - Chapter 3: Semantic HTML foundations
-- docs/claude/machine-experience-manifesto.md: Principle 6 (semantic markup)
+- ingest/machine-experience-manifesto.md: Principle 6 (semantic markup)
 - docs/structure/steve-krug.md: Chapter 6 analysis (Street Signs and Breadcrumbs)
 
 ##### Code samples needed
@@ -425,7 +425,7 @@ Introduce a framework for thinking about IA at different scales.
 ##### Cross-references
 
 - Chapter 10: Schema.org patterns in depth
-- docs/claude/machine-experience-manifesto.md: Principles 7, 8
+- ingest/machine-experience-manifesto.md: Principles 7, 8
 - Appendix L: Proposed AI Metadata Patterns
 - docs/for-ai/writing-style.md: YAML frontmatter templates
 
@@ -1002,9 +1002,9 @@ After remediation, validate:
 | docs/shared-chapters/chapter-00-what-are-ai-agents.md | Foundation concepts, 5-stage journey |
 | docs/for-ai/writing-style.md | Writing standards, forbidden vocabulary |
 | config/system/doc-architecture.md | Repository structure, chapter organisation |
-| docs/claude/machine-experience-manifesto.md | Core MX principles, semantic patterns |
+| ingest/machine-experience-manifesto.md | Core MX principles, semantic patterns |
 | docs/structure/steve-krug.md | IA analysis, navigation patterns, usability |
-| docs/claude/why-llms-dont-execute-javascript.md | Discovery, Common Crawl, llms.txt |
+| ingest/why-llms-dont-execute-javascript.md | Discovery, Common Crawl, llms.txt |
 | docs/for-ai/new-project/planned.md | Checklist patterns, structure requirements |
 | CLAUDE.md | Project overview, cross-references, terminology |
 

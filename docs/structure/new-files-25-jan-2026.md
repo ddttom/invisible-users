@@ -13,18 +13,20 @@ This document highlights the significant new files and directories added to the 
 
 ## Main Repository - New Directories
 
-### docs/claude/ (NEW - AI Assistant Deep Dives)
+### ingest/ (NEW - AI Assistant Deep Dives)
 
 Four new technical documents providing deep analysis of AI agent constraints and MX principles:
 
-- **[ai-dynamic-challenges.md](../claude/ai-dynamic-challenges.md)** - Challenges AI agents face with dynamic content
-- **[ai-dynamic-examples-and-implementation.md](../claude/ai-dynamic-examples-and-implementation.md)** - Practical implementation examples
-- **[machine-experience-manifesto.md](../claude/machine-experience-manifesto.md)** - Core MX principles and philosophy
-- **[why-llms-dont-execute-javascript.md](../claude/why-llms-dont-execute-javascript.md)** - Technical constraints explanation
+- **[ai-dynamic-challenges.md](../../ingest/ai-dynamic-challenges.md)** - Challenges AI agents face with dynamic content
+- **[ai-dynamic-examples-and-implementation.md](../../ingest/ai-dynamic-examples-and-implementation.md)** - Practical implementation examples
+- **[machine-experience-manifesto.md](../../ingest/machine-experience-manifesto.md)** - Core MX principles and philosophy
+- **[why-llms-dont-execute-javascript.md](../../ingest/why-llms-dont-execute-javascript.md)** - Technical constraints explanation
 
 **Purpose:** Technical reference material explaining why AI agents need specific patterns.
 
 **Recommendation:** Review these for technical accuracy and alignment with book chapters.
+
+**Note:** Files moved to root-level ingest/ directory (January 2026).
 
 ---
 
@@ -142,7 +144,7 @@ New project template directory and additional AI guidance:
 
 ## Next Steps
 
-1. **Review new documentation** - Especially docs/claude/ for technical accuracy
+1. **Review new documentation** - Especially ingest/ for technical accuracy
 2. **Verify presentation materials** - Check Boye & Co content for confidentiality
 3. **Complete blog post review** - Address SVG fallback and publish machine-experience-adding-metadata.html
 4. **Audit accessibility** - Table captions and contrast ratios across generated HTML
