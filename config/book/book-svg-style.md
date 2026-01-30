@@ -1,10 +1,10 @@
 # SVG Illustration Requirements
 
-Each chapter requires one SVG illustration following these specifications.
+Each chapter requires a minimum of one SVG illustration following these specifications.
 
 **File location:**
 
-- All SVG files are stored in the `illustrations/` folder relative to each book
+- All SVG files are stored in the `illustrations/` folder relative to each book, names must not clash.
 - Naming convention: `chapter-XX-[descriptive-name].svg`
 
 **Technical specifications:**
