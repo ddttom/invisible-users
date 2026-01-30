@@ -33,7 +33,7 @@ mx:
 
 This document captures the "why" behind architectural decisions, establishing a foundation for consistent decision-making as the project evolves.
 
-**For Machine Experience (MX) principles and metadata standards, see [mx-principles-for-repos.md](../../docs/for-ai/mx-principles-for-repos.md).**
+**For Machine Experience (MX) principles and metadata standards, see [mx-principles-for-repos.md](../../docs/for-ai/mx-principles-for-repos.md) ("MX Principles for Repositories" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/mx-principles-for-repos.md>).**
 
 ## Core Principles
 
@@ -158,7 +158,7 @@ This document captures the "why" behind architectural decisions, establishing a 
 - `ai.context_provides` - What context this file provides
 - `related_files` - Cross-references
 
-**See:** [docs/for-ai/yaml-frontmatter-template.md](../../docs/for-ai/yaml-frontmatter-template.md) for complete specification.
+**See:** [docs/for-ai/yaml-frontmatter-template.md](../../docs/for-ai/yaml-frontmatter-template.md) ("YAML Frontmatter Template for Book Manuscripts" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/yaml-frontmatter-template.md>) for complete specification.
 
 ### Single Source of Truth
 
@@ -332,7 +332,7 @@ config/
 - Maintains referential integrity
 - Predictable behavior
 
-**See:** [config/system/GIT-README.md](../../config/system/GIT-README.md) for complete workflow.
+**See:** [config/system/GIT-README.md](../../config/system/GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) for complete workflow.
 
 ### Commit Message Standards
 
@@ -462,13 +462,13 @@ Add new sections to this file as architectural decisions solidify.
 
 ## Related Documentation
 
-- **MX Principles:** [mx-principles-for-repos.md](../../docs/for-ai/mx-principles-for-repos.md) - Machine Experience standards and metadata requirements
-- **Folder Structure:** [folder-layout.md](folder-layout.md) - Complete repository structure
-- **Architecture:** [docs/architecture/doc-architecture.md](doc-architecture.md) - Build systems and workflows
-- **AI Guidance:** [CLAUDE.md](../../CLAUDE.md) - Operational guidance for AI assistants
-- **Git Workflows:** [config/system/GIT-README.md](../../config/system/GIT-README.md) - Multi-repository git patterns
-- **Writing Style:** [docs/for-ai/writing-style.md](../../docs/for-ai/writing-style.md) - Content standards
-- **Lessons Learned:** [LEARNINGS.md](../../LEARNINGS.md) - Battle-tested rules from mistakes
+- **MX Principles:** [mx-principles-for-repos.md](../../docs/for-ai/mx-principles-for-repos.md) ("MX Principles for Repositories" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/mx-principles-for-repos.md>) - Machine Experience standards and metadata requirements
+- **Folder Structure:** [folder-layout.md](folder-layout.md) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) - Complete repository structure
+- **Architecture:** [doc-architecture.md](doc-architecture.md) ("Documentation Architecture & Build Systems" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>) - Build systems and workflows
+- **AI Guidance:** [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - Operational guidance for AI assistants
+- **Git Workflows:** [GIT-README.md](GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) - Multi-repository git patterns
+- **Writing Style:** [writing-style.md](../../docs/for-ai/writing-style.md) ("Writing Style Guide: MX Series" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>) - Content standards
+- **Lessons Learned:** [LEARNINGS.md](../../LEARNINGS.md) ("Learnings" at <https://github.com/ddttom/invisible-users/blob/main/LEARNINGS.md>) - Battle-tested rules from mistakes
 
 ## Maintenance
 
