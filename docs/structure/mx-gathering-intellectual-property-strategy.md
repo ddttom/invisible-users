@@ -47,8 +47,8 @@ recording, or otherwise) without the prior written permission of the copyright h
 
 **Copyrighted Content (All Rights Reserved):**
 
-- MX-Bible full book text (13 chapters)
-- MX-Handbook full book text (11 chapters)
+- MX-Bible full book text
+- MX-Handbook full book text
 - Shared appendices (A-L)
 - Extended case studies in subscription content
 - Certification examination questions
