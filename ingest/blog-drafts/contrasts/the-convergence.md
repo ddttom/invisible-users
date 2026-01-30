@@ -18,7 +18,7 @@ I've written six essays exploring how established design disciplines relate to M
 
 ### 1. Cognitive Science: Processing Under Constraints
 
-[**"Two Sides of the Same Cognitive Coin: What Mindhacker Can Teach Us About Machine Experience"**](mindhacker-and-mx.md)
+[**"Two Sides of the Same Cognitive Coin: What Mindhacker Can Teach Us About Machine Experience"**](mindhacker-and-mx.md) ("Mindhacker and MX" at <https://github.com/ddttom/invisible-users/blob/main/ingest/blog-drafts/contrasts/mindhacker-and-mx.md>)
 
 Ron and Marty Hale-Evans wrote "Mindhacker" to help humans optimise their cognitive performance. Their techniques address the limitations of human memory, attention, and processing: chunking information into manageable units, creating memorable patterns, using external memory aids, establishing consistent notation systems.
 
@@ -34,7 +34,7 @@ Mindhacker optimises for human cognitive architecture. Machine Experience optimi
 
 ### 2. Usability: Don't Make Anyone Think
 
-[**"Don't Make AI Think: How Steve Krug's Usability Principles Apply to Machine Experience"**](dont-make-me-think-and-mx.md)
+[**"Don't Make AI Think: How Steve Krug's Usability Principles Apply to Machine Experience"**](dont-make-me-think-and-mx.md) ("Don't Make Me Think and MX" at <https://github.com/ddttom/invisible-users/blob/main/ingest/blog-drafts/contrasts/dont-make-me-think-and-mx.md>)
 
 Steve Krug's "Don't Make Me Think" established that good design makes interfaces self-evident. Users shouldn't have to puzzle out how things work. Affordances should be obvious. Actions should be clear. Structure should be intuitive.
 
@@ -50,7 +50,7 @@ Krug's usability principles—clarity, consistency, conventional patterns—work
 
 ### 3. Structured Content: Built for Reuse
 
-[**"From Blobs to Bots: How Structured Content Predicted Machine Experience"**](structured-content-and-mx.md)
+[**"From Blobs to Bots: How Structured Content Predicted Machine Experience"**](structured-content-and-mx.md) ("Structured Content and MX" at <https://github.com/ddttom/invisible-users/blob/main/ingest/blog-drafts/contrasts/structured-content-and-mx.md>)
 
 Carrie Hane and Mike Atherton wrote "Designing Connected Content" to solve multi-channel publishing. Content needed to work on websites, mobile apps, email, social media, printed materials. The solution: stop creating content blobs (entire pages) and start creating content chunks (reusable components).
 
@@ -64,7 +64,7 @@ But structured content also enables something Hane and Atherton recognised early
 
 ### 4. Design Principles: Affordances for Algorithms
 
-[**"Affordances for Algorithms: Don Norman's Design Principles and Machine Experience"**](norman-and-mx.md)
+[**"Affordances for Algorithms: Don Norman's Design Principles and Machine Experience"**](norman-and-mx.md) ("Norman and MX" at <https://github.com/ddttom/invisible-users/blob/main/ingest/blog-drafts/contrasts/norman-and-mx.md>)
 
 Don Norman's "The Design of Everyday Things" introduced affordances, signifiers, mapping, feedback, and conceptual models as core design principles. A door handle affords pulling. A flat plate affords pushing. Good design makes these relationships self-evident.
 
@@ -84,7 +84,7 @@ The gulf of execution (can I do what I intend?) and gulf of evaluation (can I un
 
 ### 5. Accessibility: The Same Parsing Path
 
-[**"Accessibility Is Machine Readability"**](accessibility-is-machine-readability.md)
+[**"Accessibility Is Machine Readability"**](accessibility-is-machine-readability.md) ("Accessibility Is Machine Readability" at <https://github.com/ddttom/invisible-users/blob/main/ingest/blog-drafts/contrasts/accessibility-is-machine-readability.md>)
 
 The Web Content Accessibility Guidelines (WCAG) exist to ensure content works for people with disabilities. Screen readers for blind users. Keyboard navigation for motor-impaired users. Clear language for cognitive disabilities.
 
@@ -107,7 +107,7 @@ Screen reader users need semantic HTML. AI systems need semantic HTML. Screen re
 
 ### 6. Information Architecture: Findability for All
 
-[**"Finding the Findable: Information Architecture for Machine Navigation"**](ia-and-mx.md)
+[**"Finding the Findable: Information Architecture for Machine Navigation"**](ia-and-mx.md) ("Information Architecture and MX" at <https://github.com/ddttom/invisible-users/blob/main/ingest/blog-drafts/contrasts/ia-and-mx.md>)
 
 Lou Rosenfeld, Peter Morville, and Jorge Arango established Information Architecture as the discipline of organising content so people can find it. Their framework has four components: organisation systems, labelling systems, navigation systems, and search systems.
 
@@ -231,11 +231,11 @@ Read about [usability principles](dont-make-me-think-and-mx.md) and see how remo
 
 Read about [structured content](structured-content-and-mx.md) and see how multi-channel publishing predicted multi-processor consumption.
 
-Read about [design principles](norman-and-mx.md) and see how affordances work for algorithms.
+Read about [design principles](norman-and-mx.md) ("Norman and MX" at <https://github.com/ddttom/invisible-users/blob/main/ingest/blog-drafts/contrasts/norman-and-mx.md>) and see how affordances work for algorithms.
 
-Read about [accessibility](accessibility-is-machine-readability.md) and see how WCAG already requires machine readability.
+Read about [accessibility](accessibility-is-machine-readability.md) ("Accessibility Is Machine Readability" at <https://github.com/ddttom/invisible-users/blob/main/ingest/blog-drafts/contrasts/accessibility-is-machine-readability.md>) and see how WCAG already requires machine readability.
 
-Read about [information architecture](ia-and-mx.md) and see how human findability enables machine discoverability.
+Read about [information architecture](ia-and-mx.md) ("Information Architecture and MX" at <https://github.com/ddttom/invisible-users/blob/main/ingest/blog-drafts/contrasts/ia-and-mx.md>) and see how human findability enables machine discoverability.
 
 Then recognise: you already have the skills. You already know the practices. You already create content that serves both audiences.
 

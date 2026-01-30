@@ -103,16 +103,16 @@ This file - explains the contents of this audit folder.
 
 ### For Project Managers
 
-1. Read [SUMMARY.md](SUMMARY.md) for business context
+1. Read [SUMMARY.md](SUMMARY.md) ("Executive Summary" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/lpcprint-audit-2026-01-28/SUMMARY.md>) for business context
 2. Review recommended action plan and timelines
 3. Prioritize fixes based on business impact
 4. Allocate development resources
 
 ### For Developers
 
-1. Read [lpcprint-manual-audit-report.md](lpcprint-manual-audit-report.md) for technical details
+1. Read [lpcprint-manual-audit-report.md](lpcprint-manual-audit-report.md) ("Manual Audit Report" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/lpcprint-audit-2026-01-28/lpcprint-manual-audit-report.md>) for technical details
 2. Use code examples to implement fixes
-3. Track progress with [FINDINGS-CHECKLIST.md](FINDINGS-CHECKLIST.md)
+3. Track progress with [FINDINGS-CHECKLIST.md](FINDINGS-CHECKLIST.md) ("Findings Checklist" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/lpcprint-audit-2026-01-28/FINDINGS-CHECKLIST.md>)
 4. Run validation tests after each fix
 
 ### For Accessibility Specialists

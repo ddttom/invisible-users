@@ -44,7 +44,7 @@ Without a shared vocabulary, every conversation includes this translation layer.
 
 ## The Solution: Introspected Vocabulary
 
-We created [vocabulary.md](../../../config/system/repo-vocabulary.md) by **introspecting our conversation patterns**. I analyzed:
+We created [vocabulary.md](../../../config/system/repo-vocabulary.md) ("Repository Vocabulary and Shorthand Reference" at <https://github.com/ddttom/invisible-users/blob/main/config/system/repo-vocabulary.md>) by **introspecting our conversation patterns**. I analyzed:
 
 1. **Shorthand terms Tom uses repeatedly**
    - "bible" → `packages/bible/` submodule (MX-Bible)
@@ -354,9 +354,9 @@ That's the convergence principle at work: **better for machines, better for huma
 
 **Documentation in this project:**
 
-- [vocabulary.md](../../../config/system/repo-vocabulary.md) - The actual vocabulary reference
-- [CLAUDE.md](../../CLAUDE.md) - Main project instructions
-- [config/system/doc-architecture.md](../../../config/system/doc-architecture.md) - Documentation strategy
+- [vocabulary.md](../../../config/system/repo-vocabulary.md) ("Repository Vocabulary and Shorthand Reference" at <https://github.com/ddttom/invisible-users/blob/main/config/system/repo-vocabulary.md>) - The actual vocabulary reference
+- [CLAUDE.md](../../CLAUDE.md) ("Claude Code Instructions" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - Main project instructions
+- [config/system/doc-architecture.md](../../../config/system/doc-architecture.md) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>) - Documentation strategy
 
 **Related Patterns:**
 
