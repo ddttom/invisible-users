@@ -115,9 +115,6 @@ These links point to files that don't exist or have incorrect paths. They need m
 2. **Missing Files:**
    - docs/structure/MX-plan.md (referenced in README.md but doesn't exist)
    - docs/vscode-extension-cleanup.md (referenced in ONBOARDING.md)
-   - mx-card-system-patent-disclosure.md (referenced in multiple patent docs)
-   - mx-card-patent-plan.md (referenced in multiple patent docs)
-   - mx-card-nda-template.md (referenced in provisional application)
 
 3. **Incorrect Relative Paths:**
    - config/system/GIT-README.md → `../repo/LEARNINGS.md` (should be `../../LEARNINGS.md`)

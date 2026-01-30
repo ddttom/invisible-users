@@ -60,25 +60,6 @@ These reference files that should exist but don't. Requires decision: create the
 - **Recommendation:** Create if needed or fix path to existing architecture doc
 - **Priority:** LOW (handbook internal reference)
 
-#### Patent/Legal Files (Low Priority - Consider Removing)
-
-**mx-card-system-patent-disclosure.md** (3 links)
-- Referenced in: `mx-card-book-update-plan.md`, `mx-card-copyright-plan.md`, `mx-card-provisional-application.md`
-- **Recommendation:** Create if patent documentation is active, otherwise remove references
-- **Priority:** LOW (patent-related docs)
-
-**mx-card-patent-plan.md** (3 links)
-- Referenced in: Same files as above
-- **Recommendation:** Same as above
-- **Priority:** LOW
-
-**mx-card-nda-template.md** (1 link)
-- Referenced in: `mx-card-provisional-application.md`
-- **Recommendation:** Create if needed for patent process, otherwise remove
-- **Priority:** LOW
-
-**mx-card-patent-plan.md** (duplicate references tracked above)
-
 #### Web Audit Suite Documentation
 
 **IMPROVEMENT_PLAN.md** (2 links)
