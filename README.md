@@ -40,8 +40,8 @@ This repository contains multiple integrated projects working together to addres
 Two books with shared appendices and code examples:
 
 - **[MX-Bible](packages/mx-the-bible/)** - Full comprehensive guide. Formerly "The Invisible Users".
-- **[MX-Handbook](packages/mx-handbook/)** - Practical implementation guide (11 chapters)
-- **[Shared Appendices](packages/mx-appendices/)** - Implementation guides and resources (12 appendices A-M)
+- **[MX-Handbook](packages/mx-handbook/)** - Practical implementation guide
+- **[Shared Appendices](packages/mx-appendices/)** - Implementation guides and resources (Appendices A-M)
 
 See individual package READMEs for chapter lists, word counts, and build commands.
 
