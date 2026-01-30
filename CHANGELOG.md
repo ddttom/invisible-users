@@ -7,6 +7,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - 2026-01-30
+
+#### Broken Links Remediation - Session 3 (commits 18c13ba, e74bba9, 4fa3b4f, d862ae9, 69da6e4)
+
+**Fixed broken markdown links across repositories:**
+- Fixed paths in docs/structure/quick-start-card-examples.md (renamed directory reference)
+- Fixed path in docs/structure/project-roadmap-mx-patterns.md (GIT-README.md location)
+- Fixed paths in docs/structure/new-files-25-jan-2026.md (removed broken links)
+- Fixed paths in packages/mx-appendices/appendix-o-pattern-templates.md (structure/ → docs/structure/)
+- Fixed paths and removed cross-repo references in packages/mx-handbook/ (2 files)
+- Fixed paths and removed cross-repo references in packages/mx-gathering/ (4 files)
+
+**Patent documentation removal:**
+- Removed patent files moved to separate repository (4 files deleted)
+  - mx-card-copyright-plan.md
+  - mx-card-provisional-application.md
+  - mx-card-book-update-plan.md
+  - mx-card-safe-to-share.md
+- Updated broken-links-report.md to remove patent file references
+- Updated context-preserving-urls-progress.md to remove patent file references
+- Updated mx-gathering-intellectual-property-strategy.md with separation note
+
+**Context-preserving URLs applied:**
+- Added context-preserving URLs to batch-fixed broken links (10 files)
+- Main repository: CLAUDE.md, ONBOARDING.md, doc-architecture.md, review-docs skills
+- Web Audit Suite: PROJECTSTATE.md, RECONCILIATION-STATUS.md, CONFIGURATION.md, usermanual.md
+
+**Submodule commits:**
+- mx-appendices: da0d5a3 (fixed 3 broken paths)
+- mx-handbook: b2fdae4 (removed cross-repo refs, fixed paths)
+- mx-gathering: b1ce1eb (removed cross-repo refs)
+
+**Total impact:** 13 broken links fixed, 4 patent files removed, cross-repo references removed per repository-scoped principle
+
+**LEARNINGS.md updated:** Added rule about context-preserving URLs script processing READ-ONLY external/ucp submodule accidentally
+
 ### Changed - 2026-01-30
 
 #### SVG Illustration Requirements (commit 1eb8134)
