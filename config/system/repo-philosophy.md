@@ -350,6 +350,40 @@ config/
 - Easier to trace changes
 - Better diff visualization
 
+### Pre-Push Workflow Validation
+
+**Decision:** Validate GitHub Actions workflows before pushing to prevent CI failures.
+
+**Rationale:**
+- Catches configuration errors before they reach CI
+- Prevents broken builds from blocking development
+- Validates submodule paths against `.gitmodules`
+- Detects outdated or incorrect workflow references
+- Reduces debugging time and CI resource usage
+
+**Implementation:**
+- Pre-push hook at `.claude/hooks/pre-push.sh`
+- Validates all workflow files in `.github/workflows/`
+- Checks for outdated submodule paths (e.g., `packages/bible` → `packages/mx-the-bible`)
+- Verifies referenced submodules exist in `.gitmodules`
+- Validates YAML syntax using Python if available
+- Blocks push with clear error messages if validation fails
+
+**What it catches:**
+- Non-existent submodule paths
+- Outdated legacy paths from renamed repositories
+- YAML syntax errors
+- Mismatched workflow references
+
+**Example error prevented:**
+```bash
+❌ ERROR: ci.yml contains outdated submodule paths
+   Found old paths that should be updated:
+     25:        git submodule update --init --depth 1 packages/bible
+```
+
+**History:** Added 2026-01-30 after CI failure caused by workflows referencing non-existent `packages/bible` instead of `packages/mx-the-bible`.
+
 ## Build System Philosophy
 
 ### Centralized Build Control
