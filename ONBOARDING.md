@@ -12,7 +12,7 @@ This repository contains:
 2. **Web Audit Suite** - Production-ready Node.js tool implementing the book's patterns
 3. **Shared Resources** - Appendices, code examples, and generated content
 
-**For complete architecture details, see [config/system/doc-architecture.md](../architecture/doc-architecture.md)**
+**For complete architecture details, see [config/system/doc-architecture.md](config/system/doc-architecture.md) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>)**
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ npm install
 # which verifies and creates necessary symlinks
 ```
 
-**Note:** This repository uses **9 git submodules** for content organization. The architecture documentation explains why: [config/system/doc-architecture.md](../architecture/doc-architecture.md#separation-of-concerns)
+**Note:** This repository uses **9 git submodules** for content organization. The architecture documentation explains why: [config/system/doc-architecture.md](config/system/doc-architecture.md#separation-of-concerns) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md#separation-of-concerns>)
 
 ### 2. Verify Everything Works
 
@@ -105,7 +105,7 @@ npm run audit:test             # Run tests
 npm run audit:lint             # Lint code
 ```
 
-See [packages/web-audit-suite/README.md](../../packages/web-audit-suite/README.md) for complete usage.
+See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) ("Web Audit Suite Documentation" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/README.md>) for complete usage.
 
 ## VS Code Integration
 
@@ -181,7 +181,7 @@ git submodule status
 git -C packages/bible log --oneline -10
 ```
 
-**Critical:** Always check `pwd` before git operations. See [config/system/GIT-README.md](../architecture/GIT-README.md) for comprehensive multi-repository workflow guidance.
+**Critical:** Always check `pwd` before git operations. See [config/system/GIT-README.md](config/system/GIT-README.md) ("Git Workflow for Multi-Repository Structure" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) for comprehensive multi-repository workflow guidance.
 
 ## Code Quality Standards
 
@@ -199,7 +199,7 @@ git -C packages/bible log --oneline -10
 - Blank lines around lists
 - Run: `npm run lint:markdown:fix`
 
-**For complete quality standards, see [config/system/doc-architecture.md](config/system/doc-architecture.md#version-control-strategy)**
+**For complete quality standards, see [config/system/doc-architecture.md](config/system/doc-architecture.md#version-control-strategy) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md#version-control-strategy>)**
 
 ## Writing Style (Book Manuscripts)
 
@@ -212,7 +212,7 @@ git -C packages/bible log --oneline -10
 
 **Timeless Manuscript Rule:** Write as if the book has always existed. Never include publication dates, "we added", or meta-commentary about the book's development.
 
-**For complete style guide, see [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)**
+**For complete style guide, see [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md) ("Writing Style Guide for Book Manuscripts" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>)**
 
 ## Common Issues and Solutions
 
@@ -265,8 +265,8 @@ Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/v
 
 **Tool-specific:**
 
-- [packages/web-audit-suite/README.md](../../packages/web-audit-suite/README.md) - Complete tool documentation
-- [packages/web-audit-suite/QUICKSTART.md](../../packages/web-audit-suite/QUICKSTART.md) - 5-minute guide
+- [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) ("Web Audit Suite Documentation" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/README.md>) - Complete tool documentation
+- [packages/web-audit-suite/QUICKSTART.md](packages/web-audit-suite/QUICKSTART.md) ("Web Audit Suite Quick Start" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/QUICKSTART.md>) - 5-minute guide
 
 ## Next Steps
 
@@ -290,7 +290,7 @@ Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/v
    ```
 
 4. **Try debugging:**
-   - Open [packages/web-audit-suite/index.js](../../packages/web-audit-suite/index.js)
+   - Open `packages/web-audit-suite/index.js`
    - Press F9 to set a breakpoint
    - Press F5 to start debugging
 
@@ -301,13 +301,13 @@ Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/v
 3. **Documentation Must Align** - Consistent terminology everywhere
 4. **Quality Over Speed** - Code must pass linting and tests before commit
 
-**For complete principles and architecture patterns, see [config/system/doc-architecture.md](../architecture/doc-architecture.md#key-organizational-principles)**
+**For complete principles and architecture patterns, see [config/system/doc-architecture.md](config/system/doc-architecture.md#key-organizational-principles) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md#key-organizational-principles>)**
 
 ## Welcome Aboard
 
 You're ready to contribute! Remember:
 
-- **Read the architecture doc first** - [config/system/doc-architecture.md](../architecture/doc-architecture.md)
+- **Read the architecture doc first** - [config/system/doc-architecture.md](config/system/doc-architecture.md) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>)
 - **Test your changes** - Run tests and linting before committing
 - **Follow conventions** - British English for books, ES Modules for code
 - **Ask questions** - Use documentation as your guide
