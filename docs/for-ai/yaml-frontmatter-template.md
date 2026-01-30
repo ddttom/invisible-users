@@ -233,7 +233,7 @@ wc -w path/to/file.md
 
 ## Related Documentation
 
-- [Writing Style Guide](writing-style.md) - Complete writing guidelines
-- [CLAUDE.md](../../CLAUDE.md) - Project-wide AI assistant guidance
+- [Writing Style Guide](writing-style.md) ("Writing Style Guide for MX Books" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>) - Complete writing guidelines
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md - AI Assistant Project Guide" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - Project-wide AI assistant guidance
 - Appendix L (Pattern 4) - YAML frontmatter implementation guide
 - Appendix H - Example llms.txt with YAML frontmatter

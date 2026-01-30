@@ -167,6 +167,6 @@ outputs/bible/blogs/mx/
 
 ## Related Documentation
 
-- [Blog Generation Workflow](.claude/skills/create-blog/skill.md)
-- [Blog Content Workflow](../architecture/doc-architecture.md#blog-content-workflow)
-- [YAML Frontmatter Template](../for-ai/yaml-frontmatter-template.md)
+- [Blog Generation Workflow](../../.claude/skills/create-blog/skill.md) ("Create Blog Skill - Blog Generation Workflow" at <https://github.com/ddttom/invisible-users/blob/main/.claude/skills/create-blog/skill.md>)
+- [Blog Content Workflow](../../config/system/doc-architecture.md#blog-content-workflow) ("Repository Architecture Documentation - Blog Content Workflow" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md#blog-content-workflow>)
+- [YAML Frontmatter Template](../for-ai/yaml-frontmatter-template.md) ("YAML Frontmatter Template for Book Manuscripts" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/yaml-frontmatter-template.md>)
