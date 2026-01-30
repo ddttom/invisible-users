@@ -4,7 +4,7 @@
 
 A practical guide to the collision between modern web design and AI agents, with a production-ready implementation tool.
 
-**New to this project?** Start with [ONBOARDING.md](ONBOARDING.md) for a complete setup guide.
+**New to this project?** Start with [ONBOARDING.md](ONBOARDING.md) ("Developer Onboarding Guide" at <https://github.com/ddttom/invisible-users/blob/main/ONBOARDING.md>) for a complete setup guide.
 
 ## What Are AI Agents?
 
@@ -82,7 +82,7 @@ This repository uses git submodules to achieve **clean separation between conten
 
 ## Repository Structure
 
-**📁 Complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) for the full repository structure including all submodules.
+**📁 Complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) for the full repository structure including all submodules.
 
 **High-level overview:**
 
@@ -170,7 +170,7 @@ npm run audit:start -- -s https://example.com/sitemap.xml
 npm run audit:start -- -s https://example.com/sitemap.xml -c 10
 ```
 
-See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) for complete documentation.
+See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) ("Web Audit Suite - Complete Documentation" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/README.md>) for complete documentation.
 
 ## Key Organizational Principles
 
@@ -206,10 +206,10 @@ Changes must flow: **book → tool → documentation**
 
 ### Getting Started
 
-- [ONBOARDING.md](ONBOARDING.md) - Complete developer onboarding guide (start here!)
-- [CLAUDE.md](CLAUDE.md) - AI agent instructions and comprehensive project guide
-- [LEARNINGS.md](LEARNINGS.md) - Battle-tested rules from actual mistakes
-- [GIT-README.md](config/system/GIT-README.md) - Git workflow guide for submodule management
+- [ONBOARDING.md](ONBOARDING.md) ("Developer Onboarding Guide" at <https://github.com/ddttom/invisible-users/blob/main/ONBOARDING.md>) - Complete developer onboarding guide (start here!)
+- [CLAUDE.md](CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - AI agent instructions and comprehensive project guide
+- [LEARNINGS.md](LEARNINGS.md) ("Learnings" at <https://github.com/ddttom/invisible-users/blob/main/LEARNINGS.md>) - Battle-tested rules from actual mistakes
+- [GIT-README.md](config/system/GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) - Git workflow guide for submodule management
 
 ### Package-Specific Documentation
 
@@ -225,20 +225,20 @@ Each package has its own README with detailed information:
 
 ### Architecture Documentation
 
-- [Repository Architecture](config/system/doc-architecture.md) - Repository structure and design decisions
-- [Web Audit Suite Architecture](packages/web-audit-suite/web-audit-architecture.md) - Tool architecture and pipeline design
+- [Repository Architecture](config/system/doc-architecture.md) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>) - Repository structure and design decisions
+- [Web Audit Suite Architecture](packages/web-audit-suite/web-audit-architecture.md) ("Web Audit Suite Architecture and Pipeline Design" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/web-audit-architecture.md>) - Tool architecture and pipeline design
 
 ### Strategic Planning
 
-- [MX Strategic Review](docs/structure/MX-plan.md) - Machine Experience positioning and strategy
-- [Repository Mapping](docs/structure/github-repositories.md) - Complete repository structure
-- [UX Research Insights](docs/structure/steve-krug.md) - Don't Make Me Think analysis
+- [MX Strategic Review](docs/structure/MX-plan.md) ("Machine Experience (MX) Strategic Review" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/MX-plan.md>) - Machine Experience positioning and strategy
+- [Repository Mapping](docs/structure/github-repositories.md) ("Repository Structure Mapping" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/github-repositories.md>) - Complete repository structure
+- [UX Research Insights](docs/structure/steve-krug.md) ("Steve Krug's Usability Principles Applied to MX" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/steve-krug.md>) - Don't Make Me Think analysis
 
 ## Working with Git Submodules
 
 **⚠️ CRITICAL: This repository uses git submodules that require careful handling.**
 
-**📖 See [GIT-README.md](config/system/GIT-README.md) for comprehensive git workflow guidance.**
+**📖 See [GIT-README.md](config/system/GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) for comprehensive git workflow guidance.**
 
 This workspace contains multiple git repositories:
 
@@ -253,7 +253,7 @@ This workspace contains multiple git repositories:
 9. **Business submodule:** `packages/business/mx-business/` (business strategy and planning)
 10. **Notes submodule:** `packages/notes/` (coding standards and development practices)
 
-**Always check `pwd` before git operations.** The [LEARNINGS.md](LEARNINGS.md) file documents common mistakes and their fixes.
+**Always check `pwd` before git operations.** The [LEARNINGS.md](LEARNINGS.md) ("Learnings" at <https://github.com/ddttom/invisible-users/blob/main/LEARNINGS.md>) file documents common mistakes and their fixes.
 
 ## Development Environment
 
