@@ -60,6 +60,6 @@ You can choose to:
 
 **See also:**
 
-- [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md) - Complete style guide
+- [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md) ("Writing Style Guide: MX Series" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>) - Complete style guide
 - `.claude/skills/review-docs/checklist.md` - Quick reference of all rules
 - `.claude/skills/review-docs/examples.md` - Before/after examples

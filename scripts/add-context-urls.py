@@ -54,10 +54,27 @@ def find_md_links(content: str) -> List[Tuple[str, str, str]]:
     pattern = r'\[([^\]]+)\]\(([^)]+\.md)\)(?!\s*\([^)]*at\s*<[^>]+>\))'
     matches = []
 
+    # Skip placeholder/example patterns
+    skip_patterns = [
+        'path/to/',
+        'path/file',
+        r'\.\*\\\.md',
+        r'\\\.',
+        'http://',
+        'https://',
+        'example.md',
+        '../../path/',
+    ]
+
     for match in re.finditer(pattern, content):
         full_match = match.group(0)
         link_text = match.group(1)
         link_path = match.group(2)
+
+        # Skip if it's a placeholder/example
+        if any(skip in link_path for skip in skip_patterns):
+            continue
+
         matches.append((full_match, link_text, link_path))
 
     return matches
@@ -70,8 +87,14 @@ def resolve_path(current_file: str, link_path: str, repo_root: str) -> str:
     if link_path.startswith('/'):
         abs_path = os.path.join(repo_root, link_path.lstrip('/'))
     else:
-        # Resolve relative path
+        # Try relative to current directory first
         abs_path = os.path.normpath(os.path.join(current_dir, link_path))
+
+        # If that doesn't exist, try relative to repo root
+        if not os.path.exists(abs_path):
+            abs_path_from_root = os.path.join(repo_root, link_path)
+            if os.path.exists(abs_path_from_root):
+                abs_path = abs_path_from_root
 
     # Get path relative to repo root
     try:

@@ -41,7 +41,7 @@ This skill transforms AI-generated or sterile text into writing that sounds genu
 
 **Automatic actions:**
 
-- Read [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md) Section 9
+- Read [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md) ("Writing Style Guide: MX Series" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>) Section 9
 - Load all 24 AI pattern types:
   - 6 content patterns
   - 5 language/grammar patterns

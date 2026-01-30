@@ -381,7 +381,7 @@ A complete, production-ready hybrid codebase with:
 
 - **[fix-fox.md](../../my-pa11y-project/fix-fox.md)** - Complete reconciliation plan (10,000+ words)
 - **[CLAUDE.md](../../my-pa11y-project/CLAUDE.md)** - Source repository documentation
-- **[invisible-users CLAUDE.md](CLAUDE.md)** - Target repository documentation
+- **[invisible-users CLAUDE.md](CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>)** - Target repository documentation
 
 ---
 

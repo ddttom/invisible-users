@@ -715,6 +715,6 @@ This strong framework uses industry good practices.
 
 ---
 
-**Source:** [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)
+**Source:** [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md) ("Writing Style Guide: MX Series" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>)
 
 **Usage:** Reference these examples when reviewing documents or planning amendments. Each example shows the specific rule violation and its correction.
