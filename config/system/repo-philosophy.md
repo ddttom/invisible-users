@@ -175,6 +175,38 @@ This document captures the "why" behind architectural decisions, establishing a 
 
 **All other files reference these sources rather than duplicating content.**
 
+### Size-Neutral Documentation
+
+**Decision:** Avoid hard-coded counts in documentation; use size-neutral language instead.
+
+**Rationale:**
+- Eliminates maintenance burden when counts change
+- Prevents documentation drift across multiple files
+- Focuses on concepts rather than volatile details
+- Reduces likelihood of outdated information
+
+**Examples:**
+
+❌ **Avoid:**
+- "9 chapters in the book"
+- "11 submodules in the workspace"
+- "8 repositories to manage"
+- "13 appendices available"
+
+✅ **Use instead:**
+- "All chapters" or "multiple chapters"
+- "All submodules" or "the submodules"
+- "All repositories" or "the repositories"
+- "Appendices A-M" or "shared appendices"
+
+**When counts ARE appropriate:**
+- Technical specifications (e.g., "WCAG 2.1 requires 4.5:1 contrast ratio")
+- Version numbers
+- Standards references
+- When the specific number is the key information
+
+**When to break this rule:** If the count is critical to understanding (e.g., "both books in the series"), use it. Otherwise, prefer size-neutral phrasing.
+
 ## Repository Structure Philosophy
 
 ### Separation of Concerns
