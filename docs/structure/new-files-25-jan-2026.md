@@ -20,7 +20,7 @@ Four new technical documents providing deep analysis of AI agent constraints and
 - **[ai-dynamic-challenges.md](../../ingest/ai-dynamic-challenges.md) ("AI-Dynamic Meta Tag: Challenges and Open Questions" at <https://github.com/ddttom/invisible-users/blob/main/ingest/ai-dynamic-challenges.md>)** - Challenges AI agents face with dynamic content
 - **[ai-dynamic-examples-and-implementation.md](../../ingest/ai-dynamic-examples-and-implementation.md) ("AI-Dynamic Meta Tag: Examples and Implementation" at <https://github.com/ddttom/invisible-users/blob/main/ingest/ai-dynamic-examples-and-implementation.md>)** - Practical implementation examples
 - **[machine-experience-manifesto.md](../../ingest/machine-experience-manifesto.md) ("The Machine Experience Manifesto" at <https://github.com/ddttom/invisible-users/blob/main/ingest/machine-experience-manifesto.md>)** - Core MX principles and philosophy
-- **[why-llms-dont-execute-javascript.md](../../ingest/why-llms-dont-execute-javascript.md) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>)** - Technical constraints explanation
+- **[why-llms-dont-execute-javascript.md](../../ingest/why-llms-dont-execute-javascript.md) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>) ("Why LLMs Don't Execute JavaScript (But Google Does)" at <https://github.com/ddttom/invisible-users/blob/main/ingest/why-llms-dont-execute-javascript.md>)** - Technical constraints explanation
 
 **Purpose:** Technical reference material explaining why AI agents need specific patterns.
 
@@ -53,7 +53,6 @@ Structured presentation resources with templates and historical archives:
 
 New project template directory and additional AI guidance:
 
-- **[architecting-multi-repo-codebases.md](../for-ai/architecting-multi-repo-codebases.md)** - Multi-repository architecture patterns
 - **[yaml-frontmatter-template.md](../for-ai/yaml-frontmatter-template.md) ("YAML Frontmatter Template for Book Manuscripts" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/yaml-frontmatter-template.md>)** - Standard YAML frontmatter template
 - **new-project/** - Full project template directory
   - PULL_REQUEST_TEMPLATE.md
@@ -67,13 +66,13 @@ New project template directory and additional AI guidance:
 
 ## Submodules - New Content
 
-### packages/bible/ (MX-Bible Submodule)
+### packages/mx-the-bible/ (MX-Bible Submodule)
 
-- **[update plan.md](../../packages/bible/update%20plan.md)** - Comprehensive 2026 strategic plan for MX-Bible completion
+Strategic planning document for 2026 completion available in submodule repository.
 
 **Purpose:** Master roadmap for book finalization, Appendix K completion, and publication preparation.
 
-**Recommendation:** This is your primary strategic reference for 2026. Review priorities and timelines.
+**Recommendation:** Review priorities and timelines in the submodule repository.
 
 ---
 
@@ -156,4 +155,4 @@ New project template directory and additional AI guidance:
 
 - **[CHANGELOG.md](../../CHANGELOG.md) ("Changelog" at <https://github.com/ddttom/invisible-users/blob/main/CHANGELOG.md>)** - Complete version history
 - **[docs/structure/todo.txt](todo.txt)** - Active task tracking
-- **[packages/bible/update plan.md](../../packages/bible/update%20plan.md)** - 2026 strategic roadmap
+- Strategic roadmap available in MX-Bible submodule repository
