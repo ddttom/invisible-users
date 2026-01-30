@@ -388,7 +388,7 @@ Risks:
 
 ## Related Documentation
 
-- [CMS Compliance Specification](../cms-compliance.md) - Technical requirements
-- [Webpage Compliance](../mx-compliance.md) - Output requirements
-- [CLAUDE.md](../CLAUDE.md) - MX concepts for technical understanding
+- [CMS Compliance Specification](../../docs/structure/cms-compliance.md) ("MX-Compliant CMS Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>) - Technical requirements
+- [Webpage Compliance](../../docs/structure/mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>) - Output requirements
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - MX concepts for technical understanding
 - [CEO Use Case](./ceo.md) ("MX Compliance for CEOs" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/ceo.md>) - Executive perspective

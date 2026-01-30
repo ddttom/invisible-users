@@ -268,4 +268,4 @@ AI agents are becoming the primary interface between businesses and customers. M
 
 ---
 
-*For technical details, refer to the [MX Compliance Specifications](../cms-compliance.md). For implementation guidance, consult your technology leadership.*
+*For technical details, refer to the [MX Compliance Specifications](../../docs/structure/cms-compliance.md) ("MX-Compliant CMS Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>). For implementation guidance, consult your technology leadership.*

@@ -339,7 +339,7 @@ if ($mx): ?>
 
 ## Related Documentation
 
-- [CMS Compliance Specification](../cms-compliance.md) - Technical requirements
-- [Webpage Compliance Specification](../mx-compliance.md) - Output requirements
-- [Markdown Compliance](../mx-compliance-markdown.md) - Content authoring
-- [CLAUDE.md](../CLAUDE.md) - MX concepts overview
+- [CMS Compliance Specification](../../docs/structure/cms-compliance.md) ("MX-Compliant CMS Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>) - Technical requirements
+- [Webpage Compliance Specification](../../docs/structure/mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>) - Output requirements
+- [Markdown Compliance](../../docs/structure/mx-compliance-markdown.md) ("MX-Compliant Markdown Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-markdown.md>) - Content authoring
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - MX concepts overview

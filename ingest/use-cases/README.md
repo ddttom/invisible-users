@@ -192,15 +192,15 @@ MX compliance means different things to different people. A CEO needs to underst
 ## Related Documentation
 
 ### Technical Specifications
-- [CMS Compliance](../cms-compliance.md) - Internal storage requirements
-- [Webpage Compliance](../mx-compliance.md) - HTML output requirements
-- [Markdown Compliance](../mx-compliance-markdown.md) - Source file requirements
-- [JavaScript Compliance](../mx-compliance-javascript.md) - Code patterns
-- [CSS Compliance](../mx-compliance-css.md) - Styling requirements
+- [CMS Compliance](../../docs/structure/cms-compliance.md) ("MX-Compliant CMS Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>) - Internal storage requirements
+- [Webpage Compliance](../../docs/structure/mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>) - HTML output requirements
+- [Markdown Compliance](../../docs/structure/mx-compliance-markdown.md) ("MX-Compliant Markdown Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-markdown.md>) - Source file requirements
+- [JavaScript Compliance](../../docs/structure/mx-compliance-javascript.md) ("MX-Compliant JavaScript Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-javascript.md>) - Code patterns
+- [CSS Compliance](../../docs/structure/mx-compliance-css.md) ("MX-Compliant CSS Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-css.md>) - Styling requirements
 
 ### Conceptual Overview
-- [CLAUDE.md](../CLAUDE.md) - MX concepts for AI assistants
-- [README.md](../README.md) - Directory overview
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - MX concepts for AI assistants
+- [README.md](../../README.md) ("The Invisible Users" at <https://github.com/ddttom/invisible-users/blob/main/README.md>) - Directory overview
 
 ## Contributing
 

@@ -588,7 +588,7 @@ Data Attributes:
 
 ## Related Documentation
 
-- [CSS Compliance](../mx-compliance-css.md) - CSS implementation details
-- [Webpage Compliance](../mx-compliance.md) - HTML output requirements
+- [CSS Compliance](../../docs/structure/mx-compliance-css.md) ("MX-Compliant CSS Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-css.md>) - CSS implementation details
+- [Webpage Compliance](../../docs/structure/mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>) - HTML output requirements
 - [WCAG 2.1 Quick Reference](https://www.w3.org/WAI/WCAG21/quickref/) - Full guidelines
-- [CLAUDE.md](../CLAUDE.md) - MX concepts overview
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - MX concepts overview

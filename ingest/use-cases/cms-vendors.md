@@ -275,7 +275,7 @@ Once implemented, MX compliance creates switching costs:
 
 ## Next Steps
 
-1. **Review technical specifications** - [cms-compliance.md](../cms-compliance.md), [mx-compliance.md](../mx-compliance.md)
+1. **Review technical specifications** - [cms-compliance.md](../../docs/structure/cms-compliance.md) ("MX-Compliant CMS Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>), [mx-compliance.md](../../docs/structure/mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>)
 2. **Assess current architecture** - Gap analysis against MX requirements
 3. **Build proof of concept** - Validate approach with minimal implementation
 4. **Create roadmap** - Prioritise phases based on customer demand
@@ -283,6 +283,6 @@ Once implemented, MX compliance creates switching costs:
 
 ## Related Documentation
 
-- [CMS Compliance Specification](../cms-compliance.md) - Full technical requirements
-- [Webpage Compliance Specification](../mx-compliance.md) - Output requirements
-- [CLAUDE.md](../CLAUDE.md) - MX concepts overview
+- [CMS Compliance Specification](../../docs/structure/cms-compliance.md) ("MX-Compliant CMS Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>) - Full technical requirements
+- [Webpage Compliance Specification](../../docs/structure/mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>) - Output requirements
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - MX concepts overview

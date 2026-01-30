@@ -766,7 +766,7 @@ mx-validate page.html --format json
 
 ## Related Documentation
 
-- [CMS Compliance Specification](../cms-compliance.md) - Data model requirements
-- [Webpage Compliance](../mx-compliance.md) - HTML output requirements
-- [JavaScript Compliance](../mx-compliance-javascript.md) - JS patterns
-- [CSS Compliance](../mx-compliance-css.md) - Styling requirements
+- [CMS Compliance Specification](../../docs/structure/cms-compliance.md) ("MX-Compliant CMS Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>) - Data model requirements
+- [Webpage Compliance](../../docs/structure/mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>) - HTML output requirements
+- [JavaScript Compliance](../../docs/structure/mx-compliance-javascript.md) ("MX-Compliant JavaScript Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-javascript.md>) - JS patterns
+- [CSS Compliance](../../docs/structure/mx-compliance-css.md) ("MX-Compliant CSS Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-css.md>) - Styling requirements

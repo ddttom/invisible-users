@@ -477,7 +477,7 @@ If the AI can answer accurately, your structured data is working.
 
 ### DIY Resources
 
-- [MX Conference Specification](../mx-compliance-conference.md) - Technical spec
+- [MX Conference Specification](../../docs/structure/mx-compliance-conference.md) ("MX-Compliant Conference Website Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-conference.md>) ("MX-Compliant Conference Website Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-conference.md>) - Technical spec
 - [Schema.org Event](https://schema.org/Event) - Official documentation
 - [Google Event Guide](https://developers.google.com/search/docs/data-types/event) - Implementation guide
 
@@ -499,7 +499,7 @@ Ask your conference platform vendor:
 
 ## Related Documentation
 
-- [MX Conference Specification](../mx-compliance-conference.md) - Full technical requirements
-- [Webpage Compliance](../mx-compliance.md) - Base HTML requirements
+- [MX Conference Specification](../../docs/structure/mx-compliance-conference.md) - Full technical requirements
+- [Webpage Compliance](../../docs/structure/mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>) - Base HTML requirements
 - [Developers Guide](./developers.md) ("MX Compliance for Developers" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/developers.md>) - Implementation patterns
-- [CLAUDE.md](../CLAUDE.md) - MX concepts overview
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - MX concepts overview

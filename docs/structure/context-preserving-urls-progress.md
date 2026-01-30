@@ -219,7 +219,7 @@ python3 scripts/add-context-urls.py 2>&1 | grep "Warning: Linked file not found"
 ## References
 
 - **Anti-pattern 14:** [packages/mx-appendices/appendix-n-anti-patterns-catalog.md](../../packages/mx-appendices/appendix-n-anti-patterns-catalog.md) ("Appendix N: Anti-Patterns Catalog" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-appendices/appendix-n-anti-patterns-catalog.md>)
-- **Pattern Guide:** [docs/for-ai/context-preserving-references-guide.md](../for-ai/context-preserving-references-guide.md)
+- **Pattern Guide:** [docs/for-ai/context-preserving-references-guide.md](../for-ai/context-preserving-references-guide.md) ("Context-Preserving References Implementation Guide" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/context-preserving-references-guide.md>)
 - **Implementation Script:** [scripts/add-context-urls.py](../../scripts/add-context-urls.py)
 
 ## Commits

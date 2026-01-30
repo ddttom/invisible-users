@@ -328,9 +328,9 @@ python3 scripts/add-context-urls.py 2>&1 | grep "Warning" | cut -d: -f2 | sort |
 
 ## Related Documentation
 
-- [Context-Preserving URLs Progress Report](./context-preserving-urls-progress.md)
-- [Context-Preserving References Guide](../for-ai/context-preserving-references-guide.md)
-- [Anti-Pattern 14: Context-Free References](../../packages/mx-appendices/appendix-n-anti-patterns-catalog.md)
+- [Context-Preserving URLs Progress Report](./context-preserving-urls-progress.md) ("Context-Preserving URLs Progress Report" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/context-preserving-urls-progress.md>)
+- [Context-Preserving References Guide](../for-ai/context-preserving-references-guide.md) ("Context-Preserving References Implementation Guide" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/context-preserving-references-guide.md>)
+- [Anti-Pattern 14: Context-Free References](../../packages/mx-appendices/appendix-n-anti-patterns-catalog.md) ("Appendix N: Anti-Patterns Catalog" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-appendices/appendix-n-anti-patterns-catalog.md>)
 
 ## Notes
 
