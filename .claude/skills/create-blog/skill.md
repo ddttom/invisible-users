@@ -46,8 +46,8 @@ ai-instruction: "Context for AI agents parsing this content"
 
 **Complete Documentation:**
 
-- [docs/structure/blog-metadata-schema.md](../../docs/structure/blog-metadata-schema.md) - Complete metadata schema and state tracking rules
-- [config/system/doc-architecture.md](../../config/system/doc-architecture.md#blog-content-workflow) - Workflow architecture
+- [docs/structure/blog-metadata-schema.md](../../../docs/structure/blog-metadata-schema.md) ("Blog Metadata Schema and State Tracking" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/blog-metadata-schema.md>) - Complete metadata schema and state tracking rules
+- [config/system/doc-architecture.md](../../../config/system/doc-architecture.md#blog-content-workflow) ("Documentation Architecture and Design Decisions" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>) - Workflow architecture
 
 ## Workflow
 
@@ -895,7 +895,7 @@ The generated HTML file MUST include these meta tags in the `<head>` section imm
 - `blog-last-modified`: Today's date (YYYY-MM-DD)
 - `blog-review-status`: "final-committee-review" (default review stage)
 
-**Note:** These meta tags enable tracking the blog through the review and publication workflow. See [docs/structure/blog-metadata-schema.md](../../docs/structure/blog-metadata-schema.md) for complete documentation.
+**Note:** These meta tags enable tracking the blog through the review and publication workflow. See [docs/structure/blog-metadata-schema.md](../../../docs/structure/blog-metadata-schema.md) ("Blog Metadata Schema and State Tracking" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/blog-metadata-schema.md>) for complete documentation.
 
 ### Step 13: Report Completion
 

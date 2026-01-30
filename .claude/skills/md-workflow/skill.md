@@ -363,9 +363,9 @@ CLAUDE.md                       # Complete guidance
 
 ## See Also
 
-- [CLAUDE.md](../../CLAUDE.md) - Complete repository guidance
-- [docs/for-ai/writing-style.md](../../docs/for-ai/writing-style.md) - Writing style guide
-- [config/.markdownlint.json](../../config/.markdownlint.json) - Linting configuration
+- [CLAUDE.md](../../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - Complete repository guidance
+- [docs/for-ai/writing-style.md](../../../docs/for-ai/writing-style.md) ("Writing Style Guide for AI Agent Content" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>) - Writing style guide
+- [config/.markdownlint.json](../../../config/.markdownlint.json) - Linting configuration
 - `/review-docs` skill - Style guide compliance
 - `/md-fix` skill - Quick linting
 - `/step-commit` skill - Systematic commits with linting
