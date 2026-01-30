@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2026-01-30
+
+#### Documentation Philosophy - Size-Neutral Principle (commits 1ea2d6b, 3173eb7, b069c96, 3feb6fa)
+
+**New documentation standard added to repo-philosophy.md:**
+- Establishes "Size-Neutral Documentation" principle to avoid hard-coded counts in documentation
+- Eliminates maintenance burden when counts change (chapters, submodules, repositories, etc.)
+- Provides clear examples of what to avoid and size-neutral alternatives
+- Prevents documentation drift across multiple files
+
+**Applied size-neutral documentation across repository:**
+- Updated CLAUDE.md: Removed hard-coded repository, submodule, and chapter counts
+- Updated README.md: Removed chapter counts from book descriptions
+- Updated IP strategy document: Removed chapter counts from copyright section
+- Changed "11 submodules" → "all submodules", "13 chapters" → removed counts
+- Focused documentation on concepts rather than volatile numerical details
+
+**Note:** Prospect/client documents in docs/structure/prospects/ retain historical chapter counts as records of communications at specific times.
+
 ### Added - 2026-01-29
 
 #### New Submodules (commit c14d276)
