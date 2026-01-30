@@ -98,4 +98,66 @@ if [ "$last_code_change" -gt "$last_readme_change" ] || [ "$last_code_change" -g
     echo ""
 fi
 
+# Check GitHub Actions workflow files for common issues
+WORKFLOW_DIR="${REPO_ROOT}/.github/workflows"
+if [ -d "$WORKFLOW_DIR" ]; then
+    # Get actual submodule paths from .gitmodules
+    if [ -f "${REPO_ROOT}/.gitmodules" ]; then
+        ACTUAL_SUBMODULES=$(grep "path = " "${REPO_ROOT}/.gitmodules" | sed 's/.*path = //')
+
+        # Check each workflow file
+        WORKFLOW_ERRORS=0
+        for workflow in "${WORKFLOW_DIR}"/*.yml "${WORKFLOW_DIR}"/*.yaml; do
+            if [ -f "$workflow" ]; then
+                workflow_name=$(basename "$workflow")
+
+                # Check for old/incorrect submodule paths
+                if grep -q "packages/bible\|packages/shared-appendices\|packages/shared-code-examples" "$workflow"; then
+                    echo "❌ ERROR: $workflow_name contains outdated submodule paths"
+                    echo "   Found old paths that should be updated:"
+                    grep -n "packages/bible\|packages/shared-appendices\|packages/shared-code-examples" "$workflow" | sed 's/^/     /'
+                    echo ""
+                    WORKFLOW_ERRORS=1
+                fi
+
+                # Extract submodule references from workflow (git submodule update lines)
+                WORKFLOW_SUBMODULES=$(grep -o "git submodule update.*packages/[^ ]*" "$workflow" 2>/dev/null | sed 's/.*packages\//packages\//' | sort -u)
+
+                if [ -n "$WORKFLOW_SUBMODULES" ]; then
+                    # Check if referenced submodules exist in .gitmodules
+                    while IFS= read -r submod_path; do
+                        if ! echo "$ACTUAL_SUBMODULES" | grep -q "^${submod_path}$"; then
+                            echo "❌ ERROR: $workflow_name references non-existent submodule: $submod_path"
+                            echo "   This submodule does not exist in .gitmodules"
+                            echo ""
+                            WORKFLOW_ERRORS=1
+                        fi
+                    done <<< "$WORKFLOW_SUBMODULES"
+                fi
+
+                # Basic YAML syntax check (if yq or python is available)
+                if command -v python3 > /dev/null 2>&1; then
+                    if ! python3 -c "import yaml, sys; yaml.safe_load(open('$workflow'))" 2>/dev/null; then
+                        echo "❌ ERROR: $workflow_name has invalid YAML syntax"
+                        echo ""
+                        WORKFLOW_ERRORS=1
+                    fi
+                fi
+            fi
+        done
+
+        if [ $WORKFLOW_ERRORS -eq 1 ]; then
+            echo "🚨 GitHub Actions workflow validation failed!"
+            echo ""
+            echo "Please fix the workflow errors before pushing."
+            echo "Workflow files are in: .github/workflows/"
+            echo ""
+            echo "Current submodules (from .gitmodules):"
+            echo "$ACTUAL_SUBMODULES" | sed 's/^/  - /'
+            echo ""
+            exit 1
+        fi
+    fi
+fi
+
 exit 0
