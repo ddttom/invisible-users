@@ -173,7 +173,8 @@
       "WebFetch(domain:www.lpcprint.co.uk)",
       "WebFetch(domain:ucp.dev)",
       "WebFetch(domain:docs.google.com)",
-      "Bash(git check-ignore:*)"
+      "Bash(git check-ignore:*)",
+      "Bash(npx markdownlint-cli2:*)"
     ],
     "deny": [],
     "ask": [
