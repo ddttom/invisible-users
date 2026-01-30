@@ -98,6 +98,63 @@ pwd
 #   → You're in BIBLE SUBMODULE - use ../../.claude/skills/news/skill.md
 ```
 
+---
+
+## 🚨 CRITICAL: USE SIZE-NEUTRAL LANGUAGE
+
+**NEVER use hard-coded counts in documentation or responses. This violates the size-neutral documentation principle.**
+
+### The Problem
+
+Hard-coded counts create maintenance burden and become outdated:
+
+❌ **WRONG:**
+- "All 10 submodules"
+- "The 5 core principles"
+- "9 chapters in the book"
+- "13 appendices available"
+
+✅ **CORRECT:**
+- "All submodules"
+- "Core principles"
+- "All chapters" or "the chapters"
+- "Appendices A-M" or "the appendices"
+
+### Why This Matters
+
+**For maintenance:**
+- Numbers change when content is added/removed
+- Creates documentation drift across multiple files
+- Requires updates in multiple locations
+- Easily becomes outdated
+
+**For comprehension:**
+- Focuses on concepts rather than volatile details
+- Reduces cognitive load
+- Prevents misleading information
+
+### When Counts ARE Appropriate
+
+Use specific numbers only when:
+- The number IS the key information (e.g., "WCAG 2.1 requires 4.5:1 contrast ratio")
+- Technical specifications (e.g., "Node.js 20.x")
+- Version numbers
+- Standards references
+- The specific count is critical to understanding
+
+### Apply Everywhere
+
+This principle applies to:
+- ✅ Documentation files
+- ✅ AI assistant responses and summaries
+- ✅ Commit messages
+- ✅ Code comments
+- ✅ User-facing communication
+
+**See:** [config/system/repo-philosophy.md](config/system/repo-philosophy.md#size-neutral-documentation) for complete rationale and examples.
+
+---
+
 ### Repository Architecture
 
 **This workspace has multiple git repositories (main hub + submodules). File paths depend on your location.**
