@@ -1,10 +1,11 @@
 ---
 copyright: "Copyright © 2026 Tom Cranstoun. All rights reserved."
 author: "Tom Cranstoun"
-date: "2026-01-26"
+date: "2026-01-30"
 description: "Comprehensive intellectual property protection strategy covering copyrights, trademarks, licensing models, and ownership structures for MX-Gathering monetization"
 keywords: [intellectual-property, copyright, trademark, licensing, open-source, ownership, legal-protection]
-ai-instruction: "This document is copyrighted material. No part may be reproduced without permission."
+ai-instruction: "This document is copyrighted material. No part may be reproduced without permission. Specific patent documentation maintained in separate repository."
+status: "ACTIVE - Patent files in separate repo"
 ---
 
 # MX-Gathering Intellectual Property and Ownership Strategy
@@ -12,6 +13,8 @@ ai-instruction: "This document is copyrighted material. No part may be reproduce
 ## Overview
 
 The MX-Gathering monetization model requires careful intellectual property management to protect commercial interests whilst maintaining open source community values. This strategy covers copyright, trademarks, licensing models, and ownership structures.
+
+**Note:** Specific patent application documents and detailed patent disclosure files have been moved to a separate private repository for confidentiality. This document contains general IP strategy guidance only.
 
 ## Copyright Protection
 
@@ -135,28 +138,30 @@ Certification marks provide legal protection for professional credentials and pr
 
 ## Patent Considerations
 
+**Note:** Specific patent application documents maintained in separate private repository.
+
 ### Patentability Assessment
 
-**Current Position:**
+**General Strategy Position:**
 
 - AI agent interaction patterns are generally **not patentable** (abstract ideas, mental processes)
 - Specific technical implementations **may be patentable** (novel algorithms, systems)
 - Business methods are **difficult to patent** in UK/EU (easier in US)
 
-**Patent Strategy:**
+**Recommended Patent Strategy:**
 
 - **Do not pursue software patents** for design patterns (high cost, low success probability)
 - **Document prior art** to prevent others patenting your patterns
 - **Publish patterns openly** to establish public prior art
 - **Focus on trade secrets** for proprietary processes (certification algorithms, assessment methods)
 
-**Cost-Benefit Analysis:**
+**Cost-Benefit Reference:**
 
 - UK patent application: £4,000-£8,000
 - US patent application: $10,000-$15,000
 - EU patent validation: £20,000-£40,000
 - Maintenance over 20 years: £30,000+
-- **Recommendation:** Not worth investment for design patterns
+- **General Recommendation:** Software patent investment rarely justified for design patterns
 
 ### Trade Secrets
 
