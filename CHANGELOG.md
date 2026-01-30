@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2026-01-30
+
+#### SVG Illustration Requirements (commit 1eb8134)
+
+**Updated config/book/book-svg-style.md:**
+
+- Clarified that each chapter requires a minimum of one SVG illustration (not exactly one)
+- Added requirement that SVG filenames must not clash across chapters
+- Maintains flexibility for chapters that need multiple illustrations
+
 ### Added - 2026-01-30
 
 #### Documentation Philosophy - Size-Neutral Principle (commits 1ea2d6b, 3173eb7, b069c96, 3feb6fa)
