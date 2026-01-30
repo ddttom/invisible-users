@@ -100,13 +100,13 @@ pwd
 
 ### Repository Architecture
 
-**This workspace has ELEVEN git repositories (1 main hub + 10 submodules). File paths depend on your location.**
+**This workspace has multiple git repositories (main hub + submodules). File paths depend on your location.**
 
 - **Main repo (MASTER):** `${MAIN_REPO}/`
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md` (single source of truth)
   - Role: Control and orchestration
 
-- **Submodules (ASSETS, currently 10):**
+- **Submodules (ASSETS):**
   - **MX-Bible:** `packages/mx-the-bible/` → `invisible-users-manuscript` - Full comprehensive guide (formerly "The Invisible Users")
   - **MX-Handbook:** `packages/mx-handbook/` → `MX-The-Handbook` - Implementation handbook for developers and designers
   - **MX-Gathering:** `packages/mx-gathering/` → `MX-Gathering` - Community resources, event templates, discussion archives, and thought leadership (PUBLIC, EDITABLE)
@@ -125,7 +125,7 @@ pwd
 
 **CRITICAL:** Always run `pwd` before file operations.
 
-**📁 For complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) - Single source of truth for repository structure across main repo and all 10 submodules.
+**📁 For complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) - Single source of truth for repository structure across main repo and all submodules.
 
 **Hub Repository Quick Reference:**
 
@@ -133,9 +133,9 @@ pwd
   - Contains: `.claude/` (skills, hooks, settings), `CLAUDE.md`, documentation, scripts
   - Role: Configuration hub, git workflow management, build tools
 
-- **10 Submodules under packages/:**
-  - `mx-the-bible/` - MX-Bible manuscript (13 chapters)
-  - `mx-handbook/` - MX-Handbook (11 chapters)
+- **Submodules under packages/:**
+  - `mx-the-bible/` - MX-Bible manuscript
+  - `mx-handbook/` - MX-Handbook
   - `mx-gathering/` - Community resources (PUBLIC, EDITABLE)
   - `mx-appendices/` - Shared appendices (A-M)
   - `mx-code-examples/` - Pattern implementations
@@ -286,8 +286,8 @@ git commit -m "Update mx-the-bible submodule pointer to latest version"
 
 **Key official names (always use these in formal documentation):**
 
-- **"MX-Bible"** - The full comprehensive guide (13 chapters, ~78,000 words)
-- **"MX-Handbook"** - The implementation handbook (11 chapters)
+- **"MX-Bible"** - The full comprehensive guide
+- **"MX-Handbook"** - The implementation handbook
 - **"MX-Gathering"** - Community resources repository
 
 **IMPORTANT:** Directory names and repository names remain unchanged. The vocabulary file maps conversational shorthand to actual paths and concepts for efficient communication.
@@ -301,7 +301,7 @@ git commit -m "Update mx-the-bible submodule pointer to latest version"
 Two books from modular repositories:
 
 - **"MX-Bible"** - `packages/mx-the-bible/` - Full comprehensive guide. Formerly titled "The Invisible Users".
-- **"MX-Handbook"** - `packages/mx-handbook/` - 11-chapter practical implementation guide for developers and designers. Shorthand: **handbook** or **slim**
+- **"MX-Handbook"** - `packages/mx-handbook/` - Practical implementation guide for developers and designers. Shorthand: **handbook** or **slim**
 - **Shared Appendices** - `packages/mx-appendices/` - 12 appendices (A-M) shared across both books
 - **Shared Code Examples** - `packages/mx-code-examples/` - Good vs bad pattern implementations
 
@@ -782,7 +782,7 @@ When markdown files are printed to PDF, downloaded, fed to AI agents, or otherwi
 **All MX Specifications:** Complete collection of 21 specification documents in [packages/mx-gathering/specifications/](packages/mx-gathering/specifications/) including:
 
 - Core specifications: base, code-metadata, content-fragment, data-lake, database-metadata, media-metadata, structured-data
-- MX Specifications Book: 10 chapters + 3 appendices
+- MX Specifications Book: multiple chapters and appendices
 - Announcement: structured-data-spec-announcement
 
 ### Overview
