@@ -19,17 +19,21 @@ mx:
       - ../../CLAUDE.md
       - folder-layout.md
       - doc-architecture.md
+      - ../../docs/for-ai/mx-principles-for-repos.md
   related_files:
     - ../../CLAUDE.md
     - folder-layout.md
     - doc-architecture.md
     - ../../LEARNINGS.md
-  see_also: "CLAUDE.md contains operational guidance. This file documents the underlying philosophy and design decisions."
+    - ../../docs/for-ai/mx-principles-for-repos.md
+  see_also: "CLAUDE.md contains operational guidance. This file documents the underlying philosophy and design decisions. See docs/for-ai/mx-principles-for-repos.md for Machine Experience (MX) standards."
 ---
 
 **Design principles and technical philosophy governing this repository.**
 
 This document captures the "why" behind architectural decisions, establishing a foundation for consistent decision-making as the project evolves.
+
+**For Machine Experience (MX) principles and metadata standards, see [mx-principles-for-repos.md](../../docs/for-ai/mx-principles-for-repos.md).**
 
 ## Core Principles
 
@@ -458,6 +462,7 @@ Add new sections to this file as architectural decisions solidify.
 
 ## Related Documentation
 
+- **MX Principles:** [mx-principles-for-repos.md](../../docs/for-ai/mx-principles-for-repos.md) - Machine Experience standards and metadata requirements
 - **Folder Structure:** [folder-layout.md](folder-layout.md) - Complete repository structure
 - **Architecture:** [docs/architecture/doc-architecture.md](doc-architecture.md) - Build systems and workflows
 - **AI Guidance:** [CLAUDE.md](../../CLAUDE.md) - Operational guidance for AI assistants
