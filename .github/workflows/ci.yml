@@ -22,9 +22,11 @@ jobs:
 
     - name: Initialize public submodules
       run: |
-        git submodule update --init --depth 1 packages/bible
-        git submodule update --init --depth 1 packages/shared-appendices
-        git submodule update --init --depth 1 packages/shared-code-examples
+        git submodule update --init --depth 1 packages/mx-the-bible
+        git submodule update --init --depth 1 packages/mx-handbook
+        git submodule update --init --depth 1 packages/mx-gathering
+        git submodule update --init --depth 1 packages/mx-appendices
+        git submodule update --init --depth 1 packages/mx-code-examples
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
