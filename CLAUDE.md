@@ -182,7 +182,7 @@ This principle applies to:
 
 **CRITICAL:** Always run `pwd` before file operations.
 
-**📁 For complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) - Single source of truth for repository structure across main repo and all submodules.
+**📁 For complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) - Single source of truth for repository structure across main repo and all submodules.
 
 **Hub Repository Quick Reference:**
 
@@ -315,9 +315,9 @@ git commit -m "Update mx-the-bible submodule pointer to latest version"
 
 **📖 CRITICAL REFERENCES FOR AI ASSISTANTS:**
 
-- **[LEARNINGS.md](LEARNINGS.md)** - Recent mistakes and battle-tested rules. **Read this file at the start of each session** to learn from documented errors and avoid repeating them.
-- **[config/system/GIT-README.md](config/system/GIT-README.md)** - Comprehensive git workflow guidance for AI agents (multi-repository structure, submodule-first workflow, safe patterns)
-- **[.claude/pwd-reminder.md](.claude/pwd-reminder.md)** - Working directory verification requirements
+- **[LEARNINGS.md](LEARNINGS.md) ("Learnings" at <https://github.com/ddttom/invisible-users/blob/main/LEARNINGS.md>)** - Recent mistakes and battle-tested rules. **Read this file at the start of each session** to learn from documented errors and avoid repeating them.
+- **[config/system/GIT-README.md](config/system/GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>)** - Comprehensive git workflow guidance for AI agents (multi-repository structure, submodule-first workflow, safe patterns)
+- **[.claude/pwd-reminder.md](.claude/pwd-reminder.md) ("Working Directory Verification" at <https://github.com/ddttom/invisible-users/blob/main/.claude/pwd-reminder.md>)** - Working directory verification requirements
 
 ---
 
@@ -325,7 +325,7 @@ git commit -m "Update mx-the-bible submodule pointer to latest version"
 
 **🔄 DYNAMIC REFERENCE: The user uses conversational shorthand to communicate efficiently. When you encounter unfamiliar shorthand or need to understand context-specific terminology, CONSULT the vocabulary reference file.**
 
-**Reference file:** [config/system/repo-vocabulary.md](config/system/repo-vocabulary.md)
+**Reference file:** [config/system/repo-vocabulary.md](config/system/repo-vocabulary.md) ("Vocabulary: Shorthand Reference" at <https://github.com/ddttom/invisible-users/blob/main/config/system/repo-vocabulary.md>)
 
 **This file contains:**
 
@@ -387,7 +387,7 @@ Book manuscript files (.md files in `packages/mx-the-bible/manuscripts/`, `packa
 
 **Exception:** Historical context about the *subject matter* is allowed (e.g., "Google launched UCP in January 2026" describes an industry event, not the book).
 
-**Enforcement:** All book manuscript files MUST include YAML frontmatter with an `ai-instruction` field reminding AI systems of this rule. See [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md) for the standard template.
+**Enforcement:** All book manuscript files MUST include YAML frontmatter with an `ai-instruction` field reminding AI systems of this rule. See [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md) ("Writing Style Guide: MX Series" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>) for the standard template.
 
 ### 2. Web Audit Suite (Analysis Tool)
 
@@ -399,7 +399,7 @@ Comprehensive Node.js website analysis tool (`packages/web-audit-suite/`) implem
 
 ## Repository Structure
 
-**📁 Complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) for the full repository structure including all submodules.
+**📁 Complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) for the full repository structure including all submodules.
 
 **Key directories (hub repository):**
 
@@ -486,9 +486,9 @@ All blog posts follow a state-tracked workflow with mandatory metadata:
 
 **Complete Documentation:**
 
-- [.claude/skills/create-blog/skill.md](.claude/skills/create-blog/skill.md) - Complete workflow
-- [docs/structure/blog-metadata-schema.md](docs/structure/blog-metadata-schema.md) - Metadata schema and state tracking
-- [config/system/doc-architecture.md](config/system/doc-architecture.md#blog-content-workflow) - Workflow architecture
+- [.claude/skills/create-blog/skill.md](.claude/skills/create-blog/skill.md) ("Create Blog Skill - Blog Generation Workflow" at <https://github.com/ddttom/invisible-users/blob/main/.claude/skills/create-blog/skill.md>) - Complete workflow
+- [docs/structure/blog-metadata-schema.md](docs/structure/blog-metadata-schema.md) ("Blog Metadata Schema and State Tracking" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/blog-metadata-schema.md>) - Metadata schema and state tracking
+- [config/system/doc-architecture.md](config/system/doc-architecture.md#blog-content-workflow) ("Repository Architecture Documentation - Blog Content Workflow" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md#blog-content-workflow>) - Workflow architecture
 
 ### Web Audit Suite Commands
 
@@ -516,7 +516,7 @@ npm run audit:test             # Run tests
 - Short dashes only (not em-dashes)
 - Professional tone without superlatives or emotional validation
 
-**Complete style guide:** [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md)
+**Complete style guide:** [docs/for-ai/writing-style.md](docs/for-ai/writing-style.md) ("Writing Style Guide: MX Series" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>)
 
 **Use `/review-docs [file paths]` skill to check any document against writing style guide.**
 
@@ -848,7 +848,7 @@ Relative-only links like `[README.md](../../README.md)` break when:
 - ❌ **Not needed:** Internal section anchors within same document (like `#contents`)
 - ❌ **Not needed:** External links (already absolute)
 
-**This is Anti-pattern 14:** Context-Free References. See Chapter 9 and Appendix N for complete documentation. Also documented as **MX Principle 5** in [docs/for-ai/mx-principles-for-repos.md](docs/for-ai/mx-principles-for-repos.md).
+**This is Anti-pattern 14:** Context-Free References. See Chapter 9 and Appendix N for complete documentation. Also documented as **MX Principle 5** in [docs/for-ai/mx-principles-for-repos.md](docs/for-ai/mx-principles-for-repos.md) ("MX Principles for Repositories" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/mx-principles-for-repos.md>).
 
 ## MX Code Metadata Specification
 
@@ -1235,7 +1235,7 @@ The specification supports custom extensions via namespaced properties:
 
 ## Git Workflows
 
-**⚠️ CRITICAL:** See [config/system/GIT-README.md](config/system/GIT-README.md) for comprehensive multi-repository git workflow guidance.
+**⚠️ CRITICAL:** See [config/system/GIT-README.md](config/system/GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) for comprehensive multi-repository git workflow guidance.
 
 **Essential rules:**
 
@@ -1400,7 +1400,7 @@ git commit -m "Update mx-the-bible submodule to latest version"
 git submodule update --remote
 ```
 
-**For comprehensive submodule workflows, see [config/system/GIT-README.md](config/system/GIT-README.md).**
+**For comprehensive submodule workflows, see [config/system/GIT-README.md](config/system/GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>).**
 
 ## Notes for Future Development
 
