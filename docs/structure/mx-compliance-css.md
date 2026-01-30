@@ -843,8 +843,8 @@ select {
 
 ## Related Documentation
 
-- **[mx-compliance.md](./mx-compliance.md)** - Webpage output requirements
-- **[mx-compliance-javascript.md](./mx-compliance-javascript.md)** - JavaScript requirements
+- **[mx-compliance.md](./mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>)** - Webpage output requirements
+- **[mx-compliance-javascript.md](./mx-compliance-javascript.md) ("MX-Compliant JavaScript Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-javascript.md>)** - JavaScript requirements
 - **WCAG 2.1 Guidelines** - https://www.w3.org/WAI/WCAG21/quickref/
 - **Contrast Checker** - https://webaim.org/resources/contrastchecker/
 - **CSS Custom Properties** - https://developer.mozilla.org/en-US/docs/Web/CSS/--*

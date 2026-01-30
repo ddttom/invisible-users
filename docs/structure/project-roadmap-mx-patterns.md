@@ -743,9 +743,9 @@ The phased approach allows for parallel execution with strategic coordination po
 
 ### Key Documents
 
-- [Plan 1: Extract patterns to MX-Bible](plan-1-extract-patterns-to-bible.md)
-- [Plan 2: MX Patterns book structure](plan-2-mx-patterns-book-structure.md)
-- [CLAUDE.md](../../CLAUDE.md) (main project guidance)
+- [Plan 1: Extract patterns to MX-Bible](plan-1-extract-patterns-to-bible.md) ("Plan 1: Extract Pattern Content into MX-Bible" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/plan-1-extract-patterns-to-bible.md>)
+- [Plan 2: MX Patterns book structure](plan-2-mx-patterns-book-structure.md) ("Plan 2: Structure for MX: The Patterns of Machine Experience" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/plan-2-mx-patterns-book-structure.md>)
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) (main project guidance)
 - [GIT-README.md](../architecture/GIT-README.md) (git workflow)
 
 ### Coordination Calendar (Weeks 1-16)

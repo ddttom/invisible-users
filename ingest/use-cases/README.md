@@ -24,42 +24,42 @@ MX compliance means different things to different people. A CEO needs to underst
 
 | Guide | Audience | Focus |
 |-------|----------|-------|
-| **[CMS Vendors](./cms-vendors.md)** ("CMS Vendors Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-vendors.md>) | WordPress, Drupal, Ghost, etc. | Platform features, competitive positioning |
-| **[CMS Agencies](./cms-agencies.md)** ("CMS Agencies Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-agencies.md>) | Digital agencies, web shops | Service offerings, client delivery |
-| **[Platform Creators](./platform-creators.md)** ("Platform Creators Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/platform-creators.md>) | SaaS, e-commerce platforms | Architecture, API design |
-| **[Conference Organisers](./conference-organisers.md)** ("Conference Organisers Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/conference-organisers.md>) | Event planners, conference teams | Schema.org Event, discovery, registration |
+| **[CMS Vendors](./cms-vendors.md) ("MX Compliance for CMS Vendors" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-vendors.md>)** ("CMS Vendors Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-vendors.md>) | WordPress, Drupal, Ghost, etc. | Platform features, competitive positioning |
+| **[CMS Agencies](./cms-agencies.md) ("MX Compliance for CMS Agencies" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-agencies.md>)** ("CMS Agencies Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-agencies.md>) | Digital agencies, web shops | Service offerings, client delivery |
+| **[Platform Creators](./platform-creators.md) ("MX Compliance for Platform Creators" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/platform-creators.md>)** ("Platform Creators Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/platform-creators.md>) | SaaS, e-commerce platforms | Architecture, API design |
+| **[Conference Organisers](./conference-organisers.md) ("MX Compliance for Conference Organisers" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/conference-organisers.md>)** ("Conference Organisers Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/conference-organisers.md>) | Event planners, conference teams | Schema.org Event, discovery, registration |
 
 ### By Role
 
 | Guide | Audience | Focus |
 |-------|----------|-------|
-| **[CEOs](./ceo.md)** ("CEO Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/ceo.md>) | Executive leadership | Strategy, investment, competitive advantage |
-| **[Product Owners](./product-owners.md)** ("Product Owners Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/product-owners.md>) | Product managers | User stories, roadmap, metrics |
-| **[Developers](./developers.md)** ("Developers Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/developers.md>) | Software engineers | Code examples, implementation patterns |
-| **[Designers](./designers.md)** ("Designers Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/designers.md>) | UX/UI designers | Visual patterns, accessibility, components |
+| **[CEOs](./ceo.md) ("MX Compliance for CEOs" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/ceo.md>)** ("CEO Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/ceo.md>) | Executive leadership | Strategy, investment, competitive advantage |
+| **[Product Owners](./product-owners.md) ("MX Compliance for Product Owners" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/product-owners.md>)** ("Product Owners Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/product-owners.md>) | Product managers | User stories, roadmap, metrics |
+| **[Developers](./developers.md) ("MX Compliance for Developers" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/developers.md>)** ("Developers Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/developers.md>) | Software engineers | Code examples, implementation patterns |
+| **[Designers](./designers.md) ("MX Compliance for Designers" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/designers.md>)** ("Designers Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/designers.md>) | UX/UI designers | Visual patterns, accessibility, components |
 
 ## Quick Navigation
 
 ### "I want to understand the business case"
-→ Start with **[CEO Guide](./ceo.md)** ("CEO Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/ceo.md>)
+→ Start with **[CEO Guide](./ceo.md) ("MX Compliance for CEOs" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/ceo.md>)** ("CEO Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/ceo.md>)
 
 ### "I want to sell MX services to clients"
-→ Start with **[CMS Agencies Guide](./cms-agencies.md)** ("CMS Agencies Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-agencies.md>)
+→ Start with **[CMS Agencies Guide](./cms-agencies.md) ("MX Compliance for CMS Agencies" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-agencies.md>)** ("CMS Agencies Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-agencies.md>)
 
 ### "I want to build MX into my platform"
-→ Start with **[Platform Creators Guide](./platform-creators.md)** ("Platform Creators Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/platform-creators.md>) or **[CMS Vendors Guide](./cms-vendors.md)** ("CMS Vendors Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-vendors.md>)
+→ Start with **[Platform Creators Guide](./platform-creators.md) ("MX Compliance for Platform Creators" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/platform-creators.md>)** ("Platform Creators Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/platform-creators.md>) or **[CMS Vendors Guide](./cms-vendors.md) ("MX Compliance for CMS Vendors" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-vendors.md>)** ("CMS Vendors Guide" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/cms-vendors.md>)
 
 ### "I want to prioritise MX in my backlog"
-→ Start with **[Product Owners Guide](./product-owners.md)**
+→ Start with **[Product Owners Guide](./product-owners.md) ("MX Compliance for Product Owners" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/product-owners.md>)**
 
 ### "I want to implement MX compliance"
-→ Start with **[Developers Guide](./developers.md)**
+→ Start with **[Developers Guide](./developers.md) ("MX Compliance for Developers" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/developers.md>)**
 
 ### "I want to design MX-compliant interfaces"
-→ Start with **[Designers Guide](./designers.md)**
+→ Start with **[Designers Guide](./designers.md) ("MX Compliance for Designers" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/designers.md>)**
 
 ### "I want my conference to be AI-discoverable"
-→ Start with **[Conference Organisers Guide](./conference-organisers.md)**
+→ Start with **[Conference Organisers Guide](./conference-organisers.md) ("MX Compliance for Conference Organisers" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/conference-organisers.md>)**
 
 ## What Each Guide Contains
 

@@ -50,8 +50,8 @@ Helen is a **personal friend**, not a cold prospect. Outreach should be:
 
 | File | Purpose |
 |------|---------|
-| [invitation.md](invitation.md) | Comprehensive briefing covering MX project, the opportunity, why her skills fit, what's involved, honest assessment, FAQs |
-| [conversation-guide.md](conversation-guide.md) | Talking points for the in-person/call conversation |
+| [invitation.md](invitation.md) ("Helen Harley - MX Community Invitation" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/helen-harley/invitation.md>) | Comprehensive briefing covering MX project, the opportunity, why her skills fit, what's involved, honest assessment, FAQs |
+| [conversation-guide.md](conversation-guide.md) ("Helen Harley - Conversation Guide" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/helen-harley/conversation-guide.md>) | Talking points for the in-person/call conversation |
 
 ## The Ask
 

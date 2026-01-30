@@ -215,13 +215,13 @@ Changes must flow: **book → tool → documentation**
 
 Each package has its own README with detailed information:
 
-- [MX-Bible README](packages/mx-the-bible/README.md) - Full book contents, build commands, status
-- [MX-Handbook README](packages/mx-handbook/README.md) - Implementation handbook contents
-- [MX-Gathering README](packages/mx-gathering/README.md) - Community resources
-- [Shared Appendices README](packages/mx-appendices/README.md) - Implementation guides
-- [MX-Code Examples README](packages/mx-code-examples/README.md) - Pattern examples
-- [MX-Outputs README](packages/mx-outputs/README.md) - Generated content
-- [Web Audit Suite README](packages/web-audit-suite/README.md) - Complete tool documentation
+- [MX-Bible README](packages/mx-the-bible/README.md) ("Invisible Users Manuscript" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-the-bible/README.md>) - Full book contents, build commands, status
+- [MX-Handbook README](packages/mx-handbook/README.md) ("MX-Handbook: Designing Web Interfaces for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-handbook/README.md>) - Implementation handbook contents
+- [MX-Gathering README](packages/mx-gathering/README.md) ("MX-Gathering: Community Resources and Thought Leadership" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-gathering/README.md>) - Community resources
+- [Shared Appendices README](packages/mx-appendices/README.md) ("Shared Appendices" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-appendices/README.md>) - Implementation guides
+- [MX-Code Examples README](packages/mx-code-examples/README.md) ("Shared Code Examples" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-code-examples/README.md>) - Pattern examples
+- [MX-Outputs README](packages/mx-outputs/README.md) ("Outputs Directory" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-outputs/README.md>) - Generated content
+- [Web Audit Suite README](packages/web-audit-suite/README.md) ("Web Audit Suite" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/README.md>) - Complete tool documentation
 
 ### Architecture Documentation
 

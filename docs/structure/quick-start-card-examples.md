@@ -467,8 +467,8 @@ Before publishing a Quick Start Card:
 ## References
 
 - [Appendix O: Pattern Documentation Templates](../../packages/shared-appendices/appendix-o-pattern-templates.md) - Template definitions
-- [Plan 1: Extract patterns to MX-Bible](plan-1-extract-patterns-to-bible.md) - Integration strategy
-- [Project Roadmap](project-roadmap-mx-patterns.md) - Timeline and milestones
+- [Plan 1: Extract patterns to MX-Bible](plan-1-extract-patterns-to-bible.md) ("Plan 1: Extract Pattern Content into MX-Bible" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/plan-1-extract-patterns-to-bible.md>) - Integration strategy
+- [Project Roadmap](project-roadmap-mx-patterns.md) ("MX Patterns Project Roadmap" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/project-roadmap-mx-patterns.md>) - Timeline and milestones
 
 ## Appendix: Card ID Registry
 

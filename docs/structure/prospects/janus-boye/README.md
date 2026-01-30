@@ -51,7 +51,7 @@ CMS Experts is where vendors, analysts, practitioners, and enterprise customers 
 
 | File | Purpose |
 |------|---------|
-| [outreach.md](outreach.md) | Full outreach with conversation angles, session proposals, Q&A prep |
+| [outreach.md](outreach.md) ("Janus Boye - MX + CMS Experts Community" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/janus-boye/outreach.md>) | Full outreach with conversation angles, session proposals, Q&A prep |
 
 ## Opportunities
 

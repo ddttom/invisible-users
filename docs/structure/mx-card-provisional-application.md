@@ -468,7 +468,7 @@ After receiving your filing confirmation:
 - [Full Patent Disclosure](mx-card-system-patent-disclosure.md)
 - [Patent Application Plan](mx-card-patent-plan.md)
 - [NDA Template](mx-card-nda-template.md)
-- [Safe to Share Overview](mx-card-safe-to-share.md)
+- [Safe to Share Overview](mx-card-safe-to-share.md) ("MX-Card System - Public Overview" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-card-safe-to-share.md>)
 
 ---
 

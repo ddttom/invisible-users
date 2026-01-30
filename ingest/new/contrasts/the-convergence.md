@@ -227,15 +227,15 @@ Start with any of the six foundational essays. Each stands alone as an explorati
 
 Read about [cognitive optimisation](mindhacker-and-mx.md) ("Mindhacker and MX" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/mindhacker-and-mx.md>) and see how human memory techniques inform AI context management.
 
-Read about [usability principles](dont-make-me-think-and-mx.md) and see how removing human inference removes machine ambiguity.
+Read about [usability principles](dont-make-me-think-and-mx.md) ("Don't Make AI Think: How Steve Krug's Usability Principles Apply to Machine Experience" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/dont-make-me-think-and-mx.md>) and see how removing human inference removes machine ambiguity.
 
 Read about [structured content](structured-content-and-mx.md) ("Structured Content and MX" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/structured-content-and-mx.md>) and see how multi-channel publishing predicted multi-processor consumption.
 
-Read about [design principles](norman-and-mx.md) and see how affordances work for algorithms.
+Read about [design principles](norman-and-mx.md) ("Affordances for Algorithms: Don Norman's Design Principles and Machine Experience" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/norman-and-mx.md>) and see how affordances work for algorithms.
 
-Read about [accessibility](accessibility-is-machine-readability.md) and see how WCAG already requires machine readability.
+Read about [accessibility](accessibility-is-machine-readability.md) ("Accessibility Is Machine Readability" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/accessibility-is-machine-readability.md>) and see how WCAG already requires machine readability.
 
-Read about [information architecture](ia-and-mx.md) and see how human findability enables machine discoverability.
+Read about [information architecture](ia-and-mx.md) ("Finding the Findable: Information Architecture for Machine Navigation" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/ia-and-mx.md>) and see how human findability enables machine discoverability.
 
 Then recognise: you already have the skills. You already know the practices. You already create content that serves both audiences.
 
@@ -247,22 +247,22 @@ Machine Experience is the name for what you're already doing when you do it well
 
 ## The Six Foundational Essays
 
-1. **[Two Sides of the Same Cognitive Coin: What Mindhacker Can Teach Us About Machine Experience](mindhacker-and-mx.md)**  
+1. **[Two Sides of the Same Cognitive Coin: What Mindhacker Can Teach Us About Machine Experience](mindhacker-and-mx.md) ("Two Sides of the Same Cognitive Coin: What Mindhacker Can Teach Us About Machine Experience" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/mindhacker-and-mx.md>)**  
    How cognitive optimisation techniques for humans apply to AI processing constraints
 
-2. **[Don't Make AI Think: How Steve Krug's Usability Principles Apply to Machine Experience](dont-make-me-think-and-mx.md)**  
+2. **[Don't Make AI Think: How Steve Krug's Usability Principles Apply to Machine Experience](dont-make-me-think-and-mx.md) ("Don't Make AI Think: How Steve Krug's Usability Principles Apply to Machine Experience" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/dont-make-me-think-and-mx.md>)**  
    Why reducing human inference overhead reduces machine ambiguity
 
-3. **[From Blobs to Bots: How Structured Content Predicted Machine Experience](structured-content-and-mx.md)**  
+3. **[From Blobs to Bots: How Structured Content Predicted Machine Experience](structured-content-and-mx.md) ("From Blobs to Bots: How Structured Content Predicted Machine Experience" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/structured-content-and-mx.md>)**  
    How content strategists solved machine readability while addressing multi-channel publishing
 
-4. **[Affordances for Algorithms: Don Norman's Design Principles and Machine Experience](norman-and-mx.md)**  
+4. **[Affordances for Algorithms: Don Norman's Design Principles and Machine Experience](norman-and-mx.md) ("Affordances for Algorithms: Don Norman's Design Principles and Machine Experience" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/norman-and-mx.md>)**  
    How affordances, signifiers, and feedback work for any agent that interacts with systems
 
-5. **[Accessibility Is Machine Readability](accessibility-is-machine-readability.md)**  
+5. **[Accessibility Is Machine Readability](accessibility-is-machine-readability.md) ("Accessibility Is Machine Readability" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/accessibility-is-machine-readability.md>)**  
    Why WCAG compliance makes content work for all programmatic processors
 
-6. **[Finding the Findable: Information Architecture for Machine Navigation](ia-and-mx.md)**  
+6. **[Finding the Findable: Information Architecture for Machine Navigation](ia-and-mx.md) ("Finding the Findable: Information Architecture for Machine Navigation" at <https://github.com/ddttom/invisible-users/blob/main/ingest/new/contrasts/ia-and-mx.md>)**  
    How human findability and machine discoverability are the same challenge
 
 ## Further Reading

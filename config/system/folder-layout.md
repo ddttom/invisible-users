@@ -419,11 +419,11 @@ The following symlinks were removed to reduce navigation confusion:
 
 ### Key File References
 
-- **For detailed architecture and workflows:** See [doc-architecture.md](doc-architecture.md) - Build systems, workflows, diagrams
-- **For git workflows:** See [GIT-README.md](GIT-README.md)
-- **For writing style:** See [../../docs/for-ai/writing-style.md](../../docs/for-ai/writing-style.md)
-- **For navigation rules:** See [../../CLAUDE.md](../../CLAUDE.md) - Section "Repository Navigation Map"
-- **For MX metadata specification:** See [../../packages/mx-gathering/specifications/mx-code-metadata-spec.md](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md)
+- **For detailed architecture and workflows:** See [doc-architecture.md](doc-architecture.md) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>) - Build systems, workflows, diagrams
+- **For git workflows:** See [GIT-README.md](GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>)
+- **For writing style:** See [../../docs/for-ai/writing-style.md](../../docs/for-ai/writing-style.md) ("Writing Style Guide: MX Series" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>)
+- **For navigation rules:** See [../../CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - Section "Repository Navigation Map"
+- **For MX metadata specification:** See [../../packages/mx-gathering/specifications/mx-code-metadata-spec.md](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md) ("MX Code Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-gathering/specifications/mx-code-metadata-spec.md>)
 
 ## Repository Count
 

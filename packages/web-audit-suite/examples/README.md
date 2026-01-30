@@ -314,7 +314,7 @@ jobs:
 
 For questions or issues with threshold configuration:
 
-1. Check the [Configuration Guide](../docs/CONFIGURATION.md)
-2. Review the [Features Documentation](../docs/FEATURES.md)
+1. Check the [Configuration Guide](../docs/CONFIGURATION.md) ("Configuration Guide" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/CONFIGURATION.md>)
+2. Review the [Features Documentation](../docs/FEATURES.md) ("Web Audit Suite - Features Overview" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/FEATURES.md>)
 3. Examine your results in `dashboard.html`
 4. Adjust thresholds based on your specific requirements

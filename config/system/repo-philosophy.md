@@ -278,7 +278,7 @@ config/
 - `.mxignore` for AI exclusion patterns
 - Inline `@mx:` annotations in code
 
-**Specification:** [packages/mx-gathering/specifications/mx-code-metadata-spec.md](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md)
+**Specification:** [packages/mx-gathering/specifications/mx-code-metadata-spec.md](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md) ("MX Code Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-gathering/specifications/mx-code-metadata-spec.md>)
 
 ### AI Exclusion Patterns
 

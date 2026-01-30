@@ -383,7 +383,7 @@ Add to `packages/bible/chapters/Glossary.md`:
 
 - [MX-Card System Patent Disclosure](mx-card-system-patent-disclosure.md)
 - [Patent Application Plan](mx-card-patent-plan.md)
-- [Copyright Protection Plan](mx-card-copyright-plan.md)
+- [Copyright Protection Plan](mx-card-copyright-plan.md) ("MX-Card System - Copyright Protection Plan" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-card-copyright-plan.md>)
 
 ---
 

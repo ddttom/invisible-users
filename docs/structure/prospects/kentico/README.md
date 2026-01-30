@@ -32,7 +32,7 @@ Personalised outreach materials for Kentico, a leading Digital Experience Platfo
 
 | File | Target | Purpose |
 |------|--------|---------|
-| [petr-palas.md](petr-palas.md) | Petr Palas (Founder, Executive Chairman) | Full outreach package including emails, LinkedIn, executive brief, technical brief, objection handling |
+| [petr-palas.md](petr-palas.md) ("Kentico Outreach - Petr Palas" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/kentico/petr-palas.md>) | Petr Palas (Founder, Executive Chairman) | Full outreach package including emails, LinkedIn, executive brief, technical brief, objection handling |
 
 ## Strategic Positioning
 

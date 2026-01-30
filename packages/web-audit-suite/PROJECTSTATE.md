@@ -326,7 +326,7 @@ Current snapshot of Web Audit Suite implementation status.
   - Pre-commit checklist with 9-point verification
   - Code examples showing correct vs incorrect patterns
   - Integration with git hooks and skills
-  - File: [CODE_REVIEW_CHECKLIST.md](CODE_REVIEW_CHECKLIST.md)
+  - File: [CODE_REVIEW_CHECKLIST.md](CODE_REVIEW_CHECKLIST.md) ("Code Review Checklist" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/CODE_REVIEW_CHECKLIST.md>)
 
 - **Data Lifecycle Management** (DOCUMENTED)
   - Added comprehensive "Data Lifecycle Management" section to CLAUDE.md
@@ -375,7 +375,7 @@ Current snapshot of Web Audit Suite implementation status.
 
 **Files:**
 
-- [.claude/commands/md-lint-all.md](.claude/commands/md-lint-all.md) - Command description
+- [.claude/commands/md-lint-all.md](.claude/commands/md-lint-all.md) ("Md Lint All" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/.claude/commands/md-lint-all.md>) - Command description
 - [.claude/skills/md-lint-all.json](.claude/skills/md-lint-all.json) - Agent configuration
 - [.claude/hooks/post-markdown-write.sh](.claude/hooks/post-markdown-write.sh) - Reminder hook
 
@@ -391,7 +391,7 @@ Current snapshot of Web Audit Suite implementation status.
 **Documentation Improvements:**
 
 - **Configuration Documentation Update** (NEW)
-  - Added 6 missing CLI options to [docs/CONFIGURATION.md](docs/CONFIGURATION.md)
+  - Added 6 missing CLI options to [docs/CONFIGURATION.md](docs/CONFIGURATION.md) ("Configuration Guide" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/CONFIGURATION.md>) ("Configuration Guide" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/CONFIGURATION.md>)
   - Documented `--force-scrape`, `--no-puppeteer`, `--establish-baseline`, `--baseline-timestamp`, `--extract-patterns`, `--pattern-score-threshold`
   - Enhanced `--generate-executive-summary` description to mention technology detection feature
   - Ensures all implemented CLI options are properly documented
@@ -424,14 +424,14 @@ Current snapshot of Web Audit Suite implementation status.
 **Documentation Improvements:**
 
 - **JSON Structure Documentation** (NEW)
-  - Added comprehensive results.json structure documentation to [docs/report-layout.md](docs/report-layout.md)
+  - Added comprehensive results.json structure documentation to [docs/report-layout.md](docs/report-layout.md) ("Report Layout Reference for AI Assistants" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/report-layout.md>) ("Report Layout Reference for AI Assistants" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/report-layout.md>) ("Report Layout Reference for AI Assistants" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/report-layout.md>) ("Report Layout Reference for AI Assistants" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/report-layout.md>)
   - Documented all 23 top-level arrays and objects with field details and examples
   - Created "Primary Results File" section (410+ lines) for AI assistant reference
   - Verified structure accuracy against actual data files
   - Files: [docs/report-layout.md](docs/report-layout.md:55-465)
 
 - **JSON Verification Pattern** (NEW)
-  - Added 7-step pattern to [LEARNINGS.md](LEARNINGS.md) for documenting JSON structures
+  - Added 7-step pattern to [LEARNINGS.md](LEARNINGS.md) ("Learnings" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/LEARNINGS.md>) for documenting JSON structures
   - Documents 6+ specific documentation errors made during verification process
   - Critical rule: ALWAYS verify BOTH type (array vs object) AND actual field structure
   - Pattern prevents hours of debugging data structure mismatches
@@ -842,15 +842,15 @@ web-audit-suite/
 
 ### Documentation
 
-- [README.md](README.md) - Quick start and overview
-- [QUICKSTART.md](QUICKSTART.md) - 5-minute getting started guide
+- [README.md](README.md) ("Web Audit Suite" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/README.md>) - Quick start and overview
+- [QUICKSTART.md](QUICKSTART.md) ("Quick Start Guide" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/QUICKSTART.md>) - 5-minute getting started guide
 - [CLAUDE.md](CLAUDE.md) - Comprehensive technical guide
-- [docs/usermanual.md](docs/usermanual.md) - User manual
+- [docs/usermanual.md](docs/usermanual.md) ("Web Audit Suite User Manual" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/usermanual.md>) - User manual
 - [docs/CONFIGURATION.md](docs/CONFIGURATION.md) - Configuration reference
-- [docs/FEATURES.md](docs/FEATURES.md) - Feature overview
+- [docs/FEATURES.md](docs/FEATURES.md) ("Web Audit Suite - Features Overview" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/FEATURES.md>) - Feature overview
 - [docs/report-layout.md](docs/report-layout.md) - Report specifications
-- [docs/for-ai/system.md](docs/for-ai/system.md) - Architecture details
-- [examples/README.md](examples/README.md) - Threshold configuration examples
+- [docs/for-ai/system.md](docs/for-ai/system.md) ("Author & Context" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/for-ai/system.md>) - Architecture details
+- [examples/README.md](examples/README.md) ("Threshold Configuration Examples" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/examples/README.md>) - Threshold configuration examples
 
 ### Logs
 

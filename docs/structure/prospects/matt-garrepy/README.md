@@ -44,7 +44,7 @@ This is conceptual alignment, not a sales pitch.
 
 | File | Purpose |
 |------|---------|
-| [outreach.md](outreach.md) | Full outreach document with conversation angles, article ideas, podcast topics, Q&A preparation |
+| [outreach.md](outreach.md) ("Matt Garrepy - MX Collaboration" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/matt-garrepy/outreach.md>) | Full outreach document with conversation angles, article ideas, podcast topics, Q&A preparation |
 
 ## Opportunities
 

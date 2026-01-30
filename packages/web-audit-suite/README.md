@@ -138,13 +138,13 @@ The tool collects comprehensive data about each page and stores it in `results.j
 
 ## Documentation
 
-- [Quick Start Guide](QUICKSTART.md) - Get started in 5 minutes
-- [User Manual](docs/usermanual.md) - Complete user documentation
-- [Configuration Guide](docs/CONFIGURATION.md) - Detailed configuration reference
-- [Features Overview](docs/FEATURES.md) - All available features
-- [Report Layout](docs/report-layout.md) - Understanding report structure and data
-- [CI/CD Integration Guide](docs/CI-CD-INTEGRATION.md) - GitHub Actions and CI/CD setup
-- [Example Thresholds](examples/README.md) - Threshold configuration examples
+- [Quick Start Guide](QUICKSTART.md) ("Quick Start Guide" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/QUICKSTART.md>) - Get started in 5 minutes
+- [User Manual](docs/usermanual.md) ("Web Audit Suite User Manual" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/usermanual.md>) - Complete user documentation
+- [Configuration Guide](docs/CONFIGURATION.md) ("Configuration Guide" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/CONFIGURATION.md>) - Detailed configuration reference
+- [Features Overview](docs/FEATURES.md) ("Web Audit Suite - Features Overview" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/FEATURES.md>) - All available features
+- [Report Layout](docs/report-layout.md) ("Report Layout Reference for AI Assistants" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/report-layout.md>) - Understanding report structure and data
+- [CI/CD Integration Guide](docs/CI-CD-INTEGRATION.md) ("CI/CD Integration Guide" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/CI-CD-INTEGRATION.md>) - GitHub Actions and CI/CD setup
+- [Example Thresholds](examples/README.md) ("Threshold Configuration Examples" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/examples/README.md>) - Threshold configuration examples
 
 ## Project Structure
 

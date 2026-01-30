@@ -442,11 +442,11 @@ AI agents follow a predictable journey when interacting with websites:
 
 ## Related Documentation
 
-- **Repository Philosophy:** [repo-philosophy.md](repo-philosophy.md) - Repository design principles
-- **Project Overview:** [../../README.md](../../README.md) - Project introduction
-- **MX-Bible:** [../../packages/mx-the-bible/README.md](../../packages/mx-the-bible/README.md) - Complete MX guide
-- **MX-Handbook:** [../../packages/mx-handbook/README.md](../../packages/mx-handbook/README.md) - Implementation handbook
-- **Appendices:** [../../packages/mx-appendices/README.md](../../packages/mx-appendices/README.md) - Implementation patterns
+- **Repository Philosophy:** [repo-philosophy.md](repo-philosophy.md) ("Repository Philosophy & Design Principles" at <https://github.com/ddttom/invisible-users/blob/main/config/system/repo-philosophy.md>) - Repository design principles
+- **Project Overview:** [../../README.md](../../README.md) ("The Invisible Users" at <https://github.com/ddttom/invisible-users/blob/main/README.md>) - Project introduction
+- **MX-Bible:** [../../packages/mx-the-bible/README.md](../../packages/mx-the-bible/README.md) ("Invisible Users Manuscript" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-the-bible/README.md>) - Complete MX guide
+- **MX-Handbook:** [../../packages/mx-handbook/README.md](../../packages/mx-handbook/README.md) ("MX-Handbook: Designing Web Interfaces for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-handbook/README.md>) - Implementation handbook
+- **Appendices:** [../../packages/mx-appendices/README.md](../../packages/mx-appendices/README.md) ("Shared Appendices" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-appendices/README.md>) - Implementation patterns
 
 ## Maintenance
 

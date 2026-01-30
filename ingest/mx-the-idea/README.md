@@ -114,9 +114,9 @@ Websites that don't:
 ## Getting Started
 
 1. Read the [manifesto](manifesto.md) ("MX Manifesto" at <https://github.com/ddttom/invisible-users/blob/main/ingest/mx-the-idea/manifesto.md>) for the full vision
-2. Understand [hallucination reduction](hallucination-reduction.md) - the trust argument
-3. Explore [knowledge distribution](knowledge-distribution.md) - the access argument
-4. Review [energy efficiency](energy-efficiency.md) - the sustainability argument
+2. Understand [hallucination reduction](hallucination-reduction.md) ("Hallucination Reduction" at <https://github.com/ddttom/invisible-users/blob/main/ingest/mx-the-idea/hallucination-reduction.md>) - the trust argument
+3. Explore [knowledge distribution](knowledge-distribution.md) ("Knowledge Distribution" at <https://github.com/ddttom/invisible-users/blob/main/ingest/mx-the-idea/knowledge-distribution.md>) - the access argument
+4. Review [energy efficiency](energy-efficiency.md) ("Energy Efficiency" at <https://github.com/ddttom/invisible-users/blob/main/ingest/mx-the-idea/energy-efficiency.md>) - the sustainability argument
 
 Then implement: Schema.org, semantic HTML, explicit state, MX metadata.
 

@@ -325,7 +325,7 @@ tom.cranstoun@gmail.com
 
 - [MX-Card System Patent Disclosure](mx-card-system-patent-disclosure.md)
 - [Patent Application Plan](mx-card-patent-plan.md)
-- [Book Update Plan](mx-card-book-update-plan.md)
+- [Book Update Plan](mx-card-book-update-plan.md) ("MX-Card System - Book Update Plan" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-card-book-update-plan.md>)
 
 ---
 

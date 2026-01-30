@@ -170,7 +170,7 @@ npm start -- -s $DEPLOYMENT_URL \
 
 **Review**: Exit code (0 = pass, 1 = fail)
 
-**GitHub Actions**: See [CI/CD Integration Guide](docs/CI-CD-INTEGRATION.md) for automated quality gates
+**GitHub Actions**: See [CI/CD Integration Guide](docs/CI-CD-INTEGRATION.md) ("CI/CD Integration Guide" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/CI-CD-INTEGRATION.md>) for automated quality gates
 
 ## Configuration
 
@@ -242,10 +242,10 @@ npm install chart.js chartjs-node-canvas
 
 ### Learn More
 
-- [User Manual](docs/usermanual.md) - Complete user documentation
-- [Configuration Guide](docs/CONFIGURATION.md) - Detailed configuration reference
-- [Features Overview](docs/FEATURES.md) - All available features
-- [Example Thresholds](examples/README.md) - Threshold configuration examples
+- [User Manual](docs/usermanual.md) ("Web Audit Suite User Manual" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/usermanual.md>) - Complete user documentation
+- [Configuration Guide](docs/CONFIGURATION.md) ("Configuration Guide" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/CONFIGURATION.md>) - Detailed configuration reference
+- [Features Overview](docs/FEATURES.md) ("Web Audit Suite - Features Overview" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/FEATURES.md>) - All available features
+- [Example Thresholds](examples/README.md) ("Threshold Configuration Examples" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/examples/README.md>) - Threshold configuration examples
 
 ### Advanced Usage
 

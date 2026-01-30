@@ -519,5 +519,5 @@ After implementing semantic fixes:
 
 - [Appendix O: Pattern Documentation Templates](../../packages/shared-appendices/appendix-o-pattern-templates.md)
 - [Appendix N: Anti-Patterns Catalog (current)](../../packages/shared-appendices/appendix-n-anti-patterns-catalog.md)
-- [Plan 1: Extract patterns to MX-Bible](plan-1-extract-patterns-to-bible.md)
-- [Project Roadmap](project-roadmap-mx-patterns.md)
+- [Plan 1: Extract patterns to MX-Bible](plan-1-extract-patterns-to-bible.md) ("Plan 1: Extract Pattern Content into MX-Bible" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/plan-1-extract-patterns-to-bible.md>)
+- [Project Roadmap](project-roadmap-mx-patterns.md) ("MX Patterns Project Roadmap" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/project-roadmap-mx-patterns.md>)

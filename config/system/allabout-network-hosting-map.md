@@ -546,8 +546,8 @@ curl -s https://allabout.network/blogs/mx/[filename].html | grep canonical
 
 **Related Documentation:**
 
-- [CLAUDE.md](/CLAUDE.md) - Complete project documentation
-- [Blog Creation Skill](/.claude/skills/create-blog/skill.md) - Blog generation workflow
+- [CLAUDE.md](/CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - Complete project documentation
+- [Blog Creation Skill](/.claude/skills/create-blog/skill.md) ("create-blog" at <https://github.com/ddttom/invisible-users/blob/main/.claude/skills/create-blog/skill.md>) - Blog generation workflow
 - [Appendix Generation Script](/scripts/generate-appendix-html.sh) - HTML generation
 - [Sitemap Generator](/scripts/generate-sitemap.js) - Sitemap creation
 

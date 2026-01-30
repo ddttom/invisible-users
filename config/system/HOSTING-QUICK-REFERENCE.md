@@ -146,7 +146,7 @@ chown www-data:www-data -R /public_html/invisible-users/
 
 ## Need More Detail?
 
-See [allabout-network-hosting-map.md](./allabout-network-hosting-map.md) for complete documentation including:
+See [allabout-network-hosting-map.md](./allabout-network-hosting-map.md) ("AllAbout.Network Hosting Path Map" at <https://github.com/ddttom/invisible-users/blob/main/config/system/allabout-network-hosting-map.md>) for complete documentation including:
 
 - Deployment workflows
 - Troubleshooting

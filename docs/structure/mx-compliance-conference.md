@@ -833,7 +833,7 @@ Clearly document venue accessibility:
 
 ## Related Documentation
 
-- [Webpage Compliance](./mx-compliance.md) - Base HTML requirements
-- [CMS Compliance](./cms-compliance.md) - Content management
+- [Webpage Compliance](./mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>) - Base HTML requirements
+- [CMS Compliance](./cms-compliance.md) ("MX-Compliant CMS Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>) - Content management
 - [Schema.org Event](https://schema.org/Event) - Event vocabulary
 - [Conference Organisers Use Case](./use-cases/conference-organisers.md) - Implementation guide

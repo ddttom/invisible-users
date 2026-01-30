@@ -108,7 +108,7 @@ This document defines what it means to design repositories for both human develo
 - `ai.context_provides` - What context this provides to agents
 - `related_files` - Cross-references to related content
 
-**See:** [MX Code Metadata Specification](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md) for complete technical specification.
+**See:** [MX Code Metadata Specification](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md) ("MX Code Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-gathering/specifications/mx-code-metadata-spec.md>) for complete technical specification.
 
 ### 3. Context Declaration
 
@@ -200,7 +200,7 @@ All must be able to access and understand the content.
 **The problem with relative-only links:**
 
 ```markdown
-❌ BAD: See [repo-philosophy.md](../../config/system/repo-philosophy.md)
+❌ BAD: See [repo-philosophy.md](../../config/system/repo-philosophy.md) ("Repository Philosophy & Design Principles" at <https://github.com/ddttom/invisible-users/blob/main/config/system/repo-philosophy.md>)
 ```
 
 **What breaks:**
@@ -415,8 +415,8 @@ This document should be updated when:
 
 ## Related Documentation
 
-- **MX Code Metadata Specification:** [mx-code-metadata-spec.md](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md) - Complete technical specification
-- **MX Base Specification:** [mx-base-spec.md](../../packages/mx-gathering/specifications/mx-base-spec.md) - Foundation principles
+- **MX Code Metadata Specification:** [mx-code-metadata-spec.md](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md) ("MX Code Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-gathering/specifications/mx-code-metadata-spec.md>) - Complete technical specification
+- **MX Base Specification:** [mx-base-spec.md](../../packages/mx-gathering/specifications/mx-base-spec.md) ("MX Base Specification" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-gathering/specifications/mx-base-spec.md>) - Foundation principles
 - **Repository Philosophy:** [repo-philosophy.md](../../config/system/repo-philosophy.md) ("Repository Philosophy & Design Principles" at <https://github.com/ddttom/invisible-users/blob/main/config/system/repo-philosophy.md>) - Design decisions and rationale
 - **AI Guidance:** [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md - AI Assistant Project Guide" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - Operational guidance for AI assistants
 - **Folder Structure:** [folder-layout.md](../../config/system/folder-layout.md) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) - Complete repository structure

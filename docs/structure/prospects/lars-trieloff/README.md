@@ -49,7 +49,7 @@ Professional friend - Tom knows Lars through the AEM/CMS community.
 
 | File | Purpose |
 |------|---------|
-| [outreach.md](outreach.md) | Full technical outreach with architecture ideas, conversation angles, deep dive topics, Q&A preparation |
+| [outreach.md](outreach.md) ("Lars Trieloff - MX + Edge Delivery Services" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/lars-trieloff/outreach.md>) | Full technical outreach with architecture ideas, conversation angles, deep dive topics, Q&A preparation |
 
 ## Technical Opportunity
 

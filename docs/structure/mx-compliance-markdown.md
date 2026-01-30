@@ -896,10 +896,10 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## Related Documentation
 
-- **CMS Compliance** - [cms-compliance.md](./cms-compliance.md) - Internal storage requirements
-- **Webpage Compliance** - [mx-compliance.md](./mx-compliance.md) - HTML output requirements
+- **CMS Compliance** - [cms-compliance.md](./cms-compliance.md) ("MX-Compliant CMS Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>) - Internal storage requirements
+- **Webpage Compliance** - [mx-compliance.md](./mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>) - HTML output requirements
 - **Appendix P** - Blog generation workflow using markdown source
-- **Writing Style Guide** - [docs/for-ai/writing-style.md](../for-ai/writing-style.md)
+- **Writing Style Guide** - [docs/for-ai/writing-style.md](../for-ai/writing-style.md) ("Writing Style Guide: MX Series" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>)
 
 ## Version History
 

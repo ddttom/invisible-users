@@ -372,7 +372,7 @@ jq '.[0].llmMetrics' results/results.json              # Specific field check
 ## Resources
 
 - [CLAUDE.md](CLAUDE.md) - Project architecture and guidelines
-- [LEARNINGS.md](LEARNINGS.md) - Critical lessons from mistakes
+- [LEARNINGS.md](LEARNINGS.md) ("Learnings" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/LEARNINGS.md>) - Critical lessons from mistakes
 - [IMPROVEMENT_PLAN.md](IMPROVEMENT_PLAN.md) - Code improvement roadmap
 - [appendix-battle-tested-lessons.md](appendix-battle-tested-lessons.md) - Detailed battle-tested lessons
 

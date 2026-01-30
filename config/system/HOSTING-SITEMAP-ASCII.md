@@ -409,4 +409,4 @@ Need to find where a file goes?
 ---
 
 **Last Updated:** January 2026
-**For detailed deployment instructions, see:** [allabout-network-hosting-map.md](./allabout-network-hosting-map.md)
+**For detailed deployment instructions, see:** [allabout-network-hosting-map.md](./allabout-network-hosting-map.md) ("AllAbout.Network Hosting Path Map" at <https://github.com/ddttom/invisible-users/blob/main/config/system/allabout-network-hosting-map.md>)

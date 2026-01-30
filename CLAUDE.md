@@ -501,7 +501,7 @@ npm run audit:lint             # Run ESLint
 npm run audit:test             # Run tests
 ```
 
-**See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) for complete usage details.**
+**See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) ("Web Audit Suite" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/README.md>) ("Web Audit Suite" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/README.md>) ("Web Audit Suite" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/README.md>) ("Web Audit Suite" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/README.md>) ("Web Audit Suite" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/README.md>) for complete usage details.**
 
 ## Writing Style Guidelines (Book Manuscript)
 
@@ -794,7 +794,7 @@ Use llms.txt files throughout the repository to ensure all content is discoverab
 
 **Standard fields:**
 
-See [Appendix H - Example llms.txt](packages/mx-appendices/appendix-h-live-llms.md) for complete field reference and real-world examples.
+See [Appendix H - Example llms.txt](packages/mx-appendices/appendix-h-live-llms.md) ("Appendix H: Example llms.txt File {.unnumbered}" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-appendices/appendix-h-live-llms.md>) for complete field reference and real-world examples.
 
 ### Context-Preserving Cross-Document References
 
@@ -854,7 +854,7 @@ Relative-only links like `[README.md](../../README.md)` break when:
 
 **🎯 REFERENCE IMPLEMENTATION:** This repository implements the MX Code Metadata Specification - a comprehensive framework for making codebases maximally understandable to AI agents.
 
-**Specification Document:** [packages/mx-gathering/specifications/mx-code-metadata-spec.md](packages/mx-gathering/specifications/mx-code-metadata-spec.md)
+**Specification Document:** [packages/mx-gathering/specifications/mx-code-metadata-spec.md](packages/mx-gathering/specifications/mx-code-metadata-spec.md) ("MX Code Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-gathering/specifications/mx-code-metadata-spec.md>)
 
 **All MX Specifications:** Complete collection of 21 specification documents in [packages/mx-gathering/specifications/](packages/mx-gathering/specifications/) including:
 

@@ -501,5 +501,5 @@ Ask your conference platform vendor:
 
 - [MX Conference Specification](../mx-compliance-conference.md) - Full technical requirements
 - [Webpage Compliance](../mx-compliance.md) - Base HTML requirements
-- [Developers Guide](./developers.md) - Implementation patterns
+- [Developers Guide](./developers.md) ("MX Compliance for Developers" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/developers.md>) - Implementation patterns
 - [CLAUDE.md](../CLAUDE.md) - MX concepts overview

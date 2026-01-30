@@ -808,9 +808,9 @@ Object.freeze(CONSTANTS.LANGUAGES);
 
 ## Related Documentation
 
-- **[mx-compliance.md](./mx-compliance.md)** - Webpage output requirements
-- **[mx-compliance-css.md](./mx-compliance-css.md)** - CSS requirements
-- **[mx-compliance-markdown.md](./mx-compliance-markdown.md)** - Markdown source requirements
+- **[mx-compliance.md](./mx-compliance.md) ("MX-Compliant Webpage Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>)** - Webpage output requirements
+- **[mx-compliance-css.md](./mx-compliance-css.md) ("MX-Compliant CSS Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-css.md>)** - CSS requirements
+- **[mx-compliance-markdown.md](./mx-compliance-markdown.md) ("MX-Compliant Markdown Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-markdown.md>)** - Markdown source requirements
 - **JSDoc Reference** - https://jsdoc.app/
 - **ARIA Practices** - https://www.w3.org/WAI/ARIA/apg/
 

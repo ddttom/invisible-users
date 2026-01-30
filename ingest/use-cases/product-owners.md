@@ -391,4 +391,4 @@ Risks:
 - [CMS Compliance Specification](../cms-compliance.md) - Technical requirements
 - [Webpage Compliance](../mx-compliance.md) - Output requirements
 - [CLAUDE.md](../CLAUDE.md) - MX concepts for technical understanding
-- [CEO Use Case](./ceo.md) - Executive perspective
+- [CEO Use Case](./ceo.md) ("MX Compliance for CEOs" at <https://github.com/ddttom/invisible-users/blob/main/ingest/use-cases/ceo.md>) - Executive perspective

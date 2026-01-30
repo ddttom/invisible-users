@@ -37,14 +37,14 @@ This folder contains structured prompt templates for creating outreach content t
 
 | Audience | File | Best For |
 |----------|------|----------|
-| CMS Vendors | [cms-vendors.md](./cms-vendors.md) | WordPress, Drupal, Ghost teams |
-| CMS Agencies | [cms-agencies.md](./cms-agencies.md) | Digital agencies, web consultancies |
-| Platform Creators | [platform-creators.md](./platform-creators.md) | SaaS founders, platform architects |
-| Conference Organisers | [conference-organisers.md](./conference-organisers.md) | Event planners, conference teams |
-| CEOs | [ceo.md](./ceo.md) | Executive leadership |
-| Product Owners | [product-owners.md](./product-owners.md) | Product managers |
-| Developers | [developers.md](./developers.md) | Software engineers |
-| Designers | [designers.md](./designers.md) | UX/UI designers |
+| CMS Vendors | [cms-vendors.md](./cms-vendors.md) ("CMS Vendor Outreach Templates" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/cms-vendors.md>) | WordPress, Drupal, Ghost teams |
+| CMS Agencies | [cms-agencies.md](./cms-agencies.md) ("CMS Agency Outreach Templates" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/cms-agencies.md>) | Digital agencies, web consultancies |
+| Platform Creators | [platform-creators.md](./platform-creators.md) ("Platform Creator Outreach Templates" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/platform-creators.md>) | SaaS founders, platform architects |
+| Conference Organisers | [conference-organisers.md](./conference-organisers.md) ("Conference Organiser Outreach Templates" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/conference-organisers.md>) | Event planners, conference teams |
+| CEOs | [ceo.md](./ceo.md) ("CEO/Executive Outreach Templates" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/ceo.md>) | Executive leadership |
+| Product Owners | [product-owners.md](./product-owners.md) ("Product Owner Outreach Templates" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/product-owners.md>) | Product managers |
+| Developers | [developers.md](./developers.md) ("Developer Outreach Templates" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/developers.md>) | Software engineers |
+| Designers | [designers.md](./designers.md) ("Designer Outreach Templates" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/prospects/designers.md>) | UX/UI designers |
 
 ### 2. Choose Content Type
 
@@ -191,8 +191,8 @@ When updating templates:
 ## Related Documentation
 
 - [Use Cases](../use-cases/) - Detailed audience guides
-- [CMS Compliance](../cms-compliance.md) - Technical specification
-- [CLAUDE.md](../CLAUDE.md) - MX concepts overview
+- [CMS Compliance](../cms-compliance.md) ("MX-Compliant CMS Metadata Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>) - Technical specification
+- [CLAUDE.md](../CLAUDE.md) ("MX Concepts for AI Assistants" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/CLAUDE.md>) - MX concepts overview
 
 ## MX Compliance of This Folder
 

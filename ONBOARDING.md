@@ -12,7 +12,7 @@ This repository contains:
 2. **Web Audit Suite** - Production-ready Node.js tool implementing the book's patterns
 3. **Shared Resources** - Appendices, code examples, and generated content
 
-**For complete architecture details, see [config/system/doc-architecture.md](config/system/doc-architecture.md) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>)**
+**For complete architecture details, see [config/system/doc-architecture.md](config/system/doc-architecture.md) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>) ("Repository Architecture Documentation" at <https://github.com/ddttom/invisible-users/blob/main/config/system/doc-architecture.md>)**
 
 ## Prerequisites
 
@@ -127,7 +127,7 @@ See [packages/web-audit-suite/README.md](packages/web-audit-suite/README.md) ("W
 
 This is a **multi-repository monorepo with 10 git repositories** (1 main + 9 submodules):
 
-**📁 Complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) for the authoritative, detailed folder structure including all submodules.
+**📁 Complete folder structure:** See [config/system/folder-layout.md](config/system/folder-layout.md) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) for the authoritative, detailed folder structure including all submodules.
 
 **High-level overview:**
 
@@ -156,7 +156,7 @@ invisible-users/                    # Main repository (control hub)
 
 **Key documentation:**
 - [config/system/folder-layout.md](config/system/folder-layout.md) - Complete folder structure (single source of truth)
-- [config/system/repo-philosophy.md](config/system/repo-philosophy.md) - Design principles and technical philosophy
+- [config/system/repo-philosophy.md](config/system/repo-philosophy.md) ("Repository Philosophy & Design Principles" at <https://github.com/ddttom/invisible-users/blob/main/config/system/repo-philosophy.md>) - Design principles and technical philosophy
 - [config/system/doc-architecture.md](config/system/doc-architecture.md) - Build systems, workflows, and architecture
 
 ## Understanding Submodules
@@ -181,7 +181,7 @@ git submodule status
 git -C packages/bible log --oneline -10
 ```
 
-**Critical:** Always check `pwd` before git operations. See [config/system/GIT-README.md](config/system/GIT-README.md) ("Git Workflow for Multi-Repository Structure" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) for comprehensive multi-repository workflow guidance.
+**Critical:** Always check `pwd` before git operations. See [config/system/GIT-README.md](config/system/GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) ("Git Workflow for Multi-Repository Structure" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) for comprehensive multi-repository workflow guidance.
 
 ## Code Quality Standards
 
@@ -252,16 +252,16 @@ Disable unused extensions (Java, C#, PHP, Swift) for this workspace. See [docs/v
 
 **Start here (in order):**
 
-1. **[README.md](README.md)** - Project overview
+1. **[README.md](README.md) ("The Invisible Users" at <https://github.com/ddttom/invisible-users/blob/main/README.md>)** - Project overview
 2. **[config/system/doc-architecture.md](config/system/doc-architecture.md)** - Complete architecture documentation (827 lines, comprehensive)
-3. **[CLAUDE.md](CLAUDE.md)** - AI agent instructions and project guide
+3. **[CLAUDE.md](CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>)** - AI agent instructions and project guide
 4. **[config/system/GIT-README.md](config/system/GIT-README.md)** - Git workflow with submodules
 
 **Book-specific:**
 
-- [packages/mx-the-bible/README.md](packages/mx-the-bible/README.md) - MX-Bible contents
-- [packages/mx-handbook/README.md](packages/mx-handbook/README.md) - MX-Handbook contents
-- [packages/mx-appendices/README.md](packages/mx-appendices/README.md) - Appendices overview
+- [packages/mx-the-bible/README.md](packages/mx-the-bible/README.md) ("Invisible Users Manuscript" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-the-bible/README.md>) - MX-Bible contents
+- [packages/mx-handbook/README.md](packages/mx-handbook/README.md) ("MX-Handbook: Designing Web Interfaces for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-handbook/README.md>) - MX-Handbook contents
+- [packages/mx-appendices/README.md](packages/mx-appendices/README.md) ("Shared Appendices" at <https://github.com/ddttom/invisible-users/blob/main/packages/mx-appendices/README.md>) - Appendices overview
 
 **Tool-specific:**
 

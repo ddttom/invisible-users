@@ -456,7 +456,7 @@ The main repository integrates the manuscript as a submodule, allowing the book 
 
 ## Additional Resources
 
-- [CLAUDE.md](../../CLAUDE.md) - Full project documentation
-- [README.md](../../README.md) - Project overview and setup
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - Full project documentation
+- [README.md](../../README.md) ("The Invisible Users" at <https://github.com/ddttom/invisible-users/blob/main/README.md>) - Project overview and setup
 - [LEARNINGS.md](../repo/LEARNINGS.md) - Documented mistakes and lessons learned
 - Git Submodule Documentation: <https://git-scm.com/book/en/v2/Git-Tools-Submodules>

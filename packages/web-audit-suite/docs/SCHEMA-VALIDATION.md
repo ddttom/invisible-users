@@ -355,6 +355,6 @@ Don't just provide price - add all recommended properties:
 
 For issues or questions about Schema.org validation:
 
-- Check the [Web Audit Suite documentation](./usermanual.md)
+- Check the [Web Audit Suite documentation](./usermanual.md) ("Web Audit Suite User Manual" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/usermanual.md>)
 - Review [example implementations](../examples/)
 - See [The Invisible Users book](https://allabout.network/invisible-users/) for comprehensive patterns

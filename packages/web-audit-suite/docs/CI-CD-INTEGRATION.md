@@ -539,7 +539,7 @@ workflows:
 
 For CI/CD integration issues:
 
-1. Review [Configuration Guide](CONFIGURATION.md)
+1. Review [Configuration Guide](CONFIGURATION.md) ("Configuration Guide" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/docs/CONFIGURATION.md>)
 2. Check [GitHub Actions documentation](https://docs.github.com/actions)
 3. Examine workflow logs in Actions tab
 4. Download artifacts to review detailed results

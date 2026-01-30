@@ -48,7 +48,7 @@ Total: 10 git repositories (1 main + 9 submodules)
 
 ## Repository Structure
 
-**📁 Complete folder structure:** See [config/system/folder-layout.md](../../config/system/folder-layout.md) for the authoritative, detailed folder structure of the main repository and all 9 submodules.
+**📁 Complete folder structure:** See [config/system/folder-layout.md](../../config/system/folder-layout.md) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) for the authoritative, detailed folder structure of the main repository and all 9 submodules.
 
 This section focuses on architectural concepts and relationships rather than detailed directory listings.
 
@@ -664,9 +664,9 @@ See [docs/structure/blog-metadata-schema.md](../structure/blog-metadata-schema.m
 
 ## Related Documentation
 
-- [README.md](../../README.md) - Main project documentation
-- [CLAUDE.md](../../CLAUDE.md) - AI agent instructions
-- [LEARNINGS.md](../../LEARNINGS.md) - Battle-tested rules
-- [GIT-README.md](GIT-README.md) - Git workflow guide
-- [ONBOARDING.md](../../ONBOARDING.md) - Developer onboarding
-- [web-audit-architecture.md](../../packages/web-audit-suite/web-audit-architecture.md) - Web Audit Suite architecture
+- [README.md](../../README.md) ("The Invisible Users" at <https://github.com/ddttom/invisible-users/blob/main/README.md>) - Main project documentation
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - AI agent instructions
+- [LEARNINGS.md](../../LEARNINGS.md) ("Learnings" at <https://github.com/ddttom/invisible-users/blob/main/LEARNINGS.md>) - Battle-tested rules
+- [GIT-README.md](GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) - Git workflow guide
+- [ONBOARDING.md](../../ONBOARDING.md) ("Developer Onboarding Guide" at <https://github.com/ddttom/invisible-users/blob/main/ONBOARDING.md>) - Developer onboarding
+- [web-audit-architecture.md](../../packages/web-audit-suite/web-audit-architecture.md) ("Web Audit Suite Architecture" at <https://github.com/ddttom/invisible-users/blob/main/packages/web-audit-suite/web-audit-architecture.md>) - Web Audit Suite architecture
