@@ -174,7 +174,9 @@
       "WebFetch(domain:ucp.dev)",
       "WebFetch(domain:docs.google.com)",
       "Bash(git check-ignore:*)",
-      "Bash(npx markdownlint-cli2:*)"
+      "Bash(npx markdownlint-cli2:*)",
+      "Bash(while read file)",
+      "Bash(do [ -n \"$file\" ])"
     ],
     "deny": [],
     "ask": [
