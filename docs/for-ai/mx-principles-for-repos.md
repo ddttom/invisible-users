@@ -37,7 +37,7 @@ This document defines what it means to design repositories for both human develo
 
 **Core philosophy:** Design for both audiences simultaneously, not one at the expense of the other.
 
-## The Four Core MX Principles
+## Core MX Principles
 
 ### 1. Design for Both (Humans + Machines)
 
@@ -186,6 +186,68 @@ All must be able to access and understand the content.
 - Implicit relationships
 - Hidden configuration
 
+### 5. Context-Preserving References
+
+**Principle:** Links and references must remain meaningful when documents are separated from their repository context.
+
+**Why it matters:**
+- Documents get extracted (PDF, downloads, AI context windows)
+- Relative paths break when files leave the repository
+- Humans struggle to mentally map complex folder structures
+- AI agents burn tokens reconstructing context
+- References should work in all circumstances
+
+**The problem with relative-only links:**
+
+```markdown
+❌ BAD: See [repo-philosophy.md](../../config/system/repo-philosophy.md)
+```
+
+**What breaks:**
+- **Humans:** Cannot understand "../../config/system/" without visualizing folder tree
+- **Machines:** Link is meaningless if document is copied, downloaded, or processed outside repository
+- **Cost:** AI agents spend tokens figuring out repository structure
+- **Fragility:** Links break if file is moved or viewed in different context
+
+**The solution - context-preserving pattern:**
+
+```markdown
+✅ GOOD: See [repo-philosophy.md](../../config/system/repo-philosophy.md)
+("Repository Philosophy & Design Principles" at
+<https://github.com/user/repo/blob/main/config/system/repo-philosophy.md>)
+```
+
+**What this provides:**
+- **For humans in IDEs:** Clickable relative link works normally
+- **For humans reading extracted files:** Full document title and absolute URL
+- **For machines:** Complete context even when file is processed outside repository
+- **For AI agents:** No token cost reconstructing paths - all context is explicit
+
+**Implementation examples:**
+
+```markdown
+**For complete overview, see:** [README.md](../../README.md)
+("Project Overview" at <https://github.com/org/repo/blob/main/README.md>)
+
+**For development workflow, see:** [CONTRIBUTING.md](../CONTRIBUTING.md)
+("Contribution Guidelines" at <https://github.com/org/repo/blob/main/CONTRIBUTING.md>)
+```
+
+**When to apply:**
+- ✅ All cross-document references (links to other files)
+- ✅ Documentation that might be extracted (PDFs, blog posts, AI context)
+- ✅ Any file referenced in YAML frontmatter (`related_files`)
+- ❌ Internal section anchors within same document (like `#contents`)
+- ❌ External links (already absolute)
+
+**Benefits:**
+- **Zero cognitive load:** Humans immediately know what's being referenced
+- **Zero token cost:** AI agents don't need to reconstruct repository structure
+- **Universal compatibility:** Works in repo, in PDFs, in AI chats, everywhere
+- **Future-proof:** Documents remain useful even when separated from source
+
+**This is Anti-pattern 14** from the book: Context-Free References. Relative-only links work in IDEs but fail everywhere else. Design for all circumstances.
+
 ## Implementation in invisible-users Repository
 
 ### Mandatory Requirements
@@ -209,6 +271,12 @@ mx:
 - Use `.mx.yaml` naming (dot-prefix for hidden files)
 - Include MX metadata declaring purpose and audience
 - Reference related configuration files
+
+**Cross-document references MUST:**
+- Use context-preserving pattern: `[filename](relative-path) ("Title" at <absolute-url>)`
+- Include document title for human readability
+- Include absolute GitHub URL for machine processing
+- Apply to all `related_files` references and documentation links
 
 **Code files SHOULD:**
 - Include `@mx:` annotations for AI-critical functions

@@ -743,9 +743,23 @@ See [Appendix H - Example llms.txt](packages/mx-appendices/appendix-h-live-llms.
 
 **🚨 CRITICAL: Relative links lose context when files are extracted from repository structure.**
 
-When markdown files are printed to PDF, downloaded, fed to AI agents, or otherwise separated from their repository context, relative links like `[README.md](../../README.md)` become meaningless. The solution is to provide both relative links (for IDE navigation) and absolute URLs (for context preservation).
+**⚠️ MX PRINCIPLE 5:** Context-Preserving References - links must remain meaningful when documents are separated from their repository context.
 
-**Pattern to use:**
+**The problem:**
+
+Relative-only links like `[README.md](../../README.md)` break when:
+- Files are printed to PDF
+- Documents are downloaded or copied
+- Content is fed to AI agents
+- Files are processed outside repository structure
+
+**The cost:**
+
+- **For humans:** Cognitive load to mentally map complex folder structures (`../../config/system/` means what?)
+- **For AI agents:** Token cost reconstructing repository structure from incomplete context
+- **For machines:** Meaningless links when files are separated from source
+
+**The solution - context-preserving pattern:**
 
 ```markdown
 [filename](relative-path) ("Document Title" at <absolute-url>)
@@ -762,16 +776,22 @@ When markdown files are printed to PDF, downloaded, fed to AI agents, or otherwi
 **What this accomplishes:**
 
 - **For humans in IDEs:** Clickable relative links work normally
+- **For humans reading extracted files:** Zero cognitive load - document title is explicit
+- **For AI agents:** Zero token cost - complete context without repository reconstruction
 - **For machines/extracted files:** Full document title and absolute URL provide complete context
-- **For AI agents:** Can understand relationships even when file is processed outside repository
+- **Universal compatibility:** Works in repo, in PDFs, in AI chats, everywhere
+
+**Design for all circumstances:** Links should work regardless of whether the document is in a repository, IDE, PDF, web page, or AI agent context window.
 
 **When to apply:**
 
 - ✅ **Use this pattern:** All cross-document references (links to other files)
+- ✅ **Mandatory:** All `related_files` references in YAML frontmatter
+- ✅ **Required:** Documentation that might be extracted or shared
 - ❌ **Not needed:** Internal section anchors within same document (like `#contents`)
 - ❌ **Not needed:** External links (already absolute)
 
-**This is Anti-pattern 14:** Context-Free References. See Chapter 9 and Appendix N for complete documentation.
+**This is Anti-pattern 14:** Context-Free References. See Chapter 9 and Appendix N for complete documentation. Also documented as **MX Principle 5** in [docs/for-ai/mx-principles-for-repos.md](docs/for-ai/mx-principles-for-repos.md).
 
 ## MX Code Metadata Specification
 
