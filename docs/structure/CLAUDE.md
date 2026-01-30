@@ -343,11 +343,11 @@ title: "Article"
 
 ## Related Files
 
-- **[cms-compliance.md](./cms-compliance.md)** - CMS storage and workflow specification
-- **[mx-compliance.md](./mx-compliance.md)** - Webpage output specification
-- **[mx-compliance-markdown.md](./mx-compliance-markdown.md)** - Markdown source specification
-- **[README.md](./README.md)** - Directory overview and file relationships
-- **[../for-ai/writing-style.md](../for-ai/writing-style.md)** - Writing style guidelines
+- **[cms-compliance.md](./cms-compliance.md) ("CMS Compliance Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>)** - CMS storage and workflow specification
+- **[mx-compliance.md](./mx-compliance.md) ("MX Compliance Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>)** - Webpage output specification
+- **[mx-compliance-markdown.md](./mx-compliance-markdown.md) ("MX Markdown Compliance Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-markdown.md>)** - Markdown source specification
+- **[README.md](./README.md) ("Directory Guide to Strategic Planning Documents" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/README.md>)** - Directory overview and file relationships
+- **[../for-ai/writing-style.md](../for-ai/writing-style.md) ("Writing Style Guide for MX Books" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>)** - Writing style guidelines
 
 ## Summary
 
