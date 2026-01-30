@@ -176,7 +176,8 @@
       "Bash(git check-ignore:*)",
       "Bash(npx markdownlint-cli2:*)",
       "Bash(while read file)",
-      "Bash(do [ -n \"$file\" ])"
+      "Bash(do [ -n \"$file\" ])",
+      "Bash(./.claude/hooks/pre-push.sh:*)"
     ],
     "deny": [],
     "ask": [
