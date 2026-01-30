@@ -211,10 +211,10 @@ After updating a file:
 
 ## Related Documentation
 
-- **MX Principle 5:** [mx-principles-for-repos.md](mx-principles-for-repos.md#5-context-preserving-references) - Complete principle documentation
-- **CLAUDE.md Guidance:** [CLAUDE.md](../../CLAUDE.md#context-preserving-cross-document-references) - Critical guidance for AI assistants
-- **Full Implementation Plan:** [context-preserving-refs-implementation-plan.md](../structure/context-preserving-refs-implementation-plan.md) - Detailed phases and effort estimates
-- **Repository Philosophy:** [repo-philosophy.md](../../config/system/repo-philosophy.md) - Design principles and rationale
+- **MX Principle 5:** [mx-principles-for-repos.md](mx-principles-for-repos.md#5-context-preserving-references) ("MX Principles for Repositories" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/mx-principles-for-repos.md#5-context-preserving-references>) - Complete principle documentation
+- **CLAUDE.md Guidance:** [CLAUDE.md](../../CLAUDE.md#context-preserving-cross-document-references) ("CLAUDE.md - AI Assistant Project Guide" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md#context-preserving-cross-document-references>) - Critical guidance for AI assistants
+- **Full Implementation Plan:** [context-preserving-refs-implementation-plan.md](../structure/context-preserving-refs-implementation-plan.md) ("Context-Preserving References Implementation Plan" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/context-preserving-refs-implementation-plan.md>) - Detailed phases and effort estimates
+- **Repository Philosophy:** [repo-philosophy.md](../../config/system/repo-philosophy.md) ("Repository Philosophy & Design Principles" at <https://github.com/ddttom/invisible-users/blob/main/config/system/repo-philosophy.md>) - Design principles and rationale
 
 ---
 

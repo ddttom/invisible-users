@@ -417,9 +417,9 @@ This document should be updated when:
 
 - **MX Code Metadata Specification:** [mx-code-metadata-spec.md](../../packages/mx-gathering/specifications/mx-code-metadata-spec.md) - Complete technical specification
 - **MX Base Specification:** [mx-base-spec.md](../../packages/mx-gathering/specifications/mx-base-spec.md) - Foundation principles
-- **Repository Philosophy:** [repo-philosophy.md](../../config/system/repo-philosophy.md) - Design decisions and rationale
-- **AI Guidance:** [CLAUDE.md](../../CLAUDE.md) - Operational guidance for AI assistants
-- **Folder Structure:** [folder-layout.md](../../config/system/folder-layout.md) - Complete repository structure
+- **Repository Philosophy:** [repo-philosophy.md](../../config/system/repo-philosophy.md) ("Repository Philosophy & Design Principles" at <https://github.com/ddttom/invisible-users/blob/main/config/system/repo-philosophy.md>) - Design decisions and rationale
+- **AI Guidance:** [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md - AI Assistant Project Guide" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - Operational guidance for AI assistants
+- **Folder Structure:** [folder-layout.md](../../config/system/folder-layout.md) ("Complete Repository Folder Layout" at <https://github.com/ddttom/invisible-users/blob/main/config/system/folder-layout.md>) - Complete repository structure
 
 ## Quick Reference
 

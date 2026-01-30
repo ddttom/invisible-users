@@ -48,11 +48,11 @@ Five specifications cover content, code, and styling:
 
 | Specification | Scope | Key Question Answered |
 |---------------|-------|----------------------|
-| **[cms-compliance.md](./cms-compliance.md)** | Internal CMS storage and workflow | "How should content be managed internally?" |
-| **[mx-compliance.md](./mx-compliance.md)** | Rendered webpage output (HTML) | "What must the published page contain?" |
-| **[mx-compliance-markdown.md](./mx-compliance-markdown.md)** | Source markdown files | "How should authors structure source content?" |
-| **[mx-compliance-javascript.md](./mx-compliance-javascript.md)** | JavaScript/TypeScript files | "How should scripts expose state and handle errors?" |
-| **[mx-compliance-css.md](./mx-compliance-css.md)** | CSS/SCSS files | "How should styles support accessibility?" |
+| **[cms-compliance.md](./cms-compliance.md) ("CMS Compliance Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/cms-compliance.md>)** | Internal CMS storage and workflow | "How should content be managed internally?" |
+| **[mx-compliance.md](./mx-compliance.md) ("MX Compliance Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance.md>)** | Rendered webpage output (HTML) | "What must the published page contain?" |
+| **[mx-compliance-markdown.md](./mx-compliance-markdown.md) ("MX Markdown Compliance Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-markdown.md>)** | Source markdown files | "How should authors structure source content?" |
+| **[mx-compliance-javascript.md](./mx-compliance-javascript.md) ("MX JavaScript Compliance Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-javascript.md>)** | JavaScript/TypeScript files | "How should scripts expose state and handle errors?" |
+| **[mx-compliance-css.md](./mx-compliance-css.md) ("MX CSS Compliance Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-css.md>)** | CSS/SCSS files | "How should styles support accessibility?" |
 
 ### How They Relate
 
@@ -151,7 +151,7 @@ Each specification defines three certification levels:
 
 ### AI Assistant Guidance
 
-For detailed guidance on MX concepts for AI assistants, see **[CLAUDE.md](./CLAUDE.md)** in this directory.
+For detailed guidance on MX concepts for AI assistants, see **[CLAUDE.md](./CLAUDE.md) ("CLAUDE.md - Strategic Planning Context" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/CLAUDE.md>)** in this directory.
 
 ---
 
