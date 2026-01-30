@@ -15,7 +15,7 @@ Book manuscript files were incorrectly including temporal language like:
 
 ### 1. Documentation Updated
 
-#### [docs/for-ai/writing-style.md](../for-ai/writing-style.md)
+#### [docs/for-ai/writing-style.md](../for-ai/writing-style.md) ("Writing Style Guide for MX Books" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>)
 
 Added **Section 3: Timeless Manuscript Rule** with explicit guidance:
 
@@ -35,7 +35,7 @@ Added **Section 3: Timeless Manuscript Rule** with explicit guidance:
 
 **Exception:** Historical context about *subject matter* is allowed (e.g., "Google launched UCP in January 2026" describes an industry event, not the book)
 
-#### [CLAUDE.md](../../CLAUDE.md)
+#### [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md - AI Assistant Project Guide" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>)
 
 Added comprehensive **"CRITICAL WRITING REQUIREMENT - Timeless Manuscript Rule"** section:
 
@@ -46,7 +46,7 @@ Added comprehensive **"CRITICAL WRITING REQUIREMENT - Timeless Manuscript Rule"*
 
 ### 2. YAML Frontmatter Template Created
 
-#### [docs/for-ai/yaml-frontmatter-template.md](../for-ai/yaml-frontmatter-template.md)
+#### [docs/for-ai/yaml-frontmatter-template.md](../for-ai/yaml-frontmatter-template.md) ("YAML Frontmatter Template for Book Manuscripts" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/yaml-frontmatter-template.md>)
 
 Complete template for book manuscript frontmatter with:
 
@@ -78,7 +78,7 @@ ai-instruction: |
 ### Immediate (High Priority)
 
 1. **Fix Chapter 0** - Remove "launching April 2, 2026" and similar language
-   - [docs/shared-chapters/chapter-00-what-are-ai-agents.md](../shared-chapters/chapter-00-what-are-ai-agents.md) - Line 188
+   - [docs/shared-chapters/chapter-00-what-are-ai-agents.md](../../docs/shared-chapters/chapter-00-what-are-ai-agents.md) ("Chapter 0: What Are AI Agents?" at <https://github.com/ddttom/invisible-users/blob/main/docs/shared-chapters/chapter-00-what-are-ai-agents.md>) - Line 188
 
 2. **Add YAML frontmatter to all book chapters** - Systematic rollout:
    - `packages/bible/chapters/*.md` (13 chapters)
@@ -139,10 +139,10 @@ find packages/*/chapters/ docs/shared-chapters/ -name "*.md" -exec grep -l "^---
 
 ## Related Documentation
 
-- [Writing Style Guide](../for-ai/writing-style.md) - Section 3: Core Writing Rules
-- [YAML Frontmatter Template](../for-ai/yaml-frontmatter-template.md) - Complete template and examples
-- [CLAUDE.md](../../CLAUDE.md) - Section: CRITICAL WRITING REQUIREMENT
-- [GIT-README.md](GIT-README.md) - Git workflow for multi-repository structure
+- [Writing Style Guide](../for-ai/writing-style.md) ("Writing Style Guide for MX Books" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/writing-style.md>) - Section 3: Core Writing Rules
+- [YAML Frontmatter Template](../for-ai/yaml-frontmatter-template.md) ("YAML Frontmatter Template for Book Manuscripts" at <https://github.com/ddttom/invisible-users/blob/main/docs/for-ai/yaml-frontmatter-template.md>) - Complete template and examples
+- [CLAUDE.md](../../CLAUDE.md) ("CLAUDE.md - AI Assistant Project Guide" at <https://github.com/ddttom/invisible-users/blob/main/CLAUDE.md>) - Section: CRITICAL WRITING REQUIREMENT
+- [GIT-README.md](../system/GIT-README.md) ("Git Workflow Guide for AI Agents" at <https://github.com/ddttom/invisible-users/blob/main/config/system/GIT-README.md>) - Git workflow for multi-repository structure
 
 ## Questions?
 
