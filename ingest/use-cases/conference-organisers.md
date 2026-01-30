@@ -477,7 +477,7 @@ If the AI can answer accurately, your structured data is working.
 
 ### DIY Resources
 
-- [MX Conference Specification](../../docs/structure/mx-compliance-conference.md) ("MX-Compliant Conference Website Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-conference.md>) ("MX-Compliant Conference Website Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-conference.md>) - Technical spec
+- [MX Conference Specification](../../docs/structure/mx-compliance-conference.md) ("MX-Compliant Conference Website Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-conference.md>) ("MX-Compliant Conference Website Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-conference.md>) ("MX-Compliant Conference Website Specification" at <https://github.com/ddttom/invisible-users/blob/main/docs/structure/mx-compliance-conference.md>) - Technical spec
 - [Schema.org Event](https://schema.org/Event) - Official documentation
 - [Google Event Guide](https://developers.google.com/search/docs/data-types/event) - Implementation guide
 
